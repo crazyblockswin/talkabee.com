@@ -44,6 +44,22 @@ select{width:100%;padding:12px;border:0;border-radius:14px;font-size:17px;font-w
 }
 </style>
 
+
+<style id="kitchen-narrow-panel-scene-view-fix">
+/* Narrower Activity Panel while preserving the full-height master behavior. */
+.panel{
+  width:365px!important;
+}
+/* Scene View means scene only: hide BOTH overlays. */
+#world.scene-only .panel,
+#world.scene-only .card{
+  display:none!important;
+}
+#world.scene-only .restore{
+  display:block!important;
+}
+</style>
+
 </head><body>
 <main id="world">
 <aside class="panel">
