@@ -35,21 +35,21 @@ button{font:inherit;cursor:pointer}
 .hotspot{position:absolute;transform:translate(-50%,-50%);border:0;border-radius:50%;background:transparent;opacity:.025;pointer-events:auto}
 .hotspot:hover,.hotspot:focus-visible{opacity:.52;outline:4px solid rgba(255,255,255,.95);outline-offset:-4px;background:rgba(18,151,142,.34)}
 /* Hotspots follow the stretched full-screen scene, matching the V50/V63 geometry. */
-[data-word="julie"]{left:54.7%;top:55.0%;width:12.5%;height:35.0%}
-[data-word="guitar"]{left:55.0%;top:69.0%;width:17.0%;height:24.0%}
-[data-word="dog"]{left:68.2%;top:65.0%;width:12.0%;height:22.0%}
-[data-word="cat"]{left:45.0%;top:73.0%;width:9.0%;height:18.0%}
-[data-word="pig"]{left:78.2%;top:76.0%;width:12.0%;height:19.0%}
-[data-word="hammock"]{left:71.0%;top:37.0%;width:18.0%;height:13.0%}
-[data-word="lantern"]{left:32.5%;top:62.0%;width:5.5%;height:10.0%}
-[data-word="flowers"]{left:87.5%;top:58.5%;width:11.0%;height:18.0%}
-[data-word="pier"]{left:42.0%;top:40.0%;width:19.0%;height:10.0%}
-[data-word="ocean"]{left:47.0%;top:30.0%;width:30.0%;height:13.0%}
-[data-word="sailboat"]{left:56.0%;top:30.5%;width:6.0%;height:7.0%}
-[data-word="palm"]{left:90.5%;top:28.0%;width:12.0%;height:34.0%}
-[data-word="table"]{left:89.5%;top:80.0%;width:14.0%;height:18.0%}
-[data-word="pitcher"]{left:91.5%;top:70.0%;width:5.0%;height:10.0%}
-[data-word="cushions"]{left:31.0%;top:84.0%;width:18.0%;height:19.0%}
+[data-word="julie"]{left:46.0%;top:54.0%;width:13.0%;height:38.0%}
+[data-word="guitar"]{left:49.5%;top:60.5%;width:24.0%;height:14.0%}
+[data-word="dog"]{left:34.0%;top:74.5%;width:12.0%;height:27.0%}
+[data-word="cat"]{left:42.2%;top:79.0%;width:8.0%;height:19.0%}
+[data-word="pig"]{left:59.5%;top:79.0%;width:9.0%;height:18.0%}
+[data-word="hammock"]{left:27.8%;top:33.0%;width:18.0%;height:18.0%}
+[data-word="lantern"]{left:89.0%;top:56.5%;width:6.5%;height:14.0%}
+[data-word="flowers"]{left:81.7%;top:58.5%;width:9.0%;height:16.0%}
+[data-word="pier"]{left:75.0%;top:43.0%;width:22.0%;height:16.0%}
+[data-word="ocean"]{left:66.0%;top:38.0%;width:35.0%;height:15.0%}
+[data-word="sailboat"]{left:73.5%;top:35.0%;width:5.0%;height:8.0%}
+[data-word="palm"]{left:81.5%;top:22.0%;width:20.0%;height:38.0%}
+[data-word="table"]{left:80.0%;top:76.0%;width:29.0%;height:19.0%}
+[data-word="pitcher"]{left:75.7%;top:64.5%;width:7.0%;height:13.0%}
+[data-word="cushions"]{left:56.5%;top:59.0%;width:16.0%;height:17.0%}
 @media(max-width:850px){.directory{width:165px}.panel{right:12px;bottom:12px;width:42%}}
 
 /* Scene View: hide only the left activity directory and reveal the full scene. */
@@ -67,6 +67,7 @@ body.scene-view .return-panel-toggle{display:block!important}
   <aside class="directory">
    <a id="mainDirectory" class="main-directory" href="index.html" style="display:block;text-decoration:none;color:#fff;padding:8px;border-radius:10px;margin-bottom:8px;background:rgba(255,255,255,.12);font-size:11px;font-weight:950">← Main Directory</a>
    <button id="sceneViewToggle" class="scene-view-toggle" type="button" aria-pressed="false">Scene View</button>
+   <div class="language-row" style="margin:7px 0 10px"><label for="adventureLanguage" style="display:block;font-size:10px;font-weight:950;letter-spacing:.10em;margin:0 0 4px 4px">LEARNING LANGUAGE</label><select id="adventureLanguage" aria-label="Learning language" style="width:100%;padding:8px 10px;border:1px solid rgba(255,255,255,.42);border-radius:10px;background:rgba(20,25,40,.60);color:#fff;font-weight:900"><option value="es">Spanish</option><option value="fr">French</option><option value="en">English</option><option value="de">German</option><option value="it">Italian</option><option value="pt">Portuguese</option><option value="no">Norwegian</option></select></div>
    <div class="place">🌴 Aunt Julie's Island Retreat</div>
    <div class="label">ACTIVITIES</div>
    <button data-lesson="welcome">1. 👋 Island Welcome</button>
@@ -126,43 +127,87 @@ returnPanelToggle.addEventListener("click",()=>{
   document.body.classList.remove("scene-view");
   sceneViewToggle.setAttribute("aria-pressed","false");
 });
-const lessons={
-welcome:{title:"Island Welcome",prompt:"Practice a warm welcome at Aunt Julie's retreat.",lines:[
-["Bienvenidos a la isla.","Welcome to the island."],["Hola, me llamo Julie.","Hello, my name is Julie."],["Me alegra verte.","I am happy to see you."],["Ven y siéntate conmigo.","Come and sit with me."]]},
-retreat:{title:"At the Retreat",prompt:"Talk about things around the island retreat.",lines:[
-["Estamos junto al océano.","We are beside the ocean."],["El muelle llega hasta el agua.","The pier reaches the water."],["La hamaca está bajo las palmeras.","The hammock is under the palm trees."],["La mesa está llena de cosas bonitas.","The table is full of pretty things."]]},
-animals:{title:"Julie's Animals",prompt:"Meet Aunt Julie's island companions.",lines:[
-["El perro está junto a Julie.","The dog is beside Julie."],["El gato está sentado cerca.","The cat is sitting nearby."],["El cerdito lleva un pañuelo.","The little pig is wearing a bandana."],["Los animales están tranquilos.","The animals are calm."]]},
-music:{title:"Music Time",prompt:"Practice sentences about Aunt Julie and her music.",lines:[
-["Julie toca la guitarra.","Julie plays the guitar."],["La guitarra tiene muchos colores.","The guitar has many colors."],["Cantamos juntos al atardecer.","We sing together at sunset."],["La música suena junto al mar.","The music plays beside the sea."]]},
-nature:{title:"Tropical Nature",prompt:"Explore the plants, water, and sky around the retreat.",lines:[
-["Las flores son muy coloridas.","The flowers are very colorful."],["Las palmeras son altas.","The palm trees are tall."],["El océano brilla al atardecer.","The ocean shines at sunset."],["Hay una isla a lo lejos.","There is an island in the distance."]]},
-island:{title:"Island Life",prompt:"Put people, animals, places, and actions together.",lines:[
-["Julie disfruta de una tarde tranquila.","Julie enjoys a peaceful afternoon."],["Los animales descansan cerca de ella.","The animals rest near her."],["Un velero navega por el océano.","A sailboat moves across the ocean."],["Todos disfrutan de la música y la puesta de sol.","Everyone enjoys the music and the sunset."]]}
+const languageData={
+es:{speech:"es-ES",name:"Spanish",lessons:{
+welcome:{title:"Island Welcome",prompt:"Practice a warm welcome at Aunt Julie's retreat.",lines:[["Bienvenidos a la isla.","Welcome to the island."],["Hola, me llamo Julie.","Hello, my name is Julie."],["Me alegra verte.","I am happy to see you."],["Ven y siéntate conmigo.","Come and sit with me."]]},
+retreat:{title:"At the Retreat",prompt:"Talk about things around the island retreat.",lines:[["Estamos junto al océano.","We are beside the ocean."],["El muelle llega hasta el agua.","The pier reaches the water."],["La hamaca está bajo las palmeras.","The hammock is under the palm trees."],["La mesa está llena de cosas bonitas.","The table is full of pretty things."]]},
+animals:{title:"Julie's Animals",prompt:"Meet Aunt Julie's island companions.",lines:[["El perro está junto a Julie.","The dog is beside Julie."],["El gato está sentado cerca.","The cat is sitting nearby."],["El cerdito lleva un pañuelo.","The little pig is wearing a bandana."],["Los animales están tranquilos.","The animals are calm."]]},
+music:{title:"Music Time",prompt:"Practice sentences about Aunt Julie and her music.",lines:[["Julie toca la guitarra.","Julie plays the guitar."],["La guitarra tiene muchos colores.","The guitar has many colors."],["Cantamos juntos al atardecer.","We sing together at sunset."],["La música suena junto al mar.","The music plays beside the sea."]]},
+nature:{title:"Tropical Nature",prompt:"Explore the plants, water, and sky around the retreat.",lines:[["Las flores son muy coloridas.","The flowers are very colorful."],["Las palmeras son altas.","The palm trees are tall."],["El océano brilla al atardecer.","The ocean shines at sunset."],["Hay una isla a lo lejos.","There is an island in the distance."]]},
+island:{title:"Island Life",prompt:"Put people, animals, places, and actions together.",lines:[["Julie disfruta de una tarde tranquila.","Julie enjoys a peaceful afternoon."],["Los animales descansan cerca de ella.","The animals rest near her."],["Un velero navega por el océano.","A sailboat moves across the ocean."],["Todos disfrutan de la música y la puesta de sol.","Everyone enjoys the music and the sunset."]]}
+},words:{julie:"La tía Julie.",guitar:"La guitarra.",dog:"El perro.",cat:"El gato.",pig:"El cerdito.",hammock:"La hamaca.",lantern:"La linterna.",flowers:"Las flores.",pier:"El muelle.",ocean:"El océano.",sailboat:"El velero.",palm:"La palmera.",table:"La mesa.",pitcher:"La jarra.",cushions:"Los cojines."}},
+fr:{speech:"fr-FR",name:"French",lessons:{
+welcome:{title:"Island Welcome",prompt:"Practice a warm welcome at Aunt Julie's retreat.",lines:[["Bienvenue sur l’île.","Welcome to the island."],["Bonjour, je m’appelle Julie.","Hello, my name is Julie."],["Je suis heureuse de te voir.","I am happy to see you."],["Viens t’asseoir avec moi.","Come and sit with me."]]},
+retreat:{title:"At the Retreat",prompt:"Talk about things around the island retreat.",lines:[["Nous sommes au bord de l’océan.","We are beside the ocean."],["Le quai s’avance jusqu’à l’eau.","The pier reaches the water."],["Le hamac est sous les palmiers.","The hammock is under the palm trees."],["La table est pleine de jolies choses.","The table is full of pretty things."]]},
+animals:{title:"Julie's Animals",prompt:"Meet Aunt Julie's island companions.",lines:[["Le chien est à côté de Julie.","The dog is beside Julie."],["Le chat est assis tout près.","The cat is sitting nearby."],["Le petit cochon porte un bandana.","The little pig is wearing a bandana."],["Les animaux sont calmes.","The animals are calm."]]},
+music:{title:"Music Time",prompt:"Practice sentences about Aunt Julie and her music.",lines:[["Julie joue de la guitare.","Julie plays the guitar."],["La guitare a beaucoup de couleurs.","The guitar has many colors."],["Nous chantons ensemble au coucher du soleil.","We sing together at sunset."],["La musique résonne au bord de la mer.","The music plays beside the sea."]]},
+nature:{title:"Tropical Nature",prompt:"Explore the plants, water, and sky around the retreat.",lines:[["Les fleurs sont très colorées.","The flowers are very colorful."],["Les palmiers sont grands.","The palm trees are tall."],["L’océan brille au coucher du soleil.","The ocean shines at sunset."],["Il y a une île au loin.","There is an island in the distance."]]},
+island:{title:"Island Life",prompt:"Put people, animals, places, and actions together.",lines:[["Julie profite d’un après-midi paisible.","Julie enjoys a peaceful afternoon."],["Les animaux se reposent près d’elle.","The animals rest near her."],["Un voilier traverse l’océan.","A sailboat moves across the ocean."],["Tout le monde profite de la musique et du coucher du soleil.","Everyone enjoys the music and the sunset."]]}
+},words:{julie:"Tante Julie.",guitar:"La guitare.",dog:"Le chien.",cat:"Le chat.",pig:"Le petit cochon.",hammock:"Le hamac.",lantern:"La lanterne.",flowers:"Les fleurs.",pier:"Le quai.",ocean:"L’océan.",sailboat:"Le voilier.",palm:"Le palmier.",table:"La table.",pitcher:"La cruche.",cushions:"Les coussins."}},
+en:{speech:"en-US",name:"English",lessons:{
+welcome:{title:"Island Welcome",prompt:"Practice a warm welcome at Aunt Julie's retreat.",lines:[["Welcome to the island.","Bienvenidos a la isla."],["Hello, my name is Julie.","Hola, me llamo Julie."],["I am happy to see you.","Me alegra verte."],["Come and sit with me.","Ven y siéntate conmigo."]]},
+retreat:{title:"At the Retreat",prompt:"Talk about things around the island retreat.",lines:[["We are beside the ocean.","Estamos junto al océano."],["The pier reaches the water.","El muelle llega hasta el agua."],["The hammock is under the palm trees.","La hamaca está bajo las palmeras."],["The table is full of pretty things.","La mesa está llena de cosas bonitas."]]},
+animals:{title:"Julie's Animals",prompt:"Meet Aunt Julie's island companions.",lines:[["The dog is beside Julie.","El perro está junto a Julie."],["The cat is sitting nearby.","El gato está sentado cerca."],["The little pig is wearing a bandana.","El cerdito lleva un pañuelo."],["The animals are calm.","Los animales están tranquilos."]]},
+music:{title:"Music Time",prompt:"Practice sentences about Aunt Julie and her music.",lines:[["Julie plays the guitar.","Julie toca la guitarra."],["The guitar has many colors.","La guitarra tiene muchos colores."],["We sing together at sunset.","Cantamos juntos al atardecer."],["The music plays beside the sea.","La música suena junto al mar."]]},
+nature:{title:"Tropical Nature",prompt:"Explore the plants, water, and sky around the retreat.",lines:[["The flowers are very colorful.","Las flores son muy coloridas."],["The palm trees are tall.","Las palmeras son altas."],["The ocean shines at sunset.","El océano brilla al atardecer."],["There is an island in the distance.","Hay una isla a lo lejos."]]},
+island:{title:"Island Life",prompt:"Put people, animals, places, and actions together.",lines:[["Julie enjoys a peaceful afternoon.","Julie disfruta de una tarde tranquila."],["The animals rest near her.","Los animales descansan cerca de ella."],["A sailboat moves across the ocean.","Un velero navega por el océano."],["Everyone enjoys the music and the sunset.","Todos disfrutan de la música y la puesta de sol."]]}
+},words:{julie:"Aunt Julie.",guitar:"The guitar.",dog:"The dog.",cat:"The cat.",pig:"The little pig.",hammock:"The hammock.",lantern:"The lantern.",flowers:"The flowers.",pier:"The pier.",ocean:"The ocean.",sailboat:"The sailboat.",palm:"The palm tree.",table:"The table.",pitcher:"The pitcher.",cushions:"The cushions."}},
+de:{speech:"de-DE",name:"German",lessons:{
+welcome:{title:"Island Welcome",prompt:"Practice a warm welcome at Aunt Julie's retreat.",lines:[["Willkommen auf der Insel.","Welcome to the island."],["Hallo, ich heiße Julie.","Hello, my name is Julie."],["Ich freue mich, dich zu sehen.","I am happy to see you."],["Komm und setz dich zu mir.","Come and sit with me."]]},
+retreat:{title:"At the Retreat",prompt:"Talk about things around the island retreat.",lines:[["Wir sind am Meer.","We are beside the ocean."],["Der Steg reicht bis zum Wasser.","The pier reaches the water."],["Die Hängematte ist unter den Palmen.","The hammock is under the palm trees."],["Der Tisch ist voller schöner Dinge.","The table is full of pretty things."]]},
+animals:{title:"Julie's Animals",prompt:"Meet Aunt Julie's island companions.",lines:[["Der Hund ist neben Julie.","The dog is beside Julie."],["Die Katze sitzt in der Nähe.","The cat is sitting nearby."],["Das kleine Schwein trägt ein Halstuch.","The little pig is wearing a bandana."],["Die Tiere sind ruhig.","The animals are calm."]]},
+music:{title:"Music Time",prompt:"Practice sentences about Aunt Julie and her music.",lines:[["Julie spielt Gitarre.","Julie plays the guitar."],["Die Gitarre hat viele Farben.","The guitar has many colors."],["Wir singen bei Sonnenuntergang zusammen.","We sing together at sunset."],["Die Musik erklingt am Meer.","The music plays beside the sea."]]},
+nature:{title:"Tropical Nature",prompt:"Explore the plants, water, and sky around the retreat.",lines:[["Die Blumen sind sehr bunt.","The flowers are very colorful."],["Die Palmen sind hoch.","The palm trees are tall."],["Das Meer glänzt bei Sonnenuntergang.","The ocean shines at sunset."],["In der Ferne liegt eine Insel.","There is an island in the distance."]]},
+island:{title:"Island Life",prompt:"Put people, animals, places, and actions together.",lines:[["Julie genießt einen ruhigen Nachmittag.","Julie enjoys a peaceful afternoon."],["Die Tiere ruhen sich in ihrer Nähe aus.","The animals rest near her."],["Ein Segelboot fährt über das Meer.","A sailboat moves across the ocean."],["Alle genießen die Musik und den Sonnenuntergang.","Everyone enjoys the music and the sunset."]]}
+},words:{julie:"Tante Julie.",guitar:"Die Gitarre.",dog:"Der Hund.",cat:"Die Katze.",pig:"Das kleine Schwein.",hammock:"Die Hängematte.",lantern:"Die Laterne.",flowers:"Die Blumen.",pier:"Der Steg.",ocean:"Das Meer.",sailboat:"Das Segelboot.",palm:"Die Palme.",table:"Der Tisch.",pitcher:"Der Krug.",cushions:"Die Kissen."}},
+it:{speech:"it-IT",name:"Italian",lessons:{
+welcome:{title:"Island Welcome",prompt:"Practice a warm welcome at Aunt Julie's retreat.",lines:[["Benvenuti sull’isola.","Welcome to the island."],["Ciao, mi chiamo Julie.","Hello, my name is Julie."],["Sono felice di vederti.","I am happy to see you."],["Vieni a sederti con me.","Come and sit with me."]]},
+retreat:{title:"At the Retreat",prompt:"Talk about things around the island retreat.",lines:[["Siamo vicino all’oceano.","We are beside the ocean."],["Il molo arriva fino all’acqua.","The pier reaches the water."],["L’amaca è sotto le palme.","The hammock is under the palm trees."],["Il tavolo è pieno di cose belle.","The table is full of pretty things."]]},
+animals:{title:"Julie's Animals",prompt:"Meet Aunt Julie's island companions.",lines:[["Il cane è accanto a Julie.","The dog is beside Julie."],["Il gatto è seduto qui vicino.","The cat is sitting nearby."],["Il maialino indossa una bandana.","The little pig is wearing a bandana."],["Gli animali sono tranquilli.","The animals are calm."]]},
+music:{title:"Music Time",prompt:"Practice sentences about Aunt Julie and her music.",lines:[["Julie suona la chitarra.","Julie plays the guitar."],["La chitarra ha molti colori.","The guitar has many colors."],["Cantiamo insieme al tramonto.","We sing together at sunset."],["La musica suona vicino al mare.","The music plays beside the sea."]]},
+nature:{title:"Tropical Nature",prompt:"Explore the plants, water, and sky around the retreat.",lines:[["I fiori sono molto colorati.","The flowers are very colorful."],["Le palme sono alte.","The palm trees are tall."],["L’oceano brilla al tramonto.","The ocean shines at sunset."],["C’è un’isola in lontananza.","There is an island in the distance."]]},
+island:{title:"Island Life",prompt:"Put people, animals, places, and actions together.",lines:[["Julie si gode un pomeriggio tranquillo.","Julie enjoys a peaceful afternoon."],["Gli animali riposano vicino a lei.","The animals rest near her."],["Una barca a vela attraversa l’oceano.","A sailboat moves across the ocean."],["Tutti si godono la musica e il tramonto.","Everyone enjoys the music and the sunset."]]}
+},words:{julie:"Zia Julie.",guitar:"La chitarra.",dog:"Il cane.",cat:"Il gatto.",pig:"Il maialino.",hammock:"L’amaca.",lantern:"La lanterna.",flowers:"I fiori.",pier:"Il molo.",ocean:"L’oceano.",sailboat:"La barca a vela.",palm:"La palma.",table:"Il tavolo.",pitcher:"La brocca.",cushions:"I cuscini."}},
+pt:{speech:"pt-PT",name:"Portuguese",lessons:{
+welcome:{title:"Island Welcome",prompt:"Practice a warm welcome at Aunt Julie's retreat.",lines:[["Bem-vindos à ilha.","Welcome to the island."],["Olá, chamo-me Julie.","Hello, my name is Julie."],["Fico feliz por te ver.","I am happy to see you."],["Vem sentar-te comigo.","Come and sit with me."]]},
+retreat:{title:"At the Retreat",prompt:"Talk about things around the island retreat.",lines:[["Estamos junto ao oceano.","We are beside the ocean."],["O cais chega até à água.","The pier reaches the water."],["A rede está debaixo das palmeiras.","The hammock is under the palm trees."],["A mesa está cheia de coisas bonitas.","The table is full of pretty things."]]},
+animals:{title:"Julie's Animals",prompt:"Meet Aunt Julie's island companions.",lines:[["O cão está ao lado da Julie.","The dog is beside Julie."],["O gato está sentado perto.","The cat is sitting nearby."],["O porquinho usa uma bandana.","The little pig is wearing a bandana."],["Os animais estão tranquilos.","The animals are calm."]]},
+music:{title:"Music Time",prompt:"Practice sentences about Aunt Julie and her music.",lines:[["Julie toca guitarra.","Julie plays the guitar."],["A guitarra tem muitas cores.","The guitar has many colors."],["Cantamos juntos ao pôr do sol.","We sing together at sunset."],["A música toca junto ao mar.","The music plays beside the sea."]]},
+nature:{title:"Tropical Nature",prompt:"Explore the plants, water, and sky around the retreat.",lines:[["As flores são muito coloridas.","The flowers are very colorful."],["As palmeiras são altas.","The palm trees are tall."],["O oceano brilha ao pôr do sol.","The ocean shines at sunset."],["Há uma ilha ao longe.","There is an island in the distance."]]},
+island:{title:"Island Life",prompt:"Put people, animals, places, and actions together.",lines:[["Julie desfruta de uma tarde tranquila.","Julie enjoys a peaceful afternoon."],["Os animais descansam perto dela.","The animals rest near her."],["Um veleiro atravessa o oceano.","A sailboat moves across the ocean."],["Todos desfrutam da música e do pôr do sol.","Everyone enjoys the music and the sunset."]]}
+},words:{julie:"Tia Julie.",guitar:"A guitarra.",dog:"O cão.",cat:"O gato.",pig:"O porquinho.",hammock:"A rede.",lantern:"A lanterna.",flowers:"As flores.",pier:"O cais.",ocean:"O oceano.",sailboat:"O veleiro.",palm:"A palmeira.",table:"A mesa.",pitcher:"O jarro.",cushions:"As almofadas."}},
+no:{speech:"nb-NO",name:"Norwegian",lessons:{
+welcome:{title:"Island Welcome",prompt:"Practice a warm welcome at Aunt Julie's retreat.",lines:[["Velkommen til øya.","Welcome to the island."],["Hei, jeg heter Julie.","Hello, my name is Julie."],["Jeg er glad for å se deg.","I am happy to see you."],["Kom og sett deg sammen med meg.","Come and sit with me."]]},
+retreat:{title:"At the Retreat",prompt:"Talk about things around the island retreat.",lines:[["Vi er ved havet.","We are beside the ocean."],["Brygga går ut til vannet.","The pier reaches the water."],["Hengekøyen er under palmene.","The hammock is under the palm trees."],["Bordet er fullt av fine ting.","The table is full of pretty things."]]},
+animals:{title:"Julie's Animals",prompt:"Meet Aunt Julie's island companions.",lines:[["Hunden er ved siden av Julie.","The dog is beside Julie."],["Katten sitter i nærheten.","The cat is sitting nearby."],["Den lille grisen har på seg et skjerf.","The little pig is wearing a bandana."],["Dyrene er rolige.","The animals are calm."]]},
+music:{title:"Music Time",prompt:"Practice sentences about Aunt Julie and her music.",lines:[["Julie spiller gitar.","Julie plays the guitar."],["Gitaren har mange farger.","The guitar has many colors."],["Vi synger sammen ved solnedgang.","We sing together at sunset."],["Musikken spiller ved sjøen.","The music plays beside the sea."]]},
+nature:{title:"Tropical Nature",prompt:"Explore the plants, water, and sky around the retreat.",lines:[["Blomstene er veldig fargerike.","The flowers are very colorful."],["Palmene er høye.","The palm trees are tall."],["Havet skinner ved solnedgang.","The ocean shines at sunset."],["Det er en øy i det fjerne.","There is an island in the distance."]]},
+island:{title:"Island Life",prompt:"Put people, animals, places, and actions together.",lines:[["Julie nyter en rolig ettermiddag.","Julie enjoys a peaceful afternoon."],["Dyrene hviler i nærheten av henne.","The animals rest near her."],["En seilbåt beveger seg over havet.","A sailboat moves across the ocean."],["Alle nyter musikken og solnedgangen.","Everyone enjoys the music and the sunset."]]}
+},words:{julie:"Tante Julie.",guitar:"Gitaren.",dog:"Hunden.",cat:"Katten.",pig:"Den lille grisen.",hammock:"Hengekøyen.",lantern:"Lykten.",flowers:"Blomstene.",pier:"Brygga.",ocean:"Havet.",sailboat:"Seilbåten.",palm:"Palmen.",table:"Bordet.",pitcher:"Muggen.",cushions:"Putene."}}
 };
-const words={
-julie:["La tía Julie.","Aunt Julie."],guitar:["La guitarra.","The guitar."],dog:["El perro.","The dog."],cat:["El gato.","The cat."],pig:["El cerdito.","The little pig."],
-hammock:["La hamaca.","The hammock."],lantern:["La linterna.","The lantern."],flowers:["Las flores.","The flowers."],pier:["El muelle.","The pier."],ocean:["El océano.","The ocean."],
-sailboat:["El velero.","The sailboat."],palm:["La palmera.","The palm tree."],table:["La mesa.","The table."],pitcher:["La jarra.","The pitcher."],cushions:["Los cojines.","The cushions."]
-};
+const englishWords={julie:"Aunt Julie",guitar:"Guitar",dog:"Dog",cat:"Cat",pig:"Pig",hammock:"Hammock",lantern:"Lantern",flowers:"Flowers",pier:"Pier",ocean:"Ocean",sailboat:"Sailboat",palm:"Palm tree",table:"Table",pitcher:"Pitcher",cushions:"Cushions"};
 const challengeOrder=["guitar","dog","cat","pig","hammock","lantern"];
 let active="welcome",index=0,challenge=-1,solved=false,discovery=false;
-const $=id=>document.getElementById(id),title=$("title"),prompt=$("prompt"),line=$("line"),translation=$("translation"),actions=$("actions"),find=$("find"),count=$("count"),status=$("status"),hint=$("hint"),challengeNext=$("challengeNext");
-function speak(t){if(!("speechSynthesis" in window))return;speechSynthesis.cancel();const u=new SpeechSynthesisUtterance(t);u.lang="es-ES";u.rate=.82;speechSynthesis.speak(u)}
+const $=id=>document.getElementById(id),title=$("title"),prompt=$("prompt"),line=$("line"),translation=$("translation"),actions=$("actions"),find=$("find"),count=$("count"),status=$("status"),hint=$("hint"),challengeNext=$("challengeNext"),languageSelect=$("adventureLanguage");
+const LANG_KEY="talkabee-learn-language";
+function currentLang(){return languageData[languageSelect.value]?languageSelect.value:"es"}
+function data(){return languageData[currentLang()]}
+function speak(t){if(!("speechSynthesis" in window))return;speechSynthesis.cancel();const u=new SpeechSynthesisUtterance(t);u.lang=data().speech;u.rate=.82;speechSynthesis.speak(u)}
 function clearActive(){document.querySelectorAll(".directory button").forEach(b=>b.classList.remove("active"))}
-function render(){const x=lessons[active].lines[index];line.textContent=x[0];translation.textContent=x[1]}
-function loadLesson(k){active=k;index=0;challenge=-1;discovery=false;solved=false;find.classList.remove("show");actions.style.display="flex";const l=lessons[k];title.textContent=l.title;prompt.textContent=l.prompt;render();clearActive();document.querySelector('[data-lesson="'+k+'"]').classList.add("active")}
-function loadDiscovery(){challenge=-1;discovery=true;find.classList.remove("show");actions.style.display="none";title.textContent="Click & Discover";prompt.textContent="Click objects anywhere in the scene to learn their names.";line.textContent="Explora la escena.";translation.textContent="Explore the scene.";clearActive();document.querySelector("[data-discovery]").classList.add("active")}
-function loadChallenge(i){challenge=i;discovery=false;solved=false;actions.style.display="none";find.classList.add("show");const key=challengeOrder[i],x=words[key];title.textContent="Challenge "+(i+1)+": Find "+x[1].replace(/^The /,"").replace(/\.$/,"")+".";prompt.textContent="Search the scene and click the correct object.";line.textContent=x[0];translation.textContent=x[1];count.textContent="CHALLENGE "+(i+1)+" OF 6";status.textContent="";hint.textContent="Find the correct object to unlock the next challenge.";challengeNext.textContent=i<5?"Next Challenge →":"Finish Challenges ✓";clearActive();document.querySelector('[data-challenge="'+i+'"]').classList.add("active")}
+function render(){const x=data().lessons[active].lines[index];line.textContent=x[0];translation.textContent=x[1]}
+function loadLesson(k){active=k;index=0;challenge=-1;discovery=false;solved=false;find.classList.remove("show");actions.style.display="flex";const l=data().lessons[k];title.textContent=l.title;prompt.textContent=l.prompt;render();clearActive();document.querySelector('[data-lesson="'+k+'"]').classList.add("active")}
+function loadDiscovery(){challenge=-1;discovery=true;find.classList.remove("show");actions.style.display="none";title.textContent="Click & Discover";prompt.textContent="Click objects anywhere in the scene to learn their names.";line.textContent=data().words.julie;translation.textContent="Click an object in the scene.";clearActive();document.querySelector("[data-discovery]").classList.add("active")}
+function loadChallenge(i){challenge=i;discovery=false;solved=false;actions.style.display="none";find.classList.add("show");const key=challengeOrder[i],target=data().words[key];title.textContent="Challenge "+(i+1)+": Find "+englishWords[key]+".";prompt.textContent="Search the scene and click the correct object.";line.textContent=target;translation.textContent=englishWords[key]+".";count.textContent="CHALLENGE "+(i+1)+" OF 6";status.textContent="";hint.textContent="Find the correct object to unlock the next challenge.";challengeNext.textContent=i<5?"Next Challenge →":"Finish Challenges ✓";clearActive();document.querySelector('[data-challenge="'+i+'"]').classList.add("active")}
 document.querySelectorAll("[data-lesson]").forEach(b=>b.onclick=()=>loadLesson(b.dataset.lesson));
 document.querySelector("[data-discovery]").onclick=loadDiscovery;
 document.querySelectorAll("[data-challenge]").forEach(b=>b.onclick=()=>loadChallenge(Number(b.dataset.challenge)));
-
-$("next").onclick=()=>{index=(index+1)%lessons[active].lines.length;render()};
-$("speak").onclick=()=>speak(lessons[active].lines[index][0]);
-document.querySelectorAll(".hotspot").forEach(b=>b.onclick=()=>{const key=b.dataset.word,x=words[key];if(challenge>=0){if(key===challengeOrder[challenge]){solved=true;status.textContent="✓ Nice find! "+x[0]+" "+x[1];status.style.color="#176a48";hint.textContent="Challenge complete. Move to the next one.";speak(x[0])}else{status.textContent="Not that one — keep looking.";status.style.color="#85580f"}return}if(discovery){title.textContent="Click & Discover";prompt.textContent="You found something in the scene.";line.textContent=x[0];translation.textContent=x[1];speak(x[0])}});
+$("next").onclick=()=>{index=(index+1)%data().lessons[active].lines.length;render()};
+$("speak").onclick=()=>speak(data().lessons[active].lines[index][0]);
+document.querySelectorAll(".hotspot").forEach(b=>b.onclick=()=>{const key=b.dataset.word,target=data().words[key];if(challenge>=0){if(key===challengeOrder[challenge]){solved=true;status.textContent="✓ Nice find! "+target+" "+englishWords[key]+".";status.style.color="#176a48";hint.textContent="Challenge complete. Move to the next one.";speak(target)}else{status.textContent="Not that one — keep looking.";status.style.color="#85580f"}return}if(discovery){title.textContent="Click & Discover";prompt.textContent="You found something in the scene.";line.textContent=target;translation.textContent=englishWords[key]+".";speak(target)}});
 challengeNext.onclick=()=>{if(!solved){status.textContent="Find the correct object first.";status.style.color="#85580f";return}if(challenge<5)loadChallenge(challenge+1);else{status.textContent="🏁 You completed all 6 Island Retreat challenges!";status.style.color="#176a48";hint.textContent="Great job exploring Aunt Julie's island."}};
-loadLesson("welcome");
+function applyLanguage(lang){if(!languageData[lang])lang="es";languageSelect.value=lang;localStorage.setItem(LANG_KEY,lang);if(challenge>=0)loadChallenge(challenge);else if(discovery)loadDiscovery();else loadLesson(active)}
+const params=new URLSearchParams(location.search);const incoming=params.get("lang");const saved=localStorage.getItem(LANG_KEY);applyLanguage(languageData[incoming]?incoming:(languageData[saved]?saved:"es"));
+languageSelect.addEventListener("change",()=>applyLanguage(languageSelect.value));
 })();
 </script>
 </body>
