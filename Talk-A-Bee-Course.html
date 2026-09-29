@@ -677,12 +677,25 @@ body.adventure-locked #kitchenWorld .kitchen-directory{overflow-y:auto !importan
 <style id="checkpoint81-directory-return">
 #mainDirectory{scroll-margin-top:0!important;}
 </style>
+
+<style id="course-bee-logo-clean">
+.bee-logo{
+ background:transparent !important;
+ box-shadow:none !important;
+ border-radius:0 !important;
+}
+.bee-logo img{
+ object-fit:contain !important;
+ border-radius:0 !important;
+}
+</style>
+
 </head>
 <body>
 <header>
  <div class="wrap nav">
-  <div class="brand"><div class="logo bee-logo" aria-hidden="true"><img src="images/talkabee-image-04.png" alt=""></div><div><span class="brand-name">Talk A Bee</span><small class="brand-domain">TalkABee.com</small></div></div>
-  <nav><a href="Talk-A-Bee-Main-Directory.html">Explore</a><a href="#course">Course</a><a href="Talk-A-Bee-Main-Directory.html">Main Directory</a><a href="Talk-A-Bee-Main-Directory.html">Worlds</a></nav>
+  <a class="brand" href="index.html" aria-label="Return to Main Directory" style="text-decoration:none;color:inherit"><div class="logo bee-logo" aria-hidden="true"><img src="images/talkabee-image-04.png" alt=""></div><div><span class="brand-name">Talk A Bee</span><small class="brand-domain">TalkABee.com</small></div></a>
+  <nav><a href="index.html">Explore</a><a href="#course">Course</a><a href="index.html">Main Directory</a><a href="index.html">Worlds</a></nav>
   <div class="global-controls">
    <label class="interface-control">Site <select id="siteLanguage"><option value="en">🇺🇸 English</option><option value="es">🇪🇸 Español</option><option value="fr">🇫🇷 Français</option><option value="de">🇩🇪 Deutsch</option><option value="it">🇮🇹 Italiano</option><option value="no">🇳🇴 Norsk</option><option value="pt">🇵🇹 Português</option></select></label>
    <label>Learn <select id="learnLanguageTop"><option value="es">🇪🇸 Spanish</option><option value="fr">🇫🇷 French</option><option value="en">🇺🇸 English</option></select></label>
@@ -1073,7 +1086,7 @@ body.adventure-locked #kitchenWorld .kitchen-directory{overflow-y:auto !importan
  </div></div>
 </section>
 
-<div class="course-return-bar"><a href="Talk-A-Bee-Main-Directory.html">← Main Directory</a></div>
+<div class="course-return-bar"><a href="index.html">← Main Directory</a></div>
 <section id="course" class="section soft">
  <div class="wrap">
   <div class="head"><div class="kick">TRY IT</div><h2>Choose any of the 9 starter lessons.</h2><p>The full course path is visible here. Pick a lesson directly, or use Next Lesson when you finish one.</p></div>
@@ -4413,6 +4426,45 @@ section.wrap.final-cta,
   font-weight:900;
 }
 </style>
+
+
+<script id="talkabee-site-language-live">
+(function(){
+ const site=document.getElementById('siteLanguage');
+ if(!site) return;
+
+ const originals=new WeakMap();
+ const pairs=[
+   ['header nav a[href="index.html"]','Explorar','Explore'],
+   ['header nav a[href="#course"]','Curso','Course'],
+   ['.course-return-bar a','← Directorio principal','← Main Directory'],
+   ['#course .head .kick','PRUÉBALO','TRY IT'],
+   ['#course .head h2','Elige cualquiera de las 9 lecciones iniciales.','Choose any of the 9 starter lessons.'],
+   ['#course .head p','La ruta completa del curso aparece aquí. Elige una lección directamente o usa Siguiente lección cuando termines.','The full course path is visible here. Pick a lesson directly, or use Next Lesson when you finish one.']
+ ];
+
+ function setText(el, es, en){
+   if(!el) return;
+   if(!originals.has(el)) originals.set(el, el.textContent);
+   el.textContent = site.value==='es' ? es : en;
+ }
+ function apply(){
+   document.documentElement.lang=site.value==='es'?'es':'en';
+   pairs.forEach(([sel,es,en])=>{
+     document.querySelectorAll(sel).forEach(el=>setText(el,es,en));
+   });
+   document.querySelectorAll('.account-btn').forEach(el=>{
+     if(el.classList.contains('join')) setText(el,'Unirse','Join');
+     else setText(el,'Iniciar sesión','Sign In');
+   });
+   localStorage.setItem('talkabee-site-language',site.value);
+ }
+ site.addEventListener('change',apply);
+ const saved=localStorage.getItem('talkabee-site-language');
+ if(saved==='en'||saved==='es') site.value=saved;
+ apply();
+})();
+</script>
 
 </body>
 </html>
