@@ -693,12 +693,16 @@ body.adventure-locked #kitchenWorld .kitchen-directory{overflow-y:auto !importan
 
 <style id="course-brand-tagline">
 .brand-tagline{
- display:block;
- font-size:10px;
+ display:inline-block;
+ margin-left:10px;
+ font-size:12px;
  line-height:1.15;
- font-weight:800;
+ font-weight:850;
  color:#655a79;
- margin-top:2px;
+ white-space:nowrap;
+}
+@media(max-width:760px){
+ .brand-tagline{font-size:10px;margin-left:6px}
 }
 </style>
 
@@ -706,7 +710,7 @@ body.adventure-locked #kitchenWorld .kitchen-directory{overflow-y:auto !importan
 <body>
 <header>
  <div class="wrap nav">
-  <a class="brand" href="index.html" aria-label="Return to Main Directory" style="text-decoration:none;color:inherit"><div class="logo bee-logo" aria-hidden="true"><img src="images/talkabee-image-04.png" alt=""></div><div><span class="brand-name">Talk A Bee</span><small class="brand-tagline">Interactive Language Adventures</small><small class="brand-domain">TalkABee.com</small></div></a>
+  <a class="brand" href="index.html" aria-label="Return to Main Directory" style="text-decoration:none;color:inherit"><div class="logo bee-logo" aria-hidden="true"><img src="images/talkabee-image-04.png" alt=""></div><div><span class="brand-name">Talk A Bee</span><small class="brand-domain">TalkABee.com</small></div><span class="brand-tagline">Interactive Language Adventures</span></a>
   <nav><a href="index.html">Explore</a><a href="#course">Course</a><a href="index.html">Main Directory</a><a href="index.html">Worlds</a></nav>
   <div class="global-controls">
    <label class="interface-control">Site <select id="siteLanguage"><option value="en">🇺🇸 English</option><option value="es">🇪🇸 Español</option><option value="fr">🇫🇷 Français</option><option value="de">🇩🇪 Deutsch</option><option value="it">🇮🇹 Italiano</option><option value="no">🇳🇴 Norsk</option><option value="pt">🇵🇹 Português</option></select></label>
