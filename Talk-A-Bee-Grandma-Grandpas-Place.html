@@ -83,6 +83,25 @@ html,body,#homeWorld,#homeScene{
 #homeSceneImage{display:none!important}
 </style>
 
+
+<style id="grandparents-ui-67-percent">
+/* Match the comfortable proportions seen at ~67% browser zoom,
+   WITHOUT scaling the scene or hotspot coordinate system. */
+#homeWorld .activity-panel{
+  transform:scale(.67)!important;
+  transform-origin:top left!important;
+}
+#homeWorld .home-panel{
+  transform:scale(.67)!important;
+  transform-origin:bottom right!important;
+}
+/* Scene View restore control is UI too, but remains independently clickable. */
+#homeWorld .activity-restore{
+  transform:scale(.67)!important;
+  transform-origin:top left!important;
+}
+</style>
+
 </head>
 <body>
 <main id="homeWorld" class="open" aria-label="Grandma and Grandpa's Place">
