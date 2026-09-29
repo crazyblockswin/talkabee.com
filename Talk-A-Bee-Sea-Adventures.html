@@ -677,19 +677,16 @@ body.adventure-locked #kitchenWorld .kitchen-directory{overflow-y:auto !importan
 <style id="checkpoint81-directory-return">
 #mainDirectory{scroll-margin-top:0!important;}
 </style>
+
+<style id="sea-adventure-header-free">
+/* Sea Adventures owns the whole viewport; no global site header or reserved header gap. */
+#yachtWorld.open{position:fixed!important;inset:0!important;width:100vw!important;height:100dvh!important;}
+body.adventure-locked #yachtWorld.open{inset:0!important;}
+</style>
 </head>
 <body>
-<header>
- <div class="wrap nav">
-  <div class="brand"><div class="logo bee-logo" aria-hidden="true"><img src="images/talkabee-image-04.png" alt=""></div><div><span class="brand-name">Talk A Bee</span><small class="brand-domain">TalkABee.com</small></div></div>
-  <nav><a href="#explore">Explore</a><a href="Talk-A-Bee-Course.html">Course</a><a href="#book">Digital book</a><a href="#world">Worlds</a></nav>
-  <div class="global-controls">
-   <label class="interface-control">Site <select id="siteLanguage"><option value="en">🇺🇸 English</option><option value="es">🇪🇸 Español</option><option value="fr">🇫🇷 Français</option><option value="de">🇩🇪 Deutsch</option><option value="it">🇮🇹 Italiano</option><option value="no">🇳🇴 Norsk</option><option value="pt">🇵🇹 Português</option></select></label>
-   <label>Learn <select id="learnLanguageTop"><option value="es">🇪🇸 Spanish</option><option value="fr">🇫🇷 French</option><option value="en">🇺🇸 English</option></select></label>
-   <button class="account-btn" type="button">Sign In</button><button class="account-btn join" type="button">Join</button>
-  </div>
- </div>
-</header>
+<!-- Adventure page: site header belongs on the Main Directory only. -->
+<div hidden aria-hidden="true"><select id="siteLanguage"><option value="en">🇺🇸 English</option><option value="es">🇪🇸 Español</option><option value="fr">🇫🇷 Français</option><option value="de">🇩🇪 Deutsch</option><option value="it">🇮🇹 Italiano</option><option value="no">🇳🇴 Norsk</option><option value="pt">🇵🇹 Português</option></select><select id="learnLanguageTop"><option value="es">🇪🇸 Spanish</option><option value="fr">🇫🇷 French</option><option value="en">🇺🇸 English</option></select></div>
 <button class="bee-guide-btn" id="beeGuideBtn" type="button" style="display:none!important" aria-label="Open Talk A Bee guide"><img src="images/talkabee-image-04.png" alt=""></button>
 </div>
 
@@ -4446,7 +4443,7 @@ document.addEventListener('click',function(e){
   if(!b)return;
   e.preventDefault();
   e.stopImmediatePropagation();
-  window.location.href='index.html';
+  window.location.href='Talk-A-Bee-Main-Directory.html';
 },true);
 </script>
 
