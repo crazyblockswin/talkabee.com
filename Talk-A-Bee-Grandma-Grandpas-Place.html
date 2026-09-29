@@ -102,6 +102,22 @@ html,body,#homeWorld,#homeScene{
 }
 </style>
 
+
+<style id="grandparents-left-panel-full-height-14">
+/* Left Activity Panel: full usable height at its rendered 67% scale,
+   with the requested 14% background opacity. */
+#homeWorld .activity-panel{
+  top:18px!important;
+  bottom:auto!important;
+  height:calc((100vh - 36px) / .67)!important;
+  max-height:none!important;
+  background:rgba(13,25,45,.14)!important;
+  transform:scale(.67)!important;
+  transform-origin:top left!important;
+  overflow-y:auto!important;
+}
+</style>
+
 </head>
 <body>
 <main id="homeWorld" class="open" aria-label="Grandma and Grandpa's Place">
