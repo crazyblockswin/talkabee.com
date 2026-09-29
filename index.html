@@ -783,10 +783,7 @@ header .talkabee-comments:hover{transform:translateY(-1px);box-shadow:0 5px 14px
     <a class="directory-link" href="Talk-A-Bee-Animals-Farm-Adventure.html">🐾 Animals — Farm Adventure</a>
     <a class="directory-link" href="Talk-A-Bee-Course.html">🎓 Talk A Bee Course</a>
     <div class="crazy-blocks-bonus">
-     <strong>🎮 Need a Brain Break?</strong>
-     <span>Try Crazy Blocks — a free game from the same maker of Talk A Bee.</span>
-     <a href="https://crazyblocks.win/" target="_blank" rel="noopener noreferrer">Play Crazy Blocks</a>
-     <small>No sign-up. Just play and have fun.</small>
+     <a href="https://crazyblocks.win/" target="_blank" rel="noopener noreferrer">Play Game</a>
     </div>
    </aside>
    <div class="hero-right">
@@ -4522,6 +4519,52 @@ document.addEventListener('click',function(e){
   margin:0 0 2px!important;
   line-height:1!important;
   font-size:clamp(11px,1.05vw,14px)!important;
+}
+</style>
+
+<style id="main-directory-readability-play-game-fix">
+/* Keep the approved three-bee/RV entrance artwork untouched and the panel highly transparent. */
+#mainDirectory .landing-directory{
+  background:rgba(10,16,34,.10)!important;
+  backdrop-filter:blur(2px)!important;
+  -webkit-backdrop-filter:blur(2px)!important;
+}
+/* White directory lettering with a thin black edge for readability without making rows taller. */
+#mainDirectory .directory-link,
+#mainDirectory .landing-directory h2{
+  color:#fff!important;
+  -webkit-text-stroke:.65px #000;
+  paint-order:stroke fill;
+  text-shadow:1px 1px 2px #000,-1px -1px 1px rgba(0,0,0,.85);
+}
+/* Replace the old Crazy Blocks paragraph with one simple matching row: Play Game. */
+#mainDirectory .crazy-blocks-bonus{
+  margin:4px 0 0!important;
+  padding:4px 0 0!important;
+  border-top:1px solid rgba(255,255,255,.22)!important;
+  text-align:left!important;
+}
+#mainDirectory .crazy-blocks-bonus a{
+  display:block!important;
+  width:100%!important;
+  margin:0!important;
+  padding:5px 9px!important;
+  border:1px solid rgba(255,255,255,.18)!important;
+  border-radius:14px!important;
+  background:rgba(255,255,255,.08)!important;
+  box-shadow:none!important;
+  color:#fff!important;
+  font-size:clamp(11px,1.05vw,14px)!important;
+  font-weight:900!important;
+  line-height:1!important;
+  text-decoration:none!important;
+  -webkit-text-stroke:.65px #000;
+  paint-order:stroke fill;
+  text-shadow:1px 1px 2px #000,-1px -1px 1px rgba(0,0,0,.85);
+}
+#mainDirectory .crazy-blocks-bonus a:hover{
+  background:rgba(255,255,255,.14)!important;
+  transform:none!important;
 }
 </style>
 </body>
