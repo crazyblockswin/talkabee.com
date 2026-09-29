@@ -683,6 +683,30 @@ body.adventure-locked #kitchenWorld .kitchen-directory{overflow-y:auto !importan
 #yachtWorld.open{position:fixed!important;inset:0!important;width:100vw!important;height:100dvh!important;}
 body.adventure-locked #yachtWorld.open{inset:0!important;}
 </style>
+
+<style id="sea-master-2026-upgrade">
+#yachtWorld .yacht-directory{
+  background:rgba(10,17,34,.14)!important;
+}
+#yachtWorld .yacht-panel{
+  background:rgba(255,248,245,.14)!important;
+}
+#yachtWorld .sea-control-label{
+  display:block;margin:5px 2px 3px;font-size:9px;font-weight:950;
+  letter-spacing:.10em;color:#fff;
+}
+#yachtWorld .sea-select{
+  width:100%;border:1px solid rgba(255,255,255,.22);border-radius:10px;
+  padding:7px 8px;margin:0 0 4px;background:rgba(255,255,255,.90);
+  color:#24324a;font-size:11px;font-weight:850;
+}
+#yachtWorld.activity-collapsed .yacht-directory,
+#yachtWorld.activity-collapsed .yacht-panel{
+  display:none!important;
+}
+#yachtWorld.activity-collapsed .yacht-restore{display:block!important;}
+</style>
+
 </head>
 <body>
 
@@ -700,14 +724,29 @@ body>header,body>footer,.final-cta,.hero,#mainDirectory{display:none!important;}
    
    <div class="yacht-place">🛥️ Sea Adventures</div>
    <button type="button" class="yacht-peek" id="yachtPeek">👁 Scene View</button>
-   <div class="yacht-label">ACTIVITIES</div>
+   <div class="yacht-label">LANGUAGE</div>
+   <label class="sea-control-label" for="seaLanguage">LEARN</label>
+   <select id="seaLanguage" class="sea-select">
+    <option value="es">Spanish</option>
+    <option value="fr">French</option>
+    <option value="en">English</option>
+    <option value="de">German</option>
+    <option value="it">Italian</option>
+    <option value="pt">Portuguese</option>
+    <option value="no">Norwegian</option>
+   </select>
+   <label class="sea-control-label" for="seaVoice">VOICE</label>
+   <select id="seaVoice" class="sea-select"><option value="">Browser Default</option></select>
+   <div class="yacht-label">6 ACTIVITIES</div>
    <button type="button" class="yacht-nav active" data-yacht-group="deck">👋 On Deck Talk</button>
    <button type="button" class="yacht-nav" data-yacht-group="boat">🛥️ Boat Words</button>
    <button type="button" class="yacht-nav" data-yacht-group="ocean">🌊 Ocean Words</button>
    <button type="button" class="yacht-nav" data-yacht-group="animals">🦜 Animal Friends</button>
    <button type="button" class="yacht-nav" data-yacht-group="marina">🗺️ At the Marina</button>
+   <button type="button" class="yacht-nav" data-yacht-group="weather">🌅 Sunset &amp; Weather</button>
+   <div class="yacht-divider"></div>
+   <div class="yacht-label">DISCOVERY</div>
    <button type="button" class="yacht-nav" data-yacht-group="discover">🔎 Click &amp; Discover</button>
-   <button type="button" class="yacht-nav" data-yacht-group="find">⭐ Find It Challenge</button>
    <div class="yacht-divider"></div>
    <div class="yacht-label">6 CHALLENGES</div>
    <button type="button" class="yacht-challenge-nav" data-yacht-challenge="0"><span>1</span> Grandpa Wally</button>
@@ -783,84 +822,159 @@ body>header,body>footer,.final-cta,.hero,#mainDirectory{display:none!important;}
 
 <script id="checkpoint-52-sea-adventures-script">
 document.addEventListener('DOMContentLoaded',function(){
- const main=document.getElementById('mainDirectory');
  const world=document.getElementById('yachtWorld');
- if(!world) return;
- const groups={
-  deck:{kicker:'ON DECK TALK',title:'A beautiful evening on the water.',prompt:'Hear a short sentence, then click the words one at a time.',items:[['Estamos en el yate.','We are on the yacht.'],['El atardecer es hermoso.','The sunset is beautiful.'],['Estamos juntos en la cubierta.','We are together on the deck.'],['Qué noche tan tranquila.','What a peaceful evening.']]},
-  boat:{kicker:'BOAT WORDS',title:'Words around the yacht.',prompt:'Practice useful words you might hear on a boat.',items:[['Este es el yate.','This is the yacht.'],['La caña de pescar está lista.','The fishing pole is ready.'],['La caja de pesca está abierta.','The tackle box is open.'],['El salvavidas está cerca.','The life ring is nearby.']]},
-  ocean:{kicker:'OCEAN WORDS',title:'Look out across the water.',prompt:'Use the scene to practice simple ocean words.',items:[['El océano brilla.','The ocean is shining.'],['Hay una ballena.','There is a whale.'],['El delfín salta del agua.','The dolphin jumps from the water.'],['La gaviota está cerca.','The seagull is nearby.']]},
-  animals:{kicker:'ANIMAL FRIENDS',title:'Meet the animals around the yacht.',prompt:'Practice the animals you can see in the Sea Adventures scene.',items:[['Mira la ballena.','Look at the whale.'],['Mira el delfín.','Look at the dolphin.'],['La gaviota está en la barandilla.','The seagull is on the railing.'],['El pez está en el agua.','The fish is in the water.']]},
-  marina:{kicker:'AT THE MARINA',title:'Useful words for a day on the water.',prompt:'Practice simple marina and boating words.',items:[['Necesito la caña de pescar.','I need the fishing pole.'],['La caja de pesca está aquí.','The tackle box is here.'],['El salvavidas está listo.','The life ring is ready.'],['La bebida está sobre la mesa.','The drink is on the table.']]}
- };
- const objects={
-  wally:{word:'abuelo',english:'Grandpa'},
-  cathy:{word:'abuela',english:'Grandma'},
-  boy:{word:'niño',english:'boy'},
-  girl:{word:'niña',english:'girl'},
-  binocularboy:{word:'niño',english:'boy'},
-  dog:{word:'perro',english:'dog'},
-  fishing:{word:'caña',english:'rod'},
-  whale:{word:'ballena',english:'whale'},
-  dolphin:{word:'delfín',english:'dolphin'},
-  seagull:{word:'gaviota',english:'seagull'},
-  bee:{word:'abeja',english:'bee'},
-  sun:{word:'sol',english:'sun'},
-  sailboat:{word:'velero',english:'sailboat'},
-  lighthouse:{word:'faro',english:'lighthouse'},
-  ocean:{word:'océano',english:'ocean'},
-  tackle:{word:'caja',english:'tackle'},
-  flowers:{word:'flores',english:'flowers'},
-  fruit:{word:'fruta',english:'fruit'},
-  drink:{word:'bebida',english:'drink'},
-  lantern:{word:'farol',english:'lantern'},
-  binoculars:{word:'binoculares',english:'binoculars'},
-  table:{word:'mesa',english:'table'},
-  rug:{word:'alfombra',english:'rug'},
-  rope:{word:'cuerda',english:'rope'},
-  railing:{word:'barandilla',english:'railing'},
-  stairs:{word:'escaleras',english:'stairs'},
-  lifering:{word:'salvavidas',english:'lifering'}
- };
- const order=['wally','cathy','fishing','whale','dolphin','seagull'];
- let group='deck',index=0,lastRate=.86,challengeIndex=0,solved=false;
+ if(!world)return;
  const $=id=>document.getElementById(id);
- function lang(){const v=$('learnLanguageTop')?.value;return v==='fr'?'fr-FR':v==='en'?'en-US':'es-ES'}
- function speak(text,rate=.86){if(!('speechSynthesis' in window))return;speechSynthesis.cancel();const u=new SpeechSynthesisUtterance(text);u.lang=lang();u.rate=rate;lastRate=rate;speechSynthesis.speak(u)}
+
+ const locale={es:'es-ES',fr:'fr-FR',en:'en-US',de:'de-DE',it:'it-IT',pt:'pt-PT',no:'nb-NO'};
+ const languageNames={es:'Spanish',fr:'French',en:'English',de:'German',it:'Italian',pt:'Portuguese',no:'Norwegian'};
+ const lessons={
+  es:{
+   deck:[['Estamos en el yate.','We are on the yacht.'],['El atardecer es hermoso.','The sunset is beautiful.'],['Estamos juntos en la cubierta.','We are together on the deck.'],['Qué noche tan tranquila.','What a peaceful evening.']],
+   boat:[['Este es el yate.','This is the yacht.'],['La caña de pescar está lista.','The fishing pole is ready.'],['La caja de pesca está abierta.','The tackle box is open.'],['El salvavidas está cerca.','The life ring is nearby.']],
+   ocean:[['El océano brilla.','The ocean is shining.'],['Hay una ballena.','There is a whale.'],['El delfín salta del agua.','The dolphin jumps from the water.'],['La gaviota está cerca.','The seagull is nearby.']],
+   animals:[['Mira la ballena.','Look at the whale.'],['Mira el delfín.','Look at the dolphin.'],['La gaviota está en la barandilla.','The seagull is on the railing.'],['El perro está en la cubierta.','The dog is on the deck.']],
+   marina:[['Necesito la caña de pescar.','I need the fishing pole.'],['La caja de pesca está aquí.','The tackle box is here.'],['El salvavidas está listo.','The life ring is ready.'],['La bebida está sobre la mesa.','The drink is on the table.']],
+   weather:[['El sol está bajando.','The sun is going down.'],['El cielo está despejado.','The sky is clear.'],['El agua está tranquila.','The water is calm.'],['Hace una tarde hermosa.','It is a beautiful evening.']]
+  },
+  fr:{
+   deck:[['Nous sommes sur le yacht.','We are on the yacht.'],['Le coucher de soleil est magnifique.','The sunset is beautiful.'],['Nous sommes ensemble sur le pont.','We are together on the deck.'],['Quelle soirée paisible.','What a peaceful evening.']],
+   boat:[['Voici le yacht.','This is the yacht.'],['La canne à pêche est prête.','The fishing pole is ready.'],['La boîte de pêche est ouverte.','The tackle box is open.'],['La bouée de sauvetage est proche.','The life ring is nearby.']],
+   ocean:[["L'océan brille.",'The ocean is shining.'],['Il y a une baleine.','There is a whale.'],["Le dauphin saute hors de l'eau.",'The dolphin jumps from the water.'],['La mouette est proche.','The seagull is nearby.']],
+   animals:[['Regarde la baleine.','Look at the whale.'],['Regarde le dauphin.','Look at the dolphin.'],['La mouette est sur la rambarde.','The seagull is on the railing.'],['Le chien est sur le pont.','The dog is on the deck.']],
+   marina:[["J'ai besoin de la canne à pêche.",'I need the fishing pole.'],['La boîte de pêche est ici.','The tackle box is here.'],['La bouée de sauvetage est prête.','The life ring is ready.'],['La boisson est sur la table.','The drink is on the table.']],
+   weather:[['Le soleil se couche.','The sun is going down.'],['Le ciel est dégagé.','The sky is clear.'],["L'eau est calme.",'The water is calm.'],["C'est une belle soirée.",'It is a beautiful evening.']]
+  },
+  en:{
+   deck:[['We are on the yacht.','We are on the yacht.'],['The sunset is beautiful.','The sunset is beautiful.'],['We are together on the deck.','We are together on the deck.'],['What a peaceful evening.','What a peaceful evening.']],
+   boat:[['This is the yacht.','This is the yacht.'],['The fishing pole is ready.','The fishing pole is ready.'],['The tackle box is open.','The tackle box is open.'],['The life ring is nearby.','The life ring is nearby.']],
+   ocean:[['The ocean is shining.','The ocean is shining.'],['There is a whale.','There is a whale.'],['The dolphin jumps from the water.','The dolphin jumps from the water.'],['The seagull is nearby.','The seagull is nearby.']],
+   animals:[['Look at the whale.','Look at the whale.'],['Look at the dolphin.','Look at the dolphin.'],['The seagull is on the railing.','The seagull is on the railing.'],['The dog is on the deck.','The dog is on the deck.']],
+   marina:[['I need the fishing pole.','I need the fishing pole.'],['The tackle box is here.','The tackle box is here.'],['The life ring is ready.','The life ring is ready.'],['The drink is on the table.','The drink is on the table.']],
+   weather:[['The sun is going down.','The sun is going down.'],['The sky is clear.','The sky is clear.'],['The water is calm.','The water is calm.'],['It is a beautiful evening.','It is a beautiful evening.']]
+  },
+  de:{
+   deck:[['Wir sind auf der Yacht.','We are on the yacht.'],['Der Sonnenuntergang ist wunderschön.','The sunset is beautiful.'],['Wir sind zusammen an Deck.','We are together on the deck.'],['Was für ein ruhiger Abend.','What a peaceful evening.']],
+   boat:[['Das ist die Yacht.','This is the yacht.'],['Die Angel ist bereit.','The fishing pole is ready.'],['Der Angelkasten ist offen.','The tackle box is open.'],['Der Rettungsring ist in der Nähe.','The life ring is nearby.']],
+   ocean:[['Der Ozean glänzt.','The ocean is shining.'],['Da ist ein Wal.','There is a whale.'],['Der Delfin springt aus dem Wasser.','The dolphin jumps from the water.'],['Die Möwe ist in der Nähe.','The seagull is nearby.']],
+   animals:[['Schau den Wal an.','Look at the whale.'],['Schau den Delfin an.','Look at the dolphin.'],['Die Möwe sitzt auf der Reling.','The seagull is on the railing.'],['Der Hund ist an Deck.','The dog is on the deck.']],
+   marina:[['Ich brauche die Angel.','I need the fishing pole.'],['Der Angelkasten ist hier.','The tackle box is here.'],['Der Rettungsring ist bereit.','The life ring is ready.'],['Das Getränk steht auf dem Tisch.','The drink is on the table.']],
+   weather:[['Die Sonne geht unter.','The sun is going down.'],['Der Himmel ist klar.','The sky is clear.'],['Das Wasser ist ruhig.','The water is calm.'],['Es ist ein schöner Abend.','It is a beautiful evening.']]
+  },
+  it:{
+   deck:[['Siamo sullo yacht.','We are on the yacht.'],['Il tramonto è bellissimo.','The sunset is beautiful.'],['Siamo insieme sul ponte.','We are together on the deck.'],['Che serata tranquilla.','What a peaceful evening.']],
+   boat:[['Questo è lo yacht.','This is the yacht.'],['La canna da pesca è pronta.','The fishing pole is ready.'],['La cassetta da pesca è aperta.','The tackle box is open.'],['Il salvagente è vicino.','The life ring is nearby.']],
+   ocean:[["L'oceano brilla.",'The ocean is shining.'],["C'è una balena.",'There is a whale.'],["Il delfino salta fuori dall'acqua.",'The dolphin jumps from the water.'],['Il gabbiano è vicino.','The seagull is nearby.']],
+   animals:[['Guarda la balena.','Look at the whale.'],['Guarda il delfino.','Look at the dolphin.'],['Il gabbiano è sulla ringhiera.','The seagull is on the railing.'],['Il cane è sul ponte.','The dog is on the deck.']],
+   marina:[['Ho bisogno della canna da pesca.','I need the fishing pole.'],['La cassetta da pesca è qui.','The tackle box is here.'],['Il salvagente è pronto.','The life ring is ready.'],['La bevanda è sul tavolo.','The drink is on the table.']],
+   weather:[['Il sole sta tramontando.','The sun is going down.'],['Il cielo è sereno.','The sky is clear.'],["L'acqua è calma.",'The water is calm.'],['È una bellissima serata.','It is a beautiful evening.']]
+  },
+  pt:{
+   deck:[['Estamos no iate.','We are on the yacht.'],['O pôr do sol é lindo.','The sunset is beautiful.'],['Estamos juntos no convés.','We are together on the deck.'],['Que noite tranquila.','What a peaceful evening.']],
+   boat:[['Este é o iate.','This is the yacht.'],['A vara de pesca está pronta.','The fishing pole is ready.'],['A caixa de pesca está aberta.','The tackle box is open.'],['A boia salva-vidas está perto.','The life ring is nearby.']],
+   ocean:[['O oceano está brilhando.','The ocean is shining.'],['Há uma baleia.','There is a whale.'],['O golfinho salta da água.','The dolphin jumps from the water.'],['A gaivota está perto.','The seagull is nearby.']],
+   animals:[['Olhe para a baleia.','Look at the whale.'],['Olhe para o golfinho.','Look at the dolphin.'],['A gaivota está no corrimão.','The seagull is on the railing.'],['O cachorro está no convés.','The dog is on the deck.']],
+   marina:[['Preciso da vara de pesca.','I need the fishing pole.'],['A caixa de pesca está aqui.','The tackle box is here.'],['A boia salva-vidas está pronta.','The life ring is ready.'],['A bebida está sobre a mesa.','The drink is on the table.']],
+   weather:[['O sol está se pondo.','The sun is going down.'],['O céu está limpo.','The sky is clear.'],['A água está calma.','The water is calm.'],['É uma linda tarde.','It is a beautiful evening.']]
+  },
+  no:{
+   deck:[['Vi er på yachten.','We are on the yacht.'],['Solnedgangen er vakker.','The sunset is beautiful.'],['Vi er sammen på dekk.','We are together on the deck.'],['For en fredelig kveld.','What a peaceful evening.']],
+   boat:[['Dette er yachten.','This is the yacht.'],['Fiskestangen er klar.','The fishing pole is ready.'],['Fiskeskrinet er åpent.','The tackle box is open.'],['Livbøyen er i nærheten.','The life ring is nearby.']],
+   ocean:[['Havet skinner.','The ocean is shining.'],['Det er en hval.','There is a whale.'],['Delfinen hopper opp av vannet.','The dolphin jumps from the water.'],['Måken er i nærheten.','The seagull is nearby.']],
+   animals:[['Se på hvalen.','Look at the whale.'],['Se på delfinen.','Look at the dolphin.'],['Måken sitter på rekka.','The seagull is on the railing.'],['Hunden er på dekk.','The dog is on the deck.']],
+   marina:[['Jeg trenger fiskestangen.','I need the fishing pole.'],['Fiskeskrinet er her.','The tackle box is here.'],['Livbøyen er klar.','The life ring is ready.'],['Drikken står på bordet.','The drink is on the table.']],
+   weather:[['Solen går ned.','The sun is going down.'],['Himmelen er klar.','The sky is clear.'],['Vannet er rolig.','The water is calm.'],['Det er en vakker kveld.','It is a beautiful evening.']]
+  }
+ };
+
+ const english={wally:'Grandpa',cathy:'Grandma',boy:'boy',girl:'girl',binocularboy:'boy',dog:'dog',fishing:'fishing pole',whale:'whale',dolphin:'dolphin',seagull:'seagull',bee:'bee',sun:'sun',sailboat:'sailboat',lighthouse:'lighthouse',ocean:'ocean',tackle:'tackle box',flowers:'flowers',fruit:'fruit',drink:'drink',lantern:'lantern',binoculars:'binoculars',table:'table',rug:'rug',rope:'rope',railing:'railing',stairs:'stairs',lifering:'life ring'};
+ const words={
+  es:{wally:'abuelo',cathy:'abuela',boy:'niño',girl:'niña',binocularboy:'niño',dog:'perro',fishing:'caña de pescar',whale:'ballena',dolphin:'delfín',seagull:'gaviota',bee:'abeja',sun:'sol',sailboat:'velero',lighthouse:'faro',ocean:'océano',tackle:'caja de pesca',flowers:'flores',fruit:'fruta',drink:'bebida',lantern:'farol',binoculars:'binoculares',table:'mesa',rug:'alfombra',rope:'cuerda',railing:'barandilla',stairs:'escaleras',lifering:'salvavidas'},
+  fr:{wally:'grand-père',cathy:'grand-mère',boy:'garçon',girl:'fille',binocularboy:'garçon',dog:'chien',fishing:'canne à pêche',whale:'baleine',dolphin:'dauphin',seagull:'mouette',bee:'abeille',sun:'soleil',sailboat:'voilier',lighthouse:'phare',ocean:'océan',tackle:'boîte de pêche',flowers:'fleurs',fruit:'fruit',drink:'boisson',lantern:'lanterne',binoculars:'jumelles',table:'table',rug:'tapis',rope:'corde',railing:'rambarde',stairs:'escaliers',lifering:'bouée de sauvetage'},
+  en:{wally:'grandpa',cathy:'grandma',boy:'boy',girl:'girl',binocularboy:'boy',dog:'dog',fishing:'fishing pole',whale:'whale',dolphin:'dolphin',seagull:'seagull',bee:'bee',sun:'sun',sailboat:'sailboat',lighthouse:'lighthouse',ocean:'ocean',tackle:'tackle box',flowers:'flowers',fruit:'fruit',drink:'drink',lantern:'lantern',binoculars:'binoculars',table:'table',rug:'rug',rope:'rope',railing:'railing',stairs:'stairs',lifering:'life ring'},
+  de:{wally:'Opa',cathy:'Oma',boy:'Junge',girl:'Mädchen',binocularboy:'Junge',dog:'Hund',fishing:'Angel',whale:'Wal',dolphin:'Delfin',seagull:'Möwe',bee:'Biene',sun:'Sonne',sailboat:'Segelboot',lighthouse:'Leuchtturm',ocean:'Ozean',tackle:'Angelkasten',flowers:'Blumen',fruit:'Obst',drink:'Getränk',lantern:'Laterne',binoculars:'Fernglas',table:'Tisch',rug:'Teppich',rope:'Seil',railing:'Reling',stairs:'Treppe',lifering:'Rettungsring'},
+  it:{wally:'nonno',cathy:'nonna',boy:'ragazzo',girl:'ragazza',binocularboy:'ragazzo',dog:'cane',fishing:'canna da pesca',whale:'balena',dolphin:'delfino',seagull:'gabbiano',bee:'ape',sun:'sole',sailboat:'barca a vela',lighthouse:'faro',ocean:'oceano',tackle:'cassetta da pesca',flowers:'fiori',fruit:'frutta',drink:'bevanda',lantern:'lanterna',binoculars:'binocolo',table:'tavolo',rug:'tappeto',rope:'corda',railing:'ringhiera',stairs:'scale',lifering:'salvagente'},
+  pt:{wally:'avô',cathy:'avó',boy:'menino',girl:'menina',binocularboy:'menino',dog:'cachorro',fishing:'vara de pesca',whale:'baleia',dolphin:'golfinho',seagull:'gaivota',bee:'abelha',sun:'sol',sailboat:'veleiro',lighthouse:'farol',ocean:'oceano',tackle:'caixa de pesca',flowers:'flores',fruit:'fruta',drink:'bebida',lantern:'lanterna',binoculars:'binóculos',table:'mesa',rug:'tapete',rope:'corda',railing:'corrimão',stairs:'escadas',lifering:'boia salva-vidas'},
+  no:{wally:'bestefar',cathy:'bestemor',boy:'gutt',girl:'jente',binocularboy:'gutt',dog:'hund',fishing:'fiskestang',whale:'hval',dolphin:'delfin',seagull:'måke',bee:'bie',sun:'sol',sailboat:'seilbåt',lighthouse:'fyr',ocean:'hav',tackle:'fiskeskrin',flowers:'blomster',fruit:'frukt',drink:'drikke',lantern:'lykt',binoculars:'kikkert',table:'bord',rug:'teppe',rope:'tau',railing:'rekke',stairs:'trapp',lifering:'livbøye'}
+ };
+ const meta={
+  deck:['ON DECK TALK','A beautiful evening on the water.','Hear a short sentence, then click the words one at a time.'],
+  boat:['BOAT WORDS','Words around the yacht.','Practice useful words you might hear on a boat.'],
+  ocean:['OCEAN WORDS','Look out across the water.','Use the scene to practice simple ocean words.'],
+  animals:['ANIMAL FRIENDS','Meet the animals around the yacht.','Practice the animals you can see in the Sea Adventures scene.'],
+  marina:['AT THE MARINA','Useful words for a day on the water.','Practice simple marina and boating words.'],
+  weather:['SUNSET & WEATHER','A peaceful evening at sea.','Practice simple words for the sky, sun and water.']
+ };
+ const challengeOrder=['wally','cathy','fishing','whale','dolphin','seagull'];
+ let group='deck',index=0,lastRate=.86,challengeIndex=0,solved=false,lastText='';
+
+ function currentLang(){return $('seaLanguage')?.value||'es'}
+ function currentItems(){return (lessons[currentLang()]||lessons.es)[group]||(lessons[currentLang()]||lessons.es).deck}
+ function currentWord(key){return (words[currentLang()]||words.es)[key]||english[key]||key}
+ function populateVoices(){
+   const sel=$('seaVoice'); if(!sel)return;
+   const keep=localStorage.getItem('talkabee-sea-voice-'+currentLang())||'';
+   const base=(locale[currentLang()]||'en-US').split('-')[0].toLowerCase();
+   const voices=(speechSynthesis.getVoices()||[]).filter(v=>(v.lang||'').toLowerCase().startsWith(base));
+   sel.innerHTML='<option value="">Browser Default</option>';
+   voices.forEach(v=>{const o=document.createElement('option');o.value=v.name;o.textContent=v.name+' — '+v.lang;sel.appendChild(o)});
+   if([...sel.options].some(o=>o.value===keep))sel.value=keep;
+ }
+ function speak(text,rate=.86){
+   if(!('speechSynthesis' in window)||!text)return;
+   speechSynthesis.cancel();
+   const u=new SpeechSynthesisUtterance(text);
+   u.lang=locale[currentLang()]||'en-US';u.rate=rate;
+   const wanted=$('seaVoice')?.value;
+   if(wanted){const v=speechSynthesis.getVoices().find(x=>x.name===wanted);if(v)u.voice=v}
+   lastRate=rate;lastText=text;speechSynthesis.speak(u);
+ }
  function render(){
    world.querySelectorAll('.yacht-hotspot').forEach(b=>b.classList.remove('show'));
    $('yachtFind').classList.remove('show');$('yachtList').style.display='';$('yachtWordline').style.display='';$('yachtTranslation').style.display='';$('yachtActions').style.display='flex';$('yachtNextRow').style.display='flex';
    if(group==='discover'){
-     $('yachtKicker').textContent='CLICK & DISCOVER';$('yachtTitle').textContent='Tap anything you recognize.';$('yachtPrompt').textContent='Each target teaches one word.';$('yachtWordline').innerHTML='';$('yachtTranslation').textContent='Tap a target to hear its Spanish word.';$('yachtList').style.display='none';$('yachtActions').style.display='none';$('yachtNextRow').style.display='none';world.querySelectorAll('.yacht-hotspot').forEach(b=>b.classList.add('show'));return;
+     $('yachtKicker').textContent='CLICK & DISCOVER';$('yachtTitle').textContent='Tap an object in the picture.';$('yachtPrompt').textContent='See the learning-language word and its English meaning. Audio speaks only the learning-language word.';$('yachtWordline').innerHTML='';$('yachtTranslation').textContent='Tap a hotspot in the scene.';$('yachtList').style.display='none';$('yachtActions').style.display='none';$('yachtNextRow').style.display='none';world.querySelectorAll('.yacht-hotspot').forEach(b=>b.classList.add('show'));return;
    }
    if(group==='find'){
-     const target=order[challengeIndex],o=objects[target];solved=false;$('yachtKicker').textContent='FIND IT CHALLENGE';$('yachtTitle').textContent='Challenge '+(challengeIndex+1)+': Find '+o.english+'.';$('yachtPrompt').textContent='Stay in this same yacht scene and find the requested person, animal or object.';$('yachtWordline').innerHTML='';$('yachtTranslation').textContent='';$('yachtList').style.display='none';$('yachtActions').style.display='none';$('yachtNextRow').style.display='none';world.querySelectorAll('.yacht-hotspot').forEach(b=>b.classList.add('show'));$('yachtFind').classList.add('show');$('yachtChallengeCount').textContent='CHALLENGE '+(challengeIndex+1)+' OF 6';$('yachtFindPrompt').textContent='Find: '+o.word+' — '+o.english;$('yachtFindStatus').textContent='';$('yachtNextHint').textContent='Find the correct target to unlock the next challenge.';$('yachtChallengeNext').textContent=challengeIndex<5?'Next Challenge →':'Finish Challenges ✓';world.querySelectorAll('.yacht-challenge-nav').forEach((b,i)=>b.classList.toggle('active',i===challengeIndex));return;
+     const key=challengeOrder[challengeIndex],target=currentWord(key);solved=false;
+     $('yachtKicker').textContent='FIND IT CHALLENGE';$('yachtTitle').textContent='Challenge '+(challengeIndex+1)+' of 6';$('yachtPrompt').textContent='Find the requested person, animal or object in this same scene.';$('yachtWordline').innerHTML='';$('yachtTranslation').textContent='';$('yachtList').style.display='none';$('yachtActions').style.display='none';$('yachtNextRow').style.display='none';world.querySelectorAll('.yacht-hotspot').forEach(b=>b.classList.add('show'));$('yachtFind').classList.add('show');$('yachtChallengeCount').textContent='CHALLENGE '+(challengeIndex+1)+' OF 6';$('yachtFindPrompt').textContent='Find: '+target+' — '+english[key];$('yachtFindStatus').textContent='';$('yachtNextHint').textContent='Find the correct target to unlock the next challenge.';$('yachtChallengeNext').textContent=challengeIndex<5?'Next Challenge →':'Finish Challenges ✓';world.querySelectorAll('.yacht-challenge-nav').forEach((b,i)=>b.classList.toggle('active',i===challengeIndex));return;
    }
-   const g=groups[group]||groups.deck,item=g.items[index]||g.items[0];$('yachtKicker').textContent=g.kicker;$('yachtTitle').textContent=g.title;$('yachtPrompt').textContent=g.prompt;$('yachtTranslation').textContent=item[1];$('yachtProgress').textContent='Phrase '+(index+1)+' of '+g.items.length;$('yachtWordline').innerHTML='';item[0].split(/\s+/).forEach(w=>{const b=document.createElement('button');b.type='button';b.textContent=w;b.onclick=()=>speak(w.replace(/[.,!?]/g,''),.72);$('yachtWordline').appendChild(b)});$('yachtList').innerHTML='';g.items.forEach((row,i)=>{const b=document.createElement('button');b.type='button';b.className=i===index?'active':'';b.innerHTML='<strong>'+(i+1)+'. '+row[0]+'</strong><br><span style="font-size:12px;color:#737c91">'+row[1]+'</span>';b.onclick=()=>{index=i;render()};$('yachtList').appendChild(b)});
+   const m=meta[group]||meta.deck,items=currentItems(),item=items[index]||items[0];
+   $('yachtKicker').textContent=m[0];$('yachtTitle').textContent=m[1];$('yachtPrompt').textContent=m[2];$('yachtTranslation').textContent=item[1];$('yachtProgress').textContent='Phrase '+(index+1)+' of '+items.length;$('yachtWordline').innerHTML='';
+   item[0].split(/\s+/).forEach(w=>{const b=document.createElement('button');b.type='button';b.textContent=w;b.onclick=()=>speak(w.replace(/[.,!?¿¡]/g,''),.72);$('yachtWordline').appendChild(b)});
+   $('yachtList').innerHTML='';items.forEach((row,i)=>{const b=document.createElement('button');b.type='button';b.className=i===index?'active':'';b.innerHTML='<strong>'+(i+1)+'. '+row[0]+'</strong><br><span style="font-size:12px;color:#737c91">'+row[1]+'</span>';b.onclick=()=>{index=i;render()};$('yachtList').appendChild(b)});
  }
- function open(){if(main)main.style.display='none';document.getElementById('homeWorld')?.classList.remove('open');document.getElementById('animalWorld')?.classList.remove('open');world.classList.add('open');document.body.classList.add('talkabee-world-open','sea-adventures-open');group='deck';index=0;world.querySelectorAll('.yacht-nav').forEach(b=>b.classList.toggle('active',b.dataset.yachtGroup==='deck'));render();window.scrollTo({top:0,left:0,behavior:'auto'})}
- const link=document.querySelector('#mainDirectory .directory-link[href="#yachtWorld"]');if(link)link.addEventListener('click',e=>{e.preventDefault();e.stopImmediatePropagation();open()},true);
  world.querySelectorAll('.yacht-nav').forEach(btn=>btn.addEventListener('click',()=>{world.querySelectorAll('.yacht-nav').forEach(b=>b.classList.remove('active'));btn.classList.add('active');group=btn.dataset.yachtGroup;index=0;render()}));
  world.querySelectorAll('.yacht-challenge-nav').forEach(btn=>btn.addEventListener('click',()=>{challengeIndex=Number(btn.dataset.yachtChallenge)||0;group='find';world.querySelectorAll('.yacht-nav').forEach(b=>b.classList.remove('active'));render()}));
- // V56: replace per-hotspot handlers with one delegated handler. Cloning strips any old listeners.
+
  const hotspotLayer=$('yachtHotspots');
  hotspotLayer.querySelectorAll('.yacht-hotspot').forEach(btn=>btn.replaceWith(btn.cloneNode(true)));
- hotspotLayer.addEventListener('click',(e)=>{
-   const btn=e.target.closest('.yacht-hotspot');
-   if(!btn || !hotspotLayer.contains(btn)) return;
-   e.preventDefault(); e.stopPropagation(); e.stopImmediatePropagation();
-   const key=btn.dataset.object,o=objects[key]; if(!o)return;
+ hotspotLayer.addEventListener('click',e=>{
+   const btn=e.target.closest('.yacht-hotspot');if(!btn||!hotspotLayer.contains(btn))return;
+   e.preventDefault();e.stopPropagation();
+   const key=btn.dataset.object;if(!english[key])return;
+   const target=currentWord(key);
    if(group==='find'){
-     const target=order[challengeIndex];
-     if(key===target){solved=true;$('yachtFindStatus').textContent='✓ Nice find! '+o.word+' means '+o.english+'.';$('yachtFindStatus').style.color='#19744f';$('yachtNextHint').textContent='Challenge complete. You can move to the next one.';speak(o.word,.75)}
+     const wanted=challengeOrder[challengeIndex];
+     if(key===wanted){solved=true;$('yachtFindStatus').textContent='✓ Nice find! '+target+' means '+english[key]+'.';$('yachtFindStatus').style.color='#19744f';$('yachtNextHint').textContent='Challenge complete. You can move to the next one.';speak(target,.75)}
      else{$('yachtFindStatus').textContent='Not that one — keep looking.';$('yachtFindStatus').style.color='#8b5b13'}
      return;
    }
-   $('yachtKicker').textContent='CLICK & DISCOVER';$('yachtTitle').textContent=o.english;$('yachtPrompt').textContent=o.word;$('yachtTranslation').textContent='Tap another target.';speak(o.word,.78);
+   $('yachtKicker').textContent='CLICK & DISCOVER';$('yachtTitle').textContent=target;$('yachtPrompt').textContent=english[key];$('yachtTranslation').textContent=target+' — '+english[key];speak(target,.78);
  },true);
- $('yachtChallengeNext').addEventListener('click',()=>{if(!solved){$('yachtFindStatus').textContent='Find the correct one first.';$('yachtFindStatus').style.color='#8b5b13';return;}if(challengeIndex<5){challengeIndex++;render()}else{$('yachtFindStatus').textContent='🏁 You completed all 6 Sea Adventures challenges!';$('yachtFindStatus').style.color='#19744f'}});
- $('yachtPlay').addEventListener('click',()=>speak((groups[group]||groups.deck).items[index][0],.86));$('yachtSlow').addEventListener('click',()=>speak((groups[group]||groups.deck).items[index][0],.58));$('yachtReplay').addEventListener('click',()=>speak((groups[group]||groups.deck).items[index][0],lastRate));$('yachtNextPhrase').addEventListener('click',()=>{const g=groups[group]||groups.deck;index=(index+1)%g.items.length;render()});
- $('yachtPeek').addEventListener('click',()=>world.classList.add('activity-collapsed'));$('yachtRestore').addEventListener('click',()=>world.classList.remove('activity-collapsed'));
+
+ $('yachtChallengeNext').addEventListener('click',()=>{if(!solved){$('yachtFindStatus').textContent='Find the correct one first.';$('yachtFindStatus').style.color='#8b5b13';return}if(challengeIndex<5){challengeIndex++;render()}else{$('yachtFindStatus').textContent='🏁 You completed all 6 Sea Adventures challenges!';$('yachtFindStatus').style.color='#19744f'}});
+ $('yachtPlay').addEventListener('click',()=>{const item=currentItems()[index]||currentItems()[0];speak(item[0],.86)});
+ $('yachtSlow').addEventListener('click',()=>{const item=currentItems()[index]||currentItems()[0];speak(item[0],.58)});
+ $('yachtReplay').addEventListener('click',()=>speak(lastText||((currentItems()[index]||currentItems()[0])[0]),lastRate));
+ $('yachtNextPhrase').addEventListener('click',()=>{const items=currentItems();index=(index+1)%items.length;render()});
+ $('yachtPeek').addEventListener('click',()=>world.classList.add('activity-collapsed'));
+ $('yachtRestore').addEventListener('click',()=>world.classList.remove('activity-collapsed'));
+
+ $('seaLanguage').value=localStorage.getItem('talkabee-learn-language')||'es';
+ $('seaLanguage').addEventListener('change',()=>{localStorage.setItem('talkabee-learn-language',currentLang());index=0;populateVoices();render()});
+ $('seaVoice').addEventListener('change',()=>localStorage.setItem('talkabee-sea-voice-'+currentLang(),$('seaVoice').value));
+ if('speechSynthesis' in window){speechSynthesis.onvoiceschanged=populateVoices;populateVoices()}
  render();
 });
 </script>
