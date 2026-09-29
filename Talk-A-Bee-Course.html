@@ -711,7 +711,7 @@ header .course-tagline{
   <nav><a href="index.html">Explore</a><a href="#course">Course</a><a href="index.html">Main Directory</a><a href="index.html">Worlds</a></nav>
   <div class="global-controls">
    <label class="interface-control">Site <select id="siteLanguage"><option value="en">🇺🇸 English</option><option value="es">🇪🇸 Español</option><option value="fr">🇫🇷 Français</option><option value="de">🇩🇪 Deutsch</option><option value="it">🇮🇹 Italiano</option><option value="no">🇳🇴 Norsk</option><option value="pt">🇵🇹 Português</option></select></label>
-   <label>Learn <select id="learnLanguageTop"><option value="es">🇪🇸 Spanish</option><option value="fr">🇫🇷 French</option><option value="en">🇺🇸 English</option></select></label>
+   <label>Learn <select id="learnLanguageTop"><option value="es">🇪🇸 Spanish</option><option value="fr">🇫🇷 French</option><option value="en">🇺🇸 English</option><option value="de">🇩🇪 German</option><option value="it">🇮🇹 Italian</option><option value="pt">🇵🇹 Portuguese</option><option value="no">🇳🇴 Norwegian</option></select></label>
   </div>
  </div>
 </header>
@@ -1122,7 +1122,7 @@ header .course-tagline{
   <p class="course-hint">Tip: the green lessons are ones you have completed on this device.</p>
   <div class="course-shell">
    <div class="course-top"><div><div style="font-size:10px;color:#cfc5ff;font-weight:950;letter-spacing:.09em">INTERACTIVE LESSON</div><h2 id="lessonTitle">Hello &amp; goodbye</h2><div class="lesson-meta" id="lessonMeta">Lesson 1 of 9 · Unit 1 of 3</div></div>
-    <div class="course-controls"><select id="lang"><option value="es">Spanish</option><option value="fr">French</option><option value="en">English</option></select><select id="lesson"></select><button id="trans">Hide translation</button></div>
+    <div class="course-controls"><select id="lang"><option value="es">Spanish</option><option value="fr">French</option><option value="en">English</option><option value="de">German</option><option value="it">Italian</option><option value="pt">Portuguese</option><option value="no">Norwegian</option></select><select id="lesson"></select><button id="trans">Hide translation</button></div>
    </div>
    <div class="lesson-grid">
     <div class="scene" id="scene"><div class="scene-overlay"></div><div class="scene-caption"><div class="label">TODAY'S SCENE</div><h3 id="sceneTitle">A café above the bay</h3><p id="sceneText">Sofia and Daniel meet over coffee.</p></div></div>
@@ -1220,6 +1220,46 @@ fr:{voice:"fr-FR",lessons:[
 ["Ask for directions",[["Emma","","Excusez-moi, où est la gare ?","Excuse me, where is the station?"],["Mitchell","","Elle est à deux rues d'ici.","It is two streets from here."]],"Where is the station?","Où est la gare ?"],
 ["Getting around",[["Sophie","","Ce train va au centre-ville ?","Does this train go downtown?"],["Mitchell","","Oui, c'est le prochain arrêt.","Yes, it is the next stop."]],"This train goes downtown","Ce train va au centre-ville"],
 ["At the hotel",[["Marie","","J'ai une réservation.","I have a reservation."],["Charles","","Parfait. Quel est votre nom ?","Perfect. What is your name?"]],"I have a reservation","J'ai une réservation"]]},
+de:{voice:"de-DE",lessons:[
+["Hello & goodbye",[["Sofia","","Hallo! Wie geht es dir?","Hello! How are you?"],["Daniel","","Sehr gut, danke. Und dir?","Very well, thanks. And you?"]],"Hello, how are you?","Hallo, wie geht es dir?"],
+["Introduce yourself",[["Emma","","Ich heiße Emma. Wie heißt du?","My name is Emma. What is your name?"],["Mitchell","","Ich heiße Mitchell. Freut mich.","My name is Mitchell. Nice to meet you."]],"My name is Emma","Ich heiße Emma"],
+["Everyday politeness",[["Maria","","Einen Kaffee, bitte.","A coffee, please."],["Carlos","","Natürlich. Vielen Dank.","Of course. Thank you very much."]],"Thank you very much","Vielen Dank"],
+["Food & drinks",[["Sofia","","Ich möchte einen Apfel und Wasser.","I would like an apple and water."],["Daniel","","Ich möchte Brot und Kaffee.","I would like bread and coffee."]],"I would like an apple","Ich möchte einen Apfel"],
+["At the café",[["Emma","","Ich hätte gern einen Kaffee, bitte.","I would like a coffee, please."],["Carlos","","Mit Milch?","With milk?"]],"A coffee, please","Einen Kaffee, bitte"],
+["Out shopping",[["Sofia","","Wie viel kostet dieses Hemd?","How much is this shirt?"],["Daniel","","Es kostet zwanzig Euro.","It costs twenty euros."]],"How much does it cost?","Wie viel kostet es?"],
+["Ask for directions",[["Emma","","Entschuldigung, wo ist der Bahnhof?","Excuse me, where is the station?"],["Mitchell","","Er ist zwei Straßen von hier entfernt.","It is two streets from here."]],"Where is the station?","Wo ist der Bahnhof?"],
+["Getting around",[["Sofia","","Fährt dieser Zug ins Stadtzentrum?","Does this train go downtown?"],["Mitchell","","Ja, die nächste Haltestelle.","Yes, it is the next stop."]],"This train goes downtown","Dieser Zug fährt ins Stadtzentrum"],
+["At the hotel",[["Maria","","Ich habe eine Reservierung.","I have a reservation."],["Carlos","","Perfekt. Wie ist Ihr Name?","Perfect. What is your name?"]],"I have a reservation","Ich habe eine Reservierung"]]},
+it:{voice:"it-IT",lessons:[
+["Hello & goodbye",[["Sofia","","Ciao! Come stai?","Hello! How are you?"],["Daniel","","Molto bene, grazie. E tu?","Very well, thanks. And you?"]],"Hello, how are you?","Ciao, come stai?"],
+["Introduce yourself",[["Emma","","Mi chiamo Emma. Come ti chiami?","My name is Emma. What is your name?"],["Mitchell","","Mi chiamo Mitchell. Piacere.","My name is Mitchell. Nice to meet you."]],"My name is Emma","Mi chiamo Emma"],
+["Everyday politeness",[["Maria","","Un caffè, per favore.","A coffee, please."],["Carlos","","Certo. Grazie mille.","Of course. Thank you very much."]],"Thank you very much","Grazie mille"],
+["Food & drinks",[["Sofia","","Vorrei una mela e dell'acqua.","I would like an apple and water."],["Daniel","","Vorrei del pane e un caffè.","I would like bread and coffee."]],"I would like an apple","Vorrei una mela"],
+["At the café",[["Emma","","Vorrei un caffè, per favore.","I would like a coffee, please."],["Carlos","","Con latte?","With milk?"]],"A coffee, please","Un caffè, per favore"],
+["Out shopping",[["Sofia","","Quanto costa questa camicia?","How much is this shirt?"],["Daniel","","Costa venti euro.","It costs twenty euros."]],"How much does it cost?","Quanto costa?"],
+["Ask for directions",[["Emma","","Scusi, dov'è la stazione?","Excuse me, where is the station?"],["Mitchell","","È a due strade da qui.","It is two streets from here."]],"Where is the station?","Dov'è la stazione?"],
+["Getting around",[["Sofia","","Questo treno va in centro?","Does this train go downtown?"],["Mitchell","","Sì, è la prossima fermata.","Yes, it is the next stop."]],"This train goes downtown","Questo treno va in centro"],
+["At the hotel",[["Maria","","Ho una prenotazione.","I have a reservation."],["Carlos","","Perfetto. Qual è il suo nome?","Perfect. What is your name?"]],"I have a reservation","Ho una prenotazione"]]},
+pt:{voice:"pt-PT",lessons:[
+["Hello & goodbye",[["Sofia","","Olá! Como estás?","Hello! How are you?"],["Daniel","","Muito bem, obrigado. E tu?","Very well, thanks. And you?"]],"Hello, how are you?","Olá, como estás?"],
+["Introduce yourself",[["Emma","","Chamo-me Emma. Como te chamas?","My name is Emma. What is your name?"],["Mitchell","","Chamo-me Mitchell. Muito prazer.","My name is Mitchell. Nice to meet you."]],"My name is Emma","Chamo-me Emma"],
+["Everyday politeness",[["Maria","","Um café, por favor.","A coffee, please."],["Carlos","","Claro. Muito obrigado.","Of course. Thank you very much."]],"Thank you very much","Muito obrigado"],
+["Food & drinks",[["Sofia","","Quero uma maçã e água.","I want an apple and water."],["Daniel","","Quero pão e café.","I want bread and coffee."]],"I want an apple","Quero uma maçã"],
+["At the café",[["Emma","","Queria um café, por favor.","I would like a coffee, please."],["Carlos","","Com leite?","With milk?"]],"A coffee, please","Um café, por favor"],
+["Out shopping",[["Sofia","","Quanto custa esta camisa?","How much is this shirt?"],["Daniel","","Custa vinte euros.","It costs twenty euros."]],"How much does it cost?","Quanto custa?"],
+["Ask for directions",[["Emma","","Desculpe, onde fica a estação?","Excuse me, where is the station?"],["Mitchell","","Fica a duas ruas daqui.","It is two streets from here."]],"Where is the station?","Onde fica a estação?"],
+["Getting around",[["Sofia","","Este comboio vai para o centro?","Does this train go downtown?"],["Mitchell","","Sim, é a próxima paragem.","Yes, it is the next stop."]],"This train goes downtown","Este comboio vai para o centro"],
+["At the hotel",[["Maria","","Tenho uma reserva.","I have a reservation."],["Carlos","","Perfeito. Qual é o seu nome?","Perfect. What is your name?"]],"I have a reservation","Tenho uma reserva"]]},
+no:{voice:"nb-NO",lessons:[
+["Hello & goodbye",[["Sofia","","Hei! Hvordan har du det?","Hello! How are you?"],["Daniel","","Veldig bra, takk. Og du?","Very well, thanks. And you?"]],"Hello, how are you?","Hei, hvordan har du det?"],
+["Introduce yourself",[["Emma","","Jeg heter Emma. Hva heter du?","My name is Emma. What is your name?"],["Mitchell","","Jeg heter Mitchell. Hyggelig å møte deg.","My name is Mitchell. Nice to meet you."]],"My name is Emma","Jeg heter Emma"],
+["Everyday politeness",[["Maria","","En kaffe, takk.","A coffee, please."],["Carlos","","Selvfølgelig. Tusen takk.","Of course. Thank you very much."]],"Thank you very much","Tusen takk"],
+["Food & drinks",[["Sofia","","Jeg vil gjerne ha et eple og vann.","I would like an apple and water."],["Daniel","","Jeg vil gjerne ha brød og kaffe.","I would like bread and coffee."]],"I would like an apple","Jeg vil gjerne ha et eple"],
+["At the café",[["Emma","","Jeg vil gjerne ha en kaffe, takk.","I would like a coffee, please."],["Carlos","","Med melk?","With milk?"]],"A coffee, please","En kaffe, takk"],
+["Out shopping",[["Sofia","","Hvor mye koster denne skjorten?","How much is this shirt?"],["Daniel","","Den koster tjue euro.","It costs twenty euros."]],"How much does it cost?","Hvor mye koster den?"],
+["Ask for directions",[["Emma","","Unnskyld, hvor er stasjonen?","Excuse me, where is the station?"],["Mitchell","","Den er to gater herfra.","It is two streets from here."]],"Where is the station?","Hvor er stasjonen?"],
+["Getting around",[["Sofia","","Går dette toget til sentrum?","Does this train go downtown?"],["Mitchell","","Ja, det er neste stopp.","Yes, it is the next stop."]],"This train goes downtown","Dette toget går til sentrum"],
+["At the hotel",[["Maria","","Jeg har en reservasjon.","I have a reservation."],["Carlos","","Perfekt. Hva heter du?","Perfect. What is your name?"]],"I have a reservation","Jeg har en reservasjon"]]},
 en:{voice:"en-US",lessons:[
 ["Hello & goodbye",[["Sofia","","Hello! How are you?","¡Hola! ¿Cómo estás?"],["Daniel","","Very well, thank you. And you?","Muy bien, gracias. ¿Y tú?"]],"Hello, how are you?","Hello, how are you?"],
 ["Introduce yourself",[["Emma","","My name is Emma. What's your name?","Me llamo Emma. ¿Cómo te llamas?"],["Mitchell","","My name is Mitchell. Nice to meet you.","Me llamo Mitchell. Mucho gusto."]],"My name is Emma","My name is Emma"],
@@ -2014,10 +2054,28 @@ renderGuidedSentence();
    guide&&guide.classList.remove('open');
  }));
  const topLearn=document.getElementById('learnLanguageTop');
- if(topLearn){topLearn.addEventListener('change',()=>{
-   const courseLang=document.getElementById('language');
-   if(courseLang){courseLang.value=topLearn.value; courseLang.dispatchEvent(new Event('change'));}
- });}
+ const courseLang=document.getElementById('lang');
+ if(topLearn && courseLang){
+   // Keep the header Learn selector and the real Course language selector synchronized.
+   const syncCourseLanguage=()=>{
+     courseLang.value=topLearn.value;
+     courseLang.dispatchEvent(new Event('change',{bubbles:true}));
+     try{localStorage.setItem('talkabeeLearnLanguage',topLearn.value);}catch(e){}
+   };
+   topLearn.addEventListener('change',syncCourseLanguage);
+   courseLang.addEventListener('change',()=>{
+     topLearn.value=courseLang.value;
+     try{localStorage.setItem('talkabeeLearnLanguage',courseLang.value);}catch(e){}
+   });
+   try{
+     const saved=localStorage.getItem('talkabeeLearnLanguage');
+     if(saved && topLearn.querySelector('option[value="'+saved+'"]')){
+       topLearn.value=saved;
+       courseLang.value=saved;
+       courseLang.dispatchEvent(new Event('change',{bubbles:true}));
+     }
+   }catch(e){}
+ }
  const siteLang=document.getElementById('siteLanguage');
  if(siteLang){siteLang.addEventListener('change',()=>{
    localStorage.setItem('talkabee-site-language',siteLang.value);
