@@ -4445,26 +4445,98 @@ section.wrap.final-cta,
   const site = document.getElementById('siteLanguage');
   if(!site) return;
 
-  const translations = [
-    ['header nav a[href="index.html"]', 'Explore', 'Explorar'],
-    ['header nav a[href="#course"]', 'Course', 'Curso'],
-    ['.course-return-bar a', '← Main Directory', '← Directorio principal'],
-    ['#course .head .kick', 'TRY IT', 'PRUÉBALO'],
-    ['#course .head h2', 'Choose any of the 9 starter lessons.', 'Elige cualquiera de las 9 lecciones iniciales.'],
-    ['#course .head p',
-      'The full course path is visible here. Pick a lesson directly, or use Next Lesson when you finish one.',
-      'La ruta completa del curso aparece aquí. Elige una lección directamente o usa Siguiente lección cuando termines.']
-  ];
+  const T = {
+    en: {
+      site:'Site', learn:'Learn', explore:'Explore', course:'Course',
+      directory:'Main Directory', worlds:'Worlds',
+      back:'← Main Directory', tryit:'TRY IT',
+      heading:'Choose any of the 9 starter lessons.',
+      intro:'The full course path is visible here. Pick a lesson directly, or use Next Lesson when you finish one.'
+    },
+    es: {
+      site:'Sitio', learn:'Aprender', explore:'Explorar', course:'Curso',
+      directory:'Directorio principal', worlds:'Mundos',
+      back:'← Directorio principal', tryit:'PRUÉBALO',
+      heading:'Elige cualquiera de las 9 lecciones iniciales.',
+      intro:'La ruta completa del curso aparece aquí. Elige una lección directamente o usa Siguiente lección cuando termines.'
+    },
+    fr: {
+      site:'Site', learn:'Apprendre', explore:'Explorer', course:'Cours',
+      directory:'Répertoire principal', worlds:'Mondes',
+      back:'← Répertoire principal', tryit:'ESSAYEZ',
+      heading:'Choisissez l’une des 9 leçons de départ.',
+      intro:'Le parcours complet du cours est visible ici. Choisissez directement une leçon ou utilisez Leçon suivante lorsque vous avez terminé.'
+    },
+    de: {
+      site:'Website', learn:'Lernen', explore:'Entdecken', course:'Kurs',
+      directory:'Hauptverzeichnis', worlds:'Welten',
+      back:'← Hauptverzeichnis', tryit:'AUSPROBIEREN',
+      heading:'Wähle eine der 9 Einstiegslektionen.',
+      intro:'Der vollständige Kursweg ist hier sichtbar. Wähle direkt eine Lektion oder nutze Nächste Lektion, wenn du fertig bist.'
+    },
+    it: {
+      site:'Sito', learn:'Impara', explore:'Esplora', course:'Corso',
+      directory:'Directory principale', worlds:'Mondi',
+      back:'← Directory principale', tryit:'PROVALO',
+      heading:'Scegli una delle 9 lezioni iniziali.',
+      intro:'Qui è visibile l’intero percorso del corso. Scegli direttamente una lezione oppure usa Lezione successiva quando hai finito.'
+    },
+    no: {
+      site:'Nettsted', learn:'Lær', explore:'Utforsk', course:'Kurs',
+      directory:'Hovedkatalog', worlds:'Verdener',
+      back:'← Hovedkatalog', tryit:'PRØV DET',
+      heading:'Velg en av de 9 startleksjonene.',
+      intro:'Hele kursløpet vises her. Velg en leksjon direkte, eller bruk Neste leksjon når du er ferdig.'
+    },
+    pt: {
+      site:'Site', learn:'Aprender', explore:'Explorar', course:'Curso',
+      directory:'Diretório principal', worlds:'Mundos',
+      back:'← Diretório principal', tryit:'EXPERIMENTE',
+      heading:'Escolha qualquer uma das 9 lições iniciais.',
+      intro:'O percurso completo do curso está visível aqui. Escolha uma lição diretamente ou use Próxima lição quando terminar.'
+    }
+  };
+
+  function setText(selector, value){
+    document.querySelectorAll(selector).forEach(function(el){ el.textContent = value; });
+  }
+
+  function setLabelText(label, value){
+    if(!label) return;
+    for(const node of label.childNodes){
+      if(node.nodeType === Node.TEXT_NODE){
+        node.nodeValue = value + ' ';
+        return;
+      }
+    }
+  }
 
   function applyLanguage(){
-    const es = site.value === 'es';
-    document.documentElement.lang = es ? 'es' : 'en';
-    translations.forEach(function(item){
-      document.querySelectorAll(item[0]).forEach(function(el){
-        el.textContent = es ? item[2] : item[1];
-      });
-    });
+    const lang = T[site.value] ? site.value : 'en';
+    const t = T[lang];
+    document.documentElement.lang = lang;
+
+    setLabelText(document.querySelector('label.interface-control'), t.site);
+    setLabelText(document.getElementById('learnLanguageTop')?.closest('label'), t.learn);
+
+    const nav = document.querySelectorAll('header nav a');
+    if(nav[0]) nav[0].textContent = t.explore;
+    if(nav[1]) nav[1].textContent = t.course;
+    if(nav[2]) nav[2].textContent = t.directory;
+    if(nav[3]) nav[3].textContent = t.worlds;
+
+    setText('.course-return-bar a', t.back);
+    setText('#course .head .kick', t.tryit);
+    setText('#course .head h2', t.heading);
+    setText('#course .head p', t.intro);
+
+    try { localStorage.setItem('talkabeeSiteLanguage', lang); } catch(e){}
   }
+
+  try {
+    const saved = localStorage.getItem('talkabeeSiteLanguage');
+    if(saved && T[saved] && site.querySelector('option[value="'+saved+'"]')) site.value = saved;
+  } catch(e){}
 
   site.addEventListener('change', applyLanguage);
   applyLanguage();
