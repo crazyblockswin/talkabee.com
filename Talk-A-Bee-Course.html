@@ -677,24 +677,16 @@ body.adventure-locked #kitchenWorld .kitchen-directory{overflow-y:auto !importan
 <style id="checkpoint81-directory-return">
 #mainDirectory{scroll-margin-top:0!important;}
 </style>
-
-<style id="course-header-small-fixes">
-.bee-logo{background:transparent!important;box-shadow:none!important;border-radius:0!important}
-.bee-logo img{object-fit:contain!important;border-radius:0!important}
-.course-tagline{margin-left:8px;font-size:12px;font-weight:850;color:#655a79;white-space:nowrap}
-@media(max-width:900px){.course-tagline{display:none}}
-</style>
-
 </head>
 <body>
 <header>
  <div class="wrap nav">
-  <a class="brand" href="index.html" aria-label="Return to Main Directory" style="text-decoration:none;color:inherit"><div class="logo bee-logo" aria-hidden="true"><img src="images/talkabee-image-04.png" alt=""></div><div><span class="brand-name">Talk A Bee</span><small class="brand-domain">TalkABee.com</small></div><span class="course-tagline">Interactive Language Adventures</span></a>
-  <nav><a href="index.html">Explore</a><a href="#course">Course</a><a href="index.html">Main Directory</a><a href="index.html">Worlds</a></nav>
+  <div class="brand"><div class="logo bee-logo" aria-hidden="true"><img src="images/talkabee-image-04.png" alt=""></div><div><span class="brand-name">Talk A Bee</span><small class="brand-domain">TalkABee.com</small></div></div>
+  <nav><a href="Talk-A-Bee-Main-Directory.html">Explore</a><a href="#course">Course</a><a href="Talk-A-Bee-Main-Directory.html">Main Directory</a><a href="Talk-A-Bee-Main-Directory.html">Worlds</a></nav>
   <div class="global-controls">
    <label class="interface-control">Site <select id="siteLanguage"><option value="en">🇺🇸 English</option><option value="es">🇪🇸 Español</option><option value="fr">🇫🇷 Français</option><option value="de">🇩🇪 Deutsch</option><option value="it">🇮🇹 Italiano</option><option value="no">🇳🇴 Norsk</option><option value="pt">🇵🇹 Português</option></select></label>
    <label>Learn <select id="learnLanguageTop"><option value="es">🇪🇸 Spanish</option><option value="fr">🇫🇷 French</option><option value="en">🇺🇸 English</option></select></label>
-   
+   <button class="account-btn" type="button">Sign In</button><button class="account-btn join" type="button">Join</button>
   </div>
  </div>
 </header>
@@ -1081,7 +1073,7 @@ body.adventure-locked #kitchenWorld .kitchen-directory{overflow-y:auto !importan
  </div></div>
 </section>
 
-<div class="course-return-bar"><a href="index.html">← Main Directory</a></div>
+<div class="course-return-bar"><a href="Talk-A-Bee-Main-Directory.html">← Main Directory</a></div>
 <section id="course" class="section soft">
  <div class="wrap">
   <div class="head"><div class="kick">TRY IT</div><h2>Choose any of the 9 starter lessons.</h2><p>The full course path is visible here. Pick a lesson directly, or use Next Lesson when you finish one.</p></div>
@@ -4419,50 +4411,6 @@ section.wrap.final-cta,
   color:#fff;
   text-decoration:none;
   font-weight:900;
-}
-</style>
-
-
-<style id="course-final-visibility-fix">
-/* Course page final authority: old Main Directory checkpoints must not hide the course. */
-html{
-  height:auto!important;
-  min-height:100%!important;
-  overflow-x:hidden!important;
-  overflow-y:auto!important;
-}
-body{
-  height:auto!important;
-  min-height:100vh!important;
-  max-height:none!important;
-  overflow-x:hidden!important;
-  overflow-y:auto!important;
-}
-.course-return-bar{
-  display:block!important;
-  visibility:visible!important;
-  opacity:1!important;
-  position:relative!important;
-  z-index:2!important;
-  margin-top:18px!important;
-}
-#course{
-  display:block!important;
-  visibility:visible!important;
-  opacity:1!important;
-  position:relative!important;
-  inset:auto!important;
-  width:100%!important;
-  height:auto!important;
-  min-height:600px!important;
-  max-height:none!important;
-  overflow:visible!important;
-  z-index:1!important;
-}
-#course .wrap{
-  display:block!important;
-  visibility:visible!important;
-  opacity:1!important;
 }
 </style>
 
