@@ -1891,7 +1891,7 @@ renderGuidedSentence();
   openHomeChallenge(Number(btn.dataset.homeChallenge));
  }));
  document.getElementById('homeMainDirectory').addEventListener('click',()=>{
-  window.location.href='Talk-A-Bee-Main-Directory.html';
+  window.location.href='/';
  });
  const activityPeek=document.getElementById('activityPeek');
  const activityRestore=document.getElementById('activityRestore');
@@ -4486,7 +4486,7 @@ html,body{
 document.addEventListener('DOMContentLoaded', function(){
   var world=document.getElementById('kitchenWorld');
   if(world){ world.classList.add('open'); }
-  var b=document.querySelector('#kitchenMainDirectory'); if(b) b.addEventListener('click',function(e){e.preventDefault();e.stopImmediatePropagation();window.location.href='Talk-A-Bee-Main-Directory.html';},true);
+  var b=document.querySelector('#kitchenMainDirectory'); if(b) b.addEventListener('click',function(e){e.preventDefault();e.stopImmediatePropagation();window.location.href='/';},true);
   
   try { document.querySelector('[data-kitchen="baking"]')?.click(); } catch(e) {}
 });
