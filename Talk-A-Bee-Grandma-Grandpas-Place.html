@@ -703,6 +703,175 @@ header{display:none !important;}
 #homeWorld, #homeWorld.open{inset:0 !important;}
 body.talkabee-world-open{overflow:hidden !important;}
 </style>
+
+<style id="talkabee-grandparents-template-upgrade">
+/* Talk A Bee — Grandma & Grandpa template-shell upgrade.
+   VISUAL ONLY: original artwork, lessons, hotspots and challenge logic are preserved. */
+
+/* Left Activity Panel — Julie/Market glass treatment */
+#homeWorld .home-directory.activity-panel{
+  width:300px !important;
+  left:18px !important;
+  top:18px !important;
+  bottom:18px !important;
+  padding:14px 14px 16px !important;
+  border-radius:26px !important;
+  background:linear-gradient(180deg,rgba(25,28,30,.34),rgba(18,20,22,.26)) !important;
+  border:1px solid rgba(255,255,255,.28) !important;
+  box-shadow:0 14px 36px rgba(0,0,0,.20) !important;
+  backdrop-filter:blur(12px) saturate(125%) !important;
+  -webkit-backdrop-filter:blur(12px) saturate(125%) !important;
+  overflow-y:auto !important;
+  scrollbar-width:none !important;
+}
+#homeWorld .home-directory.activity-panel::-webkit-scrollbar{display:none!important}
+
+#homeWorld .activity-back,
+#homeWorld .activity-peek,
+#homeWorld .home-nav,
+#homeWorld .home-challenge-nav{
+  border:1px solid rgba(255,255,255,.13) !important;
+  background:rgba(255,255,255,.13) !important;
+  color:#fff !important;
+  border-radius:16px !important;
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.10) !important;
+  text-shadow:0 1px 2px rgba(0,0,0,.38) !important;
+}
+#homeWorld .activity-back,
+#homeWorld .activity-peek{
+  padding:12px 13px !important;
+  font-size:15px !important;
+  font-weight:900 !important;
+  margin-bottom:8px !important;
+}
+#homeWorld .activity-place{
+  color:#fff !important;
+  font-size:23px !important;
+  line-height:1.05 !important;
+  font-weight:950 !important;
+  margin:5px 5px 12px !important;
+  text-shadow:0 2px 4px rgba(0,0,0,.45) !important;
+}
+#homeWorld .activity-label{
+  color:rgba(255,255,255,.92) !important;
+  letter-spacing:1.7px !important;
+  font-size:12px !important;
+  font-weight:950 !important;
+  margin:12px 5px 6px !important;
+  text-shadow:0 1px 2px rgba(0,0,0,.45) !important;
+}
+#homeWorld .home-nav,
+#homeWorld .home-challenge-nav{
+  padding:11px 12px !important;
+  margin:4px 0 !important;
+  font-size:15px !important;
+  font-weight:900 !important;
+}
+#homeWorld .home-nav:hover,
+#homeWorld .home-nav.active,
+#homeWorld .home-challenge-nav:hover,
+#homeWorld .home-challenge-nav.active{
+  background:rgba(35,164,160,.86) !important;
+  border-color:rgba(255,255,255,.30) !important;
+}
+#homeWorld .activity-divider{
+  height:1px !important;
+  background:rgba(255,255,255,.22) !important;
+  margin:10px 2px !important;
+}
+
+/* Script Card — current Julie/Market glass-card language */
+#homeWorld .home-panel{
+  left:auto !important;
+  right:24px !important;
+  bottom:24px !important;
+  top:auto !important;
+  width:min(540px,calc(100% - 360px)) !important;
+  max-height:52% !important;
+  padding:18px 20px !important;
+  border-radius:28px !important;
+  overflow:auto !important;
+  background:rgba(247,242,232,.64) !important;
+  border:1px solid rgba(255,255,255,.64) !important;
+  box-shadow:0 16px 38px rgba(0,0,0,.18) !important;
+  backdrop-filter:blur(13px) saturate(120%) !important;
+  -webkit-backdrop-filter:blur(13px) saturate(120%) !important;
+  color:#142033 !important;
+}
+#homeWorld .home-kicker{
+  color:#86562d !important;
+  letter-spacing:1.8px !important;
+  font-size:12px !important;
+  font-weight:950 !important;
+}
+#homeWorld .home-panel h2{
+  color:#142033 !important;
+  font-size:27px !important;
+  line-height:1.08 !important;
+  margin:5px 0 8px !important;
+}
+#homeWorld .home-panel p,
+#homeWorld .home-translation{
+  color:#243043 !important;
+}
+#homeWorld .home-wordline{
+  background:rgba(255,255,255,.52) !important;
+  border-radius:18px !important;
+  padding:9px !important;
+}
+#homeWorld .home-word{
+  background:rgba(255,255,255,.62) !important;
+  color:#142033 !important;
+  border:1px solid rgba(255,255,255,.65) !important;
+}
+#homeWorld .home-actions button,
+#homeWorld .home-nextphrase,
+#homeWorld .home-challenge-next{
+  border-radius:14px !important;
+}
+
+/* Scene View restore button — separate from hidden panel */
+#homeWorld .activity-restore{
+  position:absolute !important;
+  left:18px !important;
+  top:18px !important;
+  z-index:80 !important;
+  border:1px solid rgba(255,255,255,.35) !important;
+  border-radius:16px !important;
+  padding:11px 15px !important;
+  background:rgba(20,24,28,.48) !important;
+  color:#fff !important;
+  font-weight:900 !important;
+  backdrop-filter:blur(10px) !important;
+  -webkit-backdrop-filter:blur(10px) !important;
+}
+#homeWorld.activity-collapsed .activity-restore{display:block!important}
+#homeWorld:not(.activity-collapsed) .activity-restore{display:none!important}
+
+@media(max-width:900px){
+  #homeWorld .home-directory.activity-panel{width:280px!important}
+  #homeWorld .home-panel{
+    right:12px!important;
+    bottom:12px!important;
+    width:min(500px,calc(100% - 320px))!important;
+  }
+}
+</style>
+
+
+<style id="grandparents-language-voice-controls">
+#homeWorld .home-control-label{
+ display:block;color:rgba(255,255,255,.88);font-size:10px;font-weight:950;
+ letter-spacing:.09em;margin:7px 5px 4px;text-transform:uppercase;
+}
+#homeWorld .home-control-select{
+ width:100%;border:1px solid rgba(255,255,255,.22);border-radius:12px;
+ padding:9px 10px;margin:0 0 5px;background:rgba(255,255,255,.88);
+ color:#273147;font-size:12px;font-weight:850;outline:none;
+}
+#homeWorld .home-control-select:focus{box-shadow:0 0 0 3px rgba(255,255,255,.18)}
+</style>
+
 </head>
 <body>
 
@@ -891,13 +1060,33 @@ body.talkabee-world-open{overflow:hidden !important;}
     <button type="button" class="activity-back home-main-directory" id="homeMainDirectory">← Main Directory</button>
     <div class="activity-place">🏡 Grandma &amp; Grandpa’s Place</div>
     <button type="button" class="activity-peek" id="activityPeek">👁 Scene View</button>
-    <div class="activity-label">ACTIVITIES</div>
+    <div class="activity-label">LANGUAGE</div>
+    <label class="home-control-label" for="homeLanguage">Learn</label>
+    <select id="homeLanguage" class="home-control-select" aria-label="Learning language">
+      <option value="es">Spanish</option>
+      <option value="fr">French</option>
+      <option value="en">English</option>
+      <option value="de">German</option>
+      <option value="it">Italian</option>
+      <option value="pt">Portuguese</option>
+      <option value="no">Norwegian</option>
+    </select>
+    <label class="home-control-label" for="homeVoice">Voice</label>
+    <select id="homeVoice" class="home-control-select" aria-label="Voice selection">
+      <option value="">Browser Default</option>
+    </select>
+
+    <div class="activity-label">6 ACTIVITIES</div>
     <button type="button" class="home-nav active" data-home-group="family">👨‍👩‍👧 Family Talk</button>
     <button type="button" class="home-nav" data-home-group="garden">🌷 Garden Words</button>
     <button type="button" class="home-nav" data-home-group="birds">🐦 Birds</button>
-    <button type="button" class="home-nav" data-home-group="discover">🎣 Click &amp; Discover</button>
     <button type="button" class="home-nav" data-home-group="hobbies">🧺 Hobbies &amp; Home</button>
-    <button type="button" class="home-nav" data-home-group="find">⭐ Find It Challenge</button>
+    <button type="button" class="home-nav" data-home-group="yard">🏡 Around the Yard</button>
+    <button type="button" class="home-nav" data-home-group="everyday">💬 Everyday Life</button>
+
+    <div class="activity-divider"></div>
+    <div class="activity-label">DISCOVERY</div>
+    <button type="button" class="home-nav" data-home-group="discover">🔎 Click &amp; Discover</button>
 
     <div class="activity-divider"></div>
     <div class="activity-label">6 CHALLENGES</div>
@@ -910,7 +1099,7 @@ body.talkabee-world-open{overflow:hidden !important;}
 
    </aside>
 
-   <button type="button" class="activity-restore" id="activityRestore">☰ Activities</button>
+   <button type="button" class="activity-restore" id="activityRestore">☰ Return Panel</button>
    <div class="home-stage">
     <div class="home-scene" id="homeScene">
      <div class="scene-fill-layer" aria-hidden="true" style="background-image:url(&quot;images/talkabee-image-19.png&quot;)"></div>
@@ -1735,253 +1924,190 @@ renderGuidedSentence();
 
 <script>
 (function(){
- const groups={
-  family:{
-   kicker:'FAMILY TALK',title:'Meet Grandma Cathy and Grandpa Wally.',
-   prompt:'Hear a simple family sentence, then click the words one at a time.',
-   items:[
-    ['Esta es mi abuela.','This is my grandmother.'],
-    ['Este es mi abuelo.','This is my grandfather.'],
-    ['Mi abuela está en el jardín.','My grandmother is in the garden.'],
-    ['Mi abuelo alimenta a los pájaros.','My grandfather feeds the birds.']
-   ]
-  },
-  garden:{
-   kicker:'GARDEN WORDS',title:'Look around the garden.',
-   prompt:'The scene gives you visual clues while you practice.',
-   items:[
-    ['Hay flores en el jardín.','There are flowers in the garden.'],
-    ['Las flores son hermosas.','The flowers are beautiful.'],
-    ['La cesta tiene flores.','The basket has flowers.'],
-    ['El jardín está lleno de color.','The garden is full of color.']
-   ]
-  },
-  birds:{
-   kicker:'BIRDS',title:'Watch the birds.',
-   prompt:'Practice short sentences about what you can see.',
-   items:[
-    ['El pájaro está cerca de la casita.','The bird is near the birdhouse.'],
-    ['Hay pájaros en el jardín.','There are birds in the garden.'],
-    ['El pájaro es azul.','The bird is blue.'],
-    ['Mi abuelo alimenta a los pájaros.','My grandfather feeds the birds.']
-   ]
-  },
-  hobbies:{
-   kicker:'HOBBIES & HOME',title:'Talk about everyday things.',
-   prompt:'Use familiar objects from the scene to make the words easier to remember.',
-   items:[
-    ['A mi abuelo le gusta pescar.','My grandfather likes to fish.'],
-    ['Mi abuela cuida las flores.','My grandmother takes care of the flowers.'],
-    ['Tenemos una casa rodante.','We have an RV.'],
-    ['La maleta está junto al banco.','The suitcase is next to the bench.']
-   ]
-  }
+ const languageData={
+  es:{speech:'es-ES',groups:{
+   family:{kicker:'CHARLA FAMILIAR',title:'Conoce a la abuela Cathy y al abuelo Wally.',prompt:'Escucha una frase familiar y luego toca las palabras una por una.',items:[['Esta es mi abuela.','This is my grandmother.'],['Este es mi abuelo.','This is my grandfather.'],['Mi abuela está en el jardín.','My grandmother is in the garden.'],['Mi abuelo alimenta a los pájaros.','My grandfather feeds the birds.']]},
+   garden:{kicker:'PALABRAS DEL JARDÍN',title:'Mira alrededor del jardín.',prompt:'La escena te da pistas visuales mientras practicas.',items:[['Hay flores en el jardín.','There are flowers in the garden.'],['Las flores son hermosas.','The flowers are beautiful.'],['La cesta tiene flores.','The basket has flowers.'],['El jardín está lleno de color.','The garden is full of color.']]},
+   birds:{kicker:'PÁJAROS',title:'Observa los pájaros.',prompt:'Practica frases cortas sobre lo que puedes ver.',items:[['El pájaro está cerca de la casita.','The bird is near the birdhouse.'],['Hay pájaros en el jardín.','There are birds in the garden.'],['El pájaro es azul.','The bird is blue.'],['Mi abuelo alimenta a los pájaros.','My grandfather feeds the birds.']]},
+   hobbies:{kicker:'PASATIEMPOS Y HOGAR',title:'Habla de cosas cotidianas.',prompt:'Usa objetos conocidos de la escena para recordar las palabras.',items:[['A mi abuelo le gusta pescar.','My grandfather likes to fish.'],['Mi abuela cuida las flores.','My grandmother takes care of the flowers.'],['Tenemos una casa rodante.','We have an RV.'],['La maleta está junto al banco.','The suitcase is next to the bench.']]},
+   yard:{kicker:'ALREDEDOR DEL PATIO',title:'Explora el patio.',prompt:'Describe lugares y objetos de la escena.',items:[['El perro está junto al estanque.','The dog is beside the pond.'],['La casa rodante está cerca de la casa.','The RV is near the house.'],['La casita para pájaros está en el jardín.','The birdhouse is in the garden.'],['La caña de pescar está lista.','The fishing pole is ready.']]},
+   everyday:{kicker:'VIDA COTIDIANA',title:'Practica frases de todos los días.',prompt:'Usa frases sencillas que encajan con la vida en casa.',items:[['Estamos en casa.','We are at home.'],['Hace un día bonito.','It is a beautiful day.'],['Vamos al jardín.','We are going to the garden.'],['Pasamos tiempo con la familia.','We spend time with family.']]}
+  },objects:{
+   fishing:['la caña de pescar','fishing pole'],birdhouse:['la casita para pájaros','birdhouse'],pond:['el estanque','pond'],dog:['el perro','dog'],rv:['la casa rodante','RV'],bird:['el pájaro','bird']
+  }},
+  fr:{speech:'fr-FR',groups:{
+   family:{kicker:'EN FAMILLE',title:'Voici grand-mère Cathy et grand-père Wally.',prompt:'Écoute une phrase sur la famille, puis touche les mots un par un.',items:[['Voici ma grand-mère.','This is my grandmother.'],['Voici mon grand-père.','This is my grandfather.'],['Ma grand-mère est dans le jardin.','My grandmother is in the garden.'],['Mon grand-père nourrit les oiseaux.','My grandfather feeds the birds.']]},
+   garden:{kicker:'MOTS DU JARDIN',title:'Regarde autour du jardin.',prompt:'La scène te donne des indices visuels pendant que tu pratiques.',items:[['Il y a des fleurs dans le jardin.','There are flowers in the garden.'],['Les fleurs sont belles.','The flowers are beautiful.'],['Le panier contient des fleurs.','The basket has flowers.'],['Le jardin est plein de couleurs.','The garden is full of color.']]},
+   birds:{kicker:'OISEAUX',title:'Observe les oiseaux.',prompt:'Pratique de courtes phrases sur ce que tu vois.',items:[["L'oiseau est près de la cabane à oiseaux.",'The bird is near the birdhouse.'],['Il y a des oiseaux dans le jardin.','There are birds in the garden.'],["L'oiseau est bleu.",'The bird is blue.'],['Mon grand-père nourrit les oiseaux.','My grandfather feeds the birds.']]},
+   hobbies:{kicker:'LOISIRS ET MAISON',title:'Parle des choses de tous les jours.',prompt:'Utilise les objets familiers de la scène pour retenir les mots.',items:[['Mon grand-père aime pêcher.','My grandfather likes to fish.'],["Ma grand-mère s'occupe des fleurs.",'My grandmother takes care of the flowers.'],['Nous avons un camping-car.','We have an RV.'],['La valise est près du banc.','The suitcase is next to the bench.']]},
+   yard:{kicker:'DANS LE JARDIN',title:'Explore le jardin.',prompt:'Décris les endroits et les objets de la scène.',items:[["Le chien est près de l'étang.",'The dog is beside the pond.'],['Le camping-car est près de la maison.','The RV is near the house.'],['La cabane à oiseaux est dans le jardin.','The birdhouse is in the garden.'],['La canne à pêche est prête.','The fishing pole is ready.']]},
+   everyday:{kicker:'VIE QUOTIDIENNE',title:'Pratique des phrases de tous les jours.',prompt:'Utilise des phrases simples qui correspondent à la vie à la maison.',items:[['Nous sommes à la maison.','We are at home.'],["C'est une belle journée.",'It is a beautiful day.'],['Nous allons dans le jardin.','We are going to the garden.'],['Nous passons du temps en famille.','We spend time with family.']]}
+  },objects:{fishing:['la canne à pêche','fishing pole'],birdhouse:['la cabane à oiseaux','birdhouse'],pond:["l'étang",'pond'],dog:['le chien','dog'],rv:['le camping-car','RV'],bird:["l'oiseau",'bird']}},
+  en:{speech:'en-US',groups:{
+   family:{kicker:'FAMILY TALK',title:'Meet Grandma Cathy and Grandpa Wally.',prompt:'Hear a simple family sentence, then click the words one at a time.',items:[['This is my grandmother.','This is my grandmother.'],['This is my grandfather.','This is my grandfather.'],['My grandmother is in the garden.','My grandmother is in the garden.'],['My grandfather feeds the birds.','My grandfather feeds the birds.']]},
+   garden:{kicker:'GARDEN WORDS',title:'Look around the garden.',prompt:'The scene gives you visual clues while you practice.',items:[['There are flowers in the garden.','There are flowers in the garden.'],['The flowers are beautiful.','The flowers are beautiful.'],['The basket has flowers.','The basket has flowers.'],['The garden is full of color.','The garden is full of color.']]},
+   birds:{kicker:'BIRDS',title:'Watch the birds.',prompt:'Practice short sentences about what you can see.',items:[['The bird is near the birdhouse.','The bird is near the birdhouse.'],['There are birds in the garden.','There are birds in the garden.'],['The bird is blue.','The bird is blue.'],['My grandfather feeds the birds.','My grandfather feeds the birds.']]},
+   hobbies:{kicker:'HOBBIES & HOME',title:'Talk about everyday things.',prompt:'Use familiar objects from the scene to make the words easier to remember.',items:[['My grandfather likes to fish.','My grandfather likes to fish.'],['My grandmother takes care of the flowers.','My grandmother takes care of the flowers.'],['We have an RV.','We have an RV.'],['The suitcase is next to the bench.','The suitcase is next to the bench.']]},
+   yard:{kicker:'AROUND THE YARD',title:'Explore the yard.',prompt:'Describe places and objects in the scene.',items:[['The dog is beside the pond.','The dog is beside the pond.'],['The RV is near the house.','The RV is near the house.'],['The birdhouse is in the garden.','The birdhouse is in the garden.'],['The fishing pole is ready.','The fishing pole is ready.']]},
+   everyday:{kicker:'EVERYDAY LIFE',title:'Practice everyday phrases.',prompt:'Use simple phrases that fit life at home.',items:[['We are at home.','We are at home.'],['It is a beautiful day.','It is a beautiful day.'],['We are going to the garden.','We are going to the garden.'],['We spend time with family.','We spend time with family.']]}
+  },objects:{fishing:['the fishing pole','fishing pole'],birdhouse:['the birdhouse','birdhouse'],pond:['the pond','pond'],dog:['the dog','dog'],rv:['the RV','RV'],bird:['the bird','bird']}},
+  de:{speech:'de-DE',groups:{
+   family:{kicker:'FAMILIENGESPRÄCH',title:'Lerne Oma Cathy und Opa Wally kennen.',prompt:'Höre einen einfachen Familiensatz und tippe dann die Wörter einzeln an.',items:[['Das ist meine Großmutter.','This is my grandmother.'],['Das ist mein Großvater.','This is my grandfather.'],['Meine Großmutter ist im Garten.','My grandmother is in the garden.'],['Mein Großvater füttert die Vögel.','My grandfather feeds the birds.']]},
+   garden:{kicker:'GARTENWÖRTER',title:'Schau dich im Garten um.',prompt:'Die Szene gibt dir beim Üben visuelle Hinweise.',items:[['Im Garten sind Blumen.','There are flowers in the garden.'],['Die Blumen sind schön.','The flowers are beautiful.'],['Der Korb enthält Blumen.','The basket has flowers.'],['Der Garten ist voller Farben.','The garden is full of color.']]},
+   birds:{kicker:'VÖGEL',title:'Beobachte die Vögel.',prompt:'Übe kurze Sätze über das, was du sehen kannst.',items:[['Der Vogel ist in der Nähe des Vogelhauses.','The bird is near the birdhouse.'],['Im Garten sind Vögel.','There are birds in the garden.'],['Der Vogel ist blau.','The bird is blue.'],['Mein Großvater füttert die Vögel.','My grandfather feeds the birds.']]},
+   hobbies:{kicker:'HOBBYS & ZUHAUSE',title:'Sprich über alltägliche Dinge.',prompt:'Nutze vertraute Gegenstände aus der Szene, um dir die Wörter zu merken.',items:[['Mein Großvater angelt gern.','My grandfather likes to fish.'],['Meine Großmutter kümmert sich um die Blumen.','My grandmother takes care of the flowers.'],['Wir haben ein Wohnmobil.','We have an RV.'],['Der Koffer steht neben der Bank.','The suitcase is next to the bench.']]},
+   yard:{kicker:'IM GARTEN',title:'Erkunde den Garten.',prompt:'Beschreibe Orte und Gegenstände in der Szene.',items:[['Der Hund ist neben dem Teich.','The dog is beside the pond.'],['Das Wohnmobil steht in der Nähe des Hauses.','The RV is near the house.'],['Das Vogelhaus steht im Garten.','The birdhouse is in the garden.'],['Die Angel ist bereit.','The fishing pole is ready.']]},
+   everyday:{kicker:'ALLTAG',title:'Übe Alltagssätze.',prompt:'Verwende einfache Sätze, die zum Leben zu Hause passen.',items:[['Wir sind zu Hause.','We are at home.'],['Es ist ein schöner Tag.','It is a beautiful day.'],['Wir gehen in den Garten.','We are going to the garden.'],['Wir verbringen Zeit mit der Familie.','We spend time with family.']]}
+  },objects:{fishing:['die Angel','fishing pole'],birdhouse:['das Vogelhaus','birdhouse'],pond:['der Teich','pond'],dog:['der Hund','dog'],rv:['das Wohnmobil','RV'],bird:['der Vogel','bird']}},
+  it:{speech:'it-IT',groups:{
+   family:{kicker:'PARLIAMO DELLA FAMIGLIA',title:'Conosci nonna Cathy e nonno Wally.',prompt:'Ascolta una semplice frase sulla famiglia, poi tocca le parole una alla volta.',items:[['Questa è mia nonna.','This is my grandmother.'],['Questo è mio nonno.','This is my grandfather.'],['Mia nonna è in giardino.','My grandmother is in the garden.'],['Mio nonno dà da mangiare agli uccelli.','My grandfather feeds the birds.']]},
+   garden:{kicker:'PAROLE DEL GIARDINO',title:'Guarda intorno al giardino.',prompt:'La scena ti dà indizi visivi mentre fai pratica.',items:[['Ci sono fiori in giardino.','There are flowers in the garden.'],['I fiori sono belli.','The flowers are beautiful.'],['Il cestino contiene fiori.','The basket has flowers.'],['Il giardino è pieno di colori.','The garden is full of color.']]},
+   birds:{kicker:'UCCELLI',title:'Guarda gli uccelli.',prompt:'Esercitati con brevi frasi su ciò che puoi vedere.',items:[["L'uccello è vicino alla casetta.",'The bird is near the birdhouse.'],['Ci sono uccelli in giardino.','There are birds in the garden.'],["L'uccello è blu.",'The bird is blue.'],['Mio nonno dà da mangiare agli uccelli.','My grandfather feeds the birds.']]},
+   hobbies:{kicker:'HOBBY E CASA',title:'Parla delle cose di ogni giorno.',prompt:'Usa gli oggetti familiari della scena per ricordare le parole.',items:[['A mio nonno piace pescare.','My grandfather likes to fish.'],['Mia nonna si prende cura dei fiori.','My grandmother takes care of the flowers.'],['Abbiamo un camper.','We have an RV.'],['La valigia è accanto alla panchina.','The suitcase is next to the bench.']]},
+   yard:{kicker:'NEL GIARDINO',title:'Esplora il giardino.',prompt:'Descrivi luoghi e oggetti della scena.',items:[['Il cane è accanto allo stagno.','The dog is beside the pond.'],['Il camper è vicino alla casa.','The RV is near the house.'],['La casetta per gli uccelli è in giardino.','The birdhouse is in the garden.'],['La canna da pesca è pronta.','The fishing pole is ready.']]},
+   everyday:{kicker:'VITA QUOTIDIANA',title:'Esercitati con frasi di ogni giorno.',prompt:'Usa frasi semplici adatte alla vita in casa.',items:[['Siamo a casa.','We are at home.'],['È una bella giornata.','It is a beautiful day.'],['Andiamo in giardino.','We are going to the garden.'],['Passiamo del tempo con la famiglia.','We spend time with family.']]}
+  },objects:{fishing:['la canna da pesca','fishing pole'],birdhouse:['la casetta per gli uccelli','birdhouse'],pond:['lo stagno','pond'],dog:['il cane','dog'],rv:['il camper','RV'],bird:["l'uccello",'bird']}},
+  pt:{speech:'pt-PT',groups:{
+   family:{kicker:'CONVERSA EM FAMÍLIA',title:'Conhece a avó Cathy e o avô Wally.',prompt:'Ouve uma frase simples sobre a família e depois toca nas palavras uma a uma.',items:[['Esta é a minha avó.','This is my grandmother.'],['Este é o meu avô.','This is my grandfather.'],['A minha avó está no jardim.','My grandmother is in the garden.'],['O meu avô alimenta os pássaros.','My grandfather feeds the birds.']]},
+   garden:{kicker:'PALAVRAS DO JARDIM',title:'Olha à volta do jardim.',prompt:'A cena dá-te pistas visuais enquanto praticas.',items:[['Há flores no jardim.','There are flowers in the garden.'],['As flores são bonitas.','The flowers are beautiful.'],['O cesto tem flores.','The basket has flowers.'],['O jardim está cheio de cor.','The garden is full of color.']]},
+   birds:{kicker:'PÁSSAROS',title:'Observa os pássaros.',prompt:'Pratica frases curtas sobre o que consegues ver.',items:[['O pássaro está perto da casa dos pássaros.','The bird is near the birdhouse.'],['Há pássaros no jardim.','There are birds in the garden.'],['O pássaro é azul.','The bird is blue.'],['O meu avô alimenta os pássaros.','My grandfather feeds the birds.']]},
+   hobbies:{kicker:'PASSATEMPOS E CASA',title:'Fala sobre coisas do dia a dia.',prompt:'Usa objetos familiares da cena para te lembrares das palavras.',items:[['O meu avô gosta de pescar.','My grandfather likes to fish.'],['A minha avó cuida das flores.','My grandmother takes care of the flowers.'],['Temos uma autocaravana.','We have an RV.'],['A mala está junto ao banco.','The suitcase is next to the bench.']]},
+   yard:{kicker:'PELO JARDIM',title:'Explora o jardim.',prompt:'Descreve lugares e objetos da cena.',items:[['O cão está junto ao lago.','The dog is beside the pond.'],['A autocaravana está perto da casa.','The RV is near the house.'],['A casa dos pássaros está no jardim.','The birdhouse is in the garden.'],['A cana de pesca está pronta.','The fishing pole is ready.']]},
+   everyday:{kicker:'VIDA QUOTIDIANA',title:'Pratica frases do dia a dia.',prompt:'Usa frases simples que combinam com a vida em casa.',items:[['Estamos em casa.','We are at home.'],['Está um dia bonito.','It is a beautiful day.'],['Vamos para o jardim.','We are going to the garden.'],['Passamos tempo com a família.','We spend time with family.']]}
+  },objects:{fishing:['a cana de pesca','fishing pole'],birdhouse:['a casa dos pássaros','birdhouse'],pond:['o lago','pond'],dog:['o cão','dog'],rv:['a autocaravana','RV'],bird:['o pássaro','bird']}},
+  no:{speech:'nb-NO',groups:{
+   family:{kicker:'FAMILIEPRAT',title:'Møt bestemor Cathy og bestefar Wally.',prompt:'Hør en enkel familiesetning, og trykk deretter på ordene ett om gangen.',items:[['Dette er bestemoren min.','This is my grandmother.'],['Dette er bestefaren min.','This is my grandfather.'],['Bestemoren min er i hagen.','My grandmother is in the garden.'],['Bestefaren min mater fuglene.','My grandfather feeds the birds.']]},
+   garden:{kicker:'HAGEORD',title:'Se deg rundt i hagen.',prompt:'Scenen gir deg visuelle hint mens du øver.',items:[['Det er blomster i hagen.','There are flowers in the garden.'],['Blomstene er vakre.','The flowers are beautiful.'],['Kurven har blomster.','The basket has flowers.'],['Hagen er full av farger.','The garden is full of color.']]},
+   birds:{kicker:'FUGLER',title:'Se på fuglene.',prompt:'Øv på korte setninger om det du kan se.',items:[['Fuglen er nær fuglehuset.','The bird is near the birdhouse.'],['Det er fugler i hagen.','There are birds in the garden.'],['Fuglen er blå.','The bird is blue.'],['Bestefaren min mater fuglene.','My grandfather feeds the birds.']]},
+   hobbies:{kicker:'HOBBYER OG HJEM',title:'Snakk om hverdagslige ting.',prompt:'Bruk kjente ting i scenen for å huske ordene.',items:[['Bestefaren min liker å fiske.','My grandfather likes to fish.'],['Bestemoren min tar vare på blomstene.','My grandmother takes care of the flowers.'],['Vi har en bobil.','We have an RV.'],['Kofferten står ved benken.','The suitcase is next to the bench.']]},
+   yard:{kicker:'RUNDT I HAGEN',title:'Utforsk hagen.',prompt:'Beskriv steder og ting i scenen.',items:[['Hunden er ved dammen.','The dog is beside the pond.'],['Bobilen står nær huset.','The RV is near the house.'],['Fuglehuset står i hagen.','The birdhouse is in the garden.'],['Fiskestangen er klar.','The fishing pole is ready.']]},
+   everyday:{kicker:'HVERDAGSLIV',title:'Øv på hverdagsfraser.',prompt:'Bruk enkle setninger som passer til livet hjemme.',items:[['Vi er hjemme.','We are at home.'],['Det er en fin dag.','It is a beautiful day.'],['Vi går ut i hagen.','We are going to the garden.'],['Vi tilbringer tid med familien.','We spend time with family.']]}
+  },objects:{fishing:['fiskestangen','fishing pole'],birdhouse:['fuglehuset','birdhouse'],pond:['dammen','pond'],dog:['hunden','dog'],rv:['bobilen','RV'],bird:['fuglen','bird']}}
  };
 
- const objects={
-  fishing:{word:'la caña de pescar',english:'fishing pole',sentence:'Mi abuelo tiene una caña de pescar.'},
-  birdhouse:{word:'la casita para pájaros',english:'birdhouse',sentence:'El pájaro está cerca de la casita.'},
-  pond:{word:'el estanque',english:'pond',sentence:'El estanque tiene agua y flores.'},
-  dog:{word:'el perro',english:'dog',sentence:'El perro está junto al estanque.'},
-  rv:{word:'la casa rodante',english:'RV',sentence:'Tenemos una casa rodante.'},
-  bird:{word:'el pájaro',english:'bird',sentence:'El pájaro es azul.'}
- };
-
- let group='family',index=0,lastRate=.86,findTarget='fishing',homeChallengeIndex=0,homeChallengeSolved=false;
  const homeChallengeOrder=['fishing','rv','birdhouse','pond','dog','bird'];
- const wordline=document.getElementById('homeWordline');
- const list=document.getElementById('homeList');
- const findBox=document.getElementById('homeFind');
- const pop=document.getElementById('homePop');
- const nextRow=document.getElementById('homeNextRow');
- const progress=document.getElementById('homeProgress');
- let currentObject=null;
+ let group='family',index=0,lastRate=.86,findTarget='fishing',homeChallengeIndex=0,homeChallengeSolved=false,currentObjectKey=null;
+ const wordline=document.getElementById('homeWordline'),list=document.getElementById('homeList'),findBox=document.getElementById('homeFind'),pop=document.getElementById('homePop'),nextRow=document.getElementById('homeNextRow'),progress=document.getElementById('homeProgress');
+ const languageSelect=document.getElementById('homeLanguage'),voiceSelect=document.getElementById('homeVoice');
 
+ function lang(){return languageData[languageSelect.value]||languageData.es}
+ function obj(key){const row=lang().objects[key];return {word:row[0],english:row[1]}}
  function clean(w){return w.replace(/[.,!?¿¡;:()"“”]/g,'').trim()}
+ function selectedVoice(){
+   const voices=speechSynthesis.getVoices();
+   return voices.find(v=>v.voiceURI===voiceSelect.value)||null;
+ }
+ function refreshVoices(){
+   if(!('speechSynthesis' in window)) return;
+   const keep=voiceSelect.value||localStorage.getItem('talkabee-home-voice-'+languageSelect.value)||'',code=lang().speech.toLowerCase(),base=code.split('-')[0];
+   const voices=speechSynthesis.getVoices().filter(v=>v.lang&&v.lang.toLowerCase().startsWith(base));
+   voiceSelect.innerHTML='<option value="">Browser Default</option>';
+   voices.forEach(v=>{const o=document.createElement('option');o.value=v.voiceURI;o.textContent=v.name+' — '+v.lang;voiceSelect.appendChild(o)});
+   if([...voiceSelect.options].some(o=>o.value===keep)) voiceSelect.value=keep;
+ }
  function say(text,rate=.86,highlight=false){
-  if(!('speechSynthesis'in window))return;
-  speechSynthesis.cancel(); lastRate=rate;
-  const u=new SpeechSynthesisUtterance(text);u.lang='es-ES';u.rate=rate;
-  const words=[...wordline.querySelectorAll('.home-word')];
-  if(highlight){
-   words.forEach(w=>w.classList.remove('speaking'));
-   let i=0;
-   const fallback=setInterval(()=>{
-    words.forEach((w,j)=>w.classList.toggle('speaking',j===i));
-    i++; if(i>=words.length){clearInterval(fallback);setTimeout(()=>words.forEach(w=>w.classList.remove('speaking')),350)}
-   },Math.max(320,Math.round(650/rate)));
-  }
-  speechSynthesis.speak(u);
+   if(!('speechSynthesis'in window)||!text)return;
+   speechSynthesis.cancel();lastRate=rate;
+   const u=new SpeechSynthesisUtterance(text);u.lang=lang().speech;u.rate=rate;
+   const v=selectedVoice();if(v)u.voice=v;
+   const words=[...wordline.querySelectorAll('.home-word')];
+   if(highlight){
+     words.forEach(w=>w.classList.remove('speaking'));let i=0;
+     const fallback=setInterval(()=>{words.forEach((w,j)=>w.classList.toggle('speaking',j===i));i++;if(i>=words.length){clearInterval(fallback);setTimeout(()=>words.forEach(w=>w.classList.remove('speaking')),350)}},Math.max(320,Math.round(650/rate)));
+   }
+   speechSynthesis.speak(u);
  }
  function render(){
-  const homeWorldEl=document.getElementById('homeWorld');
-  if(homeWorldEl) homeWorldEl.classList.toggle('challenge-mode',group==='find');
-  document.querySelectorAll('.home-hotspot').forEach(b=>b.classList.remove('show'));
-  pop.classList.remove('show');
-  findBox.classList.remove('show');
-  list.style.display='';
-  wordline.style.display='';
-  document.getElementById('homeTranslation').style.display='';
-  document.querySelector('.home-actions').style.display='flex';
+   const homeWorldEl=document.getElementById('homeWorld');
+   if(homeWorldEl)homeWorldEl.classList.toggle('challenge-mode',group==='find');
+   document.querySelectorAll('.home-hotspot').forEach(b=>b.classList.remove('show'));
+   pop.classList.remove('show');findBox.classList.remove('show');list.style.display='';wordline.style.display='';
+   document.getElementById('homeTranslation').style.display='';document.querySelector('#homeWorld .home-actions').style.display='flex';
 
-  if(group==='discover'){
-   document.getElementById('homeKicker').textContent='CLICK & DISCOVER';
-   document.getElementById('homeTitle').textContent='Click something in the picture.';
-   document.getElementById('homePrompt').textContent='Fishing pole, birdhouse, pond, dog, RV and bird can all teach you a word and a sentence.';
-   wordline.innerHTML='';
-   document.getElementById('homeTranslation').textContent='Tap the glowing markers in the scene.';
-   list.style.display='none';
-   document.querySelector('.home-actions').style.display='none';
-   nextRow.style.display='none';
-   document.querySelectorAll('.home-hotspot').forEach(b=>b.classList.add('show'));
-   return;
-  }
-  if(group==='find'){
-   findTarget=homeChallengeOrder[homeChallengeIndex];
-   document.getElementById('homeKicker').textContent='FIND IT CHALLENGE';
-   document.getElementById('homeTitle').textContent='Challenge '+(homeChallengeIndex+1)+': Find the '+objects[findTarget].english+'.';
-   document.getElementById('homePrompt').textContent='Everything stays in Grandma & Grandpa’s yard. Find the requested object in this same picture.';
-   wordline.innerHTML='';
-   document.getElementById('homeTranslation').textContent='';
-   list.style.display='none';
-   document.querySelector('.home-actions').style.display='none';
-   nextRow.style.display='none';
-   document.querySelectorAll('.home-hotspot').forEach(b=>b.classList.add('show'));
-   findBox.classList.add('show');
-   document.getElementById('homeChallengeCount').textContent='CHALLENGE '+(homeChallengeIndex+1)+' OF 6';
-   document.getElementById('homeFindPrompt').textContent='Find: '+objects[findTarget].word+' — '+objects[findTarget].english;
-   document.getElementById('homeFindStatus').textContent='';
-   homeChallengeSolved=false;
-   const next=document.getElementById('homeChallengeNext');
-   next.classList.add('show');
-   next.disabled=false;
-   next.textContent=homeChallengeIndex<5?'Next Challenge →':'Finish Challenges ✓';
-   const hint=document.getElementById('challengeNextHint');
-   if(hint) hint.textContent='Find the correct object to unlock the next challenge.';
-   document.querySelectorAll('.home-challenge-nav').forEach((b,i)=>b.classList.toggle('active',i===homeChallengeIndex));
-   return;
-  }
-  const g=groups[group],item=g.items[index]||g.items[0];
-  nextRow.style.display='flex';
-  progress.textContent='Phrase '+(index+1)+' of '+g.items.length;
-  document.getElementById('homeKicker').textContent=g.kicker;
-  document.getElementById('homeTitle').textContent=g.title;
-  document.getElementById('homePrompt').textContent=g.prompt;
-  document.getElementById('homeTranslation').textContent=item[1];
-  wordline.innerHTML='';
-  item[0].split(/\s+/).forEach(w=>{
-   const b=document.createElement('button');b.type='button';b.className='home-word';b.textContent=w;
-   b.addEventListener('click',()=>say(clean(w),.72,false));wordline.appendChild(b);
-  });
-  list.innerHTML='';
-  g.items.forEach((row,i)=>{
-   const b=document.createElement('button');b.type='button';b.className='home-pick'+(i===index?' active':'');
-   b.innerHTML='<strong>'+(i+1)+'. '+row[0]+'</strong><br><span style="font-size:12px;color:#737c91">'+row[1]+'</span>';
-   b.addEventListener('click',()=>{index=i;render()});list.appendChild(b);
-  });
+   if(group==='discover'){
+     document.getElementById('homeKicker').textContent='DISCOVERY';
+     document.getElementById('homeTitle').textContent='Click an object in the picture.';
+     document.getElementById('homePrompt').textContent='See the learning-language word and its English meaning. Audio speaks only the learning-language word.';
+     wordline.innerHTML='';document.getElementById('homeTranslation').textContent='Tap a hotspot in the scene.';
+     list.style.display='none';document.querySelector('#homeWorld .home-actions').style.display='none';nextRow.style.display='none';
+     document.querySelectorAll('.home-hotspot').forEach(b=>b.classList.add('show'));return;
+   }
+   if(group==='find'){
+     findTarget=homeChallengeOrder[homeChallengeIndex];const o=obj(findTarget);
+     document.getElementById('homeKicker').textContent='FIND IT CHALLENGE';
+     document.getElementById('homeTitle').textContent='Challenge '+(homeChallengeIndex+1)+': Find the '+o.english+'.';
+     document.getElementById('homePrompt').textContent='Everything stays in Grandma & Grandpa’s yard. Find the requested object in this same picture.';
+     wordline.innerHTML='';document.getElementById('homeTranslation').textContent='';list.style.display='none';
+     document.querySelector('#homeWorld .home-actions').style.display='none';nextRow.style.display='none';
+     document.querySelectorAll('.home-hotspot').forEach(b=>b.classList.add('show'));findBox.classList.add('show');
+     document.getElementById('homeChallengeCount').textContent='CHALLENGE '+(homeChallengeIndex+1)+' OF 6';
+     document.getElementById('homeFindPrompt').textContent='Find: '+o.word+' — '+o.english;
+     document.getElementById('homeFindStatus').textContent='';homeChallengeSolved=false;
+     const next=document.getElementById('homeChallengeNext');next.classList.add('show');next.disabled=false;next.textContent=homeChallengeIndex<5?'Next Challenge →':'Finish Challenges ✓';
+     const hint=document.getElementById('challengeNextHint');if(hint)hint.textContent='Find the correct object to unlock the next challenge.';
+     document.querySelectorAll('.home-challenge-nav').forEach((b,i)=>b.classList.toggle('active',i===homeChallengeIndex));return;
+   }
+   const g=lang().groups[group]||lang().groups.family,item=g.items[index]||g.items[0];
+   nextRow.style.display='flex';progress.textContent='Phrase '+(index+1)+' of '+g.items.length;
+   document.getElementById('homeKicker').textContent=g.kicker;document.getElementById('homeTitle').textContent=g.title;document.getElementById('homePrompt').textContent=g.prompt;
+   document.getElementById('homeTranslation').textContent=item[1];wordline.innerHTML='';
+   item[0].split(/\s+/).forEach(w=>{const b=document.createElement('button');b.type='button';b.className='home-word';b.textContent=w;b.addEventListener('click',()=>say(clean(w),.72,false));wordline.appendChild(b)});
+   list.innerHTML='';g.items.forEach((row,i)=>{const b=document.createElement('button');b.type='button';b.className='home-pick'+(i===index?' active':'');b.innerHTML='<strong>'+(i+1)+'. '+row[0]+'</strong><br><span style="font-size:12px;color:#737c91">'+row[1]+'</span>';b.addEventListener('click',()=>{index=i;render()});list.appendChild(b)});
  }
- document.querySelectorAll('.home-nav[data-home-group]').forEach(btn=>btn.addEventListener('click',()=>{
-  document.querySelectorAll('.home-nav').forEach(b=>b.classList.remove('active'));
-  btn.classList.add('active');group=btn.dataset.homeGroup;index=0;render();
- }));
- document.querySelectorAll('.home-challenge-nav').forEach(btn=>btn.addEventListener('click',()=>{
-  openHomeChallenge(Number(btn.dataset.homeChallenge));
- }));
- document.getElementById('homeMainDirectory').addEventListener('click',()=>{
-  window.location.href='index.html';
- });
- const activityPeek=document.getElementById('activityPeek');
- const activityRestore=document.getElementById('activityRestore');
- if(activityPeek) activityPeek.addEventListener('click',()=>{
-   const world=document.getElementById('homeWorld');
-   if(world) world.classList.add('activity-collapsed');
- });
- if(activityRestore) activityRestore.addEventListener('click',()=>{
-   const world=document.getElementById('homeWorld');
-   if(world) world.classList.remove('activity-collapsed');
- });
- document.getElementById('homePlay').addEventListener('click',()=>say(groups[group].items[index][0],.86,true));
- document.getElementById('homeSlow').addEventListener('click',()=>say(groups[group].items[index][0],.58,true));
- document.getElementById('homeReplay').addEventListener('click',()=>say(groups[group].items[index][0],lastRate,true));
- document.getElementById('homeNextPhrase').addEventListener('click',()=>{
-  if(!groups[group]) return;
-  index=(index+1)%groups[group].items.length;
-  render();
- });
-
  function openHomeChallenge(i){
-  homeChallengeIndex=Math.max(0,Math.min(5,Number(i)||0));
-  group='find';index=0;
-  document.querySelectorAll('.home-nav').forEach(b=>b.classList.remove('active'));
-  const nav=document.querySelector('.home-challenge-nav[data-home-challenge="'+homeChallengeIndex+'"]');
-  if(nav) nav.classList.add('active');
-  render();
-  const world=document.getElementById('homeWorld');
-  if(world) world.classList.add('open');
-  document.body.classList.add('talkabee-world-open');
-  const main=document.getElementById('mainDirectory');
-  if(main) main.style.display='none';
+   homeChallengeIndex=Math.max(0,Math.min(5,Number(i)||0));group='find';index=0;
+   document.querySelectorAll('.home-nav').forEach(b=>b.classList.remove('active'));
+   const nav=document.querySelector('.home-challenge-nav[data-home-challenge="'+homeChallengeIndex+'"]');if(nav)nav.classList.add('active');
+   render();const world=document.getElementById('homeWorld');if(world)world.classList.add('open');document.body.classList.add('talkabee-world-open');
+   const main=document.getElementById('mainDirectory');if(main)main.style.display='none';
  }
  window.openHomeChallenge=openHomeChallenge;
+
+ document.querySelectorAll('.home-nav[data-home-group]').forEach(btn=>btn.addEventListener('click',()=>{document.querySelectorAll('.home-nav').forEach(b=>b.classList.remove('active'));btn.classList.add('active');group=btn.dataset.homeGroup;index=0;render()}));
+ document.querySelectorAll('.home-challenge-nav').forEach(btn=>btn.addEventListener('click',()=>openHomeChallenge(Number(btn.dataset.homeChallenge))));
+ document.getElementById('homeMainDirectory').addEventListener('click',()=>{window.location.href='index.html'});
+ const activityPeek=document.getElementById('activityPeek'),activityRestore=document.getElementById('activityRestore');
+ if(activityPeek)activityPeek.addEventListener('click',()=>document.getElementById('homeWorld')?.classList.add('activity-collapsed'));
+ if(activityRestore)activityRestore.addEventListener('click',()=>document.getElementById('homeWorld')?.classList.remove('activity-collapsed'));
+
+ document.getElementById('homePlay').addEventListener('click',()=>{const g=lang().groups[group];if(g)say(g.items[index][0],.86,true)});
+ document.getElementById('homeSlow').addEventListener('click',()=>{const g=lang().groups[group];if(g)say(g.items[index][0],.58,true)});
+ document.getElementById('homeReplay').addEventListener('click',()=>{const g=lang().groups[group];if(g)say(g.items[index][0],lastRate,true)});
+ document.getElementById('homeNextPhrase').addEventListener('click',()=>{const g=lang().groups[group];if(!g)return;index=(index+1)%g.items.length;render()});
+
  document.getElementById('homeChallengeNext').addEventListener('click',()=>{
-  const status=document.getElementById('homeFindStatus');
-  const hint=document.getElementById('challengeNextHint');
-
-  if(!homeChallengeSolved){
-   status.textContent='Find the correct object first.';
-   status.style.color='#8b5b13';
-   if(hint) hint.textContent='Complete this challenge, then click Next Challenge.';
-   return;
-  }
-
-  if(homeChallengeIndex<5){
-   openHomeChallenge(homeChallengeIndex+1);
-  }else{
-   status.textContent='🏁 You completed all 6 challenges!';
-   status.style.color='#19744f';
-   const finishBtn=document.getElementById('homeChallengeNext');
-   finishBtn.textContent='Challenges Complete ✓';
-   finishBtn.disabled=false;
-   if(hint) hint.textContent='All six challenges complete!';
-  }
+   const status=document.getElementById('homeFindStatus'),hint=document.getElementById('challengeNextHint');
+   if(!homeChallengeSolved){status.textContent='Find the correct object first.';status.style.color='#8b5b13';if(hint)hint.textContent='Complete this challenge, then click Next Challenge.';return}
+   if(homeChallengeIndex<5)openHomeChallenge(homeChallengeIndex+1);
+   else{status.textContent='🏁 You completed all 6 challenges!';status.style.color='#19744f';const finishBtn=document.getElementById('homeChallengeNext');finishBtn.textContent='Challenges Complete ✓';if(hint)hint.textContent='All six challenges complete!'}
  });
 
- document.querySelectorAll('.home-hotspot').forEach(btn=>btn.addEventListener('click',e=>{
-  const key=btn.dataset.object,obj=objects[key];
-  if(group==='find'){
-   const status=document.getElementById('homeFindStatus');
-   if(key===findTarget){
-    homeChallengeSolved=true;
-    status.textContent='✓ Correct! '+obj.word;
-    status.style.color='#19744f'; say(obj.word,.72,false);
-    const nav=document.querySelector('.home-challenge-nav[data-home-challenge="'+homeChallengeIndex+'"]');
-    if(nav) nav.classList.add('done');
-    const nextBtn=document.getElementById('homeChallengeNext');
-    nextBtn.classList.add('show');
-    nextBtn.disabled=false;
-    const hint=document.getElementById('challengeNextHint');
-    if(hint) hint.textContent='Nice work! Continue when you are ready.';
-   }else{
-    status.textContent='Try another object.';
-    status.style.color='#a2483d';
+ document.querySelectorAll('.home-hotspot').forEach(btn=>btn.addEventListener('click',()=>{
+   const key=btn.dataset.object,o=obj(key);
+   if(group==='find'){
+     const status=document.getElementById('homeFindStatus');
+     if(key===findTarget){homeChallengeSolved=true;status.textContent='✓ Correct! '+o.word;status.style.color='#19744f';say(o.word,.72,false);const nav=document.querySelector('.home-challenge-nav[data-home-challenge="'+homeChallengeIndex+'"]');if(nav)nav.classList.add('done');const hint=document.getElementById('challengeNextHint');if(hint)hint.textContent='Nice work! Continue when you are ready.'}
+     else{status.textContent='Try another object.';status.style.color='#a2483d'}return;
    }
-   return;
-  }
-  currentObject=obj;
-  document.getElementById('homePopWord').textContent=obj.word;
-  document.getElementById('homePopEnglish').textContent=obj.english;
-  document.getElementById('homePopSentence').textContent=obj.sentence;
-  const scene=document.getElementById('homeScene');
-  const r=scene.getBoundingClientRect(),br=btn.getBoundingClientRect();
-  let left=br.left-r.left+54,top=br.top-r.top-10;
-  left=Math.min(left,r.width-310); left=Math.max(14,left);
-  top=Math.min(top,r.height-170); top=Math.max(14,top);
-  pop.style.left=left+'px';pop.style.top=top+'px';pop.classList.add('show');
-  say(obj.word,.72,false);
+   if(group!=='discover')return;
+   currentObjectKey=key;document.getElementById('homePopWord').textContent=o.word;document.getElementById('homePopEnglish').textContent=o.english;
+   document.getElementById('homePopSentence').textContent='';document.getElementById('homePopSentenceSpeak').style.display='none';
+   const scene=document.getElementById('homeScene'),r=scene.getBoundingClientRect(),br=btn.getBoundingClientRect();
+   let left=br.left-r.left+54,top=br.top-r.top-10;left=Math.min(left,r.width-310);left=Math.max(14,left);top=Math.min(top,r.height-170);top=Math.max(14,top);
+   pop.style.left=left+'px';pop.style.top=top+'px';pop.classList.add('show');say(o.word,.72,false);
  }));
- document.getElementById('homePopWordSpeak').addEventListener('click',()=>currentObject&&say(currentObject.word,.72,false));
- document.getElementById('homePopSentenceSpeak').addEventListener('click',()=>currentObject&&say(currentObject.sentence,.82,false));
+ document.getElementById('homePopWordSpeak').addEventListener('click',()=>{if(currentObjectKey)say(obj(currentObjectKey).word,.72,false)});
+ document.getElementById('homePopSentenceSpeak').addEventListener('click',()=>{});
 
+ languageSelect.addEventListener('change',()=>{
+   localStorage.setItem('talkabee-learn-language',languageSelect.value);index=0;refreshVoices();render();
+   if(group==='discover')pop.classList.remove('show');
+ });
+ voiceSelect.addEventListener('change',()=>localStorage.setItem('talkabee-home-voice-'+languageSelect.value,voiceSelect.value));
+ const savedLang=localStorage.getItem('talkabee-learn-language');
+ if(savedLang&&languageData[savedLang])languageSelect.value=savedLang;
+ refreshVoices();
+ if('speechSynthesis'in window)speechSynthesis.onvoiceschanged=refreshVoices;
  render();
 })();
 </script>
@@ -4498,6 +4624,153 @@ document.addEventListener('DOMContentLoaded',function(){
   window.scrollTo(0,0);
 });
 </script>
+
+<style id="grandparents-final-authoritative-template">
+/* FINAL AUTHORITY — full Julie/Market-style shell; legacy checkpoint CSS must not override this. */
+header{display:none!important}
+body.talkabee-world-open{overflow:hidden!important}
+#homeWorld,#homeWorld.open{
+ position:fixed!important;inset:0!important;width:100vw!important;height:100vh!important;
+ padding:0!important;margin:0!important;z-index:9999!important;overflow:hidden!important;
+}
+#homeWorld>.wrap,#homeWorld .home-shell,#homeWorld .home-stage,#homeWorld .home-scene{
+ width:100%!important;height:100%!important;max-width:none!important;margin:0!important;padding:0!important;
+}
+#homeWorld>.wrap>.head{display:none!important}
+#homeWorld .home-shell{display:block!important}
+#homeWorld .home-stage{position:absolute!important;inset:0!important}
+#homeWorld .home-scene{position:absolute!important;inset:0!important;border-radius:0!important}
+#homeWorld .scene-artboard{position:absolute!important;inset:0!important;width:100%!important;height:100%!important}
+#homeWorld .scene-main-image{width:100%!important;height:100%!important;object-fit:cover!important;object-position:center!important}
+
+#homeWorld .home-directory.activity-panel{
+ position:absolute!important;left:18px!important;top:18px!important;bottom:18px!important;
+ width:300px!important;height:auto!important;z-index:70!important;overflow-y:auto!important;
+ padding:14px!important;border-radius:26px!important;
+ background:linear-gradient(180deg,rgba(25,28,30,.34),rgba(18,20,22,.26))!important;
+ border:1px solid rgba(255,255,255,.28)!important;
+ box-shadow:0 14px 36px rgba(0,0,0,.20)!important;
+ backdrop-filter:blur(12px) saturate(125%)!important;-webkit-backdrop-filter:blur(12px) saturate(125%)!important;
+ scrollbar-width:none!important;
+}
+#homeWorld .home-directory.activity-panel::-webkit-scrollbar{display:none!important}
+#homeWorld .activity-back,#homeWorld .activity-peek,#homeWorld .home-nav,#homeWorld .home-challenge-nav{
+ width:100%!important;border:1px solid rgba(255,255,255,.13)!important;
+ background:rgba(255,255,255,.13)!important;color:#fff!important;border-radius:14px!important;
+ padding:9px 10px!important;margin:3px 0!important;text-align:left!important;font-size:12px!important;font-weight:900!important;
+}
+#homeWorld .home-nav:hover,#homeWorld .home-nav.active,#homeWorld .home-challenge-nav:hover,#homeWorld .home-challenge-nav.active{
+ background:rgba(35,164,160,.86)!important;border-color:rgba(255,255,255,.30)!important;
+}
+#homeWorld .activity-place{color:#fff!important;font-size:18px!important;font-weight:950!important;margin:5px 4px 9px!important;text-shadow:0 2px 4px rgba(0,0,0,.45)!important}
+#homeWorld .activity-label{color:rgba(255,255,255,.92)!important;font-size:10px!important;font-weight:950!important;letter-spacing:.13em!important;margin:9px 5px 5px!important}
+#homeWorld .activity-divider{height:1px!important;background:rgba(255,255,255,.22)!important;margin:9px 2px!important}
+#homeWorld .home-control-label{display:block!important;color:rgba(255,255,255,.88)!important;font-size:9px!important;font-weight:950!important;letter-spacing:.09em!important;margin:5px 5px 3px!important;text-transform:uppercase!important}
+#homeWorld .home-control-select{display:block!important;width:100%!important;border:1px solid rgba(255,255,255,.22)!important;border-radius:11px!important;padding:7px 8px!important;margin:0 0 4px!important;background:rgba(255,255,255,.90)!important;color:#273147!important;font-size:11px!important;font-weight:850!important}
+
+#homeWorld .home-panel{
+ position:absolute!important;left:auto!important;right:24px!important;bottom:24px!important;top:auto!important;
+ width:min(540px,calc(100% - 360px))!important;max-height:52%!important;overflow:auto!important;z-index:55!important;
+ padding:18px 20px!important;border-radius:28px!important;
+ background:rgba(247,242,232,.64)!important;border:1px solid rgba(255,255,255,.64)!important;
+ box-shadow:0 16px 38px rgba(0,0,0,.18)!important;
+ backdrop-filter:blur(13px) saturate(120%)!important;-webkit-backdrop-filter:blur(13px) saturate(120%)!important;color:#142033!important;
+}
+#homeWorld .home-panel:before{display:none!important}
+#homeWorld .home-kicker{color:#86562d!important}
+#homeWorld .home-panel h2{color:#142033!important;font-size:27px!important}
+#homeWorld .home-panel p,#homeWorld .home-translation{color:#243043!important;text-shadow:none!important}
+#homeWorld .home-wordline{background:rgba(255,255,255,.52)!important}
+#homeWorld .home-word{background:rgba(255,255,255,.72)!important;color:#142033!important}
+#homeWorld.activity-collapsed .home-directory{transform:translateX(-340px)!important;opacity:0!important;pointer-events:none!important}
+#homeWorld.activity-collapsed .home-panel{display:none!important}
+#homeWorld .activity-restore{
+ position:absolute!important;left:18px!important;top:18px!important;z-index:90!important;
+ border:1px solid rgba(255,255,255,.35)!important;border-radius:16px!important;padding:11px 15px!important;
+ background:rgba(20,24,28,.48)!important;color:#fff!important;font-weight:900!important;
+ backdrop-filter:blur(10px)!important;-webkit-backdrop-filter:blur(10px)!important;
+}
+#homeWorld:not(.activity-collapsed) .activity-restore{display:none!important}
+#homeWorld.activity-collapsed .activity-restore{display:block!important}
+@media(max-width:900px){
+ #homeWorld .home-directory.activity-panel{width:260px!important}
+ #homeWorld .home-panel{right:12px!important;bottom:12px!important;width:min(500px,calc(100% - 292px))!important}
+}
+</style>
+
+
+<style id="grandparents-compact-transparent-script-card">
+/* Screenshot correction: smaller, lighter script card without touching scene/panel/hotspots. */
+#homeWorld .home-panel{
+  right:22px!important;
+  bottom:20px!important;
+  width:min(455px,calc(100% - 365px))!important;
+  max-height:42%!important;
+  padding:12px 14px!important;
+  border-radius:22px!important;
+  background:rgba(247,242,232,.27)!important;
+  border:1px solid rgba(255,255,255,.42)!important;
+  box-shadow:0 10px 26px rgba(0,0,0,.13)!important;
+  backdrop-filter:blur(7px) saturate(112%)!important;
+  -webkit-backdrop-filter:blur(7px) saturate(112%)!important;
+}
+#homeWorld .home-kicker{font-size:10px!important;margin-bottom:3px!important}
+#homeWorld .home-panel h2{font-size:20px!important;line-height:1.06!important;margin:2px 0 4px!important}
+#homeWorld .home-panel p{font-size:13px!important;line-height:1.25!important;margin:3px 0 7px!important}
+#homeWorld .home-wordline{
+  padding:7px!important;margin:6px 0!important;border-radius:15px!important;
+  background:rgba(255,255,255,.24)!important;
+}
+#homeWorld .home-word{padding:8px 10px!important;font-size:15px!important;border-radius:12px!important}
+#homeWorld .home-translation{font-size:13px!important;margin:5px 0!important}
+#homeWorld .home-actions{gap:6px!important;margin-top:6px!important}
+#homeWorld .home-actions button{padding:8px 10px!important;font-size:12px!important}
+#homeWorld .home-nextrow{margin-top:7px!important}
+#homeWorld .home-nextphrase{padding:8px 11px!important;font-size:12px!important}
+#homeWorld .home-progress{font-size:11px!important}
+</style>
+
+
+<style id="grandparents-script-card-20pct-smaller-alpha14">
+/* Requested screenshot correction: ~20% smaller again, alpha .14. */
+#homeWorld .home-panel{
+  width:min(364px,calc(100% - 365px))!important;
+  max-height:34%!important;
+  padding:10px 11px!important;
+  border-radius:18px!important;
+  background:rgba(247,242,232,.14)!important;
+  border:1px solid rgba(255,255,255,.28)!important;
+  box-shadow:0 8px 20px rgba(0,0,0,.09)!important;
+  backdrop-filter:blur(4px) saturate(108%)!important;
+  -webkit-backdrop-filter:blur(4px) saturate(108%)!important;
+}
+#homeWorld .home-kicker{font-size:8px!important;margin-bottom:2px!important}
+#homeWorld .home-panel h2{font-size:16px!important;line-height:1.04!important;margin:2px 0 3px!important}
+#homeWorld .home-panel p{font-size:10.5px!important;line-height:1.18!important;margin:2px 0 5px!important}
+#homeWorld .home-wordline{padding:5px!important;margin:4px 0!important;border-radius:12px!important;background:rgba(255,255,255,.16)!important}
+#homeWorld .home-word{padding:6px 8px!important;font-size:12px!important;border-radius:10px!important}
+#homeWorld .home-translation{font-size:10.5px!important;margin:4px 0!important}
+#homeWorld .home-actions{gap:5px!important;margin-top:4px!important}
+#homeWorld .home-actions button{padding:6px 8px!important;font-size:10px!important}
+#homeWorld .home-nextrow{margin-top:5px!important}
+#homeWorld .home-nextphrase{padding:6px 9px!important;font-size:10px!important}
+#homeWorld .home-progress{font-size:9px!important}
+</style>
+
+
+<style id="grandparents-rendered-card-scale-fix">
+/* Force the visible/rendered card smaller even when legacy scene scaling is active. */
+#homeWorld .home-panel{
+  width:455px!important;
+  max-width:455px!important;
+  transform:scale(.80)!important;
+  transform-origin:right bottom!important;
+  right:22px!important;
+  bottom:20px!important;
+  background:rgba(247,242,232,.14)!important;
+}
+</style>
+
 </body>
 </html>
 <style>#homeWorld .scene-hotspots .home-hotspot{
