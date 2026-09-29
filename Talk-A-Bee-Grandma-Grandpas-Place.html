@@ -118,6 +118,17 @@ html,body,#homeWorld,#homeScene{
 }
 </style>
 
+
+<style id="grandparents-script-card-bottom-middle">
+#homeWorld .home-panel{
+  left:50%!important;
+  right:auto!important;
+  bottom:18px!important;
+  transform:translateX(-50%) scale(.67)!important;
+  transform-origin:bottom center!important;
+}
+</style>
+
 </head>
 <body>
 <main id="homeWorld" class="open" aria-label="Grandma and Grandpa's Place">
@@ -300,7 +311,7 @@ it:{grandma:"Nonna",grandpa:"Nonno",girl:"Ragazza",boy:"Ragazzo",bee:"Ape",solar
 pt:{grandma:"Avó",grandpa:"Avô",girl:"Menina",boy:"Menino",bee:"Abelha",solar:"Painéis solares",stream:"Riacho",waterfall:"Cachoeira",dock:"Cais",lake:"Lago",mountains:"Montanhas",trees:"Árvores",flowers:"Flores",rocks:"Rochas",path:"Caminho",basket:"Cesta",hat:"Chapéu",glasses:"Óculos",birdfeeder:"Comedouro para pássaros",chair:"Cadeira"},
 no:{grandma:"Bestemor",grandpa:"Bestefar",girl:"Jente",boy:"Gutt",bee:"Bie",solar:"Solcellepaneler",stream:"Bekk",waterfall:"Foss",dock:"Brygge",lake:"Innsjø",mountains:"Fjell",trees:"Trær",flowers:"Blomster",rocks:"Steiner",path:"Sti",basket:"Kurv",hat:"Hatt",glasses:"Briller",birdfeeder:"Fuglemater",chair:"Stol"}};
 const discoveryEnglish={grandma:"Grandma",grandpa:"Grandpa",girl:"Girl",boy:"Boy",bee:"Bee",solar:"Solar panels",stream:"Stream",waterfall:"Waterfall",dock:"Dock",lake:"Lake",mountains:"Mountains",trees:"Trees",flowers:"Flowers",rocks:"Rocks",path:"Path",basket:"Basket",hat:"Hat",glasses:"Glasses",birdfeeder:"Bird feeder",chair:"Chair"};
-Object.keys(extraDiscovery).forEach(lang=>{if(!languageData[lang].objects)languageData[lang].objects={};Object.entries(extraDiscovery[lang]).forEach(([key,word])=>{if(!languageData[lang].objects[key])languageData[lang].objects[key]={word,english:discoveryEnglish[key]||word};});});
+Object.keys(extraDiscovery).forEach(lang=>{if(!languageData[lang].objects)languageData[lang].objects={};Object.entries(extraDiscovery[lang]).forEach(([key,word])=>{if(!languageData[lang].objects[key])languageData[lang].objects[key]=[word,discoveryEnglish[key]||word];});});
 
  function lang(){return languageData[languageSelect.value]||languageData.es}
  function obj(key){const row=lang().objects[key];return {word:row[0],english:row[1]}}
@@ -329,6 +340,19 @@ Object.keys(extraDiscovery).forEach(lang=>{if(!languageData[lang].objects)langua
    }
    speechSynthesis.speak(u);
  }
+ function sayDiscovery(text){
+   if(!('speechSynthesis' in window)||!text)return;
+   const langCode=lang().speech;
+   const chosen=selectedVoice();
+   speechSynthesis.cancel();
+   window.setTimeout(()=>{
+     const u=new SpeechSynthesisUtterance(text);
+     u.lang=langCode;u.rate=.78;
+     if(chosen)u.voice=chosen;
+     speechSynthesis.speak(u);
+   },60);
+ }
+
  function render(){
    const homeWorldEl=document.getElementById('homeWorld');
    if(homeWorldEl)homeWorldEl.classList.toggle('challenge-mode',group==='find');
@@ -406,9 +430,9 @@ Object.keys(extraDiscovery).forEach(lang=>{if(!languageData[lang].objects)langua
    document.getElementById('homePopSentence').textContent='';document.getElementById('homePopSentenceSpeak').style.display='none';
    const scene=document.getElementById('homeScene'),r=scene.getBoundingClientRect(),br=btn.getBoundingClientRect();
    let left=br.left-r.left+54,top=br.top-r.top-10;left=Math.min(left,r.width-310);left=Math.max(14,left);top=Math.min(top,r.height-170);top=Math.max(14,top);
-   pop.style.left=left+'px';pop.style.top=top+'px';pop.classList.add('show');say(o.word,.72,false);
+   pop.style.left=left+'px';pop.style.top=top+'px';pop.classList.add('show');sayDiscovery(o.word);
  }));
- document.getElementById('homePopWordSpeak').addEventListener('click',()=>{if(currentObjectKey)say(obj(currentObjectKey).word,.72,false)});
+ document.getElementById('homePopWordSpeak').addEventListener('click',()=>{if(currentObjectKey)sayDiscovery(obj(currentObjectKey).word)});
  document.getElementById('homePopSentenceSpeak').addEventListener('click',()=>{});
 
  languageSelect.addEventListener('change',()=>{
