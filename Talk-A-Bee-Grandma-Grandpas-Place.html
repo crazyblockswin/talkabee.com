@@ -4771,6 +4771,48 @@ body.talkabee-world-open{overflow:hidden!important}
 }
 </style>
 
+
+<style id="grandparents-fullscreen-scene-render-fix">
+/* SCREENSHOT FIX — force every legacy scene wrapper to the viewport.
+   Does NOT change artwork, hotspots, Activity Panel or Script Card sizing. */
+#homeWorld,
+#homeWorld.open,
+#homeWorld > .wrap,
+#homeWorld .home-shell,
+#homeWorld .home-stage,
+#homeWorld .home-scene,
+#homeWorld .scene-artboard{
+  position:fixed!important;
+  inset:0!important;
+  width:100vw!important;
+  height:100vh!important;
+  min-width:100vw!important;
+  min-height:100vh!important;
+  max-width:none!important;
+  max-height:none!important;
+  aspect-ratio:auto!important;
+  margin:0!important;
+  padding:0!important;
+}
+#homeWorld .home-shell,
+#homeWorld .home-stage,
+#homeWorld .home-scene,
+#homeWorld .scene-artboard{position:absolute!important}
+#homeWorld .scene-main-image{
+  position:absolute!important;
+  inset:0!important;
+  width:100%!important;
+  height:100%!important;
+  min-width:100%!important;
+  min-height:100%!important;
+  max-width:none!important;
+  max-height:none!important;
+  object-fit:cover!important;
+  object-position:center center!important;
+  transform:none!important;
+}
+</style>
+
 </body>
 </html>
 <style>#homeWorld .scene-hotspots .home-hotspot{
