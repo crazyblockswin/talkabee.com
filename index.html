@@ -744,6 +744,40 @@ header .talkabee-comments:hover{transform:translateY(-1px);box-shadow:0 5px 14px
 .landing-directory .crazy-blocks-bonus small{display:block;margin-top:8px;opacity:1;font-size:17px;font-weight:700;color:#171421}
 </style>
 
+<style id="talkabee-compact-header-fix">
+/* Compact desktop header: keep brand and language controls on one row. */
+@media (min-width:1051px){
+  header .wrap.nav{
+    width:min(1500px,calc(100% - 34px));
+    min-height:82px;
+    flex-wrap:nowrap;
+    gap:14px;
+  }
+  header .brand{flex:0 0 auto;min-width:0;gap:10px;}
+  header .brand-name{white-space:nowrap;font-size:21px;}
+  header .brand-domain{white-space:nowrap;}
+  header .brand-tagline{white-space:nowrap;font-size:13px;margin-left:6px;padding-left:14px;}
+  header nav{display:none;}
+  header .talkabee-donate,header .talkabee-comments{flex:0 0 auto;margin:0 3px;}
+  header .global-controls{
+    margin-left:auto;
+    flex:0 0 auto;
+    display:flex;
+    flex-wrap:nowrap;
+    align-items:center;
+    gap:10px;
+  }
+  header .global-controls label{white-space:nowrap;display:flex;align-items:center;gap:6px;}
+  header .global-controls select{min-width:125px;padding:7px 8px;}
+}
+@media (min-width:1051px) and (max-width:1250px){
+  header .brand-tagline{font-size:12px;margin-left:2px;padding-left:10px;}
+  header .talkabee-donate,header .talkabee-comments{padding:8px 10px;}
+  header .global-controls{gap:6px;}
+  header .global-controls select{min-width:112px;}
+}
+</style>
+
 </head>
 <body>
 <header>
