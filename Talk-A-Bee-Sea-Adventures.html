@@ -577,7 +577,7 @@ footer{padding:25px 0 45px;color:#778296;font-size:12px} .foot{display:flex;just
 /* The artwork already contains the script-card silhouette. Put the live card
    directly over it instead of 90px lower, which caused the double/overlap look. */
 #yachtWorld .yacht-panel{
-  left:40.2% !important;
+  left:36.5% !important;
   top:2.2% !important;
   bottom:auto !important;
   width:33% !important;
@@ -608,7 +608,7 @@ footer{padding:25px 0 45px;color:#778296;font-size:12px} .foot{display:flex;just
 #yachtWorld .yacht-stage,#yachtWorld .yacht-scene{overflow:hidden!important;}
 @media(max-width:1050px) and (min-width:760px){
   #yachtWorld .yacht-directory{width:158px!important;min-width:158px!important;max-width:158px!important;}
-  #yachtWorld .yacht-panel{left:40.2%!important;width:33%!important;}
+  #yachtWorld .yacht-panel{left:36.5%!important;width:33%!important;}
 }
 @media(max-height:760px) and (min-width:760px){
   #yachtWorld .yacht-directory{top:8px!important;bottom:8px!important;padding:8px!important;}
@@ -722,22 +722,34 @@ body>header,body>footer,.final-cta,.hero,#mainDirectory{display:none!important;}
 
   <div class="yacht-scene" id="yachtScene" style="background-image:url('images/talkabee-image-21.png')">
    <div class="yacht-hotspots" id="yachtHotspots">
-     <button type="button" class="yacht-hotspot" data-object="wally" style="left:27%;top:57%" aria-label="Grandpa Wally"></button>
-     <button type="button" class="yacht-hotspot" data-object="cathy" style="left:77%;top:59%" aria-label="Grandma Cathy"></button>
-     <button type="button" class="yacht-hotspot" data-object="fishing" style="left:38%;top:29%" aria-label="Fishing pole"></button>
-     <button type="button" class="yacht-hotspot" data-object="fish" style="left:31.5%;top:35%" aria-label="Fish"></button>
-     <button type="button" class="yacht-hotspot" data-object="whale" style="left:83.3%;top:27%" aria-label="Whale"></button>
-     <button type="button" class="yacht-hotspot" data-object="dolphin" style="left:94.4%;top:39%" aria-label="Dolphin"></button>
-     <button type="button" class="yacht-hotspot" data-object="seagull" style="left:94.1%;top:55.0%" aria-label="Seagull"></button>
-     <button type="button" class="yacht-hotspot" data-object="tackle" style="left:28.4%;top:86.6%" aria-label="Tackle box"></button>
-     <button type="button" class="yacht-hotspot table-hotspot" data-object="flowers" style="left:51.6%;top:81.0%" aria-label="Flowers on the table"></button>
-     <button type="button" class="yacht-hotspot table-hotspot" data-object="drink" style="left:59.7%;top:85.8%" aria-label="Drink on the table"></button>
-   <button type="button" class="yacht-hotspot table-hotspot" data-object="tray" style="left:54.4%;top:88.0%" aria-label="Tray on the table"></button>
-   <button type="button" class="yacht-hotspot table-wide-hotspot" data-object="table" style="left:57.0%;top:94.0%" aria-label="Table"></button>
-     <button type="button" class="yacht-hotspot" data-object="lifering" style="left:95.7%;top:87.0%" aria-label="Life ring"></button>
-     <button type="button" class="yacht-hotspot" data-object="yacht" style="left:19.0%;top:22.0%" aria-label="Yacht"></button>
-     <button type="button" class="yacht-hotspot" data-object="ocean" style="left:74%;top:44%" aria-label="Ocean"></button>
-    </div>
+     <button type="button" class="yacht-hotspot" data-object="wally" style="left:53.3%;top:59.8%" aria-label="Grandpa"></button>
+     <button type="button" class="yacht-hotspot" data-object="cathy" style="left:62.8%;top:60.2%" aria-label="Grandma"></button>
+     <button type="button" class="yacht-hotspot" data-object="boy" style="left:43.4%;top:58.0%" aria-label="Boy"></button>
+     <button type="button" class="yacht-hotspot" data-object="girl" style="left:76.0%;top:58.0%" aria-label="Girl"></button>
+     <button type="button" class="yacht-hotspot" data-object="binocularboy" style="left:87.0%;top:57.5%" aria-label="Boy"></button>
+     <button type="button" class="yacht-hotspot" data-object="dog" style="left:48.0%;top:72.0%" aria-label="Dog"></button>
+     <button type="button" class="yacht-hotspot" data-object="fishing" style="left:37.5%;top:38.5%" aria-label="Rod"></button>
+     <button type="button" class="yacht-hotspot" data-object="whale" style="left:27.0%;top:37.0%" aria-label="Whale"></button>
+     <button type="button" class="yacht-hotspot" data-object="dolphin" style="left:68.4%;top:45.0%" aria-label="Dolphin"></button>
+     <button type="button" class="yacht-hotspot" data-object="seagull" style="left:24.2%;top:58.7%" aria-label="Seagull"></button>
+     <button type="button" class="yacht-hotspot" data-object="bee" style="left:74.8%;top:10.7%" aria-label="Bee"></button>
+     <button type="button" class="yacht-hotspot" data-object="sun" style="left:58.2%;top:34.5%" aria-label="Sun"></button>
+     <button type="button" class="yacht-hotspot" data-object="sailboat" style="left:74.7%;top:38.2%" aria-label="Sailboat"></button>
+     <button type="button" class="yacht-hotspot" data-object="lighthouse" style="left:71.6%;top:27.0%" aria-label="Lighthouse"></button>
+     <button type="button" class="yacht-hotspot" data-object="ocean" style="left:52.0%;top:45.0%" aria-label="Ocean"></button>
+     <button type="button" class="yacht-hotspot" data-object="tackle" style="left:34.0%;top:76.0%" aria-label="Tackle"></button>
+     <button type="button" class="yacht-hotspot" data-object="flowers" style="left:68.7%;top:73.5%" aria-label="Flowers"></button>
+     <button type="button" class="yacht-hotspot" data-object="fruit" style="left:74.0%;top:76.8%" aria-label="Fruit"></button>
+     <button type="button" class="yacht-hotspot" data-object="drink" style="left:79.0%;top:76.5%" aria-label="Drink"></button>
+     <button type="button" class="yacht-hotspot" data-object="lantern" style="left:64.0%;top:73.7%" aria-label="Lantern"></button>
+     <button type="button" class="yacht-hotspot" data-object="binoculars" style="left:83.3%;top:78.7%" aria-label="Binoculars"></button>
+     <button type="button" class="yacht-hotspot" data-object="table" style="left:73.0%;top:84.0%" aria-label="Table"></button>
+     <button type="button" class="yacht-hotspot" data-object="rug" style="left:61.0%;top:91.0%" aria-label="Rug"></button>
+     <button type="button" class="yacht-hotspot" data-object="rope" style="left:27.5%;top:83.0%" aria-label="Rope"></button>
+     <button type="button" class="yacht-hotspot" data-object="railing" style="left:19.0%;top:67.0%" aria-label="Railing"></button>
+     <button type="button" class="yacht-hotspot" data-object="stairs" style="left:85.0%;top:35.0%" aria-label="Stairs"></button>
+     <button type="button" class="yacht-hotspot" data-object="lifering" style="left:95.0%;top:87.5%" aria-label="Lifering"></button>
+   </div>
    </div>
 
    <div class="yacht-panel">
@@ -782,21 +794,33 @@ document.addEventListener('DOMContentLoaded',function(){
   marina:{kicker:'AT THE MARINA',title:'Useful words for a day on the water.',prompt:'Practice simple marina and boating words.',items:[['Necesito la caña de pescar.','I need the fishing pole.'],['La caja de pesca está aquí.','The tackle box is here.'],['El salvavidas está listo.','The life ring is ready.'],['La bebida está sobre la mesa.','The drink is on the table.']]}
  };
  const objects={
-  wally:{word:'el abuelo',english:'Grandpa Wally',sentence:'El abuelo Wally pesca desde el yate.'},
-  cathy:{word:'la abuela',english:'Grandma Cathy',sentence:'La abuela Cathy disfruta del atardecer.'},
-  fishing:{word:'la caña de pescar',english:'fishing pole',sentence:'La caña de pescar está lista.'},
-  fish:{word:'el pez',english:'fish',sentence:'El pez nada cerca del yate.'},
-  yacht:{word:'el yate',english:'yacht',sentence:'El yate está en el océano.'},
-  ocean:{word:'el océano',english:'ocean',sentence:'El océano brilla al atardecer.'},
-  whale:{word:'la ballena',english:'whale',sentence:'La ballena salta del agua.'},
-  dolphin:{word:'el delfín',english:'dolphin',sentence:'El delfín salta junto al yate.'},
-  seagull:{word:'la gaviota',english:'seagull',sentence:'La gaviota descansa cerca de Cathy.'},
-  tackle:{word:'la caja de pesca',english:'tackle box',sentence:'La caja de pesca está abierta.'},
-  flowers:{word:'las flores',english:'flowers',sentence:'Las flores están sobre la mesa.'},
-  drink:{word:'la bebida',english:'drink',sentence:'La bebida está sobre la mesa frente a Cathy.'},
-  tray:{word:'la bandeja',english:'tray',sentence:'La bandeja está sobre la mesa.'},
-  table:{word:'la mesa',english:'table',sentence:'La mesa está frente a Cathy.'},
-  lifering:{word:'el salvavidas',english:'life ring',sentence:'El salvavidas está listo para usar.'}
+  wally:{word:'abuelo',english:'Grandpa'},
+  cathy:{word:'abuela',english:'Grandma'},
+  boy:{word:'niño',english:'boy'},
+  girl:{word:'niña',english:'girl'},
+  binocularboy:{word:'niño',english:'boy'},
+  dog:{word:'perro',english:'dog'},
+  fishing:{word:'caña',english:'rod'},
+  whale:{word:'ballena',english:'whale'},
+  dolphin:{word:'delfín',english:'dolphin'},
+  seagull:{word:'gaviota',english:'seagull'},
+  bee:{word:'abeja',english:'bee'},
+  sun:{word:'sol',english:'sun'},
+  sailboat:{word:'velero',english:'sailboat'},
+  lighthouse:{word:'faro',english:'lighthouse'},
+  ocean:{word:'océano',english:'ocean'},
+  tackle:{word:'caja',english:'tackle'},
+  flowers:{word:'flores',english:'flowers'},
+  fruit:{word:'fruta',english:'fruit'},
+  drink:{word:'bebida',english:'drink'},
+  lantern:{word:'farol',english:'lantern'},
+  binoculars:{word:'binoculares',english:'binoculars'},
+  table:{word:'mesa',english:'table'},
+  rug:{word:'alfombra',english:'rug'},
+  rope:{word:'cuerda',english:'rope'},
+  railing:{word:'barandilla',english:'railing'},
+  stairs:{word:'escaleras',english:'stairs'},
+  lifering:{word:'salvavidas',english:'lifering'}
  };
  const order=['wally','cathy','fishing','whale','dolphin','seagull'];
  let group='deck',index=0,lastRate=.86,challengeIndex=0,solved=false;
@@ -807,7 +831,7 @@ document.addEventListener('DOMContentLoaded',function(){
    world.querySelectorAll('.yacht-hotspot').forEach(b=>b.classList.remove('show'));
    $('yachtFind').classList.remove('show');$('yachtList').style.display='';$('yachtWordline').style.display='';$('yachtTranslation').style.display='';$('yachtActions').style.display='flex';$('yachtNextRow').style.display='flex';
    if(group==='discover'){
-     $('yachtKicker').textContent='CLICK & DISCOVER';$('yachtTitle').textContent='Click something in the Sea Adventures scene.';$('yachtPrompt').textContent='People, sea animals, fishing gear and the two table items can all teach you a word and sentence.';$('yachtWordline').innerHTML='';$('yachtTranslation').textContent='Tap one of the glowing targets in the scene.';$('yachtList').style.display='none';$('yachtActions').style.display='none';$('yachtNextRow').style.display='none';world.querySelectorAll('.yacht-hotspot').forEach(b=>b.classList.add('show'));return;
+     $('yachtKicker').textContent='CLICK & DISCOVER';$('yachtTitle').textContent='Tap anything you recognize.';$('yachtPrompt').textContent='Each target teaches one word.';$('yachtWordline').innerHTML='';$('yachtTranslation').textContent='Tap a target to hear its Spanish word.';$('yachtList').style.display='none';$('yachtActions').style.display='none';$('yachtNextRow').style.display='none';world.querySelectorAll('.yacht-hotspot').forEach(b=>b.classList.add('show'));return;
    }
    if(group==='find'){
      const target=order[challengeIndex],o=objects[target];solved=false;$('yachtKicker').textContent='FIND IT CHALLENGE';$('yachtTitle').textContent='Challenge '+(challengeIndex+1)+': Find '+o.english+'.';$('yachtPrompt').textContent='Stay in this same yacht scene and find the requested person, animal or object.';$('yachtWordline').innerHTML='';$('yachtTranslation').textContent='';$('yachtList').style.display='none';$('yachtActions').style.display='none';$('yachtNextRow').style.display='none';world.querySelectorAll('.yacht-hotspot').forEach(b=>b.classList.add('show'));$('yachtFind').classList.add('show');$('yachtChallengeCount').textContent='CHALLENGE '+(challengeIndex+1)+' OF 6';$('yachtFindPrompt').textContent='Find: '+o.word+' — '+o.english;$('yachtFindStatus').textContent='';$('yachtNextHint').textContent='Find the correct target to unlock the next challenge.';$('yachtChallengeNext').textContent=challengeIndex<5?'Next Challenge →':'Finish Challenges ✓';world.querySelectorAll('.yacht-challenge-nav').forEach((b,i)=>b.classList.toggle('active',i===challengeIndex));return;
@@ -832,7 +856,7 @@ document.addEventListener('DOMContentLoaded',function(){
      else{$('yachtFindStatus').textContent='Not that one — keep looking.';$('yachtFindStatus').style.color='#8b5b13'}
      return;
    }
-   $('yachtKicker').textContent='CLICK & DISCOVER';$('yachtTitle').textContent=o.word+' — '+o.english;$('yachtPrompt').textContent=o.sentence;$('yachtTranslation').textContent='Tap another target or use the speaker to hear it.';speak(o.sentence,.78);
+   $('yachtKicker').textContent='CLICK & DISCOVER';$('yachtTitle').textContent=o.english;$('yachtPrompt').textContent=o.word;$('yachtTranslation').textContent='Tap another target.';speak(o.word,.78);
  },true);
  $('yachtChallengeNext').addEventListener('click',()=>{if(!solved){$('yachtFindStatus').textContent='Find the correct one first.';$('yachtFindStatus').style.color='#8b5b13';return;}if(challengeIndex<5){challengeIndex++;render()}else{$('yachtFindStatus').textContent='🏁 You completed all 6 Sea Adventures challenges!';$('yachtFindStatus').style.color='#19744f'}});
  $('yachtPlay').addEventListener('click',()=>speak((groups[group]||groups.deck).items[index][0],.86));$('yachtSlow').addEventListener('click',()=>speak((groups[group]||groups.deck).items[index][0],.58));$('yachtReplay').addEventListener('click',()=>speak((groups[group]||groups.deck).items[index][0],lastRate));$('yachtNextPhrase').addEventListener('click',()=>{const g=groups[group]||groups.deck;index=(index+1)%g.items.length;render()});
@@ -855,7 +879,7 @@ document.addEventListener('click',function(e){
   if(!b)return;
   e.preventDefault();
   e.stopImmediatePropagation();
-  window.location.href='Talk-A-Bee-Main-Directory.html';
+  window.location.href='index.html';
 },true);
 </script>
 </body>
