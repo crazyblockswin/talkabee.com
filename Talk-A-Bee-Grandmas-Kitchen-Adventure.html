@@ -4552,3 +4552,25 @@ document.addEventListener('DOMContentLoaded',function(){
   if(w) w.classList.add('open');
 });
 </script>
+<!-- FINAL STANDALONE GRANDMA KITCHEN FIX -->
+<style id="final-kitchen-standalone-fix">
+header, #mainDirectory, #homeWorld, #yachtWorld, #trainWorld, #lakeWorldHost, .bee-guide, .bee-guide-btn {display:none!important;}
+html,body{margin:0!important;width:100%!important;height:100%!important;overflow:hidden!important;background:#182238!important;}
+body{position:static!important;}
+#kitchenWorld,#kitchenWorld.open{display:block!important;position:fixed!important;inset:0!important;top:0!important;right:0!important;bottom:0!important;left:0!important;width:100vw!important;height:100vh!important;margin:0!important;padding:0!important;z-index:2147483000!important;overflow:hidden!important;background:#182238!important;}
+#kitchenWorld .train-stage,#kitchenWorld .train-scene{position:absolute!important;inset:0!important;width:100%!important;height:100%!important;margin:0!important;padding:0!important;overflow:hidden!important;}
+</style>
+<script id="final-kitchen-standalone-startup">
+(function(){
+ function openKitchen(){
+   var w=document.getElementById('kitchenWorld');
+   if(!w) return;
+   w.classList.add('open');
+   document.documentElement.classList.add('kitchen-standalone');
+   document.body.classList.add('kitchen-standalone');
+   var main=document.getElementById('mainDirectory'); if(main) main.style.setProperty('display','none','important');
+ }
+ if(document.readyState==='loading') document.addEventListener('DOMContentLoaded',openKitchen); else openKitchen();
+ window.addEventListener('load',openKitchen);
+})();
+</script>
