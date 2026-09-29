@@ -19,7 +19,32 @@ select{width:100%;padding:12px;border:0;border-radius:14px;font-size:17px;font-w
 .restore{display:none;position:absolute;z-index:30;left:18px;top:18px;padding:13px 18px;border:1px solid #fff5;border-radius:16px;background:#111a;color:#fff;font-weight:900;cursor:pointer}
 .scene-only .panel,.scene-only .card{display:none}.scene-only .restore{display:block}
 @media(max-width:900px){.panel{width:260px}.card{width:55vw}}
-</style></head><body>
+</style>
+<style id="kitchen-master-ui-sizing">
+/* Talk A Bee master proportions at 100% browser zoom */
+.panel{
+  width:440px!important;
+  height:calc((100vh - 36px)/.67)!important;
+  transform:scale(.67)!important;
+  transform-origin:top left!important;
+  background:rgba(13,25,45,.14)!important;
+}
+.card{
+  width:620px!important;
+  left:50%!important;
+  right:auto!important;
+  bottom:18px!important;
+  transform:translateX(-50%) scale(.67)!important;
+  transform-origin:bottom center!important;
+  background:rgba(247,242,232,.14)!important;
+}
+.restore{
+  transform:scale(.67)!important;
+  transform-origin:top left!important;
+}
+</style>
+
+</head><body>
 <main id="world">
 <aside class="panel">
 <button class="main" id="mainDir">← Main Directory</button>
