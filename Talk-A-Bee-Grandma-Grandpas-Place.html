@@ -1888,7 +1888,7 @@ renderGuidedSentence();
   openHomeChallenge(Number(btn.dataset.homeChallenge));
  }));
  document.getElementById('homeMainDirectory').addEventListener('click',()=>{
-  window.location.href='Talk-A-Bee-Main-Directory.html';
+  window.location.href='index.html';
  });
  const activityPeek=document.getElementById('activityPeek');
  const activityRestore=document.getElementById('activityRestore');
@@ -4493,7 +4493,7 @@ document.addEventListener('DOMContentLoaded',function(){
   if(family) family.click();
   var back=document.getElementById('homeMainDirectory');
   if(back){
-    back.onclick=function(e){ e.preventDefault(); window.location.href='Talk-A-Bee-Main-Directory.html'; };
+    back.onclick=function(e){ e.preventDefault(); window.location.href='index.html'; };
   }
   window.scrollTo(0,0);
 });
