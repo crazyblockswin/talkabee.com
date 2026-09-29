@@ -636,7 +636,7 @@ header{height:72px!important;min-height:72px!important;max-height:72px!important
 header .nav{height:72px!important;min-height:72px!important;max-height:72px!important;overflow:hidden!important;flex-wrap:nowrap!important;}
 
 /* Keep V50's full-screen adventure area, but never stretch Grandma's Kitchen artwork. */
-#kitchenWorld{top:72px!important;bottom:0!important;height:auto!important;overflow:hidden!important;background:#182238!important;}
+#kitchenWorld{top:0!important;bottom:0!important;height:100vh!important;overflow:hidden!important;background:#182238!important;}
 #kitchenWorld .train-stage,#kitchenWorld .train-scene{position:absolute!important;inset:0!important;width:100%!important;height:100%!important;overflow:hidden!important;background:#182238!important;}
 #kitchenWorld .train-main-image{position:absolute!important;inset:0!important;width:100%!important;height:100%!important;object-fit:contain!important;object-position:center center!important;background:#182238!important;}
 </style>
@@ -1880,7 +1880,7 @@ renderGuidedSentence();
   openHomeChallenge(Number(btn.dataset.homeChallenge));
  }));
  document.getElementById('homeMainDirectory').addEventListener('click',()=>{
-  window.location.href='index.html';
+  window.location.href='Talk-A-Bee-Main-Directory.html';
  });
  const activityPeek=document.getElementById('activityPeek');
  const activityRestore=document.getElementById('activityRestore');
@@ -4475,7 +4475,7 @@ html,body{
 document.addEventListener('DOMContentLoaded', function(){
   var world=document.getElementById('kitchenWorld');
   if(world){ world.classList.add('open'); }
-  var b=document.querySelector('#kitchenMainDirectory'); if(b) b.addEventListener('click',function(e){e.preventDefault();e.stopImmediatePropagation();window.location.href='index.html';},true);
+  var b=document.querySelector('#kitchenMainDirectory'); if(b) b.addEventListener('click',function(e){e.preventDefault();e.stopImmediatePropagation();window.location.href='Talk-A-Bee-Main-Directory.html';},true);
   
   try { document.querySelector('[data-kitchen="baking"]')?.click(); } catch(e) {}
 });
@@ -4537,7 +4537,18 @@ header{height:72px!important;min-height:72px!important;max-height:72px!important
 header .nav{height:72px!important;min-height:72px!important;max-height:72px!important;overflow:hidden!important;flex-wrap:nowrap!important;}
 
 /* Keep V50's full-screen adventure area, but never stretch Grandma's Kitchen artwork. */
-#kitchenWorld{top:72px!important;bottom:0!important;height:auto!important;overflow:hidden!important;background:#182238!important;}
+#kitchenWorld{top:0!important;bottom:0!important;height:100vh!important;overflow:hidden!important;background:#182238!important;}
 #kitchenWorld .train-stage,#kitchenWorld .train-scene{position:absolute!important;inset:0!important;width:100%!important;height:100%!important;overflow:hidden!important;background:#182238!important;}
 #kitchenWorld .train-main-image{position:absolute!important;inset:0!important;width:100%!important;height:100%!important;object-fit:contain!important;object-position:center center!important;background:#182238!important;}
 </style>
+
+<style id="checkpoint-70-kitchen-header-free-refresh-fix">
+header{display:none!important;}
+#kitchenWorld,#kitchenWorld.open{top:0!important;right:0!important;bottom:0!important;left:0!important;height:100vh!important;}
+</style>
+<script id="checkpoint-70-kitchen-refresh-safety">
+document.addEventListener('DOMContentLoaded',function(){
+  var w=document.getElementById('kitchenWorld');
+  if(w) w.classList.add('open');
+});
+</script>
