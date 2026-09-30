@@ -248,6 +248,20 @@ Target the actual elements.
 }
 </style>
 
+
+<style id="farm-left-panel-compact-and-return-fix">
+/* Compact the menu rows and keep the Scene View return control outside the hidden menu wrapper. */
+.farm-panel-scroll #back{min-height:60px!important;padding:7px 10px!important;margin-bottom:5px!important;}
+.farm-panel-scroll .farm-left-controls{gap:4px!important;margin-bottom:6px!important;}
+.farm-panel-scroll .farm-left-controls button,.farm-panel-scroll .farm-left-controls select{height:42px!important;font-size:clamp(12px,.9vw,16px)!important;}
+.farm-panel-scroll .activity,.farm-panel-scroll .discovery,.farm-panel-scroll .challenge{min-height:42px!important;margin-bottom:4px!important;padding:6px 12px!important;}
+.farm-panel-scroll .activity{font-size:clamp(13px,1vw,18px)!important;}
+.farm-panel-scroll .discovery{font-size:clamp(14px,1.05vw,19px)!important;margin-top:2px!important;margin-bottom:24px!important;}
+.farm-panel-scroll .challenge{font-size:clamp(12px,.9vw,16px)!important;}
+#restorePanel{left:16px!important;top:16px!important;padding:10px 15px!important;font-size:15px!important;background:rgba(7,31,35,.78)!important;}
+#world.scene-only #restorePanel{display:block!important;}
+</style>
+
 </head>
 <body>
 <main class="world" id="world">
@@ -257,7 +271,7 @@ Target the actual elements.
 <button id="sceneView" type="button">◉ Scene View</button>
 <select id="adventureLanguage" aria-label="Adventure language"><option value="es">🇪🇸 Spanish</option><option value="fr">🇫🇷 French</option><option value="en">🇺🇸 English</option><option value="de">🇩🇪 German</option><option value="it">🇮🇹 Italian</option><option value="pt">🇵🇹 Portuguese</option><option value="no">🇳🇴 Norwegian</option></select>
 <select id="adventureVoice" aria-label="Adventure voice"><option value="">Browser Default Voice</option></select>
-</div><button id="restorePanel" type="button">← Return Panel</button>
+</div>
 <button class="click activity a1" data-key="pets" aria-label="Activity 1 Friendly Pets">1. Friendly Pets</button>
 <button class="click activity a2" data-key="farm" aria-label="Activity 2 Farm Animals">2. Farm Animals</button>
 <button class="click activity a3" data-key="wild" aria-label="Activity 3 Wild Neighbors">3. Wild Neighbors</button>
