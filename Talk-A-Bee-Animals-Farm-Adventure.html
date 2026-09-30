@@ -42,7 +42,7 @@
 <style id="clean-keeper-ui">
 .left-panel{position:absolute;z-index:10;left:.45%;top:5.2%;width:16.2%;height:91%;border-radius:20px;background:rgba(9,38,43,.80);box-shadow:0 14px 32px rgba(0,0,0,.28);border:1px solid rgba(255,255,255,.18);pointer-events:none}
 .left-title{position:absolute;z-index:11;left:1.45%;top:16.5%;width:14%;color:white;pointer-events:none}.left-title b{display:block;font-size:clamp(22px,2vw,36px)}.left-title span{font-size:clamp(12px,1.05vw,18px);font-weight:700}.section-label{position:absolute;z-index:11;left:1.45%;color:#dce7e7;font-weight:900;letter-spacing:.08em;pointer-events:none}.activities-label{top:23.3%}.challenges-label{top:64.4%}
-.click{color:#fff!important;font-size:clamp(12px,1.05vw,18px)!important;text-align:left;padding:0 14px!important;background:rgba(255,255,255,.08)!important;border:1px solid rgba(255,255,255,.15)!important;font-weight:800!important}.click:hover{background:rgba(255,255,255,.18)!important}.activity:first-of-type{background:rgba(255,211,83,.95)!important;color:#17212b!important}.discovery{background:rgba(91,174,255,.95)!important;color:#122231!important}#back{background:#fff!important;color:#24314b!important;text-align:center!important;font-size:clamp(12px,1.1vw,19px)!important}.challenge{font-size:clamp(10px,.9vw,16px)!important}
+.click{color:#fff!important;font-size:clamp(12px,1.05vw,18px)!important;text-align:left;padding:0 14px!important;background:rgba(255,255,255,.08)!important;border:1px solid rgba(255,255,255,.15)!important;font-weight:800!important}.click:hover{background:rgba(255,255,255,.18)!important}.activity.active-choice{background:rgba(255,211,83,.95)!important;color:#17212b!important}.discovery{background:rgba(91,174,255,.95)!important;color:#122231!important}#back{background:#fff!important;color:#24314b!important;text-align:center!important;font-size:clamp(12px,1.1vw,19px)!important}.challenge{font-size:clamp(10px,.9vw,16px)!important}
 #back{left:1.25%;top:7.2%;width:14.2%;height:7.2%}.activity{left:1.25%;width:14.2%;height:4.9%}.a1{top:26.0%}.a2{top:31.2%}.a3{top:36.4%}.a4{top:41.6%}.a5{top:46.8%}.a6{top:52.0%}.discovery{left:1.25%;top:57.3%;width:14.2%;height:5.2%}.challenge{left:1.25%;width:14.2%;height:4.15%}.c1{top:68.0%}.c2{top:72.4%}.c3{top:76.8%}.c4{top:81.2%}.c5{top:85.6%}.c6{top:90.0%}
 .live-card{left:62.2%!important;top:67.0%!important;width:36.5%!important;height:29.0%!important;background:rgba(9,45,51,.91)!important;opacity:1!important}
 #horse{left:25.8%;top:36.3%}#cow{left:44.2%;top:43.3%}#sheep{left:36.7%;top:49.4%}#goat{left:36.1%;top:60.7%}#pig{left:30.6%;top:71%}#dog{left:55.9%;top:65.2%}#rooster{left:83.5%;top:57.2%}#chicken{left:76.9%;top:61.4%}#rabbit{left:54.1%;top:90.8%}#squirrel{left:95%;top:47%}#bee{left:82.9%;top:13.9%}
@@ -262,6 +262,15 @@ Target the actual elements.
 #world.scene-only #restorePanel{display:block!important;}
 </style>
 
+
+<style id="farm-active-button-fix">
+/* Selected menu item follows the user's click instead of Activity 1 staying yellow. */
+.activity.active-choice,.discovery.active-choice,.challenge.active-choice{
+  background:rgba(255,211,83,.95)!important;
+  color:#17212b!important;
+}
+</style>
+
 </head>
 <body>
 <main class="world" id="world">
@@ -364,16 +373,17 @@ const els={kicker:document.getElementById('kicker'),title:document.getElementByI
 
 function data(){return languageData[lang]}
 function setCard(v){['kicker','title','prompt','target','translation'].forEach((k,i)=>els[k].textContent=v[i]||'');els.status.textContent=''}
-function clearModes(){world.classList.remove('discover','challenge-mode');document.querySelectorAll('.hotspot').forEach(h=>h.classList.remove('target-hotspot'));challengeTarget=null}
-function showLesson(k){clearModes();mode='lesson';activeKey=k;setCard(data().lessons[k])}
+function clearModes(){world.classList.remove('discover','challenge-mode');document.querySelectorAll('.hotspot').forEach(h=>h.classList.remove('target-hotspot'));document.querySelectorAll('[data-key]').forEach(b=>b.classList.remove('active-choice'));challengeTarget=null}
+function markActive(k){const b=document.querySelector('[data-key="'+k+'"]');if(b)b.classList.add('active-choice')}
+function showLesson(k){clearModes();mode='lesson';activeKey=k;markActive(k);setCard(data().lessons[k])}
 function showDiscovery(){
- clearModes();mode='discovery';activeKey='discovery';world.classList.add('discover');
+ clearModes();mode='discovery';activeKey='discovery';markActive('discovery');world.classList.add('discover');
  els.kicker.textContent='DISCOVERY';els.title.textContent='Explore the farm — click anything that glows.';
  els.prompt.textContent='Animals, objects, and scenery all have '+data().name+' names to discover.';
  els.target.textContent='Choose something in the scene.';els.translation.textContent='';els.status.textContent='';
 }
 function showChallenge(k){
- clearModes();mode='challenge';activeKey=k;const m=challengeMeta[k],v=data().challenges[k];challengeTarget=m.obj;
+ clearModes();mode='challenge';activeKey=k;markActive(k);const m=challengeMeta[k],v=data().challenges[k];challengeTarget=m.obj;
  setCard(['CHALLENGE '+k.slice(1)+' OF 6',m.title,m.prompt,v[0],v[1]]);
  world.classList.add('challenge-mode');document.getElementById(m.obj).classList.add('target-hotspot');
 }
