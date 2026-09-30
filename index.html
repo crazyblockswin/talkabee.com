@@ -823,6 +823,16 @@ header details.talkabee-more{overflow:visible!important}
 header .talkabee-more-toggle{list-style:none;user-select:none}
 header .talkabee-more-toggle::-webkit-details-marker{display:none}
 header details.talkabee-more[open] .talkabee-more-menu{display:block!important}
+/* Larger invisible hover target bridges the gap from More to Play Game. */
+header details.talkabee-more::after{
+  content:"";
+  position:absolute;
+  left:-22px;
+  right:-22px;
+  top:100%;
+  height:18px;
+  background:transparent;
+}
 </style>
 
 <style id="talkabee-more-clipping-fix">
