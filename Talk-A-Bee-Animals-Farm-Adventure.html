@@ -358,6 +358,14 @@ const challengeMeta={
  c6:{obj:'bee',title:'Find the Talk A Bee guide.',prompt:'Look on top of the fifth-wheel RV.'}
 };
 const englishNames={horse:'Horse',cow:'Cow',sheep:'Sheep',goat:'Goat',pig:'Pig',dog:'Dog',rooster:'Rooster',chicken:'Chicken',rabbit:'Rabbit',squirrel:'Squirrel',bee:'Bee',butterfly:'Butterfly',barn:'Barn',windmill:'Windmill',rv:'Fifth-wheel RV',solar:'Solar panels',campfire:'Campfire',fence:'Fence',flowers:'Flowers',mountains:'Mountains',chick:'Chick'};
+const discoverySounds={horse:'horse.mp3',cow:'cow.mp3',sheep:'sheep.mp3',goat:'goat.mp3',pig:'pig.mp3',dog:'dog.mp3',rooster:'rooster.mp3',chicken:'chicken.mp3',chick:'chicks.mp3',barn:'tractor.mp3'};
+let discoverySound=null;
+function playDiscoverySound(id){
+ const file=discoverySounds[id]; if(!file)return;
+ if(discoverySound){discoverySound.pause();discoverySound.currentTime=0;}
+ discoverySound=new Audio('sounds/'+file);
+ discoverySound.play().catch(()=>{});
+}
 const KEY='talkabee-learn-language';
 const qsLang=new URLSearchParams(location.search).get('lang');
 let lang=languageData[qsLang]?qsLang:(languageData[localStorage.getItem(KEY)]?localStorage.getItem(KEY):'es');
@@ -397,12 +405,13 @@ function showChallenge(k){
 function refresh(){if(mode==='discovery')showDiscovery();else if(mode==='challenge')showChallenge(activeKey);else showLesson(activeKey)}
 document.querySelectorAll('[data-key]').forEach(b=>b.addEventListener('click',()=>{const k=b.dataset.key;if(k==='discovery')showDiscovery();else if(challengeMeta[k])showChallenge(k);else showLesson(k)}));
 selector.addEventListener('change',()=>{lang=selector.value;localStorage.setItem(KEY,lang);fillFarmVoices();refresh()});
-function speak(txt,rate=1){
- if(!('speechSynthesis' in window))return;
+function speak(txt,rate=1,onend=null){
+ if(!('speechSynthesis' in window)){if(onend)onend();return;}
  speechSynthesis.cancel();
  const u=new SpeechSynthesisUtterance(txt);u.lang=data().speech;u.rate=rate;
  const chosen=speechSynthesis.getVoices().find(v=>v.name===voiceSelector.value);
  if(chosen)u.voice=chosen;
+ if(onend)u.onend=onend;
  speechSynthesis.speak(u);
 }
 document.getElementById('sceneView').onclick=()=>world.classList.add('scene-only');
@@ -424,7 +433,7 @@ document.querySelectorAll('.hotspot').forEach(h=>h.addEventListener('click',()=>
  }
  els.target.textContent=word;
  els.translation.textContent=lang==='en'?'':englishNames[h.id];
- speak(word,.8);
+ speak(word,.8,()=>playDiscoverySound(h.id));
 }));
 showLesson('pets');
 </script>
