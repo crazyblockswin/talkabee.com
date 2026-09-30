@@ -817,6 +817,13 @@ header .full-course-link{text-decoration:none;display:inline-flex;align-items:ce
   text-shadow:0 2px 4px rgba(0,0,0,.95),1px 0 1px #000,-1px 0 1px #000!important;
 }
 </style>
+
+<style id="talkabee-more-native-fix">
+header details.talkabee-more{overflow:visible!important}
+header .talkabee-more-toggle{list-style:none;user-select:none}
+header .talkabee-more-toggle::-webkit-details-marker{display:none}
+header details.talkabee-more[open] .talkabee-more-menu{display:block!important}
+</style>
 </head>
 <body>
 <header>
@@ -827,12 +834,12 @@ header .full-course-link{text-decoration:none;display:inline-flex;align-items:ce
   <div class="global-controls">
    <a class="topbtn full-course-link" href="Talk-A-Bee-Course.html" aria-label="Open the added course">Added Course</a>
   </div>
-  <div class="talkabee-more">
-   <button class="talkabee-more-toggle" type="button" aria-haspopup="true" aria-expanded="false" aria-label="Open more Talk A Bee links">More ▾</button>
+  <details class="talkabee-more">
+   <summary class="talkabee-more-toggle" aria-label="Open more Talk A Bee links">More ▾</summary>
    <div class="talkabee-more-menu">
     <a href="https://crazyblocks.win/" target="_blank" rel="noopener noreferrer">🎮 Play Game</a>
    </div>
-  </div>
+  </details>
   <a class="talkabee-comments" href="Talk-A-Bee-Comments.html" aria-label="Comments and suggestions for Talk A Bee">💬 Comments</a>
  </div>
 </header>
@@ -4681,34 +4688,6 @@ document.addEventListener('click',function(e){
     get:function(){return localStorage.getItem(KEY)||'es';},
     set:function(lang){if(supported.includes(lang))localStorage.setItem(KEY,lang);}
   };
-})();
-</script>
-
-
-<script id="talkabee-more-menu-behavior">
-(function(){
-  const more = document.querySelector('.talkabee-more');
-  if(!more) return;
-  const toggle = more.querySelector('.talkabee-more-toggle');
-  if(!toggle) return;
-  toggle.addEventListener('click', function(e){
-    e.stopPropagation();
-    const isOpen = more.classList.toggle('open');
-    toggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
-  });
-  document.addEventListener('click', function(e){
-    if(!more.contains(e.target)){
-      more.classList.remove('open');
-      toggle.setAttribute('aria-expanded','false');
-    }
-  });
-  document.addEventListener('keydown', function(e){
-    if(e.key === 'Escape'){
-      more.classList.remove('open');
-      toggle.setAttribute('aria-expanded','false');
-      toggle.focus();
-    }
-  });
 })();
 </script>
 </body>
