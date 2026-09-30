@@ -271,6 +271,13 @@ Target the actual elements.
 }
 </style>
 
+
+<style id="farm-audio-active-fix">
+/* Audio controls: highlight whichever button was last selected. */
+.live-card .actions button{background:#f6f7fa!important;color:#253047!important;}
+.live-card .actions button.audio-active{background:#ffd45c!important;color:#2b2515!important;}
+</style>
+
 </head>
 <body>
 <main class="world" id="world">
@@ -402,9 +409,12 @@ document.getElementById('sceneView').onclick=()=>world.classList.add('scene-only
 document.getElementById('restorePanel').onclick=()=>world.classList.remove('scene-only');
 voiceSelector.addEventListener('change',()=>localStorage.setItem('talkabee-farm-voice-'+lang,voiceSelector.value));
 if('speechSynthesis' in window){speechSynthesis.onvoiceschanged=fillFarmVoices;fillFarmVoices();}
-document.getElementById('normal').onclick=()=>speak(els.target.textContent,1);
-document.getElementById('slow').onclick=()=>speak(els.target.textContent,.65);
-document.getElementById('replay').onclick=()=>speak(els.target.textContent,.9);
+const audioButtons=[document.getElementById('normal'),document.getElementById('slow'),document.getElementById('replay')];
+function setAudioActive(button){audioButtons.forEach(b=>b.classList.remove('audio-active'));button.classList.add('audio-active')}
+setAudioActive(document.getElementById('normal'));
+document.getElementById('normal').onclick=function(){setAudioActive(this);speak(els.target.textContent,1)};
+document.getElementById('slow').onclick=function(){setAudioActive(this);speak(els.target.textContent,.65)};
+document.getElementById('replay').onclick=function(){setAudioActive(this);speak(els.target.textContent,.9)};
 document.querySelectorAll('.hotspot').forEach(h=>h.addEventListener('click',()=>{
  const word=data().words[h.id]||englishNames[h.id]||h.id;
  if(challengeTarget){
