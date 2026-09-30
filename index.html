@@ -4727,6 +4727,17 @@ document.addEventListener('click',function(e){
   };
 })();
 </script>
+
+<script id="talkabee-more-auto-retract">
+(function(){
+  const more = document.querySelector('header details.talkabee-more');
+  if (!more) return;
+  more.addEventListener('mouseleave', function(){
+    more.removeAttribute('open');
+  });
+})();
+</script>
+
 </body>
 </html>
 <style>#homeWorld .scene-hotspots .home-hotspot{
