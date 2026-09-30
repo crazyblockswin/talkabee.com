@@ -824,6 +824,14 @@ header .talkabee-more-toggle{list-style:none;user-select:none}
 header .talkabee-more-toggle::-webkit-details-marker{display:none}
 header details.talkabee-more[open] .talkabee-more-menu{display:block!important}
 </style>
+
+<style id="talkabee-more-clipping-fix">
+/* Allow the More menu to extend below the fixed 72px header without restoring header scrollbars. */
+header{overflow:visible!important;}
+header .nav{overflow:visible!important;}
+header details.talkabee-more{overflow:visible!important;z-index:10060!important;}
+header .talkabee-more-menu{z-index:10070!important;}
+</style>
 </head>
 <body>
 <header>
