@@ -778,6 +778,11 @@ header .talkabee-comments:hover{transform:translateY(-1px);box-shadow:0 5px 14px
 }
 </style>
 
+
+<style id="full-language-course-header-link">
+header .full-course-link{text-decoration:none;display:inline-flex;align-items:center;justify-content:center;white-space:nowrap}
+</style>
+
 </head>
 <body>
 <header>
@@ -787,8 +792,7 @@ header .talkabee-comments:hover{transform:translateY(-1px);box-shadow:0 5px 14px
   <a class="talkabee-donate" href="Talk-A-Bee-Support.html" target="_blank" rel="noopener noreferrer" aria-label="Donate to support Talk A Bee">❤️ Donate</a>
   <a class="talkabee-comments" href="Talk-A-Bee-Comments.html" aria-label="Comments and suggestions for Talk A Bee">💬 Comments</a>
   <div class="global-controls">
-   <label class="interface-control">Site <select id="siteLanguage"><option value="en">🇺🇸 English</option><option value="es">🇪🇸 Español</option><option value="fr">🇫🇷 Français</option><option value="de">🇩🇪 Deutsch</option><option value="it">🇮🇹 Italiano</option><option value="no">🇳🇴 Norsk</option><option value="pt">🇵🇹 Português</option></select></label>
-   <label>Learn <select id="learnLanguageTop"><option value="es">🇪🇸 Spanish</option><option value="fr">🇫🇷 French</option><option value="en">🇺🇸 English</option></select></label>
+   <a class="topbtn full-course-link" href="Talk-A-Bee-Course.html" aria-label="Open the main course">Main Course</a>
   </div>
  </div>
 </header>
@@ -4601,6 +4605,49 @@ document.addEventListener('click',function(e){
   transform:none!important;
 }
 </style>
+
+<script id="talkabee-adventure-language-bridge">
+(function(){
+  const KEY='talkabee-learn-language';
+  const supported=['es','fr','en'];
+  const params=new URLSearchParams(window.location.search);
+  const incoming=params.get('lang');
+  if(incoming && supported.includes(incoming)) localStorage.setItem(KEY,incoming);
+
+  const saved=localStorage.getItem(KEY);
+  const courseLang=document.getElementById('language');
+  if(courseLang && saved && supported.includes(saved)){
+    courseLang.value=saved;
+    courseLang.dispatchEvent(new Event('change'));
+  }
+
+  document.addEventListener('change',function(e){
+    if(e.target && (e.target.id==='language' || e.target.id==='learnLanguageTop')){
+      const value=e.target.value;
+      if(supported.includes(value)) localStorage.setItem(KEY,value);
+    }
+  });
+
+  document.querySelectorAll('#mainDirectory a.directory-link').forEach(function(a){
+    const href=a.getAttribute('href')||'';
+    if(!/Adventure|Grandma-Grandpas-Place|Sea-Adventures|Island-Retreat|Bird-Sanctuary|Library/i.test(href)) return;
+    a.addEventListener('click',function(){
+      const lang=localStorage.getItem(KEY)||'es';
+      const url=new URL(a.href,window.location.href);
+      url.searchParams.set('lang',lang);
+      a.href=url.href;
+    });
+  });
+
+  window.TalkABeeLanguage={
+    key:KEY,
+    supported:supported.slice(),
+    get:function(){return localStorage.getItem(KEY)||'es';},
+    set:function(lang){if(supported.includes(lang))localStorage.setItem(KEY,lang);}
+  };
+})();
+</script>
+
 </body>
 </html>
 <style>#homeWorld .scene-hotspots .home-hotspot{
