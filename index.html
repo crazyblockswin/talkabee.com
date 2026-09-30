@@ -787,7 +787,7 @@ header .talkabee-more{position:relative;display:inline-flex;align-items:center;f
 header .talkabee-more-toggle{display:inline-flex;align-items:center;justify-content:center;gap:5px;padding:8px 13px;border:1px solid #e3d9e8;border-radius:999px;background:#fff;color:#4b3f59;font-size:12px;font-weight:900;line-height:1;white-space:nowrap;box-shadow:0 2px 8px rgba(58,43,72,.08);cursor:pointer}
 header .talkabee-more-toggle:hover,header .talkabee-more:focus-within .talkabee-more-toggle{transform:translateY(-1px);box-shadow:0 5px 14px rgba(58,43,72,.14)}
 header .talkabee-more-menu{display:none;position:absolute;top:calc(100% + 8px);left:50%;transform:translateX(-50%);min-width:155px;padding:7px;background:#fff;border:1px solid #e3d9e8;border-radius:14px;box-shadow:0 14px 34px rgba(40,30,55,.18);z-index:500}
-header .talkabee-more:hover .talkabee-more-menu,header .talkabee-more:focus-within .talkabee-more-menu{display:block}
+header .talkabee-more:hover .talkabee-more-menu,header .talkabee-more:focus-within .talkabee-more-menu,header .talkabee-more.open .talkabee-more-menu{display:block}
 header .talkabee-more-menu a{display:block;padding:9px 11px;border-radius:9px;color:#4b3f59;text-decoration:none;font-size:12px;font-weight:900;white-space:nowrap}
 header .talkabee-more-menu a:hover,header .talkabee-more-menu a:focus{background:#f2efff;color:#5536c6;outline:none}
 @media(max-width:900px){header .talkabee-more{margin:0 2px}header .talkabee-more-toggle{padding:7px 10px}}
@@ -828,7 +828,7 @@ header .full-course-link{text-decoration:none;display:inline-flex;align-items:ce
    <a class="topbtn full-course-link" href="Talk-A-Bee-Course.html" aria-label="Open the added course">Added Course</a>
   </div>
   <div class="talkabee-more">
-   <button class="talkabee-more-toggle" type="button" aria-haspopup="true" aria-label="Open more Talk A Bee links">More ▾</button>
+   <button class="talkabee-more-toggle" type="button" aria-haspopup="true" aria-expanded="false" aria-label="Open more Talk A Bee links">More ▾</button>
    <div class="talkabee-more-menu">
     <a href="https://crazyblocks.win/" target="_blank" rel="noopener noreferrer">🎮 Play Game</a>
    </div>
@@ -4684,6 +4684,33 @@ document.addEventListener('click',function(e){
 })();
 </script>
 
+
+<script id="talkabee-more-menu-behavior">
+(function(){
+  const more = document.querySelector('.talkabee-more');
+  if(!more) return;
+  const toggle = more.querySelector('.talkabee-more-toggle');
+  if(!toggle) return;
+  toggle.addEventListener('click', function(e){
+    e.stopPropagation();
+    const isOpen = more.classList.toggle('open');
+    toggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+  });
+  document.addEventListener('click', function(e){
+    if(!more.contains(e.target)){
+      more.classList.remove('open');
+      toggle.setAttribute('aria-expanded','false');
+    }
+  });
+  document.addEventListener('keydown', function(e){
+    if(e.key === 'Escape'){
+      more.classList.remove('open');
+      toggle.setAttribute('aria-expanded','false');
+      toggle.focus();
+    }
+  });
+})();
+</script>
 </body>
 </html>
 <style>#homeWorld .scene-hotspots .home-hotspot{
