@@ -832,6 +832,35 @@ header .nav{overflow:visible!important;}
 header details.talkabee-more{overflow:visible!important;z-index:10060!important;}
 header .talkabee-more-menu{z-index:10070!important;}
 </style>
+
+<style id="talkabee-more-final-layer-fix">
+/* Keep the Main Directory artwork below the header dropdown.
+   This comes last on purpose: older checkpoint CSS re-applies overflow:hidden to the header. */
+body:not(.adventure-locked) > header{
+  position:relative!important;
+  z-index:200000!important;
+  overflow:visible!important;
+}
+body:not(.adventure-locked) > header .nav{
+  position:relative!important;
+  z-index:200001!important;
+  overflow:visible!important;
+}
+body:not(.adventure-locked) > header details.talkabee-more{
+  position:relative!important;
+  z-index:200002!important;
+  overflow:visible!important;
+}
+body:not(.adventure-locked) > header .talkabee-more-menu{
+  z-index:200003!important;
+}
+#mainDirectory{
+  z-index:1!important;
+}
+#mainDirectory .hero-feature-card{
+  z-index:1!important;
+}
+</style>
 </head>
 <body>
 <header>
