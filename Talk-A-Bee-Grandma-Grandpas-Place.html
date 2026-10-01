@@ -49,7 +49,7 @@ button,select{font:inherit}
 .challenge-next-hint{font-size:11px;margin:5px 0}
 .home-challenge-next{display:none}.home-challenge-next.show{display:inline-block}
 
-.home-pop{display:none;position:absolute;z-index:75;width:260px;padding:12px;border-radius:16px;background:rgba(255,255,255,.90);box-shadow:0 10px 25px #0004}
+.home-pop{display:none;position:absolute;z-index:75;width:260px;padding:12px;border-radius:16px;background:rgba(255,255,255,.90);box-shadow:0 10px 25px #0004;left:50%;bottom:190px;transform:translateX(-50%)}
 .home-pop.show{display:block}
 .home-pop strong,.home-pop small{display:block}.home-pop strong{font-size:22px}.home-pop small{margin:2px 0 9px}
 .home-pop button{border:0;border-radius:10px;padding:7px 9px;font-weight:850}
@@ -233,8 +233,6 @@ html,body,#homeWorld,#homeScene{
     </section>
   </div>
 </main>
-<audio id="grandpaWallyAudio" preload="auto" src="sound/wally.mp3"></audio>
-<audio id="grandmaCathyAudio" preload="auto" src="sound/cathy.mp3"></audio>
 <script>
 (function(){
  const languageData={
@@ -318,14 +316,6 @@ Object.keys(extraDiscovery).forEach(lang=>{if(!languageData[lang].objects)langua
  function lang(){return languageData[languageSelect.value]||languageData.es}
  function obj(key){const row=lang().objects[key];return {word:row[0],english:row[1]}}
  function clean(w){return w.replace(/[.,!?¿¡;:()"“”]/g,'').trim()}
- function playCharacterAudio(key){
-   const id=key==='grandpa'?'grandpaWallyAudio':key==='grandma'?'grandmaCathyAudio':'';
-   if(!id)return false;
-   const a=document.getElementById(id); if(!a)return false;
-   if('speechSynthesis' in window)speechSynthesis.cancel();
-   document.querySelectorAll('#grandpaWallyAudio,#grandmaCathyAudio').forEach(x=>{if(x!==a){x.pause();x.currentTime=0;}});
-   a.currentTime=0; a.play().catch(()=>{}); return true;
- }
  function selectedVoice(){
    const voices=speechSynthesis.getVoices();
    return voices.find(v=>v.voiceURI===voiceSelect.value)||null;
@@ -350,6 +340,18 @@ Object.keys(extraDiscovery).forEach(lang=>{if(!languageData[lang].objects)langua
    }
    speechSynthesis.speak(u);
  }
+ const characterAudio={grandpa:new Audio('sounds/wally.mp3'),grandma:new Audio('sounds/cathy.mp3')};
+ function speakDiscoveryObject(key){
+   const o=obj(key),audio=characterAudio[key];
+   if(audio){
+     if('speechSynthesis' in window)speechSynthesis.cancel();
+     Object.values(characterAudio).forEach(a=>{a.pause();a.currentTime=0});
+     audio.play().catch(()=>sayDiscovery(o.word));
+     return;
+   }
+   sayDiscovery(o.word);
+ }
+
  function sayDiscovery(text){
    if(!('speechSynthesis' in window)||!text)return;
    const langCode=lang().speech;
@@ -438,11 +440,9 @@ Object.keys(extraDiscovery).forEach(lang=>{if(!languageData[lang].objects)langua
    if(group!=='discover')return;
    currentObjectKey=key;document.getElementById('homePopWord').textContent=o.word;document.getElementById('homePopEnglish').textContent=o.english;
    document.getElementById('homePopSentence').textContent='';document.getElementById('homePopSentenceSpeak').style.display='none';
-   const scene=document.getElementById('homeScene'),r=scene.getBoundingClientRect(),br=btn.getBoundingClientRect();
-   let left=br.left-r.left+54,top=br.top-r.top-10;left=Math.min(left,r.width-310);left=Math.max(14,left);top=Math.min(top,r.height-170);top=Math.max(14,top);
-   pop.style.left=left+'px';pop.style.top=top+'px';pop.classList.add('show');if(!playCharacterAudio(key))sayDiscovery(o.word);
+   pop.classList.add('show');speakDiscoveryObject(key);
  }));
- document.getElementById('homePopWordSpeak').addEventListener('click',()=>{if(currentObjectKey&&!playCharacterAudio(currentObjectKey))sayDiscovery(obj(currentObjectKey).word)});
+ document.getElementById('homePopWordSpeak').addEventListener('click',()=>{if(currentObjectKey)speakDiscoveryObject(currentObjectKey)});
  document.getElementById('homePopSentenceSpeak').addEventListener('click',()=>{});
 
  languageSelect.addEventListener('change',()=>{
