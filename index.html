@@ -1104,6 +1104,7 @@ header .brand-tagline{white-space:normal!important;line-height:1.12!important;}
    <button type="button" class="activity-restore" id="activityRestore">☰ Activities</button>
    <div class="home-stage">
     <div class="home-scene" id="homeScene">
+     <button type="button" class="talkabee-next-adventure" id="homeNextAdventure" aria-label="Next adventure: Sea Adventures" title="Next Adventure — Sea Adventures">→</button>
      <div class="scene-fill-layer" aria-hidden="true" style="background-image:url(&quot;images/talkabee-image-19.png&quot;)"></div>
      <div class="scene-artboard" id="homeArtboard">
       <img class="scene-main-image" id="homeSceneImage" src="images/talkabee-image-20.png" alt="Grandma and Grandpa yard scene">
@@ -4749,6 +4750,63 @@ document.addEventListener('click',function(e){
   if (!more) return;
   more.addEventListener('mouseleave', function(){
     more.removeAttribute('open');
+  });
+})();
+</script>
+
+
+<style id="talkabee-next-adventure-trial">
+#homeWorld .talkabee-next-adventure{
+  position:absolute!important;
+  right:18px!important;
+  top:50%!important;
+  transform:translateY(-50%)!important;
+  z-index:95!important;
+  width:48px!important;
+  height:48px!important;
+  min-width:48px!important;
+  padding:0!important;
+  display:grid!important;
+  place-items:center!important;
+  border:2px solid rgba(255,255,255,.82)!important;
+  border-radius:50%!important;
+  background:rgba(20,34,57,.62)!important;
+  color:#fff!important;
+  font-size:30px!important;
+  font-weight:900!important;
+  line-height:1!important;
+  box-shadow:0 8px 24px rgba(0,0,0,.28)!important;
+  backdrop-filter:blur(7px)!important;
+  -webkit-backdrop-filter:blur(7px)!important;
+  cursor:pointer!important;
+}
+#homeWorld .talkabee-next-adventure:hover,
+#homeWorld .talkabee-next-adventure:focus-visible{
+  background:rgba(116,82,232,.88)!important;
+  border-color:#fff!important;
+  outline:none!important;
+}
+@media(max-width:759px){
+  #homeWorld .talkabee-next-adventure{
+    right:10px!important;
+    width:42px!important;
+    height:42px!important;
+    min-width:42px!important;
+    font-size:26px!important;
+  }
+}
+</style>
+<script id="talkabee-next-adventure-trial-script">
+(function(){
+  const next=document.getElementById('homeNextAdventure');
+  if(!next) return;
+  next.addEventListener('click',function(){
+    const lang=(window.TalkABeeLanguage && window.TalkABeeLanguage.get)
+      ? window.TalkABeeLanguage.get()
+      : (localStorage.getItem('talkabee-learn-language') || 'es');
+    const url=new URL('Talk-A-Bee-Sea-Adventures.html',window.location.href);
+    url.searchParams.set('lang',lang);
+    window.location.href=url.href;
   });
 })();
 </script>
