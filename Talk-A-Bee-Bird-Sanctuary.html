@@ -74,11 +74,15 @@ button{font:inherit;cursor:pointer}
 .restorePanel{display:none;position:absolute;z-index:60;left:12px;top:12px;border:0;border-radius:11px;padding:9px 12px;font-weight:900}
 #birdWorld.scene-only .directory,#birdWorld.scene-only .panel{display:none!important}
 #birdWorld.scene-only .restorePanel{display:block!important}
+
+.nextAdventure{position:absolute;z-index:70;right:18px;top:18px;width:48px;height:48px;border:1px solid rgba(255,255,255,.55);border-radius:50%;background:rgba(12,28,38,.48);color:#fff;font-size:30px;font-weight:900;line-height:1;display:flex;align-items:center;justify-content:center;box-shadow:0 8px 22px rgba(0,0,0,.22);backdrop-filter:blur(5px)}
+.nextAdventure:hover,.nextAdventure:focus-visible{background:rgba(67,133,94,.9);outline:3px solid rgba(255,255,255,.9)}
 </style>
 
 </head>
 <body>
 <section id="birdWorld">
+ <button class="nextAdventure" type="button" aria-label="Next adventure: Library" title="Next: Library" onclick="window.location.href='Talk-A-Bee-Library.html'">→</button>
  <button class="restorePanel" id="restorePanel" type="button">← Return Panel</button>
  <div class="scene">
   <img src="images/bird-sanctuary.jpg" alt="Ryder and Daniel building birdhouses with Grandpa at the Bird Sanctuary">
@@ -94,6 +98,8 @@ button{font:inherit;cursor:pointer}
    <div class="label">VOICE</div>
    <select id="birdVoice"><option value="">Browser Default</option></select>
    <div class="place">🐦 Bird Sanctuary</div>
+   <button data-discovery>🔎 Discovery — Click the Scene</button>
+   
    <div class="label">ACTIVITIES</div>
    <button data-lesson="meet">1. 👦 Ryder &amp; Daniel</button>
    <button data-lesson="build">2. 🏠 Build a Birdhouse</button>
@@ -102,7 +108,6 @@ button{font:inherit;cursor:pointer}
    <button data-lesson="nature">5. 🌲 Nature Around Us</button>
    <button data-lesson="sanctuary">6. ⭐ Sanctuary Adventure</button>
    <div class="label">DISCOVERY</div>
-   <button data-discovery>🔎 Discovery — Click the Scene</button>
    <div class="label">CHALLENGES</div>
    <button data-challenge="0">1. Find the Birdhouse</button>
    <button data-challenge="1">2. Find the Hammer</button>
@@ -286,6 +291,15 @@ document.querySelectorAll("[data-challenge]").forEach(b=>b.onclick=()=>loadChall
 $("next").onclick=()=>{index=(index+1)%lessons[active].lines.length;render()};
 $("speak").onclick=()=>speak(lessons[active].lines[index][0]);
 
+const sceneAudio=new Audio();
+function playSceneSound(file){
+  speechSynthesis.cancel();
+  sceneAudio.pause();
+  sceneAudio.currentTime=0;
+  sceneAudio.src=file;
+  sceneAudio.play().catch(()=>{});
+}
+
 document.querySelectorAll(".hotspot").forEach(b=>b.onclick=()=>{
  const key=b.dataset.word,x=objectWord(key);
  if(challenge>=0){
@@ -301,7 +315,9 @@ document.querySelectorAll(".hotspot").forEach(b=>b.onclick=()=>{
  }
  if(discovery){
    title.textContent="Click & Discover";prompt.textContent="You found something in the scene.";
-   line.textContent=x[0];translation.textContent=x[1];speak(x[0]);
+   line.textContent=x[0];translation.textContent=x[1];
+    if(key==="waterfall") playSceneSound("sounds/waterfall.mp3");
+    else { sceneAudio.pause(); sceneAudio.currentTime=0; speak(x[0]); }
  }
 });
 
