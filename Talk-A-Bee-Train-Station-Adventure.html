@@ -32,8 +32,11 @@
 #trainWorld.scene-only .train-directory,#trainWorld.scene-only .train-panel{display:none!important}
 #trainWorld .train-return-panel{display:none;position:absolute;z-index:90;left:14px;top:14px;border:1px solid rgba(255,255,255,.35);border-radius:11px;padding:8px 11px;background:rgba(11,22,42,.55);color:#fff;font-weight:900}
 #trainWorld.scene-only .train-return-panel{display:block}
+#trainWorld .talkabee-forward-arrow{position:fixed;top:22px;right:24px;z-index:10090;width:62px;height:62px;border-radius:50%;border:2px solid rgba(255,255,255,.82);background:rgba(11,22,42,.20);box-shadow:0 5px 16px rgba(0,0,0,.14);backdrop-filter:blur(2px);display:grid;place-items:center;text-decoration:none;cursor:pointer}
+#trainWorld .talkabee-forward-arrow::before{content:"";width:17px;height:17px;border-top:5px solid #fff;border-right:5px solid #fff;transform:rotate(45deg) translate(-2px,2px);filter:drop-shadow(0 1px 2px rgba(0,0,0,.35))}
 </style>
 <section id="trainWorld" aria-label="Train Station">
+ <a class="talkabee-forward-arrow" href="Talk-A-Bee-Bird-Sanctuary.html" aria-label="Next adventure: Bird Sanctuary" title="Next Adventure"></a>
  <div class="train-stage"><div class="train-scene">
   <img class="train-main-image" src="images/train-station-adventure.jpg" alt="Train station at sunset">
   <aside class="train-directory">
@@ -46,6 +49,8 @@
    </select>
    <label class="train-select-label" for="trainVoice">VOICE</label>
    <select id="trainVoice" class="train-select"><option value="">Browser Default</option></select>
+   <div class="train-section-label">DISCOVERY</div>
+   <button type="button" id="trainDiscovery" class="train-discovery">🔎 Discovery — Click the Scene</button>
    <div class="train-section-label">ACTIVITIES</div>
    <button data-train="ticket">1. 🎫 Buying a Ticket</button>
    <button data-train="platform">2. 🚉 Finding the Platform</button>
@@ -53,7 +58,6 @@
    <button data-train="departure">4. 📋 Reading Departures</button>
    <button data-train="luggage">5. 🧳 Luggage &amp; Travel</button>
    <button data-train="boarding">6. 🚆 Boarding the Train</button>
-   <button type="button" id="trainDiscovery" class="train-discovery">7. 🔎 Discovery</button>
    <div class="train-section-label">CHALLENGES</div>
    <button class="train-challenge-nav" data-train-challenge="0">Challenge 1</button>
    <button class="train-challenge-nav" data-train-challenge="1">Challenge 2</button>
@@ -65,7 +69,7 @@
   <button type="button" id="trainReturnPanel" class="train-return-panel">← Return Panel</button>
   <div class="train-hotspots" aria-label="Train station discovery objects">
    <button data-word="clock" style="left:51.3%;top:7.5%" aria-label="Clock"></button>
-   <button data-word="train" style="left:94%;top:46%" aria-label="Train"></button>
+   <button data-word="train" style="left:91%;top:47%;width:17%;height:25%;aspect-ratio:auto;border-radius:22px" aria-label="Train"></button>
    <button data-word="departures" style="left:84.5%;top:12.5%;width:8%" aria-label="Departure board"></button>
    <button data-word="platform" style="left:29%;top:9%;width:7%" aria-label="Platform sign"></button>
    <button data-word="luggage" style="left:13%;top:84%;width:8%" aria-label="Luggage"></button>
@@ -106,6 +110,10 @@
  const wordEN={clock:'Clock',train:'Train',departures:'Departure board',platform:'Platform sign',luggage:'Suitcase',ticket:'Ticket',flowers:'Flowers',hat:'Hat',worker:'Train worker',backpack:'Backpack',lamp:'Lamp',sailboat:'Sailboat'};
  const W={es:{clock:'el reloj',train:'el tren',departures:'el tablero de salidas',platform:'el letrero del andén',luggage:'la maleta',ticket:'el billete',flowers:'las flores',hat:'el sombrero',worker:'el empleado del tren',backpack:'la mochila',lamp:'la lámpara',sailboat:'el velero'},fr:{clock:'l’horloge',train:'le train',departures:'le tableau des départs',platform:'le panneau du quai',luggage:'la valise',ticket:'le billet',flowers:'les fleurs',hat:'le chapeau',worker:'l’employé du train',backpack:'le sac à dos',lamp:'la lampe',sailboat:'le voilier'},en:Object.fromEntries(Object.entries(wordEN).map(([k,v])=>[k,v])),de:{clock:'die Uhr',train:'der Zug',departures:'die Abfahrtstafel',platform:'das Gleisschild',luggage:'der Koffer',ticket:'die Fahrkarte',flowers:'die Blumen',hat:'der Hut',worker:'der Bahnmitarbeiter',backpack:'der Rucksack',lamp:'die Lampe',sailboat:'das Segelboot'},it:{clock:'l’orologio',train:'il treno',departures:'il tabellone delle partenze',platform:'il cartello del binario',luggage:'la valigia',ticket:'il biglietto',flowers:'i fiori',hat:'il cappello',worker:'l’addetto del treno',backpack:'lo zaino',lamp:'la lampada',sailboat:'la barca a vela'},pt:{clock:'o relógio',train:'o trem',departures:'o painel de partidas',platform:'a placa da plataforma',luggage:'a mala',ticket:'o bilhete',flowers:'as flores',hat:'o chapéu',worker:'o funcionário do trem',backpack:'a mochila',lamp:'a lâmpada',sailboat:'o veleiro'},no:{clock:'klokken',train:'toget',departures:'avgangstavlen',platform:'sporskiltet',luggage:'kofferten',ticket:'billetten',flowers:'blomstene',hat:'hatten',worker:'togansatt',backpack:'ryggsekken',lamp:'lampen',sailboat:'seilbåten'}};
  const meta={ticket:['Buying a train ticket.','Ask for a ticket politely.'],platform:['Finding the platform.','Find out where your train leaves.'],time:['Asking about the time.','Practice asking when the train leaves.'],departure:['Reading the departure board.','Use the board to check your trip.'],luggage:['Luggage and travel.','Talk about the things you are carrying.'],boarding:['Boarding the train.','Practice the final steps before leaving.']};
+
+ const trainSceneSounds={train:'sounds/train-station.mp3'};
+ let trainSceneAudio=null;
+ function playTrainSceneSound(key){const url=trainSceneSounds[key];if(!url)return;if(trainSceneAudio){trainSceneAudio.pause();trainSceneAudio.currentTime=0}trainSceneAudio=new Audio(url);trainSceneAudio.volume=.82;trainSceneAudio.play().catch(()=>{});}
  const challengeOrder=['clock','train','departures','platform','luggage','ticket']; let active='ticket',idx=0,challenge=-1,solved=false,lastText='';
  function lang(){return langSel.value||'es'}
  function fillVoices(){const l=lang(),prefix=codes[l].split('-')[0].toLowerCase(),all=speechSynthesis.getVoices().filter(v=>(v.lang||'').toLowerCase().startsWith(prefix));voiceSel.innerHTML='<option value="">Browser Default</option>'+all.map(v=>'<option value="'+v.name.replace(/"/g,'&quot;')+'">'+v.name+'</option>').join('');const saved=localStorage.getItem('talkabee-train-voice-'+l)||'';if([...voiceSel.options].some(o=>o.value===saved))voiceSel.value=saved}
@@ -118,7 +126,7 @@
  $('trainMainDirectory').addEventListener('click',()=>location.href='index.html'); $('trainSceneView').addEventListener('click',()=>w.classList.add('scene-only')); $('trainReturnPanel').addEventListener('click',()=>w.classList.remove('scene-only'));
  $('trainDiscovery').addEventListener('click',e=>{e.stopPropagation();loadDiscovery()}); $('trainNext').addEventListener('click',()=>{idx=(idx+1)%L[lang()][active].length;render()}); $('trainSpeak').addEventListener('click',()=>speak(L[lang()][active][idx]));
  w.querySelectorAll('[data-train]').forEach(b=>b.addEventListener('click',()=>loadLesson(b.dataset.train))); w.querySelectorAll('.train-challenge-nav').forEach(b=>b.addEventListener('click',()=>loadChallenge(Number(b.dataset.trainChallenge))));
- w.querySelectorAll('.train-hotspots button').forEach(b=>b.addEventListener('click',e=>{e.preventDefault();e.stopPropagation();const key=b.dataset.word,target=W[lang()][key];if(challenge>=0){if(key===challengeOrder[challenge]){solved=true;status.textContent='✓ Nice find! '+target+' — '+wordEN[key];status.style.color='#19744f';hint.textContent='Challenge complete. You can move to the next one.';speak(target,.75)}else{status.textContent='Not that one — keep looking.';status.style.color='#8b5b13'}return}title.textContent='Click & Discover';prompt.textContent='You found something at the train station.';line.textContent=target;translation.textContent=wordEN[key];speak(target,.78)}));
+ w.querySelectorAll('.train-hotspots button').forEach(b=>b.addEventListener('click',e=>{e.preventDefault();e.stopPropagation();const key=b.dataset.word,target=W[lang()][key];playTrainSceneSound(key);if(challenge>=0){if(key===challengeOrder[challenge]){solved=true;status.textContent='✓ Nice find! '+target+' — '+wordEN[key];status.style.color='#19744f';hint.textContent='Challenge complete. You can move to the next one.';speak(target,.75)}else{status.textContent='Not that one — keep looking.';status.style.color='#8b5b13'}return}title.textContent='Click & Discover';prompt.textContent='You found something at the train station.';line.textContent=target;translation.textContent=wordEN[key];speak(target,.78)}));
  nextChallenge.addEventListener('click',()=>{if(!solved){status.textContent='Find the correct object first.';status.style.color='#8b5b13';return}if(challenge<5)loadChallenge(challenge+1);else{status.textContent='🏁 You completed all 6 Train Station challenges!';status.style.color='#19744f';hint.textContent='Great job exploring the station.'}});
  langSel.value=localStorage.getItem('talkabee-learn-language')||'es'; if(!codes[langSel.value])langSel.value='es'; langSel.addEventListener('change',()=>{localStorage.setItem('talkabee-learn-language',lang());fillVoices();if(challenge>=0)loadChallenge(challenge);else if(w.classList.contains('discovery-mode'))loadDiscovery();else loadLesson(active)}); voiceSel.addEventListener('change',()=>localStorage.setItem('talkabee-train-voice-'+lang(),voiceSel.value)); if(speechSynthesis.onvoiceschanged!==undefined)speechSynthesis.onvoiceschanged=fillVoices; fillVoices();loadLesson('ticket');
 })();
