@@ -67,7 +67,15 @@ select{width:100%;padding:12px;border:0;border-radius:14px;font-size:17px;font-w
 }
 </style>
 
+
+<style id="talkabee-forward-arrow-style">
+.talkabee-forward-arrow{position:fixed;top:22px;right:24px;z-index:10050;width:62px;height:62px;border-radius:50%;border:2px solid rgba(255,255,255,.82);background:rgba(91,58,31,.16);box-shadow:0 5px 16px rgba(0,0,0,.12);backdrop-filter:blur(2px);display:grid;place-items:center;text-decoration:none;cursor:pointer;transition:background .16s ease,transform .16s ease}
+.talkabee-forward-arrow:hover{background:rgba(91,58,31,.24);transform:scale(1.04)}
+.talkabee-forward-arrow::before{content:"";width:17px;height:17px;border-top:5px solid #fff;border-right:5px solid #fff;transform:rotate(45deg) translate(-2px,2px);filter:drop-shadow(0 1px 2px rgba(0,0,0,.35))}
+</style>
+
 </head><body>
+<a class="talkabee-forward-arrow" href="Talk-A-Bee-Sea-Adventures.html" aria-label="Next adventure: Sea Adventures" title="Next Adventure"></a>
 <main id="world">
 <aside class="panel">
 <button class="main" id="mainDir">← Main Directory</button>
