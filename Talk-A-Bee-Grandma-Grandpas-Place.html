@@ -129,40 +129,47 @@ html,body,#homeWorld,#homeScene{
 }
 </style>
 
+
+<style id="talkabee-forward-arrow-style">
+.talkabee-forward-arrow{position:fixed;top:22px;right:24px;z-index:120;width:62px;height:62px;border-radius:50%;border:2px solid rgba(255,255,255,.82);background:rgba(91,58,31,.16);box-shadow:0 5px 16px rgba(0,0,0,.12);backdrop-filter:blur(2px);display:grid;place-items:center;text-decoration:none;cursor:pointer;transition:background .16s ease,transform .16s ease}
+.talkabee-forward-arrow:hover{background:rgba(91,58,31,.24);transform:scale(1.04)}
+.talkabee-forward-arrow::before{content:"";width:17px;height:17px;border-top:5px solid #fff;border-right:5px solid #fff;transform:rotate(45deg) translate(-2px,2px);filter:drop-shadow(0 1px 2px rgba(0,0,0,.35))}
+</style>
+
 </head>
 <body>
 <main id="homeWorld" class="open" aria-label="Grandma and Grandpa's Place">
+<a class="talkabee-forward-arrow" href="Talk-A-Bee-Sea-Adventures.html" aria-label="Next adventure: Sea Adventures" title="Next Adventure"></a>
   <div class="home-scene" id="homeScene">
     <img class="scene-main-image" id="homeSceneImage" src="images/grandma-grandpas-place.jpg" alt="" aria-hidden="true">
 
     <div class="scene-hotspots" id="homeHotspots">
-<button type="button" class="home-hotspot" data-object="grandma" style="left:24.2%;top:42.5%;width:4.2%;height:16%" aria-label="Grandma"></button>
-<button type="button" class="home-hotspot" data-object="grandpa" style="left:27.2%;top:41.5%;width:4%;height:16%" aria-label="Grandpa"></button>
-<button type="button" class="home-hotspot" data-object="girl" style="left:86.5%;top:68%;width:4.6%;height:15%" aria-label="Girl"></button>
-<button type="button" class="home-hotspot" data-object="boy" style="left:77%;top:66%;width:4.5%;height:15%" aria-label="Boy"></button>
-<button type="button" class="home-hotspot" data-object="bee" style="left:83%;top:59%;width:2.3%;height:4%" aria-label="Bee"></button>
-<button type="button" class="home-hotspot" data-object="dog" style="left:93.7%;top:56.5%;width:5%;height:11%" aria-label="Dog"></button>
-<button type="button" class="home-hotspot" data-object="rv" style="left:41%;top:27%;width:23%;height:13%" aria-label="RV"></button>
-<button type="button" class="home-hotspot" data-object="solar" style="left:43.5%;top:19%;width:8%;height:3.2%" aria-label="Solar panels"></button>
-<button type="button" class="home-hotspot" data-object="fishing" style="left:69%;top:60.5%;width:4%;height:5%" aria-label="Fishing pole"></button>
-<button type="button" class="home-hotspot" data-object="pond" style="left:58%;top:82%;width:22%;height:13%" aria-label="Pond"></button>
-<button type="button" class="home-hotspot" data-object="stream" style="left:69.5%;top:72%;width:10%;height:5.5%" aria-label="Stream"></button>
-<button type="button" class="home-hotspot" data-object="waterfall" style="left:74%;top:57.5%;width:9%;height:7%" aria-label="Waterfall"></button>
-<button type="button" class="home-hotspot" data-object="dock" style="left:88%;top:72.5%;width:12%;height:5%" aria-label="Dock"></button>
-<button type="button" class="home-hotspot" data-object="lake" style="left:86%;top:42%;width:12%;height:8%" aria-label="Lake"></button>
-<button type="button" class="home-hotspot" data-object="mountains" style="left:69%;top:26%;width:25%;height:9%" aria-label="Mountains"></button>
-<button type="button" class="home-hotspot" data-object="trees" style="left:64%;top:35%;width:14%;height:16%" aria-label="Trees"></button>
-<button type="button" class="home-hotspot" data-object="flowers" style="left:43%;top:50%;width:18%;height:10%" aria-label="Flowers"></button>
-<button type="button" class="home-hotspot" data-object="rocks" style="left:62%;top:61%;width:14%;height:9%" aria-label="Rocks"></button>
-<button type="button" class="home-hotspot" data-object="birdhouse" style="left:92%;top:16%;width:3.3%;height:8%" aria-label="Birdhouse"></button>
-<button type="button" class="home-hotspot" data-object="bird" style="left:74%;top:14%;width:3.2%;height:5%" aria-label="Bird"></button>
-<button type="button" class="home-hotspot" data-object="redbird" style="left:88.8%;top:18.0%;width:2.5%;height:4.5%" aria-label="Red bird"></button>
-<button type="button" class="home-hotspot" data-object="path" style="left:30%;top:57%;width:14%;height:11%" aria-label="Path"></button>
-<button type="button" class="home-hotspot" data-object="basket" style="left:22.2%;top:43%;width:3%;height:5%" aria-label="Basket"></button>
-<button type="button" class="home-hotspot" data-object="hat" style="left:26.5%;top:33%;width:2.5%;height:3%" aria-label="Hat"></button>
-<button type="button" class="home-hotspot" data-object="glasses" style="left:26.2%;top:35.5%;width:2%;height:2%" aria-label="Glasses"></button>
-<button type="button" class="home-hotspot" data-object="birdfeeder" style="left:79%;top:15%;width:3.2%;height:7%" aria-label="Bird feeder"></button>
-<button type="button" class="home-hotspot" data-object="chair" style="left:50.5%;top:31%;width:3.5%;height:5.5%" aria-label="Chair"></button>
+<button type="button" class="home-hotspot" data-object="grandma" style="left:23.6%;top:35.6%;width:5.2%;height:20.0%" aria-label="Grandma"></button>
+<button type="button" class="home-hotspot" data-object="grandpa" style="left:27.0%;top:35.0%;width:4.7%;height:20.5%" aria-label="Grandpa"></button>
+<button type="button" class="home-hotspot" data-object="girl" style="left:86.5%;top:59.5%;width:5.2%;height:18.0%" aria-label="Girl"></button>
+<button type="button" class="home-hotspot" data-object="boy" style="left:77.0%;top:58.0%;width:5.0%;height:18.0%" aria-label="Boy"></button>
+<button type="button" class="home-hotspot" data-object="bee" style="left:82.8%;top:52.5%;width:3.8%;height:7.0%" aria-label="Bee"></button>
+<button type="button" class="home-hotspot" data-object="dog" style="left:93.5%;top:49.5%;width:6.0%;height:13.0%" aria-label="Dog"></button>
+<button type="button" class="home-hotspot" data-object="rv" style="left:41.0%;top:21.5%;width:25.0%;height:16.0%" aria-label="RV"></button>
+<button type="button" class="home-hotspot" data-object="solar" style="left:43.5%;top:15.0%;width:9.5%;height:4.0%" aria-label="Solar panels"></button>
+<button type="button" class="home-hotspot" data-object="fishing" style="left:72.5%;top:55.0%;width:13.0%;height:12.0%" aria-label="Fishing pole"></button>
+<button type="button" class="home-hotspot" data-object="pond" style="left:59.0%;top:76.0%;width:31.0%;height:21.0%" aria-label="Pond"></button>
+<button type="button" class="home-hotspot" data-object="stream" style="left:73.0%;top:64.5%;width:20.0%;height:10.0%" aria-label="Stream"></button>
+<button type="button" class="home-hotspot" data-object="waterfall" style="left:76.0%;top:50.0%;width:13.0%;height:10.0%" aria-label="Waterfall"></button>
+<button type="button" class="home-hotspot" data-object="dock" style="left:85.0%;top:63.0%;width:24.0%;height:7.0%" aria-label="Dock"></button>
+<button type="button" class="home-hotspot" data-object="lake" style="left:86.0%;top:35.0%;width:15.0%;height:12.0%" aria-label="Lake"></button>
+<button type="button" class="home-hotspot" data-object="mountains" style="left:69.0%;top:21.0%;width:31.0%;height:13.0%" aria-label="Mountains"></button>
+<button type="button" class="home-hotspot" data-object="trees" style="left:64.0%;top:28.0%;width:18.0%;height:21.0%" aria-label="Trees"></button>
+<button type="button" class="home-hotspot" data-object="flowers" style="left:43.0%;top:43.5%;width:24.0%;height:15.0%" aria-label="Flowers"></button>
+<button type="button" class="home-hotspot" data-object="rocks" style="left:62.0%;top:53.0%;width:20.0%;height:14.0%" aria-label="Rocks"></button>
+<button type="button" class="home-hotspot" data-object="birdhouse" style="left:92.2%;top:10.5%;width:4.0%;height:11.0%" aria-label="Birdhouse"></button>
+<button type="button" class="home-hotspot" data-object="bird" style="left:74.0%;top:11.5%;width:5.0%;height:8.0%" aria-label="Bird"></button>
+<button type="button" class="home-hotspot" data-object="path" style="left:30.0%;top:49.0%;width:19.0%;height:17.0%" aria-label="Path"></button>
+<button type="button" class="home-hotspot" data-object="basket" style="left:22.5%;top:37.5%;width:3.8%;height:7.0%" aria-label="Basket"></button>
+<button type="button" class="home-hotspot" data-object="hat" style="left:26.4%;top:27.5%;width:3.2%;height:4.0%" aria-label="Hat"></button>
+<button type="button" class="home-hotspot" data-object="glasses" style="left:26.2%;top:30.5%;width:2.5%;height:2.4%" aria-label="Glasses"></button>
+<button type="button" class="home-hotspot" data-object="birdfeeder" style="left:79.0%;top:9.5%;width:4.0%;height:10.0%" aria-label="Bird feeder"></button>
+<button type="button" class="home-hotspot" data-object="chair" style="left:50.8%;top:25.5%;width:4.0%;height:7.0%" aria-label="Chair"></button>
 </div>
 
     <aside class="activity-panel home-directory" aria-label="Grandma and Grandpa activity menu">
@@ -236,6 +243,28 @@ html,body,#homeWorld,#homeScene{
 </main>
 <script>
 (function(){
+
+ const sceneSoundUrls={
+   rv:'sounds/RV2-nature.mp3',
+   stream:'sounds/creek.mp3',
+   waterfall:'sounds/creek.mp3',
+   pond:'sounds/creek.mp3',
+   bee:'sounds/bee.mp3',
+   trees:'sounds/birds-forest.mp3',
+   birdhouse:'sounds/birds-forest.mp3',
+   birdfeeder:'sounds/birds-forest.mp3',
+   bird:'sounds/bird.mp3'
+ };
+ let currentSceneSound=null;
+ function playSceneSound(key){
+   const url=sceneSoundUrls[key];
+   if(!url)return;
+   if(currentSceneSound){currentSceneSound.pause();currentSceneSound.currentTime=0}
+   currentSceneSound=new Audio(url);
+   currentSceneSound.volume=.82;
+   currentSceneSound.play().catch(()=>{});
+ }
+
  const languageData={
   es:{speech:'es-ES',groups:{
    family:{kicker:'CHARLA FAMILIAR',title:'Conoce a la abuela Cathy y al abuelo Wally.',prompt:'Escucha una frase familiar y luego toca las palabras una por una.',items:[['Esta es mi abuela.','This is my grandmother.'],['Este es mi abuelo.','This is my grandfather.'],['Mi abuela está en el jardín.','My grandmother is in the garden.'],['Mi abuelo alimenta a los pájaros.','My grandfather feeds the birds.']]},
@@ -245,7 +274,8 @@ html,body,#homeWorld,#homeScene{
    yard:{kicker:'ALREDEDOR DEL PATIO',title:'Explora el patio.',prompt:'Describe lugares y objetos de la escena.',items:[['El perro está junto al estanque.','The dog is beside the pond.'],['La casa rodante está cerca de la casa.','The RV is near the house.'],['La casita para pájaros está en el jardín.','The birdhouse is in the garden.'],['La caña de pescar está lista.','The fishing pole is ready.']]},
    everyday:{kicker:'VIDA COTIDIANA',title:'Practica frases de todos los días.',prompt:'Usa frases sencillas que encajan con la vida en casa.',items:[['Estamos en casa.','We are at home.'],['Hace un día bonito.','It is a beautiful day.'],['Vamos al jardín.','We are going to the garden.'],['Pasamos tiempo con la familia.','We spend time with family.']]}
   },objects:{
-   fishing:['la caña de pescar','fishing pole'],birdhouse:['la casita para pájaros','birdhouse'],pond:['el estanque','pond'],dog:['el perro','dog'],rv:['la casa rodante','RV'],bird:['el pájaro','bird'],redbird:["el pájaro rojo","red bird"]}},
+   fishing:['la caña de pescar','fishing pole'],birdhouse:['la casita para pájaros','birdhouse'],pond:['el estanque','pond'],dog:['el perro','dog'],rv:['la casa rodante','RV'],bird:['el pájaro','bird']
+  }},
   fr:{speech:'fr-FR',groups:{
    family:{kicker:'EN FAMILLE',title:'Voici grand-mère Cathy et grand-père Wally.',prompt:'Écoute une phrase sur la famille, puis touche les mots un par un.',items:[['Voici ma grand-mère.','This is my grandmother.'],['Voici mon grand-père.','This is my grandfather.'],['Ma grand-mère est dans le jardin.','My grandmother is in the garden.'],['Mon grand-père nourrit les oiseaux.','My grandfather feeds the birds.']]},
    garden:{kicker:'MOTS DU JARDIN',title:'Regarde autour du jardin.',prompt:'La scène te donne des indices visuels pendant que tu pratiques.',items:[['Il y a des fleurs dans le jardin.','There are flowers in the garden.'],['Les fleurs sont belles.','The flowers are beautiful.'],['Le panier contient des fleurs.','The basket has flowers.'],['Le jardin est plein de couleurs.','The garden is full of color.']]},
@@ -253,7 +283,7 @@ html,body,#homeWorld,#homeScene{
    hobbies:{kicker:'LOISIRS ET MAISON',title:'Parle des choses de tous les jours.',prompt:'Utilise les objets familiers de la scène pour retenir les mots.',items:[['Mon grand-père aime pêcher.','My grandfather likes to fish.'],["Ma grand-mère s'occupe des fleurs.",'My grandmother takes care of the flowers.'],['Nous avons un camping-car.','We have an RV.'],['La valise est près du banc.','The suitcase is next to the bench.']]},
    yard:{kicker:'DANS LE JARDIN',title:'Explore le jardin.',prompt:'Décris les endroits et les objets de la scène.',items:[["Le chien est près de l'étang.",'The dog is beside the pond.'],['Le camping-car est près de la maison.','The RV is near the house.'],['La cabane à oiseaux est dans le jardin.','The birdhouse is in the garden.'],['La canne à pêche est prête.','The fishing pole is ready.']]},
    everyday:{kicker:'VIE QUOTIDIENNE',title:'Pratique des phrases de tous les jours.',prompt:'Utilise des phrases simples qui correspondent à la vie à la maison.',items:[['Nous sommes à la maison.','We are at home.'],["C'est une belle journée.",'It is a beautiful day.'],['Nous allons dans le jardin.','We are going to the garden.'],['Nous passons du temps en famille.','We spend time with family.']]}
-  },objects:{fishing:['la canne à pêche','fishing pole'],birdhouse:['la cabane à oiseaux','birdhouse'],pond:["l'étang",'pond'],dog:['le chien','dog'],rv:['le camping-car','RV'],bird:["l'oiseau",'bird'],redbird:["l’oiseau rouge","red bird"]}},
+  },objects:{fishing:['la canne à pêche','fishing pole'],birdhouse:['la cabane à oiseaux','birdhouse'],pond:["l'étang",'pond'],dog:['le chien','dog'],rv:['le camping-car','RV'],bird:["l'oiseau",'bird']}},
   en:{speech:'en-US',groups:{
    family:{kicker:'FAMILY TALK',title:'Meet Grandma Cathy and Grandpa Wally.',prompt:'Hear a simple family sentence, then click the words one at a time.',items:[['This is my grandmother.','This is my grandmother.'],['This is my grandfather.','This is my grandfather.'],['My grandmother is in the garden.','My grandmother is in the garden.'],['My grandfather feeds the birds.','My grandfather feeds the birds.']]},
    garden:{kicker:'GARDEN WORDS',title:'Look around the garden.',prompt:'The scene gives you visual clues while you practice.',items:[['There are flowers in the garden.','There are flowers in the garden.'],['The flowers are beautiful.','The flowers are beautiful.'],['The basket has flowers.','The basket has flowers.'],['The garden is full of color.','The garden is full of color.']]},
@@ -261,7 +291,7 @@ html,body,#homeWorld,#homeScene{
    hobbies:{kicker:'HOBBIES & HOME',title:'Talk about everyday things.',prompt:'Use familiar objects from the scene to make the words easier to remember.',items:[['My grandfather likes to fish.','My grandfather likes to fish.'],['My grandmother takes care of the flowers.','My grandmother takes care of the flowers.'],['We have an RV.','We have an RV.'],['The suitcase is next to the bench.','The suitcase is next to the bench.']]},
    yard:{kicker:'AROUND THE YARD',title:'Explore the yard.',prompt:'Describe places and objects in the scene.',items:[['The dog is beside the pond.','The dog is beside the pond.'],['The RV is near the house.','The RV is near the house.'],['The birdhouse is in the garden.','The birdhouse is in the garden.'],['The fishing pole is ready.','The fishing pole is ready.']]},
    everyday:{kicker:'EVERYDAY LIFE',title:'Practice everyday phrases.',prompt:'Use simple phrases that fit life at home.',items:[['We are at home.','We are at home.'],['It is a beautiful day.','It is a beautiful day.'],['We are going to the garden.','We are going to the garden.'],['We spend time with family.','We spend time with family.']]}
-  },objects:{fishing:['the fishing pole','fishing pole'],birdhouse:['the birdhouse','birdhouse'],pond:['the pond','pond'],dog:['the dog','dog'],rv:['the RV','RV'],bird:['the bird','bird'],redbird:["the red bird","red bird"]}},
+  },objects:{fishing:['the fishing pole','fishing pole'],birdhouse:['the birdhouse','birdhouse'],pond:['the pond','pond'],dog:['the dog','dog'],rv:['the RV','RV'],bird:['the bird','bird']}},
   de:{speech:'de-DE',groups:{
    family:{kicker:'FAMILIENGESPRÄCH',title:'Lerne Oma Cathy und Opa Wally kennen.',prompt:'Höre einen einfachen Familiensatz und tippe dann die Wörter einzeln an.',items:[['Das ist meine Großmutter.','This is my grandmother.'],['Das ist mein Großvater.','This is my grandfather.'],['Meine Großmutter ist im Garten.','My grandmother is in the garden.'],['Mein Großvater füttert die Vögel.','My grandfather feeds the birds.']]},
    garden:{kicker:'GARTENWÖRTER',title:'Schau dich im Garten um.',prompt:'Die Szene gibt dir beim Üben visuelle Hinweise.',items:[['Im Garten sind Blumen.','There are flowers in the garden.'],['Die Blumen sind schön.','The flowers are beautiful.'],['Der Korb enthält Blumen.','The basket has flowers.'],['Der Garten ist voller Farben.','The garden is full of color.']]},
@@ -269,7 +299,7 @@ html,body,#homeWorld,#homeScene{
    hobbies:{kicker:'HOBBYS & ZUHAUSE',title:'Sprich über alltägliche Dinge.',prompt:'Nutze vertraute Gegenstände aus der Szene, um dir die Wörter zu merken.',items:[['Mein Großvater angelt gern.','My grandfather likes to fish.'],['Meine Großmutter kümmert sich um die Blumen.','My grandmother takes care of the flowers.'],['Wir haben ein Wohnmobil.','We have an RV.'],['Der Koffer steht neben der Bank.','The suitcase is next to the bench.']]},
    yard:{kicker:'IM GARTEN',title:'Erkunde den Garten.',prompt:'Beschreibe Orte und Gegenstände in der Szene.',items:[['Der Hund ist neben dem Teich.','The dog is beside the pond.'],['Das Wohnmobil steht in der Nähe des Hauses.','The RV is near the house.'],['Das Vogelhaus steht im Garten.','The birdhouse is in the garden.'],['Die Angel ist bereit.','The fishing pole is ready.']]},
    everyday:{kicker:'ALLTAG',title:'Übe Alltagssätze.',prompt:'Verwende einfache Sätze, die zum Leben zu Hause passen.',items:[['Wir sind zu Hause.','We are at home.'],['Es ist ein schöner Tag.','It is a beautiful day.'],['Wir gehen in den Garten.','We are going to the garden.'],['Wir verbringen Zeit mit der Familie.','We spend time with family.']]}
-  },objects:{fishing:['die Angel','fishing pole'],birdhouse:['das Vogelhaus','birdhouse'],pond:['der Teich','pond'],dog:['der Hund','dog'],rv:['das Wohnmobil','RV'],bird:['der Vogel','bird'],redbird:["der rote Vogel","red bird"]}},
+  },objects:{fishing:['die Angel','fishing pole'],birdhouse:['das Vogelhaus','birdhouse'],pond:['der Teich','pond'],dog:['der Hund','dog'],rv:['das Wohnmobil','RV'],bird:['der Vogel','bird']}},
   it:{speech:'it-IT',groups:{
    family:{kicker:'PARLIAMO DELLA FAMIGLIA',title:'Conosci nonna Cathy e nonno Wally.',prompt:'Ascolta una semplice frase sulla famiglia, poi tocca le parole una alla volta.',items:[['Questa è mia nonna.','This is my grandmother.'],['Questo è mio nonno.','This is my grandfather.'],['Mia nonna è in giardino.','My grandmother is in the garden.'],['Mio nonno dà da mangiare agli uccelli.','My grandfather feeds the birds.']]},
    garden:{kicker:'PAROLE DEL GIARDINO',title:'Guarda intorno al giardino.',prompt:'La scena ti dà indizi visivi mentre fai pratica.',items:[['Ci sono fiori in giardino.','There are flowers in the garden.'],['I fiori sono belli.','The flowers are beautiful.'],['Il cestino contiene fiori.','The basket has flowers.'],['Il giardino è pieno di colori.','The garden is full of color.']]},
@@ -277,7 +307,7 @@ html,body,#homeWorld,#homeScene{
    hobbies:{kicker:'HOBBY E CASA',title:'Parla delle cose di ogni giorno.',prompt:'Usa gli oggetti familiari della scena per ricordare le parole.',items:[['A mio nonno piace pescare.','My grandfather likes to fish.'],['Mia nonna si prende cura dei fiori.','My grandmother takes care of the flowers.'],['Abbiamo un camper.','We have an RV.'],['La valigia è accanto alla panchina.','The suitcase is next to the bench.']]},
    yard:{kicker:'NEL GIARDINO',title:'Esplora il giardino.',prompt:'Descrivi luoghi e oggetti della scena.',items:[['Il cane è accanto allo stagno.','The dog is beside the pond.'],['Il camper è vicino alla casa.','The RV is near the house.'],['La casetta per gli uccelli è in giardino.','The birdhouse is in the garden.'],['La canna da pesca è pronta.','The fishing pole is ready.']]},
    everyday:{kicker:'VITA QUOTIDIANA',title:'Esercitati con frasi di ogni giorno.',prompt:'Usa frasi semplici adatte alla vita in casa.',items:[['Siamo a casa.','We are at home.'],['È una bella giornata.','It is a beautiful day.'],['Andiamo in giardino.','We are going to the garden.'],['Passiamo del tempo con la famiglia.','We spend time with family.']]}
-  },objects:{fishing:['la canna da pesca','fishing pole'],birdhouse:['la casetta per gli uccelli','birdhouse'],pond:['lo stagno','pond'],dog:['il cane','dog'],rv:['il camper','RV'],bird:["l'uccello",'bird'],redbird:["l’uccello rosso","red bird"]}},
+  },objects:{fishing:['la canna da pesca','fishing pole'],birdhouse:['la casetta per gli uccelli','birdhouse'],pond:['lo stagno','pond'],dog:['il cane','dog'],rv:['il camper','RV'],bird:["l'uccello",'bird']}},
   pt:{speech:'pt-PT',groups:{
    family:{kicker:'CONVERSA EM FAMÍLIA',title:'Conhece a avó Cathy e o avô Wally.',prompt:'Ouve uma frase simples sobre a família e depois toca nas palavras uma a uma.',items:[['Esta é a minha avó.','This is my grandmother.'],['Este é o meu avô.','This is my grandfather.'],['A minha avó está no jardim.','My grandmother is in the garden.'],['O meu avô alimenta os pássaros.','My grandfather feeds the birds.']]},
    garden:{kicker:'PALAVRAS DO JARDIM',title:'Olha à volta do jardim.',prompt:'A cena dá-te pistas visuais enquanto praticas.',items:[['Há flores no jardim.','There are flowers in the garden.'],['As flores são bonitas.','The flowers are beautiful.'],['O cesto tem flores.','The basket has flowers.'],['O jardim está cheio de cor.','The garden is full of color.']]},
@@ -285,7 +315,7 @@ html,body,#homeWorld,#homeScene{
    hobbies:{kicker:'PASSATEMPOS E CASA',title:'Fala sobre coisas do dia a dia.',prompt:'Usa objetos familiares da cena para te lembrares das palavras.',items:[['O meu avô gosta de pescar.','My grandfather likes to fish.'],['A minha avó cuida das flores.','My grandmother takes care of the flowers.'],['Temos uma autocaravana.','We have an RV.'],['A mala está junto ao banco.','The suitcase is next to the bench.']]},
    yard:{kicker:'PELO JARDIM',title:'Explora o jardim.',prompt:'Descreve lugares e objetos da cena.',items:[['O cão está junto ao lago.','The dog is beside the pond.'],['A autocaravana está perto da casa.','The RV is near the house.'],['A casa dos pássaros está no jardim.','The birdhouse is in the garden.'],['A cana de pesca está pronta.','The fishing pole is ready.']]},
    everyday:{kicker:'VIDA QUOTIDIANA',title:'Pratica frases do dia a dia.',prompt:'Usa frases simples que combinam com a vida em casa.',items:[['Estamos em casa.','We are at home.'],['Está um dia bonito.','It is a beautiful day.'],['Vamos para o jardim.','We are going to the garden.'],['Passamos tempo com a família.','We spend time with family.']]}
-  },objects:{fishing:['a cana de pesca','fishing pole'],birdhouse:['a casa dos pássaros','birdhouse'],pond:['o lago','pond'],dog:['o cão','dog'],rv:['a autocaravana','RV'],bird:['o pássaro','bird'],redbird:["o pássaro vermelho","red bird"]}},
+  },objects:{fishing:['a cana de pesca','fishing pole'],birdhouse:['a casa dos pássaros','birdhouse'],pond:['o lago','pond'],dog:['o cão','dog'],rv:['a autocaravana','RV'],bird:['o pássaro','bird']}},
   no:{speech:'nb-NO',groups:{
    family:{kicker:'FAMILIEPRAT',title:'Møt bestemor Cathy og bestefar Wally.',prompt:'Hør en enkel familiesetning, og trykk deretter på ordene ett om gangen.',items:[['Dette er bestemoren min.','This is my grandmother.'],['Dette er bestefaren min.','This is my grandfather.'],['Bestemoren min er i hagen.','My grandmother is in the garden.'],['Bestefaren min mater fuglene.','My grandfather feeds the birds.']]},
    garden:{kicker:'HAGEORD',title:'Se deg rundt i hagen.',prompt:'Scenen gir deg visuelle hint mens du øver.',items:[['Det er blomster i hagen.','There are flowers in the garden.'],['Blomstene er vakre.','The flowers are beautiful.'],['Kurven har blomster.','The basket has flowers.'],['Hagen er full av farger.','The garden is full of color.']]},
@@ -293,7 +323,7 @@ html,body,#homeWorld,#homeScene{
    hobbies:{kicker:'HOBBYER OG HJEM',title:'Snakk om hverdagslige ting.',prompt:'Bruk kjente ting i scenen for å huske ordene.',items:[['Bestefaren min liker å fiske.','My grandfather likes to fish.'],['Bestemoren min tar vare på blomstene.','My grandmother takes care of the flowers.'],['Vi har en bobil.','We have an RV.'],['Kofferten står ved benken.','The suitcase is next to the bench.']]},
    yard:{kicker:'RUNDT I HAGEN',title:'Utforsk hagen.',prompt:'Beskriv steder og ting i scenen.',items:[['Hunden er ved dammen.','The dog is beside the pond.'],['Bobilen står nær huset.','The RV is near the house.'],['Fuglehuset står i hagen.','The birdhouse is in the garden.'],['Fiskestangen er klar.','The fishing pole is ready.']]},
    everyday:{kicker:'HVERDAGSLIV',title:'Øv på hverdagsfraser.',prompt:'Bruk enkle setninger som passer til livet hjemme.',items:[['Vi er hjemme.','We are at home.'],['Det er en fin dag.','It is a beautiful day.'],['Vi går ut i hagen.','We are going to the garden.'],['Vi tilbringer tid med familien.','We spend time with family.']]}
-  },objects:{fishing:['fiskestangen','fishing pole'],birdhouse:['fuglehuset','birdhouse'],pond:['dammen','pond'],dog:['hunden','dog'],rv:['bobilen','RV'],bird:['fuglen','bird'],redbird:["den røde fuglen","red bird"]}}
+  },objects:{fishing:['fiskestangen','fishing pole'],birdhouse:['fuglehuset','birdhouse'],pond:['dammen','pond'],dog:['hunden','dog'],rv:['bobilen','RV'],bird:['fuglen','bird']}}
  };
 
  const homeChallengeOrder=['fishing','rv','birdhouse','pond','dog','bird'];
@@ -432,6 +462,7 @@ Object.keys(extraDiscovery).forEach(lang=>{if(!languageData[lang].objects)langua
 
  document.querySelectorAll('.home-hotspot').forEach(btn=>btn.addEventListener('click',()=>{
    const key=btn.dataset.object,o=obj(key);
+   playSceneSound(key);
    if(group==='find'){
      const status=document.getElementById('homeFindStatus');
      if(key===findTarget){homeChallengeSolved=true;status.textContent='✓ Correct! '+o.word;status.style.color='#19744f';say(o.word,.72,false);const nav=document.querySelector('.home-challenge-nav[data-home-challenge="'+homeChallengeIndex+'"]');if(nav)nav.classList.add('done');const hint=document.getElementById('challengeNextHint');if(hint)hint.textContent='Nice work! Continue when you are ready.'}
