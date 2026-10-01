@@ -707,6 +707,13 @@ body.adventure-locked #yachtWorld.open{inset:0!important;}
 #yachtWorld.activity-collapsed .yacht-restore{display:block!important;}
 </style>
 
+
+<style id="talkabee-forward-arrow-style">
+.talkabee-forward-arrow{position:fixed;top:22px;right:24px;z-index:10050;width:62px;height:62px;border-radius:50%;border:2px solid rgba(255,255,255,.82);background:rgba(91,58,31,.16);box-shadow:0 5px 16px rgba(0,0,0,.12);backdrop-filter:blur(2px);display:grid;place-items:center;text-decoration:none;cursor:pointer;transition:background .16s ease,transform .16s ease}
+.talkabee-forward-arrow:hover{background:rgba(91,58,31,.24);transform:scale(1.04)}
+.talkabee-forward-arrow::before{content:"";width:17px;height:17px;border-top:5px solid #fff;border-right:5px solid #fff;transform:rotate(45deg) translate(-2px,2px);filter:drop-shadow(0 1px 2px rgba(0,0,0,.35))}
+</style>
+
 </head>
 <body>
 
@@ -717,6 +724,7 @@ body>header,body>footer,.final-cta,.hero,#mainDirectory{display:none!important;}
 </style>
 
 <section id="yachtWorld" class="section yacht-world" aria-label="Sea Adventures">
+  <a class="talkabee-forward-arrow" href="Talk-A-Bee-Shopping-Market-Adventure.html" aria-label="Next adventure: Shopping Market" title="Next Adventure"></a>
  <div class="yacht-stage">
   <aside class="yacht-directory" aria-label="Sea Adventures activity menu">
    <button type="button" class="yacht-back" id="yachtMainDirectory">← Main Directory</button>
@@ -887,7 +895,7 @@ document.addEventListener('DOMContentLoaded',function(){
   }
  };
 
- const english={wally:'Grandpa',cathy:'Grandma',boy:'boy',girl:'girl',binocularboy:'boy',dog:'dog',fishing:'fishing pole',whale:'whale',dolphin:'dolphin',seagull:'seagull',bee:'bee',sun:'sun',sailboat:'sailboat',lighthouse:'lighthouse',ocean:'ocean',tackle:'tackle box',flowers:'flowers',fruit:'fruit',drink:'drink',lantern:'lantern',binoculars:'binoculars',table:'table',rug:'rug',rope:'rope',railing:'railing',stairs:'stairs',lifering:'life ring'};
+ const english={wally:'Grandpa',cathy:'Grandma',boy:'boy',girl:'girl',binocularboy:'boy',dog:'dog',fishing:'fishing pole',whale:'whale',dolphin:'dolphin',seagull:'seagull',bee:'bee',sun:'sun',sailboat:'sailboat',lighthouse:'lighthouse',ocean:'ocean',tackle:'tackle box',flowers:'flowers',fruit:'fruit',drink:'drink',lantern:'lantern',binoculars:'binoculars',table:'table',rug:'rug',rope:'rope',railing:'railing',stairs:'stairs',lifering:'life ring',yacht:'yacht'};
  const words={
   es:{wally:'abuelo',cathy:'abuela',boy:'niño',girl:'niña',binocularboy:'niño',dog:'perro',fishing:'caña de pescar',whale:'ballena',dolphin:'delfín',seagull:'gaviota',bee:'abeja',sun:'sol',sailboat:'velero',lighthouse:'faro',ocean:'océano',tackle:'caja de pesca',flowers:'flores',fruit:'fruta',drink:'bebida',lantern:'farol',binoculars:'binoculares',table:'mesa',rug:'alfombra',rope:'cuerda',railing:'barandilla',stairs:'escaleras',lifering:'salvavidas'},
   fr:{wally:'grand-père',cathy:'grand-mère',boy:'garçon',girl:'fille',binocularboy:'garçon',dog:'chien',fishing:'canne à pêche',whale:'baleine',dolphin:'dauphin',seagull:'mouette',bee:'abeille',sun:'soleil',sailboat:'voilier',lighthouse:'phare',ocean:'océan',tackle:'boîte de pêche',flowers:'fleurs',fruit:'fruit',drink:'boisson',lantern:'lanterne',binoculars:'jumelles',table:'table',rug:'tapis',rope:'corde',railing:'rambarde',stairs:'escaliers',lifering:'bouée de sauvetage'},
@@ -905,6 +913,23 @@ document.addEventListener('DOMContentLoaded',function(){
   marina:['AT THE MARINA','Useful words for a day on the water.','Practice simple marina and boating words.'],
   weather:['SUNSET & WEATHER','A peaceful evening at sea.','Practice simple words for the sky, sun and water.']
  };
+ const yachtSceneSounds={
+   whale:'sounds/whale.mp3',
+   bee:'sounds/bee.mp3',
+   seagull:'sounds/seagull.mp3',
+   dolphin:'sounds/dolphin.mp3',
+   yacht:'sounds/yacht.mp3'
+ };
+ let yachtSceneAudio=null;
+ function playYachtSceneSound(key){
+   const url=yachtSceneSounds[key];
+   if(!url)return;
+   if(yachtSceneAudio){yachtSceneAudio.pause();yachtSceneAudio.currentTime=0}
+   yachtSceneAudio=new Audio(url);
+   yachtSceneAudio.volume=.82;
+   yachtSceneAudio.play().catch(()=>{});
+ }
+
  const challengeOrder=['wally','cathy','fishing','whale','dolphin','seagull'];
  let group='deck',index=0,lastRate=.86,challengeIndex=0,solved=false,lastText='';
 
@@ -952,7 +977,9 @@ document.addEventListener('DOMContentLoaded',function(){
  hotspotLayer.addEventListener('click',e=>{
    const btn=e.target.closest('.yacht-hotspot');if(!btn||!hotspotLayer.contains(btn))return;
    e.preventDefault();e.stopPropagation();
-   const key=btn.dataset.object;if(!english[key])return;
+   const key=btn.dataset.object;
+   playYachtSceneSound(key);
+   if(!english[key])return;
    const target=currentWord(key);
    if(group==='find'){
      const wanted=challengeOrder[challengeIndex];
