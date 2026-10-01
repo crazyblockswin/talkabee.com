@@ -428,9 +428,13 @@ Object.keys(extraDiscovery).forEach(lang=>{if(!languageData[lang].objects)langua
    if(group!=='discover')return;
    currentObjectKey=key;document.getElementById('homePopWord').textContent=o.word;document.getElementById('homePopEnglish').textContent=o.english;
    document.getElementById('homePopSentence').textContent='';document.getElementById('homePopSentenceSpeak').style.display='none';
-   const scene=document.getElementById('homeScene'),r=scene.getBoundingClientRect(),br=btn.getBoundingClientRect();
-   let left=br.left-r.left+54,top=br.top-r.top-10;left=Math.min(left,r.width-310);left=Math.max(14,left);top=Math.min(top,r.height-170);top=Math.max(14,top);
-   pop.style.left=left+'px';pop.style.top=top+'px';pop.classList.add('show');sayDiscovery(o.word);
+    // Discovery card stays anchored; clicking hotspots only changes its content.
+    pop.style.left='50%';
+    pop.style.top='auto';
+    pop.style.bottom='18px';
+    pop.style.transform='translateX(-50%) scale(.67)';
+    pop.style.transformOrigin='bottom center';
+    pop.classList.add('show');sayDiscovery(o.word);
  }));
  document.getElementById('homePopWordSpeak').addEventListener('click',()=>{if(currentObjectKey)sayDiscovery(obj(currentObjectKey).word)});
  document.getElementById('homePopSentenceSpeak').addEventListener('click',()=>{});
