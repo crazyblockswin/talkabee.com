@@ -464,8 +464,9 @@ Object.keys(extraDiscovery).forEach(lang=>{if(!languageData[lang].objects)langua
  });
 
  document.querySelectorAll('.home-hotspot').forEach(btn=>btn.addEventListener('click',()=>{
-   const key=btn.dataset.object,o=obj(key);
+   const key=btn.dataset.object;
    playSceneSound(key);
+   const o=obj(key);
    if(group==='find'){
      const status=document.getElementById('homeFindStatus');
      if(key===findTarget){homeChallengeSolved=true;status.textContent='✓ Correct! '+o.word;status.style.color='#19744f';say(o.word,.72,false);const nav=document.querySelector('.home-challenge-nav[data-home-challenge="'+homeChallengeIndex+'"]');if(nav)nav.classList.add('done');const hint=document.getElementById('challengeNextHint');if(hint)hint.textContent='Nice work! Continue when you are ready.'}
