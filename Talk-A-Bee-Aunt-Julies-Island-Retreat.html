@@ -54,12 +54,17 @@ button{font:inherit;cursor:pointer}
 
 /* Scene View: hide only the left activity directory and reveal the full scene. */
 .scene-view-toggle{display:block;width:100%;margin:0 0 8px 0;border:1px solid rgba(255,255,255,.55);border-radius:10px;padding:8px;background:rgba(255,255,255,.12);color:#fff;font-size:11px;font-weight:950;cursor:pointer}
-body.scene-view .directory{display:none!important}
+body.scene-view .directory,body.scene-view .panel{display:none!important}
 .return-panel-toggle{display:none;position:fixed;z-index:10000;left:16px;top:16px;width:auto;margin:0;padding:9px 13px;border:1px solid rgba(255,255,255,.72);border-radius:10px;background:rgba(10,37,42,.86);color:#fff;font-size:11px;font-weight:950;cursor:pointer;box-shadow:0 7px 20px rgba(0,0,0,.30)}
 body.scene-view .return-panel-toggle{display:block!important}
 </style>
+<style id="talkabee-forward-arrow-style">
+.talkabee-forward-arrow{position:fixed;top:22px;right:24px;z-index:10050;width:62px;height:62px;border-radius:50%;border:2px solid rgba(255,255,255,.82);background:rgba(91,58,31,.16);box-shadow:0 5px 16px rgba(0,0,0,.12);backdrop-filter:blur(2px);display:grid;place-items:center;text-decoration:none;cursor:pointer}
+.talkabee-forward-arrow::before{content:"";width:17px;height:17px;border-top:5px solid #fff;border-right:5px solid #fff;transform:rotate(45deg) translate(-2px,2px);filter:drop-shadow(0 1px 2px rgba(0,0,0,.35))}
+</style>
 </head>
 <body>
+<a class="talkabee-forward-arrow" href="Talk-A-Bee-Bird-Sanctuary.html" aria-label="Next adventure: Bird Sanctuary" title="Next Adventure"></a>
 <button id="returnPanelToggle" class="return-panel-toggle" type="button">Return Panel</button>
 <section id="world">
  <div class="scene">
@@ -70,6 +75,8 @@ body.scene-view .return-panel-toggle{display:block!important}
    <div class="place">🌴 Aunt Julie's Island Retreat</div>
    <div class="language-row" style="margin:5px 0 7px"><label for="adventureLanguage" style="display:block;font-size:9px;font-weight:950;letter-spacing:.10em;margin:0 0 3px 4px">LEARNING LANGUAGE — 7</label><select id="adventureLanguage" aria-label="Learning language" style="width:100%;padding:6px 8px;border:1px solid rgba(255,255,255,.55);border-radius:9px;background:rgba(10,37,42,.82);color:#fff;font-size:11px;font-weight:900"><option value="es">Spanish</option><option value="fr">French</option><option value="en">English</option><option value="de">German</option><option value="it">Italian</option><option value="pt">Portuguese</option><option value="no">Norwegian</option></select></div>
    <div class="voice-row" style="margin:0 0 7px"><label for="adventureVoice" style="display:block;font-size:9px;font-weight:950;letter-spacing:.10em;margin:0 0 3px 4px">VOICE</label><select id="adventureVoice" aria-label="Voice" style="width:100%;padding:6px 8px;border:1px solid rgba(255,255,255,.55);border-radius:9px;background:rgba(10,37,42,.82);color:#fff;font-size:11px;font-weight:900"><option value="">Browser default</option></select></div>
+   <div class="label">DISCOVERY</div>
+   <button data-discovery>🔎 Discovery — Click the Scene</button>
    <div class="label">ACTIVITIES</div>
    <button data-lesson="welcome">1. 👋 Island Welcome</button>
    <button data-lesson="retreat">2. 🏝️ At the Retreat</button>
@@ -77,8 +84,6 @@ body.scene-view .return-panel-toggle{display:block!important}
    <button data-lesson="music">4. 🎸 Music Time</button>
    <button data-lesson="nature">5. 🌺 Tropical Nature</button>
    <button data-lesson="island">6. ⭐ Island Life</button>
-   <div class="label">DISCOVERY</div>
-   <button data-discovery>🔎 Discovery — Click the Scene</button>
    <div class="label">CHALLENGES</div>
    <button data-challenge="0">1. Find the Gremlin</button>
    <button data-challenge="1">2. Find the Dog</button>
@@ -186,6 +191,21 @@ nature:{title:"Tropical Nature",prompt:"Explore the plants, water, and sky aroun
 island:{title:"Island Life",prompt:"Put people, animals, places, and actions together.",lines:[["Julie nyter en rolig ettermiddag.","Julie enjoys a peaceful afternoon."],["Dyrene hviler i nærheten av henne.","The animals rest near her."],["En seilbåt beveger seg over havet.","A sailboat moves across the ocean."],["Alle nyter musikken og solnedgangen.","Everyone enjoys the music and the sunset."]]}
 },words:{julie:"Tante Julie.",guitar:"Gitaren.",dog:"Hunden.",cat:"Katten.",pig:"Den lille grisen.",hammock:"Hengekøyen.",lantern:"Lykten.",flowers:"Blomstene.",pier:"Brygga.",ocean:"Havet.",sailboat:"Seilbåten.",palm:"Palmen.",table:"Bordet.",pitcher:"Muggen.",cushions:"Putene.",car:'Gremlin fra 1976.',parrot:'Papegøyen.',cabin:'Hytta.',bee:'Bien.',chair:'Stolen.',mug:'Kruset.'}}
 };
+const julieSceneSounds={
+  bee:'sounds/bee.mp3',
+  car:'sounds/car-start.mp3',
+  parrot:'sounds/parrot.mp3',
+  ocean:'sounds/ocean.mp3',sailboat:'sounds/small-boat.mp3',dog:'sounds/dog-panting.wav',palm:'sounds/wind.mp3',cabin:'sounds/cabin-guitar.mp3'
+};
+let julieSceneAudio=null;
+function playJulieSceneSound(key){
+  const url=julieSceneSounds[key];
+  if(!url)return;
+  if(julieSceneAudio){julieSceneAudio.pause();julieSceneAudio.currentTime=0}
+  julieSceneAudio=new Audio(url);
+  julieSceneAudio.volume=.82;
+  julieSceneAudio.play().catch(()=>{});
+}
 const englishWords={julie:"Aunt Julie",car:"1976 Gremlin",dog:"Dog",cabin:"Cabin",bee:"Bee",hammock:"Hammock",parrot:"Parrot",lantern:"Lantern",flowers:"Flowers",pier:"Pier",ocean:"Ocean",sailboat:"Sailboat",palm:"Palm tree",chair:"Chair",mug:"Mug"};
 const challengeOrder=["car","dog","parrot","bee","hammock","sailboat"];
 let active="welcome",index=0,challenge=-1,solved=false,discovery=false;
@@ -217,7 +237,7 @@ document.querySelector("[data-discovery]").onclick=loadDiscovery;
 document.querySelectorAll("[data-challenge]").forEach(b=>b.onclick=()=>loadChallenge(Number(b.dataset.challenge)));
 $("next").onclick=()=>{index=(index+1)%data().lessons[active].lines.length;render()};
 $("speak").onclick=()=>speak(data().lessons[active].lines[index][0]);
-document.querySelectorAll(".hotspot").forEach(b=>b.onclick=()=>{const key=b.dataset.word,target=data().words[key];if(challenge>=0){if(key===challengeOrder[challenge]){solved=true;status.textContent="✓ Nice find! "+target+" "+englishWords[key]+".";status.style.color="#176a48";hint.textContent="Challenge complete. Move to the next one.";speak(target)}else{status.textContent="Not that one — keep looking.";status.style.color="#85580f"}return}if(discovery){title.textContent="Click & Discover";prompt.textContent="You found something in the scene.";line.textContent=target;translation.textContent=englishWords[key]+".";speak(target)}});
+document.querySelectorAll(".hotspot").forEach(b=>b.onclick=()=>{const key=b.dataset.word;playJulieSceneSound(key);const target=data().words[key];if(challenge>=0){if(key===challengeOrder[challenge]){solved=true;status.textContent="✓ Nice find! "+target+" "+englishWords[key]+".";status.style.color="#176a48";hint.textContent="Challenge complete. Move to the next one.";speak(target)}else{status.textContent="Not that one — keep looking.";status.style.color="#85580f"}return}if(discovery){title.textContent="Click & Discover";prompt.textContent="You found something in the scene.";line.textContent=target;translation.textContent=englishWords[key]+".";speak(target)}});
 challengeNext.onclick=()=>{if(!solved){status.textContent="Find the correct object first.";status.style.color="#85580f";return}if(challenge<5)loadChallenge(challenge+1);else{status.textContent="🏁 You completed all 6 Island Retreat challenges!";status.style.color="#176a48";hint.textContent="Great job exploring Aunt Julie's island."}};
 function applyLanguage(lang){if(!languageData[lang])lang="es";languageSelect.value=lang;localStorage.setItem(LANG_KEY,lang);refreshVoices();if(challenge>=0)loadChallenge(challenge);else if(discovery)loadDiscovery();else loadLesson(active)}
 const params=new URLSearchParams(location.search);const incoming=params.get("lang");const saved=localStorage.getItem(LANG_KEY);applyLanguage(languageData[incoming]?incoming:(languageData[saved]?saved:"es"));
