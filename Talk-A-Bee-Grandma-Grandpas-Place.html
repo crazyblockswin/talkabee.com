@@ -233,6 +233,8 @@ html,body,#homeWorld,#homeScene{
     </section>
   </div>
 </main>
+<audio id="grandpaWallyAudio" preload="auto" src="sound/wally.mp3"></audio>
+<audio id="grandmaCathyAudio" preload="auto" src="sound/cathy.mp3"></audio>
 <script>
 (function(){
  const languageData={
@@ -316,6 +318,14 @@ Object.keys(extraDiscovery).forEach(lang=>{if(!languageData[lang].objects)langua
  function lang(){return languageData[languageSelect.value]||languageData.es}
  function obj(key){const row=lang().objects[key];return {word:row[0],english:row[1]}}
  function clean(w){return w.replace(/[.,!?¿¡;:()"“”]/g,'').trim()}
+ function playCharacterAudio(key){
+   const id=key==='grandpa'?'grandpaWallyAudio':key==='grandma'?'grandmaCathyAudio':'';
+   if(!id)return false;
+   const a=document.getElementById(id); if(!a)return false;
+   if('speechSynthesis' in window)speechSynthesis.cancel();
+   document.querySelectorAll('#grandpaWallyAudio,#grandmaCathyAudio').forEach(x=>{if(x!==a){x.pause();x.currentTime=0;}});
+   a.currentTime=0; a.play().catch(()=>{}); return true;
+ }
  function selectedVoice(){
    const voices=speechSynthesis.getVoices();
    return voices.find(v=>v.voiceURI===voiceSelect.value)||null;
@@ -428,15 +438,11 @@ Object.keys(extraDiscovery).forEach(lang=>{if(!languageData[lang].objects)langua
    if(group!=='discover')return;
    currentObjectKey=key;document.getElementById('homePopWord').textContent=o.word;document.getElementById('homePopEnglish').textContent=o.english;
    document.getElementById('homePopSentence').textContent='';document.getElementById('homePopSentenceSpeak').style.display='none';
-    // Discovery card stays anchored; clicking hotspots only changes its content.
-    pop.style.left='50%';
-    pop.style.top='auto';
-    pop.style.bottom='18px';
-    pop.style.transform='translateX(-50%) scale(.67)';
-    pop.style.transformOrigin='bottom center';
-    pop.classList.add('show');sayDiscovery(o.word);
+   const scene=document.getElementById('homeScene'),r=scene.getBoundingClientRect(),br=btn.getBoundingClientRect();
+   let left=br.left-r.left+54,top=br.top-r.top-10;left=Math.min(left,r.width-310);left=Math.max(14,left);top=Math.min(top,r.height-170);top=Math.max(14,top);
+   pop.style.left=left+'px';pop.style.top=top+'px';pop.classList.add('show');if(!playCharacterAudio(key))sayDiscovery(o.word);
  }));
- document.getElementById('homePopWordSpeak').addEventListener('click',()=>{if(currentObjectKey)sayDiscovery(obj(currentObjectKey).word)});
+ document.getElementById('homePopWordSpeak').addEventListener('click',()=>{if(currentObjectKey&&!playCharacterAudio(currentObjectKey))sayDiscovery(obj(currentObjectKey).word)});
  document.getElementById('homePopSentenceSpeak').addEventListener('click',()=>{});
 
  languageSelect.addEventListener('change',()=>{
