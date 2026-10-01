@@ -129,10 +129,45 @@ html,body,#homeWorld,#homeScene{
 }
 </style>
 
+
+<style id="talkabee-next-adventure-arrow">
+.next-adventure-arrow{
+  position:absolute;
+  z-index:90;
+  top:18px;
+  right:18px;
+  width:48px;
+  height:48px;
+  display:grid;
+  place-items:center;
+  border:1px solid rgba(255,255,255,.70);
+  border-radius:50%;
+  background:rgba(15,25,42,.42);
+  color:#fff;
+  font-size:30px;
+  line-height:1;
+  font-weight:900;
+  text-decoration:none;
+  cursor:pointer;
+  box-shadow:0 8px 22px rgba(0,0,0,.18);
+  backdrop-filter:blur(6px);
+}
+.next-adventure-arrow:hover,
+.next-adventure-arrow:focus-visible{
+  background:rgba(97,68,229,.88);
+  outline:3px solid rgba(255,255,255,.82);
+  outline-offset:2px;
+}
+@media(max-width:850px){
+  .next-adventure-arrow{top:12px;right:12px;width:42px;height:42px;font-size:27px}
+}
+</style>
+
 </head>
 <body>
 <main id="homeWorld" class="open" aria-label="Grandma and Grandpa's Place">
   <div class="home-scene" id="homeScene">
+    <a class="next-adventure-arrow" id="nextAdventureArrow" href="Talk-A-Bee-Sea-Adventures.html" aria-label="Next adventure: Sea Adventures" title="Next Adventure — Sea Adventures">→</a>
     <img class="scene-main-image" id="homeSceneImage" src="images/grandma-grandpas-place.jpg" alt="" aria-hidden="true">
 
     <div class="scene-hotspots" id="homeHotspots">
@@ -457,5 +492,24 @@ Object.keys(extraDiscovery).forEach(lang=>{if(!languageData[lang].objects)langua
  render();
 })();
 </script>
+
+<script id="talkabee-next-adventure-language">
+(function(){
+  const next=document.getElementById('nextAdventureArrow');
+  if(!next) return;
+  next.addEventListener('click',function(e){
+    let lang='';
+    try{
+      lang=(document.getElementById('homeLanguage')||{}).value ||
+           localStorage.getItem('talkabee-learn-language') || '';
+    }catch(_){}
+    if(lang){
+      e.preventDefault();
+      location.href='Talk-A-Bee-Sea-Adventures.html?lang='+encodeURIComponent(lang);
+    }
+  });
+})();
+</script>
+
 </body>
 </html>
