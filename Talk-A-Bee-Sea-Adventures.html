@@ -745,6 +745,9 @@ body>header,body>footer,.final-cta,.hero,#mainDirectory{display:none!important;}
    </select>
    <label class="sea-control-label" for="seaVoice">VOICE</label>
    <select id="seaVoice" class="sea-select"><option value="">Browser Default</option></select>
+   <div class="yacht-label">DISCOVERY</div>
+   <button type="button" class="yacht-nav" data-yacht-group="discover">🔎 Click &amp; Discover</button>
+   <div class="yacht-divider"></div>
    <div class="yacht-label">6 ACTIVITIES</div>
    <button type="button" class="yacht-nav active" data-yacht-group="deck">👋 On Deck Talk</button>
    <button type="button" class="yacht-nav" data-yacht-group="boat">🛥️ Boat Words</button>
@@ -752,9 +755,6 @@ body>header,body>footer,.final-cta,.hero,#mainDirectory{display:none!important;}
    <button type="button" class="yacht-nav" data-yacht-group="animals">🦜 Animal Friends</button>
    <button type="button" class="yacht-nav" data-yacht-group="marina">🗺️ At the Marina</button>
    <button type="button" class="yacht-nav" data-yacht-group="weather">🌅 Sunset &amp; Weather</button>
-   <div class="yacht-divider"></div>
-   <div class="yacht-label">DISCOVERY</div>
-   <button type="button" class="yacht-nav" data-yacht-group="discover">🔎 Click &amp; Discover</button>
    <div class="yacht-divider"></div>
    <div class="yacht-label">6 CHALLENGES</div>
    <button type="button" class="yacht-challenge-nav" data-yacht-challenge="0"><span>1</span> Grandpa Wally</button>
@@ -795,6 +795,7 @@ body>header,body>footer,.final-cta,.hero,#mainDirectory{display:none!important;}
      <button type="button" class="yacht-hotspot" data-object="rope" style="left:27.5%;top:83.0%" aria-label="Rope"></button>
      <button type="button" class="yacht-hotspot" data-object="railing" style="left:19.0%;top:67.0%" aria-label="Railing"></button>
      <button type="button" class="yacht-hotspot" data-object="stairs" style="left:85.0%;top:35.0%" aria-label="Stairs"></button>
+     <button type="button" class="yacht-hotspot" data-object="yacht" style="left:89.5%;top:39.0%;width:7%!important" aria-label="Yacht"></button>
      <button type="button" class="yacht-hotspot" data-object="lifering" style="left:95.0%;top:87.5%" aria-label="Lifering"></button>
    </div>
    </div>
@@ -919,6 +920,8 @@ document.addEventListener('DOMContentLoaded',function(){
    seagull:'sounds/seagull.mp3',
    dolphin:'sounds/dolphin.mp3',
    yacht:'sounds/yacht.mp3'
+    ,girl:'sounds/girl-laugh.mp3'
+    ,ocean:'sounds/ocean.mp3'
  };
  let yachtSceneAudio=null;
  function playYachtSceneSound(key){
