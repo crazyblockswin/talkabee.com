@@ -240,22 +240,25 @@ function fillBirdVoices(){
  if([...voiceSelect.options].some(o=>o.value===saved)) voiceSelect.value=saved;
 }
 
-const sceneAudio=new Audio();
-const SCENE_SOUNDS={
- waterfall:"sounds/waterfall.mp3",
- rv:"sounds/RV2-nature.mp3",
- bluebird:"sounds/birds-forest.mp3",
- birdhouse:"sounds/birdhouse.mp3",
- birdhouse2:"sounds/birdhouse.mp3",
- grandpa:"sounds/grandpa-birdhouses.mp3"
+const birdSceneSounds={
+  waterfall:'sounds/waterfall.mp3',
+  rv:'sounds/RV2-nature.mp3',
+  bluebird:'sounds/birds-forest.mp3',
+  birdhouse:'sounds/birdhouse.mp3',
+  birdhouse2:'sounds/birdhouse.mp3',
+  grandpa:'sounds/grandpa-birdhouses.mp3'
 };
-function stopSceneSound(){sceneAudio.pause();sceneAudio.currentTime=0;}
-function playSceneSound(file){
-  stopSceneSound();
-  sceneAudio.src=file;
-  sceneAudio.load();
-  const playPromise=sceneAudio.play();
-  if(playPromise&&typeof playPromise.catch==="function")playPromise.catch(()=>{});
+let birdSceneAudio=null;
+function playBirdSceneSound(key){
+  const url=birdSceneSounds[key];
+  if(!url)return;
+  if(birdSceneAudio){
+    birdSceneAudio.pause();
+    birdSceneAudio.currentTime=0;
+  }
+  birdSceneAudio=new Audio(url);
+  birdSceneAudio.volume=.82;
+  birdSceneAudio.play().catch(()=>{});
 }
 const challengeOrder=["birdhouse","hammer","paintbrush","birdfeeder","bluebird","butterfly"];
 let active="meet",index=0,challenge=-1,solved=false,discovery=false;
@@ -264,36 +267,17 @@ const title=$("title"),prompt=$("prompt"),line=$("line"),translation=$("translat
  actions=$("actions"),find=$("find"),count=$("count"),status=$("status"),
  hint=$("hint"),challengeNext=$("challengeNext");
 
-function speak(t,onDone){
-  if(typeof sceneAudio!=="undefined") stopSceneSound();
-  if(!("speechSynthesis" in window)){
-    if(typeof onDone==="function") onDone();
-    return;
-  }
-  speechSynthesis.cancel();
-  const u=new SpeechSynthesisUtterance(t);
-  u.lang=data().speech;
-  const v=selectedVoice();
-  if(v)u.voice=v;
-  u.rate=.82;
-
-  let fallbackTimer=null;
-  if(typeof onDone==="function"){
-    let finished=false;
-    const finish=()=>{
-      if(finished)return;
-      finished=true;
-      if(fallbackTimer)clearTimeout(fallbackTimer);
-      onDone();
-    };
-    u.onend=finish;
-    u.onerror=finish;
-    // Firefox safety net: estimate speech duration, then play the real sound
-    // if onend/onerror never arrives.
-    const words=String(t).trim().split(/\s+/).filter(Boolean).length;
-    fallbackTimer=setTimeout(finish,Math.max(1100,words*650));
-  }
-  speechSynthesis.speak(u);
+function speak(t,rate=.82){
+  if(!t)return;
+  try{
+    speechSynthesis.cancel();
+    const u=new SpeechSynthesisUtterance(t);
+    u.lang=data().speech;
+    u.rate=rate;
+    const v=selectedVoice();
+    if(v)u.voice=v;
+    setTimeout(()=>speechSynthesis.speak(u),40);
+  }catch(e){}
 }
 function clearActive(){document.querySelectorAll(".directory button").forEach(b=>b.classList.remove("active"))}
 function render(){const x=lessons[active].lines[index];line.textContent=x[0];translation.textContent=x[1]}
@@ -332,30 +316,31 @@ $("speak").onclick=()=>speak(lessons[active].lines[index][0]);
 
 document.querySelectorAll(".hotspot").forEach(b=>b.onclick=()=>{
  const key=b.dataset.word,x=objectWord(key);
- const hasSceneSound=Boolean(SCENE_SOUNDS[key]);
 
- // Every hotspot speaks its selected-language object name immediately.
- // Recorded scene sounds wait until the spoken name finishes.
- const speakObject=()=>speak(x[0],hasSceneSound?()=>playSceneSound(SCENE_SOUNDS[key]):undefined);
+ // Proven Train Station template: real sound fires directly from the click.
+ playBirdSceneSound(key);
 
  if(challenge>=0){
    const target=challengeOrder[challenge];
    const correct=(key===target)||(target==="birdhouse"&&key==="birdhouse2");
    if(correct){
-     solved=true;status.textContent="✓ Nice find! "+x[0]+" "+x[1];
-     status.style.color="#176a48";hint.textContent="Challenge complete. Move to the next one.";
+     solved=true;
+     status.textContent="✓ Nice find! "+x[0]+" "+x[1];
+     status.style.color="#176a48";
+     hint.textContent="Challenge complete. Move to the next one.";
+     speak(x[0],.75);
    } else {
-     status.textContent="Not that one — keep looking.";status.style.color="#85580f";
+     status.textContent="Not that one — keep looking.";
+     status.style.color="#85580f";
    }
-   speakObject();
    return;
  }
 
- if(discovery){
-   title.textContent="Click & Discover";prompt.textContent="You found something in the scene.";
-   line.textContent=x[0];translation.textContent=x[1];
- }
- speakObject();
+ title.textContent="Click & Discover";
+ prompt.textContent="You found something in the scene.";
+ line.textContent=x[0];
+ translation.textContent=x[1];
+ speak(x[0],.78);
 });
 
 
