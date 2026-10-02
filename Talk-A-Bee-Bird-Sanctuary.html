@@ -310,20 +310,28 @@ $("speak").onclick=()=>speak(lessons[active].lines[index][0]);
 
 document.querySelectorAll(".hotspot").forEach(b=>b.onclick=()=>{
  const key=b.dataset.word,x=objectWord(key);
+ const hasSceneSound=Boolean(SCENE_SOUNDS[key]);
+
+ // Real scene sounds are always live — no Discovery button required.
+ if(hasSceneSound) playSceneSound(SCENE_SOUNDS[key]);
+
  if(challenge>=0){
    const target=challengeOrder[challenge];
    const correct=(key===target)||(target==="birdhouse"&&key==="birdhouse2");
    if(correct){
      solved=true;status.textContent="✓ Nice find! "+x[0]+" "+x[1];
-     status.style.color="#176a48";hint.textContent="Challenge complete. Move to the next one.";speak(x[0]);
+     status.style.color="#176a48";hint.textContent="Challenge complete. Move to the next one.";
+     if(!hasSceneSound) speak(x[0]);
    } else {
      status.textContent="Not that one — keep looking.";status.style.color="#85580f";
    }
    return;
  }
+
  if(discovery){
    title.textContent="Click & Discover";prompt.textContent="You found something in the scene.";
-   line.textContent=x[0];translation.textContent=x[1];speak(x[0]);
+   line.textContent=x[0];translation.textContent=x[1];
+   if(!hasSceneSound) speak(x[0]);
  }
 });
 
