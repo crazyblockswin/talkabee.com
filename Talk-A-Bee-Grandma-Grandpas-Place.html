@@ -466,17 +466,22 @@ Object.keys(extraDiscovery).forEach(lang=>{if(!languageData[lang].objects)langua
    if(homeChallengeIndex<5)openHomeChallenge(homeChallengeIndex+1);
    else{status.textContent='🏁 You completed all 6 challenges!';status.style.color='#19744f';const finishBtn=document.getElementById('homeChallengeNext');finishBtn.textContent='Challenges Complete ✓';if(hint)hint.textContent='All six challenges complete!'}
  });
-
-
- function speakAutoObject(key){
-   const o=obj(key);
-   if(!('speechSynthesis' in window)||!o||!o.word){playSceneSound(key);return}
-   speechSynthesis.cancel();
-   const u=new SpeechSynthesisUtterance(o.word);
-   u.lang=lang().speech;u.rate=.78;
-   const v=selectedVoice();if(v)u.voice=v;
-   u.onend=()=>playSceneSound(key);
-   speechSynthesis.speak(u);
+  function speakAutoObject(key){
+    const o=obj(key),character=characterAudio[key];
+    if(character){
+      if('speechSynthesis' in window)speechSynthesis.cancel();
+      Object.values(characterAudio).forEach(a=>{a.pause();a.currentTime=0});
+      if(currentSceneSound){currentSceneSound.pause();currentSceneSound.currentTime=0}
+      character.play().catch(()=>sayDiscovery(o.word));
+      return;
+    }
+    if(!('speechSynthesis' in window)||!o||!o.word){playSceneSound(key);return}
+    speechSynthesis.cancel();
+    const u=new SpeechSynthesisUtterance(o.word);
+    u.lang=lang().speech;u.rate=.78;
+    const v=selectedVoice();if(v)u.voice=v;
+    u.onend=()=>playSceneSound(key);
+    speechSynthesis.speak(u);
  }
 
  document.querySelectorAll('.home-hotspot').forEach(btn=>btn.addEventListener('click',()=>{
