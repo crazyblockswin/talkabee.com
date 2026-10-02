@@ -142,15 +142,97 @@ function fillVoices(){const vs=speechSynthesis.getVoices();voiceSel.innerHTML='<
 if("speechSynthesis" in window){speechSynthesis.onvoiceschanged=fillVoices;fillVoices()}
 function speak(t,rate=.82,onend=null){if(!t||!("speechSynthesis" in window)){if(onend)onend();return;}try{speechSynthesis.cancel();const u=new SpeechSynthesisUtterance(t);u.lang=LANGS[langSel.value].code;u.rate=rate;const v=speechSynthesis.getVoices().find(v=>v.name===voiceSel.value);if(v)u.voice=v;if(onend)u.onend=onend;setTimeout(()=>speechSynthesis.speak(u),40)}catch(e){if(onend)onend();}}
 function showWord(key){lastWord=key;const x=LANGS[langSel.value].words[key];line.textContent=x[0];translation.textContent=langSel.value==="en"?"":x[1]}
-document.querySelectorAll(".hotspot").forEach(b=>b.onclick=()=>{const key=b.dataset.word,x=LANGS[langSel.value].words[key];showWord(key);speak(x[0],.82,()=>playBoardwalkSound(key));if(challenge>=0){if(key===challengeOrder[challenge]){status.textContent="✓ Nice find!";status.style.color="#9dffbf"}else{status.textContent="Not that one — keep looking.";status.style.color="#ffe28a"}}});
-document.getElementById("discovery").onclick=()=>{challenge=-1;world.classList.remove("challenge-mode");title.textContent="Click & Discover";prompt.textContent="Click any object in the scene to hear its name.";status.textContent=""};
-document.querySelectorAll("[data-ch]").forEach(b=>b.onclick=()=>{challenge=+b.dataset.ch;world.classList.add("challenge-mode");document.querySelectorAll(".hotspot").forEach(h=>h.classList.toggle("target",h.dataset.word===challengeOrder[challenge]));title.textContent="Challenge "+(challenge+1)+" of 6";prompt.textContent=b.textContent.replace(/^\d+\.\s*/,"");status.textContent=""});
-const lessons={arrive:["We are at the boardwalk.","Look at the rides and the ocean."],rides:["Which ride would you like?","I would like the Ferris wheel."],snacks:["Would you like ice cream or popcorn?","I would like ice cream, please."],beach:["Let’s walk to the beach.","Bring the umbrella and surfboard."],safety:["Where is the lifeguard?","The lifeguard tower is by the ocean."],things:["What do you see?","I see a bicycle, a kite, and a seagull."]};
-document.querySelectorAll("[data-lesson]").forEach(b=>b.onclick=()=>{challenge=-1;world.classList.remove("challenge-mode");const a=lessons[b.dataset.lesson];title.textContent=b.textContent.replace(/^\d+\.\s*/,"");prompt.textContent=a[0];line.textContent=a[1];translation.textContent="";lastWord="";speak(a[1])});
-document.getElementById("normal").onclick=()=>speak(lastWord?LANGS[langSel.value].words[lastWord][0]:line.textContent,.82);
-document.getElementById("slow").onclick=()=>speak(lastWord?LANGS[langSel.value].words[lastWord][0]:line.textContent,.58);
-document.getElementById("replay").onclick=()=>speak(lastWord?LANGS[langSel.value].words[lastWord][0]:line.textContent,.82);
-langSel.onchange=()=>{if(lastWord)showWord(lastWord)};
+document.querySelectorAll(".hotspot").forEach(b=>b.onclick=()=>{activeLesson="";const key=b.dataset.word,x=LANGS[langSel.value].words[key];showWord(key);speak(x[0],.82,()=>playBoardwalkSound(key));if(challenge>=0){if(key===challengeOrder[challenge]){status.textContent="✓ Nice find!";status.style.color="#9dffbf"}else{status.textContent="Not that one — keep looking.";status.style.color="#ffe28a"}}});
+document.getElementById("discovery").onclick=()=>{activeLesson="";challenge=-1;world.classList.remove("challenge-mode");title.textContent="Click & Discover";prompt.textContent="Click any object in the scene to hear its name.";status.textContent=""};
+document.querySelectorAll("[data-ch]").forEach(b=>b.onclick=()=>{activeLesson="";challenge=+b.dataset.ch;world.classList.add("challenge-mode");document.querySelectorAll(".hotspot").forEach(h=>h.classList.toggle("target",h.dataset.word===challengeOrder[challenge]));title.textContent="Challenge "+(challenge+1)+" of 6";prompt.textContent=b.textContent.replace(/^\d+\.\s*/,"");status.textContent=""});
+const lessons={
+en:{
+arrive:["We are at the boardwalk.","Look at the rides and the ocean."],
+rides:["Which ride would you like?","I would like the Ferris wheel."],
+snacks:["Would you like ice cream or popcorn?","I would like ice cream, please."],
+beach:["Let’s walk to the beach.","Bring the umbrella and surfboard."],
+safety:["Where is the lifeguard?","The lifeguard tower is by the ocean."],
+things:["What do you see?","I see a bicycle, a kite, and a seagull."]
+},
+es:{
+arrive:["Estamos en el paseo marítimo.","Mira las atracciones y el océano."],
+rides:["¿En qué atracción te gustaría subir?","Me gustaría subir a la noria."],
+snacks:["¿Quieres helado o palomitas?","Quiero helado, por favor."],
+beach:["Vamos a caminar hasta la playa.","Trae la sombrilla y la tabla de surf."],
+safety:["¿Dónde está el salvavidas?","La torre de salvavidas está junto al océano."],
+things:["¿Qué ves?","Veo una bicicleta, una cometa y una gaviota."]
+},
+fr:{
+arrive:["Nous sommes sur la promenade.","Regarde les attractions et l’océan."],
+rides:["Quel manège voudrais-tu faire ?","Je voudrais faire de la grande roue."],
+snacks:["Veux-tu une glace ou du pop-corn ?","Je voudrais une glace, s’il vous plaît."],
+beach:["Allons jusqu’à la plage.","Apporte le parasol et la planche de surf."],
+safety:["Où est le sauveteur ?","La tour du sauveteur est près de l’océan."],
+things:["Qu’est-ce que tu vois ?","Je vois un vélo, un cerf-volant et une mouette."]
+},
+de:{
+arrive:["Wir sind an der Strandpromenade.","Schau dir die Fahrgeschäfte und den Ozean an."],
+rides:["Welches Fahrgeschäft möchtest du fahren?","Ich möchte mit dem Riesenrad fahren."],
+snacks:["Möchtest du Eis oder Popcorn?","Ich möchte Eis, bitte."],
+beach:["Gehen wir zum Strand.","Bring den Sonnenschirm und das Surfbrett mit."],
+safety:["Wo ist der Rettungsschwimmer?","Der Rettungsschwimmerturm steht am Ozean."],
+things:["Was siehst du?","Ich sehe ein Fahrrad, einen Drachen und eine Möwe."]
+},
+it:{
+arrive:["Siamo sul lungomare.","Guarda le giostre e l’oceano."],
+rides:["Su quale giostra vorresti andare?","Vorrei andare sulla ruota panoramica."],
+snacks:["Vuoi un gelato o dei popcorn?","Vorrei un gelato, per favore."],
+beach:["Andiamo alla spiaggia.","Porta l’ombrellone e la tavola da surf."],
+safety:["Dov’è il bagnino?","La torre del bagnino è vicino all’oceano."],
+things:["Che cosa vedi?","Vedo una bicicletta, un aquilone e un gabbiano."]
+},
+pt:{
+arrive:["Estamos no calçadão.","Olhe os brinquedos e o oceano."],
+rides:["Em qual brinquedo você gostaria de ir?","Eu gostaria de ir na roda-gigante."],
+snacks:["Você quer sorvete ou pipoca?","Eu gostaria de sorvete, por favor."],
+beach:["Vamos caminhar até a praia.","Traga o guarda-sol e a prancha de surfe."],
+safety:["Onde está o salva-vidas?","A torre do salva-vidas fica perto do oceano."],
+things:["O que você vê?","Eu vejo uma bicicleta, uma pipa e uma gaivota."]
+},
+no:{
+arrive:["Vi er på strandpromenaden.","Se på karusellene og havet."],
+rides:["Hvilken attraksjon vil du prøve?","Jeg vil gjerne ta pariserhjulet."],
+snacks:["Vil du ha iskrem eller popkorn?","Jeg vil gjerne ha iskrem, takk."],
+beach:["La oss gå til stranden.","Ta med parasollen og surfebrettet."],
+safety:["Hvor er badevakten?","Badevaktstårnet står ved havet."],
+things:["Hva ser du?","Jeg ser en sykkel, en drage og en måke."]
+}
+};
+let activeLesson="";
+function showLesson(key,speakIt=false){
+  activeLesson=key;
+  lastWord="";
+  const a=lessons[langSel.value][key];
+  const btn=document.querySelector(`[data-lesson="${key}"]`);
+  title.textContent=btn?btn.textContent.replace(/^\d+\.\s*/,""):"Boardwalk Adventure";
+  prompt.textContent=a[0];
+  line.textContent=a[1];
+  translation.textContent=langSel.value==="en"?"":lessons.en[key][1];
+  if(speakIt)speak(a[1]);
+}
+document.querySelectorAll("[data-lesson]").forEach(b=>b.onclick=()=>{
+  challenge=-1;
+  world.classList.remove("challenge-mode");
+  status.textContent="";
+  showLesson(b.dataset.lesson,true);
+});
+function currentSpeechText(){
+  if(activeLesson)return lessons[langSel.value][activeLesson][1];
+  if(lastWord)return LANGS[langSel.value].words[lastWord][0];
+  return line.textContent;
+}
+document.getElementById("normal").onclick=()=>speak(currentSpeechText(),.82);
+document.getElementById("slow").onclick=()=>speak(currentSpeechText(),.58);
+document.getElementById("replay").onclick=()=>speak(currentSpeechText(),.82);
+langSel.onchange=()=>{
+  if(activeLesson)showLesson(activeLesson,false);
+  else if(lastWord)showWord(lastWord);
+};
 document.getElementById("sceneView").onclick=()=>document.body.classList.add("scene-view");
 document.getElementById("sceneReturn").onclick=()=>document.body.classList.remove("scene-view");
 showWord("ferris");
