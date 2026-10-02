@@ -4854,7 +4854,7 @@ document.addEventListener('click',function(e){
 </script>
 
 <style id="talkabee-directory-boardwalk-standard">
-/* Directory visual standard: matches the approved Boardwalk-family glass panel. */
+/* DIRECTORY PAGE 1 — approved upgraded Boardwalk-family glass panel. */
 #mainDirectory{
   min-height:calc(100vh - 72px)!important;
   height:calc(100vh - 72px)!important;
@@ -4877,7 +4877,7 @@ document.addEventListener('click',function(e){
   box-shadow:0 10px 28px rgba(0,0,0,.22)!important;
   backdrop-filter:blur(3px)!important;-webkit-backdrop-filter:blur(3px)!important;
 }
-#mainDirectory .landing-directory h2{font-size:22px!important;line-height:1.1!important;margin:0 0 10px!important;color:#fff!important;-webkit-text-stroke:0!important;text-shadow:none!important;}
+#mainDirectory .landing-directory h2{font-size:22px!important;line-height:1.1!important;margin:0 0 10px!important;color:#fff!important;font-weight:950!important;-webkit-text-stroke:0!important;text-shadow:0 2px 8px rgba(0,0,0,.28)!important;}
 #mainDirectory .directory-link{
   width:100%!important;display:block!important;margin:5px 0!important;padding:9px 10px!important;
   border-radius:12px!important;border:1px solid rgba(255,255,255,.38)!important;
@@ -4885,7 +4885,9 @@ document.addEventListener('click',function(e){
   font-weight:800!important;text-decoration:none!important;text-align:left!important;
   -webkit-text-stroke:0!important;text-shadow:none!important;paint-order:normal!important;
 }
-#mainDirectory .directory-link:hover{background:rgba(255,255,255,.18)!important;transform:none!important;}
+#mainDirectory .directory-link:hover,#mainDirectory .directory-link:focus-visible{background:rgba(255,255,255,.18)!important;border-color:rgba(255,255,255,.62)!important;transform:none!important;outline:none!important;}
+#mainDirectory .landing-directory::-webkit-scrollbar{width:6px!important;}
+#mainDirectory .landing-directory::-webkit-scrollbar-thumb{background:rgba(255,255,255,.28)!important;border-radius:999px!important;}
 #mainDirectory .directory-more{margin-top:10px!important;background:rgba(80,59,150,.64)!important;border-color:rgba(255,255,255,.52)!important;}
 @media(max-width:900px){#mainDirectory .landing-directory{width:190px!important;}}
 </style>
