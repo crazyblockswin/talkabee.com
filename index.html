@@ -891,6 +891,32 @@ header .brand-tagline{white-space:normal!important;line-height:1.12!important;}
 .talkabee-forward-arrow:hover{background:rgba(11,22,42,.38)}
 </style>
 
+
+<style id="talkabee-main-entrance-real-image-lock">
+#mainDirectory .hero-feature-card{
+  background-image:none!important;
+  background-color:#dcecff!important;
+}
+#mainDirectory .talkabee-main-entrance-image{
+  position:absolute!important;
+  inset:0!important;
+  width:100%!important;
+  height:100%!important;
+  object-fit:cover!important;
+  object-position:center top!important;
+  display:block!important;
+  opacity:1!important;
+  visibility:visible!important;
+  z-index:0!important;
+}
+#mainDirectory .hero-feature-overlay{
+  z-index:2!important;
+}
+#mainDirectory .landing-directory{
+  z-index:10!important;
+}
+</style>
+
 </head>
 <body>
 <a class="talkabee-forward-arrow" href="Talk-A-Bee-Grandma-Grandpas-Place.html" aria-label="Start adventures: Grandma & Grandpa’s Place" title="Start Adventures"></a>
@@ -937,7 +963,8 @@ header .brand-tagline{white-space:normal!important;line-height:1.12!important;}
     <a class="directory-link" href="Talk-A-Bee-Animals-Farm-Adventure.html">🐾 Animals — Farm Adventure</a>
    </aside>
    <div class="hero-right">
-    <div class="hero-feature-card" style="background-image:url('images/talkabee-main-entrance.webp')">
+    <div class="hero-feature-card" style="background-image:none!important;background-color:#dcecff;">
+      <img class="talkabee-main-entrance-image" src="images/talkabee-main-entrance.webp" alt="" aria-hidden="true">
       <div class="hero-feature-overlay hero-copy-overlay">
        <span class="eyebrow">FOLLOW THE BEE. FIND YOUR WORDS.</span>
        <h1>Talk A Bee puts the adventure first.</h1>
