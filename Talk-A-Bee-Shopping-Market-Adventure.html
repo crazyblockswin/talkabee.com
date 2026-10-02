@@ -63,25 +63,36 @@ body.scene-view .directory,body.scene-view .panel{display:none!important}
 .return-panel-toggle{display:none;position:fixed;z-index:10000;left:16px;top:16px;width:auto;margin:0;padding:9px 13px;border:1px solid rgba(255,255,255,.72);border-radius:10px;background:rgba(10,37,42,.86);color:#fff;font-size:11px;font-weight:950;cursor:pointer;box-shadow:0 7px 20px rgba(0,0,0,.30)}
 body.scene-view .return-panel-toggle{display:block!important}
 
-.forward-arrow{
+
+
+.talkabee-forward-arrow{
  position:fixed;z-index:10020;right:22px;top:18px;
  width:62px;height:62px;border:2px solid rgba(255,255,255,.82);
- border-radius:50%;display:flex;align-items:center;justify-content:center;
- background:rgba(10,37,42,.72);color:#fff;text-decoration:none;
- font-size:38px;font-weight:950;line-height:1;
- box-shadow:0 8px 24px rgba(0,0,0,.28);
- backdrop-filter:blur(5px);
- transition:transform .15s ease,background .15s ease;
+ border-radius:50%;
+ background:rgba(11,22,42,.20);
+ box-shadow:0 5px 16px rgba(0,0,0,.14);
+ backdrop-filter:blur(2px);
+ display:grid;place-items:center;
+ text-decoration:none;cursor:pointer;
 }
-.forward-arrow:hover,.forward-arrow:focus-visible{
- transform:scale(1.08);background:rgba(18,151,142,.90);
- outline:3px solid rgba(255,255,255,.9);outline-offset:2px;
+.talkabee-forward-arrow::before{
+ content:"";
+ width:17px;height:17px;
+ border-top:5px solid #fff;
+ border-right:5px solid #fff;
+ transform:rotate(45deg) translate(-2px,2px);
+ filter:drop-shadow(0 1px 2px rgba(0,0,0,.35));
+}
+.talkabee-forward-arrow:hover,.talkabee-forward-arrow:focus-visible{
+ background:rgba(11,22,42,.34);
+ outline:3px solid rgba(255,255,255,.72);
+ outline-offset:2px;
 }
 
 </style>
 </head>
 <body>
-<a id="forwardArrow" class="forward-arrow" href="Talk-A-Bee-Train-Station-Adventure.html" aria-label="Next adventure: Train Station" title="Next: Train Station">→</a>
+<a class="talkabee-forward-arrow" href="Talk-A-Bee-Train-Station-Adventure.html" aria-label="Next adventure: Train Station" title="Next Adventure"></a>
 
 <button id="returnPanelToggle" class="return-panel-toggle" type="button">Return Panel</button>
 <section id="world">
@@ -146,15 +157,6 @@ body.scene-view .return-panel-toggle{display:block!important}
  </div>
 </section>
 <script>
-
-const forwardArrow=document.getElementById("forwardArrow");
-if(forwardArrow){
- forwardArrow.addEventListener("click",function(e){
-  e.preventDefault();
-  const lang=document.getElementById("adventureLanguage")?.value||"es";
-  location.href="Talk-A-Bee-Train-Station-Adventure.html?lang="+encodeURIComponent(lang);
- });
-}
 
 (()=>{
 const sceneViewToggle=document.getElementById("sceneViewToggle");
