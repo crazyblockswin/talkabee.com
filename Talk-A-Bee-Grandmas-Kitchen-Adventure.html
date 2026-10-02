@@ -74,6 +74,27 @@ select{width:100%;padding:12px;border:0;border-radius:14px;font-size:17px;font-w
 .talkabee-forward-arrow::before{content:"";width:17px;height:17px;border-top:5px solid #fff;border-right:5px solid #fff;transform:rotate(45deg) translate(-2px,2px);filter:drop-shadow(0 1px 2px rgba(0,0,0,.35))}
 </style>
 
+
+<style id="kitchen-auto-discovery-locked-template">
+.hotspots{pointer-events:none!important}
+.hotspot{
+  pointer-events:auto!important;
+  cursor:pointer!important;
+  opacity:0!important;
+  background:transparent!important;
+  outline:none!important;
+  animation:none!important;
+}
+.hotspot:hover,.hotspot:focus-visible{
+  opacity:1!important;
+  background:rgba(53,199,187,.22)!important;
+  outline:3px solid rgba(255,255,255,.92)!important;
+}
+.challenge-mode .hotspot{
+  pointer-events:auto!important;
+}
+</style>
+
 </head><body>
 <a class="talkabee-forward-arrow" href="Talk-A-Bee-Lake-Mountain-Adventure.html" aria-label="Next adventure: Lake Mountain Adventure" title="Next Adventure"></a>
 <main id="world">
@@ -166,7 +187,7 @@ function L(){return languageData[langSel.value]}
 function voices(){let all=speechSynthesis.getVoices(),prefix=L().speech.slice(0,2).toLowerCase();return all.filter(v=>v.lang.toLowerCase().startsWith(prefix))}
 function fillVoices(){let old=localStorage.getItem('talkabee-kitchen-voice-'+langSel.value)||'';voiceSel.innerHTML='<option value="">Browser Default</option>';voices().forEach(v=>{let o=document.createElement('option');o.value=v.name;o.textContent=v.name;voiceSel.appendChild(o)});if([...voiceSel.options].some(o=>o.value===old))voiceSel.value=old}
 speechSynthesis.onvoiceschanged=fillVoices;fillVoices();
-function speak(text,rate=.88){if(!text)return;speechSynthesis.cancel();setTimeout(()=>{let u=new SpeechSynthesisUtterance(text);u.lang=L().speech;u.rate=rate;let v=speechSynthesis.getVoices().find(x=>x.name===voiceSel.value);if(v)u.voice=v;speechSynthesis.speak(u)},50);lastText=text}
+function speak(text,rate=.88,onend=null){if(!text){if(onend)onend();return;}speechSynthesis.cancel();setTimeout(()=>{let u=new SpeechSynthesisUtterance(text);u.lang=L().speech;u.rate=rate;let v=speechSynthesis.getVoices().find(x=>x.name===voiceSel.value);if(v)u.voice=v;if(onend)u.onend=onend;speechSynthesis.speak(u)},50);lastText=text}
 function render(){mode='activity';world.classList.remove('discovery','challenge-mode');pop.classList.remove('show');document.getElementById('title').textContent=activityTitles[activity];document.getElementById('prompt').textContent='Listen, then practice each useful kitchen sentence.';lineEl.textContent=L().activities[activity][phrase];transEl.textContent=L().english[activity][phrase];document.querySelectorAll('.activity').forEach((b,i)=>b.classList.toggle('active',i===activity));}
 document.querySelectorAll('.activity').forEach(b=>b.onclick=()=>{activity=+b.dataset.activity;phrase=0;render()});
 document.getElementById('next').onclick=()=>{if(mode==='activity'){phrase=(phrase+1)%4;render()}else if(mode==='challenge'){challenge=(challenge+1)%6;startChallenge(challenge)}};
@@ -174,7 +195,7 @@ document.getElementById('speak').onclick=()=>speak(lastText||lineEl.textContent,
 document.getElementById('discover').onclick=()=>{mode='discovery';world.classList.add('discovery');world.classList.remove('challenge-mode');document.getElementById('title').textContent='Click an object in the picture.';document.getElementById('prompt').textContent='See the learning-language word and its English meaning. Audio speaks only the learning-language word.';lineEl.textContent='Tap a hotspot in the scene.';transEl.textContent='';pop.classList.remove('show')};
 function startChallenge(i){mode='challenge';challenge=i;world.classList.add('challenge-mode');world.classList.remove('discovery');let k=challengeKeys[i],o=objects[langSel.value][k];document.getElementById('title').textContent='Challenge '+(i+1)+' of 6';document.getElementById('prompt').textContent='Find: '+o[0];lineEl.textContent='Click the correct object.';transEl.textContent='';pop.classList.remove('show')}
 document.querySelectorAll('.challenge').forEach(b=>b.onclick=()=>startChallenge(+b.dataset.challenge));
-document.querySelectorAll('.hotspot').forEach(b=>b.onclick=()=>{let k=b.dataset.object;playKitchenSceneSound(k);let o=objects[langSel.value][k];if(mode==='discovery'){pop.textContent=o[0]+' — '+o[1];pop.classList.add('show');speak(o[0],.76)}else if(mode==='challenge'){let right=k===challengeKeys[challenge];pop.textContent=right?'✓ Correct! '+o[0]:'Try again.';pop.classList.add('show');if(right)speak(o[0],.76)}});
+document.querySelectorAll('.hotspot').forEach(b=>b.onclick=()=>{let k=b.dataset.object,o=objects[langSel.value][k];if(!o)return;if(mode==='challenge'){let right=k===challengeKeys[challenge];pop.textContent=right?'✓ Correct! '+o[0]:'Try again.';pop.classList.add('show');if(right)speak(o[0],.76,()=>playKitchenSceneSound(k));return;}pop.textContent=o[0]+' — '+o[1];pop.classList.add('show');speak(o[0],.76,()=>playKitchenSceneSound(k));});
 langSel.onchange=()=>{localStorage.setItem('talkabee-learn-language',langSel.value);fillVoices();if(mode==='activity')render();else if(mode==='challenge')startChallenge(challenge)};
 voiceSel.onchange=()=>localStorage.setItem('talkabee-kitchen-voice-'+langSel.value,voiceSel.value);
 document.getElementById('sceneView').onclick=()=>world.classList.add('scene-only');document.getElementById('restore').onclick=()=>world.classList.remove('scene-only');
