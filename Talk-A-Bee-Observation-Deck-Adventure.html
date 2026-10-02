@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Talk A Bee — Observation Deck Adventure</title>
+<style>
+*{box-sizing:border-box}html,body{margin:0;width:100%;height:100%;overflow:hidden;font-family:Arial,sans-serif;background:#071526;color:#fff}
+.world{position:relative;width:100vw;height:100vh;background:url("images/talkabee-observation-deck-adventure.jpg") center center/cover no-repeat}
+.panel{position:absolute;z-index:20;left:16px;top:16px;width:195px;max-height:calc(100vh - 32px);overflow:auto;padding:14px;border-radius:20px;background:rgba(7,23,39,.31);border:1px solid rgba(255,255,255,.28);box-shadow:0 10px 28px rgba(0,0,0,.22);backdrop-filter:blur(3px)}
+.panel h1{font-size:22px;margin:0 0 10px}.label{margin:11px 0 5px;font-size:12px;font-weight:900;letter-spacing:.12em;color:#e9f7ff}
+.panel select,.panel button,.panel a{width:100%;display:block;margin:5px 0;padding:9px 10px;border-radius:12px;border:1px solid rgba(255,255,255,.38);background:rgba(7,32,50,.54);color:#fff;font-weight:800;text-decoration:none;text-align:left}
+.panel button:hover,.panel a:hover{background:rgba(255,255,255,.18)}
+.card{position:absolute;z-index:19;right:2.2%;bottom:2.4%;width:min(470px,31vw);padding:16px 18px;border-radius:20px;background:rgba(7,23,39,.28);border:1px solid rgba(255,255,255,.32);box-shadow:0 10px 28px rgba(0,0,0,.22);backdrop-filter:blur(3px)}
+.card h2{margin:0 0 5px;font-size:24px}.card p{margin:5px 0}.word{margin-top:10px;padding:11px 13px;border-radius:14px;background:rgba(255,255,255,.88);color:#10283c}.word strong{font-size:27px}.translation{font-size:17px;margin-top:3px}
+.controls{display:flex;gap:8px;margin-top:10px}.controls button{flex:1;padding:9px;border:0;border-radius:11px;font-weight:900}
+.hotspot{position:absolute;z-index:8;border:0;background:transparent;opacity:0;cursor:pointer;border-radius:16px}
+.hotspot:hover,.hotspot:focus-visible{opacity:.22;background:rgba(255,220,72,.55);outline:2px solid rgba(255,255,255,.8)}
+.challenge-mode .hotspot.target{opacity:1;background:rgba(255,199,48,.38);outline:4px solid #fff;box-shadow:0 0 0 7px rgba(255,200,50,.2)}
+.talkabee-forward-arrow{position:fixed;z-index:10020;right:22px;top:18px;width:62px;height:62px;border:2px solid rgba(255,255,255,.82);border-radius:50%;background:rgba(11,22,42,.20);box-shadow:0 5px 16px rgba(0,0,0,.14);backdrop-filter:blur(2px);display:grid;place-items:center;text-decoration:none}
+.talkabee-forward-arrow::before{content:"";width:17px;height:17px;border-top:5px solid #fff;border-right:5px solid #fff;transform:rotate(45deg) translate(-2px,2px);filter:drop-shadow(0 1px 2px rgba(0,0,0,.35))}
+.scene-view .panel,.scene-view .card{display:none}.scene-return{display:none;position:fixed;z-index:10030;left:18px;top:18px;padding:10px 14px;border-radius:12px;border:1px solid #fff;background:rgba(7,23,39,.65);color:#fff;font-weight:900}.scene-view .scene-return{display:block}
+@media(max-width:900px){.panel{width:190px}.card{width:38vw}}
+</style>
+
+<style id="boardwalk-hotspots-hover-only">
+.hotspot{display:block!important;opacity:0!important;background:transparent!important;outline:none!important;animation:none!important}
+.hotspot:hover,.hotspot:focus-visible{opacity:1!important;background:rgba(255,220,72,.28)!important;outline:2px solid rgba(255,255,255,.85)!important}
+.challenge-mode .hotspot.target{opacity:1!important;background:rgba(255,199,48,.38)!important;outline:4px solid #fff!important}
+</style>
+
+</head>
+<body>
+<main class="world" id="world">
+<a class="talkabee-forward-arrow" href="Talk-A-Bee-Dinosaur-Museum-Adventure.html" aria-label="Continue to Dinosaur Museum Adventure" title="Next Adventure"></a>
+<button class="scene-return" id="sceneReturn">Return to Adventure</button>
+<aside class="panel">
+<h1>🌆 Observation Deck</h1>
+<div class="label">LANGUAGE</div>
+<select id="lang"><option value="es">Spanish</option><option value="fr">French</option><option value="en">English</option><option value="de">German</option><option value="it">Italian</option><option value="pt">Portuguese</option><option value="no">Norwegian</option></select>
+<div class="label">VOICE</div><select id="voice"><option>Browser Default</option></select>
+<button id="sceneView">◉ Scene View</button>
+<div class="label">DISCOVERY</div><button id="discovery">🔎 Discovery — Click the Scene</button>
+<div class="label">ACTIVITIES</div>
+<button data-lesson="arrive">1. 🌆 Look Over the City</button>
+<button data-lesson="rides">2. 🔭 Use the Viewer</button>
+<button data-lesson="snacks">3. ⛴️ Find the Ferry</button>
+<button data-lesson="beach">4. 🏔️ Look at the Mountain</button>
+<button data-lesson="safety">5. 🌊 Explore the Water</button>
+<button data-lesson="things">6. 🐝 Things We See</button>
+<div class="label">CHALLENGES</div>
+<button data-ch="0">1. Find the Viewer</button><button data-ch="1">2. Find the Ferry</button><button data-ch="2">3. Find the Mountain</button><button data-ch="3">4. Find the Bee</button><button data-ch="4">5. Find the Girl</button><button data-ch="5">6. Find the Boy</button>
+<a href="index.html">← Return to Main Directory</a>
+</aside>
+<section class="card">
+<h2 id="title">Observation Deck Adventure</h2><p id="prompt">Click any object in the scene to hear its name.</p>
+<div class="word"><strong id="line">ciudad</strong><div class="translation" id="translation">city</div></div>
+<p id="status"></p>
+<div class="controls"><button id="normal">🔊 Normal</button><button id="slow">🐢 Slow</button><button id="replay">↻ Replay</button></div>
+</section>
+
+
+
+<button class="hotspot" data-word="city" style="left:0%;top:30%;width:46%;height:48%" aria-label="City"></button>
+<button class="hotspot" data-word="viewer" style="left:57%;top:38%;width:13%;height:49%" aria-label="Viewer"></button>
+<button class="hotspot" data-word="ferry" style="left:44%;top:48%;width:8%;height:7%" aria-label="Ferry"></button>
+<button class="hotspot" data-word="mountain" style="left:31%;top:29%;width:14%;height:12%" aria-label="Mountain"></button>
+<button class="hotspot" data-word="water" style="left:39%;top:40%;width:20%;height:24%" aria-label="Water"></button>
+<button class="hotspot" data-word="bee" style="left:72%;top:25%;width:9%;height:14%" aria-label="Bee"></button>
+<button class="hotspot" data-word="boy" style="left:63%;top:42%;width:13%;height:50%" aria-label="Boy"></button>
+<button class="hotspot" data-word="girl" style="left:77%;top:43%;width:11%;height:43%" aria-label="Girl"></button>
+<button class="hotspot" data-word="grandpa" style="left:81%;top:21%;width:9%;height:48%" aria-label="Grandpa"></button>
+<button class="hotspot" data-word="grandma" style="left:89%;top:25%;width:10%;height:49%" aria-label="Grandma"></button>
+<button class="hotspot" data-word="backpack" style="left:68%;top:51%;width:8%;height:25%" aria-label="Backpack"></button>
+<button class="hotspot" data-word="glass" style="left:49%;top:5%;width:43%;height:35%" aria-label="Glass window"></button>
+<button class="hotspot" data-word="railing" style="left:13%;top:65%;width:52%;height:20%" aria-label="Railing"></button>
+<button class="hotspot" data-word="sky" style="left:0%;top:0%;width:47%;height:29%" aria-label="Sky"></button>
+<button class="hotspot" data-word="buildings" style="left:0%;top:42%;width:35%;height:43%" aria-label="Buildings"></button>
+</main>
+<script>
+const LANGS={
+es:{code:"es-ES",words:{city:["ciudad","city"],viewer:["visor","viewer"],ferry:["ferri","ferry"],mountain:["montaña","mountain"],water:["agua","water"],bee:["abeja","bee"],boy:["niño","boy"],girl:["niña","girl"],grandpa:["abuelo","grandpa"],grandma:["abuela","grandma"],backpack:["mochila","backpack"],glass:["ventana de vidrio","glass window"],railing:["barandilla","railing"],sky:["cielo","sky"],buildings:["edificios","buildings"]}},
+fr:{code:"fr-FR",words:{city:["ville","city"],viewer:["longue-vue","viewer"],ferry:["ferry","ferry"],mountain:["montagne","mountain"],water:["eau","water"],bee:["abeille","bee"],boy:["garçon","boy"],girl:["fille","girl"],grandpa:["grand-père","grandpa"],grandma:["grand-mère","grandma"],backpack:["sac à dos","backpack"],glass:["vitre","glass window"],railing:["garde-corps","railing"],sky:["ciel","sky"],buildings:["bâtiments","buildings"]}},
+en:{code:"en-US",words:{city:["city",""],viewer:["viewer",""],ferry:["ferry",""],mountain:["mountain",""],water:["water",""],bee:["bee",""],boy:["boy",""],girl:["girl",""],grandpa:["grandpa",""],grandma:["grandma",""],backpack:["backpack",""],glass:["glass window",""],railing:["railing",""],sky:["sky",""],buildings:["buildings",""]}},
+de:{code:"de-DE",words:{city:["Stadt","city"],viewer:["Fernrohr","viewer"],ferry:["Fähre","ferry"],mountain:["Berg","mountain"],water:["Wasser","water"],bee:["Biene","bee"],boy:["Junge","boy"],girl:["Mädchen","girl"],grandpa:["Opa","grandpa"],grandma:["Oma","grandma"],backpack:["Rucksack","backpack"],glass:["Glasfenster","glass window"],railing:["Geländer","railing"],sky:["Himmel","sky"],buildings:["Gebäude","buildings"]}},
+it:{code:"it-IT",words:{city:["città","city"],viewer:["binocolo panoramico","viewer"],ferry:["traghetto","ferry"],mountain:["montagna","mountain"],water:["acqua","water"],bee:["ape","bee"],boy:["ragazzo","boy"],girl:["ragazza","girl"],grandpa:["nonno","grandpa"],grandma:["nonna","grandma"],backpack:["zaino","backpack"],glass:["finestra di vetro","glass window"],railing:["ringhiera","railing"],sky:["cielo","sky"],buildings:["edifici","buildings"]}},
+pt:{code:"pt-BR",words:{city:["cidade","city"],viewer:["binóculo panorâmico","viewer"],ferry:["balsa","ferry"],mountain:["montanha","mountain"],water:["água","water"],bee:["abelha","bee"],boy:["menino","boy"],girl:["menina","girl"],grandpa:["avô","grandpa"],grandma:["avó","grandma"],backpack:["mochila","backpack"],glass:["janela de vidro","glass window"],railing:["corrimão","railing"],sky:["céu","sky"],buildings:["prédios","buildings"]}},
+no:{code:"nb-NO",words:{city:["by","city"],viewer:["utsiktskikkert","viewer"],ferry:["ferge","ferry"],mountain:["fjell","mountain"],water:["vann","water"],bee:["bie","bee"],boy:["gutt","boy"],girl:["jente","girl"],grandpa:["bestefar","grandpa"],grandma:["bestemor","grandma"],backpack:["ryggsekk","backpack"],glass:["glassvindu","glass window"],railing:["rekkverk","railing"],sky:["himmel","sky"],buildings:["bygninger","buildings"]}}
+};
+const deckSounds={bee:"bee.mp3"};
+let deckSound=null;
+function playDeckSound(id){
+ const file=deckSounds[id]; if(!file)return;
+ if(deckSound){deckSound.pause();deckSound.currentTime=0;}
+ deckSound=new Audio("sounds/"+file); deckSound.play().catch(()=>{});
+}
+const challengeOrder=["viewer","ferry","mountain","bee","girl","boy"];
+const langSel=document.getElementById("lang"),voiceSel=document.getElementById("voice");
+const title=document.getElementById("title"),prompt=document.getElementById("prompt"),line=document.getElementById("line"),translation=document.getElementById("translation"),status=document.getElementById("status"),world=document.getElementById("world");
+let lastWord="city",challenge=-1;
+function fillVoices(){const vs=speechSynthesis.getVoices();voiceSel.innerHTML='<option>Browser Default</option>'+vs.map(v=>`<option>${v.name}</option>`).join("")}
+if("speechSynthesis" in window){speechSynthesis.onvoiceschanged=fillVoices;fillVoices()}
+function speak(t,rate=.82,onend=null){if(!t||!("speechSynthesis" in window)){if(onend)onend();return;}try{speechSynthesis.cancel();const u=new SpeechSynthesisUtterance(t);u.lang=LANGS[langSel.value].code;u.rate=rate;const v=speechSynthesis.getVoices().find(v=>v.name===voiceSel.value);if(v)u.voice=v;if(onend)u.onend=onend;u.onerror=()=>{if(onend)onend()};setTimeout(()=>speechSynthesis.speak(u),40)}catch(e){if(onend)onend();}}
+function showWord(key){lastWord=key;const x=LANGS[langSel.value].words[key];line.textContent=x[0];translation.textContent=langSel.value==="en"?"":x[1]}
+document.querySelectorAll(".hotspot").forEach(b=>b.onclick=()=>{const key=b.dataset.word,x=LANGS[langSel.value].words[key];showWord(key);speak(x[0],.82,()=>playDeckSound(key));if(challenge>=0){if(key===challengeOrder[challenge]){status.textContent="✓ Nice find!";status.style.color="#9dffbf"}else{status.textContent="Not that one — keep looking.";status.style.color="#ffe28a"}}});
+document.getElementById("discovery").onclick=()=>{challenge=-1;world.classList.remove("challenge-mode");title.textContent="Click & Discover";prompt.textContent="Click any object in the scene to hear its name.";status.textContent=""};
+document.querySelectorAll("[data-ch]").forEach(b=>b.onclick=()=>{challenge=+b.dataset.ch;world.classList.add("challenge-mode");document.querySelectorAll(".hotspot").forEach(h=>h.classList.toggle("target",h.dataset.word===challengeOrder[challenge]));title.textContent="Challenge "+(challenge+1)+" of 6";prompt.textContent=b.textContent.replace(/^\d+\.\s*/,"");status.textContent=""});
+const lessons={
+ arrive:["We are high above the city.","Look at the buildings below us."],
+ rides:["Look through the viewer.","What can you see far away?"],
+ snacks:["Can you find the ferry?","The ferry is moving across the water."],
+ beach:["Look at the mountain.","The mountain is far beyond the city."],
+ safety:["Look at the water below.","Boats travel across the water."],
+ things:["What do you see from the observation deck?","I see the city, a mountain, a ferry, and the sky."]
+};
+document.querySelectorAll("[data-lesson]").forEach(b=>b.onclick=()=>{challenge=-1;world.classList.remove("challenge-mode");const a=lessons[b.dataset.lesson];title.textContent=b.textContent.replace(/^\d+\.\s*/,"");prompt.textContent=a[0];line.textContent=a[1];translation.textContent="";lastWord="";speak(a[1])});
+document.getElementById("normal").onclick=()=>speak(lastWord?LANGS[langSel.value].words[lastWord][0]:line.textContent,.82);
+document.getElementById("slow").onclick=()=>speak(lastWord?LANGS[langSel.value].words[lastWord][0]:line.textContent,.58);
+document.getElementById("replay").onclick=()=>speak(lastWord?LANGS[langSel.value].words[lastWord][0]:line.textContent,.82);
+langSel.onchange=()=>{if(lastWord)showWord(lastWord)};
+document.getElementById("sceneView").onclick=()=>document.body.classList.add("scene-view");
+document.getElementById("sceneReturn").onclick=()=>document.body.classList.remove("scene-view");
+showWord("city");
+</script>
+</body></html>
