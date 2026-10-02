@@ -996,9 +996,11 @@ document.addEventListener('DOMContentLoaded',function(){
    if(!('speechSynthesis' in window)||!text){playYachtSceneSound(key);return}
    speechSynthesis.cancel();
    const u=new SpeechSynthesisUtterance(text);
-   u.lang=lang().speech;u.rate=.78;
-   const v=selectedVoice();if(v)u.voice=v;
+   u.lang=locale[currentLang()]||'en-US';u.rate=.78;
+   const wanted=$('seaVoice')?.value;
+   if(wanted){const v=speechSynthesis.getVoices().find(x=>x.name===wanted);if(v)u.voice=v}
    u.onend=()=>playYachtSceneSound(key);
+   u.onerror=()=>playYachtSceneSound(key);
    speechSynthesis.speak(u);
  }
 
