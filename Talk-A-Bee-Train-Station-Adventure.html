@@ -8,6 +8,18 @@
 .talkabee-prev-next-nav a:active{transform:scale(.94)}
 @media(max-width:720px){.talkabee-prev-next-nav{top:12px;right:12px}.talkabee-prev-next-nav a{width:42px;height:42px;font-size:33px}}
 </style>
+
+<style id="talkabee-clean-master-template-20261002">
+/* CLEAN MASTER: one authoritative geometry block. No legacy scaling. */
+html body /* FINAL LOCKED TALK A BEE TEMPLATE — rendered geometry matched to approved Kitchen sample. */
+.train-directory{box-sizing:border-box!important;width:195px!important;min-width:195px!important;max-width:195px!important;height:calc(100vh - 32px)!important;max-height:calc(100vh - 32px)!important;left:16px!important;top:16px!important;bottom:auto!important;transform:none!important;transform-origin:top left!important;overflow-y:auto!important;overflow-x:hidden!important;background:rgba(7,23,39,.31)!important;backdrop-filter:blur(3px)!important;-webkit-backdrop-filter:blur(3px)!important;}
+html body .train-panel{box-sizing:border-box!important;width:520px!important;min-width:520px!important;max-width:520px!important;height:auto!important;max-height:none!important;left:50%!important;right:auto!important;bottom:18px!important;transform:translateX(-50%)!important;transform-origin:bottom center!important;padding:14px 18px!important;border-radius:20px!important;background:rgba(7,23,39,.28)!important;border:1px solid rgba(255,255,255,.32)!important;box-shadow:0 10px 28px rgba(0,0,0,.22)!important;backdrop-filter:blur(3px)!important;-webkit-backdrop-filter:blur(3px)!important;color:#fff!important;overflow:visible!important;}
+html body .train-panel .kicker, html body .train-panel .eyebrow{color:rgba(255,255,255,.94)!important;font-weight:800!important;text-shadow:0 1px 3px rgba(0,0,0,.75)!important;}
+html body .train-panel .actions, html body .train-panel .home-actions, html body .train-panel .yacht-actions, html body .train-panel .train-actions{display:flex!important;flex-wrap:nowrap!important;gap:8px!important;align-items:center!important;}
+html body .train-panel .actions button, html body .train-panel .home-actions button, html body .train-panel .yacht-actions button, html body .train-panel .train-actions button{white-space:nowrap!important;margin:0!important;}
+@media(max-width:900px){html body /* FINAL LOCKED TALK A BEE TEMPLATE — rendered geometry matched to approved Kitchen sample. */
+.train-directory{width:190px!important;min-width:190px!important;max-width:190px!important;} html body .train-panel{width:min(520px,calc(100vw - 220px))!important;min-width:0!important;max-width:520px!important;}}
+</style>
 </head><body>
 <nav class="talkabee-prev-next-nav" aria-label="Adventure navigation"><a href="Talk-A-Bee-Aunt-Julies-Island-Retreat.html" aria-label="Previous page" title="Previous">‹</a><a href="Talk-A-Bee-Bird-Sanctuary.html" aria-label="Next page" title="Next">›</a></nav>
 <!-- CHECKPOINT 64 — TRAIN STATION ADVENTURE. Built from V63/V50 master layout. -->
@@ -99,7 +111,7 @@
    <p id="trainPrompt">Listen, then practice each useful travel sentence.</p>
    <div class="train-line" id="trainLine">Quiero un billete, por favor.</div>
    <div class="train-translation" id="trainTranslation">I would like a ticket, please.</div>
-   <div class="train-actions" id="trainActions"><button id="trainSpeak">🔊 Speak</button><button id="trainNext">Next line →</button></div>
+   <div class="train-actions" id="trainActions"><button id="trainSpeak">🔊 Speak</button><button id="trainSlow">🐢 Slow</button><button id="trainReplay">↻ Replay</button><button id="trainNext">Next phrase →</button></div>
    <div class="train-find" id="trainFind"><div class="train-challenge-count" id="trainChallengeCount">CHALLENGE 1 OF 6</div><div class="train-find-status" id="trainFindStatus"></div><div class="train-next-hint" id="trainNextHint">Find the correct object to unlock the next challenge.</div><button type="button" class="train-challenge-next" id="trainChallengeNext">Next Challenge →</button></div>
   </div>
  </div></div>
@@ -136,7 +148,7 @@
  function loadDiscovery(){challenge=-1;solved=false;lastText='';w.classList.remove('challenge-mode');w.classList.add('discovery-mode');find.classList.remove('show');actions.style.display='none';kicker.textContent='CLICK & DISCOVER';title.textContent='Explore the train station.';prompt.textContent='Click a glowing object to see its '+names[lang()]+' name and English meaning.';line.textContent='';translation.textContent='Choose any glowing train-station item.';clearActive();$('trainDiscovery').classList.add('active')}
  function loadChallenge(i){challenge=i;solved=false;lastText='';w.classList.remove('discovery-mode');w.classList.add('challenge-mode');find.classList.add('show');actions.style.display='none';const key=challengeOrder[i];kicker.textContent='FIND IT CHALLENGE';title.textContent='Challenge '+(i+1)+': Find '+wordEN[key]+'.';prompt.textContent='Search the train station scene and click the correct object.';line.textContent=W[lang()][key];translation.textContent=wordEN[key];count.textContent='CHALLENGE '+(i+1)+' OF 6';status.textContent='';hint.textContent='Find the correct object to unlock the next challenge.';nextChallenge.textContent=i<5?'Next Challenge →':'Finish Challenges ✓';clearActive();w.querySelector('[data-train-challenge="'+i+'"]').classList.add('active')}
  $('trainMainDirectory').addEventListener('click',()=>location.href='index.html'); $('trainSceneView').addEventListener('click',()=>w.classList.add('scene-only')); $('trainReturnPanel').addEventListener('click',()=>w.classList.remove('scene-only'));
- $('trainDiscovery').addEventListener('click',e=>{e.stopPropagation();loadDiscovery()}); $('trainNext').addEventListener('click',()=>{idx=(idx+1)%L[lang()][active].length;render()}); $('trainSpeak').addEventListener('click',()=>speak(L[lang()][active][idx]));
+ $('trainDiscovery').addEventListener('click',e=>{e.stopPropagation();loadDiscovery()}); $('trainNext').addEventListener('click',()=>{idx=(idx+1)%L[lang()][active].length;render()}); $('trainSpeak').addEventListener('click',()=>speak(L[lang()][active][idx])); $('trainSlow').addEventListener('click',()=>speak(L[lang()][active][idx],.62)); $('trainReplay').addEventListener('click',()=>speak(lastText||L[lang()][active][idx],.82));
  w.querySelectorAll('[data-train]').forEach(b=>b.addEventListener('click',()=>loadLesson(b.dataset.train))); w.querySelectorAll('.train-challenge-nav').forEach(b=>b.addEventListener('click',()=>loadChallenge(Number(b.dataset.trainChallenge))));
  w.querySelectorAll('.train-hotspots button').forEach(b=>b.addEventListener('click',e=>{e.preventDefault();e.stopPropagation();const key=b.dataset.word,target=W[lang()][key];playTrainSceneSound(key);if(challenge>=0){if(key===challengeOrder[challenge]){solved=true;status.textContent='✓ Nice find! '+target+' — '+wordEN[key];status.style.color='#19744f';hint.textContent='Challenge complete. You can move to the next one.';speak(target,.75)}else{status.textContent='Not that one — keep looking.';status.style.color='#8b5b13'}return}title.textContent='Click & Discover';prompt.textContent='You found something at the train station.';line.textContent=target;translation.textContent=wordEN[key];speak(target,.78)}));
  nextChallenge.addEventListener('click',()=>{if(!solved){status.textContent='Find the correct object first.';status.style.color='#8b5b13';return}if(challenge<5)loadChallenge(challenge+1);else{status.textContent='🏁 You completed all 6 Train Station challenges!';status.style.color='#19744f';hint.textContent='Great job exploring the station.'}});
@@ -144,44 +156,9 @@
 })();
 </script>
 <style>html,body{margin:0;width:100%;height:100%;overflow:hidden}#trainWorld{display:block!important}#trainWorld.open{display:block!important}</style>
-
-
-<style id="talkabee-boardwalk-panel-standard-v2">
-/* Talk A Bee Boardwalk panel standard — shell transplant only. */
-#trainWorld .train-directory{left:16px!important;top:16px!important;bottom:auto!important;width:195px!important;min-width:0!important;max-width:195px!important;height:auto!important;max-height:calc(100vh - 32px)!important;overflow-y:auto!important;overflow-x:hidden!important;padding:14px!important;border-radius:20px!important;background:rgba(7,23,39,.31)!important;border:1px solid rgba(255,255,255,.28)!important;box-shadow:0 10px 28px rgba(0,0,0,.22)!important;backdrop-filter:blur(3px)!important;-webkit-backdrop-filter:blur(3px)!important;color:#fff!important;scrollbar-width:thin!important}
-#trainWorld .train-directory button,#trainWorld .train-directory select,#trainWorld .train-directory a{width:100%!important;box-sizing:border-box!important;margin:5px 0!important;padding:9px 10px!important;min-height:0!important;height:auto!important;border-radius:12px!important;border:1px solid rgba(255,255,255,.38)!important;background:rgba(7,32,50,.54)!important;color:#fff!important;font-size:13px!important;line-height:1.25!important;font-weight:800!important;text-decoration:none!important;text-align:left!important;box-shadow:none!important}
-#trainWorld .train-directory button:hover,#trainWorld .train-directory a:hover{background:rgba(255,255,255,.18)!important}
-#trainWorld .train-directory select option{color:#17212b!important;background:#fff!important}
-#trainWorld .train-directory .place,#trainWorld .train-directory .activity-place,#trainWorld .train-directory .yacht-place,#trainWorld .train-directory .train-place,#trainWorld .train-directory .title{font-size:20px!important;line-height:1.08!important;font-weight:950!important;margin:2px 0 10px!important;color:#fff!important;text-shadow:none!important}
-#trainWorld .train-directory .label,#trainWorld .train-directory .activity-label,#trainWorld .train-directory .yacht-label,#trainWorld .train-directory .train-label{font-size:10px!important;line-height:1.2!important;font-weight:950!important;letter-spacing:.12em!important;color:#e9f7ff!important;margin:11px 2px 5px!important}
-#trainWorld .train-directory .divider,#trainWorld .train-directory .activity-divider,#trainWorld .train-directory .yacht-divider,#trainWorld .train-directory .train-divider{height:1px!important;background:rgba(255,255,255,.20)!important;margin:10px 2px!important}
-#trainWorld .train-main-directory{margin-top:12px!important;background:rgba(7,32,50,.54)!important}
-@media(max-width:900px){#trainWorld .train-directory{width:190px!important;max-width:190px!important}}
-</style>
 <script id="talkabee-panel-return-bottom-v2">
 (()=>{const panel=document.querySelector('#trainWorld .train-directory'),back=document.querySelector('#trainWorld .train-main-directory');if(panel&&back)panel.appendChild(back);})();
 </script>
-
-<style id="talkabee-one-size-fits-all-v1">
-/* ONE SIZE FITS ALL — exact shared Adventure panel + script-card geometry */
-.train-directory{box-sizing:border-box!important;left:16px!important;top:16px!important;bottom:auto!important;width:195px!important;min-width:195px!important;max-width:195px!important;height:auto!important;max-height:calc(100vh - 32px)!important;overflow-y:auto!important;overflow-x:hidden!important;padding:14px!important;border-radius:20px!important;background:rgba(7,23,39,.31)!important;border:1px solid rgba(255,255,255,.28)!important;box-shadow:0 10px 28px rgba(0,0,0,.22)!important;backdrop-filter:blur(3px)!important;-webkit-backdrop-filter:blur(3px)!important;color:#fff!important;scrollbar-width:thin!important}
-.train-directory button,.train-directory select,.train-directory a{box-sizing:border-box!important;width:100%!important;margin:5px 0!important;padding:9px 10px!important;min-height:0!important;height:auto!important;border-radius:12px!important;border:1px solid rgba(255,255,255,.38)!important;background:rgba(7,32,50,.54)!important;color:#fff!important;font-size:13px!important;line-height:1.25!important;font-weight:800!important;box-shadow:none!important}
-.train-panel{box-sizing:border-box!important;width:min(470px,31vw)!important;min-width:0!important;max-width:470px!important;height:auto!important;max-height:none!important;padding:16px 18px!important;border-radius:20px!important;background:rgba(7,23,39,.28)!important;border:1px solid rgba(255,255,255,.32)!important;box-shadow:0 10px 28px rgba(0,0,0,.22)!important;backdrop-filter:blur(3px)!important;-webkit-backdrop-filter:blur(3px)!important;color:#fff!important;overflow:visible!important}
-@media(max-width:900px){.train-directory{width:190px!important;min-width:190px!important;max-width:190px!important}.train-panel{width:min(470px,calc(100vw - 220px))!important;max-width:470px!important}}
-</style>
-
-<style id="talkabee-final-master-template-v1">
-/* LOCKED TALK A BEE ADVENTURE MASTER — 2026-10-02 */
-.train-directory{box-sizing:border-box!important;left:16px!important;top:16px!important;bottom:auto!important;width:195px!important;min-width:195px!important;max-width:195px!important;height:calc(100vh - 32px)!important;max-height:calc(100vh - 32px)!important;overflow-y:auto!important;overflow-x:hidden!important;padding:12px 14px!important;border-radius:20px!important;background:rgba(7,23,39,.31)!important;border:1px solid rgba(255,255,255,.28)!important;box-shadow:0 10px 28px rgba(0,0,0,.22)!important;backdrop-filter:blur(3px)!important;-webkit-backdrop-filter:blur(3px)!important;color:#fff!important;scrollbar-width:thin!important;transform:none!important;transform-origin:top left!important}
-.train-directory button,.train-directory select,.train-directory a{box-sizing:border-box!important;width:100%!important;margin:4px 0!important;padding:8px 10px!important;min-height:0!important;height:auto!important;border-radius:12px!important;border:1px solid rgba(255,255,255,.38)!important;background:rgba(7,32,50,.54)!important;color:#fff!important;font-size:12px!important;line-height:1.16!important;font-weight:800!important;box-shadow:none!important}
-.train-directory .label,.train-directory .activity-label,.train-directory .yacht-label,.train-directory .train-label{font-size:9.5px!important;line-height:1.2!important;margin:8px 2px 4px!important}
-.train-directory .place,.train-directory .activity-place,.train-directory .yacht-place,.train-directory .train-place,.train-directory .title{font-size:19px!important;line-height:1.08!important;margin:1px 0 7px!important}
-.train-directory .divider,.train-directory .activity-divider,.train-directory .yacht-divider,.train-directory .train-divider{margin:7px 2px!important}
-.train-panel{box-sizing:border-box!important;width:min(650px,48vw)!important;min-width:0!important;max-width:650px!important;height:auto!important;max-height:none!important;padding:14px 18px!important;border-radius:20px!important;background:rgba(7,23,39,.28)!important;border:1px solid rgba(255,255,255,.32)!important;box-shadow:0 10px 28px rgba(0,0,0,.22)!important;backdrop-filter:blur(3px)!important;-webkit-backdrop-filter:blur(3px)!important;color:#fff!important;overflow:visible!important;transform:none!important}
-.train-panel .actions{display:flex!important;flex-wrap:nowrap!important;gap:8px!important;align-items:center!important}
-.train-panel .actions button{white-space:nowrap!important;margin:0!important}
-@media(max-width:900px){.train-directory{width:190px!important;min-width:190px!important;max-width:190px!important}.train-panel{width:min(620px,calc(100vw - 220px))!important;max-width:620px!important}.train-panel .actions{flex-wrap:wrap!important}}
-</style>
 <script id="talkabee-inclusive-browser-voices-v1">
 (()=>{
   if(!('speechSynthesis' in window))return;
