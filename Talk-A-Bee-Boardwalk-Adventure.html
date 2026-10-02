@@ -7,7 +7,7 @@
 <style>
 *{box-sizing:border-box}html,body{margin:0;width:100%;height:100%;overflow:hidden;font-family:Arial,sans-serif;background:#071526;color:#fff}
 .world{position:relative;width:100vw;height:100vh;background:url("images/boardwalk-adventure.jpg") center center/cover no-repeat}
-.panel{position:absolute;z-index:20;left:16px;top:16px;width:246px;max-height:calc(100vh - 32px);overflow:auto;padding:14px;border-radius:20px;background:rgba(7,23,39,.31);border:1px solid rgba(255,255,255,.28);box-shadow:0 10px 28px rgba(0,0,0,.22);backdrop-filter:blur(3px)}
+.panel{position:absolute;z-index:20;left:16px;top:16px;width:195px;max-height:calc(100vh - 32px);overflow:auto;padding:14px;border-radius:20px;background:rgba(7,23,39,.31);border:1px solid rgba(255,255,255,.28);box-shadow:0 10px 28px rgba(0,0,0,.22);backdrop-filter:blur(3px)}
 .panel h1{font-size:22px;margin:0 0 10px}.label{margin:11px 0 5px;font-size:12px;font-weight:900;letter-spacing:.12em;color:#e9f7ff}
 .panel select,.panel button,.panel a{width:100%;display:block;margin:5px 0;padding:9px 10px;border-radius:12px;border:1px solid rgba(255,255,255,.38);background:rgba(7,32,50,.54);color:#fff;font-weight:800;text-decoration:none;text-align:left}
 .panel button:hover,.panel a:hover{background:rgba(255,255,255,.18)}
@@ -20,8 +20,15 @@
 .talkabee-forward-arrow{position:fixed;z-index:10020;right:22px;top:18px;width:62px;height:62px;border:2px solid rgba(255,255,255,.82);border-radius:50%;background:rgba(11,22,42,.20);box-shadow:0 5px 16px rgba(0,0,0,.14);backdrop-filter:blur(2px);display:grid;place-items:center;text-decoration:none}
 .talkabee-forward-arrow::before{content:"";width:17px;height:17px;border-top:5px solid #fff;border-right:5px solid #fff;transform:rotate(45deg) translate(-2px,2px);filter:drop-shadow(0 1px 2px rgba(0,0,0,.35))}
 .scene-view .panel,.scene-view .card{display:none}.scene-return{display:none;position:fixed;z-index:10030;left:18px;top:18px;padding:10px 14px;border-radius:12px;border:1px solid #fff;background:rgba(7,23,39,.65);color:#fff;font-weight:900}.scene-view .scene-return{display:block}
-@media(max-width:900px){.panel{width:220px}.card{width:38vw}}
+@media(max-width:900px){.panel{width:190px}.card{width:38vw}}
 </style>
+
+<style id="boardwalk-hotspots-hover-only">
+.hotspot{display:block!important;opacity:0!important;background:transparent!important;outline:none!important;animation:none!important}
+.hotspot:hover,.hotspot:focus-visible{opacity:1!important;background:rgba(255,220,72,.28)!important;outline:2px solid rgba(255,255,255,.85)!important}
+.challenge-mode .hotspot.target{opacity:1!important;background:rgba(255,199,48,.38)!important;outline:4px solid #fff!important}
+</style>
+
 </head>
 <body>
 <main class="world" id="world">
@@ -53,23 +60,42 @@
 </section>
 
 
+
 <button class="hotspot" data-word="ferris" style="left:46.5%;top:8%;width:16%;height:29%" aria-label="Ferris wheel"></button>
 <button class="hotspot" data-word="carousel" style="left:57%;top:25%;width:17%;height:22%" aria-label="Carousel"></button>
 <button class="hotspot" data-word="tickets" style="left:51%;top:34%;width:10%;height:14%" aria-label="Ticket booth"></button>
 <button class="hotspot" data-word="icecream" style="left:32%;top:25%;width:13%;height:22%" aria-label="Ice cream stand"></button>
 <button class="hotspot" data-word="popcorn" style="left:43%;top:34%;width:9%;height:14%" aria-label="Popcorn stand"></button>
 <button class="hotspot" data-word="lifeguard" style="left:83%;top:31%;width:12%;height:27%" aria-label="Lifeguard tower"></button>
-<button class="hotspot" data-word="surfboard" style="left:80%;top:43%;width:7%;height:20%" aria-label="Surfboard"></button>
+<button class="hotspot" data-word="surfboard" style="left:80%;top:43%;width:7%;height:20%" aria-label="Surfboards"></button>
 <button class="hotspot" data-word="umbrella" style="left:61%;top:43%;width:12%;height:13%" aria-label="Beach umbrella"></button>
 <button class="hotspot" data-word="sandcastle" style="left:69%;top:54%;width:9%;height:12%" aria-label="Sandcastle"></button>
 <button class="hotspot" data-word="seagull" style="left:79%;top:6%;width:9%;height:13%" aria-label="Seagull"></button>
 <button class="hotspot" data-word="kite" style="left:90%;top:2%;width:9%;height:16%" aria-label="Kite"></button>
 <button class="hotspot" data-word="bench" style="left:0%;top:65%;width:15%;height:31%" aria-label="Bench"></button>
-<button class="hotspot" data-word="lamp" style="left:5%;top:12%;width:10%;height:25%" aria-label="Lamp"></button>
-<button class="hotspot" data-word="flowers" style="left:0%;top:51%;width:14%;height:19%" aria-label="Flowers"></button>
-<button class="hotspot" data-word="bear" style="left:31%;top:61%;width:12%;height:30%" aria-label="Bear"></button>
+<button class="hotspot" data-word="lamp" style="left:5%;top:11%;width:9%;height:25%" aria-label="Lamp"></button>
+<button class="hotspot" data-word="flowers" style="left:0%;top:50%;width:14%;height:20%" aria-label="Flowers"></button>
+<button class="hotspot" data-word="bear" style="left:31%;top:60%;width:12%;height:31%" aria-label="Bear"></button>
 <button class="hotspot" data-word="ocean" style="left:90%;top:39%;width:10%;height:17%" aria-label="Ocean"></button>
-
+<button class="hotspot" data-word="palmtree" style="left:10%;top:0%;width:15%;height:35%" aria-label="Palm tree"></button>
+<button class="hotspot" data-word="flag" style="left:16%;top:24%;width:6%;height:11%" aria-label="American flag"></button>
+<button class="hotspot" data-word="icecreamcone" style="left:35%;top:18%;width:7%;height:16%" aria-label="Ice cream cone"></button>
+<button class="hotspot" data-word="rollercoaster" style="left:66%;top:17%;width:11%;height:17%" aria-label="Roller coaster"></button>
+<button class="hotspot" data-word="pier" style="left:69%;top:38%;width:16%;height:13%" aria-label="Pier"></button>
+<button class="hotspot" data-word="lifering" style="left:87%;top:40%;width:5%;height:9%" aria-label="Life ring"></button>
+<button class="hotspot" data-word="binoculars" style="left:90%;top:34%;width:5%;height:8%" aria-label="Binoculars"></button>
+<button class="hotspot" data-word="beachchair" style="left:63%;top:51%;width:9%;height:12%" aria-label="Beach chair"></button>
+<button class="hotspot" data-word="bucket" style="left:68%;top:59%;width:5%;height:7%" aria-label="Bucket"></button>
+<button class="hotspot" data-word="sailboat" style="left:96%;top:42%;width:4%;height:9%" aria-label="Sailboat"></button>
+<button class="hotspot" data-word="boardwalk" style="left:48%;top:72%;width:35%;height:25%" aria-label="Boardwalk"></button>
+<button class="hotspot" data-word="backpack" style="left:26%;top:59%;width:7%;height:19%" aria-label="Backpack"></button>
+<button class="hotspot" data-word="hat" style="left:24%;top:35%;width:9%;height:10%" aria-label="Hat"></button>
+<button class="hotspot" data-word="sunglasses" style="left:24%;top:38%;width:5%;height:6%" aria-label="Sunglasses"></button>
+<button class="hotspot" data-word="boy" style="left:37%;top:47%;width:9%;height:22%" aria-label="Boy"></button>
+<button class="hotspot" data-word="girl" style="left:28%;top:54%;width:8%;height:27%" aria-label="Girl"></button>
+<button class="hotspot" data-word="grandpa" style="left:22%;top:42%;width:10%;height:34%" aria-label="Grandpa"></button>
+<button class="hotspot" data-word="grandma" style="left:32%;top:38%;width:9%;height:25%" aria-label="Grandma"></button>
+<button class="hotspot" data-word="beach" style="left:78%;top:57%;width:18%;height:18%" aria-label="Beach"></button>
 </main>
 <script>
 const LANGS={
@@ -81,15 +107,42 @@ it:{code:"it-IT",words:{ferris:["ruota panoramica","Ferris wheel"],carousel:["gi
 pt:{code:"pt-BR",words:{ferris:["roda-gigante","Ferris wheel"],carousel:["carrossel","carousel"],tickets:["bilheteria","ticket booth"],icecream:["sorvete","ice cream"],popcorn:["pipoca","popcorn"],lifeguard:["torre do salva-vidas","lifeguard tower"],surfboard:["prancha de surfe","surfboard"],umbrella:["guarda-sol","beach umbrella"],sandcastle:["castelo de areia","sandcastle"],seagull:["gaivota","seagull"],kite:["pipa","kite"],bicycle:["bicicleta","bicycle"],skateboard:["skate","skateboard"],trashcan:["lixeira","trash can"],binoculars:["binóculos","binoculars"],sunglasses:["óculos de sol","sunglasses"],hat:["chapéu","hat"],bench:["banco","bench"],lamp:["poste de luz","lamp"],flowers:["flores","flowers"],bear:["Bear","Bear"],ocean:["oceano","ocean"]}},
 no:{code:"nb-NO",words:{ferris:["pariserhjul","Ferris wheel"],carousel:["karusell","carousel"],tickets:["billettluke","ticket booth"],icecream:["iskrem","ice cream"],popcorn:["popkorn","popcorn"],lifeguard:["badevaktstårn","lifeguard tower"],surfboard:["surfebrett","surfboard"],umbrella:["parasoll","beach umbrella"],sandcastle:["sandslott","sandcastle"],seagull:["måke","seagull"],kite:["drage","kite"],bicycle:["sykkel","bicycle"],skateboard:["rullebrett","skateboard"],trashcan:["søppelbøtte","trash can"],binoculars:["kikkert","binoculars"],sunglasses:["solbriller","sunglasses"],hat:["hatt","hat"],bench:["benk","bench"],lamp:["gatelykt","lamp"],flowers:["blomster","flowers"],bear:["Bear","Bear"],ocean:["hav","ocean"]}}
 };
+
+const EXTRA_WORDS={
+es:{palmtree:"palmera",flag:"bandera",icecreamcone:"cono de helado",rollercoaster:"montaña rusa",pier:"muelle",lifering:"salvavidas",beachchair:"silla de playa",bucket:"cubo",sailboat:"velero",boardwalk:"paseo marítimo",backpack:"mochila",boy:"niño",girl:"niña",grandpa:"abuelo",grandma:"abuela",beach:"playa"},
+fr:{palmtree:"palmier",flag:"drapeau",icecreamcone:"cornet de glace",rollercoaster:"montagnes russes",pier:"jetée",lifering:"bouée de sauvetage",beachchair:"chaise de plage",bucket:"seau",sailboat:"voilier",boardwalk:"promenade",backpack:"sac à dos",boy:"garçon",girl:"fille",grandpa:"grand-père",grandma:"grand-mère",beach:"plage"},
+en:{palmtree:"palm tree",flag:"flag",icecreamcone:"ice cream cone",rollercoaster:"roller coaster",pier:"pier",lifering:"life ring",beachchair:"beach chair",bucket:"bucket",sailboat:"sailboat",boardwalk:"boardwalk",backpack:"backpack",boy:"boy",girl:"girl",grandpa:"grandpa",grandma:"grandma",beach:"beach"},
+de:{palmtree:"Palme",flag:"Flagge",icecreamcone:"Eistüte",rollercoaster:"Achterbahn",pier:"Seebrücke",lifering:"Rettungsring",beachchair:"Strandstuhl",bucket:"Eimer",sailboat:"Segelboot",boardwalk:"Promenade",backpack:"Rucksack",boy:"Junge",girl:"Mädchen",grandpa:"Opa",grandma:"Oma",beach:"Strand"},
+it:{palmtree:"palma",flag:"bandiera",icecreamcone:"cono gelato",rollercoaster:"montagne russe",pier:"molo",lifering:"salvagente",beachchair:"sedia da spiaggia",bucket:"secchio",sailboat:"barca a vela",boardwalk:"passeggiata",backpack:"zaino",boy:"ragazzo",girl:"ragazza",grandpa:"nonno",grandma:"nonna",beach:"spiaggia"},
+pt:{palmtree:"palmeira",flag:"bandeira",icecreamcone:"casquinha de sorvete",rollercoaster:"montanha-russa",pier:"cais",lifering:"boia salva-vidas",beachchair:"cadeira de praia",bucket:"balde",sailboat:"veleiro",boardwalk:"calçadão",backpack:"mochila",boy:"menino",girl:"menina",grandpa:"avô",grandma:"avó",beach:"praia"},
+no:{palmtree:"palme",flag:"flagg",icecreamcone:"iskremkjeks",rollercoaster:"berg-og-dal-bane",pier:"brygge",lifering:"livbøye",beachchair:"strandstol",bucket:"bøtte",sailboat:"seilbåt",boardwalk:"strandpromenade",backpack:"ryggsekk",boy:"gutt",girl:"jente",grandpa:"bestefar",grandma:"bestemor",beach:"strand"}
+};
+Object.keys(EXTRA_WORDS).forEach(l=>{
+  Object.entries(EXTRA_WORDS[l]).forEach(([k,v])=>{
+    LANGS[l].words[k]=[v,l==="en"?"":EXTRA_WORDS.en[k]];
+  });
+});
+
+
+const boardwalkSounds={boardwalk:"carnival.mp3",carousel:"circus.mp3"};
+let boardwalkSound=null;
+function playBoardwalkSound(id){
+  const file=boardwalkSounds[id];
+  if(!file)return;
+  if(boardwalkSound){boardwalkSound.pause();boardwalkSound.currentTime=0;}
+  boardwalkSound=new Audio("sounds/"+file);
+  boardwalkSound.play().catch(()=>{});
+}
+
 const challengeOrder=["ferris","carousel","lifeguard","kite","icecream","bear"];
 const langSel=document.getElementById("lang"),voiceSel=document.getElementById("voice");
 const title=document.getElementById("title"),prompt=document.getElementById("prompt"),line=document.getElementById("line"),translation=document.getElementById("translation"),status=document.getElementById("status"),world=document.getElementById("world");
 let lastWord="ferris",challenge=-1;
 function fillVoices(){const vs=speechSynthesis.getVoices();voiceSel.innerHTML='<option>Browser Default</option>'+vs.map(v=>`<option>${v.name}</option>`).join("")}
 if("speechSynthesis" in window){speechSynthesis.onvoiceschanged=fillVoices;fillVoices()}
-function speak(t,rate=.82){if(!t||!("speechSynthesis" in window))return;try{speechSynthesis.cancel();const u=new SpeechSynthesisUtterance(t);u.lang=LANGS[langSel.value].code;u.rate=rate;const v=speechSynthesis.getVoices().find(v=>v.name===voiceSel.value);if(v)u.voice=v;setTimeout(()=>speechSynthesis.speak(u),40)}catch(e){}}
+function speak(t,rate=.82,onend=null){if(!t||!("speechSynthesis" in window)){if(onend)onend();return;}try{speechSynthesis.cancel();const u=new SpeechSynthesisUtterance(t);u.lang=LANGS[langSel.value].code;u.rate=rate;const v=speechSynthesis.getVoices().find(v=>v.name===voiceSel.value);if(v)u.voice=v;if(onend)u.onend=onend;setTimeout(()=>speechSynthesis.speak(u),40)}catch(e){if(onend)onend();}}
 function showWord(key){lastWord=key;const x=LANGS[langSel.value].words[key];line.textContent=x[0];translation.textContent=langSel.value==="en"?"":x[1]}
-document.querySelectorAll(".hotspot").forEach(b=>b.onclick=()=>{const key=b.dataset.word,x=LANGS[langSel.value].words[key];showWord(key);speak(x[0]);if(challenge>=0){if(key===challengeOrder[challenge]){status.textContent="✓ Nice find!";status.style.color="#9dffbf"}else{status.textContent="Not that one — keep looking.";status.style.color="#ffe28a"}}});
+document.querySelectorAll(".hotspot").forEach(b=>b.onclick=()=>{const key=b.dataset.word,x=LANGS[langSel.value].words[key];showWord(key);speak(x[0],.82,()=>playBoardwalkSound(key));if(challenge>=0){if(key===challengeOrder[challenge]){status.textContent="✓ Nice find!";status.style.color="#9dffbf"}else{status.textContent="Not that one — keep looking.";status.style.color="#ffe28a"}}});
 document.getElementById("discovery").onclick=()=>{challenge=-1;world.classList.remove("challenge-mode");title.textContent="Click & Discover";prompt.textContent="Click any object in the scene to hear its name.";status.textContent=""};
 document.querySelectorAll("[data-ch]").forEach(b=>b.onclick=()=>{challenge=+b.dataset.ch;world.classList.add("challenge-mode");document.querySelectorAll(".hotspot").forEach(h=>h.classList.toggle("target",h.dataset.word===challengeOrder[challenge]));title.textContent="Challenge "+(challenge+1)+" of 6";prompt.textContent=b.textContent.replace(/^\d+\.\s*/,"");status.textContent=""});
 const lessons={arrive:["We are at the boardwalk.","Look at the rides and the ocean."],rides:["Which ride would you like?","I would like the Ferris wheel."],snacks:["Would you like ice cream or popcorn?","I would like ice cream, please."],beach:["Let’s walk to the beach.","Bring the umbrella and surfboard."],safety:["Where is the lifeguard?","The lifeguard tower is by the ocean."],things:["What do you see?","I see a bicycle, a kite, and a seagull."]};
