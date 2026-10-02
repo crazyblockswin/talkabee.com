@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Talk A Bee — Nighttime Campground Adventure</title>
+<style>
+*{box-sizing:border-box}html,body{margin:0;width:100%;height:100%;overflow:hidden;font-family:Arial,sans-serif;background:#071526;color:#fff}
+.world{position:relative;width:100vw;height:100vh;background:url("images/talkabee-nighttime-campground-adventure.jpg") center center/cover no-repeat}
+.panel{position:absolute;z-index:20;left:16px;top:16px;width:195px;max-height:calc(100vh - 32px);overflow:auto;padding:14px;border-radius:20px;background:rgba(7,23,39,.31);border:1px solid rgba(255,255,255,.28);box-shadow:0 10px 28px rgba(0,0,0,.22);backdrop-filter:blur(3px)}
+.panel h1{font-size:22px;margin:0 0 10px}.label{margin:11px 0 5px;font-size:12px;font-weight:900;letter-spacing:.12em;color:#e9f7ff}
+.panel select,.panel button,.panel a{width:100%;display:block;margin:5px 0;padding:9px 10px;border-radius:12px;border:1px solid rgba(255,255,255,.38);background:rgba(7,32,50,.54);color:#fff;font-weight:800;text-decoration:none;text-align:left}
+.panel button:hover,.panel a:hover{background:rgba(255,255,255,.18)}
+.card{position:absolute;z-index:19;right:5%;top:5%;bottom:auto;width:min(470px,31vw);padding:16px 18px;border-radius:20px;background:rgba(7,23,39,.28);border:1px solid rgba(255,255,255,.32);box-shadow:0 10px 28px rgba(0,0,0,.22);backdrop-filter:blur(3px)}
+.card h2{margin:0 0 5px;font-size:24px}.card p{margin:5px 0}.word{margin-top:10px;padding:11px 13px;border-radius:14px;background:rgba(255,255,255,.88);color:#10283c}.word strong{font-size:27px}.translation{font-size:17px;margin-top:3px}
+.controls{display:flex;gap:8px;margin-top:10px}.controls button{flex:1;padding:9px;border:0;border-radius:11px;font-weight:900}
+.hotspot{position:absolute;z-index:8;border:0;background:transparent;opacity:0;cursor:pointer;border-radius:16px}
+.hotspot:hover,.hotspot:focus-visible{opacity:1;background:rgba(255,220,72,.28);outline:2px solid rgba(255,255,255,.85)}
+.challenge-mode .hotspot.target{opacity:1;background:rgba(255,199,48,.38);outline:4px solid #fff;box-shadow:0 0 0 7px rgba(255,200,50,.2)}
+.talkabee-forward-arrow{position:fixed;z-index:10020;right:22px;top:18px;width:62px;height:62px;border:2px solid rgba(255,255,255,.82);border-radius:50%;background:rgba(11,22,42,.20);box-shadow:0 5px 16px rgba(0,0,0,.14);backdrop-filter:blur(2px);display:grid;place-items:center;text-decoration:none}
+.talkabee-forward-arrow::before{content:"";width:17px;height:17px;border-top:5px solid #fff;border-right:5px solid #fff;transform:rotate(45deg) translate(-2px,2px);filter:drop-shadow(0 1px 2px rgba(0,0,0,.35))}
+.scene-view .panel,.scene-view .card{display:none}.scene-return{display:none;position:fixed;z-index:10030;left:18px;top:18px;padding:10px 14px;border-radius:12px;border:1px solid #fff;background:rgba(7,23,39,.65);color:#fff;font-weight:900}.scene-view .scene-return{display:block}
+@media(max-width:900px){.panel{width:190px}.card{width:38vw}}
+</style>
+</head>
+<body>
+<main class="world" id="world">
+<a class="talkabee-forward-arrow" href="index.html" aria-label="Continue from Nighttime Campground Adventure" title="Next Adventure"></a>
+<button class="scene-return" id="sceneReturn">Return to Adventure</button>
+<aside class="panel">
+<h1>🏕️ Nighttime Campground</h1>
+<div class="label">LANGUAGE</div>
+<select id="lang"><option value="es">Spanish</option><option value="fr">French</option><option value="en">English</option><option value="de">German</option><option value="it">Italian</option><option value="pt">Portuguese</option><option value="no">Norwegian</option></select>
+<div class="label">VOICE</div><select id="voice"><option>Browser Default</option></select>
+<button id="sceneView">◉ Scene View</button>
+<div class="label">DISCOVERY</div><button id="discovery">🔎 Discovery — Click the Scene</button>
+<div class="label">ACTIVITIES</div>
+<button data-lesson="arrive">1. 🏕️ Arrive at Camp</button>
+<button data-lesson="fire">2. 🔥 Around the Campfire</button>
+<button data-lesson="food">3. 🍡 Roast Marshmallows</button>
+<button data-lesson="night">4. 🌙 Nighttime Nature</button>
+<button data-lesson="gear">5. 🔦 Camping Gear</button>
+<button data-lesson="family">6. 👨‍👩‍👧 Family at Camp</button>
+<div class="label">CHALLENGES</div>
+<button data-ch="0">1. Find the Campfire</button><button data-ch="1">2. Find the RV</button><button data-ch="2">3. Find the Tent</button><button data-ch="3">4. Find the Moon</button><button data-ch="4">5. Find Bear</button><button data-ch="5">6. Find the Raccoon</button>
+<a href="index.html">← Return to Main Directory</a>
+</aside>
+<section class="card">
+<h2 id="title">Nighttime Campground Adventure</h2><p id="prompt">Click any object in the scene to hear its name.</p>
+<div class="word"><strong id="line">campamento</strong><div class="translation" id="translation">campground</div></div>
+<p id="status"></p>
+<div class="controls"><button id="normal">🔊 Normal</button><button id="slow">🐢 Slow</button><button id="replay">↻ Replay</button></div>
+</section>
+
+<button class="hotspot" data-word="sign" style="left:25.5%;top:30%;width:11%;height:22%" aria-label="Camp sign"></button>
+<button class="hotspot" data-word="bee" style="left:31%;top:19%;width:7%;height:10%" aria-label="Bee"></button>
+<button class="hotspot" data-word="rv" style="left:36%;top:27%;width:32%;height:28%" aria-label="RV"></button>
+<button class="hotspot" data-word="solar" style="left:39%;top:25%;width:11%;height:9%" aria-label="Solar panels"></button>
+<button class="hotspot" data-word="door" style="left:45%;top:37%;width:6%;height:17%" aria-label="RV door"></button>
+<button class="hotspot" data-word="bicycle" style="left:36%;top:45%;width:10%;height:13%" aria-label="Bicycles"></button>
+<button class="hotspot" data-word="picnic" style="left:30%;top:49%;width:15%;height:15%" aria-label="Picnic table"></button>
+<button class="hotspot" data-word="guitar" style="left:37%;top:53%;width:12%;height:18%" aria-label="Guitar"></button>
+<button class="hotspot" data-word="grandpa" style="left:39%;top:50%;width:8%;height:23%" aria-label="Grandpa Wally"></button>
+<button class="hotspot" data-word="grandma" style="left:47%;top:49%;width:7%;height:22%" aria-label="Grandma Cathy"></button>
+<button class="hotspot" data-word="family" style="left:54%;top:49%;width:25%;height:24%" aria-label="Family and friends"></button>
+<button class="hotspot" data-word="fire" style="left:54%;top:62%;width:15%;height:20%" aria-label="Campfire"></button>
+<button class="hotspot" data-word="marshmallow" style="left:65%;top:61%;width:12%;height:15%" aria-label="Marshmallows"></button>
+<button class="hotspot" data-word="bear" style="left:40%;top:66%;width:11%;height:16%" aria-label="Bear"></button>
+<button class="hotspot" data-word="cooler" style="left:34%;top:64%;width:8%;height:11%" aria-label="Cooler"></button>
+<button class="hotspot" data-word="tent" style="left:84%;top:39%;width:16%;height:28%" aria-label="Tent"></button>
+<button class="hotspot" data-word="lantern" style="left:79%;top:51%;width:7%;height:15%" aria-label="Lantern"></button>
+<button class="hotspot" data-word="raccoon" style="left:89%;top:74%;width:11%;height:15%" aria-label="Raccoon"></button>
+<button class="hotspot" data-word="lake" style="left:69%;top:38%;width:17%;height:19%" aria-label="Lake"></button>
+<button class="hotspot" data-word="canoe" style="left:72%;top:48%;width:10%;height:7%" aria-label="Canoe"></button>
+<button class="hotspot" data-word="creek" style="left:29%;top:77%;width:39%;height:18%" aria-label="Creek"></button>
+<button class="hotspot" data-word="moon" style="left:83%;top:5%;width:10%;height:15%" aria-label="Moon"></button>
+<button class="hotspot" data-word="stars" style="left:51%;top:0%;width:31%;height:20%" aria-label="Stars"></button>
+<button class="hotspot" data-word="mountains" style="left:55%;top:16%;width:29%;height:18%" aria-label="Mountains"></button>
+<button class="hotspot" data-word="trees" style="left:10%;top:3%;width:18%;height:45%" aria-label="Pine trees"></button>
+<button class="hotspot" data-word="logs" style="left:59%;top:78%;width:14%;height:12%" aria-label="Firewood"></button>
+<button class="hotspot" data-word="pot" style="left:64%;top:75%;width:9%;height:10%" aria-label="Cooking pot"></button>
+</main>
+
+<script>
+const EN={campground:"campground",sign:"camp sign",bee:"bee",rv:"RV",solar:"solar panels",door:"RV door",bicycle:"bicycle",picnic:"picnic table",guitar:"guitar",grandpa:"Grandpa",grandma:"Grandma",family:"family",fire:"campfire",marshmallow:"marshmallows",bear:"Bear",cooler:"cooler",tent:"tent",lantern:"lantern",raccoon:"raccoon",lake:"lake",canoe:"canoe",creek:"creek",moon:"moon",stars:"stars",mountains:"mountains",trees:"pine trees",logs:"firewood",pot:"cooking pot"};
+const WORDS={
+es:{campground:"campamento",sign:"letrero del campamento",bee:"abeja",rv:"casa rodante",solar:"paneles solares",door:"puerta de la casa rodante",bicycle:"bicicleta",picnic:"mesa de picnic",guitar:"guitarra",grandpa:"abuelo",grandma:"abuela",family:"familia",fire:"fogata",marshmallow:"malvaviscos",bear:"Bear",cooler:"nevera",tent:"tienda de campaña",lantern:"linterna",raccoon:"mapache",lake:"lago",canoe:"canoa",creek:"arroyo",moon:"luna",stars:"estrellas",mountains:"montañas",trees:"pinos",logs:"leña",pot:"olla"},
+fr:{campground:"camping",sign:"panneau du camping",bee:"abeille",rv:"camping-car",solar:"panneaux solaires",door:"porte du camping-car",bicycle:"vélo",picnic:"table de pique-nique",guitar:"guitare",grandpa:"grand-père",grandma:"grand-mère",family:"famille",fire:"feu de camp",marshmallow:"guimauves",bear:"Bear",cooler:"glacière",tent:"tente",lantern:"lanterne",raccoon:"raton laveur",lake:"lac",canoe:"canoë",creek:"ruisseau",moon:"lune",stars:"étoiles",mountains:"montagnes",trees:"pins",logs:"bois de chauffage",pot:"marmite"},
+en:{...EN},
+de:{campground:"Campingplatz",sign:"Campingschild",bee:"Biene",rv:"Wohnmobil",solar:"Solarmodule",door:"Wohnmobiltür",bicycle:"Fahrrad",picnic:"Picknicktisch",guitar:"Gitarre",grandpa:"Opa",grandma:"Oma",family:"Familie",fire:"Lagerfeuer",marshmallow:"Marshmallows",bear:"Bear",cooler:"Kühlbox",tent:"Zelt",lantern:"Laterne",raccoon:"Waschbär",lake:"See",canoe:"Kanu",creek:"Bach",moon:"Mond",stars:"Sterne",mountains:"Berge",trees:"Kiefern",logs:"Feuerholz",pot:"Kochtopf"},
+it:{campground:"campeggio",sign:"cartello del campeggio",bee:"ape",rv:"camper",solar:"pannelli solari",door:"porta del camper",bicycle:"bicicletta",picnic:"tavolo da picnic",guitar:"chitarra",grandpa:"nonno",grandma:"nonna",family:"famiglia",fire:"falò",marshmallow:"marshmallow",bear:"Bear",cooler:"frigorifero portatile",tent:"tenda",lantern:"lanterna",raccoon:"procione",lake:"lago",canoe:"canoa",creek:"ruscello",moon:"luna",stars:"stelle",mountains:"montagne",trees:"pini",logs:"legna da ardere",pot:"pentola"},
+pt:{campground:"acampamento",sign:"placa do acampamento",bee:"abelha",rv:"autocaravana",solar:"painéis solares",door:"porta da autocaravana",bicycle:"bicicleta",picnic:"mesa de piquenique",guitar:"guitarra",grandpa:"avô",grandma:"avó",family:"família",fire:"fogueira",marshmallow:"marshmallows",bear:"Bear",cooler:"caixa térmica",tent:"tenda",lantern:"lanterna",raccoon:"guaxinim",lake:"lago",canoe:"canoa",creek:"riacho",moon:"lua",stars:"estrelas",mountains:"montanhas",trees:"pinheiros",logs:"lenha",pot:"panela"},
+no:{campground:"campingplass",sign:"campingskilt",bee:"bie",rv:"bobil",solar:"solcellepaneler",door:"bobildør",bicycle:"sykkel",picnic:"piknikbord",guitar:"gitar",grandpa:"bestefar",grandma:"bestemor",family:"familie",fire:"leirbål",marshmallow:"marshmallows",bear:"Bear",cooler:"kjøleboks",tent:"telt",lantern:"lykt",raccoon:"vaskebjørn",lake:"innsjø",canoe:"kano",creek:"bekk",moon:"måne",stars:"stjerner",mountains:"fjell",trees:"furutrær",logs:"ved",pot:"gryte"}
+};
+const CODES={es:"es-ES",fr:"fr-FR",en:"en-US",de:"de-DE",it:"it-IT",pt:"pt-PT",no:"nb-NO"};
+const campgroundSounds={bee:"bee.mp3",bear:"dog-bark.mp3",creek:"creek.mp3",trees:"crickets-birds.mp3",stars:"crickets-birds.mp3"};
+let sceneSound=null;
+function playCampSound(id){const file=campgroundSounds[id];if(!file)return;if(sceneSound){sceneSound.pause();sceneSound.currentTime=0}sceneSound=new Audio("sounds/"+file);sceneSound.volume=.82;sceneSound.play().catch(()=>{})}
+
+const challengeOrder=["fire","rv","tent","moon","bear","raccoon"];
+const langSel=document.getElementById("lang"),voiceSel=document.getElementById("voice");
+const title=document.getElementById("title"),prompt=document.getElementById("prompt"),line=document.getElementById("line"),translation=document.getElementById("translation"),status=document.getElementById("status"),world=document.getElementById("world");
+let lastWord="campground",challenge=-1;
+function fillVoices(){if(!("speechSynthesis" in window))return;const base=CODES[langSel.value].split("-")[0].toLowerCase();const vs=speechSynthesis.getVoices().filter(v=>v.lang&&v.lang.toLowerCase().startsWith(base));voiceSel.innerHTML='<option>Browser Default</option>'+vs.map(v=>`<option>${v.name}</option>`).join("")}
+if("speechSynthesis" in window){speechSynthesis.onvoiceschanged=fillVoices;fillVoices()}
+function speak(t,rate=.82,onend=null){if(!t||!("speechSynthesis" in window)){if(onend)onend();return}try{speechSynthesis.cancel();const u=new SpeechSynthesisUtterance(t);u.lang=CODES[langSel.value];u.rate=rate;const v=speechSynthesis.getVoices().find(v=>v.name===voiceSel.value);if(v)u.voice=v;if(onend){u.onend=onend;u.onerror=onend}setTimeout(()=>speechSynthesis.speak(u),40)}catch(e){if(onend)onend()}}
+function showWord(key){lastWord=key;line.textContent=WORDS[langSel.value][key]||EN[key]||key;translation.textContent=langSel.value==="en"?"":(EN[key]||key)}
+document.querySelectorAll(".hotspot").forEach(b=>b.onclick=()=>{const key=b.dataset.word;showWord(key);speak(WORDS[langSel.value][key]||EN[key],.82,()=>playCampSound(key));if(challenge>=0){if(key===challengeOrder[challenge]){status.textContent="✓ Nice find!";status.style.color="#9dffbf"}else{status.textContent="Not that one — keep looking.";status.style.color="#ffe28a"}}});
+document.getElementById("discovery").onclick=()=>{challenge=-1;world.classList.remove("challenge-mode");document.querySelectorAll(".hotspot").forEach(h=>h.classList.remove("target"));title.textContent="Click & Discover";prompt.textContent="Click any object in the scene to hear its name.";status.textContent=""};
+document.querySelectorAll("[data-ch]").forEach(b=>b.onclick=()=>{challenge=+b.dataset.ch;world.classList.add("challenge-mode");document.querySelectorAll(".hotspot").forEach(h=>h.classList.toggle("target",h.dataset.word===challengeOrder[challenge]));title.textContent="Challenge "+(challenge+1)+" of 6";prompt.textContent=b.textContent.replace(/^\d+\.\s*/,"");status.textContent=""});
+const lessons={
+arrive:["We are camping by the lake.","Our campsite is ready for the night."],
+fire:["Everyone is sitting around the campfire.","The fire is warm and bright."],
+food:["We are roasting marshmallows.","Be careful near the campfire."],
+night:["Look at the moon and the stars.","The mountains are quiet at night."],
+gear:["We have a tent, lantern, cooler, and bicycles.","The camping gear is ready."],
+family:["Grandma, Grandpa, family, and friends are together.","Bear is relaxing beside the campfire."]
+};
+document.querySelectorAll("[data-lesson]").forEach(b=>b.onclick=()=>{challenge=-1;world.classList.remove("challenge-mode");document.querySelectorAll(".hotspot").forEach(h=>h.classList.remove("target"));const a=lessons[b.dataset.lesson];title.textContent=b.textContent.replace(/^\d+\.\s*/,"");prompt.textContent=a[0];line.textContent=a[1];translation.textContent="";lastWord="";speak(a[1])});
+document.getElementById("normal").onclick=()=>speak(lastWord?(WORDS[langSel.value][lastWord]||EN[lastWord]):line.textContent,.82);
+document.getElementById("slow").onclick=()=>speak(lastWord?(WORDS[langSel.value][lastWord]||EN[lastWord]):line.textContent,.58);
+document.getElementById("replay").onclick=()=>speak(lastWord?(WORDS[langSel.value][lastWord]||EN[lastWord]):line.textContent,.82);
+langSel.onchange=()=>{fillVoices();if(lastWord)showWord(lastWord)};
+document.getElementById("sceneView").onclick=()=>document.body.classList.add("scene-view");
+document.getElementById("sceneReturn").onclick=()=>document.body.classList.remove("scene-view");
+showWord("campground");
+</script>
+</body>
+</html>
