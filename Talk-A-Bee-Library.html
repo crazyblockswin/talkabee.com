@@ -13,14 +13,40 @@
 .wordpop{position:absolute;z-index:40;display:none;padding:8px 12px;border-radius:12px;background:rgba(20,20,20,.82);color:white;font-weight:900;font-size:14px;pointer-events:none}
 .restore{display:none;position:absolute;z-index:60;left:12px;top:12px;border:0;border-radius:11px;padding:9px 12px;font-weight:900;cursor:pointer}.world.scene-only .dir,.world.scene-only .panel{display:none!important}.world.scene-only .restore{display:block!important}
 @media(max-width:900px){.dir{width:170px}.panel{width:38vw}}
+
+.talkabee-forward-arrow{
+ position:fixed;z-index:10020;right:22px;top:18px;
+ width:62px;height:62px;border:2px solid rgba(255,255,255,.82);
+ border-radius:50%;
+ background:rgba(11,22,42,.20);
+ box-shadow:0 5px 16px rgba(0,0,0,.14);
+ backdrop-filter:blur(2px);
+ display:grid;place-items:center;
+ text-decoration:none;cursor:pointer;
+}
+.talkabee-forward-arrow::before{
+ content:"";
+ width:17px;height:17px;
+ border-top:5px solid #fff;
+ border-right:5px solid #fff;
+ transform:rotate(45deg) translate(-2px,2px);
+ filter:drop-shadow(0 1px 2px rgba(0,0,0,.35));
+}
+.talkabee-forward-arrow:hover,.talkabee-forward-arrow:focus-visible{
+ background:rgba(11,22,42,.34);
+ outline:3px solid rgba(255,255,255,.72);
+ outline-offset:2px;
+}
+
 </style></head><body>
-<section class="world" id="world"><button class="restore" id="restore">← Return Panel</button><div class="scene"><img class="bg" src="images/library-adventure.jpg" alt="Sofia and Daniel studying Italian in a beautiful library"></div>
+<a class="talkabee-forward-arrow" href="Talk-A-Bee-City-Bus-Adventure.html" aria-label="Next adventure: City Bus" title="Next Adventure"></a><section class="world" id="world"><button class="restore" id="restore">← Return Panel</button><div class="scene"><img class="bg" src="images/library-adventure.jpg" alt="Sofia and Daniel studying Italian in a beautiful library"></div>
 <aside class="dir"><a href="index.html">← Main Directory</a><button id="sceneView">◉ Scene View</button><div class="place">📚 Library</div>
 <div class="label">LANGUAGE</div><select id="language"><option value="es">Spanish</option><option value="fr">French</option><option value="en">English</option><option value="de">German</option><option value="it">Italian</option><option value="pt">Portuguese</option><option value="no">Norwegian</option></select>
 <div class="label">VOICE</div><select id="voice"><option value="">Browser Default</option></select>
+<div class="label">DISCOVERY</div><button id="discovery">🔎 Discovery — Click the Scene</button>
 <div class="label">ACTIVITIES</div>
 <button data-lesson="conversation">1. 💬 Library Conversation</button><button data-lesson="books">2. 📖 Books & Reading</button><button data-lesson="study">3. ✏️ Studying Together</button><button data-lesson="travel">4. 🇮🇹 Italy & Travel</button><button data-lesson="phrases">5. 🗣️ Useful Phrases</button><button data-lesson="questions">6. ❓ Asking Questions</button>
-<div class="label">DISCOVERY</div><button id="discovery">🔎 Discovery — Click the Scene</button><div class="label">CHALLENGES</div>
+<div class="label">CHALLENGES</div>
 <button data-ch="0">1. Find the book</button><button data-ch="1">2. Find the fountain</button><button data-ch="2">3. Find the cup</button><button data-ch="3">4. Find the notebook</button><button data-ch="4">5. Find the pen</button><button data-ch="5">6. Find the ladder</button></aside>
 <div class="hotspots"><button data-word="libro" data-en="book" style="left:36.14%;top:53.64%;width:23.05%;height:19.16%"></button><button data-word="fuente" data-en="fountain" style="left:81.82%;top:26.36%;width:4.98%;height:17.76%"></button><button data-word="taza" data-en="cup" style="left:82.24%;top:64.49%;width:7.07%;height:13.55%"></button><button data-word="cuaderno" data-en="notebook" style="left:39.81%;top:77.01%;width:26.72%;height:14.02%"></button><button data-word="bolígrafo" data-en="pen" style="left:58.15%;top:76.92%;width:11.79%;height:5.14%"></button><button data-word="escalera" data-en="ladder" style="left:21.22%;top:5.42%;width:3.93%;height:34.58%"></button></div><div class="wordpop" id="pop"></div>
 <div class="panel"><div class="kicker" id="kicker">AT THE LIBRARY</div><h2 id="title">Sofia and Daniel study together.</h2><p id="prompt"></p><div id="lines"></div><div class="tip" id="tip"></div></div>
