@@ -272,9 +272,9 @@ function speak(t,rate=.82){
   try{
     speechSynthesis.cancel();
     const u=new SpeechSynthesisUtterance(t);
-    u.lang=data().speech;
+    u.lang=LANGS[currentLang()].code;
     u.rate=rate;
-    const v=selectedVoice();
+    const v=speechSynthesis.getVoices().find(v=>v.name===voiceSelect.value);
     if(v)u.voice=v;
     setTimeout(()=>speechSynthesis.speak(u),40);
   }catch(e){}
