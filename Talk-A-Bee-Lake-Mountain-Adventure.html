@@ -107,6 +107,23 @@
 .directory select{height:30px!important;min-height:30px!important;padding:2px 8px!important;font-size:13px!important;border-radius:8px!important}
 </style>
 
+
+<style id="lake-auto-discovery-locked-template">
+.hotspot{
+ pointer-events:auto!important;
+ opacity:0!important;
+ background:transparent!important;
+ outline:none!important;
+ animation:none!important;
+ cursor:pointer!important;
+}
+.hotspot:hover,.hotspot:focus-visible{
+ opacity:.45!important;
+ outline:3px solid white!important;
+ background:rgba(32,169,164,.28)!important;
+}
+</style>
+
 </head><body>
 <a class="talkabee-forward-arrow" href="Talk-A-Bee-Aunt-Julies-Island-Retreat.html" aria-label="Next adventure: Aunt Julie's Island Retreat" title="Next Adventure"></a><main id="world">
 <button class="restore" id="restore">← Return Panel</button>
@@ -165,13 +182,13 @@ function playLakeSceneSound(key){
 const challenges=['fish','fishingpole','dog','eagle','owl','swing'];let ai=0,pi=0,mode='lesson',ci=0,last='',lastRate=.84;
 const $=x=>document.getElementById(x),world=$('world');$('lang').value=localStorage.getItem('talkabee-learn-language')||'es';
 function lang(){return $('lang').value} function voices(){let s=$('voice'),keep=localStorage.getItem('talkabee-lake-voice-'+lang())||'',base=LANGS[lang()].code.split('-')[0].toLowerCase(),vs=(speechSynthesis.getVoices()||[]).filter(v=>(v.lang||'').toLowerCase().startsWith(base));s.innerHTML='<option value="">Browser Default</option>';vs.forEach(v=>s.add(new Option(v.name+' — '+v.lang,v.name)));if([...s.options].some(o=>o.value===keep))s.value=keep}
-function say(t,r=.84){if(!t||!speechSynthesis)return;speechSynthesis.cancel();let u=new SpeechSynthesisUtterance(t);u.lang=LANGS[lang()].code;u.rate=r;let v=speechSynthesis.getVoices().find(x=>x.name===$('voice').value);if(v)u.voice=v;last=t;lastRate=r;speechSynthesis.speak(u)}
+function say(t,r=.84,onend=null){if(!t||!speechSynthesis){if(onend)onend();return}speechSynthesis.cancel();let u=new SpeechSynthesisUtterance(t);u.lang=LANGS[lang()].code;u.rate=r;let v=speechSynthesis.getVoices().find(x=>x.name===$('voice').value);if(v)u.voice=v;last=t;lastRate=r;if(onend)u.onend=onend;speechSynthesis.speak(u)}
 function active(b){document.querySelectorAll('.nav').forEach(x=>x.classList.remove('active'));if(b)b.classList.add('active')}
 function lesson(){mode='lesson';world.className='';let row=A[lang()][ai][1][pi],en=ENG[ai][pi];$('kicker').textContent='ACTIVITY '+(ai+1)+' OF 6';$('cardTitle').textContent=A[lang()][ai][0];$('prompt').textContent='Listen, then practice the sentence.';$('line').textContent=row;$('translation').textContent=en;$('actions').style.display='flex';$('status').textContent=''}
 document.querySelectorAll('.lesson').forEach(b=>b.onclick=()=>{ai=+b.dataset.i;pi=0;active(b);lesson()});
 $('discovery').onclick=()=>{mode='discovery';world.className='discovery';active($('discovery'));$('kicker').textContent='DISCOVERY';$('cardTitle').textContent='Click an object in the scene';$('prompt').textContent='See the learning-language word and its English meaning.';$('line').textContent='';$('translation').textContent='Audio speaks only the learning-language word.';$('actions').style.display='none';$('status').textContent=''};
 document.querySelectorAll('.challengeBtn').forEach(b=>b.onclick=()=>{mode='challenge';ci=+b.dataset.c;world.className='challenge';active(b);let k=challenges[ci],w=WORDS[lang()][k];$('kicker').textContent='CHALLENGE '+(ci+1)+' OF 6';$('cardTitle').textContent='Find: '+w;$('prompt').textContent='Click the correct object in the scene.';$('line').textContent=w;$('translation').textContent=EN[k];$('actions').style.display='none';$('status').textContent=''});
-document.querySelectorAll('.hotspot').forEach(b=>b.onclick=()=>{let k=b.dataset.word;playLakeSceneSound(k);let w=WORDS[lang()][k];if(mode==='discovery'){$('line').textContent=w;$('translation').textContent=w+' — '+EN[k];say(w,.76)}else if(mode==='challenge'){if(k===challenges[ci]){$('status').textContent='✓ Nice find! '+w+' — '+EN[k];say(w,.76)}else $('status').textContent='Not that one — keep looking.'}});
+document.querySelectorAll('.hotspot').forEach(b=>b.onclick=()=>{let k=b.dataset.word,w=WORDS[lang()][k];if(mode==='challenge'){if(k===challenges[ci]){$('status').textContent='✓ Nice find! '+w+' — '+EN[k];say(w,.76,()=>playLakeSceneSound(k))}else $('status').textContent='Not that one — keep looking.';return}$('line').textContent=w;$('translation').textContent=w+' — '+EN[k];say(w,.76,()=>playLakeSceneSound(k))});
 $('next').onclick=()=>{pi=(pi+1)%4;lesson()};$('speak').onclick=()=>say(A[lang()][ai][1][pi],.84);$('slow').onclick=()=>say(A[lang()][ai][1][pi],.58);$('replay').onclick=()=>say(last||A[lang()][ai][1][pi],lastRate);
 $('sceneView').onclick=()=>world.className='scene-only';$('restore').onclick=()=>{world.className='';lesson()};
 $('lang').onchange=()=>{localStorage.setItem('talkabee-learn-language',lang());voices();if(mode==='lesson')lesson();else $('discovery').click()};$('voice').onchange=()=>localStorage.setItem('talkabee-lake-voice-'+lang(),$('voice').value);

@@ -714,6 +714,18 @@ body.adventure-locked #yachtWorld.open{inset:0!important;}
 .talkabee-forward-arrow::before{content:"";width:17px;height:17px;border-top:5px solid #fff;border-right:5px solid #fff;transform:rotate(45deg) translate(-2px,2px);filter:drop-shadow(0 1px 2px rgba(0,0,0,.35))}
 </style>
 
+
+<style id="sea-auto-discovery-locked-template">
+#yachtWorld .yacht-hotspot{
+ display:block!important;pointer-events:auto!important;opacity:0!important;
+ background:transparent!important;outline:none!important;animation:none!important;
+}
+#yachtWorld .yacht-hotspot:hover,#yachtWorld .yacht-hotspot:focus-visible{
+ opacity:.48!important;outline:4px solid rgba(255,255,255,.95)!important;
+ outline-offset:-4px!important;border-radius:50%!important;background:rgba(103,76,227,.32)!important;
+}
+</style>
+
 </head>
 <body>
 
@@ -980,22 +992,31 @@ document.addEventListener('DOMContentLoaded',function(){
  world.querySelectorAll('.yacht-nav').forEach(btn=>btn.addEventListener('click',()=>{world.querySelectorAll('.yacht-nav').forEach(b=>b.classList.remove('active'));btn.classList.add('active');group=btn.dataset.yachtGroup;index=0;render()}));
  world.querySelectorAll('.yacht-challenge-nav').forEach(btn=>btn.addEventListener('click',()=>{challengeIndex=Number(btn.dataset.yachtChallenge)||0;group='find';world.querySelectorAll('.yacht-nav').forEach(b=>b.classList.remove('active'));render()}));
 
+ function speakYachtAuto(key,text){
+   if(!('speechSynthesis' in window)||!text){playYachtSceneSound(key);return}
+   speechSynthesis.cancel();
+   const u=new SpeechSynthesisUtterance(text);
+   u.lang=lang().speech;u.rate=.78;
+   const v=selectedVoice();if(v)u.voice=v;
+   u.onend=()=>playYachtSceneSound(key);
+   speechSynthesis.speak(u);
+ }
+
  const hotspotLayer=$('yachtHotspots');
  hotspotLayer.querySelectorAll('.yacht-hotspot').forEach(btn=>btn.replaceWith(btn.cloneNode(true)));
  hotspotLayer.addEventListener('click',e=>{
    const btn=e.target.closest('.yacht-hotspot');if(!btn||!hotspotLayer.contains(btn))return;
    e.preventDefault();e.stopPropagation();
    const key=btn.dataset.object;
-   playYachtSceneSound(key);
    if(!english[key])return;
    const target=currentWord(key);
    if(group==='find'){
      const wanted=challengeOrder[challengeIndex];
-     if(key===wanted){solved=true;$('yachtFindStatus').textContent='✓ Nice find! '+target+' means '+english[key]+'.';$('yachtFindStatus').style.color='#19744f';$('yachtNextHint').textContent='Challenge complete. You can move to the next one.';speak(target,.75)}
+     if(key===wanted){solved=true;$('yachtFindStatus').textContent='✓ Nice find! '+target+' means '+english[key]+'.';$('yachtFindStatus').style.color='#19744f';$('yachtNextHint').textContent='Challenge complete. You can move to the next one.';speakYachtAuto(key,target)}
      else{$('yachtFindStatus').textContent='Not that one — keep looking.';$('yachtFindStatus').style.color='#8b5b13'}
      return;
    }
-   $('yachtKicker').textContent='CLICK & DISCOVER';$('yachtTitle').textContent=target;$('yachtPrompt').textContent=english[key];$('yachtTranslation').textContent=target+' — '+english[key];speak(target,.78);
+   $('yachtKicker').textContent='CLICK & DISCOVER';$('yachtTitle').textContent=target;$('yachtPrompt').textContent=english[key];$('yachtTranslation').textContent=target+' — '+english[key];speakYachtAuto(key,target);
  },true);
 
  $('yachtChallengeNext').addEventListener('click',()=>{if(!solved){$('yachtFindStatus').textContent='Find the correct one first.';$('yachtFindStatus').style.color='#8b5b13';return}if(challengeIndex<5){challengeIndex++;render()}else{$('yachtFindStatus').textContent='🏁 You completed all 6 Sea Adventures challenges!';$('yachtFindStatus').style.color='#19744f'}});

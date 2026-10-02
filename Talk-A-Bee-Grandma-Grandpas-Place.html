@@ -136,6 +136,10 @@ html,body,#homeWorld,#homeScene{
 .talkabee-forward-arrow::before{content:"";width:17px;height:17px;border-top:5px solid #fff;border-right:5px solid #fff;transform:rotate(45deg) translate(-2px,2px);filter:drop-shadow(0 1px 2px rgba(0,0,0,.35))}
 </style>
 
+<style id="grandparents-auto-discovery-locked-template">
+.home-hotspot{display:block!important;pointer-events:auto!important;cursor:pointer!important;opacity:0!important;background:transparent!important;outline:none!important;animation:none!important}
+.home-hotspot:hover,.home-hotspot:focus-visible{opacity:1!important;background:rgba(50,190,180,.22)!important;outline:3px solid rgba(255,255,255,.95)!important}
+</style>
 </head>
 <body>
 <main id="homeWorld" class="open" aria-label="Grandma and Grandpa's Place">
@@ -401,7 +405,7 @@ Object.keys(extraDiscovery).forEach(lang=>{if(!languageData[lang].objects)langua
  function render(){
    const homeWorldEl=document.getElementById('homeWorld');
    if(homeWorldEl)homeWorldEl.classList.toggle('challenge-mode',group==='find');
-   document.querySelectorAll('.home-hotspot').forEach(b=>b.classList.remove('show'));
+   document.querySelectorAll('.home-hotspot').forEach(b=>b.classList.add('show'));
    pop.classList.remove('show');findBox.classList.remove('show');list.style.display='';wordline.style.display='';
    document.getElementById('homeTranslation').style.display='';document.querySelector('#homeWorld .home-actions').style.display='flex';
 
@@ -463,19 +467,28 @@ Object.keys(extraDiscovery).forEach(lang=>{if(!languageData[lang].objects)langua
    else{status.textContent='🏁 You completed all 6 challenges!';status.style.color='#19744f';const finishBtn=document.getElementById('homeChallengeNext');finishBtn.textContent='Challenges Complete ✓';if(hint)hint.textContent='All six challenges complete!'}
  });
 
- document.querySelectorAll('.home-hotspot').forEach(btn=>btn.addEventListener('click',()=>{
-   const key=btn.dataset.object;
-   playSceneSound(key);
+
+ function speakAutoObject(key){
    const o=obj(key);
+   if(!('speechSynthesis' in window)||!o||!o.word){playSceneSound(key);return}
+   speechSynthesis.cancel();
+   const u=new SpeechSynthesisUtterance(o.word);
+   u.lang=lang().speech;u.rate=.78;
+   const v=selectedVoice();if(v)u.voice=v;
+   u.onend=()=>playSceneSound(key);
+   speechSynthesis.speak(u);
+ }
+
+ document.querySelectorAll('.home-hotspot').forEach(btn=>btn.addEventListener('click',()=>{
+   const key=btn.dataset.object,o=obj(key);
    if(group==='find'){
      const status=document.getElementById('homeFindStatus');
-     if(key===findTarget){homeChallengeSolved=true;status.textContent='✓ Correct! '+o.word;status.style.color='#19744f';say(o.word,.72,false);const nav=document.querySelector('.home-challenge-nav[data-home-challenge="'+homeChallengeIndex+'"]');if(nav)nav.classList.add('done');const hint=document.getElementById('challengeNextHint');if(hint)hint.textContent='Nice work! Continue when you are ready.'}
+     if(key===findTarget){homeChallengeSolved=true;status.textContent='✓ Correct! '+o.word;status.style.color='#19744f';say(o.word,.72,false);playSceneSound(key);const nav=document.querySelector('.home-challenge-nav[data-home-challenge="'+homeChallengeIndex+'"]');if(nav)nav.classList.add('done');const hint=document.getElementById('challengeNextHint');if(hint)hint.textContent='Nice work! Continue when you are ready.'}
      else{status.textContent='Try another object.';status.style.color='#a2483d'}return;
    }
-   if(group!=='discover')return;
    currentObjectKey=key;document.getElementById('homePopWord').textContent=o.word;document.getElementById('homePopEnglish').textContent=o.english;
    document.getElementById('homePopSentence').textContent='';document.getElementById('homePopSentenceSpeak').style.display='none';
-   pop.classList.add('show');speakDiscoveryObject(key);
+   pop.classList.add('show');speakAutoObject(key);
  }));
  document.getElementById('homePopWordSpeak').addEventListener('click',()=>{if(currentObjectKey)speakDiscoveryObject(currentObjectKey)});
  document.getElementById('homePopSentenceSpeak').addEventListener('click',()=>{});
