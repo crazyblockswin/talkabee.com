@@ -298,6 +298,33 @@ Target the actual elements.
 }
 </style>
 
+
+<style id="farm-hotspots-hover-only-final">
+/* Always clickable, visually invisible until hover/focus.
+   Challenge target may still show when a challenge asks the learner to find it. */
+.hotspot{
+  display:block!important;
+  opacity:0!important;
+  animation:none!important;
+  background:transparent!important;
+  border-color:transparent!important;
+  box-shadow:none!important;
+}
+.hotspot:hover,
+.hotspot:focus-visible{
+  opacity:1!important;
+  background:rgba(255,195,55,.28)!important;
+  border-color:rgba(255,255,255,.90)!important;
+  box-shadow:0 0 0 5px rgba(255,195,55,.13)!important;
+}
+.challenge-mode .hotspot.target-hotspot{
+  opacity:1!important;
+  background:rgba(255,195,55,.38)!important;
+  border-color:rgba(255,255,255,.94)!important;
+  box-shadow:0 0 0 7px rgba(255,195,55,.18),0 8px 22px rgba(0,0,0,.20)!important;
+}
+</style>
+
 </head>
 <body>
 <main class="world" id="world">
