@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Talk A Bee — Dinosaur Museum Adventure</title>
+<style>
+*{box-sizing:border-box}html,body{margin:0;width:100%;height:100%;overflow:hidden;font-family:Arial,sans-serif;background:#071526;color:#fff}
+.world{position:relative;width:100vw;height:100vh;background:url("images/talkabee-dinosaur-museum-adventure.jpg") center center/cover no-repeat}
+.panel{position:absolute;z-index:20;left:16px;top:16px;width:195px;max-height:calc(100vh - 32px);overflow:auto;padding:14px;border-radius:20px;background:rgba(7,23,39,.31);border:1px solid rgba(255,255,255,.28);box-shadow:0 10px 28px rgba(0,0,0,.22);backdrop-filter:blur(3px)}
+.panel h1{font-size:22px;margin:0 0 10px}.label{margin:11px 0 5px;font-size:12px;font-weight:900;letter-spacing:.12em;color:#e9f7ff}
+.panel select,.panel button,.panel a{width:100%;display:block;margin:5px 0;padding:9px 10px;border-radius:12px;border:1px solid rgba(255,255,255,.38);background:rgba(7,32,50,.54);color:#fff;font-weight:800;text-decoration:none;text-align:left}
+.panel button:hover,.panel a:hover{background:rgba(255,255,255,.18)}
+.card{position:absolute;z-index:19;right:2.2%;bottom:2.4%;width:min(470px,31vw);padding:16px 18px;border-radius:20px;background:rgba(7,23,39,.28);border:1px solid rgba(255,255,255,.32);box-shadow:0 10px 28px rgba(0,0,0,.22);backdrop-filter:blur(3px)}
+.card h2{margin:0 0 5px;font-size:24px}.card p{margin:5px 0}.word{margin-top:10px;padding:11px 13px;border-radius:14px;background:rgba(255,255,255,.88);color:#10283c}.word strong{font-size:27px}.translation{font-size:17px;margin-top:3px}
+.controls{display:flex;gap:8px;margin-top:10px}.controls button{flex:1;padding:9px;border:0;border-radius:11px;font-weight:900}
+.hotspot{position:absolute;z-index:8;border:0;background:transparent;opacity:0;cursor:pointer;border-radius:16px}
+.hotspot:hover,.hotspot:focus-visible{opacity:.22;background:rgba(255,220,72,.55);outline:2px solid rgba(255,255,255,.8)}
+.challenge-mode .hotspot.target{opacity:1;background:rgba(255,199,48,.38);outline:4px solid #fff;box-shadow:0 0 0 7px rgba(255,200,50,.2)}
+.talkabee-forward-arrow{position:fixed;z-index:10020;right:22px;top:18px;width:62px;height:62px;border:2px solid rgba(255,255,255,.82);border-radius:50%;background:rgba(11,22,42,.20);box-shadow:0 5px 16px rgba(0,0,0,.14);backdrop-filter:blur(2px);display:grid;place-items:center;text-decoration:none}
+.talkabee-forward-arrow::before{content:"";width:17px;height:17px;border-top:5px solid #fff;border-right:5px solid #fff;transform:rotate(45deg) translate(-2px,2px);filter:drop-shadow(0 1px 2px rgba(0,0,0,.35))}
+.scene-view .panel,.scene-view .card{display:none}.scene-return{display:none;position:fixed;z-index:10030;left:18px;top:18px;padding:10px 14px;border-radius:12px;border:1px solid #fff;background:rgba(7,23,39,.65);color:#fff;font-weight:900}.scene-view .scene-return{display:block}
+@media(max-width:900px){.panel{width:190px}.card{width:38vw}}
+</style>
+
+<style id="boardwalk-hotspots-hover-only">
+.hotspot{display:block!important;opacity:0!important;background:transparent!important;outline:none!important;animation:none!important}
+.hotspot:hover,.hotspot:focus-visible{opacity:1!important;background:rgba(255,220,72,.28)!important;outline:2px solid rgba(255,255,255,.85)!important}
+.challenge-mode .hotspot.target{opacity:1!important;background:rgba(255,199,48,.38)!important;outline:4px solid #fff!important}
+</style>
+
+</head>
+<body>
+<main class="world" id="world">
+<a class="talkabee-forward-arrow" href="Talk-A-Bee-Nighttime-Campground-Adventure.html" aria-label="Continue to Nighttime Campground Adventure" title="Next Adventure"></a>
+<button class="scene-return" id="sceneReturn">Return to Adventure</button>
+<aside class="panel">
+<h1>🦖 Dinosaur Museum</h1>
+<div class="label">LANGUAGE</div>
+<select id="lang"><option value="es">Spanish</option><option value="fr">French</option><option value="en">English</option><option value="de">German</option><option value="it">Italian</option><option value="pt">Portuguese</option><option value="no">Norwegian</option></select>
+<div class="label">VOICE</div><select id="voice"><option>Browser Default</option></select>
+<button id="sceneView">◉ Scene View</button>
+<div class="label">DISCOVERY</div><button id="discovery">🔎 Discovery — Click the Scene</button>
+<div class="label">ACTIVITIES</div>
+<button data-lesson="arrive">1. 🦖 Meet the Dinosaurs</button>
+<button data-lesson="rides">2. 🦴 Look at the Fossils</button>
+<button data-lesson="snacks">3. 🥚 Dinosaur Eggs</button>
+<button data-lesson="beach">4. 👣 Follow the Footprints</button>
+<button data-lesson="safety">5. 🪽 Flying Reptiles</button>
+<button data-lesson="things">6. 🔎 Explore the Museum</button>
+<div class="label">CHALLENGES</div>
+<button data-ch="0">1. Find the T. rex</button><button data-ch="1">2. Find the Triceratops</button><button data-ch="2">3. Find the Stegosaurus</button><button data-ch="3">4. Find the Pterosaur</button><button data-ch="4">5. Find the Dinosaur Eggs</button><button data-ch="5">6. Find the Footprints</button>
+<a href="index.html">← Return to Main Directory</a>
+</aside>
+<section class="card">
+<h2 id="title">Dinosaur Museum Adventure</h2><p id="prompt">Click any object in the scene to hear its name.</p>
+<div class="word"><strong id="line">tiranosaurio rex</strong><div class="translation" id="translation">T. rex</div></div>
+<p id="status"></p>
+<div class="controls"><button id="normal">🔊 Normal</button><button id="slow">🐢 Slow</button><button id="replay">↻ Replay</button></div>
+</section>
+
+
+
+<button class="hotspot" data-word="trex" style="left:23%;top:4%;width:35%;height:57%" aria-label="T. rex"></button>
+<button class="hotspot" data-word="triceratops" style="left:78%;top:26%;width:22%;height:38%" aria-label="Triceratops"></button>
+<button class="hotspot" data-word="stegosaurus" style="left:57%;top:44%;width:22%;height:23%" aria-label="Stegosaurus"></button>
+<button class="hotspot" data-word="sauropod" style="left:39%;top:31%;width:27%;height:31%" aria-label="Sauropod"></button>
+<button class="hotspot" data-word="pterosaur" style="left:73%;top:3%;width:24%;height:28%" aria-label="Pterosaur"></button>
+<button class="hotspot" data-word="bee" style="left:57%;top:10%;width:14%;height:19%" aria-label="Bee"></button>
+<button class="hotspot" data-word="eggs" style="left:22%;top:78%;width:17%;height:19%" aria-label="Dinosaur eggs"></button>
+<button class="hotspot" data-word="footprints" style="left:47%;top:82%;width:22%;height:16%" aria-label="Dinosaur footprints"></button>
+<button class="hotspot" data-word="girl" style="left:25%;top:59%;width:13%;height:34%" aria-label="Girl"></button>
+<button class="hotspot" data-word="boy" style="left:35%;top:65%;width:11%;height:29%" aria-label="Boy"></button>
+<button class="hotspot" data-word="fossil" style="left:82%;top:61%;width:17%;height:18%" aria-label="Fossil"></button>
+<button class="hotspot" data-word="skeleton" style="left:41%;top:38%;width:15%;height:25%" aria-label="Dinosaur skeleton"></button>
+<button class="hotspot" data-word="museum" style="left:45%;top:1%;width:30%;height:18%" aria-label="Museum"></button>
+<button class="hotspot" data-word="plants" style="left:1%;top:49%;width:22%;height:45%" aria-label="Plants"></button>
+<button class="hotspot" data-word="glassdome" style="left:43%;top:0%;width:39%;height:13%" aria-label="Glass dome"></button>
+</main>
+<script>
+const LANGS={
+es:{code:"es-ES",words:{trex:["tiranosaurio rex","T. rex"],triceratops:["triceratops","Triceratops"],stegosaurus:["estegosaurio","Stegosaurus"],sauropod:["saurópodo","sauropod"],pterosaur:["pterosaurio","pterosaur"],bee:["abeja","bee"],eggs:["huevos de dinosaurio","dinosaur eggs"],footprints:["huellas de dinosaurio","dinosaur footprints"],girl:["niña","girl"],boy:["niño","boy"],fossil:["fósil","fossil"],skeleton:["esqueleto","skeleton"],museum:["museo","museum"],plants:["plantas","plants"],glassdome:["cúpula de cristal","glass dome"]}},
+fr:{code:"fr-FR",words:{trex:["tyrannosaure rex","T. rex"],triceratops:["tricératops","Triceratops"],stegosaurus:["stégosaure","Stegosaurus"],sauropod:["sauropode","sauropod"],pterosaur:["ptérosaure","pterosaur"],bee:["abeille","bee"],eggs:["œufs de dinosaure","dinosaur eggs"],footprints:["empreintes de dinosaure","dinosaur footprints"],girl:["fille","girl"],boy:["garçon","boy"],fossil:["fossile","fossil"],skeleton:["squelette","skeleton"],museum:["musée","museum"],plants:["plantes","plants"],glassdome:["dôme de verre","glass dome"]}},
+en:{code:"en-US",words:{trex:["T. rex",""],triceratops:["Triceratops",""],stegosaurus:["Stegosaurus",""],sauropod:["sauropod",""],pterosaur:["pterosaur",""],bee:["bee",""],eggs:["dinosaur eggs",""],footprints:["dinosaur footprints",""],girl:["girl",""],boy:["boy",""],fossil:["fossil",""],skeleton:["skeleton",""],museum:["museum",""],plants:["plants",""],glassdome:["glass dome",""]}},
+de:{code:"de-DE",words:{trex:["Tyrannosaurus Rex","T. rex"],triceratops:["Triceratops","Triceratops"],stegosaurus:["Stegosaurus","Stegosaurus"],sauropod:["Sauropode","sauropod"],pterosaur:["Flugsaurier","pterosaur"],bee:["Biene","bee"],eggs:["Dinosauriereier","dinosaur eggs"],footprints:["Dinosaurierspuren","dinosaur footprints"],girl:["Mädchen","girl"],boy:["Junge","boy"],fossil:["Fossil","fossil"],skeleton:["Skelett","skeleton"],museum:["Museum","museum"],plants:["Pflanzen","plants"],glassdome:["Glaskuppel","glass dome"]}},
+it:{code:"it-IT",words:{trex:["tirannosauro rex","T. rex"],triceratops:["triceratopo","Triceratops"],stegosaurus:["stegosauro","Stegosaurus"],sauropod:["sauropode","sauropod"],pterosaur:["pterosauro","pterosaur"],bee:["ape","bee"],eggs:["uova di dinosauro","dinosaur eggs"],footprints:["impronte di dinosauro","dinosaur footprints"],girl:["ragazza","girl"],boy:["ragazzo","boy"],fossil:["fossile","fossil"],skeleton:["scheletro","skeleton"],museum:["museo","museum"],plants:["piante","plants"],glassdome:["cupola di vetro","glass dome"]}},
+pt:{code:"pt-BR",words:{trex:["tiranossauro rex","T. rex"],triceratops:["tricerátops","Triceratops"],stegosaurus:["estegossauro","Stegosaurus"],sauropod:["saurópode","sauropod"],pterosaur:["pterossauro","pterosaur"],bee:["abelha","bee"],eggs:["ovos de dinossauro","dinosaur eggs"],footprints:["pegadas de dinossauro","dinosaur footprints"],girl:["menina","girl"],boy:["menino","boy"],fossil:["fóssil","fossil"],skeleton:["esqueleto","skeleton"],museum:["museu","museum"],plants:["plantas","plants"],glassdome:["cúpula de vidro","glass dome"]}},
+no:{code:"nb-NO",words:{trex:["tyrannosaurus rex","T. rex"],triceratops:["triceratops","Triceratops"],stegosaurus:["stegosaurus","Stegosaurus"],sauropod:["sauropod","sauropod"],pterosaur:["flygeøgle","pterosaur"],bee:["bie","bee"],eggs:["dinosauregg","dinosaur eggs"],footprints:["dinosaurspor","dinosaur footprints"],girl:["jente","girl"],boy:["gutt","boy"],fossil:["fossil","fossil"],skeleton:["skjelett","skeleton"],museum:["museum","museum"],plants:["planter","plants"],glassdome:["glasskuppel","glass dome"]}}
+};
+const museumSounds={bee:"bee.mp3"};
+let museumSound=null;
+function playMuseumSound(id){
+ const file=museumSounds[id]; if(!file)return;
+ if(museumSound){museumSound.pause();museumSound.currentTime=0;}
+ museumSound=new Audio("sounds/"+file); museumSound.play().catch(()=>{});
+}
+const challengeOrder=["trex","triceratops","stegosaurus","pterosaur","eggs","footprints"];
+const langSel=document.getElementById("lang"),voiceSel=document.getElementById("voice");
+const title=document.getElementById("title"),prompt=document.getElementById("prompt"),line=document.getElementById("line"),translation=document.getElementById("translation"),status=document.getElementById("status"),world=document.getElementById("world");
+let lastWord="trex",challenge=-1;
+function fillVoices(){const vs=speechSynthesis.getVoices();voiceSel.innerHTML='<option>Browser Default</option>'+vs.map(v=>`<option>${v.name}</option>`).join("")}
+if("speechSynthesis" in window){speechSynthesis.onvoiceschanged=fillVoices;fillVoices()}
+function speak(t,rate=.82,onend=null){if(!t||!("speechSynthesis" in window)){if(onend)onend();return;}try{speechSynthesis.cancel();const u=new SpeechSynthesisUtterance(t);u.lang=LANGS[langSel.value].code;u.rate=rate;const v=speechSynthesis.getVoices().find(v=>v.name===voiceSel.value);if(v)u.voice=v;if(onend)u.onend=onend;u.onerror=()=>{if(onend)onend()};setTimeout(()=>speechSynthesis.speak(u),40)}catch(e){if(onend)onend();}}
+function showWord(key){lastWord=key;const x=LANGS[langSel.value].words[key];line.textContent=x[0];translation.textContent=langSel.value==="en"?"":x[1]}
+document.querySelectorAll(".hotspot").forEach(b=>b.onclick=()=>{const key=b.dataset.word,x=LANGS[langSel.value].words[key];showWord(key);speak(x[0],.82,()=>playMuseumSound(key));if(challenge>=0){if(key===challengeOrder[challenge]){status.textContent="✓ Nice find!";status.style.color="#9dffbf"}else{status.textContent="Not that one — keep looking.";status.style.color="#ffe28a"}}});
+document.getElementById("discovery").onclick=()=>{challenge=-1;world.classList.remove("challenge-mode");title.textContent="Click & Discover";prompt.textContent="Click any object in the scene to hear its name.";status.textContent=""};
+document.querySelectorAll("[data-ch]").forEach(b=>b.onclick=()=>{challenge=+b.dataset.ch;world.classList.add("challenge-mode");document.querySelectorAll(".hotspot").forEach(h=>h.classList.toggle("target",h.dataset.word===challengeOrder[challenge]));title.textContent="Challenge "+(challenge+1)+" of 6";prompt.textContent=b.textContent.replace(/^\d+\.\s*/,"");status.textContent=""});
+const lessons={
+ arrive:["We are at the dinosaur museum.","Look at the giant dinosaur skeletons."],
+ rides:["The T. rex was a powerful dinosaur.","Look at its enormous teeth."],
+ snacks:["These are dinosaur eggs.","The eggs are protected in the exhibit."],
+ beach:["Follow the dinosaur footprints.","Where do the tracks lead?"],
+ safety:["Look up at the flying reptile.","The pterosaur is above us."],
+ things:["What do you see in the museum?","I see fossils, skeletons, and dinosaurs."]
+};
+document.querySelectorAll("[data-lesson]").forEach(b=>b.onclick=()=>{challenge=-1;world.classList.remove("challenge-mode");const a=lessons[b.dataset.lesson];title.textContent=b.textContent.replace(/^\d+\.\s*/,"");prompt.textContent=a[0];line.textContent=a[1];translation.textContent="";lastWord="";speak(a[1])});
+document.getElementById("normal").onclick=()=>speak(lastWord?LANGS[langSel.value].words[lastWord][0]:line.textContent,.82);
+document.getElementById("slow").onclick=()=>speak(lastWord?LANGS[langSel.value].words[lastWord][0]:line.textContent,.58);
+document.getElementById("replay").onclick=()=>speak(lastWord?LANGS[langSel.value].words[lastWord][0]:line.textContent,.82);
+langSel.onchange=()=>{if(lastWord)showWord(lastWord)};
+document.getElementById("sceneView").onclick=()=>document.body.classList.add("scene-view");
+document.getElementById("sceneReturn").onclick=()=>document.body.classList.remove("scene-view");
+showWord("trex");
+</script>
+</body></html>
