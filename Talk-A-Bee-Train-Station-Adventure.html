@@ -64,12 +64,12 @@
    <div class="train-section-label">DISCOVERY</div>
    <button type="button" id="trainDiscovery" class="train-discovery">🔎 Discovery — Click the Scene</button>
    <div class="train-section-label">ACTIVITIES</div>
-   <button data-train="ticket">1. 🎫 Buying a Ticket</button>
-   <button data-train="platform">2. 🚉 Finding the Platform</button>
-   <button data-train="time">3. 🕐 Asking the Time</button>
-   <button data-train="departure">4. 📋 Reading Departures</button>
-   <button data-train="luggage">5. 🧳 Luggage &amp; Travel</button>
-   <button data-train="boarding">6. 🚆 Boarding the Train</button>
+   <button data-train="ticket">1. Buying a Ticket</button>
+   <button data-train="platform">2. Finding the Platform</button>
+   <button data-train="time">3. Asking the Time</button>
+   <button data-train="departure">4. Reading Departures</button>
+   <button data-train="luggage">5. Luggage &amp; Travel</button>
+   <button data-train="boarding">6. Boarding the Train</button>
    <div class="train-section-label">CHALLENGES</div>
    <button class="train-challenge-nav" data-train-challenge="0">Challenge 1</button>
    <button class="train-challenge-nav" data-train-challenge="1">Challenge 2</button>
@@ -160,5 +160,45 @@
 </style>
 <script id="talkabee-panel-return-bottom-v2">
 (()=>{const panel=document.querySelector('#trainWorld .train-directory'),back=document.querySelector('#trainWorld .train-main-directory');if(panel&&back)panel.appendChild(back);})();
+</script>
+
+<style id="talkabee-one-size-fits-all-v1">
+/* ONE SIZE FITS ALL — exact shared Adventure panel + script-card geometry */
+.train-directory{box-sizing:border-box!important;left:16px!important;top:16px!important;bottom:auto!important;width:195px!important;min-width:195px!important;max-width:195px!important;height:auto!important;max-height:calc(100vh - 32px)!important;overflow-y:auto!important;overflow-x:hidden!important;padding:14px!important;border-radius:20px!important;background:rgba(7,23,39,.31)!important;border:1px solid rgba(255,255,255,.28)!important;box-shadow:0 10px 28px rgba(0,0,0,.22)!important;backdrop-filter:blur(3px)!important;-webkit-backdrop-filter:blur(3px)!important;color:#fff!important;scrollbar-width:thin!important}
+.train-directory button,.train-directory select,.train-directory a{box-sizing:border-box!important;width:100%!important;margin:5px 0!important;padding:9px 10px!important;min-height:0!important;height:auto!important;border-radius:12px!important;border:1px solid rgba(255,255,255,.38)!important;background:rgba(7,32,50,.54)!important;color:#fff!important;font-size:13px!important;line-height:1.25!important;font-weight:800!important;box-shadow:none!important}
+.train-panel{box-sizing:border-box!important;width:min(470px,31vw)!important;min-width:0!important;max-width:470px!important;height:auto!important;max-height:none!important;padding:16px 18px!important;border-radius:20px!important;background:rgba(7,23,39,.28)!important;border:1px solid rgba(255,255,255,.32)!important;box-shadow:0 10px 28px rgba(0,0,0,.22)!important;backdrop-filter:blur(3px)!important;-webkit-backdrop-filter:blur(3px)!important;color:#fff!important;overflow:visible!important}
+@media(max-width:900px){.train-directory{width:190px!important;min-width:190px!important;max-width:190px!important}.train-panel{width:min(470px,calc(100vw - 220px))!important;max-width:470px!important}}
+</style>
+
+<style id="talkabee-final-master-template-v1">
+/* LOCKED TALK A BEE ADVENTURE MASTER — 2026-10-02 */
+.train-directory{box-sizing:border-box!important;left:16px!important;top:16px!important;bottom:auto!important;width:195px!important;min-width:195px!important;max-width:195px!important;height:calc(100vh - 32px)!important;max-height:calc(100vh - 32px)!important;overflow-y:auto!important;overflow-x:hidden!important;padding:12px 14px!important;border-radius:20px!important;background:rgba(7,23,39,.31)!important;border:1px solid rgba(255,255,255,.28)!important;box-shadow:0 10px 28px rgba(0,0,0,.22)!important;backdrop-filter:blur(3px)!important;-webkit-backdrop-filter:blur(3px)!important;color:#fff!important;scrollbar-width:thin!important;transform:none!important;transform-origin:top left!important}
+.train-directory button,.train-directory select,.train-directory a{box-sizing:border-box!important;width:100%!important;margin:4px 0!important;padding:8px 10px!important;min-height:0!important;height:auto!important;border-radius:12px!important;border:1px solid rgba(255,255,255,.38)!important;background:rgba(7,32,50,.54)!important;color:#fff!important;font-size:12px!important;line-height:1.16!important;font-weight:800!important;box-shadow:none!important}
+.train-directory .label,.train-directory .activity-label,.train-directory .yacht-label,.train-directory .train-label{font-size:9.5px!important;line-height:1.2!important;margin:8px 2px 4px!important}
+.train-directory .place,.train-directory .activity-place,.train-directory .yacht-place,.train-directory .train-place,.train-directory .title{font-size:19px!important;line-height:1.08!important;margin:1px 0 7px!important}
+.train-directory .divider,.train-directory .activity-divider,.train-directory .yacht-divider,.train-directory .train-divider{margin:7px 2px!important}
+.train-panel{box-sizing:border-box!important;width:min(650px,48vw)!important;min-width:0!important;max-width:650px!important;height:auto!important;max-height:none!important;padding:14px 18px!important;border-radius:20px!important;background:rgba(7,23,39,.28)!important;border:1px solid rgba(255,255,255,.32)!important;box-shadow:0 10px 28px rgba(0,0,0,.22)!important;backdrop-filter:blur(3px)!important;-webkit-backdrop-filter:blur(3px)!important;color:#fff!important;overflow:visible!important;transform:none!important}
+.train-panel .actions{display:flex!important;flex-wrap:nowrap!important;gap:8px!important;align-items:center!important}
+.train-panel .actions button{white-space:nowrap!important;margin:0!important}
+@media(max-width:900px){.train-directory{width:190px!important;min-width:190px!important;max-width:190px!important}.train-panel{width:min(620px,calc(100vw - 220px))!important;max-width:620px!important}.train-panel .actions{flex-wrap:wrap!important}}
+</style>
+<script id="talkabee-inclusive-browser-voices-v1">
+(()=>{
+  if(!('speechSynthesis' in window))return;
+  const voiceSelects=()=>[...document.querySelectorAll('select')].filter(s=>/voice/i.test((s.id||'')+' '+(s.name||'')+' '+(s.className||'')));
+  function fillAllBrowserVoices(){
+    const voices=speechSynthesis.getVoices(); if(!voices.length)return;
+    voiceSelects().forEach(sel=>{
+      const chosen=sel.value;
+      sel.innerHTML='';
+      const d=document.createElement('option'); d.value=''; d.textContent='Browser Default'; sel.appendChild(d);
+      voices.forEach(v=>{const o=document.createElement('option');o.value=v.name;o.textContent=v.name+(v.lang?' — '+v.lang:'');sel.appendChild(o)});
+      if([...sel.options].some(o=>o.value===chosen))sel.value=chosen;
+    });
+  }
+  speechSynthesis.addEventListener?.('voiceschanged',fillAllBrowserVoices);
+  window.addEventListener('load',()=>{fillAllBrowserVoices();setTimeout(fillAllBrowserVoices,150);setTimeout(fillAllBrowserVoices,600);setTimeout(fillAllBrowserVoices,1500)});
+  document.addEventListener('change',e=>{if(e.target&&e.target.tagName==='SELECT'&&!/voice/i.test((e.target.id||'')+' '+(e.target.name||'')+' '+(e.target.className||'')))setTimeout(fillAllBrowserVoices,0)},true);
+})();
 </script>
 </body></html>

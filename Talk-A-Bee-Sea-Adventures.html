@@ -770,15 +770,15 @@ body>header,body>footer,.final-cta,.hero,#mainDirectory{display:none!important;}
    <label class="sea-control-label" for="seaVoice">VOICE</label>
    <select id="seaVoice" class="sea-select"><option value="">Browser Default</option></select>
    <div class="yacht-label">DISCOVERY</div>
-   <button type="button" class="yacht-nav" data-yacht-group="discover">🔎 Click &amp; Discover</button>
+   <button type="button" class="yacht-nav" data-yacht-group="discover">Click &amp; Discover</button>
    <div class="yacht-divider"></div>
    <div class="yacht-label">6 ACTIVITIES</div>
-   <button type="button" class="yacht-nav active" data-yacht-group="deck">👋 On Deck Talk</button>
-   <button type="button" class="yacht-nav" data-yacht-group="boat">🛥️ Boat Words</button>
-   <button type="button" class="yacht-nav" data-yacht-group="ocean">🌊 Ocean Words</button>
-   <button type="button" class="yacht-nav" data-yacht-group="animals">🦜 Animal Friends</button>
-   <button type="button" class="yacht-nav" data-yacht-group="marina">🗺️ At the Marina</button>
-   <button type="button" class="yacht-nav" data-yacht-group="weather">🌅 Sunset &amp; Weather</button>
+   <button type="button" class="yacht-nav active" data-yacht-group="deck">On Deck Talk</button>
+   <button type="button" class="yacht-nav" data-yacht-group="boat">Boat Words</button>
+   <button type="button" class="yacht-nav" data-yacht-group="ocean">Ocean Words</button>
+   <button type="button" class="yacht-nav" data-yacht-group="animals">Animal Friends</button>
+   <button type="button" class="yacht-nav" data-yacht-group="marina">At the Marina</button>
+   <button type="button" class="yacht-nav" data-yacht-group="weather">Sunset &amp; Weather</button>
    <div class="yacht-divider"></div>
    <div class="yacht-label">6 CHALLENGES</div>
    <button type="button" class="yacht-challenge-nav" data-yacht-challenge="0"><span>1</span> Grandpa Wally</button>
@@ -831,7 +831,7 @@ body>header,body>footer,.final-cta,.hero,#mainDirectory{display:none!important;}
    <div class="yacht-wordline" id="yachtWordline"></div>
    <div class="yacht-translation" id="yachtTranslation"></div>
    <div class="yacht-actions" id="yachtActions">
-    <button type="button" class="primary" id="yachtPlay">🔊 Speak + Highlight</button>
+    <button type="button" class="primary" id="yachtPlay">🔊 Speak</button>
     <button type="button" id="yachtSlow">🐢 Slow</button>
     <button type="button" id="yachtReplay">↻ Replay</button>
    </div>
@@ -1081,6 +1081,46 @@ document.addEventListener('click',function(e){
 </style>
 <script id="talkabee-panel-return-bottom-v2">
 (()=>{const panel=document.querySelector('#yachtWorld .yacht-directory'),back=document.querySelector('#yachtWorld .yacht-back');if(panel&&back)panel.appendChild(back);})();
+</script>
+
+<style id="talkabee-one-size-fits-all-v1">
+/* ONE SIZE FITS ALL — exact shared Adventure panel + script-card geometry */
+.yacht-directory{box-sizing:border-box!important;left:16px!important;top:16px!important;bottom:auto!important;width:195px!important;min-width:195px!important;max-width:195px!important;height:auto!important;max-height:calc(100vh - 32px)!important;overflow-y:auto!important;overflow-x:hidden!important;padding:14px!important;border-radius:20px!important;background:rgba(7,23,39,.31)!important;border:1px solid rgba(255,255,255,.28)!important;box-shadow:0 10px 28px rgba(0,0,0,.22)!important;backdrop-filter:blur(3px)!important;-webkit-backdrop-filter:blur(3px)!important;color:#fff!important;scrollbar-width:thin!important}
+.yacht-directory button,.yacht-directory select,.yacht-directory a{box-sizing:border-box!important;width:100%!important;margin:5px 0!important;padding:9px 10px!important;min-height:0!important;height:auto!important;border-radius:12px!important;border:1px solid rgba(255,255,255,.38)!important;background:rgba(7,32,50,.54)!important;color:#fff!important;font-size:13px!important;line-height:1.25!important;font-weight:800!important;box-shadow:none!important}
+.yacht-panel{box-sizing:border-box!important;width:min(470px,31vw)!important;min-width:0!important;max-width:470px!important;height:auto!important;max-height:none!important;padding:16px 18px!important;border-radius:20px!important;background:rgba(7,23,39,.28)!important;border:1px solid rgba(255,255,255,.32)!important;box-shadow:0 10px 28px rgba(0,0,0,.22)!important;backdrop-filter:blur(3px)!important;-webkit-backdrop-filter:blur(3px)!important;color:#fff!important;overflow:visible!important}
+@media(max-width:900px){.yacht-directory{width:190px!important;min-width:190px!important;max-width:190px!important}.yacht-panel{width:min(470px,calc(100vw - 220px))!important;max-width:470px!important}}
+</style>
+
+<style id="talkabee-final-master-template-v1">
+/* LOCKED TALK A BEE ADVENTURE MASTER — 2026-10-02 */
+.yacht-directory{box-sizing:border-box!important;left:16px!important;top:16px!important;bottom:auto!important;width:195px!important;min-width:195px!important;max-width:195px!important;height:calc(100vh - 32px)!important;max-height:calc(100vh - 32px)!important;overflow-y:auto!important;overflow-x:hidden!important;padding:12px 14px!important;border-radius:20px!important;background:rgba(7,23,39,.31)!important;border:1px solid rgba(255,255,255,.28)!important;box-shadow:0 10px 28px rgba(0,0,0,.22)!important;backdrop-filter:blur(3px)!important;-webkit-backdrop-filter:blur(3px)!important;color:#fff!important;scrollbar-width:thin!important;transform:none!important;transform-origin:top left!important}
+.yacht-directory button,.yacht-directory select,.yacht-directory a{box-sizing:border-box!important;width:100%!important;margin:4px 0!important;padding:8px 10px!important;min-height:0!important;height:auto!important;border-radius:12px!important;border:1px solid rgba(255,255,255,.38)!important;background:rgba(7,32,50,.54)!important;color:#fff!important;font-size:12px!important;line-height:1.16!important;font-weight:800!important;box-shadow:none!important}
+.yacht-directory .label,.yacht-directory .activity-label,.yacht-directory .yacht-label,.yacht-directory .train-label{font-size:9.5px!important;line-height:1.2!important;margin:8px 2px 4px!important}
+.yacht-directory .place,.yacht-directory .activity-place,.yacht-directory .yacht-place,.yacht-directory .train-place,.yacht-directory .title{font-size:19px!important;line-height:1.08!important;margin:1px 0 7px!important}
+.yacht-directory .divider,.yacht-directory .activity-divider,.yacht-directory .yacht-divider,.yacht-directory .train-divider{margin:7px 2px!important}
+.yacht-panel{box-sizing:border-box!important;width:min(650px,48vw)!important;min-width:0!important;max-width:650px!important;height:auto!important;max-height:none!important;padding:14px 18px!important;border-radius:20px!important;background:rgba(7,23,39,.28)!important;border:1px solid rgba(255,255,255,.32)!important;box-shadow:0 10px 28px rgba(0,0,0,.22)!important;backdrop-filter:blur(3px)!important;-webkit-backdrop-filter:blur(3px)!important;color:#fff!important;overflow:visible!important;transform:none!important}
+.yacht-panel .actions{display:flex!important;flex-wrap:nowrap!important;gap:8px!important;align-items:center!important}
+.yacht-panel .actions button{white-space:nowrap!important;margin:0!important}
+@media(max-width:900px){.yacht-directory{width:190px!important;min-width:190px!important;max-width:190px!important}.yacht-panel{width:min(620px,calc(100vw - 220px))!important;max-width:620px!important}.yacht-panel .actions{flex-wrap:wrap!important}}
+</style>
+<script id="talkabee-inclusive-browser-voices-v1">
+(()=>{
+  if(!('speechSynthesis' in window))return;
+  const voiceSelects=()=>[...document.querySelectorAll('select')].filter(s=>/voice/i.test((s.id||'')+' '+(s.name||'')+' '+(s.className||'')));
+  function fillAllBrowserVoices(){
+    const voices=speechSynthesis.getVoices(); if(!voices.length)return;
+    voiceSelects().forEach(sel=>{
+      const chosen=sel.value;
+      sel.innerHTML='';
+      const d=document.createElement('option'); d.value=''; d.textContent='Browser Default'; sel.appendChild(d);
+      voices.forEach(v=>{const o=document.createElement('option');o.value=v.name;o.textContent=v.name+(v.lang?' — '+v.lang:'');sel.appendChild(o)});
+      if([...sel.options].some(o=>o.value===chosen))sel.value=chosen;
+    });
+  }
+  speechSynthesis.addEventListener?.('voiceschanged',fillAllBrowserVoices);
+  window.addEventListener('load',()=>{fillAllBrowserVoices();setTimeout(fillAllBrowserVoices,150);setTimeout(fillAllBrowserVoices,600);setTimeout(fillAllBrowserVoices,1500)});
+  document.addEventListener('change',e=>{if(e.target&&e.target.tagName==='SELECT'&&!/voice/i.test((e.target.id||'')+' '+(e.target.name||'')+' '+(e.target.className||'')))setTimeout(fillAllBrowserVoices,0)},true);
+})();
 </script>
 </body>
 </html>

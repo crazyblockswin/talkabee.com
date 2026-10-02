@@ -61,7 +61,7 @@
 <div class="label">VOICE</div><select id="voice"><option value="">Browser Default</option></select>
 <div class="label">DISCOVERY</div><button id="discovery">🔎 Discovery — Click the Scene</button>
 <div class="label">ACTIVITIES</div>
-<button data-lesson="conversation">1. 💬 Library Conversation</button><button data-lesson="books">2. 📖 Books & Reading</button><button data-lesson="study">3. ✏️ Studying Together</button><button data-lesson="travel">4. 🇮🇹 Italy & Travel</button><button data-lesson="phrases">5. 🗣️ Useful Phrases</button><button data-lesson="questions">6. ❓ Asking Questions</button>
+<button data-lesson="conversation">1. Library Conversation</button><button data-lesson="books">2. Books & Reading</button><button data-lesson="study">3. Studying Together</button><button data-lesson="travel">4. Italy & Travel</button><button data-lesson="phrases">5. Useful Phrases</button><button data-lesson="questions">6. Asking Questions</button>
 <div class="label">CHALLENGES</div>
 <button data-ch="0">1. Find the book</button><button data-ch="1">2. Find the fountain</button><button data-ch="2">3. Find the cup</button><button data-ch="3">4. Find the notebook</button><button data-ch="4">5. Find the pen</button><button data-ch="5">6. Find the ladder</button></aside>
 <div class="hotspots"><button data-word="libro" data-en="book" style="left:36.14%;top:53.64%;width:23.05%;height:19.16%"></button><button data-word="fuente" data-en="fountain" style="left:81.82%;top:26.36%;width:4.98%;height:17.76%"></button><button data-word="taza" data-en="cup" style="left:82.24%;top:64.49%;width:7.07%;height:13.55%"></button><button data-word="cuaderno" data-en="notebook" style="left:39.81%;top:77.01%;width:26.72%;height:14.02%"></button><button data-word="bolígrafo" data-en="pen" style="left:58.15%;top:76.92%;width:11.79%;height:5.14%"></button><button data-word="escalera" data-en="ladder" style="left:21.22%;top:5.42%;width:3.93%;height:34.58%"></button></div><div class="wordpop" id="pop"></div>
@@ -107,5 +107,45 @@ load('conversation');
 </style>
 <script id="talkabee-panel-return-bottom-v2">
 (()=>{const panel=document.querySelector('#world .dir'),back=document.querySelector('#world .dir a[href="index.html"]');if(panel&&back)panel.appendChild(back);})();
+</script>
+
+<style id="talkabee-one-size-fits-all-v1">
+/* ONE SIZE FITS ALL — exact shared Adventure panel + script-card geometry */
+.dir{box-sizing:border-box!important;left:16px!important;top:16px!important;bottom:auto!important;width:195px!important;min-width:195px!important;max-width:195px!important;height:auto!important;max-height:calc(100vh - 32px)!important;overflow-y:auto!important;overflow-x:hidden!important;padding:14px!important;border-radius:20px!important;background:rgba(7,23,39,.31)!important;border:1px solid rgba(255,255,255,.28)!important;box-shadow:0 10px 28px rgba(0,0,0,.22)!important;backdrop-filter:blur(3px)!important;-webkit-backdrop-filter:blur(3px)!important;color:#fff!important;scrollbar-width:thin!important}
+.dir button,.dir select,.dir a{box-sizing:border-box!important;width:100%!important;margin:5px 0!important;padding:9px 10px!important;min-height:0!important;height:auto!important;border-radius:12px!important;border:1px solid rgba(255,255,255,.38)!important;background:rgba(7,32,50,.54)!important;color:#fff!important;font-size:13px!important;line-height:1.25!important;font-weight:800!important;box-shadow:none!important}
+.panel{box-sizing:border-box!important;width:min(470px,31vw)!important;min-width:0!important;max-width:470px!important;height:auto!important;max-height:none!important;padding:16px 18px!important;border-radius:20px!important;background:rgba(7,23,39,.28)!important;border:1px solid rgba(255,255,255,.32)!important;box-shadow:0 10px 28px rgba(0,0,0,.22)!important;backdrop-filter:blur(3px)!important;-webkit-backdrop-filter:blur(3px)!important;color:#fff!important;overflow:visible!important}
+@media(max-width:900px){.dir{width:190px!important;min-width:190px!important;max-width:190px!important}.panel{width:min(470px,calc(100vw - 220px))!important;max-width:470px!important}}
+</style>
+
+<style id="talkabee-final-master-template-v1">
+/* LOCKED TALK A BEE ADVENTURE MASTER — 2026-10-02 */
+.dir{box-sizing:border-box!important;left:16px!important;top:16px!important;bottom:auto!important;width:195px!important;min-width:195px!important;max-width:195px!important;height:calc(100vh - 32px)!important;max-height:calc(100vh - 32px)!important;overflow-y:auto!important;overflow-x:hidden!important;padding:12px 14px!important;border-radius:20px!important;background:rgba(7,23,39,.31)!important;border:1px solid rgba(255,255,255,.28)!important;box-shadow:0 10px 28px rgba(0,0,0,.22)!important;backdrop-filter:blur(3px)!important;-webkit-backdrop-filter:blur(3px)!important;color:#fff!important;scrollbar-width:thin!important;transform:none!important;transform-origin:top left!important}
+.dir button,.dir select,.dir a{box-sizing:border-box!important;width:100%!important;margin:4px 0!important;padding:8px 10px!important;min-height:0!important;height:auto!important;border-radius:12px!important;border:1px solid rgba(255,255,255,.38)!important;background:rgba(7,32,50,.54)!important;color:#fff!important;font-size:12px!important;line-height:1.16!important;font-weight:800!important;box-shadow:none!important}
+.dir .label,.dir .activity-label,.dir .yacht-label,.dir .train-label{font-size:9.5px!important;line-height:1.2!important;margin:8px 2px 4px!important}
+.dir .place,.dir .activity-place,.dir .yacht-place,.dir .train-place,.dir .title{font-size:19px!important;line-height:1.08!important;margin:1px 0 7px!important}
+.dir .divider,.dir .activity-divider,.dir .yacht-divider,.dir .train-divider{margin:7px 2px!important}
+.panel{box-sizing:border-box!important;width:min(650px,48vw)!important;min-width:0!important;max-width:650px!important;height:auto!important;max-height:none!important;padding:14px 18px!important;border-radius:20px!important;background:rgba(7,23,39,.28)!important;border:1px solid rgba(255,255,255,.32)!important;box-shadow:0 10px 28px rgba(0,0,0,.22)!important;backdrop-filter:blur(3px)!important;-webkit-backdrop-filter:blur(3px)!important;color:#fff!important;overflow:visible!important;transform:none!important}
+.panel .actions{display:flex!important;flex-wrap:nowrap!important;gap:8px!important;align-items:center!important}
+.panel .actions button{white-space:nowrap!important;margin:0!important}
+@media(max-width:900px){.dir{width:190px!important;min-width:190px!important;max-width:190px!important}.panel{width:min(620px,calc(100vw - 220px))!important;max-width:620px!important}.panel .actions{flex-wrap:wrap!important}}
+</style>
+<script id="talkabee-inclusive-browser-voices-v1">
+(()=>{
+  if(!('speechSynthesis' in window))return;
+  const voiceSelects=()=>[...document.querySelectorAll('select')].filter(s=>/voice/i.test((s.id||'')+' '+(s.name||'')+' '+(s.className||'')));
+  function fillAllBrowserVoices(){
+    const voices=speechSynthesis.getVoices(); if(!voices.length)return;
+    voiceSelects().forEach(sel=>{
+      const chosen=sel.value;
+      sel.innerHTML='';
+      const d=document.createElement('option'); d.value=''; d.textContent='Browser Default'; sel.appendChild(d);
+      voices.forEach(v=>{const o=document.createElement('option');o.value=v.name;o.textContent=v.name+(v.lang?' — '+v.lang:'');sel.appendChild(o)});
+      if([...sel.options].some(o=>o.value===chosen))sel.value=chosen;
+    });
+  }
+  speechSynthesis.addEventListener?.('voiceschanged',fillAllBrowserVoices);
+  window.addEventListener('load',()=>{fillAllBrowserVoices();setTimeout(fillAllBrowserVoices,150);setTimeout(fillAllBrowserVoices,600);setTimeout(fillAllBrowserVoices,1500)});
+  document.addEventListener('change',e=>{if(e.target&&e.target.tagName==='SELECT'&&!/voice/i.test((e.target.id||'')+' '+(e.target.name||'')+' '+(e.target.className||'')))setTimeout(fillAllBrowserVoices,0)},true);
+})();
 </script>
 </body></html>

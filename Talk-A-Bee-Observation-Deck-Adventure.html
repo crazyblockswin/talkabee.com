@@ -54,12 +54,12 @@
 <button id="sceneView">◉ Scene View</button>
 <div class="label">DISCOVERY</div><button id="discovery">🔎 Discovery — Click the Scene</button>
 <div class="label">ACTIVITIES</div>
-<button data-lesson="arrive">1. 🌆 Look Over the City</button>
-<button data-lesson="rides">2. 🔭 Use the Viewer</button>
-<button data-lesson="snacks">3. ⛴️ Find the Ferry</button>
-<button data-lesson="beach">4. 🏔️ Look at the Mountain</button>
-<button data-lesson="safety">5. 🌊 Explore the Water</button>
-<button data-lesson="things">6. 🐝 Things We See</button>
+<button data-lesson="arrive">1. Look Over the City</button>
+<button data-lesson="rides">2. Use the Viewer</button>
+<button data-lesson="snacks">3. Find the Ferry</button>
+<button data-lesson="beach">4. Look at the Mountain</button>
+<button data-lesson="safety">5. Explore the Water</button>
+<button data-lesson="things">6. Things We See</button>
 <div class="label">CHALLENGES</div>
 <button data-ch="0">1. Find the Viewer</button><button data-ch="1">2. Find the Ferry</button><button data-ch="2">3. Find the Mountain</button><button data-ch="3">4. Find the Bee</button><button data-ch="4">5. Find the Girl</button><button data-ch="5">6. Find the Boy</button>
 <a href="index.html">← Return to Main Directory</a>
@@ -144,5 +144,45 @@ langSel.onchange=()=>{if(activeLesson)showLesson(activeLesson,false);else if(las
 document.getElementById("sceneView").onclick=()=>document.body.classList.add("scene-view");
 document.getElementById("sceneReturn").onclick=()=>document.body.classList.remove("scene-view");
 showWord("city");
+</script>
+
+<style id="talkabee-one-size-fits-all-v1">
+/* ONE SIZE FITS ALL — exact shared Adventure panel + script-card geometry */
+.panel{box-sizing:border-box!important;left:16px!important;top:16px!important;bottom:auto!important;width:195px!important;min-width:195px!important;max-width:195px!important;height:auto!important;max-height:calc(100vh - 32px)!important;overflow-y:auto!important;overflow-x:hidden!important;padding:14px!important;border-radius:20px!important;background:rgba(7,23,39,.31)!important;border:1px solid rgba(255,255,255,.28)!important;box-shadow:0 10px 28px rgba(0,0,0,.22)!important;backdrop-filter:blur(3px)!important;-webkit-backdrop-filter:blur(3px)!important;color:#fff!important;scrollbar-width:thin!important}
+.panel button,.panel select,.panel a{box-sizing:border-box!important;width:100%!important;margin:5px 0!important;padding:9px 10px!important;min-height:0!important;height:auto!important;border-radius:12px!important;border:1px solid rgba(255,255,255,.38)!important;background:rgba(7,32,50,.54)!important;color:#fff!important;font-size:13px!important;line-height:1.25!important;font-weight:800!important;box-shadow:none!important}
+.card{box-sizing:border-box!important;width:min(470px,31vw)!important;min-width:0!important;max-width:470px!important;height:auto!important;max-height:none!important;padding:16px 18px!important;border-radius:20px!important;background:rgba(7,23,39,.28)!important;border:1px solid rgba(255,255,255,.32)!important;box-shadow:0 10px 28px rgba(0,0,0,.22)!important;backdrop-filter:blur(3px)!important;-webkit-backdrop-filter:blur(3px)!important;color:#fff!important;overflow:visible!important}
+@media(max-width:900px){.panel{width:190px!important;min-width:190px!important;max-width:190px!important}.card{width:min(470px,calc(100vw - 220px))!important;max-width:470px!important}}
+</style>
+
+<style id="talkabee-final-master-template-v1">
+/* LOCKED TALK A BEE ADVENTURE MASTER — 2026-10-02 */
+.panel{box-sizing:border-box!important;left:16px!important;top:16px!important;bottom:auto!important;width:195px!important;min-width:195px!important;max-width:195px!important;height:calc(100vh - 32px)!important;max-height:calc(100vh - 32px)!important;overflow-y:auto!important;overflow-x:hidden!important;padding:12px 14px!important;border-radius:20px!important;background:rgba(7,23,39,.31)!important;border:1px solid rgba(255,255,255,.28)!important;box-shadow:0 10px 28px rgba(0,0,0,.22)!important;backdrop-filter:blur(3px)!important;-webkit-backdrop-filter:blur(3px)!important;color:#fff!important;scrollbar-width:thin!important;transform:none!important;transform-origin:top left!important}
+.panel button,.panel select,.panel a{box-sizing:border-box!important;width:100%!important;margin:4px 0!important;padding:8px 10px!important;min-height:0!important;height:auto!important;border-radius:12px!important;border:1px solid rgba(255,255,255,.38)!important;background:rgba(7,32,50,.54)!important;color:#fff!important;font-size:12px!important;line-height:1.16!important;font-weight:800!important;box-shadow:none!important}
+.panel .label,.panel .activity-label,.panel .yacht-label,.panel .train-label{font-size:9.5px!important;line-height:1.2!important;margin:8px 2px 4px!important}
+.panel .place,.panel .activity-place,.panel .yacht-place,.panel .train-place,.panel .title{font-size:19px!important;line-height:1.08!important;margin:1px 0 7px!important}
+.panel .divider,.panel .activity-divider,.panel .yacht-divider,.panel .train-divider{margin:7px 2px!important}
+.card{box-sizing:border-box!important;width:min(650px,48vw)!important;min-width:0!important;max-width:650px!important;height:auto!important;max-height:none!important;padding:14px 18px!important;border-radius:20px!important;background:rgba(7,23,39,.28)!important;border:1px solid rgba(255,255,255,.32)!important;box-shadow:0 10px 28px rgba(0,0,0,.22)!important;backdrop-filter:blur(3px)!important;-webkit-backdrop-filter:blur(3px)!important;color:#fff!important;overflow:visible!important;transform:none!important}
+.card .actions{display:flex!important;flex-wrap:nowrap!important;gap:8px!important;align-items:center!important}
+.card .actions button{white-space:nowrap!important;margin:0!important}
+@media(max-width:900px){.panel{width:190px!important;min-width:190px!important;max-width:190px!important}.card{width:min(620px,calc(100vw - 220px))!important;max-width:620px!important}.card .actions{flex-wrap:wrap!important}}
+</style>
+<script id="talkabee-inclusive-browser-voices-v1">
+(()=>{
+  if(!('speechSynthesis' in window))return;
+  const voiceSelects=()=>[...document.querySelectorAll('select')].filter(s=>/voice/i.test((s.id||'')+' '+(s.name||'')+' '+(s.className||'')));
+  function fillAllBrowserVoices(){
+    const voices=speechSynthesis.getVoices(); if(!voices.length)return;
+    voiceSelects().forEach(sel=>{
+      const chosen=sel.value;
+      sel.innerHTML='';
+      const d=document.createElement('option'); d.value=''; d.textContent='Browser Default'; sel.appendChild(d);
+      voices.forEach(v=>{const o=document.createElement('option');o.value=v.name;o.textContent=v.name+(v.lang?' — '+v.lang:'');sel.appendChild(o)});
+      if([...sel.options].some(o=>o.value===chosen))sel.value=chosen;
+    });
+  }
+  speechSynthesis.addEventListener?.('voiceschanged',fillAllBrowserVoices);
+  window.addEventListener('load',()=>{fillAllBrowserVoices();setTimeout(fillAllBrowserVoices,150);setTimeout(fillAllBrowserVoices,600);setTimeout(fillAllBrowserVoices,1500)});
+  document.addEventListener('change',e=>{if(e.target&&e.target.tagName==='SELECT'&&!/voice/i.test((e.target.id||'')+' '+(e.target.name||'')+' '+(e.target.className||'')))setTimeout(fillAllBrowserVoices,0)},true);
+})();
 </script>
 </body></html>

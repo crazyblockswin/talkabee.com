@@ -204,16 +204,16 @@ html,body,#homeWorld,#homeScene{
       <select id="homeVoice" class="home-control-select"><option value="">Browser Default</option></select>
 
       <div class="activity-label">DISCOVERY</div>
-      <button class="home-nav" data-home-group="discover">🔎 Click &amp; Discover</button>
+      <button class="home-nav" data-home-group="discover">Click &amp; Discover</button>
 
       <div class="activity-divider"></div>
       <div class="activity-label">6 ACTIVITIES</div>
-      <button class="home-nav active" data-home-group="family">👨‍👩‍👧 Family Talk</button>
-      <button class="home-nav" data-home-group="garden">🌷 Garden Words</button>
-      <button class="home-nav" data-home-group="birds">🐦 Birds</button>
-      <button class="home-nav" data-home-group="hobbies">🧺 Hobbies &amp; Home</button>
-      <button class="home-nav" data-home-group="yard">🏡 Around the Yard</button>
-      <button class="home-nav" data-home-group="everyday">💬 Everyday Life</button>
+      <button class="home-nav active" data-home-group="family">Family Talk</button>
+      <button class="home-nav" data-home-group="garden">Garden Words</button>
+      <button class="home-nav" data-home-group="birds">Birds</button>
+      <button class="home-nav" data-home-group="hobbies">Hobbies &amp; Home</button>
+      <button class="home-nav" data-home-group="yard">Around the Yard</button>
+      <button class="home-nav" data-home-group="everyday">Everyday Life</button>
 
       <div class="activity-divider"></div>
       <div class="activity-label">6 CHALLENGES</div>
@@ -241,7 +241,7 @@ html,body,#homeWorld,#homeScene{
       <div class="home-wordline" id="homeWordline"></div>
       <div class="home-translation" id="homeTranslation"></div>
       <div class="home-actions">
-        <button class="primary" id="homePlay">🔊 Speak + Highlight</button>
+        <button class="primary" id="homePlay">🔊 Speak</button>
         <button id="homeSlow">🐢 Slow</button><button id="homeReplay">↻ Replay</button>
       </div>
       <div class="home-nextrow" id="homeNextRow">
@@ -538,6 +538,46 @@ Object.keys(extraDiscovery).forEach(lang=>{if(!languageData[lang].objects)langua
 </style>
 <script id="talkabee-panel-return-bottom-v2">
 (()=>{const panel=document.querySelector('.activity-panel.home-directory'),back=document.querySelector('#homeMainDirectory');if(panel&&back)panel.appendChild(back);})();
+</script>
+
+<style id="talkabee-one-size-fits-all-v1">
+/* ONE SIZE FITS ALL — exact shared Adventure panel + script-card geometry */
+.activity-panel.home-directory{box-sizing:border-box!important;left:16px!important;top:16px!important;bottom:auto!important;width:195px!important;min-width:195px!important;max-width:195px!important;height:auto!important;max-height:calc(100vh - 32px)!important;overflow-y:auto!important;overflow-x:hidden!important;padding:14px!important;border-radius:20px!important;background:rgba(7,23,39,.31)!important;border:1px solid rgba(255,255,255,.28)!important;box-shadow:0 10px 28px rgba(0,0,0,.22)!important;backdrop-filter:blur(3px)!important;-webkit-backdrop-filter:blur(3px)!important;color:#fff!important;scrollbar-width:thin!important}
+.activity-panel.home-directory button,.activity-panel.home-directory select,.activity-panel.home-directory a{box-sizing:border-box!important;width:100%!important;margin:5px 0!important;padding:9px 10px!important;min-height:0!important;height:auto!important;border-radius:12px!important;border:1px solid rgba(255,255,255,.38)!important;background:rgba(7,32,50,.54)!important;color:#fff!important;font-size:13px!important;line-height:1.25!important;font-weight:800!important;box-shadow:none!important}
+.home-panel{box-sizing:border-box!important;width:min(470px,31vw)!important;min-width:0!important;max-width:470px!important;height:auto!important;max-height:none!important;padding:16px 18px!important;border-radius:20px!important;background:rgba(7,23,39,.28)!important;border:1px solid rgba(255,255,255,.32)!important;box-shadow:0 10px 28px rgba(0,0,0,.22)!important;backdrop-filter:blur(3px)!important;-webkit-backdrop-filter:blur(3px)!important;color:#fff!important;overflow:visible!important}
+@media(max-width:900px){.activity-panel.home-directory{width:190px!important;min-width:190px!important;max-width:190px!important}.home-panel{width:min(470px,calc(100vw - 220px))!important;max-width:470px!important}}
+</style>
+
+<style id="talkabee-final-master-template-v1">
+/* LOCKED TALK A BEE ADVENTURE MASTER — 2026-10-02 */
+.activity-panel.home-directory{box-sizing:border-box!important;left:16px!important;top:16px!important;bottom:auto!important;width:195px!important;min-width:195px!important;max-width:195px!important;height:calc(100vh - 32px)!important;max-height:calc(100vh - 32px)!important;overflow-y:auto!important;overflow-x:hidden!important;padding:12px 14px!important;border-radius:20px!important;background:rgba(7,23,39,.31)!important;border:1px solid rgba(255,255,255,.28)!important;box-shadow:0 10px 28px rgba(0,0,0,.22)!important;backdrop-filter:blur(3px)!important;-webkit-backdrop-filter:blur(3px)!important;color:#fff!important;scrollbar-width:thin!important;transform:none!important;transform-origin:top left!important}
+.activity-panel.home-directory button,.activity-panel.home-directory select,.activity-panel.home-directory a{box-sizing:border-box!important;width:100%!important;margin:4px 0!important;padding:8px 10px!important;min-height:0!important;height:auto!important;border-radius:12px!important;border:1px solid rgba(255,255,255,.38)!important;background:rgba(7,32,50,.54)!important;color:#fff!important;font-size:12px!important;line-height:1.16!important;font-weight:800!important;box-shadow:none!important}
+.activity-panel.home-directory .label,.activity-panel.home-directory .activity-label,.activity-panel.home-directory .yacht-label,.activity-panel.home-directory .train-label{font-size:9.5px!important;line-height:1.2!important;margin:8px 2px 4px!important}
+.activity-panel.home-directory .place,.activity-panel.home-directory .activity-place,.activity-panel.home-directory .yacht-place,.activity-panel.home-directory .train-place,.activity-panel.home-directory .title{font-size:19px!important;line-height:1.08!important;margin:1px 0 7px!important}
+.activity-panel.home-directory .divider,.activity-panel.home-directory .activity-divider,.activity-panel.home-directory .yacht-divider,.activity-panel.home-directory .train-divider{margin:7px 2px!important}
+.home-panel{box-sizing:border-box!important;width:min(650px,48vw)!important;min-width:0!important;max-width:650px!important;height:auto!important;max-height:none!important;padding:14px 18px!important;border-radius:20px!important;background:rgba(7,23,39,.28)!important;border:1px solid rgba(255,255,255,.32)!important;box-shadow:0 10px 28px rgba(0,0,0,.22)!important;backdrop-filter:blur(3px)!important;-webkit-backdrop-filter:blur(3px)!important;color:#fff!important;overflow:visible!important;transform:none!important}
+.home-panel .actions{display:flex!important;flex-wrap:nowrap!important;gap:8px!important;align-items:center!important}
+.home-panel .actions button{white-space:nowrap!important;margin:0!important}
+@media(max-width:900px){.activity-panel.home-directory{width:190px!important;min-width:190px!important;max-width:190px!important}.home-panel{width:min(620px,calc(100vw - 220px))!important;max-width:620px!important}.home-panel .actions{flex-wrap:wrap!important}}
+</style>
+<script id="talkabee-inclusive-browser-voices-v1">
+(()=>{
+  if(!('speechSynthesis' in window))return;
+  const voiceSelects=()=>[...document.querySelectorAll('select')].filter(s=>/voice/i.test((s.id||'')+' '+(s.name||'')+' '+(s.className||'')));
+  function fillAllBrowserVoices(){
+    const voices=speechSynthesis.getVoices(); if(!voices.length)return;
+    voiceSelects().forEach(sel=>{
+      const chosen=sel.value;
+      sel.innerHTML='';
+      const d=document.createElement('option'); d.value=''; d.textContent='Browser Default'; sel.appendChild(d);
+      voices.forEach(v=>{const o=document.createElement('option');o.value=v.name;o.textContent=v.name+(v.lang?' — '+v.lang:'');sel.appendChild(o)});
+      if([...sel.options].some(o=>o.value===chosen))sel.value=chosen;
+    });
+  }
+  speechSynthesis.addEventListener?.('voiceschanged',fillAllBrowserVoices);
+  window.addEventListener('load',()=>{fillAllBrowserVoices();setTimeout(fillAllBrowserVoices,150);setTimeout(fillAllBrowserVoices,600);setTimeout(fillAllBrowserVoices,1500)});
+  document.addEventListener('change',e=>{if(e.target&&e.target.tagName==='SELECT'&&!/voice/i.test((e.target.id||'')+' '+(e.target.name||'')+' '+(e.target.className||'')))setTimeout(fillAllBrowserVoices,0)},true);
+})();
 </script>
 </body>
 </html>
