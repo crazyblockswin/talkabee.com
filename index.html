@@ -917,6 +917,9 @@ header .brand-tagline{white-space:normal!important;line-height:1.12!important;}
 }
 </style>
 
+
+
+
 </head>
 <body>
 <a class="talkabee-forward-arrow" href="Talk-A-Bee-Grandma-Grandpas-Place.html" aria-label="Start adventures: Grandma & Grandpa’s Place" title="Start Adventures"></a>
@@ -946,25 +949,16 @@ header .brand-tagline{white-space:normal!important;line-height:1.12!important;}
  <div class="wrap">
   <div class="hero-layout hero-sidebar-layout">
    <aside class="landing-directory" aria-label="Main directory">
-    
     <h2>Main Directory</h2>
-    
     <a class="directory-link" href="Talk-A-Bee-Grandma-Grandpas-Place.html">🏡 Grandma &amp; Grandpa’s Place</a>
     <a class="directory-link" href="Talk-A-Bee-Sea-Adventures.html">🌊 Sea Adventures</a>
     <a class="directory-link" href="Talk-A-Bee-Shopping-Market-Adventure.html">🛍️ Shopping Market</a>
     <a class="directory-link" href="Talk-A-Bee-Grandmas-Kitchen-Adventure.html">🍪 Grandma's Kitchen</a>
-<a class="directory-link" href="Talk-A-Bee-Lake-Mountain-Adventure.html">🏞️ Lake &amp; Mountain Adventure</a>
-    <a class="directory-link" href="Talk-A-Bee-Aunt-Julies-Island-Retreat.html">🌴 Aunt Julie&#39;s Island Retreat</a>
+    <a class="directory-link" href="Talk-A-Bee-Lake-Mountain-Adventure.html">🏞️ Lake &amp; Mountain Adventure</a>
+    <a class="directory-link" href="Talk-A-Bee-Aunt-Julies-Island-Retreat.html">🌴 Aunt Julie's Island Retreat</a>
     <a class="directory-link" href="Talk-A-Bee-Train-Station-Adventure.html">🚆 Train Station</a>
     <a class="directory-link" href="Talk-A-Bee-Bird-Sanctuary.html">🐦 Bird Sanctuary</a>
-    <a class="directory-link" href="Talk-A-Bee-Library.html">📚 Library</a>
-    <a class="directory-link" href="Talk-A-Bee-City-Bus-Adventure.html">🚌 City Bus Adventure</a>
-    <a class="directory-link" href="Talk-A-Bee-Hotel-Adventure.html">🏨 Hotel Adventure</a>
-    <a class="directory-link" href="Talk-A-Bee-Animals-Farm-Adventure.html">🐾 Animals — Farm Adventure</a>
-    <a class="directory-link" href="Talk-A-Bee-Boardwalk-Adventure.html">🎡 Boardwalk Adventure</a>
-    <a class="directory-link" href="Talk-A-Bee-Observation-Deck-Adventure.html">🌆 Observation Deck</a>
-<a class="directory-link" href="Talk-A-Bee-Dinosaur-Museum-Adventure.html">🦖 Dinosaur Museum</a>
-    <a class="directory-link" href="Talk-A-Bee-Nighttime-Campground-Adventure.html">🏕️ Nighttime Campground</a>
+    <a class="directory-link directory-more" href="Talk-A-Bee-More-Adventures.html">More Adventures →</a>
    </aside>
    <div class="hero-right">
     <div class="hero-feature-card" style="background-image:none!important;background-color:#dcecff;">
@@ -4859,6 +4853,42 @@ document.addEventListener('click',function(e){
 })();
 </script>
 
+<style id="talkabee-directory-boardwalk-standard">
+/* Directory visual standard: matches the approved Boardwalk-family glass panel. */
+#mainDirectory{
+  min-height:calc(100vh - 72px)!important;
+  height:calc(100vh - 72px)!important;
+  position:relative!important;
+  display:block!important;
+  background:#071526 url("images/talkabee-directory-balloon-world.png") center center/cover no-repeat!important;
+  overflow:hidden!important;
+  padding:0!important;
+}
+#mainDirectory:after{display:none!important;}
+#mainDirectory>.wrap{width:100%!important;max-width:none!important;height:100%!important;margin:0!important;}
+#mainDirectory .hero-layout{display:block!important;width:100%!important;height:100%!important;padding:0!important;}
+#mainDirectory .hero-right{display:none!important;}
+#mainDirectory .landing-directory{
+  position:absolute!important;z-index:20!important;left:16px!important;top:16px!important;
+  width:195px!important;max-height:calc(100% - 32px)!important;overflow:auto!important;
+  padding:14px!important;border-radius:20px!important;
+  background:rgba(7,23,39,.31)!important;
+  border:1px solid rgba(255,255,255,.28)!important;
+  box-shadow:0 10px 28px rgba(0,0,0,.22)!important;
+  backdrop-filter:blur(3px)!important;-webkit-backdrop-filter:blur(3px)!important;
+}
+#mainDirectory .landing-directory h2{font-size:22px!important;line-height:1.1!important;margin:0 0 10px!important;color:#fff!important;-webkit-text-stroke:0!important;text-shadow:none!important;}
+#mainDirectory .directory-link{
+  width:100%!important;display:block!important;margin:5px 0!important;padding:9px 10px!important;
+  border-radius:12px!important;border:1px solid rgba(255,255,255,.38)!important;
+  background:rgba(7,32,50,.54)!important;color:#fff!important;font-size:13px!important;line-height:1.2!important;
+  font-weight:800!important;text-decoration:none!important;text-align:left!important;
+  -webkit-text-stroke:0!important;text-shadow:none!important;paint-order:normal!important;
+}
+#mainDirectory .directory-link:hover{background:rgba(255,255,255,.18)!important;transform:none!important;}
+#mainDirectory .directory-more{margin-top:10px!important;background:rgba(80,59,150,.64)!important;border-color:rgba(255,255,255,.52)!important;}
+@media(max-width:900px){#mainDirectory .landing-directory{width:190px!important;}}
+</style>
 </body>
 </html>
 <style>#homeWorld .scene-hotspots .home-hotspot{
