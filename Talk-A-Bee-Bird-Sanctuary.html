@@ -379,5 +379,21 @@ challengeNext.onclick=()=>{
 loadLesson("meet");
 })();
 </script>
+
+<style id="talkabee-boardwalk-panel-standard-v2">
+/* Talk A Bee Boardwalk panel standard — shell transplant only. */
+#birdWorld .directory{left:16px!important;top:16px!important;bottom:auto!important;width:195px!important;min-width:0!important;max-width:195px!important;height:auto!important;max-height:calc(100vh - 32px)!important;overflow-y:auto!important;overflow-x:hidden!important;padding:14px!important;border-radius:20px!important;background:rgba(7,23,39,.31)!important;border:1px solid rgba(255,255,255,.28)!important;box-shadow:0 10px 28px rgba(0,0,0,.22)!important;backdrop-filter:blur(3px)!important;-webkit-backdrop-filter:blur(3px)!important;color:#fff!important;scrollbar-width:thin!important}
+#birdWorld .directory button,#birdWorld .directory select,#birdWorld .directory a{width:100%!important;box-sizing:border-box!important;margin:5px 0!important;padding:9px 10px!important;min-height:0!important;height:auto!important;border-radius:12px!important;border:1px solid rgba(255,255,255,.38)!important;background:rgba(7,32,50,.54)!important;color:#fff!important;font-size:13px!important;line-height:1.25!important;font-weight:800!important;text-decoration:none!important;text-align:left!important;box-shadow:none!important}
+#birdWorld .directory button:hover,#birdWorld .directory a:hover{background:rgba(255,255,255,.18)!important}
+#birdWorld .directory select option{color:#17212b!important;background:#fff!important}
+#birdWorld .directory .place,#birdWorld .directory .activity-place,#birdWorld .directory .yacht-place,#birdWorld .directory .train-place,#birdWorld .directory .title{font-size:20px!important;line-height:1.08!important;font-weight:950!important;margin:2px 0 10px!important;color:#fff!important;text-shadow:none!important}
+#birdWorld .directory .label,#birdWorld .directory .activity-label,#birdWorld .directory .yacht-label,#birdWorld .directory .train-label{font-size:10px!important;line-height:1.2!important;font-weight:950!important;letter-spacing:.12em!important;color:#e9f7ff!important;margin:11px 2px 5px!important}
+#birdWorld .directory .divider,#birdWorld .directory .activity-divider,#birdWorld .directory .yacht-divider,#birdWorld .directory .train-divider{height:1px!important;background:rgba(255,255,255,.20)!important;margin:10px 2px!important}
+#birdWorld .main-directory{margin-top:12px!important;background:rgba(7,32,50,.54)!important}
+@media(max-width:900px){#birdWorld .directory{width:190px!important;max-width:190px!important}}
+</style>
+<script id="talkabee-panel-return-bottom-v2">
+(()=>{const panel=document.querySelector('#birdWorld .directory'),back=document.querySelector('#birdWorld .main-directory');if(panel&&back)panel.appendChild(back);})();
+</script>
 </body>
 </html>

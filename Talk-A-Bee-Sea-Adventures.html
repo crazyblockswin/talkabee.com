@@ -1066,5 +1066,21 @@ document.addEventListener('click',function(e){
   window.location.href='index.html';
 },true);
 </script>
+
+<style id="talkabee-boardwalk-panel-standard-v2">
+/* Talk A Bee Boardwalk panel standard — shell transplant only. */
+#yachtWorld .yacht-directory{left:16px!important;top:16px!important;bottom:auto!important;width:195px!important;min-width:0!important;max-width:195px!important;height:auto!important;max-height:calc(100vh - 32px)!important;overflow-y:auto!important;overflow-x:hidden!important;padding:14px!important;border-radius:20px!important;background:rgba(7,23,39,.31)!important;border:1px solid rgba(255,255,255,.28)!important;box-shadow:0 10px 28px rgba(0,0,0,.22)!important;backdrop-filter:blur(3px)!important;-webkit-backdrop-filter:blur(3px)!important;color:#fff!important;scrollbar-width:thin!important}
+#yachtWorld .yacht-directory button,#yachtWorld .yacht-directory select,#yachtWorld .yacht-directory a{width:100%!important;box-sizing:border-box!important;margin:5px 0!important;padding:9px 10px!important;min-height:0!important;height:auto!important;border-radius:12px!important;border:1px solid rgba(255,255,255,.38)!important;background:rgba(7,32,50,.54)!important;color:#fff!important;font-size:13px!important;line-height:1.25!important;font-weight:800!important;text-decoration:none!important;text-align:left!important;box-shadow:none!important}
+#yachtWorld .yacht-directory button:hover,#yachtWorld .yacht-directory a:hover{background:rgba(255,255,255,.18)!important}
+#yachtWorld .yacht-directory select option{color:#17212b!important;background:#fff!important}
+#yachtWorld .yacht-directory .place,#yachtWorld .yacht-directory .activity-place,#yachtWorld .yacht-directory .yacht-place,#yachtWorld .yacht-directory .train-place,#yachtWorld .yacht-directory .title{font-size:20px!important;line-height:1.08!important;font-weight:950!important;margin:2px 0 10px!important;color:#fff!important;text-shadow:none!important}
+#yachtWorld .yacht-directory .label,#yachtWorld .yacht-directory .activity-label,#yachtWorld .yacht-directory .yacht-label,#yachtWorld .yacht-directory .train-label{font-size:10px!important;line-height:1.2!important;font-weight:950!important;letter-spacing:.12em!important;color:#e9f7ff!important;margin:11px 2px 5px!important}
+#yachtWorld .yacht-directory .divider,#yachtWorld .yacht-directory .activity-divider,#yachtWorld .yacht-directory .yacht-divider,#yachtWorld .yacht-directory .train-divider{height:1px!important;background:rgba(255,255,255,.20)!important;margin:10px 2px!important}
+#yachtWorld .yacht-back{margin-top:12px!important;background:rgba(7,32,50,.54)!important}
+@media(max-width:900px){#yachtWorld .yacht-directory{width:190px!important;max-width:190px!important}}
+</style>
+<script id="talkabee-panel-return-bottom-v2">
+(()=>{const panel=document.querySelector('#yachtWorld .yacht-directory'),back=document.querySelector('#yachtWorld .yacht-back');if(panel&&back)panel.appendChild(back);})();
+</script>
 </body>
 </html>
