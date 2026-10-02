@@ -105,22 +105,34 @@ function fillVoices(){if(!("speechSynthesis" in window))return;const base=CODES[
 if("speechSynthesis" in window){speechSynthesis.onvoiceschanged=fillVoices;fillVoices()}
 function speak(t,rate=.82,onend=null){if(!t||!("speechSynthesis" in window)){if(onend)onend();return}try{speechSynthesis.cancel();const u=new SpeechSynthesisUtterance(t);u.lang=CODES[langSel.value];u.rate=rate;const v=speechSynthesis.getVoices().find(v=>v.name===voiceSel.value);if(v)u.voice=v;if(onend){u.onend=onend;u.onerror=onend}setTimeout(()=>speechSynthesis.speak(u),40)}catch(e){if(onend)onend()}}
 function showWord(key){lastWord=key;line.textContent=WORDS[langSel.value][key]||EN[key]||key;translation.textContent=langSel.value==="en"?"":(EN[key]||key)}
-document.querySelectorAll(".hotspot").forEach(b=>b.onclick=()=>{const key=b.dataset.word;showWord(key);speak(WORDS[langSel.value][key]||EN[key],.82,()=>playCampSound(key));if(challenge>=0){if(key===challengeOrder[challenge]){status.textContent="✓ Nice find!";status.style.color="#9dffbf"}else{status.textContent="Not that one — keep looking.";status.style.color="#ffe28a"}}});
-document.getElementById("discovery").onclick=()=>{challenge=-1;world.classList.remove("challenge-mode");document.querySelectorAll(".hotspot").forEach(h=>h.classList.remove("target"));title.textContent="Click & Discover";prompt.textContent="Click any object in the scene to hear its name.";status.textContent=""};
-document.querySelectorAll("[data-ch]").forEach(b=>b.onclick=()=>{challenge=+b.dataset.ch;world.classList.add("challenge-mode");document.querySelectorAll(".hotspot").forEach(h=>h.classList.toggle("target",h.dataset.word===challengeOrder[challenge]));title.textContent="Challenge "+(challenge+1)+" of 6";prompt.textContent=b.textContent.replace(/^\d+\.\s*/,"");status.textContent=""});
+document.querySelectorAll(".hotspot").forEach(b=>b.onclick=()=>{activeLesson="";const key=b.dataset.word;showWord(key);speak(WORDS[langSel.value][key]||EN[key],.82,()=>playCampSound(key));if(challenge>=0){if(key===challengeOrder[challenge]){status.textContent="✓ Nice find!";status.style.color="#9dffbf"}else{status.textContent="Not that one — keep looking.";status.style.color="#ffe28a"}}});
+document.getElementById("discovery").onclick=()=>{activeLesson="";challenge=-1;world.classList.remove("challenge-mode");document.querySelectorAll(".hotspot").forEach(h=>h.classList.remove("target"));title.textContent="Click & Discover";prompt.textContent="Click any object in the scene to hear its name.";status.textContent=""};
+document.querySelectorAll("[data-ch]").forEach(b=>b.onclick=()=>{activeLesson="";challenge=+b.dataset.ch;world.classList.add("challenge-mode");document.querySelectorAll(".hotspot").forEach(h=>h.classList.toggle("target",h.dataset.word===challengeOrder[challenge]));title.textContent="Challenge "+(challenge+1)+" of 6";prompt.textContent=b.textContent.replace(/^\d+\.\s*/,"");status.textContent=""});
 const lessons={
-arrive:["We are camping by the lake.","Our campsite is ready for the night."],
-fire:["Everyone is sitting around the campfire.","The fire is warm and bright."],
-food:["We are roasting marshmallows.","Be careful near the campfire."],
-night:["Look at the moon and the stars.","The mountains are quiet at night."],
-gear:["We have a tent, lantern, cooler, and bicycles.","The camping gear is ready."],
-family:["Grandma, Grandpa, family, and friends are together.","Bear is relaxing beside the campfire."]
+en:{arrive:["We are camping by the lake.", "Our campsite is ready for the night."],fire:["Everyone is sitting around the campfire.", "The fire is warm and bright."],food:["We are roasting marshmallows.", "Be careful near the campfire."],night:["Look at the moon and the stars.", "The mountains are quiet at night."],gear:["We have a tent, lantern, cooler, and bicycles.", "The camping gear is ready."],family:["Grandma, Grandpa, family, and friends are together.", "Bear is relaxing beside the campfire."]}},
+es:{arrive:["Estamos acampando junto al lago.", "Nuestro campamento está listo para la noche."],fire:["Todos están sentados alrededor de la fogata.", "El fuego es cálido y brillante."],food:["Estamos asando malvaviscos.", "Ten cuidado cerca de la fogata."],night:["Mira la luna y las estrellas.", "Las montañas están tranquilas por la noche."],gear:["Tenemos una tienda de campaña, una linterna, una nevera y bicicletas.", "El equipo de campamento está listo."],family:["La abuela, el abuelo, la familia y los amigos están juntos.", "Bear está descansando junto a la fogata."]}},
+fr:{arrive:["Nous campons près du lac.", "Notre camping est prêt pour la nuit."],fire:["Tout le monde est assis autour du feu de camp.", "Le feu est chaud et lumineux."],food:["Nous faisons griller des guimauves.", "Fais attention près du feu de camp."],night:["Regarde la lune et les étoiles.", "Les montagnes sont calmes la nuit."],gear:["Nous avons une tente, une lanterne, une glacière et des vélos.", "Le matériel de camping est prêt."],family:["Grand-mère, grand-père, la famille et les amis sont ensemble.", "Bear se repose près du feu de camp."]}},
+de:{arrive:["Wir campen am See.", "Unser Campingplatz ist bereit für die Nacht."],fire:["Alle sitzen um das Lagerfeuer.", "Das Feuer ist warm und hell."],food:["Wir rösten Marshmallows.", "Sei vorsichtig in der Nähe des Lagerfeuers."],night:["Schau dir den Mond und die Sterne an.", "Die Berge sind nachts ruhig."],gear:["Wir haben ein Zelt, eine Laterne, eine Kühlbox und Fahrräder.", "Die Campingausrüstung ist bereit."],family:["Oma, Opa, Familie und Freunde sind zusammen.", "Bear entspannt sich neben dem Lagerfeuer."]}},
+it:{arrive:["Siamo in campeggio vicino al lago.", "Il nostro campeggio è pronto per la notte."],fire:["Tutti sono seduti intorno al falò.", "Il fuoco è caldo e luminoso."],food:["Stiamo arrostendo i marshmallow.", "Fai attenzione vicino al falò."],night:["Guarda la luna e le stelle.", "Le montagne sono tranquille di notte."],gear:["Abbiamo una tenda, una lanterna, un frigorifero portatile e delle biciclette.", "L’attrezzatura da campeggio è pronta."],family:["La nonna, il nonno, la famiglia e gli amici sono insieme.", "Bear si rilassa vicino al falò."]}},
+pt:{arrive:["Estamos acampando perto do lago.", "Nosso acampamento está pronto para a noite."],fire:["Todos estão sentados ao redor da fogueira.", "O fogo está quente e brilhante."],food:["Estamos assando marshmallows.", "Tenha cuidado perto da fogueira."],night:["Olhe a lua e as estrelas.", "As montanhas ficam tranquilas à noite."],gear:["Temos uma tenda, uma lanterna, uma caixa térmica e bicicletas.", "O equipamento de camping está pronto."],family:["A avó, o avô, a família e os amigos estão juntos.", "Bear está descansando ao lado da fogueira."]}},
+no:{arrive:["Vi camper ved innsjøen.", "Campingplassen vår er klar for natten."],fire:["Alle sitter rundt leirbålet.", "Bålet er varmt og lyst."],food:["Vi griller marshmallows.", "Vær forsiktig i nærheten av leirbålet."],night:["Se på månen og stjernene.", "Fjellene er stille om natten."],gear:["Vi har telt, lykt, kjøleboks og sykler.", "Campingutstyret er klart."],family:["Bestemor, bestefar, familie og venner er sammen.", "Bear slapper av ved leirbålet."]}}
 };
-document.querySelectorAll("[data-lesson]").forEach(b=>b.onclick=()=>{challenge=-1;world.classList.remove("challenge-mode");document.querySelectorAll(".hotspot").forEach(h=>h.classList.remove("target"));const a=lessons[b.dataset.lesson];title.textContent=b.textContent.replace(/^\d+\.\s*/,"");prompt.textContent=a[0];line.textContent=a[1];translation.textContent="";lastWord="";speak(a[1])});
-document.getElementById("normal").onclick=()=>speak(lastWord?(WORDS[langSel.value][lastWord]||EN[lastWord]):line.textContent,.82);
-document.getElementById("slow").onclick=()=>speak(lastWord?(WORDS[langSel.value][lastWord]||EN[lastWord]):line.textContent,.58);
-document.getElementById("replay").onclick=()=>speak(lastWord?(WORDS[langSel.value][lastWord]||EN[lastWord]):line.textContent,.82);
-langSel.onchange=()=>{fillVoices();if(lastWord)showWord(lastWord)};
+let activeLesson="";
+function showLesson(key,speakIt=false){
+  activeLesson=key;lastWord="";
+  const a=lessons[langSel.value][key];
+  const btn=document.querySelector(`[data-lesson="${key}"]`);
+  title.textContent=btn?btn.textContent.replace(/^\d+\.\s*/,""):"Nighttime Campground Adventure";
+  prompt.textContent=a[0];line.textContent=a[1];
+  translation.textContent=langSel.value==="en"?"":lessons.en[key][1];
+  if(speakIt)speak(a[1]);
+}
+document.querySelectorAll("[data-lesson]").forEach(b=>b.onclick=()=>{challenge=-1;world.classList.remove("challenge-mode");document.querySelectorAll(".hotspot").forEach(h=>h.classList.remove("target"));status.textContent="";showLesson(b.dataset.lesson,true)});
+function currentSpeechText(){if(activeLesson)return lessons[langSel.value][activeLesson][1];if(lastWord)return WORDS[langSel.value][lastWord]||EN[lastWord];return line.textContent}
+document.getElementById("normal").onclick=()=>speak(currentSpeechText(),.82);
+document.getElementById("slow").onclick=()=>speak(currentSpeechText(),.58);
+document.getElementById("replay").onclick=()=>speak(currentSpeechText(),.82);
+langSel.onchange=()=>{fillVoices();if(activeLesson)showLesson(activeLesson,false);else if(lastWord)showWord(lastWord)};
 document.getElementById("sceneView").onclick=()=>document.body.classList.add("scene-view");
 document.getElementById("sceneReturn").onclick=()=>document.body.classList.remove("scene-view");
 showWord("campground");

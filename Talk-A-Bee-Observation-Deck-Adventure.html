@@ -103,21 +103,33 @@ if("speechSynthesis" in window){speechSynthesis.onvoiceschanged=fillVoices;fillV
 function speak(t,rate=.82,onend=null){if(!t||!("speechSynthesis" in window)){if(onend)onend();return;}try{speechSynthesis.cancel();const u=new SpeechSynthesisUtterance(t);u.lang=LANGS[langSel.value].code;u.rate=rate;const v=speechSynthesis.getVoices().find(v=>v.name===voiceSel.value);if(v)u.voice=v;if(onend)u.onend=onend;u.onerror=()=>{if(onend)onend()};setTimeout(()=>speechSynthesis.speak(u),40)}catch(e){if(onend)onend();}}
 function showWord(key){lastWord=key;const x=LANGS[langSel.value].words[key];line.textContent=x[0];translation.textContent=langSel.value==="en"?"":x[1]}
 document.querySelectorAll(".hotspot").forEach(b=>b.onclick=()=>{const key=b.dataset.word,x=LANGS[langSel.value].words[key];showWord(key);speak(x[0],.82,()=>playDeckSound(key));if(challenge>=0){if(key===challengeOrder[challenge]){status.textContent="✓ Nice find!";status.style.color="#9dffbf"}else{status.textContent="Not that one — keep looking.";status.style.color="#ffe28a"}}});
-document.getElementById("discovery").onclick=()=>{challenge=-1;world.classList.remove("challenge-mode");title.textContent="Click & Discover";prompt.textContent="Click any object in the scene to hear its name.";status.textContent=""};
-document.querySelectorAll("[data-ch]").forEach(b=>b.onclick=()=>{challenge=+b.dataset.ch;world.classList.add("challenge-mode");document.querySelectorAll(".hotspot").forEach(h=>h.classList.toggle("target",h.dataset.word===challengeOrder[challenge]));title.textContent="Challenge "+(challenge+1)+" of 6";prompt.textContent=b.textContent.replace(/^\d+\.\s*/,"");status.textContent=""});
+document.getElementById("discovery").onclick=()=>{activeLesson="";challenge=-1;world.classList.remove("challenge-mode");title.textContent="Click & Discover";prompt.textContent="Click any object in the scene to hear its name.";status.textContent=""};
+document.querySelectorAll("[data-ch]").forEach(b=>b.onclick=()=>{activeLesson="";challenge=+b.dataset.ch;world.classList.add("challenge-mode");document.querySelectorAll(".hotspot").forEach(h=>h.classList.toggle("target",h.dataset.word===challengeOrder[challenge]));title.textContent="Challenge "+(challenge+1)+" of 6";prompt.textContent=b.textContent.replace(/^\d+\.\s*/,"");status.textContent=""});
 const lessons={
- arrive:["We are high above the city.","Look at the buildings below us."],
- rides:["Look through the viewer.","What can you see far away?"],
- snacks:["Can you find the ferry?","The ferry is moving across the water."],
- beach:["Look at the mountain.","The mountain is far beyond the city."],
- safety:["Look at the water below.","Boats travel across the water."],
- things:["What do you see from the observation deck?","I see the city, a mountain, a ferry, and the sky."]
+en:{arrive:["We are high above the city.", "Look at the buildings below us."],rides:["Look through the viewer.", "What can you see far away?"],snacks:["Can you find the ferry?", "The ferry is moving across the water."],beach:["Look at the mountain.", "The mountain is far beyond the city."],safety:["Look at the water below.", "Boats travel across the water."],things:["What do you see from the observation deck?", "I see the city, a mountain, a ferry, and the sky."]}},
+es:{arrive:["Estamos muy por encima de la ciudad.", "Mira los edificios debajo de nosotros."],rides:["Mira por el visor.", "¿Qué puedes ver a lo lejos?"],snacks:["¿Puedes encontrar el ferri?", "El ferri se mueve por el agua."],beach:["Mira la montaña.", "La montaña está lejos, más allá de la ciudad."],safety:["Mira el agua abajo.", "Los barcos cruzan el agua."],things:["¿Qué ves desde el mirador?", "Veo la ciudad, una montaña, un ferri y el cielo."]}},
+fr:{arrive:["Nous sommes très haut au-dessus de la ville.", "Regarde les bâtiments en dessous de nous."],rides:["Regarde dans la longue-vue.", "Que peux-tu voir au loin ?"],snacks:["Peux-tu trouver le ferry ?", "Le ferry traverse l’eau."],beach:["Regarde la montagne.", "La montagne est loin derrière la ville."],safety:["Regarde l’eau en dessous.", "Les bateaux traversent l’eau."],things:["Que vois-tu depuis la plateforme d’observation ?", "Je vois la ville, une montagne, un ferry et le ciel."]}},
+de:{arrive:["Wir sind hoch über der Stadt.", "Schau dir die Gebäude unter uns an."],rides:["Schau durch das Fernrohr.", "Was kannst du in der Ferne sehen?"],snacks:["Kannst du die Fähre finden?", "Die Fähre fährt über das Wasser."],beach:["Schau dir den Berg an.", "Der Berg liegt weit hinter der Stadt."],safety:["Schau auf das Wasser unter uns.", "Boote fahren über das Wasser."],things:["Was siehst du von der Aussichtsplattform?", "Ich sehe die Stadt, einen Berg, eine Fähre und den Himmel."]}},
+it:{arrive:["Siamo molto in alto sopra la città.", "Guarda gli edifici sotto di noi."],rides:["Guarda nel binocolo panoramico.", "Che cosa riesci a vedere lontano?"],snacks:["Riesci a trovare il traghetto?", "Il traghetto attraversa l’acqua."],beach:["Guarda la montagna.", "La montagna è lontana, oltre la città."],safety:["Guarda l’acqua sotto di noi.", "Le barche attraversano l’acqua."],things:["Che cosa vedi dalla terrazza panoramica?", "Vedo la città, una montagna, un traghetto e il cielo."]}},
+pt:{arrive:["Estamos bem acima da cidade.", "Olhe os prédios abaixo de nós."],rides:["Olhe pelo binóculo panorâmico.", "O que você consegue ver ao longe?"],snacks:["Você consegue encontrar a balsa?", "A balsa está atravessando a água."],beach:["Olhe a montanha.", "A montanha fica longe, além da cidade."],safety:["Olhe a água abaixo.", "Os barcos atravessam a água."],things:["O que você vê do mirante?", "Eu vejo a cidade, uma montanha, uma balsa e o céu."]}},
+no:{arrive:["Vi er høyt over byen.", "Se på bygningene under oss."],rides:["Se gjennom utsiktskikkerten.", "Hva kan du se langt borte?"],snacks:["Kan du finne fergen?", "Fergen beveger seg over vannet."],beach:["Se på fjellet.", "Fjellet ligger langt bortenfor byen."],safety:["Se på vannet nedenfor.", "Båter beveger seg over vannet."],things:["Hva ser du fra utsiktsplattformen?", "Jeg ser byen, et fjell, en ferge og himmelen."]}}
 };
-document.querySelectorAll("[data-lesson]").forEach(b=>b.onclick=()=>{challenge=-1;world.classList.remove("challenge-mode");const a=lessons[b.dataset.lesson];title.textContent=b.textContent.replace(/^\d+\.\s*/,"");prompt.textContent=a[0];line.textContent=a[1];translation.textContent="";lastWord="";speak(a[1])});
-document.getElementById("normal").onclick=()=>speak(lastWord?LANGS[langSel.value].words[lastWord][0]:line.textContent,.82);
-document.getElementById("slow").onclick=()=>speak(lastWord?LANGS[langSel.value].words[lastWord][0]:line.textContent,.58);
-document.getElementById("replay").onclick=()=>speak(lastWord?LANGS[langSel.value].words[lastWord][0]:line.textContent,.82);
-langSel.onchange=()=>{if(lastWord)showWord(lastWord)};
+let activeLesson="";
+function showLesson(key,speakIt=false){
+  activeLesson=key;lastWord="";
+  const a=lessons[langSel.value][key];
+  const btn=document.querySelector(`[data-lesson="${key}"]`);
+  title.textContent=btn?btn.textContent.replace(/^\d+\.\s*/,""):"Observation Deck Adventure";
+  prompt.textContent=a[0];line.textContent=a[1];
+  translation.textContent=langSel.value==="en"?"":lessons.en[key][1];
+  if(speakIt)speak(a[1]);
+}
+document.querySelectorAll("[data-lesson]").forEach(b=>b.onclick=()=>{challenge=-1;world.classList.remove("challenge-mode");status.textContent="";showLesson(b.dataset.lesson,true)});
+function currentSpeechText(){if(activeLesson)return lessons[langSel.value][activeLesson][1];if(lastWord)return LANGS[langSel.value].words[lastWord][0];return line.textContent}
+document.getElementById("normal").onclick=()=>speak(currentSpeechText(),.82);
+document.getElementById("slow").onclick=()=>speak(currentSpeechText(),.58);
+document.getElementById("replay").onclick=()=>speak(currentSpeechText(),.82);
+langSel.onchange=()=>{if(activeLesson)showLesson(activeLesson,false);else if(lastWord)showWord(lastWord)};
 document.getElementById("sceneView").onclick=()=>document.body.classList.add("scene-view");
 document.getElementById("sceneReturn").onclick=()=>document.body.classList.remove("scene-view");
 showWord("city");
