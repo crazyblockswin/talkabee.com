@@ -966,6 +966,11 @@ header .brand-tagline{white-space:normal!important;line-height:1.12!important;}
    <div class="hero-right">
     <div class="hero-feature-card" style="background-image:none!important;background-color:#dcecff;">
       <img class="talkabee-main-entrance-image" src="images/talkabee-directory-balloon-world.jpg" alt="" aria-hidden="true">
+      <div class="directory-sound-hotspots" aria-label="Scene sounds">
+        <button class="directory-sound-hotspot" type="button" data-sound="sounds/waterfall.mp3" data-x="75.0" data-y="55.0" data-w="11.5" data-h="34.0" aria-label="Play waterfall sound"><span>Waterfall</span></button>
+        <button class="directory-sound-hotspot" type="button" data-sound="sounds/hot-air-balloon.mp3" data-x="90.0" data-y="36.0" data-w="18.0" data-h="55.0" aria-label="Play hot-air balloon sound"><span>Hot-air balloon</span></button>
+        <button class="directory-sound-hotspot" type="button" data-sound="sounds/campground-night.mp3" data-x="31.0" data-y="78.0" data-w="38.0" data-h="31.0" aria-label="Play campground night sound"><span>Campground</span></button>
+      </div>
       <div class="hero-feature-overlay hero-copy-overlay">
        <span class="eyebrow">FOLLOW THE BEE. FIND YOUR WORDS.</span>
        <h1>Talk A Bee puts the adventure first.</h1>
@@ -4856,6 +4861,51 @@ document.addEventListener('click',function(e){
 })();
 </script>
 
+
+
+<style id="talkabee-directory-sound-hotspots-20261002">
+/* Directory 1 scene sounds: invisible until hover/focus. */
+#mainDirectory .directory-sound-hotspots{position:absolute;inset:0;z-index:12;pointer-events:none;overflow:hidden;}
+#mainDirectory .directory-sound-hotspot{position:absolute;display:block;margin:0;padding:0;border:2px solid transparent;border-radius:22px;background:transparent;color:#fff;opacity:0;pointer-events:auto;cursor:pointer;transition:opacity .16s ease,background .16s ease,border-color .16s ease,box-shadow .16s ease;}
+#mainDirectory .directory-sound-hotspot:hover,#mainDirectory .directory-sound-hotspot:focus-visible{opacity:1;background:rgba(255,255,255,.10);border-color:rgba(255,255,255,.90);box-shadow:0 0 0 4px rgba(116,82,232,.20),0 8px 28px rgba(0,0,0,.20);outline:none;}
+#mainDirectory .directory-sound-hotspot span{position:absolute;left:50%;bottom:8px;transform:translateX(-50%);white-space:nowrap;padding:5px 9px;border-radius:999px;background:rgba(7,23,39,.78);color:#fff;font-size:12px;font-weight:900;text-shadow:0 1px 2px rgba(0,0,0,.4);}
+</style>
+<script id="talkabee-directory-sound-hotspots-js-20261002">
+(function(){
+  const root=document.getElementById('mainDirectory');
+  if(!root) return;
+  const img=root.querySelector('.talkabee-main-entrance-image');
+  const spots=[...root.querySelectorAll('.directory-sound-hotspot')];
+  if(!img || !spots.length) return;
+  let currentAudio=null;
+
+  function placeDirectorySoundHotspots(){
+    const box=img.getBoundingClientRect();
+    const iw=img.naturalWidth||1672, ih=img.naturalHeight||941;
+    if(!box.width || !box.height) return;
+    const scale=Math.max(box.width/iw,box.height/ih); // object-fit:cover
+    const rw=iw*scale, rh=ih*scale;
+    const cropX=(rw-box.width)/2, cropY=(rh-box.height)/2;
+    spots.forEach(spot=>{
+      const x=(parseFloat(spot.dataset.x)/100)*iw*scale-cropX;
+      const y=(parseFloat(spot.dataset.y)/100)*ih*scale-cropY;
+      const w=(parseFloat(spot.dataset.w)/100)*iw*scale;
+      const h=(parseFloat(spot.dataset.h)/100)*ih*scale;
+      spot.style.left=(x-w/2)+'px'; spot.style.top=(y-h/2)+'px';
+      spot.style.width=w+'px'; spot.style.height=h+'px';
+    });
+  }
+
+  spots.forEach(spot=>spot.addEventListener('click',()=>{
+    if(currentAudio){currentAudio.pause();currentAudio.currentTime=0;}
+    currentAudio=new Audio(spot.dataset.sound);
+    currentAudio.play().catch(()=>{});
+  }));
+  if(img.complete) placeDirectorySoundHotspots();
+  else img.addEventListener('load',placeDirectorySoundHotspots,{once:true});
+  window.addEventListener('resize',placeDirectorySoundHotspots);
+})();
+</script>
 
 </body>
 </html>
