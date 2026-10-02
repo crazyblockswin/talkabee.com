@@ -16,7 +16,7 @@
 .script-mask{position:absolute;z-index:14;left:61.7%;top:61.2%;right:.8%;bottom:1.7%;border-radius:24px;background:#0d2b30;box-shadow:0 15px 35px rgba(0,0,0,.24)}
 .live-card{position:absolute;z-index:15;left:62.3%;top:65.6%;width:35.6%;height:28.3%;padding:18px 22px;color:#fff;border-radius:22px;background:#0d2b30;box-shadow:0 15px 35px rgba(0,0,0,.24);overflow:hidden}
 .kicker{font-size:clamp(10px,.9vw,15px);font-weight:950;letter-spacing:.12em;color:#ffe064}.live-card h1{font-size:clamp(18px,1.7vw,29px);margin:7px 0 8px;line-height:1.08}.prompt{font-size:clamp(10px,.9vw,15px);line-height:1.25;margin:0 0 8px}.target{font-size:clamp(18px,1.65vw,28px);font-weight:950;margin-top:3px}.translation{font-size:clamp(10px,.9vw,15px);margin-top:2px}.actions{display:flex;gap:9px;margin-top:10px;flex-wrap:wrap}.actions button{border:0;border-radius:10px;padding:9px 14px;font-weight:950;font-size:clamp(11px,.9vw,15px);cursor:pointer}.primary{background:#ffd45c;color:#2b2515}.actions button:not(.primary){background:#f6f7fa;color:#253047}
-.hotspot{display:none;position:absolute;z-index:30;transform:translate(-50%,-50%);width:5.2%;aspect-ratio:1/1;border:4px solid rgba(255,255,255,.94);border-radius:50%;background:rgba(255,195,55,.45);box-shadow:0 0 0 7px rgba(255,195,55,.18),0 8px 22px rgba(0,0,0,.28);cursor:pointer;animation:pulse 1.7s ease-in-out infinite}.discover .hotspot,.challenge-mode .hotspot.target-hotspot{display:block}.hotspot:hover{background:rgba(116,82,232,.55)}
+.hotspot{display:block;position:absolute;z-index:30;transform:translate(-50%,-50%);width:5.2%;aspect-ratio:1/1;border:4px solid rgba(255,255,255,.94);border-radius:50%;background:rgba(255,195,55,.45);box-shadow:0 0 0 7px rgba(255,195,55,.18),0 8px 22px rgba(0,0,0,.28);cursor:pointer;animation:pulse 1.7s ease-in-out infinite}.discover .hotspot,.challenge-mode .hotspot.target-hotspot{display:block}.hotspot:hover{background:rgba(116,82,232,.55)}
 @keyframes pulse{50%{transform:translate(-50%,-50%) scale(1.08)}}
 #horse{left:24%;top:35%}#cow{left:43%;top:40%}#sheep{left:35%;top:48%}#goat{left:33%;top:59%}#pig{left:28%;top:68%}#dog{left:53%;top:64%}#rooster{left:82%;top:55%}#chicken{left:76%;top:60%}#rabbit{left:52%;top:88%}#squirrel{left:94%;top:47%}#bee{left:82%;top:14%}
 .status{font-weight:950;color:#ffe064;margin-top:8px;min-height:18px}
@@ -278,9 +278,31 @@ Target the actual elements.
 .live-card .actions button.audio-active{background:#ffd45c!important;color:#2b2515!important;}
 </style>
 
+
+<style id="farm-locked-template-final">
+/* LOCKED TALK-A-BEE TEMPLATE:
+   Hotspots are live from page load; Discovery is optional.
+   Challenge mode still identifies the requested target. */
+.hotspot{display:block!important;}
+
+/* Approved upper-right forward arrow. */
+.talkabee-forward-arrow{
+  position:fixed;z-index:10020;right:22px;top:18px;width:62px;height:62px;
+  border:2px solid rgba(255,255,255,.82);border-radius:50%;
+  background:rgba(11,22,42,.20);box-shadow:0 5px 16px rgba(0,0,0,.14);
+  backdrop-filter:blur(2px);display:grid;place-items:center;text-decoration:none;
+}
+.talkabee-forward-arrow::before{
+  content:"";width:17px;height:17px;border-top:5px solid #fff;border-right:5px solid #fff;
+  transform:rotate(45deg) translate(-2px,2px);filter:drop-shadow(0 1px 2px rgba(0,0,0,.35));
+}
+</style>
+
 </head>
 <body>
 <main class="world" id="world">
+<a class="talkabee-forward-arrow" href="Talk-A-Bee-Boardwalk-Adventure.html" aria-label="Next adventure: Boardwalk Adventure" title="Next Adventure"></a>
+
 <button id="restorePanel" type="button">← Return to Menu</button>
 <img class="scene" src="images/animals-farm-adventure.jpg" alt="Animals Farm Adventure">
 <div class="left-panel" aria-hidden="true"></div>
