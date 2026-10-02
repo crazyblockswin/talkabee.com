@@ -30,7 +30,7 @@ nav a:hover{background:#f2efff;color:var(--violet2)}
 
 .brand-name{display:block;line-height:1;font-size:21px;font-weight:950}.brand-domain{display:block;font-size:10px;color:#7b6e97;margin-top:3px;letter-spacing:.04em}.brand-tagline{font-size:13px;font-weight:850;color:#536077;white-space:nowrap;margin-left:8px;padding-left:16px;border-left:0}.bee-logo{font-size:25px;background:transparent!important;color:#251d10;box-shadow:none!important}.bee-logo img{display:block;width:100%;height:100%;object-fit:contain;background:transparent}.global-controls{margin-left:auto;display:flex;align-items:center;gap:7px;flex-wrap:wrap}.global-controls label{font-size:10px;font-weight:900;color:#6f6484;display:flex;align-items:center;gap:5px}.global-controls select{border:1px solid #ded7e9;background:white;border-radius:9px;padding:7px 8px;font-size:11px;font-weight:800;color:#3d3552}.account-btn{border:1px solid #ded7e9;background:white;color:#3d3552;border-radius:999px;padding:8px 11px;font-weight:900;font-size:11px}.account-btn.join{background:#171a2c;color:#fff;border-color:#171a2c}header nav{margin-left:8px}.bee-guide{position:fixed;right:20px;bottom:22px;z-index:120}.bee-guide-btn{width:58px;height:58px;border:0;border-radius:50%;font-size:30px;background:#ffd455;box-shadow:0 12px 30px rgba(70,49,12,.25);animation:beeFloat 2.4s ease-in-out infinite}.bee-guide-panel{position:absolute;right:0;bottom:68px;width:245px;background:white;border:1px solid #e6deca;border-radius:17px;padding:13px;box-shadow:0 18px 46px rgba(35,28,61,.2);display:none}.bee-guide.open .bee-guide-panel{display:block}.bee-guide-panel b{display:block;margin-bottom:4px}.bee-guide-panel p{margin:0 0 9px;color:#687389;font-size:12px}.bee-guide-panel button{width:100%;border:0;background:#f4efff;color:#5a3ec2;border-radius:9px;padding:8px 9px;font-weight:900;margin-top:5px;text-align:left}@keyframes beeFloat{0%,100%{transform:translateY(0) rotate(-4deg)}50%{transform:translateY(-7px) rotate(5deg)}}@media(max-width:1050px){header nav{display:none}.global-controls{margin-left:auto}.nav{gap:10px}}@media(max-width:720px){.global-controls label.interface-control{display:none}.brand-domain{display:none}.brand-tagline{display:none}.account-btn{display:none}.nav{min-height:64px}}
 
-.hero{min-height:710px;position:relative;display:flex;align-items:center;background-image:url("images/talkabee-image-01.jpg");background-size:cover;background-position:center}
+.hero{min-height:710px;position:relative;display:flex;align-items:center;background-image:none;background-size:cover;background-position:center}
 .hero:after{content:"";position:absolute;inset:auto 0 0;height:170px;background:linear-gradient(transparent,#fffdf9)}
 .hero-content{position:relative;z-index:2;width:min(620px,90%);color:white;padding:70px 0 110px}
 .eyebrow{display:inline-flex;gap:8px;align-items:center;padding:8px 11px;border:1px solid rgba(255,255,255,.28);border-radius:999px;background:rgba(255,255,255,.12);font-size:11px;font-weight:950;letter-spacing:.09em}
@@ -916,7 +916,7 @@ header .brand-tagline{white-space:normal!important;line-height:1.12!important;}
 </div>
 
 <!-- CHECKPOINT 40: Widescreen Grandma & Grandpa artwork installed; left activity panel remains live CSS -->
-<section class="hero" id="mainDirectory">
+<section class="hero" id="mainDirectory" style="background:none!important;background-image:none!important;">
  <div class="wrap">
   <div class="hero-layout hero-sidebar-layout">
    <aside class="landing-directory" aria-label="Main directory">
