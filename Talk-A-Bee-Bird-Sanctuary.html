@@ -263,15 +263,25 @@ const title=$("title"),prompt=$("prompt"),line=$("line"),translation=$("translat
  actions=$("actions"),find=$("find"),count=$("count"),status=$("status"),
  hint=$("hint"),challengeNext=$("challengeNext");
 
-function speak(t){
- if(!("speechSynthesis" in window)) return;
- speechSynthesis.cancel();
- const u=new SpeechSynthesisUtterance(t);
- u.lang=LANGS[currentLang()].code;
- u.rate=.82;
- const chosen=speechSynthesis.getVoices().find(v=>v.name===voiceSelect.value);
- if(chosen) u.voice=chosen;
- speechSynthesis.speak(u);
+function speak(t,onDone){
+  if(typeof sceneAudio!=="undefined") stopSceneSound();
+  if(!("speechSynthesis" in window)){
+    if(typeof onDone==="function") onDone();
+    return;
+  }
+  speechSynthesis.cancel();
+  const u=new SpeechSynthesisUtterance(t);
+  u.lang=data().speech;
+  const v=selectedVoice();
+  if(v)u.voice=v;
+  u.rate=.82;
+  if(typeof onDone==="function"){
+    let finished=false;
+    const finish=()=>{if(finished)return;finished=true;onDone();};
+    u.onend=finish;
+    u.onerror=finish;
+  }
+  speechSynthesis.speak(u);
 }
 function clearActive(){document.querySelectorAll(".directory button").forEach(b=>b.classList.remove("active"))}
 function render(){const x=lessons[active].lines[index];line.textContent=x[0];translation.textContent=x[1]}
@@ -312,8 +322,9 @@ document.querySelectorAll(".hotspot").forEach(b=>b.onclick=()=>{
  const key=b.dataset.word,x=objectWord(key);
  const hasSceneSound=Boolean(SCENE_SOUNDS[key]);
 
- // Real scene sounds are always live — no Discovery button required.
- if(hasSceneSound) playSceneSound(SCENE_SOUNDS[key]);
+ // Every hotspot speaks its selected-language object name immediately.
+ // Recorded scene sounds wait until the spoken name finishes.
+ const speakObject=()=>speak(x[0],hasSceneSound?()=>playSceneSound(SCENE_SOUNDS[key]):undefined);
 
  if(challenge>=0){
    const target=challengeOrder[challenge];
@@ -321,18 +332,18 @@ document.querySelectorAll(".hotspot").forEach(b=>b.onclick=()=>{
    if(correct){
      solved=true;status.textContent="✓ Nice find! "+x[0]+" "+x[1];
      status.style.color="#176a48";hint.textContent="Challenge complete. Move to the next one.";
-     if(!hasSceneSound) speak(x[0]);
    } else {
      status.textContent="Not that one — keep looking.";status.style.color="#85580f";
    }
+   speakObject();
    return;
  }
 
  if(discovery){
    title.textContent="Click & Discover";prompt.textContent="You found something in the scene.";
    line.textContent=x[0];translation.textContent=x[1];
-   if(!hasSceneSound) speak(x[0]);
  }
+ speakObject();
 });
 
 
