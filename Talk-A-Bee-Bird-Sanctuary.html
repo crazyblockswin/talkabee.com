@@ -251,10 +251,11 @@ const SCENE_SOUNDS={
 };
 function stopSceneSound(){sceneAudio.pause();sceneAudio.currentTime=0;}
 function playSceneSound(file){
- if("speechSynthesis" in window) speechSynthesis.cancel();
- stopSceneSound();
- sceneAudio.src=file;
- sceneAudio.play().catch(()=>{});
+  stopSceneSound();
+  sceneAudio.src=file;
+  sceneAudio.load();
+  const playPromise=sceneAudio.play();
+  if(playPromise&&typeof playPromise.catch==="function")playPromise.catch(()=>{});
 }
 const challengeOrder=["birdhouse","hammer","paintbrush","birdfeeder","bluebird","butterfly"];
 let active="meet",index=0,challenge=-1,solved=false,discovery=false;
@@ -275,11 +276,22 @@ function speak(t,onDone){
   const v=selectedVoice();
   if(v)u.voice=v;
   u.rate=.82;
+
+  let fallbackTimer=null;
   if(typeof onDone==="function"){
     let finished=false;
-    const finish=()=>{if(finished)return;finished=true;onDone();};
+    const finish=()=>{
+      if(finished)return;
+      finished=true;
+      if(fallbackTimer)clearTimeout(fallbackTimer);
+      onDone();
+    };
     u.onend=finish;
     u.onerror=finish;
+    // Firefox safety net: estimate speech duration, then play the real sound
+    // if onend/onerror never arrives.
+    const words=String(t).trim().split(/\s+/).filter(Boolean).length;
+    fallbackTimer=setTimeout(finish,Math.max(1100,words*650));
   }
   speechSynthesis.speak(u);
 }
