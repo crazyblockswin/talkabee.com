@@ -1,0 +1,213 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Talk A Bee — Skydiving Adventure</title>
+<link rel="icon" type="image/png" href="images/talkabee-favicon.png">
+<style>
+*{box-sizing:border-box}
+html,body{margin:0;width:100%;height:100%;overflow:hidden;font-family:Arial,Helvetica,sans-serif;background:#063a66;color:#fff}
+.world{position:relative;width:100vw;height:100vh;background:url("images/Talk-A-Bee-Skydiving-Adventure.jpg") center center/cover no-repeat}
+
+/* APPROVED TALK A BEE LEFT PANEL */
+.panel{position:fixed;z-index:1000;left:16px;top:16px;bottom:16px;width:180px;min-width:180px;max-width:180px;
+padding:14px;overflow-x:hidden;overflow-y:auto;border-radius:20px;border:1px solid rgba(255,255,255,.28);
+background:rgba(7,23,39,.31);box-shadow:0 12px 30px rgba(0,0,0,.24);backdrop-filter:blur(3px);-webkit-backdrop-filter:blur(3px)}
+.panel h1{font-size:19px;line-height:1.08;margin:4px 0 10px;text-shadow:0 2px 4px rgba(0,0,0,.55)}
+.label{font-size:9.5px;line-height:1.1;letter-spacing:.09em;font-weight:900;margin:9px 0 4px}
+.panel button,.panel select,.panel a{width:100%;min-height:34px;margin:4px 0;padding:8px 9px;border-radius:12px;
+border:1px solid rgba(255,255,255,.38);background:rgba(7,32,50,.54);color:#fff;font:800 12px/1.16 Arial,sans-serif;
+text-align:left;text-decoration:none}
+.panel button:hover,.panel a:hover{background:rgba(20,58,79,.70)}
+.panel button.active{background:rgba(78,69,219,.74)}
+.panel select{white-space:nowrap;text-overflow:ellipsis;overflow:hidden}
+
+/* APPROVED 520px SCRIPT CARD */
+.card{position:fixed;z-index:900;left:50%;bottom:16px;width:520px;max-width:520px;padding:14px 16px;
+border-radius:20px;border:1px solid rgba(255,255,255,.30);background:rgba(25,19,24,.38);
+box-shadow:0 12px 30px rgba(0,0,0,.28);backdrop-filter:blur(5px);-webkit-backdrop-filter:blur(5px);
+transform:translateX(-50%) scale(.67);transform-origin:bottom center}
+.card .kicker{font-size:15px;line-height:1.25;font-weight:900;letter-spacing:.10em;color:rgba(255,255,255,.96);
+text-shadow:0 1px 3px rgba(0,0,0,.78);margin:0 0 6px}
+.card h2{font-size:22px;line-height:1.08;margin:4px 0 7px;text-shadow:0 1px 3px rgba(0,0,0,.55)}
+.card p{font-size:18px;line-height:1.35;margin:4px 0 7px}
+.word{margin-top:8px;padding:10px 12px;border-radius:14px;background:rgba(88,88,88,.72);border:1px solid rgba(255,255,255,.20)}
+.word strong{display:block;font-size:22px;line-height:1.28}
+.translation{font-size:18px;line-height:1.35;margin-top:3px}
+.controls{display:flex;align-items:center;gap:8px;flex-wrap:nowrap;margin-top:8px}
+.controls button{width:auto;min-width:0;padding:9px 13px;border-radius:12px;border:1px solid rgba(255,255,255,.35);
+background:rgba(255,255,255,.88);color:#10283c;font:900 13px/1 Arial,sans-serif;white-space:nowrap}
+
+/* HOTSPOTS */
+.hotspot{position:absolute;z-index:8;border:0;background:transparent;opacity:0;cursor:pointer;border-radius:16px}
+.hotspot:hover,.hotspot:focus-visible{opacity:1;background:rgba(255,220,72,.28);outline:2px solid rgba(255,255,255,.90)}
+.challenge-mode .hotspot.target{opacity:1;background:rgba(255,199,48,.38);outline:4px solid #fff;box-shadow:0 0 0 7px rgba(255,200,50,.20)}
+
+/* APPROVED COMPACT PREVIOUS / NEXT CHEVRONS */
+.talkabee-prev-next-nav{position:fixed;top:18px;right:22px;z-index:2147483000;display:flex;align-items:center;overflow:hidden;
+border:2px solid rgba(255,255,255,.82);border-radius:999px;background:rgba(11,22,42,.24);
+box-shadow:0 5px 16px rgba(0,0,0,.16);backdrop-filter:blur(3px);-webkit-backdrop-filter:blur(3px)}
+.talkabee-prev-next-nav a{width:48px;height:48px;display:grid;place-items:center;text-decoration:none;color:#fff;
+font:900 38px/1 Arial,sans-serif;text-shadow:0 1px 3px rgba(0,0,0,.42)}
+.talkabee-prev-next-nav a+a{border-left:1px solid rgba(255,255,255,.36)}
+.talkabee-prev-next-nav a:hover,.talkabee-prev-next-nav a:focus-visible{background:rgba(255,255,255,.18);outline:none}
+
+/* SCENE VIEW */
+.scene-return{display:none;position:fixed;z-index:2147483001;left:18px;top:18px;padding:10px 14px;border-radius:12px;
+border:1px solid #fff;background:rgba(7,23,39,.65);color:#fff;font-weight:900}
+.scene-view .panel,.scene-view .card,.scene-view .talkabee-prev-next-nav{display:none}
+.scene-view .scene-return{display:block}
+
+@media(max-width:760px){
+ .panel{left:10px;top:10px;bottom:10px;width:180px;min-width:180px;max-width:180px;padding:11px}
+ .card{width:min(520px,calc(100vw - 32px));bottom:10px;transform:translateX(-50%) scale(.82)}
+ .talkabee-prev-next-nav{top:12px;right:12px}.talkabee-prev-next-nav a{width:42px;height:42px;font-size:33px}
+}
+</style>
+</head>
+<body>
+<nav class="talkabee-prev-next-nav" aria-label="Adventure navigation">
+  <a href="Talk-A-Bee-Boat-Locks-Adventure.html" aria-label="Previous adventure" title="Previous">‹</a>
+  <a href="Talk-A-Bee-Nighttime-Campground-Adventure.html" aria-label="Next adventure" title="Next">›</a>
+</nav>
+
+<main class="world" id="world">
+<button class="scene-return" id="sceneReturn">Return to Adventure</button>
+
+<aside class="panel">
+<h1>🪂 Skydiving Adventure</h1>
+<div class="label">LANGUAGE</div>
+<select id="lang">
+<option value="es">Spanish</option><option value="fr">French</option><option value="en">English</option>
+<option value="de">German</option><option value="it">Italian</option><option value="pt">Portuguese</option><option value="no">Norwegian</option>
+</select>
+<div class="label">VOICE</div>
+<select id="voice"><option value="">Browser Default</option></select>
+<button id="sceneView">◉ Scene View</button>
+
+<div class="label">DISCOVERY</div>
+<button id="discovery">🔎 Discovery — Click the Scene</button>
+
+<div class="label">ACTIVITIES</div>
+<button data-lesson="plane">1. Ride Up in the Plane</button>
+<button data-lesson="gear">2. Check the Skydiving Gear</button>
+<button data-lesson="jump">3. Exit the Airplane</button>
+<button data-lesson="freefall">4. Feel the Freefall</button>
+<button data-lesson="parachute">5. Open the Parachute</button>
+<button data-lesson="view">6. Explore the View Below</button>
+<div class="label">CHALLENGES</div>
+<button data-ch="0">1. Find the Flying Bee</button>
+<button data-ch="1">2. Find the Airplane</button>
+<button data-ch="2">3. Find a Helmet</button>
+<button data-ch="3">4. Find a Parachute Pack</button>
+<button data-ch="4">5. Find the Mountain</button>
+<button data-ch="5">6. Find the Lake</button>
+<a href="index.html">← Return to Main Directory</a>
+</aside>
+
+<section class="card">
+<div class="kicker">SKYDIVING OVER THE MOUNTAINS</div>
+<h2 id="title">Skydiving Adventure</h2>
+<p id="prompt">Click any object in the scene to hear its name.</p>
+<div class="word"><strong id="line">paracaidismo</strong><div class="translation" id="translation">skydiving</div></div>
+<p id="status"></p>
+<div class="controls">
+<button id="normal">🔊 Speak</button><button id="slow">🐢 Slow</button><button id="replay">↻ Replay</button><button id="nextPhrase">Next phrase →</button>
+</div>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- Hotspots mapped to the approved Skydiving keeper JPG. -->
+<button class="hotspot" data-word="bee" style="left:17%;top:13%;width:14%;height:21%" aria-label="Flying Bee"></button>
+<button class="hotspot" data-word="airplane" style="left:20%;top:0%;width:80%;height:43%" aria-label="Airplane"></button>
+<button class="hotspot" data-word="door" style="left:78%;top:0%;width:22%;height:36%" aria-label="Airplane door"></button>
+<button class="hotspot" data-word="crew" style="left:80%;top:3%;width:14%;height:24%" aria-label="Crew member"></button>
+<button class="hotspot" data-word="instructor" style="left:38%;top:17%;width:31%;height:28%" aria-label="Skydiving instructor"></button>
+<button class="hotspot" data-word="jumperblue" style="left:21%;top:28%;width:36%;height:35%" aria-label="Blue skydiver"></button>
+<button class="hotspot" data-word="jumperpink" style="left:57%;top:27%;width:29%;height:31%" aria-label="Pink skydiver"></button>
+<button class="hotspot" data-word="helmet" style="left:36%;top:27%;width:10%;height:14%" aria-label="Helmet"></button>
+<button class="hotspot" data-word="goggles" style="left:37%;top:32%;width:9%;height:9%" aria-label="Goggles"></button>
+<button class="hotspot" data-word="harness" style="left:39%;top:41%;width:12%;height:16%" aria-label="Skydiving harness"></button>
+<button class="hotspot" data-word="parachute" style="left:50%;top:17%;width:12%;height:22%" aria-label="Parachute pack"></button>
+<button class="hotspot" data-word="wing" style="left:18%;top:0%;width:55%;height:18%" aria-label="Airplane wing"></button>
+<button class="hotspot" data-word="mountain" style="left:39%;top:51%;width:31%;height:27%" aria-label="Snowy mountain"></button>
+<button class="hotspot" data-word="lake" style="left:8%;top:68%;width:67%;height:31%" aria-label="Mountain lake"></button>
+<button class="hotspot" data-word="islands" style="left:25%;top:72%;width:43%;height:24%" aria-label="Islands"></button>
+<button class="hotspot" data-word="clouds" style="left:0%;top:37%;width:35%;height:28%" aria-label="Clouds"></button>
+<button class="hotspot" data-word="forest" style="left:0%;top:56%;width:35%;height:43%" aria-label="Forest"></button>
+<button class="hotspot" data-word="sky" style="left:0%;top:0%;width:22%;height:39%" aria-label="Blue sky"></button>
+<button class="hotspot" data-word="landinggear" style="left:94%;top:51%;width:6%;height:24%" aria-label="Landing gear"></button>
+<button class="hotspot" data-word="valley" style="left:66%;top:53%;width:34%;height:37%" aria-label="Mountain valley"></button>
+
+</main>
+
+<script>
+const EN={game:"skydiving",bee:"flying bee",airplane:"airplane",door:"airplane door",crew:"crew member",instructor:"skydiving instructor",jumperblue:"skydiver",jumperpink:"skydiver",helmet:"helmet",goggles:"goggles",harness:"skydiving harness",parachute:"parachute pack",wing:"airplane wing",mountain:"snowy mountain",lake:"mountain lake",islands:"islands",clouds:"clouds",forest:"forest",sky:"blue sky",landinggear:"landing gear",valley:"mountain valley"};
+const WORDS={
+es:{game:"paracaidismo",bee:"abeja voladora",airplane:"avión",door:"puerta del avión",crew:"miembro de la tripulación",instructor:"instructor de paracaidismo",jumperblue:"paracaidista",jumperpink:"paracaidista",helmet:"casco",goggles:"gafas protectoras",harness:"arnés de paracaidismo",parachute:"mochila del paracaídas",wing:"ala del avión",mountain:"montaña nevada",lake:"lago de montaña",islands:"islas",clouds:"nubes",forest:"bosque",sky:"cielo azul",landinggear:"tren de aterrizaje",valley:"valle de montaña"},
+fr:{game:"parachutisme",bee:"abeille volante",airplane:"avion",door:"porte de l'avion",crew:"membre d'équipage",instructor:"instructeur de parachutisme",jumperblue:"parachutiste",jumperpink:"parachutiste",helmet:"casque",goggles:"lunettes de protection",harness:"harnais de parachutisme",parachute:"sac de parachute",wing:"aile de l'avion",mountain:"montagne enneigée",lake:"lac de montagne",islands:"îles",clouds:"nuages",forest:"forêt",sky:"ciel bleu",landinggear:"train d'atterrissage",valley:"vallée de montagne"},
+en:{...EN},
+de:{game:"Fallschirmspringen",bee:"fliegende Biene",airplane:"Flugzeug",door:"Flugzeugtür",crew:"Besatzungsmitglied",instructor:"Fallschirmsprunglehrer",jumperblue:"Fallschirmspringer",jumperpink:"Fallschirmspringer",helmet:"Helm",goggles:"Schutzbrille",harness:"Fallschirmgurt",parachute:"Fallschirmpaket",wing:"Flugzeugflügel",mountain:"schneebedeckter Berg",lake:"Bergsee",islands:"Inseln",clouds:"Wolken",forest:"Wald",sky:"blauer Himmel",landinggear:"Fahrwerk",valley:"Bergtal"},
+it:{game:"paracadutismo",bee:"ape volante",airplane:"aereo",door:"porta dell'aereo",crew:"membro dell'equipaggio",instructor:"istruttore di paracadutismo",jumperblue:"paracadutista",jumperpink:"paracadutista",helmet:"casco",goggles:"occhiali protettivi",harness:"imbracatura da paracadutismo",parachute:"zaino del paracadute",wing:"ala dell'aereo",mountain:"montagna innevata",lake:"lago di montagna",islands:"isole",clouds:"nuvole",forest:"foresta",sky:"cielo blu",landinggear:"carrello di atterraggio",valley:"valle di montagna"},
+pt:{game:"paraquedismo",bee:"abelha voadora",airplane:"avião",door:"porta do avião",crew:"membro da tripulação",instructor:"instrutor de paraquedismo",jumperblue:"paraquedista",jumperpink:"paraquedista",helmet:"capacete",goggles:"óculos de proteção",harness:"arnês de paraquedismo",parachute:"mochila do paraquedas",wing:"asa do avião",mountain:"montanha nevada",lake:"lago de montanha",islands:"ilhas",clouds:"nuvens",forest:"floresta",sky:"céu azul",landinggear:"trem de pouso",valley:"vale de montanha"},
+no:{game:"fallskjermhopping",bee:"flygende bie",airplane:"fly",door:"flydør",crew:"besetningsmedlem",instructor:"fallskjerminstruktør",jumperblue:"fallskjermhopper",jumperpink:"fallskjermhopper",helmet:"hjelm",goggles:"vernebriller",harness:"fallskjermsele",parachute:"fallskjermpakke",wing:"flyvinge",mountain:"snødekt fjell",lake:"fjellvann",islands:"øyer",clouds:"skyer",forest:"skog",sky:"blå himmel",landinggear:"landingshjul",valley:"fjelldal"}};
+const SPEECH_LANG={es:"es-ES",fr:"fr-FR",en:"en-US",de:"de-DE",it:"it-IT",pt:"pt-PT",no:"nb-NO"};
+const lessons={
+en:{plane:["The skydivers ride in an airplane until they reach the planned jumping altitude.","The crew checks the open door and the area outside before anyone exits."],gear:["Skydivers use a helmet, goggles, a harness, and a parachute system.","The equipment is checked before the jump so everything is secure."],jump:["At the correct time, the skydivers leave the airplane and move into a stable body position.","The instructor stays nearby and watches the jump."],freefall:["During freefall, air pushes against the skydivers as they move through the sky.","A stable position helps them control their direction and body movement."],parachute:["At the planned altitude, the parachute is deployed and fills with air.","The open parachute slows the descent for the trip toward the landing area."],view:["From high above, the skydivers can see mountains, forests, islands, clouds, and a huge blue lake.","The landscape looks completely different from thousands of feet in the air."]},
+es:{plane:["Los paracaidistas viajan en avión hasta alcanzar la altitud prevista para el salto.","La tripulación revisa la puerta abierta y la zona exterior antes de que alguien salga."],gear:["Los paracaidistas usan casco, gafas, arnés y un sistema de paracaídas.","El equipo se revisa antes del salto para comprobar que todo esté seguro."],jump:["En el momento correcto, los paracaidistas salen del avión y adoptan una posición estable.","El instructor permanece cerca y observa el salto."],freefall:["Durante la caída libre, el aire empuja a los paracaidistas mientras se mueven por el cielo.","Una posición estable ayuda a controlar la dirección y el movimiento del cuerpo."],parachute:["A la altitud prevista, se abre el paracaídas y se llena de aire.","El paracaídas abierto reduce la velocidad para el descenso hacia la zona de aterrizaje."],view:["Desde gran altura, los paracaidistas pueden ver montañas, bosques, islas, nubes y un enorme lago azul.","El paisaje se ve completamente diferente desde miles de pies de altura."]},
+fr:{plane:["Les parachutistes montent dans un avion jusqu'à l'altitude prévue pour le saut.","L'équipage vérifie la porte ouverte et la zone extérieure avant la sortie."],gear:["Les parachutistes utilisent un casque, des lunettes, un harnais et un système de parachute.","L'équipement est vérifié avant le saut pour s'assurer que tout est bien fixé."],jump:["Au bon moment, les parachutistes quittent l'avion et prennent une position stable.","L'instructeur reste à proximité et surveille le saut."],freefall:["Pendant la chute libre, l'air pousse contre les parachutistes pendant leur descente.","Une position stable aide à contrôler la direction et les mouvements du corps."],parachute:["À l'altitude prévue, le parachute est déployé et se remplit d'air.","Le parachute ouvert ralentit la descente vers la zone d'atterrissage."],view:["De très haut, les parachutistes voient des montagnes, des forêts, des îles, des nuages et un immense lac bleu.","Le paysage paraît complètement différent à plusieurs milliers de pieds d'altitude."]},
+de:{plane:["Die Fallschirmspringer fliegen mit einem Flugzeug bis zur geplanten Absprunghöhe.","Die Besatzung überprüft die offene Tür und den Bereich draußen, bevor jemand aussteigt."],gear:["Fallschirmspringer tragen Helm, Schutzbrille, Gurtzeug und ein Fallschirmsystem.","Die Ausrüstung wird vor dem Sprung überprüft, damit alles sicher sitzt."],jump:["Zum richtigen Zeitpunkt verlassen die Fallschirmspringer das Flugzeug und nehmen eine stabile Körperhaltung ein.","Der Lehrer bleibt in der Nähe und beobachtet den Sprung."],freefall:["Im freien Fall drückt die Luft gegen die Fallschirmspringer, während sie sich durch den Himmel bewegen.","Eine stabile Haltung hilft, Richtung und Körperbewegung zu kontrollieren."],parachute:["In der geplanten Höhe wird der Fallschirm geöffnet und füllt sich mit Luft.","Der geöffnete Fallschirm verlangsamt den Sinkflug zur Landezone."],view:["Von hoch oben sehen die Fallschirmspringer Berge, Wälder, Inseln, Wolken und einen riesigen blauen See.","Die Landschaft sieht aus mehreren tausend Fuß Höhe völlig anders aus."]},
+it:{plane:["I paracadutisti viaggiano in aereo fino a raggiungere l'altitudine prevista per il lancio.","L'equipaggio controlla la porta aperta e la zona esterna prima dell'uscita."],gear:["I paracadutisti usano casco, occhiali, imbracatura e sistema di paracadute.","L'attrezzatura viene controllata prima del lancio per assicurarsi che sia tutto sicuro."],jump:["Al momento giusto, i paracadutisti lasciano l'aereo e assumono una posizione stabile.","L'istruttore rimane vicino e osserva il lancio."],freefall:["Durante la caduta libera, l'aria spinge contro i paracadutisti mentre attraversano il cielo.","Una posizione stabile aiuta a controllare la direzione e i movimenti del corpo."],parachute:["All'altitudine prevista, il paracadute viene aperto e si riempie d'aria.","Il paracadute aperto rallenta la discesa verso la zona di atterraggio."],view:["Dall'alto, i paracadutisti vedono montagne, foreste, isole, nuvole e un enorme lago blu.","Il paesaggio appare completamente diverso da migliaia di piedi di altezza."]},
+pt:{plane:["Os paraquedistas viajam de avião até alcançar a altitude planejada para o salto.","A tripulação verifica a porta aberta e a área externa antes da saída."],gear:["Os paraquedistas usam capacete, óculos, arnês e um sistema de paraquedas.","O equipamento é verificado antes do salto para garantir que tudo esteja seguro."],jump:["No momento correto, os paraquedistas saem do avião e assumem uma posição estável.","O instrutor permanece por perto e acompanha o salto."],freefall:["Durante a queda livre, o ar empurra os paraquedistas enquanto eles se movem pelo céu.","Uma posição estável ajuda a controlar a direção e os movimentos do corpo."],parachute:["Na altitude planejada, o paraquedas é aberto e se enche de ar.","O paraquedas aberto reduz a velocidade da descida até a área de pouso."],view:["Do alto, os paraquedistas podem ver montanhas, florestas, ilhas, nuvens e um enorme lago azul.","A paisagem parece completamente diferente a milhares de pés de altura."]},
+no:{plane:["Fallskjermhopperne flyr med et fly til den planlagte hopphøyden.","Besetningen sjekker den åpne døren og området utenfor før noen går ut."],gear:["Fallskjermhoppere bruker hjelm, vernebriller, sele og et fallskjermsystem.","Utstyret kontrolleres før hoppet slik at alt sitter sikkert."],jump:["På riktig tidspunkt forlater fallskjermhopperne flyet og går inn i en stabil kroppsstilling.","Instruktøren holder seg i nærheten og følger med på hoppet."],freefall:["Under fritt fall presser luften mot fallskjermhopperne mens de beveger seg gjennom himmelen.","En stabil stilling hjelper dem å kontrollere retning og kroppsbevegelse."],parachute:["I den planlagte høyden åpnes fallskjermen og fylles med luft.","Den åpne fallskjermen bremser nedstigningen mot landingsområdet."],view:["Høyt over bakken kan fallskjermhopperne se fjell, skoger, øyer, skyer og en enorm blå innsjø.","Landskapet ser helt annerledes ut fra flere tusen fots høyde."]}};
+const challengeOrder=["bee","airplane","helmet","parachute","mountain","lake"];
+const SOUND_MAP={};
+const langSel=document.getElementById("lang"),voiceSel=document.getElementById("voice");
+const title=document.getElementById("title"),prompt=document.getElementById("prompt"),line=document.getElementById("line"),translation=document.getElementById("translation"),status=document.getElementById("status"),world=document.getElementById("world");
+let lastWord="game",activeLesson="",lessonPhrase=1,challenge=-1,lastSpoken="";
+function voices(){return ("speechSynthesis" in window)?speechSynthesis.getVoices():[]}
+function fillVoices(){const old=localStorage.getItem("talkabee-skydiving-voice-"+langSel.value)||"";voiceSel.innerHTML='<option value="">Browser Default</option>';voices().forEach(v=>{const o=document.createElement("option");o.value=v.name;o.textContent=v.name+(v.lang?" — "+v.lang:"");voiceSel.appendChild(o)});if([...voiceSel.options].some(o=>o.value===old))voiceSel.value=old}
+if("speechSynthesis" in window){speechSynthesis.onvoiceschanged=fillVoices;fillVoices();setTimeout(fillVoices,150);setTimeout(fillVoices,600);setTimeout(fillVoices,1500)}
+voiceSel.onchange=()=>localStorage.setItem("talkabee-skydiving-voice-"+langSel.value,voiceSel.value);
+function speak(text,rate=.88,onend=null){if(!text||!("speechSynthesis" in window)){if(onend)onend();return}speechSynthesis.cancel();setTimeout(()=>{const u=new SpeechSynthesisUtterance(text);u.lang=SPEECH_LANG[langSel.value]||langSel.value;u.rate=rate;const v=speechSynthesis.getVoices().find(x=>x.name===voiceSel.value);if(v)u.voice=v;if(onend)u.onend=onend;speechSynthesis.speak(u)},50);lastSpoken=text}
+function stopSound(){document.querySelectorAll("audio[data-talkabee-sound]").forEach(a=>{a.pause();a.currentTime=0;a.remove()})}
+function playSound(key){stopSound();const src=SOUND_MAP[key];if(!src)return;const a=new Audio(src);a.dataset.talkabeeSound="1";document.body.appendChild(a);a.play().catch(()=>{});a.onended=()=>a.remove()}
+function showWord(key){activeLesson="";lastWord=key;lessonPhrase=1;title.textContent="Click & Discover";prompt.textContent="You found "+(EN[key]||key)+".";line.textContent=WORDS[langSel.value][key]||EN[key]||key;translation.textContent=langSel.value==="en"?"":(EN[key]||key)}
+document.querySelectorAll(".hotspot").forEach(b=>b.onclick=()=>{const key=b.dataset.word;showWord(key);let played=false;const after=()=>{if(played)return;played=true;playSound(key)};speak(WORDS[langSel.value][key]||EN[key]||key,.82,after);setTimeout(after,1500);if(challenge>=0){if(key===challengeOrder[challenge]){status.textContent="✓ Nice find!";status.style.color="#9dffbf"}else{status.textContent="Not that one — keep looking.";status.style.color="#ffe28a"}}});
+function clearChallenge(){challenge=-1;world.classList.remove("challenge-mode");document.querySelectorAll(".hotspot").forEach(h=>h.classList.remove("target"));status.textContent=""}
+document.getElementById("discovery").onclick=()=>{clearChallenge();activeLesson="";lastWord="game";title.textContent="Click & Discover";prompt.textContent="Click any object in the scene to hear its name.";line.textContent=WORDS[langSel.value].game;translation.textContent=langSel.value==="en"?"":EN.game};
+document.querySelectorAll("[data-ch]").forEach(b=>b.onclick=()=>{activeLesson="";lastWord="";challenge=+b.dataset.ch;world.classList.add("challenge-mode");document.querySelectorAll(".hotspot").forEach(h=>h.classList.toggle("target",h.dataset.word===challengeOrder[challenge]));title.textContent="Challenge "+(challenge+1)+" of 6";prompt.textContent=b.textContent.replace(/^[0-9]+\.\s*/,"");line.textContent=WORDS[langSel.value][challengeOrder[challenge]];translation.textContent=langSel.value==="en"?"":EN[challengeOrder[challenge]];status.textContent=""});
+function showLesson(key,speakIt=false){clearChallenge();activeLesson=key;lastWord="";lessonPhrase=Math.max(0,Math.min(1,lessonPhrase));const a=lessons[langSel.value][key],e=lessons.en[key],btn=document.querySelector(`[data-lesson="${key}"]`);title.textContent=btn?btn.textContent.replace(/^[0-9]+\.\s*/,""):"Skydiving Adventure";prompt.textContent=a[0];line.textContent=a[lessonPhrase];translation.textContent=langSel.value==="en"?"":e[lessonPhrase];if(speakIt)speak(a[lessonPhrase])}
+document.querySelectorAll("[data-lesson]").forEach(b=>b.onclick=()=>{lessonPhrase=1;showLesson(b.dataset.lesson,true)});
+function currentSpeechText(){if(activeLesson)return lessons[langSel.value][activeLesson][lessonPhrase];if(lastWord)return WORDS[langSel.value][lastWord]||EN[lastWord];return line.textContent}
+document.getElementById("normal").onclick=()=>speak(currentSpeechText(),.82);
+document.getElementById("slow").onclick=()=>speak(currentSpeechText(),.58);
+document.getElementById("replay").onclick=()=>speak(lastSpoken||currentSpeechText(),.82);
+document.getElementById("nextPhrase").onclick=()=>{if(!activeLesson){const keys=Object.keys(EN),i=Math.max(0,keys.indexOf(lastWord));showWord(keys[(i+1)%keys.length]);speak(currentSpeechText(),.82);return}lessonPhrase=(lessonPhrase+1)%2;showLesson(activeLesson,true)};
+langSel.onchange=()=>{fillVoices();if(activeLesson)showLesson(activeLesson,false);else if(lastWord)showWord(lastWord)};
+document.getElementById("sceneView").onclick=()=>document.body.classList.add("scene-view");
+document.getElementById("sceneReturn").onclick=()=>document.body.classList.remove("scene-view");
+showWord("game");
+</script>
+</body>
+</html>
+
+<style id="talkabee-ski-panel-180">
+@media(min-width:761px){.panel{width:180px!important;min-width:180px!important;max-width:180px!important}}
+</style>

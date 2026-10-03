@@ -1,0 +1,220 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Talk A Bee — Spacewalk Adventure</title>
+<link rel="icon" type="image/png" href="images/talkabee-favicon.png">
+<style>
+*{box-sizing:border-box}
+html,body{margin:0;width:100%;height:100%;overflow:hidden;font-family:Arial,Helvetica,sans-serif;background:#063a66;color:#fff}
+.world{position:relative;width:100vw;height:100vh;background:url("images/Talk-A-Bee-Spacewalk-Adventure.jpg") center center/cover no-repeat}
+
+/* APPROVED TALK A BEE LEFT PANEL */
+.panel{position:fixed;z-index:1000;left:16px;top:16px;bottom:16px;width:180px;min-width:180px;max-width:180px;
+padding:14px;overflow-x:hidden;overflow-y:auto;border-radius:20px;border:1px solid rgba(255,255,255,.28);
+background:rgba(7,23,39,.31);box-shadow:0 12px 30px rgba(0,0,0,.24);backdrop-filter:blur(3px);-webkit-backdrop-filter:blur(3px)}
+.panel h1{font-size:19px;line-height:1.08;margin:4px 0 10px;text-shadow:0 2px 4px rgba(0,0,0,.55)}
+.label{font-size:9.5px;line-height:1.1;letter-spacing:.09em;font-weight:900;margin:9px 0 4px}
+.panel button,.panel select,.panel a{width:100%;min-height:34px;margin:4px 0;padding:8px 9px;border-radius:12px;
+border:1px solid rgba(255,255,255,.38);background:rgba(7,32,50,.54);color:#fff;font:800 12px/1.16 Arial,sans-serif;
+text-align:left;text-decoration:none}
+.panel button:hover,.panel a:hover{background:rgba(20,58,79,.70)}
+.panel button.active{background:rgba(78,69,219,.74)}
+.panel select{white-space:nowrap;text-overflow:ellipsis;overflow:hidden}
+
+/* APPROVED 520px SCRIPT CARD */
+.card{position:fixed;z-index:900;left:50%;bottom:16px;width:520px;max-width:520px;padding:14px 16px;
+border-radius:20px;border:1px solid rgba(255,255,255,.30);background:rgba(25,19,24,.38);
+box-shadow:0 12px 30px rgba(0,0,0,.28);backdrop-filter:blur(5px);-webkit-backdrop-filter:blur(5px);
+transform:translateX(-50%) scale(.67);transform-origin:bottom center}
+.card .kicker{font-size:15px;line-height:1.25;font-weight:900;letter-spacing:.10em;color:rgba(255,255,255,.96);
+text-shadow:0 1px 3px rgba(0,0,0,.78);margin:0 0 6px}
+.card h2{font-size:22px;line-height:1.08;margin:4px 0 7px;text-shadow:0 1px 3px rgba(0,0,0,.55)}
+.card p{font-size:18px;line-height:1.35;margin:4px 0 7px}
+.word{margin-top:8px;padding:10px 12px;border-radius:14px;background:rgba(88,88,88,.72);border:1px solid rgba(255,255,255,.20)}
+.word strong{display:block;font-size:22px;line-height:1.28}
+.translation{font-size:18px;line-height:1.35;margin-top:3px}
+.controls{display:flex;align-items:center;gap:8px;flex-wrap:nowrap;margin-top:8px}
+.controls button{width:auto;min-width:0;padding:9px 13px;border-radius:12px;border:1px solid rgba(255,255,255,.35);
+background:rgba(255,255,255,.88);color:#10283c;font:900 13px/1 Arial,sans-serif;white-space:nowrap}
+
+/* HOTSPOTS */
+.hotspot{position:absolute;z-index:8;border:0;background:transparent;opacity:0;cursor:pointer;border-radius:16px}
+.hotspot:hover,.hotspot:focus-visible{opacity:1;background:rgba(255,220,72,.28);outline:2px solid rgba(255,255,255,.90)}
+.challenge-mode .hotspot.target{opacity:1;background:rgba(255,199,48,.38);outline:4px solid #fff;box-shadow:0 0 0 7px rgba(255,200,50,.20)}
+
+/* APPROVED COMPACT PREVIOUS / NEXT CHEVRONS */
+.talkabee-prev-next-nav{position:fixed;top:18px;right:22px;z-index:2147483000;display:flex;align-items:center;overflow:hidden;
+border:2px solid rgba(255,255,255,.82);border-radius:999px;background:rgba(11,22,42,.24);
+box-shadow:0 5px 16px rgba(0,0,0,.16);backdrop-filter:blur(3px);-webkit-backdrop-filter:blur(3px)}
+.talkabee-prev-next-nav a{width:48px;height:48px;display:grid;place-items:center;text-decoration:none;color:#fff;
+font:900 38px/1 Arial,sans-serif;text-shadow:0 1px 3px rgba(0,0,0,.42)}
+.talkabee-prev-next-nav a+a{border-left:1px solid rgba(255,255,255,.36)}
+.talkabee-prev-next-nav a:hover,.talkabee-prev-next-nav a:focus-visible{background:rgba(255,255,255,.18);outline:none}
+
+/* SCENE VIEW */
+.scene-return{display:none;position:fixed;z-index:2147483001;left:18px;top:18px;padding:10px 14px;border-radius:12px;
+border:1px solid #fff;background:rgba(7,23,39,.65);color:#fff;font-weight:900}
+.scene-view .panel,.scene-view .card,.scene-view .talkabee-prev-next-nav{display:none}
+.scene-view .scene-return{display:block}
+
+@media(max-width:760px){
+ .panel{left:10px;top:10px;bottom:10px;width:180px;min-width:180px;max-width:180px;padding:11px}
+ .card{width:min(520px,calc(100vw - 32px));bottom:10px;transform:translateX(-50%) scale(.82)}
+ .talkabee-prev-next-nav{top:12px;right:12px}.talkabee-prev-next-nav a{width:42px;height:42px;font-size:33px}
+}
+</style>
+</head>
+<body>
+<nav class="talkabee-prev-next-nav" aria-label="Adventure navigation">
+  <a href="Talk-A-Bee-Oval-Office-Adventure.html" aria-label="Previous adventure" title="Previous">‹</a>
+  <a href="Talk-A-Bee-Nighttime-Campground-Adventure.html" aria-label="Next adventure" title="Next">›</a>
+</nav>
+
+<main class="world" id="world">
+<button class="scene-return" id="sceneReturn">Return to Adventure</button>
+
+<aside class="panel">
+<h1>🚀 Spacewalk Adventure</h1>
+<div class="label">LANGUAGE</div>
+<select id="lang">
+<option value="es">Spanish</option><option value="fr">French</option><option value="en">English</option>
+<option value="de">German</option><option value="it">Italian</option><option value="pt">Portuguese</option><option value="no">Norwegian</option>
+</select>
+<div class="label">VOICE</div>
+<select id="voice"><option value="">Browser Default</option></select>
+<button id="sceneView">◉ Scene View</button>
+
+<div class="label">DISCOVERY</div>
+<button id="discovery">🔎 Discovery — Click the Scene</button>
+
+<div class="label">ACTIVITIES</div>
+<button data-lesson="crew">1. Meet the Spacewalk Crew</button>
+<button data-lesson="suit">2. Explore a Spacesuit</button>
+<button data-lesson="station">3. Explore the Space Station</button>
+<button data-lesson="tether">4. Why Astronauts Use Tethers</button>
+<button data-lesson="earth">5. Look Down at Earth</button>
+<button data-lesson="solar">6. Explore the Solar Panels</button>
+<div class="label">CHALLENGES</div>
+<button data-ch="0">1. Find Bee</button>
+<button data-ch="1">2. Find Earth</button>
+<button data-ch="2">3. Find a Tether</button>
+<button data-ch="3">4. Find the Solar Panels</button>
+<button data-ch="4">5. Find the Space Station</button>
+<button data-ch="5">6. Find the Moon</button>
+<a href="index.html">← Return to Main Directory</a>
+</aside>
+
+<section class="card">
+<div class="kicker">SPACEWALK ABOVE EARTH</div>
+<h2 id="title">Spacewalk Adventure</h2>
+<p id="prompt">Click any object in the scene to hear its name.</p>
+<div class="word"><strong id="line">caminata espacial</strong><div class="translation" id="translation">spacewalk</div></div>
+<p id="status"></p>
+<div class="controls">
+<button id="normal">🔊 Speak</button><button id="slow">🐢 Slow</button><button id="replay">↻ Replay</button><button id="nextPhrase">Next phrase →</button>
+</div>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- Hotspots mapped to the approved Spacewalk keeper JPG. -->
+<button class="hotspot" data-word="bee" style="left:36%;top:32%;width:15%;height:28%" aria-label="Astronaut Bee"></button>
+<button class="hotspot" data-word="astronaut" style="left:25%;top:18%;width:17%;height:27%" aria-label="Astronaut"></button>
+<button class="hotspot" data-word="boy" style="left:54%;top:37%;width:27%;height:46%" aria-label="Boy astronaut"></button>
+<button class="hotspot" data-word="girl" style="left:72%;top:18%;width:24%;height:34%" aria-label="Girl astronaut"></button>
+<button class="hotspot" data-word="spacesuit" style="left:58%;top:40%;width:22%;height:40%" aria-label="Spacesuit"></button>
+<button class="hotspot" data-word="helmet" style="left:61%;top:36%;width:15%;height:22%" aria-label="Helmet"></button>
+<button class="hotspot" data-word="gloves" style="left:72%;top:57%;width:18%;height:22%" aria-label="Space gloves"></button>
+<button class="hotspot" data-word="tether" style="left:43%;top:52%;width:27%;height:18%" aria-label="Safety tether"></button>
+<button class="hotspot" data-word="station" style="left:57%;top:0%;width:43%;height:38%" aria-label="Space station"></button>
+<button class="hotspot" data-word="solarpanels" style="left:39%;top:0%;width:21%;height:54%" aria-label="Solar panels"></button>
+<button class="hotspot" data-word="truss" style="left:68%;top:0%;width:31%;height:25%" aria-label="Station truss"></button>
+<button class="hotspot" data-word="handrail" style="left:79%;top:37%;width:21%;height:29%" aria-label="Handrail"></button>
+<button class="hotspot" data-word="tools" style="left:86%;top:24%;width:14%;height:35%" aria-label="Space tools"></button>
+<button class="hotspot" data-word="earth" style="left:0%;top:22%;width:50%;height:78%" aria-label="Earth"></button>
+<button class="hotspot" data-word="ocean" style="left:3%;top:53%;width:35%;height:34%" aria-label="Ocean"></button>
+<button class="hotspot" data-word="clouds" style="left:0%;top:31%;width:38%;height:32%" aria-label="Clouds"></button>
+<button class="hotspot" data-word="atmosphere" style="left:0%;top:20%;width:39%;height:15%" aria-label="Atmosphere"></button>
+<button class="hotspot" data-word="moon" style="left:25%;top:2%;width:9%;height:14%" aria-label="Moon"></button>
+<button class="hotspot" data-word="sun" style="left:0%;top:0%;width:12%;height:19%" aria-label="Sun"></button>
+<button class="hotspot" data-word="stars" style="left:10%;top:0%;width:29%;height:23%" aria-label="Stars"></button>
+
+</main>
+
+<script>
+const EN={game:"spacewalk",bee:"astronaut Bee",astronaut:"astronaut",boy:"boy astronaut",girl:"girl astronaut",spacesuit:"spacesuit",helmet:"helmet",gloves:"space gloves",tether:"safety tether",station:"space station",solarpanels:"solar panels",truss:"station truss",handrail:"handrail",tools:"space tools",earth:"Earth",ocean:"ocean",clouds:"clouds",atmosphere:"atmosphere",moon:"Moon",sun:"Sun",stars:"stars"};
+const WORDS={
+es:{game:"caminata espacial",bee:"abeja astronauta",astronaut:"astronauta",boy:"niño astronauta",girl:"niña astronauta",spacesuit:"traje espacial",helmet:"casco",gloves:"guantes espaciales",tether:"cable de seguridad",station:"estación espacial",solarpanels:"paneles solares",truss:"estructura de la estación",handrail:"pasamanos",tools:"herramientas espaciales",earth:"Tierra",ocean:"océano",clouds:"nubes",atmosphere:"atmósfera",moon:"Luna",sun:"Sol",stars:"estrellas"},
+fr:{game:"sortie dans l'espace",bee:"abeille astronaute",astronaut:"astronaute",boy:"garçon astronaute",girl:"fille astronaute",spacesuit:"combinaison spatiale",helmet:"casque",gloves:"gants spatiaux",tether:"câble de sécurité",station:"station spatiale",solarpanels:"panneaux solaires",truss:"structure de la station",handrail:"main courante",tools:"outils spatiaux",earth:"Terre",ocean:"océan",clouds:"nuages",atmosphere:"atmosphère",moon:"Lune",sun:"Soleil",stars:"étoiles"},
+en:{...EN},
+de:{game:"Weltraumspaziergang",bee:"Astronauten-Biene",astronaut:"Astronaut",boy:"Junge als Astronaut",girl:"Mädchen als Astronautin",spacesuit:"Raumanzug",helmet:"Helm",gloves:"Weltraumhandschuhe",tether:"Sicherungsleine",station:"Raumstation",solarpanels:"Solarmodule",truss:"Stationsgerüst",handrail:"Handlauf",tools:"Weltraumwerkzeuge",earth:"Erde",ocean:"Ozean",clouds:"Wolken",atmosphere:"Atmosphäre",moon:"Mond",sun:"Sonne",stars:"Sterne"},
+it:{game:"passeggiata spaziale",bee:"ape astronauta",astronaut:"astronauta",boy:"ragazzo astronauta",girl:"ragazza astronauta",spacesuit:"tuta spaziale",helmet:"casco",gloves:"guanti spaziali",tether:"cavo di sicurezza",station:"stazione spaziale",solarpanels:"pannelli solari",truss:"struttura della stazione",handrail:"corrimano",tools:"attrezzi spaziali",earth:"Terra",ocean:"oceano",clouds:"nuvole",atmosphere:"atmosfera",moon:"Luna",sun:"Sole",stars:"stelle"},
+pt:{game:"caminhada espacial",bee:"abelha astronauta",astronaut:"astronauta",boy:"menino astronauta",girl:"menina astronauta",spacesuit:"traje espacial",helmet:"capacete",gloves:"luvas espaciais",tether:"cabo de segurança",station:"estação espacial",solarpanels:"painéis solares",truss:"estrutura da estação",handrail:"corrimão",tools:"ferramentas espaciais",earth:"Terra",ocean:"oceano",clouds:"nuvens",atmosphere:"atmosfera",moon:"Lua",sun:"Sol",stars:"estrelas"},
+no:{game:"romvandring",bee:"astronautbie",astronaut:"astronaut",boy:"gutt som astronaut",girl:"jente som astronaut",spacesuit:"romdrakt",helmet:"hjelm",gloves:"romhansker",tether:"sikkerhetsline",station:"romstasjon",solarpanels:"solpaneler",truss:"stasjonsramme",handrail:"håndtak",tools:"romverktøy",earth:"jorden",ocean:"hav",clouds:"skyer",atmosphere:"atmosfære",moon:"månen",sun:"solen",stars:"stjerner"}};
+const SPEECH_LANG={es:"es-ES",fr:"fr-FR",en:"en-US",de:"de-DE",it:"it-IT",pt:"pt-PT",no:"nb-NO"};
+const lessons={
+en:{crew:["The crew is outside a space station performing a spacewalk high above Earth.","Astronauts train carefully before working outside a spacecraft in the vacuum of space."],suit:["A spacesuit provides oxygen, pressure, temperature control, communication equipment, and protection.","The helmet and gloves are part of the system that keeps an astronaut safe while working outside."],station:["A space station is a spacecraft designed so people can live and work in orbit for extended periods.","Outside the station are modules, structural trusses, handrails, equipment, and large solar arrays."],tether:["During a spacewalk, astronauts can use safety tethers to stay connected to the spacecraft.","Handrails and attachment points help astronauts move carefully around the outside of the station."],earth:["From orbit, astronauts can see Earth's curved horizon, blue oceans, white clouds, and the thin atmosphere.","The atmosphere looks like a narrow layer surrounding our planet when viewed from space."],solar:["Large solar arrays collect sunlight and convert its energy into electricity for the space station.","The arrays can be positioned to collect sunlight as the station travels around Earth."]},
+es:{crew:["La tripulación está fuera de una estación espacial realizando una caminata espacial muy por encima de la Tierra.","Los astronautas entrenan cuidadosamente antes de trabajar fuera de una nave espacial en el vacío del espacio."],suit:["Un traje espacial proporciona oxígeno, presión, control de temperatura, comunicaciones y protección.","El casco y los guantes forman parte del sistema que mantiene seguro al astronauta mientras trabaja afuera."],station:["Una estación espacial es una nave diseñada para que las personas vivan y trabajen en órbita durante largos períodos.","En el exterior hay módulos, estructuras, pasamanos, equipos y grandes paneles solares."],tether:["Durante una caminata espacial, los astronautas pueden usar cables de seguridad para permanecer conectados a la nave.","Los pasamanos y puntos de sujeción ayudan a los astronautas a moverse cuidadosamente por el exterior."],earth:["Desde la órbita, los astronautas pueden ver el horizonte curvo de la Tierra, océanos azules, nubes blancas y la delgada atmósfera.","La atmósfera parece una capa estrecha alrededor de nuestro planeta vista desde el espacio."],solar:["Grandes paneles solares recogen la luz del Sol y convierten su energía en electricidad para la estación espacial.","Los paneles pueden orientarse para recoger la luz solar mientras la estación viaja alrededor de la Tierra."]},
+fr:{crew:["L'équipage se trouve à l'extérieur d'une station spatiale pour effectuer une sortie au-dessus de la Terre.","Les astronautes s'entraînent soigneusement avant de travailler à l'extérieur d'un vaisseau dans le vide spatial."],suit:["Une combinaison spatiale fournit de l'oxygène, de la pression, un contrôle thermique, des communications et une protection.","Le casque et les gants font partie du système qui protège l'astronaute pendant son travail à l'extérieur."],station:["Une station spatiale est un vaisseau conçu pour permettre à des personnes de vivre et travailler en orbite pendant de longues périodes.","À l'extérieur se trouvent des modules, des structures, des mains courantes, des équipements et de grands panneaux solaires."],tether:["Pendant une sortie spatiale, les astronautes peuvent utiliser des câbles de sécurité pour rester reliés au vaisseau.","Les mains courantes et les points d'attache les aident à se déplacer prudemment autour de la station."],earth:["Depuis l'orbite, les astronautes peuvent voir l'horizon courbe de la Terre, les océans bleus, les nuages blancs et la fine atmosphère.","Vue de l'espace, l'atmosphère ressemble à une mince couche entourant notre planète."],solar:["De grands panneaux solaires captent la lumière du Soleil et transforment son énergie en électricité pour la station.","Les panneaux peuvent être orientés pour capter la lumière lorsque la station tourne autour de la Terre."]},
+de:{crew:["Die Besatzung befindet sich außerhalb einer Raumstation auf einem Weltraumspaziergang hoch über der Erde.","Astronauten trainieren sorgfältig, bevor sie außerhalb eines Raumfahrzeugs im Vakuum des Weltraums arbeiten."],suit:["Ein Raumanzug liefert Sauerstoff, Druck, Temperaturregelung, Kommunikation und Schutz.","Helm und Handschuhe gehören zum System, das Astronauten bei der Arbeit außerhalb schützt."],station:["Eine Raumstation ist ein Raumfahrzeug, in dem Menschen längere Zeit im Orbit leben und arbeiten können.","Außen befinden sich Module, Gerüste, Handläufe, Geräte und große Solaranlagen."],tether:["Bei einem Weltraumspaziergang können Astronauten Sicherheitsleinen benutzen, um mit dem Raumfahrzeug verbunden zu bleiben.","Handläufe und Befestigungspunkte helfen ihnen, sich vorsichtig an der Außenseite der Station zu bewegen."],earth:["Aus dem Orbit können Astronauten den gekrümmten Horizont der Erde, blaue Ozeane, weiße Wolken und die dünne Atmosphäre sehen.","Vom Weltraum aus erscheint die Atmosphäre als schmale Schicht um unseren Planeten."],solar:["Große Solaranlagen sammeln Sonnenlicht und wandeln dessen Energie in Strom für die Raumstation um.","Die Anlagen können ausgerichtet werden, um Sonnenlicht zu sammeln, während die Station die Erde umkreist."]},
+it:{crew:["L'equipaggio è all'esterno di una stazione spaziale per una passeggiata spaziale sopra la Terra.","Gli astronauti si addestrano con cura prima di lavorare fuori da un veicolo spaziale nel vuoto."],suit:["Una tuta spaziale fornisce ossigeno, pressione, controllo della temperatura, comunicazioni e protezione.","Il casco e i guanti fanno parte del sistema che mantiene al sicuro un astronauta mentre lavora all'esterno."],station:["Una stazione spaziale è un veicolo progettato affinché le persone possano vivere e lavorare in orbita per lunghi periodi.","All'esterno ci sono moduli, strutture, corrimano, attrezzature e grandi pannelli solari."],tether:["Durante una passeggiata spaziale, gli astronauti possono usare cavi di sicurezza per rimanere collegati al veicolo.","Corrimano e punti di aggancio li aiutano a muoversi con attenzione all'esterno della stazione."],earth:["Dall'orbita gli astronauti possono vedere l'orizzonte curvo della Terra, oceani blu, nuvole bianche e la sottile atmosfera.","Dallo spazio l'atmosfera appare come uno strato sottile intorno al nostro pianeta."],solar:["Grandi pannelli solari raccolgono la luce del Sole e trasformano la sua energia in elettricità per la stazione.","I pannelli possono essere orientati per raccogliere la luce mentre la stazione viaggia intorno alla Terra."]},
+pt:{crew:["A tripulação está fora de uma estação espacial realizando uma caminhada espacial acima da Terra.","Os astronautas treinam cuidadosamente antes de trabalhar fora de uma nave no vácuo do espaço."],suit:["Um traje espacial fornece oxigênio, pressão, controle de temperatura, comunicação e proteção.","O capacete e as luvas fazem parte do sistema que mantém o astronauta seguro durante o trabalho externo."],station:["Uma estação espacial é uma nave projetada para que pessoas possam viver e trabalhar em órbita por longos períodos.","Do lado de fora há módulos, estruturas, corrimãos, equipamentos e grandes painéis solares."],tether:["Durante uma caminhada espacial, astronautas podem usar cabos de segurança para permanecer ligados à nave.","Corrimãos e pontos de fixação ajudam os astronautas a se mover com cuidado pelo exterior da estação."],earth:["Da órbita, astronautas podem ver o horizonte curvo da Terra, oceanos azuis, nuvens brancas e a fina atmosfera.","Vista do espaço, a atmosfera parece uma camada estreita ao redor do nosso planeta."],solar:["Grandes painéis solares captam a luz do Sol e transformam sua energia em eletricidade para a estação.","Os painéis podem ser posicionados para captar luz solar enquanto a estação viaja ao redor da Terra."]},
+no:{crew:["Mannskapet er utenfor en romstasjon på romvandring høyt over jorden.","Astronauter trener grundig før de arbeider utenfor et romfartøy i vakuumet i verdensrommet."],suit:["En romdrakt gir oksygen, trykk, temperaturkontroll, kommunikasjon og beskyttelse.","Hjelmen og hanskene er deler av systemet som holder astronauten trygg under arbeid utenfor."],station:["En romstasjon er et romfartøy laget slik at mennesker kan bo og arbeide i bane over lengre tid.","Utenpå finnes moduler, rammer, håndtak, utstyr og store solpaneler."],tether:["Under en romvandring kan astronauter bruke sikkerhetsliner for å holde seg koblet til romfartøyet.","Håndtak og festepunkter hjelper astronautene å bevege seg forsiktig rundt utsiden av stasjonen."],earth:["Fra bane kan astronauter se jordens buede horisont, blå hav, hvite skyer og den tynne atmosfæren.","Fra verdensrommet ser atmosfæren ut som et smalt lag rundt planeten vår."],solar:["Store solpaneler samler sollys og omdanner energien til elektrisitet for romstasjonen.","Panelene kan plasseres for å samle sollys mens stasjonen beveger seg rundt jorden."]}};
+const challengeOrder=["bee","earth","tether","solarpanels","station","moon"];
+const SOUND_MAP={};
+const langSel=document.getElementById("lang"),voiceSel=document.getElementById("voice");
+const title=document.getElementById("title"),prompt=document.getElementById("prompt"),line=document.getElementById("line"),translation=document.getElementById("translation"),status=document.getElementById("status"),world=document.getElementById("world");
+let lastWord="game",activeLesson="",lessonPhrase=1,challenge=-1,lastSpoken="";
+function voices(){return ("speechSynthesis" in window)?speechSynthesis.getVoices():[]}
+function fillVoices(){const old=localStorage.getItem("talkabee-spacewalk-voice-"+langSel.value)||"";voiceSel.innerHTML='<option value="">Browser Default</option>';voices().forEach(v=>{const o=document.createElement("option");o.value=v.name;o.textContent=v.name+(v.lang?" — "+v.lang:"");voiceSel.appendChild(o)});if([...voiceSel.options].some(o=>o.value===old))voiceSel.value=old}
+if("speechSynthesis" in window){speechSynthesis.onvoiceschanged=fillVoices;fillVoices();setTimeout(fillVoices,150);setTimeout(fillVoices,600);setTimeout(fillVoices,1500)}
+voiceSel.onchange=()=>localStorage.setItem("talkabee-spacewalk-voice-"+langSel.value,voiceSel.value);
+function speak(text,rate=.88,onend=null){if(!text||!("speechSynthesis" in window)){if(onend)onend();return}speechSynthesis.cancel();setTimeout(()=>{const u=new SpeechSynthesisUtterance(text);u.lang=SPEECH_LANG[langSel.value]||langSel.value;u.rate=rate;const v=speechSynthesis.getVoices().find(x=>x.name===voiceSel.value);if(v)u.voice=v;if(onend)u.onend=onend;speechSynthesis.speak(u)},50);lastSpoken=text}
+function stopSound(){document.querySelectorAll("audio[data-talkabee-sound]").forEach(a=>{a.pause();a.currentTime=0;a.remove()})}
+function playSound(key){stopSound();const src=SOUND_MAP[key];if(!src)return;const a=new Audio(src);a.dataset.talkabeeSound="1";document.body.appendChild(a);a.play().catch(()=>{});a.onended=()=>a.remove()}
+function showWord(key){activeLesson="";lastWord=key;lessonPhrase=1;title.textContent="Click & Discover";prompt.textContent="You found "+(EN[key]||key)+".";line.textContent=WORDS[langSel.value][key]||EN[key]||key;translation.textContent=langSel.value==="en"?"":(EN[key]||key)}
+document.querySelectorAll(".hotspot").forEach(b=>b.onclick=()=>{const key=b.dataset.word;showWord(key);let played=false;const after=()=>{if(played)return;played=true;playSound(key)};speak(WORDS[langSel.value][key]||EN[key]||key,.82,after);setTimeout(after,1500);if(challenge>=0){if(key===challengeOrder[challenge]){status.textContent="✓ Nice find!";status.style.color="#9dffbf"}else{status.textContent="Not that one — keep looking.";status.style.color="#ffe28a"}}});
+function clearChallenge(){challenge=-1;world.classList.remove("challenge-mode");document.querySelectorAll(".hotspot").forEach(h=>h.classList.remove("target"));status.textContent=""}
+document.getElementById("discovery").onclick=()=>{clearChallenge();activeLesson="";lastWord="game";title.textContent="Click & Discover";prompt.textContent="Click any object in the scene to hear its name.";line.textContent=WORDS[langSel.value].game;translation.textContent=langSel.value==="en"?"":EN.game};
+document.querySelectorAll("[data-ch]").forEach(b=>b.onclick=()=>{activeLesson="";lastWord="";challenge=+b.dataset.ch;world.classList.add("challenge-mode");document.querySelectorAll(".hotspot").forEach(h=>h.classList.toggle("target",h.dataset.word===challengeOrder[challenge]));title.textContent="Challenge "+(challenge+1)+" of 6";prompt.textContent=b.textContent.replace(/^[0-9]+\.\s*/,"");line.textContent=WORDS[langSel.value][challengeOrder[challenge]];translation.textContent=langSel.value==="en"?"":EN[challengeOrder[challenge]];status.textContent=""});
+function showLesson(key,speakIt=false){clearChallenge();activeLesson=key;lastWord="";lessonPhrase=Math.max(0,Math.min(1,lessonPhrase));const a=lessons[langSel.value][key],e=lessons.en[key],btn=document.querySelector(`[data-lesson="${key}"]`);title.textContent=btn?btn.textContent.replace(/^[0-9]+\.\s*/,""):"Spacewalk Adventure";prompt.textContent=a[0];line.textContent=a[lessonPhrase];translation.textContent=langSel.value==="en"?"":e[lessonPhrase];if(speakIt)speak(a[lessonPhrase])}
+document.querySelectorAll("[data-lesson]").forEach(b=>b.onclick=()=>{lessonPhrase=1;showLesson(b.dataset.lesson,true)});
+function currentSpeechText(){if(activeLesson)return lessons[langSel.value][activeLesson][lessonPhrase];if(lastWord)return WORDS[langSel.value][lastWord]||EN[lastWord];return line.textContent}
+document.getElementById("normal").onclick=()=>speak(currentSpeechText(),.82);
+document.getElementById("slow").onclick=()=>speak(currentSpeechText(),.58);
+document.getElementById("replay").onclick=()=>speak(lastSpoken||currentSpeechText(),.82);
+document.getElementById("nextPhrase").onclick=()=>{if(!activeLesson){const keys=Object.keys(EN),i=Math.max(0,keys.indexOf(lastWord));showWord(keys[(i+1)%keys.length]);speak(currentSpeechText(),.82);return}lessonPhrase=(lessonPhrase+1)%2;showLesson(activeLesson,true)};
+langSel.onchange=()=>{fillVoices();if(activeLesson)showLesson(activeLesson,false);else if(lastWord)showWord(lastWord)};
+document.getElementById("sceneView").onclick=()=>document.body.classList.add("scene-view");
+document.getElementById("sceneReturn").onclick=()=>document.body.classList.remove("scene-view");
+showWord("game");
+</script>
+</body>
+</html>
+
+<style id="talkabee-ski-panel-180">
+@media(min-width:761px){.panel{width:180px!important;min-width:180px!important;max-width:180px!important}}
+</style>

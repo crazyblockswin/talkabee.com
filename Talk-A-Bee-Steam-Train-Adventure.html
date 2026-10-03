@@ -1,0 +1,206 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Talk A Bee — Steam Train Adventure</title>
+<link rel="icon" type="image/png" href="images/talkabee-favicon.png">
+<style>
+*{box-sizing:border-box}
+html,body{margin:0;width:100%;height:100%;overflow:hidden;font-family:Arial,Helvetica,sans-serif;background:#063a66;color:#fff}
+.world{position:relative;width:100vw;height:100vh;background:url("images/Talk-A-Bee-Steam-Train-Adventure.jpg") center center/cover no-repeat}
+
+/* APPROVED TALK A BEE LEFT PANEL */
+.panel{position:fixed;z-index:1000;left:16px;top:16px;bottom:16px;width:180px;min-width:180px;max-width:180px;
+padding:14px;overflow-x:hidden;overflow-y:auto;border-radius:20px;border:1px solid rgba(255,255,255,.28);
+background:rgba(7,23,39,.31);box-shadow:0 12px 30px rgba(0,0,0,.24);backdrop-filter:blur(3px);-webkit-backdrop-filter:blur(3px)}
+.panel h1{font-size:19px;line-height:1.08;margin:4px 0 10px;text-shadow:0 2px 4px rgba(0,0,0,.55)}
+.label{font-size:9.5px;line-height:1.1;letter-spacing:.09em;font-weight:900;margin:9px 0 4px}
+.panel button,.panel select,.panel a{width:100%;min-height:34px;margin:4px 0;padding:8px 9px;border-radius:12px;
+border:1px solid rgba(255,255,255,.38);background:rgba(7,32,50,.54);color:#fff;font:800 12px/1.16 Arial,sans-serif;
+text-align:left;text-decoration:none}
+.panel button:hover,.panel a:hover{background:rgba(20,58,79,.70)}
+.panel button.active{background:rgba(78,69,219,.74)}
+.panel select{white-space:nowrap;text-overflow:ellipsis;overflow:hidden}
+
+/* APPROVED 520px SCRIPT CARD */
+.card{position:fixed;z-index:900;left:50%;bottom:16px;width:520px;max-width:520px;padding:14px 16px;
+border-radius:20px;border:1px solid rgba(255,255,255,.30);background:rgba(25,19,24,.38);
+box-shadow:0 12px 30px rgba(0,0,0,.28);backdrop-filter:blur(5px);-webkit-backdrop-filter:blur(5px);
+transform:translateX(-50%) scale(.67);transform-origin:bottom center}
+.card .kicker{font-size:15px;line-height:1.25;font-weight:900;letter-spacing:.10em;color:rgba(255,255,255,.96);
+text-shadow:0 1px 3px rgba(0,0,0,.78);margin:0 0 6px}
+.card h2{font-size:22px;line-height:1.08;margin:4px 0 7px;text-shadow:0 1px 3px rgba(0,0,0,.55)}
+.card p{font-size:18px;line-height:1.35;margin:4px 0 7px}
+.word{margin-top:8px;padding:10px 12px;border-radius:14px;background:rgba(88,88,88,.72);border:1px solid rgba(255,255,255,.20)}
+.word strong{display:block;font-size:22px;line-height:1.28}
+.translation{font-size:18px;line-height:1.35;margin-top:3px}
+.controls{display:flex;align-items:center;gap:8px;flex-wrap:nowrap;margin-top:8px}
+.controls button{width:auto;min-width:0;padding:9px 13px;border-radius:12px;border:1px solid rgba(255,255,255,.35);
+background:rgba(255,255,255,.88);color:#10283c;font:900 13px/1 Arial,sans-serif;white-space:nowrap}
+
+/* HOTSPOTS */
+.hotspot{position:absolute;z-index:8;border:0;background:transparent;opacity:0;cursor:pointer;border-radius:16px}
+.hotspot:hover,.hotspot:focus-visible{opacity:1;background:rgba(255,220,72,.28);outline:2px solid rgba(255,255,255,.90)}
+.challenge-mode .hotspot.target{opacity:1;background:rgba(255,199,48,.38);outline:4px solid #fff;box-shadow:0 0 0 7px rgba(255,200,50,.20)}
+
+/* APPROVED COMPACT PREVIOUS / NEXT CHEVRONS */
+.talkabee-prev-next-nav{position:fixed;top:18px;right:22px;z-index:2147483000;display:flex;align-items:center;overflow:hidden;
+border:2px solid rgba(255,255,255,.82);border-radius:999px;background:rgba(11,22,42,.24);
+box-shadow:0 5px 16px rgba(0,0,0,.16);backdrop-filter:blur(3px);-webkit-backdrop-filter:blur(3px)}
+.talkabee-prev-next-nav a{width:48px;height:48px;display:grid;place-items:center;text-decoration:none;color:#fff;
+font:900 38px/1 Arial,sans-serif;text-shadow:0 1px 3px rgba(0,0,0,.42)}
+.talkabee-prev-next-nav a+a{border-left:1px solid rgba(255,255,255,.36)}
+.talkabee-prev-next-nav a:hover,.talkabee-prev-next-nav a:focus-visible{background:rgba(255,255,255,.18);outline:none}
+
+/* SCENE VIEW */
+.scene-return{display:none;position:fixed;z-index:2147483001;left:18px;top:18px;padding:10px 14px;border-radius:12px;
+border:1px solid #fff;background:rgba(7,23,39,.65);color:#fff;font-weight:900}
+.scene-view .panel,.scene-view .card,.scene-view .talkabee-prev-next-nav{display:none}
+.scene-view .scene-return{display:block}
+
+@media(max-width:760px){
+ .panel{left:10px;top:10px;bottom:10px;width:180px;min-width:180px;max-width:180px;padding:11px}
+ .card{width:min(520px,calc(100vw - 32px));bottom:10px;transform:translateX(-50%) scale(.82)}
+ .talkabee-prev-next-nav{top:12px;right:12px}.talkabee-prev-next-nav a{width:42px;height:42px;font-size:33px}
+}
+</style>
+</head>
+<body>
+<nav class="talkabee-prev-next-nav" aria-label="Adventure navigation">
+  <a href="Talk-A-Bee-Helicopter-Mountain-Rescue-Adventure.html" aria-label="Previous adventure" title="Previous">‹</a>
+  <a href="Talk-A-Bee-Cave-Adventure.html" aria-label="Next adventure" title="Next">›</a>
+</nav>
+
+<main class="world" id="world">
+<button class="scene-return" id="sceneReturn">Return to Adventure</button>
+
+<aside class="panel">
+<h1>🚂 Steam Train Adventure</h1>
+<div class="label">LANGUAGE</div>
+<select id="lang">
+<option value="es">Spanish</option><option value="fr">French</option><option value="en">English</option>
+<option value="de">German</option><option value="it">Italian</option><option value="pt">Portuguese</option><option value="no">Norwegian</option>
+</select>
+<div class="label">VOICE</div>
+<select id="voice"><option value="">Browser Default</option></select>
+<button id="sceneView">◉ Scene View</button>
+
+<div class="label">DISCOVERY</div>
+<button id="discovery">🔎 Discovery — Click the Scene</button>
+
+<div class="label">ACTIVITIES</div>
+<button data-lesson="ride">1. Ride the Steam Train</button>
+<button data-lesson="engine">2. Explore the Locomotive</button>
+<button data-lesson="bridge">3. Cross the Trestle</button>
+<button data-lesson="station">4. Visit the Railroad Depot</button>
+<button data-lesson="scenery">5. Look Across the Mountains</button>
+<button data-lesson="wildlife">6. Wildlife Along the Tracks</button>
+<div class="label">CHALLENGES</div>
+<button data-ch="0">1. Find the Engineer Bee</button>
+<button data-ch="1">2. Find the Train Bell</button>
+<button data-ch="2">3. Find the Waterfall</button>
+<button data-ch="3">4. Find the Railroad Crossing</button>
+<button data-ch="4">5. Find the Bison</button>
+<button data-ch="5">6. Find the Eagle</button>
+<a href="index.html">← Return to Main Directory</a>
+</aside>
+
+<section class="card">
+<div class="kicker">ABOARD THE MOUNTAIN STEAM TRAIN</div>
+<h2 id="title">Steam Train Adventure</h2>
+<p id="prompt">Click any object in the scene to hear its name.</p>
+<div class="word"><strong id="line">tren de vapor</strong><div class="translation" id="translation">steam train</div></div>
+<p id="status"></p>
+<div class="controls">
+<button id="normal">🔊 Speak</button><button id="slow">🐢 Slow</button><button id="replay">↻ Replay</button><button id="nextPhrase">Next phrase →</button>
+</div>
+</section>
+
+
+
+
+
+
+
+
+
+
+<!-- Hotspots mapped to the approved clean Steam Train Adventure JPG. -->
+<button class="hotspot" data-word="locomotive" style="left:60%;top:8%;width:40%;height:72%" aria-label="Steam locomotive"></button>
+<button class="hotspot" data-word="bee" style="left:63%;top:20%;width:9%;height:17%" aria-label="Engineer bee"></button>
+<button class="hotspot" data-word="bell" style="left:78%;top:13%;width:8%;height:15%" aria-label="Train bell"></button>
+<button class="hotspot" data-word="headlight" style="left:91%;top:13%;width:9%;height:19%" aria-label="Headlight"></button>
+<button class="hotspot" data-word="smokestack" style="left:87%;top:2%;width:9%;height:23%" aria-label="Smokestack"></button>
+<button class="hotspot" data-word="steam" style="left:62%;top:0%;width:31%;height:18%" aria-label="Steam"></button>
+<button class="hotspot" data-word="passengers" style="left:49%;top:31%;width:18%;height:22%" aria-label="Passengers"></button>
+<button class="hotspot" data-word="cars" style="left:31%;top:34%;width:31%;height:22%" aria-label="Passenger cars"></button>
+<button class="hotspot" data-word="trestle" style="left:31%;top:49%;width:63%;height:50%" aria-label="Trestle bridge"></button>
+<button class="hotspot" data-word="tracks" style="left:49%;top:52%;width:51%;height:43%" aria-label="Railroad tracks"></button>
+<button class="hotspot" data-word="waterfall" style="left:18%;top:54%;width:22%;height:36%" aria-label="Waterfall"></button>
+<button class="hotspot" data-word="river" style="left:22%;top:77%;width:30%;height:23%" aria-label="River"></button>
+<button class="hotspot" data-word="depot" style="left:6%;top:38%;width:23%;height:19%" aria-label="Railroad depot"></button>
+<button class="hotspot" data-word="crossing" style="left:2%;top:37%;width:11%;height:18%" aria-label="Railroad crossing"></button>
+<button class="hotspot" data-word="watertower" style="left:19%;top:34%;width:10%;height:19%" aria-label="Water tower"></button>
+<button class="hotspot" data-word="bison" style="left:2%;top:56%;width:19%;height:18%" aria-label="Bison"></button>
+<button class="hotspot" data-word="deer" style="left:0%;top:76%;width:13%;height:22%" aria-label="Deer"></button>
+<button class="hotspot" data-word="eagle" style="left:2%;top:4%;width:13%;height:17%" aria-label="Eagle"></button>
+<button class="hotspot" data-word="mountains" style="left:9%;top:10%;width:46%;height:29%" aria-label="Mountains"></button>
+<button class="hotspot" data-word="forest" style="left:0%;top:23%;width:47%;height:42%" aria-label="Forest"></button>
+
+</main>
+
+<script>
+const EN={train:"steam train",locomotive:"steam locomotive",bee:"engineer bee",bell:"train bell",headlight:"headlight",smokestack:"smokestack",steam:"steam",passengers:"passengers",cars:"passenger cars",trestle:"trestle bridge",tracks:"railroad tracks",waterfall:"waterfall",river:"river",depot:"railroad depot",crossing:"railroad crossing",watertower:"water tower",bison:"bison",deer:"deer",eagle:"eagle",mountains:"mountains",forest:"forest"};
+const WORDS={
+es:{train:"tren de vapor",locomotive:"locomotora de vapor",bee:"abeja maquinista",bell:"campana del tren",headlight:"faro",smokestack:"chimenea",steam:"vapor",passengers:"pasajeros",cars:"vagones de pasajeros",trestle:"puente de caballetes",tracks:"vías del tren",waterfall:"cascada",river:"río",depot:"estación de ferrocarril",crossing:"cruce ferroviario",watertower:"torre de agua",bison:"bisontes",deer:"ciervo",eagle:"águila",mountains:"montañas",forest:"bosque"},
+fr:{train:"train à vapeur",locomotive:"locomotive à vapeur",bee:"abeille mécanicienne",bell:"cloche du train",headlight:"phare",smokestack:"cheminée",steam:"vapeur",passengers:"passagers",cars:"voitures de voyageurs",trestle:"pont à tréteaux",tracks:"voies ferrées",waterfall:"cascade",river:"rivière",depot:"gare ferroviaire",crossing:"passage à niveau",watertower:"château d'eau",bison:"bisons",deer:"cerf",eagle:"aigle",mountains:"montagnes",forest:"forêt"},
+en:{...EN},
+de:{train:"Dampfzug",locomotive:"Dampflokomotive",bee:"Lokführer-Biene",bell:"Zugglocke",headlight:"Scheinwerfer",smokestack:"Schornstein",steam:"Dampf",passengers:"Fahrgäste",cars:"Personenwagen",trestle:"Bockbrücke",tracks:"Eisenbahngleise",waterfall:"Wasserfall",river:"Fluss",depot:"Bahnhof",crossing:"Bahnübergang",watertower:"Wasserturm",bison:"Bisone",deer:"Hirsch",eagle:"Adler",mountains:"Berge",forest:"Wald"},
+it:{train:"treno a vapore",locomotive:"locomotiva a vapore",bee:"ape macchinista",bell:"campana del treno",headlight:"faro",smokestack:"ciminiera",steam:"vapore",passengers:"passeggeri",cars:"carrozze passeggeri",trestle:"ponte a traliccio",tracks:"binari ferroviari",waterfall:"cascata",river:"fiume",depot:"stazione ferroviaria",crossing:"passaggio a livello",watertower:"torre dell'acqua",bison:"bisonti",deer:"cervo",eagle:"aquila",mountains:"montagne",forest:"foresta"},
+pt:{train:"trem a vapor",locomotive:"locomotiva a vapor",bee:"abelha maquinista",bell:"sino do trem",headlight:"farol",smokestack:"chaminé",steam:"vapor",passengers:"passageiros",cars:"vagões de passageiros",trestle:"ponte de cavaletes",tracks:"trilhos",waterfall:"cachoeira",river:"rio",depot:"estação ferroviária",crossing:"passagem de nível",watertower:"torre de água",bison:"bisões",deer:"veado",eagle:"águia",mountains:"montanhas",forest:"floresta"},
+no:{train:"damptog",locomotive:"damplokomotiv",bee:"lokførerbie",bell:"togklokke",headlight:"frontlykt",smokestack:"skorstein",steam:"damp",passengers:"passasjerer",cars:"passasjervogner",trestle:"jernbanebro",tracks:"jernbanespor",waterfall:"foss",river:"elv",depot:"jernbanestasjon",crossing:"jernbaneovergang",watertower:"vanntårn",bison:"bison",deer:"hjort",eagle:"ørn",mountains:"fjell",forest:"skog"}};
+const SPEECH_LANG={es:"es-ES",fr:"fr-FR",en:"en-US",de:"de-DE",it:"it-IT",pt:"pt-PT",no:"nb-NO"};
+const lessons={
+en:{ride:["All aboard the mountain steam train.","The old locomotive carries its passengers across a spectacular mountain valley."],engine:["The steam locomotive uses heated water to create steam that helps move the train.","Its bell, smokestack, wheels, and bright headlight are easy to spot."],bridge:["The train is crossing a tall wooden trestle bridge.","Far below, a river rushes through the rocky canyon."],station:["A small railroad depot waits beside the tracks.","The railroad crossing and water tower are part of the old station area."],scenery:["Snowy mountains, pine forests, a river, and a waterfall surround the railway.","Passengers have a wonderful view from the train."],wildlife:["Bison graze near the station while a deer watches from the hillside.","An eagle soars above the mountains as the train passes by."]},
+es:{ride:["Todos a bordo del tren de vapor de montaña.","La antigua locomotora lleva a sus pasajeros por un espectacular valle montañoso."],engine:["La locomotora de vapor usa agua caliente para crear vapor que ayuda a mover el tren.","Su campana, chimenea, ruedas y faro brillante son fáciles de encontrar."],bridge:["El tren está cruzando un alto puente de madera.","Muy abajo, un río corre por el cañón rocoso."],station:["Una pequeña estación de ferrocarril espera junto a las vías.","El cruce ferroviario y la torre de agua forman parte de la antigua estación."],scenery:["Montañas nevadas, bosques de pinos, un río y una cascada rodean el ferrocarril.","Los pasajeros tienen una vista maravillosa desde el tren."],wildlife:["Los bisontes pastan cerca de la estación mientras un ciervo observa desde la ladera.","Un águila vuela sobre las montañas mientras pasa el tren."]},
+fr:{ride:["En voiture pour le train à vapeur de montagne.","La vieille locomotive transporte ses passagers à travers une spectaculaire vallée de montagne."],engine:["La locomotive utilise de l'eau chauffée pour produire la vapeur qui aide à déplacer le train.","Sa cloche, sa cheminée, ses roues et son phare sont faciles à repérer."],bridge:["Le train traverse un grand pont à tréteaux en bois.","Très bas, une rivière traverse le canyon rocheux."],station:["Une petite gare attend près des voies.","Le passage à niveau et le château d'eau font partie de l'ancienne gare."],scenery:["Des montagnes enneigées, des forêts de pins, une rivière et une cascade entourent la voie ferrée.","Les passagers profitent d'une vue magnifique depuis le train."],wildlife:["Des bisons broutent près de la gare tandis qu'un cerf observe depuis la colline.","Un aigle plane au-dessus des montagnes pendant le passage du train."]},
+de:{ride:["Alle einsteigen in den Berg-Dampfzug.","Die alte Lokomotive fährt mit ihren Fahrgästen durch ein beeindruckendes Bergtal."],engine:["Die Dampflokomotive erhitzt Wasser und erzeugt Dampf, der den Zug antreibt.","Glocke, Schornstein, Räder und heller Scheinwerfer sind gut zu erkennen."],bridge:["Der Zug fährt über eine hohe hölzerne Bockbrücke.","Weit unten fließt ein Fluss durch die felsige Schlucht."],station:["Ein kleiner Bahnhof liegt neben den Gleisen.","Bahnübergang und Wasserturm gehören zum alten Bahnhofsgelände."],scenery:["Schneebedeckte Berge, Kiefernwälder, ein Fluss und ein Wasserfall umgeben die Bahnstrecke.","Die Fahrgäste genießen eine herrliche Aussicht."],wildlife:["Bisone grasen nahe dem Bahnhof, während ein Hirsch vom Hang aus zusieht.","Ein Adler fliegt über die Berge, während der Zug vorbeifährt."]},
+it:{ride:["Tutti a bordo del treno a vapore di montagna.","La vecchia locomotiva porta i passeggeri attraverso una spettacolare valle di montagna."],engine:["La locomotiva riscalda l'acqua per creare il vapore che aiuta a muovere il treno.","La campana, la ciminiera, le ruote e il faro sono facili da vedere."],bridge:["Il treno attraversa un alto ponte di legno.","Molto più in basso, un fiume scorre nel canyon roccioso."],station:["Una piccola stazione ferroviaria si trova accanto ai binari.","Il passaggio a livello e la torre dell'acqua fanno parte della vecchia stazione."],scenery:["Montagne innevate, foreste di pini, un fiume e una cascata circondano la ferrovia.","I passeggeri godono di una vista meravigliosa dal treno."],wildlife:["I bisonti pascolano vicino alla stazione mentre un cervo osserva dalla collina.","Un'aquila vola sopra le montagne mentre passa il treno."]},
+pt:{ride:["Todos a bordo do trem a vapor da montanha.","A antiga locomotiva leva os passageiros por um espetacular vale montanhoso."],engine:["A locomotiva aquece água para criar vapor que ajuda a mover o trem.","O sino, a chaminé, as rodas e o farol são fáceis de encontrar."],bridge:["O trem está atravessando uma alta ponte de madeira.","Bem abaixo, um rio corre pelo cânion rochoso."],station:["Uma pequena estação ferroviária fica ao lado dos trilhos.","A passagem de nível e a torre de água fazem parte da antiga estação."],scenery:["Montanhas nevadas, florestas de pinheiros, um rio e uma cachoeira cercam a ferrovia.","Os passageiros têm uma vista maravilhosa do trem."],wildlife:["Bisões pastam perto da estação enquanto um veado observa da encosta.","Uma águia voa sobre as montanhas enquanto o trem passa."]},
+no:{ride:["Alle om bord på fjellets damptog.","Det gamle lokomotivet tar passasjerene gjennom en spektakulær fjelldal."],engine:["Damplokomotivet varmer opp vann for å lage damp som hjelper toget å bevege seg.","Klokken, skorsteinen, hjulene og frontlykten er lette å se."],bridge:["Toget krysser en høy trebro.","Langt nedenfor renner en elv gjennom den steinete dalen."],station:["En liten jernbanestasjon ligger ved sporene.","Jernbaneovergangen og vanntårnet er en del av det gamle stasjonsområdet."],scenery:["Snødekte fjell, furuskog, en elv og en foss omgir jernbanen.","Passasjerene har en fantastisk utsikt fra toget."],wildlife:["Bison beiter nær stasjonen mens en hjort ser på fra åssiden.","En ørn svever over fjellene mens toget passerer."]}};
+const challengeOrder=["bee","bell","waterfall","crossing","bison","eagle"];
+const SOUND_MAP={};
+const langSel=document.getElementById("lang"),voiceSel=document.getElementById("voice");
+const title=document.getElementById("title"),prompt=document.getElementById("prompt"),line=document.getElementById("line"),translation=document.getElementById("translation"),status=document.getElementById("status"),world=document.getElementById("world");
+let lastWord="train",activeLesson="",lessonPhrase=1,challenge=-1,lastSpoken="";
+function voices(){return ("speechSynthesis" in window)?speechSynthesis.getVoices():[]}
+function fillVoices(){const old=localStorage.getItem("talkabee-steamtrain-voice-"+langSel.value)||"";voiceSel.innerHTML='<option value="">Browser Default</option>';voices().forEach(v=>{const o=document.createElement("option");o.value=v.name;o.textContent=v.name+(v.lang?" — "+v.lang:"");voiceSel.appendChild(o)});if([...voiceSel.options].some(o=>o.value===old))voiceSel.value=old}
+if("speechSynthesis" in window){speechSynthesis.onvoiceschanged=fillVoices;fillVoices();setTimeout(fillVoices,150);setTimeout(fillVoices,600);setTimeout(fillVoices,1500)}
+voiceSel.onchange=()=>localStorage.setItem("talkabee-steamtrain-voice-"+langSel.value,voiceSel.value);
+function speak(text,rate=.88,onend=null){if(!text||!("speechSynthesis" in window)){if(onend)onend();return}speechSynthesis.cancel();setTimeout(()=>{const u=new SpeechSynthesisUtterance(text);u.lang=SPEECH_LANG[langSel.value]||langSel.value;u.rate=rate;const v=speechSynthesis.getVoices().find(x=>x.name===voiceSel.value);if(v)u.voice=v;if(onend)u.onend=onend;speechSynthesis.speak(u)},50);lastSpoken=text}
+function stopSound(){document.querySelectorAll("audio[data-talkabee-sound]").forEach(a=>{a.pause();a.currentTime=0;a.remove()})}
+function playSound(key){stopSound();const src=SOUND_MAP[key];if(!src)return;const a=new Audio(src);a.dataset.talkabeeSound="1";document.body.appendChild(a);a.play().catch(()=>{});a.onended=()=>a.remove()}
+function showWord(key){activeLesson="";lastWord=key;lessonPhrase=1;title.textContent="Click & Discover";prompt.textContent="You found "+(EN[key]||key)+".";line.textContent=WORDS[langSel.value][key]||EN[key]||key;translation.textContent=langSel.value==="en"?"":(EN[key]||key)}
+document.querySelectorAll(".hotspot").forEach(b=>b.onclick=()=>{const key=b.dataset.word;showWord(key);let played=false;const after=()=>{if(played)return;played=true;playSound(key)};speak(WORDS[langSel.value][key]||EN[key]||key,.82,after);setTimeout(after,1500);if(challenge>=0){if(key===challengeOrder[challenge]){status.textContent="✓ Nice find!";status.style.color="#9dffbf"}else{status.textContent="Not that one — keep looking.";status.style.color="#ffe28a"}}});
+function clearChallenge(){challenge=-1;world.classList.remove("challenge-mode");document.querySelectorAll(".hotspot").forEach(h=>h.classList.remove("target"));status.textContent=""}
+document.getElementById("discovery").onclick=()=>{clearChallenge();activeLesson="";lastWord="train";title.textContent="Click & Discover";prompt.textContent="Click any object in the scene to hear its name.";line.textContent=WORDS[langSel.value].train;translation.textContent=langSel.value==="en"?"":EN.train};
+document.querySelectorAll("[data-ch]").forEach(b=>b.onclick=()=>{activeLesson="";lastWord="";challenge=+b.dataset.ch;world.classList.add("challenge-mode");document.querySelectorAll(".hotspot").forEach(h=>h.classList.toggle("target",h.dataset.word===challengeOrder[challenge]));title.textContent="Challenge "+(challenge+1)+" of 6";prompt.textContent=b.textContent.replace(/^[0-9]+\.\s*/,"");line.textContent=WORDS[langSel.value][challengeOrder[challenge]];translation.textContent=langSel.value==="en"?"":EN[challengeOrder[challenge]];status.textContent=""});
+function showLesson(key,speakIt=false){clearChallenge();activeLesson=key;lastWord="";lessonPhrase=Math.max(0,Math.min(1,lessonPhrase));const a=lessons[langSel.value][key],e=lessons.en[key],btn=document.querySelector(`[data-lesson="${key}"]`);title.textContent=btn?btn.textContent.replace(/^[0-9]+\.\s*/,""):"Steam Train Adventure";prompt.textContent=a[0];line.textContent=a[lessonPhrase];translation.textContent=langSel.value==="en"?"":e[lessonPhrase];if(speakIt)speak(a[lessonPhrase])}
+document.querySelectorAll("[data-lesson]").forEach(b=>b.onclick=()=>{lessonPhrase=1;showLesson(b.dataset.lesson,true)});
+function currentSpeechText(){if(activeLesson)return lessons[langSel.value][activeLesson][lessonPhrase];if(lastWord)return WORDS[langSel.value][lastWord]||EN[lastWord];return line.textContent}
+document.getElementById("normal").onclick=()=>speak(currentSpeechText(),.82);
+document.getElementById("slow").onclick=()=>speak(currentSpeechText(),.58);
+document.getElementById("replay").onclick=()=>speak(lastSpoken||currentSpeechText(),.82);
+document.getElementById("nextPhrase").onclick=()=>{if(!activeLesson){const keys=Object.keys(EN),i=Math.max(0,keys.indexOf(lastWord));showWord(keys[(i+1)%keys.length]);speak(currentSpeechText(),.82);return}lessonPhrase=(lessonPhrase+1)%2;showLesson(activeLesson,true)};
+langSel.onchange=()=>{fillVoices();if(activeLesson)showLesson(activeLesson,false);else if(lastWord)showWord(lastWord)};
+document.getElementById("sceneView").onclick=()=>document.body.classList.add("scene-view");
+document.getElementById("sceneReturn").onclick=()=>document.body.classList.remove("scene-view");
+showWord("train");
+</script>
+</body>
+</html>
+
+<style id="talkabee-ski-panel-180">
+@media(min-width:761px){.panel{width:180px!important;min-width:180px!important;max-width:180px!important}}
+</style>

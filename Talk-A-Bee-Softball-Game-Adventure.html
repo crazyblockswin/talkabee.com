@@ -1,0 +1,209 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Talk A Bee — Softball Game Adventure</title>
+<link rel="icon" type="image/png" href="images/talkabee-favicon.png">
+<style>
+*{box-sizing:border-box}
+html,body{margin:0;width:100%;height:100%;overflow:hidden;font-family:Arial,Helvetica,sans-serif;background:#063a66;color:#fff}
+.world{position:relative;width:100vw;height:100vh;background:url("images/Talk-A-Bee-Softball-Game-Adventure.jpg") center center/cover no-repeat}
+
+/* APPROVED TALK A BEE LEFT PANEL */
+.panel{position:fixed;z-index:1000;left:16px;top:16px;bottom:16px;width:180px;min-width:180px;max-width:180px;
+padding:14px;overflow-x:hidden;overflow-y:auto;border-radius:20px;border:1px solid rgba(255,255,255,.28);
+background:rgba(7,23,39,.31);box-shadow:0 12px 30px rgba(0,0,0,.24);backdrop-filter:blur(3px);-webkit-backdrop-filter:blur(3px)}
+.panel h1{font-size:19px;line-height:1.08;margin:4px 0 10px;text-shadow:0 2px 4px rgba(0,0,0,.55)}
+.label{font-size:9.5px;line-height:1.1;letter-spacing:.09em;font-weight:900;margin:9px 0 4px}
+.panel button,.panel select,.panel a{width:100%;min-height:34px;margin:4px 0;padding:8px 9px;border-radius:12px;
+border:1px solid rgba(255,255,255,.38);background:rgba(7,32,50,.54);color:#fff;font:800 12px/1.16 Arial,sans-serif;
+text-align:left;text-decoration:none}
+.panel button:hover,.panel a:hover{background:rgba(20,58,79,.70)}
+.panel button.active{background:rgba(78,69,219,.74)}
+.panel select{white-space:nowrap;text-overflow:ellipsis;overflow:hidden}
+
+/* APPROVED 520px SCRIPT CARD */
+.card{position:fixed;z-index:900;left:50%;bottom:16px;width:520px;max-width:520px;padding:14px 16px;
+border-radius:20px;border:1px solid rgba(255,255,255,.30);background:rgba(25,19,24,.38);
+box-shadow:0 12px 30px rgba(0,0,0,.28);backdrop-filter:blur(5px);-webkit-backdrop-filter:blur(5px);
+transform:translateX(-50%) scale(.67);transform-origin:bottom center}
+.card .kicker{font-size:15px;line-height:1.25;font-weight:900;letter-spacing:.10em;color:rgba(255,255,255,.96);
+text-shadow:0 1px 3px rgba(0,0,0,.78);margin:0 0 6px}
+.card h2{font-size:22px;line-height:1.08;margin:4px 0 7px;text-shadow:0 1px 3px rgba(0,0,0,.55)}
+.card p{font-size:18px;line-height:1.35;margin:4px 0 7px}
+.word{margin-top:8px;padding:10px 12px;border-radius:14px;background:rgba(88,88,88,.72);border:1px solid rgba(255,255,255,.20)}
+.word strong{display:block;font-size:22px;line-height:1.28}
+.translation{font-size:18px;line-height:1.35;margin-top:3px}
+.controls{display:flex;align-items:center;gap:8px;flex-wrap:nowrap;margin-top:8px}
+.controls button{width:auto;min-width:0;padding:9px 13px;border-radius:12px;border:1px solid rgba(255,255,255,.35);
+background:rgba(255,255,255,.88);color:#10283c;font:900 13px/1 Arial,sans-serif;white-space:nowrap}
+
+/* HOTSPOTS */
+.hotspot{position:absolute;z-index:8;border:0;background:transparent;opacity:0;cursor:pointer;border-radius:16px}
+.hotspot:hover,.hotspot:focus-visible{opacity:1;background:rgba(255,220,72,.28);outline:2px solid rgba(255,255,255,.90)}
+.challenge-mode .hotspot.target{opacity:1;background:rgba(255,199,48,.38);outline:4px solid #fff;box-shadow:0 0 0 7px rgba(255,200,50,.20)}
+
+/* APPROVED COMPACT PREVIOUS / NEXT CHEVRONS */
+.talkabee-prev-next-nav{position:fixed;top:18px;right:22px;z-index:2147483000;display:flex;align-items:center;overflow:hidden;
+border:2px solid rgba(255,255,255,.82);border-radius:999px;background:rgba(11,22,42,.24);
+box-shadow:0 5px 16px rgba(0,0,0,.16);backdrop-filter:blur(3px);-webkit-backdrop-filter:blur(3px)}
+.talkabee-prev-next-nav a{width:48px;height:48px;display:grid;place-items:center;text-decoration:none;color:#fff;
+font:900 38px/1 Arial,sans-serif;text-shadow:0 1px 3px rgba(0,0,0,.42)}
+.talkabee-prev-next-nav a+a{border-left:1px solid rgba(255,255,255,.36)}
+.talkabee-prev-next-nav a:hover,.talkabee-prev-next-nav a:focus-visible{background:rgba(255,255,255,.18);outline:none}
+
+/* SCENE VIEW */
+.scene-return{display:none;position:fixed;z-index:2147483001;left:18px;top:18px;padding:10px 14px;border-radius:12px;
+border:1px solid #fff;background:rgba(7,23,39,.65);color:#fff;font-weight:900}
+.scene-view .panel,.scene-view .card,.scene-view .talkabee-prev-next-nav{display:none}
+.scene-view .scene-return{display:block}
+
+@media(max-width:760px){
+ .panel{left:10px;top:10px;bottom:10px;width:180px;min-width:180px;max-width:180px;padding:11px}
+ .card{width:min(520px,calc(100vw - 32px));bottom:10px;transform:translateX(-50%) scale(.82)}
+ .talkabee-prev-next-nav{top:12px;right:12px}.talkabee-prev-next-nav a{width:42px;height:42px;font-size:33px}
+}
+</style>
+</head>
+<body>
+<nav class="talkabee-prev-next-nav" aria-label="Adventure navigation">
+  <a href="Talk-A-Bee-Bicycle-Race-Adventure.html" aria-label="Previous adventure" title="Previous">‹</a>
+  <a href="Talk-A-Bee-Football-Game-Adventure.html" aria-label="Next adventure" title="Next">›</a>
+</nav>
+
+<main class="world" id="world">
+<button class="scene-return" id="sceneReturn">Return to Adventure</button>
+
+<aside class="panel">
+<h1>🥎 Softball Game Adventure</h1>
+<div class="label">LANGUAGE</div>
+<select id="lang">
+<option value="es">Spanish</option><option value="fr">French</option><option value="en">English</option>
+<option value="de">German</option><option value="it">Italian</option><option value="pt">Portuguese</option><option value="no">Norwegian</option>
+</select>
+<div class="label">VOICE</div>
+<select id="voice"><option value="">Browser Default</option></select>
+<button id="sceneView">◉ Scene View</button>
+
+<div class="label">DISCOVERY</div>
+<button id="discovery">🔎 Discovery — Click the Scene</button>
+
+<div class="label">ACTIVITIES</div>
+<button data-lesson="pitch">1. Bee Takes the Mound</button>
+<button data-lesson="bat">2. Batter Up!</button>
+<button data-lesson="field">3. Explore the Field</button>
+<button data-lesson="players">4. Meet the Players</button>
+<button data-lesson="score">5. Read the Scoreboard</button>
+<button data-lesson="crowd">6. Cheer from the Stands</button>
+<div class="label">CHALLENGES</div>
+<button data-ch="0">1. Find the Bee Pitcher</button>
+<button data-ch="1">2. Find the Softball</button>
+<button data-ch="2">3. Find the Batter</button>
+<button data-ch="3">4. Find the Catcher</button>
+<button data-ch="4">5. Find the Scoreboard</button>
+<button data-ch="5">6. Find Home Plate</button>
+<a href="index.html">← Return to Main Directory</a>
+</aside>
+
+<section class="card">
+<div class="kicker">AT THE SOFTBALL GAME</div>
+<h2 id="title">Softball Game Adventure</h2>
+<p id="prompt">Click any object in the scene to hear its name.</p>
+<div class="word"><strong id="line">partido de sóftbol</strong><div class="translation" id="translation">softball game</div></div>
+<p id="status"></p>
+<div class="controls">
+<button id="normal">🔊 Speak</button><button id="slow">🐢 Slow</button><button id="replay">↻ Replay</button><button id="nextPhrase">Next phrase →</button>
+</div>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- Hotspots mapped to the approved clean Softball Game Adventure JPG. -->
+<button class="hotspot" data-word="bee" style="left:35%;top:43%;width:15%;height:29%" aria-label="Bee pitcher"></button>
+<button class="hotspot" data-word="softball" style="left:42%;top:48%;width:7%;height:10%" aria-label="Softball"></button>
+<button class="hotspot" data-word="pitchermound" style="left:32%;top:60%;width:25%;height:18%" aria-label="Pitcher's mound"></button>
+<button class="hotspot" data-word="batter" style="left:66%;top:36%;width:17%;height:45%" aria-label="Batter"></button>
+<button class="hotspot" data-word="bat" style="left:72%;top:28%;width:11%;height:24%" aria-label="Softball bat"></button>
+<button class="hotspot" data-word="catcher" style="left:77%;top:51%;width:17%;height:43%" aria-label="Catcher"></button>
+<button class="hotspot" data-word="umpire" style="left:91%;top:27%;width:9%;height:67%" aria-label="Umpire"></button>
+<button class="hotspot" data-word="homeplate" style="left:60%;top:82%;width:21%;height:16%" aria-label="Home plate"></button>
+<button class="hotspot" data-word="scoreboard" style="left:75%;top:8%;width:23%;height:27%" aria-label="Scoreboard"></button>
+<button class="hotspot" data-word="spectators" style="left:72%;top:29%;width:27%;height:27%" aria-label="Spectators"></button>
+<button class="hotspot" data-word="fielder1" style="left:7%;top:45%;width:13%;height:27%" aria-label="Infielder"></button>
+<button class="hotspot" data-word="fielder2" style="left:20%;top:44%;width:11%;height:25%" aria-label="Infielder"></button>
+<button class="hotspot" data-word="fielder3" style="left:55%;top:44%;width:11%;height:25%" aria-label="Infielder"></button>
+<button class="hotspot" data-word="glove" style="left:14%;top:53%;width:8%;height:14%" aria-label="Softball glove"></button>
+<button class="hotspot" data-word="helmet" style="left:70%;top:34%;width:10%;height:14%" aria-label="Batting helmet"></button>
+<button class="hotspot" data-word="field" style="left:0%;top:57%;width:65%;height:43%" aria-label="Softball field"></button>
+<button class="hotspot" data-word="fence" style="left:0%;top:38%;width:69%;height:20%" aria-label="Outfield fence"></button>
+<button class="hotspot" data-word="lake" style="left:32%;top:31%;width:28%;height:16%" aria-label="Lake"></button>
+<button class="hotspot" data-word="mountains" style="left:17%;top:11%;width:49%;height:29%" aria-label="Mountains"></button>
+<button class="hotspot" data-word="flag" style="left:69%;top:4%;width:12%;height:27%" aria-label="Flag"></button>
+
+</main>
+
+<script>
+const EN={game:"softball game",bee:"bee pitcher",softball:"softball",pitchermound:"pitcher's mound",batter:"batter",bat:"softball bat",catcher:"catcher",umpire:"umpire",homeplate:"home plate",scoreboard:"scoreboard",spectators:"spectators",fielder1:"infielder",fielder2:"infielder",fielder3:"infielder",glove:"softball glove",helmet:"batting helmet",field:"softball field",fence:"outfield fence",lake:"lake",mountains:"mountains",flag:"flag"};
+const WORDS={
+es:{game:"partido de sóftbol",bee:"abeja lanzadora",softball:"pelota de sóftbol",pitchermound:"montículo del lanzador",batter:"bateadora",bat:"bate de sóftbol",catcher:"receptora",umpire:"árbitro",homeplate:"plato de home",scoreboard:"marcador",spectators:"espectadores",fielder1:"jugadora de cuadro",fielder2:"jugador de cuadro",fielder3:"jugador de cuadro",glove:"guante de sóftbol",helmet:"casco de bateo",field:"campo de sóftbol",fence:"valla del jardín",lake:"lago",mountains:"montañas",flag:"bandera"},
+fr:{game:"match de softball",bee:"abeille lanceuse",softball:"balle de softball",pitchermound:"monticule du lanceur",batter:"frappeuse",bat:"batte de softball",catcher:"receveuse",umpire:"arbitre",homeplate:"marbre",scoreboard:"tableau d'affichage",spectators:"spectateurs",fielder1:"joueuse de champ intérieur",fielder2:"joueur de champ intérieur",fielder3:"joueur de champ intérieur",glove:"gant de softball",helmet:"casque de frappe",field:"terrain de softball",fence:"clôture du champ extérieur",lake:"lac",mountains:"montagnes",flag:"drapeau"},
+en:{...EN},
+de:{game:"Softballspiel",bee:"Pitcher-Biene",softball:"Softball",pitchermound:"Pitcherhügel",batter:"Schlagfrau",bat:"Softballschläger",catcher:"Catcherin",umpire:"Schiedsrichter",homeplate:"Home Plate",scoreboard:"Anzeigetafel",spectators:"Zuschauer",fielder1:"Infielderin",fielder2:"Infielder",fielder3:"Infielder",glove:"Softballhandschuh",helmet:"Schlaghelm",field:"Softballfeld",fence:"Außenfeldzaun",lake:"See",mountains:"Berge",flag:"Flagge"},
+it:{game:"partita di softball",bee:"ape lanciatrice",softball:"palla da softball",pitchermound:"pedana del lanciatore",batter:"battitrice",bat:"mazza da softball",catcher:"ricevitrice",umpire:"arbitro",homeplate:"casa base",scoreboard:"tabellone",spectators:"spettatori",fielder1:"interno",fielder2:"interno",fielder3:"interno",glove:"guanto da softball",helmet:"casco da battuta",field:"campo da softball",fence:"recinzione esterna",lake:"lago",mountains:"montagne",flag:"bandiera"},
+pt:{game:"jogo de softball",bee:"abelha arremessadora",softball:"bola de softball",pitchermound:"monte do arremessador",batter:"rebatedora",bat:"taco de softball",catcher:"receptora",umpire:"árbitro",homeplate:"base principal",scoreboard:"placar",spectators:"espectadores",fielder1:"jogadora de campo interno",fielder2:"jogador de campo interno",fielder3:"jogador de campo interno",glove:"luva de softball",helmet:"capacete de rebatedor",field:"campo de softball",fence:"cerca do campo externo",lake:"lago",mountains:"montanhas",flag:"bandeira"},
+no:{game:"softballkamp",bee:"pitcherbie",softball:"softball",pitchermound:"pitcherhaug",batter:"slagspiller",bat:"softballkølle",catcher:"catcher",umpire:"dommer",homeplate:"hjemmeplate",scoreboard:"resultattavle",spectators:"tilskuere",fielder1:"infielder",fielder2:"infielder",fielder3:"infielder",glove:"softballhanske",helmet:"slaghjelm",field:"softballbane",fence:"utegjerde",lake:"innsjø",mountains:"fjell",flag:"flagg"}};
+const SPEECH_LANG={es:"es-ES",fr:"fr-FR",en:"en-US",de:"de-DE",it:"it-IT",pt:"pt-PT",no:"nb-NO"};
+const lessons={
+en:{pitch:["The Talk A Bee pitcher is on the mound with the softball ready to throw.","The pitcher steps forward and sends the ball toward home plate."],bat:["The batter watches the pitcher and gets ready to swing.","She grips the bat with both hands and keeps her eyes on the softball."],field:["Home plate, the pitcher's mound, the infield, and the outfield are all parts of the softball field.","Fielders spread out and get ready for the ball."],players:["The pitcher throws, the batter swings, the catcher receives the pitch, and the umpire watches the play.","Every player has an important job during the game."],score:["The scoreboard shows the home team, guest team, and current inning.","Fans can look at it to follow the game."],crowd:["Spectators cheer from the bleachers behind home plate.","The lake and mountains make this a beautiful place for a softball game."]},
+es:{pitch:["La abeja de Talk A Bee está en el montículo con la pelota lista para lanzar.","La lanzadora da un paso adelante y envía la pelota hacia el plato de home."],bat:["La bateadora observa a la lanzadora y se prepara para batear.","Sujeta el bate con ambas manos y mantiene la vista en la pelota."],field:["El plato de home, el montículo, el cuadro y los jardines forman parte del campo de sóftbol.","Los jugadores se colocan y se preparan para la pelota."],players:["La lanzadora lanza, la bateadora batea, la receptora recibe y el árbitro observa la jugada.","Cada jugador tiene un trabajo importante durante el partido."],score:["El marcador muestra el equipo local, el visitante y la entrada actual.","Los aficionados pueden mirarlo para seguir el partido."],crowd:["Los espectadores animan desde las gradas detrás del plato.","El lago y las montañas hacen de este un hermoso lugar para jugar sóftbol."]},
+fr:{pitch:["L'abeille Talk A Bee est sur le monticule avec la balle prête à lancer.","La lanceuse avance et envoie la balle vers le marbre."],bat:["La frappeuse regarde la lanceuse et se prépare à frapper.","Elle tient la batte à deux mains et garde les yeux sur la balle."],field:["Le marbre, le monticule, le champ intérieur et le champ extérieur font partie du terrain de softball.","Les joueurs se placent et se préparent pour la balle."],players:["La lanceuse lance, la frappeuse frappe, la receveuse attrape et l'arbitre observe le jeu.","Chaque joueur a un rôle important pendant le match."],score:["Le tableau affiche l'équipe locale, l'équipe visiteuse et la manche actuelle.","Les supporters peuvent le regarder pour suivre le match."],crowd:["Les spectateurs encouragent depuis les tribunes derrière le marbre.","Le lac et les montagnes rendent ce terrain magnifique."]},
+de:{pitch:["Die Talk A Bee Biene steht als Pitcher auf dem Hügel und hält den Softball bereit.","Der Pitcher macht einen Schritt nach vorn und wirft den Ball zur Home Plate."],bat:["Die Schlagfrau beobachtet den Pitcher und macht sich zum Schlag bereit.","Sie hält den Schläger mit beiden Händen und behält den Ball im Blick."],field:["Home Plate, Pitcherhügel, Innenfeld und Außenfeld gehören zum Softballfeld.","Die Feldspieler verteilen sich und machen sich bereit."],players:["Der Pitcher wirft, die Schlagfrau schlägt, der Catcher fängt und der Schiedsrichter beobachtet das Spiel.","Jeder Spieler hat während des Spiels eine wichtige Aufgabe."],score:["Die Anzeigetafel zeigt Heimteam, Gastteam und das aktuelle Inning.","Die Zuschauer können dort den Spielstand verfolgen."],crowd:["Die Zuschauer jubeln von den Tribünen hinter der Home Plate.","Der See und die Berge machen dies zu einem wunderschönen Softballplatz."]},
+it:{pitch:["L'ape Talk A Bee è sulla pedana con la palla pronta da lanciare.","La lanciatrice fa un passo avanti e manda la palla verso casa base."],bat:["La battitrice guarda la lanciatrice e si prepara a colpire.","Tiene la mazza con entrambe le mani e guarda la palla."],field:["Casa base, la pedana, il campo interno e quello esterno fanno parte del campo da softball.","I giocatori si dispongono e si preparano per la palla."],players:["La lanciatrice lancia, la battitrice colpisce, la ricevitrice prende la palla e l'arbitro osserva il gioco.","Ogni giocatore ha un ruolo importante durante la partita."],score:["Il tabellone mostra la squadra di casa, gli ospiti e l'inning corrente.","I tifosi possono guardarlo per seguire la partita."],crowd:["Gli spettatori fanno il tifo dalle tribune dietro casa base.","Il lago e le montagne rendono bellissimo questo campo."]},
+pt:{pitch:["A abelha Talk A Bee está no monte com a bola pronta para arremessar.","A arremessadora avança e manda a bola em direção à base principal."],bat:["A rebatedora observa a arremessadora e se prepara para rebater.","Ela segura o taco com as duas mãos e mantém os olhos na bola."],field:["A base principal, o monte, o campo interno e o campo externo fazem parte do campo de softball.","Os jogadores se espalham e ficam prontos para a bola."],players:["A arremessadora lança, a rebatedora rebate, a receptora recebe e o árbitro observa a jogada.","Cada jogador tem uma função importante durante o jogo."],score:["O placar mostra o time da casa, o visitante e a entrada atual.","Os torcedores podem olhar para acompanhar o jogo."],crowd:["Os espectadores torcem nas arquibancadas atrás da base principal.","O lago e as montanhas tornam este um belo lugar para jogar softball."]},
+no:{pitch:["Talk A Bee-bien står på pitcherhaugen med softballen klar til kast.","Pitcheren går frem og sender ballen mot hjemmeplaten."],bat:["Slagspilleren følger med på pitcheren og gjør seg klar til å slå.","Hun holder køllen med begge hender og følger ballen med blikket."],field:["Hjemmeplaten, pitcherhaugen, indre felt og ytre felt er deler av softballbanen.","Feltspillerne sprer seg og gjør seg klare."],players:["Pitcheren kaster, slagspilleren slår, catcheren tar imot og dommeren følger spillet.","Hver spiller har en viktig oppgave under kampen."],score:["Resultattavlen viser hjemmelaget, gjestelaget og gjeldende inning.","Tilskuerne kan se på den for å følge kampen."],crowd:["Tilskuerne heier fra tribunene bak hjemmeplaten.","Innsjøen og fjellene gjør dette til et vakkert sted for en softballkamp."]}};
+const challengeOrder=["bee","softball","batter","catcher","scoreboard","homeplate"];
+const SOUND_MAP={};
+const langSel=document.getElementById("lang"),voiceSel=document.getElementById("voice");
+const title=document.getElementById("title"),prompt=document.getElementById("prompt"),line=document.getElementById("line"),translation=document.getElementById("translation"),status=document.getElementById("status"),world=document.getElementById("world");
+let lastWord="game",activeLesson="",lessonPhrase=1,challenge=-1,lastSpoken="";
+function voices(){return ("speechSynthesis" in window)?speechSynthesis.getVoices():[]}
+function fillVoices(){const old=localStorage.getItem("talkabee-softball-voice-"+langSel.value)||"";voiceSel.innerHTML='<option value="">Browser Default</option>';voices().forEach(v=>{const o=document.createElement("option");o.value=v.name;o.textContent=v.name+(v.lang?" — "+v.lang:"");voiceSel.appendChild(o)});if([...voiceSel.options].some(o=>o.value===old))voiceSel.value=old}
+if("speechSynthesis" in window){speechSynthesis.onvoiceschanged=fillVoices;fillVoices();setTimeout(fillVoices,150);setTimeout(fillVoices,600);setTimeout(fillVoices,1500)}
+voiceSel.onchange=()=>localStorage.setItem("talkabee-softball-voice-"+langSel.value,voiceSel.value);
+function speak(text,rate=.88,onend=null){if(!text||!("speechSynthesis" in window)){if(onend)onend();return}speechSynthesis.cancel();setTimeout(()=>{const u=new SpeechSynthesisUtterance(text);u.lang=SPEECH_LANG[langSel.value]||langSel.value;u.rate=rate;const v=speechSynthesis.getVoices().find(x=>x.name===voiceSel.value);if(v)u.voice=v;if(onend)u.onend=onend;speechSynthesis.speak(u)},50);lastSpoken=text}
+function stopSound(){document.querySelectorAll("audio[data-talkabee-sound]").forEach(a=>{a.pause();a.currentTime=0;a.remove()})}
+function playSound(key){stopSound();const src=SOUND_MAP[key];if(!src)return;const a=new Audio(src);a.dataset.talkabeeSound="1";document.body.appendChild(a);a.play().catch(()=>{});a.onended=()=>a.remove()}
+function showWord(key){activeLesson="";lastWord=key;lessonPhrase=1;title.textContent="Click & Discover";prompt.textContent="You found "+(EN[key]||key)+".";line.textContent=WORDS[langSel.value][key]||EN[key]||key;translation.textContent=langSel.value==="en"?"":(EN[key]||key)}
+document.querySelectorAll(".hotspot").forEach(b=>b.onclick=()=>{const key=b.dataset.word;showWord(key);let played=false;const after=()=>{if(played)return;played=true;playSound(key)};speak(WORDS[langSel.value][key]||EN[key]||key,.82,after);setTimeout(after,1500);if(challenge>=0){if(key===challengeOrder[challenge]){status.textContent="✓ Nice find!";status.style.color="#9dffbf"}else{status.textContent="Not that one — keep looking.";status.style.color="#ffe28a"}}});
+function clearChallenge(){challenge=-1;world.classList.remove("challenge-mode");document.querySelectorAll(".hotspot").forEach(h=>h.classList.remove("target"));status.textContent=""}
+document.getElementById("discovery").onclick=()=>{clearChallenge();activeLesson="";lastWord="game";title.textContent="Click & Discover";prompt.textContent="Click any object in the scene to hear its name.";line.textContent=WORDS[langSel.value].game;translation.textContent=langSel.value==="en"?"":EN.game};
+document.querySelectorAll("[data-ch]").forEach(b=>b.onclick=()=>{activeLesson="";lastWord="";challenge=+b.dataset.ch;world.classList.add("challenge-mode");document.querySelectorAll(".hotspot").forEach(h=>h.classList.toggle("target",h.dataset.word===challengeOrder[challenge]));title.textContent="Challenge "+(challenge+1)+" of 6";prompt.textContent=b.textContent.replace(/^[0-9]+\.\s*/,"");line.textContent=WORDS[langSel.value][challengeOrder[challenge]];translation.textContent=langSel.value==="en"?"":EN[challengeOrder[challenge]];status.textContent=""});
+function showLesson(key,speakIt=false){clearChallenge();activeLesson=key;lastWord="";lessonPhrase=Math.max(0,Math.min(1,lessonPhrase));const a=lessons[langSel.value][key],e=lessons.en[key],btn=document.querySelector(`[data-lesson="${key}"]`);title.textContent=btn?btn.textContent.replace(/^[0-9]+\.\s*/,""):"Softball Game Adventure";prompt.textContent=a[0];line.textContent=a[lessonPhrase];translation.textContent=langSel.value==="en"?"":e[lessonPhrase];if(speakIt)speak(a[lessonPhrase])}
+document.querySelectorAll("[data-lesson]").forEach(b=>b.onclick=()=>{lessonPhrase=1;showLesson(b.dataset.lesson,true)});
+function currentSpeechText(){if(activeLesson)return lessons[langSel.value][activeLesson][lessonPhrase];if(lastWord)return WORDS[langSel.value][lastWord]||EN[lastWord];return line.textContent}
+document.getElementById("normal").onclick=()=>speak(currentSpeechText(),.82);
+document.getElementById("slow").onclick=()=>speak(currentSpeechText(),.58);
+document.getElementById("replay").onclick=()=>speak(lastSpoken||currentSpeechText(),.82);
+document.getElementById("nextPhrase").onclick=()=>{if(!activeLesson){const keys=Object.keys(EN),i=Math.max(0,keys.indexOf(lastWord));showWord(keys[(i+1)%keys.length]);speak(currentSpeechText(),.82);return}lessonPhrase=(lessonPhrase+1)%2;showLesson(activeLesson,true)};
+langSel.onchange=()=>{fillVoices();if(activeLesson)showLesson(activeLesson,false);else if(lastWord)showWord(lastWord)};
+document.getElementById("sceneView").onclick=()=>document.body.classList.add("scene-view");
+document.getElementById("sceneReturn").onclick=()=>document.body.classList.remove("scene-view");
+showWord("game");
+</script>
+</body>
+</html>
+
+<style id="talkabee-ski-panel-180">
+@media(min-width:761px){.panel{width:180px!important;min-width:180px!important;max-width:180px!important}}
+</style>
