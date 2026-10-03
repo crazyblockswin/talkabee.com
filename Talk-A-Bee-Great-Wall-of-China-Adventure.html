@@ -1,0 +1,200 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Talk A Bee — Great Wall of China Adventure</title>
+<link rel="icon" type="image/png" href="images/talkabee-favicon.png">
+<style>
+*{box-sizing:border-box}
+html,body{margin:0;width:100%;height:100%;overflow:hidden;font-family:Arial,Helvetica,sans-serif;background:#063a66;color:#fff}
+.world{position:relative;width:100vw;height:100vh;background:url("images/Talk-A-Bee-Great-Wall-of-China-Adventure.jpg") center center/cover no-repeat}
+
+/* APPROVED TALK A BEE LEFT PANEL */
+.panel{position:fixed;z-index:1000;left:16px;top:16px;bottom:16px;width:180px;min-width:180px;max-width:180px;
+padding:14px;overflow-x:hidden;overflow-y:auto;border-radius:20px;border:1px solid rgba(255,255,255,.28);
+background:rgba(7,23,39,.31);box-shadow:0 12px 30px rgba(0,0,0,.24);backdrop-filter:blur(3px);-webkit-backdrop-filter:blur(3px)}
+.panel h1{font-size:19px;line-height:1.08;margin:4px 0 10px;text-shadow:0 2px 4px rgba(0,0,0,.55)}
+.label{font-size:9.5px;line-height:1.1;letter-spacing:.09em;font-weight:900;margin:9px 0 4px}
+.panel button,.panel select,.panel a{width:100%;min-height:34px;margin:4px 0;padding:8px 9px;border-radius:12px;
+border:1px solid rgba(255,255,255,.38);background:rgba(7,32,50,.54);color:#fff;font:800 12px/1.16 Arial,sans-serif;
+text-align:left;text-decoration:none}
+.panel button:hover,.panel a:hover{background:rgba(20,58,79,.70)}
+.panel button.active{background:rgba(78,69,219,.74)}
+.panel select{white-space:nowrap;text-overflow:ellipsis;overflow:hidden}
+
+/* APPROVED 520px SCRIPT CARD */
+.card{position:fixed;z-index:900;left:50%;bottom:16px;width:520px;max-width:520px;padding:14px 16px;
+border-radius:20px;border:1px solid rgba(255,255,255,.30);background:rgba(25,19,24,.38);
+box-shadow:0 12px 30px rgba(0,0,0,.28);backdrop-filter:blur(5px);-webkit-backdrop-filter:blur(5px);
+transform:translateX(-50%) scale(.67);transform-origin:bottom center}
+.card .kicker{font-size:15px;line-height:1.25;font-weight:900;letter-spacing:.10em;color:rgba(255,255,255,.96);
+text-shadow:0 1px 3px rgba(0,0,0,.78);margin:0 0 6px}
+.card h2{font-size:22px;line-height:1.08;margin:4px 0 7px;text-shadow:0 1px 3px rgba(0,0,0,.55)}
+.card p{font-size:18px;line-height:1.35;margin:4px 0 7px}
+.word{margin-top:8px;padding:10px 12px;border-radius:14px;background:rgba(88,88,88,.72);border:1px solid rgba(255,255,255,.20)}
+.word strong{display:block;font-size:22px;line-height:1.28}
+.translation{font-size:18px;line-height:1.35;margin-top:3px}
+.controls{display:flex;align-items:center;gap:8px;flex-wrap:nowrap;margin-top:8px}
+.controls button{width:auto;min-width:0;padding:9px 13px;border-radius:12px;border:1px solid rgba(255,255,255,.35);
+background:rgba(255,255,255,.88);color:#10283c;font:900 13px/1 Arial,sans-serif;white-space:nowrap}
+
+/* HOTSPOTS */
+.hotspot{position:absolute;z-index:8;border:0;background:transparent;opacity:0;cursor:pointer;border-radius:16px}
+.hotspot:hover,.hotspot:focus-visible{opacity:1;background:rgba(255,220,72,.28);outline:2px solid rgba(255,255,255,.90)}
+.challenge-mode .hotspot.target{opacity:1;background:rgba(255,199,48,.38);outline:4px solid #fff;box-shadow:0 0 0 7px rgba(255,200,50,.20)}
+
+/* APPROVED COMPACT PREVIOUS / NEXT CHEVRONS */
+.talkabee-prev-next-nav{position:fixed;top:18px;right:22px;z-index:2147483000;display:flex;align-items:center;overflow:hidden;
+border:2px solid rgba(255,255,255,.82);border-radius:999px;background:rgba(11,22,42,.24);
+box-shadow:0 5px 16px rgba(0,0,0,.16);backdrop-filter:blur(3px);-webkit-backdrop-filter:blur(3px)}
+.talkabee-prev-next-nav a{width:48px;height:48px;display:grid;place-items:center;text-decoration:none;color:#fff;
+font:900 38px/1 Arial,sans-serif;text-shadow:0 1px 3px rgba(0,0,0,.42)}
+.talkabee-prev-next-nav a+a{border-left:1px solid rgba(255,255,255,.36)}
+.talkabee-prev-next-nav a:hover,.talkabee-prev-next-nav a:focus-visible{background:rgba(255,255,255,.18);outline:none}
+
+/* SCENE VIEW */
+.scene-return{display:none;position:fixed;z-index:2147483001;left:18px;top:18px;padding:10px 14px;border-radius:12px;
+border:1px solid #fff;background:rgba(7,23,39,.65);color:#fff;font-weight:900}
+.scene-view .panel,.scene-view .card,.scene-view .talkabee-prev-next-nav{display:none}
+.scene-view .scene-return{display:block}
+
+@media(max-width:760px){
+ .panel{left:10px;top:10px;bottom:10px;width:180px;min-width:180px;max-width:180px;padding:11px}
+ .card{width:min(520px,calc(100vw - 32px));bottom:10px;transform:translateX(-50%) scale(.82)}
+ .talkabee-prev-next-nav{top:12px;right:12px}.talkabee-prev-next-nav a{width:42px;height:42px;font-size:33px}
+}
+</style>
+</head>
+<body>
+<nav class="talkabee-prev-next-nav" aria-label="Adventure navigation">
+  <a href="Talk-A-Bee-Zoo-Adventure.html" aria-label="Previous adventure" title="Previous">‹</a>
+  <a href="Talk-A-Bee-Nighttime-Campground-Adventure.html" aria-label="Next adventure" title="Next">›</a>
+</nav>
+
+<main class="world" id="world">
+<button class="scene-return" id="sceneReturn">Return to Adventure</button>
+
+<aside class="panel">
+<h1>🏯 Great Wall of China Adventure</h1>
+<div class="label">LANGUAGE</div>
+<select id="lang">
+<option value="es">Spanish</option><option value="fr">French</option><option value="en">English</option>
+<option value="de">German</option><option value="it">Italian</option><option value="pt">Portuguese</option><option value="no">Norwegian</option>
+</select>
+<div class="label">VOICE</div>
+<select id="voice"><option value="">Browser Default</option></select>
+<button id="sceneView">◉ Scene View</button>
+
+<div class="label">DISCOVERY</div>
+<button id="discovery">🔎 Discovery — Click the Scene</button>
+
+<div class="label">ACTIVITIES</div>
+<button data-lesson="arrive">1. Arrive at the Great Wall</button>
+<button data-lesson="wall">2. Explore the Wall</button>
+<button data-lesson="tower">3. Visit a Watchtower</button>
+<button data-lesson="view">4. Look Across the Mountains</button>
+<button data-lesson="travelers">5. Meet the Travelers</button>
+<button data-lesson="sky">6. Look to the Sky</button>
+<div class="label">CHALLENGES</div>
+<button data-ch="0">1. Find a Watchtower</button>
+<button data-ch="1">2. Find the Hot-Air Balloons</button>
+<button data-ch="2">3. Find the Eagle</button>
+<button data-ch="3">4. Find the Squirrel</button>
+<button data-ch="4">5. Find the Bee</button>
+<button data-ch="5">6. Find the River</button>
+<a href="index.html">← Return to Main Directory</a>
+</aside>
+
+<section class="card">
+<div class="kicker">ON THE GREAT WALL OF CHINA</div>
+<h2 id="title">Great Wall of China Adventure</h2>
+<p id="prompt">Click any object in the scene to hear its name.</p>
+<div class="word"><strong id="line">Gran Muralla China</strong><div class="translation" id="translation">Great Wall of China</div></div>
+<p id="status"></p>
+<div class="controls">
+<button id="normal">🔊 Speak</button><button id="slow">🐢 Slow</button><button id="replay">↻ Replay</button><button id="nextPhrase">Next phrase →</button>
+</div>
+</section>
+
+
+
+
+
+<!-- Hotspots mapped to the approved wide Great Wall of China JPG. -->
+<button class="hotspot" data-word="wall" style="left:18%;top:34%;width:72%;height:44%" aria-label="Great Wall"></button>
+<button class="hotspot" data-word="watchtower" style="left:83%;top:8%;width:16%;height:31%" aria-label="Watchtower"></button>
+<button class="hotspot" data-word="watchtowers" style="left:51%;top:15%;width:27%;height:28%" aria-label="Distant watchtowers"></button>
+<button class="hotspot" data-word="mountains" style="left:12%;top:13%;width:48%;height:29%" aria-label="Mountains"></button>
+<button class="hotspot" data-word="balloons" style="left:57%;top:1%;width:17%;height:17%" aria-label="Hot-air balloons"></button>
+<button class="hotspot" data-word="eagle" style="left:78%;top:1%;width:11%;height:12%" aria-label="Eagle"></button>
+<button class="hotspot" data-word="bee" style="left:2%;top:2%;width:12%;height:17%" aria-label="Bee"></button>
+<button class="hotspot" data-word="squirrel" style="left:92%;top:49%;width:8%;height:17%" aria-label="Squirrel"></button>
+<button class="hotspot" data-word="river" style="left:17%;top:44%;width:25%;height:21%" aria-label="River"></button>
+<button class="hotspot" data-word="village" style="left:7%;top:39%;width:27%;height:17%" aria-label="Village"></button>
+<button class="hotspot" data-word="bridge" style="left:20%;top:56%;width:16%;height:10%" aria-label="Bridge"></button>
+<button class="hotspot" data-word="grandma" style="left:64%;top:47%;width:8%;height:29%" aria-label="Grandma"></button>
+<button class="hotspot" data-word="grandpa" style="left:70%;top:45%;width:8%;height:31%" aria-label="Grandpa"></button>
+<button class="hotspot" data-word="carlos" style="left:75%;top:46%;width:8%;height:30%" aria-label="Carlos"></button>
+<button class="hotspot" data-word="sophia" style="left:82%;top:45%;width:8%;height:31%" aria-label="Sophia"></button>
+<button class="hotspot" data-word="mitchell" style="left:73%;top:57%;width:8%;height:25%" aria-label="Mitchell"></button>
+<button class="hotspot" data-word="nicole" style="left:79%;top:58%;width:8%;height:25%" aria-label="Nicole"></button>
+<button class="hotspot" data-word="trees" style="left:1%;top:1%;width:30%;height:26%" aria-label="Trees"></button>
+<button class="hotspot" data-word="walkway" style="left:46%;top:70%;width:45%;height:28%" aria-label="Stone walkway"></button>
+
+</main>
+
+<script>
+const EN={greatwall:"Great Wall of China",wall:"Great Wall",watchtower:"watchtower",watchtowers:"watchtowers",mountains:"mountains",balloons:"hot-air balloons",eagle:"eagle",bee:"bee",squirrel:"squirrel",river:"river",village:"village",bridge:"bridge",grandma:"Grandma",grandpa:"Grandpa",carlos:"Carlos",sophia:"Sophia",mitchell:"Mitchell",nicole:"Nicole",trees:"trees",walkway:"stone walkway"};
+const WORDS={
+es:{greatwall:"Gran Muralla China",wall:"Gran Muralla",watchtower:"torre de vigilancia",watchtowers:"torres de vigilancia",mountains:"montañas",balloons:"globos aerostáticos",eagle:"águila",bee:"abeja",squirrel:"ardilla",river:"río",village:"pueblo",bridge:"puente",grandma:"abuela",grandpa:"abuelo",carlos:"Carlos",sophia:"Sophia",mitchell:"Mitchell",nicole:"Nicole",trees:"árboles",walkway:"camino de piedra"},
+fr:{greatwall:"Grande Muraille de Chine",wall:"Grande Muraille",watchtower:"tour de guet",watchtowers:"tours de guet",mountains:"montagnes",balloons:"montgolfières",eagle:"aigle",bee:"abeille",squirrel:"écureuil",river:"rivière",village:"village",bridge:"pont",grandma:"grand-mère",grandpa:"grand-père",carlos:"Carlos",sophia:"Sophia",mitchell:"Mitchell",nicole:"Nicole",trees:"arbres",walkway:"chemin de pierre"},
+en:{...EN},
+de:{greatwall:"Chinesische Mauer",wall:"Große Mauer",watchtower:"Wachturm",watchtowers:"Wachtürme",mountains:"Berge",balloons:"Heißluftballons",eagle:"Adler",bee:"Biene",squirrel:"Eichhörnchen",river:"Fluss",village:"Dorf",bridge:"Brücke",grandma:"Oma",grandpa:"Opa",carlos:"Carlos",sophia:"Sophia",mitchell:"Mitchell",nicole:"Nicole",trees:"Bäume",walkway:"Steinweg"},
+it:{greatwall:"Grande Muraglia Cinese",wall:"Grande Muraglia",watchtower:"torre di guardia",watchtowers:"torri di guardia",mountains:"montagne",balloons:"mongolfiere",eagle:"aquila",bee:"ape",squirrel:"scoiattolo",river:"fiume",village:"villaggio",bridge:"ponte",grandma:"nonna",grandpa:"nonno",carlos:"Carlos",sophia:"Sophia",mitchell:"Mitchell",nicole:"Nicole",trees:"alberi",walkway:"sentiero di pietra"},
+pt:{greatwall:"Grande Muralha da China",wall:"Grande Muralha",watchtower:"torre de vigia",watchtowers:"torres de vigia",mountains:"montanhas",balloons:"balões de ar quente",eagle:"águia",bee:"abelha",squirrel:"esquilo",river:"rio",village:"vila",bridge:"ponte",grandma:"avó",grandpa:"avô",carlos:"Carlos",sophia:"Sophia",mitchell:"Mitchell",nicole:"Nicole",trees:"árvores",walkway:"caminho de pedra"},
+no:{greatwall:"Den kinesiske mur",wall:"Den kinesiske mur",watchtower:"vakttårn",watchtowers:"vakttårn",mountains:"fjell",balloons:"varmluftsballonger",eagle:"ørn",bee:"bie",squirrel:"ekorn",river:"elv",village:"landsby",bridge:"bro",grandma:"bestemor",grandpa:"bestefar",carlos:"Carlos",sophia:"Sophia",mitchell:"Mitchell",nicole:"Nicole",trees:"trær",walkway:"steingang"}};
+const SPEECH_LANG={es:"es-ES",fr:"fr-FR",en:"en-US",de:"de-DE",it:"it-IT",pt:"pt-PT",no:"nb-NO"};
+const lessons={
+en:{arrive:["We have arrived at the Great Wall of China.","The wall winds across the mountains for a very long distance."],wall:["The Great Wall follows the ridges of the mountains.","Its stone walkway rises and falls with the land."],tower:["Watchtowers stand at many points along the wall.","People once used these towers to watch the surrounding land."],view:["From the wall we can see mountains, trees, a river, and a village.","The view stretches far into the distance."],travelers:["Grandma, Grandpa, Carlos, Sophia, Mitchell, and Nicole are exploring together.","They stop along the wall to enjoy the view."],sky:["Hot-air balloons float above the mountains.","An eagle soars high in the blue sky."]},
+es:{arrive:["Hemos llegado a la Gran Muralla China.","La muralla serpentea por las montañas a lo largo de una gran distancia."],wall:["La Gran Muralla sigue las crestas de las montañas.","Su camino de piedra sube y baja con el terreno."],tower:["Hay torres de vigilancia en muchos puntos de la muralla.","Estas torres se usaban para observar las tierras cercanas."],view:["Desde la muralla podemos ver montañas, árboles, un río y un pueblo.","La vista se extiende muy lejos."],travelers:["La abuela, el abuelo, Carlos, Sophia, Mitchell y Nicole exploran juntos.","Se detienen en la muralla para disfrutar de la vista."],sky:["Los globos aerostáticos flotan sobre las montañas.","Un águila vuela alto en el cielo azul."]},
+fr:{arrive:["Nous sommes arrivés à la Grande Muraille de Chine.","La muraille serpente à travers les montagnes sur une très longue distance."],wall:["La Grande Muraille suit les crêtes des montagnes.","Son chemin de pierre monte et descend avec le terrain."],tower:["Des tours de guet se trouvent à de nombreux endroits le long de la muraille.","Ces tours servaient à observer les terres environnantes."],view:["Depuis la muraille, nous voyons des montagnes, des arbres, une rivière et un village.","La vue s'étend très loin."],travelers:["Grand-mère, grand-père, Carlos, Sophia, Mitchell et Nicole explorent ensemble.","Ils s'arrêtent sur la muraille pour admirer la vue."],sky:["Des montgolfières flottent au-dessus des montagnes.","Un aigle plane haut dans le ciel bleu."]},
+de:{arrive:["Wir sind an der Chinesischen Mauer angekommen.","Die Mauer schlängelt sich über eine große Entfernung durch die Berge."],wall:["Die Chinesische Mauer folgt den Bergkämmen.","Ihr Steinweg steigt und fällt mit dem Gelände."],tower:["Entlang der Mauer stehen viele Wachtürme.","Von diesen Türmen aus konnte man das umliegende Land beobachten."],view:["Von der Mauer sehen wir Berge, Bäume, einen Fluss und ein Dorf.","Die Aussicht reicht weit in die Ferne."],travelers:["Oma, Opa, Carlos, Sophia, Mitchell und Nicole erkunden die Mauer gemeinsam.","Sie bleiben stehen und genießen die Aussicht."],sky:["Heißluftballons schweben über den Bergen.","Ein Adler fliegt hoch am blauen Himmel."]},
+it:{arrive:["Siamo arrivati alla Grande Muraglia Cinese.","La muraglia attraversa le montagne per una distanza molto lunga."],wall:["La Grande Muraglia segue le creste delle montagne.","Il suo sentiero di pietra sale e scende con il terreno."],tower:["Lungo la muraglia ci sono molte torri di guardia.","Queste torri servivano per osservare il territorio circostante."],view:["Dalla muraglia possiamo vedere montagne, alberi, un fiume e un villaggio.","La vista si estende molto lontano."],travelers:["Nonna, nonno, Carlos, Sophia, Mitchell e Nicole esplorano insieme.","Si fermano sulla muraglia per ammirare il panorama."],sky:["Le mongolfiere fluttuano sopra le montagne.","Un'aquila vola alta nel cielo blu."]},
+pt:{arrive:["Chegamos à Grande Muralha da China.","A muralha atravessa as montanhas por uma distância muito longa."],wall:["A Grande Muralha acompanha as cristas das montanhas.","Seu caminho de pedra sobe e desce com o terreno."],tower:["Há torres de vigia em muitos pontos da muralha.","Essas torres eram usadas para observar as terras ao redor."],view:["Da muralha podemos ver montanhas, árvores, um rio e uma vila.","A vista se estende por uma grande distância."],travelers:["A avó, o avô, Carlos, Sophia, Mitchell e Nicole exploram juntos.","Eles param na muralha para apreciar a vista."],sky:["Balões de ar quente flutuam sobre as montanhas.","Uma águia voa alto no céu azul."]},
+no:{arrive:["Vi har kommet til Den kinesiske mur.","Muren slynger seg gjennom fjellene over en svært lang avstand."],wall:["Den kinesiske mur følger fjellryggene.","Steingangen går opp og ned med terrenget."],tower:["Det står vakttårn mange steder langs muren.","Tårnene ble brukt til å holde øye med områdene rundt."],view:["Fra muren kan vi se fjell, trær, en elv og en landsby.","Utsikten strekker seg langt i det fjerne."],travelers:["Bestemor, bestefar, Carlos, Sophia, Mitchell og Nicole utforsker sammen.","De stopper langs muren for å nyte utsikten."],sky:["Varmluftsballonger svever over fjellene.","En ørn flyr høyt på den blå himmelen."]}};
+const challengeOrder=["watchtower","balloons","eagle","squirrel","bee","river"];
+const SOUND_MAP={};
+const langSel=document.getElementById("lang"),voiceSel=document.getElementById("voice");
+const title=document.getElementById("title"),prompt=document.getElementById("prompt"),line=document.getElementById("line"),translation=document.getElementById("translation"),status=document.getElementById("status"),world=document.getElementById("world");
+let lastWord="greatwall",activeLesson="",lessonPhrase=1,challenge=-1,lastSpoken="";
+function voices(){return ("speechSynthesis" in window)?speechSynthesis.getVoices():[]}
+function fillVoices(){const old=localStorage.getItem("talkabee-greatwall-voice-"+langSel.value)||"";voiceSel.innerHTML='<option value="">Browser Default</option>';voices().forEach(v=>{const o=document.createElement("option");o.value=v.name;o.textContent=v.name+(v.lang?" — "+v.lang:"");voiceSel.appendChild(o)});if([...voiceSel.options].some(o=>o.value===old))voiceSel.value=old}
+if("speechSynthesis" in window){speechSynthesis.onvoiceschanged=fillVoices;fillVoices();setTimeout(fillVoices,150);setTimeout(fillVoices,600);setTimeout(fillVoices,1500)}
+voiceSel.onchange=()=>localStorage.setItem("talkabee-greatwall-voice-"+langSel.value,voiceSel.value);
+function speak(text,rate=.88,onend=null){if(!text||!("speechSynthesis" in window)){if(onend)onend();return}speechSynthesis.cancel();setTimeout(()=>{const u=new SpeechSynthesisUtterance(text);u.lang=SPEECH_LANG[langSel.value]||langSel.value;u.rate=rate;const v=speechSynthesis.getVoices().find(x=>x.name===voiceSel.value);if(v)u.voice=v;if(onend)u.onend=onend;speechSynthesis.speak(u)},50);lastSpoken=text}
+function stopSound(){document.querySelectorAll("audio[data-talkabee-sound]").forEach(a=>{a.pause();a.currentTime=0;a.remove()})}
+function playSound(key){stopSound();const src=SOUND_MAP[key];if(!src)return;const a=new Audio(src);a.dataset.talkabeeSound="1";document.body.appendChild(a);a.play().catch(()=>{});a.onended=()=>a.remove()}
+function showWord(key){activeLesson="";lastWord=key;lessonPhrase=1;title.textContent="Click & Discover";prompt.textContent="You found "+(EN[key]||key)+".";line.textContent=WORDS[langSel.value][key]||EN[key]||key;translation.textContent=langSel.value==="en"?"":(EN[key]||key)}
+document.querySelectorAll(".hotspot").forEach(b=>b.onclick=()=>{const key=b.dataset.word;showWord(key);let played=false;const after=()=>{if(played)return;played=true;playSound(key)};speak(WORDS[langSel.value][key]||EN[key]||key,.82,after);setTimeout(after,1500);if(challenge>=0){if(key===challengeOrder[challenge]){status.textContent="✓ Nice find!";status.style.color="#9dffbf"}else{status.textContent="Not that one — keep looking.";status.style.color="#ffe28a"}}});
+function clearChallenge(){challenge=-1;world.classList.remove("challenge-mode");document.querySelectorAll(".hotspot").forEach(h=>h.classList.remove("target"));status.textContent=""}
+document.getElementById("discovery").onclick=()=>{clearChallenge();activeLesson="";lastWord="greatwall";title.textContent="Click & Discover";prompt.textContent="Click any object in the scene to hear its name.";line.textContent=WORDS[langSel.value].greatwall;translation.textContent=langSel.value==="en"?"":EN.greatwall};
+document.querySelectorAll("[data-ch]").forEach(b=>b.onclick=()=>{activeLesson="";lastWord="";challenge=+b.dataset.ch;world.classList.add("challenge-mode");document.querySelectorAll(".hotspot").forEach(h=>h.classList.toggle("target",h.dataset.word===challengeOrder[challenge]));title.textContent="Challenge "+(challenge+1)+" of 6";prompt.textContent=b.textContent.replace(/^[0-9]+\.\s*/,"");line.textContent=WORDS[langSel.value][challengeOrder[challenge]];translation.textContent=langSel.value==="en"?"":EN[challengeOrder[challenge]];status.textContent=""});
+function showLesson(key,speakIt=false){clearChallenge();activeLesson=key;lastWord="";lessonPhrase=Math.max(0,Math.min(1,lessonPhrase));const a=lessons[langSel.value][key],e=lessons.en[key],btn=document.querySelector(`[data-lesson="${key}"]`);title.textContent=btn?btn.textContent.replace(/^[0-9]+\.\s*/,""):"Great Wall of China Adventure";prompt.textContent=a[0];line.textContent=a[lessonPhrase];translation.textContent=langSel.value==="en"?"":e[lessonPhrase];if(speakIt)speak(a[lessonPhrase])}
+document.querySelectorAll("[data-lesson]").forEach(b=>b.onclick=()=>{lessonPhrase=1;showLesson(b.dataset.lesson,true)});
+function currentSpeechText(){if(activeLesson)return lessons[langSel.value][activeLesson][lessonPhrase];if(lastWord)return WORDS[langSel.value][lastWord]||EN[lastWord];return line.textContent}
+document.getElementById("normal").onclick=()=>speak(currentSpeechText(),.82);
+document.getElementById("slow").onclick=()=>speak(currentSpeechText(),.58);
+document.getElementById("replay").onclick=()=>speak(lastSpoken||currentSpeechText(),.82);
+document.getElementById("nextPhrase").onclick=()=>{if(!activeLesson){const keys=Object.keys(EN),i=Math.max(0,keys.indexOf(lastWord));showWord(keys[(i+1)%keys.length]);speak(currentSpeechText(),.82);return}lessonPhrase=(lessonPhrase+1)%2;showLesson(activeLesson,true)};
+langSel.onchange=()=>{fillVoices();if(activeLesson)showLesson(activeLesson,false);else if(lastWord)showWord(lastWord)};
+document.getElementById("sceneView").onclick=()=>document.body.classList.add("scene-view");
+document.getElementById("sceneReturn").onclick=()=>document.body.classList.remove("scene-view");
+showWord("greatwall");
+</script>
+</body>
+</html>
+
+<style id="talkabee-ski-panel-180">
+@media(min-width:761px){.panel{width:180px!important;min-width:180px!important;max-width:180px!important}}
+</style>
