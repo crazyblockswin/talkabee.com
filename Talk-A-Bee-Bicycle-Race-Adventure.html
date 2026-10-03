@@ -1,0 +1,208 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Talk A Bee — Bicycle Race Adventure</title>
+<link rel="icon" type="image/png" href="images/talkabee-favicon.png">
+<style>
+*{box-sizing:border-box}
+html,body{margin:0;width:100%;height:100%;overflow:hidden;font-family:Arial,Helvetica,sans-serif;background:#063a66;color:#fff}
+.world{position:relative;width:100vw;height:100vh;background:url("images/Talk-A-Bee-Bicycle-Race-Adventure.jpg") center center/cover no-repeat}
+
+/* APPROVED TALK A BEE LEFT PANEL */
+.panel{position:fixed;z-index:1000;left:16px;top:16px;bottom:16px;width:180px;min-width:180px;max-width:180px;
+padding:14px;overflow-x:hidden;overflow-y:auto;border-radius:20px;border:1px solid rgba(255,255,255,.28);
+background:rgba(7,23,39,.31);box-shadow:0 12px 30px rgba(0,0,0,.24);backdrop-filter:blur(3px);-webkit-backdrop-filter:blur(3px)}
+.panel h1{font-size:19px;line-height:1.08;margin:4px 0 10px;text-shadow:0 2px 4px rgba(0,0,0,.55)}
+.label{font-size:9.5px;line-height:1.1;letter-spacing:.09em;font-weight:900;margin:9px 0 4px}
+.panel button,.panel select,.panel a{width:100%;min-height:34px;margin:4px 0;padding:8px 9px;border-radius:12px;
+border:1px solid rgba(255,255,255,.38);background:rgba(7,32,50,.54);color:#fff;font:800 12px/1.16 Arial,sans-serif;
+text-align:left;text-decoration:none}
+.panel button:hover,.panel a:hover{background:rgba(20,58,79,.70)}
+.panel button.active{background:rgba(78,69,219,.74)}
+.panel select{white-space:nowrap;text-overflow:ellipsis;overflow:hidden}
+
+/* APPROVED 520px SCRIPT CARD */
+.card{position:fixed;z-index:900;left:50%;bottom:16px;width:520px;max-width:520px;padding:14px 16px;
+border-radius:20px;border:1px solid rgba(255,255,255,.30);background:rgba(25,19,24,.38);
+box-shadow:0 12px 30px rgba(0,0,0,.28);backdrop-filter:blur(5px);-webkit-backdrop-filter:blur(5px);
+transform:translateX(-50%) scale(.67);transform-origin:bottom center}
+.card .kicker{font-size:15px;line-height:1.25;font-weight:900;letter-spacing:.10em;color:rgba(255,255,255,.96);
+text-shadow:0 1px 3px rgba(0,0,0,.78);margin:0 0 6px}
+.card h2{font-size:22px;line-height:1.08;margin:4px 0 7px;text-shadow:0 1px 3px rgba(0,0,0,.55)}
+.card p{font-size:18px;line-height:1.35;margin:4px 0 7px}
+.word{margin-top:8px;padding:10px 12px;border-radius:14px;background:rgba(88,88,88,.72);border:1px solid rgba(255,255,255,.20)}
+.word strong{display:block;font-size:22px;line-height:1.28}
+.translation{font-size:18px;line-height:1.35;margin-top:3px}
+.controls{display:flex;align-items:center;gap:8px;flex-wrap:nowrap;margin-top:8px}
+.controls button{width:auto;min-width:0;padding:9px 13px;border-radius:12px;border:1px solid rgba(255,255,255,.35);
+background:rgba(255,255,255,.88);color:#10283c;font:900 13px/1 Arial,sans-serif;white-space:nowrap}
+
+/* HOTSPOTS */
+.hotspot{position:absolute;z-index:8;border:0;background:transparent;opacity:0;cursor:pointer;border-radius:16px}
+.hotspot:hover,.hotspot:focus-visible{opacity:1;background:rgba(255,220,72,.28);outline:2px solid rgba(255,255,255,.90)}
+.challenge-mode .hotspot.target{opacity:1;background:rgba(255,199,48,.38);outline:4px solid #fff;box-shadow:0 0 0 7px rgba(255,200,50,.20)}
+
+/* APPROVED COMPACT PREVIOUS / NEXT CHEVRONS */
+.talkabee-prev-next-nav{position:fixed;top:18px;right:22px;z-index:2147483000;display:flex;align-items:center;overflow:hidden;
+border:2px solid rgba(255,255,255,.82);border-radius:999px;background:rgba(11,22,42,.24);
+box-shadow:0 5px 16px rgba(0,0,0,.16);backdrop-filter:blur(3px);-webkit-backdrop-filter:blur(3px)}
+.talkabee-prev-next-nav a{width:48px;height:48px;display:grid;place-items:center;text-decoration:none;color:#fff;
+font:900 38px/1 Arial,sans-serif;text-shadow:0 1px 3px rgba(0,0,0,.42)}
+.talkabee-prev-next-nav a+a{border-left:1px solid rgba(255,255,255,.36)}
+.talkabee-prev-next-nav a:hover,.talkabee-prev-next-nav a:focus-visible{background:rgba(255,255,255,.18);outline:none}
+
+/* SCENE VIEW */
+.scene-return{display:none;position:fixed;z-index:2147483001;left:18px;top:18px;padding:10px 14px;border-radius:12px;
+border:1px solid #fff;background:rgba(7,23,39,.65);color:#fff;font-weight:900}
+.scene-view .panel,.scene-view .card,.scene-view .talkabee-prev-next-nav{display:none}
+.scene-view .scene-return{display:block}
+
+@media(max-width:760px){
+ .panel{left:10px;top:10px;bottom:10px;width:180px;min-width:180px;max-width:180px;padding:11px}
+ .card{width:min(520px,calc(100vw - 32px));bottom:10px;transform:translateX(-50%) scale(.82)}
+ .talkabee-prev-next-nav{top:12px;right:12px}.talkabee-prev-next-nav a{width:42px;height:42px;font-size:33px}
+}
+</style>
+</head>
+<body>
+<nav class="talkabee-prev-next-nav" aria-label="Adventure navigation">
+  <a href="Talk-A-Bee-Cave-Adventure.html" aria-label="Previous adventure" title="Previous">‹</a>
+  <a href="Talk-A-Bee-Softball-Game-Adventure.html" aria-label="Next adventure" title="Next">›</a>
+</nav>
+
+<main class="world" id="world">
+<button class="scene-return" id="sceneReturn">Return to Adventure</button>
+
+<aside class="panel">
+<h1>🚴 Bicycle Race Adventure</h1>
+<div class="label">LANGUAGE</div>
+<select id="lang">
+<option value="es">Spanish</option><option value="fr">French</option><option value="en">English</option>
+<option value="de">German</option><option value="it">Italian</option><option value="pt">Portuguese</option><option value="no">Norwegian</option>
+</select>
+<div class="label">VOICE</div>
+<select id="voice"><option value="">Browser Default</option></select>
+<button id="sceneView">◉ Scene View</button>
+
+<div class="label">DISCOVERY</div>
+<button id="discovery">🔎 Discovery — Click the Scene</button>
+
+<div class="label">ACTIVITIES</div>
+<button data-lesson="start">1. Get Ready to Race</button>
+<button data-lesson="bike">2. Explore the Bicycle</button>
+<button data-lesson="safety">3. Helmets & Safety</button>
+<button data-lesson="course">4. Follow the Bike Trail</button>
+<button data-lesson="signal">5. Watch for the Start Signal</button>
+<button data-lesson="team">6. Meet the Racers</button>
+<div class="label">CHALLENGES</div>
+<button data-ch="0">1. Find the Bee Racer</button>
+<button data-ch="1">2. Find the Start Line</button>
+<button data-ch="2">3. Find a Helmet</button>
+<button data-ch="3">4. Find the Trail Sign</button>
+<button data-ch="4">5. Find the Lake</button>
+<button data-ch="5">6. Find the Race Official</button>
+<a href="index.html">← Return to Main Directory</a>
+</aside>
+
+<section class="card">
+<div class="kicker">AT THE MOUNTAIN BIKE START</div>
+<h2 id="title">Bicycle Race Adventure</h2>
+<p id="prompt">Click any object in the scene to hear its name.</p>
+<div class="word"><strong id="line">carrera de bicicletas</strong><div class="translation" id="translation">bicycle race</div></div>
+<p id="status"></p>
+<div class="controls">
+<button id="normal">🔊 Speak</button><button id="slow">🐢 Slow</button><button id="replay">↻ Replay</button><button id="nextPhrase">Next phrase →</button>
+</div>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- Hotspots mapped to the approved clean Bicycle Race Adventure JPG. -->
+<button class="hotspot" data-word="bee" style="left:58%;top:48%;width:9%;height:26%" aria-label="Bee racer"></button>
+<button class="hotspot" data-word="startline" style="left:34%;top:69%;width:63%;height:14%" aria-label="Start line"></button>
+<button class="hotspot" data-word="startgate" style="left:38%;top:14%;width:48%;height:30%" aria-label="Start gate"></button>
+<button class="hotspot" data-word="official" style="left:92%;top:17%;width:8%;height:49%" aria-label="Race official"></button>
+<button class="hotspot" data-word="signal" style="left:94%;top:8%;width:6%;height:17%" aria-label="Start signal"></button>
+<button class="hotspot" data-word="helmet" style="left:43%;top:44%;width:9%;height:14%" aria-label="Helmet"></button>
+<button class="hotspot" data-word="bicycle" style="left:38%;top:55%;width:14%;height:25%" aria-label="Bicycle"></button>
+<button class="hotspot" data-word="racer1" style="left:36%;top:43%;width:11%;height:29%" aria-label="Racer"></button>
+<button class="hotspot" data-word="racer2" style="left:46%;top:43%;width:10%;height:30%" aria-label="Racer"></button>
+<button class="hotspot" data-word="racer3" style="left:53%;top:44%;width:10%;height:30%" aria-label="Racer"></button>
+<button class="hotspot" data-word="racers" style="left:65%;top:42%;width:29%;height:34%" aria-label="Bicycle racers"></button>
+<button class="hotspot" data-word="trailsign" style="left:0%;top:30%;width:14%;height:22%" aria-label="Bike trail sign"></button>
+<button class="hotspot" data-word="lake" style="left:12%;top:36%;width:25%;height:23%" aria-label="Mountain lake"></button>
+<button class="hotspot" data-word="mountain" style="left:10%;top:15%;width:31%;height:25%" aria-label="Mountain"></button>
+<button class="hotspot" data-word="forest" style="left:0%;top:9%;width:35%;height:53%" aria-label="Forest"></button>
+<button class="hotspot" data-word="spectators" style="left:28%;top:39%;width:28%;height:23%" aria-label="Spectators"></button>
+<button class="hotspot" data-word="flags" style="left:84%;top:19%;width:16%;height:16%" aria-label="Race flags"></button>
+<button class="hotspot" data-word="tent" style="left:83%;top:31%;width:16%;height:18%" aria-label="Race tent"></button>
+<button class="hotspot" data-word="track" style="left:22%;top:62%;width:78%;height:38%" aria-label="Dirt race track"></button>
+<button class="hotspot" data-word="rocks" style="left:0%;top:57%;width:27%;height:42%" aria-label="Trail rocks"></button>
+
+</main>
+
+<script>
+const EN={race:"bicycle race",bee:"bee racer",startline:"starting line",startgate:"start gate",official:"race official",signal:"start signal",helmet:"helmet",bicycle:"bicycle",racer1:"bicycle racer",racer2:"bicycle racer",racer3:"bicycle racer",racers:"bicycle racers",trailsign:"bike trail sign",lake:"mountain lake",mountain:"mountain",forest:"forest",spectators:"spectators",flags:"race flags",tent:"race tent",track:"dirt race track",rocks:"trail rocks"};
+const WORDS={
+es:{race:"carrera de bicicletas",bee:"abeja ciclista",startline:"línea de salida",startgate:"arco de salida",official:"oficial de carrera",signal:"señal de salida",helmet:"casco",bicycle:"bicicleta",racer1:"ciclista",racer2:"ciclista",racer3:"ciclista",racers:"ciclistas",trailsign:"señal de sendero para bicicletas",lake:"lago de montaña",mountain:"montaña",forest:"bosque",spectators:"espectadores",flags:"banderas de carrera",tent:"carpa de carrera",track:"pista de tierra",rocks:"rocas del sendero"},
+fr:{race:"course de vélos",bee:"abeille cycliste",startline:"ligne de départ",startgate:"portique de départ",official:"officiel de course",signal:"signal de départ",helmet:"casque",bicycle:"vélo",racer1:"cycliste",racer2:"cycliste",racer3:"cycliste",racers:"cyclistes",trailsign:"panneau de piste cyclable",lake:"lac de montagne",mountain:"montagne",forest:"forêt",spectators:"spectateurs",flags:"drapeaux de course",tent:"tente de course",track:"piste en terre",rocks:"rochers du sentier"},
+en:{...EN},
+de:{race:"Fahrradrennen",bee:"Rennfahrer-Biene",startline:"Startlinie",startgate:"Starttor",official:"Rennleiter",signal:"Startsignal",helmet:"Helm",bicycle:"Fahrrad",racer1:"Radfahrer",racer2:"Radfahrer",racer3:"Radfahrer",racers:"Radfahrer",trailsign:"Radwegweiser",lake:"Bergsee",mountain:"Berg",forest:"Wald",spectators:"Zuschauer",flags:"Rennflaggen",tent:"Rennzelt",track:"Schotterpiste",rocks:"Wegsteine"},
+it:{race:"gara di biciclette",bee:"ape ciclista",startline:"linea di partenza",startgate:"arco di partenza",official:"ufficiale di gara",signal:"segnale di partenza",helmet:"casco",bicycle:"bicicletta",racer1:"ciclista",racer2:"ciclista",racer3:"ciclista",racers:"ciclisti",trailsign:"cartello del percorso ciclabile",lake:"lago di montagna",mountain:"montagna",forest:"foresta",spectators:"spettatori",flags:"bandiere di gara",tent:"tenda della gara",track:"pista sterrata",rocks:"rocce del sentiero"},
+pt:{race:"corrida de bicicletas",bee:"abelha ciclista",startline:"linha de largada",startgate:"pórtico de largada",official:"oficial da corrida",signal:"sinal de largada",helmet:"capacete",bicycle:"bicicleta",racer1:"ciclista",racer2:"ciclista",racer3:"ciclista",racers:"ciclistas",trailsign:"placa de trilha de bicicleta",lake:"lago de montanha",mountain:"montanha",forest:"floresta",spectators:"espectadores",flags:"bandeiras da corrida",tent:"tenda da corrida",track:"pista de terra",rocks:"rochas da trilha"},
+no:{race:"sykkelritt",bee:"sykkelbie",startline:"startlinje",startgate:"startportal",official:"løpsleder",signal:"startsignal",helmet:"hjelm",bicycle:"sykkel",racer1:"syklist",racer2:"syklist",racer3:"syklist",racers:"syklister",trailsign:"sykkelstiskilt",lake:"fjellvann",mountain:"fjell",forest:"skog",spectators:"tilskuere",flags:"løpsflagg",tent:"løpstelt",track:"grusbane",rocks:"steiner på stien"}};
+const SPEECH_LANG={es:"es-ES",fr:"fr-FR",en:"en-US",de:"de-DE",it:"it-IT",pt:"pt-PT",no:"nb-NO"};
+const lessons={
+en:{start:["The bicycle racers are crouched at the starting line and ready to go.","Everyone is waiting for the official start signal."],bike:["A bicycle has two wheels, handlebars, pedals, brakes, and a chain.","The racers lean forward over their handlebars for a fast start."],safety:["Every racer is wearing a helmet before the race begins.","Helmets help protect riders while they race along the trail."],course:["The mountain bike trail winds through the forest beside the lake.","Trail signs help riders know which direction to follow."],signal:["The race official raises the starting signal while the riders wait.","As soon as the signal is given, the race begins."],team:["The young racers line up together in bright helmets and jerseys.","The little Talk A Bee racer even has a bicycle of his own."]},
+es:{start:["Los ciclistas están agachados en la línea de salida y listos para comenzar.","Todos esperan la señal oficial de salida."],bike:["Una bicicleta tiene dos ruedas, manillar, pedales, frenos y una cadena.","Los ciclistas se inclinan sobre el manillar para salir rápidamente."],safety:["Cada ciclista lleva un casco antes de comenzar la carrera.","Los cascos ayudan a proteger a los ciclistas durante la carrera."],course:["El sendero de montaña atraviesa el bosque junto al lago.","Las señales ayudan a los ciclistas a saber qué dirección seguir."],signal:["El oficial levanta la señal de salida mientras los ciclistas esperan.","En cuanto se da la señal, comienza la carrera."],team:["Los jóvenes ciclistas se alinean con cascos y camisetas de colores.","La pequeña abeja de Talk A Bee incluso tiene su propia bicicleta."]},
+fr:{start:["Les cyclistes sont accroupis sur la ligne de départ et prêts à partir.","Tout le monde attend le signal officiel de départ."],bike:["Un vélo possède deux roues, un guidon, des pédales, des freins et une chaîne.","Les cyclistes se penchent sur leur guidon pour prendre un départ rapide."],safety:["Chaque cycliste porte un casque avant le début de la course.","Les casques aident à protéger les cyclistes sur le parcours."],course:["La piste de VTT traverse la forêt au bord du lac.","Les panneaux indiquent aux cyclistes la direction à suivre."],signal:["L'officiel lève le signal de départ pendant que les cyclistes attendent.","Dès que le signal est donné, la course commence."],team:["Les jeunes cyclistes s'alignent avec des casques et des maillots colorés.","La petite abeille Talk A Bee a même son propre vélo."]},
+de:{start:["Die Radfahrer stehen geduckt an der Startlinie und sind bereit.","Alle warten auf das offizielle Startsignal."],bike:["Ein Fahrrad hat zwei Räder, Lenker, Pedale, Bremsen und eine Kette.","Die Fahrer beugen sich für einen schnellen Start über den Lenker."],safety:["Jeder Fahrer trägt vor dem Rennen einen Helm.","Helme schützen die Fahrer auf der Strecke."],course:["Der Mountainbike-Weg führt durch den Wald am See entlang.","Wegweiser zeigen den Fahrern die richtige Richtung."],signal:["Der Rennleiter hebt das Startsignal, während die Fahrer warten.","Sobald das Signal gegeben wird, beginnt das Rennen."],team:["Die jungen Fahrer stehen mit bunten Helmen und Trikots an der Startlinie.","Die kleine Talk A Bee Biene hat sogar ihr eigenes Fahrrad."]},
+it:{start:["I ciclisti sono accovacciati sulla linea di partenza e pronti a partire.","Tutti aspettano il segnale ufficiale di partenza."],bike:["Una bicicletta ha due ruote, manubrio, pedali, freni e una catena.","I ciclisti si piegano sul manubrio per una partenza veloce."],safety:["Ogni ciclista indossa un casco prima dell'inizio della gara.","I caschi aiutano a proteggere i ciclisti lungo il percorso."],course:["Il sentiero per mountain bike attraversa il bosco accanto al lago.","I cartelli aiutano i ciclisti a seguire la direzione giusta."],signal:["L'ufficiale alza il segnale di partenza mentre i ciclisti aspettano.","Appena viene dato il segnale, la gara comincia."],team:["I giovani ciclisti si schierano con caschi e maglie colorate.","La piccola ape Talk A Bee ha persino la sua bicicletta."]},
+pt:{start:["Os ciclistas estão agachados na linha de largada e prontos para começar.","Todos esperam pelo sinal oficial de largada."],bike:["Uma bicicleta tem duas rodas, guidão, pedais, freios e uma corrente.","Os ciclistas se inclinam sobre o guidão para uma largada rápida."],safety:["Cada ciclista usa um capacete antes do início da corrida.","Os capacetes ajudam a proteger os ciclistas durante a prova."],course:["A trilha de mountain bike passa pela floresta ao lado do lago.","As placas ajudam os ciclistas a saber qual direção seguir."],signal:["O oficial levanta o sinal de largada enquanto os ciclistas esperam.","Assim que o sinal é dado, a corrida começa."],team:["Os jovens ciclistas se alinham com capacetes e camisas coloridas.","A pequena abelha Talk A Bee até tem sua própria bicicleta."]},
+no:{start:["Syklistene står klare ved startlinjen og venter på å sette av gårde.","Alle venter på det offisielle startsignalet."],bike:["En sykkel har to hjul, styre, pedaler, bremser og kjede.","Syklistene lener seg frem over styret for en rask start."],safety:["Alle syklistene bruker hjelm før løpet begynner.","Hjelmer hjelper til med å beskytte syklistene på stien."],course:["Terrengsykkelstien går gjennom skogen langs innsjøen.","Skiltene hjelper syklistene med å finne riktig retning."],signal:["Løpslederen løfter startsignalet mens syklistene venter.","Så snart signalet blir gitt, starter løpet."],team:["De unge syklistene står på rekke med fargerike hjelmer og trøyer.","Den lille Talk A Bee-bien har til og med sin egen sykkel."]}};
+const challengeOrder=["bee","startline","helmet","trailsign","lake","official"];
+const SOUND_MAP={};
+const langSel=document.getElementById("lang"),voiceSel=document.getElementById("voice");
+const title=document.getElementById("title"),prompt=document.getElementById("prompt"),line=document.getElementById("line"),translation=document.getElementById("translation"),status=document.getElementById("status"),world=document.getElementById("world");
+let lastWord="race",activeLesson="",lessonPhrase=1,challenge=-1,lastSpoken="";
+function voices(){return ("speechSynthesis" in window)?speechSynthesis.getVoices():[]}
+function fillVoices(){const old=localStorage.getItem("talkabee-bikerace-voice-"+langSel.value)||"";voiceSel.innerHTML='<option value="">Browser Default</option>';voices().forEach(v=>{const o=document.createElement("option");o.value=v.name;o.textContent=v.name+(v.lang?" — "+v.lang:"");voiceSel.appendChild(o)});if([...voiceSel.options].some(o=>o.value===old))voiceSel.value=old}
+if("speechSynthesis" in window){speechSynthesis.onvoiceschanged=fillVoices;fillVoices();setTimeout(fillVoices,150);setTimeout(fillVoices,600);setTimeout(fillVoices,1500)}
+voiceSel.onchange=()=>localStorage.setItem("talkabee-bikerace-voice-"+langSel.value,voiceSel.value);
+function speak(text,rate=.88,onend=null){if(!text||!("speechSynthesis" in window)){if(onend)onend();return}speechSynthesis.cancel();setTimeout(()=>{const u=new SpeechSynthesisUtterance(text);u.lang=SPEECH_LANG[langSel.value]||langSel.value;u.rate=rate;const v=speechSynthesis.getVoices().find(x=>x.name===voiceSel.value);if(v)u.voice=v;if(onend)u.onend=onend;speechSynthesis.speak(u)},50);lastSpoken=text}
+function stopSound(){document.querySelectorAll("audio[data-talkabee-sound]").forEach(a=>{a.pause();a.currentTime=0;a.remove()})}
+function playSound(key){stopSound();const src=SOUND_MAP[key];if(!src)return;const a=new Audio(src);a.dataset.talkabeeSound="1";document.body.appendChild(a);a.play().catch(()=>{});a.onended=()=>a.remove()}
+function showWord(key){activeLesson="";lastWord=key;lessonPhrase=1;title.textContent="Click & Discover";prompt.textContent="You found "+(EN[key]||key)+".";line.textContent=WORDS[langSel.value][key]||EN[key]||key;translation.textContent=langSel.value==="en"?"":(EN[key]||key)}
+document.querySelectorAll(".hotspot").forEach(b=>b.onclick=()=>{const key=b.dataset.word;showWord(key);let played=false;const after=()=>{if(played)return;played=true;playSound(key)};speak(WORDS[langSel.value][key]||EN[key]||key,.82,after);setTimeout(after,1500);if(challenge>=0){if(key===challengeOrder[challenge]){status.textContent="✓ Nice find!";status.style.color="#9dffbf"}else{status.textContent="Not that one — keep looking.";status.style.color="#ffe28a"}}});
+function clearChallenge(){challenge=-1;world.classList.remove("challenge-mode");document.querySelectorAll(".hotspot").forEach(h=>h.classList.remove("target"));status.textContent=""}
+document.getElementById("discovery").onclick=()=>{clearChallenge();activeLesson="";lastWord="race";title.textContent="Click & Discover";prompt.textContent="Click any object in the scene to hear its name.";line.textContent=WORDS[langSel.value].race;translation.textContent=langSel.value==="en"?"":EN.race};
+document.querySelectorAll("[data-ch]").forEach(b=>b.onclick=()=>{activeLesson="";lastWord="";challenge=+b.dataset.ch;world.classList.add("challenge-mode");document.querySelectorAll(".hotspot").forEach(h=>h.classList.toggle("target",h.dataset.word===challengeOrder[challenge]));title.textContent="Challenge "+(challenge+1)+" of 6";prompt.textContent=b.textContent.replace(/^[0-9]+\.\s*/,"");line.textContent=WORDS[langSel.value][challengeOrder[challenge]];translation.textContent=langSel.value==="en"?"":EN[challengeOrder[challenge]];status.textContent=""});
+function showLesson(key,speakIt=false){clearChallenge();activeLesson=key;lastWord="";lessonPhrase=Math.max(0,Math.min(1,lessonPhrase));const a=lessons[langSel.value][key],e=lessons.en[key],btn=document.querySelector(`[data-lesson="${key}"]`);title.textContent=btn?btn.textContent.replace(/^[0-9]+\.\s*/,""):"Bicycle Race Adventure";prompt.textContent=a[0];line.textContent=a[lessonPhrase];translation.textContent=langSel.value==="en"?"":e[lessonPhrase];if(speakIt)speak(a[lessonPhrase])}
+document.querySelectorAll("[data-lesson]").forEach(b=>b.onclick=()=>{lessonPhrase=1;showLesson(b.dataset.lesson,true)});
+function currentSpeechText(){if(activeLesson)return lessons[langSel.value][activeLesson][lessonPhrase];if(lastWord)return WORDS[langSel.value][lastWord]||EN[lastWord];return line.textContent}
+document.getElementById("normal").onclick=()=>speak(currentSpeechText(),.82);
+document.getElementById("slow").onclick=()=>speak(currentSpeechText(),.58);
+document.getElementById("replay").onclick=()=>speak(lastSpoken||currentSpeechText(),.82);
+document.getElementById("nextPhrase").onclick=()=>{if(!activeLesson){const keys=Object.keys(EN),i=Math.max(0,keys.indexOf(lastWord));showWord(keys[(i+1)%keys.length]);speak(currentSpeechText(),.82);return}lessonPhrase=(lessonPhrase+1)%2;showLesson(activeLesson,true)};
+langSel.onchange=()=>{fillVoices();if(activeLesson)showLesson(activeLesson,false);else if(lastWord)showWord(lastWord)};
+document.getElementById("sceneView").onclick=()=>document.body.classList.add("scene-view");
+document.getElementById("sceneReturn").onclick=()=>document.body.classList.remove("scene-view");
+showWord("race");
+</script>
+</body>
+</html>
+
+<style id="talkabee-ski-panel-180">
+@media(min-width:761px){.panel{width:180px!important;min-width:180px!important;max-width:180px!important}}
+</style>

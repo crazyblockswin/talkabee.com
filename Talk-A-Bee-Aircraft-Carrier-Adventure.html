@@ -1,0 +1,226 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Talk A Bee — Aircraft Carrier Adventure</title>
+<link rel="icon" type="image/png" href="images/talkabee-favicon.png">
+<style>
+*{box-sizing:border-box}
+html,body{margin:0;width:100%;height:100%;overflow:hidden;font-family:Arial,Helvetica,sans-serif;background:#063a66;color:#fff}
+.world{position:relative;width:100vw;height:100vh;background:url("images/Talk-A-Bee-Aircraft-Carrier-Adventure.jpg") center center/cover no-repeat}
+
+/* APPROVED TALK A BEE LEFT PANEL */
+.panel{position:fixed;z-index:1000;left:16px;top:16px;bottom:16px;width:180px;min-width:180px;max-width:180px;
+padding:14px;overflow-x:hidden;overflow-y:auto;border-radius:20px;border:1px solid rgba(255,255,255,.28);
+background:rgba(7,23,39,.31);box-shadow:0 12px 30px rgba(0,0,0,.24);backdrop-filter:blur(3px);-webkit-backdrop-filter:blur(3px)}
+.panel h1{font-size:19px;line-height:1.08;margin:4px 0 10px;text-shadow:0 2px 4px rgba(0,0,0,.55)}
+.label{font-size:9.5px;line-height:1.1;letter-spacing:.09em;font-weight:900;margin:9px 0 4px}
+.panel button,.panel select,.panel a{width:100%;min-height:34px;margin:4px 0;padding:8px 9px;border-radius:12px;
+border:1px solid rgba(255,255,255,.38);background:rgba(7,32,50,.54);color:#fff;font:800 12px/1.16 Arial,sans-serif;
+text-align:left;text-decoration:none}
+.panel button:hover,.panel a:hover{background:rgba(20,58,79,.70)}
+.panel button.active{background:rgba(78,69,219,.74)}
+.panel select{white-space:nowrap;text-overflow:ellipsis;overflow:hidden}
+
+/* APPROVED 520px SCRIPT CARD */
+.card{position:fixed;z-index:900;left:50%;bottom:16px;width:520px;max-width:520px;padding:14px 16px;
+border-radius:20px;border:1px solid rgba(255,255,255,.30);background:rgba(25,19,24,.38);
+box-shadow:0 12px 30px rgba(0,0,0,.28);backdrop-filter:blur(5px);-webkit-backdrop-filter:blur(5px);
+transform:translateX(-50%) scale(.67);transform-origin:bottom center}
+.card .kicker{font-size:15px;line-height:1.25;font-weight:900;letter-spacing:.10em;color:rgba(255,255,255,.96);
+text-shadow:0 1px 3px rgba(0,0,0,.78);margin:0 0 6px}
+.card h2{font-size:22px;line-height:1.08;margin:4px 0 7px;text-shadow:0 1px 3px rgba(0,0,0,.55)}
+.card p{font-size:18px;line-height:1.35;margin:4px 0 7px}
+.word{margin-top:8px;padding:10px 12px;border-radius:14px;background:rgba(88,88,88,.72);border:1px solid rgba(255,255,255,.20)}
+.word strong{display:block;font-size:22px;line-height:1.28}
+.translation{font-size:18px;line-height:1.35;margin-top:3px}
+.controls{display:flex;align-items:center;gap:8px;flex-wrap:nowrap;margin-top:8px}
+.controls button{width:auto;min-width:0;padding:9px 13px;border-radius:12px;border:1px solid rgba(255,255,255,.35);
+background:rgba(255,255,255,.88);color:#10283c;font:900 13px/1 Arial,sans-serif;white-space:nowrap}
+
+/* HOTSPOTS */
+.hotspot{position:absolute;z-index:8;border:0;background:transparent;opacity:0;cursor:pointer;border-radius:16px}
+.hotspot:hover,.hotspot:focus-visible{opacity:1;background:rgba(255,220,72,.28);outline:2px solid rgba(255,255,255,.90)}
+.challenge-mode .hotspot.target{opacity:1;background:rgba(255,199,48,.38);outline:4px solid #fff;box-shadow:0 0 0 7px rgba(255,200,50,.20)}
+
+/* APPROVED COMPACT PREVIOUS / NEXT CHEVRONS */
+.talkabee-prev-next-nav{position:fixed;top:18px;right:22px;z-index:2147483000;display:flex;align-items:center;overflow:hidden;
+border:2px solid rgba(255,255,255,.82);border-radius:999px;background:rgba(11,22,42,.24);
+box-shadow:0 5px 16px rgba(0,0,0,.16);backdrop-filter:blur(3px);-webkit-backdrop-filter:blur(3px)}
+.talkabee-prev-next-nav a{width:48px;height:48px;display:grid;place-items:center;text-decoration:none;color:#fff;
+font:900 38px/1 Arial,sans-serif;text-shadow:0 1px 3px rgba(0,0,0,.42)}
+.talkabee-prev-next-nav a+a{border-left:1px solid rgba(255,255,255,.36)}
+.talkabee-prev-next-nav a:hover,.talkabee-prev-next-nav a:focus-visible{background:rgba(255,255,255,.18);outline:none}
+
+/* SCENE VIEW */
+.scene-return{display:none;position:fixed;z-index:2147483001;left:18px;top:18px;padding:10px 14px;border-radius:12px;
+border:1px solid #fff;background:rgba(7,23,39,.65);color:#fff;font-weight:900}
+.scene-view .panel,.scene-view .card,.scene-view .talkabee-prev-next-nav{display:none}
+.scene-view .scene-return{display:block}
+
+@media(max-width:760px){
+ .panel{left:10px;top:10px;bottom:10px;width:180px;min-width:180px;max-width:180px;padding:11px}
+ .card{width:min(520px,calc(100vw - 32px));bottom:10px;transform:translateX(-50%) scale(.82)}
+ .talkabee-prev-next-nav{top:12px;right:12px}.talkabee-prev-next-nav a{width:42px;height:42px;font-size:33px}
+}
+</style>
+</head>
+<body>
+<nav class="talkabee-prev-next-nav" aria-label="Adventure navigation">
+  <a href="Talk-A-Bee-Basic-Training-Adventure.html" aria-label="Previous adventure" title="Previous">‹</a>
+  <a href="Talk-A-Bee-Nighttime-Campground-Adventure.html" aria-label="Next adventure" title="Next">›</a>
+</nav>
+
+<main class="world" id="world">
+<button class="scene-return" id="sceneReturn">Return to Adventure</button>
+
+<aside class="panel">
+<h1>⚓ Aircraft Carrier Adventure</h1>
+<div class="label">LANGUAGE</div>
+<select id="lang">
+<option value="es">Spanish</option><option value="fr">French</option><option value="en">English</option>
+<option value="de">German</option><option value="it">Italian</option><option value="pt">Portuguese</option><option value="no">Norwegian</option>
+</select>
+<div class="label">VOICE</div>
+<select id="voice"><option value="">Browser Default</option></select>
+<button id="sceneView">◉ Scene View</button>
+
+<div class="label">DISCOVERY</div>
+<button id="discovery">🔎 Discovery — Click the Scene</button>
+
+<div class="label">ACTIVITIES</div>
+<button data-lesson="deck">1. Explore the Flight Deck</button>
+<button data-lesson="aircraft">2. Explore Carrier Aircraft</button>
+<button data-lesson="crew">3. Meet the Deck Crew</button>
+<button data-lesson="island">4. Explore the Carrier Island</button>
+<button data-lesson="safety">5. Learn Flight Deck Safety</button>
+<button data-lesson="sea">6. Life at Sea</button>
+<div class="label">CHALLENGES</div>
+<button data-ch="0">1. Find Navy Bee</button>
+<button data-ch="1">2. Find the Jet</button>
+<button data-ch="2">3. Find the Helicopter</button>
+<button data-ch="3">4. Find the Island</button>
+<button data-ch="4">5. Find the American Flag</button>
+<button data-ch="5">6. Find the Tow Tractor</button>
+<a href="index.html">← Return to Main Directory</a>
+</aside>
+
+<section class="card">
+<div class="kicker">ON THE FLIGHT DECK</div>
+<h2 id="title">Aircraft Carrier Adventure</h2>
+<p id="prompt">Click any object in the scene to hear its name.</p>
+<div class="word"><strong id="line">portaaviones</strong><div class="translation" id="translation">aircraft carrier</div></div>
+<p id="status"></p>
+<div class="controls">
+<button id="normal">🔊 Speak</button><button id="slow">🐢 Slow</button><button id="replay">↻ Replay</button><button id="nextPhrase">Next phrase →</button>
+</div>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- Hotspots mapped to the approved Aircraft Carrier keeper JPG. -->
+<button class="hotspot" data-word="bee" style="left:42%;top:59%;width:10%;height:23%" aria-label="Navy Bee"></button>
+<button class="hotspot" data-word="visitors" style="left:15%;top:58%;width:28%;height:32%" aria-label="Visitors"></button>
+<button class="hotspot" data-word="sailor" style="left:23%;top:52%;width:10%;height:17%" aria-label="Sailor"></button>
+<button class="hotspot" data-word="jet" style="left:46%;top:40%;width:27%;height:19%" aria-label="Jet"></button>
+<button class="hotspot" data-word="jets" style="left:2%;top:34%;width:61%;height:16%" aria-label="Carrier aircraft"></button>
+<button class="hotspot" data-word="helicopter" style="left:64%;top:6%;width:20%;height:20%" aria-label="Helicopter"></button>
+<button class="hotspot" data-word="island" style="left:20%;top:4%;width:18%;height:38%" aria-label="Carrier island"></button>
+<button class="hotspot" data-word="flag" style="left:31%;top:11%;width:7%;height:12%" aria-label="American flag"></button>
+<button class="hotspot" data-word="flightdeck" style="left:28%;top:44%;width:72%;height:49%" aria-label="Flight deck"></button>
+<button class="hotspot" data-word="crew" style="left:72%;top:42%;width:28%;height:24%" aria-label="Flight deck crew"></button>
+<button class="hotspot" data-word="yellowshirt" style="left:68%;top:50%;width:8%;height:18%" aria-label="Yellow shirt director"></button>
+<button class="hotspot" data-word="greenshirt" style="left:76%;top:45%;width:8%;height:14%" aria-label="Green shirt crew member"></button>
+<button class="hotspot" data-word="towtractor" style="left:83%;top:56%;width:16%;height:14%" aria-label="Tow tractor"></button>
+<button class="hotspot" data-word="towtractor" style="left:6%;top:44%;width:12%;height:12%" aria-label="Tow tractor"></button>
+<button class="hotspot" data-word="ocean" style="left:65%;top:28%;width:35%;height:19%" aria-label="Ocean"></button>
+<button class="hotspot" data-word="ship" style="left:83%;top:31%;width:10%;height:10%" aria-label="Navy ship"></button>
+<button class="hotspot" data-word="decklines" style="left:48%;top:58%;width:40%;height:24%" aria-label="Deck markings"></button>
+<button class="hotspot" data-word="railing" style="left:0%;top:72%;width:42%;height:19%" aria-label="Safety railing"></button>
+<button class="hotspot" data-word="equipment" style="left:0%;top:51%;width:17%;height:26%" aria-label="Deck equipment"></button>
+<button class="hotspot" data-word="sky" style="left:39%;top:0%;width:60%;height:31%" aria-label="Sky"></button>
+
+</main>
+
+<script>
+const EN={game:"aircraft carrier",bee:"Navy Bee",visitors:"visitors",sailor:"sailor",jet:"jet aircraft",jets:"carrier aircraft",helicopter:"helicopter",island:"carrier island",flag:"American flag",flightdeck:"flight deck",crew:"flight deck crew",yellowshirt:"aircraft director",greenshirt:"flight deck crew member",towtractor:"tow tractor",ocean:"ocean",ship:"Navy ship",decklines:"deck markings",railing:"safety railing",equipment:"deck equipment",sky:"sky"};
+const WORDS={
+es:{game:"portaaviones",bee:"abeja de la Marina",visitors:"visitantes",sailor:"marinero",jet:"avión a reacción",jets:"aviones del portaaviones",helicopter:"helicóptero",island:"isla del portaaviones",flag:"bandera estadounidense",flightdeck:"cubierta de vuelo",crew:"tripulación de cubierta",yellowshirt:"director de aeronaves",greenshirt:"miembro de la tripulación de cubierta",towtractor:"tractor de remolque",ocean:"océano",ship:"buque de la Marina",decklines:"marcas de cubierta",railing:"barandilla de seguridad",equipment:"equipo de cubierta",sky:"cielo"},
+fr:{game:"porte-avions",bee:"abeille de la Marine",visitors:"visiteurs",sailor:"marin",jet:"avion à réaction",jets:"avions embarqués",helicopter:"hélicoptère",island:"îlot du porte-avions",flag:"drapeau américain",flightdeck:"pont d'envol",crew:"équipe du pont d'envol",yellowshirt:"directeur d'aéronef",greenshirt:"membre d'équipe du pont",towtractor:"tracteur de remorquage",ocean:"océan",ship:"navire de la Marine",decklines:"marquages du pont",railing:"garde-corps de sécurité",equipment:"équipement du pont",sky:"ciel"},
+en:{...EN},
+de:{game:"Flugzeugträger",bee:"Marine-Biene",visitors:"Besucher",sailor:"Matrose",jet:"Düsenflugzeug",jets:"Trägerflugzeuge",helicopter:"Hubschrauber",island:"Trägerinsel",flag:"amerikanische Flagge",flightdeck:"Flugdeck",crew:"Flugdeckbesatzung",yellowshirt:"Flugzeug-Einweiser",greenshirt:"Flugdeckmitglied",towtractor:"Schleppfahrzeug",ocean:"Ozean",ship:"Marineschiff",decklines:"Deckmarkierungen",railing:"Sicherheitsgeländer",equipment:"Deckausrüstung",sky:"Himmel"},
+it:{game:"portaerei",bee:"ape della Marina",visitors:"visitatori",sailor:"marinaio",jet:"aereo a reazione",jets:"aerei imbarcati",helicopter:"elicottero",island:"isola della portaerei",flag:"bandiera americana",flightdeck:"ponte di volo",crew:"equipaggio del ponte di volo",yellowshirt:"direttore degli aeromobili",greenshirt:"membro dell'equipaggio di coperta",towtractor:"trattore da traino",ocean:"oceano",ship:"nave della Marina",decklines:"segnaletica del ponte",railing:"ringhiera di sicurezza",equipment:"attrezzatura di coperta",sky:"cielo"},
+pt:{game:"porta-aviões",bee:"abelha da Marinha",visitors:"visitantes",sailor:"marinheiro",jet:"avião a jato",jets:"aeronaves do porta-aviões",helicopter:"helicóptero",island:"ilha do porta-aviões",flag:"bandeira americana",flightdeck:"convés de voo",crew:"equipe do convés de voo",yellowshirt:"diretor de aeronaves",greenshirt:"membro da equipe do convés",towtractor:"trator de reboque",ocean:"oceano",ship:"navio da Marinha",decklines:"marcações do convés",railing:"grade de segurança",equipment:"equipamento do convés",sky:"céu"},
+no:{game:"hangarskip",bee:"marinebie",visitors:"besøkende",sailor:"sjømann",jet:"jetfly",jets:"hangarskipfly",helicopter:"helikopter",island:"kommandotårn",flag:"amerikansk flagg",flightdeck:"flydekk",crew:"flydekkmannskap",yellowshirt:"flydirigent",greenshirt:"medlem av flydekkmannskapet",towtractor:"slepekjøretøy",ocean:"hav",ship:"marineskip",decklines:"dekkmarkeringer",railing:"sikkerhetsrekkverk",equipment:"dekkutstyr",sky:"himmel"}};
+const SPEECH_LANG={es:"es-ES",fr:"fr-FR",en:"en-US",de:"de-DE",it:"it-IT",pt:"pt-PT",no:"nb-NO"};
+const lessons={
+en:{deck:["An aircraft carrier has a large flight deck where aircraft can take off, land, move, and be serviced while the ship is at sea.","The deck is carefully organized with markings, equipment, trained crews, and strict safety procedures."],aircraft:["Aircraft carriers can operate different aircraft, including fixed-wing airplanes and helicopters.","Aircraft are moved, inspected, fueled, maintained, launched, and recovered by teams with specialized jobs."],crew:["Flight deck crews use colored clothing to help identify different jobs in a very busy environment.","Teamwork and clear signals help people coordinate aircraft movement safely."],island:["The tall structure rising above the flight deck is called the island.","It contains important spaces used to help navigate the ship and manage flight-deck operations."],safety:["A carrier flight deck can be noisy, windy, crowded, and full of moving equipment.","Crews train carefully, wear protective gear, follow marked areas, and communicate with standardized signals."],sea:["An aircraft carrier is both an airfield and a large ship, with many people living and working aboard.","Sailors perform many different jobs to operate the ship, maintain equipment, prepare meals, navigate, communicate, and support aviation."]},
+es:{deck:["Un portaaviones tiene una gran cubierta de vuelo donde las aeronaves pueden despegar, aterrizar, moverse y recibir mantenimiento mientras el barco está en el mar.","La cubierta está cuidadosamente organizada con marcas, equipos, personal capacitado y estrictos procedimientos de seguridad."],aircraft:["Los portaaviones pueden operar diferentes aeronaves, incluidos aviones de ala fija y helicópteros.","Los equipos especializados mueven, inspeccionan, abastecen, mantienen, lanzan y recuperan las aeronaves."],crew:["Las tripulaciones de cubierta usan ropa de diferentes colores para identificar trabajos distintos en un entorno muy ocupado.","El trabajo en equipo y las señales claras ayudan a coordinar el movimiento de las aeronaves con seguridad."],island:["La estructura alta sobre la cubierta se llama isla.","Contiene espacios importantes utilizados para ayudar a navegar el barco y gestionar las operaciones de vuelo."],safety:["La cubierta de un portaaviones puede ser ruidosa, ventosa, concurrida y llena de equipos en movimiento.","Las tripulaciones entrenan cuidadosamente, usan protección, siguen las zonas marcadas y se comunican con señales estandarizadas."],sea:["Un portaaviones es a la vez un aeródromo y un gran barco, con muchas personas viviendo y trabajando a bordo.","Los marineros realizan muchos trabajos para operar el barco, mantener equipos, preparar alimentos, navegar, comunicarse y apoyar la aviación."]},
+fr:{deck:["Un porte-avions possède un grand pont d'envol où les aéronefs peuvent décoller, atterrir, se déplacer et être entretenus en mer.","Le pont est soigneusement organisé avec des marquages, du matériel, des équipes formées et des règles de sécurité strictes."],aircraft:["Les porte-avions peuvent utiliser différents aéronefs, notamment des avions et des hélicoptères.","Des équipes spécialisées déplacent, inspectent, ravitaillent, entretiennent, lancent et récupèrent les aéronefs."],crew:["Les équipes du pont d'envol portent des couleurs différentes pour identifier leurs fonctions dans un environnement très actif.","Le travail d'équipe et des signaux clairs permettent de coordonner les mouvements en sécurité."],island:["La grande structure qui s'élève au-dessus du pont est appelée l'îlot.","Elle contient des espaces importants servant à la navigation du navire et à la gestion des opérations aériennes."],safety:["Un pont d'envol peut être bruyant, venteux, encombré et rempli d'équipements en mouvement.","Les équipes s'entraînent soigneusement, portent des protections, respectent les zones marquées et utilisent des signaux normalisés."],sea:["Un porte-avions est à la fois un aérodrome et un grand navire où de nombreuses personnes vivent et travaillent.","Les marins exercent de nombreux métiers pour faire fonctionner le navire, entretenir le matériel, préparer les repas, naviguer, communiquer et soutenir l'aviation."]},
+de:{deck:["Ein Flugzeugträger besitzt ein großes Flugdeck, auf dem Flugzeuge auf See starten, landen, bewegt und gewartet werden können.","Das Deck ist mit Markierungen, Ausrüstung, geschulten Teams und strengen Sicherheitsverfahren sorgfältig organisiert."],aircraft:["Flugzeugträger können verschiedene Luftfahrzeuge einsetzen, darunter Flugzeuge und Hubschrauber.","Spezialisierte Teams bewegen, prüfen, betanken, warten, starten und übernehmen die Luftfahrzeuge."],crew:["Flugdeckbesatzungen tragen unterschiedliche Farben, damit verschiedene Aufgaben in der geschäftigen Umgebung erkennbar sind.","Teamarbeit und klare Signale helfen, Flugzeugbewegungen sicher zu koordinieren."],island:["Der hohe Aufbau über dem Flugdeck wird Insel genannt.","Darin befinden sich wichtige Bereiche zur Navigation des Schiffes und zur Leitung des Flugbetriebs."],safety:["Ein Flugdeck kann laut, windig, überfüllt und voller beweglicher Ausrüstung sein.","Die Teams trainieren sorgfältig, tragen Schutzausrüstung, beachten markierte Bereiche und verwenden standardisierte Signale."],sea:["Ein Flugzeugträger ist zugleich Flugplatz und großes Schiff, auf dem viele Menschen leben und arbeiten.","Matrosen übernehmen viele Aufgaben, um das Schiff zu betreiben, Ausrüstung zu warten, Mahlzeiten zuzubereiten, zu navigieren, zu kommunizieren und den Flugbetrieb zu unterstützen."]},
+it:{deck:["Una portaerei ha un grande ponte di volo dove gli aeromobili possono decollare, atterrare, spostarsi ed essere assistiti mentre la nave è in mare.","Il ponte è organizzato con segnaletica, attrezzature, equipaggi addestrati e rigorose procedure di sicurezza."],aircraft:["Le portaerei possono operare diversi aeromobili, compresi aerei ed elicotteri.","Squadre specializzate spostano, ispezionano, riforniscono, mantengono, lanciano e recuperano gli aeromobili."],crew:["Gli equipaggi del ponte indossano colori diversi per identificare i vari lavori in un ambiente molto attivo.","Il lavoro di squadra e segnali chiari aiutano a coordinare in sicurezza il movimento degli aeromobili."],island:["L'alta struttura che si eleva sopra il ponte si chiama isola.","Contiene importanti spazi utilizzati per aiutare a navigare la nave e gestire le operazioni di volo."],safety:["Il ponte di volo può essere rumoroso, ventoso, affollato e pieno di attrezzature in movimento.","Gli equipaggi si addestrano attentamente, indossano protezioni, rispettano le aree segnate e comunicano con segnali standard."],sea:["Una portaerei è sia un aeroporto sia una grande nave, con molte persone che vivono e lavorano a bordo.","I marinai svolgono molti lavori per far funzionare la nave, mantenere le attrezzature, preparare pasti, navigare, comunicare e sostenere l'aviazione."]},
+pt:{deck:["Um porta-aviões possui um grande convés de voo onde aeronaves podem decolar, pousar, se mover e receber manutenção enquanto o navio está no mar.","O convés é cuidadosamente organizado com marcações, equipamentos, equipes treinadas e procedimentos rigorosos de segurança."],aircraft:["Porta-aviões podem operar diferentes aeronaves, incluindo aviões e helicópteros.","Equipes especializadas movem, inspecionam, abastecem, mantêm, lançam e recuperam as aeronaves."],crew:["As equipes do convés usam roupas de cores diferentes para identificar trabalhos distintos em um ambiente muito movimentado.","Trabalho em equipe e sinais claros ajudam a coordenar o movimento das aeronaves com segurança."],island:["A estrutura alta acima do convés é chamada de ilha.","Ela contém espaços importantes usados para ajudar na navegação do navio e no gerenciamento das operações de voo."],safety:["Um convés de voo pode ser barulhento, ventoso, movimentado e cheio de equipamentos em movimento.","As equipes treinam cuidadosamente, usam proteção, seguem áreas marcadas e se comunicam com sinais padronizados."],sea:["Um porta-aviões é ao mesmo tempo um aeródromo e um grande navio, com muitas pessoas vivendo e trabalhando a bordo.","Marinheiros desempenham muitos trabalhos para operar o navio, manter equipamentos, preparar refeições, navegar, comunicar e apoiar a aviação."]},
+no:{deck:["Et hangarskip har et stort flydekk der luftfartøy kan ta av, lande, flyttes og vedlikeholdes mens skipet er til sjøs.","Dekket er nøye organisert med markeringer, utstyr, trente mannskaper og strenge sikkerhetsrutiner."],aircraft:["Hangarskip kan operere ulike luftfartøy, blant annet fly og helikoptre.","Spesialiserte team flytter, inspiserer, fyller drivstoff, vedlikeholder, sender ut og tar imot luftfartøy."],crew:["Mannskap på flydekket bruker forskjellige farger for å gjøre ulike arbeidsoppgaver lettere å kjenne igjen.","Samarbeid og tydelige signaler hjelper dem å koordinere flybevegelser på en trygg måte."],island:["Den høye konstruksjonen over flydekket kalles kommandotårnet eller øya.","Den inneholder viktige områder som brukes til navigasjon og styring av flyoperasjoner."],safety:["Et flydekk kan være støyende, vindfullt, travelt og fullt av utstyr i bevegelse.","Mannskap trener grundig, bruker verneutstyr, følger merkede områder og kommuniserer med standardiserte signaler."],sea:["Et hangarskip er både en flyplass og et stort skip, med mange mennesker som bor og arbeider om bord.","Sjøfolk gjør mange forskjellige jobber for å drive skipet, vedlikeholde utstyr, lage mat, navigere, kommunisere og støtte luftfarten."]}};
+const challengeOrder=["bee","jet","helicopter","island","flag","towtractor"];
+const SOUND_MAP={};
+const langSel=document.getElementById("lang"),voiceSel=document.getElementById("voice");
+const title=document.getElementById("title"),prompt=document.getElementById("prompt"),line=document.getElementById("line"),translation=document.getElementById("translation"),status=document.getElementById("status"),world=document.getElementById("world");
+let lastWord="game",activeLesson="",lessonPhrase=1,challenge=-1,lastSpoken="";
+function voices(){return ("speechSynthesis" in window)?speechSynthesis.getVoices():[]}
+function fillVoices(){const old=localStorage.getItem("talkabee-carrier-voice-"+langSel.value)||"";voiceSel.innerHTML='<option value="">Browser Default</option>';voices().forEach(v=>{const o=document.createElement("option");o.value=v.name;o.textContent=v.name+(v.lang?" — "+v.lang:"");voiceSel.appendChild(o)});if([...voiceSel.options].some(o=>o.value===old))voiceSel.value=old}
+if("speechSynthesis" in window){speechSynthesis.onvoiceschanged=fillVoices;fillVoices();setTimeout(fillVoices,150);setTimeout(fillVoices,600);setTimeout(fillVoices,1500)}
+voiceSel.onchange=()=>localStorage.setItem("talkabee-carrier-voice-"+langSel.value,voiceSel.value);
+function speak(text,rate=.88,onend=null){if(!text||!("speechSynthesis" in window)){if(onend)onend();return}speechSynthesis.cancel();setTimeout(()=>{const u=new SpeechSynthesisUtterance(text);u.lang=SPEECH_LANG[langSel.value]||langSel.value;u.rate=rate;const v=speechSynthesis.getVoices().find(x=>x.name===voiceSel.value);if(v)u.voice=v;if(onend)u.onend=onend;speechSynthesis.speak(u)},50);lastSpoken=text}
+function stopSound(){document.querySelectorAll("audio[data-talkabee-sound]").forEach(a=>{a.pause();a.currentTime=0;a.remove()})}
+function playSound(key){stopSound();const src=SOUND_MAP[key];if(!src)return;const a=new Audio(src);a.dataset.talkabeeSound="1";document.body.appendChild(a);a.play().catch(()=>{});a.onended=()=>a.remove()}
+function showWord(key){activeLesson="";lastWord=key;lessonPhrase=1;title.textContent="Click & Discover";prompt.textContent="You found "+(EN[key]||key)+".";line.textContent=WORDS[langSel.value][key]||EN[key]||key;translation.textContent=langSel.value==="en"?"":(EN[key]||key)}
+document.querySelectorAll(".hotspot").forEach(b=>b.onclick=()=>{const key=b.dataset.word;showWord(key);let played=false;const after=()=>{if(played)return;played=true;playSound(key)};speak(WORDS[langSel.value][key]||EN[key]||key,.82,after);setTimeout(after,1500);if(challenge>=0){if(key===challengeOrder[challenge]){status.textContent="✓ Nice find!";status.style.color="#9dffbf"}else{status.textContent="Not that one — keep looking.";status.style.color="#ffe28a"}}});
+function clearChallenge(){challenge=-1;world.classList.remove("challenge-mode");document.querySelectorAll(".hotspot").forEach(h=>h.classList.remove("target"));status.textContent=""}
+document.getElementById("discovery").onclick=()=>{clearChallenge();activeLesson="";lastWord="game";title.textContent="Click & Discover";prompt.textContent="Click any object in the scene to hear its name.";line.textContent=WORDS[langSel.value].game;translation.textContent=langSel.value==="en"?"":EN.game};
+document.querySelectorAll("[data-ch]").forEach(b=>b.onclick=()=>{activeLesson="";lastWord="";challenge=+b.dataset.ch;world.classList.add("challenge-mode");document.querySelectorAll(".hotspot").forEach(h=>h.classList.toggle("target",h.dataset.word===challengeOrder[challenge]));title.textContent="Challenge "+(challenge+1)+" of 6";prompt.textContent=b.textContent.replace(/^[0-9]+\.\s*/,"");line.textContent=WORDS[langSel.value][challengeOrder[challenge]];translation.textContent=langSel.value==="en"?"":EN[challengeOrder[challenge]];status.textContent=""});
+function showLesson(key,speakIt=false){clearChallenge();activeLesson=key;lastWord="";lessonPhrase=Math.max(0,Math.min(1,lessonPhrase));const a=lessons[langSel.value][key],e=lessons.en[key],btn=document.querySelector(`[data-lesson="${key}"]`);title.textContent=btn?btn.textContent.replace(/^[0-9]+\.\s*/,""):"Aircraft Carrier Adventure";prompt.textContent=a[0];line.textContent=a[lessonPhrase];translation.textContent=langSel.value==="en"?"":e[lessonPhrase];if(speakIt)speak(a[lessonPhrase])}
+document.querySelectorAll("[data-lesson]").forEach(b=>b.onclick=()=>{lessonPhrase=1;showLesson(b.dataset.lesson,true)});
+function currentSpeechText(){if(activeLesson)return lessons[langSel.value][activeLesson][lessonPhrase];if(lastWord)return WORDS[langSel.value][lastWord]||EN[lastWord];return line.textContent}
+document.getElementById("normal").onclick=()=>speak(currentSpeechText(),.82);
+document.getElementById("slow").onclick=()=>speak(currentSpeechText(),.58);
+document.getElementById("replay").onclick=()=>speak(lastSpoken||currentSpeechText(),.82);
+document.getElementById("nextPhrase").onclick=()=>{if(!activeLesson){const keys=Object.keys(EN),i=Math.max(0,keys.indexOf(lastWord));showWord(keys[(i+1)%keys.length]);speak(currentSpeechText(),.82);return}lessonPhrase=(lessonPhrase+1)%2;showLesson(activeLesson,true)};
+langSel.onchange=()=>{fillVoices();if(activeLesson)showLesson(activeLesson,false);else if(lastWord)showWord(lastWord)};
+document.getElementById("sceneView").onclick=()=>document.body.classList.add("scene-view");
+document.getElementById("sceneReturn").onclick=()=>document.body.classList.remove("scene-view");
+showWord("game");
+</script>
+</body>
+</html>
+
+<style id="talkabee-ski-panel-180">
+@media(min-width:761px){.panel{width:180px!important;min-width:180px!important;max-width:180px!important}}
+</style>

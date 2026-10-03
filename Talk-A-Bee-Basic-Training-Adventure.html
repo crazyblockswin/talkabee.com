@@ -1,0 +1,225 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Talk A Bee — Basic Training Adventure</title>
+<link rel="icon" type="image/png" href="images/talkabee-favicon.png">
+<style>
+*{box-sizing:border-box}
+html,body{margin:0;width:100%;height:100%;overflow:hidden;font-family:Arial,Helvetica,sans-serif;background:#063a66;color:#fff}
+.world{position:relative;width:100vw;height:100vh;background:url("images/Talk-A-Bee-Basic-Training-Adventure.jpg") center center/cover no-repeat}
+
+/* APPROVED TALK A BEE LEFT PANEL */
+.panel{position:fixed;z-index:1000;left:16px;top:16px;bottom:16px;width:180px;min-width:180px;max-width:180px;
+padding:14px;overflow-x:hidden;overflow-y:auto;border-radius:20px;border:1px solid rgba(255,255,255,.28);
+background:rgba(7,23,39,.31);box-shadow:0 12px 30px rgba(0,0,0,.24);backdrop-filter:blur(3px);-webkit-backdrop-filter:blur(3px)}
+.panel h1{font-size:19px;line-height:1.08;margin:4px 0 10px;text-shadow:0 2px 4px rgba(0,0,0,.55)}
+.label{font-size:9.5px;line-height:1.1;letter-spacing:.09em;font-weight:900;margin:9px 0 4px}
+.panel button,.panel select,.panel a{width:100%;min-height:34px;margin:4px 0;padding:8px 9px;border-radius:12px;
+border:1px solid rgba(255,255,255,.38);background:rgba(7,32,50,.54);color:#fff;font:800 12px/1.16 Arial,sans-serif;
+text-align:left;text-decoration:none}
+.panel button:hover,.panel a:hover{background:rgba(20,58,79,.70)}
+.panel button.active{background:rgba(78,69,219,.74)}
+.panel select{white-space:nowrap;text-overflow:ellipsis;overflow:hidden}
+
+/* APPROVED 520px SCRIPT CARD */
+.card{position:fixed;z-index:900;left:50%;bottom:16px;width:520px;max-width:520px;padding:14px 16px;
+border-radius:20px;border:1px solid rgba(255,255,255,.30);background:rgba(25,19,24,.38);
+box-shadow:0 12px 30px rgba(0,0,0,.28);backdrop-filter:blur(5px);-webkit-backdrop-filter:blur(5px);
+transform:translateX(-50%) scale(.67);transform-origin:bottom center}
+.card .kicker{font-size:15px;line-height:1.25;font-weight:900;letter-spacing:.10em;color:rgba(255,255,255,.96);
+text-shadow:0 1px 3px rgba(0,0,0,.78);margin:0 0 6px}
+.card h2{font-size:22px;line-height:1.08;margin:4px 0 7px;text-shadow:0 1px 3px rgba(0,0,0,.55)}
+.card p{font-size:18px;line-height:1.35;margin:4px 0 7px}
+.word{margin-top:8px;padding:10px 12px;border-radius:14px;background:rgba(88,88,88,.72);border:1px solid rgba(255,255,255,.20)}
+.word strong{display:block;font-size:22px;line-height:1.28}
+.translation{font-size:18px;line-height:1.35;margin-top:3px}
+.controls{display:flex;align-items:center;gap:8px;flex-wrap:nowrap;margin-top:8px}
+.controls button{width:auto;min-width:0;padding:9px 13px;border-radius:12px;border:1px solid rgba(255,255,255,.35);
+background:rgba(255,255,255,.88);color:#10283c;font:900 13px/1 Arial,sans-serif;white-space:nowrap}
+
+/* HOTSPOTS */
+.hotspot{position:absolute;z-index:8;border:0;background:transparent;opacity:0;cursor:pointer;border-radius:16px}
+.hotspot:hover,.hotspot:focus-visible{opacity:1;background:rgba(255,220,72,.28);outline:2px solid rgba(255,255,255,.90)}
+.challenge-mode .hotspot.target{opacity:1;background:rgba(255,199,48,.38);outline:4px solid #fff;box-shadow:0 0 0 7px rgba(255,200,50,.20)}
+
+/* APPROVED COMPACT PREVIOUS / NEXT CHEVRONS */
+.talkabee-prev-next-nav{position:fixed;top:18px;right:22px;z-index:2147483000;display:flex;align-items:center;overflow:hidden;
+border:2px solid rgba(255,255,255,.82);border-radius:999px;background:rgba(11,22,42,.24);
+box-shadow:0 5px 16px rgba(0,0,0,.16);backdrop-filter:blur(3px);-webkit-backdrop-filter:blur(3px)}
+.talkabee-prev-next-nav a{width:48px;height:48px;display:grid;place-items:center;text-decoration:none;color:#fff;
+font:900 38px/1 Arial,sans-serif;text-shadow:0 1px 3px rgba(0,0,0,.42)}
+.talkabee-prev-next-nav a+a{border-left:1px solid rgba(255,255,255,.36)}
+.talkabee-prev-next-nav a:hover,.talkabee-prev-next-nav a:focus-visible{background:rgba(255,255,255,.18);outline:none}
+
+/* SCENE VIEW */
+.scene-return{display:none;position:fixed;z-index:2147483001;left:18px;top:18px;padding:10px 14px;border-radius:12px;
+border:1px solid #fff;background:rgba(7,23,39,.65);color:#fff;font-weight:900}
+.scene-view .panel,.scene-view .card,.scene-view .talkabee-prev-next-nav{display:none}
+.scene-view .scene-return{display:block}
+
+@media(max-width:760px){
+ .panel{left:10px;top:10px;bottom:10px;width:180px;min-width:180px;max-width:180px;padding:11px}
+ .card{width:min(520px,calc(100vw - 32px));bottom:10px;transform:translateX(-50%) scale(.82)}
+ .talkabee-prev-next-nav{top:12px;right:12px}.talkabee-prev-next-nav a{width:42px;height:42px;font-size:33px}
+}
+</style>
+</head>
+<body>
+<nav class="talkabee-prev-next-nav" aria-label="Adventure navigation">
+  <a href="Talk-A-Bee-Protect-Earth-Adventure.html" aria-label="Previous adventure" title="Previous">‹</a>
+  <a href="Talk-A-Bee-Aircraft-Carrier-Adventure.html" aria-label="Next adventure" title="Next">›</a>
+</nav>
+
+<main class="world" id="world">
+<button class="scene-return" id="sceneReturn">Return to Adventure</button>
+
+<aside class="panel">
+<h1>🫡 Basic Training Adventure</h1>
+<div class="label">LANGUAGE</div>
+<select id="lang">
+<option value="es">Spanish</option><option value="fr">French</option><option value="en">English</option>
+<option value="de">German</option><option value="it">Italian</option><option value="pt">Portuguese</option><option value="no">Norwegian</option>
+</select>
+<div class="label">VOICE</div>
+<select id="voice"><option value="">Browser Default</option></select>
+<button id="sceneView">◉ Scene View</button>
+
+<div class="label">DISCOVERY</div>
+<button id="discovery">🔎 Discovery — Click the Scene</button>
+
+<div class="label">ACTIVITIES</div>
+<button data-lesson="team">1. Meet the Training Team</button>
+<button data-lesson="course">2. Run the Obstacle Course</button>
+<button data-lesson="climb">3. Climb the Training Wall</button>
+<button data-lesson="gear">4. Explore Training Gear</button>
+<button data-lesson="fitness">5. Practice Fitness</button>
+<button data-lesson="values">6. Teamwork & Discipline</button>
+<div class="label">CHALLENGES</div>
+<button data-ch="0">1. Find Drill Sergeant Bee</button>
+<button data-ch="1">2. Find the American Flag</button>
+<button data-ch="2">3. Find the Climbing Wall</button>
+<button data-ch="3">4. Find the Tires</button>
+<button data-ch="4">5. Find the Helicopter</button>
+<button data-ch="5">6. Find a Backpack</button>
+<a href="index.html">← Return to Main Directory</a>
+</aside>
+
+<section class="card">
+<div class="kicker">AT BASIC TRAINING</div>
+<h2 id="title">Basic Training Adventure</h2>
+<p id="prompt">Click any object in the scene to hear its name.</p>
+<div class="word"><strong id="line">entrenamiento básico</strong><div class="translation" id="translation">basic training</div></div>
+<p id="status"></p>
+<div class="controls">
+<button id="normal">🔊 Speak</button><button id="slow">🐢 Slow</button><button id="replay">↻ Replay</button><button id="nextPhrase">Next phrase →</button>
+</div>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- Hotspots mapped to the approved Basic Training keeper JPG. -->
+<button class="hotspot" data-word="bee" style="left:28%;top:53%;width:12%;height:29%" aria-label="Drill Sergeant Bee"></button>
+<button class="hotspot" data-word="trainees" style="left:47%;top:70%;width:47%;height:23%" aria-label="Trainees"></button>
+<button class="hotspot" data-word="instructor" style="left:40%;top:47%;width:11%;height:23%" aria-label="Instructor"></button>
+<button class="hotspot" data-word="flag" style="left:13%;top:5%;width:13%;height:22%" aria-label="American flag"></button>
+<button class="hotspot" data-word="mountains" style="left:24%;top:4%;width:43%;height:23%" aria-label="Mountains"></button>
+<button class="hotspot" data-word="forest" style="left:23%;top:22%;width:62%;height:18%" aria-label="Forest"></button>
+<button class="hotspot" data-word="wall" style="left:48%;top:17%;width:17%;height:35%" aria-label="Climbing wall"></button>
+<button class="hotspot" data-word="rope" style="left:55%;top:19%;width:9%;height:31%" aria-label="Climbing rope"></button>
+<button class="hotspot" data-word="tires" style="left:57%;top:54%;width:29%;height:14%" aria-label="Training tires"></button>
+<button class="hotspot" data-word="tunnel" style="left:88%;top:56%;width:12%;height:17%" aria-label="Training tunnel"></button>
+<button class="hotspot" data-word="helicopter" style="left:65%;top:5%;width:19%;height:16%" aria-label="Helicopter"></button>
+<button class="hotspot" data-word="tower" style="left:85%;top:7%;width:10%;height:25%" aria-label="Observation tower"></button>
+<button class="hotspot" data-word="tents" style="left:4%;top:33%;width:39%;height:18%" aria-label="Training tents"></button>
+<button class="hotspot" data-word="truck" style="left:89%;top:37%;width:11%;height:15%" aria-label="Military truck"></button>
+<button class="hotspot" data-word="backpack" style="left:18%;top:68%;width:13%;height:17%" aria-label="Backpack"></button>
+<button class="hotspot" data-word="canteen" style="left:21%;top:70%;width:8%;height:12%" aria-label="Canteen"></button>
+<button class="hotspot" data-word="uniform" style="left:59%;top:72%;width:13%;height:19%" aria-label="Training uniform"></button>
+<button class="hotspot" data-word="boots" style="left:31%;top:75%;width:8%;height:13%" aria-label="Boots"></button>
+<button class="hotspot" data-word="obstacle" style="left:43%;top:50%;width:48%;height:22%" aria-label="Obstacle course"></button>
+<button class="hotspot" data-word="camp" style="left:7%;top:29%;width:87%;height:39%" aria-label="Training camp"></button>
+
+</main>
+
+<script>
+const EN={game:"basic training",bee:"drill sergeant Bee",trainees:"trainees",instructor:"instructor",flag:"American flag",mountains:"mountains",forest:"forest",wall:"climbing wall",rope:"climbing rope",tires:"training tires",tunnel:"training tunnel",helicopter:"helicopter",tower:"observation tower",tents:"training tents",truck:"military truck",backpack:"backpack",canteen:"canteen",uniform:"training uniform",boots:"boots",obstacle:"obstacle course",camp:"training camp"};
+const WORDS={
+es:{game:"entrenamiento básico",bee:"abeja sargento instructor",trainees:"reclutas",instructor:"instructor",flag:"bandera estadounidense",mountains:"montañas",forest:"bosque",wall:"muro de escalada",rope:"cuerda de escalada",tires:"neumáticos de entrenamiento",tunnel:"túnel de entrenamiento",helicopter:"helicóptero",tower:"torre de observación",tents:"tiendas de entrenamiento",truck:"camión militar",backpack:"mochila",canteen:"cantimplora",uniform:"uniforme de entrenamiento",boots:"botas",obstacle:"pista de obstáculos",camp:"campamento de entrenamiento"},
+fr:{game:"entraînement de base",bee:"abeille sergent instructeur",trainees:"stagiaires",instructor:"instructeur",flag:"drapeau américain",mountains:"montagnes",forest:"forêt",wall:"mur d'escalade",rope:"corde d'escalade",tires:"pneus d'entraînement",tunnel:"tunnel d'entraînement",helicopter:"hélicoptère",tower:"tour d'observation",tents:"tentes d'entraînement",truck:"camion militaire",backpack:"sac à dos",canteen:"gourde",uniform:"uniforme d'entraînement",boots:"bottes",obstacle:"parcours d'obstacles",camp:"camp d'entraînement"},
+en:{...EN},
+de:{game:"Grundausbildung",bee:"Drill-Sergeant-Biene",trainees:"Auszubildende",instructor:"Ausbilder",flag:"amerikanische Flagge",mountains:"Berge",forest:"Wald",wall:"Kletterwand",rope:"Kletterseil",tires:"Trainingsreifen",tunnel:"Trainingstunnel",helicopter:"Hubschrauber",tower:"Beobachtungsturm",tents:"Trainingszelte",truck:"Militärlastwagen",backpack:"Rucksack",canteen:"Feldflasche",uniform:"Trainingsuniform",boots:"Stiefel",obstacle:"Hindernisparcours",camp:"Trainingslager"},
+it:{game:"addestramento di base",bee:"ape sergente istruttore",trainees:"allievi",instructor:"istruttore",flag:"bandiera americana",mountains:"montagne",forest:"foresta",wall:"parete da arrampicata",rope:"corda da arrampicata",tires:"pneumatici da allenamento",tunnel:"tunnel di allenamento",helicopter:"elicottero",tower:"torre di osservazione",tents:"tende da addestramento",truck:"camion militare",backpack:"zaino",canteen:"borraccia",uniform:"uniforme da addestramento",boots:"stivali",obstacle:"percorso a ostacoli",camp:"campo di addestramento"},
+pt:{game:"treinamento básico",bee:"abelha sargento instrutor",trainees:"recrutas",instructor:"instrutor",flag:"bandeira americana",mountains:"montanhas",forest:"floresta",wall:"parede de escalada",rope:"corda de escalada",tires:"pneus de treinamento",tunnel:"túnel de treinamento",helicopter:"helicóptero",tower:"torre de observação",tents:"tendas de treinamento",truck:"caminhão militar",backpack:"mochila",canteen:"cantil",uniform:"uniforme de treinamento",boots:"botas",obstacle:"pista de obstáculos",camp:"campo de treinamento"},
+no:{game:"grunntrening",bee:"drillinstruktørbie",trainees:"rekrutter",instructor:"instruktør",flag:"amerikansk flagg",mountains:"fjell",forest:"skog",wall:"klatrevegg",rope:"klatretau",tires:"treningsdekk",tunnel:"treningstunnel",helicopter:"helikopter",tower:"observasjonstårn",tents:"treningstelt",truck:"militærlastebil",backpack:"ryggsekk",canteen:"feltflaske",uniform:"treningsuniform",boots:"støvler",obstacle:"hinderløype",camp:"treningsleir"}};
+const SPEECH_LANG={es:"es-ES",fr:"fr-FR",en:"en-US",de:"de-DE",it:"it-IT",pt:"pt-PT",no:"nb-NO"};
+const lessons={
+en:{team:["Basic training teaches people to work together, follow instructions, stay organized, and support their team.","Training often combines classroom learning, physical exercise, practical skills, and teamwork."],course:["Obstacle courses challenge balance, coordination, endurance, and problem-solving.","Trainees learn to move carefully through different obstacles while encouraging their teammates."],climb:["Climbing walls and ropes build strength, confidence, coordination, and persistence.","Safety procedures and proper instruction are important during climbing activities."],gear:["Training gear can include uniforms, boots, backpacks, canteens, protective equipment, and other supplies.","Keeping equipment organized and cared for is part of being prepared."],fitness:["Physical training can include running, crawling, climbing, carrying equipment, and other exercises.","Fitness training develops endurance, strength, coordination, and healthy teamwork."],values:["Discipline means practicing good habits, following instructions, being responsible, and continuing even when a task is difficult.","Teamwork means helping others, communicating clearly, and working toward a shared goal."]},
+es:{team:["El entrenamiento básico enseña a trabajar juntos, seguir instrucciones, mantenerse organizados y apoyar al equipo.","El entrenamiento suele combinar aprendizaje, ejercicio físico, habilidades prácticas y trabajo en equipo."],course:["Las pistas de obstáculos desafían el equilibrio, la coordinación, la resistencia y la resolución de problemas.","Los reclutas aprenden a superar distintos obstáculos con cuidado mientras animan a sus compañeros."],climb:["Los muros y cuerdas de escalada desarrollan fuerza, confianza, coordinación y perseverancia.","Los procedimientos de seguridad y la instrucción adecuada son importantes durante la escalada."],gear:["El equipo de entrenamiento puede incluir uniformes, botas, mochilas, cantimploras, equipo protector y otros suministros.","Mantener el equipo organizado y cuidado forma parte de estar preparado."],fitness:["El entrenamiento físico puede incluir correr, gatear, escalar, transportar equipo y otros ejercicios.","Desarrolla resistencia, fuerza, coordinación y trabajo en equipo saludable."],values:["La disciplina significa practicar buenos hábitos, seguir instrucciones, ser responsable y continuar aunque una tarea sea difícil.","El trabajo en equipo significa ayudar a los demás, comunicarse claramente y trabajar hacia una meta compartida."]},
+fr:{team:["L'entraînement de base apprend à travailler ensemble, suivre les instructions, rester organisé et soutenir son équipe.","Il combine souvent apprentissage, exercice physique, compétences pratiques et travail d'équipe."],course:["Les parcours d'obstacles mettent à l'épreuve l'équilibre, la coordination, l'endurance et la résolution de problèmes.","Les stagiaires apprennent à franchir différents obstacles avec prudence tout en encourageant leurs coéquipiers."],climb:["Les murs et cordes d'escalade développent force, confiance, coordination et persévérance.","Les procédures de sécurité et une bonne instruction sont importantes pendant l'escalade."],gear:["L'équipement d'entraînement peut comprendre uniformes, bottes, sacs à dos, gourdes, protections et autres fournitures.","Garder son équipement organisé et bien entretenu fait partie de la préparation."],fitness:["L'entraînement physique peut comprendre courir, ramper, grimper, porter du matériel et d'autres exercices.","Il développe endurance, force, coordination et esprit d'équipe."],values:["La discipline consiste à pratiquer de bonnes habitudes, suivre les instructions, être responsable et persévérer quand une tâche est difficile.","Le travail d'équipe consiste à aider les autres, communiquer clairement et avancer vers un objectif commun."]},
+de:{team:["Die Grundausbildung lehrt Menschen, zusammenzuarbeiten, Anweisungen zu befolgen, organisiert zu bleiben und ihr Team zu unterstützen.","Das Training verbindet häufig Unterricht, körperliche Übungen, praktische Fähigkeiten und Teamarbeit."],course:["Hindernisparcours fordern Gleichgewicht, Koordination, Ausdauer und Problemlösung.","Die Teilnehmer lernen, verschiedene Hindernisse vorsichtig zu überwinden und ihre Teamkameraden zu unterstützen."],climb:["Kletterwände und Seile fördern Kraft, Selbstvertrauen, Koordination und Ausdauer.","Sicherheitsverfahren und richtige Anleitung sind beim Klettern wichtig."],gear:["Zur Trainingsausrüstung können Uniformen, Stiefel, Rucksäcke, Feldflaschen, Schutzausrüstung und weitere Vorräte gehören.","Ausrüstung ordentlich und gepflegt zu halten gehört zur Vorbereitung."],fitness:["Körperliches Training kann Laufen, Kriechen, Klettern, das Tragen von Ausrüstung und andere Übungen umfassen.","Es entwickelt Ausdauer, Kraft, Koordination und Teamarbeit."],values:["Disziplin bedeutet, gute Gewohnheiten zu üben, Anweisungen zu befolgen, Verantwortung zu übernehmen und auch bei schwierigen Aufgaben weiterzumachen.","Teamarbeit bedeutet, anderen zu helfen, klar zu kommunizieren und gemeinsam auf ein Ziel hinzuarbeiten."]},
+it:{team:["L'addestramento di base insegna a lavorare insieme, seguire istruzioni, essere organizzati e sostenere la squadra.","Spesso combina apprendimento, esercizio fisico, abilità pratiche e lavoro di squadra."],course:["I percorsi a ostacoli mettono alla prova equilibrio, coordinazione, resistenza e capacità di risolvere problemi.","Gli allievi imparano a superare diversi ostacoli con attenzione incoraggiando i compagni."],climb:["Pareti e corde da arrampicata sviluppano forza, fiducia, coordinazione e perseveranza.","Procedure di sicurezza e istruzioni corrette sono importanti durante l'arrampicata."],gear:["L'attrezzatura può comprendere uniformi, stivali, zaini, borracce, protezioni e altre forniture.","Tenere l'attrezzatura ordinata e curata fa parte dell'essere preparati."],fitness:["L'allenamento fisico può includere corsa, strisciamento, arrampicata, trasporto di attrezzatura e altri esercizi.","Sviluppa resistenza, forza, coordinazione e collaborazione."],values:["La disciplina significa praticare buone abitudini, seguire istruzioni, essere responsabili e continuare anche quando un compito è difficile.","Il lavoro di squadra significa aiutare gli altri, comunicare chiaramente e lavorare verso un obiettivo comune."]},
+pt:{team:["O treinamento básico ensina a trabalhar em conjunto, seguir instruções, manter organização e apoiar a equipe.","O treinamento costuma combinar aprendizagem, exercício físico, habilidades práticas e trabalho em equipe."],course:["Pistas de obstáculos desafiam equilíbrio, coordenação, resistência e solução de problemas.","Os recrutas aprendem a passar por diferentes obstáculos com cuidado enquanto incentivam seus colegas."],climb:["Paredes e cordas de escalada desenvolvem força, confiança, coordenação e persistência.","Procedimentos de segurança e orientação adequada são importantes durante a escalada."],gear:["O equipamento pode incluir uniformes, botas, mochilas, cantis, equipamentos de proteção e outros suprimentos.","Manter o equipamento organizado e bem cuidado faz parte de estar preparado."],fitness:["O treinamento físico pode incluir corrida, rastejamento, escalada, transporte de equipamentos e outros exercícios.","Ele desenvolve resistência, força, coordenação e trabalho em equipe."],values:["Disciplina significa praticar bons hábitos, seguir instruções, ser responsável e continuar mesmo quando uma tarefa é difícil.","Trabalho em equipe significa ajudar os outros, comunicar-se claramente e trabalhar por um objetivo compartilhado."]},
+no:{team:["Grunntrening lærer folk å samarbeide, følge instruksjoner, holde orden og støtte laget sitt.","Treningen kombinerer ofte læring, fysisk aktivitet, praktiske ferdigheter og samarbeid."],course:["Hinderløyper utfordrer balanse, koordinasjon, utholdenhet og problemløsning.","Rekrutter lærer å bevege seg forsiktig gjennom ulike hindringer samtidig som de oppmuntrer lagkameratene."],climb:["Klatrevegger og tau bygger styrke, selvtillit, koordinasjon og utholdenhet.","Sikkerhetsrutiner og riktig veiledning er viktig under klatring."],gear:["Treningsutstyr kan omfatte uniformer, støvler, ryggsekker, feltflasker, verneutstyr og andre forsyninger.","Å holde utstyret organisert og godt vedlikeholdt er en del av å være forberedt."],fitness:["Fysisk trening kan omfatte løping, kryping, klatring, bæring av utstyr og andre øvelser.","Treningen utvikler utholdenhet, styrke, koordinasjon og samarbeid."],values:["Disiplin betyr å øve på gode vaner, følge instruksjoner, ta ansvar og fortsette selv når en oppgave er vanskelig.","Samarbeid betyr å hjelpe andre, kommunisere tydelig og arbeide mot et felles mål."]}};
+const challengeOrder=["bee","flag","wall","tires","helicopter","backpack"];
+const SOUND_MAP={};
+const langSel=document.getElementById("lang"),voiceSel=document.getElementById("voice");
+const title=document.getElementById("title"),prompt=document.getElementById("prompt"),line=document.getElementById("line"),translation=document.getElementById("translation"),status=document.getElementById("status"),world=document.getElementById("world");
+let lastWord="game",activeLesson="",lessonPhrase=1,challenge=-1,lastSpoken="";
+function voices(){return ("speechSynthesis" in window)?speechSynthesis.getVoices():[]}
+function fillVoices(){const old=localStorage.getItem("talkabee-basic-training-voice-"+langSel.value)||"";voiceSel.innerHTML='<option value="">Browser Default</option>';voices().forEach(v=>{const o=document.createElement("option");o.value=v.name;o.textContent=v.name+(v.lang?" — "+v.lang:"");voiceSel.appendChild(o)});if([...voiceSel.options].some(o=>o.value===old))voiceSel.value=old}
+if("speechSynthesis" in window){speechSynthesis.onvoiceschanged=fillVoices;fillVoices();setTimeout(fillVoices,150);setTimeout(fillVoices,600);setTimeout(fillVoices,1500)}
+voiceSel.onchange=()=>localStorage.setItem("talkabee-basic-training-voice-"+langSel.value,voiceSel.value);
+function speak(text,rate=.88,onend=null){if(!text||!("speechSynthesis" in window)){if(onend)onend();return}speechSynthesis.cancel();setTimeout(()=>{const u=new SpeechSynthesisUtterance(text);u.lang=SPEECH_LANG[langSel.value]||langSel.value;u.rate=rate;const v=speechSynthesis.getVoices().find(x=>x.name===voiceSel.value);if(v)u.voice=v;if(onend)u.onend=onend;speechSynthesis.speak(u)},50);lastSpoken=text}
+function stopSound(){document.querySelectorAll("audio[data-talkabee-sound]").forEach(a=>{a.pause();a.currentTime=0;a.remove()})}
+function playSound(key){stopSound();const src=SOUND_MAP[key];if(!src)return;const a=new Audio(src);a.dataset.talkabeeSound="1";document.body.appendChild(a);a.play().catch(()=>{});a.onended=()=>a.remove()}
+function showWord(key){activeLesson="";lastWord=key;lessonPhrase=1;title.textContent="Click & Discover";prompt.textContent="You found "+(EN[key]||key)+".";line.textContent=WORDS[langSel.value][key]||EN[key]||key;translation.textContent=langSel.value==="en"?"":(EN[key]||key)}
+document.querySelectorAll(".hotspot").forEach(b=>b.onclick=()=>{const key=b.dataset.word;showWord(key);let played=false;const after=()=>{if(played)return;played=true;playSound(key)};speak(WORDS[langSel.value][key]||EN[key]||key,.82,after);setTimeout(after,1500);if(challenge>=0){if(key===challengeOrder[challenge]){status.textContent="✓ Nice find!";status.style.color="#9dffbf"}else{status.textContent="Not that one — keep looking.";status.style.color="#ffe28a"}}});
+function clearChallenge(){challenge=-1;world.classList.remove("challenge-mode");document.querySelectorAll(".hotspot").forEach(h=>h.classList.remove("target"));status.textContent=""}
+document.getElementById("discovery").onclick=()=>{clearChallenge();activeLesson="";lastWord="game";title.textContent="Click & Discover";prompt.textContent="Click any object in the scene to hear its name.";line.textContent=WORDS[langSel.value].game;translation.textContent=langSel.value==="en"?"":EN.game};
+document.querySelectorAll("[data-ch]").forEach(b=>b.onclick=()=>{activeLesson="";lastWord="";challenge=+b.dataset.ch;world.classList.add("challenge-mode");document.querySelectorAll(".hotspot").forEach(h=>h.classList.toggle("target",h.dataset.word===challengeOrder[challenge]));title.textContent="Challenge "+(challenge+1)+" of 6";prompt.textContent=b.textContent.replace(/^[0-9]+\.\s*/,"");line.textContent=WORDS[langSel.value][challengeOrder[challenge]];translation.textContent=langSel.value==="en"?"":EN[challengeOrder[challenge]];status.textContent=""});
+function showLesson(key,speakIt=false){clearChallenge();activeLesson=key;lastWord="";lessonPhrase=Math.max(0,Math.min(1,lessonPhrase));const a=lessons[langSel.value][key],e=lessons.en[key],btn=document.querySelector(`[data-lesson="${key}"]`);title.textContent=btn?btn.textContent.replace(/^[0-9]+\.\s*/,""):"Basic Training Adventure";prompt.textContent=a[0];line.textContent=a[lessonPhrase];translation.textContent=langSel.value==="en"?"":e[lessonPhrase];if(speakIt)speak(a[lessonPhrase])}
+document.querySelectorAll("[data-lesson]").forEach(b=>b.onclick=()=>{lessonPhrase=1;showLesson(b.dataset.lesson,true)});
+function currentSpeechText(){if(activeLesson)return lessons[langSel.value][activeLesson][lessonPhrase];if(lastWord)return WORDS[langSel.value][lastWord]||EN[lastWord];return line.textContent}
+document.getElementById("normal").onclick=()=>speak(currentSpeechText(),.82);
+document.getElementById("slow").onclick=()=>speak(currentSpeechText(),.58);
+document.getElementById("replay").onclick=()=>speak(lastSpoken||currentSpeechText(),.82);
+document.getElementById("nextPhrase").onclick=()=>{if(!activeLesson){const keys=Object.keys(EN),i=Math.max(0,keys.indexOf(lastWord));showWord(keys[(i+1)%keys.length]);speak(currentSpeechText(),.82);return}lessonPhrase=(lessonPhrase+1)%2;showLesson(activeLesson,true)};
+langSel.onchange=()=>{fillVoices();if(activeLesson)showLesson(activeLesson,false);else if(lastWord)showWord(lastWord)};
+document.getElementById("sceneView").onclick=()=>document.body.classList.add("scene-view");
+document.getElementById("sceneReturn").onclick=()=>document.body.classList.remove("scene-view");
+showWord("game");
+</script>
+</body>
+</html>
+
+<style id="talkabee-ski-panel-180">
+@media(min-width:761px){.panel{width:180px!important;min-width:180px!important;max-width:180px!important}}
+</style>
