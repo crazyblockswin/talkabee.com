@@ -935,27 +935,16 @@ header .brand-tagline{white-space:normal!important;line-height:1.12!important;}
 </style>
 
 <style id="talkabee-header-arrow-clearance">
-/* Keep the fixed previous/next arrows clear of the header links. */
 @media (min-width:1051px){
-  header .nav{
-    padding-right:220px !important;
-  }
-  header .global-controls{
-    margin-left:auto !important;
-    gap:4px !important;
-  }
+  /* Shift only Standard Course + Comments + More left, away from fixed arrows. */
+  header .global-controls,
   header .talkabee-comments,
   header .talkabee-more{
+    position:relative !important;
+    left:-190px !important;
     flex:0 0 auto !important;
   }
-  header .talkabee-comments{
-    padding-left:10px !important;
-    padding-right:10px !important;
-  }
-  header .talkabee-more-toggle{
-    padding-left:12px !important;
-    padding-right:12px !important;
-  }
+  header .global-controls{margin-left:auto !important;}
 }
 </style>
 
