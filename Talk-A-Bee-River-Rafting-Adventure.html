@@ -1,0 +1,215 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Talk A Bee — River Rafting Adventure</title>
+<link rel="icon" type="image/png" href="images/talkabee-favicon.png">
+<style>
+*{box-sizing:border-box}
+html,body{margin:0;width:100%;height:100%;overflow:hidden;font-family:Arial,Helvetica,sans-serif;background:#063a66;color:#fff}
+.world{position:relative;width:100vw;height:100vh;background:url("images/Talk-A-Bee-River-Rafting-Adventure.jpg") center center/cover no-repeat}
+
+/* APPROVED TALK A BEE LEFT PANEL */
+.panel{position:fixed;z-index:1000;left:16px;top:16px;bottom:16px;width:180px;min-width:180px;max-width:180px;
+padding:14px;overflow-x:hidden;overflow-y:auto;border-radius:20px;border:1px solid rgba(255,255,255,.28);
+background:rgba(7,23,39,.31);box-shadow:0 12px 30px rgba(0,0,0,.24);backdrop-filter:blur(3px);-webkit-backdrop-filter:blur(3px)}
+.panel h1{font-size:19px;line-height:1.08;margin:4px 0 10px;text-shadow:0 2px 4px rgba(0,0,0,.55)}
+.label{font-size:9.5px;line-height:1.1;letter-spacing:.09em;font-weight:900;margin:9px 0 4px}
+.panel button,.panel select,.panel a{width:100%;min-height:34px;margin:4px 0;padding:8px 9px;border-radius:12px;
+border:1px solid rgba(255,255,255,.38);background:rgba(7,32,50,.54);color:#fff;font:800 12px/1.16 Arial,sans-serif;
+text-align:left;text-decoration:none}
+.panel button:hover,.panel a:hover{background:rgba(20,58,79,.70)}
+.panel button.active{background:rgba(78,69,219,.74)}
+.panel select{white-space:nowrap;text-overflow:ellipsis;overflow:hidden}
+
+/* APPROVED 520px SCRIPT CARD */
+.card{position:fixed;z-index:900;left:50%;bottom:16px;width:520px;max-width:520px;padding:14px 16px;
+border-radius:20px;border:1px solid rgba(255,255,255,.30);background:rgba(25,19,24,.38);
+box-shadow:0 12px 30px rgba(0,0,0,.28);backdrop-filter:blur(5px);-webkit-backdrop-filter:blur(5px);
+transform:translateX(-50%) scale(.67);transform-origin:bottom center}
+.card .kicker{font-size:15px;line-height:1.25;font-weight:900;letter-spacing:.10em;color:rgba(255,255,255,.96);
+text-shadow:0 1px 3px rgba(0,0,0,.78);margin:0 0 6px}
+.card h2{font-size:22px;line-height:1.08;margin:4px 0 7px;text-shadow:0 1px 3px rgba(0,0,0,.55)}
+.card p{font-size:18px;line-height:1.35;margin:4px 0 7px}
+.word{margin-top:8px;padding:10px 12px;border-radius:14px;background:rgba(88,88,88,.72);border:1px solid rgba(255,255,255,.20)}
+.word strong{display:block;font-size:22px;line-height:1.28}
+.translation{font-size:18px;line-height:1.35;margin-top:3px}
+.controls{display:flex;align-items:center;gap:8px;flex-wrap:nowrap;margin-top:8px}
+.controls button{width:auto;min-width:0;padding:9px 13px;border-radius:12px;border:1px solid rgba(255,255,255,.35);
+background:rgba(255,255,255,.88);color:#10283c;font:900 13px/1 Arial,sans-serif;white-space:nowrap}
+
+/* HOTSPOTS */
+.hotspot{position:absolute;z-index:8;border:0;background:transparent;opacity:0;cursor:pointer;border-radius:16px}
+.hotspot:hover,.hotspot:focus-visible{opacity:1;background:rgba(255,220,72,.28);outline:2px solid rgba(255,255,255,.90)}
+.challenge-mode .hotspot.target{opacity:1;background:rgba(255,199,48,.38);outline:4px solid #fff;box-shadow:0 0 0 7px rgba(255,200,50,.20)}
+
+/* APPROVED COMPACT PREVIOUS / NEXT CHEVRONS */
+.talkabee-prev-next-nav{position:fixed;top:18px;right:22px;z-index:2147483000;display:flex;align-items:center;overflow:hidden;
+border:2px solid rgba(255,255,255,.82);border-radius:999px;background:rgba(11,22,42,.24);
+box-shadow:0 5px 16px rgba(0,0,0,.16);backdrop-filter:blur(3px);-webkit-backdrop-filter:blur(3px)}
+.talkabee-prev-next-nav a{width:48px;height:48px;display:grid;place-items:center;text-decoration:none;color:#fff;
+font:900 38px/1 Arial,sans-serif;text-shadow:0 1px 3px rgba(0,0,0,.42)}
+.talkabee-prev-next-nav a+a{border-left:1px solid rgba(255,255,255,.36)}
+.talkabee-prev-next-nav a:hover,.talkabee-prev-next-nav a:focus-visible{background:rgba(255,255,255,.18);outline:none}
+
+/* SCENE VIEW */
+.scene-return{display:none;position:fixed;z-index:2147483001;left:18px;top:18px;padding:10px 14px;border-radius:12px;
+border:1px solid #fff;background:rgba(7,23,39,.65);color:#fff;font-weight:900}
+.scene-view .panel,.scene-view .card,.scene-view .talkabee-prev-next-nav{display:none}
+.scene-view .scene-return{display:block}
+
+@media(max-width:760px){
+ .panel{left:10px;top:10px;bottom:10px;width:180px;min-width:180px;max-width:180px;padding:11px}
+ .card{width:min(520px,calc(100vw - 32px));bottom:10px;transform:translateX(-50%) scale(.82)}
+ .talkabee-prev-next-nav{top:12px;right:12px}.talkabee-prev-next-nav a{width:42px;height:42px;font-size:33px}
+}
+</style>
+</head>
+<body>
+<nav class="talkabee-prev-next-nav" aria-label="Adventure navigation">
+  <a href="Talk-A-Bee-Dog-Show-Adventure.html" aria-label="Previous adventure" title="Previous">‹</a>
+  <a href="Talk-A-Bee-Nighttime-Campground-Adventure.html" aria-label="Next adventure" title="Next">›</a>
+</nav>
+
+<main class="world" id="world">
+<button class="scene-return" id="sceneReturn">Return to Adventure</button>
+
+<aside class="panel">
+<h1>🌊 River Rafting Adventure</h1>
+<div class="label">LANGUAGE</div>
+<select id="lang">
+<option value="es">Spanish</option><option value="fr">French</option><option value="en">English</option>
+<option value="de">German</option><option value="it">Italian</option><option value="pt">Portuguese</option><option value="no">Norwegian</option>
+</select>
+<div class="label">VOICE</div>
+<select id="voice"><option value="">Browser Default</option></select>
+<button id="sceneView">◉ Scene View</button>
+
+<div class="label">DISCOVERY</div>
+<button id="discovery">🔎 Discovery — Click the Scene</button>
+
+<div class="label">ACTIVITIES</div>
+<button data-lesson="family">1. Meet the Rafting Crew</button>
+<button data-lesson="gear">2. Rafting Safety Gear</button>
+<button data-lesson="rapids">3. Explore the Rapids</button>
+<button data-lesson="paddles">4. Paddle Together</button>
+<button data-lesson="river">5. Read the River</button>
+<button data-lesson="mountains">6. Explore the Mountain Valley</button>
+<div class="label">CHALLENGES</div>
+<button data-ch="0">1. Find Grandma</button>
+<button data-ch="1">2. Find Grandpa</button>
+<button data-ch="2">3. Find the Bee</button>
+<button data-ch="3">4. Find the Dog</button>
+<button data-ch="4">5. Find a Yellow Paddle</button>
+<button data-ch="5">6. Find the Huge Rapids</button>
+<a href="index.html">← Return to Main Directory</a>
+</aside>
+
+<section class="card">
+<div class="kicker">ON THE WHITEWATER RIVER</div>
+<h2 id="title">River Rafting Adventure</h2>
+<p id="prompt">Click any object in the scene to hear its name.</p>
+<div class="word"><strong id="line">rafting en aguas bravas</strong><div class="translation" id="translation">whitewater rafting</div></div>
+<p id="status"></p>
+<div class="controls">
+<button id="normal">🔊 Speak</button><button id="slow">🐢 Slow</button><button id="replay">↻ Replay</button><button id="nextPhrase">Next phrase →</button>
+</div>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- Hotspots mapped to the approved River Rafting keeper JPG. -->
+<button class="hotspot" data-word="grandma" style="left:37%;top:39%;width:8%;height:18%" aria-label="Grandma"></button>
+<button class="hotspot" data-word="grandpa" style="left:49%;top:39%;width:8%;height:18%" aria-label="Grandpa"></button>
+<button class="hotspot" data-word="bee" style="left:53%;top:36%;width:8%;height:16%" aria-label="Rafting Bee"></button>
+<button class="hotspot" data-word="dog" style="left:52%;top:52%;width:9%;height:17%" aria-label="Dog"></button>
+<button class="hotspot" data-word="family" style="left:38%;top:40%;width:29%;height:24%" aria-label="Rafting crew"></button>
+<button class="hotspot" data-word="raft" style="left:37%;top:54%;width:32%;height:17%" aria-label="Raft"></button>
+<button class="hotspot" data-word="paddle" style="left:33%;top:47%;width:18%;height:15%" aria-label="Yellow paddle"></button>
+<button class="hotspot" data-word="paddleblue" style="left:46%;top:50%;width:21%;height:14%" aria-label="Blue paddle"></button>
+<button class="hotspot" data-word="helmet" style="left:46%;top:46%;width:6%;height:9%" aria-label="Helmet"></button>
+<button class="hotspot" data-word="lifejacket" style="left:59%;top:50%;width:7%;height:12%" aria-label="Life jacket"></button>
+<button class="hotspot" data-word="rapids" style="left:25%;top:44%;width:55%;height:34%" aria-label="Huge rapids"></button>
+<button class="hotspot" data-word="whitewater" style="left:0%;top:57%;width:100%;height:42%" aria-label="Whitewater"></button>
+<button class="hotspot" data-word="river" style="left:18%;top:48%;width:67%;height:47%" aria-label="River"></button>
+<button class="hotspot" data-word="rocks" style="left:0%;top:28%;width:27%;height:48%" aria-label="River rocks"></button>
+<button class="hotspot" data-word="forest" style="left:0%;top:0%;width:31%;height:42%" aria-label="Evergreen forest"></button>
+<button class="hotspot" data-word="mountain" style="left:48%;top:0%;width:38%;height:32%" aria-label="Snowy mountain"></button>
+<button class="hotspot" data-word="trees" style="left:72%;top:5%;width:28%;height:43%" aria-label="Pine trees"></button>
+<button class="hotspot" data-word="sky" style="left:25%;top:0%;width:28%;height:24%" aria-label="Blue sky"></button>
+<button class="hotspot" data-word="spray" style="left:31%;top:52%;width:46%;height:25%" aria-label="Water spray"></button>
+<button class="hotspot" data-word="valley" style="left:29%;top:18%;width:55%;height:28%" aria-label="Mountain valley"></button>
+
+</main>
+
+<script>
+const EN={game:"whitewater rafting",grandma:"Grandma",grandpa:"Grandpa",bee:"rafting bee",dog:"dog",family:"rafting crew",raft:"raft",paddle:"yellow paddle",paddleblue:"blue paddle",helmet:"helmet",lifejacket:"life jacket",rapids:"huge rapids",whitewater:"whitewater",river:"river",rocks:"river rocks",forest:"evergreen forest",mountain:"snowy mountain",trees:"pine trees",sky:"blue sky",spray:"water spray",valley:"mountain valley"};
+const WORDS={
+es:{game:"rafting en aguas bravas",grandma:"abuela",grandpa:"abuelo",bee:"abeja del rafting",dog:"perro",family:"equipo de rafting",raft:"balsa",paddle:"remo amarillo",paddleblue:"remo azul",helmet:"casco",lifejacket:"chaleco salvavidas",rapids:"rápidos enormes",whitewater:"aguas bravas",river:"río",rocks:"rocas del río",forest:"bosque de hoja perenne",mountain:"montaña nevada",trees:"pinos",sky:"cielo azul",spray:"rocío de agua",valley:"valle de montaña"},
+fr:{game:"rafting en eaux vives",grandma:"grand-mère",grandpa:"grand-père",bee:"abeille du rafting",dog:"chien",family:"équipe de rafting",raft:"radeau",paddle:"pagaie jaune",paddleblue:"pagaie bleue",helmet:"casque",lifejacket:"gilet de sauvetage",rapids:"énormes rapides",whitewater:"eaux vives",river:"rivière",rocks:"rochers de la rivière",forest:"forêt de conifères",mountain:"montagne enneigée",trees:"pins",sky:"ciel bleu",spray:"embruns",valley:"vallée de montagne"},
+en:{...EN},
+de:{game:"Wildwasser-Rafting",grandma:"Oma",grandpa:"Opa",bee:"Rafting-Biene",dog:"Hund",family:"Rafting-Team",raft:"Schlauchboot",paddle:"gelbes Paddel",paddleblue:"blaues Paddel",helmet:"Helm",lifejacket:"Schwimmweste",rapids:"riesige Stromschnellen",whitewater:"Wildwasser",river:"Fluss",rocks:"Flussfelsen",forest:"Nadelwald",mountain:"schneebedeckter Berg",trees:"Kiefern",sky:"blauer Himmel",spray:"Wasserspritzer",valley:"Bergtal"},
+it:{game:"rafting sulle rapide",grandma:"nonna",grandpa:"nonno",bee:"ape del rafting",dog:"cane",family:"equipaggio del rafting",raft:"gommone",paddle:"pagaia gialla",paddleblue:"pagaia blu",helmet:"casco",lifejacket:"giubbotto salvagente",rapids:"rapide enormi",whitewater:"acque bianche",river:"fiume",rocks:"rocce del fiume",forest:"foresta di conifere",mountain:"montagna innevata",trees:"pini",sky:"cielo blu",spray:"spruzzi d'acqua",valley:"valle di montagna"},
+pt:{game:"rafting em águas bravas",grandma:"avó",grandpa:"avô",bee:"abelha do rafting",dog:"cachorro",family:"equipe de rafting",raft:"bote",paddle:"remo amarelo",paddleblue:"remo azul",helmet:"capacete",lifejacket:"colete salva-vidas",rapids:"corredeiras enormes",whitewater:"águas bravas",river:"rio",rocks:"rochas do rio",forest:"floresta de coníferas",mountain:"montanha nevada",trees:"pinheiros",sky:"céu azul",spray:"borrifo de água",valley:"vale de montanha"},
+no:{game:"elverafting",grandma:"bestemor",grandpa:"bestefar",bee:"raftingbie",dog:"hund",family:"raftinglag",raft:"flåte",paddle:"gul padleåre",paddleblue:"blå padleåre",helmet:"hjelm",lifejacket:"redningsvest",rapids:"enorme stryk",whitewater:"hvitt vann",river:"elv",rocks:"elvesteiner",forest:"barskog",mountain:"snødekt fjell",trees:"furutrær",sky:"blå himmel",spray:"vannsprut",valley:"fjelldal"}};
+const SPEECH_LANG={es:"es-ES",fr:"fr-FR",en:"en-US",de:"de-DE",it:"it-IT",pt:"pt-PT",no:"nb-NO"};
+const lessons={
+en:{family:["Grandma, Grandpa, the family, their dog, and Bee are all together for a whitewater rafting adventure.","Everyone works as a team while the raft travels through the mountain river."],gear:["The rafters wear helmets and life jackets while they are on the river.","Safety equipment helps protect the crew in fast-moving water."],rapids:["Rapids form where fast water moves over and around rocks in the river.","The rushing water creates waves, splashes, and white foam."],paddles:["The rafting crew uses paddles to help guide the raft through the river.","Working together helps the raft move in the intended direction."],river:["A river can change from calm water to fast rapids as its depth, slope, and rocks change.","Rafters watch the water and follow their guide through the safest route."],mountains:["The river runs through a beautiful valley surrounded by evergreen forests and snowy mountains.","Mountain rivers often carry cold water from rain and melting snow."]},
+es:{family:["La abuela, el abuelo, la familia, su perro y la abeja están juntos en una aventura de rafting.","Todos trabajan en equipo mientras la balsa recorre el río de montaña."],gear:["Los participantes usan cascos y chalecos salvavidas mientras están en el río.","El equipo de seguridad ayuda a proteger al grupo en el agua rápida."],rapids:["Los rápidos se forman donde el agua veloz pasa sobre y alrededor de las rocas del río.","El agua crea olas, salpicaduras y espuma blanca."],paddles:["El equipo usa remos para ayudar a guiar la balsa por el río.","Trabajar juntos ayuda a mover la balsa en la dirección deseada."],river:["Un río puede cambiar de agua tranquila a rápidos cuando cambian su profundidad, pendiente y rocas.","Los participantes observan el agua y siguen a su guía por la ruta más segura."],mountains:["El río atraviesa un hermoso valle rodeado de bosques y montañas nevadas.","Los ríos de montaña suelen llevar agua fría de la lluvia y la nieve derretida."]},
+fr:{family:["Grand-mère, grand-père, la famille, leur chien et l'abeille sont réunis pour une aventure de rafting.","Tout le monde travaille en équipe pendant que le radeau descend la rivière de montagne."],gear:["Les participants portent des casques et des gilets de sauvetage sur la rivière.","L'équipement de sécurité aide à protéger l'équipe dans l'eau rapide."],rapids:["Les rapides se forment lorsque l'eau rapide passe sur et autour des rochers de la rivière.","L'eau crée des vagues, des éclaboussures et de l'écume blanche."],paddles:["L'équipe utilise des pagaies pour aider à guider le radeau sur la rivière.","Travailler ensemble aide le radeau à aller dans la direction voulue."],river:["Une rivière peut passer d'une eau calme à des rapides lorsque sa profondeur, sa pente et ses rochers changent.","Les participants observent l'eau et suivent leur guide sur l'itinéraire le plus sûr."],mountains:["La rivière traverse une belle vallée entourée de forêts de conifères et de montagnes enneigées.","Les rivières de montagne transportent souvent de l'eau froide provenant de la pluie et de la fonte des neiges."]},
+de:{family:["Oma, Opa, die Familie, ihr Hund und die Biene erleben gemeinsam ein Wildwasser-Rafting-Abenteuer.","Alle arbeiten als Team, während das Boot durch den Bergfluss fährt."],gear:["Die Rafter tragen auf dem Fluss Helme und Schwimmwesten.","Sicherheitsausrüstung hilft, die Gruppe in schnell fließendem Wasser zu schützen."],rapids:["Stromschnellen entstehen dort, wo schnelles Wasser über und um Felsen im Fluss fließt.","Das strömende Wasser erzeugt Wellen, Spritzer und weißen Schaum."],paddles:["Das Rafting-Team benutzt Paddel, um das Boot durch den Fluss zu führen.","Gemeinsames Arbeiten hilft, das Boot in die gewünschte Richtung zu bewegen."],river:["Ein Fluss kann von ruhigem Wasser zu schnellen Stromschnellen wechseln, wenn sich Tiefe, Gefälle und Felsen verändern.","Die Rafter beobachten das Wasser und folgen ihrem Guide auf der sichersten Route."],mountains:["Der Fluss fließt durch ein wunderschönes Tal mit Nadelwäldern und schneebedeckten Bergen.","Bergflüsse führen oft kaltes Wasser aus Regen und schmelzendem Schnee."]},
+it:{family:["La nonna, il nonno, la famiglia, il loro cane e l'ape sono insieme per un'avventura di rafting.","Tutti lavorano in squadra mentre il gommone percorre il fiume di montagna."],gear:["I partecipanti indossano caschi e giubbotti salvagente mentre sono sul fiume.","L'attrezzatura di sicurezza aiuta a proteggere il gruppo nell'acqua veloce."],rapids:["Le rapide si formano dove l'acqua veloce passa sopra e intorno alle rocce del fiume.","L'acqua crea onde, spruzzi e schiuma bianca."],paddles:["L'equipaggio usa le pagaie per aiutare a guidare il gommone lungo il fiume.","Lavorare insieme aiuta il gommone a muoversi nella direzione desiderata."],river:["Un fiume può passare da acqua calma a rapide quando cambiano profondità, pendenza e rocce.","I partecipanti osservano l'acqua e seguono la guida lungo il percorso più sicuro."],mountains:["Il fiume attraversa una bellissima valle circondata da foreste di conifere e montagne innevate.","I fiumi di montagna spesso trasportano acqua fredda proveniente dalla pioggia e dalla neve sciolta."]},
+pt:{family:["A avó, o avô, a família, o cachorro e a abelha estão juntos em uma aventura de rafting.","Todos trabalham em equipe enquanto o bote percorre o rio de montanha."],gear:["Os participantes usam capacetes e coletes salva-vidas enquanto estão no rio.","O equipamento de segurança ajuda a proteger a equipe em águas rápidas."],rapids:["As corredeiras se formam onde a água rápida passa por cima e ao redor das rochas do rio.","A água cria ondas, respingos e espuma branca."],paddles:["A equipe usa remos para ajudar a guiar o bote pelo rio.","Trabalhar em conjunto ajuda o bote a seguir na direção desejada."],river:["Um rio pode mudar de águas calmas para corredeiras quando sua profundidade, inclinação e rochas mudam.","Os participantes observam a água e seguem o guia pela rota mais segura."],mountains:["O rio atravessa um belo vale cercado por florestas e montanhas nevadas.","Rios de montanha muitas vezes carregam água fria da chuva e da neve derretida."]},
+no:{family:["Bestemor, bestefar, familien, hunden deres og bien er sammen på et raftingeventyr.","Alle samarbeider mens flåten beveger seg gjennom fjellelven."],gear:["Deltakerne bruker hjelmer og redningsvester mens de er på elven.","Sikkerhetsutstyr bidrar til å beskytte laget i raskt vann."],rapids:["Stryk dannes der raskt vann beveger seg over og rundt steiner i elven.","Det strømmende vannet lager bølger, sprut og hvitt skum."],paddles:["Raftinglaget bruker padleårer for å hjelpe til med å styre flåten gjennom elven.","Samarbeid hjelper flåten å bevege seg i ønsket retning."],river:["En elv kan gå fra rolig vann til raske stryk når dybde, helling og steiner endrer seg.","Deltakerne følger med på vannet og følger guiden gjennom den tryggeste ruten."],mountains:["Elven går gjennom en vakker dal omgitt av barskog og snødekte fjell.","Fjellelver fører ofte kaldt vann fra regn og smeltende snø."]}};
+const challengeOrder=["grandma","grandpa","bee","dog","paddle","rapids"];
+const SOUND_MAP={};
+const langSel=document.getElementById("lang"),voiceSel=document.getElementById("voice");
+const title=document.getElementById("title"),prompt=document.getElementById("prompt"),line=document.getElementById("line"),translation=document.getElementById("translation"),status=document.getElementById("status"),world=document.getElementById("world");
+let lastWord="game",activeLesson="",lessonPhrase=1,challenge=-1,lastSpoken="";
+function voices(){return ("speechSynthesis" in window)?speechSynthesis.getVoices():[]}
+function fillVoices(){const old=localStorage.getItem("talkabee-rafting-voice-"+langSel.value)||"";voiceSel.innerHTML='<option value="">Browser Default</option>';voices().forEach(v=>{const o=document.createElement("option");o.value=v.name;o.textContent=v.name+(v.lang?" — "+v.lang:"");voiceSel.appendChild(o)});if([...voiceSel.options].some(o=>o.value===old))voiceSel.value=old}
+if("speechSynthesis" in window){speechSynthesis.onvoiceschanged=fillVoices;fillVoices();setTimeout(fillVoices,150);setTimeout(fillVoices,600);setTimeout(fillVoices,1500)}
+voiceSel.onchange=()=>localStorage.setItem("talkabee-rafting-voice-"+langSel.value,voiceSel.value);
+function speak(text,rate=.88,onend=null){if(!text||!("speechSynthesis" in window)){if(onend)onend();return}speechSynthesis.cancel();setTimeout(()=>{const u=new SpeechSynthesisUtterance(text);u.lang=SPEECH_LANG[langSel.value]||langSel.value;u.rate=rate;const v=speechSynthesis.getVoices().find(x=>x.name===voiceSel.value);if(v)u.voice=v;if(onend)u.onend=onend;speechSynthesis.speak(u)},50);lastSpoken=text}
+function stopSound(){document.querySelectorAll("audio[data-talkabee-sound]").forEach(a=>{a.pause();a.currentTime=0;a.remove()})}
+function playSound(key){stopSound();const src=SOUND_MAP[key];if(!src)return;const a=new Audio(src);a.dataset.talkabeeSound="1";document.body.appendChild(a);a.play().catch(()=>{});a.onended=()=>a.remove()}
+function showWord(key){activeLesson="";lastWord=key;lessonPhrase=1;title.textContent="Click & Discover";prompt.textContent="You found "+(EN[key]||key)+".";line.textContent=WORDS[langSel.value][key]||EN[key]||key;translation.textContent=langSel.value==="en"?"":(EN[key]||key)}
+document.querySelectorAll(".hotspot").forEach(b=>b.onclick=()=>{const key=b.dataset.word;showWord(key);let played=false;const after=()=>{if(played)return;played=true;playSound(key)};speak(WORDS[langSel.value][key]||EN[key]||key,.82,after);setTimeout(after,1500);if(challenge>=0){if(key===challengeOrder[challenge]){status.textContent="✓ Nice find!";status.style.color="#9dffbf"}else{status.textContent="Not that one — keep looking.";status.style.color="#ffe28a"}}});
+function clearChallenge(){challenge=-1;world.classList.remove("challenge-mode");document.querySelectorAll(".hotspot").forEach(h=>h.classList.remove("target"));status.textContent=""}
+document.getElementById("discovery").onclick=()=>{clearChallenge();activeLesson="";lastWord="game";title.textContent="Click & Discover";prompt.textContent="Click any object in the scene to hear its name.";line.textContent=WORDS[langSel.value].game;translation.textContent=langSel.value==="en"?"":EN.game};
+document.querySelectorAll("[data-ch]").forEach(b=>b.onclick=()=>{activeLesson="";lastWord="";challenge=+b.dataset.ch;world.classList.add("challenge-mode");document.querySelectorAll(".hotspot").forEach(h=>h.classList.toggle("target",h.dataset.word===challengeOrder[challenge]));title.textContent="Challenge "+(challenge+1)+" of 6";prompt.textContent=b.textContent.replace(/^[0-9]+\.\s*/,"");line.textContent=WORDS[langSel.value][challengeOrder[challenge]];translation.textContent=langSel.value==="en"?"":EN[challengeOrder[challenge]];status.textContent=""});
+function showLesson(key,speakIt=false){clearChallenge();activeLesson=key;lastWord="";lessonPhrase=Math.max(0,Math.min(1,lessonPhrase));const a=lessons[langSel.value][key],e=lessons.en[key],btn=document.querySelector(`[data-lesson="${key}"]`);title.textContent=btn?btn.textContent.replace(/^[0-9]+\.\s*/,""):"River Rafting Adventure";prompt.textContent=a[0];line.textContent=a[lessonPhrase];translation.textContent=langSel.value==="en"?"":e[lessonPhrase];if(speakIt)speak(a[lessonPhrase])}
+document.querySelectorAll("[data-lesson]").forEach(b=>b.onclick=()=>{lessonPhrase=1;showLesson(b.dataset.lesson,true)});
+function currentSpeechText(){if(activeLesson)return lessons[langSel.value][activeLesson][lessonPhrase];if(lastWord)return WORDS[langSel.value][lastWord]||EN[lastWord];return line.textContent}
+document.getElementById("normal").onclick=()=>speak(currentSpeechText(),.82);
+document.getElementById("slow").onclick=()=>speak(currentSpeechText(),.58);
+document.getElementById("replay").onclick=()=>speak(lastSpoken||currentSpeechText(),.82);
+document.getElementById("nextPhrase").onclick=()=>{if(!activeLesson){const keys=Object.keys(EN),i=Math.max(0,keys.indexOf(lastWord));showWord(keys[(i+1)%keys.length]);speak(currentSpeechText(),.82);return}lessonPhrase=(lessonPhrase+1)%2;showLesson(activeLesson,true)};
+langSel.onchange=()=>{fillVoices();if(activeLesson)showLesson(activeLesson,false);else if(lastWord)showWord(lastWord)};
+document.getElementById("sceneView").onclick=()=>document.body.classList.add("scene-view");
+document.getElementById("sceneReturn").onclick=()=>document.body.classList.remove("scene-view");
+showWord("game");
+</script>
+</body>
+</html>
+
+<style id="talkabee-ski-panel-180">
+@media(min-width:761px){.panel{width:180px!important;min-width:180px!important;max-width:180px!important}}
+</style>
