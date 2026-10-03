@@ -231,7 +231,7 @@ pt:{campground:"acampamento",sign:"placa do acampamento",bee:"abelha",rv:"autoca
 no:{campground:"campingplass",sign:"campingskilt",bee:"bie",rv:"bobil",solar:"solcellepaneler",door:"bobildør",bicycle:"sykkel",picnic:"piknikbord",guitar:"gitar",grandpa:"bestefar",grandma:"bestemor",family:"familie",fire:"leirbål",marshmallow:"marshmallows",bear:"Bear",cooler:"kjøleboks",tent:"telt",lantern:"lykt",raccoon:"vaskebjørn",lake:"innsjø",canoe:"kano",creek:"bekk",moon:"måne",stars:"stjerner",mountains:"fjell",trees:"furutrær",logs:"ved",pot:"gryte"}
 };
 const CODES={es:"es-ES",fr:"fr-FR",en:"en-US",de:"de-DE",it:"it-IT",pt:"pt-PT",no:"nb-NO"};
-const campgroundSounds={bee:"bee.mp3",bear:"dog-bark.mp3",creek:"creek.mp3",trees:"crickets-birds.mp3",stars:"crickets-birds.mp3",guitar:"guitar.mp3",grandpa:"guitar.mp3",sign:"guitar-campfire.mp3"};
+const campgroundSounds={bee:"bee.mp3",bear:"dog-bark.mp3",creek:"creek.mp3",trees:"crickets-birds.mp3",stars:"crickets-birds.mp3",guitar:"guitar.mp3",grandpa:"guitar.mp3",sign:"guitar-campfire.mp3",door:"guitar3.mp3"};
 let sceneSound=null;
 function playCampSound(id){const file=campgroundSounds[id];if(!file)return;if(sceneSound){sceneSound.pause();sceneSound.currentTime=0}sceneSound=new Audio("sounds/"+file);sceneSound.volume=.82;sceneSound.play().catch(()=>{})}
 
