@@ -959,31 +959,39 @@ header .brand-tagline{white-space:normal!important;line-height:1.12!important;}
   opacity:1;transform:scale(1);box-shadow:0 0 14px 5px rgba(151,92,255,.72),inset 0 0 10px rgba(205,175,255,.52);
 }
 #mainDirectory .landing-directory h2{padding-right:0!important;text-align:center!important;margin-top:0!important}
-/* Wandering pupils: slow, playful glances while preserving the keeper glasses PNG. */
+/* Wandering eyes: cover the baked-in pupil area with a small iris patch, then move only a natural-size pupil inside it. */
 #mainDirectory .landing-directory .talkabee-eye-nav .wandering-pupil{
-  position:absolute!important;top:51.8%!important;width:13.5%!important;aspect-ratio:1/1!important;
-  margin-top:-6.75%!important;border-radius:50%!important;background:#050505!important;
-  box-shadow:inset -2px -2px 4px rgba(255,255,255,.05)!important;pointer-events:none!important;z-index:2!important;
-  animation:talkabee-eye-glance 8.4s ease-in-out infinite!important;
+  position:absolute!important;top:52.5%!important;width:11.8%!important;aspect-ratio:1/1!important;
+  margin-top:-5.9%!important;border-radius:50%!important;background:#d99500!important;
+  box-shadow:inset 0 0 0 2px rgba(103,55,0,.45),inset 0 0 8px rgba(92,45,0,.55)!important;
+  pointer-events:none!important;z-index:2!important;overflow:hidden!important;
 }
 #mainDirectory .landing-directory .talkabee-eye-nav .wandering-pupil::before{
-  content:"";position:absolute;width:25%;height:25%;left:18%;top:14%;border-radius:50%;background:rgba(255,255,255,.94);
+  content:"";position:absolute;width:46%;height:46%;left:27%;top:27%;border-radius:50%;background:#080808;
+  box-shadow:inset -1px -1px 2px rgba(255,255,255,.08);animation:talkabee-eye-glance 8.4s ease-in-out infinite;
 }
 #mainDirectory .landing-directory .talkabee-eye-nav .wandering-pupil::after{
-  content:"";position:absolute;width:9%;height:9%;left:48%;top:28%;border-radius:50%;background:rgba(255,255,255,.94);
+  content:"";position:absolute;width:11%;height:11%;left:39%;top:34%;border-radius:50%;background:rgba(255,255,255,.96);
+  animation:talkabee-eye-highlight 8.4s ease-in-out infinite;
 }
-#mainDirectory .landing-directory .talkabee-eye-nav .pupil-left{left:31.2%!important}
-#mainDirectory .landing-directory .talkabee-eye-nav .pupil-right{left:68.7%!important}
+#mainDirectory .landing-directory .talkabee-eye-nav .pupil-left{left:28.0%!important}
+#mainDirectory .landing-directory .talkabee-eye-nav .pupil-right{left:60.2%!important}
 @keyframes talkabee-eye-glance{
-  0%,14%,100%{transform:translateX(0)}
-  20%,32%{transform:translateX(-24%)}
-  38%,55%{transform:translateX(0)}
-  62%,75%{transform:translateX(24%)}
-  81%,100%{transform:translateX(0)}
+  0%,14%,100%{transform:translateX(0)} 20%,32%{transform:translateX(-38%)} 38%,55%{transform:translateX(0)}
+  62%,75%{transform:translateX(38%)} 81%,100%{transform:translateX(0)}
 }
-#mainDirectory .landing-directory .talkabee-eye-nav:hover .wandering-pupil,
-#mainDirectory .landing-directory .talkabee-eye-nav:focus-within .wandering-pupil{animation-play-state:paused!important}
-@media(prefers-reduced-motion:reduce){#mainDirectory .landing-directory .talkabee-eye-nav .wandering-pupil{animation:none!important}}
+@keyframes talkabee-eye-highlight{
+  0%,14%,100%{transform:translateX(0)} 20%,32%{transform:translateX(-78%)} 38%,55%{transform:translateX(0)}
+  62%,75%{transform:translateX(78%)} 81%,100%{transform:translateX(0)}
+}
+#mainDirectory .landing-directory .talkabee-eye-nav:hover .wandering-pupil::before,
+#mainDirectory .landing-directory .talkabee-eye-nav:hover .wandering-pupil::after,
+#mainDirectory .landing-directory .talkabee-eye-nav:focus-within .wandering-pupil::before,
+#mainDirectory .landing-directory .talkabee-eye-nav:focus-within .wandering-pupil::after{animation-play-state:paused!important}
+@media(prefers-reduced-motion:reduce){
+ #mainDirectory .landing-directory .talkabee-eye-nav .wandering-pupil::before,
+ #mainDirectory .landing-directory .talkabee-eye-nav .wandering-pupil::after{animation:none!important}
+}
 @media(max-width:720px){#mainDirectory .landing-directory .talkabee-eye-nav{width:132px!important}}
 </style>
 </head>
