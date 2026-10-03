@@ -1,0 +1,197 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Talk A Bee — Mountain Ski Resort Adventure</title>
+<link rel="icon" type="image/png" href="images/talkabee-favicon.png">
+<style>
+*{box-sizing:border-box}
+html,body{margin:0;width:100%;height:100%;overflow:hidden;font-family:Arial,Helvetica,sans-serif;background:#063a66;color:#fff}
+.world{position:relative;width:100vw;height:100vh;background:url("images/Talk-A-Bee-Mountain-Ski-Resort-Adventure.jpg") center center/cover no-repeat}
+
+/* APPROVED TALK A BEE LEFT PANEL */
+.panel{position:fixed;z-index:1000;left:16px;top:16px;bottom:16px;width:180px;min-width:180px;max-width:180px;
+padding:14px;overflow-x:hidden;overflow-y:auto;border-radius:20px;border:1px solid rgba(255,255,255,.28);
+background:rgba(7,23,39,.31);box-shadow:0 12px 30px rgba(0,0,0,.24);backdrop-filter:blur(3px);-webkit-backdrop-filter:blur(3px)}
+.panel h1{font-size:19px;line-height:1.08;margin:4px 0 10px;text-shadow:0 2px 4px rgba(0,0,0,.55)}
+.label{font-size:9.5px;line-height:1.1;letter-spacing:.09em;font-weight:900;margin:9px 0 4px}
+.panel button,.panel select,.panel a{width:100%;min-height:34px;margin:4px 0;padding:8px 9px;border-radius:12px;
+border:1px solid rgba(255,255,255,.38);background:rgba(7,32,50,.54);color:#fff;font:800 12px/1.16 Arial,sans-serif;
+text-align:left;text-decoration:none}
+.panel button:hover,.panel a:hover{background:rgba(20,58,79,.70)}
+.panel button.active{background:rgba(78,69,219,.74)}
+.panel select{white-space:nowrap;text-overflow:ellipsis;overflow:hidden}
+
+/* APPROVED 520px SCRIPT CARD */
+.card{position:fixed;z-index:900;left:50%;bottom:16px;width:520px;max-width:520px;padding:14px 16px;
+border-radius:20px;border:1px solid rgba(255,255,255,.30);background:rgba(25,19,24,.38);
+box-shadow:0 12px 30px rgba(0,0,0,.28);backdrop-filter:blur(5px);-webkit-backdrop-filter:blur(5px);
+transform:translateX(-50%) scale(.67);transform-origin:bottom center}
+.card .kicker{font-size:15px;line-height:1.25;font-weight:900;letter-spacing:.10em;color:rgba(255,255,255,.96);
+text-shadow:0 1px 3px rgba(0,0,0,.78);margin:0 0 6px}
+.card h2{font-size:22px;line-height:1.08;margin:4px 0 7px;text-shadow:0 1px 3px rgba(0,0,0,.55)}
+.card p{font-size:18px;line-height:1.35;margin:4px 0 7px}
+.word{margin-top:8px;padding:10px 12px;border-radius:14px;background:rgba(88,88,88,.72);border:1px solid rgba(255,255,255,.20)}
+.word strong{display:block;font-size:22px;line-height:1.28}
+.translation{font-size:18px;line-height:1.35;margin-top:3px}
+.controls{display:flex;align-items:center;gap:8px;flex-wrap:nowrap;margin-top:8px}
+.controls button{width:auto;min-width:0;padding:9px 13px;border-radius:12px;border:1px solid rgba(255,255,255,.35);
+background:rgba(255,255,255,.88);color:#10283c;font:900 13px/1 Arial,sans-serif;white-space:nowrap}
+
+/* HOTSPOTS */
+.hotspot{position:absolute;z-index:8;border:0;background:transparent;opacity:0;cursor:pointer;border-radius:16px}
+.hotspot:hover,.hotspot:focus-visible{opacity:1;background:rgba(255,220,72,.28);outline:2px solid rgba(255,255,255,.90)}
+.challenge-mode .hotspot.target{opacity:1;background:rgba(255,199,48,.38);outline:4px solid #fff;box-shadow:0 0 0 7px rgba(255,200,50,.20)}
+
+/* APPROVED COMPACT PREVIOUS / NEXT CHEVRONS */
+.talkabee-prev-next-nav{position:fixed;top:18px;right:22px;z-index:2147483000;display:flex;align-items:center;overflow:hidden;
+border:2px solid rgba(255,255,255,.82);border-radius:999px;background:rgba(11,22,42,.24);
+box-shadow:0 5px 16px rgba(0,0,0,.16);backdrop-filter:blur(3px);-webkit-backdrop-filter:blur(3px)}
+.talkabee-prev-next-nav a{width:48px;height:48px;display:grid;place-items:center;text-decoration:none;color:#fff;
+font:900 38px/1 Arial,sans-serif;text-shadow:0 1px 3px rgba(0,0,0,.42)}
+.talkabee-prev-next-nav a+a{border-left:1px solid rgba(255,255,255,.36)}
+.talkabee-prev-next-nav a:hover,.talkabee-prev-next-nav a:focus-visible{background:rgba(255,255,255,.18);outline:none}
+
+/* SCENE VIEW */
+.scene-return{display:none;position:fixed;z-index:2147483001;left:18px;top:18px;padding:10px 14px;border-radius:12px;
+border:1px solid #fff;background:rgba(7,23,39,.65);color:#fff;font-weight:900}
+.scene-view .panel,.scene-view .card,.scene-view .talkabee-prev-next-nav{display:none}
+.scene-view .scene-return{display:block}
+
+@media(max-width:760px){
+ .panel{left:10px;top:10px;bottom:10px;width:180px;min-width:180px;max-width:180px;padding:11px}
+ .card{width:min(520px,calc(100vw - 32px));bottom:10px;transform:translateX(-50%) scale(.82)}
+ .talkabee-prev-next-nav{top:12px;right:12px}.talkabee-prev-next-nav a{width:42px;height:42px;font-size:33px}
+}
+</style>
+</head>
+<body>
+<nav class="talkabee-prev-next-nav" aria-label="Adventure navigation">
+  <a href="Talk-A-Bee-Underwater-Adventure.html" aria-label="Previous adventure" title="Previous">‹</a>
+  <a href="Talk-A-Bee-Nighttime-Campground-Adventure.html" aria-label="Next adventure" title="Next">›</a>
+</nav>
+
+<main class="world" id="world">
+<button class="scene-return" id="sceneReturn">Return to Adventure</button>
+
+<aside class="panel">
+<h1>🏔️ Mountain Ski Resort</h1>
+<div class="label">LANGUAGE</div>
+<select id="lang">
+<option value="es">Spanish</option><option value="fr">French</option><option value="en">English</option>
+<option value="de">German</option><option value="it">Italian</option><option value="pt">Portuguese</option><option value="no">Norwegian</option>
+</select>
+<div class="label">VOICE</div>
+<select id="voice"><option value="">Browser Default</option></select>
+<button id="sceneView">◉ Scene View</button>
+
+<div class="label">DISCOVERY</div>
+<button id="discovery">🔎 Discovery — Click the Scene</button>
+
+<div class="label">ACTIVITIES</div>
+<button data-lesson="arrive">1. Arrive at the Resort</button>
+<button data-lesson="gear">2. Get Your Ski Gear</button>
+<button data-lesson="lift">3. Ride the Chairlift</button>
+<button data-lesson="slopes">4. Ski the Mountain</button>
+<button data-lesson="lodge">5. Visit the Lodge</button>
+<button data-lesson="winter">6. Winter Fun</button>
+<div class="label">CHALLENGES</div>
+<button data-ch="0">1. Find the Chairlift</button>
+<button data-ch="1">2. Find the Skis</button>
+<button data-ch="2">3. Find Grandma</button>
+<button data-ch="3">4. Find Grandpa</button>
+<button data-ch="4">5. Find the Bee</button>
+<button data-ch="5">6. Find the Fire Pit</button>
+<a href="index.html">← Return to Main Directory</a>
+</aside>
+
+<section class="card">
+<div class="kicker">AT THE MOUNTAIN SKI RESORT</div>
+<h2 id="title">Mountain Ski Resort Adventure</h2>
+<p id="prompt">Click any object in the scene to hear its name.</p>
+<div class="word"><strong id="line">estación de esquí</strong><div class="translation" id="translation">ski resort</div></div>
+<p id="status"></p>
+<div class="controls">
+<button id="normal">🔊 Speak</button><button id="slow">🐢 Slow</button><button id="replay">↻ Replay</button><button id="nextPhrase">Next phrase →</button>
+</div>
+</section>
+
+
+<!-- Hotspots mapped to the approved wide ski-resort JPG. -->
+<button class="hotspot" data-word="mountain" style="left:19%;top:2%;width:38%;height:28%" aria-label="Mountain"></button>
+<button class="hotspot" data-word="chairlift" style="left:59%;top:0%;width:27%;height:22%" aria-label="Chairlift"></button>
+<button class="hotspot" data-word="skiers" style="left:48%;top:24%;width:20%;height:25%" aria-label="Skiers"></button>
+<button class="hotspot" data-word="trails" style="left:34%;top:34%;width:9%;height:8%" aria-label="Trails sign"></button>
+<button class="hotspot" data-word="lift" style="left:34%;top:40%;width:9%;height:7%" aria-label="Lift sign"></button>
+<button class="hotspot" data-word="rentals" style="left:34%;top:46%;width:9%;height:7%" aria-label="Rentals sign"></button>
+<button class="hotspot" data-word="school" style="left:34%;top:52%;width:10%;height:7%" aria-label="Ski school sign"></button>
+<button class="hotspot" data-word="cafe" style="left:34%;top:58%;width:9%;height:7%" aria-label="Cafe sign"></button>
+<button class="hotspot" data-word="skis" style="left:43%;top:46%;width:10%;height:21%" aria-label="Skis"></button>
+<button class="hotspot" data-word="snowboard" style="left:38%;top:59%;width:11%;height:9%" aria-label="Snowboard"></button>
+<button class="hotspot" data-word="bee" style="left:45%;top:59%;width:10%;height:22%" aria-label="Skiing bee"></button>
+<button class="hotspot" data-word="grandma" style="left:55%;top:40%;width:10%;height:33%" aria-label="Grandma"></button>
+<button class="hotspot" data-word="grandpa" style="left:64%;top:36%;width:10%;height:37%" aria-label="Grandpa"></button>
+<button class="hotspot" data-word="lodge" style="left:70%;top:21%;width:30%;height:38%" aria-label="Ski lodge"></button>
+<button class="hotspot" data-word="resortsign" style="left:86%;top:31%;width:13%;height:10%" aria-label="Ski resort sign"></button>
+<button class="hotspot" data-word="firepit" style="left:86%;top:58%;width:14%;height:20%" aria-label="Fire pit"></button>
+<button class="hotspot" data-word="chairs" style="left:74%;top:59%;width:15%;height:19%" aria-label="Chairs"></button>
+<button class="hotspot" data-word="trees" style="left:0%;top:8%;width:28%;height:51%" aria-label="Snowy pine trees"></button>
+<button class="hotspot" data-word="snow" style="left:13%;top:64%;width:28%;height:26%" aria-label="Snow"></button>
+
+</main>
+
+<script>
+const EN={resort:"ski resort",mountain:"mountain",chairlift:"chairlift",skiers:"skiers",trails:"trails",lift:"lift",rentals:"ski rentals",school:"ski school",cafe:"café",skis:"skis",snowboard:"snowboard",bee:"bee",grandma:"Grandma",grandpa:"Grandpa",lodge:"ski lodge",resortsign:"ski resort sign",firepit:"fire pit",chairs:"chairs",trees:"pine trees",snow:"snow"};
+const WORDS={
+es:{resort:"estación de esquí",mountain:"montaña",chairlift:"telesilla",skiers:"esquiadores",trails:"pistas",lift:"remonte",rentals:"alquiler de esquís",school:"escuela de esquí",cafe:"cafetería",skis:"esquís",snowboard:"tabla de snowboard",bee:"abeja",grandma:"abuela",grandpa:"abuelo",lodge:"refugio de esquí",resortsign:"letrero de la estación de esquí",firepit:"fogata",chairs:"sillas",trees:"pinos",snow:"nieve"},
+fr:{resort:"station de ski",mountain:"montagne",chairlift:"télésiège",skiers:"skieurs",trails:"pistes",lift:"remontée mécanique",rentals:"location de skis",school:"école de ski",cafe:"café",skis:"skis",snowboard:"snowboard",bee:"abeille",grandma:"grand-mère",grandpa:"grand-père",lodge:"chalet de ski",resortsign:"panneau de la station de ski",firepit:"brasero",chairs:"chaises",trees:"pins",snow:"neige"},
+en:{...EN},
+de:{resort:"Skigebiet",mountain:"Berg",chairlift:"Sessellift",skiers:"Skifahrer",trails:"Skipisten",lift:"Skilift",rentals:"Skiverleih",school:"Skischule",cafe:"Café",skis:"Skier",snowboard:"Snowboard",bee:"Biene",grandma:"Oma",grandpa:"Opa",lodge:"Skihütte",resortsign:"Skigebietsschild",firepit:"Feuerstelle",chairs:"Stühle",trees:"Kiefern",snow:"Schnee"},
+it:{resort:"stazione sciistica",mountain:"montagna",chairlift:"seggiovia",skiers:"sciatori",trails:"piste",lift:"impianto di risalita",rentals:"noleggio sci",school:"scuola di sci",cafe:"caffè",skis:"sci",snowboard:"snowboard",bee:"ape",grandma:"nonna",grandpa:"nonno",lodge:"rifugio sciistico",resortsign:"cartello della stazione sciistica",firepit:"braciere",chairs:"sedie",trees:"pini",snow:"neve"},
+pt:{resort:"estação de esqui",mountain:"montanha",chairlift:"teleférico",skiers:"esquiadores",trails:"pistas",lift:"elevador de esqui",rentals:"aluguel de esquis",school:"escola de esqui",cafe:"café",skis:"esquis",snowboard:"prancha de snowboard",bee:"abelha",grandma:"avó",grandpa:"avô",lodge:"chalé de esqui",resortsign:"placa da estação de esqui",firepit:"fogueira",chairs:"cadeiras",trees:"pinheiros",snow:"neve"},
+no:{resort:"skianlegg",mountain:"fjell",chairlift:"stolheis",skiers:"skiløpere",trails:"skiløyper",lift:"skiheis",rentals:"skiutleie",school:"skiskole",cafe:"kafé",skis:"ski",snowboard:"snøbrett",bee:"bie",grandma:"bestemor",grandpa:"bestefar",lodge:"skihytte",resortsign:"skianleggsskilt",firepit:"bålplass",chairs:"stoler",trees:"furutrær",snow:"snø"}};
+const SPEECH_LANG={es:"es-ES",fr:"fr-FR",en:"en-US",de:"de-DE",it:"it-IT",pt:"pt-PT",no:"nb-NO"};
+const lessons={
+en:{arrive:["We have arrived at the mountain ski resort.","The snowy mountain is ready for a day of adventure."],gear:["We need skis, boots, poles, and warm clothes.","The rental area has equipment for the slopes."],lift:["The chairlift carries skiers up the mountain.","We sit safely and enjoy the view on the way up."],slopes:["Skiers glide down the snowy trails.","Some trails are gentle and others are steep."],lodge:["The ski lodge is warm and cozy.","People can rest, eat, and warm up inside."],winter:["There are many ways to enjoy a snowy mountain.","We can ski, snowboard, relax by the fire, and play in the snow."]},
+es:{arrive:["Hemos llegado a la estación de esquí.","La montaña nevada está lista para un día de aventura."],gear:["Necesitamos esquís, botas, bastones y ropa abrigada.","La zona de alquiler tiene equipo para las pistas."],lift:["El telesilla lleva a los esquiadores montaña arriba.","Nos sentamos con seguridad y disfrutamos de la vista."],slopes:["Los esquiadores bajan por las pistas nevadas.","Algunas pistas son suaves y otras son empinadas."],lodge:["El refugio de esquí es cálido y acogedor.","La gente puede descansar, comer y calentarse dentro."],winter:["Hay muchas maneras de disfrutar de una montaña nevada.","Podemos esquiar, hacer snowboard, descansar junto al fuego y jugar en la nieve."]},
+fr:{arrive:["Nous sommes arrivés à la station de ski.","La montagne enneigée est prête pour une journée d'aventure."],gear:["Nous avons besoin de skis, de bottes, de bâtons et de vêtements chauds.","La location propose du matériel pour les pistes."],lift:["Le télésiège transporte les skieurs en haut de la montagne.","Nous nous asseyons en sécurité et profitons de la vue."],slopes:["Les skieurs glissent sur les pistes enneigées.","Certaines pistes sont douces et d'autres sont raides."],lodge:["Le chalet de ski est chaud et confortable.","On peut s'y reposer, manger et se réchauffer."],winter:["Il y a beaucoup de façons de profiter d'une montagne enneigée.","Nous pouvons skier, faire du snowboard, nous détendre près du feu et jouer dans la neige."]},
+de:{arrive:["Wir sind im Skigebiet angekommen.","Der verschneite Berg ist bereit für einen Abenteuertag."],gear:["Wir brauchen Skier, Stiefel, Stöcke und warme Kleidung.","Beim Skiverleih gibt es Ausrüstung für die Pisten."],lift:["Der Sessellift bringt Skifahrer den Berg hinauf.","Wir sitzen sicher und genießen die Aussicht."],slopes:["Skifahrer gleiten die verschneiten Pisten hinunter.","Manche Pisten sind sanft und andere steil."],lodge:["Die Skihütte ist warm und gemütlich.","Drinnen kann man sich ausruhen, essen und aufwärmen."],winter:["Auf einem verschneiten Berg gibt es viel zu erleben.","Wir können Ski fahren, snowboarden, am Feuer sitzen und im Schnee spielen."]},
+it:{arrive:["Siamo arrivati alla stazione sciistica.","La montagna innevata è pronta per una giornata di avventura."],gear:["Ci servono sci, scarponi, bastoncini e vestiti caldi.","Il noleggio ha l'attrezzatura per le piste."],lift:["La seggiovia porta gli sciatori sulla montagna.","Ci sediamo in sicurezza e ci godiamo il panorama."],slopes:["Gli sciatori scivolano sulle piste innevate.","Alcune piste sono dolci e altre sono ripide."],lodge:["Il rifugio sciistico è caldo e accogliente.","Dentro si può riposare, mangiare e riscaldarsi."],winter:["Ci sono molti modi per divertirsi su una montagna innevata.","Possiamo sciare, fare snowboard, rilassarci vicino al fuoco e giocare nella neve."]},
+pt:{arrive:["Chegamos à estação de esqui.","A montanha nevada está pronta para um dia de aventura."],gear:["Precisamos de esquis, botas, bastões e roupas quentes.","A área de aluguel tem equipamentos para as pistas."],lift:["O teleférico leva os esquiadores montanha acima.","Sentamos com segurança e apreciamos a vista."],slopes:["Os esquiadores deslizam pelas pistas nevadas.","Algumas pistas são suaves e outras são íngremes."],lodge:["O chalé de esqui é quente e aconchegante.","As pessoas podem descansar, comer e se aquecer lá dentro."],winter:["Há muitas maneiras de aproveitar uma montanha nevada.","Podemos esquiar, praticar snowboard, relaxar perto do fogo e brincar na neve."]},
+no:{arrive:["Vi har kommet til skianlegget.","Det snødekte fjellet er klart for en dag med eventyr."],gear:["Vi trenger ski, støvler, staver og varme klær.","Skiutleien har utstyr til bakkene."],lift:["Stolheisen frakter skiløpere opp fjellet.","Vi sitter trygt og nyter utsikten på vei opp."],slopes:["Skiløpere glir ned de snødekte løypene.","Noen løyper er slake og andre er bratte."],lodge:["Skihytta er varm og koselig.","Folk kan hvile, spise og varme seg inne."],winter:["Det finnes mange måter å nyte et snødekt fjell på.","Vi kan stå på ski, kjøre snowboard, slappe av ved bålet og leke i snøen."]}};
+const challengeOrder=["chairlift","skis","grandma","grandpa","bee","firepit"];
+const SOUND_MAP={};
+const langSel=document.getElementById("lang"),voiceSel=document.getElementById("voice");
+const title=document.getElementById("title"),prompt=document.getElementById("prompt"),line=document.getElementById("line"),translation=document.getElementById("translation"),status=document.getElementById("status"),world=document.getElementById("world");
+let lastWord="resort",activeLesson="",lessonPhrase=1,challenge=-1,lastSpoken="";
+function voices(){return ("speechSynthesis" in window)?speechSynthesis.getVoices():[]}
+function fillVoices(){const old=localStorage.getItem("talkabee-ski-voice-"+langSel.value)||"";voiceSel.innerHTML='<option value="">Browser Default</option>';voices().forEach(v=>{const o=document.createElement("option");o.value=v.name;o.textContent=v.name+(v.lang?" — "+v.lang:"");voiceSel.appendChild(o)});if([...voiceSel.options].some(o=>o.value===old))voiceSel.value=old}
+if("speechSynthesis" in window){speechSynthesis.onvoiceschanged=fillVoices;fillVoices();setTimeout(fillVoices,150);setTimeout(fillVoices,600);setTimeout(fillVoices,1500)}
+voiceSel.onchange=()=>localStorage.setItem("talkabee-ski-voice-"+langSel.value,voiceSel.value);
+function speak(text,rate=.88,onend=null){if(!text||!("speechSynthesis" in window)){if(onend)onend();return}speechSynthesis.cancel();setTimeout(()=>{const u=new SpeechSynthesisUtterance(text);u.lang=SPEECH_LANG[langSel.value]||langSel.value;u.rate=rate;const v=speechSynthesis.getVoices().find(x=>x.name===voiceSel.value);if(v)u.voice=v;if(onend)u.onend=onend;speechSynthesis.speak(u)},50);lastSpoken=text}
+function stopSound(){document.querySelectorAll("audio[data-talkabee-sound]").forEach(a=>{a.pause();a.currentTime=0;a.remove()})}
+function playSound(key){stopSound();const src=SOUND_MAP[key];if(!src)return;const a=new Audio(src);a.dataset.talkabeeSound="1";document.body.appendChild(a);a.play().catch(()=>{});a.onended=()=>a.remove()}
+function showWord(key){activeLesson="";lastWord=key;lessonPhrase=1;title.textContent="Click & Discover";prompt.textContent="You found "+(EN[key]||key)+".";line.textContent=WORDS[langSel.value][key]||EN[key]||key;translation.textContent=langSel.value==="en"?"":(EN[key]||key)}
+document.querySelectorAll(".hotspot").forEach(b=>b.onclick=()=>{const key=b.dataset.word;showWord(key);let played=false;const after=()=>{if(played)return;played=true;playSound(key)};speak(WORDS[langSel.value][key]||EN[key]||key,.82,after);setTimeout(after,1500);if(challenge>=0){if(key===challengeOrder[challenge]){status.textContent="✓ Nice find!";status.style.color="#9dffbf"}else{status.textContent="Not that one — keep looking.";status.style.color="#ffe28a"}}});
+function clearChallenge(){challenge=-1;world.classList.remove("challenge-mode");document.querySelectorAll(".hotspot").forEach(h=>h.classList.remove("target"));status.textContent=""}
+document.getElementById("discovery").onclick=()=>{clearChallenge();activeLesson="";lastWord="resort";title.textContent="Click & Discover";prompt.textContent="Click any object in the scene to hear its name.";line.textContent=WORDS[langSel.value].resort;translation.textContent=langSel.value==="en"?"":EN.resort};
+document.querySelectorAll("[data-ch]").forEach(b=>b.onclick=()=>{activeLesson="";lastWord="";challenge=+b.dataset.ch;world.classList.add("challenge-mode");document.querySelectorAll(".hotspot").forEach(h=>h.classList.toggle("target",h.dataset.word===challengeOrder[challenge]));title.textContent="Challenge "+(challenge+1)+" of 6";prompt.textContent=b.textContent.replace(/^[0-9]+\.\s*/,"");line.textContent=WORDS[langSel.value][challengeOrder[challenge]];translation.textContent=langSel.value==="en"?"":EN[challengeOrder[challenge]];status.textContent=""});
+function showLesson(key,speakIt=false){clearChallenge();activeLesson=key;lastWord="";lessonPhrase=Math.max(0,Math.min(1,lessonPhrase));const a=lessons[langSel.value][key],e=lessons.en[key],btn=document.querySelector(`[data-lesson="${key}"]`);title.textContent=btn?btn.textContent.replace(/^[0-9]+\.\s*/,""):"Mountain Ski Resort";prompt.textContent=a[0];line.textContent=a[lessonPhrase];translation.textContent=langSel.value==="en"?"":e[lessonPhrase];if(speakIt)speak(a[lessonPhrase])}
+document.querySelectorAll("[data-lesson]").forEach(b=>b.onclick=()=>{lessonPhrase=1;showLesson(b.dataset.lesson,true)});
+function currentSpeechText(){if(activeLesson)return lessons[langSel.value][activeLesson][lessonPhrase];if(lastWord)return WORDS[langSel.value][lastWord]||EN[lastWord];return line.textContent}
+document.getElementById("normal").onclick=()=>speak(currentSpeechText(),.82);
+document.getElementById("slow").onclick=()=>speak(currentSpeechText(),.58);
+document.getElementById("replay").onclick=()=>speak(lastSpoken||currentSpeechText(),.82);
+document.getElementById("nextPhrase").onclick=()=>{if(!activeLesson){const keys=Object.keys(EN),i=Math.max(0,keys.indexOf(lastWord));showWord(keys[(i+1)%keys.length]);speak(currentSpeechText(),.82);return}lessonPhrase=(lessonPhrase+1)%2;showLesson(activeLesson,true)};
+langSel.onchange=()=>{fillVoices();if(activeLesson)showLesson(activeLesson,false);else if(lastWord)showWord(lastWord)};
+document.getElementById("sceneView").onclick=()=>document.body.classList.add("scene-view");
+document.getElementById("sceneReturn").onclick=()=>document.body.classList.remove("scene-view");
+showWord("resort");
+</script>
+</body>
+</html>
+
+<style id="talkabee-ski-panel-180">
+@media(min-width:761px){.panel{width:180px!important;min-width:180px!important;max-width:180px!important}}
+</style>
