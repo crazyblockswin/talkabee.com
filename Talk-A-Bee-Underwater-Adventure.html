@@ -1,0 +1,344 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Talk A Bee — Underwater Adventure</title>
+<link rel="icon" type="image/png" href="images/talkabee-favicon.png">
+<style>
+*{box-sizing:border-box}
+html,body{margin:0;width:100%;height:100%;overflow:hidden;font-family:Arial,Helvetica,sans-serif;background:#063a66;color:#fff}
+.world{position:relative;width:100vw;height:100vh;background:url("images/Talk-A-Bee-Underwater-Adventure.jpg") center center/cover no-repeat}
+
+/* APPROVED TALK A BEE LEFT PANEL */
+.panel{position:fixed;z-index:1000;left:16px;top:16px;bottom:16px;width:180px;min-width:180px;max-width:180px;
+padding:14px;overflow-x:hidden;overflow-y:auto;border-radius:20px;border:1px solid rgba(255,255,255,.28);
+background:rgba(7,23,39,.31);box-shadow:0 12px 30px rgba(0,0,0,.24);backdrop-filter:blur(3px);-webkit-backdrop-filter:blur(3px)}
+.panel h1{font-size:19px;line-height:1.08;margin:4px 0 10px;text-shadow:0 2px 4px rgba(0,0,0,.55)}
+.label{font-size:9.5px;line-height:1.1;letter-spacing:.09em;font-weight:900;margin:9px 0 4px}
+.panel button,.panel select,.panel a{width:100%;min-height:34px;margin:4px 0;padding:8px 9px;border-radius:12px;
+border:1px solid rgba(255,255,255,.38);background:rgba(7,32,50,.54);color:#fff;font:800 12px/1.16 Arial,sans-serif;
+text-align:left;text-decoration:none}
+.panel button:hover,.panel a:hover{background:rgba(20,58,79,.70)}
+.panel button.active{background:rgba(78,69,219,.74)}
+.panel select{white-space:nowrap;text-overflow:ellipsis;overflow:hidden}
+
+/* APPROVED 520px SCRIPT CARD */
+.card{position:fixed;z-index:900;left:50%;bottom:16px;width:520px;max-width:520px;padding:14px 16px;
+border-radius:20px;border:1px solid rgba(255,255,255,.30);background:rgba(25,19,24,.38);
+box-shadow:0 12px 30px rgba(0,0,0,.28);backdrop-filter:blur(5px);-webkit-backdrop-filter:blur(5px);
+transform:translateX(-50%) scale(.67);transform-origin:bottom center}
+.card .kicker{font-size:15px;line-height:1.25;font-weight:900;letter-spacing:.10em;color:rgba(255,255,255,.96);
+text-shadow:0 1px 3px rgba(0,0,0,.78);margin:0 0 6px}
+.card h2{font-size:22px;line-height:1.08;margin:4px 0 7px;text-shadow:0 1px 3px rgba(0,0,0,.55)}
+.card p{font-size:18px;line-height:1.35;margin:4px 0 7px}
+.word{margin-top:8px;padding:10px 12px;border-radius:14px;background:rgba(88,88,88,.72);border:1px solid rgba(255,255,255,.20)}
+.word strong{display:block;font-size:22px;line-height:1.28}
+.translation{font-size:18px;line-height:1.35;margin-top:3px}
+.controls{display:flex;align-items:center;gap:8px;flex-wrap:nowrap;margin-top:8px}
+.controls button{width:auto;min-width:0;padding:9px 13px;border-radius:12px;border:1px solid rgba(255,255,255,.35);
+background:rgba(255,255,255,.88);color:#10283c;font:900 13px/1 Arial,sans-serif;white-space:nowrap}
+
+/* HOTSPOTS */
+.hotspot{position:absolute;z-index:8;border:0;background:transparent;opacity:0;cursor:pointer;border-radius:16px}
+.hotspot:hover,.hotspot:focus-visible{opacity:1;background:rgba(255,220,72,.28);outline:2px solid rgba(255,255,255,.90)}
+.challenge-mode .hotspot.target{opacity:1;background:rgba(255,199,48,.38);outline:4px solid #fff;box-shadow:0 0 0 7px rgba(255,200,50,.20)}
+
+/* APPROVED COMPACT PREVIOUS / NEXT CHEVRONS */
+.talkabee-prev-next-nav{position:fixed;top:18px;right:22px;z-index:2147483000;display:flex;align-items:center;overflow:hidden;
+border:2px solid rgba(255,255,255,.82);border-radius:999px;background:rgba(11,22,42,.24);
+box-shadow:0 5px 16px rgba(0,0,0,.16);backdrop-filter:blur(3px);-webkit-backdrop-filter:blur(3px)}
+.talkabee-prev-next-nav a{width:48px;height:48px;display:grid;place-items:center;text-decoration:none;color:#fff;
+font:900 38px/1 Arial,sans-serif;text-shadow:0 1px 3px rgba(0,0,0,.42)}
+.talkabee-prev-next-nav a+a{border-left:1px solid rgba(255,255,255,.36)}
+.talkabee-prev-next-nav a:hover,.talkabee-prev-next-nav a:focus-visible{background:rgba(255,255,255,.18);outline:none}
+
+/* SCENE VIEW */
+.scene-return{display:none;position:fixed;z-index:2147483001;left:18px;top:18px;padding:10px 14px;border-radius:12px;
+border:1px solid #fff;background:rgba(7,23,39,.65);color:#fff;font-weight:900}
+.scene-view .panel,.scene-view .card,.scene-view .talkabee-prev-next-nav{display:none}
+.scene-view .scene-return{display:block}
+
+@media(max-width:760px){
+ .panel{left:10px;top:10px;bottom:10px;width:180px;min-width:180px;max-width:180px;padding:11px}
+ .card{width:min(520px,calc(100vw - 32px));bottom:10px;transform:translateX(-50%) scale(.82)}
+ .talkabee-prev-next-nav{top:12px;right:12px}.talkabee-prev-next-nav a{width:42px;height:42px;font-size:33px}
+}
+</style>
+</head>
+<body>
+<nav class="talkabee-prev-next-nav" aria-label="Adventure navigation">
+  <a href="Talk-A-Bee-Dinosaur-Museum-Adventure.html" aria-label="Previous adventure" title="Previous">‹</a>
+  <a href="Talk-A-Bee-Nighttime-Campground-Adventure.html" aria-label="Next adventure" title="Next">›</a>
+</nav>
+
+<main class="world" id="world">
+<button class="scene-return" id="sceneReturn">Return to Adventure</button>
+
+<aside class="panel">
+<h1>🌊 Underwater Adventure</h1>
+<div class="label">LANGUAGE</div>
+<select id="lang">
+<option value="es">Spanish</option><option value="fr">French</option><option value="en">English</option>
+<option value="de">German</option><option value="it">Italian</option><option value="pt">Portuguese</option><option value="no">Norwegian</option>
+</select>
+<div class="label">VOICE</div>
+<select id="voice"><option value="">Browser Default</option></select>
+<button id="sceneView">◉ Scene View</button>
+
+<div class="label">DISCOVERY</div>
+<button id="discovery">🔎 Discovery — Click the Scene</button>
+
+<div class="label">ACTIVITIES</div>
+<button data-lesson="dive">1. Meet the Divers</button>
+<button data-lesson="reef">2. Explore the Coral Reef</button>
+<button data-lesson="fish">3. Tropical Fish</button>
+<button data-lesson="animals">4. Amazing Sea Animals</button>
+<button data-lesson="gear">5. Scuba Gear</button>
+<button data-lesson="ocean">6. Underwater World</button>
+
+<div class="label">CHALLENGES</div>
+<button data-ch="0">1. Find the Shark</button>
+<button data-ch="1">2. Find the Sea Turtle</button>
+<button data-ch="2">3. Find the Starfish</button>
+<button data-ch="3">4. Find the Moray Eel</button>
+<button data-ch="4">5. Find the Octopus</button>
+<button data-ch="5">6. Find the Bee</button>
+
+<a href="index.html">← Return to Main Directory</a>
+</aside>
+
+<section class="card">
+<div class="kicker">UNDER THE TROPICAL SEA</div>
+<h2 id="title">Underwater Adventure</h2>
+<p id="prompt">Click any object in the scene to hear its name.</p>
+<div class="word"><strong id="line">arrecife de coral</strong><div class="translation" id="translation">coral reef</div></div>
+<p id="status"></p>
+<div class="controls">
+<button id="normal">🔊 Speak</button><button id="slow">🐢 Slow</button><button id="replay">↻ Replay</button><button id="nextPhrase">Next phrase →</button>
+</div>
+</section>
+
+<!-- Hotspots mapped to the approved wide reef image. -->
+<button class="hotspot" data-word="dolphin" style="left:14%;top:8%;width:23%;height:17%" aria-label="Dolphins"></button>
+<button class="hotspot" data-word="shipwreck" style="left:20%;top:27%;width:24%;height:30%" aria-label="Shipwreck"></button>
+<button class="hotspot" data-word="turtle" style="left:31%;top:25%;width:21%;height:28%" aria-label="Sea turtle"></button>
+<button class="hotspot" data-word="grandma" style="left:46%;top:18%;width:15%;height:30%" aria-label="Grandma"></button>
+<button class="hotspot" data-word="grandpa" style="left:59%;top:18%;width:17%;height:34%" aria-label="Grandpa"></button>
+<button class="hotspot" data-word="shark" style="left:68%;top:2%;width:25%;height:22%" aria-label="Shark"></button>
+<button class="hotspot" data-word="bee" style="left:80%;top:19%;width:10%;height:18%" aria-label="Scuba bee"></button>
+<button class="hotspot" data-word="clownfish" style="left:0%;top:54%;width:16%;height:17%" aria-label="Clownfish"></button>
+<button class="hotspot" data-word="tropicalfish" style="left:13%;top:45%;width:23%;height:22%" aria-label="Tropical fish"></button>
+<button class="hotspot" data-word="pufferfish" style="left:57%;top:53%;width:10%;height:14%" aria-label="Pufferfish"></button>
+<button class="hotspot" data-word="eel" style="left:84%;top:51%;width:16%;height:18%" aria-label="Moray eel"></button>
+<button class="hotspot" data-word="starfish" style="left:5%;top:77%;width:18%;height:18%" aria-label="Starfish"></button>
+<button class="hotspot" data-word="crab" style="left:27%;top:73%;width:15%;height:18%" aria-label="Crab"></button>
+<button class="hotspot" data-word="lobster" style="left:52%;top:72%;width:16%;height:20%" aria-label="Lobster"></button>
+<button class="hotspot" data-word="octopus" style="left:79%;top:72%;width:21%;height:25%" aria-label="Octopus"></button>
+<button class="hotspot" data-word="coral" style="left:68%;top:38%;width:31%;height:40%" aria-label="Coral reef"></button>
+<button class="hotspot" data-word="seaweed" style="left:0%;top:25%;width:12%;height:42%" aria-label="Seaweed"></button>
+<button class="hotspot" data-word="sand" style="left:37%;top:79%;width:20%;height:18%" aria-label="Sand"></button>
+<button class="hotspot" data-word="tank" style="left:55%;top:22%;width:8%;height:18%" aria-label="Scuba tank"></button>
+<button class="hotspot" data-word="fins" style="left:43%;top:32%;width:14%;height:20%" aria-label="Scuba fins"></button>
+</main>
+
+<script>
+const EN={
+reef:"coral reef",dolphin:"dolphins",shipwreck:"shipwreck",turtle:"sea turtle",grandma:"Grandma",grandpa:"Grandpa",
+shark:"shark",bee:"bee",clownfish:"clownfish",tropicalfish:"tropical fish",pufferfish:"pufferfish",eel:"moray eel",
+starfish:"starfish",crab:"crab",lobster:"lobster",octopus:"octopus",coral:"coral",seaweed:"seaweed",sand:"sand",
+tank:"scuba tank",fins:"fins"
+};
+const WORDS={
+es:{reef:"arrecife de coral",dolphin:"delfines",shipwreck:"barco hundido",turtle:"tortuga marina",grandma:"abuela",grandpa:"abuelo",shark:"tiburón",bee:"abeja",clownfish:"pez payaso",tropicalfish:"peces tropicales",pufferfish:"pez globo",eel:"morena",starfish:"estrella de mar",crab:"cangrejo",lobster:"langosta",octopus:"pulpo",coral:"coral",seaweed:"algas marinas",sand:"arena",tank:"tanque de buceo",fins:"aletas"},
+fr:{reef:"récif corallien",dolphin:"dauphins",shipwreck:"épave",turtle:"tortue de mer",grandma:"grand-mère",grandpa:"grand-père",shark:"requin",bee:"abeille",clownfish:"poisson-clown",tropicalfish:"poissons tropicaux",pufferfish:"poisson-globe",eel:"murène",starfish:"étoile de mer",crab:"crabe",lobster:"homard",octopus:"pieuvre",coral:"corail",seaweed:"algues",sand:"sable",tank:"bouteille de plongée",fins:"palmes"},
+en:{...EN},
+de:{reef:"Korallenriff",dolphin:"Delfine",shipwreck:"Schiffswrack",turtle:"Meeresschildkröte",grandma:"Oma",grandpa:"Opa",shark:"Hai",bee:"Biene",clownfish:"Clownfisch",tropicalfish:"Tropenfische",pufferfish:"Kugelfisch",eel:"Muräne",starfish:"Seestern",crab:"Krabbe",lobster:"Hummer",octopus:"Oktopus",coral:"Koralle",seaweed:"Seetang",sand:"Sand",tank:"Tauchflasche",fins:"Flossen"},
+it:{reef:"barriera corallina",dolphin:"delfini",shipwreck:"relitto",turtle:"tartaruga marina",grandma:"nonna",grandpa:"nonno",shark:"squalo",bee:"ape",clownfish:"pesce pagliaccio",tropicalfish:"pesci tropicali",pufferfish:"pesce palla",eel:"murena",starfish:"stella marina",crab:"granchio",lobster:"aragosta",octopus:"polpo",coral:"corallo",seaweed:"alghe",sand:"sabbia",tank:"bombola da sub",fins:"pinne"},
+pt:{reef:"recife de coral",dolphin:"golfinhos",shipwreck:"naufrágio",turtle:"tartaruga marinha",grandma:"avó",grandpa:"avô",shark:"tubarão",bee:"abelha",clownfish:"peixe-palhaço",tropicalfish:"peixes tropicais",pufferfish:"baiacu",eel:"moreia",starfish:"estrela-do-mar",crab:"caranguejo",lobster:"lagosta",octopus:"polvo",coral:"coral",seaweed:"algas marinhas",sand:"areia",tank:"cilindro de mergulho",fins:"nadadeiras"},
+no:{reef:"korallrev",dolphin:"delfiner",shipwreck:"skipsvrak",turtle:"havskilpadde",grandma:"bestemor",grandpa:"bestefar",shark:"hai",bee:"bie",clownfish:"klovnefisk",tropicalfish:"tropiske fisk",pufferfish:"kulefisk",eel:"murene",starfish:"sjøstjerne",crab:"krabbe",lobster:"hummer",octopus:"blekksprut",coral:"korall",seaweed:"tang",sand:"sand",tank:"dykkeflaske",fins:"svømmeføtter"}
+};
+const SPEECH_LANG={es:"es-ES",fr:"fr-FR",en:"en-US",de:"de-DE",it:"it-IT",pt:"pt-PT",no:"nb-NO"};
+
+const lessons={
+en:{
+dive:["Grandma and Grandpa are scuba diving together.","They breathe through regulators and explore the reef."],
+reef:["The coral reef is full of color and life.","Coral gives many sea animals a place to live."],
+fish:["Tropical fish swim all around the reef.","Look for the clownfish and the pufferfish."],
+animals:["A shark, turtle, eel, octopus, and dolphins share the sea.","Each animal moves through the water in a different way."],
+gear:["The divers wear masks, scuba tanks, and fins.","Scuba gear helps people explore underwater."],
+ocean:["Sunlight shines through the clear tropical water.","The underwater world is busy, bright, and beautiful."]
+},
+es:{
+dive:["La abuela y el abuelo están buceando juntos.","Respiran por reguladores y exploran el arrecife."],
+reef:["El arrecife de coral está lleno de color y vida.","El coral da hogar a muchos animales marinos."],
+fish:["Los peces tropicales nadan alrededor del arrecife.","Busca el pez payaso y el pez globo."],
+animals:["Un tiburón, una tortuga, una morena, un pulpo y delfines comparten el mar.","Cada animal se mueve por el agua de una manera diferente."],
+gear:["Los buzos llevan máscaras, tanques de buceo y aletas.","El equipo de buceo ayuda a explorar bajo el agua."],
+ocean:["La luz del sol brilla a través del agua tropical.","El mundo submarino es activo, brillante y hermoso."]
+},
+fr:{
+dive:["Grand-mère et grand-père font de la plongée ensemble.","Ils respirent avec leurs détendeurs et explorent le récif."],
+reef:["Le récif corallien est plein de couleurs et de vie.","Le corail abrite de nombreux animaux marins."],
+fish:["Les poissons tropicaux nagent autour du récif.","Cherche le poisson-clown et le poisson-globe."],
+animals:["Un requin, une tortue, une murène, une pieuvre et des dauphins partagent la mer.","Chaque animal se déplace différemment dans l'eau."],
+gear:["Les plongeurs portent des masques, des bouteilles et des palmes.","L'équipement de plongée aide à explorer sous l'eau."],
+ocean:["La lumière du soleil traverse l'eau tropicale claire.","Le monde sous-marin est vivant, lumineux et magnifique."]
+},
+de:{
+dive:["Oma und Opa tauchen zusammen.","Sie atmen durch Atemregler und erkunden das Riff."],
+reef:["Das Korallenriff ist voller Farben und Leben.","Korallen bieten vielen Meerestieren ein Zuhause."],
+fish:["Tropische Fische schwimmen rund um das Riff.","Suche den Clownfisch und den Kugelfisch."],
+animals:["Ein Hai, eine Schildkröte, eine Muräne, ein Oktopus und Delfine teilen sich das Meer.","Jedes Tier bewegt sich anders durch das Wasser."],
+gear:["Die Taucher tragen Masken, Tauchflaschen und Flossen.","Tauchausrüstung hilft Menschen, die Unterwasserwelt zu erkunden."],
+ocean:["Sonnenlicht scheint durch das klare tropische Wasser.","Die Unterwasserwelt ist lebendig, hell und wunderschön."]
+},
+it:{
+dive:["La nonna e il nonno fanno immersioni insieme.","Respirano con gli erogatori ed esplorano la barriera."],
+reef:["La barriera corallina è piena di colori e vita.","Il corallo offre una casa a molti animali marini."],
+fish:["I pesci tropicali nuotano intorno alla barriera.","Cerca il pesce pagliaccio e il pesce palla."],
+animals:["Uno squalo, una tartaruga, una murena, un polpo e i delfini condividono il mare.","Ogni animale si muove nell'acqua in modo diverso."],
+gear:["I sub indossano maschere, bombole e pinne.","L'attrezzatura da sub aiuta a esplorare sott'acqua."],
+ocean:["La luce del sole attraversa l'acqua tropicale limpida.","Il mondo sottomarino è vivace, luminoso e bellissimo."]
+},
+pt:{
+dive:["A avó e o avô estão mergulhando juntos.","Eles respiram pelos reguladores e exploram o recife."],
+reef:["O recife de coral está cheio de cor e vida.","O coral oferece abrigo a muitos animais marinhos."],
+fish:["Peixes tropicais nadam ao redor do recife.","Procure o peixe-palhaço e o baiacu."],
+animals:["Um tubarão, uma tartaruga, uma moreia, um polvo e golfinhos compartilham o mar.","Cada animal se move pela água de uma maneira diferente."],
+gear:["Os mergulhadores usam máscaras, cilindros e nadadeiras.","O equipamento de mergulho ajuda as pessoas a explorar debaixo d'água."],
+ocean:["A luz do sol atravessa a água tropical clara.","O mundo subaquático é movimentado, brilhante e bonito."]
+},
+no:{
+dive:["Bestemor og bestefar dykker sammen.","De puster gjennom regulatorer og utforsker revet."],
+reef:["Korallrevet er fullt av farger og liv.","Koraller gir mange sjødyr et sted å bo."],
+fish:["Tropiske fisk svømmer rundt revet.","Se etter klovnefisken og kulefisken."],
+animals:["En hai, en skilpadde, en murene, en blekksprut og delfiner deler havet.","Hvert dyr beveger seg gjennom vannet på sin egen måte."],
+gear:["Dykkerne bruker masker, dykkeflasker og svømmeføtter.","Dykkerutstyr hjelper mennesker med å utforske under vann."],
+ocean:["Sollyset skinner gjennom det klare tropiske vannet.","Undervannsverdenen er travel, lys og vakker."]
+}
+};
+
+const challengeOrder=["shark","turtle","starfish","eel","octopus","bee"];
+const lessonOrder=["dive","reef","fish","animals","gear","ocean"];
+const SOUND_MAP={dolphin:"sounds/dolphin.mp3",grandma:"sounds/scuba-diver.mp3",grandpa:"sounds/scuba-diver.mp3"};
+
+const langSel=document.getElementById("lang"), voiceSel=document.getElementById("voice");
+const savedLanguage=localStorage.getItem("talkabee-learn-language");
+if(savedLanguage && WORDS[savedLanguage]) langSel.value=savedLanguage;
+const title=document.getElementById("title"), prompt=document.getElementById("prompt"), line=document.getElementById("line");
+const translation=document.getElementById("translation"), status=document.getElementById("status"), world=document.getElementById("world");
+let lastWord="reef", activeLesson="", lessonPhrase=1, challenge=-1, lastSpoken="";
+
+function voices(){return ("speechSynthesis" in window)?speechSynthesis.getVoices():[]}
+function fillVoices(){
+ const old=localStorage.getItem("talkabee-underwater-voice-"+langSel.value)||"";
+ voiceSel.innerHTML='<option value="">Browser Default</option>';
+ voices().forEach(v=>{
+  const o=document.createElement("option");
+  o.value=v.name;
+  o.textContent=v.name+(v.lang?" — "+v.lang:"");
+  voiceSel.appendChild(o);
+ });
+ if([...voiceSel.options].some(o=>o.value===old))voiceSel.value=old;
+}
+if("speechSynthesis" in window){
+ speechSynthesis.onvoiceschanged=fillVoices;
+ fillVoices();
+ setTimeout(fillVoices,150);
+ setTimeout(fillVoices,600);
+ setTimeout(fillVoices,1500);
+}
+voiceSel.onchange=()=>localStorage.setItem("talkabee-underwater-voice-"+langSel.value,voiceSel.value);
+
+function speak(text,rate=.88,onend=null){
+ if(!text){if(onend)onend();return}
+ if(!("speechSynthesis" in window)){if(onend)onend();return}
+ speechSynthesis.cancel();
+ setTimeout(()=>{
+  const u=new SpeechSynthesisUtterance(text);
+  u.lang=SPEECH_LANG[langSel.value]||langSel.value;
+  u.rate=rate;
+  const v=speechSynthesis.getVoices().find(x=>x.name===voiceSel.value);
+  if(v)u.voice=v;
+  if(onend)u.onend=onend;
+  speechSynthesis.speak(u);
+ },50);
+ lastSpoken=text;
+}
+function stopSound(){
+ document.querySelectorAll("audio[data-talkabee-sound]").forEach(a=>{a.pause();a.currentTime=0;a.remove()});
+}
+function playSound(key){
+ stopSound();const src=SOUND_MAP[key];if(!src)return;
+ const a=new Audio(src);a.dataset.talkabeeSound="1";document.body.appendChild(a);a.play().catch(()=>{});
+ a.onended=()=>a.remove();
+}
+function showWord(key){
+ activeLesson="";lastWord=key;lessonPhrase=1;
+ title.textContent="Click & Discover";prompt.textContent="You found "+(EN[key]||key)+".";
+ line.textContent=WORDS[langSel.value][key]||EN[key]||key;
+ translation.textContent=langSel.value==="en"?"":(EN[key]||key);
+}
+document.querySelectorAll(".hotspot").forEach(b=>b.onclick=()=>{
+ const key=b.dataset.word;showWord(key);
+ let played=false;const after=()=>{if(played)return;played=true;playSound(key)};
+ speak(WORDS[langSel.value][key]||EN[key]||key,.82,after);setTimeout(after,1500);
+ if(challenge>=0){
+  if(key===challengeOrder[challenge]){status.textContent="✓ Nice find!";status.style.color="#9dffbf"}
+  else{status.textContent="Not that one — keep looking.";status.style.color="#ffe28a"}
+ }
+});
+
+function clearChallenge(){
+ challenge=-1;world.classList.remove("challenge-mode");
+ document.querySelectorAll(".hotspot").forEach(h=>h.classList.remove("target"));
+ status.textContent="";
+}
+document.getElementById("discovery").onclick=()=>{
+ clearChallenge();activeLesson="";lastWord="reef";
+ title.textContent="Click & Discover";prompt.textContent="Click any object in the scene to hear its name.";
+ line.textContent=WORDS[langSel.value].reef;translation.textContent=langSel.value==="en"?"":EN.reef;
+};
+document.querySelectorAll("[data-ch]").forEach(b=>b.onclick=()=>{
+ activeLesson="";lastWord="";challenge=+b.dataset.ch;world.classList.add("challenge-mode");
+ document.querySelectorAll(".hotspot").forEach(h=>h.classList.toggle("target",h.dataset.word===challengeOrder[challenge]));
+ title.textContent="Challenge "+(challenge+1)+" of 6";prompt.textContent=b.textContent.replace(/^\d+\.\s*/,"");
+ line.textContent=WORDS[langSel.value][challengeOrder[challenge]];translation.textContent=langSel.value==="en"?"":EN[challengeOrder[challenge]];
+ status.textContent="";
+});
+
+function showLesson(key,speakIt=false){
+ clearChallenge();activeLesson=key;lastWord="";lessonPhrase=Math.max(0,Math.min(1,lessonPhrase));
+ const a=lessons[langSel.value][key], e=lessons.en[key], btn=document.querySelector(`[data-lesson="${key}"]`);
+ title.textContent=btn?btn.textContent.replace(/^\d+\.\s*/,""):"Underwater Adventure";
+ prompt.textContent=a[0];line.textContent=a[lessonPhrase];translation.textContent=langSel.value==="en"?"":e[lessonPhrase];
+ if(speakIt)speak(a[lessonPhrase]);
+}
+document.querySelectorAll("[data-lesson]").forEach(b=>b.onclick=()=>{lessonPhrase=1;showLesson(b.dataset.lesson,true)});
+
+function currentSpeechText(){
+ if(activeLesson)return lessons[langSel.value][activeLesson][lessonPhrase];
+ if(lastWord)return WORDS[langSel.value][lastWord]||EN[lastWord];
+ return line.textContent;
+}
+document.getElementById("normal").onclick=()=>speak(currentSpeechText(),.82);
+document.getElementById("slow").onclick=()=>speak(currentSpeechText(),.58);
+document.getElementById("replay").onclick=()=>speak(lastSpoken||currentSpeechText(),.82);
+document.getElementById("nextPhrase").onclick=()=>{
+ if(!activeLesson){const i=Math.max(0,Object.keys(EN).indexOf(lastWord));const keys=Object.keys(EN);showWord(keys[(i+1)%keys.length]);speak(currentSpeechText(),.82);return}
+ lessonPhrase=(lessonPhrase+1)%2;showLesson(activeLesson,true);
+};
+langSel.onchange=()=>{
+ localStorage.setItem("talkabee-learn-language",langSel.value);
+ fillVoices();
+ if(activeLesson)showLesson(activeLesson,false);
+ else if(lastWord)showWord(lastWord);
+};
+document.getElementById("sceneView").onclick=()=>document.body.classList.add("scene-view");
+document.getElementById("sceneReturn").onclick=()=>document.body.classList.remove("scene-view");
+
+showWord("reef");
+</script>
+</body>
+</html>
