@@ -1000,8 +1000,34 @@ header .brand-tagline{white-space:normal!important;line-height:1.12!important;}
 }
 @media(max-width:720px){#mainDirectory .landing-directory .talkabee-eye-nav{width:132px!important}}
 </style>
+
+<style id="talkabee-edition-menu-style">
+.talkabee-editions{position:fixed;top:16px;left:50%;transform:translateX(-50%);z-index:2147482998;font-family:Arial,sans-serif}
+.talkabee-editions details{position:relative}
+.talkabee-editions summary{list-style:none;cursor:pointer;border:1px solid rgba(255,255,255,.55);border-radius:999px;padding:10px 15px;background:rgba(7,23,39,.62);color:#fff;font-size:13px;font-weight:900;white-space:nowrap;box-shadow:0 8px 24px rgba(0,0,0,.22);backdrop-filter:blur(7px);-webkit-backdrop-filter:blur(7px)}
+.talkabee-editions summary::-webkit-details-marker{display:none}
+.talkabee-editions .edition-row{position:absolute;top:calc(100% + 8px);left:50%;transform:translateX(-50%);display:flex;gap:6px;padding:8px;border:1px solid rgba(255,255,255,.4);border-radius:15px;background:rgba(7,23,39,.80);box-shadow:0 12px 32px rgba(0,0,0,.28);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);white-space:nowrap}
+.talkabee-editions .edition-row a{display:block;padding:9px 11px;border-radius:10px;color:#fff;text-decoration:none;font-size:12px;font-weight:850;background:rgba(255,255,255,.07)}
+.talkabee-editions .edition-row a:hover,.talkabee-editions .edition-row a:focus-visible{background:rgba(255,255,255,.20);outline:none}
+.talkabee-editions.on-main{top:82px}
+@media(max-width:900px){.talkabee-editions .edition-row{max-width:94vw;overflow-x:auto}.talkabee-editions.on-main{top:72px}}
+</style>
+
 </head>
 <body>
+<div class="talkabee-editions on-main">
+<details>
+<summary>Explore Adventures ▾</summary>
+<div class="edition-row" role="navigation" aria-label="Talk A Bee Editions">
+<a href="index.html">Main Adventures</a>
+<a href="Talk-A-Bee-More-Adventures.html">Community Edition</a>
+<a href="Talk-A-Bee-Directory-3.html">Travel Edition</a>
+<a href="Talk-A-Bee-Directory-4.html">Sports Edition</a>
+<a href="Talk-A-Bee-Directory-5.html">Space Edition</a>
+<a href="Talk-A-Bee-Directory-6.html">Family &amp; Special</a>
+</div>
+</details>
+</div>
 <header>
  <div class="wrap nav">
   <a class="brand" href="index.html" aria-label="Talk A Bee home"><div class="logo bee-logo" aria-hidden="true"><img src="images/talkabee-image-04.png" alt=""></div><div><span class="brand-name">Talk A Bee</span><small class="brand-domain">TalkABee.com</small></div><span class="brand-tagline">A Language-Learning Storybook<br>That Comes Alive</span></a>
