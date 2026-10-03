@@ -1,0 +1,223 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Talk A Bee — Saturn Spacecraft Adventure</title>
+<link rel="icon" type="image/png" href="images/talkabee-favicon.png">
+<style>
+*{box-sizing:border-box}
+html,body{margin:0;width:100%;height:100%;overflow:hidden;font-family:Arial,Helvetica,sans-serif;background:#063a66;color:#fff}
+.world{position:relative;width:100vw;height:100vh;background:url("images/Talk-A-Bee-Saturn-Spacecraft-Adventure.jpg") center center/cover no-repeat}
+
+/* APPROVED TALK A BEE LEFT PANEL */
+.panel{position:fixed;z-index:1000;left:16px;top:16px;bottom:16px;width:180px;min-width:180px;max-width:180px;
+padding:14px;overflow-x:hidden;overflow-y:auto;border-radius:20px;border:1px solid rgba(255,255,255,.28);
+background:rgba(7,23,39,.31);box-shadow:0 12px 30px rgba(0,0,0,.24);backdrop-filter:blur(3px);-webkit-backdrop-filter:blur(3px)}
+.panel h1{font-size:19px;line-height:1.08;margin:4px 0 10px;text-shadow:0 2px 4px rgba(0,0,0,.55)}
+.label{font-size:9.5px;line-height:1.1;letter-spacing:.09em;font-weight:900;margin:9px 0 4px}
+.panel button,.panel select,.panel a{width:100%;min-height:34px;margin:4px 0;padding:8px 9px;border-radius:12px;
+border:1px solid rgba(255,255,255,.38);background:rgba(7,32,50,.54);color:#fff;font:800 12px/1.16 Arial,sans-serif;
+text-align:left;text-decoration:none}
+.panel button:hover,.panel a:hover{background:rgba(20,58,79,.70)}
+.panel button.active{background:rgba(78,69,219,.74)}
+.panel select{white-space:nowrap;text-overflow:ellipsis;overflow:hidden}
+
+/* APPROVED 520px SCRIPT CARD */
+.card{position:fixed;z-index:900;left:50%;bottom:16px;width:520px;max-width:520px;padding:14px 16px;
+border-radius:20px;border:1px solid rgba(255,255,255,.30);background:rgba(25,19,24,.38);
+box-shadow:0 12px 30px rgba(0,0,0,.28);backdrop-filter:blur(5px);-webkit-backdrop-filter:blur(5px);
+transform:translateX(-50%) scale(.67);transform-origin:bottom center}
+.card .kicker{font-size:15px;line-height:1.25;font-weight:900;letter-spacing:.10em;color:rgba(255,255,255,.96);
+text-shadow:0 1px 3px rgba(0,0,0,.78);margin:0 0 6px}
+.card h2{font-size:22px;line-height:1.08;margin:4px 0 7px;text-shadow:0 1px 3px rgba(0,0,0,.55)}
+.card p{font-size:18px;line-height:1.35;margin:4px 0 7px}
+.word{margin-top:8px;padding:10px 12px;border-radius:14px;background:rgba(88,88,88,.72);border:1px solid rgba(255,255,255,.20)}
+.word strong{display:block;font-size:22px;line-height:1.28}
+.translation{font-size:18px;line-height:1.35;margin-top:3px}
+.controls{display:flex;align-items:center;gap:8px;flex-wrap:nowrap;margin-top:8px}
+.controls button{width:auto;min-width:0;padding:9px 13px;border-radius:12px;border:1px solid rgba(255,255,255,.35);
+background:rgba(255,255,255,.88);color:#10283c;font:900 13px/1 Arial,sans-serif;white-space:nowrap}
+
+/* HOTSPOTS */
+.hotspot{position:absolute;z-index:8;border:0;background:transparent;opacity:0;cursor:pointer;border-radius:16px}
+.hotspot:hover,.hotspot:focus-visible{opacity:1;background:rgba(255,220,72,.28);outline:2px solid rgba(255,255,255,.90)}
+.challenge-mode .hotspot.target{opacity:1;background:rgba(255,199,48,.38);outline:4px solid #fff;box-shadow:0 0 0 7px rgba(255,200,50,.20)}
+
+/* APPROVED COMPACT PREVIOUS / NEXT CHEVRONS */
+.talkabee-prev-next-nav{position:fixed;top:18px;right:22px;z-index:2147483000;display:flex;align-items:center;overflow:hidden;
+border:2px solid rgba(255,255,255,.82);border-radius:999px;background:rgba(11,22,42,.24);
+box-shadow:0 5px 16px rgba(0,0,0,.16);backdrop-filter:blur(3px);-webkit-backdrop-filter:blur(3px)}
+.talkabee-prev-next-nav a{width:48px;height:48px;display:grid;place-items:center;text-decoration:none;color:#fff;
+font:900 38px/1 Arial,sans-serif;text-shadow:0 1px 3px rgba(0,0,0,.42)}
+.talkabee-prev-next-nav a+a{border-left:1px solid rgba(255,255,255,.36)}
+.talkabee-prev-next-nav a:hover,.talkabee-prev-next-nav a:focus-visible{background:rgba(255,255,255,.18);outline:none}
+
+/* SCENE VIEW */
+.scene-return{display:none;position:fixed;z-index:2147483001;left:18px;top:18px;padding:10px 14px;border-radius:12px;
+border:1px solid #fff;background:rgba(7,23,39,.65);color:#fff;font-weight:900}
+.scene-view .panel,.scene-view .card,.scene-view .talkabee-prev-next-nav{display:none}
+.scene-view .scene-return{display:block}
+
+@media(max-width:760px){
+ .panel{left:10px;top:10px;bottom:10px;width:180px;min-width:180px;max-width:180px;padding:11px}
+ .card{width:min(520px,calc(100vw - 32px));bottom:10px;transform:translateX(-50%) scale(.82)}
+ .talkabee-prev-next-nav{top:12px;right:12px}.talkabee-prev-next-nav a{width:42px;height:42px;font-size:33px}
+}
+</style>
+</head>
+<body>
+<nav class="talkabee-prev-next-nav" aria-label="Adventure navigation">
+  <a href="Talk-A-Bee-Mission-Control-Adventure.html" aria-label="Previous adventure" title="Previous">‹</a>
+  <a href="Talk-A-Bee-Protect-Earth-Adventure.html" aria-label="Next adventure" title="Next">›</a>
+</nav>
+
+<main class="world" id="world">
+<button class="scene-return" id="sceneReturn">Return to Adventure</button>
+
+<aside class="panel">
+<h1>🪐 Saturn Spacecraft Adventure</h1>
+<div class="label">LANGUAGE</div>
+<select id="lang">
+<option value="es">Spanish</option><option value="fr">French</option><option value="en">English</option>
+<option value="de">German</option><option value="it">Italian</option><option value="pt">Portuguese</option><option value="no">Norwegian</option>
+</select>
+<div class="label">VOICE</div>
+<select id="voice"><option value="">Browser Default</option></select>
+<button id="sceneView">◉ Scene View</button>
+
+<div class="label">DISCOVERY</div>
+<button id="discovery">🔎 Discovery — Click the Scene</button>
+
+<div class="label">ACTIVITIES</div>
+<button data-lesson="saturn">1. Explore Saturn</button>
+<button data-lesson="rings">2. Explore Saturn's Rings</button>
+<button data-lesson="moons">3. Discover Saturn's Moons</button>
+<button data-lesson="window">4. Look Through the Window</button>
+<button data-lesson="ship">5. Explore the Spacecraft</button>
+<button data-lesson="system">6. Explore the Solar System</button>
+<div class="label">CHALLENGES</div>
+<button data-ch="0">1. Find Bee</button>
+<button data-ch="1">2. Find Saturn</button>
+<button data-ch="2">3. Find Saturn's Rings</button>
+<button data-ch="3">4. Find a Moon</button>
+<button data-ch="4">5. Find the Solar System Screen</button>
+<button data-ch="5">6. Find the Spacecraft Window</button>
+<a href="index.html">← Return to Main Directory</a>
+</aside>
+
+<section class="card">
+<div class="kicker">FLYING PAST SATURN</div>
+<h2 id="title">Saturn Spacecraft Adventure</h2>
+<p id="prompt">Click any object in the scene to hear its name.</p>
+<div class="word"><strong id="line">Saturno</strong><div class="translation" id="translation">Saturn</div></div>
+<p id="status"></p>
+<div class="controls">
+<button id="normal">🔊 Speak</button><button id="slow">🐢 Slow</button><button id="replay">↻ Replay</button><button id="nextPhrase">Next phrase →</button>
+</div>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- Hotspots mapped to the approved Saturn keeper JPG. -->
+<button class="hotspot" data-word="bee" style="left:51%;top:59%;width:10%;height:21%" aria-label="Astronaut Bee"></button>
+<button class="hotspot" data-word="saturn" style="left:63%;top:17%;width:25%;height:40%" aria-label="Saturn"></button>
+<button class="hotspot" data-word="rings" style="left:55%;top:26%;width:39%;height:32%" aria-label="Saturn rings"></button>
+<button class="hotspot" data-word="moon" style="left:89%;top:49%;width:11%;height:25%" aria-label="Moon"></button>
+<button class="hotspot" data-word="moon" style="left:55%;top:31%;width:8%;height:13%" aria-label="Moon"></button>
+<button class="hotspot" data-word="stars" style="left:48%;top:0%;width:50%;height:22%" aria-label="Stars"></button>
+<button class="hotspot" data-word="galaxy" style="left:55%;top:0%;width:38%;height:20%" aria-label="Milky Way"></button>
+<button class="hotspot" data-word="sunlight" style="left:94%;top:0%;width:6%;height:17%" aria-label="Sunlight"></button>
+<button class="hotspot" data-word="window" style="left:45%;top:8%;width:55%;height:52%" aria-label="Spacecraft window"></button>
+<button class="hotspot" data-word="solarsystem" style="left:0%;top:26%;width:25%;height:29%" aria-label="Solar System screen"></button>
+<button class="hotspot" data-word="console" style="left:56%;top:60%;width:44%;height:24%" aria-label="Control console"></button>
+<button class="hotspot" data-word="monitor" style="left:81%;top:61%;width:17%;height:19%" aria-label="Computer monitor"></button>
+<button class="hotspot" data-word="astronaut" style="left:0%;top:42%;width:13%;height:27%" aria-label="Astronaut"></button>
+<button class="hotspot" data-word="crew" style="left:20%;top:48%;width:36%;height:34%" aria-label="Space crew"></button>
+<button class="hotspot" data-word="seat" style="left:19%;top:68%;width:26%;height:28%" aria-label="Spacecraft seat"></button>
+<button class="hotspot" data-word="hologram" style="left:0%;top:68%;width:22%;height:26%" aria-label="Solar System hologram"></button>
+<button class="hotspot" data-word="ceiling" style="left:0%;top:0%;width:45%;height:22%" aria-label="Spacecraft ceiling"></button>
+<button class="hotspot" data-word="planetdisplay" style="left:0%;top:9%;width:25%;height:18%" aria-label="Planet displays"></button>
+<button class="hotspot" data-word="spacesuit" style="left:52%;top:61%;width:9%;height:18%" aria-label="Bee spacesuit"></button>
+<button class="hotspot" data-word="controls" style="left:31%;top:54%;width:25%;height:17%" aria-label="Spacecraft controls"></button>
+
+</main>
+
+<script>
+const EN={game:"Saturn",bee:"astronaut Bee",saturn:"Saturn",rings:"Saturn's rings",moon:"moon",stars:"stars",galaxy:"Milky Way",sunlight:"sunlight",window:"spacecraft window",solarsystem:"Solar System screen",console:"control console",monitor:"computer monitor",astronaut:"astronaut",crew:"space crew",seat:"spacecraft seat",hologram:"Solar System hologram",ceiling:"spacecraft ceiling",planetdisplay:"planet displays",spacesuit:"spacesuit",controls:"spacecraft controls"};
+const WORDS={
+es:{game:"Saturno",bee:"abeja astronauta",saturn:"Saturno",rings:"anillos de Saturno",moon:"luna",stars:"estrellas",galaxy:"Vía Láctea",sunlight:"luz solar",window:"ventana de la nave",solarsystem:"pantalla del sistema solar",console:"consola de control",monitor:"monitor",astronaut:"astronauta",crew:"tripulación espacial",seat:"asiento de la nave",hologram:"holograma del sistema solar",ceiling:"techo de la nave",planetdisplay:"pantallas planetarias",spacesuit:"traje espacial",controls:"controles de la nave"},
+fr:{game:"Saturne",bee:"abeille astronaute",saturn:"Saturne",rings:"anneaux de Saturne",moon:"lune",stars:"étoiles",galaxy:"Voie lactée",sunlight:"lumière du Soleil",window:"fenêtre du vaisseau",solarsystem:"écran du système solaire",console:"console de contrôle",monitor:"écran",astronaut:"astronaute",crew:"équipage spatial",seat:"siège du vaisseau",hologram:"hologramme du système solaire",ceiling:"plafond du vaisseau",planetdisplay:"écrans planétaires",spacesuit:"combinaison spatiale",controls:"commandes du vaisseau"},
+en:{...EN},
+de:{game:"Saturn",bee:"Astronauten-Biene",saturn:"Saturn",rings:"Saturnringe",moon:"Mond",stars:"Sterne",galaxy:"Milchstraße",sunlight:"Sonnenlicht",window:"Raumschifffenster",solarsystem:"Sonnensystem-Bildschirm",console:"Kontrollkonsole",monitor:"Computermonitor",astronaut:"Astronaut",crew:"Raumbesatzung",seat:"Raumschiffsitz",hologram:"Sonnensystem-Hologramm",ceiling:"Raumschiffdecke",planetdisplay:"Planetenanzeigen",spacesuit:"Raumanzug",controls:"Raumschiffsteuerung"},
+it:{game:"Saturno",bee:"ape astronauta",saturn:"Saturno",rings:"anelli di Saturno",moon:"luna",stars:"stelle",galaxy:"Via Lattea",sunlight:"luce solare",window:"finestra dell'astronave",solarsystem:"schermo del sistema solare",console:"console di controllo",monitor:"monitor",astronaut:"astronauta",crew:"equipaggio spaziale",seat:"sedile dell'astronave",hologram:"ologramma del sistema solare",ceiling:"soffitto dell'astronave",planetdisplay:"schermi planetari",spacesuit:"tuta spaziale",controls:"comandi dell'astronave"},
+pt:{game:"Saturno",bee:"abelha astronauta",saturn:"Saturno",rings:"anéis de Saturno",moon:"lua",stars:"estrelas",galaxy:"Via Láctea",sunlight:"luz solar",window:"janela da nave",solarsystem:"tela do sistema solar",console:"console de controle",monitor:"monitor",astronaut:"astronauta",crew:"tripulação espacial",seat:"assento da nave",hologram:"holograma do sistema solar",ceiling:"teto da nave",planetdisplay:"telas planetárias",spacesuit:"traje espacial",controls:"controles da nave"},
+no:{game:"Saturn",bee:"astronautbie",saturn:"Saturn",rings:"Saturns ringer",moon:"måne",stars:"stjerner",galaxy:"Melkeveien",sunlight:"sollys",window:"romskipvindu",solarsystem:"solsystemskjerm",console:"kontrollkonsoll",monitor:"dataskjerm",astronaut:"astronaut",crew:"rommannskap",seat:"romskipsete",hologram:"solsystemhologram",ceiling:"romskiptak",planetdisplay:"planetvisninger",spacesuit:"romdrakt",controls:"romskipkontroller"}};
+const SPEECH_LANG={es:"es-ES",fr:"fr-FR",en:"en-US",de:"de-DE",it:"it-IT",pt:"pt-PT",no:"nb-NO"};
+const lessons={
+en:{saturn:["Saturn is the sixth planet from the Sun and the second-largest planet in our Solar System.","It is a gas giant made mostly of hydrogen and helium, with no solid surface like Earth's."],rings:["Saturn is famous for its enormous ring system, made of countless pieces of ice and rock.","The rings stretch far from the planet but are surprisingly thin compared with their width."],moons:["Saturn has many moons, ranging from tiny irregular objects to large worlds such as Titan.","Titan is larger than the planet Mercury and has a thick atmosphere."],window:["From a spacecraft window, Saturn and its rings would create an extraordinary view.","Real spacecraft windows are carefully engineered to withstand the conditions of space while allowing crews to see outside."],ship:["Spacecraft use computers, displays, communication systems, navigation equipment, power systems, and many other technologies.","Crew members train to understand their spacecraft and respond carefully to changing conditions."],system:["Saturn is one of eight planets orbiting the Sun in our Solar System.","The outer Solar System also includes Jupiter, Uranus, Neptune, many moons, dwarf planets, asteroids, and icy objects."]},
+es:{saturn:["Saturno es el sexto planeta desde el Sol y el segundo planeta más grande de nuestro sistema solar.","Es un gigante gaseoso compuesto principalmente de hidrógeno y helio, sin una superficie sólida como la Tierra."],rings:["Saturno es famoso por su enorme sistema de anillos, formado por innumerables fragmentos de hielo y roca.","Los anillos se extienden muy lejos del planeta, pero son sorprendentemente delgados en comparación con su anchura."],moons:["Saturno tiene muchas lunas, desde pequeños objetos irregulares hasta grandes mundos como Titán.","Titán es más grande que el planeta Mercurio y tiene una atmósfera espesa."],window:["Desde la ventana de una nave espacial, Saturno y sus anillos ofrecerían una vista extraordinaria.","Las ventanas reales de las naves están diseñadas cuidadosamente para soportar las condiciones del espacio y permitir que la tripulación vea el exterior."],ship:["Las naves espaciales utilizan computadoras, pantallas, comunicaciones, navegación, sistemas de energía y muchas otras tecnologías.","Los tripulantes entrenan para comprender su nave y responder cuidadosamente a condiciones cambiantes."],system:["Saturno es uno de los ocho planetas que orbitan el Sol en nuestro sistema solar.","El sistema solar exterior también incluye Júpiter, Urano, Neptuno, muchas lunas, planetas enanos, asteroides y objetos helados."]},
+fr:{saturn:["Saturne est la sixième planète à partir du Soleil et la deuxième plus grande planète de notre système solaire.","C'est une géante gazeuse composée principalement d'hydrogène et d'hélium, sans surface solide comme celle de la Terre."],rings:["Saturne est célèbre pour son immense système d'anneaux composé d'innombrables morceaux de glace et de roche.","Les anneaux s'étendent très loin de la planète mais sont étonnamment minces par rapport à leur largeur."],moons:["Saturne possède de nombreuses lunes, des petits objets irréguliers aux grands mondes comme Titan.","Titan est plus grand que la planète Mercure et possède une atmosphère épaisse."],window:["Depuis la fenêtre d'un vaisseau, Saturne et ses anneaux offriraient une vue extraordinaire.","Les fenêtres des vrais vaisseaux sont soigneusement conçues pour résister aux conditions spatiales tout en permettant à l'équipage de regarder dehors."],ship:["Les vaisseaux utilisent des ordinateurs, écrans, communications, systèmes de navigation, d'énergie et de nombreuses autres technologies.","Les membres d'équipage s'entraînent à comprendre leur vaisseau et à réagir avec soin aux changements."],system:["Saturne est l'une des huit planètes qui tournent autour du Soleil dans notre système solaire.","Le système solaire externe comprend aussi Jupiter, Uranus, Neptune, de nombreuses lunes, des planètes naines, des astéroïdes et des objets glacés."]},
+de:{saturn:["Saturn ist der sechste Planet von der Sonne und der zweitgrößte Planet unseres Sonnensystems.","Er ist ein Gasriese, der hauptsächlich aus Wasserstoff und Helium besteht und keine feste Oberfläche wie die Erde hat."],rings:["Saturn ist für sein riesiges Ringsystem bekannt, das aus unzähligen Eis- und Gesteinsstücken besteht.","Die Ringe reichen weit vom Planeten weg, sind im Vergleich zu ihrer Breite jedoch erstaunlich dünn."],moons:["Saturn hat viele Monde, von kleinen unregelmäßigen Objekten bis zu großen Welten wie Titan.","Titan ist größer als der Planet Merkur und besitzt eine dichte Atmosphäre."],window:["Durch ein Raumschifffenster würden Saturn und seine Ringe einen außergewöhnlichen Anblick bieten.","Echte Raumschifffenster werden sorgfältig konstruiert, um den Bedingungen im Weltraum standzuhalten und gleichzeitig den Blick nach draußen zu ermöglichen."],ship:["Raumfahrzeuge nutzen Computer, Anzeigen, Kommunikations- und Navigationssysteme, Energieversorgung und viele weitere Technologien.","Besatzungsmitglieder trainieren, ihr Raumfahrzeug zu verstehen und sorgfältig auf Veränderungen zu reagieren."],system:["Saturn ist einer von acht Planeten, die in unserem Sonnensystem die Sonne umkreisen.","Zum äußeren Sonnensystem gehören außerdem Jupiter, Uranus, Neptun, viele Monde, Zwergplaneten, Asteroiden und eisige Objekte."]},
+it:{saturn:["Saturno è il sesto pianeta dal Sole e il secondo pianeta più grande del nostro sistema solare.","È un gigante gassoso composto principalmente da idrogeno ed elio, senza una superficie solida come quella terrestre."],rings:["Saturno è famoso per il suo enorme sistema di anelli formato da innumerevoli pezzi di ghiaccio e roccia.","Gli anelli si estendono molto lontano dal pianeta ma sono sorprendentemente sottili rispetto alla loro larghezza."],moons:["Saturno possiede molte lune, da piccoli oggetti irregolari a grandi mondi come Titano.","Titano è più grande del pianeta Mercurio e possiede una spessa atmosfera."],window:["Da una finestra dell'astronave, Saturno e i suoi anelli offrirebbero una vista straordinaria.","Le vere finestre delle astronavi sono progettate con cura per resistere alle condizioni dello spazio e permettere all'equipaggio di guardare fuori."],ship:["Le astronavi usano computer, schermi, comunicazioni, navigazione, sistemi di alimentazione e molte altre tecnologie.","I membri dell'equipaggio si addestrano a comprendere il veicolo e a reagire con attenzione alle condizioni che cambiano."],system:["Saturno è uno degli otto pianeti che orbitano intorno al Sole nel nostro sistema solare.","Il sistema solare esterno comprende anche Giove, Urano, Nettuno, molte lune, pianeti nani, asteroidi e oggetti ghiacciati."]},
+pt:{saturn:["Saturno é o sexto planeta a partir do Sol e o segundo maior planeta do nosso sistema solar.","É um gigante gasoso composto principalmente de hidrogênio e hélio, sem uma superfície sólida como a da Terra."],rings:["Saturno é famoso por seu enorme sistema de anéis, formado por incontáveis pedaços de gelo e rocha.","Os anéis se estendem muito longe do planeta, mas são surpreendentemente finos em comparação com sua largura."],moons:["Saturno tem muitas luas, desde pequenos objetos irregulares até grandes mundos como Titã.","Titã é maior que o planeta Mercúrio e possui uma atmosfera espessa."],window:["Da janela de uma nave, Saturno e seus anéis ofereceriam uma vista extraordinária.","As janelas de naves reais são cuidadosamente projetadas para suportar as condições do espaço e permitir que a tripulação veja o exterior."],ship:["Naves espaciais usam computadores, telas, comunicação, navegação, sistemas de energia e muitas outras tecnologias.","Tripulantes treinam para compreender a nave e responder cuidadosamente às mudanças nas condições."],system:["Saturno é um dos oito planetas que orbitam o Sol em nosso sistema solar.","O sistema solar externo também inclui Júpiter, Urano, Netuno, muitas luas, planetas anões, asteroides e objetos gelados."]},
+no:{saturn:["Saturn er den sjette planeten fra solen og den nest største planeten i solsystemet vårt.","Den er en gasskjempe som hovedsakelig består av hydrogen og helium, uten en fast overflate som jorden."],rings:["Saturn er kjent for sitt enorme ringsystem, som består av utallige biter av is og stein.","Ringene strekker seg langt fra planeten, men er overraskende tynne sammenlignet med bredden."],moons:["Saturn har mange måner, fra små uregelmessige objekter til store verdener som Titan.","Titan er større enn planeten Merkur og har en tykk atmosfære."],window:["Fra et romskipvindu ville Saturn og ringene gi en utrolig utsikt.","Ekte romskipvinduer er nøye konstruert for å tåle forholdene i verdensrommet samtidig som mannskapet kan se ut."],ship:["Romfartøy bruker datamaskiner, skjermer, kommunikasjon, navigasjon, kraftsystemer og mange andre teknologier.","Mannskapet trener på å forstå romfartøyet og reagere nøye når forholdene endrer seg."],system:["Saturn er en av åtte planeter som går i bane rundt solen i solsystemet vårt.","Det ytre solsystemet omfatter også Jupiter, Uranus, Neptun, mange måner, dvergplaneter, asteroider og isete objekter."]}};
+const challengeOrder=["bee","saturn","rings","moon","solarsystem","window"];
+const SOUND_MAP={};
+const langSel=document.getElementById("lang"),voiceSel=document.getElementById("voice");
+const title=document.getElementById("title"),prompt=document.getElementById("prompt"),line=document.getElementById("line"),translation=document.getElementById("translation"),status=document.getElementById("status"),world=document.getElementById("world");
+let lastWord="game",activeLesson="",lessonPhrase=1,challenge=-1,lastSpoken="";
+function voices(){return ("speechSynthesis" in window)?speechSynthesis.getVoices():[]}
+function fillVoices(){const old=localStorage.getItem("talkabee-saturn-voice-"+langSel.value)||"";voiceSel.innerHTML='<option value="">Browser Default</option>';voices().forEach(v=>{const o=document.createElement("option");o.value=v.name;o.textContent=v.name+(v.lang?" — "+v.lang:"");voiceSel.appendChild(o)});if([...voiceSel.options].some(o=>o.value===old))voiceSel.value=old}
+if("speechSynthesis" in window){speechSynthesis.onvoiceschanged=fillVoices;fillVoices();setTimeout(fillVoices,150);setTimeout(fillVoices,600);setTimeout(fillVoices,1500)}
+voiceSel.onchange=()=>localStorage.setItem("talkabee-saturn-voice-"+langSel.value,voiceSel.value);
+function speak(text,rate=.88,onend=null){if(!text||!("speechSynthesis" in window)){if(onend)onend();return}speechSynthesis.cancel();setTimeout(()=>{const u=new SpeechSynthesisUtterance(text);u.lang=SPEECH_LANG[langSel.value]||langSel.value;u.rate=rate;const v=speechSynthesis.getVoices().find(x=>x.name===voiceSel.value);if(v)u.voice=v;if(onend)u.onend=onend;speechSynthesis.speak(u)},50);lastSpoken=text}
+function stopSound(){document.querySelectorAll("audio[data-talkabee-sound]").forEach(a=>{a.pause();a.currentTime=0;a.remove()})}
+function playSound(key){stopSound();const src=SOUND_MAP[key];if(!src)return;const a=new Audio(src);a.dataset.talkabeeSound="1";document.body.appendChild(a);a.play().catch(()=>{});a.onended=()=>a.remove()}
+function showWord(key){activeLesson="";lastWord=key;lessonPhrase=1;title.textContent="Click & Discover";prompt.textContent="You found "+(EN[key]||key)+".";line.textContent=WORDS[langSel.value][key]||EN[key]||key;translation.textContent=langSel.value==="en"?"":(EN[key]||key)}
+document.querySelectorAll(".hotspot").forEach(b=>b.onclick=()=>{const key=b.dataset.word;showWord(key);let played=false;const after=()=>{if(played)return;played=true;playSound(key)};speak(WORDS[langSel.value][key]||EN[key]||key,.82,after);setTimeout(after,1500);if(challenge>=0){if(key===challengeOrder[challenge]){status.textContent="✓ Nice find!";status.style.color="#9dffbf"}else{status.textContent="Not that one — keep looking.";status.style.color="#ffe28a"}}});
+function clearChallenge(){challenge=-1;world.classList.remove("challenge-mode");document.querySelectorAll(".hotspot").forEach(h=>h.classList.remove("target"));status.textContent=""}
+document.getElementById("discovery").onclick=()=>{clearChallenge();activeLesson="";lastWord="game";title.textContent="Click & Discover";prompt.textContent="Click any object in the scene to hear its name.";line.textContent=WORDS[langSel.value].game;translation.textContent=langSel.value==="en"?"":EN.game};
+document.querySelectorAll("[data-ch]").forEach(b=>b.onclick=()=>{activeLesson="";lastWord="";challenge=+b.dataset.ch;world.classList.add("challenge-mode");document.querySelectorAll(".hotspot").forEach(h=>h.classList.toggle("target",h.dataset.word===challengeOrder[challenge]));title.textContent="Challenge "+(challenge+1)+" of 6";prompt.textContent=b.textContent.replace(/^[0-9]+\.\s*/,"");line.textContent=WORDS[langSel.value][challengeOrder[challenge]];translation.textContent=langSel.value==="en"?"":EN[challengeOrder[challenge]];status.textContent=""});
+function showLesson(key,speakIt=false){clearChallenge();activeLesson=key;lastWord="";lessonPhrase=Math.max(0,Math.min(1,lessonPhrase));const a=lessons[langSel.value][key],e=lessons.en[key],btn=document.querySelector(`[data-lesson="${key}"]`);title.textContent=btn?btn.textContent.replace(/^[0-9]+\.\s*/,""):"Saturn Spacecraft Adventure";prompt.textContent=a[0];line.textContent=a[lessonPhrase];translation.textContent=langSel.value==="en"?"":e[lessonPhrase];if(speakIt)speak(a[lessonPhrase])}
+document.querySelectorAll("[data-lesson]").forEach(b=>b.onclick=()=>{lessonPhrase=1;showLesson(b.dataset.lesson,true)});
+function currentSpeechText(){if(activeLesson)return lessons[langSel.value][activeLesson][lessonPhrase];if(lastWord)return WORDS[langSel.value][lastWord]||EN[lastWord];return line.textContent}
+document.getElementById("normal").onclick=()=>speak(currentSpeechText(),.82);
+document.getElementById("slow").onclick=()=>speak(currentSpeechText(),.58);
+document.getElementById("replay").onclick=()=>speak(lastSpoken||currentSpeechText(),.82);
+document.getElementById("nextPhrase").onclick=()=>{if(!activeLesson){const keys=Object.keys(EN),i=Math.max(0,keys.indexOf(lastWord));showWord(keys[(i+1)%keys.length]);speak(currentSpeechText(),.82);return}lessonPhrase=(lessonPhrase+1)%2;showLesson(activeLesson,true)};
+langSel.onchange=()=>{fillVoices();if(activeLesson)showLesson(activeLesson,false);else if(lastWord)showWord(lastWord)};
+document.getElementById("sceneView").onclick=()=>document.body.classList.add("scene-view");
+document.getElementById("sceneReturn").onclick=()=>document.body.classList.remove("scene-view");
+showWord("game");
+</script>
+</body>
+</html>
+
+<style id="talkabee-ski-panel-180">
+@media(min-width:761px){.panel{width:180px!important;min-width:180px!important;max-width:180px!important}}
+</style>

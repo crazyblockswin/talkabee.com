@@ -1,0 +1,221 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Talk A Bee — Moon Adventure</title>
+<link rel="icon" type="image/png" href="images/talkabee-favicon.png">
+<style>
+*{box-sizing:border-box}
+html,body{margin:0;width:100%;height:100%;overflow:hidden;font-family:Arial,Helvetica,sans-serif;background:#063a66;color:#fff}
+.world{position:relative;width:100vw;height:100vh;background:url("images/Talk-A-Bee-Moon-Adventure.jpg") center center/cover no-repeat}
+
+/* APPROVED TALK A BEE LEFT PANEL */
+.panel{position:fixed;z-index:1000;left:16px;top:16px;bottom:16px;width:180px;min-width:180px;max-width:180px;
+padding:14px;overflow-x:hidden;overflow-y:auto;border-radius:20px;border:1px solid rgba(255,255,255,.28);
+background:rgba(7,23,39,.31);box-shadow:0 12px 30px rgba(0,0,0,.24);backdrop-filter:blur(3px);-webkit-backdrop-filter:blur(3px)}
+.panel h1{font-size:19px;line-height:1.08;margin:4px 0 10px;text-shadow:0 2px 4px rgba(0,0,0,.55)}
+.label{font-size:9.5px;line-height:1.1;letter-spacing:.09em;font-weight:900;margin:9px 0 4px}
+.panel button,.panel select,.panel a{width:100%;min-height:34px;margin:4px 0;padding:8px 9px;border-radius:12px;
+border:1px solid rgba(255,255,255,.38);background:rgba(7,32,50,.54);color:#fff;font:800 12px/1.16 Arial,sans-serif;
+text-align:left;text-decoration:none}
+.panel button:hover,.panel a:hover{background:rgba(20,58,79,.70)}
+.panel button.active{background:rgba(78,69,219,.74)}
+.panel select{white-space:nowrap;text-overflow:ellipsis;overflow:hidden}
+
+/* APPROVED 520px SCRIPT CARD */
+.card{position:fixed;z-index:900;left:50%;bottom:16px;width:520px;max-width:520px;padding:14px 16px;
+border-radius:20px;border:1px solid rgba(255,255,255,.30);background:rgba(25,19,24,.38);
+box-shadow:0 12px 30px rgba(0,0,0,.28);backdrop-filter:blur(5px);-webkit-backdrop-filter:blur(5px);
+transform:translateX(-50%) scale(.67);transform-origin:bottom center}
+.card .kicker{font-size:15px;line-height:1.25;font-weight:900;letter-spacing:.10em;color:rgba(255,255,255,.96);
+text-shadow:0 1px 3px rgba(0,0,0,.78);margin:0 0 6px}
+.card h2{font-size:22px;line-height:1.08;margin:4px 0 7px;text-shadow:0 1px 3px rgba(0,0,0,.55)}
+.card p{font-size:18px;line-height:1.35;margin:4px 0 7px}
+.word{margin-top:8px;padding:10px 12px;border-radius:14px;background:rgba(88,88,88,.72);border:1px solid rgba(255,255,255,.20)}
+.word strong{display:block;font-size:22px;line-height:1.28}
+.translation{font-size:18px;line-height:1.35;margin-top:3px}
+.controls{display:flex;align-items:center;gap:8px;flex-wrap:nowrap;margin-top:8px}
+.controls button{width:auto;min-width:0;padding:9px 13px;border-radius:12px;border:1px solid rgba(255,255,255,.35);
+background:rgba(255,255,255,.88);color:#10283c;font:900 13px/1 Arial,sans-serif;white-space:nowrap}
+
+/* HOTSPOTS */
+.hotspot{position:absolute;z-index:8;border:0;background:transparent;opacity:0;cursor:pointer;border-radius:16px}
+.hotspot:hover,.hotspot:focus-visible{opacity:1;background:rgba(255,220,72,.28);outline:2px solid rgba(255,255,255,.90)}
+.challenge-mode .hotspot.target{opacity:1;background:rgba(255,199,48,.38);outline:4px solid #fff;box-shadow:0 0 0 7px rgba(255,200,50,.20)}
+
+/* APPROVED COMPACT PREVIOUS / NEXT CHEVRONS */
+.talkabee-prev-next-nav{position:fixed;top:18px;right:22px;z-index:2147483000;display:flex;align-items:center;overflow:hidden;
+border:2px solid rgba(255,255,255,.82);border-radius:999px;background:rgba(11,22,42,.24);
+box-shadow:0 5px 16px rgba(0,0,0,.16);backdrop-filter:blur(3px);-webkit-backdrop-filter:blur(3px)}
+.talkabee-prev-next-nav a{width:48px;height:48px;display:grid;place-items:center;text-decoration:none;color:#fff;
+font:900 38px/1 Arial,sans-serif;text-shadow:0 1px 3px rgba(0,0,0,.42)}
+.talkabee-prev-next-nav a+a{border-left:1px solid rgba(255,255,255,.36)}
+.talkabee-prev-next-nav a:hover,.talkabee-prev-next-nav a:focus-visible{background:rgba(255,255,255,.18);outline:none}
+
+/* SCENE VIEW */
+.scene-return{display:none;position:fixed;z-index:2147483001;left:18px;top:18px;padding:10px 14px;border-radius:12px;
+border:1px solid #fff;background:rgba(7,23,39,.65);color:#fff;font-weight:900}
+.scene-view .panel,.scene-view .card,.scene-view .talkabee-prev-next-nav{display:none}
+.scene-view .scene-return{display:block}
+
+@media(max-width:760px){
+ .panel{left:10px;top:10px;bottom:10px;width:180px;min-width:180px;max-width:180px;padding:11px}
+ .card{width:min(520px,calc(100vw - 32px));bottom:10px;transform:translateX(-50%) scale(.82)}
+ .talkabee-prev-next-nav{top:12px;right:12px}.talkabee-prev-next-nav a{width:42px;height:42px;font-size:33px}
+}
+</style>
+</head>
+<body>
+<nav class="talkabee-prev-next-nav" aria-label="Adventure navigation">
+  <a href="Talk-A-Bee-Spacewalk-Adventure.html" aria-label="Previous adventure" title="Previous">‹</a>
+  <a href="Talk-A-Bee-Nighttime-Campground-Adventure.html" aria-label="Next adventure" title="Next">›</a>
+</nav>
+
+<main class="world" id="world">
+<button class="scene-return" id="sceneReturn">Return to Adventure</button>
+
+<aside class="panel">
+<h1>🌕 Moon Adventure</h1>
+<div class="label">LANGUAGE</div>
+<select id="lang">
+<option value="es">Spanish</option><option value="fr">French</option><option value="en">English</option>
+<option value="de">German</option><option value="it">Italian</option><option value="pt">Portuguese</option><option value="no">Norwegian</option>
+</select>
+<div class="label">VOICE</div>
+<select id="voice"><option value="">Browser Default</option></select>
+<button id="sceneView">◉ Scene View</button>
+
+<div class="label">DISCOVERY</div>
+<button id="discovery">🔎 Discovery — Click the Scene</button>
+
+<div class="label">ACTIVITIES</div>
+<button data-lesson="crew">1. Meet the Moon Crew</button>
+<button data-lesson="surface">2. Explore the Lunar Surface</button>
+<button data-lesson="lander">3. Explore the Lunar Lander</button>
+<button data-lesson="rover">4. Explore the Moon Rover</button>
+<button data-lesson="base">5. Visit the Moon Base</button>
+<button data-lesson="earth">6. Look Back at Earth</button>
+<div class="label">CHALLENGES</div>
+<button data-ch="0">1. Find Bee</button>
+<button data-ch="1">2. Find Earth</button>
+<button data-ch="2">3. Find the American Flag</button>
+<button data-ch="3">4. Find the Lunar Lander</button>
+<button data-ch="4">5. Find the Moon Rover</button>
+<button data-ch="5">6. Find the Moon Castle</button>
+<a href="index.html">← Return to Main Directory</a>
+</aside>
+
+<section class="card">
+<div class="kicker">EXPLORING THE MOON</div>
+<h2 id="title">Moon Adventure</h2>
+<p id="prompt">Click any object in the scene to hear its name.</p>
+<div class="word"><strong id="line">la Luna</strong><div class="translation" id="translation">the Moon</div></div>
+<p id="status"></p>
+<div class="controls">
+<button id="normal">🔊 Speak</button><button id="slow">🐢 Slow</button><button id="replay">↻ Replay</button><button id="nextPhrase">Next phrase →</button>
+</div>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- Hotspots mapped to the approved Moon keeper JPG. -->
+<button class="hotspot" data-word="bee" style="left:50%;top:58%;width:8%;height:14%" aria-label="Astronaut Bee"></button>
+<button class="hotspot" data-word="crew" style="left:42%;top:55%;width:31%;height:20%" aria-label="Moon crew"></button>
+<button class="hotspot" data-word="mooncastle" style="left:57%;top:65%;width:12%;height:11%" aria-label="Moon castle"></button>
+<button class="hotspot" data-word="moonrock" style="left:38%;top:65%;width:10%;height:12%" aria-label="Moon rock"></button>
+<button class="hotspot" data-word="surface" style="left:18%;top:58%;width:60%;height:42%" aria-label="Lunar surface"></button>
+<button class="hotspot" data-word="crater" style="left:19%;top:73%;width:22%;height:18%" aria-label="Crater"></button>
+<button class="hotspot" data-word="lander" style="left:19%;top:29%;width:20%;height:30%" aria-label="Lunar lander"></button>
+<button class="hotspot" data-word="ladder" style="left:31%;top:43%;width:8%;height:18%" aria-label="Lander ladder"></button>
+<button class="hotspot" data-word="flag" style="left:43%;top:43%;width:10%;height:17%" aria-label="American flag"></button>
+<button class="hotspot" data-word="rover" style="left:0%;top:45%;width:23%;height:22%" aria-label="Moon rover"></button>
+<button class="hotspot" data-word="antenna" style="left:8%;top:33%;width:11%;height:18%" aria-label="Dish antenna"></button>
+<button class="hotspot" data-word="base" style="left:68%;top:42%;width:29%;height:20%" aria-label="Moon base"></button>
+<button class="hotspot" data-word="habitat" style="left:72%;top:42%;width:18%;height:17%" aria-label="Lunar habitat"></button>
+<button class="hotspot" data-word="smallrover" style="left:86%;top:52%;width:12%;height:13%" aria-label="Small rover"></button>
+<button class="hotspot" data-word="instrument" style="left:91%;top:60%;width:9%;height:19%" aria-label="Science instrument"></button>
+<button class="hotspot" data-word="earth" style="left:58%;top:3%;width:19%;height:30%" aria-label="Earth"></button>
+<button class="hotspot" data-word="sun" style="left:0%;top:0%;width:12%;height:20%" aria-label="Sun"></button>
+<button class="hotspot" data-word="stars" style="left:13%;top:0%;width:43%;height:28%" aria-label="Stars"></button>
+<button class="hotspot" data-word="mountains" style="left:0%;top:31%;width:100%;height:18%" aria-label="Lunar mountains"></button>
+<button class="hotspot" data-word="footprints" style="left:46%;top:72%;width:26%;height:20%" aria-label="Footprints"></button>
+
+</main>
+
+<script>
+const EN={game:"the Moon",bee:"astronaut Bee",crew:"Moon crew",mooncastle:"Moon castle",moonrock:"Moon rock",surface:"lunar surface",crater:"crater",lander:"lunar lander",ladder:"lander ladder",flag:"American flag",rover:"Moon rover",antenna:"dish antenna",base:"Moon base",habitat:"lunar habitat",smallrover:"small rover",instrument:"science instrument",earth:"Earth",sun:"Sun",stars:"stars",mountains:"lunar mountains",footprints:"footprints"};
+const WORDS={
+es:{game:"la Luna",bee:"abeja astronauta",crew:"tripulación lunar",mooncastle:"castillo lunar",moonrock:"roca lunar",surface:"superficie lunar",crater:"cráter",lander:"módulo lunar",ladder:"escalera del módulo",flag:"bandera estadounidense",rover:"vehículo lunar",antenna:"antena parabólica",base:"base lunar",habitat:"hábitat lunar",smallrover:"vehículo pequeño",instrument:"instrumento científico",earth:"Tierra",sun:"Sol",stars:"estrellas",mountains:"montañas lunares",footprints:"huellas"},
+fr:{game:"la Lune",bee:"abeille astronaute",crew:"équipage lunaire",mooncastle:"château lunaire",moonrock:"roche lunaire",surface:"surface lunaire",crater:"cratère",lander:"module lunaire",ladder:"échelle du module",flag:"drapeau américain",rover:"rover lunaire",antenna:"antenne parabolique",base:"base lunaire",habitat:"habitat lunaire",smallrover:"petit rover",instrument:"instrument scientifique",earth:"Terre",sun:"Soleil",stars:"étoiles",mountains:"montagnes lunaires",footprints:"empreintes"},
+en:{...EN},
+de:{game:"der Mond",bee:"Astronauten-Biene",crew:"Mondbesatzung",mooncastle:"Mondburg",moonrock:"Mondgestein",surface:"Mondoberfläche",crater:"Krater",lander:"Mondlandefähre",ladder:"Landefährenleiter",flag:"amerikanische Flagge",rover:"Mondrover",antenna:"Parabolantenne",base:"Mondbasis",habitat:"Mondhabitat",smallrover:"kleiner Rover",instrument:"wissenschaftliches Instrument",earth:"Erde",sun:"Sonne",stars:"Sterne",mountains:"Mondberge",footprints:"Fußspuren"},
+it:{game:"la Luna",bee:"ape astronauta",crew:"equipaggio lunare",mooncastle:"castello lunare",moonrock:"roccia lunare",surface:"superficie lunare",crater:"cratere",lander:"modulo lunare",ladder:"scala del modulo",flag:"bandiera americana",rover:"rover lunare",antenna:"antenna parabolica",base:"base lunare",habitat:"habitat lunare",smallrover:"piccolo rover",instrument:"strumento scientifico",earth:"Terra",sun:"Sole",stars:"stelle",mountains:"montagne lunari",footprints:"impronte"},
+pt:{game:"a Lua",bee:"abelha astronauta",crew:"tripulação lunar",mooncastle:"castelo lunar",moonrock:"rocha lunar",surface:"superfície lunar",crater:"cratera",lander:"módulo lunar",ladder:"escada do módulo",flag:"bandeira americana",rover:"veículo lunar",antenna:"antena parabólica",base:"base lunar",habitat:"habitat lunar",smallrover:"pequeno veículo",instrument:"instrumento científico",earth:"Terra",sun:"Sol",stars:"estrelas",mountains:"montanhas lunares",footprints:"pegadas"},
+no:{game:"månen",bee:"astronautbie",crew:"månemannskap",mooncastle:"måneslott",moonrock:"månestein",surface:"måneoverflaten",crater:"krater",lander:"månelander",ladder:"landerens stige",flag:"amerikansk flagg",rover:"månebil",antenna:"parabolantenne",base:"månebase",habitat:"månehabitat",smallrover:"liten rover",instrument:"vitenskapelig instrument",earth:"jorden",sun:"solen",stars:"stjerner",mountains:"månefjell",footprints:"fotspor"}};
+const SPEECH_LANG={es:"es-ES",fr:"fr-FR",en:"en-US",de:"de-DE",it:"it-IT",pt:"pt-PT",no:"nb-NO"};
+const lessons={
+en:{crew:["The Moon crew is exploring the lunar surface in spacesuits while Bee joins the expedition.","Astronauts need life-support equipment because the Moon has essentially no breathable atmosphere."],surface:["The Moon's surface is covered by broken rock and fine material called regolith, with craters and rugged terrain.","With much weaker gravity than Earth, astronauts would weigh less on the Moon."],lander:["A lunar lander is designed to carry astronauts or equipment between lunar orbit and the Moon's surface.","Landing safely requires careful navigation because the surface contains rocks, slopes, and craters."],rover:["A lunar rover helps astronauts travel farther across the Moon and carry equipment.","Rovers can also support scientific exploration by moving tools, samples, and instruments."],base:["Future lunar habitats could give crews protected places to live and work during longer missions.","A Moon base would need systems for power, communication, temperature control, air, water, and other supplies."],earth:["From the Moon, Earth appears as a bright world hanging in the dark sky.","Earth is about 384,400 kilometers, or roughly 239,000 miles, from the Moon on average."]},
+es:{crew:["La tripulación explora la superficie lunar con trajes espaciales mientras la abeja participa en la expedición.","Los astronautas necesitan equipos de soporte vital porque la Luna prácticamente no tiene una atmósfera respirable."],surface:["La superficie de la Luna está cubierta de roca fragmentada y material fino llamado regolito, además de cráteres y terreno accidentado.","Con una gravedad mucho menor que la de la Tierra, los astronautas pesarían menos en la Luna."],lander:["Un módulo lunar está diseñado para transportar astronautas o equipos entre la órbita lunar y la superficie.","Aterrizar con seguridad requiere una navegación cuidadosa porque hay rocas, pendientes y cráteres."],rover:["Un vehículo lunar ayuda a los astronautas a viajar más lejos y transportar equipos.","Los vehículos también pueden apoyar la exploración científica moviendo herramientas, muestras e instrumentos."],base:["Los futuros hábitats lunares podrían ofrecer lugares protegidos para vivir y trabajar durante misiones más largas.","Una base lunar necesitaría sistemas de energía, comunicación, control de temperatura, aire, agua y otros suministros."],earth:["Desde la Luna, la Tierra aparece como un mundo brillante suspendido en el cielo oscuro.","La Tierra está a unos 384.400 kilómetros, aproximadamente 239.000 millas, de la Luna en promedio."]},
+fr:{crew:["L'équipage explore la surface lunaire en combinaison spatiale tandis que l'abeille participe à l'expédition.","Les astronautes ont besoin d'équipements de survie car la Lune n'a pratiquement pas d'atmosphère respirable."],surface:["La surface de la Lune est couverte de roche fragmentée et d'une matière fine appelée régolithe, avec des cratères et un terrain accidenté.","Avec une gravité beaucoup plus faible que sur Terre, les astronautes pèseraient moins sur la Lune."],lander:["Un module lunaire est conçu pour transporter des astronautes ou du matériel entre l'orbite lunaire et la surface.","Un atterrissage sûr exige une navigation précise à cause des rochers, pentes et cratères."],rover:["Un rover lunaire aide les astronautes à voyager plus loin et à transporter du matériel.","Les rovers peuvent aussi soutenir la recherche scientifique en déplaçant outils, échantillons et instruments."],base:["De futurs habitats lunaires pourraient offrir des espaces protégés pour vivre et travailler pendant des missions plus longues.","Une base lunaire aurait besoin de systèmes pour l'énergie, les communications, la température, l'air, l'eau et d'autres fournitures."],earth:["Depuis la Lune, la Terre apparaît comme un monde lumineux suspendu dans le ciel sombre.","La Terre se trouve en moyenne à environ 384 400 kilomètres, soit environ 239 000 miles, de la Lune."]},
+de:{crew:["Die Mondbesatzung erkundet die Oberfläche in Raumanzügen, während die Biene an der Expedition teilnimmt.","Astronauten brauchen Lebenserhaltungssysteme, weil der Mond praktisch keine atembare Atmosphäre besitzt."],surface:["Die Mondoberfläche ist mit zerbrochenem Gestein und feinem Material namens Regolith bedeckt und weist Krater sowie unebenes Gelände auf.","Wegen der viel schwächeren Schwerkraft würden Astronauten auf dem Mond weniger wiegen als auf der Erde."],lander:["Eine Mondlandefähre transportiert Astronauten oder Ausrüstung zwischen der Mondumlaufbahn und der Oberfläche.","Eine sichere Landung erfordert sorgfältige Navigation wegen Felsen, Hängen und Kratern."],rover:["Ein Mondrover hilft Astronauten, größere Entfernungen zurückzulegen und Ausrüstung zu transportieren.","Rover können die wissenschaftliche Erforschung unterstützen, indem sie Werkzeuge, Proben und Instrumente bewegen."],base:["Zukünftige Mondhabitate könnten Besatzungen geschützte Orte zum Leben und Arbeiten während längerer Missionen bieten.","Eine Mondbasis bräuchte Systeme für Energie, Kommunikation, Temperaturkontrolle, Luft, Wasser und weitere Vorräte."],earth:["Vom Mond aus erscheint die Erde als helle Welt am dunklen Himmel.","Die Erde ist im Durchschnitt etwa 384.400 Kilometer vom Mond entfernt."]},
+it:{crew:["L'equipaggio esplora la superficie lunare con tute spaziali mentre l'ape partecipa alla spedizione.","Gli astronauti hanno bisogno di sistemi di supporto vitale perché la Luna non ha praticamente un'atmosfera respirabile."],surface:["La superficie lunare è coperta da roccia frantumata e materiale fine chiamato regolite, con crateri e terreno accidentato.","Con una gravità molto più debole rispetto alla Terra, gli astronauti peserebbero meno sulla Luna."],lander:["Un modulo lunare è progettato per trasportare astronauti o attrezzature tra l'orbita lunare e la superficie.","Atterrare in sicurezza richiede una navigazione attenta a causa di rocce, pendii e crateri."],rover:["Un rover lunare aiuta gli astronauti a viaggiare più lontano e trasportare attrezzature.","I rover possono sostenere l'esplorazione scientifica spostando strumenti, campioni e attrezzature."],base:["Futuri habitat lunari potrebbero offrire agli equipaggi luoghi protetti dove vivere e lavorare durante missioni più lunghe.","Una base lunare avrebbe bisogno di sistemi per energia, comunicazioni, temperatura, aria, acqua e altre risorse."],earth:["Dalla Luna, la Terra appare come un mondo luminoso sospeso nel cielo scuro.","La Terra dista in media circa 384.400 chilometri dalla Luna."]},
+pt:{crew:["A tripulação explora a superfície lunar em trajes espaciais enquanto a abelha participa da expedição.","Astronautas precisam de sistemas de suporte à vida porque a Lua praticamente não tem atmosfera respirável."],surface:["A superfície da Lua é coberta por rocha fragmentada e material fino chamado regolito, com crateras e terreno irregular.","Com gravidade muito mais fraca que a da Terra, os astronautas pesariam menos na Lua."],lander:["Um módulo lunar é projetado para transportar astronautas ou equipamentos entre a órbita lunar e a superfície.","Pousar com segurança exige navegação cuidadosa por causa de rochas, inclinações e crateras."],rover:["Um veículo lunar ajuda astronautas a viajar mais longe e transportar equipamentos.","Veículos também podem apoiar a exploração científica transportando ferramentas, amostras e instrumentos."],base:["Futuros habitats lunares poderiam oferecer locais protegidos para equipes viverem e trabalharem durante missões mais longas.","Uma base lunar precisaria de sistemas para energia, comunicação, temperatura, ar, água e outros suprimentos."],earth:["Da Lua, a Terra aparece como um mundo brilhante suspenso no céu escuro.","A Terra fica, em média, a cerca de 384.400 quilômetros da Lua."]},
+no:{crew:["Mannskapet utforsker måneoverflaten i romdrakter mens bien blir med på ekspedisjonen.","Astronauter trenger livsoppholdssystemer fordi månen praktisk talt ikke har noen pustbar atmosfære."],surface:["Måneoverflaten er dekket av knust stein og fint materiale som kalles regolitt, med kratere og ulendt terreng.","Med mye svakere tyngdekraft enn på jorden ville astronauter veie mindre på månen."],lander:["En månelander er laget for å frakte astronauter eller utstyr mellom månebane og overflaten.","En trygg landing krever nøye navigasjon på grunn av steiner, skråninger og kratere."],rover:["En månebil hjelper astronauter å reise lenger og frakte utstyr.","Rovere kan også støtte vitenskapelig utforskning ved å flytte verktøy, prøver og instrumenter."],base:["Fremtidige månehabitater kan gi mannskap beskyttede steder å bo og arbeide under lengre oppdrag.","En månebase trenger systemer for strøm, kommunikasjon, temperaturkontroll, luft, vann og andre forsyninger."],earth:["Fra månen ser jorden ut som en lys verden på den mørke himmelen.","Jorden ligger i gjennomsnitt omtrent 384 400 kilometer fra månen."]}};
+const challengeOrder=["bee","earth","flag","lander","rover","mooncastle"];
+const SOUND_MAP={};
+const langSel=document.getElementById("lang"),voiceSel=document.getElementById("voice");
+const title=document.getElementById("title"),prompt=document.getElementById("prompt"),line=document.getElementById("line"),translation=document.getElementById("translation"),status=document.getElementById("status"),world=document.getElementById("world");
+let lastWord="game",activeLesson="",lessonPhrase=1,challenge=-1,lastSpoken="";
+function voices(){return ("speechSynthesis" in window)?speechSynthesis.getVoices():[]}
+function fillVoices(){const old=localStorage.getItem("talkabee-moon-voice-"+langSel.value)||"";voiceSel.innerHTML='<option value="">Browser Default</option>';voices().forEach(v=>{const o=document.createElement("option");o.value=v.name;o.textContent=v.name+(v.lang?" — "+v.lang:"");voiceSel.appendChild(o)});if([...voiceSel.options].some(o=>o.value===old))voiceSel.value=old}
+if("speechSynthesis" in window){speechSynthesis.onvoiceschanged=fillVoices;fillVoices();setTimeout(fillVoices,150);setTimeout(fillVoices,600);setTimeout(fillVoices,1500)}
+voiceSel.onchange=()=>localStorage.setItem("talkabee-moon-voice-"+langSel.value,voiceSel.value);
+function speak(text,rate=.88,onend=null){if(!text||!("speechSynthesis" in window)){if(onend)onend();return}speechSynthesis.cancel();setTimeout(()=>{const u=new SpeechSynthesisUtterance(text);u.lang=SPEECH_LANG[langSel.value]||langSel.value;u.rate=rate;const v=speechSynthesis.getVoices().find(x=>x.name===voiceSel.value);if(v)u.voice=v;if(onend)u.onend=onend;speechSynthesis.speak(u)},50);lastSpoken=text}
+function stopSound(){document.querySelectorAll("audio[data-talkabee-sound]").forEach(a=>{a.pause();a.currentTime=0;a.remove()})}
+function playSound(key){stopSound();const src=SOUND_MAP[key];if(!src)return;const a=new Audio(src);a.dataset.talkabeeSound="1";document.body.appendChild(a);a.play().catch(()=>{});a.onended=()=>a.remove()}
+function showWord(key){activeLesson="";lastWord=key;lessonPhrase=1;title.textContent="Click & Discover";prompt.textContent="You found "+(EN[key]||key)+".";line.textContent=WORDS[langSel.value][key]||EN[key]||key;translation.textContent=langSel.value==="en"?"":(EN[key]||key)}
+document.querySelectorAll(".hotspot").forEach(b=>b.onclick=()=>{const key=b.dataset.word;showWord(key);let played=false;const after=()=>{if(played)return;played=true;playSound(key)};speak(WORDS[langSel.value][key]||EN[key]||key,.82,after);setTimeout(after,1500);if(challenge>=0){if(key===challengeOrder[challenge]){status.textContent="✓ Nice find!";status.style.color="#9dffbf"}else{status.textContent="Not that one — keep looking.";status.style.color="#ffe28a"}}});
+function clearChallenge(){challenge=-1;world.classList.remove("challenge-mode");document.querySelectorAll(".hotspot").forEach(h=>h.classList.remove("target"));status.textContent=""}
+document.getElementById("discovery").onclick=()=>{clearChallenge();activeLesson="";lastWord="game";title.textContent="Click & Discover";prompt.textContent="Click any object in the scene to hear its name.";line.textContent=WORDS[langSel.value].game;translation.textContent=langSel.value==="en"?"":EN.game};
+document.querySelectorAll("[data-ch]").forEach(b=>b.onclick=()=>{activeLesson="";lastWord="";challenge=+b.dataset.ch;world.classList.add("challenge-mode");document.querySelectorAll(".hotspot").forEach(h=>h.classList.toggle("target",h.dataset.word===challengeOrder[challenge]));title.textContent="Challenge "+(challenge+1)+" of 6";prompt.textContent=b.textContent.replace(/^[0-9]+\.\s*/,"");line.textContent=WORDS[langSel.value][challengeOrder[challenge]];translation.textContent=langSel.value==="en"?"":EN[challengeOrder[challenge]];status.textContent=""});
+function showLesson(key,speakIt=false){clearChallenge();activeLesson=key;lastWord="";lessonPhrase=Math.max(0,Math.min(1,lessonPhrase));const a=lessons[langSel.value][key],e=lessons.en[key],btn=document.querySelector(`[data-lesson="${key}"]`);title.textContent=btn?btn.textContent.replace(/^[0-9]+\.\s*/,""):"Moon Adventure";prompt.textContent=a[0];line.textContent=a[lessonPhrase];translation.textContent=langSel.value==="en"?"":e[lessonPhrase];if(speakIt)speak(a[lessonPhrase])}
+document.querySelectorAll("[data-lesson]").forEach(b=>b.onclick=()=>{lessonPhrase=1;showLesson(b.dataset.lesson,true)});
+function currentSpeechText(){if(activeLesson)return lessons[langSel.value][activeLesson][lessonPhrase];if(lastWord)return WORDS[langSel.value][lastWord]||EN[lastWord];return line.textContent}
+document.getElementById("normal").onclick=()=>speak(currentSpeechText(),.82);
+document.getElementById("slow").onclick=()=>speak(currentSpeechText(),.58);
+document.getElementById("replay").onclick=()=>speak(lastSpoken||currentSpeechText(),.82);
+document.getElementById("nextPhrase").onclick=()=>{if(!activeLesson){const keys=Object.keys(EN),i=Math.max(0,keys.indexOf(lastWord));showWord(keys[(i+1)%keys.length]);speak(currentSpeechText(),.82);return}lessonPhrase=(lessonPhrase+1)%2;showLesson(activeLesson,true)};
+langSel.onchange=()=>{fillVoices();if(activeLesson)showLesson(activeLesson,false);else if(lastWord)showWord(lastWord)};
+document.getElementById("sceneView").onclick=()=>document.body.classList.add("scene-view");
+document.getElementById("sceneReturn").onclick=()=>document.body.classList.remove("scene-view");
+showWord("game");
+</script>
+</body>
+</html>
+
+<style id="talkabee-ski-panel-180">
+@media(min-width:761px){.panel{width:180px!important;min-width:180px!important;max-width:180px!important}}
+</style>

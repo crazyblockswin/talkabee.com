@@ -1,0 +1,219 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Talk A Bee — Oval Office Adventure</title>
+<link rel="icon" type="image/png" href="images/talkabee-favicon.png">
+<style>
+*{box-sizing:border-box}
+html,body{margin:0;width:100%;height:100%;overflow:hidden;font-family:Arial,Helvetica,sans-serif;background:#063a66;color:#fff}
+.world{position:relative;width:100vw;height:100vh;background:url("images/Talk-A-Bee-Oval-Office-Adventure.jpg") center center/cover no-repeat}
+
+/* APPROVED TALK A BEE LEFT PANEL */
+.panel{position:fixed;z-index:1000;left:16px;top:16px;bottom:16px;width:180px;min-width:180px;max-width:180px;
+padding:14px;overflow-x:hidden;overflow-y:auto;border-radius:20px;border:1px solid rgba(255,255,255,.28);
+background:rgba(7,23,39,.31);box-shadow:0 12px 30px rgba(0,0,0,.24);backdrop-filter:blur(3px);-webkit-backdrop-filter:blur(3px)}
+.panel h1{font-size:19px;line-height:1.08;margin:4px 0 10px;text-shadow:0 2px 4px rgba(0,0,0,.55)}
+.label{font-size:9.5px;line-height:1.1;letter-spacing:.09em;font-weight:900;margin:9px 0 4px}
+.panel button,.panel select,.panel a{width:100%;min-height:34px;margin:4px 0;padding:8px 9px;border-radius:12px;
+border:1px solid rgba(255,255,255,.38);background:rgba(7,32,50,.54);color:#fff;font:800 12px/1.16 Arial,sans-serif;
+text-align:left;text-decoration:none}
+.panel button:hover,.panel a:hover{background:rgba(20,58,79,.70)}
+.panel button.active{background:rgba(78,69,219,.74)}
+.panel select{white-space:nowrap;text-overflow:ellipsis;overflow:hidden}
+
+/* APPROVED 520px SCRIPT CARD */
+.card{position:fixed;z-index:900;left:50%;bottom:16px;width:520px;max-width:520px;padding:14px 16px;
+border-radius:20px;border:1px solid rgba(255,255,255,.30);background:rgba(25,19,24,.38);
+box-shadow:0 12px 30px rgba(0,0,0,.28);backdrop-filter:blur(5px);-webkit-backdrop-filter:blur(5px);
+transform:translateX(-50%) scale(.67);transform-origin:bottom center}
+.card .kicker{font-size:15px;line-height:1.25;font-weight:900;letter-spacing:.10em;color:rgba(255,255,255,.96);
+text-shadow:0 1px 3px rgba(0,0,0,.78);margin:0 0 6px}
+.card h2{font-size:22px;line-height:1.08;margin:4px 0 7px;text-shadow:0 1px 3px rgba(0,0,0,.55)}
+.card p{font-size:18px;line-height:1.35;margin:4px 0 7px}
+.word{margin-top:8px;padding:10px 12px;border-radius:14px;background:rgba(88,88,88,.72);border:1px solid rgba(255,255,255,.20)}
+.word strong{display:block;font-size:22px;line-height:1.28}
+.translation{font-size:18px;line-height:1.35;margin-top:3px}
+.controls{display:flex;align-items:center;gap:8px;flex-wrap:nowrap;margin-top:8px}
+.controls button{width:auto;min-width:0;padding:9px 13px;border-radius:12px;border:1px solid rgba(255,255,255,.35);
+background:rgba(255,255,255,.88);color:#10283c;font:900 13px/1 Arial,sans-serif;white-space:nowrap}
+
+/* HOTSPOTS */
+.hotspot{position:absolute;z-index:8;border:0;background:transparent;opacity:0;cursor:pointer;border-radius:16px}
+.hotspot:hover,.hotspot:focus-visible{opacity:1;background:rgba(255,220,72,.28);outline:2px solid rgba(255,255,255,.90)}
+.challenge-mode .hotspot.target{opacity:1;background:rgba(255,199,48,.38);outline:4px solid #fff;box-shadow:0 0 0 7px rgba(255,200,50,.20)}
+
+/* APPROVED COMPACT PREVIOUS / NEXT CHEVRONS */
+.talkabee-prev-next-nav{position:fixed;top:18px;right:22px;z-index:2147483000;display:flex;align-items:center;overflow:hidden;
+border:2px solid rgba(255,255,255,.82);border-radius:999px;background:rgba(11,22,42,.24);
+box-shadow:0 5px 16px rgba(0,0,0,.16);backdrop-filter:blur(3px);-webkit-backdrop-filter:blur(3px)}
+.talkabee-prev-next-nav a{width:48px;height:48px;display:grid;place-items:center;text-decoration:none;color:#fff;
+font:900 38px/1 Arial,sans-serif;text-shadow:0 1px 3px rgba(0,0,0,.42)}
+.talkabee-prev-next-nav a+a{border-left:1px solid rgba(255,255,255,.36)}
+.talkabee-prev-next-nav a:hover,.talkabee-prev-next-nav a:focus-visible{background:rgba(255,255,255,.18);outline:none}
+
+/* SCENE VIEW */
+.scene-return{display:none;position:fixed;z-index:2147483001;left:18px;top:18px;padding:10px 14px;border-radius:12px;
+border:1px solid #fff;background:rgba(7,23,39,.65);color:#fff;font-weight:900}
+.scene-view .panel,.scene-view .card,.scene-view .talkabee-prev-next-nav{display:none}
+.scene-view .scene-return{display:block}
+
+@media(max-width:760px){
+ .panel{left:10px;top:10px;bottom:10px;width:180px;min-width:180px;max-width:180px;padding:11px}
+ .card{width:min(520px,calc(100vw - 32px));bottom:10px;transform:translateX(-50%) scale(.82)}
+ .talkabee-prev-next-nav{top:12px;right:12px}.talkabee-prev-next-nav a{width:42px;height:42px;font-size:33px}
+}
+</style>
+</head>
+<body>
+<nav class="talkabee-prev-next-nav" aria-label="Adventure navigation">
+  <a href="Talk-A-Bee-Family-Picnic-Adventure.html" aria-label="Previous adventure" title="Previous">‹</a>
+  <a href="Talk-A-Bee-Nighttime-Campground-Adventure.html" aria-label="Next adventure" title="Next">›</a>
+</nav>
+
+<main class="world" id="world">
+<button class="scene-return" id="sceneReturn">Return to Adventure</button>
+
+<aside class="panel">
+<h1>🏛️ Oval Office Adventure</h1>
+<div class="label">LANGUAGE</div>
+<select id="lang">
+<option value="es">Spanish</option><option value="fr">French</option><option value="en">English</option>
+<option value="de">German</option><option value="it">Italian</option><option value="pt">Portuguese</option><option value="no">Norwegian</option>
+</select>
+<div class="label">VOICE</div>
+<select id="voice"><option value="">Browser Default</option></select>
+<button id="sceneView">◉ Scene View</button>
+
+<div class="label">DISCOVERY</div>
+<button id="discovery">🔎 Discovery — Click the Scene</button>
+
+<div class="label">ACTIVITIES</div>
+<button data-lesson="office">1. Explore the Oval Office</button>
+<button data-lesson="desk">2. Explore the Resolute Desk</button>
+<button data-lesson="symbols">3. Flags and Symbols</button>
+<button data-lesson="history">4. Portraits and History</button>
+<button data-lesson="room">5. Furniture and Fireplace</button>
+<button data-lesson="view">6. Look Through the Windows</button>
+<div class="label">CHALLENGES</div>
+<button data-ch="0">1. Find Bee</button>
+<button data-ch="1">2. Find the Resolute Desk</button>
+<button data-ch="2">3. Find the American Flag</button>
+<button data-ch="3">4. Find the Fireplace</button>
+<button data-ch="4">5. Find George Washington</button>
+<button data-ch="5">6. Find the Washington Monument</button>
+<a href="index.html">← Return to Main Directory</a>
+</aside>
+
+<section class="card">
+<div class="kicker">VISITING THE OVAL OFFICE</div>
+<h2 id="title">Oval Office Adventure</h2>
+<p id="prompt">Click any object in the scene to hear its name.</p>
+<div class="word"><strong id="line">Despacho Oval</strong><div class="translation" id="translation">Oval Office</div></div>
+<p id="status"></p>
+<div class="controls">
+<button id="normal">🔊 Speak</button><button id="slow">🐢 Slow</button><button id="replay">↻ Replay</button><button id="nextPhrase">Next phrase →</button>
+</div>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- Hotspots mapped to the approved Oval Office keeper JPG. -->
+<button class="hotspot" data-word="bee" style="left:32%;top:38%;width:12%;height:19%" aria-label="Bee"></button>
+<button class="hotspot" data-word="desk" style="left:25%;top:50%;width:38%;height:28%" aria-label="Resolute Desk"></button>
+<button class="hotspot" data-word="chair" style="left:29%;top:39%;width:13%;height:18%" aria-label="Desk chair"></button>
+<button class="hotspot" data-word="flag" style="left:17%;top:15%;width:10%;height:42%" aria-label="American flag"></button>
+<button class="hotspot" data-word="presidentialflag" style="left:33%;top:15%;width:10%;height:36%" aria-label="Presidential flag"></button>
+<button class="hotspot" data-word="fireplace" style="left:88%;top:31%;width:12%;height:31%" aria-label="Fireplace"></button>
+<button class="hotspot" data-word="washington" style="left:87%;top:2%;width:12%;height:27%" aria-label="George Washington portrait"></button>
+<button class="hotspot" data-word="lincoln" style="left:53%;top:15%;width:12%;height:23%" aria-label="Abraham Lincoln portrait"></button>
+<button class="hotspot" data-word="windows" style="left:0%;top:6%;width:47%;height:38%" aria-label="Oval Office windows"></button>
+<button class="hotspot" data-word="monument" style="left:3%;top:10%;width:9%;height:24%" aria-label="Washington Monument"></button>
+<button class="hotspot" data-word="rug" style="left:34%;top:72%;width:38%;height:28%" aria-label="Oval Office rug"></button>
+<button class="hotspot" data-word="sofa" style="left:0%;top:65%;width:28%;height:35%" aria-label="Sofa"></button>
+<button class="hotspot" data-word="books" style="left:69%;top:15%;width:11%;height:23%" aria-label="Books"></button>
+<button class="hotspot" data-word="globe" style="left:13%;top:40%;width:10%;height:18%" aria-label="Globe"></button>
+<button class="hotspot" data-word="telephone" style="left:47%;top:45%;width:10%;height:12%" aria-label="Telephone"></button>
+<button class="hotspot" data-word="flowers" style="left:61%;top:77%;width:13%;height:17%" aria-label="Flowers"></button>
+<button class="hotspot" data-word="guide" style="left:59%;top:28%;width:10%;height:38%" aria-label="Tour guide"></button>
+<button class="hotspot" data-word="visitors" style="left:64%;top:37%;width:25%;height:37%" aria-label="Visitors"></button>
+<button class="hotspot" data-word="bust" style="left:66%;top:27%;width:8%;height:17%" aria-label="Historical bust"></button>
+<button class="hotspot" data-word="lamp" style="left:94%;top:43%;width:6%;height:27%" aria-label="Lamp"></button>
+
+</main>
+
+<script>
+const EN={game:"Oval Office",bee:"Bee",desk:"Resolute Desk",chair:"desk chair",flag:"American flag",presidentialflag:"presidential flag",fireplace:"fireplace",washington:"George Washington portrait",lincoln:"Abraham Lincoln portrait",windows:"windows",monument:"Washington Monument",rug:"rug",sofa:"sofa",books:"books",globe:"globe",telephone:"telephone",flowers:"flowers",guide:"tour guide",visitors:"visitors",bust:"historical bust",lamp:"lamp"};
+const WORDS={
+es:{game:"Despacho Oval",bee:"abeja",desk:"escritorio Resolute",chair:"silla de escritorio",flag:"bandera estadounidense",presidentialflag:"bandera presidencial",fireplace:"chimenea",washington:"retrato de George Washington",lincoln:"retrato de Abraham Lincoln",windows:"ventanas",monument:"Monumento a Washington",rug:"alfombra",sofa:"sofá",books:"libros",globe:"globo terráqueo",telephone:"teléfono",flowers:"flores",guide:"guía turístico",visitors:"visitantes",bust:"busto histórico",lamp:"lámpara"},
+fr:{game:"Bureau ovale",bee:"abeille",desk:"bureau Resolute",chair:"fauteuil de bureau",flag:"drapeau américain",presidentialflag:"drapeau présidentiel",fireplace:"cheminée",washington:"portrait de George Washington",lincoln:"portrait d'Abraham Lincoln",windows:"fenêtres",monument:"Washington Monument",rug:"tapis",sofa:"canapé",books:"livres",globe:"globe terrestre",telephone:"téléphone",flowers:"fleurs",guide:"guide",visitors:"visiteurs",bust:"buste historique",lamp:"lampe"},
+en:{...EN},
+de:{game:"Oval Office",bee:"Biene",desk:"Resolute-Schreibtisch",chair:"Schreibtischstuhl",flag:"amerikanische Flagge",presidentialflag:"Präsidentenflagge",fireplace:"Kamin",washington:"Porträt von George Washington",lincoln:"Porträt von Abraham Lincoln",windows:"Fenster",monument:"Washington Monument",rug:"Teppich",sofa:"Sofa",books:"Bücher",globe:"Globus",telephone:"Telefon",flowers:"Blumen",guide:"Reiseführer",visitors:"Besucher",bust:"historische Büste",lamp:"Lampe"},
+it:{game:"Studio Ovale",bee:"ape",desk:"scrivania Resolute",chair:"sedia da scrivania",flag:"bandiera americana",presidentialflag:"bandiera presidenziale",fireplace:"camino",washington:"ritratto di George Washington",lincoln:"ritratto di Abraham Lincoln",windows:"finestre",monument:"Monumento a Washington",rug:"tappeto",sofa:"divano",books:"libri",globe:"mappamondo",telephone:"telefono",flowers:"fiori",guide:"guida",visitors:"visitatori",bust:"busto storico",lamp:"lampada"},
+pt:{game:"Salão Oval",bee:"abelha",desk:"mesa Resolute",chair:"cadeira de escritório",flag:"bandeira americana",presidentialflag:"bandeira presidencial",fireplace:"lareira",washington:"retrato de George Washington",lincoln:"retrato de Abraham Lincoln",windows:"janelas",monument:"Monumento de Washington",rug:"tapete",sofa:"sofá",books:"livros",globe:"globo terrestre",telephone:"telefone",flowers:"flores",guide:"guia",visitors:"visitantes",bust:"busto histórico",lamp:"lâmpada"},
+no:{game:"Det ovale kontor",bee:"bie",desk:"Resolute-skrivebordet",chair:"skrivebordsstol",flag:"amerikansk flagg",presidentialflag:"presidentflagget",fireplace:"peis",washington:"portrett av George Washington",lincoln:"portrett av Abraham Lincoln",windows:"vinduer",monument:"Washington-monumentet",rug:"teppe",sofa:"sofa",books:"bøker",globe:"globus",telephone:"telefon",flowers:"blomster",guide:"guide",visitors:"besøkende",bust:"historisk byste",lamp:"lampe"}};
+const SPEECH_LANG={es:"es-ES",fr:"fr-FR",en:"en-US",de:"de-DE",it:"it-IT",pt:"pt-PT",no:"nb-NO"};
+const lessons={
+en:{office:["The Oval Office is the working office of the president of the United States in the White House.","Its oval shape, large windows, fireplace, flags, furniture, and artwork make it one of the most recognizable rooms in the White House."],desk:["The Resolute Desk is a historic desk associated with the Oval Office and has been used by several presidents.","It was made from timber from the British ship HMS Resolute and was presented to President Rutherford B. Hayes by Queen Victoria in 1880."],symbols:["The American flag and the presidential flag are important symbols displayed in the office.","The room's decorations can change from one presidential administration to another."],history:["Portraits, paintings, books, and sculptures can connect the office with people and events from American history.","Presidents choose artwork and objects for the Oval Office from collections available to the White House."],room:["The Oval Office includes seating areas used for conversations and meetings, along with a fireplace and working desk.","The arrangement of furniture and decorations may change when a new president takes office."],view:["Large windows bring natural light into the Oval Office and look toward the White House grounds.","The Washington Monument is a famous landmark in Washington, D.C., honoring George Washington."]},
+es:{office:["El Despacho Oval es la oficina de trabajo del presidente de los Estados Unidos en la Casa Blanca.","Su forma ovalada, grandes ventanas, chimenea, banderas, muebles y obras de arte lo convierten en una de las salas más reconocibles de la Casa Blanca."],desk:["El escritorio Resolute es un escritorio histórico asociado con el Despacho Oval y ha sido utilizado por varios presidentes.","Fue construido con madera del barco británico HMS Resolute y la reina Victoria lo regaló al presidente Rutherford B. Hayes en 1880."],symbols:["La bandera estadounidense y la bandera presidencial son símbolos importantes que se exhiben en la oficina.","La decoración de la sala puede cambiar de una administración presidencial a otra."],history:["Retratos, pinturas, libros y esculturas pueden conectar la oficina con personas y acontecimientos de la historia estadounidense.","Los presidentes eligen obras de arte y objetos para el Despacho Oval de las colecciones disponibles para la Casa Blanca."],room:["El Despacho Oval incluye áreas para conversar y reunirse, además de una chimenea y un escritorio de trabajo.","La disposición de los muebles y la decoración puede cambiar cuando un nuevo presidente asume el cargo."],view:["Grandes ventanas dejan entrar luz natural y miran hacia los terrenos de la Casa Blanca.","El Monumento a Washington es un famoso monumento de Washington D. C. dedicado a George Washington."]},
+fr:{office:["Le Bureau ovale est le bureau de travail du président des États-Unis à la Maison-Blanche.","Sa forme ovale, ses grandes fenêtres, sa cheminée, ses drapeaux, son mobilier et ses œuvres d'art en font l'une des pièces les plus reconnaissables de la Maison-Blanche."],desk:["Le bureau Resolute est un meuble historique associé au Bureau ovale et utilisé par plusieurs présidents.","Il a été fabriqué avec du bois du navire britannique HMS Resolute et offert au président Rutherford B. Hayes par la reine Victoria en 1880."],symbols:["Le drapeau américain et le drapeau présidentiel sont des symboles importants exposés dans le bureau.","La décoration de la pièce peut changer d'une administration présidentielle à l'autre."],history:["Les portraits, peintures, livres et sculptures peuvent relier le bureau aux personnes et événements de l'histoire américaine.","Les présidents choisissent des œuvres et objets pour le Bureau ovale parmi les collections disponibles à la Maison-Blanche."],room:["Le Bureau ovale comprend des espaces pour les conversations et réunions, ainsi qu'une cheminée et un bureau de travail.","La disposition des meubles et la décoration peuvent changer lorsqu'un nouveau président entre en fonction."],view:["De grandes fenêtres apportent de la lumière naturelle et donnent sur les terrains de la Maison-Blanche.","Le Washington Monument est un célèbre monument de Washington, D.C., dédié à George Washington."]},
+de:{office:["Das Oval Office ist das Arbeitszimmer des Präsidenten der Vereinigten Staaten im Weißen Haus.","Seine ovale Form, großen Fenster, der Kamin, Flaggen, Möbel und Kunstwerke machen es zu einem der bekanntesten Räume des Weißen Hauses."],desk:["Der Resolute-Schreibtisch ist ein historischer Schreibtisch, der mit dem Oval Office verbunden ist und von mehreren Präsidenten genutzt wurde.","Er wurde aus Holz des britischen Schiffes HMS Resolute gefertigt und 1880 von Königin Victoria Präsident Rutherford B. Hayes geschenkt."],symbols:["Die amerikanische Flagge und die Präsidentenflagge sind wichtige Symbole im Büro.","Die Ausstattung des Raumes kann sich von einer Präsidentschaft zur nächsten ändern."],history:["Porträts, Gemälde, Bücher und Skulpturen können das Büro mit Personen und Ereignissen der amerikanischen Geschichte verbinden.","Präsidenten wählen Kunstwerke und Gegenstände für das Oval Office aus Sammlungen aus, die dem Weißen Haus zur Verfügung stehen."],room:["Das Oval Office hat Sitzbereiche für Gespräche und Besprechungen sowie einen Kamin und einen Arbeitsschreibtisch.","Die Anordnung von Möbeln und Dekoration kann sich ändern, wenn ein neuer Präsident sein Amt antritt."],view:["Große Fenster bringen natürliches Licht in das Oval Office und blicken auf das Gelände des Weißen Hauses.","Das Washington Monument ist ein berühmtes Wahrzeichen in Washington, D.C., das George Washington ehrt."]},
+it:{office:["Lo Studio Ovale è l'ufficio di lavoro del presidente degli Stati Uniti nella Casa Bianca.","La forma ovale, le grandi finestre, il camino, le bandiere, i mobili e le opere d'arte lo rendono una delle stanze più riconoscibili della Casa Bianca."],desk:["La scrivania Resolute è una scrivania storica associata allo Studio Ovale ed è stata utilizzata da diversi presidenti.","Fu realizzata con il legno della nave britannica HMS Resolute e donata al presidente Rutherford B. Hayes dalla regina Vittoria nel 1880."],symbols:["La bandiera americana e quella presidenziale sono simboli importanti esposti nell'ufficio.","Le decorazioni della stanza possono cambiare da un'amministrazione presidenziale all'altra."],history:["Ritratti, dipinti, libri e sculture possono collegare l'ufficio a persone ed eventi della storia americana.","I presidenti scelgono opere d'arte e oggetti per lo Studio Ovale dalle collezioni disponibili alla Casa Bianca."],room:["Lo Studio Ovale comprende aree per conversazioni e riunioni, oltre a un camino e una scrivania di lavoro.","La disposizione dei mobili e le decorazioni possono cambiare quando entra in carica un nuovo presidente."],view:["Grandi finestre portano luce naturale nello Studio Ovale e si affacciano sui terreni della Casa Bianca.","Il Monumento a Washington è un famoso punto di riferimento di Washington, D.C., dedicato a George Washington."]},
+pt:{office:["O Salão Oval é o escritório de trabalho do presidente dos Estados Unidos na Casa Branca.","Sua forma oval, grandes janelas, lareira, bandeiras, móveis e obras de arte fazem dele uma das salas mais reconhecíveis da Casa Branca."],desk:["A mesa Resolute é uma mesa histórica associada ao Salão Oval e foi usada por vários presidentes.","Ela foi feita com madeira do navio britânico HMS Resolute e presenteada ao presidente Rutherford B. Hayes pela rainha Vitória em 1880."],symbols:["A bandeira americana e a bandeira presidencial são símbolos importantes exibidos no escritório.","A decoração da sala pode mudar de uma administração presidencial para outra."],history:["Retratos, pinturas, livros e esculturas podem conectar o escritório a pessoas e acontecimentos da história americana.","Os presidentes escolhem obras de arte e objetos para o Salão Oval entre as coleções disponíveis à Casa Branca."],room:["O Salão Oval inclui áreas para conversas e reuniões, além de uma lareira e uma mesa de trabalho.","A disposição dos móveis e a decoração podem mudar quando um novo presidente assume o cargo."],view:["Grandes janelas trazem luz natural para o Salão Oval e têm vista para os terrenos da Casa Branca.","O Monumento de Washington é um famoso marco de Washington, D.C., que homenageia George Washington."]},
+no:{office:["Det ovale kontor er arbeidskontoret til presidenten i USA i Det hvite hus.","Den ovale formen, de store vinduene, peisen, flaggene, møblene og kunsten gjør rommet til et av de mest gjenkjennelige i Det hvite hus."],desk:["Resolute-skrivebordet er et historisk skrivebord knyttet til Det ovale kontor og har blitt brukt av flere presidenter.","Det ble laget av tre fra det britiske skipet HMS Resolute og gitt til president Rutherford B. Hayes av dronning Victoria i 1880."],symbols:["Det amerikanske flagget og presidentflagget er viktige symboler som vises i kontoret.","Dekorasjonen i rommet kan endres fra én presidentadministrasjon til en annen."],history:["Portretter, malerier, bøker og skulpturer kan knytte kontoret til mennesker og hendelser i amerikansk historie.","Presidenter velger kunst og gjenstander til Det ovale kontor fra samlinger som er tilgjengelige for Det hvite hus."],room:["Det ovale kontor har sittegrupper for samtaler og møter, i tillegg til peis og arbeidsbord.","Plasseringen av møbler og dekorasjoner kan endres når en ny president tiltrer."],view:["Store vinduer gir naturlig lys og vender mot området rundt Det hvite hus.","Washington-monumentet er et kjent landemerke i Washington, D.C., som hedrer George Washington."]}};
+const challengeOrder=["bee","desk","flag","fireplace","washington","monument"];
+const SOUND_MAP={};
+const langSel=document.getElementById("lang"),voiceSel=document.getElementById("voice");
+const title=document.getElementById("title"),prompt=document.getElementById("prompt"),line=document.getElementById("line"),translation=document.getElementById("translation"),status=document.getElementById("status"),world=document.getElementById("world");
+let lastWord="game",activeLesson="",lessonPhrase=1,challenge=-1,lastSpoken="";
+function voices(){return ("speechSynthesis" in window)?speechSynthesis.getVoices():[]}
+function fillVoices(){const old=localStorage.getItem("talkabee-oval-voice-"+langSel.value)||"";voiceSel.innerHTML='<option value="">Browser Default</option>';voices().forEach(v=>{const o=document.createElement("option");o.value=v.name;o.textContent=v.name+(v.lang?" — "+v.lang:"");voiceSel.appendChild(o)});if([...voiceSel.options].some(o=>o.value===old))voiceSel.value=old}
+if("speechSynthesis" in window){speechSynthesis.onvoiceschanged=fillVoices;fillVoices();setTimeout(fillVoices,150);setTimeout(fillVoices,600);setTimeout(fillVoices,1500)}
+voiceSel.onchange=()=>localStorage.setItem("talkabee-oval-voice-"+langSel.value,voiceSel.value);
+function speak(text,rate=.88,onend=null){if(!text||!("speechSynthesis" in window)){if(onend)onend();return}speechSynthesis.cancel();setTimeout(()=>{const u=new SpeechSynthesisUtterance(text);u.lang=SPEECH_LANG[langSel.value]||langSel.value;u.rate=rate;const v=speechSynthesis.getVoices().find(x=>x.name===voiceSel.value);if(v)u.voice=v;if(onend)u.onend=onend;speechSynthesis.speak(u)},50);lastSpoken=text}
+function stopSound(){document.querySelectorAll("audio[data-talkabee-sound]").forEach(a=>{a.pause();a.currentTime=0;a.remove()})}
+function playSound(key){stopSound();const src=SOUND_MAP[key];if(!src)return;const a=new Audio(src);a.dataset.talkabeeSound="1";document.body.appendChild(a);a.play().catch(()=>{});a.onended=()=>a.remove()}
+function showWord(key){activeLesson="";lastWord=key;lessonPhrase=1;title.textContent="Click & Discover";prompt.textContent="You found "+(EN[key]||key)+".";line.textContent=WORDS[langSel.value][key]||EN[key]||key;translation.textContent=langSel.value==="en"?"":(EN[key]||key)}
+document.querySelectorAll(".hotspot").forEach(b=>b.onclick=()=>{const key=b.dataset.word;showWord(key);let played=false;const after=()=>{if(played)return;played=true;playSound(key)};speak(WORDS[langSel.value][key]||EN[key]||key,.82,after);setTimeout(after,1500);if(challenge>=0){if(key===challengeOrder[challenge]){status.textContent="✓ Nice find!";status.style.color="#9dffbf"}else{status.textContent="Not that one — keep looking.";status.style.color="#ffe28a"}}});
+function clearChallenge(){challenge=-1;world.classList.remove("challenge-mode");document.querySelectorAll(".hotspot").forEach(h=>h.classList.remove("target"));status.textContent=""}
+document.getElementById("discovery").onclick=()=>{clearChallenge();activeLesson="";lastWord="game";title.textContent="Click & Discover";prompt.textContent="Click any object in the scene to hear its name.";line.textContent=WORDS[langSel.value].game;translation.textContent=langSel.value==="en"?"":EN.game};
+document.querySelectorAll("[data-ch]").forEach(b=>b.onclick=()=>{activeLesson="";lastWord="";challenge=+b.dataset.ch;world.classList.add("challenge-mode");document.querySelectorAll(".hotspot").forEach(h=>h.classList.toggle("target",h.dataset.word===challengeOrder[challenge]));title.textContent="Challenge "+(challenge+1)+" of 6";prompt.textContent=b.textContent.replace(/^[0-9]+\.\s*/,"");line.textContent=WORDS[langSel.value][challengeOrder[challenge]];translation.textContent=langSel.value==="en"?"":EN[challengeOrder[challenge]];status.textContent=""});
+function showLesson(key,speakIt=false){clearChallenge();activeLesson=key;lastWord="";lessonPhrase=Math.max(0,Math.min(1,lessonPhrase));const a=lessons[langSel.value][key],e=lessons.en[key],btn=document.querySelector(`[data-lesson="${key}"]`);title.textContent=btn?btn.textContent.replace(/^[0-9]+\.\s*/,""):"Oval Office Adventure";prompt.textContent=a[0];line.textContent=a[lessonPhrase];translation.textContent=langSel.value==="en"?"":e[lessonPhrase];if(speakIt)speak(a[lessonPhrase])}
+document.querySelectorAll("[data-lesson]").forEach(b=>b.onclick=()=>{lessonPhrase=1;showLesson(b.dataset.lesson,true)});
+function currentSpeechText(){if(activeLesson)return lessons[langSel.value][activeLesson][lessonPhrase];if(lastWord)return WORDS[langSel.value][lastWord]||EN[lastWord];return line.textContent}
+document.getElementById("normal").onclick=()=>speak(currentSpeechText(),.82);
+document.getElementById("slow").onclick=()=>speak(currentSpeechText(),.58);
+document.getElementById("replay").onclick=()=>speak(lastSpoken||currentSpeechText(),.82);
+document.getElementById("nextPhrase").onclick=()=>{if(!activeLesson){const keys=Object.keys(EN),i=Math.max(0,keys.indexOf(lastWord));showWord(keys[(i+1)%keys.length]);speak(currentSpeechText(),.82);return}lessonPhrase=(lessonPhrase+1)%2;showLesson(activeLesson,true)};
+langSel.onchange=()=>{fillVoices();if(activeLesson)showLesson(activeLesson,false);else if(lastWord)showWord(lastWord)};
+document.getElementById("sceneView").onclick=()=>document.body.classList.add("scene-view");
+document.getElementById("sceneReturn").onclick=()=>document.body.classList.remove("scene-view");
+showWord("game");
+</script>
+</body>
+</html>
+
+<style id="talkabee-ski-panel-180">
+@media(min-width:761px){.panel{width:180px!important;min-width:180px!important;max-width:180px!important}}
+</style>

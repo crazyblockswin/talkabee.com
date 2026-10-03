@@ -69,7 +69,7 @@ border:1px solid #fff;background:rgba(7,23,39,.65);color:#fff;font-weight:900}
 <body>
 <nav class="talkabee-prev-next-nav" aria-label="Adventure navigation">
   <a href="Talk-A-Bee-Underwater-Adventure.html" aria-label="Previous adventure" title="Previous">‹</a>
-  <a href="Talk-A-Bee-Nighttime-Campground-Adventure.html" aria-label="Next adventure" title="Next">›</a>
+  <a href="Talk-A-Bee-Airplane-Flying-Adventure.html" aria-label="Next adventure" title="Next">›</a>
 </nav>
 
 <main class="world" id="world">
@@ -161,7 +161,7 @@ it:{arrive:["Siamo arrivati alla stazione sciistica.","La montagna innevata è p
 pt:{arrive:["Chegamos à estação de esqui.","A montanha nevada está pronta para um dia de aventura."],gear:["Precisamos de esquis, botas, bastões e roupas quentes.","A área de aluguel tem equipamentos para as pistas."],lift:["O teleférico leva os esquiadores montanha acima.","Sentamos com segurança e apreciamos a vista."],slopes:["Os esquiadores deslizam pelas pistas nevadas.","Algumas pistas são suaves e outras são íngremes."],lodge:["O chalé de esqui é quente e aconchegante.","As pessoas podem descansar, comer e se aquecer lá dentro."],winter:["Há muitas maneiras de aproveitar uma montanha nevada.","Podemos esquiar, praticar snowboard, relaxar perto do fogo e brincar na neve."]},
 no:{arrive:["Vi har kommet til skianlegget.","Det snødekte fjellet er klart for en dag med eventyr."],gear:["Vi trenger ski, støvler, staver og varme klær.","Skiutleien har utstyr til bakkene."],lift:["Stolheisen frakter skiløpere opp fjellet.","Vi sitter trygt og nyter utsikten på vei opp."],slopes:["Skiløpere glir ned de snødekte løypene.","Noen løyper er slake og andre er bratte."],lodge:["Skihytta er varm og koselig.","Folk kan hvile, spise og varme seg inne."],winter:["Det finnes mange måter å nyte et snødekt fjell på.","Vi kan stå på ski, kjøre snowboard, slappe av ved bålet og leke i snøen."]}};
 const challengeOrder=["chairlift","skis","grandma","grandpa","bee","firepit"];
-const SOUND_MAP={};
+const SOUND_MAP={firepit:"sounds/fire.mp3"};
 const langSel=document.getElementById("lang"),voiceSel=document.getElementById("voice");
 const title=document.getElementById("title"),prompt=document.getElementById("prompt"),line=document.getElementById("line"),translation=document.getElementById("translation"),status=document.getElementById("status"),world=document.getElementById("world");
 let lastWord="resort",activeLesson="",lessonPhrase=1,challenge=-1,lastSpoken="";

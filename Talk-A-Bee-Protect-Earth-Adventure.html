@@ -1,0 +1,224 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Talk A Bee — Protect Earth Adventure</title>
+<link rel="icon" type="image/png" href="images/talkabee-favicon.png">
+<style>
+*{box-sizing:border-box}
+html,body{margin:0;width:100%;height:100%;overflow:hidden;font-family:Arial,Helvetica,sans-serif;background:#063a66;color:#fff}
+.world{position:relative;width:100vw;height:100vh;background:url("images/Talk-A-Bee-Protect-Earth-Adventure.jpg") center center/cover no-repeat}
+
+/* APPROVED TALK A BEE LEFT PANEL */
+.panel{position:fixed;z-index:1000;left:16px;top:16px;bottom:16px;width:180px;min-width:180px;max-width:180px;
+padding:14px;overflow-x:hidden;overflow-y:auto;border-radius:20px;border:1px solid rgba(255,255,255,.28);
+background:rgba(7,23,39,.31);box-shadow:0 12px 30px rgba(0,0,0,.24);backdrop-filter:blur(3px);-webkit-backdrop-filter:blur(3px)}
+.panel h1{font-size:19px;line-height:1.08;margin:4px 0 10px;text-shadow:0 2px 4px rgba(0,0,0,.55)}
+.label{font-size:9.5px;line-height:1.1;letter-spacing:.09em;font-weight:900;margin:9px 0 4px}
+.panel button,.panel select,.panel a{width:100%;min-height:34px;margin:4px 0;padding:8px 9px;border-radius:12px;
+border:1px solid rgba(255,255,255,.38);background:rgba(7,32,50,.54);color:#fff;font:800 12px/1.16 Arial,sans-serif;
+text-align:left;text-decoration:none}
+.panel button:hover,.panel a:hover{background:rgba(20,58,79,.70)}
+.panel button.active{background:rgba(78,69,219,.74)}
+.panel select{white-space:nowrap;text-overflow:ellipsis;overflow:hidden}
+
+/* APPROVED 520px SCRIPT CARD */
+.card{position:fixed;z-index:900;left:50%;bottom:16px;width:520px;max-width:520px;padding:14px 16px;
+border-radius:20px;border:1px solid rgba(255,255,255,.30);background:rgba(25,19,24,.38);
+box-shadow:0 12px 30px rgba(0,0,0,.28);backdrop-filter:blur(5px);-webkit-backdrop-filter:blur(5px);
+transform:translateX(-50%) scale(.67);transform-origin:bottom center}
+.card .kicker{font-size:15px;line-height:1.25;font-weight:900;letter-spacing:.10em;color:rgba(255,255,255,.96);
+text-shadow:0 1px 3px rgba(0,0,0,.78);margin:0 0 6px}
+.card h2{font-size:22px;line-height:1.08;margin:4px 0 7px;text-shadow:0 1px 3px rgba(0,0,0,.55)}
+.card p{font-size:18px;line-height:1.35;margin:4px 0 7px}
+.word{margin-top:8px;padding:10px 12px;border-radius:14px;background:rgba(88,88,88,.72);border:1px solid rgba(255,255,255,.20)}
+.word strong{display:block;font-size:22px;line-height:1.28}
+.translation{font-size:18px;line-height:1.35;margin-top:3px}
+.controls{display:flex;align-items:center;gap:8px;flex-wrap:nowrap;margin-top:8px}
+.controls button{width:auto;min-width:0;padding:9px 13px;border-radius:12px;border:1px solid rgba(255,255,255,.35);
+background:rgba(255,255,255,.88);color:#10283c;font:900 13px/1 Arial,sans-serif;white-space:nowrap}
+
+/* HOTSPOTS */
+.hotspot{position:absolute;z-index:8;border:0;background:transparent;opacity:0;cursor:pointer;border-radius:16px}
+.hotspot:hover,.hotspot:focus-visible{opacity:1;background:rgba(255,220,72,.28);outline:2px solid rgba(255,255,255,.90)}
+.challenge-mode .hotspot.target{opacity:1;background:rgba(255,199,48,.38);outline:4px solid #fff;box-shadow:0 0 0 7px rgba(255,200,50,.20)}
+
+/* APPROVED COMPACT PREVIOUS / NEXT CHEVRONS */
+.talkabee-prev-next-nav{position:fixed;top:18px;right:22px;z-index:2147483000;display:flex;align-items:center;overflow:hidden;
+border:2px solid rgba(255,255,255,.82);border-radius:999px;background:rgba(11,22,42,.24);
+box-shadow:0 5px 16px rgba(0,0,0,.16);backdrop-filter:blur(3px);-webkit-backdrop-filter:blur(3px)}
+.talkabee-prev-next-nav a{width:48px;height:48px;display:grid;place-items:center;text-decoration:none;color:#fff;
+font:900 38px/1 Arial,sans-serif;text-shadow:0 1px 3px rgba(0,0,0,.42)}
+.talkabee-prev-next-nav a+a{border-left:1px solid rgba(255,255,255,.36)}
+.talkabee-prev-next-nav a:hover,.talkabee-prev-next-nav a:focus-visible{background:rgba(255,255,255,.18);outline:none}
+
+/* SCENE VIEW */
+.scene-return{display:none;position:fixed;z-index:2147483001;left:18px;top:18px;padding:10px 14px;border-radius:12px;
+border:1px solid #fff;background:rgba(7,23,39,.65);color:#fff;font-weight:900}
+.scene-view .panel,.scene-view .card,.scene-view .talkabee-prev-next-nav{display:none}
+.scene-view .scene-return{display:block}
+
+@media(max-width:760px){
+ .panel{left:10px;top:10px;bottom:10px;width:180px;min-width:180px;max-width:180px;padding:11px}
+ .card{width:min(520px,calc(100vw - 32px));bottom:10px;transform:translateX(-50%) scale(.82)}
+ .talkabee-prev-next-nav{top:12px;right:12px}.talkabee-prev-next-nav a{width:42px;height:42px;font-size:33px}
+}
+</style>
+</head>
+<body>
+<nav class="talkabee-prev-next-nav" aria-label="Adventure navigation">
+  <a href="Talk-A-Bee-Saturn-Spacecraft-Adventure.html" aria-label="Previous adventure" title="Previous">‹</a>
+  <a href="Talk-A-Bee-Basic-Training-Adventure.html" aria-label="Next adventure" title="Next">›</a>
+</nav>
+
+<main class="world" id="world">
+<button class="scene-return" id="sceneReturn">Return to Adventure</button>
+
+<aside class="panel">
+<h1>🌎 Protect Earth Adventure</h1>
+<div class="label">LANGUAGE</div>
+<select id="lang">
+<option value="es">Spanish</option><option value="fr">French</option><option value="en">English</option>
+<option value="de">German</option><option value="it">Italian</option><option value="pt">Portuguese</option><option value="no">Norwegian</option>
+</select>
+<div class="label">VOICE</div>
+<select id="voice"><option value="">Browser Default</option></select>
+<button id="sceneView">◉ Scene View</button>
+
+<div class="label">DISCOVERY</div>
+<button id="discovery">🔎 Discovery — Click the Scene</button>
+
+<div class="label">ACTIVITIES</div>
+<button data-lesson="view">1. Look Down at Earth</button>
+<button data-lesson="pollution">2. What Is Air Pollution?</button>
+<button data-lesson="factories">3. Factories & Smokestacks</button>
+<button data-lesson="water">4. Protect Our Water</button>
+<button data-lesson="choices">5. Make Cleaner Choices</button>
+<button data-lesson="protect">6. Protect Our Planet</button>
+<div class="label">CHALLENGES</div>
+<button data-ch="0">1. Find Bee</button>
+<button data-ch="1">2. Find a Smokestack</button>
+<button data-ch="2">3. Find the Smoke</button>
+<button data-ch="3">4. Find the River</button>
+<button data-ch="4">5. Find the City</button>
+<button data-ch="5">6. Find Clean Clouds</button>
+<a href="index.html">← Return to Main Directory</a>
+</aside>
+
+<section class="card">
+<div class="kicker">PROTECT OUR EARTH</div>
+<h2 id="title">Protect Earth Adventure</h2>
+<p id="prompt">Click any object in the scene to hear its name.</p>
+<div class="word"><strong id="line">proteger la Tierra</strong><div class="translation" id="translation">protect the Earth</div></div>
+<p id="status"></p>
+<div class="controls">
+<button id="normal">🔊 Speak</button><button id="slow">🐢 Slow</button><button id="replay">↻ Replay</button><button id="nextPhrase">Next phrase →</button>
+</div>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- Hotspots mapped to the approved Protect Earth keeper JPG. -->
+<button class="hotspot" data-word="bee" style="left:63%;top:57%;width:13%;height:34%" aria-label="Bee"></button>
+<button class="hotspot" data-word="crew" style="left:16%;top:53%;width:48%;height:43%" aria-label="Space crew"></button>
+<button class="hotspot" data-word="earth" style="left:23%;top:7%;width:77%;height:57%" aria-label="Earth"></button>
+<button class="hotspot" data-word="factories" style="left:28%;top:29%;width:35%;height:28%" aria-label="Factories"></button>
+<button class="hotspot" data-word="smokestacks" style="left:30%;top:29%;width:31%;height:23%" aria-label="Smokestacks"></button>
+<button class="hotspot" data-word="smoke" style="left:29%;top:19%;width:39%;height:26%" aria-label="Smoke"></button>
+<button class="hotspot" data-word="haze" style="left:31%;top:20%;width:45%;height:34%" aria-label="Haze"></button>
+<button class="hotspot" data-word="city" style="left:43%;top:39%;width:36%;height:22%" aria-label="City"></button>
+<button class="hotspot" data-word="river" style="left:67%;top:31%;width:22%;height:24%" aria-label="River"></button>
+<button class="hotspot" data-word="ocean" style="left:68%;top:45%;width:28%;height:19%" aria-label="Ocean"></button>
+<button class="hotspot" data-word="clouds" style="left:37%;top:9%;width:43%;height:18%" aria-label="Clouds"></button>
+<button class="hotspot" data-word="atmosphere" style="left:30%;top:4%;width:67%;height:12%" aria-label="Atmosphere"></button>
+<button class="hotspot" data-word="sunrise" style="left:88%;top:5%;width:12%;height:24%" aria-label="Sunrise"></button>
+<button class="hotspot" data-word="ships" style="left:76%;top:46%;width:22%;height:18%" aria-label="Ships"></button>
+<button class="hotspot" data-word="window" style="left:19%;top:4%;width:81%;height:62%" aria-label="Spacecraft window"></button>
+<button class="hotspot" data-word="map" style="left:0%;top:18%;width:17%;height:39%" aria-label="Environmental map"></button>
+<button class="hotspot" data-word="chart" style="left:0%;top:53%;width:16%;height:22%" aria-label="Pollution chart"></button>
+<button class="hotspot" data-word="console" style="left:38%;top:66%;width:62%;height:25%" aria-label="Control console"></button>
+<button class="hotspot" data-word="monitor" style="left:81%;top:66%;width:18%;height:22%" aria-label="Pollution monitor"></button>
+<button class="hotspot" data-word="satellite" style="left:9%;top:7%;width:12%;height:13%" aria-label="Satellite"></button>
+
+</main>
+
+<script>
+const EN={game:"protect the Earth",bee:"Bee",crew:"space crew",earth:"Earth",factories:"factories",smokestacks:"smokestacks",smoke:"smoke",haze:"air pollution",city:"city",river:"river",ocean:"ocean",clouds:"clouds",atmosphere:"atmosphere",sunrise:"sunrise",ships:"ships",window:"spacecraft window",map:"environmental map",chart:"pollution chart",console:"control console",monitor:"pollution monitor",satellite:"satellite"};
+const WORDS={
+es:{game:"proteger la Tierra",bee:"abeja",crew:"tripulación espacial",earth:"Tierra",factories:"fábricas",smokestacks:"chimeneas",smoke:"humo",haze:"contaminación del aire",city:"ciudad",river:"río",ocean:"océano",clouds:"nubes",atmosphere:"atmósfera",sunrise:"amanecer",ships:"barcos",window:"ventana de la nave",map:"mapa ambiental",chart:"gráfico de contaminación",console:"consola de control",monitor:"monitor de contaminación",satellite:"satélite"},
+fr:{game:"protéger la Terre",bee:"abeille",crew:"équipage spatial",earth:"Terre",factories:"usines",smokestacks:"cheminées",smoke:"fumée",haze:"pollution de l'air",city:"ville",river:"rivière",ocean:"océan",clouds:"nuages",atmosphere:"atmosphère",sunrise:"lever du soleil",ships:"navires",window:"fenêtre du vaisseau",map:"carte environnementale",chart:"graphique de pollution",console:"console de contrôle",monitor:"moniteur de pollution",satellite:"satellite"},
+en:{...EN},
+de:{game:"die Erde schützen",bee:"Biene",crew:"Raumbesatzung",earth:"Erde",factories:"Fabriken",smokestacks:"Schornsteine",smoke:"Rauch",haze:"Luftverschmutzung",city:"Stadt",river:"Fluss",ocean:"Ozean",clouds:"Wolken",atmosphere:"Atmosphäre",sunrise:"Sonnenaufgang",ships:"Schiffe",window:"Raumschifffenster",map:"Umweltkarte",chart:"Verschmutzungsdiagramm",console:"Kontrollkonsole",monitor:"Verschmutzungsmonitor",satellite:"Satellit"},
+it:{game:"proteggere la Terra",bee:"ape",crew:"equipaggio spaziale",earth:"Terra",factories:"fabbriche",smokestacks:"ciminiere",smoke:"fumo",haze:"inquinamento dell'aria",city:"città",river:"fiume",ocean:"oceano",clouds:"nuvole",atmosphere:"atmosfera",sunrise:"alba",ships:"navi",window:"finestra dell'astronave",map:"mappa ambientale",chart:"grafico dell'inquinamento",console:"console di controllo",monitor:"monitor dell'inquinamento",satellite:"satellite"},
+pt:{game:"proteger a Terra",bee:"abelha",crew:"tripulação espacial",earth:"Terra",factories:"fábricas",smokestacks:"chaminés",smoke:"fumaça",haze:"poluição do ar",city:"cidade",river:"rio",ocean:"oceano",clouds:"nuvens",atmosphere:"atmosfera",sunrise:"nascer do sol",ships:"navios",window:"janela da nave",map:"mapa ambiental",chart:"gráfico de poluição",console:"console de controle",monitor:"monitor de poluição",satellite:"satélite"},
+no:{game:"beskytte jorden",bee:"bie",crew:"rommannskap",earth:"jorden",factories:"fabrikker",smokestacks:"skorsteiner",smoke:"røyk",haze:"luftforurensning",city:"by",river:"elv",ocean:"hav",clouds:"skyer",atmosphere:"atmosfære",sunrise:"soloppgang",ships:"skip",window:"romskipvindu",map:"miljøkart",chart:"forurensningsdiagram",console:"kontrollkonsoll",monitor:"forurensningsmåler",satellite:"satellitt"}};
+const SPEECH_LANG={es:"es-ES",fr:"fr-FR",en:"en-US",de:"de-DE",it:"it-IT",pt:"pt-PT",no:"nb-NO"};
+const lessons={
+en:{view:["From space, Earth looks beautiful, but astronauts can also observe clouds, cities, fires, dust, and some forms of pollution.","Seeing our planet from far away reminds us that its air, land, and water are connected."],pollution:["Air pollution happens when harmful gases and particles enter the air.","Pollution can come from many sources, including transportation, industry, fires, and energy production."],factories:["Factories make many useful products, but industrial processes can also release pollution if emissions are not controlled.","Cleaner technology, filters, efficiency, and cleaner energy can reduce harmful emissions."],water:["Pollution on land can reach streams, rivers, lakes, and oceans through runoff and waste.","Keeping trash and harmful chemicals out of waterways helps protect wildlife and clean water."],choices:["People can help by wasting less energy, reusing and recycling materials, preventing litter, and choosing cleaner transportation when practical.","Communities, businesses, scientists, and governments can also work together to reduce pollution."],protect:["Earth is our shared home. Protecting clean air, clean water, soil, forests, and wildlife helps people and nature.","The message of this adventure is simple: do not pollute, and do what you can to leave the planet cleaner."]},
+es:{view:["Desde el espacio, la Tierra se ve hermosa, pero los astronautas también pueden observar nubes, ciudades, incendios, polvo y algunas formas de contaminación.","Ver nuestro planeta desde lejos nos recuerda que su aire, tierra y agua están conectados."],pollution:["La contaminación del aire ocurre cuando gases y partículas dañinas entran en el aire.","La contaminación puede provenir de muchas fuentes, como el transporte, la industria, los incendios y la producción de energía."],factories:["Las fábricas producen muchos productos útiles, pero los procesos industriales también pueden liberar contaminación si las emisiones no se controlan.","La tecnología más limpia, los filtros, la eficiencia y la energía más limpia pueden reducir las emisiones dañinas."],water:["La contaminación en tierra puede llegar a arroyos, ríos, lagos y océanos por la escorrentía y los residuos.","Mantener la basura y los productos químicos dañinos fuera del agua ayuda a proteger la vida silvestre y el agua limpia."],choices:["Las personas pueden ayudar usando menos energía, reutilizando y reciclando materiales, evitando tirar basura y eligiendo transporte más limpio cuando sea práctico.","Las comunidades, empresas, científicos y gobiernos también pueden trabajar juntos para reducir la contaminación."],protect:["La Tierra es nuestro hogar compartido. Proteger el aire, el agua, el suelo, los bosques y la vida silvestre ayuda a las personas y a la naturaleza.","El mensaje de esta aventura es sencillo: no contamines y haz lo que puedas para dejar el planeta más limpio."]},
+fr:{view:["Depuis l'espace, la Terre est magnifique, mais les astronautes peuvent aussi observer les nuages, les villes, les incendies, la poussière et certaines formes de pollution.","Voir notre planète de loin nous rappelle que son air, ses terres et son eau sont liés."],pollution:["La pollution de l'air se produit lorsque des gaz et des particules nocifs pénètrent dans l'air.","Elle peut provenir de nombreuses sources, notamment les transports, l'industrie, les incendies et la production d'énergie."],factories:["Les usines fabriquent de nombreux produits utiles, mais les procédés industriels peuvent aussi produire de la pollution si les émissions ne sont pas contrôlées.","Des technologies plus propres, des filtres, l'efficacité et une énergie plus propre peuvent réduire les émissions nocives."],water:["La pollution terrestre peut atteindre les ruisseaux, les rivières, les lacs et les océans par le ruissellement et les déchets.","Empêcher les déchets et les produits chimiques nocifs d'entrer dans l'eau aide à protéger la faune et l'eau propre."],choices:["On peut aider en gaspillant moins d'énergie, en réutilisant et recyclant, en évitant les déchets sauvages et en choisissant des transports plus propres lorsque c'est possible.","Les communautés, entreprises, scientifiques et gouvernements peuvent également travailler ensemble pour réduire la pollution."],protect:["La Terre est notre maison commune. Protéger l'air, l'eau, les sols, les forêts et la faune aide les personnes et la nature.","Le message de cette aventure est simple : ne polluons pas et faisons ce que nous pouvons pour laisser une planète plus propre."]},
+de:{view:["Aus dem Weltraum sieht die Erde wunderschön aus, doch Astronauten können auch Wolken, Städte, Brände, Staub und manche Formen der Verschmutzung beobachten.","Der Blick aus der Ferne erinnert uns daran, dass Luft, Land und Wasser miteinander verbunden sind."],pollution:["Luftverschmutzung entsteht, wenn schädliche Gase und Partikel in die Luft gelangen.","Verschmutzung kann aus vielen Quellen stammen, darunter Verkehr, Industrie, Brände und Energieerzeugung."],factories:["Fabriken stellen viele nützliche Produkte her, doch industrielle Prozesse können auch Schadstoffe freisetzen, wenn Emissionen nicht kontrolliert werden.","Sauberere Technik, Filter, Effizienz und sauberere Energie können schädliche Emissionen verringern."],water:["Verschmutzung an Land kann durch Abfluss und Abfälle in Bäche, Flüsse, Seen und Ozeane gelangen.","Müll und schädliche Chemikalien von Gewässern fernzuhalten hilft, Tiere und sauberes Wasser zu schützen."],choices:["Menschen können helfen, indem sie weniger Energie verschwenden, Materialien wiederverwenden und recyceln, Müll vermeiden und wenn möglich sauberere Verkehrsmittel wählen.","Gemeinden, Unternehmen, Wissenschaftler und Regierungen können ebenfalls zusammenarbeiten, um Verschmutzung zu reduzieren."],protect:["Die Erde ist unser gemeinsames Zuhause. Saubere Luft, sauberes Wasser, Böden, Wälder und Tiere zu schützen hilft Menschen und Natur.","Die Botschaft dieses Abenteuers ist einfach: nicht verschmutzen und tun, was man kann, um den Planeten sauberer zu hinterlassen."]},
+it:{view:["Dallo spazio la Terra appare bellissima, ma gli astronauti possono anche osservare nuvole, città, incendi, polvere e alcune forme di inquinamento.","Vedere il pianeta da lontano ci ricorda che aria, terra e acqua sono collegate."],pollution:["L'inquinamento atmosferico si verifica quando gas e particelle nocive entrano nell'aria.","Può provenire da molte fonti, tra cui trasporti, industria, incendi e produzione di energia."],factories:["Le fabbriche producono molti prodotti utili, ma i processi industriali possono anche rilasciare inquinamento se le emissioni non sono controllate.","Tecnologie più pulite, filtri, efficienza ed energia più pulita possono ridurre le emissioni nocive."],water:["L'inquinamento sulla terra può raggiungere ruscelli, fiumi, laghi e oceani attraverso il deflusso e i rifiuti.","Tenere rifiuti e sostanze chimiche nocive lontano dall'acqua aiuta a proteggere la fauna e l'acqua pulita."],choices:["Le persone possono aiutare sprecando meno energia, riutilizzando e riciclando materiali, evitando di gettare rifiuti e scegliendo trasporti più puliti quando possibile.","Comunità, imprese, scienziati e governi possono inoltre collaborare per ridurre l'inquinamento."],protect:["La Terra è la nostra casa comune. Proteggere aria, acqua, suolo, foreste e fauna aiuta le persone e la natura.","Il messaggio di questa avventura è semplice: non inquinare e fai ciò che puoi per lasciare il pianeta più pulito."]},
+pt:{view:["Do espaço, a Terra parece linda, mas astronautas também podem observar nuvens, cidades, incêndios, poeira e algumas formas de poluição.","Ver nosso planeta de longe nos lembra que o ar, a terra e a água estão conectados."],pollution:["A poluição do ar acontece quando gases e partículas prejudiciais entram no ar.","Ela pode vir de muitas fontes, incluindo transporte, indústria, incêndios e produção de energia."],factories:["Fábricas produzem muitos produtos úteis, mas processos industriais também podem liberar poluição se as emissões não forem controladas.","Tecnologia mais limpa, filtros, eficiência e energia mais limpa podem reduzir emissões prejudiciais."],water:["A poluição em terra pode chegar a córregos, rios, lagos e oceanos por escoamento e resíduos.","Manter lixo e produtos químicos prejudiciais longe da água ajuda a proteger a vida selvagem e a água limpa."],choices:["As pessoas podem ajudar desperdiçando menos energia, reutilizando e reciclando materiais, evitando lixo e escolhendo transporte mais limpo quando for prático.","Comunidades, empresas, cientistas e governos também podem trabalhar juntos para reduzir a poluição."],protect:["A Terra é nosso lar compartilhado. Proteger o ar, a água, o solo, as florestas e a vida selvagem ajuda as pessoas e a natureza.","A mensagem desta aventura é simples: não polua e faça o que puder para deixar o planeta mais limpo."]},
+no:{view:["Fra verdensrommet ser jorden vakker ut, men astronauter kan også observere skyer, byer, branner, støv og enkelte former for forurensning.","Å se planeten på avstand minner oss om at luft, land og vann henger sammen."],pollution:["Luftforurensning oppstår når skadelige gasser og partikler kommer ut i luften.","Forurensning kan komme fra mange kilder, blant annet transport, industri, branner og energiproduksjon."],factories:["Fabrikker lager mange nyttige produkter, men industrielle prosesser kan også slippe ut forurensning dersom utslipp ikke kontrolleres.","Renere teknologi, filtre, effektivitet og renere energi kan redusere skadelige utslipp."],water:["Forurensning på land kan nå bekker, elver, innsjøer og hav gjennom avrenning og avfall.","Å holde søppel og skadelige kjemikalier unna vann bidrar til å beskytte dyreliv og rent vann."],choices:["Folk kan hjelpe ved å sløse mindre energi, gjenbruke og resirkulere materialer, unngå forsøpling og velge renere transport når det er praktisk.","Lokalsamfunn, bedrifter, forskere og myndigheter kan også samarbeide om å redusere forurensning."],protect:["Jorden er vårt felles hjem. Å beskytte ren luft, rent vann, jord, skog og dyreliv hjelper både mennesker og natur.","Budskapet i dette eventyret er enkelt: ikke forurens, og gjør det du kan for å etterlate planeten renere."]}};
+const challengeOrder=["bee","smokestacks","smoke","river","city","clouds"];
+const SOUND_MAP={};
+const langSel=document.getElementById("lang"),voiceSel=document.getElementById("voice");
+const title=document.getElementById("title"),prompt=document.getElementById("prompt"),line=document.getElementById("line"),translation=document.getElementById("translation"),status=document.getElementById("status"),world=document.getElementById("world");
+let lastWord="game",activeLesson="",lessonPhrase=1,challenge=-1,lastSpoken="";
+function voices(){return ("speechSynthesis" in window)?speechSynthesis.getVoices():[]}
+function fillVoices(){const old=localStorage.getItem("talkabee-protect-earth-voice-"+langSel.value)||"";voiceSel.innerHTML='<option value="">Browser Default</option>';voices().forEach(v=>{const o=document.createElement("option");o.value=v.name;o.textContent=v.name+(v.lang?" — "+v.lang:"");voiceSel.appendChild(o)});if([...voiceSel.options].some(o=>o.value===old))voiceSel.value=old}
+if("speechSynthesis" in window){speechSynthesis.onvoiceschanged=fillVoices;fillVoices();setTimeout(fillVoices,150);setTimeout(fillVoices,600);setTimeout(fillVoices,1500)}
+voiceSel.onchange=()=>localStorage.setItem("talkabee-protect-earth-voice-"+langSel.value,voiceSel.value);
+function speak(text,rate=.88,onend=null){if(!text||!("speechSynthesis" in window)){if(onend)onend();return}speechSynthesis.cancel();setTimeout(()=>{const u=new SpeechSynthesisUtterance(text);u.lang=SPEECH_LANG[langSel.value]||langSel.value;u.rate=rate;const v=speechSynthesis.getVoices().find(x=>x.name===voiceSel.value);if(v)u.voice=v;if(onend)u.onend=onend;speechSynthesis.speak(u)},50);lastSpoken=text}
+function stopSound(){document.querySelectorAll("audio[data-talkabee-sound]").forEach(a=>{a.pause();a.currentTime=0;a.remove()})}
+function playSound(key){stopSound();const src=SOUND_MAP[key];if(!src)return;const a=new Audio(src);a.dataset.talkabeeSound="1";document.body.appendChild(a);a.play().catch(()=>{});a.onended=()=>a.remove()}
+function showWord(key){activeLesson="";lastWord=key;lessonPhrase=1;title.textContent="Click & Discover";prompt.textContent="You found "+(EN[key]||key)+".";line.textContent=WORDS[langSel.value][key]||EN[key]||key;translation.textContent=langSel.value==="en"?"":(EN[key]||key)}
+document.querySelectorAll(".hotspot").forEach(b=>b.onclick=()=>{const key=b.dataset.word;showWord(key);let played=false;const after=()=>{if(played)return;played=true;playSound(key)};speak(WORDS[langSel.value][key]||EN[key]||key,.82,after);setTimeout(after,1500);if(challenge>=0){if(key===challengeOrder[challenge]){status.textContent="✓ Nice find!";status.style.color="#9dffbf"}else{status.textContent="Not that one — keep looking.";status.style.color="#ffe28a"}}});
+function clearChallenge(){challenge=-1;world.classList.remove("challenge-mode");document.querySelectorAll(".hotspot").forEach(h=>h.classList.remove("target"));status.textContent=""}
+document.getElementById("discovery").onclick=()=>{clearChallenge();activeLesson="";lastWord="game";title.textContent="Click & Discover";prompt.textContent="Click any object in the scene to hear its name.";line.textContent=WORDS[langSel.value].game;translation.textContent=langSel.value==="en"?"":EN.game};
+document.querySelectorAll("[data-ch]").forEach(b=>b.onclick=()=>{activeLesson="";lastWord="";challenge=+b.dataset.ch;world.classList.add("challenge-mode");document.querySelectorAll(".hotspot").forEach(h=>h.classList.toggle("target",h.dataset.word===challengeOrder[challenge]));title.textContent="Challenge "+(challenge+1)+" of 6";prompt.textContent=b.textContent.replace(/^[0-9]+\.\s*/,"");line.textContent=WORDS[langSel.value][challengeOrder[challenge]];translation.textContent=langSel.value==="en"?"":EN[challengeOrder[challenge]];status.textContent=""});
+function showLesson(key,speakIt=false){clearChallenge();activeLesson=key;lastWord="";lessonPhrase=Math.max(0,Math.min(1,lessonPhrase));const a=lessons[langSel.value][key],e=lessons.en[key],btn=document.querySelector(`[data-lesson="${key}"]`);title.textContent=btn?btn.textContent.replace(/^[0-9]+\.\s*/,""):"Protect Earth Adventure";prompt.textContent=a[0];line.textContent=a[lessonPhrase];translation.textContent=langSel.value==="en"?"":e[lessonPhrase];if(speakIt)speak(a[lessonPhrase])}
+document.querySelectorAll("[data-lesson]").forEach(b=>b.onclick=()=>{lessonPhrase=1;showLesson(b.dataset.lesson,true)});
+function currentSpeechText(){if(activeLesson)return lessons[langSel.value][activeLesson][lessonPhrase];if(lastWord)return WORDS[langSel.value][lastWord]||EN[lastWord];return line.textContent}
+document.getElementById("normal").onclick=()=>speak(currentSpeechText(),.82);
+document.getElementById("slow").onclick=()=>speak(currentSpeechText(),.58);
+document.getElementById("replay").onclick=()=>speak(lastSpoken||currentSpeechText(),.82);
+document.getElementById("nextPhrase").onclick=()=>{if(!activeLesson){const keys=Object.keys(EN),i=Math.max(0,keys.indexOf(lastWord));showWord(keys[(i+1)%keys.length]);speak(currentSpeechText(),.82);return}lessonPhrase=(lessonPhrase+1)%2;showLesson(activeLesson,true)};
+langSel.onchange=()=>{fillVoices();if(activeLesson)showLesson(activeLesson,false);else if(lastWord)showWord(lastWord)};
+document.getElementById("sceneView").onclick=()=>document.body.classList.add("scene-view");
+document.getElementById("sceneReturn").onclick=()=>document.body.classList.remove("scene-view");
+showWord("game");
+</script>
+</body>
+</html>
+
+<style id="talkabee-ski-panel-180">
+@media(min-width:761px){.panel{width:180px!important;min-width:180px!important;max-width:180px!important}}
+</style>

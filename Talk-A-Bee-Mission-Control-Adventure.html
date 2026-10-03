@@ -1,0 +1,222 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Talk A Bee — Mission Control Adventure</title>
+<link rel="icon" type="image/png" href="images/talkabee-favicon.png">
+<style>
+*{box-sizing:border-box}
+html,body{margin:0;width:100%;height:100%;overflow:hidden;font-family:Arial,Helvetica,sans-serif;background:#063a66;color:#fff}
+.world{position:relative;width:100vw;height:100vh;background:url("images/Talk-A-Bee-Mission-Control-Adventure.jpg") center center/cover no-repeat}
+
+/* APPROVED TALK A BEE LEFT PANEL */
+.panel{position:fixed;z-index:1000;left:16px;top:16px;bottom:16px;width:180px;min-width:180px;max-width:180px;
+padding:14px;overflow-x:hidden;overflow-y:auto;border-radius:20px;border:1px solid rgba(255,255,255,.28);
+background:rgba(7,23,39,.31);box-shadow:0 12px 30px rgba(0,0,0,.24);backdrop-filter:blur(3px);-webkit-backdrop-filter:blur(3px)}
+.panel h1{font-size:19px;line-height:1.08;margin:4px 0 10px;text-shadow:0 2px 4px rgba(0,0,0,.55)}
+.label{font-size:9.5px;line-height:1.1;letter-spacing:.09em;font-weight:900;margin:9px 0 4px}
+.panel button,.panel select,.panel a{width:100%;min-height:34px;margin:4px 0;padding:8px 9px;border-radius:12px;
+border:1px solid rgba(255,255,255,.38);background:rgba(7,32,50,.54);color:#fff;font:800 12px/1.16 Arial,sans-serif;
+text-align:left;text-decoration:none}
+.panel button:hover,.panel a:hover{background:rgba(20,58,79,.70)}
+.panel button.active{background:rgba(78,69,219,.74)}
+.panel select{white-space:nowrap;text-overflow:ellipsis;overflow:hidden}
+
+/* APPROVED 520px SCRIPT CARD */
+.card{position:fixed;z-index:900;left:50%;bottom:16px;width:520px;max-width:520px;padding:14px 16px;
+border-radius:20px;border:1px solid rgba(255,255,255,.30);background:rgba(25,19,24,.38);
+box-shadow:0 12px 30px rgba(0,0,0,.28);backdrop-filter:blur(5px);-webkit-backdrop-filter:blur(5px);
+transform:translateX(-50%) scale(.67);transform-origin:bottom center}
+.card .kicker{font-size:15px;line-height:1.25;font-weight:900;letter-spacing:.10em;color:rgba(255,255,255,.96);
+text-shadow:0 1px 3px rgba(0,0,0,.78);margin:0 0 6px}
+.card h2{font-size:22px;line-height:1.08;margin:4px 0 7px;text-shadow:0 1px 3px rgba(0,0,0,.55)}
+.card p{font-size:18px;line-height:1.35;margin:4px 0 7px}
+.word{margin-top:8px;padding:10px 12px;border-radius:14px;background:rgba(88,88,88,.72);border:1px solid rgba(255,255,255,.20)}
+.word strong{display:block;font-size:22px;line-height:1.28}
+.translation{font-size:18px;line-height:1.35;margin-top:3px}
+.controls{display:flex;align-items:center;gap:8px;flex-wrap:nowrap;margin-top:8px}
+.controls button{width:auto;min-width:0;padding:9px 13px;border-radius:12px;border:1px solid rgba(255,255,255,.35);
+background:rgba(255,255,255,.88);color:#10283c;font:900 13px/1 Arial,sans-serif;white-space:nowrap}
+
+/* HOTSPOTS */
+.hotspot{position:absolute;z-index:8;border:0;background:transparent;opacity:0;cursor:pointer;border-radius:16px}
+.hotspot:hover,.hotspot:focus-visible{opacity:1;background:rgba(255,220,72,.28);outline:2px solid rgba(255,255,255,.90)}
+.challenge-mode .hotspot.target{opacity:1;background:rgba(255,199,48,.38);outline:4px solid #fff;box-shadow:0 0 0 7px rgba(255,200,50,.20)}
+
+/* APPROVED COMPACT PREVIOUS / NEXT CHEVRONS */
+.talkabee-prev-next-nav{position:fixed;top:18px;right:22px;z-index:2147483000;display:flex;align-items:center;overflow:hidden;
+border:2px solid rgba(255,255,255,.82);border-radius:999px;background:rgba(11,22,42,.24);
+box-shadow:0 5px 16px rgba(0,0,0,.16);backdrop-filter:blur(3px);-webkit-backdrop-filter:blur(3px)}
+.talkabee-prev-next-nav a{width:48px;height:48px;display:grid;place-items:center;text-decoration:none;color:#fff;
+font:900 38px/1 Arial,sans-serif;text-shadow:0 1px 3px rgba(0,0,0,.42)}
+.talkabee-prev-next-nav a+a{border-left:1px solid rgba(255,255,255,.36)}
+.talkabee-prev-next-nav a:hover,.talkabee-prev-next-nav a:focus-visible{background:rgba(255,255,255,.18);outline:none}
+
+/* SCENE VIEW */
+.scene-return{display:none;position:fixed;z-index:2147483001;left:18px;top:18px;padding:10px 14px;border-radius:12px;
+border:1px solid #fff;background:rgba(7,23,39,.65);color:#fff;font-weight:900}
+.scene-view .panel,.scene-view .card,.scene-view .talkabee-prev-next-nav{display:none}
+.scene-view .scene-return{display:block}
+
+@media(max-width:760px){
+ .panel{left:10px;top:10px;bottom:10px;width:180px;min-width:180px;max-width:180px;padding:11px}
+ .card{width:min(520px,calc(100vw - 32px));bottom:10px;transform:translateX(-50%) scale(.82)}
+ .talkabee-prev-next-nav{top:12px;right:12px}.talkabee-prev-next-nav a{width:42px;height:42px;font-size:33px}
+}
+</style>
+</head>
+<body>
+<nav class="talkabee-prev-next-nav" aria-label="Adventure navigation">
+  <a href="Talk-A-Bee-Moon-Adventure.html" aria-label="Previous adventure" title="Previous">‹</a>
+  <a href="Talk-A-Bee-Nighttime-Campground-Adventure.html" aria-label="Next adventure" title="Next">›</a>
+</nav>
+
+<main class="world" id="world">
+<button class="scene-return" id="sceneReturn">Return to Adventure</button>
+
+<aside class="panel">
+<h1>🚀 Mission Control Adventure</h1>
+<div class="label">LANGUAGE</div>
+<select id="lang">
+<option value="es">Spanish</option><option value="fr">French</option><option value="en">English</option>
+<option value="de">German</option><option value="it">Italian</option><option value="pt">Portuguese</option><option value="no">Norwegian</option>
+</select>
+<div class="label">VOICE</div>
+<select id="voice"><option value="">Browser Default</option></select>
+<button id="sceneView">◉ Scene View</button>
+
+<div class="label">DISCOVERY</div>
+<button id="discovery">🔎 Discovery — Click the Scene</button>
+
+<div class="label">ACTIVITIES</div>
+<button data-lesson="room">1. Explore Mission Control</button>
+<button data-lesson="controllers">2. Meet the Flight Controllers</button>
+<button data-lesson="launch">3. Follow the Rocket Launch</button>
+<button data-lesson="screens">4. Read the Mission Screens</button>
+<button data-lesson="comms">5. Explore Communications</button>
+<button data-lesson="team">6. Learn About Teamwork</button>
+<div class="label">CHALLENGES</div>
+<button data-ch="0">1. Find Bee</button>
+<button data-ch="1">2. Find the Rocket</button>
+<button data-ch="2">3. Find the Countdown Clock</button>
+<button data-ch="3">4. Find the American Flag</button>
+<button data-ch="4">5. Find a Headset</button>
+<button data-ch="5">6. Find Earth</button>
+<a href="index.html">← Return to Main Directory</a>
+</aside>
+
+<section class="card">
+<div class="kicker">INSIDE MISSION CONTROL</div>
+<h2 id="title">Mission Control Adventure</h2>
+<p id="prompt">Click any object in the scene to hear its name.</p>
+<div class="word"><strong id="line">centro de control de misión</strong><div class="translation" id="translation">mission control center</div></div>
+<p id="status"></p>
+<div class="controls">
+<button id="normal">🔊 Speak</button><button id="slow">🐢 Slow</button><button id="replay">↻ Replay</button><button id="nextPhrase">Next phrase →</button>
+</div>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- Hotspots mapped to the approved Mission Control keeper JPG. -->
+<button class="hotspot" data-word="bee" style="left:32%;top:72%;width:9%;height:22%" aria-label="Bee"></button>
+<button class="hotspot" data-word="visitors" style="left:12%;top:58%;width:32%;height:42%" aria-label="Visitors"></button>
+<button class="hotspot" data-word="controllers" style="left:25%;top:48%;width:65%;height:27%" aria-label="Flight controllers"></button>
+<button class="hotspot" data-word="console" style="left:41%;top:55%;width:18%;height:17%" aria-label="Control console"></button>
+<button class="hotspot" data-word="monitor" style="left:72%;top:55%;width:17%;height:17%" aria-label="Computer monitor"></button>
+<button class="hotspot" data-word="headset" style="left:91%;top:53%;width:8%;height:18%" aria-label="Headset"></button>
+<button class="hotspot" data-word="rocket" style="left:45%;top:28%;width:13%;height:22%" aria-label="Rocket"></button>
+<button class="hotspot" data-word="launchpad" style="left:82%;top:27%;width:18%;height:25%" aria-label="Launch pad"></button>
+<button class="hotspot" data-word="countdown" style="left:39%;top:12%;width:20%;height:11%" aria-label="Countdown clock"></button>
+<button class="hotspot" data-word="bigscreen" style="left:26%;top:7%;width:49%;height:44%" aria-label="Mission screen"></button>
+<button class="hotspot" data-word="earth" style="left:32%;top:26%;width:11%;height:20%" aria-label="Earth display"></button>
+<button class="hotspot" data-word="flag" style="left:18%;top:21%;width:8%;height:24%" aria-label="American flag"></button>
+<button class="hotspot" data-word="moon" style="left:8%;top:12%;width:11%;height:19%" aria-label="Moon display"></button>
+<button class="hotspot" data-word="gallery" style="left:0%;top:7%;width:24%;height:25%" aria-label="Observation gallery"></button>
+<button class="hotspot" data-word="gallery" style="left:77%;top:7%;width:23%;height:24%" aria-label="Observation gallery"></button>
+<button class="hotspot" data-word="telemetry" style="left:58%;top:24%;width:16%;height:25%" aria-label="Telemetry display"></button>
+<button class="hotspot" data-word="map" style="left:69%;top:33%;width:10%;height:16%" aria-label="Mission map"></button>
+<button class="hotspot" data-word="chair" style="left:60%;top:57%;width:10%;height:20%" aria-label="Control room chair"></button>
+<button class="hotspot" data-word="telephone" style="left:88%;top:69%;width:8%;height:12%" aria-label="Telephone"></button>
+<button class="hotspot" data-word="ceiling" style="left:25%;top:0%;width:51%;height:12%" aria-label="Control room ceiling"></button>
+
+</main>
+
+<script>
+const EN={game:"mission control center",bee:"Bee",visitors:"visitors",controllers:"flight controllers",console:"control console",monitor:"computer monitor",headset:"headset",rocket:"rocket",launchpad:"launch pad",countdown:"countdown clock",bigscreen:"mission screen",earth:"Earth",flag:"American flag",moon:"Moon",gallery:"observation gallery",telemetry:"telemetry display",map:"mission map",chair:"control room chair",telephone:"telephone",ceiling:"control room ceiling"};
+const WORDS={
+es:{game:"centro de control de misión",bee:"abeja",visitors:"visitantes",controllers:"controladores de vuelo",console:"consola de control",monitor:"monitor",headset:"auriculares",rocket:"cohete",launchpad:"plataforma de lanzamiento",countdown:"reloj de cuenta regresiva",bigscreen:"pantalla de misión",earth:"Tierra",flag:"bandera estadounidense",moon:"Luna",gallery:"galería de observación",telemetry:"pantalla de telemetría",map:"mapa de misión",chair:"silla de control",telephone:"teléfono",ceiling:"techo de la sala"},
+fr:{game:"centre de contrôle de mission",bee:"abeille",visitors:"visiteurs",controllers:"contrôleurs de vol",console:"console de contrôle",monitor:"écran d'ordinateur",headset:"casque audio",rocket:"fusée",launchpad:"pas de tir",countdown:"compte à rebours",bigscreen:"écran de mission",earth:"Terre",flag:"drapeau américain",moon:"Lune",gallery:"galerie d'observation",telemetry:"écran de télémétrie",map:"carte de mission",chair:"chaise de contrôle",telephone:"téléphone",ceiling:"plafond de la salle"},
+en:{...EN},
+de:{game:"Missionskontrollzentrum",bee:"Biene",visitors:"Besucher",controllers:"Flugkontrolleure",console:"Kontrollkonsole",monitor:"Computermonitor",headset:"Headset",rocket:"Rakete",launchpad:"Startrampe",countdown:"Countdown-Uhr",bigscreen:"Missionsbildschirm",earth:"Erde",flag:"amerikanische Flagge",moon:"Mond",gallery:"Beobachtungsgalerie",telemetry:"Telemetrieanzeige",map:"Missionskarte",chair:"Kontrollraumstuhl",telephone:"Telefon",ceiling:"Kontrollraumdecke"},
+it:{game:"centro di controllo missione",bee:"ape",visitors:"visitatori",controllers:"controllori di volo",console:"console di controllo",monitor:"monitor",headset:"cuffie",rocket:"razzo",launchpad:"rampa di lancio",countdown:"conto alla rovescia",bigscreen:"schermo della missione",earth:"Terra",flag:"bandiera americana",moon:"Luna",gallery:"galleria di osservazione",telemetry:"schermo di telemetria",map:"mappa della missione",chair:"sedia della sala controllo",telephone:"telefono",ceiling:"soffitto della sala"},
+pt:{game:"centro de controle da missão",bee:"abelha",visitors:"visitantes",controllers:"controladores de voo",console:"console de controle",monitor:"monitor",headset:"fone de ouvido",rocket:"foguete",launchpad:"plataforma de lançamento",countdown:"relógio de contagem regressiva",bigscreen:"tela da missão",earth:"Terra",flag:"bandeira americana",moon:"Lua",gallery:"galeria de observação",telemetry:"tela de telemetria",map:"mapa da missão",chair:"cadeira da sala de controle",telephone:"telefone",ceiling:"teto da sala"},
+no:{game:"kontrollsenter for romferd",bee:"bie",visitors:"besøkende",controllers:"flygeledere",console:"kontrollkonsoll",monitor:"dataskjerm",headset:"hodesett",rocket:"rakett",launchpad:"oppskytingsrampe",countdown:"nedtellingsklokke",bigscreen:"oppdragsskjerm",earth:"jorden",flag:"amerikansk flagg",moon:"månen",gallery:"observasjonsgalleri",telemetry:"telemetriskjerm",map:"oppdragskart",chair:"kontrollromstol",telephone:"telefon",ceiling:"taket i kontrollrommet"}};
+const SPEECH_LANG={es:"es-ES",fr:"fr-FR",en:"en-US",de:"de-DE",it:"it-IT",pt:"pt-PT",no:"nb-NO"};
+const lessons={
+en:{room:["Mission control is a center where teams monitor and support a space mission.","Rows of consoles and large displays help specialists share information and follow the mission together."],controllers:["Flight controllers specialize in different systems and responsibilities during a mission.","They communicate, study data, solve problems, and coordinate decisions as one team."],launch:["During a launch, teams follow the rocket's progress and watch important measurements.","A countdown organizes the final sequence of events leading to liftoff."],screens:["Large screens can display mission status, maps, spacecraft information, video, and other data.","Controllers also use individual monitors to focus on the systems they are responsible for."],comms:["Headsets, microphones, computers, and communication networks help mission teams exchange information.","Clear communication is especially important when many specialists must coordinate quickly."],team:["Space missions depend on many people working together, both in space and on Earth.","Engineers, scientists, technicians, controllers, astronauts, and many other specialists contribute to a mission."]},
+es:{room:["El control de misión es un centro donde equipos supervisan y apoyan una misión espacial.","Filas de consolas y grandes pantallas ayudan a los especialistas a compartir información y seguir la misión juntos."],controllers:["Los controladores de vuelo se especializan en diferentes sistemas y responsabilidades durante una misión.","Se comunican, estudian datos, resuelven problemas y coordinan decisiones como un solo equipo."],launch:["Durante un lanzamiento, los equipos siguen el progreso del cohete y observan mediciones importantes.","Una cuenta regresiva organiza la secuencia final de eventos antes del despegue."],screens:["Las grandes pantallas pueden mostrar el estado de la misión, mapas, información de la nave, video y otros datos.","Los controladores también usan monitores individuales para concentrarse en los sistemas que tienen asignados."],comms:["Auriculares, micrófonos, computadoras y redes de comunicación ayudan a los equipos a intercambiar información.","La comunicación clara es especialmente importante cuando muchos especialistas deben coordinarse rápidamente."],team:["Las misiones espaciales dependen de muchas personas que trabajan juntas, tanto en el espacio como en la Tierra.","Ingenieros, científicos, técnicos, controladores, astronautas y muchos otros especialistas contribuyen a una misión."]},
+fr:{room:["Le contrôle de mission est un centre où des équipes surveillent et soutiennent une mission spatiale.","Des rangées de consoles et de grands écrans aident les spécialistes à partager les informations et à suivre la mission ensemble."],controllers:["Les contrôleurs de vol sont spécialisés dans différents systèmes et responsabilités pendant une mission.","Ils communiquent, étudient les données, résolvent les problèmes et coordonnent les décisions en équipe."],launch:["Pendant un lancement, les équipes suivent la progression de la fusée et surveillent des mesures importantes.","Un compte à rebours organise la séquence finale des événements avant le décollage."],screens:["Les grands écrans peuvent afficher l'état de la mission, des cartes, des informations sur le vaisseau, des vidéos et d'autres données.","Les contrôleurs utilisent aussi des écrans individuels pour surveiller leurs systèmes."],comms:["Les casques, microphones, ordinateurs et réseaux de communication permettent aux équipes d'échanger des informations.","Une communication claire est essentielle lorsque de nombreux spécialistes doivent se coordonner rapidement."],team:["Les missions spatiales dépendent de nombreuses personnes travaillant ensemble, dans l'espace et sur Terre.","Ingénieurs, scientifiques, techniciens, contrôleurs, astronautes et de nombreux autres spécialistes contribuent à une mission."]},
+de:{room:["Die Missionskontrolle ist ein Zentrum, in dem Teams eine Weltraummission überwachen und unterstützen.","Reihen von Konsolen und große Anzeigen helfen Fachleuten, Informationen auszutauschen und die Mission gemeinsam zu verfolgen."],controllers:["Flugkontrolleure sind während einer Mission auf verschiedene Systeme und Aufgaben spezialisiert.","Sie kommunizieren, untersuchen Daten, lösen Probleme und koordinieren Entscheidungen als Team."],launch:["Während eines Starts verfolgen Teams den Flug der Rakete und beobachten wichtige Messwerte.","Ein Countdown ordnet die letzten Ereignisse vor dem Start."],screens:["Große Bildschirme können Missionsstatus, Karten, Raumfahrzeuginformationen, Videos und andere Daten anzeigen.","Kontrolleure verwenden außerdem eigene Monitore für die Systeme, für die sie verantwortlich sind."],comms:["Headsets, Mikrofone, Computer und Kommunikationsnetze helfen Missionsteams beim Informationsaustausch.","Klare Kommunikation ist besonders wichtig, wenn viele Fachleute sich schnell abstimmen müssen."],team:["Weltraummissionen hängen von vielen Menschen ab, die im Weltraum und auf der Erde zusammenarbeiten.","Ingenieure, Wissenschaftler, Techniker, Kontrolleure, Astronauten und viele weitere Fachleute tragen zu einer Mission bei."]},
+it:{room:["Il controllo missione è un centro dove le squadre monitorano e supportano una missione spaziale.","File di console e grandi schermi aiutano gli specialisti a condividere informazioni e seguire insieme la missione."],controllers:["I controllori di volo sono specializzati in diversi sistemi e responsabilità durante una missione.","Comunicano, studiano i dati, risolvono problemi e coordinano le decisioni come una squadra."],launch:["Durante un lancio, le squadre seguono il progresso del razzo e osservano misurazioni importanti.","Un conto alla rovescia organizza la sequenza finale degli eventi prima del decollo."],screens:["I grandi schermi possono mostrare stato della missione, mappe, informazioni sul veicolo, video e altri dati.","I controllori usano anche monitor individuali per concentrarsi sui sistemi di loro competenza."],comms:["Cuffie, microfoni, computer e reti di comunicazione aiutano le squadre a scambiarsi informazioni.","Una comunicazione chiara è particolarmente importante quando molti specialisti devono coordinarsi rapidamente."],team:["Le missioni spaziali dipendono da molte persone che lavorano insieme, nello spazio e sulla Terra.","Ingegneri, scienziati, tecnici, controllori, astronauti e molti altri specialisti contribuiscono a una missione."]},
+pt:{room:["O controle da missão é um centro onde equipes monitoram e apoiam uma missão espacial.","Fileiras de consoles e grandes telas ajudam especialistas a compartilhar informações e acompanhar a missão juntos."],controllers:["Controladores de voo se especializam em diferentes sistemas e responsabilidades durante uma missão.","Eles se comunicam, estudam dados, resolvem problemas e coordenam decisões como uma equipe."],launch:["Durante um lançamento, as equipes acompanham o progresso do foguete e observam medições importantes.","Uma contagem regressiva organiza a sequência final de eventos antes da decolagem."],screens:["Grandes telas podem mostrar o estado da missão, mapas, informações da nave, vídeo e outros dados.","Controladores também usam monitores individuais para se concentrar nos sistemas pelos quais são responsáveis."],comms:["Fones, microfones, computadores e redes de comunicação ajudam as equipes a trocar informações.","Comunicação clara é especialmente importante quando muitos especialistas precisam se coordenar rapidamente."],team:["Missões espaciais dependem de muitas pessoas trabalhando juntas, tanto no espaço quanto na Terra.","Engenheiros, cientistas, técnicos, controladores, astronautas e muitos outros especialistas contribuem para uma missão."]},
+no:{room:["Et kontrollsenter er et sted der team overvåker og støtter en romferd.","Rader med konsoller og store skjermer hjelper spesialister med å dele informasjon og følge oppdraget sammen."],controllers:["Flygeledere spesialiserer seg på ulike systemer og ansvarsområder under en romferd.","De kommuniserer, studerer data, løser problemer og samordner beslutninger som ett team."],launch:["Under en oppskyting følger teamene rakettens fremdrift og overvåker viktige målinger.","En nedtelling organiserer den siste rekken av hendelser før oppskyting."],screens:["Store skjermer kan vise oppdragsstatus, kart, informasjon om romfartøyet, video og andre data.","Kontrollører bruker også egne skjermer for å følge systemene de har ansvar for."],comms:["Hodesett, mikrofoner, datamaskiner og kommunikasjonsnettverk hjelper teamene med å utveksle informasjon.","Tydelig kommunikasjon er spesielt viktig når mange spesialister må koordinere seg raskt."],team:["Romferder er avhengige av mange mennesker som samarbeider både i verdensrommet og på jorden.","Ingeniører, forskere, teknikere, kontrollører, astronauter og mange andre spesialister bidrar til et oppdrag."]}};
+const challengeOrder=["bee","rocket","countdown","flag","headset","earth"];
+const SOUND_MAP={};
+const langSel=document.getElementById("lang"),voiceSel=document.getElementById("voice");
+const title=document.getElementById("title"),prompt=document.getElementById("prompt"),line=document.getElementById("line"),translation=document.getElementById("translation"),status=document.getElementById("status"),world=document.getElementById("world");
+let lastWord="game",activeLesson="",lessonPhrase=1,challenge=-1,lastSpoken="";
+function voices(){return ("speechSynthesis" in window)?speechSynthesis.getVoices():[]}
+function fillVoices(){const old=localStorage.getItem("talkabee-mission-control-voice-"+langSel.value)||"";voiceSel.innerHTML='<option value="">Browser Default</option>';voices().forEach(v=>{const o=document.createElement("option");o.value=v.name;o.textContent=v.name+(v.lang?" — "+v.lang:"");voiceSel.appendChild(o)});if([...voiceSel.options].some(o=>o.value===old))voiceSel.value=old}
+if("speechSynthesis" in window){speechSynthesis.onvoiceschanged=fillVoices;fillVoices();setTimeout(fillVoices,150);setTimeout(fillVoices,600);setTimeout(fillVoices,1500)}
+voiceSel.onchange=()=>localStorage.setItem("talkabee-mission-control-voice-"+langSel.value,voiceSel.value);
+function speak(text,rate=.88,onend=null){if(!text||!("speechSynthesis" in window)){if(onend)onend();return}speechSynthesis.cancel();setTimeout(()=>{const u=new SpeechSynthesisUtterance(text);u.lang=SPEECH_LANG[langSel.value]||langSel.value;u.rate=rate;const v=speechSynthesis.getVoices().find(x=>x.name===voiceSel.value);if(v)u.voice=v;if(onend)u.onend=onend;speechSynthesis.speak(u)},50);lastSpoken=text}
+function stopSound(){document.querySelectorAll("audio[data-talkabee-sound]").forEach(a=>{a.pause();a.currentTime=0;a.remove()})}
+function playSound(key){stopSound();const src=SOUND_MAP[key];if(!src)return;const a=new Audio(src);a.dataset.talkabeeSound="1";document.body.appendChild(a);a.play().catch(()=>{});a.onended=()=>a.remove()}
+function showWord(key){activeLesson="";lastWord=key;lessonPhrase=1;title.textContent="Click & Discover";prompt.textContent="You found "+(EN[key]||key)+".";line.textContent=WORDS[langSel.value][key]||EN[key]||key;translation.textContent=langSel.value==="en"?"":(EN[key]||key)}
+document.querySelectorAll(".hotspot").forEach(b=>b.onclick=()=>{const key=b.dataset.word;showWord(key);let played=false;const after=()=>{if(played)return;played=true;playSound(key)};speak(WORDS[langSel.value][key]||EN[key]||key,.82,after);setTimeout(after,1500);if(challenge>=0){if(key===challengeOrder[challenge]){status.textContent="✓ Nice find!";status.style.color="#9dffbf"}else{status.textContent="Not that one — keep looking.";status.style.color="#ffe28a"}}});
+function clearChallenge(){challenge=-1;world.classList.remove("challenge-mode");document.querySelectorAll(".hotspot").forEach(h=>h.classList.remove("target"));status.textContent=""}
+document.getElementById("discovery").onclick=()=>{clearChallenge();activeLesson="";lastWord="game";title.textContent="Click & Discover";prompt.textContent="Click any object in the scene to hear its name.";line.textContent=WORDS[langSel.value].game;translation.textContent=langSel.value==="en"?"":EN.game};
+document.querySelectorAll("[data-ch]").forEach(b=>b.onclick=()=>{activeLesson="";lastWord="";challenge=+b.dataset.ch;world.classList.add("challenge-mode");document.querySelectorAll(".hotspot").forEach(h=>h.classList.toggle("target",h.dataset.word===challengeOrder[challenge]));title.textContent="Challenge "+(challenge+1)+" of 6";prompt.textContent=b.textContent.replace(/^[0-9]+\.\s*/,"");line.textContent=WORDS[langSel.value][challengeOrder[challenge]];translation.textContent=langSel.value==="en"?"":EN[challengeOrder[challenge]];status.textContent=""});
+function showLesson(key,speakIt=false){clearChallenge();activeLesson=key;lastWord="";lessonPhrase=Math.max(0,Math.min(1,lessonPhrase));const a=lessons[langSel.value][key],e=lessons.en[key],btn=document.querySelector(`[data-lesson="${key}"]`);title.textContent=btn?btn.textContent.replace(/^[0-9]+\.\s*/,""):"Mission Control Adventure";prompt.textContent=a[0];line.textContent=a[lessonPhrase];translation.textContent=langSel.value==="en"?"":e[lessonPhrase];if(speakIt)speak(a[lessonPhrase])}
+document.querySelectorAll("[data-lesson]").forEach(b=>b.onclick=()=>{lessonPhrase=1;showLesson(b.dataset.lesson,true)});
+function currentSpeechText(){if(activeLesson)return lessons[langSel.value][activeLesson][lessonPhrase];if(lastWord)return WORDS[langSel.value][lastWord]||EN[lastWord];return line.textContent}
+document.getElementById("normal").onclick=()=>speak(currentSpeechText(),.82);
+document.getElementById("slow").onclick=()=>speak(currentSpeechText(),.58);
+document.getElementById("replay").onclick=()=>speak(lastSpoken||currentSpeechText(),.82);
+document.getElementById("nextPhrase").onclick=()=>{if(!activeLesson){const keys=Object.keys(EN),i=Math.max(0,keys.indexOf(lastWord));showWord(keys[(i+1)%keys.length]);speak(currentSpeechText(),.82);return}lessonPhrase=(lessonPhrase+1)%2;showLesson(activeLesson,true)};
+langSel.onchange=()=>{fillVoices();if(activeLesson)showLesson(activeLesson,false);else if(lastWord)showWord(lastWord)};
+document.getElementById("sceneView").onclick=()=>document.body.classList.add("scene-view");
+document.getElementById("sceneReturn").onclick=()=>document.body.classList.remove("scene-view");
+showWord("game");
+</script>
+</body>
+</html>
+
+<style id="talkabee-ski-panel-180">
+@media(min-width:761px){.panel{width:180px!important;min-width:180px!important;max-width:180px!important}}
+</style>

@@ -1,0 +1,204 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Talk A Bee — Seattle Fishing Adventure</title>
+<link rel="icon" type="image/png" href="images/talkabee-favicon.png">
+<style>
+*{box-sizing:border-box}
+html,body{margin:0;width:100%;height:100%;overflow:hidden;font-family:Arial,Helvetica,sans-serif;background:#063a66;color:#fff}
+.world{position:relative;width:100vw;height:100vh;background:url("images/Talk-A-Bee-Seattle-Fishing-Adventure.jpg") center center/cover no-repeat}
+
+/* APPROVED TALK A BEE LEFT PANEL */
+.panel{position:fixed;z-index:1000;left:16px;top:16px;bottom:16px;width:180px;min-width:180px;max-width:180px;
+padding:14px;overflow-x:hidden;overflow-y:auto;border-radius:20px;border:1px solid rgba(255,255,255,.28);
+background:rgba(7,23,39,.31);box-shadow:0 12px 30px rgba(0,0,0,.24);backdrop-filter:blur(3px);-webkit-backdrop-filter:blur(3px)}
+.panel h1{font-size:19px;line-height:1.08;margin:4px 0 10px;text-shadow:0 2px 4px rgba(0,0,0,.55)}
+.label{font-size:9.5px;line-height:1.1;letter-spacing:.09em;font-weight:900;margin:9px 0 4px}
+.panel button,.panel select,.panel a{width:100%;min-height:34px;margin:4px 0;padding:8px 9px;border-radius:12px;
+border:1px solid rgba(255,255,255,.38);background:rgba(7,32,50,.54);color:#fff;font:800 12px/1.16 Arial,sans-serif;
+text-align:left;text-decoration:none}
+.panel button:hover,.panel a:hover{background:rgba(20,58,79,.70)}
+.panel button.active{background:rgba(78,69,219,.74)}
+.panel select{white-space:nowrap;text-overflow:ellipsis;overflow:hidden}
+
+/* APPROVED 520px SCRIPT CARD */
+.card{position:fixed;z-index:900;left:50%;bottom:16px;width:520px;max-width:520px;padding:14px 16px;
+border-radius:20px;border:1px solid rgba(255,255,255,.30);background:rgba(25,19,24,.38);
+box-shadow:0 12px 30px rgba(0,0,0,.28);backdrop-filter:blur(5px);-webkit-backdrop-filter:blur(5px);
+transform:translateX(-50%) scale(.67);transform-origin:bottom center}
+.card .kicker{font-size:15px;line-height:1.25;font-weight:900;letter-spacing:.10em;color:rgba(255,255,255,.96);
+text-shadow:0 1px 3px rgba(0,0,0,.78);margin:0 0 6px}
+.card h2{font-size:22px;line-height:1.08;margin:4px 0 7px;text-shadow:0 1px 3px rgba(0,0,0,.55)}
+.card p{font-size:18px;line-height:1.35;margin:4px 0 7px}
+.word{margin-top:8px;padding:10px 12px;border-radius:14px;background:rgba(88,88,88,.72);border:1px solid rgba(255,255,255,.20)}
+.word strong{display:block;font-size:22px;line-height:1.28}
+.translation{font-size:18px;line-height:1.35;margin-top:3px}
+.controls{display:flex;align-items:center;gap:8px;flex-wrap:nowrap;margin-top:8px}
+.controls button{width:auto;min-width:0;padding:9px 13px;border-radius:12px;border:1px solid rgba(255,255,255,.35);
+background:rgba(255,255,255,.88);color:#10283c;font:900 13px/1 Arial,sans-serif;white-space:nowrap}
+
+/* HOTSPOTS */
+.hotspot{position:absolute;z-index:8;border:0;background:transparent;opacity:0;cursor:pointer;border-radius:16px}
+.hotspot:hover,.hotspot:focus-visible{opacity:1;background:rgba(255,220,72,.28);outline:2px solid rgba(255,255,255,.90)}
+.challenge-mode .hotspot.target{opacity:1;background:rgba(255,199,48,.38);outline:4px solid #fff;box-shadow:0 0 0 7px rgba(255,200,50,.20)}
+
+/* APPROVED COMPACT PREVIOUS / NEXT CHEVRONS */
+.talkabee-prev-next-nav{position:fixed;top:18px;right:22px;z-index:2147483000;display:flex;align-items:center;overflow:hidden;
+border:2px solid rgba(255,255,255,.82);border-radius:999px;background:rgba(11,22,42,.24);
+box-shadow:0 5px 16px rgba(0,0,0,.16);backdrop-filter:blur(3px);-webkit-backdrop-filter:blur(3px)}
+.talkabee-prev-next-nav a{width:48px;height:48px;display:grid;place-items:center;text-decoration:none;color:#fff;
+font:900 38px/1 Arial,sans-serif;text-shadow:0 1px 3px rgba(0,0,0,.42)}
+.talkabee-prev-next-nav a+a{border-left:1px solid rgba(255,255,255,.36)}
+.talkabee-prev-next-nav a:hover,.talkabee-prev-next-nav a:focus-visible{background:rgba(255,255,255,.18);outline:none}
+
+/* SCENE VIEW */
+.scene-return{display:none;position:fixed;z-index:2147483001;left:18px;top:18px;padding:10px 14px;border-radius:12px;
+border:1px solid #fff;background:rgba(7,23,39,.65);color:#fff;font-weight:900}
+.scene-view .panel,.scene-view .card,.scene-view .talkabee-prev-next-nav{display:none}
+.scene-view .scene-return{display:block}
+
+@media(max-width:760px){
+ .panel{left:10px;top:10px;bottom:10px;width:180px;min-width:180px;max-width:180px;padding:11px}
+ .card{width:min(520px,calc(100vw - 32px));bottom:10px;transform:translateX(-50%) scale(.82)}
+ .talkabee-prev-next-nav{top:12px;right:12px}.talkabee-prev-next-nav a{width:42px;height:42px;font-size:33px}
+}
+</style>
+</head>
+<body>
+<nav class="talkabee-prev-next-nav" aria-label="Adventure navigation">
+  <a href="Talk-A-Bee-Hang-Gliding-Adventure.html" aria-label="Previous adventure" title="Previous">‹</a>
+  <a href="Talk-A-Bee-Helicopter-Mountain-Rescue-Adventure.html" aria-label="Next adventure" title="Next">›</a>
+</nav>
+
+<main class="world" id="world">
+<button class="scene-return" id="sceneReturn">Return to Adventure</button>
+
+<aside class="panel">
+<h1>🎣 Seattle Fishing Adventure</h1>
+<div class="label">LANGUAGE</div>
+<select id="lang">
+<option value="es">Spanish</option><option value="fr">French</option><option value="en">English</option>
+<option value="de">German</option><option value="it">Italian</option><option value="pt">Portuguese</option><option value="no">Norwegian</option>
+</select>
+<div class="label">VOICE</div>
+<select id="voice"><option value="">Browser Default</option></select>
+<button id="sceneView">◉ Scene View</button>
+
+<div class="label">DISCOVERY</div>
+<button id="discovery">🔎 Discovery — Click the Scene</button>
+
+<div class="label">ACTIVITIES</div>
+<button data-lesson="boat">1. Board the Fishing Boat</button>
+<button data-lesson="fish">2. Let's Go Fishing</button>
+<button data-lesson="city">3. Explore Seattle</button>
+<button data-lesson="wildlife">4. Wildlife on the Water</button>
+<button data-lesson="gear">5. Fishing Gear</button>
+<button data-lesson="family">6. A Day Together</button>
+<div class="label">CHALLENGES</div>
+<button data-ch="0">1. Find the Orca</button>
+<button data-ch="1">2. Find the Dolphin</button>
+<button data-ch="2">3. Find the Space Needle</button>
+<button data-ch="3">4. Find Mount Rainier</button>
+<button data-ch="4">5. Find the Dog</button>
+<button data-ch="5">6. Find the Bee</button>
+<a href="index.html">← Return to Main Directory</a>
+</aside>
+
+<section class="card">
+<div class="kicker">ON A SEATTLE FISHING BOAT</div>
+<h2 id="title">Seattle Fishing Adventure</h2>
+<p id="prompt">Click any object in the scene to hear its name.</p>
+<div class="word"><strong id="line">barco de pesca</strong><div class="translation" id="translation">fishing boat</div></div>
+<p id="status"></p>
+<div class="controls">
+<button id="normal">🔊 Speak</button><button id="slow">🐢 Slow</button><button id="replay">↻ Replay</button><button id="nextPhrase">Next phrase →</button>
+</div>
+</section>
+
+
+
+
+
+
+
+
+<!-- Hotspots mapped to the approved CLEAN Seattle Fishing JPG; no UI is baked into the image. -->
+<button class="hotspot" data-word="orca" style="left:10%;top:44%;width:24%;height:25%" aria-label="Orca"></button>
+<button class="hotspot" data-word="dolphin" style="left:37%;top:47%;width:15%;height:18%" aria-label="Dolphin"></button>
+<button class="hotspot" data-word="spaceneedle" style="left:31%;top:12%;width:10%;height:31%" aria-label="Space Needle"></button>
+<button class="hotspot" data-word="seattle" style="left:20%;top:17%;width:43%;height:25%" aria-label="Seattle skyline"></button>
+<button class="hotspot" data-word="rainier" style="left:88%;top:11%;width:12%;height:20%" aria-label="Mount Rainier"></button>
+<button class="hotspot" data-word="ferriswheel" style="left:24%;top:31%;width:9%;height:13%" aria-label="Ferris wheel"></button>
+<button class="hotspot" data-word="seagulls" style="left:13%;top:5%;width:47%;height:19%" aria-label="Seagulls"></button>
+<button class="hotspot" data-word="boat" style="left:48%;top:22%;width:52%;height:76%" aria-label="Fishing boat"></button>
+<button class="hotspot" data-word="fishingrods" style="left:38%;top:25%;width:61%;height:42%" aria-label="Fishing rods"></button>
+<button class="hotspot" data-word="grandpa" style="left:55%;top:32%;width:11%;height:32%" aria-label="Grandpa"></button>
+<button class="hotspot" data-word="sophia" style="left:65%;top:30%;width:10%;height:29%" aria-label="Sophia"></button>
+<button class="hotspot" data-word="carlos" style="left:75%;top:29%;width:10%;height:31%" aria-label="Carlos"></button>
+<button class="hotspot" data-word="grandma" style="left:84%;top:34%;width:12%;height:31%" aria-label="Grandma"></button>
+<button class="hotspot" data-word="mitchell" style="left:58%;top:48%;width:13%;height:29%" aria-label="Mitchell"></button>
+<button class="hotspot" data-word="nicole" style="left:69%;top:49%;width:13%;height:29%" aria-label="Nicole"></button>
+<button class="hotspot" data-word="dog" style="left:79%;top:57%;width:13%;height:25%" aria-label="Dog"></button>
+<button class="hotspot" data-word="bee" style="left:66%;top:10%;width:10%;height:15%" aria-label="Bee"></button>
+<button class="hotspot" data-word="lifering" style="left:58%;top:14%;width:9%;height:14%" aria-label="Life ring"></button>
+<button class="hotspot" data-word="radar" style="left:76%;top:4%;width:10%;height:14%" aria-label="Radar"></button>
+<button class="hotspot" data-word="net" style="left:80%;top:73%;width:18%;height:22%" aria-label="Fishing net"></button>
+
+</main>
+
+<script>
+const EN={fishing:"fishing boat",boat:"fishing boat",orca:"orca",dolphin:"dolphin",spaceneedle:"Space Needle",seattle:"Seattle skyline",rainier:"Mount Rainier",ferriswheel:"Ferris wheel",seagulls:"seagulls",fishingrods:"fishing rods",grandpa:"Grandpa",sophia:"Sophia",carlos:"Carlos",grandma:"Grandma",mitchell:"Mitchell",nicole:"Nicole",dog:"dog",bee:"bee",lifering:"life ring",radar:"radar",net:"fishing net"};
+const WORDS={
+es:{fishing:"barco de pesca",boat:"barco de pesca",orca:"orca",dolphin:"delfín",spaceneedle:"Aguja Espacial",seattle:"horizonte de Seattle",rainier:"Monte Rainier",ferriswheel:"noria",seagulls:"gaviotas",fishingrods:"cañas de pescar",grandpa:"abuelo",sophia:"Sophia",carlos:"Carlos",grandma:"abuela",mitchell:"Mitchell",nicole:"Nicole",dog:"perro",bee:"abeja",lifering:"salvavidas",radar:"radar",net:"red de pesca"},
+fr:{fishing:"bateau de pêche",boat:"bateau de pêche",orca:"orque",dolphin:"dauphin",spaceneedle:"Space Needle",seattle:"horizon de Seattle",rainier:"mont Rainier",ferriswheel:"grande roue",seagulls:"mouettes",fishingrods:"cannes à pêche",grandpa:"grand-père",sophia:"Sophia",carlos:"Carlos",grandma:"grand-mère",mitchell:"Mitchell",nicole:"Nicole",dog:"chien",bee:"abeille",lifering:"bouée de sauvetage",radar:"radar",net:"filet de pêche"},
+en:{...EN},
+de:{fishing:"Fischerboot",boat:"Fischerboot",orca:"Orca",dolphin:"Delfin",spaceneedle:"Space Needle",seattle:"Skyline von Seattle",rainier:"Mount Rainier",ferriswheel:"Riesenrad",seagulls:"Möwen",fishingrods:"Angelruten",grandpa:"Opa",sophia:"Sophia",carlos:"Carlos",grandma:"Oma",mitchell:"Mitchell",nicole:"Nicole",dog:"Hund",bee:"Biene",lifering:"Rettungsring",radar:"Radar",net:"Fischernetz"},
+it:{fishing:"barca da pesca",boat:"barca da pesca",orca:"orca",dolphin:"delfino",spaceneedle:"Space Needle",seattle:"skyline di Seattle",rainier:"Monte Rainier",ferriswheel:"ruota panoramica",seagulls:"gabbiani",fishingrods:"canne da pesca",grandpa:"nonno",sophia:"Sophia",carlos:"Carlos",grandma:"nonna",mitchell:"Mitchell",nicole:"Nicole",dog:"cane",bee:"ape",lifering:"salvagente",radar:"radar",net:"rete da pesca"},
+pt:{fishing:"barco de pesca",boat:"barco de pesca",orca:"orca",dolphin:"golfinho",spaceneedle:"Space Needle",seattle:"horizonte de Seattle",rainier:"Monte Rainier",ferriswheel:"roda-gigante",seagulls:"gaivotas",fishingrods:"varas de pesca",grandpa:"avô",sophia:"Sophia",carlos:"Carlos",grandma:"avó",mitchell:"Mitchell",nicole:"Nicole",dog:"cachorro",bee:"abelha",lifering:"boia salva-vidas",radar:"radar",net:"rede de pesca"},
+no:{fishing:"fiskebåt",boat:"fiskebåt",orca:"spekkhogger",dolphin:"delfin",spaceneedle:"Space Needle",seattle:"Seattle-silhuetten",rainier:"Mount Rainier",ferriswheel:"pariserhjul",seagulls:"måker",fishingrods:"fiskestenger",grandpa:"bestefar",sophia:"Sophia",carlos:"Carlos",grandma:"bestemor",mitchell:"Mitchell",nicole:"Nicole",dog:"hund",bee:"bie",lifering:"livbøye",radar:"radar",net:"fiskenett"}};
+const SPEECH_LANG={es:"es-ES",fr:"fr-FR",en:"en-US",de:"de-DE",it:"it-IT",pt:"pt-PT",no:"nb-NO"};
+const lessons={
+en:{boat:["Welcome aboard our Seattle fishing boat.","The family is ready for a day on the water."],fish:["Fishing rods stretch over the water as everyone watches for a bite.","A fishing net is ready to help bring a fish aboard."],city:["Seattle rises behind the boat with the Space Needle and waterfront in view.","Mount Rainier stands beyond the city on a clear day."],wildlife:["An orca and a dolphin appear near the boat while seagulls fly overhead.","The water around Seattle is full of fascinating wildlife."],gear:["Fishing rods, reels, a net, radar, and safety equipment help the crew on the water.","Good equipment helps make a fishing trip safer and easier."],family:["Grandma, Grandpa, Carlos, Sophia, Mitchell, and Nicole are fishing together.","Even the dog and the Talk A Bee mascot joined the adventure."]},
+es:{boat:["Bienvenidos a nuestro barco de pesca en Seattle.","La familia está lista para pasar un día en el agua."],fish:["Las cañas de pescar se extienden sobre el agua mientras todos esperan que pique un pez.","Una red de pesca está lista para ayudar a subir un pez al barco."],city:["Seattle se levanta detrás del barco con la Aguja Espacial y el paseo marítimo a la vista.","El Monte Rainier se ve más allá de la ciudad en un día despejado."],wildlife:["Una orca y un delfín aparecen cerca del barco mientras las gaviotas vuelan por encima.","Las aguas de Seattle tienen una fauna fascinante."],gear:["Las cañas, los carretes, la red, el radar y el equipo de seguridad ayudan a la tripulación.","Un buen equipo hace que la pesca sea más segura y fácil."],family:["La abuela, el abuelo, Carlos, Sophia, Mitchell y Nicole pescan juntos.","Hasta el perro y la mascota Talk A Bee se unieron a la aventura."]},
+fr:{boat:["Bienvenue à bord de notre bateau de pêche à Seattle.","La famille est prête pour une journée sur l'eau."],fish:["Les cannes à pêche s'étendent au-dessus de l'eau pendant que tout le monde attend une prise.","Un filet de pêche est prêt pour aider à monter un poisson à bord."],city:["Seattle s'élève derrière le bateau avec le Space Needle et le front de mer en vue.","Le mont Rainier se dresse au-delà de la ville par temps clair."],wildlife:["Un orque et un dauphin apparaissent près du bateau pendant que des mouettes volent au-dessus.","Les eaux autour de Seattle abritent une faune fascinante."],gear:["Les cannes, moulinets, filet, radar et équipements de sécurité aident l'équipage.","Un bon équipement rend la pêche plus sûre et plus facile."],family:["Grand-mère, grand-père, Carlos, Sophia, Mitchell et Nicole pêchent ensemble.","Même le chien et la mascotte Talk A Bee participent à l'aventure."]},
+de:{boat:["Willkommen an Bord unseres Fischerboots in Seattle.","Die Familie ist bereit für einen Tag auf dem Wasser."],fish:["Die Angelruten ragen über das Wasser, während alle auf einen Biss warten.","Ein Fischernetz liegt bereit, um einen Fisch an Bord zu holen."],city:["Hinter dem Boot liegt Seattle mit der Space Needle und der Uferpromenade.","An einem klaren Tag erhebt sich Mount Rainier hinter der Stadt."],wildlife:["Ein Orca und ein Delfin erscheinen in der Nähe des Boots, während Möwen darüber fliegen.","Die Gewässer um Seattle bieten faszinierende Tierwelt."],gear:["Angelruten, Rollen, Netz, Radar und Sicherheitsausrüstung helfen der Crew.","Gute Ausrüstung macht einen Angelausflug sicherer und einfacher."],family:["Oma, Opa, Carlos, Sophia, Mitchell und Nicole angeln zusammen.","Sogar der Hund und das Talk A Bee Maskottchen sind dabei."]},
+it:{boat:["Benvenuti a bordo della nostra barca da pesca a Seattle.","La famiglia è pronta per una giornata sull'acqua."],fish:["Le canne da pesca si estendono sull'acqua mentre tutti aspettano che un pesce abbocchi.","Una rete da pesca è pronta per aiutare a portare un pesce a bordo."],city:["Seattle si alza dietro la barca con lo Space Needle e il lungomare in vista.","Il Monte Rainier si trova oltre la città in una giornata limpida."],wildlife:["Un'orca e un delfino appaiono vicino alla barca mentre i gabbiani volano sopra.","Le acque intorno a Seattle ospitano animali affascinanti."],gear:["Canne, mulinelli, rete, radar e attrezzature di sicurezza aiutano l'equipaggio.","Una buona attrezzatura rende la pesca più sicura e facile."],family:["Nonna, nonno, Carlos, Sophia, Mitchell e Nicole pescano insieme.","Anche il cane e la mascotte Talk A Bee partecipano all'avventura."]},
+pt:{boat:["Bem-vindos a bordo do nosso barco de pesca em Seattle.","A família está pronta para um dia na água."],fish:["As varas de pesca se estendem sobre a água enquanto todos esperam um peixe morder.","Uma rede de pesca está pronta para ajudar a trazer um peixe a bordo."],city:["Seattle aparece atrás do barco com a Space Needle e a orla à vista.","O Monte Rainier fica além da cidade em um dia claro."],wildlife:["Uma orca e um golfinho aparecem perto do barco enquanto gaivotas voam acima.","As águas ao redor de Seattle têm uma vida selvagem fascinante."],gear:["Varas, molinetes, rede, radar e equipamentos de segurança ajudam a tripulação.","Um bom equipamento torna a pesca mais segura e fácil."],family:["A avó, o avô, Carlos, Sophia, Mitchell e Nicole pescam juntos.","Até o cachorro e a mascote Talk A Bee participaram da aventura."]},
+no:{boat:["Velkommen om bord i fiskebåten vår i Seattle.","Familien er klar for en dag på vannet."],fish:["Fiskestengene strekker seg over vannet mens alle venter på napp.","Et fiskenett er klart til å hjelpe med å få en fisk om bord."],city:["Seattle ligger bak båten med Space Needle og havneområdet i sikte.","Mount Rainier reiser seg bak byen på en klar dag."],wildlife:["En spekkhogger og en delfin dukker opp nær båten mens måker flyr over.","Vannet rundt Seattle har et fascinerende dyreliv."],gear:["Fiskestenger, sneller, nett, radar og sikkerhetsutstyr hjelper mannskapet.","Godt utstyr gjør fisketuren tryggere og enklere."],family:["Bestemor, bestefar, Carlos, Sophia, Mitchell og Nicole fisker sammen.","Til og med hunden og Talk A Bee-maskotten ble med på eventyret."]}};
+const challengeOrder=["orca","dolphin","spaceneedle","rainier","dog","bee"];
+const SOUND_MAP={};
+const langSel=document.getElementById("lang"),voiceSel=document.getElementById("voice");
+const title=document.getElementById("title"),prompt=document.getElementById("prompt"),line=document.getElementById("line"),translation=document.getElementById("translation"),status=document.getElementById("status"),world=document.getElementById("world");
+let lastWord="fishing",activeLesson="",lessonPhrase=1,challenge=-1,lastSpoken="";
+function voices(){return ("speechSynthesis" in window)?speechSynthesis.getVoices():[]}
+function fillVoices(){const old=localStorage.getItem("talkabee-fishing-voice-"+langSel.value)||"";voiceSel.innerHTML='<option value="">Browser Default</option>';voices().forEach(v=>{const o=document.createElement("option");o.value=v.name;o.textContent=v.name+(v.lang?" — "+v.lang:"");voiceSel.appendChild(o)});if([...voiceSel.options].some(o=>o.value===old))voiceSel.value=old}
+if("speechSynthesis" in window){speechSynthesis.onvoiceschanged=fillVoices;fillVoices();setTimeout(fillVoices,150);setTimeout(fillVoices,600);setTimeout(fillVoices,1500)}
+voiceSel.onchange=()=>localStorage.setItem("talkabee-fishing-voice-"+langSel.value,voiceSel.value);
+function speak(text,rate=.88,onend=null){if(!text||!("speechSynthesis" in window)){if(onend)onend();return}speechSynthesis.cancel();setTimeout(()=>{const u=new SpeechSynthesisUtterance(text);u.lang=SPEECH_LANG[langSel.value]||langSel.value;u.rate=rate;const v=speechSynthesis.getVoices().find(x=>x.name===voiceSel.value);if(v)u.voice=v;if(onend)u.onend=onend;speechSynthesis.speak(u)},50);lastSpoken=text}
+function stopSound(){document.querySelectorAll("audio[data-talkabee-sound]").forEach(a=>{a.pause();a.currentTime=0;a.remove()})}
+function playSound(key){stopSound();const src=SOUND_MAP[key];if(!src)return;const a=new Audio(src);a.dataset.talkabeeSound="1";document.body.appendChild(a);a.play().catch(()=>{});a.onended=()=>a.remove()}
+function showWord(key){activeLesson="";lastWord=key;lessonPhrase=1;title.textContent="Click & Discover";prompt.textContent="You found "+(EN[key]||key)+".";line.textContent=WORDS[langSel.value][key]||EN[key]||key;translation.textContent=langSel.value==="en"?"":(EN[key]||key)}
+document.querySelectorAll(".hotspot").forEach(b=>b.onclick=()=>{const key=b.dataset.word;showWord(key);let played=false;const after=()=>{if(played)return;played=true;playSound(key)};speak(WORDS[langSel.value][key]||EN[key]||key,.82,after);setTimeout(after,1500);if(challenge>=0){if(key===challengeOrder[challenge]){status.textContent="✓ Nice find!";status.style.color="#9dffbf"}else{status.textContent="Not that one — keep looking.";status.style.color="#ffe28a"}}});
+function clearChallenge(){challenge=-1;world.classList.remove("challenge-mode");document.querySelectorAll(".hotspot").forEach(h=>h.classList.remove("target"));status.textContent=""}
+document.getElementById("discovery").onclick=()=>{clearChallenge();activeLesson="";lastWord="fishing";title.textContent="Click & Discover";prompt.textContent="Click any object in the scene to hear its name.";line.textContent=WORDS[langSel.value].fishing;translation.textContent=langSel.value==="en"?"":EN.fishing};
+document.querySelectorAll("[data-ch]").forEach(b=>b.onclick=()=>{activeLesson="";lastWord="";challenge=+b.dataset.ch;world.classList.add("challenge-mode");document.querySelectorAll(".hotspot").forEach(h=>h.classList.toggle("target",h.dataset.word===challengeOrder[challenge]));title.textContent="Challenge "+(challenge+1)+" of 6";prompt.textContent=b.textContent.replace(/^[0-9]+\.\s*/,"");line.textContent=WORDS[langSel.value][challengeOrder[challenge]];translation.textContent=langSel.value==="en"?"":EN[challengeOrder[challenge]];status.textContent=""});
+function showLesson(key,speakIt=false){clearChallenge();activeLesson=key;lastWord="";lessonPhrase=Math.max(0,Math.min(1,lessonPhrase));const a=lessons[langSel.value][key],e=lessons.en[key],btn=document.querySelector(`[data-lesson="${key}"]`);title.textContent=btn?btn.textContent.replace(/^[0-9]+\.\s*/,""):"Seattle Fishing Adventure";prompt.textContent=a[0];line.textContent=a[lessonPhrase];translation.textContent=langSel.value==="en"?"":e[lessonPhrase];if(speakIt)speak(a[lessonPhrase])}
+document.querySelectorAll("[data-lesson]").forEach(b=>b.onclick=()=>{lessonPhrase=1;showLesson(b.dataset.lesson,true)});
+function currentSpeechText(){if(activeLesson)return lessons[langSel.value][activeLesson][lessonPhrase];if(lastWord)return WORDS[langSel.value][lastWord]||EN[lastWord];return line.textContent}
+document.getElementById("normal").onclick=()=>speak(currentSpeechText(),.82);
+document.getElementById("slow").onclick=()=>speak(currentSpeechText(),.58);
+document.getElementById("replay").onclick=()=>speak(lastSpoken||currentSpeechText(),.82);
+document.getElementById("nextPhrase").onclick=()=>{if(!activeLesson){const keys=Object.keys(EN),i=Math.max(0,keys.indexOf(lastWord));showWord(keys[(i+1)%keys.length]);speak(currentSpeechText(),.82);return}lessonPhrase=(lessonPhrase+1)%2;showLesson(activeLesson,true)};
+langSel.onchange=()=>{fillVoices();if(activeLesson)showLesson(activeLesson,false);else if(lastWord)showWord(lastWord)};
+document.getElementById("sceneView").onclick=()=>document.body.classList.add("scene-view");
+document.getElementById("sceneReturn").onclick=()=>document.body.classList.remove("scene-view");
+showWord("fishing");
+</script>
+</body>
+</html>
+
+<style id="talkabee-ski-panel-180">
+@media(min-width:761px){.panel{width:180px!important;min-width:180px!important;max-width:180px!important}}
+</style>

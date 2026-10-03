@@ -1,0 +1,211 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Talk A Bee — Rowing Regatta Adventure</title>
+<link rel="icon" type="image/png" href="images/talkabee-favicon.png">
+<style>
+*{box-sizing:border-box}
+html,body{margin:0;width:100%;height:100%;overflow:hidden;font-family:Arial,Helvetica,sans-serif;background:#063a66;color:#fff}
+.world{position:relative;width:100vw;height:100vh;background:url("images/Talk-A-Bee-Rowing-Regatta-Adventure.jpg") center center/cover no-repeat}
+
+/* APPROVED TALK A BEE LEFT PANEL */
+.panel{position:fixed;z-index:1000;left:16px;top:16px;bottom:16px;width:180px;min-width:180px;max-width:180px;
+padding:14px;overflow-x:hidden;overflow-y:auto;border-radius:20px;border:1px solid rgba(255,255,255,.28);
+background:rgba(7,23,39,.31);box-shadow:0 12px 30px rgba(0,0,0,.24);backdrop-filter:blur(3px);-webkit-backdrop-filter:blur(3px)}
+.panel h1{font-size:19px;line-height:1.08;margin:4px 0 10px;text-shadow:0 2px 4px rgba(0,0,0,.55)}
+.label{font-size:9.5px;line-height:1.1;letter-spacing:.09em;font-weight:900;margin:9px 0 4px}
+.panel button,.panel select,.panel a{width:100%;min-height:34px;margin:4px 0;padding:8px 9px;border-radius:12px;
+border:1px solid rgba(255,255,255,.38);background:rgba(7,32,50,.54);color:#fff;font:800 12px/1.16 Arial,sans-serif;
+text-align:left;text-decoration:none}
+.panel button:hover,.panel a:hover{background:rgba(20,58,79,.70)}
+.panel button.active{background:rgba(78,69,219,.74)}
+.panel select{white-space:nowrap;text-overflow:ellipsis;overflow:hidden}
+
+/* APPROVED 520px SCRIPT CARD */
+.card{position:fixed;z-index:900;left:50%;bottom:16px;width:520px;max-width:520px;padding:14px 16px;
+border-radius:20px;border:1px solid rgba(255,255,255,.30);background:rgba(25,19,24,.38);
+box-shadow:0 12px 30px rgba(0,0,0,.28);backdrop-filter:blur(5px);-webkit-backdrop-filter:blur(5px);
+transform:translateX(-50%) scale(.67);transform-origin:bottom center}
+.card .kicker{font-size:15px;line-height:1.25;font-weight:900;letter-spacing:.10em;color:rgba(255,255,255,.96);
+text-shadow:0 1px 3px rgba(0,0,0,.78);margin:0 0 6px}
+.card h2{font-size:22px;line-height:1.08;margin:4px 0 7px;text-shadow:0 1px 3px rgba(0,0,0,.55)}
+.card p{font-size:18px;line-height:1.35;margin:4px 0 7px}
+.word{margin-top:8px;padding:10px 12px;border-radius:14px;background:rgba(88,88,88,.72);border:1px solid rgba(255,255,255,.20)}
+.word strong{display:block;font-size:22px;line-height:1.28}
+.translation{font-size:18px;line-height:1.35;margin-top:3px}
+.controls{display:flex;align-items:center;gap:8px;flex-wrap:nowrap;margin-top:8px}
+.controls button{width:auto;min-width:0;padding:9px 13px;border-radius:12px;border:1px solid rgba(255,255,255,.35);
+background:rgba(255,255,255,.88);color:#10283c;font:900 13px/1 Arial,sans-serif;white-space:nowrap}
+
+/* HOTSPOTS */
+.hotspot{position:absolute;z-index:8;border:0;background:transparent;opacity:0;cursor:pointer;border-radius:16px}
+.hotspot:hover,.hotspot:focus-visible{opacity:1;background:rgba(255,220,72,.28);outline:2px solid rgba(255,255,255,.90)}
+.challenge-mode .hotspot.target{opacity:1;background:rgba(255,199,48,.38);outline:4px solid #fff;box-shadow:0 0 0 7px rgba(255,200,50,.20)}
+
+/* APPROVED COMPACT PREVIOUS / NEXT CHEVRONS */
+.talkabee-prev-next-nav{position:fixed;top:18px;right:22px;z-index:2147483000;display:flex;align-items:center;overflow:hidden;
+border:2px solid rgba(255,255,255,.82);border-radius:999px;background:rgba(11,22,42,.24);
+box-shadow:0 5px 16px rgba(0,0,0,.16);backdrop-filter:blur(3px);-webkit-backdrop-filter:blur(3px)}
+.talkabee-prev-next-nav a{width:48px;height:48px;display:grid;place-items:center;text-decoration:none;color:#fff;
+font:900 38px/1 Arial,sans-serif;text-shadow:0 1px 3px rgba(0,0,0,.42)}
+.talkabee-prev-next-nav a+a{border-left:1px solid rgba(255,255,255,.36)}
+.talkabee-prev-next-nav a:hover,.talkabee-prev-next-nav a:focus-visible{background:rgba(255,255,255,.18);outline:none}
+
+/* SCENE VIEW */
+.scene-return{display:none;position:fixed;z-index:2147483001;left:18px;top:18px;padding:10px 14px;border-radius:12px;
+border:1px solid #fff;background:rgba(7,23,39,.65);color:#fff;font-weight:900}
+.scene-view .panel,.scene-view .card,.scene-view .talkabee-prev-next-nav{display:none}
+.scene-view .scene-return{display:block}
+
+@media(max-width:760px){
+ .panel{left:10px;top:10px;bottom:10px;width:180px;min-width:180px;max-width:180px;padding:11px}
+ .card{width:min(520px,calc(100vw - 32px));bottom:10px;transform:translateX(-50%) scale(.82)}
+ .talkabee-prev-next-nav{top:12px;right:12px}.talkabee-prev-next-nav a{width:42px;height:42px;font-size:33px}
+}
+</style>
+</head>
+<body>
+<nav class="talkabee-prev-next-nav" aria-label="Adventure navigation">
+  <a href="Talk-A-Bee-Football-Game-Adventure.html" aria-label="Previous adventure" title="Previous">‹</a>
+  <a href="Talk-A-Bee-Nighttime-Campground-Adventure.html" aria-label="Next adventure" title="Next">›</a>
+</nav>
+
+<main class="world" id="world">
+<button class="scene-return" id="sceneReturn">Return to Adventure</button>
+
+<aside class="panel">
+<h1>🚣 Rowing Regatta Adventure</h1>
+<div class="label">LANGUAGE</div>
+<select id="lang">
+<option value="es">Spanish</option><option value="fr">French</option><option value="en">English</option>
+<option value="de">German</option><option value="it">Italian</option><option value="pt">Portuguese</option><option value="no">Norwegian</option>
+</select>
+<div class="label">VOICE</div>
+<select id="voice"><option value="">Browser Default</option></select>
+<button id="sceneView">◉ Scene View</button>
+
+<div class="label">DISCOVERY</div>
+<button id="discovery">🔎 Discovery — Click the Scene</button>
+
+<div class="label">ACTIVITIES</div>
+<button data-lesson="coxswain">1. Bee the Coxswain</button>
+<button data-lesson="crew">2. Meet the Rowing Crew</button>
+<button data-lesson="stroke">3. Row Together</button>
+<button data-lesson="shell">4. Explore the Racing Shell</button>
+<button data-lesson="race">5. Race Across the Lake</button>
+<button data-lesson="regatta">6. Lakeview Regatta</button>
+<div class="label">CHALLENGES</div>
+<button data-ch="0">1. Find the Bee Coxswain</button>
+<button data-ch="1">2. Find an Oar</button>
+<button data-ch="2">3. Find the Racing Shell</button>
+<button data-ch="3">4. Find the Red Crew</button>
+<button data-ch="4">5. Find the Regatta Banner</button>
+<button data-ch="5">6. Find the Sailboat</button>
+<a href="index.html">← Return to Main Directory</a>
+</aside>
+
+<section class="card">
+<div class="kicker">AT THE LAKEVIEW REGATTA</div>
+<h2 id="title">Rowing Regatta Adventure</h2>
+<p id="prompt">Click any object in the scene to hear its name.</p>
+<div class="word"><strong id="line">regata de remo</strong><div class="translation" id="translation">rowing regatta</div></div>
+<p id="status"></p>
+<div class="controls">
+<button id="normal">🔊 Speak</button><button id="slow">🐢 Slow</button><button id="replay">↻ Replay</button><button id="nextPhrase">Next phrase →</button>
+</div>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- Hotspots mapped to the approved Rowing Regatta keeper JPG. -->
+<button class="hotspot" data-word="bee" style="left:75%;top:48%;width:11%;height:24%" aria-label="Bee coxswain"></button>
+<button class="hotspot" data-word="megaphone" style="left:72%;top:49%;width:8%;height:12%" aria-label="Megaphone"></button>
+<button class="hotspot" data-word="crew" style="left:29%;top:42%;width:46%;height:30%" aria-label="Rowing crew"></button>
+<button class="hotspot" data-word="oars" style="left:13%;top:52%;width:66%;height:21%" aria-label="Oars"></button>
+<button class="hotspot" data-word="shell" style="left:32%;top:65%;width:58%;height:18%" aria-label="Racing shell"></button>
+<button class="hotspot" data-word="redcrew" style="left:80%;top:38%;width:20%;height:22%" aria-label="Red rowing crew"></button>
+<button class="hotspot" data-word="water" style="left:0%;top:47%;width:100%;height:53%" aria-label="Lake water"></button>
+<button class="hotspot" data-word="buoys" style="left:0%;top:42%;width:35%;height:16%" aria-label="Race buoys"></button>
+<button class="hotspot" data-word="banner" style="left:80%;top:23%;width:20%;height:16%" aria-label="Lakeview Regatta banner"></button>
+<button class="hotspot" data-word="boathouse" style="left:78%;top:11%;width:22%;height:31%" aria-label="Regatta boathouse"></button>
+<button class="hotspot" data-word="spectators" style="left:73%;top:24%;width:27%;height:25%" aria-label="Spectators"></button>
+<button class="hotspot" data-word="dock" style="left:70%;top:37%;width:30%;height:18%" aria-label="Dock"></button>
+<button class="hotspot" data-word="sailboat" style="left:18%;top:35%;width:10%;height:17%" aria-label="Sailboat"></button>
+<button class="hotspot" data-word="boat" style="left:4%;top:37%;width:10%;height:15%" aria-label="Motorboat"></button>
+<button class="hotspot" data-word="mountains" style="left:17%;top:6%;width:49%;height:31%" aria-label="Snowy mountains"></button>
+<button class="hotspot" data-word="forest" style="left:0%;top:16%;width:32%;height:30%" aria-label="Pine forest"></button>
+<button class="hotspot" data-word="flags" style="left:67%;top:20%;width:17%;height:22%" aria-label="Regatta flags"></button>
+<button class="hotspot" data-word="splash" style="left:12%;top:55%;width:24%;height:21%" aria-label="Oar splash"></button>
+<button class="hotspot" data-word="rower" style="left:56%;top:42%;width:10%;height:26%" aria-label="Rower"></button>
+<button class="hotspot" data-word="finish" style="left:65%;top:31%;width:15%;height:25%" aria-label="Race course"></button>
+
+</main>
+
+<script>
+const EN={game:"rowing regatta",bee:"bee coxswain",megaphone:"megaphone",crew:"rowing crew",oars:"oars",shell:"racing shell",redcrew:"red rowing crew",water:"lake water",buoys:"race buoys",banner:"regatta banner",boathouse:"boathouse",spectators:"spectators",dock:"dock",sailboat:"sailboat",boat:"motorboat",mountains:"snowy mountains",forest:"pine forest",flags:"regatta flags",splash:"oar splash",rower:"rower",finish:"race course"};
+const WORDS={
+es:{game:"regata de remo",bee:"abeja timonel",megaphone:"megáfono",crew:"equipo de remo",oars:"remos",shell:"bote de competición",redcrew:"equipo rojo de remo",water:"agua del lago",buoys:"boyas de carrera",banner:"pancarta de la regata",boathouse:"cobertizo para botes",spectators:"espectadores",dock:"muelle",sailboat:"velero",boat:"lancha motora",mountains:"montañas nevadas",forest:"bosque de pinos",flags:"banderas de la regata",splash:"salpicadura del remo",rower:"remero",finish:"recorrido de la carrera"},
+fr:{game:"régate d'aviron",bee:"abeille barreur",megaphone:"mégaphone",crew:"équipe d'aviron",oars:"rames",shell:"coque de course",redcrew:"équipe rouge d'aviron",water:"eau du lac",buoys:"bouées de course",banner:"bannière de la régate",boathouse:"hangar à bateaux",spectators:"spectateurs",dock:"quai",sailboat:"voilier",boat:"bateau à moteur",mountains:"montagnes enneigées",forest:"forêt de pins",flags:"drapeaux de la régate",splash:"éclaboussure de rame",rower:"rameur",finish:"parcours de course"},
+en:{...EN},
+de:{game:"Ruderregatta",bee:"Steuermann-Biene",megaphone:"Megafon",crew:"Rudermannschaft",oars:"Ruder",shell:"Rennboot",redcrew:"rote Rudermannschaft",water:"Seewasser",buoys:"Rennbojen",banner:"Regatta-Banner",boathouse:"Bootshaus",spectators:"Zuschauer",dock:"Steg",sailboat:"Segelboot",boat:"Motorboot",mountains:"schneebedeckte Berge",forest:"Kiefernwald",flags:"Regattaflaggen",splash:"Ruderspritzer",rower:"Ruderer",finish:"Rennstrecke"},
+it:{game:"regata di canottaggio",bee:"ape timoniere",megaphone:"megafono",crew:"equipaggio di canottaggio",oars:"remi",shell:"barca da gara",redcrew:"equipaggio rosso",water:"acqua del lago",buoys:"boe di gara",banner:"striscione della regata",boathouse:"rimessa per barche",spectators:"spettatori",dock:"molo",sailboat:"barca a vela",boat:"motoscafo",mountains:"montagne innevate",forest:"foresta di pini",flags:"bandiere della regata",splash:"spruzzo del remo",rower:"vogatore",finish:"percorso di gara"},
+pt:{game:"regata de remo",bee:"abelha timoneira",megaphone:"megafone",crew:"equipe de remo",oars:"remos",shell:"barco de competição",redcrew:"equipe vermelha de remo",water:"água do lago",buoys:"boias de corrida",banner:"faixa da regata",boathouse:"casa de barcos",spectators:"espectadores",dock:"cais",sailboat:"veleiro",boat:"lancha",mountains:"montanhas nevadas",forest:"floresta de pinheiros",flags:"bandeiras da regata",splash:"respingo do remo",rower:"remador",finish:"percurso da corrida"},
+no:{game:"roregatta",bee:"styrmannsbie",megaphone:"megafon",crew:"roelag",oars:"årer",shell:"racerbåt",redcrew:"rødt roelag",water:"innsjøvann",buoys:"løpsbøyer",banner:"regattabanner",boathouse:"båthus",spectators:"tilskuere",dock:"brygge",sailboat:"seilbåt",boat:"motorbåt",mountains:"snødekte fjell",forest:"furuskog",flags:"regattaflagg",splash:"åresprut",rower:"roer",finish:"løpsbane"}};
+const SPEECH_LANG={es:"es-ES",fr:"fr-FR",en:"en-US",de:"de-DE",it:"it-IT",pt:"pt-PT",no:"nb-NO"};
+const lessons={
+en:{coxswain:["The Talk A Bee coxswain sits at the end of the racing shell and directs the crew.","The coxswain steers, calls the rhythm, and encourages the rowers."],crew:["Eight rowers sit in the racing shell and work as one team.","Each rower follows the same rhythm so the boat moves quickly and smoothly."],stroke:["The rowers place their oars in the water together, pull, and then return for the next stroke.","Good timing makes the racing shell glide across the lake."],shell:["A racing shell is long, narrow, and built to move quickly through the water.","The rowers sit in a line while their oars extend from both sides."],race:["Several crews race side by side along a marked course across the lake.","Red buoys help separate the racing lanes."],regatta:["A rowing competition with many races is called a regatta.","Spectators gather at the boathouse and docks to cheer for the crews."]},
+es:{coxswain:["La abeja timonel de Talk A Bee se sienta al final del bote y dirige al equipo.","El timonel guía el bote, marca el ritmo y anima a los remeros."],crew:["Ocho remeros se sientan en el bote de competición y trabajan como un solo equipo.","Cada remero sigue el mismo ritmo para que el bote avance rápido y suavemente."],stroke:["Los remeros colocan los remos en el agua juntos, tiran y vuelven para la siguiente palada.","Un buen ritmo hace que el bote se deslice por el lago."],shell:["Un bote de competición es largo, estrecho y está diseñado para moverse rápidamente por el agua.","Los remeros se sientan en fila y los remos se extienden a ambos lados."],race:["Varios equipos compiten lado a lado en un recorrido marcado por el lago.","Las boyas rojas ayudan a separar los carriles."],regatta:["Una competición de remo con muchas carreras se llama regata.","Los espectadores se reúnen en el cobertizo y los muelles para animar a los equipos."]},
+fr:{coxswain:["L'abeille barreur de Talk A Bee est assise à l'extrémité de la coque et dirige l'équipe.","Le barreur dirige le bateau, donne le rythme et encourage les rameurs."],crew:["Huit rameurs sont assis dans la coque de course et travaillent comme une seule équipe.","Chaque rameur suit le même rythme pour que le bateau avance vite et régulièrement."],stroke:["Les rameurs mettent leurs rames dans l'eau ensemble, tirent puis reviennent pour le coup suivant.","Un bon rythme fait glisser la coque sur le lac."],shell:["Une coque de course est longue, étroite et conçue pour avancer rapidement sur l'eau.","Les rameurs sont assis en ligne et leurs rames s'étendent des deux côtés."],race:["Plusieurs équipes courent côte à côte sur un parcours balisé à travers le lac.","Des bouées rouges séparent les couloirs."],regatta:["Une compétition d'aviron avec plusieurs courses s'appelle une régate.","Les spectateurs se rassemblent près du hangar et des quais pour encourager les équipes."]},
+de:{coxswain:["Die Talk A Bee Steuermann-Biene sitzt am Ende des Rennboots und führt die Mannschaft.","Der Steuermann lenkt, gibt den Rhythmus vor und feuert die Ruderer an."],crew:["Acht Ruderer sitzen im Rennboot und arbeiten als ein Team.","Jeder Ruderer folgt demselben Rhythmus, damit das Boot schnell und ruhig fährt."],stroke:["Die Ruderer setzen ihre Ruder gleichzeitig ins Wasser, ziehen und gehen dann zum nächsten Schlag zurück.","Gutes Timing lässt das Rennboot über den See gleiten."],shell:["Ein Rennboot ist lang, schmal und für hohe Geschwindigkeit auf dem Wasser gebaut.","Die Ruderer sitzen hintereinander und ihre Ruder ragen zu beiden Seiten hinaus."],race:["Mehrere Mannschaften fahren nebeneinander auf einer markierten Strecke über den See.","Rote Bojen trennen die Rennbahnen."],regatta:["Ein Ruderwettbewerb mit vielen Rennen heißt Regatta.","Zuschauer versammeln sich am Bootshaus und an den Stegen, um die Teams anzufeuern."]},
+it:{coxswain:["L'ape timoniere di Talk A Bee siede all'estremità della barca e dirige l'equipaggio.","Il timoniere guida, dà il ritmo e incoraggia i vogatori."],crew:["Otto vogatori siedono nella barca da gara e lavorano come una sola squadra.","Ogni vogatore segue lo stesso ritmo per far muovere la barca velocemente e senza scosse."],stroke:["I vogatori mettono i remi nell'acqua insieme, tirano e poi tornano per la vogata successiva.","Un buon ritmo fa scivolare la barca sul lago."],shell:["Una barca da gara è lunga, stretta e costruita per muoversi rapidamente sull'acqua.","I vogatori siedono in fila e i remi si estendono da entrambi i lati."],race:["Diversi equipaggi gareggiano fianco a fianco lungo un percorso segnato sul lago.","Le boe rosse aiutano a separare le corsie."],regatta:["Una competizione di canottaggio con molte gare si chiama regata.","Gli spettatori si riuniscono vicino alla rimessa e ai moli per fare il tifo."]},
+pt:{coxswain:["A abelha timoneira de Talk A Bee senta na extremidade do barco e dirige a equipe.","A timoneira conduz, marca o ritmo e incentiva os remadores."],crew:["Oito remadores sentam no barco de competição e trabalham como uma só equipe.","Cada remador segue o mesmo ritmo para o barco avançar rápido e suavemente."],stroke:["Os remadores colocam os remos na água juntos, puxam e retornam para a próxima remada.","Um bom ritmo faz o barco deslizar pelo lago."],shell:["Um barco de competição é longo, estreito e feito para se mover rapidamente na água.","Os remadores sentam em linha e seus remos se estendem pelos dois lados."],race:["Várias equipes competem lado a lado em um percurso marcado pelo lago.","Boias vermelhas ajudam a separar as raias."],regatta:["Uma competição de remo com várias corridas é chamada de regata.","Os espectadores se reúnem na casa de barcos e nos cais para torcer pelas equipes."]},
+no:{coxswain:["Talk A Bee-styrmannsbien sitter i enden av racerbåten og leder laget.","Styrmannen styrer, roper rytmen og oppmuntrer roerne."],crew:["Åtte roere sitter i racerbåten og arbeider som ett lag.","Hver roer følger samme rytme slik at båten går raskt og jevnt."],stroke:["Roerne setter årene i vannet samtidig, trekker og går tilbake til neste åretak.","God timing får racerbåten til å gli over innsjøen."],shell:["En racerbåt er lang, smal og bygget for å bevege seg raskt gjennom vannet.","Roerne sitter på rekke mens årene stikker ut på begge sider."],race:["Flere lag konkurrerer side om side langs en merket bane over innsjøen.","Røde bøyer hjelper til med å skille banene."],regatta:["En rokonkurranse med mange løp kalles en regatta.","Tilskuere samles ved båthuset og bryggene for å heie på lagene."]}};
+const challengeOrder=["bee","oars","shell","redcrew","banner","sailboat"];
+const SOUND_MAP={};
+const langSel=document.getElementById("lang"),voiceSel=document.getElementById("voice");
+const title=document.getElementById("title"),prompt=document.getElementById("prompt"),line=document.getElementById("line"),translation=document.getElementById("translation"),status=document.getElementById("status"),world=document.getElementById("world");
+let lastWord="game",activeLesson="",lessonPhrase=1,challenge=-1,lastSpoken="";
+function voices(){return ("speechSynthesis" in window)?speechSynthesis.getVoices():[]}
+function fillVoices(){const old=localStorage.getItem("talkabee-regatta-voice-"+langSel.value)||"";voiceSel.innerHTML='<option value="">Browser Default</option>';voices().forEach(v=>{const o=document.createElement("option");o.value=v.name;o.textContent=v.name+(v.lang?" — "+v.lang:"");voiceSel.appendChild(o)});if([...voiceSel.options].some(o=>o.value===old))voiceSel.value=old}
+if("speechSynthesis" in window){speechSynthesis.onvoiceschanged=fillVoices;fillVoices();setTimeout(fillVoices,150);setTimeout(fillVoices,600);setTimeout(fillVoices,1500)}
+voiceSel.onchange=()=>localStorage.setItem("talkabee-regatta-voice-"+langSel.value,voiceSel.value);
+function speak(text,rate=.88,onend=null){if(!text||!("speechSynthesis" in window)){if(onend)onend();return}speechSynthesis.cancel();setTimeout(()=>{const u=new SpeechSynthesisUtterance(text);u.lang=SPEECH_LANG[langSel.value]||langSel.value;u.rate=rate;const v=speechSynthesis.getVoices().find(x=>x.name===voiceSel.value);if(v)u.voice=v;if(onend)u.onend=onend;speechSynthesis.speak(u)},50);lastSpoken=text}
+function stopSound(){document.querySelectorAll("audio[data-talkabee-sound]").forEach(a=>{a.pause();a.currentTime=0;a.remove()})}
+function playSound(key){stopSound();const src=SOUND_MAP[key];if(!src)return;const a=new Audio(src);a.dataset.talkabeeSound="1";document.body.appendChild(a);a.play().catch(()=>{});a.onended=()=>a.remove()}
+function showWord(key){activeLesson="";lastWord=key;lessonPhrase=1;title.textContent="Click & Discover";prompt.textContent="You found "+(EN[key]||key)+".";line.textContent=WORDS[langSel.value][key]||EN[key]||key;translation.textContent=langSel.value==="en"?"":(EN[key]||key)}
+document.querySelectorAll(".hotspot").forEach(b=>b.onclick=()=>{const key=b.dataset.word;showWord(key);let played=false;const after=()=>{if(played)return;played=true;playSound(key)};speak(WORDS[langSel.value][key]||EN[key]||key,.82,after);setTimeout(after,1500);if(challenge>=0){if(key===challengeOrder[challenge]){status.textContent="✓ Nice find!";status.style.color="#9dffbf"}else{status.textContent="Not that one — keep looking.";status.style.color="#ffe28a"}}});
+function clearChallenge(){challenge=-1;world.classList.remove("challenge-mode");document.querySelectorAll(".hotspot").forEach(h=>h.classList.remove("target"));status.textContent=""}
+document.getElementById("discovery").onclick=()=>{clearChallenge();activeLesson="";lastWord="game";title.textContent="Click & Discover";prompt.textContent="Click any object in the scene to hear its name.";line.textContent=WORDS[langSel.value].game;translation.textContent=langSel.value==="en"?"":EN.game};
+document.querySelectorAll("[data-ch]").forEach(b=>b.onclick=()=>{activeLesson="";lastWord="";challenge=+b.dataset.ch;world.classList.add("challenge-mode");document.querySelectorAll(".hotspot").forEach(h=>h.classList.toggle("target",h.dataset.word===challengeOrder[challenge]));title.textContent="Challenge "+(challenge+1)+" of 6";prompt.textContent=b.textContent.replace(/^[0-9]+\.\s*/,"");line.textContent=WORDS[langSel.value][challengeOrder[challenge]];translation.textContent=langSel.value==="en"?"":EN[challengeOrder[challenge]];status.textContent=""});
+function showLesson(key,speakIt=false){clearChallenge();activeLesson=key;lastWord="";lessonPhrase=Math.max(0,Math.min(1,lessonPhrase));const a=lessons[langSel.value][key],e=lessons.en[key],btn=document.querySelector(`[data-lesson="${key}"]`);title.textContent=btn?btn.textContent.replace(/^[0-9]+\.\s*/,""):"Rowing Regatta Adventure";prompt.textContent=a[0];line.textContent=a[lessonPhrase];translation.textContent=langSel.value==="en"?"":e[lessonPhrase];if(speakIt)speak(a[lessonPhrase])}
+document.querySelectorAll("[data-lesson]").forEach(b=>b.onclick=()=>{lessonPhrase=1;showLesson(b.dataset.lesson,true)});
+function currentSpeechText(){if(activeLesson)return lessons[langSel.value][activeLesson][lessonPhrase];if(lastWord)return WORDS[langSel.value][lastWord]||EN[lastWord];return line.textContent}
+document.getElementById("normal").onclick=()=>speak(currentSpeechText(),.82);
+document.getElementById("slow").onclick=()=>speak(currentSpeechText(),.58);
+document.getElementById("replay").onclick=()=>speak(lastSpoken||currentSpeechText(),.82);
+document.getElementById("nextPhrase").onclick=()=>{if(!activeLesson){const keys=Object.keys(EN),i=Math.max(0,keys.indexOf(lastWord));showWord(keys[(i+1)%keys.length]);speak(currentSpeechText(),.82);return}lessonPhrase=(lessonPhrase+1)%2;showLesson(activeLesson,true)};
+langSel.onchange=()=>{fillVoices();if(activeLesson)showLesson(activeLesson,false);else if(lastWord)showWord(lastWord)};
+document.getElementById("sceneView").onclick=()=>document.body.classList.add("scene-view");
+document.getElementById("sceneReturn").onclick=()=>document.body.classList.remove("scene-view");
+showWord("game");
+</script>
+</body>
+</html>
+
+<style id="talkabee-ski-panel-180">
+@media(min-width:761px){.panel{width:180px!important;min-width:180px!important;max-width:180px!important}}
+</style>
