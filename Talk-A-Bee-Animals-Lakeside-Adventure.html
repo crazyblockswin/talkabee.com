@@ -14,7 +14,73 @@ header a{color:#fff;text-decoration:none;font-weight:900;font-size:22px}.domain{
 .hotspot{display:none;position:absolute;z-index:7;width:30px;height:30px;border:3px solid #fff;background:#f7bf39cc;border-radius:50%;box-shadow:0 0 0 5px #f7bf3940,0 3px 10px #0008;cursor:pointer}.discover .hotspot{display:block}.hotspot:hover{transform:scale(1.15)}
 #deer{left:11%;top:48%}#duck{left:35%;top:61%}#rabbit{left:12%;top:75%}#squirrel{left:25%;top:79%}#dog{left:45%;top:74%}#chicken{left:81%;top:79%}#rooster{left:92%;top:70%}#eagle{left:43%;top:8%}#bee{left:85%;top:10%}
 @media(max-width:850px){header{height:62px}.tagline{display:none}.world{height:calc(100vh - 62px)}.panel{width:210px}.script{right:10px;bottom:10px;width:calc(100% - 240px)}.script h1{font-size:20px}.target{font-size:18px}}
-</style></head><body>
+</style>
+<style id="talkabee-readable-supporting-text">
+/* Readability-only repair. Existing links, navigation, JS, hotspots and audio are untouched. */
+.tab-master-card p,
+.tab-master-card .prompt,
+.tab-master-card #prompt,
+.tab-master-card .instruction,
+.tab-master-card .instructions,
+.tab-master-card .hint,
+.tab-master-card #hint,
+.tab-master-card .translation,
+.tab-master-card #translation,
+.tab-master-card .english,
+.tab-master-card [class*="subtitle"],
+.tab-master-card [class*="instruction"],
+.tab-master-card [class*="prompt"],
+.tab-master-card [class*="translation"],
+.tab-master-card [class*="hint"],
+.tab-master-card [class*="status"],
+.animal-lesson-card p,
+.animal-lesson-card .prompt,
+.animal-lesson-card .instruction,
+.animal-lesson-card .translation,
+.animal-lesson-card .hint {
+  font-size:18px !important;
+  line-height:1.35 !important;
+}
+
+/* Small location/progress/counter lines also need to be readable. */
+.tab-master-card .eyebrow,
+.tab-master-card .kicker,
+.tab-master-card .overline,
+.tab-master-card .location,
+.tab-master-card .activity-count,
+.tab-master-card .challenge-count,
+.tab-master-card [class*="count"],
+.animal-lesson-card .eyebrow,
+.animal-lesson-card [class*="count"] {
+  font-size:15px !important;
+  line-height:1.25 !important;
+  font-weight:800 !important;
+}
+
+/* Spoken/foreign-language line stays visually strongest. */
+.tab-master-card #line,
+.tab-master-card .line,
+.tab-master-card .train-line,
+.tab-master-card .words,
+.tab-master-card [class*="phrase"],
+.animal-lesson-card #line,
+.animal-lesson-card .line,
+.animal-lesson-card [class*="phrase"] {
+  font-size:22px !important;
+  line-height:1.28 !important;
+  font-weight:800 !important;
+}
+
+/* Let increased text wrap naturally instead of being clipped. */
+.tab-master-card,
+.animal-lesson-card {
+  height:auto !important;
+}
+</style>
+
+  <link rel="icon" type="image/png" href="images/talkabee-favicon.png">
+  <link rel="shortcut icon" type="image/png" href="images/talkabee-favicon.png">
+</head><body>
 <header><a href="index.html">🐝 Talk A Bee<span class="domain">TalkABee.com</span></a><span class="tagline">Interactive Language Adventures</span></header>
 <main class="world" id="world"><div class="scene"></div>
 <aside class="panel"><a class="home" href="index.html">← Return to Main Directory</a><h2>🐾 Animals</h2><p class="sub">Lakeside Adventure</p><div class="label">ACTIVITIES</div>

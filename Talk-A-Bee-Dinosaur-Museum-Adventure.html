@@ -39,18 +39,132 @@
 .talkabee-prev-next-nav a:active{transform:scale(.94)}
 @media(max-width:720px){.talkabee-prev-next-nav{top:12px;right:12px}.talkabee-prev-next-nav a{width:42px;height:42px;font-size:33px}}
 </style>
-
-<style id="talkabee-clean-master-template-20261002">
-/* CLEAN MASTER: one authoritative geometry block. No legacy scaling. */
-html body /* FINAL LOCKED TALK A BEE TEMPLATE — rendered geometry matched to approved Kitchen sample. */
-aside.panel{box-sizing:border-box!important;width:195px!important;min-width:195px!important;max-width:195px!important;height:calc(100vh - 32px)!important;max-height:calc(100vh - 32px)!important;left:16px!important;top:16px!important;bottom:auto!important;transform:none!important;transform-origin:top left!important;overflow-y:auto!important;overflow-x:hidden!important;background:rgba(7,23,39,.31)!important;backdrop-filter:blur(3px)!important;-webkit-backdrop-filter:blur(3px)!important;}
-html body section.card{box-sizing:border-box!important;width:520px!important;min-width:520px!important;max-width:520px!important;height:auto!important;max-height:none!important;left:50%!important;right:auto!important;bottom:18px!important;transform:translateX(-50%)!important;transform-origin:bottom center!important;padding:14px 18px!important;border-radius:20px!important;background:rgba(7,23,39,.28)!important;border:1px solid rgba(255,255,255,.32)!important;box-shadow:0 10px 28px rgba(0,0,0,.22)!important;backdrop-filter:blur(3px)!important;-webkit-backdrop-filter:blur(3px)!important;color:#fff!important;overflow:visible!important;}
-html body section.card .kicker, html body section.card .eyebrow{color:rgba(255,255,255,.94)!important;font-weight:800!important;text-shadow:0 1px 3px rgba(0,0,0,.75)!important;}
-html body section.card .actions, html body section.card .home-actions, html body section.card .yacht-actions, html body section.card .train-actions{display:flex!important;flex-wrap:nowrap!important;gap:8px!important;align-items:center!important;}
-html body section.card .actions button, html body section.card .home-actions button, html body section.card .yacht-actions button, html body section.card .train-actions button{white-space:nowrap!important;margin:0!important;}
-@media(max-width:900px){html body /* FINAL LOCKED TALK A BEE TEMPLATE — rendered geometry matched to approved Kitchen sample. */
-aside.panel{width:190px!important;min-width:190px!important;max-width:190px!important;} html body section.card{width:min(520px,calc(100vw - 220px))!important;min-width:0!important;max-width:520px!important;}}
+<style id="talkabee-literal-master-template">
+/* ONE literal Talk A Bee Adventure shell. Legacy classes remain only as JS hooks. */
+.tab-master-panel,.tab-master-panel *,.tab-master-card,.tab-master-card *{box-sizing:border-box}
+.tab-master-panel{
+ position:fixed!important;left:16px!important;top:16px!important;bottom:16px!important;right:auto!important;
+ width:195px!important;min-width:195px!important;max-width:195px!important;height:auto!important;max-height:none!important;
+ margin:0!important;padding:14px!important;overflow-x:hidden!important;overflow-y:auto!important;
+ transform:none!important;scale:1!important;zoom:1!important;opacity:1!important;
+ border-radius:20px!important;border:1px solid rgba(255,255,255,.28)!important;
+ background:rgba(7,23,39,.31)!important;box-shadow:0 12px 30px rgba(0,0,0,.24)!important;
+ backdrop-filter:blur(3px)!important;-webkit-backdrop-filter:blur(3px)!important;color:#fff!important;z-index:1000!important;
+ font-family:Arial,Helvetica,sans-serif!important;font-size:12px!important;line-height:1.16!important;
+}
+.tab-master-panel .place,.tab-master-panel h1,.tab-master-panel .title{font-size:19px!important;line-height:1.08!important;font-weight:900!important;color:#fff!important;margin:4px 0 10px!important;text-shadow:0 2px 4px rgba(0,0,0,.55)!important}
+.tab-master-panel .label,.tab-master-panel label{font-size:9.5px!important;line-height:1.1!important;letter-spacing:.09em!important;font-weight:900!important;color:#fff!important;margin:9px 0 4px!important}
+.tab-master-panel button,.tab-master-panel select,.tab-master-panel a{
+ width:100%!important;max-width:100%!important;min-height:34px!important;height:auto!important;margin:4px 0!important;padding:8px 9px!important;
+ border-radius:12px!important;border:1px solid rgba(255,255,255,.38)!important;background:rgba(7,32,50,.54)!important;color:#fff!important;
+ font:800 12px/1.16 Arial,Helvetica,sans-serif!important;text-align:left!important;text-decoration:none!important;white-space:normal!important;
+ transform:none!important;box-shadow:none!important;
+}
+.tab-master-panel select{white-space:nowrap!important;text-overflow:ellipsis!important;overflow:hidden!important}
+.tab-master-panel button:hover,.tab-master-panel a:hover{background:rgba(20,58,79,.70)!important}
+.tab-master-panel .active,.tab-master-panel button.active{background:rgba(78,69,219,.74)!important;color:#fff!important}
+.tab-master-card{
+ position:fixed!important;left:50%!important;right:auto!important;bottom:16px!important;top:auto!important;
+ width:520px!important;min-width:520px!important;max-width:520px!important;height:auto!important;min-height:0!important;max-height:44vh!important;
+ margin:0!important;padding:14px 16px!important;overflow:auto!important;transform:translateX(-50%)!important;scale:1!important;zoom:1!important;opacity:1!important;
+ border-radius:20px!important;border:1px solid rgba(255,255,255,.30)!important;background:rgba(25,19,24,.38)!important;
+ box-shadow:0 12px 30px rgba(0,0,0,.28)!important;backdrop-filter:blur(5px)!important;-webkit-backdrop-filter:blur(5px)!important;
+ color:#fff!important;z-index:900!important;font-family:Arial,Helvetica,sans-serif!important;
+}
+.tab-master-card .kicker,.tab-master-card [class*="kicker"]{color:rgba(255,255,255,.94)!important;font-size:11px!important;line-height:1.1!important;font-weight:900!important;letter-spacing:.12em!important;text-shadow:0 1px 3px rgba(0,0,0,.78)!important;margin:0 0 7px!important}
+.tab-master-card h1,.tab-master-card h2{color:#fff!important;font-size:22px!important;line-height:1.08!important;margin:4px 0 7px!important;text-shadow:0 1px 3px rgba(0,0,0,.55)!important}
+.tab-master-card p,.tab-master-card .prompt,.tab-master-card .translation,.tab-master-card .tip{font-size:13px!important;line-height:1.25!important;margin:4px 0 7px!important;color:#fff!important}
+.tab-master-card .line,.tab-master-card .target,.tab-master-card #line,.tab-master-card #target{font-size:20px!important;line-height:1.12!important;font-weight:900!important;margin:7px 0!important;color:#fff!important}
+.tab-master-card .actions,.tab-master-card [class*="actions"]{display:flex!important;align-items:center!important;gap:8px!important;flex-wrap:nowrap!important;margin-top:8px!important}
+.tab-master-card .actions button,.tab-master-card [class*="actions"] button,.tab-master-card>button{width:auto!important;min-width:0!important;height:auto!important;padding:9px 13px!important;margin:0!important;border-radius:12px!important;font:900 13px/1 Arial,Helvetica,sans-serif!important;white-space:nowrap!important}
+@media(max-width:760px){.tab-master-panel{left:10px!important;top:10px!important;bottom:10px!important;width:190px!important;min-width:190px!important;max-width:190px!important;padding:11px!important}.tab-master-card{width:min(520px,calc(100vw - 24px))!important;min-width:0!important;bottom:10px!important;padding:12px!important}}
 </style>
+
+<style id="tab-spoken-phrase-readability">
+/* Last-four phrase fix: style the full .word field, not the inner #line text. */
+.tab-master-card .word {
+  background:rgba(88,88,88,.72)!important;
+  color:#fff!important;
+  border:1px solid rgba(255,255,255,.20)!important;
+  border-radius:14px!important;
+  text-shadow:0 1px 2px rgba(0,0,0,.55)!important;
+}
+.tab-master-card .word #line,
+.tab-master-card .word .line {
+  background:transparent!important;
+  color:#fff!important;
+  border:0!important;
+  border-radius:0!important;
+  text-shadow:0 1px 2px rgba(0,0,0,.55)!important;
+}
+.tab-master-card .word .translation {color:#fff!important;}
+</style>
+
+<style id="talkabee-readable-supporting-text">
+/* Readability-only repair. Existing links, navigation, JS, hotspots and audio are untouched. */
+.tab-master-card p,
+.tab-master-card .prompt,
+.tab-master-card #prompt,
+.tab-master-card .instruction,
+.tab-master-card .instructions,
+.tab-master-card .hint,
+.tab-master-card #hint,
+.tab-master-card .translation,
+.tab-master-card #translation,
+.tab-master-card .english,
+.tab-master-card [class*="subtitle"],
+.tab-master-card [class*="instruction"],
+.tab-master-card [class*="prompt"],
+.tab-master-card [class*="translation"],
+.tab-master-card [class*="hint"],
+.tab-master-card [class*="status"],
+.animal-lesson-card p,
+.animal-lesson-card .prompt,
+.animal-lesson-card .instruction,
+.animal-lesson-card .translation,
+.animal-lesson-card .hint {
+  font-size:18px !important;
+  line-height:1.35 !important;
+}
+
+/* Small location/progress/counter lines also need to be readable. */
+.tab-master-card .eyebrow,
+.tab-master-card .kicker,
+.tab-master-card .overline,
+.tab-master-card .location,
+.tab-master-card .activity-count,
+.tab-master-card .challenge-count,
+.tab-master-card [class*="count"],
+.animal-lesson-card .eyebrow,
+.animal-lesson-card [class*="count"] {
+  font-size:15px !important;
+  line-height:1.25 !important;
+  font-weight:800 !important;
+}
+
+/* Spoken/foreign-language line stays visually strongest. */
+.tab-master-card #line,
+.tab-master-card .line,
+.tab-master-card .train-line,
+.tab-master-card .words,
+.tab-master-card [class*="phrase"],
+.animal-lesson-card #line,
+.animal-lesson-card .line,
+.animal-lesson-card [class*="phrase"] {
+  font-size:22px !important;
+  line-height:1.28 !important;
+  font-weight:800 !important;
+}
+
+/* Let increased text wrap naturally instead of being clipped. */
+.tab-master-card,
+.animal-lesson-card {
+  height:auto !important;
+}
+</style>
+
+  <link rel="icon" type="image/png" href="images/talkabee-favicon.png">
+  <link rel="shortcut icon" type="image/png" href="images/talkabee-favicon.png">
 </head>
 <body>
 <nav class="talkabee-prev-next-nav" aria-label="Adventure navigation"><a href="Talk-A-Bee-Observation-Deck-Adventure.html" aria-label="Previous page" title="Previous">‹</a><a href="Talk-A-Bee-Nighttime-Campground-Adventure.html" aria-label="Next page" title="Next">›</a></nav>
@@ -58,7 +172,7 @@ aside.panel{width:190px!important;min-width:190px!important;max-width:190px!impo
 <main class="world" id="world">
 
 <button class="scene-return" id="sceneReturn">Return to Adventure</button>
-<aside class="panel">
+<aside class="panel tab-master-panel">
 <h1>🦖 Dinosaur Museum</h1>
 <div class="label">LANGUAGE</div>
 <select id="lang"><option value="es">Spanish</option><option value="fr">French</option><option value="en">English</option><option value="de">German</option><option value="it">Italian</option><option value="pt">Portuguese</option><option value="no">Norwegian</option></select>
@@ -66,21 +180,21 @@ aside.panel{width:190px!important;min-width:190px!important;max-width:190px!impo
 <button id="sceneView">◉ Scene View</button>
 <div class="label">DISCOVERY</div><button id="discovery">🔎 Discovery — Click the Scene</button>
 <div class="label">ACTIVITIES</div>
-<button data-lesson="arrive">1. Meet the Dinosaurs</button>
-<button data-lesson="rides">2. Look at the Fossils</button>
-<button data-lesson="snacks">3. Dinosaur Eggs</button>
-<button data-lesson="beach">4. Follow the Footprints</button>
-<button data-lesson="safety">5. Flying Reptiles</button>
-<button data-lesson="things">6. Explore the Museum</button>
+<button data-lesson="arrive">1. 🦖 Meet the Dinosaurs</button>
+<button data-lesson="rides">2. 🦴 Look at the Fossils</button>
+<button data-lesson="snacks">3. 🥚 Dinosaur Eggs</button>
+<button data-lesson="beach">4. 👣 Follow the Footprints</button>
+<button data-lesson="safety">5. 🪽 Flying Reptiles</button>
+<button data-lesson="things">6. 🔎 Explore the Museum</button>
 <div class="label">CHALLENGES</div>
 <button data-ch="0">1. Find the T. rex</button><button data-ch="1">2. Find the Triceratops</button><button data-ch="2">3. Find the Stegosaurus</button><button data-ch="3">4. Find the Pterosaur</button><button data-ch="4">5. Find the Dinosaur Eggs</button><button data-ch="5">6. Find the Footprints</button>
 <a href="index.html">← Return to Main Directory</a>
 </aside>
-<section class="card">
+<section class="card tab-master-card">
 <h2 id="title">Dinosaur Museum Adventure</h2><p id="prompt">Click any object in the scene to hear its name.</p>
 <div class="word"><strong id="line">tiranosaurio rex</strong><div class="translation" id="translation">T. rex</div></div>
 <p id="status"></p>
-<div class="controls"><button id="normal">🔊 Speak</button><button id="slow">🐢 Slow</button><button id="replay">↻ Replay</button></div>
+<div class="controls"><button id="normal">🔊 Normal</button><button id="slow">🐢 Slow</button><button id="replay">↻ Replay</button></div>
 </section>
 
 
@@ -122,9 +236,26 @@ const challengeOrder=["trex","triceratops","stegosaurus","pterosaur","eggs","foo
 const langSel=document.getElementById("lang"),voiceSel=document.getElementById("voice");
 const title=document.getElementById("title"),prompt=document.getElementById("prompt"),line=document.getElementById("line"),translation=document.getElementById("translation"),status=document.getElementById("status"),world=document.getElementById("world");
 let lastWord="trex",challenge=-1,activeLesson="";
-function fillVoices(){const vs=speechSynthesis.getVoices();voiceSel.innerHTML='<option>Browser Default</option>'+vs.map(v=>`<option>${v.name}</option>`).join("")}
-if("speechSynthesis" in window){speechSynthesis.onvoiceschanged=fillVoices;fillVoices()}
-function speak(t,rate=.82,onend=null){if(!t||!("speechSynthesis" in window)){if(onend)onend();return;}try{speechSynthesis.cancel();const u=new SpeechSynthesisUtterance(t);u.lang=LANGS[langSel.value].code;u.rate=rate;const v=speechSynthesis.getVoices().find(v=>v.name===voiceSel.value);if(v)u.voice=v;if(onend)u.onend=onend;u.onerror=()=>{if(onend)onend()};setTimeout(()=>speechSynthesis.speak(u),40)}catch(e){if(onend)onend();}}
+function selectedVoice(){
+ const vs=speechSynthesis.getVoices()||[];
+ return vs.find(v=>v.voiceURI===voiceSel.value)||null;
+}
+function refreshVoices(){
+ if(!("speechSynthesis" in window))return;
+ const vs=speechSynthesis.getVoices()||[];
+ if(!vs.length)return;
+ const saved=localStorage.getItem("talkabee-dinosaur-voice")||voiceSel.value||"";
+ voiceSel.innerHTML='<option value="">Browser Default</option>';
+ vs.forEach(v=>voiceSel.add(new Option(v.name+" — "+(v.lang||""),v.voiceURI)));
+ if([...voiceSel.options].some(o=>o.value===saved))voiceSel.value=saved;
+}
+if("speechSynthesis" in window){
+ speechSynthesis.onvoiceschanged=refreshVoices;
+ refreshVoices();
+ setTimeout(refreshVoices,150);setTimeout(refreshVoices,600);setTimeout(refreshVoices,1500);
+}
+voiceSel.onchange=()=>localStorage.setItem("talkabee-dinosaur-voice",voiceSel.value);
+function speak(t,rate=.82,onend=null){if(!t||!("speechSynthesis" in window)){if(onend)onend();return;}try{speechSynthesis.cancel();const u=new SpeechSynthesisUtterance(t);u.lang=LANGS[langSel.value].code;u.rate=rate;const v=selectedVoice();if(v)u.voice=v;if(onend)u.onend=onend;setTimeout(()=>speechSynthesis.speak(u),40)}catch(e){if(onend)onend();}}
 function showWord(key){lastWord=key;const x=LANGS[langSel.value].words[key];line.textContent=x[0];translation.textContent=langSel.value==="en"?"":x[1]}
 document.querySelectorAll(".hotspot").forEach(b=>b.onclick=()=>{activeLesson="";const key=b.dataset.word,x=LANGS[langSel.value].words[key];showWord(key);let soundDone=false;const playSound=()=>{if(soundDone)return;soundDone=true;playMuseumSound(key)};speak(x[0],.82,playSound);setTimeout(playSound,1400);if(challenge>=0){if(key===challengeOrder[challenge]){status.textContent="✓ Nice find!";status.style.color="#9dffbf"}else{status.textContent="Not that one — keep looking.";status.style.color="#ffe28a"}}});
 document.getElementById("discovery").onclick=()=>{activeLesson="";challenge=-1;world.classList.remove("challenge-mode");title.textContent="Click & Discover";prompt.textContent="Click any object in the scene to hear its name.";status.textContent=""};
@@ -157,23 +288,45 @@ document.getElementById("sceneView").onclick=()=>document.body.classList.add("sc
 document.getElementById("sceneReturn").onclick=()=>document.body.classList.remove("scene-view");
 showWord("trex");
 </script>
-<script id="talkabee-inclusive-browser-voices-v1">
-(()=>{
-  if(!('speechSynthesis' in window))return;
-  const voiceSelects=()=>[...document.querySelectorAll('select')].filter(s=>/voice/i.test((s.id||'')+' '+(s.name||'')+' '+(s.className||'')));
-  function fillAllBrowserVoices(){
-    const voices=speechSynthesis.getVoices(); if(!voices.length)return;
-    voiceSelects().forEach(sel=>{
-      const chosen=sel.value;
-      sel.innerHTML='';
-      const d=document.createElement('option'); d.value=''; d.textContent='Browser Default'; sel.appendChild(d);
-      voices.forEach(v=>{const o=document.createElement('option');o.value=v.name;o.textContent=v.name+(v.lang?' — '+v.lang:'');sel.appendChild(o)});
-      if([...sel.options].some(o=>o.value===chosen))sel.value=chosen;
-    });
-  }
-  speechSynthesis.addEventListener?.('voiceschanged',fillAllBrowserVoices);
-  window.addEventListener('load',()=>{fillAllBrowserVoices();setTimeout(fillAllBrowserVoices,150);setTimeout(fillAllBrowserVoices,600);setTimeout(fillAllBrowserVoices,1500)});
-  document.addEventListener('change',e=>{if(e.target&&e.target.tagName==='SELECT'&&!/voice/i.test((e.target.id||'')+' '+(e.target.name||'')+' '+(e.target.className||'')))setTimeout(fillAllBrowserVoices,0)},true);
+<script id="talkabee-literal-master-behavior">
+(function(){
+ function cleanActivityIcons(){
+  document.querySelectorAll('.tab-master-panel button').forEach(function(b){
+   if(b.matches('[data-lesson],[data-activity],[data-act],.activity,[data-train-activity],[data-home-activity]')){
+    b.innerHTML=b.innerHTML.replace(/(^\s*\d+\.\s*)(?:<[^>]+>\s*)?[\u{1F000}-\u{1FAFF}\u2600-\u27BF]\uFE0F?\s*/u,'$1');
+   }
+  });
+ }
+ function moveHomeToBottom(){
+  var p=document.querySelector('.tab-master-panel'); if(!p)return;
+  var links=[].slice.call(p.querySelectorAll('a[href="index.html"],a[href$="/index.html"]'));
+  links.forEach(function(a){p.appendChild(a)});
+ }
+ function labels(){
+  document.querySelectorAll('.tab-master-card button').forEach(function(b){
+   var t=b.textContent.trim();
+   if(/normal/i.test(t)) b.textContent='🔊 Speak';
+   if(/^next\s*(line|phrase)?/i.test(t)) b.textContent='Next phrase →';
+  });
+ }
+ function run(){cleanActivityIcons();moveHomeToBottom();labels()}
+ if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',run);else run();
 })();
 </script>
+
+<style id="talkabee-rendered-card-footprint-lock">
+/* Visual master: match the user-approved Grandma's Kitchen rendered footprint. */
+.tab-master-card{
+  width:520px!important; max-width:520px!important; min-width:0!important;
+  transform:translateX(-50%) scale(.67)!important;
+  transform-origin:bottom center!important;
+}
+@media(max-width:760px){.tab-master-card{width:min(520px,calc(100vw - 32px))!important;transform:translateX(-50%) scale(.82)!important;}}
+</style>
+
+<style id="talkabee-dinosaur-card-position">
+/* Position only: move the approved card to the right. */
+.tab-master-card{left:66%!important;}
+@media(max-width:760px){.tab-master-card{left:50%!important;}}
+</style>
 </body></html>

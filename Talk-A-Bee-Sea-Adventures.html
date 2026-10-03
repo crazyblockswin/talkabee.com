@@ -1,11 +1,12 @@
-<!doctype html>
+<!DOCTYPE html>
+
 <!-- Talk A Bee Checkpoint 52. Sea Adventures updated from V51/V50;  Corrected Challenge Trail: all six challenges now stay inside Grandma & Grandpa’s single home scene. Added a Back to Main Directory control, numbered challenge links in the home directory, fixed challenge order, and Next Challenge progression. -->
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
 <title>Talk A Bee — Adventure-First Language World</title>
-<meta name="description" content="A character-driven language course with beautiful scenes, conversation practice, sentence building, audio, speaking and downloadable illustrated books.">
+<meta content="A character-driven language course with beautiful scenes, conversation practice, sentence building, audio, speaking and downloadable illustrated books." name="description"/>
 <style>
 :root{
  --ink:#142239;--muted:#66738a;--cream:#fffaf1;--paper:#fff;--line:#e8e1d8;
@@ -448,10 +449,6 @@ footer{padding:25px 0 45px;color:#778296;font-size:12px} .foot{display:flex;just
 }
 
 </style>
-
-
-
-
 <style id="checkpoint-45-clean-widescreen-scene">
 /* CHECKPOINT 45 — clean redrawn widescreen scene only. No filler side panels. */
 #homeWorld .scene-fill-layer{display:none !important;}
@@ -460,7 +457,6 @@ footer{padding:25px 0 45px;color:#778296;font-size:12px} .foot{display:flex;just
 #homeWorld .scene-main-image{width:100% !important;height:100% !important;object-fit:cover !important;object-position:center center !important;}
 #homeWorld .home-scene:after{background:linear-gradient(180deg,rgba(8,14,28,0),rgba(8,14,28,.035)) !important;}
 </style>
-
 <style id="checkpoint-51-yacht-adventure">
 #yachtWorld{display:none;padding:0!important;background:#0d1724!important;}
 #yachtWorld.open{display:block!important;position:fixed;inset:72px 0 0 0;z-index:85;}
@@ -503,7 +499,6 @@ footer{padding:25px 0 45px;color:#778296;font-size:12px} .foot{display:flex;just
 #yachtWorld .yacht-next-hint{font-size:11px;color:#737b8e;margin:7px 0;}
 @media(max-width:820px){#yachtWorld.open{inset:64px 0 0 0}#yachtWorld .yacht-directory{width:220px}#yachtWorld .yacht-panel{left:250px;width:calc(100% - 266px)}#yachtWorld .yacht-hotspot{width:66px;height:66px;font-size:25px}}
 </style>
-
 <style id="checkpoint-52-sea-adventures-tuning">
 /* V52: newest Sea Adventures artwork is a complete 16:9 interface scene.
    Put the live controls directly over their matching artwork so there is no double header/panel effect. */
@@ -542,7 +537,6 @@ footer{padding:25px 0 45px;color:#778296;font-size:12px} .foot{display:flex;just
 #yachtWorld .yacht-hotspot[data-object="yacht"]{width:10%!important;}
 @media(max-width:900px){#yachtWorld .yacht-directory{min-width:165px!important;width:16%!important;}#yachtWorld .yacht-panel{left:30%!important;width:43%!important;}}
 </style>
-
 <style id="checkpoint-54-v50-layout-fix">
 /* V54 — use the proven V50 glass-panel behavior and align the live controls
    with the interface areas already present in the Sea Adventures artwork. */
@@ -617,7 +611,6 @@ footer{padding:25px 0 45px;color:#778296;font-size:12px} .foot{display:flex;just
   #yachtWorld .yacht-panel p{font-size:10.5px!important;}
 }
 </style>
-
 <style id="kitchen-v50-fullscreen-fix">
 /* V68: Grandma's Kitchen uses the exact V50 full-screen world geometry. */
 #kitchenWorld{display:none!important;padding:0!important;background:#0d1724!important;overflow:hidden!important;}
@@ -628,7 +621,6 @@ footer{padding:25px 0 45px;color:#778296;font-size:12px} .foot{display:flex;just
 /* keep the lesson card away from Grandma's face */
 #kitchenWorld .kitchen-panel{right:1.4%!important;top:3.5%!important;width:27%!important;max-width:430px!important;}
 </style>
-
 <style id="checkpoint-69-header-and-kitchen-ratio-fix">
 /* V69 — corrected master header: no stray literal newline text and no header scrollbar. */
 html,body{overflow-x:hidden!important;}
@@ -640,7 +632,6 @@ header .nav{height:72px!important;min-height:72px!important;max-height:72px!impo
 #kitchenWorld .train-stage,#kitchenWorld .train-scene{position:absolute!important;inset:0!important;width:100%!important;height:100%!important;overflow:hidden!important;background:#182238!important;}
 #kitchenWorld .train-main-image{position:absolute!important;inset:0!important;width:100%!important;height:100%!important;object-fit:contain!important;object-position:center center!important;background:#182238!important;}
 </style>
-
 <style id="checkpoint-71-adventure-viewport-lock">
 /* V71 master fix: when an adventure is open, the original page underneath cannot scroll. */
 html.adventure-locked, body.adventure-locked{
@@ -651,7 +642,6 @@ body.adventure-locked > header{position:fixed !important; top:0 !important; left
 body.adventure-locked #kitchenWorld.open{position:fixed !important; inset:72px 0 0 0 !important; overflow:hidden !important;}
 body.adventure-locked #kitchenWorld .kitchen-directory{overflow-y:auto !important; overscroll-behavior:contain !important;}
 </style>
-
 <style id="checkpoint79-main-directory-glass">
 #mainDirectory .landing-directory{
   background:rgba(13,19,38,.14) !important;
@@ -661,7 +651,6 @@ body.adventure-locked #kitchenWorld .kitchen-directory{overflow-y:auto !importan
   box-shadow:0 10px 28px rgba(8,12,28,.16) !important;
 }
 </style>
-
 <style id="checkpoint80-outer-directory-clear">
 #mainDirectory .landing-directory,
 #mainDirectory .directory-panel,
@@ -673,17 +662,14 @@ body.adventure-locked #kitchenWorld .kitchen-directory{overflow-y:auto !importan
     box-shadow: none !important;
 }
 </style>
-
 <style id="checkpoint81-directory-return">
 #mainDirectory{scroll-margin-top:0!important;}
 </style>
-
 <style id="sea-adventure-header-free">
 /* Sea Adventures owns the whole viewport; no global site header or reserved header gap. */
 #yachtWorld.open{position:fixed!important;inset:0!important;width:100vw!important;height:100dvh!important;}
 body.adventure-locked #yachtWorld.open{inset:0!important;}
 </style>
-
 <style id="sea-master-2026-upgrade">
 #yachtWorld .yacht-directory{
   background:rgba(10,17,34,.14)!important;
@@ -706,15 +692,11 @@ body.adventure-locked #yachtWorld.open{inset:0!important;}
 }
 #yachtWorld.activity-collapsed .yacht-restore{display:block!important;}
 </style>
-
-
 <style id="talkabee-forward-arrow-style">
 .talkabee-forward-arrow{position:fixed;top:22px;right:24px;z-index:10050;width:62px;height:62px;border-radius:50%;border:2px solid rgba(255,255,255,.82);background:rgba(91,58,31,.16);box-shadow:0 5px 16px rgba(0,0,0,.12);backdrop-filter:blur(2px);display:grid;place-items:center;text-decoration:none;cursor:pointer;transition:background .16s ease,transform .16s ease}
 .talkabee-forward-arrow:hover{background:rgba(91,58,31,.24);transform:scale(1.04)}
 .talkabee-forward-arrow::before{content:"";width:17px;height:17px;border-top:5px solid #fff;border-right:5px solid #fff;transform:rotate(45deg) translate(-2px,2px);filter:drop-shadow(0 1px 2px rgba(0,0,0,.35))}
 </style>
-
-
 <style id="sea-auto-discovery-locked-template">
 #yachtWorld .yacht-hotspot{
  display:block!important;pointer-events:auto!important;opacity:0!important;
@@ -725,8 +707,6 @@ body.adventure-locked #yachtWorld.open{inset:0!important;}
  outline-offset:-4px!important;border-radius:50%!important;background:rgba(103,76,227,.32)!important;
 }
 </style>
-
-
 <style id="talkabee-prev-next-nav-style">
 /* Talk A Bee standard compact Previous / Next navigation. */
 .talkabee-prev-next-nav{position:fixed;top:18px;right:22px;z-index:2147483000;display:flex;align-items:center;overflow:hidden;border:2px solid rgba(255,255,255,.82);border-radius:999px;background:rgba(11,22,42,.24);box-shadow:0 5px 16px rgba(0,0,0,.16);backdrop-filter:blur(3px);-webkit-backdrop-filter:blur(3px)}
@@ -736,135 +716,245 @@ body.adventure-locked #yachtWorld.open{inset:0!important;}
 .talkabee-prev-next-nav a:active{transform:scale(.94)}
 @media(max-width:720px){.talkabee-prev-next-nav{top:12px;right:12px}.talkabee-prev-next-nav a{width:42px;height:42px;font-size:33px}}
 </style>
+<style id="talkabee-literal-proof-master">
+/* TALK A BEE — literal proof master. Same rendered shell on all three proof pages. */
+.tab-master-panel{
+ position:fixed!important;left:16px!important;top:16px!important;width:195px!important;
+ height:calc(100vh - 32px)!important;max-height:calc(100vh - 32px)!important;
+ box-sizing:border-box!important;overflow-y:auto!important;overflow-x:hidden!important;
+ padding:14px!important;border-radius:20px!important;
+ background:rgba(7,23,39,.31)!important;border:1px solid rgba(255,255,255,.28)!important;
+ box-shadow:0 14px 34px rgba(0,0,0,.28)!important;backdrop-filter:blur(5px)!important;
+ transform:none!important;transform-origin:initial!important;z-index:40!important;color:#fff!important;
+ font-family:Arial,Helvetica,sans-serif!important;
+}
+.tab-master-panel .title,.tab-master-panel .yacht-place{font-size:19px!important;line-height:1.08!important;font-weight:800!important;margin:4px 0 10px!important;color:#fff!important;text-shadow:0 1px 3px #000!important;}
+.tab-master-panel .label,.tab-master-panel .yacht-label,.tab-master-panel .sea-control-label{display:block!important;font-size:9.5px!important;line-height:1.15!important;font-weight:800!important;letter-spacing:.09em!important;color:#fff!important;margin:10px 0 4px!important;text-transform:uppercase!important;}
+.tab-master-panel select,.tab-master-panel button,.tab-master-panel a{
+ box-sizing:border-box!important;width:100%!important;min-height:34px!important;margin:4px 0!important;padding:8px 9px!important;
+ border-radius:12px!important;border:1px solid rgba(255,255,255,.38)!important;background:rgba(7,32,50,.54)!important;
+ color:#fff!important;font-size:12px!important;line-height:1.15!important;font-weight:700!important;text-align:left!important;text-decoration:none!important;
+ box-shadow:none!important;transform:none!important;
+}
+.tab-master-panel select{appearance:auto!important;}
+.tab-master-panel .active{background:rgba(255,255,255,.18)!important;color:#fff!important;}
+.tab-master-panel .divider,.tab-master-panel .yacht-divider{height:1px!important;background:rgba(255,255,255,.24)!important;margin:8px 0!important;}
+.tab-master-panel .main,.tab-master-panel .yacht-back,.tab-master-panel>a[href="index.html"]{order:99!important;margin-top:10px!important;}
 
-<style id="talkabee-clean-master-template-20261002">
-/* CLEAN MASTER: one authoritative geometry block. No legacy scaling. */
-html body /* FINAL LOCKED TALK A BEE TEMPLATE — rendered geometry matched to approved Kitchen sample. */
-.yacht-directory{box-sizing:border-box!important;width:195px!important;min-width:195px!important;max-width:195px!important;height:calc(100vh - 32px)!important;max-height:calc(100vh - 32px)!important;left:16px!important;top:16px!important;bottom:auto!important;transform:none!important;transform-origin:top left!important;overflow-y:auto!important;overflow-x:hidden!important;background:rgba(7,23,39,.31)!important;backdrop-filter:blur(3px)!important;-webkit-backdrop-filter:blur(3px)!important;}
-html body .yacht-panel{box-sizing:border-box!important;width:520px!important;min-width:520px!important;max-width:520px!important;height:auto!important;max-height:none!important;left:50%!important;right:auto!important;bottom:18px!important;transform:translateX(-50%)!important;transform-origin:bottom center!important;padding:14px 18px!important;border-radius:20px!important;background:rgba(7,23,39,.28)!important;border:1px solid rgba(255,255,255,.32)!important;box-shadow:0 10px 28px rgba(0,0,0,.22)!important;backdrop-filter:blur(3px)!important;-webkit-backdrop-filter:blur(3px)!important;color:#fff!important;overflow:visible!important;}
-html body .yacht-panel .kicker, html body .yacht-panel .eyebrow{color:rgba(255,255,255,.94)!important;font-weight:800!important;text-shadow:0 1px 3px rgba(0,0,0,.75)!important;}
-html body .yacht-panel .actions, html body .yacht-panel .home-actions, html body .yacht-panel .yacht-actions, html body .yacht-panel .train-actions{display:flex!important;flex-wrap:nowrap!important;gap:8px!important;align-items:center!important;}
-html body .yacht-panel .actions button, html body .yacht-panel .home-actions button, html body .yacht-panel .yacht-actions button, html body .yacht-panel .train-actions button{white-space:nowrap!important;margin:0!important;}
-@media(max-width:900px){html body /* FINAL LOCKED TALK A BEE TEMPLATE — rendered geometry matched to approved Kitchen sample. */
-.yacht-directory{width:190px!important;min-width:190px!important;max-width:190px!important;} html body .yacht-panel{width:min(520px,calc(100vw - 220px))!important;min-width:0!important;max-width:520px!important;}}
+.tab-master-card{
+ position:fixed!important;left:50%!important;bottom:18px!important;width:520px!important;min-height:184px!important;height:auto!important;
+ box-sizing:border-box!important;padding:16px 18px!important;border-radius:20px!important;
+ background:rgba(30,20,28,.46)!important;border:1px solid rgba(255,255,255,.28)!important;
+ box-shadow:0 16px 36px rgba(0,0,0,.30)!important;backdrop-filter:blur(8px)!important;
+ transform:translateX(-50%)!important;transform-origin:center bottom!important;z-index:35!important;overflow:visible!important;
+ color:#fff!important;font-family:Arial,Helvetica,sans-serif!important;
+}
+.tab-master-card .kicker,.tab-master-card .yacht-kicker,.tab-master-card>#kicker,.tab-master-card .label:first-child{
+ color:rgba(255,255,255,.94)!important;font-size:11px!important;line-height:1.1!important;font-weight:800!important;letter-spacing:.12em!important;
+ text-transform:uppercase!important;text-shadow:0 1px 3px rgba(0,0,0,.8)!important;margin:0 0 7px!important;
+}
+.tab-master-card h2{font-size:23px!important;line-height:1.1!important;margin:0 0 6px!important;color:#fff!important;font-weight:800!important;text-shadow:0 1px 3px rgba(0,0,0,.6)!important;}
+.tab-master-card p{font-size:13px!important;line-height:1.25!important;margin:0 0 8px!important;color:#fff!important;}
+.tab-master-card .words,.tab-master-card .line,.tab-master-card .yacht-wordline{display:block!important;width:100%!important;box-sizing:border-box!important;margin:8px 0!important;padding:10px 12px!important;border-radius:12px!important;background:rgba(255,255,255,.40)!important;color:#fff!important;font-size:22px!important;line-height:1.12!important;font-weight:800!important;min-height:43px!important;}
+.tab-master-card .words button,.tab-master-card .yacht-wordline button{display:inline!important;width:auto!important;margin:0 4px 0 0!important;padding:0!important;border:0!important;background:transparent!important;color:inherit!important;font:inherit!important;box-shadow:none!important;}
+.tab-master-card .translation,.tab-master-card .yacht-translation{font-size:14px!important;line-height:1.2!important;font-weight:800!important;color:#fff!important;margin:6px 0 8px!important;}
+.tab-master-card .actions,.tab-master-card .yacht-actions{display:flex!important;flex-wrap:nowrap!important;gap:7px!important;align-items:center!important;margin:8px 0 0!important;}
+.tab-master-card .actions button,.tab-master-card .yacht-actions button,.tab-master-card .yacht-nextphrase{width:auto!important;min-width:0!important;white-space:nowrap!important;padding:9px 12px!important;margin:0!important;border-radius:12px!important;border:0!important;font-size:13px!important;line-height:1!important;font-weight:800!important;box-shadow:none!important;}
+.tab-master-card .actions button:first-child,.tab-master-card .yacht-actions button:first-child{background:#6447e8!important;color:#fff!important;}
+.tab-master-card .actions button:not(:first-child),.tab-master-card .yacht-actions button:not(:first-child),.tab-master-card .yacht-nextphrase{background:#f4f4f6!important;color:#111!important;}
+/* Sea legacy internals hidden/reflowed so its visible lesson uses the literal master card. */
+.tab-master-card .yacht-nextrow{display:contents!important;}
+.tab-master-card .yacht-progress,.tab-master-card .yacht-list{display:none!important;}
+.tab-master-card .yacht-find{margin-top:8px!important;}
+@media(max-width:760px){.tab-master-panel{left:8px!important;top:8px!important;height:calc(100vh - 16px)!important;max-height:calc(100vh - 16px)!important;width:190px!important}.tab-master-card{width:min(520px,calc(100vw - 220px))!important;bottom:10px!important;}}
 </style>
+<style id="sea-card-position-only">
+/* Sea position only: move the actual legacy yacht card RIGHT. */
+#yachtWorld .yacht-panel.tab-master-card{
+  left:35%!important;
+  right:auto!important;
+  transform:none!important;
+  z-index:80!important;
+}
+@media(max-width:760px){
+  #yachtWorld .yacht-panel.tab-master-card{
+    left:48%!important;
+    right:auto!important;
+    transform:none!important;
+  }
+}
+</style>
+
+<style id="talkabee-readable-supporting-text">
+/* Readability-only repair. Existing links, navigation, JS, hotspots and audio are untouched. */
+.tab-master-card p,
+.tab-master-card .prompt,
+.tab-master-card #prompt,
+.tab-master-card .instruction,
+.tab-master-card .instructions,
+.tab-master-card .hint,
+.tab-master-card #hint,
+.tab-master-card .translation,
+.tab-master-card #translation,
+.tab-master-card .english,
+.tab-master-card [class*="subtitle"],
+.tab-master-card [class*="instruction"],
+.tab-master-card [class*="prompt"],
+.tab-master-card [class*="translation"],
+.tab-master-card [class*="hint"],
+.tab-master-card [class*="status"],
+.animal-lesson-card p,
+.animal-lesson-card .prompt,
+.animal-lesson-card .instruction,
+.animal-lesson-card .translation,
+.animal-lesson-card .hint {
+  font-size:18px !important;
+  line-height:1.35 !important;
+}
+
+/* Small location/progress/counter lines also need to be readable. */
+.tab-master-card .eyebrow,
+.tab-master-card .kicker,
+.tab-master-card .overline,
+.tab-master-card .location,
+.tab-master-card .activity-count,
+.tab-master-card .challenge-count,
+.tab-master-card [class*="count"],
+.animal-lesson-card .eyebrow,
+.animal-lesson-card [class*="count"] {
+  font-size:15px !important;
+  line-height:1.25 !important;
+  font-weight:800 !important;
+}
+
+/* Spoken/foreign-language line stays visually strongest. */
+.tab-master-card #line,
+.tab-master-card .line,
+.tab-master-card .train-line,
+.tab-master-card .words,
+.tab-master-card [class*="phrase"],
+.animal-lesson-card #line,
+.animal-lesson-card .line,
+.animal-lesson-card [class*="phrase"] {
+  font-size:22px !important;
+  line-height:1.28 !important;
+  font-weight:800 !important;
+}
+
+/* Let increased text wrap naturally instead of being clipped. */
+.tab-master-card,
+.animal-lesson-card {
+  height:auto !important;
+}
+</style>
+
+  <link rel="icon" type="image/png" href="images/talkabee-favicon.png">
+  <link rel="shortcut icon" type="image/png" href="images/talkabee-favicon.png">
 </head>
 <body>
-<nav class="talkabee-prev-next-nav" aria-label="Adventure navigation"><a href="Talk-A-Bee-Grandma-Grandpas-Place.html" aria-label="Previous page" title="Previous">‹</a><a href="Talk-A-Bee-Shopping-Market-Adventure.html" aria-label="Next page" title="Next">›</a></nav>
-
-
+<nav aria-label="Adventure navigation" class="talkabee-prev-next-nav"><a aria-label="Previous page" href="Talk-A-Bee-Grandma-Grandpas-Place.html" title="Previous">‹</a><a aria-label="Next page" href="Talk-A-Bee-Shopping-Market-Adventure.html" title="Next">›</a></nav>
 <style id="sea-standalone-clean-shell">
 html,body{margin:0!important;padding:0!important;width:100%!important;height:100%!important;overflow:hidden!important;background:#101725!important;}
 body>header,body>footer,.final-cta,.hero,#mainDirectory{display:none!important;}
 #yachtWorld{display:block!important;position:fixed!important;inset:0!important;width:100vw!important;height:100dvh!important;margin:0!important;padding:0!important;}
 </style>
+<section aria-label="Sea Adventures" class="section yacht-world" id="yachtWorld">
+<div class="yacht-stage">
+<aside aria-label="Sea Adventures activity menu" class="yacht-directory tab-master-panel">
+<button class="yacht-back" id="yachtMainDirectory" type="button">← Main Directory</button>
+<div class="yacht-place">🛥️ Sea Adventures</div>
+<button class="yacht-peek" id="yachtPeek" type="button">👁 Scene View</button>
+<div class="yacht-label">LANGUAGE</div>
+<label class="sea-control-label" for="seaLanguage">LEARN</label>
+<select class="sea-select" id="seaLanguage">
+<option value="es">Spanish</option>
+<option value="fr">French</option>
+<option value="en">English</option>
+<option value="de">German</option>
+<option value="it">Italian</option>
+<option value="pt">Portuguese</option>
+<option value="no">Norwegian</option>
+</select>
+<label class="sea-control-label" for="seaVoice">VOICE</label>
+<select class="sea-select" id="seaVoice"><option value="">Browser Default</option></select>
+<div class="yacht-label">DISCOVERY</div>
+<button class="yacht-nav" data-yacht-group="discover" type="button">🔎 Click &amp; Discover</button>
+<div class="yacht-divider"></div>
+<div class="yacht-label">6 ACTIVITIES</div>
+<button class="yacht-nav active" data-yacht-group="deck" type="button">On Deck Talk</button>
+<button class="yacht-nav" data-yacht-group="boat" type="button">Boat Words</button>
+<button class="yacht-nav" data-yacht-group="ocean" type="button">Ocean Words</button>
+<button class="yacht-nav" data-yacht-group="animals" type="button">Animal Friends</button>
+<button class="yacht-nav" data-yacht-group="marina" type="button">At the Marina</button>
+<button class="yacht-nav" data-yacht-group="weather" type="button">Sunset &amp; Weather</button>
+<div class="yacht-divider"></div>
+<div class="yacht-label">6 CHALLENGES</div>
+<button class="yacht-challenge-nav" data-yacht-challenge="0" type="button"><span>1</span> Grandpa Wally</button>
+<button class="yacht-challenge-nav" data-yacht-challenge="1" type="button"><span>2</span> Grandma Cathy</button>
+<button class="yacht-challenge-nav" data-yacht-challenge="2" type="button"><span>3</span> Fishing Pole</button>
+<button class="yacht-challenge-nav" data-yacht-challenge="3" type="button"><span>4</span> Whale</button>
+<button class="yacht-challenge-nav" data-yacht-challenge="4" type="button"><span>5</span> Dolphin</button>
+<button class="yacht-challenge-nav" data-yacht-challenge="5" type="button"><span>6</span> Seagull</button>
+</aside>
+<button class="yacht-restore" id="yachtRestore" type="button">☰ Activities</button>
+<div class="yacht-scene" id="yachtScene" style="background-image:url('images/talkabee-image-21.jpg')">
+<div class="yacht-hotspots" id="yachtHotspots">
+<button aria-label="Grandpa" class="yacht-hotspot" data-object="wally" style="left:53.3%;top:59.8%" type="button"></button>
+<button aria-label="Grandma" class="yacht-hotspot" data-object="cathy" style="left:62.8%;top:60.2%" type="button"></button>
+<button aria-label="Boy" class="yacht-hotspot" data-object="boy" style="left:43.4%;top:58.0%" type="button"></button>
+<button aria-label="Girl" class="yacht-hotspot" data-object="girl" style="left:76.0%;top:58.0%" type="button"></button>
+<button aria-label="Boy" class="yacht-hotspot" data-object="binocularboy" style="left:87.0%;top:57.5%" type="button"></button>
+<button aria-label="Dog" class="yacht-hotspot" data-object="dog" style="left:48.0%;top:72.0%" type="button"></button>
+<button aria-label="Rod" class="yacht-hotspot" data-object="fishing" style="left:37.5%;top:38.5%" type="button"></button>
+<button aria-label="Whale" class="yacht-hotspot" data-object="whale" style="left:27.0%;top:37.0%" type="button"></button>
+<button aria-label="Dolphin" class="yacht-hotspot" data-object="dolphin" style="left:68.4%;top:45.0%" type="button"></button>
+<button aria-label="Seagull" class="yacht-hotspot" data-object="seagull" style="left:24.2%;top:58.7%" type="button"></button>
+<button aria-label="Bee" class="yacht-hotspot" data-object="bee" style="left:74.8%;top:10.7%" type="button"></button>
+<button aria-label="Sun" class="yacht-hotspot" data-object="sun" style="left:58.2%;top:34.5%" type="button"></button>
+<button aria-label="Sailboat" class="yacht-hotspot" data-object="sailboat" style="left:74.7%;top:38.2%" type="button"></button>
+<button aria-label="Lighthouse" class="yacht-hotspot" data-object="lighthouse" style="left:71.6%;top:27.0%" type="button"></button>
+<button aria-label="Ocean" class="yacht-hotspot" data-object="ocean" style="left:52.0%;top:45.0%" type="button"></button>
+<button aria-label="Tackle" class="yacht-hotspot" data-object="tackle" style="left:34.0%;top:76.0%" type="button"></button>
+<button aria-label="Flowers" class="yacht-hotspot" data-object="flowers" style="left:68.7%;top:73.5%" type="button"></button>
+<button aria-label="Fruit" class="yacht-hotspot" data-object="fruit" style="left:74.0%;top:76.8%" type="button"></button>
+<button aria-label="Drink" class="yacht-hotspot" data-object="drink" style="left:79.0%;top:76.5%" type="button"></button>
+<button aria-label="Lantern" class="yacht-hotspot" data-object="lantern" style="left:64.0%;top:73.7%" type="button"></button>
+<button aria-label="Binoculars" class="yacht-hotspot" data-object="binoculars" style="left:83.3%;top:78.7%" type="button"></button>
+<button aria-label="Table" class="yacht-hotspot" data-object="table" style="left:73.0%;top:84.0%" type="button"></button>
+<button aria-label="Rug" class="yacht-hotspot" data-object="rug" style="left:61.0%;top:91.0%" type="button"></button>
+<button aria-label="Rope" class="yacht-hotspot" data-object="rope" style="left:27.5%;top:83.0%" type="button"></button>
+<button aria-label="Railing" class="yacht-hotspot" data-object="railing" style="left:19.0%;top:67.0%" type="button"></button>
+<button aria-label="Stairs" class="yacht-hotspot" data-object="stairs" style="left:85.0%;top:35.0%" type="button"></button>
+<button aria-label="Yacht" class="yacht-hotspot" data-object="yacht" style="left:89.5%;top:39.0%;width:7%!important" type="button"></button>
+<button aria-label="Lifering" class="yacht-hotspot" data-object="lifering" style="left:95.0%;top:87.5%" type="button"></button>
+</div>
+</div>
+<div class="yacht-panel tab-master-card">
+<div class="yacht-kicker" id="yachtKicker">ON DECK TALK</div>
+<h2 id="yachtTitle">A beautiful evening on the water.</h2>
+<p id="yachtPrompt">Hear a short sentence, then click the words one at a time.</p>
+<div class="yacht-wordline" id="yachtWordline"></div>
+<div class="yacht-translation" id="yachtTranslation"></div>
+<div class="yacht-actions" id="yachtActions">
+<button class="primary" id="yachtPlay" type="button">🔊 Speak</button>
+<button id="yachtSlow" type="button">🐢 Slow</button>
+<button id="yachtReplay" type="button">↻ Replay</button>
+<button class="yacht-nextphrase" id="yachtNextPhrase" type="button">Next phrase →</button></div>
+<div class="yacht-nextrow" id="yachtNextRow">
+<span class="yacht-progress" id="yachtProgress">Phrase 1 of 4</span>
 
-<section id="yachtWorld" class="section yacht-world" aria-label="Sea Adventures">
-  
- <div class="yacht-stage">
-  <aside class="yacht-directory" aria-label="Sea Adventures activity menu">
-   <button type="button" class="yacht-back" id="yachtMainDirectory">← Main Directory</button>
-   
-   
-   <div class="yacht-place">🛥️ Sea Adventures</div>
-   <button type="button" class="yacht-peek" id="yachtPeek">👁 Scene View</button>
-   <div class="yacht-label">LANGUAGE</div>
-   <label class="sea-control-label" for="seaLanguage">LEARN</label>
-   <select id="seaLanguage" class="sea-select">
-    <option value="es">Spanish</option>
-    <option value="fr">French</option>
-    <option value="en">English</option>
-    <option value="de">German</option>
-    <option value="it">Italian</option>
-    <option value="pt">Portuguese</option>
-    <option value="no">Norwegian</option>
-   </select>
-   <label class="sea-control-label" for="seaVoice">VOICE</label>
-   <select id="seaVoice" class="sea-select"><option value="">Browser Default</option></select>
-   <div class="yacht-label">DISCOVERY</div>
-   <button type="button" class="yacht-nav" data-yacht-group="discover">Click &amp; Discover</button>
-   <div class="yacht-divider"></div>
-   <div class="yacht-label">6 ACTIVITIES</div>
-   <button type="button" class="yacht-nav active" data-yacht-group="deck">On Deck Talk</button>
-   <button type="button" class="yacht-nav" data-yacht-group="boat">Boat Words</button>
-   <button type="button" class="yacht-nav" data-yacht-group="ocean">Ocean Words</button>
-   <button type="button" class="yacht-nav" data-yacht-group="animals">Animal Friends</button>
-   <button type="button" class="yacht-nav" data-yacht-group="marina">At the Marina</button>
-   <button type="button" class="yacht-nav" data-yacht-group="weather">Sunset &amp; Weather</button>
-   <div class="yacht-divider"></div>
-   <div class="yacht-label">6 CHALLENGES</div>
-   <button type="button" class="yacht-challenge-nav" data-yacht-challenge="0"><span>1</span> Grandpa Wally</button>
-   <button type="button" class="yacht-challenge-nav" data-yacht-challenge="1"><span>2</span> Grandma Cathy</button>
-   <button type="button" class="yacht-challenge-nav" data-yacht-challenge="2"><span>3</span> Fishing Pole</button>
-   <button type="button" class="yacht-challenge-nav" data-yacht-challenge="3"><span>4</span> Whale</button>
-   <button type="button" class="yacht-challenge-nav" data-yacht-challenge="4"><span>5</span> Dolphin</button>
-   <button type="button" class="yacht-challenge-nav" data-yacht-challenge="5"><span>6</span> Seagull</button>
-  </aside>
-
-  <button type="button" class="yacht-restore" id="yachtRestore">☰ Activities</button>
-
-  <div class="yacht-scene" id="yachtScene" style="background-image:url('images/talkabee-image-21.jpg')">
-   <div class="yacht-hotspots" id="yachtHotspots">
-     <button type="button" class="yacht-hotspot" data-object="wally" style="left:53.3%;top:59.8%" aria-label="Grandpa"></button>
-     <button type="button" class="yacht-hotspot" data-object="cathy" style="left:62.8%;top:60.2%" aria-label="Grandma"></button>
-     <button type="button" class="yacht-hotspot" data-object="boy" style="left:43.4%;top:58.0%" aria-label="Boy"></button>
-     <button type="button" class="yacht-hotspot" data-object="girl" style="left:76.0%;top:58.0%" aria-label="Girl"></button>
-     <button type="button" class="yacht-hotspot" data-object="binocularboy" style="left:87.0%;top:57.5%" aria-label="Boy"></button>
-     <button type="button" class="yacht-hotspot" data-object="dog" style="left:48.0%;top:72.0%" aria-label="Dog"></button>
-     <button type="button" class="yacht-hotspot" data-object="fishing" style="left:37.5%;top:38.5%" aria-label="Rod"></button>
-     <button type="button" class="yacht-hotspot" data-object="whale" style="left:27.0%;top:37.0%" aria-label="Whale"></button>
-     <button type="button" class="yacht-hotspot" data-object="dolphin" style="left:68.4%;top:45.0%" aria-label="Dolphin"></button>
-     <button type="button" class="yacht-hotspot" data-object="seagull" style="left:24.2%;top:58.7%" aria-label="Seagull"></button>
-     <button type="button" class="yacht-hotspot" data-object="bee" style="left:74.8%;top:10.7%" aria-label="Bee"></button>
-     <button type="button" class="yacht-hotspot" data-object="sun" style="left:58.2%;top:34.5%" aria-label="Sun"></button>
-     <button type="button" class="yacht-hotspot" data-object="sailboat" style="left:74.7%;top:38.2%" aria-label="Sailboat"></button>
-     <button type="button" class="yacht-hotspot" data-object="lighthouse" style="left:71.6%;top:27.0%" aria-label="Lighthouse"></button>
-     <button type="button" class="yacht-hotspot" data-object="ocean" style="left:52.0%;top:45.0%" aria-label="Ocean"></button>
-     <button type="button" class="yacht-hotspot" data-object="tackle" style="left:34.0%;top:76.0%" aria-label="Tackle"></button>
-     <button type="button" class="yacht-hotspot" data-object="flowers" style="left:68.7%;top:73.5%" aria-label="Flowers"></button>
-     <button type="button" class="yacht-hotspot" data-object="fruit" style="left:74.0%;top:76.8%" aria-label="Fruit"></button>
-     <button type="button" class="yacht-hotspot" data-object="drink" style="left:79.0%;top:76.5%" aria-label="Drink"></button>
-     <button type="button" class="yacht-hotspot" data-object="lantern" style="left:64.0%;top:73.7%" aria-label="Lantern"></button>
-     <button type="button" class="yacht-hotspot" data-object="binoculars" style="left:83.3%;top:78.7%" aria-label="Binoculars"></button>
-     <button type="button" class="yacht-hotspot" data-object="table" style="left:73.0%;top:84.0%" aria-label="Table"></button>
-     <button type="button" class="yacht-hotspot" data-object="rug" style="left:61.0%;top:91.0%" aria-label="Rug"></button>
-     <button type="button" class="yacht-hotspot" data-object="rope" style="left:27.5%;top:83.0%" aria-label="Rope"></button>
-     <button type="button" class="yacht-hotspot" data-object="railing" style="left:19.0%;top:67.0%" aria-label="Railing"></button>
-     <button type="button" class="yacht-hotspot" data-object="stairs" style="left:85.0%;top:35.0%" aria-label="Stairs"></button>
-     <button type="button" class="yacht-hotspot" data-object="yacht" style="left:89.5%;top:39.0%;width:7%!important" aria-label="Yacht"></button>
-     <button type="button" class="yacht-hotspot" data-object="lifering" style="left:95.0%;top:87.5%" aria-label="Lifering"></button>
-   </div>
-   </div>
-
-   <div class="yacht-panel">
-   <div class="yacht-kicker" id="yachtKicker">ON DECK TALK</div>
-   <h2 id="yachtTitle">A beautiful evening on the water.</h2>
-   <p id="yachtPrompt">Hear a short sentence, then click the words one at a time.</p>
-   <div class="yacht-wordline" id="yachtWordline"></div>
-   <div class="yacht-translation" id="yachtTranslation"></div>
-   <div class="yacht-actions" id="yachtActions">
-    <button type="button" class="primary" id="yachtPlay">🔊 Speak</button>
-    <button type="button" id="yachtSlow">🐢 Slow</button>
-    <button type="button" id="yachtReplay">↻ Replay</button>
-   </div>
-   <div class="yacht-nextrow" id="yachtNextRow">
-    <span class="yacht-progress" id="yachtProgress">Phrase 1 of 4</span>
-    <button type="button" class="yacht-nextphrase" id="yachtNextPhrase">Next phrase →</button>
-   </div>
-   <div class="yacht-list" id="yachtList"></div>
-   <div class="yacht-find" id="yachtFind">
-    <div class="yacht-challenge-count" id="yachtChallengeCount">CHALLENGE 1 OF 6</div>
-    <div id="yachtFindPrompt">Find Grandpa Wally.</div>
-    <div class="yacht-find-status" id="yachtFindStatus"></div>
-    <div class="yacht-next-hint" id="yachtNextHint">Find the correct object to unlock the next challenge.</div>
-    <button type="button" class="yacht-challenge-next" id="yachtChallengeNext">Next Challenge →</button>
-   </div>
-  </div>
- </div>
+</div>
+<div class="yacht-list" id="yachtList"></div>
+<div class="yacht-find" id="yachtFind">
+<div class="yacht-challenge-count" id="yachtChallengeCount">CHALLENGE 1 OF 6</div>
+<div id="yachtFindPrompt">Find Grandpa Wally.</div>
+<div class="yacht-find-status" id="yachtFindStatus"></div>
+<div class="yacht-next-hint" id="yachtNextHint">Find the correct object to unlock the next challenge.</div>
+<button class="yacht-challenge-next" id="yachtChallengeNext" type="button">Next Challenge →</button>
+</div>
+</div>
+</div>
 </section>
-
-
-
 <script id="checkpoint-52-sea-adventures-script">
 document.addEventListener('DOMContentLoaded',function(){
  const world=document.getElementById('yachtWorld');
@@ -981,12 +1071,23 @@ document.addEventListener('DOMContentLoaded',function(){
  function currentItems(){return (lessons[currentLang()]||lessons.es)[group]||(lessons[currentLang()]||lessons.es).deck}
  function currentWord(key){return (words[currentLang()]||words.es)[key]||english[key]||key}
  function populateVoices(){
-   const sel=$('seaVoice'); if(!sel)return;
+   const sel=$('seaVoice'); if(!sel || !('speechSynthesis' in window))return;
    const keep=localStorage.getItem('talkabee-sea-voice-'+currentLang())||'';
    const base=(locale[currentLang()]||'en-US').split('-')[0].toLowerCase();
-   const voices=(speechSynthesis.getVoices()||[]).filter(v=>(v.lang||'').toLowerCase().startsWith(base));
+   const all=(speechSynthesis.getVoices()||[]).slice();
+   all.sort((a,b)=>{
+     const am=(a.lang||'').toLowerCase().startsWith(base)?0:1;
+     const bm=(b.lang||'').toLowerCase().startsWith(base)?0:1;
+     return am-bm || (a.lang||'').localeCompare(b.lang||'') || a.name.localeCompare(b.name);
+   });
    sel.innerHTML='<option value="">Browser Default</option>';
-   voices.forEach(v=>{const o=document.createElement('option');o.value=v.name;o.textContent=v.name+' — '+v.lang;sel.appendChild(o)});
+   all.forEach(v=>{
+     const o=document.createElement('option');
+     o.value=v.name;
+     const match=(v.lang||'').toLowerCase().startsWith(base);
+     o.textContent=(match?'★ ':'')+v.name+' — '+(v.lang||'Unknown');
+     sel.appendChild(o);
+   });
    if([...sel.options].some(o=>o.value===keep))sel.value=keep;
  }
  function speak(text,rate=.86){
@@ -1056,7 +1157,12 @@ document.addEventListener('DOMContentLoaded',function(){
  $('seaLanguage').value=localStorage.getItem('talkabee-learn-language')||'es';
  $('seaLanguage').addEventListener('change',()=>{localStorage.setItem('talkabee-learn-language',currentLang());index=0;populateVoices();render()});
  $('seaVoice').addEventListener('change',()=>localStorage.setItem('talkabee-sea-voice-'+currentLang(),$('seaVoice').value));
- if('speechSynthesis' in window){speechSynthesis.onvoiceschanged=populateVoices;populateVoices()}
+ if('speechSynthesis' in window){
+    populateVoices();
+    if(speechSynthesis.addEventListener) speechSynthesis.addEventListener('voiceschanged',populateVoices);
+    else speechSynthesis.onvoiceschanged=populateVoices;
+    [100,300,700,1500,3000].forEach(ms=>setTimeout(populateVoices,ms));
+  }
  render();
 });
 </script>
@@ -1077,28 +1183,6 @@ document.addEventListener('click',function(e){
   e.stopImmediatePropagation();
   window.location.href='index.html';
 },true);
-</script>
-<script id="talkabee-panel-return-bottom-v2">
-(()=>{const panel=document.querySelector('#yachtWorld .yacht-directory'),back=document.querySelector('#yachtWorld .yacht-back');if(panel&&back)panel.appendChild(back);})();
-</script>
-<script id="talkabee-inclusive-browser-voices-v1">
-(()=>{
-  if(!('speechSynthesis' in window))return;
-  const voiceSelects=()=>[...document.querySelectorAll('select')].filter(s=>/voice/i.test((s.id||'')+' '+(s.name||'')+' '+(s.className||'')));
-  function fillAllBrowserVoices(){
-    const voices=speechSynthesis.getVoices(); if(!voices.length)return;
-    voiceSelects().forEach(sel=>{
-      const chosen=sel.value;
-      sel.innerHTML='';
-      const d=document.createElement('option'); d.value=''; d.textContent='Browser Default'; sel.appendChild(d);
-      voices.forEach(v=>{const o=document.createElement('option');o.value=v.name;o.textContent=v.name+(v.lang?' — '+v.lang:'');sel.appendChild(o)});
-      if([...sel.options].some(o=>o.value===chosen))sel.value=chosen;
-    });
-  }
-  speechSynthesis.addEventListener?.('voiceschanged',fillAllBrowserVoices);
-  window.addEventListener('load',()=>{fillAllBrowserVoices();setTimeout(fillAllBrowserVoices,150);setTimeout(fillAllBrowserVoices,600);setTimeout(fillAllBrowserVoices,1500)});
-  document.addEventListener('change',e=>{if(e.target&&e.target.tagName==='SELECT'&&!/voice/i.test((e.target.id||'')+' '+(e.target.name||'')+' '+(e.target.className||'')))setTimeout(fillAllBrowserVoices,0)},true);
-})();
 </script>
 </body>
 </html>

@@ -346,17 +346,149 @@ Target the actual elements.
 @media(max-width:720px){.talkabee-prev-next-nav{top:12px;right:12px}.talkabee-prev-next-nav a{width:42px;height:42px;font-size:33px}}
 </style>
 
-<style id="talkabee-clean-master-template-20261002">
-/* CLEAN MASTER: one authoritative geometry block. No legacy scaling. */
-html body /* FINAL LOCKED TALK A BEE TEMPLATE — rendered geometry matched to approved Kitchen sample. */
-.farm-panel-scroll{box-sizing:border-box!important;width:195px!important;min-width:195px!important;max-width:195px!important;height:calc(100vh - 32px)!important;max-height:calc(100vh - 32px)!important;left:16px!important;top:16px!important;bottom:auto!important;transform:none!important;transform-origin:top left!important;overflow-y:auto!important;overflow-x:hidden!important;background:rgba(7,23,39,.31)!important;backdrop-filter:blur(3px)!important;-webkit-backdrop-filter:blur(3px)!important;}
-html body .live-card{box-sizing:border-box!important;width:520px!important;min-width:520px!important;max-width:520px!important;height:auto!important;max-height:none!important;left:50%!important;right:auto!important;bottom:18px!important;transform:translateX(-50%)!important;transform-origin:bottom center!important;padding:14px 18px!important;border-radius:20px!important;background:rgba(7,23,39,.28)!important;border:1px solid rgba(255,255,255,.32)!important;box-shadow:0 10px 28px rgba(0,0,0,.22)!important;backdrop-filter:blur(3px)!important;-webkit-backdrop-filter:blur(3px)!important;color:#fff!important;overflow:visible!important;}
-html body .live-card .kicker, html body .live-card .eyebrow{color:rgba(255,255,255,.94)!important;font-weight:800!important;text-shadow:0 1px 3px rgba(0,0,0,.75)!important;}
-html body .live-card .actions, html body .live-card .home-actions, html body .live-card .yacht-actions, html body .live-card .train-actions{display:flex!important;flex-wrap:nowrap!important;gap:8px!important;align-items:center!important;}
-html body .live-card .actions button, html body .live-card .home-actions button, html body .live-card .yacht-actions button, html body .live-card .train-actions button{white-space:nowrap!important;margin:0!important;}
-@media(max-width:900px){html body /* FINAL LOCKED TALK A BEE TEMPLATE — rendered geometry matched to approved Kitchen sample. */
-.farm-panel-scroll{width:190px!important;min-width:190px!important;max-width:190px!important;} html body .live-card{width:min(520px,calc(100vw - 220px))!important;min-width:0!important;max-width:520px!important;}}
+<style id="farm-boardwalk-panel-master">
+/* Boardwalk-standard panel transplant — visual shell only. */
+.left-panel{display:none!important}
+.farm-panel-scroll{position:absolute!important;z-index:40!important;left:16px!important;top:16px!important;width:195px!important;height:auto!important;max-height:calc(100vh - 32px)!important;overflow:auto!important;padding:14px!important;border-radius:20px!important;background:rgba(7,23,39,.31)!important;border:1px solid rgba(255,255,255,.28)!important;box-shadow:0 10px 28px rgba(0,0,0,.22)!important;backdrop-filter:blur(3px)!important;scrollbar-width:thin!important;color:#fff!important}
+.farm-panel-scroll h1{font-size:22px!important;line-height:1.05!important;margin:0 0 10px!important;color:#fff!important;text-shadow:none!important}
+.farm-panel-scroll .label{display:block!important;margin:11px 0 5px!important;font-size:12px!important;font-weight:900!important;letter-spacing:.12em!important;color:#e9f7ff!important}
+.farm-panel-scroll #back,.farm-panel-scroll .farm-left-controls,.farm-panel-scroll .activity,.farm-panel-scroll .discovery,.farm-panel-scroll .challenge{position:relative!important;left:auto!important;top:auto!important;width:100%!important;height:auto!important;min-height:0!important}
+.farm-panel-scroll .farm-left-controls{display:block!important;margin:0!important}
+.farm-panel-scroll select,.farm-panel-scroll button,.farm-panel-scroll a{width:100%!important;display:block!important;margin:5px 0!important;padding:9px 10px!important;min-height:0!important;height:auto!important;border-radius:12px!important;border:1px solid rgba(255,255,255,.38)!important;background:rgba(7,32,50,.54)!important;color:#fff!important;font-size:13px!important;line-height:1.25!important;font-weight:800!important;text-decoration:none!important;text-align:left!important;box-shadow:none!important}
+.farm-panel-scroll select{appearance:auto!important}
+.farm-panel-scroll option{color:#17212b!important;background:#fff!important}
+.farm-panel-scroll button:hover,.farm-panel-scroll a:hover{background:rgba(255,255,255,.18)!important}
+.farm-panel-scroll .activity.active-choice,.farm-panel-scroll .discovery.active-choice,.farm-panel-scroll .challenge.active-choice{background:rgba(122,82,232,.86)!important;color:#fff!important;border-color:rgba(255,255,255,.62)!important}
+.farm-panel-scroll .discovery{margin:5px 0!important;text-align:left!important}
+.farm-panel-scroll .challenge{text-align:left!important}
+.farm-panel-scroll #back{display:block!important;margin-top:12px!important;padding:9px 10px!important;justify-content:initial!important;text-align:left!important;background:rgba(7,32,50,.54)!important}
+#restorePanel{position:fixed!important;z-index:10030!important;left:18px!important;top:18px!important;padding:10px 14px!important;border-radius:12px!important;border:1px solid #fff!important;background:rgba(7,23,39,.65)!important;color:#fff!important;font-size:14px!important;font-weight:900!important}
+#world.scene-only .farm-panel-scroll{display:none!important}
+#world.scene-only #restorePanel{display:block!important}
+@media(max-width:900px){.farm-panel-scroll{width:190px!important}}
 </style>
+<style id="talkabee-literal-master-template">
+/* ONE literal Talk A Bee Adventure shell. Legacy classes remain only as JS hooks. */
+.tab-master-panel,.tab-master-panel *,.tab-master-card,.tab-master-card *{box-sizing:border-box}
+.tab-master-panel{
+ position:fixed!important;left:16px!important;top:16px!important;bottom:16px!important;right:auto!important;
+ width:195px!important;min-width:195px!important;max-width:195px!important;height:auto!important;max-height:none!important;
+ margin:0!important;padding:14px!important;overflow-x:hidden!important;overflow-y:auto!important;
+ transform:none!important;scale:1!important;zoom:1!important;opacity:1!important;
+ border-radius:20px!important;border:1px solid rgba(255,255,255,.28)!important;
+ background:rgba(7,23,39,.31)!important;box-shadow:0 12px 30px rgba(0,0,0,.24)!important;
+ backdrop-filter:blur(3px)!important;-webkit-backdrop-filter:blur(3px)!important;color:#fff!important;z-index:1000!important;
+ font-family:Arial,Helvetica,sans-serif!important;font-size:12px!important;line-height:1.16!important;
+}
+.tab-master-panel .place,.tab-master-panel h1,.tab-master-panel .title{font-size:19px!important;line-height:1.08!important;font-weight:900!important;color:#fff!important;margin:4px 0 10px!important;text-shadow:0 2px 4px rgba(0,0,0,.55)!important}
+.tab-master-panel .label,.tab-master-panel label{font-size:9.5px!important;line-height:1.1!important;letter-spacing:.09em!important;font-weight:900!important;color:#fff!important;margin:9px 0 4px!important}
+.tab-master-panel button,.tab-master-panel select,.tab-master-panel a{
+ width:100%!important;max-width:100%!important;min-height:34px!important;height:auto!important;margin:4px 0!important;padding:8px 9px!important;
+ border-radius:12px!important;border:1px solid rgba(255,255,255,.38)!important;background:rgba(7,32,50,.54)!important;color:#fff!important;
+ font:800 12px/1.16 Arial,Helvetica,sans-serif!important;text-align:left!important;text-decoration:none!important;white-space:normal!important;
+ transform:none!important;box-shadow:none!important;
+}
+.tab-master-panel select{white-space:nowrap!important;text-overflow:ellipsis!important;overflow:hidden!important}
+.tab-master-panel button:hover,.tab-master-panel a:hover{background:rgba(20,58,79,.70)!important}
+.tab-master-panel .active,.tab-master-panel button.active{background:rgba(78,69,219,.74)!important;color:#fff!important}
+.tab-master-card{
+ position:fixed!important;left:50%!important;right:auto!important;bottom:16px!important;top:auto!important;
+ width:520px!important;min-width:520px!important;max-width:520px!important;height:auto!important;min-height:0!important;max-height:44vh!important;
+ margin:0!important;padding:14px 16px!important;overflow:auto!important;transform:translateX(-50%)!important;scale:1!important;zoom:1!important;opacity:1!important;
+ border-radius:20px!important;border:1px solid rgba(255,255,255,.30)!important;background:rgba(25,19,24,.38)!important;
+ box-shadow:0 12px 30px rgba(0,0,0,.28)!important;backdrop-filter:blur(5px)!important;-webkit-backdrop-filter:blur(5px)!important;
+ color:#fff!important;z-index:900!important;font-family:Arial,Helvetica,sans-serif!important;
+}
+.tab-master-card .kicker,.tab-master-card [class*="kicker"]{color:rgba(255,255,255,.94)!important;font-size:11px!important;line-height:1.1!important;font-weight:900!important;letter-spacing:.12em!important;text-shadow:0 1px 3px rgba(0,0,0,.78)!important;margin:0 0 7px!important}
+.tab-master-card h1,.tab-master-card h2{color:#fff!important;font-size:22px!important;line-height:1.08!important;margin:4px 0 7px!important;text-shadow:0 1px 3px rgba(0,0,0,.55)!important}
+.tab-master-card p,.tab-master-card .prompt,.tab-master-card .translation,.tab-master-card .tip{font-size:13px!important;line-height:1.25!important;margin:4px 0 7px!important;color:#fff!important}
+.tab-master-card .line,.tab-master-card .target,.tab-master-card #line,.tab-master-card #target{font-size:20px!important;line-height:1.12!important;font-weight:900!important;margin:7px 0!important;color:#fff!important}
+.tab-master-card .actions,.tab-master-card [class*="actions"]{display:flex!important;align-items:center!important;gap:8px!important;flex-wrap:nowrap!important;margin-top:8px!important}
+.tab-master-card .actions button,.tab-master-card [class*="actions"] button,.tab-master-card>button{width:auto!important;min-width:0!important;height:auto!important;padding:9px 13px!important;margin:0!important;border-radius:12px!important;font:900 13px/1 Arial,Helvetica,sans-serif!important;white-space:nowrap!important}
+@media(max-width:760px){.tab-master-panel{left:10px!important;top:10px!important;bottom:10px!important;width:190px!important;min-width:190px!important;max-width:190px!important;padding:11px!important}.tab-master-card{width:min(520px,calc(100vw - 24px))!important;min-width:0!important;bottom:10px!important;padding:12px!important}}
+</style>
+
+<style id="tab-spoken-phrase-readability">
+/* Locked spoken-language phrase treatment: gray field + white type. */
+.tab-master-card #line,
+.tab-master-card .line,
+.tab-master-card .words {
+  background:rgba(88,88,88,.72)!important;
+  color:#fff!important;
+  border:1px solid rgba(255,255,255,.20)!important;
+  border-radius:14px!important;
+  text-shadow:0 1px 2px rgba(0,0,0,.55)!important;
+}
+.tab-master-card #line *,
+.tab-master-card .line *,
+.tab-master-card .words * {color:#fff!important;}
+</style>
+
+<style id="talkabee-readable-supporting-text">
+/* Readability-only repair. Existing links, navigation, JS, hotspots and audio are untouched. */
+.tab-master-card p,
+.tab-master-card .prompt,
+.tab-master-card #prompt,
+.tab-master-card .instruction,
+.tab-master-card .instructions,
+.tab-master-card .hint,
+.tab-master-card #hint,
+.tab-master-card .translation,
+.tab-master-card #translation,
+.tab-master-card .english,
+.tab-master-card [class*="subtitle"],
+.tab-master-card [class*="instruction"],
+.tab-master-card [class*="prompt"],
+.tab-master-card [class*="translation"],
+.tab-master-card [class*="hint"],
+.tab-master-card [class*="status"],
+.animal-lesson-card p,
+.animal-lesson-card .prompt,
+.animal-lesson-card .instruction,
+.animal-lesson-card .translation,
+.animal-lesson-card .hint {
+  font-size:18px !important;
+  line-height:1.35 !important;
+}
+
+/* Small location/progress/counter lines also need to be readable. */
+.tab-master-card .eyebrow,
+.tab-master-card .kicker,
+.tab-master-card .overline,
+.tab-master-card .location,
+.tab-master-card .activity-count,
+.tab-master-card .challenge-count,
+.tab-master-card [class*="count"],
+.animal-lesson-card .eyebrow,
+.animal-lesson-card [class*="count"] {
+  font-size:15px !important;
+  line-height:1.25 !important;
+  font-weight:800 !important;
+}
+
+/* Spoken/foreign-language line stays visually strongest. */
+.tab-master-card #line,
+.tab-master-card .line,
+.tab-master-card .train-line,
+.tab-master-card .words,
+.tab-master-card [class*="phrase"],
+.animal-lesson-card #line,
+.animal-lesson-card .line,
+.animal-lesson-card [class*="phrase"] {
+  font-size:22px !important;
+  line-height:1.28 !important;
+  font-weight:800 !important;
+}
+
+/* Let increased text wrap naturally instead of being clipped. */
+.tab-master-card,
+.animal-lesson-card {
+  height:auto !important;
+}
+</style>
+
+  <link rel="icon" type="image/png" href="images/talkabee-favicon.png">
+  <link rel="shortcut icon" type="image/png" href="images/talkabee-favicon.png">
 </head>
 <body>
 <nav class="talkabee-prev-next-nav" aria-label="Adventure navigation"><a href="Talk-A-Bee-Hotel-Adventure.html" aria-label="Previous page" title="Previous">‹</a><a href="Talk-A-Bee-Boardwalk-Adventure.html" aria-label="Next page" title="Next">›</a></nav>
@@ -367,7 +499,7 @@ html body .live-card .actions button, html body .live-card .home-actions button,
 <button id="restorePanel" type="button">Return to Adventure</button>
 <img class="scene" src="images/animals-farm-adventure.jpg" alt="Animals Farm Adventure">
 <div class="left-panel" aria-hidden="true"></div>
-<aside class="farm-panel-scroll" aria-label="Animals Farm Adventure controls">
+<aside class="farm-panel-scroll tab-master-panel" aria-label="Animals Farm Adventure controls">
 <h1>🐝 Animals — Farm Adventure</h1>
 <div class="label">LANGUAGE</div>
 <div class="farm-left-controls">
@@ -393,7 +525,7 @@ html body .live-card .actions button, html body .live-card .home-actions button,
 <button class="click challenge c5" data-key="c5" aria-label="Challenge 5">5. Challenge 5 of 6</button>
 <button class="click challenge c6" data-key="c6" aria-label="Challenge 6">6. Challenge 6 of 6</button>
 <a id="back" class="click" href="index.html" aria-label="Return to Main Directory">← Return to Main Directory</a>
-</aside><div class="script-mask" aria-hidden="true"></div><section class="live-card" aria-live="polite"><div class="kicker" id="kicker">ACTIVITY 1 • FRIENDLY PETS</div><h1 id="title">Meet Bear by the campfire.</h1><p class="prompt" id="prompt">Listen, repeat, and use the scene to connect the words with what you see.</p><div class="target" id="target">El perro está junto al fuego.</div><div class="translation" id="translation">The dog is beside the fire.</div><div class="actions"><button class="primary" id="normal">🔊 Speak</button><button id="slow">🐢 Slow</button><button id="replay">↻ Replay</button></div><div class="status" id="status"></div></section>
+</aside><div class="script-mask" aria-hidden="true"></div><section class="live-card tab-master-card" aria-live="polite"><div class="kicker" id="kicker">ACTIVITY 1 • FRIENDLY PETS</div><h1 id="title">Meet Bear by the campfire.</h1><p class="prompt" id="prompt">Listen, repeat, and use the scene to connect the words with what you see.</p><div class="target" id="target">El perro está junto al fuego.</div><div class="translation" id="translation">The dog is beside the fire.</div><div class="actions"><button class="primary" id="normal">🔊 Normal</button><button id="slow">🐢 Slow</button><button id="replay">↻ Replay</button></div><div class="status" id="status"></div></section>
 <button class="hotspot" id="horse" data-name="Horse" data-es="el caballo"></button><button class="hotspot" id="cow" data-name="Cow" data-es="la vaca"></button><button class="hotspot" id="sheep" data-name="Sheep" data-es="la oveja"></button><button class="hotspot" id="goat" data-name="Goat" data-es="la cabra"></button><button class="hotspot" id="pig" data-name="Pig" data-es="el cerdo"></button><button class="hotspot" id="dog" data-name="Dog" data-es="el perro"></button><button class="hotspot" id="rooster" data-name="Rooster" data-es="el gallo"></button><button class="hotspot" id="chicken" data-name="Chicken" data-es="la gallina"></button><button class="hotspot" id="rabbit" data-name="Rabbit" data-es="el conejo"></button><button class="hotspot" id="squirrel" data-name="Squirrel" data-es="la ardilla"></button><button class="hotspot" id="bee" data-name="Bee" data-es="la abeja"></button><button class="hotspot" id="butterfly" data-name="Butterfly" data-es="la mariposa"></button><button class="hotspot" id="barn" data-name="Barn" data-es="el granero"></button><button class="hotspot" id="windmill" data-name="Windmill" data-es="el molino de viento"></button><button class="hotspot" id="rv" data-name="Fifth-wheel RV" data-es="la casa rodante"></button><button class="hotspot" id="solar" data-name="Solar panels" data-es="los paneles solares"></button><button class="hotspot" id="campfire" data-name="Campfire" data-es="la fogata"></button><button class="hotspot" id="fence" data-name="Fence" data-es="la cerca"></button><button class="hotspot" id="flowers" data-name="Flowers" data-es="las flores"></button><button class="hotspot" id="mountains" data-name="Mountains" data-es="las montañas"></button><button class="hotspot" id="chick" data-name="Chick" data-es="el pollito"></button>
 </main>
 <script>
@@ -528,23 +660,51 @@ document.querySelectorAll('.hotspot').forEach(h=>h.addEventListener('click',()=>
 }));
 showLesson('pets');
 </script>
-<script id="talkabee-inclusive-browser-voices-v1">
-(()=>{
+<script id="talkabee-literal-master-behavior">
+(function(){
+ function cleanActivityIcons(){
+  document.querySelectorAll('.tab-master-panel button').forEach(function(b){
+   if(b.matches('[data-lesson],[data-activity],[data-act],.activity,[data-train-activity],[data-home-activity]')){
+    b.innerHTML=b.innerHTML.replace(/(^\s*\d+\.\s*)(?:<[^>]+>\s*)?[\u{1F000}-\u{1FAFF}\u2600-\u27BF]\uFE0F?\s*/u,'$1');
+   }
+  });
+ }
+ function moveHomeToBottom(){
+  var p=document.querySelector('.tab-master-panel'); if(!p)return;
+  var links=[].slice.call(p.querySelectorAll('a[href="index.html"],a[href$="/index.html"]'));
+  links.forEach(function(a){p.appendChild(a)});
+ }
+ function inclusiveVoices(){
   if(!('speechSynthesis' in window))return;
-  const voiceSelects=()=>[...document.querySelectorAll('select')].filter(s=>/voice/i.test((s.id||'')+' '+(s.name||'')+' '+(s.className||'')));
-  function fillAllBrowserVoices(){
-    const voices=speechSynthesis.getVoices(); if(!voices.length)return;
-    voiceSelects().forEach(sel=>{
-      const chosen=sel.value;
-      sel.innerHTML='';
-      const d=document.createElement('option'); d.value=''; d.textContent='Browser Default'; sel.appendChild(d);
-      voices.forEach(v=>{const o=document.createElement('option');o.value=v.name;o.textContent=v.name+(v.lang?' — '+v.lang:'');sel.appendChild(o)});
-      if([...sel.options].some(o=>o.value===chosen))sel.value=chosen;
-    });
-  }
-  speechSynthesis.addEventListener?.('voiceschanged',fillAllBrowserVoices);
-  window.addEventListener('load',()=>{fillAllBrowserVoices();setTimeout(fillAllBrowserVoices,150);setTimeout(fillAllBrowserVoices,600);setTimeout(fillAllBrowserVoices,1500)});
-  document.addEventListener('change',e=>{if(e.target&&e.target.tagName==='SELECT'&&!/voice/i.test((e.target.id||'')+' '+(e.target.name||'')+' '+(e.target.className||'')))setTimeout(fillAllBrowserVoices,0)},true);
+  var p=document.querySelector('.tab-master-panel'); if(!p)return;
+  var sel=[].slice.call(p.querySelectorAll('select')).find(function(s){return /voice/i.test(s.id||s.name||s.getAttribute('aria-label')||'')}) || [].slice.call(p.querySelectorAll('select'))[1];
+  if(!sel)return;
+  var current=sel.value, voices=speechSynthesis.getVoices()||[];
+  if(!voices.length)return;
+  sel.innerHTML='<option value="">Browser Default</option>';
+  voices.forEach(function(v){var o=document.createElement('option');o.value=v.name;o.textContent=v.name+' — '+(v.lang||'');sel.appendChild(o)});
+  if([].slice.call(sel.options).some(function(o){return o.value===current}))sel.value=current;
+ }
+ function labels(){
+  document.querySelectorAll('.tab-master-card button').forEach(function(b){
+   var t=b.textContent.trim();
+   if(/normal/i.test(t)) b.textContent='🔊 Speak';
+   if(/^next\s*(line|phrase)?/i.test(t)) b.textContent='Next phrase →';
+  });
+ }
+ function run(){cleanActivityIcons();moveHomeToBottom();inclusiveVoices();labels()}
+ if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',run);else run();
+ if('speechSynthesis' in window){speechSynthesis.addEventListener&&speechSynthesis.addEventListener('voiceschanged',inclusiveVoices);setTimeout(inclusiveVoices,250);setTimeout(inclusiveVoices,1000)}
 })();
 </script>
+
+<style id="talkabee-rendered-card-footprint-lock">
+/* Visual master: match the user-approved Grandma's Kitchen rendered footprint. */
+.tab-master-card{
+  width:520px!important; max-width:520px!important; min-width:0!important;
+  transform:translateX(-50%) scale(.67)!important;
+  transform-origin:bottom center!important;
+}
+@media(max-width:760px){.tab-master-card{width:min(520px,calc(100vw - 32px))!important;transform:translateX(-50%) scale(.82)!important;}}
+</style>
 </body></html>

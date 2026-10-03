@@ -100,18 +100,214 @@ body.scene-view .return-panel-toggle{display:block!important}
 .talkabee-prev-next-nav a:active{transform:scale(.94)}
 @media(max-width:720px){.talkabee-prev-next-nav{top:12px;right:12px}.talkabee-prev-next-nav a{width:42px;height:42px;font-size:33px}}
 </style>
-
-<style id="talkabee-clean-master-template-20261002">
-/* CLEAN MASTER: one authoritative geometry block. No legacy scaling. */
-html body /* FINAL LOCKED TALK A BEE TEMPLATE — rendered geometry matched to approved Kitchen sample. */
-.directory{box-sizing:border-box!important;width:195px!important;min-width:195px!important;max-width:195px!important;height:calc(100vh - 32px)!important;max-height:calc(100vh - 32px)!important;left:16px!important;top:16px!important;bottom:auto!important;transform:none!important;transform-origin:top left!important;overflow-y:auto!important;overflow-x:hidden!important;background:rgba(7,23,39,.31)!important;backdrop-filter:blur(3px)!important;-webkit-backdrop-filter:blur(3px)!important;}
-html body .panel{box-sizing:border-box!important;width:520px!important;min-width:520px!important;max-width:520px!important;height:auto!important;max-height:none!important;left:50%!important;right:auto!important;bottom:18px!important;transform:translateX(-50%)!important;transform-origin:bottom center!important;padding:14px 18px!important;border-radius:20px!important;background:rgba(7,23,39,.28)!important;border:1px solid rgba(255,255,255,.32)!important;box-shadow:0 10px 28px rgba(0,0,0,.22)!important;backdrop-filter:blur(3px)!important;-webkit-backdrop-filter:blur(3px)!important;color:#fff!important;overflow:visible!important;}
-html body .panel .kicker, html body .panel .eyebrow{color:rgba(255,255,255,.94)!important;font-weight:800!important;text-shadow:0 1px 3px rgba(0,0,0,.75)!important;}
-html body .panel .actions, html body .panel .home-actions, html body .panel .yacht-actions, html body .panel .train-actions{display:flex!important;flex-wrap:nowrap!important;gap:8px!important;align-items:center!important;}
-html body .panel .actions button, html body .panel .home-actions button, html body .panel .yacht-actions button, html body .panel .train-actions button{white-space:nowrap!important;margin:0!important;}
-@media(max-width:900px){html body /* FINAL LOCKED TALK A BEE TEMPLATE — rendered geometry matched to approved Kitchen sample. */
-.directory{width:190px!important;min-width:190px!important;max-width:190px!important;} html body .panel{width:min(520px,calc(100vw - 220px))!important;min-width:0!important;max-width:520px!important;}}
+<style id="talkabee-literal-master-template">
+/* ONE literal Talk A Bee Adventure shell. Legacy classes remain only as JS hooks. */
+.tab-master-panel,.tab-master-panel *,.tab-master-card,.tab-master-card *{box-sizing:border-box}
+.tab-master-panel{
+ position:fixed!important;left:16px!important;top:16px!important;bottom:16px!important;right:auto!important;
+ width:195px!important;min-width:195px!important;max-width:195px!important;height:auto!important;max-height:none!important;
+ margin:0!important;padding:14px!important;overflow-x:hidden!important;overflow-y:auto!important;
+ transform:none!important;scale:1!important;zoom:1!important;opacity:1!important;
+ border-radius:20px!important;border:1px solid rgba(255,255,255,.28)!important;
+ background:rgba(7,23,39,.31)!important;box-shadow:0 12px 30px rgba(0,0,0,.24)!important;
+ backdrop-filter:blur(3px)!important;-webkit-backdrop-filter:blur(3px)!important;color:#fff!important;z-index:1000!important;
+ font-family:Arial,Helvetica,sans-serif!important;font-size:12px!important;line-height:1.16!important;
+}
+.tab-master-panel .place,.tab-master-panel h1,.tab-master-panel .title{font-size:19px!important;line-height:1.08!important;font-weight:900!important;color:#fff!important;margin:4px 0 10px!important;text-shadow:0 2px 4px rgba(0,0,0,.55)!important}
+.tab-master-panel .label,.tab-master-panel label{font-size:9.5px!important;line-height:1.1!important;letter-spacing:.09em!important;font-weight:900!important;color:#fff!important;margin:9px 0 4px!important}
+.tab-master-panel button,.tab-master-panel select,.tab-master-panel a{
+ width:100%!important;max-width:100%!important;min-height:34px!important;height:auto!important;margin:4px 0!important;padding:8px 9px!important;
+ border-radius:12px!important;border:1px solid rgba(255,255,255,.38)!important;background:rgba(7,32,50,.54)!important;color:#fff!important;
+ font:800 12px/1.16 Arial,Helvetica,sans-serif!important;text-align:left!important;text-decoration:none!important;white-space:normal!important;
+ transform:none!important;box-shadow:none!important;
+}
+.tab-master-panel select{white-space:nowrap!important;text-overflow:ellipsis!important;overflow:hidden!important}
+.tab-master-panel button:hover,.tab-master-panel a:hover{background:rgba(20,58,79,.70)!important}
+.tab-master-panel .active,.tab-master-panel button.active{background:rgba(78,69,219,.74)!important;color:#fff!important}
+.tab-master-card{
+ position:fixed!important;left:50%!important;right:auto!important;bottom:16px!important;top:auto!important;
+ width:520px!important;min-width:520px!important;max-width:520px!important;height:auto!important;min-height:0!important;max-height:44vh!important;
+ margin:0!important;padding:14px 16px!important;overflow:auto!important;transform:translateX(-50%)!important;scale:1!important;zoom:1!important;opacity:1!important;
+ border-radius:20px!important;border:1px solid rgba(255,255,255,.30)!important;background:rgba(25,19,24,.38)!important;
+ box-shadow:0 12px 30px rgba(0,0,0,.28)!important;backdrop-filter:blur(5px)!important;-webkit-backdrop-filter:blur(5px)!important;
+ color:#fff!important;z-index:900!important;font-family:Arial,Helvetica,sans-serif!important;
+}
+.tab-master-card .kicker,.tab-master-card [class*="kicker"]{color:rgba(255,255,255,.94)!important;font-size:11px!important;line-height:1.1!important;font-weight:900!important;letter-spacing:.12em!important;text-shadow:0 1px 3px rgba(0,0,0,.78)!important;margin:0 0 7px!important}
+.tab-master-card h1,.tab-master-card h2{color:#fff!important;font-size:22px!important;line-height:1.08!important;margin:4px 0 7px!important;text-shadow:0 1px 3px rgba(0,0,0,.55)!important}
+.tab-master-card p,.tab-master-card .prompt,.tab-master-card .translation,.tab-master-card .tip{font-size:13px!important;line-height:1.25!important;margin:4px 0 7px!important;color:#fff!important}
+.tab-master-card .line,.tab-master-card .target,.tab-master-card #line,.tab-master-card #target{font-size:20px!important;line-height:1.12!important;font-weight:900!important;margin:7px 0!important;color:#fff!important}
+.tab-master-card .actions,.tab-master-card [class*="actions"]{display:flex!important;align-items:center!important;gap:8px!important;flex-wrap:nowrap!important;margin-top:8px!important}
+.tab-master-card .actions button,.tab-master-card [class*="actions"] button,.tab-master-card>button{width:auto!important;min-width:0!important;height:auto!important;padding:9px 13px!important;margin:0!important;border-radius:12px!important;font:900 13px/1 Arial,Helvetica,sans-serif!important;white-space:nowrap!important}
+@media(max-width:760px){.tab-master-panel{left:10px!important;top:10px!important;bottom:10px!important;width:190px!important;min-width:190px!important;max-width:190px!important;padding:11px!important}.tab-master-card{width:min(520px,calc(100vw - 24px))!important;min-width:0!important;bottom:10px!important;padding:12px!important}}
 </style>
+
+<style id="tab-spoken-phrase-readability">
+/* Locked spoken-language phrase treatment: gray field + white type. */
+.tab-master-card #line,
+.tab-master-card .line,
+.tab-master-card .words {
+  background:rgba(88,88,88,.72)!important;
+  color:#fff!important;
+  border:1px solid rgba(255,255,255,.20)!important;
+  border-radius:14px!important;
+  text-shadow:0 1px 2px rgba(0,0,0,.55)!important;
+}
+.tab-master-card #line *,
+.tab-master-card .line *,
+.tab-master-card .words * {color:#fff!important;}
+</style>
+
+<style id="talkabee-readable-supporting-text">
+/* Readability-only repair. Existing links, navigation, JS, hotspots and audio are untouched. */
+.tab-master-card p,
+.tab-master-card .prompt,
+.tab-master-card #prompt,
+.tab-master-card .instruction,
+.tab-master-card .instructions,
+.tab-master-card .hint,
+.tab-master-card #hint,
+.tab-master-card .translation,
+.tab-master-card #translation,
+.tab-master-card .english,
+.tab-master-card [class*="subtitle"],
+.tab-master-card [class*="instruction"],
+.tab-master-card [class*="prompt"],
+.tab-master-card [class*="translation"],
+.tab-master-card [class*="hint"],
+.tab-master-card [class*="status"],
+.animal-lesson-card p,
+.animal-lesson-card .prompt,
+.animal-lesson-card .instruction,
+.animal-lesson-card .translation,
+.animal-lesson-card .hint {
+  font-size:18px !important;
+  line-height:1.35 !important;
+}
+
+/* Small location/progress/counter lines also need to be readable. */
+.tab-master-card .eyebrow,
+.tab-master-card .kicker,
+.tab-master-card .overline,
+.tab-master-card .location,
+.tab-master-card .activity-count,
+.tab-master-card .challenge-count,
+.tab-master-card [class*="count"],
+.animal-lesson-card .eyebrow,
+.animal-lesson-card [class*="count"] {
+  font-size:15px !important;
+  line-height:1.25 !important;
+  font-weight:800 !important;
+}
+
+/* Spoken/foreign-language line stays visually strongest. */
+.tab-master-card #line,
+.tab-master-card .line,
+.tab-master-card .train-line,
+.tab-master-card .words,
+.tab-master-card [class*="phrase"],
+.animal-lesson-card #line,
+.animal-lesson-card .line,
+.animal-lesson-card [class*="phrase"] {
+  font-size:22px !important;
+  line-height:1.28 !important;
+  font-weight:800 !important;
+}
+
+/* Let increased text wrap naturally instead of being clipped. */
+.tab-master-card,
+.animal-lesson-card {
+  height:auto !important;
+}
+</style>
+
+
+
+
+<style id="market-lake-card-component">
+/* Shopping Market now uses the Lake & Mountain card component. */
+.tab-master-card{
+  position:fixed!important;
+  left:62%!important;
+  right:auto!important;
+  bottom:18px!important;
+  top:auto!important;
+  width:520px!important;
+  min-width:0!important;
+  max-width:520px!important;
+  min-height:184px!important;
+  height:auto!important;
+  max-height:none!important;
+  box-sizing:border-box!important;
+  padding:16px 18px!important;
+  border-radius:20px!important;
+  background:rgba(30,20,28,.46)!important;
+  border:1px solid rgba(255,255,255,.28)!important;
+  box-shadow:0 16px 36px rgba(0,0,0,.30)!important;
+  backdrop-filter:blur(8px)!important;
+  -webkit-backdrop-filter:blur(8px)!important;
+  transform:translateX(-50%) scale(.67)!important;
+  transform-origin:bottom center!important;
+  z-index:35!important;
+  overflow:visible!important;
+  color:#fff!important;
+  font-family:Arial,Helvetica,sans-serif!important;
+}
+.tab-master-card .kicker,
+.tab-master-card #kicker{
+  color:rgba(255,255,255,.94)!important;
+  font-size:11px!important;
+  line-height:1.1!important;
+  font-weight:800!important;
+  letter-spacing:.12em!important;
+  text-transform:uppercase!important;
+  text-shadow:0 1px 3px rgba(0,0,0,.8)!important;
+  margin:0 0 7px!important;
+}
+.tab-master-card h2{
+  font-size:23px!important;line-height:1.1!important;margin:0 0 6px!important;
+  color:#fff!important;font-weight:800!important;text-shadow:0 1px 3px rgba(0,0,0,.6)!important;
+}
+.tab-master-card p{
+  font-size:13px!important;line-height:1.25!important;margin:0 0 8px!important;color:#fff!important;
+}
+.tab-master-card .line{
+  display:block!important;width:100%!important;box-sizing:border-box!important;
+  margin:8px 0!important;padding:10px 12px!important;border-radius:14px!important;
+  background:rgba(88,88,88,.72)!important;color:#fff!important;
+  border:1px solid rgba(255,255,255,.20)!important;
+  text-shadow:0 1px 2px rgba(0,0,0,.55)!important;
+  font-size:22px!important;line-height:1.12!important;font-weight:800!important;min-height:43px!important;
+}
+.tab-master-card .translation{
+  font-size:14px!important;line-height:1.2!important;font-weight:800!important;
+  color:#fff!important;margin:6px 0 8px!important;
+}
+.tab-master-card .actions{
+  display:flex!important;flex-wrap:nowrap!important;gap:7px!important;
+  align-items:center!important;margin:8px 0 0!important;
+}
+.tab-master-card .actions button{
+  width:auto!important;min-width:0!important;white-space:nowrap!important;
+  padding:9px 12px!important;margin:0!important;border-radius:12px!important;
+  border:0!important;font-size:13px!important;line-height:1!important;font-weight:800!important;box-shadow:none!important;
+}
+.tab-master-card .actions button:first-child{background:#6447e8!important;color:#fff!important;}
+.tab-master-card .actions button:not(:first-child){background:#f4f4f6!important;color:#111!important;}
+.tab-master-card .status{
+  min-height:0!important;margin:8px 0 0!important;color:#fff!important;
+  font-size:13px!important;line-height:1.2!important;font-weight:800!important;
+}
+@media(max-width:760px){
+  .tab-master-card{
+    width:min(520px,calc(100vw - 32px))!important;
+    left:62%!important;bottom:10px!important;
+    transform:translateX(-50%) scale(.82)!important;
+  }
+}
+</style>
+
+  <link rel="icon" type="image/png" href="images/talkabee-favicon.png">
+  <link rel="shortcut icon" type="image/png" href="images/talkabee-favicon.png">
 </head>
 <body>
 <nav class="talkabee-prev-next-nav" aria-label="Adventure navigation"><a href="Talk-A-Bee-Sea-Adventures.html" aria-label="Previous page" title="Previous">‹</a><a href="Talk-A-Bee-Grandmas-Kitchen-Adventure.html" aria-label="Next page" title="Next">›</a></nav>
@@ -122,21 +318,21 @@ html body .panel .actions button, html body .panel .home-actions button, html bo
 <section id="world">
  <div class="scene">
   <img src="images/shopping-market-adventure.jpg" alt="Shopping Market Adventure">
-  <aside class="directory">
-   <a id="mainDirectory" class="main-directory" href="index.html" style="display:block;text-decoration:none;color:#fff;padding:8px;border-radius:10px;margin-bottom:8px;background:rgba(255,255,255,.12);font-size:11px;font-weight:950">← Main Directory</a>
-   <button id="sceneViewToggle" class="scene-view-toggle" type="button" aria-pressed="false">Scene View</button>
+  <aside class="directory tab-master-panel">
+   
    <div class="place">🛍️ Shopping Market Adventure</div>
+   <button id="sceneViewToggle" class="scene-view-toggle" type="button" aria-pressed="false">Scene View</button>
    <div class="language-row" style="margin:5px 0 7px"><label for="adventureLanguage" style="display:block;font-size:9px;font-weight:950;letter-spacing:.10em;margin:0 0 3px 4px">LEARNING LANGUAGE — 7</label><select id="adventureLanguage" aria-label="Learning language" style="width:100%;padding:6px 8px;border:1px solid rgba(255,255,255,.55);border-radius:9px;background:rgba(10,37,42,.82);color:#fff;font-size:11px;font-weight:900"><option value="es">Spanish</option><option value="fr">French</option><option value="en">English</option><option value="de">German</option><option value="it">Italian</option><option value="pt">Portuguese</option><option value="no">Norwegian</option></select></div>
    <div class="voice-row" style="margin:0 0 7px"><label for="adventureVoice" style="display:block;font-size:9px;font-weight:950;letter-spacing:.10em;margin:0 0 3px 4px">VOICE</label><select id="adventureVoice" aria-label="Voice" style="width:100%;padding:6px 8px;border:1px solid rgba(255,255,255,.55);border-radius:9px;background:rgba(10,37,42,.82);color:#fff;font-size:11px;font-weight:900"><option value="">Browser default</option></select></div>
    <div class="label">DISCOVERY</div>
    <button data-discovery>🔎 Discovery — Click the Scene</button>
     <div class="label">ACTIVITIES</div>
-   <button data-lesson="greetings">1. Market Greetings</button>
-   <button data-lesson="produce">2. Fruit & Vegetables</button>
-   <button data-lesson="fish">3. Fish Market</button>
-   <button data-lesson="meat">4. Butcher Shop</button>
-   <button data-lesson="traffic">5. Busy Market Street</button>
-   <button data-lesson="checkout">6. Paying for Shopping</button>
+   <button data-lesson="greetings">1. 👋 Market Greetings</button>
+   <button data-lesson="produce">2. 🥕 Fruit & Vegetables</button>
+   <button data-lesson="fish">3. 🐟 Fish Market</button>
+   <button data-lesson="meat">4. 🥩 Butcher Shop</button>
+   <button data-lesson="traffic">5. 🚗 Busy Market Street</button>
+   <button data-lesson="checkout">6. 🛍️ Paying for Shopping</button>
 
    <div class="label">CHALLENGES</div>
    <button data-challenge="0">1. Find the Dog</button>
@@ -145,16 +341,24 @@ html body .panel .actions button, html body .panel .home-actions button, html bo
    <button data-challenge="3">4. Find the Meat</button>
    <button data-challenge="4">5. Find the Car</button>
    <button data-challenge="5">6. Find the Bee</button>
+  
+    <a id="mainDirectory" class="main-directory" href="index.html" style="display:block;text-decoration:none;color:#fff;padding:8px;border-radius:10px;margin-bottom:8px;background:rgba(255,255,255,.12);font-size:11px;font-weight:950">← Main Directory</a>
   </aside>
 
-  <div class="panel">
-   <div class="kicker">SHOPPING MARKET ADVENTURE</div>
-   <h2 id="title"></h2><p id="prompt"></p>
-   <div class="line" id="line"></div>
-   <div class="translation" id="translation"></div>
-   <div class="actions" id="actions"><button id="speak">🔊 Hear It</button><button id="next">Next →</button></div>
-   <div class="find" id="find"><div class="count" id="count"></div><div class="status" id="status"></div><div class="hint" id="hint"></div><button class="challengeNext" id="challengeNext">Next Challenge →</button></div>
-  </div>
+  <section class="card tab-master-card">
+    <div class="label" id="kicker">SHOPPING MARKET ADVENTURE</div>
+    <h2 id="title"></h2>
+    <p id="prompt"></p>
+    <div class="line" id="line"></div>
+    <div class="translation" id="translation"></div>
+    <div class="actions" id="actions">
+      <button id="speak">🔊 Speak</button>
+      <button id="slow">🐢 Slow</button>
+      <button id="replay">↻ Replay</button>
+      <button id="next">Next phrase →</button>
+    </div>
+    <div class="status" id="status"></div>
+  </section>
 
   <div class="hotspots">
    <button class="hotspot" data-word="bee" aria-label="Bee"></button>
@@ -206,42 +410,130 @@ function playMarketSceneSound(key){
  marketSceneAudio.play().catch(()=>{});
 }
 const challengeOrder=["dog","vegetables","fish","meat","car","bee"];
-let active="greetings",index=0,challenge=-1,solved=false,discovery=false;
-const $=id=>document.getElementById(id),title=$("title"),prompt=$("prompt"),line=$("line"),translation=$("translation"),actions=$("actions"),find=$("find"),count=$("count"),status=$("status"),hint=$("hint"),challengeNext=$("challengeNext"),languageSelect=$("adventureLanguage"),voiceSelect=$("adventureVoice");
+let active="greetings",index=0,challenge=-1,discovery=false,lastSpoken="",lastRate=.82;
+const $=id=>document.getElementById(id),
+      title=$("title"),prompt=$("prompt"),line=$("line"),translation=$("translation"),
+      actions=$("actions"),status=$("status"),
+      languageSelect=$("adventureLanguage"),voiceSelect=$("adventureVoice");
 const LANG_KEY="talkabee-learn-language",VOICE_KEY="talkabee-voice-";
 let availableVoices=[];
+
 function currentLang(){return languageData[languageSelect.value]?languageSelect.value:"es"}
 function data(){return languageData[currentLang()]}
 function voiceBase(){return data().speech.toLowerCase().split("-")[0]}
+
+function selectedVoice(){
+ if(!("speechSynthesis" in window)||!voiceSelect)return null;
+ const voices=speechSynthesis.getVoices();
+ return voices.find(v=>v.voiceURI===voiceSelect.value)||null;
+}
 function refreshVoices(){
  if(!("speechSynthesis" in window)||!voiceSelect)return;
- availableVoices=speechSynthesis.getVoices()||[];
- const base=voiceBase(),matching=availableVoices.filter(v=>(v.lang||"").toLowerCase().split("-")[0]===base);
- const saved=localStorage.getItem(VOICE_KEY+currentLang())||"";
- voiceSelect.innerHTML="";
- const d=document.createElement("option");d.value="";d.textContent="Browser default";voiceSelect.appendChild(d);
- matching.forEach(v=>{const o=document.createElement("option");o.value=v.name;o.textContent=v.name+" ("+v.lang+")";voiceSelect.appendChild(o)});
- if([...voiceSelect.options].some(o=>o.value===saved))voiceSelect.value=saved;
+ const storageKey=VOICE_KEY+currentLang();
+ const keep=voiceSelect.value||localStorage.getItem(storageKey)||"";
+ const voices=speechSynthesis.getVoices();
+ if(!voices.length)return;
+ voiceSelect.innerHTML='<option value="">Browser Default</option>';
+ voices.forEach(v=>{
+   const o=document.createElement("option");
+   o.value=v.voiceURI;
+   o.textContent=v.name+" — "+(v.lang||"");
+   voiceSelect.appendChild(o);
+ });
+ if([...voiceSelect.options].some(o=>o.value===keep))voiceSelect.value=keep;
 }
-function selectedVoice(){return availableVoices.find(v=>v.name===voiceSelect.value&&((v.lang||"").toLowerCase().split("-")[0]===voiceBase()) )||null}
-function speak(t){if(!("speechSynthesis" in window))return;speechSynthesis.cancel();const u=new SpeechSynthesisUtterance(t);u.lang=data().speech;const v=selectedVoice();if(v)u.voice=v;u.rate=.82;speechSynthesis.speak(u)}
+function speak(t,rate=.82,onend=null){
+ if(!("speechSynthesis" in window)||!t){if(onend)onend();return}
+ speechSynthesis.cancel();
+ const u=new SpeechSynthesisUtterance(t);
+ u.lang=data().speech;
+ const v=selectedVoice(); if(v)u.voice=v;
+ u.rate=rate;
+ lastSpoken=t; lastRate=rate;
+ if(onend)u.onend=onend;
+ speechSynthesis.speak(u);
+}
 function clearActive(){document.querySelectorAll(".directory button").forEach(b=>b.classList.remove("active"))}
-function render(){const x=data().lessons[active].lines[index];line.textContent=x[0];translation.textContent=x[1]}
-function loadLesson(k){active=k;index=0;challenge=-1;discovery=false;solved=false;find.classList.remove("show");actions.style.display="flex";const l=data().lessons[k];title.textContent=l.title;prompt.textContent=l.prompt;render();clearActive();document.querySelector('[data-lesson="'+k+'"]').classList.add("active")}
-function loadDiscovery(){challenge=-1;discovery=true;find.classList.remove("show");actions.style.display="none";title.textContent="Click & Discover";prompt.textContent="Click objects anywhere in the scene to learn their names.";line.textContent="";translation.textContent="Click an object in the scene.";clearActive();document.querySelector("[data-discovery]").classList.add("active")}
-function loadChallenge(i){challenge=i;discovery=false;solved=false;actions.style.display="none";find.classList.add("show");const key=challengeOrder[i],target=data().words[key];title.textContent="Challenge "+(i+1)+": Find "+englishWords[key]+".";prompt.textContent="Search the scene and click the correct object.";line.textContent=target;translation.textContent=englishWords[key]+".";count.textContent="CHALLENGE "+(i+1)+" OF 6";status.textContent="";hint.textContent="Find the correct object to unlock the next challenge.";challengeNext.textContent=i<5?"Next Challenge →":"Finish Challenges ✓";clearActive();document.querySelector('[data-challenge="'+i+'"]').classList.add("active")}
+function render(){
+ const x=data().lessons[active].lines[index];
+ line.textContent=x[0];translation.textContent=x[1];
+}
+function loadLesson(k){
+ active=k;index=0;challenge=-1;discovery=false;
+ const l=data().lessons[k];
+ $("kicker").textContent="ACTIVITY "+([...document.querySelectorAll("[data-lesson]")].findIndex(b=>b.dataset.lesson===k)+1)+" OF 6";
+ title.textContent=l.title;prompt.textContent=l.prompt;
+ actions.style.display="flex";status.textContent="";
+ render();clearActive();
+ const b=document.querySelector('[data-lesson="'+k+'"]');if(b)b.classList.add("active");
+}
+function loadDiscovery(){
+ challenge=-1;discovery=true;
+ $("kicker").textContent="DISCOVERY";
+ title.textContent="Click an object in the scene";
+ prompt.textContent="See the learning-language word and its English meaning.";
+ line.textContent="";
+ translation.textContent="Audio speaks the learning-language word.";
+ actions.style.display="none";status.textContent="";
+ clearActive();
+ const b=document.querySelector("[data-discovery]");if(b)b.classList.add("active");
+}
+function loadChallenge(i){
+ challenge=i;discovery=false;
+ const key=challengeOrder[i],target=data().words[key];
+ $("kicker").textContent="CHALLENGE "+(i+1)+" OF 6";
+ title.textContent="Find: "+target;
+ prompt.textContent="Click the correct object in the scene.";
+ line.textContent=target;
+ translation.textContent=englishWords[key];
+ actions.style.display="none";status.textContent="";
+ clearActive();
+ const b=document.querySelector('[data-challenge="'+i+'"]');if(b)b.classList.add("active");
+}
+
 document.querySelectorAll("[data-lesson]").forEach(b=>b.onclick=()=>loadLesson(b.dataset.lesson));
 document.querySelector("[data-discovery]").onclick=loadDiscovery;
 document.querySelectorAll("[data-challenge]").forEach(b=>b.onclick=()=>loadChallenge(Number(b.dataset.challenge)));
+
 $("next").onclick=()=>{index=(index+1)%data().lessons[active].lines.length;render()};
-$("speak").onclick=()=>speak(data().lessons[active].lines[index][0]);
-document.querySelectorAll(".hotspot").forEach(b=>b.onclick=()=>{const key=b.dataset.word;playMarketSceneSound(key);const target=data().words[key];if(challenge>=0){if(key===challengeOrder[challenge]){solved=true;status.textContent="✓ Nice find! "+target+" "+englishWords[key]+".";status.style.color="#176a48";hint.textContent="Challenge complete. Move to the next one.";speak(target)}else{status.textContent="Not that one — keep looking.";status.style.color="#85580f"}return}if(discovery){title.textContent="Click & Discover";prompt.textContent="You found something in the scene.";line.textContent=target;translation.textContent=englishWords[key]+".";speak(target)}});
-challengeNext.onclick=()=>{if(!solved){status.textContent="Find the correct object first.";status.style.color="#85580f";return}if(challenge<5)loadChallenge(challenge+1);else{status.textContent="🏁 You completed all 6 Market challenges!";status.style.color="#176a48";hint.textContent="Great job exploring the market."}};
-function applyLanguage(lang){if(!languageData[lang])lang="es";languageSelect.value=lang;localStorage.setItem(LANG_KEY,lang);refreshVoices();if(challenge>=0)loadChallenge(challenge);else if(discovery)loadDiscovery();else loadLesson(active)}
-const params=new URLSearchParams(location.search);const incoming=params.get("lang");const saved=localStorage.getItem(LANG_KEY);applyLanguage(languageData[incoming]?incoming:(languageData[saved]?saved:"es"));
+$("speak").onclick=()=>speak(data().lessons[active].lines[index][0],.82);
+$("slow").onclick=()=>speak(data().lessons[active].lines[index][0],.58);
+$("replay").onclick=()=>speak(lastSpoken||data().lessons[active].lines[index][0],lastRate);
+
+document.querySelectorAll(".hotspot").forEach(b=>b.onclick=()=>{
+ const key=b.dataset.word,target=data().words[key];
+ if(challenge>=0){
+   if(key===challengeOrder[challenge]){
+     status.textContent="✓ Nice find! "+target+" — "+englishWords[key];
+     speak(target,.76,()=>playMarketSceneSound(key));
+   }else status.textContent="Not that one — keep looking.";
+   return;
+ }
+ if(discovery){
+   title.textContent="Click & Discover";
+   prompt.textContent="You found something in the scene.";
+   line.textContent=target;
+   translation.textContent=target+" — "+englishWords[key];
+   speak(target,.76,()=>playMarketSceneSound(key));
+ }
+});
+
+function applyLanguage(lang){
+ if(!languageData[lang])lang="es";
+ languageSelect.value=lang;localStorage.setItem(LANG_KEY,lang);refreshVoices();
+ if(challenge>=0)loadChallenge(challenge);else if(discovery)loadDiscovery();else loadLesson(active);
+}
+const params=new URLSearchParams(location.search),incoming=params.get("lang"),saved=localStorage.getItem(LANG_KEY);
+applyLanguage(languageData[incoming]?incoming:(languageData[saved]?saved:"es"));
 languageSelect.addEventListener("change",()=>applyLanguage(languageSelect.value));
 voiceSelect.addEventListener("change",()=>localStorage.setItem(VOICE_KEY+currentLang(),voiceSelect.value));
-if("speechSynthesis" in window){speechSynthesis.onvoiceschanged=refreshVoices;setTimeout(refreshVoices,100)}
+if("speechSynthesis" in window){
+ refreshVoices();
+ if(speechSynthesis.addEventListener)speechSynthesis.addEventListener("voiceschanged",refreshVoices);
+ else speechSynthesis.onvoiceschanged=refreshVoices;
+ [100,300,700,1500].forEach(ms=>setTimeout(refreshVoices,ms));
+}
+
 })();
 </script>
 
@@ -252,27 +544,6 @@ window.addEventListener('pageshow', function(){
 });
 </script>
 <script id="market-new-home-reset">window.addEventListener("pageshow",()=>{const p=document.querySelector(".directory");if(p)p.scrollTop=0;});</script>
-<script id="talkabee-panel-return-bottom-v2">
-(()=>{const panel=document.querySelector('#world .directory'),back=document.querySelector('#world .main-directory');if(panel&&back)panel.appendChild(back);})();
-</script>
-<script id="talkabee-inclusive-browser-voices-v1">
-(()=>{
-  if(!('speechSynthesis' in window))return;
-  const voiceSelects=()=>[...document.querySelectorAll('select')].filter(s=>/voice/i.test((s.id||'')+' '+(s.name||'')+' '+(s.className||'')));
-  function fillAllBrowserVoices(){
-    const voices=speechSynthesis.getVoices(); if(!voices.length)return;
-    voiceSelects().forEach(sel=>{
-      const chosen=sel.value;
-      sel.innerHTML='';
-      const d=document.createElement('option'); d.value=''; d.textContent='Browser Default'; sel.appendChild(d);
-      voices.forEach(v=>{const o=document.createElement('option');o.value=v.name;o.textContent=v.name+(v.lang?' — '+v.lang:'');sel.appendChild(o)});
-      if([...sel.options].some(o=>o.value===chosen))sel.value=chosen;
-    });
-  }
-  speechSynthesis.addEventListener?.('voiceschanged',fillAllBrowserVoices);
-  window.addEventListener('load',()=>{fillAllBrowserVoices();setTimeout(fillAllBrowserVoices,150);setTimeout(fillAllBrowserVoices,600);setTimeout(fillAllBrowserVoices,1500)});
-  document.addEventListener('change',e=>{if(e.target&&e.target.tagName==='SELECT'&&!/voice/i.test((e.target.id||'')+' '+(e.target.name||'')+' '+(e.target.className||'')))setTimeout(fillAllBrowserVoices,0)},true);
-})();
-</script>
+
 </body>
 </html>
