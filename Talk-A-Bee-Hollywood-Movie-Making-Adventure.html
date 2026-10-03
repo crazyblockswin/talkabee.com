@@ -1,0 +1,202 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Talk A Bee — Hollywood Movie-Making Adventure</title>
+<link rel="icon" type="image/png" href="images/talkabee-favicon.png">
+<style>
+*{box-sizing:border-box}
+html,body{margin:0;width:100%;height:100%;overflow:hidden;font-family:Arial,Helvetica,sans-serif;background:#063a66;color:#fff}
+.world{position:relative;width:100vw;height:100vh;background:url("images/Talk-A-Bee-Hollywood-Movie-Making-Adventure.jpg") center center/cover no-repeat}
+
+/* APPROVED TALK A BEE LEFT PANEL */
+.panel{position:fixed;z-index:1000;left:16px;top:16px;bottom:16px;width:180px;min-width:180px;max-width:180px;
+padding:14px;overflow-x:hidden;overflow-y:auto;border-radius:20px;border:1px solid rgba(255,255,255,.28);
+background:rgba(7,23,39,.31);box-shadow:0 12px 30px rgba(0,0,0,.24);backdrop-filter:blur(3px);-webkit-backdrop-filter:blur(3px)}
+.panel h1{font-size:19px;line-height:1.08;margin:4px 0 10px;text-shadow:0 2px 4px rgba(0,0,0,.55)}
+.label{font-size:9.5px;line-height:1.1;letter-spacing:.09em;font-weight:900;margin:9px 0 4px}
+.panel button,.panel select,.panel a{width:100%;min-height:34px;margin:4px 0;padding:8px 9px;border-radius:12px;
+border:1px solid rgba(255,255,255,.38);background:rgba(7,32,50,.54);color:#fff;font:800 12px/1.16 Arial,sans-serif;
+text-align:left;text-decoration:none}
+.panel button:hover,.panel a:hover{background:rgba(20,58,79,.70)}
+.panel button.active{background:rgba(78,69,219,.74)}
+.panel select{white-space:nowrap;text-overflow:ellipsis;overflow:hidden}
+
+/* APPROVED 520px SCRIPT CARD */
+.card{position:fixed;z-index:900;left:50%;bottom:16px;width:520px;max-width:520px;padding:14px 16px;
+border-radius:20px;border:1px solid rgba(255,255,255,.30);background:rgba(25,19,24,.38);
+box-shadow:0 12px 30px rgba(0,0,0,.28);backdrop-filter:blur(5px);-webkit-backdrop-filter:blur(5px);
+transform:translateX(-50%) scale(.67);transform-origin:bottom center}
+.card .kicker{font-size:15px;line-height:1.25;font-weight:900;letter-spacing:.10em;color:rgba(255,255,255,.96);
+text-shadow:0 1px 3px rgba(0,0,0,.78);margin:0 0 6px}
+.card h2{font-size:22px;line-height:1.08;margin:4px 0 7px;text-shadow:0 1px 3px rgba(0,0,0,.55)}
+.card p{font-size:18px;line-height:1.35;margin:4px 0 7px}
+.word{margin-top:8px;padding:10px 12px;border-radius:14px;background:rgba(88,88,88,.72);border:1px solid rgba(255,255,255,.20)}
+.word strong{display:block;font-size:22px;line-height:1.28}
+.translation{font-size:18px;line-height:1.35;margin-top:3px}
+.controls{display:flex;align-items:center;gap:8px;flex-wrap:nowrap;margin-top:8px}
+.controls button{width:auto;min-width:0;padding:9px 13px;border-radius:12px;border:1px solid rgba(255,255,255,.35);
+background:rgba(255,255,255,.88);color:#10283c;font:900 13px/1 Arial,sans-serif;white-space:nowrap}
+
+/* HOTSPOTS */
+.hotspot{position:absolute;z-index:8;border:0;background:transparent;opacity:0;cursor:pointer;border-radius:16px}
+.hotspot:hover,.hotspot:focus-visible{opacity:1;background:rgba(255,220,72,.28);outline:2px solid rgba(255,255,255,.90)}
+.challenge-mode .hotspot.target{opacity:1;background:rgba(255,199,48,.38);outline:4px solid #fff;box-shadow:0 0 0 7px rgba(255,200,50,.20)}
+
+/* APPROVED COMPACT PREVIOUS / NEXT CHEVRONS */
+.talkabee-prev-next-nav{position:fixed;top:18px;right:22px;z-index:2147483000;display:flex;align-items:center;overflow:hidden;
+border:2px solid rgba(255,255,255,.82);border-radius:999px;background:rgba(11,22,42,.24);
+box-shadow:0 5px 16px rgba(0,0,0,.16);backdrop-filter:blur(3px);-webkit-backdrop-filter:blur(3px)}
+.talkabee-prev-next-nav a{width:48px;height:48px;display:grid;place-items:center;text-decoration:none;color:#fff;
+font:900 38px/1 Arial,sans-serif;text-shadow:0 1px 3px rgba(0,0,0,.42)}
+.talkabee-prev-next-nav a+a{border-left:1px solid rgba(255,255,255,.36)}
+.talkabee-prev-next-nav a:hover,.talkabee-prev-next-nav a:focus-visible{background:rgba(255,255,255,.18);outline:none}
+
+/* SCENE VIEW */
+.scene-return{display:none;position:fixed;z-index:2147483001;left:18px;top:18px;padding:10px 14px;border-radius:12px;
+border:1px solid #fff;background:rgba(7,23,39,.65);color:#fff;font-weight:900}
+.scene-view .panel,.scene-view .card,.scene-view .talkabee-prev-next-nav{display:none}
+.scene-view .scene-return{display:block}
+
+@media(max-width:760px){
+ .panel{left:10px;top:10px;bottom:10px;width:180px;min-width:180px;max-width:180px;padding:11px}
+ .card{width:min(520px,calc(100vw - 32px));bottom:10px;transform:translateX(-50%) scale(.82)}
+ .talkabee-prev-next-nav{top:12px;right:12px}.talkabee-prev-next-nav a{width:42px;height:42px;font-size:33px}
+}
+</style>
+</head>
+<body>
+<nav class="talkabee-prev-next-nav" aria-label="Adventure navigation">
+  <a href="Talk-A-Bee-Great-Wall-of-China-Adventure.html" aria-label="Previous adventure" title="Previous">‹</a>
+  <a href="Talk-A-Bee-Hang-Gliding-Adventure.html" aria-label="Next adventure" title="Next">›</a>
+</nav>
+
+<main class="world" id="world">
+<button class="scene-return" id="sceneReturn">Return to Adventure</button>
+
+<aside class="panel">
+<h1>🎬 Hollywood Movie-Making Adventure</h1>
+<div class="label">LANGUAGE</div>
+<select id="lang">
+<option value="es">Spanish</option><option value="fr">French</option><option value="en">English</option>
+<option value="de">German</option><option value="it">Italian</option><option value="pt">Portuguese</option><option value="no">Norwegian</option>
+</select>
+<div class="label">VOICE</div>
+<select id="voice"><option value="">Browser Default</option></select>
+<button id="sceneView">◉ Scene View</button>
+
+<div class="label">DISCOVERY</div>
+<button id="discovery">🔎 Discovery — Click the Scene</button>
+
+<div class="label">ACTIVITIES</div>
+<button data-lesson="studio">1. Enter the Movie Studio</button>
+<button data-lesson="camera">2. Behind the Camera</button>
+<button data-lesson="stunt">3. Film an Action Scene</button>
+<button data-lesson="sound">4. Lights, Camera & Sound</button>
+<button data-lesson="costume">5. Costumes & Makeup</button>
+<button data-lesson="crew">6. Meet the Movie Crew</button>
+<div class="label">CHALLENGES</div>
+<button data-ch="0">1. Find the Movie Camera</button>
+<button data-ch="1">2. Find the Boom Microphone</button>
+<button data-ch="2">3. Find the Stunt Car</button>
+<button data-ch="3">4. Find the Green Screen</button>
+<button data-ch="4">5. Find the Director's Chair</button>
+<button data-ch="5">6. Find the Bee</button>
+<a href="index.html">← Return to Main Directory</a>
+</aside>
+
+<section class="card">
+<div class="kicker">ON A HOLLYWOOD MOVIE SET</div>
+<h2 id="title">Hollywood Movie-Making Adventure</h2>
+<p id="prompt">Click any object in the scene to hear its name.</p>
+<div class="word"><strong id="line">estudio de cine</strong><div class="translation" id="translation">movie studio</div></div>
+<p id="status"></p>
+<div class="controls">
+<button id="normal">🔊 Speak</button><button id="slow">🐢 Slow</button><button id="replay">↻ Replay</button><button id="nextPhrase">Next phrase →</button>
+</div>
+</section>
+
+
+
+
+
+
+<!-- Hotspots mapped to the approved wide Hollywood Movie-Making JPG. -->
+<button class="hotspot" data-word="studio" style="left:10%;top:15%;width:18%;height:31%" aria-label="Studio"></button>
+<button class="hotspot" data-word="hollywood" style="left:36%;top:17%;width:22%;height:12%" aria-label="Hollywood sign"></button>
+<button class="hotspot" data-word="watertower" style="left:87%;top:2%;width:9%;height:19%" aria-label="Hollywood Studios water tower"></button>
+<button class="hotspot" data-word="helicopter" style="left:61%;top:1%;width:14%;height:14%" aria-label="Helicopter"></button>
+<button class="hotspot" data-word="drone" style="left:54%;top:6%;width:9%;height:10%" aria-label="Camera drone"></button>
+<button class="hotspot" data-word="greenscreen" style="left:88%;top:20%;width:12%;height:28%" aria-label="Green screen"></button>
+<button class="hotspot" data-word="boommic" style="left:76%;top:26%;width:18%;height:23%" aria-label="Boom microphone"></button>
+<button class="hotspot" data-word="explosion" style="left:75%;top:36%;width:14%;height:20%" aria-label="Stunt explosion"></button>
+<button class="hotspot" data-word="stuntcar" style="left:72%;top:48%;width:17%;height:15%" aria-label="Stunt car"></button>
+<button class="hotspot" data-word="camera" style="left:50%;top:39%;width:18%;height:29%" aria-label="Movie camera"></button>
+<button class="hotspot" data-word="monitor" style="left:65%;top:59%;width:19%;height:23%" aria-label="Director monitors"></button>
+<button class="hotspot" data-word="clapperboard" style="left:76%;top:62%;width:8%;height:12%" aria-label="Clapperboard"></button>
+<button class="hotspot" data-word="directorchair" style="left:1%;top:55%;width:19%;height:30%" aria-label="Director chair"></button>
+<button class="hotspot" data-word="costumes" style="left:91%;top:43%;width:9%;height:25%" aria-label="Costumes"></button>
+<button class="hotspot" data-word="makeup" style="left:87%;top:68%;width:13%;height:27%" aria-label="Makeup station"></button>
+<button class="hotspot" data-word="lights" style="left:0%;top:11%;width:14%;height:33%" aria-label="Studio light"></button>
+<button class="hotspot" data-word="bee" style="left:49%;top:34%;width:12%;height:17%" aria-label="Director bee"></button>
+<button class="hotspot" data-word="cast" style="left:26%;top:42%;width:22%;height:32%" aria-label="Talk A Bee cast"></button>
+<button class="hotspot" data-word="crew" style="left:17%;top:39%;width:64%;height:31%" aria-label="Movie crew"></button>
+<button class="hotspot" data-word="palmtrees" style="left:0%;top:0%;width:38%;height:26%" aria-label="Palm trees"></button>
+
+</main>
+
+<script>
+const EN={movie:"movie studio",studio:"movie studio",hollywood:"Hollywood sign",watertower:"studio water tower",helicopter:"camera helicopter",drone:"camera drone",greenscreen:"green screen",boommic:"boom microphone",explosion:"stunt explosion",stuntcar:"stunt car",camera:"movie camera",monitor:"director monitors",clapperboard:"clapperboard",directorchair:"director's chair",costumes:"costumes",makeup:"makeup station",lights:"studio lights",bee:"director bee",cast:"cast members",crew:"movie crew",palmtrees:"palm trees"};
+const WORDS={
+es:{movie:"estudio de cine",studio:"estudio de cine",hollywood:"letrero de Hollywood",watertower:"torre de agua del estudio",helicopter:"helicóptero con cámara",drone:"dron con cámara",greenscreen:"pantalla verde",boommic:"micrófono de pértiga",explosion:"explosión de acrobacia",stuntcar:"coche de acrobacias",camera:"cámara de cine",monitor:"monitores del director",clapperboard:"claqueta",directorchair:"silla del director",costumes:"vestuario",makeup:"zona de maquillaje",lights:"luces de estudio",bee:"abeja directora",cast:"miembros del reparto",crew:"equipo de filmación",palmtrees:"palmeras"},
+fr:{movie:"studio de cinéma",studio:"studio de cinéma",hollywood:"panneau Hollywood",watertower:"château d'eau du studio",helicopter:"hélicoptère caméra",drone:"drone caméra",greenscreen:"fond vert",boommic:"microphone perche",explosion:"explosion de cascade",stuntcar:"voiture de cascade",camera:"caméra de cinéma",monitor:"moniteurs du réalisateur",clapperboard:"clap",directorchair:"fauteuil du réalisateur",costumes:"costumes",makeup:"poste de maquillage",lights:"projecteurs de studio",bee:"abeille réalisatrice",cast:"acteurs",crew:"équipe de tournage",palmtrees:"palmiers"},
+en:{...EN},
+de:{movie:"Filmstudio",studio:"Filmstudio",hollywood:"Hollywood-Schriftzug",watertower:"Studio-Wasserturm",helicopter:"Kamerahelikopter",drone:"Kameradrohne",greenscreen:"Greenscreen",boommic:"Angel-Mikrofon",explosion:"Stunt-Explosion",stuntcar:"Stuntauto",camera:"Filmkamera",monitor:"Regiemonitore",clapperboard:"Filmklappe",directorchair:"Regiestuhl",costumes:"Kostüme",makeup:"Schminkplatz",lights:"Studioleuchten",bee:"Regisseur-Biene",cast:"Darsteller",crew:"Filmcrew",palmtrees:"Palmen"},
+it:{movie:"studio cinematografico",studio:"studio cinematografico",hollywood:"scritta Hollywood",watertower:"torre dell'acqua dello studio",helicopter:"elicottero con telecamera",drone:"drone con telecamera",greenscreen:"schermo verde",boommic:"microfono ad asta",explosion:"esplosione acrobatica",stuntcar:"auto acrobatica",camera:"cinepresa",monitor:"monitor del regista",clapperboard:"ciak",directorchair:"sedia del regista",costumes:"costumi",makeup:"postazione trucco",lights:"luci da studio",bee:"ape regista",cast:"attori",crew:"troupe cinematografica",palmtrees:"palme"},
+pt:{movie:"estúdio de cinema",studio:"estúdio de cinema",hollywood:"letreiro de Hollywood",watertower:"torre de água do estúdio",helicopter:"helicóptero com câmera",drone:"drone com câmera",greenscreen:"tela verde",boommic:"microfone boom",explosion:"explosão de dublê",stuntcar:"carro de dublê",camera:"câmera de cinema",monitor:"monitores do diretor",clapperboard:"claquete",directorchair:"cadeira do diretor",costumes:"figurinos",makeup:"área de maquiagem",lights:"luzes de estúdio",bee:"abelha diretora",cast:"elenco",crew:"equipe de filmagem",palmtrees:"palmeiras"},
+no:{movie:"filmstudio",studio:"filmstudio",hollywood:"Hollywood-skilt",watertower:"studioets vanntårn",helicopter:"kamerahelikopter",drone:"kameradrone",greenscreen:"grønnskjerm",boommic:"bom-mikrofon",explosion:"stunteksplosjon",stuntcar:"stuntbil",camera:"filmkamera",monitor:"regissørskjermer",clapperboard:"filmklapper",directorchair:"regissørstol",costumes:"kostymer",makeup:"sminkestasjon",lights:"studiolys",bee:"regissørbie",cast:"skuespillere",crew:"filmteam",palmtrees:"palmer"}};
+const SPEECH_LANG={es:"es-ES",fr:"fr-FR",en:"en-US",de:"de-DE",it:"it-IT",pt:"pt-PT",no:"nb-NO"};
+const lessons={
+en:{studio:["Welcome to a Hollywood movie studio.","A movie set is filled with actors, cameras, lights, props, and crew members."],camera:["The movie camera records the action for the film.","The camera crew carefully chooses each shot."],stunt:["The stunt team is filming an exciting action scene.","The car and explosion are controlled effects created for the movie."],sound:["Bright studio lights illuminate the set while a boom microphone records sound.","Many crew members work together behind the scenes."],costume:["Costumes and makeup help transform actors into their characters.","Artists prepare clothing, hair, and makeup before filming begins."],crew:["Directors, camera operators, actors, sound crews, and stunt teams all have different jobs.","Making a movie takes a large team working together."]},
+es:{studio:["Bienvenidos a un estudio de cine de Hollywood.","Un set de cine está lleno de actores, cámaras, luces, accesorios y miembros del equipo."],camera:["La cámara de cine graba la acción de la película.","El equipo de cámara elige cuidadosamente cada toma."],stunt:["El equipo de acrobacias está filmando una emocionante escena de acción.","El coche y la explosión son efectos controlados creados para la película."],sound:["Las luces del estudio iluminan el set mientras un micrófono de pértiga graba el sonido.","Muchos miembros del equipo trabajan juntos detrás de las cámaras."],costume:["El vestuario y el maquillaje ayudan a transformar a los actores en sus personajes.","Los artistas preparan la ropa, el cabello y el maquillaje antes de filmar."],crew:["Directores, operadores de cámara, actores, técnicos de sonido y especialistas tienen trabajos diferentes.","Hacer una película requiere un gran equipo trabajando unido."]},
+fr:{studio:["Bienvenue dans un studio de cinéma à Hollywood.","Un plateau de cinéma est rempli d'acteurs, de caméras, de lumières, d'accessoires et de techniciens."],camera:["La caméra enregistre l'action du film.","L'équipe caméra choisit soigneusement chaque plan."],stunt:["L'équipe de cascadeurs tourne une scène d'action passionnante.","La voiture et l'explosion sont des effets contrôlés créés pour le film."],sound:["Les projecteurs éclairent le plateau pendant qu'un microphone perche enregistre le son.","De nombreux techniciens travaillent ensemble en coulisses."],costume:["Les costumes et le maquillage transforment les acteurs en personnages.","Les artistes préparent les vêtements, les cheveux et le maquillage avant le tournage."],crew:["Réalisateurs, cameramen, acteurs, ingénieurs du son et cascadeurs ont tous des rôles différents.","Faire un film demande une grande équipe qui travaille ensemble."]},
+de:{studio:["Willkommen in einem Hollywood-Filmstudio.","Ein Filmset ist voller Schauspieler, Kameras, Lichter, Requisiten und Crewmitglieder."],camera:["Die Filmkamera nimmt die Handlung für den Film auf.","Das Kamerateam wählt jede Einstellung sorgfältig aus."],stunt:["Das Stuntteam dreht eine spannende Actionszene.","Das Auto und die Explosion sind kontrollierte Effekte für den Film."],sound:["Helle Studioleuchten beleuchten das Set, während ein Angel-Mikrofon den Ton aufnimmt.","Viele Crewmitglieder arbeiten hinter den Kulissen zusammen."],costume:["Kostüme und Make-up verwandeln Schauspieler in ihre Figuren.","Vor dem Dreh werden Kleidung, Haare und Make-up vorbereitet."],crew:["Regisseure, Kameraleute, Schauspieler, Tonteams und Stuntleute haben unterschiedliche Aufgaben.","Für einen Film muss ein großes Team zusammenarbeiten."]},
+it:{studio:["Benvenuti in uno studio cinematografico di Hollywood.","Un set cinematografico è pieno di attori, telecamere, luci, oggetti di scena e troupe."],camera:["La cinepresa registra l'azione del film.","La troupe sceglie con cura ogni inquadratura."],stunt:["La squadra degli stuntman sta girando un'emozionante scena d'azione.","L'auto e l'esplosione sono effetti controllati creati per il film."],sound:["Le luci dello studio illuminano il set mentre un microfono ad asta registra il suono.","Molte persone lavorano insieme dietro le quinte."],costume:["Costumi e trucco aiutano a trasformare gli attori nei loro personaggi.","Gli artisti preparano vestiti, capelli e trucco prima delle riprese."],crew:["Registi, operatori, attori, tecnici del suono e stuntman hanno lavori diversi.","Realizzare un film richiede una grande squadra."]},
+pt:{studio:["Bem-vindos a um estúdio de cinema de Hollywood.","Um set de filmagem tem atores, câmeras, luzes, adereços e muitos membros da equipe."],camera:["A câmera de cinema grava a ação do filme.","A equipe de câmera escolhe cuidadosamente cada tomada."],stunt:["A equipe de dublês está filmando uma emocionante cena de ação.","O carro e a explosão são efeitos controlados criados para o filme."],sound:["As luzes do estúdio iluminam o set enquanto um microfone boom grava o som.","Muitos membros da equipe trabalham juntos nos bastidores."],costume:["Figurinos e maquiagem ajudam a transformar os atores em personagens.","Os artistas preparam roupas, cabelo e maquiagem antes das filmagens."],crew:["Diretores, operadores de câmera, atores, equipes de som e dublês têm trabalhos diferentes.","Fazer um filme exige uma grande equipe trabalhando junta."]},
+no:{studio:["Velkommen til et filmstudio i Hollywood.","Et filmsett er fullt av skuespillere, kameraer, lys, rekvisitter og filmarbeidere."],camera:["Filmkameraet tar opp handlingen til filmen.","Kamerateamet velger hvert bilde nøye."],stunt:["Stuntteamet filmer en spennende actionscene.","Bilen og eksplosjonen er kontrollerte effekter laget for filmen."],sound:["Sterke studiolys lyser opp settet mens en bom-mikrofon tar opp lyd.","Mange i filmteamet jobber sammen bak kulissene."],costume:["Kostymer og sminke hjelper skuespillerne med å bli karakterene sine.","Artister forbereder klær, hår og sminke før filmingen."],crew:["Regissører, kameraoperatører, skuespillere, lydteam og stuntfolk har forskjellige jobber.","Å lage en film krever et stort team som samarbeider."]}};
+const challengeOrder=["camera","boommic","stuntcar","greenscreen","directorchair","bee"];
+const SOUND_MAP={};
+const langSel=document.getElementById("lang"),voiceSel=document.getElementById("voice");
+const title=document.getElementById("title"),prompt=document.getElementById("prompt"),line=document.getElementById("line"),translation=document.getElementById("translation"),status=document.getElementById("status"),world=document.getElementById("world");
+let lastWord="movie",activeLesson="",lessonPhrase=1,challenge=-1,lastSpoken="";
+function voices(){return ("speechSynthesis" in window)?speechSynthesis.getVoices():[]}
+function fillVoices(){const old=localStorage.getItem("talkabee-hollywood-voice-"+langSel.value)||"";voiceSel.innerHTML='<option value="">Browser Default</option>';voices().forEach(v=>{const o=document.createElement("option");o.value=v.name;o.textContent=v.name+(v.lang?" — "+v.lang:"");voiceSel.appendChild(o)});if([...voiceSel.options].some(o=>o.value===old))voiceSel.value=old}
+if("speechSynthesis" in window){speechSynthesis.onvoiceschanged=fillVoices;fillVoices();setTimeout(fillVoices,150);setTimeout(fillVoices,600);setTimeout(fillVoices,1500)}
+voiceSel.onchange=()=>localStorage.setItem("talkabee-hollywood-voice-"+langSel.value,voiceSel.value);
+function speak(text,rate=.88,onend=null){if(!text||!("speechSynthesis" in window)){if(onend)onend();return}speechSynthesis.cancel();setTimeout(()=>{const u=new SpeechSynthesisUtterance(text);u.lang=SPEECH_LANG[langSel.value]||langSel.value;u.rate=rate;const v=speechSynthesis.getVoices().find(x=>x.name===voiceSel.value);if(v)u.voice=v;if(onend)u.onend=onend;speechSynthesis.speak(u)},50);lastSpoken=text}
+function stopSound(){document.querySelectorAll("audio[data-talkabee-sound]").forEach(a=>{a.pause();a.currentTime=0;a.remove()})}
+function playSound(key){stopSound();const src=SOUND_MAP[key];if(!src)return;const a=new Audio(src);a.dataset.talkabeeSound="1";document.body.appendChild(a);a.play().catch(()=>{});a.onended=()=>a.remove()}
+function showWord(key){activeLesson="";lastWord=key;lessonPhrase=1;title.textContent="Click & Discover";prompt.textContent="You found "+(EN[key]||key)+".";line.textContent=WORDS[langSel.value][key]||EN[key]||key;translation.textContent=langSel.value==="en"?"":(EN[key]||key)}
+document.querySelectorAll(".hotspot").forEach(b=>b.onclick=()=>{const key=b.dataset.word;showWord(key);let played=false;const after=()=>{if(played)return;played=true;playSound(key)};speak(WORDS[langSel.value][key]||EN[key]||key,.82,after);setTimeout(after,1500);if(challenge>=0){if(key===challengeOrder[challenge]){status.textContent="✓ Nice find!";status.style.color="#9dffbf"}else{status.textContent="Not that one — keep looking.";status.style.color="#ffe28a"}}});
+function clearChallenge(){challenge=-1;world.classList.remove("challenge-mode");document.querySelectorAll(".hotspot").forEach(h=>h.classList.remove("target"));status.textContent=""}
+document.getElementById("discovery").onclick=()=>{clearChallenge();activeLesson="";lastWord="movie";title.textContent="Click & Discover";prompt.textContent="Click any object in the scene to hear its name.";line.textContent=WORDS[langSel.value].movie;translation.textContent=langSel.value==="en"?"":EN.movie};
+document.querySelectorAll("[data-ch]").forEach(b=>b.onclick=()=>{activeLesson="";lastWord="";challenge=+b.dataset.ch;world.classList.add("challenge-mode");document.querySelectorAll(".hotspot").forEach(h=>h.classList.toggle("target",h.dataset.word===challengeOrder[challenge]));title.textContent="Challenge "+(challenge+1)+" of 6";prompt.textContent=b.textContent.replace(/^[0-9]+\.\s*/,"");line.textContent=WORDS[langSel.value][challengeOrder[challenge]];translation.textContent=langSel.value==="en"?"":EN[challengeOrder[challenge]];status.textContent=""});
+function showLesson(key,speakIt=false){clearChallenge();activeLesson=key;lastWord="";lessonPhrase=Math.max(0,Math.min(1,lessonPhrase));const a=lessons[langSel.value][key],e=lessons.en[key],btn=document.querySelector(`[data-lesson="${key}"]`);title.textContent=btn?btn.textContent.replace(/^[0-9]+\.\s*/,""):"Hollywood Movie-Making Adventure";prompt.textContent=a[0];line.textContent=a[lessonPhrase];translation.textContent=langSel.value==="en"?"":e[lessonPhrase];if(speakIt)speak(a[lessonPhrase])}
+document.querySelectorAll("[data-lesson]").forEach(b=>b.onclick=()=>{lessonPhrase=1;showLesson(b.dataset.lesson,true)});
+function currentSpeechText(){if(activeLesson)return lessons[langSel.value][activeLesson][lessonPhrase];if(lastWord)return WORDS[langSel.value][lastWord]||EN[lastWord];return line.textContent}
+document.getElementById("normal").onclick=()=>speak(currentSpeechText(),.82);
+document.getElementById("slow").onclick=()=>speak(currentSpeechText(),.58);
+document.getElementById("replay").onclick=()=>speak(lastSpoken||currentSpeechText(),.82);
+document.getElementById("nextPhrase").onclick=()=>{if(!activeLesson){const keys=Object.keys(EN),i=Math.max(0,keys.indexOf(lastWord));showWord(keys[(i+1)%keys.length]);speak(currentSpeechText(),.82);return}lessonPhrase=(lessonPhrase+1)%2;showLesson(activeLesson,true)};
+langSel.onchange=()=>{fillVoices();if(activeLesson)showLesson(activeLesson,false);else if(lastWord)showWord(lastWord)};
+document.getElementById("sceneView").onclick=()=>document.body.classList.add("scene-view");
+document.getElementById("sceneReturn").onclick=()=>document.body.classList.remove("scene-view");
+showWord("movie");
+</script>
+</body>
+</html>
+
+<style id="talkabee-ski-panel-180">
+@media(min-width:761px){.panel{width:180px!important;min-width:180px!important;max-width:180px!important}}
+</style>

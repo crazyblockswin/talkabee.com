@@ -1,0 +1,217 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Talk A Bee — Hot Air Balloon Festival Adventure</title>
+<link rel="icon" type="image/png" href="images/talkabee-favicon.png">
+<style>
+*{box-sizing:border-box}
+html,body{margin:0;width:100%;height:100%;overflow:hidden;font-family:Arial,Helvetica,sans-serif;background:#063a66;color:#fff}
+.world{position:relative;width:100vw;height:100vh;background:url("images/Talk-A-Bee-Hot-Air-Balloon-Festival-Adventure.jpg") center center/cover no-repeat}
+
+/* APPROVED TALK A BEE LEFT PANEL */
+.panel{position:fixed;z-index:1000;left:16px;top:16px;bottom:16px;width:180px;min-width:180px;max-width:180px;
+padding:14px;overflow-x:hidden;overflow-y:auto;border-radius:20px;border:1px solid rgba(255,255,255,.28);
+background:rgba(7,23,39,.31);box-shadow:0 12px 30px rgba(0,0,0,.24);backdrop-filter:blur(3px);-webkit-backdrop-filter:blur(3px)}
+.panel h1{font-size:19px;line-height:1.08;margin:4px 0 10px;text-shadow:0 2px 4px rgba(0,0,0,.55)}
+.label{font-size:9.5px;line-height:1.1;letter-spacing:.09em;font-weight:900;margin:9px 0 4px}
+.panel button,.panel select,.panel a{width:100%;min-height:34px;margin:4px 0;padding:8px 9px;border-radius:12px;
+border:1px solid rgba(255,255,255,.38);background:rgba(7,32,50,.54);color:#fff;font:800 12px/1.16 Arial,sans-serif;
+text-align:left;text-decoration:none}
+.panel button:hover,.panel a:hover{background:rgba(20,58,79,.70)}
+.panel button.active{background:rgba(78,69,219,.74)}
+.panel select{white-space:nowrap;text-overflow:ellipsis;overflow:hidden}
+
+/* APPROVED 520px SCRIPT CARD */
+.card{position:fixed;z-index:900;left:50%;bottom:16px;width:520px;max-width:520px;padding:14px 16px;
+border-radius:20px;border:1px solid rgba(255,255,255,.30);background:rgba(25,19,24,.38);
+box-shadow:0 12px 30px rgba(0,0,0,.28);backdrop-filter:blur(5px);-webkit-backdrop-filter:blur(5px);
+transform:translateX(-50%) scale(.67);transform-origin:bottom center}
+.card .kicker{font-size:15px;line-height:1.25;font-weight:900;letter-spacing:.10em;color:rgba(255,255,255,.96);
+text-shadow:0 1px 3px rgba(0,0,0,.78);margin:0 0 6px}
+.card h2{font-size:22px;line-height:1.08;margin:4px 0 7px;text-shadow:0 1px 3px rgba(0,0,0,.55)}
+.card p{font-size:18px;line-height:1.35;margin:4px 0 7px}
+.word{margin-top:8px;padding:10px 12px;border-radius:14px;background:rgba(88,88,88,.72);border:1px solid rgba(255,255,255,.20)}
+.word strong{display:block;font-size:22px;line-height:1.28}
+.translation{font-size:18px;line-height:1.35;margin-top:3px}
+.controls{display:flex;align-items:center;gap:8px;flex-wrap:nowrap;margin-top:8px}
+.controls button{width:auto;min-width:0;padding:9px 13px;border-radius:12px;border:1px solid rgba(255,255,255,.35);
+background:rgba(255,255,255,.88);color:#10283c;font:900 13px/1 Arial,sans-serif;white-space:nowrap}
+
+/* HOTSPOTS */
+.hotspot{position:absolute;z-index:8;border:0;background:transparent;opacity:0;cursor:pointer;border-radius:16px}
+.hotspot:hover,.hotspot:focus-visible{opacity:1;background:rgba(255,220,72,.28);outline:2px solid rgba(255,255,255,.90)}
+.challenge-mode .hotspot.target{opacity:1;background:rgba(255,199,48,.38);outline:4px solid #fff;box-shadow:0 0 0 7px rgba(255,200,50,.20)}
+
+/* APPROVED COMPACT PREVIOUS / NEXT CHEVRONS */
+.talkabee-prev-next-nav{position:fixed;top:18px;right:22px;z-index:2147483000;display:flex;align-items:center;overflow:hidden;
+border:2px solid rgba(255,255,255,.82);border-radius:999px;background:rgba(11,22,42,.24);
+box-shadow:0 5px 16px rgba(0,0,0,.16);backdrop-filter:blur(3px);-webkit-backdrop-filter:blur(3px)}
+.talkabee-prev-next-nav a{width:48px;height:48px;display:grid;place-items:center;text-decoration:none;color:#fff;
+font:900 38px/1 Arial,sans-serif;text-shadow:0 1px 3px rgba(0,0,0,.42)}
+.talkabee-prev-next-nav a+a{border-left:1px solid rgba(255,255,255,.36)}
+.talkabee-prev-next-nav a:hover,.talkabee-prev-next-nav a:focus-visible{background:rgba(255,255,255,.18);outline:none}
+
+/* SCENE VIEW */
+.scene-return{display:none;position:fixed;z-index:2147483001;left:18px;top:18px;padding:10px 14px;border-radius:12px;
+border:1px solid #fff;background:rgba(7,23,39,.65);color:#fff;font-weight:900}
+.scene-view .panel,.scene-view .card,.scene-view .talkabee-prev-next-nav{display:none}
+.scene-view .scene-return{display:block}
+
+@media(max-width:760px){
+ .panel{left:10px;top:10px;bottom:10px;width:180px;min-width:180px;max-width:180px;padding:11px}
+ .card{width:min(520px,calc(100vw - 32px));bottom:10px;transform:translateX(-50%) scale(.82)}
+ .talkabee-prev-next-nav{top:12px;right:12px}.talkabee-prev-next-nav a{width:42px;height:42px;font-size:33px}
+}
+</style>
+</head>
+<body>
+<nav class="talkabee-prev-next-nav" aria-label="Adventure navigation">
+  <a href="Talk-A-Bee-Golf-Adventure.html" aria-label="Previous adventure" title="Previous">‹</a>
+  <a href="Talk-A-Bee-Nighttime-Campground-Adventure.html" aria-label="Next adventure" title="Next">›</a>
+</nav>
+
+<main class="world" id="world">
+<button class="scene-return" id="sceneReturn">Return to Adventure</button>
+
+<aside class="panel">
+<h1>🎈 Hot Air Balloon Festival</h1>
+<div class="label">LANGUAGE</div>
+<select id="lang">
+<option value="es">Spanish</option><option value="fr">French</option><option value="en">English</option>
+<option value="de">German</option><option value="it">Italian</option><option value="pt">Portuguese</option><option value="no">Norwegian</option>
+</select>
+<div class="label">VOICE</div>
+<select id="voice"><option value="">Browser Default</option></select>
+<button id="sceneView">◉ Scene View</button>
+
+<div class="label">DISCOVERY</div>
+<button id="discovery">🔎 Discovery — Click the Scene</button>
+
+<div class="label">ACTIVITIES</div>
+<button data-lesson="crew">1. Meet the Balloon Crew</button>
+<button data-lesson="balloon">2. Explore a Hot Air Balloon</button>
+<button data-lesson="burner">3. Watch the Burner</button>
+<button data-lesson="festival">4. Explore the Festival</button>
+<button data-lesson="flight">5. Balloons in Flight</button>
+<button data-lesson="view">6. Explore the Mountain Lake</button>
+<div class="label">CHALLENGES</div>
+<button data-ch="0">1. Find Grandma</button>
+<button data-ch="1">2. Find Grandpa</button>
+<button data-ch="2">3. Find the Bee</button>
+<button data-ch="3">4. Find the Burner Flame</button>
+<button data-ch="4">5. Find the Balloon Basket</button>
+<button data-ch="5">6. Find the Lake</button>
+<a href="index.html">← Return to Main Directory</a>
+</aside>
+
+<section class="card">
+<div class="kicker">AT THE HOT AIR BALLOON FESTIVAL</div>
+<h2 id="title">Hot Air Balloon Festival</h2>
+<p id="prompt">Click any object in the scene to hear its name.</p>
+<div class="word"><strong id="line">festival de globos aerostáticos</strong><div class="translation" id="translation">hot air balloon festival</div></div>
+<p id="status"></p>
+<div class="controls">
+<button id="normal">🔊 Speak</button><button id="slow">🐢 Slow</button><button id="replay">↻ Replay</button><button id="nextPhrase">Next phrase →</button>
+</div>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- Hotspots mapped to the approved Hot Air Balloon Festival keeper JPG. -->
+<button class="hotspot" data-word="grandma" style="left:84%;top:42%;width:7%;height:20%" aria-label="Grandma"></button>
+<button class="hotspot" data-word="grandpa" style="left:91%;top:42%;width:8%;height:21%" aria-label="Grandpa"></button>
+<button class="hotspot" data-word="bee" style="left:64%;top:39%;width:10%;height:22%" aria-label="Balloon Bee"></button>
+<button class="hotspot" data-word="crew" style="left:64%;top:42%;width:35%;height:26%" aria-label="Balloon crew"></button>
+<button class="hotspot" data-word="basket" style="left:63%;top:62%;width:37%;height:37%" aria-label="Balloon basket"></button>
+<button class="hotspot" data-word="burner" style="left:79%;top:17%;width:12%;height:25%" aria-label="Balloon burner"></button>
+<button class="hotspot" data-word="flame" style="left:81%;top:15%;width:8%;height:20%" aria-label="Burner flame"></button>
+<button class="hotspot" data-word="balloon" style="left:57%;top:0%;width:43%;height:25%" aria-label="Hot air balloon"></button>
+<button class="hotspot" data-word="ropes" style="left:70%;top:17%;width:26%;height:34%" aria-label="Balloon ropes"></button>
+<button class="hotspot" data-word="lake" style="left:0%;top:39%;width:62%;height:25%" aria-label="Mountain lake"></button>
+<button class="hotspot" data-word="island" style="left:28%;top:42%;width:29%;height:17%" aria-label="Forest island"></button>
+<button class="hotspot" data-word="mountains" style="left:15%;top:24%;width:67%;height:20%" aria-label="Snowy mountains"></button>
+<button class="hotspot" data-word="sun" style="left:0%;top:22%;width:12%;height:19%" aria-label="Sunrise"></button>
+<button class="hotspot" data-word="sky" style="left:0%;top:0%;width:57%;height:25%" aria-label="Blue sky"></button>
+<button class="hotspot" data-word="balloons" style="left:5%;top:2%;width:59%;height:37%" aria-label="Balloons in flight"></button>
+<button class="hotspot" data-word="field" style="left:0%;top:64%;width:63%;height:35%" aria-label="Festival field"></button>
+<button class="hotspot" data-word="crowd" style="left:8%;top:67%;width:52%;height:22%" aria-label="Festival crowd"></button>
+<button class="hotspot" data-word="inflating" style="left:14%;top:65%;width:47%;height:22%" aria-label="Inflating balloons"></button>
+<button class="hotspot" data-word="tents" style="left:0%;top:64%;width:35%;height:15%" aria-label="Festival tents"></button>
+<button class="hotspot" data-word="forest" style="left:0%;top:48%;width:32%;height:18%" aria-label="Pine forest"></button>
+
+</main>
+
+<script>
+const EN={game:"hot air balloon festival",grandma:"Grandma",grandpa:"Grandpa",bee:"balloon bee",crew:"balloon crew",basket:"balloon basket",burner:"balloon burner",flame:"burner flame",balloon:"hot air balloon",ropes:"balloon ropes",lake:"mountain lake",island:"forest island",mountains:"snowy mountains",sun:"sunrise",sky:"blue sky",balloons:"balloons in flight",field:"festival field",crowd:"festival crowd",inflating:"inflating balloons",tents:"festival tents",forest:"pine forest"};
+const WORDS={
+es:{game:"festival de globos aerostáticos",grandma:"abuela",grandpa:"abuelo",bee:"abeja del globo",crew:"tripulación del globo",basket:"cesta del globo",burner:"quemador del globo",flame:"llama del quemador",balloon:"globo aerostático",ropes:"cuerdas del globo",lake:"lago de montaña",island:"isla boscosa",mountains:"montañas nevadas",sun:"amanecer",sky:"cielo azul",balloons:"globos en vuelo",field:"campo del festival",crowd:"multitud del festival",inflating:"globos inflándose",tents:"carpas del festival",forest:"bosque de pinos"},
+fr:{game:"festival de montgolfières",grandma:"grand-mère",grandpa:"grand-père",bee:"abeille en montgolfière",crew:"équipage de la montgolfière",basket:"nacelle",burner:"brûleur",flame:"flamme du brûleur",balloon:"montgolfière",ropes:"cordages",lake:"lac de montagne",island:"île boisée",mountains:"montagnes enneigées",sun:"lever du soleil",sky:"ciel bleu",balloons:"montgolfières en vol",field:"terrain du festival",crowd:"foule du festival",inflating:"montgolfières en gonflage",tents:"tentes du festival",forest:"forêt de pins"},
+en:{...EN},
+de:{game:"Heißluftballon-Festival",grandma:"Oma",grandpa:"Opa",bee:"Ballon-Biene",crew:"Ballonbesatzung",basket:"Ballonkorb",burner:"Ballonbrenner",flame:"Brennerflamme",balloon:"Heißluftballon",ropes:"Ballonseile",lake:"Bergsee",island:"Waldinsel",mountains:"schneebedeckte Berge",sun:"Sonnenaufgang",sky:"blauer Himmel",balloons:"Ballons im Flug",field:"Festivalgelände",crowd:"Festivalbesucher",inflating:"aufgeblasene Ballons",tents:"Festivalzelte",forest:"Kiefernwald"},
+it:{game:"festival delle mongolfiere",grandma:"nonna",grandpa:"nonno",bee:"ape in mongolfiera",crew:"equipaggio della mongolfiera",basket:"cesto della mongolfiera",burner:"bruciatore",flame:"fiamma del bruciatore",balloon:"mongolfiera",ropes:"corde della mongolfiera",lake:"lago di montagna",island:"isola boscosa",mountains:"montagne innevate",sun:"alba",sky:"cielo blu",balloons:"mongolfiere in volo",field:"campo del festival",crowd:"folla del festival",inflating:"mongolfiere che si gonfiano",tents:"tende del festival",forest:"pineta"},
+pt:{game:"festival de balões de ar quente",grandma:"avó",grandpa:"avô",bee:"abelha do balão",crew:"tripulação do balão",basket:"cesto do balão",burner:"queimador do balão",flame:"chama do queimador",balloon:"balão de ar quente",ropes:"cordas do balão",lake:"lago de montanha",island:"ilha arborizada",mountains:"montanhas nevadas",sun:"nascer do sol",sky:"céu azul",balloons:"balões em voo",field:"campo do festival",crowd:"multidão do festival",inflating:"balões sendo inflados",tents:"tendas do festival",forest:"floresta de pinheiros"},
+no:{game:"varmluftballongfestival",grandma:"bestemor",grandpa:"bestefar",bee:"ballongbie",crew:"ballongmannskap",basket:"ballongkurv",burner:"ballongbrenner",flame:"brennerflamme",balloon:"varmluftballong",ropes:"ballongtau",lake:"fjellvann",island:"skogkledd øy",mountains:"snødekte fjell",sun:"soloppgang",sky:"blå himmel",balloons:"ballonger i luften",field:"festivalområde",crowd:"festivalpublikum",inflating:"ballonger som blåses opp",tents:"festivaltelt",forest:"furuskog"}};
+const SPEECH_LANG={es:"es-ES",fr:"fr-FR",en:"en-US",de:"de-DE",it:"it-IT",pt:"pt-PT",no:"nb-NO"};
+const lessons={
+en:{crew:["Grandma, Grandpa, the children, and Bee are riding together in a hot air balloon basket.","From high above the festival, the crew can see the lake, mountains, forests, and balloons all around them."],balloon:["A hot air balloon has a large fabric envelope above a strong basket.","The balloon rises when the air inside the envelope becomes warmer than the surrounding air."],burner:["The burner produces a powerful flame that heats the air inside the balloon.","The pilot controls the burner to help the balloon rise or maintain altitude."],festival:["A balloon festival brings many pilots, crews, visitors, tents, and colorful balloons together in one place.","Some balloons are being inflated on the field while others are already flying."],flight:["Hot air balloons travel with the wind, so pilots pay close attention to weather and wind direction.","Balloons can rise and descend by changing the temperature of the air inside the envelope."],view:["The festival overlooks a beautiful mountain lake surrounded by pine forests and snowy peaks.","At sunrise, the low golden light reflects across the water and makes the balloons glow."]},
+es:{crew:["La abuela, el abuelo, los niños y la abeja viajan juntos en la cesta de un globo aerostático.","Desde lo alto del festival pueden ver el lago, las montañas, los bosques y los globos a su alrededor."],balloon:["Un globo aerostático tiene una gran envoltura de tela sobre una cesta resistente.","El globo sube cuando el aire dentro de la envoltura está más caliente que el aire exterior."],burner:["El quemador produce una llama potente que calienta el aire dentro del globo.","El piloto controla el quemador para ayudar al globo a subir o mantener su altura."],festival:["Un festival de globos reúne a pilotos, equipos, visitantes, carpas y globos de muchos colores.","Algunos globos se están inflando en el campo mientras otros ya están volando."],flight:["Los globos viajan con el viento, por eso los pilotos observan cuidadosamente el clima y la dirección del viento.","Los globos pueden subir y bajar cambiando la temperatura del aire dentro de la envoltura."],view:["El festival domina un hermoso lago de montaña rodeado de bosques de pinos y picos nevados.","Al amanecer, la luz dorada se refleja en el agua y hace brillar los globos."]},
+fr:{crew:["Grand-mère, grand-père, les enfants et l'abeille voyagent ensemble dans la nacelle d'une montgolfière.","Au-dessus du festival, ils voient le lac, les montagnes, les forêts et les ballons tout autour."],balloon:["Une montgolfière possède une grande enveloppe en tissu au-dessus d'une nacelle solide.","Le ballon monte lorsque l'air dans l'enveloppe devient plus chaud que l'air extérieur."],burner:["Le brûleur produit une forte flamme qui chauffe l'air à l'intérieur du ballon.","Le pilote contrôle le brûleur pour faire monter le ballon ou maintenir son altitude."],festival:["Un festival rassemble de nombreux pilotes, équipages, visiteurs, tentes et montgolfières colorées.","Certains ballons sont gonflés sur le terrain tandis que d'autres volent déjà."],flight:["Les montgolfières voyagent avec le vent, alors les pilotes surveillent attentivement la météo et la direction du vent.","Elles peuvent monter et descendre en modifiant la température de l'air dans l'enveloppe."],view:["Le festival surplombe un magnifique lac de montagne entouré de forêts de pins et de sommets enneigés.","Au lever du soleil, la lumière dorée se reflète sur l'eau et illumine les ballons."]},
+de:{crew:["Oma, Opa, die Kinder und die Biene fahren gemeinsam in einem Heißluftballonkorb.","Hoch über dem Festival sehen sie den See, die Berge, Wälder und viele Ballons."],balloon:["Ein Heißluftballon hat eine große Stoffhülle über einem stabilen Korb.","Der Ballon steigt, wenn die Luft in der Hülle wärmer wird als die umgebende Luft."],burner:["Der Brenner erzeugt eine starke Flamme, die die Luft im Ballon erwärmt.","Der Pilot steuert den Brenner, damit der Ballon steigt oder seine Höhe hält."],festival:["Bei einem Ballonfestival kommen viele Piloten, Teams, Besucher, Zelte und bunte Ballons zusammen.","Einige Ballons werden auf dem Feld aufgeblasen, während andere bereits fliegen."],flight:["Heißluftballons bewegen sich mit dem Wind, deshalb achten Piloten genau auf Wetter und Windrichtung.","Ballons können steigen und sinken, indem die Temperatur der Luft in der Hülle verändert wird."],view:["Das Festival liegt an einem wunderschönen Bergsee mit Kiefernwäldern und schneebedeckten Gipfeln.","Bei Sonnenaufgang spiegelt sich das goldene Licht im Wasser und lässt die Ballons leuchten."]},
+it:{crew:["La nonna, il nonno, i bambini e l'ape viaggiano insieme nel cesto di una mongolfiera.","Dall'alto del festival possono vedere il lago, le montagne, i boschi e le mongolfiere intorno a loro."],balloon:["Una mongolfiera ha un grande involucro di tessuto sopra un cesto resistente.","La mongolfiera sale quando l'aria all'interno diventa più calda dell'aria circostante."],burner:["Il bruciatore produce una fiamma potente che riscalda l'aria all'interno della mongolfiera.","Il pilota controlla il bruciatore per far salire la mongolfiera o mantenerne l'altitudine."],festival:["Un festival riunisce molti piloti, equipaggi, visitatori, tende e mongolfiere colorate.","Alcune mongolfiere vengono gonfiate sul campo mentre altre sono già in volo."],flight:["Le mongolfiere viaggiano con il vento, quindi i piloti osservano attentamente il tempo e la direzione del vento.","Possono salire e scendere modificando la temperatura dell'aria nell'involucro."],view:["Il festival si affaccia su un bellissimo lago di montagna circondato da pinete e cime innevate.","All'alba, la luce dorata si riflette sull'acqua e fa risplendere le mongolfiere."]},
+pt:{crew:["A avó, o avô, as crianças e a abelha viajam juntos no cesto de um balão de ar quente.","Do alto do festival, eles podem ver o lago, as montanhas, as florestas e os balões ao redor."],balloon:["Um balão de ar quente tem um grande envelope de tecido acima de um cesto resistente.","O balão sobe quando o ar dentro do envelope fica mais quente que o ar ao redor."],burner:["O queimador produz uma chama forte que aquece o ar dentro do balão.","O piloto controla o queimador para ajudar o balão a subir ou manter a altitude."],festival:["Um festival reúne muitos pilotos, equipes, visitantes, tendas e balões coloridos.","Alguns balões estão sendo inflados no campo enquanto outros já estão voando."],flight:["Balões de ar quente viajam com o vento, por isso os pilotos observam cuidadosamente o clima e a direção do vento.","Eles podem subir e descer mudando a temperatura do ar dentro do envelope."],view:["O festival fica diante de um belo lago de montanha cercado por florestas de pinheiros e picos nevados.","Ao nascer do sol, a luz dourada se reflete na água e faz os balões brilharem."]},
+no:{crew:["Bestemor, bestefar, barna og bien flyr sammen i kurven på en varmluftballong.","Høyt over festivalen kan de se innsjøen, fjellene, skogene og ballongene rundt seg."],balloon:["En varmluftballong har en stor stoffduk over en solid kurv.","Ballongen stiger når luften inne blir varmere enn luften rundt."],burner:["Brenneren lager en kraftig flamme som varmer luften inne i ballongen.","Piloten styrer brenneren for å få ballongen til å stige eller holde høyden."],festival:["En ballongfestival samler mange piloter, mannskaper, besøkende, telt og fargerike ballonger.","Noen ballonger blåses opp på bakken mens andre allerede flyr."],flight:["Varmluftballonger beveger seg med vinden, så pilotene følger nøye med på vær og vindretning.","Ballongene kan stige og synke ved å endre temperaturen på luften inne i duken."],view:["Festivalen ligger ved en vakker fjellsjø omgitt av furuskog og snødekte topper.","Ved soloppgang speiler det gylne lyset seg i vannet og får ballongene til å gløde."]}};
+const challengeOrder=["grandma","grandpa","bee","flame","basket","lake"];
+const SOUND_MAP={};
+const langSel=document.getElementById("lang"),voiceSel=document.getElementById("voice");
+const title=document.getElementById("title"),prompt=document.getElementById("prompt"),line=document.getElementById("line"),translation=document.getElementById("translation"),status=document.getElementById("status"),world=document.getElementById("world");
+let lastWord="game",activeLesson="",lessonPhrase=1,challenge=-1,lastSpoken="";
+function voices(){return ("speechSynthesis" in window)?speechSynthesis.getVoices():[]}
+function fillVoices(){const old=localStorage.getItem("talkabee-balloon-voice-"+langSel.value)||"";voiceSel.innerHTML='<option value="">Browser Default</option>';voices().forEach(v=>{const o=document.createElement("option");o.value=v.name;o.textContent=v.name+(v.lang?" — "+v.lang:"");voiceSel.appendChild(o)});if([...voiceSel.options].some(o=>o.value===old))voiceSel.value=old}
+if("speechSynthesis" in window){speechSynthesis.onvoiceschanged=fillVoices;fillVoices();setTimeout(fillVoices,150);setTimeout(fillVoices,600);setTimeout(fillVoices,1500)}
+voiceSel.onchange=()=>localStorage.setItem("talkabee-balloon-voice-"+langSel.value,voiceSel.value);
+function speak(text,rate=.88,onend=null){if(!text||!("speechSynthesis" in window)){if(onend)onend();return}speechSynthesis.cancel();setTimeout(()=>{const u=new SpeechSynthesisUtterance(text);u.lang=SPEECH_LANG[langSel.value]||langSel.value;u.rate=rate;const v=speechSynthesis.getVoices().find(x=>x.name===voiceSel.value);if(v)u.voice=v;if(onend)u.onend=onend;speechSynthesis.speak(u)},50);lastSpoken=text}
+function stopSound(){document.querySelectorAll("audio[data-talkabee-sound]").forEach(a=>{a.pause();a.currentTime=0;a.remove()})}
+function playSound(key){stopSound();const src=SOUND_MAP[key];if(!src)return;const a=new Audio(src);a.dataset.talkabeeSound="1";document.body.appendChild(a);a.play().catch(()=>{});a.onended=()=>a.remove()}
+function showWord(key){activeLesson="";lastWord=key;lessonPhrase=1;title.textContent="Click & Discover";prompt.textContent="You found "+(EN[key]||key)+".";line.textContent=WORDS[langSel.value][key]||EN[key]||key;translation.textContent=langSel.value==="en"?"":(EN[key]||key)}
+document.querySelectorAll(".hotspot").forEach(b=>b.onclick=()=>{const key=b.dataset.word;showWord(key);let played=false;const after=()=>{if(played)return;played=true;playSound(key)};speak(WORDS[langSel.value][key]||EN[key]||key,.82,after);setTimeout(after,1500);if(challenge>=0){if(key===challengeOrder[challenge]){status.textContent="✓ Nice find!";status.style.color="#9dffbf"}else{status.textContent="Not that one — keep looking.";status.style.color="#ffe28a"}}});
+function clearChallenge(){challenge=-1;world.classList.remove("challenge-mode");document.querySelectorAll(".hotspot").forEach(h=>h.classList.remove("target"));status.textContent=""}
+document.getElementById("discovery").onclick=()=>{clearChallenge();activeLesson="";lastWord="game";title.textContent="Click & Discover";prompt.textContent="Click any object in the scene to hear its name.";line.textContent=WORDS[langSel.value].game;translation.textContent=langSel.value==="en"?"":EN.game};
+document.querySelectorAll("[data-ch]").forEach(b=>b.onclick=()=>{activeLesson="";lastWord="";challenge=+b.dataset.ch;world.classList.add("challenge-mode");document.querySelectorAll(".hotspot").forEach(h=>h.classList.toggle("target",h.dataset.word===challengeOrder[challenge]));title.textContent="Challenge "+(challenge+1)+" of 6";prompt.textContent=b.textContent.replace(/^[0-9]+\.\s*/,"");line.textContent=WORDS[langSel.value][challengeOrder[challenge]];translation.textContent=langSel.value==="en"?"":EN[challengeOrder[challenge]];status.textContent=""});
+function showLesson(key,speakIt=false){clearChallenge();activeLesson=key;lastWord="";lessonPhrase=Math.max(0,Math.min(1,lessonPhrase));const a=lessons[langSel.value][key],e=lessons.en[key],btn=document.querySelector(`[data-lesson="${key}"]`);title.textContent=btn?btn.textContent.replace(/^[0-9]+\.\s*/,""):"Hot Air Balloon Festival";prompt.textContent=a[0];line.textContent=a[lessonPhrase];translation.textContent=langSel.value==="en"?"":e[lessonPhrase];if(speakIt)speak(a[lessonPhrase])}
+document.querySelectorAll("[data-lesson]").forEach(b=>b.onclick=()=>{lessonPhrase=1;showLesson(b.dataset.lesson,true)});
+function currentSpeechText(){if(activeLesson)return lessons[langSel.value][activeLesson][lessonPhrase];if(lastWord)return WORDS[langSel.value][lastWord]||EN[lastWord];return line.textContent}
+document.getElementById("normal").onclick=()=>speak(currentSpeechText(),.82);
+document.getElementById("slow").onclick=()=>speak(currentSpeechText(),.58);
+document.getElementById("replay").onclick=()=>speak(lastSpoken||currentSpeechText(),.82);
+document.getElementById("nextPhrase").onclick=()=>{if(!activeLesson){const keys=Object.keys(EN),i=Math.max(0,keys.indexOf(lastWord));showWord(keys[(i+1)%keys.length]);speak(currentSpeechText(),.82);return}lessonPhrase=(lessonPhrase+1)%2;showLesson(activeLesson,true)};
+langSel.onchange=()=>{fillVoices();if(activeLesson)showLesson(activeLesson,false);else if(lastWord)showWord(lastWord)};
+document.getElementById("sceneView").onclick=()=>document.body.classList.add("scene-view");
+document.getElementById("sceneReturn").onclick=()=>document.body.classList.remove("scene-view");
+showWord("game");
+</script>
+</body>
+</html>
+
+<style id="talkabee-ski-panel-180">
+@media(min-width:761px){.panel{width:180px!important;min-width:180px!important;max-width:180px!important}}
+</style>

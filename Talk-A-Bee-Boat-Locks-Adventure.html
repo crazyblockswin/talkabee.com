@@ -1,0 +1,212 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Talk A Bee — Boat Locks Adventure</title>
+<link rel="icon" type="image/png" href="images/talkabee-favicon.png">
+<style>
+*{box-sizing:border-box}
+html,body{margin:0;width:100%;height:100%;overflow:hidden;font-family:Arial,Helvetica,sans-serif;background:#063a66;color:#fff}
+.world{position:relative;width:100vw;height:100vh;background:url("images/Talk-A-Bee-Boat-Locks-Adventure.jpg") center center/cover no-repeat}
+
+/* APPROVED TALK A BEE LEFT PANEL */
+.panel{position:fixed;z-index:1000;left:16px;top:16px;bottom:16px;width:180px;min-width:180px;max-width:180px;
+padding:14px;overflow-x:hidden;overflow-y:auto;border-radius:20px;border:1px solid rgba(255,255,255,.28);
+background:rgba(7,23,39,.31);box-shadow:0 12px 30px rgba(0,0,0,.24);backdrop-filter:blur(3px);-webkit-backdrop-filter:blur(3px)}
+.panel h1{font-size:19px;line-height:1.08;margin:4px 0 10px;text-shadow:0 2px 4px rgba(0,0,0,.55)}
+.label{font-size:9.5px;line-height:1.1;letter-spacing:.09em;font-weight:900;margin:9px 0 4px}
+.panel button,.panel select,.panel a{width:100%;min-height:34px;margin:4px 0;padding:8px 9px;border-radius:12px;
+border:1px solid rgba(255,255,255,.38);background:rgba(7,32,50,.54);color:#fff;font:800 12px/1.16 Arial,sans-serif;
+text-align:left;text-decoration:none}
+.panel button:hover,.panel a:hover{background:rgba(20,58,79,.70)}
+.panel button.active{background:rgba(78,69,219,.74)}
+.panel select{white-space:nowrap;text-overflow:ellipsis;overflow:hidden}
+
+/* APPROVED 520px SCRIPT CARD */
+.card{position:fixed;z-index:900;left:50%;bottom:16px;width:520px;max-width:520px;padding:14px 16px;
+border-radius:20px;border:1px solid rgba(255,255,255,.30);background:rgba(25,19,24,.38);
+box-shadow:0 12px 30px rgba(0,0,0,.28);backdrop-filter:blur(5px);-webkit-backdrop-filter:blur(5px);
+transform:translateX(-50%) scale(.67);transform-origin:bottom center}
+.card .kicker{font-size:15px;line-height:1.25;font-weight:900;letter-spacing:.10em;color:rgba(255,255,255,.96);
+text-shadow:0 1px 3px rgba(0,0,0,.78);margin:0 0 6px}
+.card h2{font-size:22px;line-height:1.08;margin:4px 0 7px;text-shadow:0 1px 3px rgba(0,0,0,.55)}
+.card p{font-size:18px;line-height:1.35;margin:4px 0 7px}
+.word{margin-top:8px;padding:10px 12px;border-radius:14px;background:rgba(88,88,88,.72);border:1px solid rgba(255,255,255,.20)}
+.word strong{display:block;font-size:22px;line-height:1.28}
+.translation{font-size:18px;line-height:1.35;margin-top:3px}
+.controls{display:flex;align-items:center;gap:8px;flex-wrap:nowrap;margin-top:8px}
+.controls button{width:auto;min-width:0;padding:9px 13px;border-radius:12px;border:1px solid rgba(255,255,255,.35);
+background:rgba(255,255,255,.88);color:#10283c;font:900 13px/1 Arial,sans-serif;white-space:nowrap}
+
+/* HOTSPOTS */
+.hotspot{position:absolute;z-index:8;border:0;background:transparent;opacity:0;cursor:pointer;border-radius:16px}
+.hotspot:hover,.hotspot:focus-visible{opacity:1;background:rgba(255,220,72,.28);outline:2px solid rgba(255,255,255,.90)}
+.challenge-mode .hotspot.target{opacity:1;background:rgba(255,199,48,.38);outline:4px solid #fff;box-shadow:0 0 0 7px rgba(255,200,50,.20)}
+
+/* APPROVED COMPACT PREVIOUS / NEXT CHEVRONS */
+.talkabee-prev-next-nav{position:fixed;top:18px;right:22px;z-index:2147483000;display:flex;align-items:center;overflow:hidden;
+border:2px solid rgba(255,255,255,.82);border-radius:999px;background:rgba(11,22,42,.24);
+box-shadow:0 5px 16px rgba(0,0,0,.16);backdrop-filter:blur(3px);-webkit-backdrop-filter:blur(3px)}
+.talkabee-prev-next-nav a{width:48px;height:48px;display:grid;place-items:center;text-decoration:none;color:#fff;
+font:900 38px/1 Arial,sans-serif;text-shadow:0 1px 3px rgba(0,0,0,.42)}
+.talkabee-prev-next-nav a+a{border-left:1px solid rgba(255,255,255,.36)}
+.talkabee-prev-next-nav a:hover,.talkabee-prev-next-nav a:focus-visible{background:rgba(255,255,255,.18);outline:none}
+
+/* SCENE VIEW */
+.scene-return{display:none;position:fixed;z-index:2147483001;left:18px;top:18px;padding:10px 14px;border-radius:12px;
+border:1px solid #fff;background:rgba(7,23,39,.65);color:#fff;font-weight:900}
+.scene-view .panel,.scene-view .card,.scene-view .talkabee-prev-next-nav{display:none}
+.scene-view .scene-return{display:block}
+
+@media(max-width:760px){
+ .panel{left:10px;top:10px;bottom:10px;width:180px;min-width:180px;max-width:180px;padding:11px}
+ .card{width:min(520px,calc(100vw - 32px));bottom:10px;transform:translateX(-50%) scale(.82)}
+ .talkabee-prev-next-nav{top:12px;right:12px}.talkabee-prev-next-nav a{width:42px;height:42px;font-size:33px}
+}
+</style>
+</head>
+<body>
+<nav class="talkabee-prev-next-nav" aria-label="Adventure navigation">
+  <a href="Talk-A-Bee-Rowing-Regatta-Adventure.html" aria-label="Previous adventure" title="Previous">‹</a>
+  <a href="Talk-A-Bee-Nighttime-Campground-Adventure.html" aria-label="Next adventure" title="Next">›</a>
+</nav>
+
+<main class="world" id="world">
+<button class="scene-return" id="sceneReturn">Return to Adventure</button>
+
+<aside class="panel">
+<h1>⚓ Boat Locks Adventure</h1>
+<div class="label">LANGUAGE</div>
+<select id="lang">
+<option value="es">Spanish</option><option value="fr">French</option><option value="en">English</option>
+<option value="de">German</option><option value="it">Italian</option><option value="pt">Portuguese</option><option value="no">Norwegian</option>
+</select>
+<div class="label">VOICE</div>
+<select id="voice"><option value="">Browser Default</option></select>
+<button id="sceneView">◉ Scene View</button>
+
+<div class="label">DISCOVERY</div>
+<button id="discovery">🔎 Discovery — Click the Scene</button>
+
+<div class="label">ACTIVITIES</div>
+<button data-lesson="captain">1. Bee the Boat Captain</button>
+<button data-lesson="enter">2. Enter the Lock</button>
+<button data-lesson="gate">3. Close the Lock Gate</button>
+<button data-lesson="water">4. Change the Water Level</button>
+<button data-lesson="exit">5. Open the Other Gate</button>
+<button data-lesson="safety">6. Travel Through Safely</button>
+<div class="label">CHALLENGES</div>
+<button data-ch="0">1. Find Captain Bee</button>
+<button data-ch="1">2. Find the Lock Gate</button>
+<button data-ch="2">3. Find the Yellow Bollard</button>
+<button data-ch="3">4. Find the Ladder</button>
+<button data-ch="4">5. Find the Seagull</button>
+<button data-ch="5">6. Find the Boat Behind Us</button>
+<a href="index.html">← Return to Main Directory</a>
+</aside>
+
+<section class="card">
+<div class="kicker">GOING THROUGH THE BOAT LOCKS</div>
+<h2 id="title">Boat Locks Adventure</h2>
+<p id="prompt">Click any object in the scene to hear its name.</p>
+<div class="word"><strong id="line">esclusa para barcos</strong><div class="translation" id="translation">boat lock</div></div>
+<p id="status"></p>
+<div class="controls">
+<button id="normal">🔊 Speak</button><button id="slow">🐢 Slow</button><button id="replay">↻ Replay</button><button id="nextPhrase">Next phrase →</button>
+</div>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- Hotspots mapped to the approved Boat Locks keeper JPG. -->
+<button class="hotspot" data-word="bee" style="left:58%;top:48%;width:9%;height:19%" aria-label="Captain Bee"></button>
+<button class="hotspot" data-word="wheel" style="left:61%;top:57%;width:8%;height:14%" aria-label="Steering wheel"></button>
+<button class="hotspot" data-word="boat" style="left:30%;top:37%;width:49%;height:53%" aria-label="Captain's boat"></button>
+<button class="hotspot" data-word="dog" style="left:47%;top:52%;width:9%;height:20%" aria-label="Dog"></button>
+<button class="hotspot" data-word="child" style="left:53%;top:48%;width:8%;height:20%" aria-label="Child in life jacket"></button>
+<button class="hotspot" data-word="lifejacket" style="left:53%;top:53%;width:7%;height:13%" aria-label="Life jacket"></button>
+<button class="hotspot" data-word="lockgate" style="left:16%;top:30%;width:21%;height:27%" aria-label="Lock gate"></button>
+<button class="hotspot" data-word="waterfall" style="left:25%;top:39%;width:22%;height:20%" aria-label="Water flowing through lock"></button>
+<button class="hotspot" data-word="boatbehind" style="left:15%;top:36%;width:13%;height:22%" aria-label="Boat behind us"></button>
+<button class="hotspot" data-word="bollard" style="left:2%;top:36%;width:13%;height:22%" aria-label="Yellow bollard"></button>
+<button class="hotspot" data-word="ladder" style="left:89%;top:33%;width:8%;height:35%" aria-label="Lock ladder"></button>
+<button class="hotspot" data-word="wall" style="left:80%;top:29%;width:20%;height:47%" aria-label="Lock wall"></button>
+<button class="hotspot" data-word="control" style="left:76%;top:4%;width:24%;height:29%" aria-label="Lock control building"></button>
+<button class="hotspot" data-word="spectators" style="left:64%;top:15%;width:35%;height:22%" aria-label="Spectators"></button>
+<button class="hotspot" data-word="seagull" style="left:62%;top:0%;width:17%;height:16%" aria-label="Seagull"></button>
+<button class="hotspot" data-word="sailboat" style="left:8%;top:18%;width:12%;height:23%" aria-label="Sailboat"></button>
+<button class="hotspot" data-word="mountains" style="left:10%;top:7%;width:42%;height:23%" aria-label="Mountains"></button>
+<button class="hotspot" data-word="water" style="left:0%;top:54%;width:100%;height:46%" aria-label="Lock water"></button>
+<button class="hotspot" data-word="fender" style="left:34%;top:61%;width:11%;height:21%" aria-label="Boat fender"></button>
+<button class="hotspot" data-word="anchor" style="left:70%;top:68%;width:10%;height:16%" aria-label="Anchor"></button>
+
+</main>
+
+<script>
+const EN={game:"boat lock",bee:"Captain Bee",wheel:"steering wheel",boat:"cabin cruiser",dog:"dog",child:"child",lifejacket:"life jacket",lockgate:"lock gate",waterfall:"flowing water",boatbehind:"boat behind us",bollard:"yellow bollard",ladder:"lock ladder",wall:"lock wall",control:"lock control building",spectators:"spectators",seagull:"seagull",sailboat:"sailboat",mountains:"mountains",water:"lock water",fender:"boat fender",anchor:"anchor"};
+const WORDS={
+es:{game:"esclusa para barcos",bee:"abeja capitana",wheel:"timón",boat:"barco de recreo",dog:"perro",child:"niño",lifejacket:"chaleco salvavidas",lockgate:"compuerta de la esclusa",waterfall:"agua corriente",boatbehind:"barco detrás de nosotros",bollard:"bolardo amarillo",ladder:"escalera de la esclusa",wall:"muro de la esclusa",control:"edificio de control",spectators:"espectadores",seagull:"gaviota",sailboat:"velero",mountains:"montañas",water:"agua de la esclusa",fender:"defensa del barco",anchor:"ancla"},
+fr:{game:"écluse à bateaux",bee:"abeille capitaine",wheel:"barre",boat:"bateau de plaisance",dog:"chien",child:"enfant",lifejacket:"gilet de sauvetage",lockgate:"porte d'écluse",waterfall:"eau qui coule",boatbehind:"bateau derrière nous",bollard:"bollard jaune",ladder:"échelle de l'écluse",wall:"mur de l'écluse",control:"bâtiment de contrôle",spectators:"spectateurs",seagull:"mouette",sailboat:"voilier",mountains:"montagnes",water:"eau de l'écluse",fender:"pare-battage",anchor:"ancre"},
+en:{...EN},
+de:{game:"Bootsschleuse",bee:"Kapitänsbiene",wheel:"Steuerrad",boat:"Kajütboot",dog:"Hund",child:"Kind",lifejacket:"Rettungsweste",lockgate:"Schleusentor",waterfall:"fließendes Wasser",boatbehind:"Boot hinter uns",bollard:"gelber Poller",ladder:"Schleusenleiter",wall:"Schleusenwand",control:"Schleusenleitstand",spectators:"Zuschauer",seagull:"Möwe",sailboat:"Segelboot",mountains:"Berge",water:"Schleusenwasser",fender:"Bootsfender",anchor:"Anker"},
+it:{game:"chiusa per barche",bee:"ape capitano",wheel:"timone",boat:"barca cabinata",dog:"cane",child:"bambino",lifejacket:"giubbotto di salvataggio",lockgate:"porta della chiusa",waterfall:"acqua corrente",boatbehind:"barca dietro di noi",bollard:"bitta gialla",ladder:"scala della chiusa",wall:"muro della chiusa",control:"edificio di controllo",spectators:"spettatori",seagull:"gabbiano",sailboat:"barca a vela",mountains:"montagne",water:"acqua della chiusa",fender:"parabordo",anchor:"ancora"},
+pt:{game:"eclusa para barcos",bee:"abelha capitã",wheel:"leme",boat:"barco de cabine",dog:"cachorro",child:"criança",lifejacket:"colete salva-vidas",lockgate:"portão da eclusa",waterfall:"água corrente",boatbehind:"barco atrás de nós",bollard:"cabeço amarelo",ladder:"escada da eclusa",wall:"parede da eclusa",control:"edifício de controle",spectators:"espectadores",seagull:"gaivota",sailboat:"veleiro",mountains:"montanhas",water:"água da eclusa",fender:"defensa do barco",anchor:"âncora"},
+no:{game:"båtsluse",bee:"kapteinbie",wheel:"ratt",boat:"kabinbåt",dog:"hund",child:"barn",lifejacket:"redningsvest",lockgate:"sluseport",waterfall:"rennende vann",boatbehind:"båt bak oss",bollard:"gul pullert",ladder:"slusestige",wall:"slusevegg",control:"kontrollbygning",spectators:"tilskuere",seagull:"måke",sailboat:"seilbåt",mountains:"fjell",water:"slusevann",fender:"båtfender",anchor:"anker"}};
+const SPEECH_LANG={es:"es-ES",fr:"fr-FR",en:"en-US",de:"de-DE",it:"it-IT",pt:"pt-PT",no:"nb-NO"};
+const lessons={
+en:{captain:["Captain Bee is at the helm and guides the boat into the lock.","A captain watches the water, the gates, and other boats while steering safely."],enter:["The boat enters the lock chamber through an open gate.","Once the boat is safely inside, it waits while the gate closes."],gate:["The lock gate closes behind the boat and holds water inside the chamber.","Strong gates separate water that may be at different levels."],water:["Water enters or leaves the lock chamber to raise or lower the boat.","The boat floats with the changing water level instead of climbing a hill of water."],exit:["When the water reaches the level on the other side, the opposite gate can open.","Captain Bee can then steer the boat out and continue the trip."],safety:["Boats move slowly inside a lock and stay clear of the walls and gates.","Life jackets, fenders, ladders, signals, and careful steering help everyone travel safely."]},
+es:{captain:["La abeja capitana está al timón y guía el barco hacia la esclusa.","Un capitán observa el agua, las compuertas y los otros barcos mientras navega con cuidado."],enter:["El barco entra en la cámara de la esclusa por una compuerta abierta.","Cuando está dentro con seguridad, espera mientras se cierra la compuerta."],gate:["La compuerta se cierra detrás del barco y mantiene el agua dentro de la cámara.","Las compuertas fuertes separan aguas que pueden estar a diferentes niveles."],water:["El agua entra o sale de la cámara para subir o bajar el barco.","El barco flota con el cambio del nivel del agua."],exit:["Cuando el agua alcanza el nivel del otro lado, puede abrirse la compuerta opuesta.","La abeja capitana puede sacar el barco y continuar el viaje."],safety:["Los barcos se mueven despacio dentro de una esclusa y se mantienen alejados de muros y compuertas.","Los chalecos, defensas, escaleras, señales y una navegación cuidadosa ayudan a viajar con seguridad."]},
+fr:{captain:["L'abeille capitaine est à la barre et guide le bateau dans l'écluse.","Un capitaine surveille l'eau, les portes et les autres bateaux tout en naviguant prudemment."],enter:["Le bateau entre dans le sas par une porte ouverte.","Une fois à l'intérieur, il attend pendant que la porte se ferme."],gate:["La porte se ferme derrière le bateau et retient l'eau dans le sas.","De solides portes séparent des eaux qui peuvent être à des niveaux différents."],water:["L'eau entre ou sort du sas pour faire monter ou descendre le bateau.","Le bateau flotte avec le changement du niveau de l'eau."],exit:["Lorsque l'eau atteint le niveau de l'autre côté, la porte opposée peut s'ouvrir.","L'abeille capitaine peut alors sortir et poursuivre le voyage."],safety:["Les bateaux avancent lentement dans une écluse et restent loin des murs et des portes.","Les gilets, pare-battages, échelles, signaux et une conduite prudente assurent la sécurité."]},
+de:{captain:["Die Kapitänsbiene steht am Steuer und führt das Boot in die Schleuse.","Ein Kapitän beobachtet Wasser, Tore und andere Boote und steuert vorsichtig."],enter:["Das Boot fährt durch ein geöffnetes Tor in die Schleusenkammer.","Wenn es sicher darin liegt, wartet es, während das Tor geschlossen wird."],gate:["Das Schleusentor schließt sich hinter dem Boot und hält das Wasser in der Kammer.","Starke Tore trennen Wasser mit unterschiedlichen Höhen."],water:["Wasser fließt in die Kammer hinein oder heraus und hebt oder senkt das Boot.","Das Boot schwimmt mit dem sich ändernden Wasserstand."],exit:["Wenn das Wasser die Höhe auf der anderen Seite erreicht, kann das gegenüberliegende Tor geöffnet werden.","Die Kapitänsbiene kann hinausfahren und die Reise fortsetzen."],safety:["Boote fahren in einer Schleuse langsam und halten Abstand zu Wänden und Toren.","Rettungswesten, Fender, Leitern, Signale und vorsichtiges Steuern sorgen für Sicherheit."]},
+it:{captain:["L'ape capitano è al timone e guida la barca nella chiusa.","Un capitano osserva l'acqua, le porte e le altre barche mentre naviga con prudenza."],enter:["La barca entra nella camera della chiusa attraverso una porta aperta.","Quando è al sicuro all'interno, aspetta mentre la porta si chiude."],gate:["La porta della chiusa si chiude dietro la barca e trattiene l'acqua nella camera.","Porte robuste separano acque che possono trovarsi a livelli diversi."],water:["L'acqua entra o esce dalla camera per alzare o abbassare la barca.","La barca galleggia seguendo il cambiamento del livello dell'acqua."],exit:["Quando l'acqua raggiunge il livello dell'altro lato, la porta opposta può aprirsi.","L'ape capitano può uscire e continuare il viaggio."],safety:["Le barche si muovono lentamente nella chiusa e restano lontane da muri e porte.","Giubbotti, parabordi, scale, segnali e una guida attenta aiutano tutti a viaggiare in sicurezza."]},
+pt:{captain:["A abelha capitã está no leme e conduz o barco para dentro da eclusa.","Um capitão observa a água, os portões e os outros barcos enquanto navega com cuidado."],enter:["O barco entra na câmara da eclusa por um portão aberto.","Quando está seguro lá dentro, espera enquanto o portão se fecha."],gate:["O portão fecha atrás do barco e mantém a água dentro da câmara.","Portões fortes separam águas que podem estar em níveis diferentes."],water:["A água entra ou sai da câmara para levantar ou baixar o barco.","O barco flutua acompanhando a mudança do nível da água."],exit:["Quando a água atinge o nível do outro lado, o portão oposto pode abrir.","A abelha capitã pode sair e continuar a viagem."],safety:["Os barcos se movem devagar dentro da eclusa e ficam afastados das paredes e portões.","Coletes, defensas, escadas, sinais e uma condução cuidadosa ajudam todos a viajar com segurança."]},
+no:{captain:["Kapteinbien står ved roret og styrer båten inn i slusen.","En kaptein følger med på vannet, portene og andre båter mens båten styres trygt."],enter:["Båten går inn i slusekammeret gjennom en åpen port.","Når båten er trygt inne, venter den mens porten lukkes."],gate:["Sluseporten lukkes bak båten og holder vannet inne i kammeret.","Sterke porter skiller vann som kan ha forskjellige nivåer."],water:["Vann går inn eller ut av slusekammeret for å heve eller senke båten.","Båten flyter med det skiftende vannnivået."],exit:["Når vannet når samme nivå som på den andre siden, kan den motsatte porten åpnes.","Kapteinbien kan styre båten ut og fortsette turen."],safety:["Båter beveger seg sakte i en sluse og holder avstand til vegger og porter.","Redningsvester, fendere, stiger, signaler og forsiktig styring bidrar til en trygg tur."]}};
+const challengeOrder=["bee","lockgate","bollard","ladder","seagull","boatbehind"];
+const SOUND_MAP={};
+const langSel=document.getElementById("lang"),voiceSel=document.getElementById("voice");
+const title=document.getElementById("title"),prompt=document.getElementById("prompt"),line=document.getElementById("line"),translation=document.getElementById("translation"),status=document.getElementById("status"),world=document.getElementById("world");
+let lastWord="game",activeLesson="",lessonPhrase=1,challenge=-1,lastSpoken="";
+function voices(){return ("speechSynthesis" in window)?speechSynthesis.getVoices():[]}
+function fillVoices(){const old=localStorage.getItem("talkabee-locks-voice-"+langSel.value)||"";voiceSel.innerHTML='<option value="">Browser Default</option>';voices().forEach(v=>{const o=document.createElement("option");o.value=v.name;o.textContent=v.name+(v.lang?" — "+v.lang:"");voiceSel.appendChild(o)});if([...voiceSel.options].some(o=>o.value===old))voiceSel.value=old}
+if("speechSynthesis" in window){speechSynthesis.onvoiceschanged=fillVoices;fillVoices();setTimeout(fillVoices,150);setTimeout(fillVoices,600);setTimeout(fillVoices,1500)}
+voiceSel.onchange=()=>localStorage.setItem("talkabee-locks-voice-"+langSel.value,voiceSel.value);
+function speak(text,rate=.88,onend=null){if(!text||!("speechSynthesis" in window)){if(onend)onend();return}speechSynthesis.cancel();setTimeout(()=>{const u=new SpeechSynthesisUtterance(text);u.lang=SPEECH_LANG[langSel.value]||langSel.value;u.rate=rate;const v=speechSynthesis.getVoices().find(x=>x.name===voiceSel.value);if(v)u.voice=v;if(onend)u.onend=onend;speechSynthesis.speak(u)},50);lastSpoken=text}
+function stopSound(){document.querySelectorAll("audio[data-talkabee-sound]").forEach(a=>{a.pause();a.currentTime=0;a.remove()})}
+function playSound(key){stopSound();const src=SOUND_MAP[key];if(!src)return;const a=new Audio(src);a.dataset.talkabeeSound="1";document.body.appendChild(a);a.play().catch(()=>{});a.onended=()=>a.remove()}
+function showWord(key){activeLesson="";lastWord=key;lessonPhrase=1;title.textContent="Click & Discover";prompt.textContent="You found "+(EN[key]||key)+".";line.textContent=WORDS[langSel.value][key]||EN[key]||key;translation.textContent=langSel.value==="en"?"":(EN[key]||key)}
+document.querySelectorAll(".hotspot").forEach(b=>b.onclick=()=>{const key=b.dataset.word;showWord(key);let played=false;const after=()=>{if(played)return;played=true;playSound(key)};speak(WORDS[langSel.value][key]||EN[key]||key,.82,after);setTimeout(after,1500);if(challenge>=0){if(key===challengeOrder[challenge]){status.textContent="✓ Nice find!";status.style.color="#9dffbf"}else{status.textContent="Not that one — keep looking.";status.style.color="#ffe28a"}}});
+function clearChallenge(){challenge=-1;world.classList.remove("challenge-mode");document.querySelectorAll(".hotspot").forEach(h=>h.classList.remove("target"));status.textContent=""}
+document.getElementById("discovery").onclick=()=>{clearChallenge();activeLesson="";lastWord="game";title.textContent="Click & Discover";prompt.textContent="Click any object in the scene to hear its name.";line.textContent=WORDS[langSel.value].game;translation.textContent=langSel.value==="en"?"":EN.game};
+document.querySelectorAll("[data-ch]").forEach(b=>b.onclick=()=>{activeLesson="";lastWord="";challenge=+b.dataset.ch;world.classList.add("challenge-mode");document.querySelectorAll(".hotspot").forEach(h=>h.classList.toggle("target",h.dataset.word===challengeOrder[challenge]));title.textContent="Challenge "+(challenge+1)+" of 6";prompt.textContent=b.textContent.replace(/^[0-9]+\.\s*/,"");line.textContent=WORDS[langSel.value][challengeOrder[challenge]];translation.textContent=langSel.value==="en"?"":EN[challengeOrder[challenge]];status.textContent=""});
+function showLesson(key,speakIt=false){clearChallenge();activeLesson=key;lastWord="";lessonPhrase=Math.max(0,Math.min(1,lessonPhrase));const a=lessons[langSel.value][key],e=lessons.en[key],btn=document.querySelector(`[data-lesson="${key}"]`);title.textContent=btn?btn.textContent.replace(/^[0-9]+\.\s*/,""):"Boat Locks Adventure";prompt.textContent=a[0];line.textContent=a[lessonPhrase];translation.textContent=langSel.value==="en"?"":e[lessonPhrase];if(speakIt)speak(a[lessonPhrase])}
+document.querySelectorAll("[data-lesson]").forEach(b=>b.onclick=()=>{lessonPhrase=1;showLesson(b.dataset.lesson,true)});
+function currentSpeechText(){if(activeLesson)return lessons[langSel.value][activeLesson][lessonPhrase];if(lastWord)return WORDS[langSel.value][lastWord]||EN[lastWord];return line.textContent}
+document.getElementById("normal").onclick=()=>speak(currentSpeechText(),.82);
+document.getElementById("slow").onclick=()=>speak(currentSpeechText(),.58);
+document.getElementById("replay").onclick=()=>speak(lastSpoken||currentSpeechText(),.82);
+document.getElementById("nextPhrase").onclick=()=>{if(!activeLesson){const keys=Object.keys(EN),i=Math.max(0,keys.indexOf(lastWord));showWord(keys[(i+1)%keys.length]);speak(currentSpeechText(),.82);return}lessonPhrase=(lessonPhrase+1)%2;showLesson(activeLesson,true)};
+langSel.onchange=()=>{fillVoices();if(activeLesson)showLesson(activeLesson,false);else if(lastWord)showWord(lastWord)};
+document.getElementById("sceneView").onclick=()=>document.body.classList.add("scene-view");
+document.getElementById("sceneReturn").onclick=()=>document.body.classList.remove("scene-view");
+showWord("game");
+</script>
+</body>
+</html>
+
+<style id="talkabee-ski-panel-180">
+@media(min-width:761px){.panel{width:180px!important;min-width:180px!important;max-width:180px!important}}
+</style>

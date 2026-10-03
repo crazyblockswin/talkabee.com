@@ -1,0 +1,214 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Talk A Bee — Dog Show Adventure</title>
+<link rel="icon" type="image/png" href="images/talkabee-favicon.png">
+<style>
+*{box-sizing:border-box}
+html,body{margin:0;width:100%;height:100%;overflow:hidden;font-family:Arial,Helvetica,sans-serif;background:#063a66;color:#fff}
+.world{position:relative;width:100vw;height:100vh;background:url("images/Talk-A-Bee-Dog-Show-Adventure.jpg") center center/cover no-repeat}
+
+/* APPROVED TALK A BEE LEFT PANEL */
+.panel{position:fixed;z-index:1000;left:16px;top:16px;bottom:16px;width:180px;min-width:180px;max-width:180px;
+padding:14px;overflow-x:hidden;overflow-y:auto;border-radius:20px;border:1px solid rgba(255,255,255,.28);
+background:rgba(7,23,39,.31);box-shadow:0 12px 30px rgba(0,0,0,.24);backdrop-filter:blur(3px);-webkit-backdrop-filter:blur(3px)}
+.panel h1{font-size:19px;line-height:1.08;margin:4px 0 10px;text-shadow:0 2px 4px rgba(0,0,0,.55)}
+.label{font-size:9.5px;line-height:1.1;letter-spacing:.09em;font-weight:900;margin:9px 0 4px}
+.panel button,.panel select,.panel a{width:100%;min-height:34px;margin:4px 0;padding:8px 9px;border-radius:12px;
+border:1px solid rgba(255,255,255,.38);background:rgba(7,32,50,.54);color:#fff;font:800 12px/1.16 Arial,sans-serif;
+text-align:left;text-decoration:none}
+.panel button:hover,.panel a:hover{background:rgba(20,58,79,.70)}
+.panel button.active{background:rgba(78,69,219,.74)}
+.panel select{white-space:nowrap;text-overflow:ellipsis;overflow:hidden}
+
+/* APPROVED 520px SCRIPT CARD */
+.card{position:fixed;z-index:900;left:50%;bottom:16px;width:520px;max-width:520px;padding:14px 16px;
+border-radius:20px;border:1px solid rgba(255,255,255,.30);background:rgba(25,19,24,.38);
+box-shadow:0 12px 30px rgba(0,0,0,.28);backdrop-filter:blur(5px);-webkit-backdrop-filter:blur(5px);
+transform:translateX(-50%) scale(.67);transform-origin:bottom center}
+.card .kicker{font-size:15px;line-height:1.25;font-weight:900;letter-spacing:.10em;color:rgba(255,255,255,.96);
+text-shadow:0 1px 3px rgba(0,0,0,.78);margin:0 0 6px}
+.card h2{font-size:22px;line-height:1.08;margin:4px 0 7px;text-shadow:0 1px 3px rgba(0,0,0,.55)}
+.card p{font-size:18px;line-height:1.35;margin:4px 0 7px}
+.word{margin-top:8px;padding:10px 12px;border-radius:14px;background:rgba(88,88,88,.72);border:1px solid rgba(255,255,255,.20)}
+.word strong{display:block;font-size:22px;line-height:1.28}
+.translation{font-size:18px;line-height:1.35;margin-top:3px}
+.controls{display:flex;align-items:center;gap:8px;flex-wrap:nowrap;margin-top:8px}
+.controls button{width:auto;min-width:0;padding:9px 13px;border-radius:12px;border:1px solid rgba(255,255,255,.35);
+background:rgba(255,255,255,.88);color:#10283c;font:900 13px/1 Arial,sans-serif;white-space:nowrap}
+
+/* HOTSPOTS */
+.hotspot{position:absolute;z-index:8;border:0;background:transparent;opacity:0;cursor:pointer;border-radius:16px}
+.hotspot:hover,.hotspot:focus-visible{opacity:1;background:rgba(255,220,72,.28);outline:2px solid rgba(255,255,255,.90)}
+.challenge-mode .hotspot.target{opacity:1;background:rgba(255,199,48,.38);outline:4px solid #fff;box-shadow:0 0 0 7px rgba(255,200,50,.20)}
+
+/* APPROVED COMPACT PREVIOUS / NEXT CHEVRONS */
+.talkabee-prev-next-nav{position:fixed;top:18px;right:22px;z-index:2147483000;display:flex;align-items:center;overflow:hidden;
+border:2px solid rgba(255,255,255,.82);border-radius:999px;background:rgba(11,22,42,.24);
+box-shadow:0 5px 16px rgba(0,0,0,.16);backdrop-filter:blur(3px);-webkit-backdrop-filter:blur(3px)}
+.talkabee-prev-next-nav a{width:48px;height:48px;display:grid;place-items:center;text-decoration:none;color:#fff;
+font:900 38px/1 Arial,sans-serif;text-shadow:0 1px 3px rgba(0,0,0,.42)}
+.talkabee-prev-next-nav a+a{border-left:1px solid rgba(255,255,255,.36)}
+.talkabee-prev-next-nav a:hover,.talkabee-prev-next-nav a:focus-visible{background:rgba(255,255,255,.18);outline:none}
+
+/* SCENE VIEW */
+.scene-return{display:none;position:fixed;z-index:2147483001;left:18px;top:18px;padding:10px 14px;border-radius:12px;
+border:1px solid #fff;background:rgba(7,23,39,.65);color:#fff;font-weight:900}
+.scene-view .panel,.scene-view .card,.scene-view .talkabee-prev-next-nav{display:none}
+.scene-view .scene-return{display:block}
+
+@media(max-width:760px){
+ .panel{left:10px;top:10px;bottom:10px;width:180px;min-width:180px;max-width:180px;padding:11px}
+ .card{width:min(520px,calc(100vw - 32px));bottom:10px;transform:translateX(-50%) scale(.82)}
+ .talkabee-prev-next-nav{top:12px;right:12px}.talkabee-prev-next-nav a{width:42px;height:42px;font-size:33px}
+}
+</style>
+</head>
+<body>
+<nav class="talkabee-prev-next-nav" aria-label="Adventure navigation">
+  <a href="Talk-A-Bee-Skydiving-Adventure.html" aria-label="Previous adventure" title="Previous">‹</a>
+  <a href="Talk-A-Bee-Nighttime-Campground-Adventure.html" aria-label="Next adventure" title="Next">›</a>
+</nav>
+
+<main class="world" id="world">
+<button class="scene-return" id="sceneReturn">Return to Adventure</button>
+
+<aside class="panel">
+<h1>🐕 Dog Show Adventure</h1>
+<div class="label">LANGUAGE</div>
+<select id="lang">
+<option value="es">Spanish</option><option value="fr">French</option><option value="en">English</option>
+<option value="de">German</option><option value="it">Italian</option><option value="pt">Portuguese</option><option value="no">Norwegian</option>
+</select>
+<div class="label">VOICE</div>
+<select id="voice"><option value="">Browser Default</option></select>
+<button id="sceneView">◉ Scene View</button>
+
+<div class="label">DISCOVERY</div>
+<button id="discovery">🔎 Discovery — Click the Scene</button>
+
+<div class="label">ACTIVITIES</div>
+<button data-lesson="judge">1. Bee the Dog Show Judge</button>
+<button data-lesson="handlers">2. Meet the Dog Handlers</button>
+<button data-lesson="breeds">3. Explore the Dog Breeds</button>
+<button data-lesson="ring">4. Walk Around the Ring</button>
+<button data-lesson="judging">5. How Dogs Are Judged</button>
+<button data-lesson="awards">6. Awards at the Dog Show</button>
+<div class="label">CHALLENGES</div>
+<button data-ch="0">1. Find Referee Bee</button>
+<button data-ch="1">2. Find the Golden Retriever</button>
+<button data-ch="2">3. Find the Dalmatian</button>
+<button data-ch="3">4. Find the German Shepherd</button>
+<button data-ch="4">5. Find the Dog Show Banner</button>
+<button data-ch="5">6. Find the Audience</button>
+<a href="index.html">← Return to Main Directory</a>
+</aside>
+
+<section class="card">
+<div class="kicker">AT THE DOG SHOW</div>
+<h2 id="title">Dog Show Adventure</h2>
+<p id="prompt">Click any object in the scene to hear its name.</p>
+<div class="word"><strong id="line">exposición canina</strong><div class="translation" id="translation">dog show</div></div>
+<p id="status"></p>
+<div class="controls">
+<button id="normal">🔊 Speak</button><button id="slow">🐢 Slow</button><button id="replay">↻ Replay</button><button id="nextPhrase">Next phrase →</button>
+</div>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- Hotspots mapped to the approved Dog Show keeper JPG. -->
+<button class="hotspot" data-word="bee" style="left:10%;top:39%;width:13%;height:27%" aria-label="Referee Bee"></button>
+<button class="hotspot" data-word="clipboard" style="left:15%;top:51%;width:8%;height:12%" aria-label="Clipboard"></button>
+<button class="hotspot" data-word="golden" style="left:24%;top:52%;width:10%;height:20%" aria-label="Golden Retriever"></button>
+<button class="hotspot" data-word="smallwhite" style="left:32%;top:58%;width:7%;height:14%" aria-label="Small white dog"></button>
+<button class="hotspot" data-word="bordercollie" style="left:38%;top:55%;width:9%;height:18%" aria-label="Border Collie"></button>
+<button class="hotspot" data-word="spaniel" style="left:46%;top:58%;width:8%;height:16%" aria-label="Spaniel"></button>
+<button class="hotspot" data-word="brown" style="left:55%;top:53%;width:9%;height:21%" aria-label="Brown dog"></button>
+<button class="hotspot" data-word="dalmatian" style="left:64%;top:50%;width:9%;height:23%" aria-label="Dalmatian"></button>
+<button class="hotspot" data-word="bulldog" style="left:71%;top:59%;width:8%;height:15%" aria-label="Bulldog"></button>
+<button class="hotspot" data-word="pomeranian" style="left:77%;top:58%;width:8%;height:16%" aria-label="Pomeranian"></button>
+<button class="hotspot" data-word="shepherd" style="left:85%;top:51%;width:9%;height:24%" aria-label="German Shepherd"></button>
+<button class="hotspot" data-word="terrier" style="left:92%;top:59%;width:7%;height:17%" aria-label="Terrier"></button>
+<button class="hotspot" data-word="handlers" style="left:25%;top:41%;width:72%;height:27%" aria-label="Dog handlers"></button>
+<button class="hotspot" data-word="leash" style="left:51%;top:49%;width:7%;height:20%" aria-label="Dog leash"></button>
+<button class="hotspot" data-word="banner" style="left:47%;top:3%;width:39%;height:18%" aria-label="Dog Show banner"></button>
+<button class="hotspot" data-word="audience" style="left:33%;top:22%;width:64%;height:24%" aria-label="Audience"></button>
+<button class="hotspot" data-word="fence" style="left:17%;top:43%;width:83%;height:13%" aria-label="Show ring fence"></button>
+<button class="hotspot" data-word="flowers" style="left:0%;top:68%;width:22%;height:31%" aria-label="Flowers"></button>
+<button class="hotspot" data-word="turf" style="left:20%;top:72%;width:80%;height:28%" aria-label="Show ring turf"></button>
+<button class="hotspot" data-word="lights" style="left:0%;top:0%;width:46%;height:21%" aria-label="Arena lights"></button>
+
+</main>
+
+<script>
+const EN={game:"dog show",bee:"Referee Bee",clipboard:"clipboard",golden:"Golden Retriever",smallwhite:"small white dog",bordercollie:"Border Collie",spaniel:"spaniel",brown:"brown dog",dalmatian:"Dalmatian",bulldog:"bulldog",pomeranian:"Pomeranian",shepherd:"German Shepherd",terrier:"terrier",handlers:"dog handlers",leash:"dog leash",banner:"dog show banner",audience:"audience",fence:"show ring fence",flowers:"flowers",turf:"show ring turf",lights:"arena lights"};
+const WORDS={
+es:{game:"exposición canina",bee:"abeja árbitro",clipboard:"portapapeles",golden:"Golden Retriever",smallwhite:"perro blanco pequeño",bordercollie:"Border Collie",spaniel:"spaniel",brown:"perro marrón",dalmatian:"dálmata",bulldog:"bulldog",pomeranian:"pomerania",shepherd:"pastor alemán",terrier:"terrier",handlers:"presentadores de perros",leash:"correa",banner:"pancarta de la exposición canina",audience:"público",fence:"valla de la pista",flowers:"flores",turf:"césped de la pista",lights:"luces de la arena"},
+fr:{game:"exposition canine",bee:"abeille arbitre",clipboard:"presse-papiers",golden:"Golden Retriever",smallwhite:"petit chien blanc",bordercollie:"Border Collie",spaniel:"épagneul",brown:"chien brun",dalmatian:"dalmatien",bulldog:"bouledogue",pomeranian:"spitz nain",shepherd:"berger allemand",terrier:"terrier",handlers:"présentateurs de chiens",leash:"laisse",banner:"bannière de l'exposition canine",audience:"public",fence:"barrière du ring",flowers:"fleurs",turf:"gazon du ring",lights:"lumières de l'arène"},
+en:{...EN},
+de:{game:"Hundeausstellung",bee:"Schiedsrichter-Biene",clipboard:"Klemmbrett",golden:"Golden Retriever",smallwhite:"kleiner weißer Hund",bordercollie:"Border Collie",spaniel:"Spaniel",brown:"brauner Hund",dalmatian:"Dalmatiner",bulldog:"Bulldogge",pomeranian:"Zwergspitz",shepherd:"Deutscher Schäferhund",terrier:"Terrier",handlers:"Hundeführer",leash:"Hundeleine",banner:"Hundeausstellungsbanner",audience:"Publikum",fence:"Ausstellungsring-Zaun",flowers:"Blumen",turf:"Ringrasen",lights:"Hallenbeleuchtung"},
+it:{game:"mostra canina",bee:"ape arbitro",clipboard:"cartellina",golden:"Golden Retriever",smallwhite:"cagnolino bianco",bordercollie:"Border Collie",spaniel:"spaniel",brown:"cane marrone",dalmatian:"dalmata",bulldog:"bulldog",pomeranian:"volpino di Pomerania",shepherd:"pastore tedesco",terrier:"terrier",handlers:"conduttori dei cani",leash:"guinzaglio",banner:"striscione della mostra canina",audience:"pubblico",fence:"recinzione del ring",flowers:"fiori",turf:"prato del ring",lights:"luci dell'arena"},
+pt:{game:"exposição canina",bee:"abelha árbitra",clipboard:"prancheta",golden:"Golden Retriever",smallwhite:"cachorro branco pequeno",bordercollie:"Border Collie",spaniel:"spaniel",brown:"cachorro marrom",dalmatian:"dálmata",bulldog:"buldogue",pomeranian:"lulu da Pomerânia",shepherd:"pastor alemão",terrier:"terrier",handlers:"apresentadores de cães",leash:"guia",banner:"faixa da exposição canina",audience:"público",fence:"cerca da pista",flowers:"flores",turf:"gramado da pista",lights:"luzes da arena"},
+no:{game:"hundeutstilling",bee:"dommerbie",clipboard:"skrivebrett",golden:"Golden Retriever",smallwhite:"liten hvit hund",bordercollie:"Border Collie",spaniel:"spaniel",brown:"brun hund",dalmatian:"dalmatiner",bulldog:"bulldog",pomeranian:"pomeranian",shepherd:"schæferhund",terrier:"terrier",handlers:"hundeførere",leash:"hundebånd",banner:"hundeutstillingsbanner",audience:"publikum",fence:"utstillingsringgjerde",flowers:"blomster",turf:"gress i ringen",lights:"arenalys"}};
+const SPEECH_LANG={es:"es-ES",fr:"fr-FR",en:"en-US",de:"de-DE",it:"it-IT",pt:"pt-PT",no:"nb-NO"};
+const lessons={
+en:{judge:["Referee Bee stands beside the show ring with a clipboard and watches each dog carefully.","At a dog show, the judge compares dogs using the standards for their breed."],handlers:["The handlers stand in a line with their dogs and keep each dog calm and attentive.","A handler guides the dog around the ring and helps the judge see how it stands and moves."],breeds:["Many different dog breeds can compete at a dog show.","This lineup includes dogs with different sizes, coats, colors, ears, and body shapes."],ring:["The dogs and handlers enter the fenced show ring and follow the judge's directions.","The green turf gives them a clear, comfortable surface for walking and standing."],judging:["A dog show judge looks at each dog's structure, movement, coat, and overall appearance.","The dogs may stand for examination and then move around the ring."],awards:["After judging is complete, awards may be presented to dogs selected in their classes.","The audience watches from the stands while the handlers celebrate their dogs."]},
+es:{judge:["La abeja árbitro está junto a la pista con un portapapeles y observa cuidadosamente a cada perro.","En una exposición canina, el juez compara los perros según los estándares de su raza."],handlers:["Los presentadores están en fila con sus perros y los mantienen tranquilos y atentos.","Un presentador guía al perro por la pista y ayuda al juez a observar cómo se para y se mueve."],breeds:["Muchas razas diferentes pueden competir en una exposición canina.","Esta fila incluye perros de distintos tamaños, pelajes, colores, orejas y formas corporales."],ring:["Los perros y sus presentadores entran en la pista cercada y siguen las instrucciones del juez.","El césped verde ofrece una superficie cómoda para caminar y permanecer de pie."],judging:["El juez observa la estructura, el movimiento, el pelaje y la apariencia general de cada perro.","Los perros pueden quedarse quietos para ser examinados y después caminar por la pista."],awards:["Cuando termina la evaluación, se pueden entregar premios a los perros seleccionados en sus categorías.","El público observa desde las gradas mientras los presentadores celebran a sus perros."]},
+fr:{judge:["L'abeille arbitre se tient près du ring avec un presse-papiers et observe attentivement chaque chien.","Dans une exposition canine, le juge compare les chiens selon les standards de leur race."],handlers:["Les présentateurs sont alignés avec leurs chiens et les gardent calmes et attentifs.","Un présentateur guide le chien autour du ring et aide le juge à observer sa posture et ses mouvements."],breeds:["De nombreuses races de chiens peuvent participer à une exposition canine.","Cette ligne présente des chiens de tailles, pelages, couleurs, oreilles et silhouettes différents."],ring:["Les chiens et leurs présentateurs entrent dans le ring clôturé et suivent les instructions du juge.","Le gazon vert offre une surface confortable pour marcher et se tenir debout."],judging:["Le juge observe la structure, le mouvement, le pelage et l'apparence générale de chaque chien.","Les chiens peuvent rester immobiles pour l'examen puis marcher autour du ring."],awards:["Une fois le jugement terminé, des récompenses peuvent être remises aux chiens sélectionnés dans leurs catégories.","Le public regarde depuis les gradins pendant que les présentateurs célèbrent leurs chiens."]},
+de:{judge:["Die Schiedsrichter-Biene steht mit einem Klemmbrett am Ausstellungsring und beobachtet jeden Hund genau.","Bei einer Hundeausstellung vergleicht der Richter die Hunde anhand der Standards ihrer Rasse."],handlers:["Die Hundeführer stehen mit ihren Hunden in einer Reihe und halten sie ruhig und aufmerksam.","Ein Hundeführer führt den Hund durch den Ring und zeigt dem Richter, wie er steht und sich bewegt."],breeds:["Viele verschiedene Hunderassen können an einer Hundeausstellung teilnehmen.","In dieser Reihe stehen Hunde mit unterschiedlichen Größen, Fellarten, Farben, Ohren und Körperformen."],ring:["Hunde und Hundeführer betreten den eingezäunten Ring und folgen den Anweisungen des Richters.","Der grüne Rasen bietet eine angenehme Fläche zum Gehen und Stehen."],judging:["Der Richter betrachtet Körperbau, Bewegung, Fell und Gesamterscheinung jedes Hundes.","Die Hunde stehen zur Untersuchung still und bewegen sich anschließend durch den Ring."],awards:["Nach der Bewertung können ausgewählte Hunde in ihren Klassen ausgezeichnet werden.","Das Publikum schaut von den Tribünen zu, während die Hundeführer ihre Hunde feiern."]},
+it:{judge:["L'ape arbitro sta accanto al ring con una cartellina e osserva attentamente ogni cane.","In una mostra canina, il giudice confronta i cani secondo gli standard della loro razza."],handlers:["I conduttori stanno in fila con i loro cani e li mantengono calmi e attenti.","Un conduttore guida il cane nel ring e aiuta il giudice a vedere come sta in piedi e come si muove."],breeds:["Molte razze diverse possono partecipare a una mostra canina.","Questa fila comprende cani con dimensioni, mantelli, colori, orecchie e forme del corpo differenti."],ring:["I cani e i conduttori entrano nel ring recintato e seguono le indicazioni del giudice.","Il prato verde offre una superficie comoda per camminare e stare in piedi."],judging:["Il giudice osserva la struttura, il movimento, il mantello e l'aspetto generale di ogni cane.","I cani possono restare fermi per l'esame e poi muoversi nel ring."],awards:["Dopo il giudizio, possono essere assegnati premi ai cani scelti nelle varie classi.","Il pubblico guarda dalle tribune mentre i conduttori festeggiano i loro cani."]},
+pt:{judge:["A abelha árbitra fica ao lado da pista com uma prancheta e observa cada cão com atenção.","Em uma exposição canina, o juiz compara os cães de acordo com os padrões de sua raça."],handlers:["Os apresentadores ficam em fila com seus cães e os mantêm calmos e atentos.","Um apresentador conduz o cão pela pista e ajuda o juiz a observar como ele fica em pé e se movimenta."],breeds:["Muitas raças diferentes podem competir em uma exposição canina.","Esta fila inclui cães com tamanhos, pelos, cores, orelhas e formatos de corpo diferentes."],ring:["Os cães e apresentadores entram na pista cercada e seguem as orientações do juiz.","O gramado verde oferece uma superfície confortável para caminhar e ficar em pé."],judging:["O juiz observa a estrutura, o movimento, a pelagem e a aparência geral de cada cão.","Os cães podem ficar parados para exame e depois caminhar pela pista."],awards:["Depois do julgamento, prêmios podem ser entregues aos cães selecionados em suas classes.","O público acompanha das arquibancadas enquanto os apresentadores comemoram seus cães."]},
+no:{judge:["Dommerbien står ved utstillingsringen med et skrivebrett og følger nøye med på hver hund.","På en hundeutstilling sammenligner dommeren hundene etter standardene for rasen."],handlers:["Hundeførerne står på rekke med hundene og holder dem rolige og oppmerksomme.","En hundefører leder hunden rundt i ringen og hjelper dommeren å se hvordan den står og beveger seg."],breeds:["Mange forskjellige hunderaser kan delta på en hundeutstilling.","Denne rekken har hunder med forskjellige størrelser, pelstyper, farger, ører og kroppsformer."],ring:["Hundene og førerne går inn i den inngjerdede utstillingsringen og følger dommerens instrukser.","Det grønne gresset gir en behagelig overflate for å gå og stå."],judging:["Dommeren ser på hver hunds kroppsbygning, bevegelser, pels og helhetsinntrykk.","Hundene kan stå stille for undersøkelse og deretter bevege seg rundt i ringen."],awards:["Etter bedømmingen kan utvalgte hunder få premier i klassene sine.","Publikum følger med fra tribunene mens hundeførerne feirer hundene sine."]}};
+const challengeOrder=["bee","golden","dalmatian","shepherd","banner","audience"];
+const SOUND_MAP={};
+const langSel=document.getElementById("lang"),voiceSel=document.getElementById("voice");
+const title=document.getElementById("title"),prompt=document.getElementById("prompt"),line=document.getElementById("line"),translation=document.getElementById("translation"),status=document.getElementById("status"),world=document.getElementById("world");
+let lastWord="game",activeLesson="",lessonPhrase=1,challenge=-1,lastSpoken="";
+function voices(){return ("speechSynthesis" in window)?speechSynthesis.getVoices():[]}
+function fillVoices(){const old=localStorage.getItem("talkabee-dogshow-voice-"+langSel.value)||"";voiceSel.innerHTML='<option value="">Browser Default</option>';voices().forEach(v=>{const o=document.createElement("option");o.value=v.name;o.textContent=v.name+(v.lang?" — "+v.lang:"");voiceSel.appendChild(o)});if([...voiceSel.options].some(o=>o.value===old))voiceSel.value=old}
+if("speechSynthesis" in window){speechSynthesis.onvoiceschanged=fillVoices;fillVoices();setTimeout(fillVoices,150);setTimeout(fillVoices,600);setTimeout(fillVoices,1500)}
+voiceSel.onchange=()=>localStorage.setItem("talkabee-dogshow-voice-"+langSel.value,voiceSel.value);
+function speak(text,rate=.88,onend=null){if(!text||!("speechSynthesis" in window)){if(onend)onend();return}speechSynthesis.cancel();setTimeout(()=>{const u=new SpeechSynthesisUtterance(text);u.lang=SPEECH_LANG[langSel.value]||langSel.value;u.rate=rate;const v=speechSynthesis.getVoices().find(x=>x.name===voiceSel.value);if(v)u.voice=v;if(onend)u.onend=onend;speechSynthesis.speak(u)},50);lastSpoken=text}
+function stopSound(){document.querySelectorAll("audio[data-talkabee-sound]").forEach(a=>{a.pause();a.currentTime=0;a.remove()})}
+function playSound(key){stopSound();const src=SOUND_MAP[key];if(!src)return;const a=new Audio(src);a.dataset.talkabeeSound="1";document.body.appendChild(a);a.play().catch(()=>{});a.onended=()=>a.remove()}
+function showWord(key){activeLesson="";lastWord=key;lessonPhrase=1;title.textContent="Click & Discover";prompt.textContent="You found "+(EN[key]||key)+".";line.textContent=WORDS[langSel.value][key]||EN[key]||key;translation.textContent=langSel.value==="en"?"":(EN[key]||key)}
+document.querySelectorAll(".hotspot").forEach(b=>b.onclick=()=>{const key=b.dataset.word;showWord(key);let played=false;const after=()=>{if(played)return;played=true;playSound(key)};speak(WORDS[langSel.value][key]||EN[key]||key,.82,after);setTimeout(after,1500);if(challenge>=0){if(key===challengeOrder[challenge]){status.textContent="✓ Nice find!";status.style.color="#9dffbf"}else{status.textContent="Not that one — keep looking.";status.style.color="#ffe28a"}}});
+function clearChallenge(){challenge=-1;world.classList.remove("challenge-mode");document.querySelectorAll(".hotspot").forEach(h=>h.classList.remove("target"));status.textContent=""}
+document.getElementById("discovery").onclick=()=>{clearChallenge();activeLesson="";lastWord="game";title.textContent="Click & Discover";prompt.textContent="Click any object in the scene to hear its name.";line.textContent=WORDS[langSel.value].game;translation.textContent=langSel.value==="en"?"":EN.game};
+document.querySelectorAll("[data-ch]").forEach(b=>b.onclick=()=>{activeLesson="";lastWord="";challenge=+b.dataset.ch;world.classList.add("challenge-mode");document.querySelectorAll(".hotspot").forEach(h=>h.classList.toggle("target",h.dataset.word===challengeOrder[challenge]));title.textContent="Challenge "+(challenge+1)+" of 6";prompt.textContent=b.textContent.replace(/^[0-9]+\.\s*/,"");line.textContent=WORDS[langSel.value][challengeOrder[challenge]];translation.textContent=langSel.value==="en"?"":EN[challengeOrder[challenge]];status.textContent=""});
+function showLesson(key,speakIt=false){clearChallenge();activeLesson=key;lastWord="";lessonPhrase=Math.max(0,Math.min(1,lessonPhrase));const a=lessons[langSel.value][key],e=lessons.en[key],btn=document.querySelector(`[data-lesson="${key}"]`);title.textContent=btn?btn.textContent.replace(/^[0-9]+\.\s*/,""):"Dog Show Adventure";prompt.textContent=a[0];line.textContent=a[lessonPhrase];translation.textContent=langSel.value==="en"?"":e[lessonPhrase];if(speakIt)speak(a[lessonPhrase])}
+document.querySelectorAll("[data-lesson]").forEach(b=>b.onclick=()=>{lessonPhrase=1;showLesson(b.dataset.lesson,true)});
+function currentSpeechText(){if(activeLesson)return lessons[langSel.value][activeLesson][lessonPhrase];if(lastWord)return WORDS[langSel.value][lastWord]||EN[lastWord];return line.textContent}
+document.getElementById("normal").onclick=()=>speak(currentSpeechText(),.82);
+document.getElementById("slow").onclick=()=>speak(currentSpeechText(),.58);
+document.getElementById("replay").onclick=()=>speak(lastSpoken||currentSpeechText(),.82);
+document.getElementById("nextPhrase").onclick=()=>{if(!activeLesson){const keys=Object.keys(EN),i=Math.max(0,keys.indexOf(lastWord));showWord(keys[(i+1)%keys.length]);speak(currentSpeechText(),.82);return}lessonPhrase=(lessonPhrase+1)%2;showLesson(activeLesson,true)};
+langSel.onchange=()=>{fillVoices();if(activeLesson)showLesson(activeLesson,false);else if(lastWord)showWord(lastWord)};
+document.getElementById("sceneView").onclick=()=>document.body.classList.add("scene-view");
+document.getElementById("sceneReturn").onclick=()=>document.body.classList.remove("scene-view");
+showWord("game");
+</script>
+</body>
+</html>
+
+<style id="talkabee-ski-panel-180">
+@media(min-width:761px){.panel{width:180px!important;min-width:180px!important;max-width:180px!important}}
+</style>

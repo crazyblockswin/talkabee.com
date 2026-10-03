@@ -1,0 +1,216 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Talk A Bee — Golf Adventure</title>
+<link rel="icon" type="image/png" href="images/talkabee-favicon.png">
+<style>
+*{box-sizing:border-box}
+html,body{margin:0;width:100%;height:100%;overflow:hidden;font-family:Arial,Helvetica,sans-serif;background:#063a66;color:#fff}
+.world{position:relative;width:100vw;height:100vh;background:url("images/Talk-A-Bee-Golf-Adventure.jpg") center center/cover no-repeat}
+
+/* APPROVED TALK A BEE LEFT PANEL */
+.panel{position:fixed;z-index:1000;left:16px;top:16px;bottom:16px;width:180px;min-width:180px;max-width:180px;
+padding:14px;overflow-x:hidden;overflow-y:auto;border-radius:20px;border:1px solid rgba(255,255,255,.28);
+background:rgba(7,23,39,.31);box-shadow:0 12px 30px rgba(0,0,0,.24);backdrop-filter:blur(3px);-webkit-backdrop-filter:blur(3px)}
+.panel h1{font-size:19px;line-height:1.08;margin:4px 0 10px;text-shadow:0 2px 4px rgba(0,0,0,.55)}
+.label{font-size:9.5px;line-height:1.1;letter-spacing:.09em;font-weight:900;margin:9px 0 4px}
+.panel button,.panel select,.panel a{width:100%;min-height:34px;margin:4px 0;padding:8px 9px;border-radius:12px;
+border:1px solid rgba(255,255,255,.38);background:rgba(7,32,50,.54);color:#fff;font:800 12px/1.16 Arial,sans-serif;
+text-align:left;text-decoration:none}
+.panel button:hover,.panel a:hover{background:rgba(20,58,79,.70)}
+.panel button.active{background:rgba(78,69,219,.74)}
+.panel select{white-space:nowrap;text-overflow:ellipsis;overflow:hidden}
+
+/* APPROVED 520px SCRIPT CARD */
+.card{position:fixed;z-index:900;left:50%;bottom:16px;width:520px;max-width:520px;padding:14px 16px;
+border-radius:20px;border:1px solid rgba(255,255,255,.30);background:rgba(25,19,24,.38);
+box-shadow:0 12px 30px rgba(0,0,0,.28);backdrop-filter:blur(5px);-webkit-backdrop-filter:blur(5px);
+transform:translateX(-50%) scale(.67);transform-origin:bottom center}
+.card .kicker{font-size:15px;line-height:1.25;font-weight:900;letter-spacing:.10em;color:rgba(255,255,255,.96);
+text-shadow:0 1px 3px rgba(0,0,0,.78);margin:0 0 6px}
+.card h2{font-size:22px;line-height:1.08;margin:4px 0 7px;text-shadow:0 1px 3px rgba(0,0,0,.55)}
+.card p{font-size:18px;line-height:1.35;margin:4px 0 7px}
+.word{margin-top:8px;padding:10px 12px;border-radius:14px;background:rgba(88,88,88,.72);border:1px solid rgba(255,255,255,.20)}
+.word strong{display:block;font-size:22px;line-height:1.28}
+.translation{font-size:18px;line-height:1.35;margin-top:3px}
+.controls{display:flex;align-items:center;gap:8px;flex-wrap:nowrap;margin-top:8px}
+.controls button{width:auto;min-width:0;padding:9px 13px;border-radius:12px;border:1px solid rgba(255,255,255,.35);
+background:rgba(255,255,255,.88);color:#10283c;font:900 13px/1 Arial,sans-serif;white-space:nowrap}
+
+/* HOTSPOTS */
+.hotspot{position:absolute;z-index:8;border:0;background:transparent;opacity:0;cursor:pointer;border-radius:16px}
+.hotspot:hover,.hotspot:focus-visible{opacity:1;background:rgba(255,220,72,.28);outline:2px solid rgba(255,255,255,.90)}
+.challenge-mode .hotspot.target{opacity:1;background:rgba(255,199,48,.38);outline:4px solid #fff;box-shadow:0 0 0 7px rgba(255,200,50,.20)}
+
+/* APPROVED COMPACT PREVIOUS / NEXT CHEVRONS */
+.talkabee-prev-next-nav{position:fixed;top:18px;right:22px;z-index:2147483000;display:flex;align-items:center;overflow:hidden;
+border:2px solid rgba(255,255,255,.82);border-radius:999px;background:rgba(11,22,42,.24);
+box-shadow:0 5px 16px rgba(0,0,0,.16);backdrop-filter:blur(3px);-webkit-backdrop-filter:blur(3px)}
+.talkabee-prev-next-nav a{width:48px;height:48px;display:grid;place-items:center;text-decoration:none;color:#fff;
+font:900 38px/1 Arial,sans-serif;text-shadow:0 1px 3px rgba(0,0,0,.42)}
+.talkabee-prev-next-nav a+a{border-left:1px solid rgba(255,255,255,.36)}
+.talkabee-prev-next-nav a:hover,.talkabee-prev-next-nav a:focus-visible{background:rgba(255,255,255,.18);outline:none}
+
+/* SCENE VIEW */
+.scene-return{display:none;position:fixed;z-index:2147483001;left:18px;top:18px;padding:10px 14px;border-radius:12px;
+border:1px solid #fff;background:rgba(7,23,39,.65);color:#fff;font-weight:900}
+.scene-view .panel,.scene-view .card,.scene-view .talkabee-prev-next-nav{display:none}
+.scene-view .scene-return{display:block}
+
+@media(max-width:760px){
+ .panel{left:10px;top:10px;bottom:10px;width:180px;min-width:180px;max-width:180px;padding:11px}
+ .card{width:min(520px,calc(100vw - 32px));bottom:10px;transform:translateX(-50%) scale(.82)}
+ .talkabee-prev-next-nav{top:12px;right:12px}.talkabee-prev-next-nav a{width:42px;height:42px;font-size:33px}
+}
+</style>
+</head>
+<body>
+<nav class="talkabee-prev-next-nav" aria-label="Adventure navigation">
+  <a href="Talk-A-Bee-River-Rafting-Adventure.html" aria-label="Previous adventure" title="Previous">‹</a>
+  <a href="Talk-A-Bee-Nighttime-Campground-Adventure.html" aria-label="Next adventure" title="Next">›</a>
+</nav>
+
+<main class="world" id="world">
+<button class="scene-return" id="sceneReturn">Return to Adventure</button>
+
+<aside class="panel">
+<h1>⛳ Golf Adventure</h1>
+<div class="label">LANGUAGE</div>
+<select id="lang">
+<option value="es">Spanish</option><option value="fr">French</option><option value="en">English</option>
+<option value="de">German</option><option value="it">Italian</option><option value="pt">Portuguese</option><option value="no">Norwegian</option>
+</select>
+<div class="label">VOICE</div>
+<select id="voice"><option value="">Browser Default</option></select>
+<button id="sceneView">◉ Scene View</button>
+
+<div class="label">DISCOVERY</div>
+<button id="discovery">🔎 Discovery — Click the Scene</button>
+
+<div class="label">ACTIVITIES</div>
+<button data-lesson="crew">1. Meet the Golf Crew</button>
+<button data-lesson="swing">2. Watch the Golf Swing</button>
+<button data-lesson="green">3. Explore the Putting Green</button>
+<button data-lesson="course">4. Tour the Golf Course</button>
+<button data-lesson="equipment">5. Golf Clubs and Carts</button>
+<button data-lesson="scenery">6. Explore the Mountain Resort</button>
+<div class="label">CHALLENGES</div>
+<button data-ch="0">1. Find Grandpa</button>
+<button data-ch="1">2. Find Grandma</button>
+<button data-ch="2">3. Find the Bee</button>
+<button data-ch="3">4. Find the Golf Ball</button>
+<button data-ch="4">5. Find the Yellow Flag</button>
+<button data-ch="5">6. Find the Waterfall</button>
+<a href="index.html">← Return to Main Directory</a>
+</aside>
+
+<section class="card">
+<div class="kicker">ON THE GOLF COURSE</div>
+<h2 id="title">Golf Adventure</h2>
+<p id="prompt">Click any object in the scene to hear its name.</p>
+<div class="word"><strong id="line">campo de golf</strong><div class="translation" id="translation">golf course</div></div>
+<p id="status"></p>
+<div class="controls">
+<button id="normal">🔊 Speak</button><button id="slow">🐢 Slow</button><button id="replay">↻ Replay</button><button id="nextPhrase">Next phrase →</button>
+</div>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- Hotspots mapped to the approved Golf keeper JPG. -->
+<button class="hotspot" data-word="grandpa" style="left:23%;top:49%;width:8%;height:25%" aria-label="Grandpa"></button>
+<button class="hotspot" data-word="grandma" style="left:29%;top:50%;width:7%;height:24%" aria-label="Grandma"></button>
+<button class="hotspot" data-word="bee" style="left:62%;top:53%;width:10%;height:23%" aria-label="Golf Bee"></button>
+<button class="hotspot" data-word="golfer" style="left:44%;top:51%;width:8%;height:26%" aria-label="Golfer"></button>
+<button class="hotspot" data-word="crew" style="left:19%;top:52%;width:56%;height:26%" aria-label="Golf crew"></button>
+<button class="hotspot" data-word="dog" style="left:69%;top:59%;width:7%;height:18%" aria-label="German Shepherd"></button>
+<button class="hotspot" data-word="smalldog" style="left:74%;top:68%;width:5%;height:10%" aria-label="Small dog"></button>
+<button class="hotspot" data-word="ball" style="left:60%;top:78%;width:5%;height:8%" aria-label="Golf ball"></button>
+<button class="hotspot" data-word="flag" style="left:66%;top:46%;width:7%;height:35%" aria-label="Yellow flag"></button>
+<button class="hotspot" data-word="club" style="left:46%;top:51%;width:11%;height:17%" aria-label="Golf club"></button>
+<button class="hotspot" data-word="green" style="left:18%;top:70%;width:68%;height:29%" aria-label="Putting green"></button>
+<button class="hotspot" data-word="bunker" style="left:84%;top:67%;width:16%;height:18%" aria-label="Sand bunker"></button>
+<button class="hotspot" data-word="cart" style="left:0%;top:50%;width:15%;height:20%" aria-label="Golf cart"></button>
+<button class="hotspot" data-word="carttwo" style="left:87%;top:50%;width:13%;height:17%" aria-label="Golf cart"></button>
+<button class="hotspot" data-word="pond" style="left:36%;top:44%;width:48%;height:19%" aria-label="Pond"></button>
+<button class="hotspot" data-word="waterfall" style="left:61%;top:39%;width:12%;height:13%" aria-label="Waterfall"></button>
+<button class="hotspot" data-word="clubhouse" style="left:77%;top:24%;width:23%;height:24%" aria-label="Clubhouse"></button>
+<button class="hotspot" data-word="mountain" style="left:39%;top:4%;width:45%;height:30%" aria-label="Snowy mountains"></button>
+<button class="hotspot" data-word="forest" style="left:0%;top:0%;width:35%;height:48%" aria-label="Pine forest"></button>
+<button class="hotspot" data-word="fairway" style="left:26%;top:33%;width:36%;height:19%" aria-label="Fairway"></button>
+
+</main>
+
+<script>
+const EN={game:"golf course",grandpa:"Grandpa",grandma:"Grandma",bee:"golf bee",golfer:"golfer",crew:"golf crew",dog:"German Shepherd",smalldog:"small dog",ball:"golf ball",flag:"yellow flag",club:"golf club",green:"putting green",bunker:"sand bunker",cart:"golf cart",carttwo:"golf cart",pond:"pond",waterfall:"waterfall",clubhouse:"clubhouse",mountain:"snowy mountains",forest:"pine forest",fairway:"fairway"};
+const WORDS={
+es:{game:"campo de golf",grandpa:"abuelo",grandma:"abuela",bee:"abeja golfista",golfer:"golfista",crew:"grupo de golf",dog:"pastor alemán",smalldog:"perro pequeño",ball:"pelota de golf",flag:"bandera amarilla",club:"palo de golf",green:"green",bunker:"búnker de arena",cart:"carrito de golf",carttwo:"carrito de golf",pond:"estanque",waterfall:"cascada",clubhouse:"casa club",mountain:"montañas nevadas",forest:"bosque de pinos",fairway:"calle"},
+fr:{game:"terrain de golf",grandpa:"grand-père",grandma:"grand-mère",bee:"abeille golfeuse",golfer:"golfeur",crew:"groupe de golf",dog:"berger allemand",smalldog:"petit chien",ball:"balle de golf",flag:"drapeau jaune",club:"club de golf",green:"green",bunker:"bunker de sable",cart:"voiturette de golf",carttwo:"voiturette de golf",pond:"étang",waterfall:"cascade",clubhouse:"club-house",mountain:"montagnes enneigées",forest:"forêt de pins",fairway:"fairway"},
+en:{...EN},
+de:{game:"Golfplatz",grandpa:"Opa",grandma:"Oma",bee:"Golf-Biene",golfer:"Golfer",crew:"Golfgruppe",dog:"Deutscher Schäferhund",smalldog:"kleiner Hund",ball:"Golfball",flag:"gelbe Fahne",club:"Golfschläger",green:"Putting-Grün",bunker:"Sandbunker",cart:"Golfwagen",carttwo:"Golfwagen",pond:"Teich",waterfall:"Wasserfall",clubhouse:"Clubhaus",mountain:"schneebedeckte Berge",forest:"Kiefernwald",fairway:"Fairway"},
+it:{game:"campo da golf",grandpa:"nonno",grandma:"nonna",bee:"ape golfista",golfer:"golfista",crew:"gruppo di golf",dog:"pastore tedesco",smalldog:"cane piccolo",ball:"pallina da golf",flag:"bandiera gialla",club:"mazza da golf",green:"green",bunker:"bunker di sabbia",cart:"golf cart",carttwo:"golf cart",pond:"laghetto",waterfall:"cascata",clubhouse:"clubhouse",mountain:"montagne innevate",forest:"pineta",fairway:"fairway"},
+pt:{game:"campo de golfe",grandpa:"avô",grandma:"avó",bee:"abelha golfista",golfer:"golfista",crew:"grupo de golfe",dog:"pastor alemão",smalldog:"cachorro pequeno",ball:"bola de golfe",flag:"bandeira amarela",club:"taco de golfe",green:"green",bunker:"bunker de areia",cart:"carrinho de golfe",carttwo:"carrinho de golfe",pond:"lago",waterfall:"cachoeira",clubhouse:"clube",mountain:"montanhas nevadas",forest:"floresta de pinheiros",fairway:"fairway"},
+no:{game:"golfbane",grandpa:"bestefar",grandma:"bestemor",bee:"golfbie",golfer:"golfspiller",crew:"golfgruppe",dog:"schæferhund",smalldog:"liten hund",ball:"golfball",flag:"gult flagg",club:"golfkølle",green:"puttinggreen",bunker:"sandbunker",cart:"golfbil",carttwo:"golfbil",pond:"dam",waterfall:"foss",clubhouse:"klubbhus",mountain:"snødekte fjell",forest:"furuskog",fairway:"fairway"}};
+const SPEECH_LANG={es:"es-ES",fr:"fr-FR",en:"en-US",de:"de-DE",it:"it-IT",pt:"pt-PT",no:"nb-NO"};
+const lessons={
+en:{crew:["Grandma, Grandpa, the children, Bee, and the dogs have gathered for a day on the golf course.","The whole crew watches as the golfer takes a shot toward the green."],swing:["A golfer uses a club to strike the golf ball toward a target.","A smooth swing helps send the ball in the intended direction."],green:["The putting green is the closely cut grass surrounding the hole and flag.","Golfers usually use a putter on the green to roll the ball toward the hole."],course:["A golf course includes fairways, greens, sand bunkers, trees, and sometimes ponds or streams.","Players travel from hole to hole while trying to complete each one in as few strokes as possible."],equipment:["Golfers use different clubs for different kinds of shots, and golf carts can help people travel around a large course.","Golf bags carry the clubs and other equipment used during a round."],scenery:["This mountain golf course has pine forests, a pond, a waterfall, flowers, and snowy peaks.","The clubhouse overlooks the course and gives visitors a place to gather."]},
+es:{crew:["La abuela, el abuelo, los niños, la abeja y los perros se han reunido para pasar un día en el campo de golf.","Todo el grupo observa mientras el golfista golpea la pelota hacia el green."],swing:["Un golfista usa un palo para golpear la pelota hacia un objetivo.","Un swing suave ayuda a enviar la pelota en la dirección deseada."],green:["El green es el césped corto que rodea el hoyo y la bandera.","Los golfistas suelen usar un putter en el green para hacer rodar la pelota hacia el hoyo."],course:["Un campo de golf incluye calles, greens, búnkeres de arena, árboles y a veces estanques o arroyos.","Los jugadores avanzan de hoyo en hoyo intentando completar cada uno con el menor número de golpes posible."],equipment:["Los golfistas usan diferentes palos para diferentes golpes, y los carritos ayudan a recorrer un campo grande.","Las bolsas de golf llevan los palos y otros equipos utilizados durante una ronda."],scenery:["Este campo de montaña tiene bosques de pinos, un estanque, una cascada, flores y picos nevados.","La casa club domina el campo y ofrece un lugar para reunirse."]},
+fr:{crew:["Grand-mère, grand-père, les enfants, l'abeille et les chiens sont réunis pour une journée sur le terrain de golf.","Tout le groupe regarde le golfeur frapper la balle vers le green."],swing:["Un golfeur utilise un club pour frapper la balle vers une cible.","Un mouvement fluide aide à envoyer la balle dans la direction souhaitée."],green:["Le green est l'herbe très courte autour du trou et du drapeau.","Les golfeurs utilisent généralement un putter sur le green pour faire rouler la balle vers le trou."],course:["Un terrain de golf comprend des fairways, des greens, des bunkers de sable, des arbres et parfois des étangs ou des ruisseaux.","Les joueurs passent d'un trou à l'autre en essayant de terminer chacun avec le moins de coups possible."],equipment:["Les golfeurs utilisent différents clubs selon les coups, et les voiturettes facilitent les déplacements sur un grand parcours.","Les sacs de golf transportent les clubs et le reste de l'équipement."],scenery:["Ce terrain de montagne possède des forêts de pins, un étang, une cascade, des fleurs et des sommets enneigés.","Le club-house domine le parcours et offre un lieu de rassemblement."]},
+de:{crew:["Oma, Opa, die Kinder, die Biene und die Hunde verbringen gemeinsam einen Tag auf dem Golfplatz.","Die ganze Gruppe schaut zu, während der Golfer den Ball in Richtung Grün schlägt."],swing:["Ein Golfer benutzt einen Schläger, um den Golfball in Richtung eines Ziels zu schlagen.","Ein gleichmäßiger Schwung hilft, den Ball in die gewünschte Richtung zu schicken."],green:["Das Putting-Grün ist das kurz geschnittene Gras rund um Loch und Fahne.","Auf dem Grün benutzen Golfer normalerweise einen Putter, um den Ball zum Loch zu rollen."],course:["Ein Golfplatz umfasst Fairways, Grüns, Sandbunker, Bäume und manchmal Teiche oder Bäche.","Die Spieler gehen von Loch zu Loch und versuchen, jedes mit möglichst wenigen Schlägen zu beenden."],equipment:["Golfer verwenden verschiedene Schläger für verschiedene Schläge, und Golfwagen helfen bei der Fortbewegung auf einem großen Platz.","Golftaschen tragen Schläger und andere Ausrüstung."],scenery:["Dieser Berggolfplatz hat Kiefernwälder, einen Teich, einen Wasserfall, Blumen und schneebedeckte Gipfel.","Das Clubhaus blickt über den Platz und bietet Besuchern einen Treffpunkt."]},
+it:{crew:["La nonna, il nonno, i bambini, l'ape e i cani sono riuniti per una giornata sul campo da golf.","Tutto il gruppo guarda mentre il golfista colpisce la pallina verso il green."],swing:["Un golfista usa una mazza per colpire la pallina verso un bersaglio.","Uno swing fluido aiuta a mandare la pallina nella direzione desiderata."],green:["Il green è l'erba tagliata molto corta intorno alla buca e alla bandiera.","Sul green i golfisti usano normalmente un putter per far rotolare la pallina verso la buca."],course:["Un campo da golf comprende fairway, green, bunker di sabbia, alberi e a volte laghetti o ruscelli.","I giocatori passano da una buca all'altra cercando di completarle con il minor numero possibile di colpi."],equipment:["I golfisti usano mazze diverse per colpi diversi e i golf cart aiutano a spostarsi su un campo grande.","Le sacche da golf trasportano le mazze e le altre attrezzature."],scenery:["Questo campo di montagna ha pinete, un laghetto, una cascata, fiori e cime innevate.","La clubhouse domina il percorso e offre ai visitatori un luogo dove riunirsi."]},
+pt:{crew:["A avó, o avô, as crianças, a abelha e os cães estão reunidos para um dia no campo de golfe.","Todo o grupo observa enquanto o golfista bate a bola em direção ao green."],swing:["Um golfista usa um taco para bater a bola em direção a um alvo.","Um movimento suave ajuda a enviar a bola na direção desejada."],green:["O green é a grama bem aparada ao redor do buraco e da bandeira.","No green, os golfistas normalmente usam um putter para rolar a bola em direção ao buraco."],course:["Um campo de golfe inclui fairways, greens, bunkers de areia, árvores e às vezes lagos ou riachos.","Os jogadores passam de buraco em buraco tentando completar cada um com o menor número possível de tacadas."],equipment:["Os golfistas usam tacos diferentes para tipos diferentes de tacadas, e os carrinhos ajudam a percorrer um campo grande.","As bolsas de golfe carregam os tacos e outros equipamentos."],scenery:["Este campo de montanha tem florestas de pinheiros, um lago, uma cachoeira, flores e picos nevados.","O clube tem vista para o campo e oferece aos visitantes um lugar para se reunir."]},
+no:{crew:["Bestemor, bestefar, barna, bien og hundene er samlet for en dag på golfbanen.","Hele gruppen ser på mens golfspilleren slår ballen mot greenen."],swing:["En golfspiller bruker en kølle til å slå golfballen mot et mål.","En jevn sving hjelper til med å sende ballen i ønsket retning."],green:["Puttinggreenen er det kortklipte gresset rundt hullet og flagget.","Golfspillere bruker vanligvis en putter på greenen for å rulle ballen mot hullet."],course:["En golfbane har fairwayer, greener, sandbunkere, trær og noen ganger dammer eller bekker.","Spillerne går fra hull til hull og prøver å fullføre hvert hull med så få slag som mulig."],equipment:["Golfspillere bruker forskjellige køller til forskjellige slag, og golfbiler kan gjøre det lettere å komme seg rundt på en stor bane.","Golfbager bærer køllene og annet utstyr."],scenery:["Denne fjellbanen har furuskog, en dam, en foss, blomster og snødekte topper.","Klubbhuset har utsikt over banen og gir besøkende et sted å samles."]}};
+const challengeOrder=["grandpa","grandma","bee","ball","flag","waterfall"];
+const SOUND_MAP={};
+const langSel=document.getElementById("lang"),voiceSel=document.getElementById("voice");
+const title=document.getElementById("title"),prompt=document.getElementById("prompt"),line=document.getElementById("line"),translation=document.getElementById("translation"),status=document.getElementById("status"),world=document.getElementById("world");
+let lastWord="game",activeLesson="",lessonPhrase=1,challenge=-1,lastSpoken="";
+function voices(){return ("speechSynthesis" in window)?speechSynthesis.getVoices():[]}
+function fillVoices(){const old=localStorage.getItem("talkabee-golf-voice-"+langSel.value)||"";voiceSel.innerHTML='<option value="">Browser Default</option>';voices().forEach(v=>{const o=document.createElement("option");o.value=v.name;o.textContent=v.name+(v.lang?" — "+v.lang:"");voiceSel.appendChild(o)});if([...voiceSel.options].some(o=>o.value===old))voiceSel.value=old}
+if("speechSynthesis" in window){speechSynthesis.onvoiceschanged=fillVoices;fillVoices();setTimeout(fillVoices,150);setTimeout(fillVoices,600);setTimeout(fillVoices,1500)}
+voiceSel.onchange=()=>localStorage.setItem("talkabee-golf-voice-"+langSel.value,voiceSel.value);
+function speak(text,rate=.88,onend=null){if(!text||!("speechSynthesis" in window)){if(onend)onend();return}speechSynthesis.cancel();setTimeout(()=>{const u=new SpeechSynthesisUtterance(text);u.lang=SPEECH_LANG[langSel.value]||langSel.value;u.rate=rate;const v=speechSynthesis.getVoices().find(x=>x.name===voiceSel.value);if(v)u.voice=v;if(onend)u.onend=onend;speechSynthesis.speak(u)},50);lastSpoken=text}
+function stopSound(){document.querySelectorAll("audio[data-talkabee-sound]").forEach(a=>{a.pause();a.currentTime=0;a.remove()})}
+function playSound(key){stopSound();const src=SOUND_MAP[key];if(!src)return;const a=new Audio(src);a.dataset.talkabeeSound="1";document.body.appendChild(a);a.play().catch(()=>{});a.onended=()=>a.remove()}
+function showWord(key){activeLesson="";lastWord=key;lessonPhrase=1;title.textContent="Click & Discover";prompt.textContent="You found "+(EN[key]||key)+".";line.textContent=WORDS[langSel.value][key]||EN[key]||key;translation.textContent=langSel.value==="en"?"":(EN[key]||key)}
+document.querySelectorAll(".hotspot").forEach(b=>b.onclick=()=>{const key=b.dataset.word;showWord(key);let played=false;const after=()=>{if(played)return;played=true;playSound(key)};speak(WORDS[langSel.value][key]||EN[key]||key,.82,after);setTimeout(after,1500);if(challenge>=0){if(key===challengeOrder[challenge]){status.textContent="✓ Nice find!";status.style.color="#9dffbf"}else{status.textContent="Not that one — keep looking.";status.style.color="#ffe28a"}}});
+function clearChallenge(){challenge=-1;world.classList.remove("challenge-mode");document.querySelectorAll(".hotspot").forEach(h=>h.classList.remove("target"));status.textContent=""}
+document.getElementById("discovery").onclick=()=>{clearChallenge();activeLesson="";lastWord="game";title.textContent="Click & Discover";prompt.textContent="Click any object in the scene to hear its name.";line.textContent=WORDS[langSel.value].game;translation.textContent=langSel.value==="en"?"":EN.game};
+document.querySelectorAll("[data-ch]").forEach(b=>b.onclick=()=>{activeLesson="";lastWord="";challenge=+b.dataset.ch;world.classList.add("challenge-mode");document.querySelectorAll(".hotspot").forEach(h=>h.classList.toggle("target",h.dataset.word===challengeOrder[challenge]));title.textContent="Challenge "+(challenge+1)+" of 6";prompt.textContent=b.textContent.replace(/^[0-9]+\.\s*/,"");line.textContent=WORDS[langSel.value][challengeOrder[challenge]];translation.textContent=langSel.value==="en"?"":EN[challengeOrder[challenge]];status.textContent=""});
+function showLesson(key,speakIt=false){clearChallenge();activeLesson=key;lastWord="";lessonPhrase=Math.max(0,Math.min(1,lessonPhrase));const a=lessons[langSel.value][key],e=lessons.en[key],btn=document.querySelector(`[data-lesson="${key}"]`);title.textContent=btn?btn.textContent.replace(/^[0-9]+\.\s*/,""):"Golf Adventure";prompt.textContent=a[0];line.textContent=a[lessonPhrase];translation.textContent=langSel.value==="en"?"":e[lessonPhrase];if(speakIt)speak(a[lessonPhrase])}
+document.querySelectorAll("[data-lesson]").forEach(b=>b.onclick=()=>{lessonPhrase=1;showLesson(b.dataset.lesson,true)});
+function currentSpeechText(){if(activeLesson)return lessons[langSel.value][activeLesson][lessonPhrase];if(lastWord)return WORDS[langSel.value][lastWord]||EN[lastWord];return line.textContent}
+document.getElementById("normal").onclick=()=>speak(currentSpeechText(),.82);
+document.getElementById("slow").onclick=()=>speak(currentSpeechText(),.58);
+document.getElementById("replay").onclick=()=>speak(lastSpoken||currentSpeechText(),.82);
+document.getElementById("nextPhrase").onclick=()=>{if(!activeLesson){const keys=Object.keys(EN),i=Math.max(0,keys.indexOf(lastWord));showWord(keys[(i+1)%keys.length]);speak(currentSpeechText(),.82);return}lessonPhrase=(lessonPhrase+1)%2;showLesson(activeLesson,true)};
+langSel.onchange=()=>{fillVoices();if(activeLesson)showLesson(activeLesson,false);else if(lastWord)showWord(lastWord)};
+document.getElementById("sceneView").onclick=()=>document.body.classList.add("scene-view");
+document.getElementById("sceneReturn").onclick=()=>document.body.classList.remove("scene-view");
+showWord("game");
+</script>
+</body>
+</html>
+
+<style id="talkabee-ski-panel-180">
+@media(min-width:761px){.panel{width:180px!important;min-width:180px!important;max-width:180px!important}}
+</style>

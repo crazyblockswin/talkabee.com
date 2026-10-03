@@ -1,0 +1,207 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Talk A Bee — Cave Adventure</title>
+<link rel="icon" type="image/png" href="images/talkabee-favicon.png">
+<style>
+*{box-sizing:border-box}
+html,body{margin:0;width:100%;height:100%;overflow:hidden;font-family:Arial,Helvetica,sans-serif;background:#063a66;color:#fff}
+.world{position:relative;width:100vw;height:100vh;background:url("images/Talk-A-Bee-Cave-Adventure.jpg") center center/cover no-repeat}
+
+/* APPROVED TALK A BEE LEFT PANEL */
+.panel{position:fixed;z-index:1000;left:16px;top:16px;bottom:16px;width:180px;min-width:180px;max-width:180px;
+padding:14px;overflow-x:hidden;overflow-y:auto;border-radius:20px;border:1px solid rgba(255,255,255,.28);
+background:rgba(7,23,39,.31);box-shadow:0 12px 30px rgba(0,0,0,.24);backdrop-filter:blur(3px);-webkit-backdrop-filter:blur(3px)}
+.panel h1{font-size:19px;line-height:1.08;margin:4px 0 10px;text-shadow:0 2px 4px rgba(0,0,0,.55)}
+.label{font-size:9.5px;line-height:1.1;letter-spacing:.09em;font-weight:900;margin:9px 0 4px}
+.panel button,.panel select,.panel a{width:100%;min-height:34px;margin:4px 0;padding:8px 9px;border-radius:12px;
+border:1px solid rgba(255,255,255,.38);background:rgba(7,32,50,.54);color:#fff;font:800 12px/1.16 Arial,sans-serif;
+text-align:left;text-decoration:none}
+.panel button:hover,.panel a:hover{background:rgba(20,58,79,.70)}
+.panel button.active{background:rgba(78,69,219,.74)}
+.panel select{white-space:nowrap;text-overflow:ellipsis;overflow:hidden}
+
+/* APPROVED 520px SCRIPT CARD */
+.card{position:fixed;z-index:900;left:50%;bottom:16px;width:520px;max-width:520px;padding:14px 16px;
+border-radius:20px;border:1px solid rgba(255,255,255,.30);background:rgba(25,19,24,.38);
+box-shadow:0 12px 30px rgba(0,0,0,.28);backdrop-filter:blur(5px);-webkit-backdrop-filter:blur(5px);
+transform:translateX(-50%) scale(.67);transform-origin:bottom center}
+.card .kicker{font-size:15px;line-height:1.25;font-weight:900;letter-spacing:.10em;color:rgba(255,255,255,.96);
+text-shadow:0 1px 3px rgba(0,0,0,.78);margin:0 0 6px}
+.card h2{font-size:22px;line-height:1.08;margin:4px 0 7px;text-shadow:0 1px 3px rgba(0,0,0,.55)}
+.card p{font-size:18px;line-height:1.35;margin:4px 0 7px}
+.word{margin-top:8px;padding:10px 12px;border-radius:14px;background:rgba(88,88,88,.72);border:1px solid rgba(255,255,255,.20)}
+.word strong{display:block;font-size:22px;line-height:1.28}
+.translation{font-size:18px;line-height:1.35;margin-top:3px}
+.controls{display:flex;align-items:center;gap:8px;flex-wrap:nowrap;margin-top:8px}
+.controls button{width:auto;min-width:0;padding:9px 13px;border-radius:12px;border:1px solid rgba(255,255,255,.35);
+background:rgba(255,255,255,.88);color:#10283c;font:900 13px/1 Arial,sans-serif;white-space:nowrap}
+
+/* HOTSPOTS */
+.hotspot{position:absolute;z-index:8;border:0;background:transparent;opacity:0;cursor:pointer;border-radius:16px}
+.hotspot:hover,.hotspot:focus-visible{opacity:1;background:rgba(255,220,72,.28);outline:2px solid rgba(255,255,255,.90)}
+.challenge-mode .hotspot.target{opacity:1;background:rgba(255,199,48,.38);outline:4px solid #fff;box-shadow:0 0 0 7px rgba(255,200,50,.20)}
+
+/* APPROVED COMPACT PREVIOUS / NEXT CHEVRONS */
+.talkabee-prev-next-nav{position:fixed;top:18px;right:22px;z-index:2147483000;display:flex;align-items:center;overflow:hidden;
+border:2px solid rgba(255,255,255,.82);border-radius:999px;background:rgba(11,22,42,.24);
+box-shadow:0 5px 16px rgba(0,0,0,.16);backdrop-filter:blur(3px);-webkit-backdrop-filter:blur(3px)}
+.talkabee-prev-next-nav a{width:48px;height:48px;display:grid;place-items:center;text-decoration:none;color:#fff;
+font:900 38px/1 Arial,sans-serif;text-shadow:0 1px 3px rgba(0,0,0,.42)}
+.talkabee-prev-next-nav a+a{border-left:1px solid rgba(255,255,255,.36)}
+.talkabee-prev-next-nav a:hover,.talkabee-prev-next-nav a:focus-visible{background:rgba(255,255,255,.18);outline:none}
+
+/* SCENE VIEW */
+.scene-return{display:none;position:fixed;z-index:2147483001;left:18px;top:18px;padding:10px 14px;border-radius:12px;
+border:1px solid #fff;background:rgba(7,23,39,.65);color:#fff;font-weight:900}
+.scene-view .panel,.scene-view .card,.scene-view .talkabee-prev-next-nav{display:none}
+.scene-view .scene-return{display:block}
+
+@media(max-width:760px){
+ .panel{left:10px;top:10px;bottom:10px;width:180px;min-width:180px;max-width:180px;padding:11px}
+ .card{width:min(520px,calc(100vw - 32px));bottom:10px;transform:translateX(-50%) scale(.82)}
+ .talkabee-prev-next-nav{top:12px;right:12px}.talkabee-prev-next-nav a{width:42px;height:42px;font-size:33px}
+}
+</style>
+</head>
+<body>
+<nav class="talkabee-prev-next-nav" aria-label="Adventure navigation">
+  <a href="Talk-A-Bee-Steam-Train-Adventure.html" aria-label="Previous adventure" title="Previous">‹</a>
+  <a href="Talk-A-Bee-Bicycle-Race-Adventure.html" aria-label="Next adventure" title="Next">›</a>
+</nav>
+
+<main class="world" id="world">
+<button class="scene-return" id="sceneReturn">Return to Adventure</button>
+
+<aside class="panel">
+<h1>🦇 Cave Adventure</h1>
+<div class="label">LANGUAGE</div>
+<select id="lang">
+<option value="es">Spanish</option><option value="fr">French</option><option value="en">English</option>
+<option value="de">German</option><option value="it">Italian</option><option value="pt">Portuguese</option><option value="no">Norwegian</option>
+</select>
+<div class="label">VOICE</div>
+<select id="voice"><option value="">Browser Default</option></select>
+<button id="sceneView">◉ Scene View</button>
+
+<div class="label">DISCOVERY</div>
+<button id="discovery">🔎 Discovery — Click the Scene</button>
+
+<div class="label">ACTIVITIES</div>
+<button data-lesson="explore">1. Explore the Cave</button>
+<button data-lesson="formations">2. Cave Formations</button>
+<button data-lesson="water">3. Follow the Cave Water</button>
+<button data-lesson="gear">4. Helmets & Headlamps</button>
+<button data-lesson="bats">5. Watch the Bats</button>
+<button data-lesson="group">6. Meet the Cave Explorers</button>
+<div class="label">CHALLENGES</div>
+<button data-ch="0">1. Find the Stalactites</button>
+<button data-ch="1">2. Find the Stalagmites</button>
+<button data-ch="2">3. Find the Bats</button>
+<button data-ch="3">4. Find the Waterfall</button>
+<button data-ch="4">5. Find the Headlamp</button>
+<button data-ch="5">6. Find the Bee</button>
+<a href="index.html">← Return to Main Directory</a>
+</aside>
+
+<section class="card">
+<div class="kicker">DEEP INSIDE THE CAVE</div>
+<h2 id="title">Cave Adventure</h2>
+<p id="prompt">Click any object in the scene to hear its name.</p>
+<div class="word"><strong id="line">cueva</strong><div class="translation" id="translation">cave</div></div>
+<p id="status"></p>
+<div class="controls">
+<button id="normal">🔊 Speak</button><button id="slow">🐢 Slow</button><button id="replay">↻ Replay</button><button id="nextPhrase">Next phrase →</button>
+</div>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+<!-- Hotspots mapped to the approved softer-light Cave Adventure JPG. -->
+<button class="hotspot" data-word="stalactites" style="left:0%;top:0%;width:63%;height:28%" aria-label="Stalactites"></button>
+<button class="hotspot" data-word="stalagmites" style="left:18%;top:25%;width:43%;height:38%" aria-label="Stalagmites"></button>
+<button class="hotspot" data-word="bats" style="left:21%;top:4%;width:42%;height:25%" aria-label="Bats"></button>
+<button class="hotspot" data-word="waterfall" style="left:0%;top:30%;width:25%;height:35%" aria-label="Cave waterfall"></button>
+<button class="hotspot" data-word="pool" style="left:9%;top:53%;width:49%;height:36%" aria-label="Cave pool"></button>
+<button class="hotspot" data-word="stream" style="left:19%;top:67%;width:47%;height:31%" aria-label="Cave stream"></button>
+<button class="hotspot" data-word="helmet" style="left:70%;top:29%;width:9%;height:13%" aria-label="Helmet"></button>
+<button class="hotspot" data-word="headlamp" style="left:73%;top:28%;width:8%;height:12%" aria-label="Headlamp"></button>
+<button class="hotspot" data-word="backpack" style="left:68%;top:35%;width:13%;height:23%" aria-label="Backpack"></button>
+<button class="hotspot" data-word="grandma" style="left:69%;top:27%;width:12%;height:31%" aria-label="Grandma"></button>
+<button class="hotspot" data-word="grandpa" style="left:80%;top:25%;width:12%;height:32%" aria-label="Grandpa"></button>
+<button class="hotspot" data-word="mitchell" style="left:64%;top:41%;width:13%;height:30%" aria-label="Mitchell"></button>
+<button class="hotspot" data-word="nicole" style="left:84%;top:39%;width:14%;height:32%" aria-label="Nicole"></button>
+<button class="hotspot" data-word="bee" style="left:76%;top:49%;width:11%;height:24%" aria-label="Bee explorer"></button>
+<button class="hotspot" data-word="explorers" style="left:43%;top:34%;width:23%;height:31%" aria-label="Cave explorers"></button>
+<button class="hotspot" data-word="cavern" style="left:33%;top:8%;width:43%;height:42%" aria-label="Cavern"></button>
+<button class="hotspot" data-word="rocks" style="left:55%;top:67%;width:45%;height:33%" aria-label="Cave rocks"></button>
+<button class="hotspot" data-word="reflection" style="left:30%;top:55%;width:28%;height:28%" aria-label="Water reflection"></button>
+<button class="hotspot" data-word="passage" style="left:51%;top:20%;width:18%;height:24%" aria-label="Cave passage"></button>
+<button class="hotspot" data-word="dripstone" style="left:2%;top:13%;width:28%;height:34%" aria-label="Dripstone"></button>
+
+</main>
+
+<script>
+const EN={cave:"cave",stalactites:"stalactites",stalagmites:"stalagmites",bats:"bats",waterfall:"cave waterfall",pool:"cave pool",stream:"cave stream",helmet:"helmet",headlamp:"headlamp",backpack:"backpack",grandma:"Grandma",grandpa:"Grandpa",mitchell:"Mitchell",nicole:"Nicole",bee:"bee explorer",explorers:"cave explorers",cavern:"cavern",rocks:"cave rocks",reflection:"water reflection",passage:"cave passage",dripstone:"dripstone"};
+const WORDS={
+es:{cave:"cueva",stalactites:"estalactitas",stalagmites:"estalagmitas",bats:"murciélagos",waterfall:"cascada de la cueva",pool:"poza de la cueva",stream:"arroyo de la cueva",helmet:"casco",headlamp:"linterna frontal",backpack:"mochila",grandma:"abuela",grandpa:"abuelo",mitchell:"Mitchell",nicole:"Nicole",bee:"abeja exploradora",explorers:"exploradores de cuevas",cavern:"caverna",rocks:"rocas de la cueva",reflection:"reflejo en el agua",passage:"pasaje de la cueva",dripstone:"formación calcárea"},
+fr:{cave:"grotte",stalactites:"stalactites",stalagmites:"stalagmites",bats:"chauves-souris",waterfall:"cascade de la grotte",pool:"bassin de la grotte",stream:"ruisseau de la grotte",helmet:"casque",headlamp:"lampe frontale",backpack:"sac à dos",grandma:"grand-mère",grandpa:"grand-père",mitchell:"Mitchell",nicole:"Nicole",bee:"abeille exploratrice",explorers:"explorateurs de grotte",cavern:"caverne",rocks:"rochers de la grotte",reflection:"reflet dans l'eau",passage:"passage de la grotte",dripstone:"concrétion calcaire"},
+en:{...EN},
+de:{cave:"Höhle",stalactites:"Stalaktiten",stalagmites:"Stalagmiten",bats:"Fledermäuse",waterfall:"Höhlenwasserfall",pool:"Höhlenbecken",stream:"Höhlenbach",helmet:"Helm",headlamp:"Stirnlampe",backpack:"Rucksack",grandma:"Oma",grandpa:"Opa",mitchell:"Mitchell",nicole:"Nicole",bee:"Forscherbiene",explorers:"Höhlenforscher",cavern:"Höhlenkammer",rocks:"Höhlenfelsen",reflection:"Wasserspiegelung",passage:"Höhlengang",dripstone:"Tropfstein"},
+it:{cave:"grotta",stalactites:"stalattiti",stalagmites:"stalagmiti",bats:"pipistrelli",waterfall:"cascata della grotta",pool:"pozza della grotta",stream:"ruscello della grotta",helmet:"casco",headlamp:"lampada frontale",backpack:"zaino",grandma:"nonna",grandpa:"nonno",mitchell:"Mitchell",nicole:"Nicole",bee:"ape esploratrice",explorers:"esploratori della grotta",cavern:"caverna",rocks:"rocce della grotta",reflection:"riflesso nell'acqua",passage:"passaggio della grotta",dripstone:"concrezione calcarea"},
+pt:{cave:"caverna",stalactites:"estalactites",stalagmites:"estalagmites",bats:"morcegos",waterfall:"cachoeira da caverna",pool:"poça da caverna",stream:"riacho da caverna",helmet:"capacete",headlamp:"lanterna de cabeça",backpack:"mochila",grandma:"avó",grandpa:"avô",mitchell:"Mitchell",nicole:"Nicole",bee:"abelha exploradora",explorers:"exploradores da caverna",cavern:"caverna",rocks:"rochas da caverna",reflection:"reflexo na água",passage:"passagem da caverna",dripstone:"formação calcária"},
+no:{cave:"hule",stalactites:"stalaktitter",stalagmites:"stalagmitter",bats:"flaggermus",waterfall:"hulefoss",pool:"hulebasseng",stream:"hulebekk",helmet:"hjelm",headlamp:"hodelykt",backpack:"ryggsekk",grandma:"bestemor",grandpa:"bestefar",mitchell:"Mitchell",nicole:"Nicole",bee:"utforskerbie",explorers:"huleutforskere",cavern:"hulekammer",rocks:"hulesteiner",reflection:"vannspeiling",passage:"hulegang",dripstone:"dryppstein"}};
+const SPEECH_LANG={es:"es-ES",fr:"fr-FR",en:"en-US",de:"de-DE",it:"it-IT",pt:"pt-PT",no:"nb-NO"};
+const lessons={
+en:{explore:["We are exploring a huge underground cave.","Our headlamps help us see the rocky path and sparkling formations."],formations:["Stalactites hang down from the cave ceiling.","Stalagmites grow upward from the cave floor."],water:["Water trickles through the cave and gathers in clear turquoise pools.","A small waterfall feeds the stream that winds through the cavern."],gear:["Every explorer wears a helmet and a bright headlamp.","Backpacks carry useful supplies for the underground adventure."],bats:["Bats fly through the dark spaces high above us.","They are perfectly at home inside the cave."],group:["Eight explorers are making their way through the cavern together.","Grandma, Grandpa, Mitchell, Nicole, and the little bee are enjoying the cave adventure."]},
+es:{explore:["Estamos explorando una enorme cueva subterránea.","Nuestras linternas frontales nos ayudan a ver el sendero rocoso y las formaciones brillantes."],formations:["Las estalactitas cuelgan del techo de la cueva.","Las estalagmitas crecen hacia arriba desde el suelo."],water:["El agua corre por la cueva y se reúne en pozas turquesas y transparentes.","Una pequeña cascada alimenta el arroyo que atraviesa la caverna."],gear:["Cada explorador lleva un casco y una linterna frontal brillante.","Las mochilas llevan provisiones útiles para la aventura subterránea."],bats:["Los murciélagos vuelan por los espacios oscuros sobre nosotros.","Están perfectamente adaptados a la vida dentro de la cueva."],group:["Ocho exploradores avanzan juntos por la caverna.","La abuela, el abuelo, Mitchell, Nicole y la pequeña abeja disfrutan de la aventura."]},
+fr:{explore:["Nous explorons une immense grotte souterraine.","Nos lampes frontales nous aident à voir le chemin rocheux et les formations brillantes."],formations:["Les stalactites pendent du plafond de la grotte.","Les stalagmites poussent vers le haut depuis le sol."],water:["L'eau ruisselle dans la grotte et se rassemble dans des bassins turquoise transparents.","Une petite cascade alimente le ruisseau qui traverse la caverne."],gear:["Chaque explorateur porte un casque et une lampe frontale brillante.","Les sacs à dos transportent des fournitures utiles pour l'aventure souterraine."],bats:["Des chauves-souris volent dans les espaces sombres au-dessus de nous.","Elles sont parfaitement chez elles dans la grotte."],group:["Huit explorateurs avancent ensemble dans la caverne.","Grand-mère, grand-père, Mitchell, Nicole et la petite abeille profitent de l'aventure."]},
+de:{explore:["Wir erkunden eine riesige unterirdische Höhle.","Unsere Stirnlampen helfen uns, den felsigen Weg und die glitzernden Formationen zu sehen."],formations:["Stalaktiten hängen von der Höhlendecke herab.","Stalagmiten wachsen vom Höhlenboden nach oben."],water:["Wasser rieselt durch die Höhle und sammelt sich in klaren türkisfarbenen Becken.","Ein kleiner Wasserfall speist den Bach, der durch die Höhle fließt."],gear:["Jeder Höhlenforscher trägt einen Helm und eine helle Stirnlampe.","In den Rucksäcken befinden sich nützliche Dinge für das Abenteuer unter der Erde."],bats:["Fledermäuse fliegen durch die dunklen Räume hoch über uns.","Sie fühlen sich in der Höhle ganz zu Hause."],group:["Acht Höhlenforscher gehen gemeinsam durch die Höhle.","Oma, Opa, Mitchell, Nicole und die kleine Biene genießen das Höhlenabenteuer."]},
+it:{explore:["Stiamo esplorando un'enorme grotta sotterranea.","Le nostre lampade frontali ci aiutano a vedere il sentiero roccioso e le formazioni scintillanti."],formations:["Le stalattiti pendono dal soffitto della grotta.","Le stalagmiti crescono verso l'alto dal pavimento."],water:["L'acqua scorre nella grotta e si raccoglie in limpide pozze turchesi.","Una piccola cascata alimenta il ruscello che attraversa la caverna."],gear:["Ogni esploratore indossa un casco e una lampada frontale luminosa.","Gli zaini trasportano provviste utili per l'avventura sotterranea."],bats:["I pipistrelli volano negli spazi bui sopra di noi.","Sono perfettamente a casa dentro la grotta."],group:["Otto esploratori attraversano insieme la caverna.","Nonna, nonno, Mitchell, Nicole e la piccola ape si godono l'avventura."]},
+pt:{explore:["Estamos explorando uma enorme caverna subterrânea.","Nossas lanternas de cabeça ajudam a ver o caminho rochoso e as formações brilhantes."],formations:["As estalactites pendem do teto da caverna.","As estalagmites crescem para cima a partir do chão."],water:["A água corre pela caverna e se junta em poças turquesa cristalinas.","Uma pequena cachoeira alimenta o riacho que atravessa a caverna."],gear:["Cada explorador usa um capacete e uma lanterna de cabeça brilhante.","As mochilas carregam suprimentos úteis para a aventura subterrânea."],bats:["Morcegos voam pelos espaços escuros acima de nós.","Eles estão perfeitamente em casa dentro da caverna."],group:["Oito exploradores seguem juntos pela caverna.","A avó, o avô, Mitchell, Nicole e a pequena abelha aproveitam a aventura."]},
+no:{explore:["Vi utforsker en enorm underjordisk hule.","Hodelyktene våre hjelper oss å se den steinete stien og de glitrende formasjonene."],formations:["Stalaktitter henger ned fra huletaket.","Stalagmitter vokser opp fra hulegulvet."],water:["Vann sildrer gjennom hulen og samler seg i klare turkise bassenger.","En liten foss mater bekken som slynger seg gjennom hulekammeret."],gear:["Hver utforsker bruker hjelm og en lys hodelykt.","Ryggsekkene har nyttige forsyninger for eventyret under bakken."],bats:["Flaggermus flyr gjennom de mørke områdene høyt over oss.","De føler seg helt hjemme inne i hulen."],group:["Åtte utforskere beveger seg sammen gjennom hulekammeret.","Bestemor, bestefar, Mitchell, Nicole og den lille bien nyter huleeventyret."]}};
+const challengeOrder=["stalactites","stalagmites","bats","waterfall","headlamp","bee"];
+const SOUND_MAP={};
+const langSel=document.getElementById("lang"),voiceSel=document.getElementById("voice");
+const title=document.getElementById("title"),prompt=document.getElementById("prompt"),line=document.getElementById("line"),translation=document.getElementById("translation"),status=document.getElementById("status"),world=document.getElementById("world");
+let lastWord="cave",activeLesson="",lessonPhrase=1,challenge=-1,lastSpoken="";
+function voices(){return ("speechSynthesis" in window)?speechSynthesis.getVoices():[]}
+function fillVoices(){const old=localStorage.getItem("talkabee-cave-voice-"+langSel.value)||"";voiceSel.innerHTML='<option value="">Browser Default</option>';voices().forEach(v=>{const o=document.createElement("option");o.value=v.name;o.textContent=v.name+(v.lang?" — "+v.lang:"");voiceSel.appendChild(o)});if([...voiceSel.options].some(o=>o.value===old))voiceSel.value=old}
+if("speechSynthesis" in window){speechSynthesis.onvoiceschanged=fillVoices;fillVoices();setTimeout(fillVoices,150);setTimeout(fillVoices,600);setTimeout(fillVoices,1500)}
+voiceSel.onchange=()=>localStorage.setItem("talkabee-cave-voice-"+langSel.value,voiceSel.value);
+function speak(text,rate=.88,onend=null){if(!text||!("speechSynthesis" in window)){if(onend)onend();return}speechSynthesis.cancel();setTimeout(()=>{const u=new SpeechSynthesisUtterance(text);u.lang=SPEECH_LANG[langSel.value]||langSel.value;u.rate=rate;const v=speechSynthesis.getVoices().find(x=>x.name===voiceSel.value);if(v)u.voice=v;if(onend)u.onend=onend;speechSynthesis.speak(u)},50);lastSpoken=text}
+function stopSound(){document.querySelectorAll("audio[data-talkabee-sound]").forEach(a=>{a.pause();a.currentTime=0;a.remove()})}
+function playSound(key){stopSound();const src=SOUND_MAP[key];if(!src)return;const a=new Audio(src);a.dataset.talkabeeSound="1";document.body.appendChild(a);a.play().catch(()=>{});a.onended=()=>a.remove()}
+function showWord(key){activeLesson="";lastWord=key;lessonPhrase=1;title.textContent="Click & Discover";prompt.textContent="You found "+(EN[key]||key)+".";line.textContent=WORDS[langSel.value][key]||EN[key]||key;translation.textContent=langSel.value==="en"?"":(EN[key]||key)}
+document.querySelectorAll(".hotspot").forEach(b=>b.onclick=()=>{const key=b.dataset.word;showWord(key);let played=false;const after=()=>{if(played)return;played=true;playSound(key)};speak(WORDS[langSel.value][key]||EN[key]||key,.82,after);setTimeout(after,1500);if(challenge>=0){if(key===challengeOrder[challenge]){status.textContent="✓ Nice find!";status.style.color="#9dffbf"}else{status.textContent="Not that one — keep looking.";status.style.color="#ffe28a"}}});
+function clearChallenge(){challenge=-1;world.classList.remove("challenge-mode");document.querySelectorAll(".hotspot").forEach(h=>h.classList.remove("target"));status.textContent=""}
+document.getElementById("discovery").onclick=()=>{clearChallenge();activeLesson="";lastWord="cave";title.textContent="Click & Discover";prompt.textContent="Click any object in the scene to hear its name.";line.textContent=WORDS[langSel.value].cave;translation.textContent=langSel.value==="en"?"":EN.cave};
+document.querySelectorAll("[data-ch]").forEach(b=>b.onclick=()=>{activeLesson="";lastWord="";challenge=+b.dataset.ch;world.classList.add("challenge-mode");document.querySelectorAll(".hotspot").forEach(h=>h.classList.toggle("target",h.dataset.word===challengeOrder[challenge]));title.textContent="Challenge "+(challenge+1)+" of 6";prompt.textContent=b.textContent.replace(/^[0-9]+\.\s*/,"");line.textContent=WORDS[langSel.value][challengeOrder[challenge]];translation.textContent=langSel.value==="en"?"":EN[challengeOrder[challenge]];status.textContent=""});
+function showLesson(key,speakIt=false){clearChallenge();activeLesson=key;lastWord="";lessonPhrase=Math.max(0,Math.min(1,lessonPhrase));const a=lessons[langSel.value][key],e=lessons.en[key],btn=document.querySelector(`[data-lesson="${key}"]`);title.textContent=btn?btn.textContent.replace(/^[0-9]+\.\s*/,""):"Cave Adventure";prompt.textContent=a[0];line.textContent=a[lessonPhrase];translation.textContent=langSel.value==="en"?"":e[lessonPhrase];if(speakIt)speak(a[lessonPhrase])}
+document.querySelectorAll("[data-lesson]").forEach(b=>b.onclick=()=>{lessonPhrase=1;showLesson(b.dataset.lesson,true)});
+function currentSpeechText(){if(activeLesson)return lessons[langSel.value][activeLesson][lessonPhrase];if(lastWord)return WORDS[langSel.value][lastWord]||EN[lastWord];return line.textContent}
+document.getElementById("normal").onclick=()=>speak(currentSpeechText(),.82);
+document.getElementById("slow").onclick=()=>speak(currentSpeechText(),.58);
+document.getElementById("replay").onclick=()=>speak(lastSpoken||currentSpeechText(),.82);
+document.getElementById("nextPhrase").onclick=()=>{if(!activeLesson){const keys=Object.keys(EN),i=Math.max(0,keys.indexOf(lastWord));showWord(keys[(i+1)%keys.length]);speak(currentSpeechText(),.82);return}lessonPhrase=(lessonPhrase+1)%2;showLesson(activeLesson,true)};
+langSel.onchange=()=>{fillVoices();if(activeLesson)showLesson(activeLesson,false);else if(lastWord)showWord(lastWord)};
+document.getElementById("sceneView").onclick=()=>document.body.classList.add("scene-view");
+document.getElementById("sceneReturn").onclick=()=>document.body.classList.remove("scene-view");
+showWord("cave");
+</script>
+</body>
+</html>
+
+<style id="talkabee-ski-panel-180">
+@media(min-width:761px){.panel{width:180px!important;min-width:180px!important;max-width:180px!important}}
+</style>

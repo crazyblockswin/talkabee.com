@@ -1,0 +1,218 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Talk A Bee — Family Picnic Adventure</title>
+<link rel="icon" type="image/png" href="images/talkabee-favicon.png">
+<style>
+*{box-sizing:border-box}
+html,body{margin:0;width:100%;height:100%;overflow:hidden;font-family:Arial,Helvetica,sans-serif;background:#063a66;color:#fff}
+.world{position:relative;width:100vw;height:100vh;background:url("images/Talk-A-Bee-Family-Picnic-Adventure.jpg") center center/cover no-repeat}
+
+/* APPROVED TALK A BEE LEFT PANEL */
+.panel{position:fixed;z-index:1000;left:16px;top:16px;bottom:16px;width:180px;min-width:180px;max-width:180px;
+padding:14px;overflow-x:hidden;overflow-y:auto;border-radius:20px;border:1px solid rgba(255,255,255,.28);
+background:rgba(7,23,39,.31);box-shadow:0 12px 30px rgba(0,0,0,.24);backdrop-filter:blur(3px);-webkit-backdrop-filter:blur(3px)}
+.panel h1{font-size:19px;line-height:1.08;margin:4px 0 10px;text-shadow:0 2px 4px rgba(0,0,0,.55)}
+.label{font-size:9.5px;line-height:1.1;letter-spacing:.09em;font-weight:900;margin:9px 0 4px}
+.panel button,.panel select,.panel a{width:100%;min-height:34px;margin:4px 0;padding:8px 9px;border-radius:12px;
+border:1px solid rgba(255,255,255,.38);background:rgba(7,32,50,.54);color:#fff;font:800 12px/1.16 Arial,sans-serif;
+text-align:left;text-decoration:none}
+.panel button:hover,.panel a:hover{background:rgba(20,58,79,.70)}
+.panel button.active{background:rgba(78,69,219,.74)}
+.panel select{white-space:nowrap;text-overflow:ellipsis;overflow:hidden}
+
+/* APPROVED 520px SCRIPT CARD */
+.card{position:fixed;z-index:900;left:50%;bottom:16px;width:520px;max-width:520px;padding:14px 16px;
+border-radius:20px;border:1px solid rgba(255,255,255,.30);background:rgba(25,19,24,.38);
+box-shadow:0 12px 30px rgba(0,0,0,.28);backdrop-filter:blur(5px);-webkit-backdrop-filter:blur(5px);
+transform:translateX(-50%) scale(.67);transform-origin:bottom center}
+.card .kicker{font-size:15px;line-height:1.25;font-weight:900;letter-spacing:.10em;color:rgba(255,255,255,.96);
+text-shadow:0 1px 3px rgba(0,0,0,.78);margin:0 0 6px}
+.card h2{font-size:22px;line-height:1.08;margin:4px 0 7px;text-shadow:0 1px 3px rgba(0,0,0,.55)}
+.card p{font-size:18px;line-height:1.35;margin:4px 0 7px}
+.word{margin-top:8px;padding:10px 12px;border-radius:14px;background:rgba(88,88,88,.72);border:1px solid rgba(255,255,255,.20)}
+.word strong{display:block;font-size:22px;line-height:1.28}
+.translation{font-size:18px;line-height:1.35;margin-top:3px}
+.controls{display:flex;align-items:center;gap:8px;flex-wrap:nowrap;margin-top:8px}
+.controls button{width:auto;min-width:0;padding:9px 13px;border-radius:12px;border:1px solid rgba(255,255,255,.35);
+background:rgba(255,255,255,.88);color:#10283c;font:900 13px/1 Arial,sans-serif;white-space:nowrap}
+
+/* HOTSPOTS */
+.hotspot{position:absolute;z-index:8;border:0;background:transparent;opacity:0;cursor:pointer;border-radius:16px}
+.hotspot:hover,.hotspot:focus-visible{opacity:1;background:rgba(255,220,72,.28);outline:2px solid rgba(255,255,255,.90)}
+.challenge-mode .hotspot.target{opacity:1;background:rgba(255,199,48,.38);outline:4px solid #fff;box-shadow:0 0 0 7px rgba(255,200,50,.20)}
+
+/* APPROVED COMPACT PREVIOUS / NEXT CHEVRONS */
+.talkabee-prev-next-nav{position:fixed;top:18px;right:22px;z-index:2147483000;display:flex;align-items:center;overflow:hidden;
+border:2px solid rgba(255,255,255,.82);border-radius:999px;background:rgba(11,22,42,.24);
+box-shadow:0 5px 16px rgba(0,0,0,.16);backdrop-filter:blur(3px);-webkit-backdrop-filter:blur(3px)}
+.talkabee-prev-next-nav a{width:48px;height:48px;display:grid;place-items:center;text-decoration:none;color:#fff;
+font:900 38px/1 Arial,sans-serif;text-shadow:0 1px 3px rgba(0,0,0,.42)}
+.talkabee-prev-next-nav a+a{border-left:1px solid rgba(255,255,255,.36)}
+.talkabee-prev-next-nav a:hover,.talkabee-prev-next-nav a:focus-visible{background:rgba(255,255,255,.18);outline:none}
+
+/* SCENE VIEW */
+.scene-return{display:none;position:fixed;z-index:2147483001;left:18px;top:18px;padding:10px 14px;border-radius:12px;
+border:1px solid #fff;background:rgba(7,23,39,.65);color:#fff;font-weight:900}
+.scene-view .panel,.scene-view .card,.scene-view .talkabee-prev-next-nav{display:none}
+.scene-view .scene-return{display:block}
+
+@media(max-width:760px){
+ .panel{left:10px;top:10px;bottom:10px;width:180px;min-width:180px;max-width:180px;padding:11px}
+ .card{width:min(520px,calc(100vw - 32px));bottom:10px;transform:translateX(-50%) scale(.82)}
+ .talkabee-prev-next-nav{top:12px;right:12px}.talkabee-prev-next-nav a{width:42px;height:42px;font-size:33px}
+}
+</style>
+</head>
+<body>
+<nav class="talkabee-prev-next-nav" aria-label="Adventure navigation">
+  <a href="Talk-A-Bee-Hot-Air-Balloon-Festival-Adventure.html" aria-label="Previous adventure" title="Previous">‹</a>
+  <a href="Talk-A-Bee-Nighttime-Campground-Adventure.html" aria-label="Next adventure" title="Next">›</a>
+</nav>
+
+<main class="world" id="world">
+<button class="scene-return" id="sceneReturn">Return to Adventure</button>
+
+<aside class="panel">
+<h1>🧺 Family Picnic Adventure</h1>
+<div class="label">LANGUAGE</div>
+<select id="lang">
+<option value="es">Spanish</option><option value="fr">French</option><option value="en">English</option>
+<option value="de">German</option><option value="it">Italian</option><option value="pt">Portuguese</option><option value="no">Norwegian</option>
+</select>
+<div class="label">VOICE</div>
+<select id="voice"><option value="">Browser Default</option></select>
+<button id="sceneView">◉ Scene View</button>
+
+<div class="label">DISCOVERY</div>
+<button id="discovery">🔎 Discovery — Click the Scene</button>
+
+<div class="label">ACTIVITIES</div>
+<button data-lesson="crew">1. Meet the Picnic Crew</button>
+<button data-lesson="food">2. Explore the Picnic Food</button>
+<button data-lesson="fire">3. Cook by the Campfire</button>
+<button data-lesson="lake">4. Explore the Lakeshore</button>
+<button data-lesson="camp">5. Explore the Campsite</button>
+<button data-lesson="nature">6. Explore the Mountain View</button>
+<div class="label">CHALLENGES</div>
+<button data-ch="0">1. Find Grandma</button>
+<button data-ch="1">2. Find Grandpa</button>
+<button data-ch="2">3. Find the Bee</button>
+<button data-ch="3">4. Find the Hot Dogs</button>
+<button data-ch="4">5. Find the Campfire</button>
+<button data-ch="5">6. Find the Sailboat</button>
+<a href="index.html">← Return to Main Directory</a>
+</aside>
+
+<section class="card">
+<div class="kicker">AT THE BIG FAMILY PICNIC</div>
+<h2 id="title">Family Picnic Adventure</h2>
+<p id="prompt">Click any object in the scene to hear its name.</p>
+<div class="word"><strong id="line">picnic familiar</strong><div class="translation" id="translation">family picnic</div></div>
+<p id="status"></p>
+<div class="controls">
+<button id="normal">🔊 Speak</button><button id="slow">🐢 Slow</button><button id="replay">↻ Replay</button><button id="nextPhrase">Next phrase →</button>
+</div>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- Hotspots mapped to the approved Family Picnic keeper JPG. -->
+<button class="hotspot" data-word="grandma" style="left:62%;top:49%;width:6%;height:16%" aria-label="Grandma"></button>
+<button class="hotspot" data-word="grandpa" style="left:54%;top:47%;width:7%;height:18%" aria-label="Grandpa"></button>
+<button class="hotspot" data-word="bee" style="left:84%;top:25%;width:7%;height:13%" aria-label="Bee on RV"></button>
+<button class="hotspot" data-word="crew" style="left:40%;top:48%;width:49%;height:23%" aria-label="Picnic crew"></button>
+<button class="hotspot" data-word="table" style="left:37%;top:61%;width:53%;height:16%" aria-label="Picnic table"></button>
+<button class="hotspot" data-word="food" style="left:42%;top:58%;width:44%;height:11%" aria-label="Picnic food"></button>
+<button class="hotspot" data-word="hotdogs" style="left:69%;top:72%;width:10%;height:10%" aria-label="Hot dogs"></button>
+<button class="hotspot" data-word="hamburgers" style="left:58%;top:58%;width:9%;height:9%" aria-label="Hamburgers"></button>
+<button class="hotspot" data-word="campfire" style="left:65%;top:74%;width:25%;height:24%" aria-label="Campfire"></button>
+<button class="hotspot" data-word="dog" style="left:52%;top:68%;width:9%;height:15%" aria-label="Golden dog"></button>
+<button class="hotspot" data-word="shepherd" style="left:87%;top:60%;width:8%;height:18%" aria-label="German Shepherd"></button>
+<button class="hotspot" data-word="rv" style="left:76%;top:30%;width:24%;height:24%" aria-label="RV"></button>
+<button class="hotspot" data-word="tent" style="left:94%;top:43%;width:6%;height:17%" aria-label="Tent"></button>
+<button class="hotspot" data-word="lake" style="left:12%;top:39%;width:47%;height:19%" aria-label="Lake"></button>
+<button class="hotspot" data-word="sailboat" style="left:31%;top:38%;width:8%;height:13%" aria-label="Sailboat"></button>
+<button class="hotspot" data-word="motorboat" style="left:23%;top:47%;width:12%;height:10%" aria-label="Motorboat"></button>
+<button class="hotspot" data-word="canoes" style="left:46%;top:47%;width:13%;height:9%" aria-label="Canoes"></button>
+<button class="hotspot" data-word="mountains" style="left:12%;top:20%;width:58%;height:20%" aria-label="Snowy mountains"></button>
+<button class="hotspot" data-word="forest" style="left:0%;top:0%;width:29%;height:50%" aria-label="Pine forest"></button>
+<button class="hotspot" data-word="flowers" style="left:0%;top:65%;width:39%;height:35%" aria-label="Wildflowers"></button>
+
+</main>
+
+<script>
+const EN={game:"family picnic",grandma:"Grandma",grandpa:"Grandpa",bee:"Bee",crew:"picnic crew",table:"picnic table",food:"picnic food",hotdogs:"hot dogs",hamburgers:"hamburgers",campfire:"campfire",dog:"golden dog",shepherd:"German Shepherd",rv:"RV",tent:"tent",lake:"lake",sailboat:"sailboat",motorboat:"motorboat",canoes:"canoes",mountains:"snowy mountains",forest:"pine forest",flowers:"wildflowers"};
+const WORDS={
+es:{game:"picnic familiar",grandma:"abuela",grandpa:"abuelo",bee:"abeja",crew:"grupo del picnic",table:"mesa de picnic",food:"comida de picnic",hotdogs:"perritos calientes",hamburgers:"hamburguesas",campfire:"fogata",dog:"perro dorado",shepherd:"pastor alemán",rv:"casa rodante",tent:"tienda de campaña",lake:"lago",sailboat:"velero",motorboat:"lancha",canoes:"canoas",mountains:"montañas nevadas",forest:"bosque de pinos",flowers:"flores silvestres"},
+fr:{game:"pique-nique familial",grandma:"grand-mère",grandpa:"grand-père",bee:"abeille",crew:"groupe du pique-nique",table:"table de pique-nique",food:"nourriture du pique-nique",hotdogs:"hot-dogs",hamburgers:"hamburgers",campfire:"feu de camp",dog:"chien doré",shepherd:"berger allemand",rv:"camping-car",tent:"tente",lake:"lac",sailboat:"voilier",motorboat:"bateau à moteur",canoes:"canoës",mountains:"montagnes enneigées",forest:"forêt de pins",flowers:"fleurs sauvages"},
+en:{...EN},
+de:{game:"Familienpicknick",grandma:"Oma",grandpa:"Opa",bee:"Biene",crew:"Picknickgruppe",table:"Picknicktisch",food:"Picknickessen",hotdogs:"Hotdogs",hamburgers:"Hamburger",campfire:"Lagerfeuer",dog:"goldener Hund",shepherd:"Deutscher Schäferhund",rv:"Wohnmobil",tent:"Zelt",lake:"See",sailboat:"Segelboot",motorboat:"Motorboot",canoes:"Kanus",mountains:"schneebedeckte Berge",forest:"Kiefernwald",flowers:"Wildblumen"},
+it:{game:"picnic di famiglia",grandma:"nonna",grandpa:"nonno",bee:"ape",crew:"gruppo del picnic",table:"tavolo da picnic",food:"cibo da picnic",hotdogs:"hot dog",hamburgers:"hamburger",campfire:"falò",dog:"cane dorato",shepherd:"pastore tedesco",rv:"camper",tent:"tenda",lake:"lago",sailboat:"barca a vela",motorboat:"motoscafo",canoes:"canoe",mountains:"montagne innevate",forest:"pineta",flowers:"fiori selvatici"},
+pt:{game:"piquenique em família",grandma:"avó",grandpa:"avô",bee:"abelha",crew:"grupo do piquenique",table:"mesa de piquenique",food:"comida do piquenique",hotdogs:"cachorros-quentes",hamburgers:"hambúrgueres",campfire:"fogueira",dog:"cachorro dourado",shepherd:"pastor alemão",rv:"trailer",tent:"barraca",lake:"lago",sailboat:"veleiro",motorboat:"lancha",canoes:"canoas",mountains:"montanhas nevadas",forest:"floresta de pinheiros",flowers:"flores silvestres"},
+no:{game:"familiepiknik",grandma:"bestemor",grandpa:"bestefar",bee:"bie",crew:"piknikgruppe",table:"piknikbord",food:"piknikmat",hotdogs:"pølser",hamburgers:"hamburgere",campfire:"leirbål",dog:"gyllen hund",shepherd:"schæferhund",rv:"bobil",tent:"telt",lake:"innsjø",sailboat:"seilbåt",motorboat:"motorbåt",canoes:"kanoer",mountains:"snødekte fjell",forest:"furuskog",flowers:"villblomster"}};
+const SPEECH_LANG={es:"es-ES",fr:"fr-FR",en:"en-US",de:"de-DE",it:"it-IT",pt:"pt-PT",no:"nb-NO"};
+const lessons={
+en:{crew:["Grandma, Grandpa, the children, dogs, and Bee have all gathered for one enormous lakeside picnic.","Everyone has a place around the long table while Bee watches from the roof of the RV."],food:["The picnic table is covered with favorite outdoor foods, including hot dogs, hamburgers, fruit, drinks, and other treats.","Sharing a meal gives everyone time to talk, laugh, and enjoy the day together."],fire:["Hot dogs and other foods can be cooked over the campfire while everyone gathers nearby.","The fire also creates a warm gathering place as the day becomes cooler."],lake:["The picnic overlooks a calm mountain lake with a sailboat, a motorboat, canoes, and a dock.","The water reflects the surrounding forest and snowy mountains."],camp:["The campsite includes an RV, a tent, outdoor chairs, coolers, cooking equipment, and plenty of room for the whole group.","Camping equipment makes it easier to eat, relax, and spend time outdoors."],nature:["Pine forests, wildflowers, blue water, and snowy mountains surround the picnic area.","The wide landscape makes this picnic feel like a celebration of all the adventures the crew has shared."]},
+es:{crew:["La abuela, el abuelo, los niños, los perros y la abeja se han reunido para un enorme picnic junto al lago.","Todos tienen un lugar alrededor de la larga mesa mientras la abeja observa desde el techo de la casa rodante."],food:["La mesa está llena de comidas favoritas al aire libre, como perritos calientes, hamburguesas, fruta, bebidas y otras delicias.","Compartir una comida permite que todos hablen, rían y disfruten juntos del día."],fire:["Los perritos calientes y otros alimentos se pueden cocinar sobre la fogata mientras todos se reúnen cerca.","El fuego también crea un lugar cálido para reunirse cuando el día se vuelve más fresco."],lake:["El picnic tiene vista a un tranquilo lago de montaña con un velero, una lancha, canoas y un muelle.","El agua refleja el bosque y las montañas nevadas."],camp:["El campamento incluye una casa rodante, una tienda, sillas, neveras y equipo para cocinar.","El equipo de campamento facilita comer, descansar y pasar tiempo al aire libre."],nature:["Bosques de pinos, flores silvestres, agua azul y montañas nevadas rodean el picnic.","El amplio paisaje hace que este picnic parezca una celebración de todas las aventuras compartidas."]},
+fr:{crew:["Grand-mère, grand-père, les enfants, les chiens et l'abeille se sont réunis pour un immense pique-nique au bord du lac.","Tout le monde a une place autour de la longue table tandis que l'abeille observe depuis le toit du camping-car."],food:["La table est couverte de plats de plein air, notamment des hot-dogs, des hamburgers, des fruits, des boissons et d'autres gourmandises.","Partager un repas permet à tout le monde de parler, rire et profiter de la journée ensemble."],fire:["Les hot-dogs et d'autres aliments peuvent cuire au-dessus du feu de camp pendant que tout le monde se rassemble.","Le feu crée aussi un endroit chaleureux lorsque la journée devient plus fraîche."],lake:["Le pique-nique donne sur un lac de montagne calme avec un voilier, un bateau à moteur, des canoës et un quai.","L'eau reflète la forêt et les montagnes enneigées."],camp:["Le camping comprend un camping-car, une tente, des chaises, des glacières et du matériel de cuisine.","Le matériel de camping facilite les repas, la détente et le temps passé dehors."],nature:["Des forêts de pins, des fleurs sauvages, de l'eau bleue et des montagnes enneigées entourent le pique-nique.","Le vaste paysage donne à ce pique-nique l'allure d'une célébration de toutes les aventures partagées."]},
+de:{crew:["Oma, Opa, die Kinder, die Hunde und die Biene haben sich zu einem riesigen Picknick am See versammelt.","Alle haben einen Platz am langen Tisch, während die Biene vom Dach des Wohnmobils zusieht."],food:["Der Picknicktisch ist mit beliebten Speisen wie Hotdogs, Hamburgern, Obst, Getränken und anderen Leckereien gedeckt.","Beim gemeinsamen Essen können alle reden, lachen und den Tag genießen."],fire:["Hotdogs und andere Speisen können über dem Lagerfeuer zubereitet werden, während alle in der Nähe zusammenkommen.","Das Feuer schafft auch einen warmen Treffpunkt, wenn es später kühler wird."],lake:["Das Picknick blickt auf einen ruhigen Bergsee mit Segelboot, Motorboot, Kanus und einem Steg.","Das Wasser spiegelt den Wald und die schneebedeckten Berge."],camp:["Zum Campingplatz gehören ein Wohnmobil, ein Zelt, Stühle, Kühlboxen und Kochutensilien.","Campingausrüstung macht Essen, Entspannen und Zeit im Freien einfacher."],nature:["Kiefernwälder, Wildblumen, blaues Wasser und schneebedeckte Berge umgeben den Picknickplatz.","Die weite Landschaft lässt dieses Picknick wie eine Feier aller gemeinsamen Abenteuer wirken."]},
+it:{crew:["La nonna, il nonno, i bambini, i cani e l'ape si sono riuniti per un enorme picnic sul lago.","Tutti hanno un posto intorno al lungo tavolo mentre l'ape osserva dal tetto del camper."],food:["Il tavolo è pieno di cibi da picnic, tra cui hot dog, hamburger, frutta, bevande e altre bontà.","Condividere un pasto dà a tutti il tempo di parlare, ridere e godersi la giornata insieme."],fire:["Gli hot dog e altri cibi possono essere cucinati sul falò mentre tutti si riuniscono nelle vicinanze.","Il fuoco crea anche un luogo caldo quando la giornata diventa più fresca."],lake:["Il picnic si affaccia su un tranquillo lago di montagna con una barca a vela, un motoscafo, canoe e un molo.","L'acqua riflette il bosco e le montagne innevate."],camp:["Il campeggio comprende un camper, una tenda, sedie, borse frigo e attrezzature per cucinare.","L'attrezzatura da campeggio rende più facile mangiare, rilassarsi e trascorrere tempo all'aperto."],nature:["Pinete, fiori selvatici, acqua blu e montagne innevate circondano l'area del picnic.","Il grande paesaggio fa sembrare questo picnic una festa di tutte le avventure condivise."]},
+pt:{crew:["A avó, o avô, as crianças, os cães e a abelha se reuniram para um enorme piquenique à beira do lago.","Todos têm um lugar ao redor da longa mesa enquanto a abelha observa do teto do trailer."],food:["A mesa está cheia de comidas favoritas ao ar livre, incluindo cachorros-quentes, hambúrgueres, frutas, bebidas e outras delícias.","Compartilhar uma refeição dá a todos tempo para conversar, rir e aproveitar o dia juntos."],fire:["Cachorros-quentes e outros alimentos podem ser preparados sobre a fogueira enquanto todos se reúnem por perto.","O fogo também cria um lugar acolhedor quando o dia fica mais fresco."],lake:["O piquenique tem vista para um lago tranquilo de montanha com um veleiro, uma lancha, canoas e um cais.","A água reflete a floresta e as montanhas nevadas."],camp:["O acampamento inclui um trailer, uma barraca, cadeiras, caixas térmicas e equipamentos de cozinha.","O equipamento de camping facilita comer, relaxar e passar tempo ao ar livre."],nature:["Florestas de pinheiros, flores silvestres, água azul e montanhas nevadas cercam o piquenique.","A ampla paisagem faz este piquenique parecer uma celebração de todas as aventuras compartilhadas."]},
+no:{crew:["Bestemor, bestefar, barna, hundene og bien har samlet seg til en enorm piknik ved innsjøen.","Alle har en plass rundt det lange bordet mens bien følger med fra taket på bobilen."],food:["Piknikbordet er dekket med utendørsfavoritter som pølser, hamburgere, frukt, drikke og andre godsaker.","Et felles måltid gir alle tid til å snakke, le og nyte dagen sammen."],fire:["Pølser og annen mat kan tilberedes over leirbålet mens alle samles i nærheten.","Bålet skaper også et varmt samlingssted når dagen blir kjøligere."],lake:["Pikniken har utsikt over en rolig fjellsjø med seilbåt, motorbåt, kanoer og brygge.","Vannet speiler skogen og de snødekte fjellene."],camp:["Campingplassen har bobil, telt, stoler, kjølebokser og kokeutstyr.","Campingutstyret gjør det lettere å spise, slappe av og være ute."],nature:["Furuskog, villblomster, blått vann og snødekte fjell omgir piknikområdet.","Det vide landskapet får pikniken til å føles som en feiring av alle eventyrene gruppen har delt."]}};
+const challengeOrder=["grandma","grandpa","bee","hotdogs","campfire","sailboat"];
+const SOUND_MAP={};
+const langSel=document.getElementById("lang"),voiceSel=document.getElementById("voice");
+const title=document.getElementById("title"),prompt=document.getElementById("prompt"),line=document.getElementById("line"),translation=document.getElementById("translation"),status=document.getElementById("status"),world=document.getElementById("world");
+let lastWord="game",activeLesson="",lessonPhrase=1,challenge=-1,lastSpoken="";
+function voices(){return ("speechSynthesis" in window)?speechSynthesis.getVoices():[]}
+function fillVoices(){const old=localStorage.getItem("talkabee-picnic-voice-"+langSel.value)||"";voiceSel.innerHTML='<option value="">Browser Default</option>';voices().forEach(v=>{const o=document.createElement("option");o.value=v.name;o.textContent=v.name+(v.lang?" — "+v.lang:"");voiceSel.appendChild(o)});if([...voiceSel.options].some(o=>o.value===old))voiceSel.value=old}
+if("speechSynthesis" in window){speechSynthesis.onvoiceschanged=fillVoices;fillVoices();setTimeout(fillVoices,150);setTimeout(fillVoices,600);setTimeout(fillVoices,1500)}
+voiceSel.onchange=()=>localStorage.setItem("talkabee-picnic-voice-"+langSel.value,voiceSel.value);
+function speak(text,rate=.88,onend=null){if(!text||!("speechSynthesis" in window)){if(onend)onend();return}speechSynthesis.cancel();setTimeout(()=>{const u=new SpeechSynthesisUtterance(text);u.lang=SPEECH_LANG[langSel.value]||langSel.value;u.rate=rate;const v=speechSynthesis.getVoices().find(x=>x.name===voiceSel.value);if(v)u.voice=v;if(onend)u.onend=onend;speechSynthesis.speak(u)},50);lastSpoken=text}
+function stopSound(){document.querySelectorAll("audio[data-talkabee-sound]").forEach(a=>{a.pause();a.currentTime=0;a.remove()})}
+function playSound(key){stopSound();const src=SOUND_MAP[key];if(!src)return;const a=new Audio(src);a.dataset.talkabeeSound="1";document.body.appendChild(a);a.play().catch(()=>{});a.onended=()=>a.remove()}
+function showWord(key){activeLesson="";lastWord=key;lessonPhrase=1;title.textContent="Click & Discover";prompt.textContent="You found "+(EN[key]||key)+".";line.textContent=WORDS[langSel.value][key]||EN[key]||key;translation.textContent=langSel.value==="en"?"":(EN[key]||key)}
+document.querySelectorAll(".hotspot").forEach(b=>b.onclick=()=>{const key=b.dataset.word;showWord(key);let played=false;const after=()=>{if(played)return;played=true;playSound(key)};speak(WORDS[langSel.value][key]||EN[key]||key,.82,after);setTimeout(after,1500);if(challenge>=0){if(key===challengeOrder[challenge]){status.textContent="✓ Nice find!";status.style.color="#9dffbf"}else{status.textContent="Not that one — keep looking.";status.style.color="#ffe28a"}}});
+function clearChallenge(){challenge=-1;world.classList.remove("challenge-mode");document.querySelectorAll(".hotspot").forEach(h=>h.classList.remove("target"));status.textContent=""}
+document.getElementById("discovery").onclick=()=>{clearChallenge();activeLesson="";lastWord="game";title.textContent="Click & Discover";prompt.textContent="Click any object in the scene to hear its name.";line.textContent=WORDS[langSel.value].game;translation.textContent=langSel.value==="en"?"":EN.game};
+document.querySelectorAll("[data-ch]").forEach(b=>b.onclick=()=>{activeLesson="";lastWord="";challenge=+b.dataset.ch;world.classList.add("challenge-mode");document.querySelectorAll(".hotspot").forEach(h=>h.classList.toggle("target",h.dataset.word===challengeOrder[challenge]));title.textContent="Challenge "+(challenge+1)+" of 6";prompt.textContent=b.textContent.replace(/^[0-9]+\.\s*/,"");line.textContent=WORDS[langSel.value][challengeOrder[challenge]];translation.textContent=langSel.value==="en"?"":EN[challengeOrder[challenge]];status.textContent=""});
+function showLesson(key,speakIt=false){clearChallenge();activeLesson=key;lastWord="";lessonPhrase=Math.max(0,Math.min(1,lessonPhrase));const a=lessons[langSel.value][key],e=lessons.en[key],btn=document.querySelector(`[data-lesson="${key}"]`);title.textContent=btn?btn.textContent.replace(/^[0-9]+\.\s*/,""):"Family Picnic Adventure";prompt.textContent=a[0];line.textContent=a[lessonPhrase];translation.textContent=langSel.value==="en"?"":e[lessonPhrase];if(speakIt)speak(a[lessonPhrase])}
+document.querySelectorAll("[data-lesson]").forEach(b=>b.onclick=()=>{lessonPhrase=1;showLesson(b.dataset.lesson,true)});
+function currentSpeechText(){if(activeLesson)return lessons[langSel.value][activeLesson][lessonPhrase];if(lastWord)return WORDS[langSel.value][lastWord]||EN[lastWord];return line.textContent}
+document.getElementById("normal").onclick=()=>speak(currentSpeechText(),.82);
+document.getElementById("slow").onclick=()=>speak(currentSpeechText(),.58);
+document.getElementById("replay").onclick=()=>speak(lastSpoken||currentSpeechText(),.82);
+document.getElementById("nextPhrase").onclick=()=>{if(!activeLesson){const keys=Object.keys(EN),i=Math.max(0,keys.indexOf(lastWord));showWord(keys[(i+1)%keys.length]);speak(currentSpeechText(),.82);return}lessonPhrase=(lessonPhrase+1)%2;showLesson(activeLesson,true)};
+langSel.onchange=()=>{fillVoices();if(activeLesson)showLesson(activeLesson,false);else if(lastWord)showWord(lastWord)};
+document.getElementById("sceneView").onclick=()=>document.body.classList.add("scene-view");
+document.getElementById("sceneReturn").onclick=()=>document.body.classList.remove("scene-view");
+showWord("game");
+</script>
+</body>
+</html>
+
+<style id="talkabee-ski-panel-180">
+@media(min-width:761px){.panel{width:180px!important;min-width:180px!important;max-width:180px!important}}
+</style>

@@ -1,0 +1,205 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Talk A Bee — Helicopter Mountain Rescue Adventure</title>
+<link rel="icon" type="image/png" href="images/talkabee-favicon.png">
+<style>
+*{box-sizing:border-box}
+html,body{margin:0;width:100%;height:100%;overflow:hidden;font-family:Arial,Helvetica,sans-serif;background:#063a66;color:#fff}
+.world{position:relative;width:100vw;height:100vh;background:url("images/Talk-A-Bee-Helicopter-Mountain-Rescue-Adventure.jpg") center center/cover no-repeat}
+
+/* APPROVED TALK A BEE LEFT PANEL */
+.panel{position:fixed;z-index:1000;left:16px;top:16px;bottom:16px;width:180px;min-width:180px;max-width:180px;
+padding:14px;overflow-x:hidden;overflow-y:auto;border-radius:20px;border:1px solid rgba(255,255,255,.28);
+background:rgba(7,23,39,.31);box-shadow:0 12px 30px rgba(0,0,0,.24);backdrop-filter:blur(3px);-webkit-backdrop-filter:blur(3px)}
+.panel h1{font-size:19px;line-height:1.08;margin:4px 0 10px;text-shadow:0 2px 4px rgba(0,0,0,.55)}
+.label{font-size:9.5px;line-height:1.1;letter-spacing:.09em;font-weight:900;margin:9px 0 4px}
+.panel button,.panel select,.panel a{width:100%;min-height:34px;margin:4px 0;padding:8px 9px;border-radius:12px;
+border:1px solid rgba(255,255,255,.38);background:rgba(7,32,50,.54);color:#fff;font:800 12px/1.16 Arial,sans-serif;
+text-align:left;text-decoration:none}
+.panel button:hover,.panel a:hover{background:rgba(20,58,79,.70)}
+.panel button.active{background:rgba(78,69,219,.74)}
+.panel select{white-space:nowrap;text-overflow:ellipsis;overflow:hidden}
+
+/* APPROVED 520px SCRIPT CARD */
+.card{position:fixed;z-index:900;left:50%;bottom:16px;width:520px;max-width:520px;padding:14px 16px;
+border-radius:20px;border:1px solid rgba(255,255,255,.30);background:rgba(25,19,24,.38);
+box-shadow:0 12px 30px rgba(0,0,0,.28);backdrop-filter:blur(5px);-webkit-backdrop-filter:blur(5px);
+transform:translateX(-50%) scale(.67);transform-origin:bottom center}
+.card .kicker{font-size:15px;line-height:1.25;font-weight:900;letter-spacing:.10em;color:rgba(255,255,255,.96);
+text-shadow:0 1px 3px rgba(0,0,0,.78);margin:0 0 6px}
+.card h2{font-size:22px;line-height:1.08;margin:4px 0 7px;text-shadow:0 1px 3px rgba(0,0,0,.55)}
+.card p{font-size:18px;line-height:1.35;margin:4px 0 7px}
+.word{margin-top:8px;padding:10px 12px;border-radius:14px;background:rgba(88,88,88,.72);border:1px solid rgba(255,255,255,.20)}
+.word strong{display:block;font-size:22px;line-height:1.28}
+.translation{font-size:18px;line-height:1.35;margin-top:3px}
+.controls{display:flex;align-items:center;gap:8px;flex-wrap:nowrap;margin-top:8px}
+.controls button{width:auto;min-width:0;padding:9px 13px;border-radius:12px;border:1px solid rgba(255,255,255,.35);
+background:rgba(255,255,255,.88);color:#10283c;font:900 13px/1 Arial,sans-serif;white-space:nowrap}
+
+/* HOTSPOTS */
+.hotspot{position:absolute;z-index:8;border:0;background:transparent;opacity:0;cursor:pointer;border-radius:16px}
+.hotspot:hover,.hotspot:focus-visible{opacity:1;background:rgba(255,220,72,.28);outline:2px solid rgba(255,255,255,.90)}
+.challenge-mode .hotspot.target{opacity:1;background:rgba(255,199,48,.38);outline:4px solid #fff;box-shadow:0 0 0 7px rgba(255,200,50,.20)}
+
+/* APPROVED COMPACT PREVIOUS / NEXT CHEVRONS */
+.talkabee-prev-next-nav{position:fixed;top:18px;right:22px;z-index:2147483000;display:flex;align-items:center;overflow:hidden;
+border:2px solid rgba(255,255,255,.82);border-radius:999px;background:rgba(11,22,42,.24);
+box-shadow:0 5px 16px rgba(0,0,0,.16);backdrop-filter:blur(3px);-webkit-backdrop-filter:blur(3px)}
+.talkabee-prev-next-nav a{width:48px;height:48px;display:grid;place-items:center;text-decoration:none;color:#fff;
+font:900 38px/1 Arial,sans-serif;text-shadow:0 1px 3px rgba(0,0,0,.42)}
+.talkabee-prev-next-nav a+a{border-left:1px solid rgba(255,255,255,.36)}
+.talkabee-prev-next-nav a:hover,.talkabee-prev-next-nav a:focus-visible{background:rgba(255,255,255,.18);outline:none}
+
+/* SCENE VIEW */
+.scene-return{display:none;position:fixed;z-index:2147483001;left:18px;top:18px;padding:10px 14px;border-radius:12px;
+border:1px solid #fff;background:rgba(7,23,39,.65);color:#fff;font-weight:900}
+.scene-view .panel,.scene-view .card,.scene-view .talkabee-prev-next-nav{display:none}
+.scene-view .scene-return{display:block}
+
+@media(max-width:760px){
+ .panel{left:10px;top:10px;bottom:10px;width:180px;min-width:180px;max-width:180px;padding:11px}
+ .card{width:min(520px,calc(100vw - 32px));bottom:10px;transform:translateX(-50%) scale(.82)}
+ .talkabee-prev-next-nav{top:12px;right:12px}.talkabee-prev-next-nav a{width:42px;height:42px;font-size:33px}
+}
+</style>
+</head>
+<body>
+<nav class="talkabee-prev-next-nav" aria-label="Adventure navigation">
+  <a href="Talk-A-Bee-Seattle-Fishing-Adventure.html" aria-label="Previous adventure" title="Previous">‹</a>
+  <a href="Talk-A-Bee-Steam-Train-Adventure.html" aria-label="Next adventure" title="Next">›</a>
+</nav>
+
+<main class="world" id="world">
+<button class="scene-return" id="sceneReturn">Return to Adventure</button>
+
+<aside class="panel">
+<h1>🚁 Helicopter Mountain Rescue Adventure</h1>
+<div class="label">LANGUAGE</div>
+<select id="lang">
+<option value="es">Spanish</option><option value="fr">French</option><option value="en">English</option>
+<option value="de">German</option><option value="it">Italian</option><option value="pt">Portuguese</option><option value="no">Norwegian</option>
+</select>
+<div class="label">VOICE</div>
+<select id="voice"><option value="">Browser Default</option></select>
+<button id="sceneView">◉ Scene View</button>
+
+<div class="label">DISCOVERY</div>
+<button id="discovery">🔎 Discovery — Click the Scene</button>
+
+<div class="label">ACTIVITIES</div>
+<button data-lesson="mission">1. Begin the Rescue Mission</button>
+<button data-lesson="helicopter">2. Explore the Helicopter</button>
+<button data-lesson="rescue">3. Rescue the Hiker</button>
+<button data-lesson="safety">4. Rescue Gear & Safety</button>
+<button data-lesson="landscape">5. Look Across the Mountains</button>
+<button data-lesson="team">6. Meet the Rescue Team</button>
+<div class="label">CHALLENGES</div>
+<button data-ch="0">1. Find the Hiker</button>
+<button data-ch="1">2. Find the Rescue Basket</button>
+<button data-ch="2">3. Find the Waterfall</button>
+<button data-ch="3">4. Find the Eagle</button>
+<button data-ch="4">5. Find the Dog</button>
+<button data-ch="5">6. Find the Bee</button>
+<a href="index.html">← Return to Main Directory</a>
+</aside>
+
+<section class="card">
+<div class="kicker">ON A MOUNTAIN RESCUE</div>
+<h2 id="title">Helicopter Mountain Rescue Adventure</h2>
+<p id="prompt">Click any object in the scene to hear its name.</p>
+<div class="word"><strong id="line">helicóptero de rescate</strong><div class="translation" id="translation">rescue helicopter</div></div>
+<p id="status"></p>
+<div class="controls">
+<button id="normal">🔊 Speak</button><button id="slow">🐢 Slow</button><button id="replay">↻ Replay</button><button id="nextPhrase">Next phrase →</button>
+</div>
+</section>
+
+
+
+
+
+
+
+
+
+<!-- Hotspots mapped to the approved clean Helicopter Mountain Rescue JPG. -->
+<button class="hotspot" data-word="helicopter" style="left:37%;top:2%;width:63%;height:39%" aria-label="Rescue helicopter"></button>
+<button class="hotspot" data-word="pilot" style="left:52%;top:7%;width:10%;height:20%" aria-label="Pilot"></button>
+<button class="hotspot" data-word="grandpa" style="left:62%;top:8%;width:10%;height:20%" aria-label="Grandpa"></button>
+<button class="hotspot" data-word="mitchell" style="left:67%;top:12%;width:8%;height:18%" aria-label="Mitchell"></button>
+<button class="hotspot" data-word="nicole" style="left:72%;top:12%;width:8%;height:18%" aria-label="Nicole"></button>
+<button class="hotspot" data-word="bee" style="left:59%;top:13%;width:8%;height:18%" aria-label="Bee"></button>
+<button class="hotspot" data-word="dog" style="left:77%;top:14%;width:10%;height:19%" aria-label="Rescue dog"></button>
+<button class="hotspot" data-word="cable" style="left:63%;top:34%;width:7%;height:27%" aria-label="Rescue cable"></button>
+<button class="hotspot" data-word="rescuer" style="left:64%;top:46%;width:13%;height:26%" aria-label="Rescuer"></button>
+<button class="hotspot" data-word="basket" style="left:58%;top:57%;width:15%;height:16%" aria-label="Rescue basket"></button>
+<button class="hotspot" data-word="hiker" style="left:78%;top:55%;width:18%;height:29%" aria-label="Hiker"></button>
+<button class="hotspot" data-word="backpack" style="left:87%;top:57%;width:9%;height:19%" aria-label="Backpack"></button>
+<button class="hotspot" data-word="mountain" style="left:6%;top:12%;width:40%;height:29%" aria-label="Mountain"></button>
+<button class="hotspot" data-word="waterfall" style="left:10%;top:43%;width:20%;height:31%" aria-label="Waterfall"></button>
+<button class="hotspot" data-word="lake" style="left:42%;top:47%;width:44%;height:35%" aria-label="Mountain lake"></button>
+<button class="hotspot" data-word="eagle" style="left:2%;top:4%;width:13%;height:16%" aria-label="Eagle"></button>
+<button class="hotspot" data-word="forest" style="left:4%;top:66%;width:48%;height:33%" aria-label="Forest"></button>
+<button class="hotspot" data-word="campground" style="left:36%;top:82%;width:16%;height:15%" aria-label="Campground"></button>
+<button class="hotspot" data-word="helmet" style="left:69%;top:45%;width:8%;height:12%" aria-label="Rescue helmet"></button>
+<button class="hotspot" data-word="ledge" style="left:77%;top:72%;width:23%;height:27%" aria-label="Rocky ledge"></button>
+
+</main>
+
+<script>
+const EN={rescue:"rescue helicopter",helicopter:"rescue helicopter",pilot:"pilot",grandpa:"Grandpa",mitchell:"Mitchell",nicole:"Nicole",bee:"bee",dog:"rescue dog",cable:"rescue cable",rescuer:"rescuer",basket:"rescue basket",hiker:"hiker",backpack:"backpack",mountain:"mountain",waterfall:"waterfall",lake:"mountain lake",eagle:"eagle",forest:"forest",campground:"campground",helmet:"rescue helmet",ledge:"rocky ledge"};
+const WORDS={
+es:{rescue:"helicóptero de rescate",helicopter:"helicóptero de rescate",pilot:"piloto",grandpa:"abuelo",mitchell:"Mitchell",nicole:"Nicole",bee:"abeja",dog:"perro de rescate",cable:"cable de rescate",rescuer:"rescatista",basket:"cesta de rescate",hiker:"excursionista",backpack:"mochila",mountain:"montaña",waterfall:"cascada",lake:"lago de montaña",eagle:"águila",forest:"bosque",campground:"campamento",helmet:"casco de rescate",ledge:"saliente rocoso"},
+fr:{rescue:"hélicoptère de sauvetage",helicopter:"hélicoptère de sauvetage",pilot:"pilote",grandpa:"grand-père",mitchell:"Mitchell",nicole:"Nicole",bee:"abeille",dog:"chien de sauvetage",cable:"câble de sauvetage",rescuer:"secouriste",basket:"panier de sauvetage",hiker:"randonneur",backpack:"sac à dos",mountain:"montagne",waterfall:"cascade",lake:"lac de montagne",eagle:"aigle",forest:"forêt",campground:"camping",helmet:"casque de sauvetage",ledge:"corniche rocheuse"},
+en:{...EN},
+de:{rescue:"Rettungshubschrauber",helicopter:"Rettungshubschrauber",pilot:"Pilot",grandpa:"Opa",mitchell:"Mitchell",nicole:"Nicole",bee:"Biene",dog:"Rettungshund",cable:"Rettungsseil",rescuer:"Retter",basket:"Rettungskorb",hiker:"Wanderer",backpack:"Rucksack",mountain:"Berg",waterfall:"Wasserfall",lake:"Bergsee",eagle:"Adler",forest:"Wald",campground:"Campingplatz",helmet:"Rettungshelm",ledge:"Felsvorsprung"},
+it:{rescue:"elicottero di soccorso",helicopter:"elicottero di soccorso",pilot:"pilota",grandpa:"nonno",mitchell:"Mitchell",nicole:"Nicole",bee:"ape",dog:"cane da soccorso",cable:"cavo di soccorso",rescuer:"soccorritore",basket:"cesta di soccorso",hiker:"escursionista",backpack:"zaino",mountain:"montagna",waterfall:"cascata",lake:"lago di montagna",eagle:"aquila",forest:"foresta",campground:"campeggio",helmet:"casco di soccorso",ledge:"sporgenza rocciosa"},
+pt:{rescue:"helicóptero de resgate",helicopter:"helicóptero de resgate",pilot:"piloto",grandpa:"avô",mitchell:"Mitchell",nicole:"Nicole",bee:"abelha",dog:"cão de resgate",cable:"cabo de resgate",rescuer:"socorrista",basket:"cesta de resgate",hiker:"caminhante",backpack:"mochila",mountain:"montanha",waterfall:"cachoeira",lake:"lago de montanha",eagle:"águia",forest:"floresta",campground:"acampamento",helmet:"capacete de resgate",ledge:"saliência rochosa"},
+no:{rescue:"redningshelikopter",helicopter:"redningshelikopter",pilot:"pilot",grandpa:"bestefar",mitchell:"Mitchell",nicole:"Nicole",bee:"bie",dog:"redningshund",cable:"redningskabel",rescuer:"redningsarbeider",basket:"redningskurv",hiker:"turgåer",backpack:"ryggsekk",mountain:"fjell",waterfall:"foss",lake:"fjellvann",eagle:"ørn",forest:"skog",campground:"campingplass",helmet:"redningshjelm",ledge:"fjellhylle"}};
+const SPEECH_LANG={es:"es-ES",fr:"fr-FR",en:"en-US",de:"de-DE",it:"it-IT",pt:"pt-PT",no:"nb-NO"};
+const lessons={
+en:{mission:["A hiker needs help high in the mountains.","The rescue helicopter team is moving into position."],helicopter:["The rescue helicopter can hover above places that are difficult to reach.","The pilot keeps the aircraft steady while the rescue team works."],rescue:["A rescuer is lowered toward the stranded hiker.","The rescue basket can safely lift someone away from the rocky ledge."],safety:["Helmets, harnesses, cables, and rescue equipment help protect the team.","Everyone works carefully and follows the rescue plan."],landscape:["Snowy mountains, a waterfall, forests, and a blue lake surround the rescue area.","An eagle flies high above the valley."],team:["Grandpa, Mitchell, Nicole, the pilot, and the rescue crew are working together.","Even the rescue dog and the Talk A Bee mascot came along."]},
+es:{mission:["Un excursionista necesita ayuda en lo alto de las montañas.","El equipo del helicóptero de rescate se está colocando en posición."],helicopter:["El helicóptero de rescate puede mantenerse sobre lugares difíciles de alcanzar.","El piloto mantiene la aeronave estable mientras trabaja el equipo."],rescue:["Un rescatista desciende hacia el excursionista atrapado.","La cesta de rescate puede levantar a una persona de forma segura desde la saliente rocosa."],safety:["Los cascos, arneses, cables y equipos de rescate ayudan a proteger al equipo.","Todos trabajan con cuidado y siguen el plan de rescate."],landscape:["Montañas nevadas, una cascada, bosques y un lago azul rodean la zona de rescate.","Un águila vuela sobre el valle."],team:["El abuelo, Mitchell, Nicole, el piloto y el equipo de rescate trabajan juntos.","Hasta el perro de rescate y la mascota Talk A Bee vinieron."]},
+fr:{mission:["Un randonneur a besoin d'aide dans les montagnes.","L'équipe de l'hélicoptère de sauvetage se met en position."],helicopter:["L'hélicoptère de sauvetage peut rester en vol stationnaire au-dessus des endroits difficiles d'accès.","Le pilote maintient l'appareil stable pendant que l'équipe travaille."],rescue:["Un secouriste descend vers le randonneur bloqué.","Le panier de sauvetage peut soulever une personne en sécurité depuis la corniche rocheuse."],safety:["Les casques, harnais, câbles et équipements de sauvetage protègent l'équipe.","Tout le monde travaille prudemment et suit le plan de sauvetage."],landscape:["Des montagnes enneigées, une cascade, des forêts et un lac bleu entourent la zone.","Un aigle vole au-dessus de la vallée."],team:["Grand-père, Mitchell, Nicole, le pilote et l'équipe de sauvetage travaillent ensemble.","Même le chien de sauvetage et la mascotte Talk A Bee sont venus."]},
+de:{mission:["Ein Wanderer braucht hoch in den Bergen Hilfe.","Das Team des Rettungshubschraubers bringt sich in Position."],helicopter:["Der Rettungshubschrauber kann über schwer erreichbaren Orten schweben.","Der Pilot hält den Hubschrauber ruhig, während das Rettungsteam arbeitet."],rescue:["Ein Retter wird zum gestrandeten Wanderer hinabgelassen.","Der Rettungskorb kann eine Person sicher vom Felsvorsprung wegheben."],safety:["Helme, Gurte, Seile und Rettungsausrüstung schützen das Team.","Alle arbeiten vorsichtig und folgen dem Rettungsplan."],landscape:["Schneebedeckte Berge, ein Wasserfall, Wälder und ein blauer See umgeben das Rettungsgebiet.","Ein Adler fliegt hoch über dem Tal."],team:["Opa, Mitchell, Nicole, der Pilot und das Rettungsteam arbeiten zusammen.","Sogar der Rettungshund und das Talk A Bee Maskottchen sind dabei."]},
+it:{mission:["Un escursionista ha bisogno di aiuto in alta montagna.","La squadra dell'elicottero di soccorso si sta mettendo in posizione."],helicopter:["L'elicottero di soccorso può restare sospeso sopra luoghi difficili da raggiungere.","Il pilota mantiene stabile l'elicottero mentre la squadra lavora."],rescue:["Un soccorritore viene calato verso l'escursionista bloccato.","La cesta di soccorso può sollevare una persona in sicurezza dalla sporgenza rocciosa."],safety:["Caschi, imbracature, cavi e attrezzature di soccorso proteggono la squadra.","Tutti lavorano con attenzione e seguono il piano di soccorso."],landscape:["Montagne innevate, una cascata, foreste e un lago blu circondano l'area.","Un'aquila vola alta sopra la valle."],team:["Nonno, Mitchell, Nicole, il pilota e la squadra di soccorso lavorano insieme.","Anche il cane da soccorso e la mascotte Talk A Bee sono venuti."]},
+pt:{mission:["Um caminhante precisa de ajuda no alto das montanhas.","A equipe do helicóptero de resgate está se posicionando."],helicopter:["O helicóptero de resgate pode pairar sobre lugares difíceis de alcançar.","O piloto mantém a aeronave estável enquanto a equipe trabalha."],rescue:["Um socorrista desce em direção ao caminhante preso.","A cesta de resgate pode retirar uma pessoa com segurança da saliência rochosa."],safety:["Capacetes, cintos, cabos e equipamentos de resgate ajudam a proteger a equipe.","Todos trabalham com cuidado e seguem o plano de resgate."],landscape:["Montanhas nevadas, uma cachoeira, florestas e um lago azul cercam a área.","Uma águia voa alto sobre o vale."],team:["O avô, Mitchell, Nicole, o piloto e a equipe de resgate trabalham juntos.","Até o cão de resgate e a mascote Talk A Bee vieram."]},
+no:{mission:["En turgåer trenger hjelp høyt oppe i fjellet.","Redningshelikopteret og teamet går i posisjon."],helicopter:["Redningshelikopteret kan sveve over steder som er vanskelige å nå.","Piloten holder helikopteret stabilt mens redningsteamet arbeider."],rescue:["En redningsarbeider senkes ned mot turgåeren.","Redningskurven kan løfte en person trygt bort fra fjellhyllen."],safety:["Hjelmer, seler, kabler og redningsutstyr beskytter teamet.","Alle arbeider forsiktig og følger redningsplanen."],landscape:["Snødekte fjell, en foss, skoger og et blått fjellvann omgir området.","En ørn flyr høyt over dalen."],team:["Bestefar, Mitchell, Nicole, piloten og redningsteamet arbeider sammen.","Til og med redningshunden og Talk A Bee-maskotten er med."]}};
+const challengeOrder=["hiker","basket","waterfall","eagle","dog","bee"];
+const SOUND_MAP={};
+const langSel=document.getElementById("lang"),voiceSel=document.getElementById("voice");
+const title=document.getElementById("title"),prompt=document.getElementById("prompt"),line=document.getElementById("line"),translation=document.getElementById("translation"),status=document.getElementById("status"),world=document.getElementById("world");
+let lastWord="rescue",activeLesson="",lessonPhrase=1,challenge=-1,lastSpoken="";
+function voices(){return ("speechSynthesis" in window)?speechSynthesis.getVoices():[]}
+function fillVoices(){const old=localStorage.getItem("talkabee-rescue-voice-"+langSel.value)||"";voiceSel.innerHTML='<option value="">Browser Default</option>';voices().forEach(v=>{const o=document.createElement("option");o.value=v.name;o.textContent=v.name+(v.lang?" — "+v.lang:"");voiceSel.appendChild(o)});if([...voiceSel.options].some(o=>o.value===old))voiceSel.value=old}
+if("speechSynthesis" in window){speechSynthesis.onvoiceschanged=fillVoices;fillVoices();setTimeout(fillVoices,150);setTimeout(fillVoices,600);setTimeout(fillVoices,1500)}
+voiceSel.onchange=()=>localStorage.setItem("talkabee-rescue-voice-"+langSel.value,voiceSel.value);
+function speak(text,rate=.88,onend=null){if(!text||!("speechSynthesis" in window)){if(onend)onend();return}speechSynthesis.cancel();setTimeout(()=>{const u=new SpeechSynthesisUtterance(text);u.lang=SPEECH_LANG[langSel.value]||langSel.value;u.rate=rate;const v=speechSynthesis.getVoices().find(x=>x.name===voiceSel.value);if(v)u.voice=v;if(onend)u.onend=onend;speechSynthesis.speak(u)},50);lastSpoken=text}
+function stopSound(){document.querySelectorAll("audio[data-talkabee-sound]").forEach(a=>{a.pause();a.currentTime=0;a.remove()})}
+function playSound(key){stopSound();const src=SOUND_MAP[key];if(!src)return;const a=new Audio(src);a.dataset.talkabeeSound="1";document.body.appendChild(a);a.play().catch(()=>{});a.onended=()=>a.remove()}
+function showWord(key){activeLesson="";lastWord=key;lessonPhrase=1;title.textContent="Click & Discover";prompt.textContent="You found "+(EN[key]||key)+".";line.textContent=WORDS[langSel.value][key]||EN[key]||key;translation.textContent=langSel.value==="en"?"":(EN[key]||key)}
+document.querySelectorAll(".hotspot").forEach(b=>b.onclick=()=>{const key=b.dataset.word;showWord(key);let played=false;const after=()=>{if(played)return;played=true;playSound(key)};speak(WORDS[langSel.value][key]||EN[key]||key,.82,after);setTimeout(after,1500);if(challenge>=0){if(key===challengeOrder[challenge]){status.textContent="✓ Nice find!";status.style.color="#9dffbf"}else{status.textContent="Not that one — keep looking.";status.style.color="#ffe28a"}}});
+function clearChallenge(){challenge=-1;world.classList.remove("challenge-mode");document.querySelectorAll(".hotspot").forEach(h=>h.classList.remove("target"));status.textContent=""}
+document.getElementById("discovery").onclick=()=>{clearChallenge();activeLesson="";lastWord="rescue";title.textContent="Click & Discover";prompt.textContent="Click any object in the scene to hear its name.";line.textContent=WORDS[langSel.value].rescue;translation.textContent=langSel.value==="en"?"":EN.rescue};
+document.querySelectorAll("[data-ch]").forEach(b=>b.onclick=()=>{activeLesson="";lastWord="";challenge=+b.dataset.ch;world.classList.add("challenge-mode");document.querySelectorAll(".hotspot").forEach(h=>h.classList.toggle("target",h.dataset.word===challengeOrder[challenge]));title.textContent="Challenge "+(challenge+1)+" of 6";prompt.textContent=b.textContent.replace(/^[0-9]+\.\s*/,"");line.textContent=WORDS[langSel.value][challengeOrder[challenge]];translation.textContent=langSel.value==="en"?"":EN[challengeOrder[challenge]];status.textContent=""});
+function showLesson(key,speakIt=false){clearChallenge();activeLesson=key;lastWord="";lessonPhrase=Math.max(0,Math.min(1,lessonPhrase));const a=lessons[langSel.value][key],e=lessons.en[key],btn=document.querySelector(`[data-lesson="${key}"]`);title.textContent=btn?btn.textContent.replace(/^[0-9]+\.\s*/,""):"Helicopter Mountain Rescue Adventure";prompt.textContent=a[0];line.textContent=a[lessonPhrase];translation.textContent=langSel.value==="en"?"":e[lessonPhrase];if(speakIt)speak(a[lessonPhrase])}
+document.querySelectorAll("[data-lesson]").forEach(b=>b.onclick=()=>{lessonPhrase=1;showLesson(b.dataset.lesson,true)});
+function currentSpeechText(){if(activeLesson)return lessons[langSel.value][activeLesson][lessonPhrase];if(lastWord)return WORDS[langSel.value][lastWord]||EN[lastWord];return line.textContent}
+document.getElementById("normal").onclick=()=>speak(currentSpeechText(),.82);
+document.getElementById("slow").onclick=()=>speak(currentSpeechText(),.58);
+document.getElementById("replay").onclick=()=>speak(lastSpoken||currentSpeechText(),.82);
+document.getElementById("nextPhrase").onclick=()=>{if(!activeLesson){const keys=Object.keys(EN),i=Math.max(0,keys.indexOf(lastWord));showWord(keys[(i+1)%keys.length]);speak(currentSpeechText(),.82);return}lessonPhrase=(lessonPhrase+1)%2;showLesson(activeLesson,true)};
+langSel.onchange=()=>{fillVoices();if(activeLesson)showLesson(activeLesson,false);else if(lastWord)showWord(lastWord)};
+document.getElementById("sceneView").onclick=()=>document.body.classList.add("scene-view");
+document.getElementById("sceneReturn").onclick=()=>document.body.classList.remove("scene-view");
+showWord("rescue");
+</script>
+</body>
+</html>
+
+<style id="talkabee-ski-panel-180">
+@media(min-width:761px){.panel{width:180px!important;min-width:180px!important;max-width:180px!important}}
+</style>

@@ -1,0 +1,203 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Talk A Bee — Hang Gliding Adventure</title>
+<link rel="icon" type="image/png" href="images/talkabee-favicon.png">
+<style>
+*{box-sizing:border-box}
+html,body{margin:0;width:100%;height:100%;overflow:hidden;font-family:Arial,Helvetica,sans-serif;background:#063a66;color:#fff}
+.world{position:relative;width:100vw;height:100vh;background:url("images/Talk-A-Bee-Hang-Gliding-Adventure.jpg") center center/cover no-repeat}
+
+/* APPROVED TALK A BEE LEFT PANEL */
+.panel{position:fixed;z-index:1000;left:16px;top:16px;bottom:16px;width:180px;min-width:180px;max-width:180px;
+padding:14px;overflow-x:hidden;overflow-y:auto;border-radius:20px;border:1px solid rgba(255,255,255,.28);
+background:rgba(7,23,39,.31);box-shadow:0 12px 30px rgba(0,0,0,.24);backdrop-filter:blur(3px);-webkit-backdrop-filter:blur(3px)}
+.panel h1{font-size:19px;line-height:1.08;margin:4px 0 10px;text-shadow:0 2px 4px rgba(0,0,0,.55)}
+.label{font-size:9.5px;line-height:1.1;letter-spacing:.09em;font-weight:900;margin:9px 0 4px}
+.panel button,.panel select,.panel a{width:100%;min-height:34px;margin:4px 0;padding:8px 9px;border-radius:12px;
+border:1px solid rgba(255,255,255,.38);background:rgba(7,32,50,.54);color:#fff;font:800 12px/1.16 Arial,sans-serif;
+text-align:left;text-decoration:none}
+.panel button:hover,.panel a:hover{background:rgba(20,58,79,.70)}
+.panel button.active{background:rgba(78,69,219,.74)}
+.panel select{white-space:nowrap;text-overflow:ellipsis;overflow:hidden}
+
+/* APPROVED 520px SCRIPT CARD */
+.card{position:fixed;z-index:900;left:50%;bottom:16px;width:520px;max-width:520px;padding:14px 16px;
+border-radius:20px;border:1px solid rgba(255,255,255,.30);background:rgba(25,19,24,.38);
+box-shadow:0 12px 30px rgba(0,0,0,.28);backdrop-filter:blur(5px);-webkit-backdrop-filter:blur(5px);
+transform:translateX(-50%) scale(.67);transform-origin:bottom center}
+.card .kicker{font-size:15px;line-height:1.25;font-weight:900;letter-spacing:.10em;color:rgba(255,255,255,.96);
+text-shadow:0 1px 3px rgba(0,0,0,.78);margin:0 0 6px}
+.card h2{font-size:22px;line-height:1.08;margin:4px 0 7px;text-shadow:0 1px 3px rgba(0,0,0,.55)}
+.card p{font-size:18px;line-height:1.35;margin:4px 0 7px}
+.word{margin-top:8px;padding:10px 12px;border-radius:14px;background:rgba(88,88,88,.72);border:1px solid rgba(255,255,255,.20)}
+.word strong{display:block;font-size:22px;line-height:1.28}
+.translation{font-size:18px;line-height:1.35;margin-top:3px}
+.controls{display:flex;align-items:center;gap:8px;flex-wrap:nowrap;margin-top:8px}
+.controls button{width:auto;min-width:0;padding:9px 13px;border-radius:12px;border:1px solid rgba(255,255,255,.35);
+background:rgba(255,255,255,.88);color:#10283c;font:900 13px/1 Arial,sans-serif;white-space:nowrap}
+
+/* HOTSPOTS */
+.hotspot{position:absolute;z-index:8;border:0;background:transparent;opacity:0;cursor:pointer;border-radius:16px}
+.hotspot:hover,.hotspot:focus-visible{opacity:1;background:rgba(255,220,72,.28);outline:2px solid rgba(255,255,255,.90)}
+.challenge-mode .hotspot.target{opacity:1;background:rgba(255,199,48,.38);outline:4px solid #fff;box-shadow:0 0 0 7px rgba(255,200,50,.20)}
+
+/* APPROVED COMPACT PREVIOUS / NEXT CHEVRONS */
+.talkabee-prev-next-nav{position:fixed;top:18px;right:22px;z-index:2147483000;display:flex;align-items:center;overflow:hidden;
+border:2px solid rgba(255,255,255,.82);border-radius:999px;background:rgba(11,22,42,.24);
+box-shadow:0 5px 16px rgba(0,0,0,.16);backdrop-filter:blur(3px);-webkit-backdrop-filter:blur(3px)}
+.talkabee-prev-next-nav a{width:48px;height:48px;display:grid;place-items:center;text-decoration:none;color:#fff;
+font:900 38px/1 Arial,sans-serif;text-shadow:0 1px 3px rgba(0,0,0,.42)}
+.talkabee-prev-next-nav a+a{border-left:1px solid rgba(255,255,255,.36)}
+.talkabee-prev-next-nav a:hover,.talkabee-prev-next-nav a:focus-visible{background:rgba(255,255,255,.18);outline:none}
+
+/* SCENE VIEW */
+.scene-return{display:none;position:fixed;z-index:2147483001;left:18px;top:18px;padding:10px 14px;border-radius:12px;
+border:1px solid #fff;background:rgba(7,23,39,.65);color:#fff;font-weight:900}
+.scene-view .panel,.scene-view .card,.scene-view .talkabee-prev-next-nav{display:none}
+.scene-view .scene-return{display:block}
+
+@media(max-width:760px){
+ .panel{left:10px;top:10px;bottom:10px;width:180px;min-width:180px;max-width:180px;padding:11px}
+ .card{width:min(520px,calc(100vw - 32px));bottom:10px;transform:translateX(-50%) scale(.82)}
+ .talkabee-prev-next-nav{top:12px;right:12px}.talkabee-prev-next-nav a{width:42px;height:42px;font-size:33px}
+}
+</style>
+</head>
+<body>
+<nav class="talkabee-prev-next-nav" aria-label="Adventure navigation">
+  <a href="Talk-A-Bee-Hollywood-Movie-Making-Adventure.html" aria-label="Previous adventure" title="Previous">‹</a>
+  <a href="Talk-A-Bee-Seattle-Fishing-Adventure.html" aria-label="Next adventure" title="Next">›</a>
+</nav>
+
+<main class="world" id="world">
+<button class="scene-return" id="sceneReturn">Return to Adventure</button>
+
+<aside class="panel">
+<h1>🪂 Hang Gliding Adventure</h1>
+<div class="label">LANGUAGE</div>
+<select id="lang">
+<option value="es">Spanish</option><option value="fr">French</option><option value="en">English</option>
+<option value="de">German</option><option value="it">Italian</option><option value="pt">Portuguese</option><option value="no">Norwegian</option>
+</select>
+<div class="label">VOICE</div>
+<select id="voice"><option value="">Browser Default</option></select>
+<button id="sceneView">◉ Scene View</button>
+
+<div class="label">DISCOVERY</div>
+<button id="discovery">🔎 Discovery — Click the Scene</button>
+
+<div class="label">ACTIVITIES</div>
+<button data-lesson="fly">1. Take to the Sky</button>
+<button data-lesson="glider">2. Explore the Hang Glider</button>
+<button data-lesson="view">3. Look Down Below</button>
+<button data-lesson="water">4. Lakes & Waterfalls</button>
+<button data-lesson="travel">5. Roads, Boats & Trains</button>
+<button data-lesson="wildlife">6. Wildlife from Above</button>
+<div class="label">CHALLENGES</div>
+<button data-ch="0">1. Find the Eagle</button>
+<button data-ch="1">2. Find the Waterfall</button>
+<button data-ch="2">3. Find the Train</button>
+<button data-ch="3">4. Find the RV</button>
+<button data-ch="4">5. Find the Deer</button>
+<button data-ch="5">6. Find the Bee</button>
+<a href="index.html">← Return to Main Directory</a>
+</aside>
+
+<section class="card">
+<div class="kicker">HIGH ABOVE TALK A BEE COUNTRY</div>
+<h2 id="title">Hang Gliding Adventure</h2>
+<p id="prompt">Click any object in the scene to hear its name.</p>
+<div class="word"><strong id="line">ala delta</strong><div class="translation" id="translation">hang glider</div></div>
+<p id="status"></p>
+<div class="controls">
+<button id="normal">🔊 Speak</button><button id="slow">🐢 Slow</button><button id="replay">↻ Replay</button><button id="nextPhrase">Next phrase →</button>
+</div>
+</section>
+
+
+
+
+
+
+
+<!-- Hotspots mapped to the approved wide Hang Gliding Adventure JPG. -->
+<button class="hotspot" data-word="glider" style="left:14%;top:0%;width:85%;height:25%" aria-label="Hang glider"></button>
+<button class="hotspot" data-word="boy" style="left:29%;top:12%;width:24%;height:31%" aria-label="Boy"></button>
+<button class="hotspot" data-word="bee" style="left:51%;top:17%;width:13%;height:24%" aria-label="Bee"></button>
+<button class="hotspot" data-word="girl" style="left:62%;top:12%;width:23%;height:32%" aria-label="Girl"></button>
+<button class="hotspot" data-word="controlbar" style="left:30%;top:32%;width:55%;height:12%" aria-label="Control bar"></button>
+<button class="hotspot" data-word="helmet" style="left:47%;top:11%;width:10%;height:14%" aria-label="Helmet"></button>
+<button class="hotspot" data-word="eagle" style="left:14%;top:8%;width:17%;height:17%" aria-label="Eagle"></button>
+<button class="hotspot" data-word="mountains" style="left:0%;top:14%;width:48%;height:28%" aria-label="Mountains"></button>
+<button class="hotspot" data-word="lake" style="left:38%;top:37%;width:55%;height:29%" aria-label="Lake"></button>
+<button class="hotspot" data-word="waterfall" style="left:7%;top:42%;width:17%;height:26%" aria-label="Waterfall"></button>
+<button class="hotspot" data-word="town" style="left:69%;top:42%;width:29%;height:23%" aria-label="Town"></button>
+<button class="hotspot" data-word="boat" style="left:56%;top:50%;width:17%;height:13%" aria-label="Boat"></button>
+<button class="hotspot" data-word="train" style="left:56%;top:69%;width:31%;height:13%" aria-label="Train"></button>
+<button class="hotspot" data-word="bridge" style="left:58%;top:74%;width:24%;height:18%" aria-label="Rail bridge"></button>
+<button class="hotspot" data-word="river" style="left:54%;top:78%;width:24%;height:21%" aria-label="River"></button>
+<button class="hotspot" data-word="rv" style="left:90%;top:61%;width:10%;height:17%" aria-label="RV"></button>
+<button class="hotspot" data-word="road" style="left:84%;top:57%;width:16%;height:26%" aria-label="Road"></button>
+<button class="hotspot" data-word="cabin" style="left:23%;top:67%;width:17%;height:18%" aria-label="Cabin"></button>
+<button class="hotspot" data-word="deer" style="left:0%;top:61%;width:14%;height:26%" aria-label="Deer"></button>
+<button class="hotspot" data-word="forest" style="left:13%;top:55%;width:40%;height:41%" aria-label="Forest"></button>
+
+</main>
+
+<script>
+const EN={hanggliding:"hang glider",glider:"hang glider",boy:"boy",bee:"bee",girl:"girl",controlbar:"control bar",helmet:"helmet",eagle:"eagle",mountains:"mountains",lake:"lake",waterfall:"waterfall",town:"town",boat:"boat",train:"train",bridge:"rail bridge",river:"river",rv:"RV",road:"road",cabin:"cabin",deer:"deer",forest:"forest"};
+const WORDS={
+es:{hanggliding:"ala delta",glider:"ala delta",boy:"niño",bee:"abeja",girl:"niña",controlbar:"barra de control",helmet:"casco",eagle:"águila",mountains:"montañas",lake:"lago",waterfall:"cascada",town:"pueblo",boat:"barco",train:"tren",bridge:"puente ferroviario",river:"río",rv:"vehículo recreativo",road:"carretera",cabin:"cabaña",deer:"ciervo",forest:"bosque"},
+fr:{hanggliding:"deltaplane",glider:"deltaplane",boy:"garçon",bee:"abeille",girl:"fille",controlbar:"barre de contrôle",helmet:"casque",eagle:"aigle",mountains:"montagnes",lake:"lac",waterfall:"cascade",town:"ville",boat:"bateau",train:"train",bridge:"pont ferroviaire",river:"rivière",rv:"camping-car",road:"route",cabin:"chalet",deer:"cerf",forest:"forêt"},
+en:{...EN},
+de:{hanggliding:"Drachenflieger",glider:"Drachenflieger",boy:"Junge",bee:"Biene",girl:"Mädchen",controlbar:"Steuerbügel",helmet:"Helm",eagle:"Adler",mountains:"Berge",lake:"See",waterfall:"Wasserfall",town:"Stadt",boat:"Boot",train:"Zug",bridge:"Eisenbahnbrücke",river:"Fluss",rv:"Wohnmobil",road:"Straße",cabin:"Hütte",deer:"Hirsch",forest:"Wald"},
+it:{hanggliding:"deltaplano",glider:"deltaplano",boy:"ragazzo",bee:"ape",girl:"ragazza",controlbar:"barra di controllo",helmet:"casco",eagle:"aquila",mountains:"montagne",lake:"lago",waterfall:"cascata",town:"città",boat:"barca",train:"treno",bridge:"ponte ferroviario",river:"fiume",rv:"camper",road:"strada",cabin:"baita",deer:"cervo",forest:"foresta"},
+pt:{hanggliding:"asa-delta",glider:"asa-delta",boy:"menino",bee:"abelha",girl:"menina",controlbar:"barra de controle",helmet:"capacete",eagle:"águia",mountains:"montanhas",lake:"lago",waterfall:"cachoeira",town:"cidade",boat:"barco",train:"trem",bridge:"ponte ferroviária",river:"rio",rv:"motorhome",road:"estrada",cabin:"cabana",deer:"veado",forest:"floresta"},
+no:{hanggliding:"hangglider",glider:"hangglider",boy:"gutt",bee:"bie",girl:"jente",controlbar:"styrebøyle",helmet:"hjelm",eagle:"ørn",mountains:"fjell",lake:"innsjø",waterfall:"foss",town:"by",boat:"båt",train:"tog",bridge:"jernbanebro",river:"elv",rv:"bobil",road:"vei",cabin:"hytte",deer:"hjort",forest:"skog"}};
+const SPEECH_LANG={es:"es-ES",fr:"fr-FR",en:"en-US",de:"de-DE",it:"it-IT",pt:"pt-PT",no:"nb-NO"};
+const lessons={
+en:{fly:["We are hang gliding high above Talk A Bee country.","The wind carries the glider smoothly across the valley."],glider:["The colorful wing lifts the hang glider through the air.","The children hold the control bar while safely secured in their harnesses."],view:["From up here we can see mountains, forests, a town, and a sparkling lake.","Everything below looks small from the sky."],water:["A waterfall pours down the mountainside into the valley.","The lake and river wind through the landscape below."],travel:["A train crosses the bridge while boats travel across the lake.","Roads curve through the mountains toward cabins and towns."],wildlife:["An eagle flies beside the glider and a deer stands far below.","Even the Talk A Bee mascot came along for the flight."]},
+es:{fly:["Volamos en ala delta muy alto sobre el país de Talk A Bee.","El viento lleva el ala delta suavemente por el valle."],glider:["El ala colorida mantiene el ala delta en el aire.","Los niños sostienen la barra de control mientras están sujetos con seguridad."],view:["Desde aquí podemos ver montañas, bosques, un pueblo y un lago brillante.","Todo parece pequeño desde el cielo."],water:["Una cascada cae por la montaña hacia el valle.","El lago y el río atraviesan el paisaje."],travel:["Un tren cruza el puente mientras los barcos navegan por el lago.","Las carreteras serpentean por las montañas hacia cabañas y pueblos."],wildlife:["Un águila vuela junto al ala delta y un ciervo está muy abajo.","Hasta la mascota de Talk A Bee vino a volar."]},
+fr:{fly:["Nous faisons du deltaplane très haut au-dessus du pays de Talk A Bee.","Le vent porte doucement le deltaplane au-dessus de la vallée."],glider:["L'aile colorée maintient le deltaplane dans les airs.","Les enfants tiennent la barre de contrôle tout en étant attachés en sécurité."],view:["D'ici, nous voyons des montagnes, des forêts, une ville et un lac étincelant.","Tout semble petit vu du ciel."],water:["Une cascade descend de la montagne vers la vallée.","Le lac et la rivière serpentent dans le paysage."],travel:["Un train traverse le pont pendant que des bateaux naviguent sur le lac.","Les routes tournent dans les montagnes vers les chalets et les villes."],wildlife:["Un aigle vole près du deltaplane et un cerf se tient loin en dessous.","Même la mascotte Talk A Bee est venue voler."]},
+de:{fly:["Wir fliegen mit dem Drachen hoch über dem Talk A Bee Land.","Der Wind trägt den Drachen sanft über das Tal."],glider:["Der bunte Flügel hält den Drachen in der Luft.","Die Kinder halten den Steuerbügel und sind sicher angeschnallt."],view:["Von hier oben sehen wir Berge, Wälder, eine Stadt und einen glitzernden See.","Vom Himmel aus sieht unten alles klein aus."],water:["Ein Wasserfall stürzt den Berghang hinunter ins Tal.","See und Fluss ziehen sich durch die Landschaft."],travel:["Ein Zug fährt über die Brücke, während Boote über den See fahren.","Straßen schlängeln sich durch die Berge zu Hütten und Städten."],wildlife:["Ein Adler fliegt neben dem Drachen und weit unten steht ein Hirsch.","Sogar das Talk A Bee Maskottchen ist mitgeflogen."]},
+it:{fly:["Voliamo in deltaplano molto in alto sopra il paese di Talk A Bee.","Il vento porta dolcemente il deltaplano attraverso la valle."],glider:["L'ala colorata mantiene il deltaplano in aria.","I bambini tengono la barra di controllo mentre sono assicurati alle imbracature."],view:["Da quassù vediamo montagne, foreste, una città e un lago scintillante.","Dal cielo tutto sembra piccolo."],water:["Una cascata scende dalla montagna nella valle.","Il lago e il fiume attraversano il paesaggio."],travel:["Un treno attraversa il ponte mentre le barche navigano sul lago.","Le strade attraversano le montagne verso baite e città."],wildlife:["Un'aquila vola accanto al deltaplano e un cervo si trova molto più in basso.","Anche la mascotte Talk A Bee è venuta a volare."]},
+pt:{fly:["Estamos voando de asa-delta bem alto sobre a terra de Talk A Bee.","O vento leva a asa-delta suavemente pelo vale."],glider:["A asa colorida mantém a asa-delta no ar.","As crianças seguram a barra de controle enquanto estão presas com segurança."],view:["Daqui de cima vemos montanhas, florestas, uma cidade e um lago brilhante.","Tudo parece pequeno visto do céu."],water:["Uma cachoeira desce a montanha até o vale.","O lago e o rio atravessam a paisagem."],travel:["Um trem atravessa a ponte enquanto barcos navegam pelo lago.","As estradas passam pelas montanhas em direção a cabanas e cidades."],wildlife:["Uma águia voa ao lado da asa-delta e um veado está lá embaixo.","Até a mascote Talk A Bee veio para o voo."]},
+no:{fly:["Vi flyr med hangglider høyt over Talk A Bee-land.","Vinden bærer hangglideren rolig over dalen."],glider:["Den fargerike vingen holder hangglideren i luften.","Barna holder styrebøylen mens de er trygt festet i selene."],view:["Her oppe ser vi fjell, skoger, en by og en glitrende innsjø.","Alt ser lite ut fra himmelen."],water:["En foss renner ned fjellsiden og inn i dalen.","Innsjøen og elven slynger seg gjennom landskapet."],travel:["Et tog krysser broen mens båter beveger seg over innsjøen.","Veier svinger gjennom fjellene mot hytter og byer."],wildlife:["En ørn flyr ved siden av hangglideren og en hjort står langt nedenfor.","Selv Talk A Bee-maskotten ble med på flyturen."]}};
+const challengeOrder=["eagle","waterfall","train","rv","deer","bee"];
+const SOUND_MAP={};
+const langSel=document.getElementById("lang"),voiceSel=document.getElementById("voice");
+const title=document.getElementById("title"),prompt=document.getElementById("prompt"),line=document.getElementById("line"),translation=document.getElementById("translation"),status=document.getElementById("status"),world=document.getElementById("world");
+let lastWord="hanggliding",activeLesson="",lessonPhrase=1,challenge=-1,lastSpoken="";
+function voices(){return ("speechSynthesis" in window)?speechSynthesis.getVoices():[]}
+function fillVoices(){const old=localStorage.getItem("talkabee-hanggliding-voice-"+langSel.value)||"";voiceSel.innerHTML='<option value="">Browser Default</option>';voices().forEach(v=>{const o=document.createElement("option");o.value=v.name;o.textContent=v.name+(v.lang?" — "+v.lang:"");voiceSel.appendChild(o)});if([...voiceSel.options].some(o=>o.value===old))voiceSel.value=old}
+if("speechSynthesis" in window){speechSynthesis.onvoiceschanged=fillVoices;fillVoices();setTimeout(fillVoices,150);setTimeout(fillVoices,600);setTimeout(fillVoices,1500)}
+voiceSel.onchange=()=>localStorage.setItem("talkabee-hanggliding-voice-"+langSel.value,voiceSel.value);
+function speak(text,rate=.88,onend=null){if(!text||!("speechSynthesis" in window)){if(onend)onend();return}speechSynthesis.cancel();setTimeout(()=>{const u=new SpeechSynthesisUtterance(text);u.lang=SPEECH_LANG[langSel.value]||langSel.value;u.rate=rate;const v=speechSynthesis.getVoices().find(x=>x.name===voiceSel.value);if(v)u.voice=v;if(onend)u.onend=onend;speechSynthesis.speak(u)},50);lastSpoken=text}
+function stopSound(){document.querySelectorAll("audio[data-talkabee-sound]").forEach(a=>{a.pause();a.currentTime=0;a.remove()})}
+function playSound(key){stopSound();const src=SOUND_MAP[key];if(!src)return;const a=new Audio(src);a.dataset.talkabeeSound="1";document.body.appendChild(a);a.play().catch(()=>{});a.onended=()=>a.remove()}
+function showWord(key){activeLesson="";lastWord=key;lessonPhrase=1;title.textContent="Click & Discover";prompt.textContent="You found "+(EN[key]||key)+".";line.textContent=WORDS[langSel.value][key]||EN[key]||key;translation.textContent=langSel.value==="en"?"":(EN[key]||key)}
+document.querySelectorAll(".hotspot").forEach(b=>b.onclick=()=>{const key=b.dataset.word;showWord(key);let played=false;const after=()=>{if(played)return;played=true;playSound(key)};speak(WORDS[langSel.value][key]||EN[key]||key,.82,after);setTimeout(after,1500);if(challenge>=0){if(key===challengeOrder[challenge]){status.textContent="✓ Nice find!";status.style.color="#9dffbf"}else{status.textContent="Not that one — keep looking.";status.style.color="#ffe28a"}}});
+function clearChallenge(){challenge=-1;world.classList.remove("challenge-mode");document.querySelectorAll(".hotspot").forEach(h=>h.classList.remove("target"));status.textContent=""}
+document.getElementById("discovery").onclick=()=>{clearChallenge();activeLesson="";lastWord="hanggliding";title.textContent="Click & Discover";prompt.textContent="Click any object in the scene to hear its name.";line.textContent=WORDS[langSel.value].hanggliding;translation.textContent=langSel.value==="en"?"":EN.hanggliding};
+document.querySelectorAll("[data-ch]").forEach(b=>b.onclick=()=>{activeLesson="";lastWord="";challenge=+b.dataset.ch;world.classList.add("challenge-mode");document.querySelectorAll(".hotspot").forEach(h=>h.classList.toggle("target",h.dataset.word===challengeOrder[challenge]));title.textContent="Challenge "+(challenge+1)+" of 6";prompt.textContent=b.textContent.replace(/^[0-9]+\.\s*/,"");line.textContent=WORDS[langSel.value][challengeOrder[challenge]];translation.textContent=langSel.value==="en"?"":EN[challengeOrder[challenge]];status.textContent=""});
+function showLesson(key,speakIt=false){clearChallenge();activeLesson=key;lastWord="";lessonPhrase=Math.max(0,Math.min(1,lessonPhrase));const a=lessons[langSel.value][key],e=lessons.en[key],btn=document.querySelector(`[data-lesson="${key}"]`);title.textContent=btn?btn.textContent.replace(/^[0-9]+\.\s*/,""):"Hang Gliding Adventure";prompt.textContent=a[0];line.textContent=a[lessonPhrase];translation.textContent=langSel.value==="en"?"":e[lessonPhrase];if(speakIt)speak(a[lessonPhrase])}
+document.querySelectorAll("[data-lesson]").forEach(b=>b.onclick=()=>{lessonPhrase=1;showLesson(b.dataset.lesson,true)});
+function currentSpeechText(){if(activeLesson)return lessons[langSel.value][activeLesson][lessonPhrase];if(lastWord)return WORDS[langSel.value][lastWord]||EN[lastWord];return line.textContent}
+document.getElementById("normal").onclick=()=>speak(currentSpeechText(),.82);
+document.getElementById("slow").onclick=()=>speak(currentSpeechText(),.58);
+document.getElementById("replay").onclick=()=>speak(lastSpoken||currentSpeechText(),.82);
+document.getElementById("nextPhrase").onclick=()=>{if(!activeLesson){const keys=Object.keys(EN),i=Math.max(0,keys.indexOf(lastWord));showWord(keys[(i+1)%keys.length]);speak(currentSpeechText(),.82);return}lessonPhrase=(lessonPhrase+1)%2;showLesson(activeLesson,true)};
+langSel.onchange=()=>{fillVoices();if(activeLesson)showLesson(activeLesson,false);else if(lastWord)showWord(lastWord)};
+document.getElementById("sceneView").onclick=()=>document.body.classList.add("scene-view");
+document.getElementById("sceneReturn").onclick=()=>document.body.classList.remove("scene-view");
+showWord("hanggliding");
+</script>
+</body>
+</html>
+
+<style id="talkabee-ski-panel-180">
+@media(min-width:761px){.panel{width:180px!important;min-width:180px!important;max-width:180px!important}}
+</style>
