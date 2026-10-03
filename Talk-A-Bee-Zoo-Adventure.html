@@ -1,0 +1,199 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Talk A Bee — Zoo Adventure</title>
+<link rel="icon" type="image/png" href="images/talkabee-favicon.png">
+<style>
+*{box-sizing:border-box}
+html,body{margin:0;width:100%;height:100%;overflow:hidden;font-family:Arial,Helvetica,sans-serif;background:#063a66;color:#fff}
+.world{position:relative;width:100vw;height:100vh;background:url("images/Talk-A-Bee-Zoo-Adventure.jpg") center center/cover no-repeat}
+
+/* APPROVED TALK A BEE LEFT PANEL */
+.panel{position:fixed;z-index:1000;left:16px;top:16px;bottom:16px;width:180px;min-width:180px;max-width:180px;
+padding:14px;overflow-x:hidden;overflow-y:auto;border-radius:20px;border:1px solid rgba(255,255,255,.28);
+background:rgba(7,23,39,.31);box-shadow:0 12px 30px rgba(0,0,0,.24);backdrop-filter:blur(3px);-webkit-backdrop-filter:blur(3px)}
+.panel h1{font-size:19px;line-height:1.08;margin:4px 0 10px;text-shadow:0 2px 4px rgba(0,0,0,.55)}
+.label{font-size:9.5px;line-height:1.1;letter-spacing:.09em;font-weight:900;margin:9px 0 4px}
+.panel button,.panel select,.panel a{width:100%;min-height:34px;margin:4px 0;padding:8px 9px;border-radius:12px;
+border:1px solid rgba(255,255,255,.38);background:rgba(7,32,50,.54);color:#fff;font:800 12px/1.16 Arial,sans-serif;
+text-align:left;text-decoration:none}
+.panel button:hover,.panel a:hover{background:rgba(20,58,79,.70)}
+.panel button.active{background:rgba(78,69,219,.74)}
+.panel select{white-space:nowrap;text-overflow:ellipsis;overflow:hidden}
+
+/* APPROVED 520px SCRIPT CARD */
+.card{position:fixed;z-index:900;left:50%;bottom:16px;width:520px;max-width:520px;padding:14px 16px;
+border-radius:20px;border:1px solid rgba(255,255,255,.30);background:rgba(25,19,24,.38);
+box-shadow:0 12px 30px rgba(0,0,0,.28);backdrop-filter:blur(5px);-webkit-backdrop-filter:blur(5px);
+transform:translateX(-50%) scale(.67);transform-origin:bottom center}
+.card .kicker{font-size:15px;line-height:1.25;font-weight:900;letter-spacing:.10em;color:rgba(255,255,255,.96);
+text-shadow:0 1px 3px rgba(0,0,0,.78);margin:0 0 6px}
+.card h2{font-size:22px;line-height:1.08;margin:4px 0 7px;text-shadow:0 1px 3px rgba(0,0,0,.55)}
+.card p{font-size:18px;line-height:1.35;margin:4px 0 7px}
+.word{margin-top:8px;padding:10px 12px;border-radius:14px;background:rgba(88,88,88,.72);border:1px solid rgba(255,255,255,.20)}
+.word strong{display:block;font-size:22px;line-height:1.28}
+.translation{font-size:18px;line-height:1.35;margin-top:3px}
+.controls{display:flex;align-items:center;gap:8px;flex-wrap:nowrap;margin-top:8px}
+.controls button{width:auto;min-width:0;padding:9px 13px;border-radius:12px;border:1px solid rgba(255,255,255,.35);
+background:rgba(255,255,255,.88);color:#10283c;font:900 13px/1 Arial,sans-serif;white-space:nowrap}
+
+/* HOTSPOTS */
+.hotspot{position:absolute;z-index:8;border:0;background:transparent;opacity:0;cursor:pointer;border-radius:16px}
+.hotspot:hover,.hotspot:focus-visible{opacity:1;background:rgba(255,220,72,.28);outline:2px solid rgba(255,255,255,.90)}
+.challenge-mode .hotspot.target{opacity:1;background:rgba(255,199,48,.38);outline:4px solid #fff;box-shadow:0 0 0 7px rgba(255,200,50,.20)}
+
+/* APPROVED COMPACT PREVIOUS / NEXT CHEVRONS */
+.talkabee-prev-next-nav{position:fixed;top:18px;right:22px;z-index:2147483000;display:flex;align-items:center;overflow:hidden;
+border:2px solid rgba(255,255,255,.82);border-radius:999px;background:rgba(11,22,42,.24);
+box-shadow:0 5px 16px rgba(0,0,0,.16);backdrop-filter:blur(3px);-webkit-backdrop-filter:blur(3px)}
+.talkabee-prev-next-nav a{width:48px;height:48px;display:grid;place-items:center;text-decoration:none;color:#fff;
+font:900 38px/1 Arial,sans-serif;text-shadow:0 1px 3px rgba(0,0,0,.42)}
+.talkabee-prev-next-nav a+a{border-left:1px solid rgba(255,255,255,.36)}
+.talkabee-prev-next-nav a:hover,.talkabee-prev-next-nav a:focus-visible{background:rgba(255,255,255,.18);outline:none}
+
+/* SCENE VIEW */
+.scene-return{display:none;position:fixed;z-index:2147483001;left:18px;top:18px;padding:10px 14px;border-radius:12px;
+border:1px solid #fff;background:rgba(7,23,39,.65);color:#fff;font-weight:900}
+.scene-view .panel,.scene-view .card,.scene-view .talkabee-prev-next-nav{display:none}
+.scene-view .scene-return{display:block}
+
+@media(max-width:760px){
+ .panel{left:10px;top:10px;bottom:10px;width:180px;min-width:180px;max-width:180px;padding:11px}
+ .card{width:min(520px,calc(100vw - 32px));bottom:10px;transform:translateX(-50%) scale(.82)}
+ .talkabee-prev-next-nav{top:12px;right:12px}.talkabee-prev-next-nav a{width:42px;height:42px;font-size:33px}
+}
+</style>
+</head>
+<body>
+<nav class="talkabee-prev-next-nav" aria-label="Adventure navigation">
+  <a href="Talk-A-Bee-Airplane-Flying-Adventure.html" aria-label="Previous adventure" title="Previous">‹</a>
+  <a href="Talk-A-Bee-Nighttime-Campground-Adventure.html" aria-label="Next adventure" title="Next">›</a>
+</nav>
+
+<main class="world" id="world">
+<button class="scene-return" id="sceneReturn">Return to Adventure</button>
+
+<aside class="panel">
+<h1>🦁 Zoo Adventure</h1>
+<div class="label">LANGUAGE</div>
+<select id="lang">
+<option value="es">Spanish</option><option value="fr">French</option><option value="en">English</option>
+<option value="de">German</option><option value="it">Italian</option><option value="pt">Portuguese</option><option value="no">Norwegian</option>
+</select>
+<div class="label">VOICE</div>
+<select id="voice"><option value="">Browser Default</option></select>
+<button id="sceneView">◉ Scene View</button>
+
+<div class="label">DISCOVERY</div>
+<button id="discovery">🔎 Discovery — Click the Scene</button>
+
+<div class="label">ACTIVITIES</div>
+<button data-lesson="welcome">1. Welcome to the Zoo</button>
+<button data-lesson="savanna">2. Savanna Animals</button>
+<button data-lesson="birds">3. Birds & Penguins</button>
+<button data-lesson="water">4. Animals in the Water</button>
+<button data-lesson="sounds">5. Animal Sounds</button>
+<button data-lesson="explore">6. Explore the Zoo</button>
+<div class="label">CHALLENGES</div>
+<button data-ch="0">1. Find the Elephant</button>
+<button data-ch="1">2. Find the Lion</button>
+<button data-ch="2">3. Find the Zebra</button>
+<button data-ch="3">4. Find the Penguins</button>
+<button data-ch="4">5. Find the Parrot</button>
+<button data-ch="5">6. Find the Bee</button>
+<a href="index.html">← Return to Main Directory</a>
+</aside>
+
+<section class="card">
+<div class="kicker">AT THE ZOO</div>
+<h2 id="title">Zoo Adventure</h2>
+<p id="prompt">Click any object in the scene to hear its name.</p>
+<div class="word"><strong id="line">zoológico</strong><div class="translation" id="translation">zoo</div></div>
+<p id="status"></p>
+<div class="controls">
+<button id="normal">🔊 Speak</button><button id="slow">🐢 Slow</button><button id="replay">↻ Replay</button><button id="nextPhrase">Next phrase →</button>
+</div>
+</section>
+
+
+
+
+<!-- Hotspots mapped to the approved wide Zoo Adventure JPG. -->
+<button class="hotspot" data-word="elephant" style="left:0%;top:5%;width:26%;height:54%" aria-label="Elephant"></button>
+<button class="hotspot" data-word="giraffe" style="left:23%;top:8%;width:18%;height:45%" aria-label="Giraffes"></button>
+<button class="hotspot" data-word="mountain" style="left:47%;top:8%;width:18%;height:20%" aria-label="Mountain"></button>
+<button class="hotspot" data-word="bee" style="left:60%;top:5%;width:11%;height:18%" aria-label="Bee"></button>
+<button class="hotspot" data-word="monkey" style="left:72%;top:1%;width:11%;height:17%" aria-label="Monkey"></button>
+<button class="hotspot" data-word="parrot" style="left:88%;top:2%;width:10%;height:17%" aria-label="Parrot"></button>
+<button class="hotspot" data-word="lion" style="left:78%;top:18%;width:21%;height:25%" aria-label="Lion"></button>
+<button class="hotspot" data-word="zoosign" style="left:49%;top:29%;width:20%;height:17%" aria-label="Zoo sign"></button>
+<button class="hotspot" data-word="zebra" style="left:49%;top:44%;width:15%;height:19%" aria-label="Zebra"></button>
+<button class="hotspot" data-word="tram" style="left:61%;top:45%;width:18%;height:16%" aria-label="Zoo tram"></button>
+<button class="hotspot" data-word="penguins" style="left:53%;top:62%;width:20%;height:24%" aria-label="Penguins"></button>
+<button class="hotspot" data-word="seal" style="left:78%;top:51%;width:21%;height:34%" aria-label="Sea lion"></button>
+<button class="hotspot" data-word="waterfall" style="left:91%;top:35%;width:9%;height:28%" aria-label="Waterfall"></button>
+<button class="hotspot" data-word="pool" style="left:68%;top:66%;width:31%;height:25%" aria-label="Pool"></button>
+<button class="hotspot" data-word="boy" style="left:23%;top:61%;width:18%;height:38%" aria-label="Boy"></button>
+<button class="hotspot" data-word="girl" style="left:39%;top:64%;width:20%;height:35%" aria-label="Girl"></button>
+<button class="hotspot" data-word="visitors" style="left:21%;top:45%;width:27%;height:26%" aria-label="Zoo visitors"></button>
+<button class="hotspot" data-word="trees" style="left:0%;top:0%;width:100%;height:18%" aria-label="Trees"></button>
+<button class="hotspot" data-word="path" style="left:28%;top:69%;width:19%;height:27%" aria-label="Zoo path"></button>
+
+</main>
+
+<script>
+const EN={zoo:"zoo",elephant:"elephant",giraffe:"giraffes",mountain:"mountain",bee:"bee",monkey:"monkey",parrot:"parrot",lion:"lion",zoosign:"zoo sign",zebra:"zebra",tram:"zoo tram",penguins:"penguins",seal:"sea lion",waterfall:"waterfall",pool:"pool",boy:"boy",girl:"girl",visitors:"zoo visitors",trees:"trees",path:"zoo path"};
+const WORDS={
+es:{zoo:"zoológico",elephant:"elefante",giraffe:"jirafas",mountain:"montaña",bee:"abeja",monkey:"mono",parrot:"loro",lion:"león",zoosign:"letrero del zoológico",zebra:"cebra",tram:"tranvía del zoológico",penguins:"pingüinos",seal:"león marino",waterfall:"cascada",pool:"estanque",boy:"niño",girl:"niña",visitors:"visitantes del zoológico",trees:"árboles",path:"sendero del zoológico"},
+fr:{zoo:"zoo",elephant:"éléphant",giraffe:"girafes",mountain:"montagne",bee:"abeille",monkey:"singe",parrot:"perroquet",lion:"lion",zoosign:"panneau du zoo",zebra:"zèbre",tram:"tram du zoo",penguins:"manchots",seal:"otarie",waterfall:"cascade",pool:"bassin",boy:"garçon",girl:"fille",visitors:"visiteurs du zoo",trees:"arbres",path:"chemin du zoo"},
+en:{...EN},
+de:{zoo:"Zoo",elephant:"Elefant",giraffe:"Giraffen",mountain:"Berg",bee:"Biene",monkey:"Affe",parrot:"Papagei",lion:"Löwe",zoosign:"Zooschild",zebra:"Zebra",tram:"Zoobahn",penguins:"Pinguine",seal:"Seelöwe",waterfall:"Wasserfall",pool:"Becken",boy:"Junge",girl:"Mädchen",visitors:"Zoobesucher",trees:"Bäume",path:"Zooweg"},
+it:{zoo:"zoo",elephant:"elefante",giraffe:"giraffe",mountain:"montagna",bee:"ape",monkey:"scimmia",parrot:"pappagallo",lion:"leone",zoosign:"cartello dello zoo",zebra:"zebra",tram:"trenino dello zoo",penguins:"pinguini",seal:"leone marino",waterfall:"cascata",pool:"vasca",boy:"ragazzo",girl:"ragazza",visitors:"visitatori dello zoo",trees:"alberi",path:"sentiero dello zoo"},
+pt:{zoo:"zoológico",elephant:"elefante",giraffe:"girafas",mountain:"montanha",bee:"abelha",monkey:"macaco",parrot:"papagaio",lion:"leão",zoosign:"placa do zoológico",zebra:"zebra",tram:"bonde do zoológico",penguins:"pinguins",seal:"leão-marinho",waterfall:"cachoeira",pool:"lago",boy:"menino",girl:"menina",visitors:"visitantes do zoológico",trees:"árvores",path:"caminho do zoológico"},
+no:{zoo:"dyrehage",elephant:"elefant",giraffe:"sjiraffer",mountain:"fjell",bee:"bie",monkey:"ape",parrot:"papegøye",lion:"løve",zoosign:"dyrehageskilt",zebra:"sebra",tram:"dyrehagetrikk",penguins:"pingviner",seal:"sjøløve",waterfall:"foss",pool:"basseng",boy:"gutt",girl:"jente",visitors:"besøkende",trees:"trær",path:"sti"}};
+const SPEECH_LANG={es:"es-ES",fr:"fr-FR",en:"en-US",de:"de-DE",it:"it-IT",pt:"pt-PT",no:"nb-NO"};
+const lessons={
+en:{welcome:["Welcome to the zoo!","There are animals from many parts of the world."],savanna:["Elephants, giraffes, zebras, and lions are amazing animals.","Look closely at their different sizes, colors, and shapes."],birds:["The colorful parrot sits high in the tree.","Penguins gather together beside the water."],water:["Sea lions swim and play in the pool.","The waterfall splashes into the clear blue water."],sounds:["Zoo animals make many different sounds.","Listen for roars, calls, splashes, and chatter."],explore:["The zoo has paths, exhibits, signs, and a tram.","Every part of the zoo has something new to discover."]},
+es:{welcome:["¡Bienvenidos al zoológico!","Hay animales de muchas partes del mundo."],savanna:["Los elefantes, las jirafas, las cebras y los leones son animales increíbles.","Observa sus diferentes tamaños, colores y formas."],birds:["El loro colorido está en lo alto del árbol.","Los pingüinos se reúnen junto al agua."],water:["Los leones marinos nadan y juegan en el estanque.","La cascada cae en el agua azul."],sounds:["Los animales del zoológico hacen muchos sonidos diferentes.","Escucha rugidos, llamadas, chapoteos y parloteos."],explore:["El zoológico tiene senderos, exhibiciones, letreros y un tranvía.","Cada parte del zoológico tiene algo nuevo por descubrir."]},
+fr:{welcome:["Bienvenue au zoo !","Il y a des animaux de nombreuses régions du monde."],savanna:["Les éléphants, les girafes, les zèbres et les lions sont des animaux étonnants.","Observe leurs différentes tailles, couleurs et formes."],birds:["Le perroquet coloré est perché dans l'arbre.","Les manchots se rassemblent près de l'eau."],water:["Les otaries nagent et jouent dans le bassin.","La cascade se jette dans l'eau bleue."],sounds:["Les animaux du zoo font beaucoup de sons différents.","Écoute les rugissements, les cris, les éclaboussures et les bavardages."],explore:["Le zoo a des chemins, des enclos, des panneaux et un tram.","Chaque partie du zoo offre quelque chose à découvrir."]},
+de:{welcome:["Willkommen im Zoo!","Hier gibt es Tiere aus vielen Teilen der Welt."],savanna:["Elefanten, Giraffen, Zebras und Löwen sind erstaunliche Tiere.","Achte auf ihre unterschiedlichen Größen, Farben und Formen."],birds:["Der bunte Papagei sitzt hoch im Baum.","Die Pinguine versammeln sich am Wasser."],water:["Seelöwen schwimmen und spielen im Becken.","Der Wasserfall plätschert in das blaue Wasser."],sounds:["Zootiere machen viele verschiedene Geräusche.","Höre auf Brüllen, Rufe, Platschen und Schnattern."],explore:["Der Zoo hat Wege, Gehege, Schilder und eine Bahn.","In jedem Teil des Zoos gibt es etwas Neues zu entdecken."]},
+it:{welcome:["Benvenuti allo zoo!","Ci sono animali provenienti da molte parti del mondo."],savanna:["Elefanti, giraffe, zebre e leoni sono animali straordinari.","Osserva le loro diverse dimensioni, colori e forme."],birds:["Il pappagallo colorato è appollaiato sull'albero.","I pinguini si riuniscono vicino all'acqua."],water:["I leoni marini nuotano e giocano nella vasca.","La cascata scende nell'acqua azzurra."],sounds:["Gli animali dello zoo fanno molti suoni diversi.","Ascolta ruggiti, richiami, schizzi e versi."],explore:["Lo zoo ha sentieri, recinti, cartelli e un trenino.","Ogni parte dello zoo offre qualcosa di nuovo da scoprire."]},
+pt:{welcome:["Bem-vindos ao zoológico!","Há animais de muitas partes do mundo."],savanna:["Elefantes, girafas, zebras e leões são animais incríveis.","Observe seus diferentes tamanhos, cores e formas."],birds:["O papagaio colorido está no alto da árvore.","Os pinguins se reúnem perto da água."],water:["Os leões-marinhos nadam e brincam no lago.","A cachoeira cai na água azul."],sounds:["Os animais do zoológico fazem muitos sons diferentes.","Ouça rugidos, chamados, respingos e conversas."],explore:["O zoológico tem caminhos, recintos, placas e um bonde.","Cada parte do zoológico tem algo novo para descobrir."]},
+no:{welcome:["Velkommen til dyrehagen!","Her finnes dyr fra mange deler av verden."],savanna:["Elefanter, sjiraffer, sebraer og løver er fantastiske dyr.","Se på de forskjellige størrelsene, fargene og formene."],birds:["Den fargerike papegøyen sitter høyt i treet.","Pingvinene samler seg ved vannet."],water:["Sjøløver svømmer og leker i bassenget.","Fossen renner ned i det blå vannet."],sounds:["Dyrene i dyrehagen lager mange forskjellige lyder.","Lytt etter brøl, rop, plasking og skravling."],explore:["Dyrehagen har stier, innhegninger, skilt og en trikk.","Hver del av dyrehagen har noe nytt å oppdage."]}};
+const challengeOrder=["elephant","lion","zebra","penguins","parrot","bee"];
+const SOUND_MAP={};
+const langSel=document.getElementById("lang"),voiceSel=document.getElementById("voice");
+const title=document.getElementById("title"),prompt=document.getElementById("prompt"),line=document.getElementById("line"),translation=document.getElementById("translation"),status=document.getElementById("status"),world=document.getElementById("world");
+let lastWord="zoo",activeLesson="",lessonPhrase=1,challenge=-1,lastSpoken="";
+function voices(){return ("speechSynthesis" in window)?speechSynthesis.getVoices():[]}
+function fillVoices(){const old=localStorage.getItem("talkabee-zoo-voice-"+langSel.value)||"";voiceSel.innerHTML='<option value="">Browser Default</option>';voices().forEach(v=>{const o=document.createElement("option");o.value=v.name;o.textContent=v.name+(v.lang?" — "+v.lang:"");voiceSel.appendChild(o)});if([...voiceSel.options].some(o=>o.value===old))voiceSel.value=old}
+if("speechSynthesis" in window){speechSynthesis.onvoiceschanged=fillVoices;fillVoices();setTimeout(fillVoices,150);setTimeout(fillVoices,600);setTimeout(fillVoices,1500)}
+voiceSel.onchange=()=>localStorage.setItem("talkabee-zoo-voice-"+langSel.value,voiceSel.value);
+function speak(text,rate=.88,onend=null){if(!text||!("speechSynthesis" in window)){if(onend)onend();return}speechSynthesis.cancel();setTimeout(()=>{const u=new SpeechSynthesisUtterance(text);u.lang=SPEECH_LANG[langSel.value]||langSel.value;u.rate=rate;const v=speechSynthesis.getVoices().find(x=>x.name===voiceSel.value);if(v)u.voice=v;if(onend)u.onend=onend;speechSynthesis.speak(u)},50);lastSpoken=text}
+function stopSound(){document.querySelectorAll("audio[data-talkabee-sound]").forEach(a=>{a.pause();a.currentTime=0;a.remove()})}
+function playSound(key){stopSound();const src=SOUND_MAP[key];if(!src)return;const a=new Audio(src);a.dataset.talkabeeSound="1";document.body.appendChild(a);a.play().catch(()=>{});a.onended=()=>a.remove()}
+function showWord(key){activeLesson="";lastWord=key;lessonPhrase=1;title.textContent="Click & Discover";prompt.textContent="You found "+(EN[key]||key)+".";line.textContent=WORDS[langSel.value][key]||EN[key]||key;translation.textContent=langSel.value==="en"?"":(EN[key]||key)}
+document.querySelectorAll(".hotspot").forEach(b=>b.onclick=()=>{const key=b.dataset.word;showWord(key);let played=false;const after=()=>{if(played)return;played=true;playSound(key)};speak(WORDS[langSel.value][key]||EN[key]||key,.82,after);setTimeout(after,1500);if(challenge>=0){if(key===challengeOrder[challenge]){status.textContent="✓ Nice find!";status.style.color="#9dffbf"}else{status.textContent="Not that one — keep looking.";status.style.color="#ffe28a"}}});
+function clearChallenge(){challenge=-1;world.classList.remove("challenge-mode");document.querySelectorAll(".hotspot").forEach(h=>h.classList.remove("target"));status.textContent=""}
+document.getElementById("discovery").onclick=()=>{clearChallenge();activeLesson="";lastWord="zoo";title.textContent="Click & Discover";prompt.textContent="Click any object in the scene to hear its name.";line.textContent=WORDS[langSel.value].zoo;translation.textContent=langSel.value==="en"?"":EN.zoo};
+document.querySelectorAll("[data-ch]").forEach(b=>b.onclick=()=>{activeLesson="";lastWord="";challenge=+b.dataset.ch;world.classList.add("challenge-mode");document.querySelectorAll(".hotspot").forEach(h=>h.classList.toggle("target",h.dataset.word===challengeOrder[challenge]));title.textContent="Challenge "+(challenge+1)+" of 6";prompt.textContent=b.textContent.replace(/^[0-9]+\.\s*/,"");line.textContent=WORDS[langSel.value][challengeOrder[challenge]];translation.textContent=langSel.value==="en"?"":EN[challengeOrder[challenge]];status.textContent=""});
+function showLesson(key,speakIt=false){clearChallenge();activeLesson=key;lastWord="";lessonPhrase=Math.max(0,Math.min(1,lessonPhrase));const a=lessons[langSel.value][key],e=lessons.en[key],btn=document.querySelector(`[data-lesson="${key}"]`);title.textContent=btn?btn.textContent.replace(/^[0-9]+\.\s*/,""):"Zoo Adventure";prompt.textContent=a[0];line.textContent=a[lessonPhrase];translation.textContent=langSel.value==="en"?"":e[lessonPhrase];if(speakIt)speak(a[lessonPhrase])}
+document.querySelectorAll("[data-lesson]").forEach(b=>b.onclick=()=>{lessonPhrase=1;showLesson(b.dataset.lesson,true)});
+function currentSpeechText(){if(activeLesson)return lessons[langSel.value][activeLesson][lessonPhrase];if(lastWord)return WORDS[langSel.value][lastWord]||EN[lastWord];return line.textContent}
+document.getElementById("normal").onclick=()=>speak(currentSpeechText(),.82);
+document.getElementById("slow").onclick=()=>speak(currentSpeechText(),.58);
+document.getElementById("replay").onclick=()=>speak(lastSpoken||currentSpeechText(),.82);
+document.getElementById("nextPhrase").onclick=()=>{if(!activeLesson){const keys=Object.keys(EN),i=Math.max(0,keys.indexOf(lastWord));showWord(keys[(i+1)%keys.length]);speak(currentSpeechText(),.82);return}lessonPhrase=(lessonPhrase+1)%2;showLesson(activeLesson,true)};
+langSel.onchange=()=>{fillVoices();if(activeLesson)showLesson(activeLesson,false);else if(lastWord)showWord(lastWord)};
+document.getElementById("sceneView").onclick=()=>document.body.classList.add("scene-view");
+document.getElementById("sceneReturn").onclick=()=>document.body.classList.remove("scene-view");
+showWord("zoo");
+</script>
+</body>
+</html>
+
+<style id="talkabee-ski-panel-180">
+@media(min-width:761px){.panel{width:180px!important;min-width:180px!important;max-width:180px!important}}
+</style>

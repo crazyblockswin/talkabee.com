@@ -1,0 +1,198 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Talk A Bee — Airplane Flying Adventure</title>
+<link rel="icon" type="image/png" href="images/talkabee-favicon.png">
+<style>
+*{box-sizing:border-box}
+html,body{margin:0;width:100%;height:100%;overflow:hidden;font-family:Arial,Helvetica,sans-serif;background:#063a66;color:#fff}
+.world{position:relative;width:100vw;height:100vh;background:url("images/Talk-A-Bee-Airplane-Flying-Adventure.jpg") center center/cover no-repeat}
+
+/* APPROVED TALK A BEE LEFT PANEL */
+.panel{position:fixed;z-index:1000;left:16px;top:16px;bottom:16px;width:180px;min-width:180px;max-width:180px;
+padding:14px;overflow-x:hidden;overflow-y:auto;border-radius:20px;border:1px solid rgba(255,255,255,.28);
+background:rgba(7,23,39,.31);box-shadow:0 12px 30px rgba(0,0,0,.24);backdrop-filter:blur(3px);-webkit-backdrop-filter:blur(3px)}
+.panel h1{font-size:19px;line-height:1.08;margin:4px 0 10px;text-shadow:0 2px 4px rgba(0,0,0,.55)}
+.label{font-size:9.5px;line-height:1.1;letter-spacing:.09em;font-weight:900;margin:9px 0 4px}
+.panel button,.panel select,.panel a{width:100%;min-height:34px;margin:4px 0;padding:8px 9px;border-radius:12px;
+border:1px solid rgba(255,255,255,.38);background:rgba(7,32,50,.54);color:#fff;font:800 12px/1.16 Arial,sans-serif;
+text-align:left;text-decoration:none}
+.panel button:hover,.panel a:hover{background:rgba(20,58,79,.70)}
+.panel button.active{background:rgba(78,69,219,.74)}
+.panel select{white-space:nowrap;text-overflow:ellipsis;overflow:hidden}
+
+/* APPROVED 520px SCRIPT CARD */
+.card{position:fixed;z-index:900;left:50%;bottom:16px;width:520px;max-width:520px;padding:14px 16px;
+border-radius:20px;border:1px solid rgba(255,255,255,.30);background:rgba(25,19,24,.38);
+box-shadow:0 12px 30px rgba(0,0,0,.28);backdrop-filter:blur(5px);-webkit-backdrop-filter:blur(5px);
+transform:translateX(-50%) scale(.67);transform-origin:bottom center}
+.card .kicker{font-size:15px;line-height:1.25;font-weight:900;letter-spacing:.10em;color:rgba(255,255,255,.96);
+text-shadow:0 1px 3px rgba(0,0,0,.78);margin:0 0 6px}
+.card h2{font-size:22px;line-height:1.08;margin:4px 0 7px;text-shadow:0 1px 3px rgba(0,0,0,.55)}
+.card p{font-size:18px;line-height:1.35;margin:4px 0 7px}
+.word{margin-top:8px;padding:10px 12px;border-radius:14px;background:rgba(88,88,88,.72);border:1px solid rgba(255,255,255,.20)}
+.word strong{display:block;font-size:22px;line-height:1.28}
+.translation{font-size:18px;line-height:1.35;margin-top:3px}
+.controls{display:flex;align-items:center;gap:8px;flex-wrap:nowrap;margin-top:8px}
+.controls button{width:auto;min-width:0;padding:9px 13px;border-radius:12px;border:1px solid rgba(255,255,255,.35);
+background:rgba(255,255,255,.88);color:#10283c;font:900 13px/1 Arial,sans-serif;white-space:nowrap}
+
+/* HOTSPOTS */
+.hotspot{position:absolute;z-index:8;border:0;background:transparent;opacity:0;cursor:pointer;border-radius:16px}
+.hotspot:hover,.hotspot:focus-visible{opacity:1;background:rgba(255,220,72,.28);outline:2px solid rgba(255,255,255,.90)}
+.challenge-mode .hotspot.target{opacity:1;background:rgba(255,199,48,.38);outline:4px solid #fff;box-shadow:0 0 0 7px rgba(255,200,50,.20)}
+
+/* APPROVED COMPACT PREVIOUS / NEXT CHEVRONS */
+.talkabee-prev-next-nav{position:fixed;top:18px;right:22px;z-index:2147483000;display:flex;align-items:center;overflow:hidden;
+border:2px solid rgba(255,255,255,.82);border-radius:999px;background:rgba(11,22,42,.24);
+box-shadow:0 5px 16px rgba(0,0,0,.16);backdrop-filter:blur(3px);-webkit-backdrop-filter:blur(3px)}
+.talkabee-prev-next-nav a{width:48px;height:48px;display:grid;place-items:center;text-decoration:none;color:#fff;
+font:900 38px/1 Arial,sans-serif;text-shadow:0 1px 3px rgba(0,0,0,.42)}
+.talkabee-prev-next-nav a+a{border-left:1px solid rgba(255,255,255,.36)}
+.talkabee-prev-next-nav a:hover,.talkabee-prev-next-nav a:focus-visible{background:rgba(255,255,255,.18);outline:none}
+
+/* SCENE VIEW */
+.scene-return{display:none;position:fixed;z-index:2147483001;left:18px;top:18px;padding:10px 14px;border-radius:12px;
+border:1px solid #fff;background:rgba(7,23,39,.65);color:#fff;font-weight:900}
+.scene-view .panel,.scene-view .card,.scene-view .talkabee-prev-next-nav{display:none}
+.scene-view .scene-return{display:block}
+
+@media(max-width:760px){
+ .panel{left:10px;top:10px;bottom:10px;width:180px;min-width:180px;max-width:180px;padding:11px}
+ .card{width:min(520px,calc(100vw - 32px));bottom:10px;transform:translateX(-50%) scale(.82)}
+ .talkabee-prev-next-nav{top:12px;right:12px}.talkabee-prev-next-nav a{width:42px;height:42px;font-size:33px}
+}
+</style>
+</head>
+<body>
+<nav class="talkabee-prev-next-nav" aria-label="Adventure navigation">
+  <a href="Talk-A-Bee-Mountain-Ski-Resort-Adventure.html" aria-label="Previous adventure" title="Previous">‹</a>
+  <a href="Talk-A-Bee-Zoo-Adventure.html" aria-label="Next adventure" title="Next">›</a>
+</nav>
+
+<main class="world" id="world">
+<button class="scene-return" id="sceneReturn">Return to Adventure</button>
+
+<aside class="panel">
+<h1>✈️ Airplane Flying Adventure</h1>
+<div class="label">LANGUAGE</div>
+<select id="lang">
+<option value="es">Spanish</option><option value="fr">French</option><option value="en">English</option>
+<option value="de">German</option><option value="it">Italian</option><option value="pt">Portuguese</option><option value="no">Norwegian</option>
+</select>
+<div class="label">VOICE</div>
+<select id="voice"><option value="">Browser Default</option></select>
+<button id="sceneView">◉ Scene View</button>
+
+<div class="label">DISCOVERY</div>
+<button id="discovery">🔎 Discovery — Click the Scene</button>
+
+<div class="label">ACTIVITIES</div>
+<button data-lesson="cockpit">1. Explore the Cockpit</button>
+<button data-lesson="takeoff">2. Ready for Takeoff</button>
+<button data-lesson="controls">3. Flight Controls</button>
+<button data-lesson="view">4. Look Out the Window</button>
+<button data-lesson="crew">5. Meet the Flight Crew</button>
+<button data-lesson="flying">6. Flying Adventure</button>
+<div class="label">CHALLENGES</div>
+<button data-ch="0">1. Find the Throttle</button>
+<button data-ch="1">2. Find the Headset</button>
+<button data-ch="2">3. Find the Mountain</button>
+<button data-ch="3">4. Find the Ferry</button>
+<button data-ch="4">5. Find the Bee</button>
+<button data-ch="5">6. Find the Airplane Wing</button>
+<a href="index.html">← Return to Main Directory</a>
+</aside>
+
+<section class="card">
+<div class="kicker">FLYING HIGH ABOVE THE CITY</div>
+<h2 id="title">Airplane Flying Adventure</h2>
+<p id="prompt">Click any object in the scene to hear its name.</p>
+<div class="word"><strong id="line">cabina del piloto</strong><div class="translation" id="translation">cockpit</div></div>
+<p id="status"></p>
+<div class="controls">
+<button id="normal">🔊 Speak</button><button id="slow">🐢 Slow</button><button id="replay">↻ Replay</button><button id="nextPhrase">Next phrase →</button>
+</div>
+</section>
+
+
+
+<!-- Hotspots mapped to the approved wide Airplane Flying Adventure JPG. -->
+<button class="hotspot" data-word="captain" style="left:12%;top:18%;width:24%;height:46%" aria-label="Captain"></button>
+<button class="hotspot" data-word="pilot" style="left:57%;top:18%;width:20%;height:43%" aria-label="Pilot"></button>
+<button class="hotspot" data-word="boy" style="left:13%;top:57%;width:21%;height:40%" aria-label="Boy"></button>
+<button class="hotspot" data-word="girl" style="left:67%;top:57%;width:20%;height:40%" aria-label="Girl"></button>
+<button class="hotspot" data-word="bee" style="left:83%;top:12%;width:12%;height:20%" aria-label="Bee"></button>
+<button class="hotspot" data-word="mountain" style="left:51%;top:10%;width:19%;height:23%" aria-label="Mountain"></button>
+<button class="hotspot" data-word="city" style="left:78%;top:31%;width:18%;height:20%" aria-label="City"></button>
+<button class="hotspot" data-word="tower" style="left:81%;top:34%;width:7%;height:15%" aria-label="Observation tower"></button>
+<button class="hotspot" data-word="water" style="left:69%;top:30%;width:30%;height:28%" aria-label="Water"></button>
+<button class="hotspot" data-word="ferry" style="left:91%;top:46%;width:9%;height:10%" aria-label="Ferry"></button>
+<button class="hotspot" data-word="wing" style="left:0%;top:31%;width:20%;height:19%" aria-label="Airplane wing"></button>
+<button class="hotspot" data-word="overhead" style="left:27%;top:0%;width:49%;height:15%" aria-label="Overhead controls"></button>
+<button class="hotspot" data-word="instruments" style="left:34%;top:42%;width:29%;height:24%" aria-label="Flight instruments"></button>
+<button class="hotspot" data-word="screen" style="left:41%;top:47%;width:10%;height:17%" aria-label="Navigation screen"></button>
+<button class="hotspot" data-word="throttle" style="left:42%;top:64%;width:15%;height:28%" aria-label="Throttle"></button>
+<button class="hotspot" data-word="headset" style="left:72%;top:26%;width:11%;height:21%" aria-label="Headset"></button>
+<button class="hotspot" data-word="controls" style="left:36%;top:62%;width:27%;height:33%" aria-label="Cockpit controls"></button>
+<button class="hotspot" data-word="clouds" style="left:0%;top:8%;width:28%;height:24%" aria-label="Clouds"></button>
+<button class="hotspot" data-word="forest" style="left:28%;top:25%;width:25%;height:17%" aria-label="Forest"></button>
+
+</main>
+
+<script>
+const EN={cockpit:"cockpit",captain:"captain",pilot:"pilot",boy:"boy",girl:"girl",bee:"bee",mountain:"mountain",city:"city",tower:"observation tower",water:"water",ferry:"ferry",wing:"airplane wing",overhead:"overhead controls",instruments:"flight instruments",screen:"navigation screen",throttle:"throttle",headset:"headset",controls:"cockpit controls",clouds:"clouds",forest:"forest"};
+const WORDS={
+es:{cockpit:"cabina del piloto",captain:"capitán",pilot:"piloto",boy:"niño",girl:"niña",bee:"abeja",mountain:"montaña",city:"ciudad",tower:"torre de observación",water:"agua",ferry:"ferri",wing:"ala del avión",overhead:"controles superiores",instruments:"instrumentos de vuelo",screen:"pantalla de navegación",throttle:"palanca de potencia",headset:"auriculares",controls:"controles de la cabina",clouds:"nubes",forest:"bosque"},
+fr:{cockpit:"poste de pilotage",captain:"commandant",pilot:"pilote",boy:"garçon",girl:"fille",bee:"abeille",mountain:"montagne",city:"ville",tower:"tour d'observation",water:"eau",ferry:"ferry",wing:"aile de l'avion",overhead:"commandes supérieures",instruments:"instruments de vol",screen:"écran de navigation",throttle:"manette des gaz",headset:"casque",controls:"commandes du cockpit",clouds:"nuages",forest:"forêt"},
+en:{...EN},
+de:{cockpit:"Cockpit",captain:"Kapitän",pilot:"Pilot",boy:"Junge",girl:"Mädchen",bee:"Biene",mountain:"Berg",city:"Stadt",tower:"Aussichtsturm",water:"Wasser",ferry:"Fähre",wing:"Flugzeugflügel",overhead:"Überkopfbedienfeld",instruments:"Fluginstrumente",screen:"Navigationsbildschirm",throttle:"Schubhebel",headset:"Headset",controls:"Cockpit-Bedienelemente",clouds:"Wolken",forest:"Wald"},
+it:{cockpit:"cabina di pilotaggio",captain:"comandante",pilot:"pilota",boy:"ragazzo",girl:"ragazza",bee:"ape",mountain:"montagna",city:"città",tower:"torre panoramica",water:"acqua",ferry:"traghetto",wing:"ala dell'aereo",overhead:"comandi superiori",instruments:"strumenti di volo",screen:"schermo di navigazione",throttle:"manetta",headset:"cuffie",controls:"comandi della cabina",clouds:"nuvole",forest:"foresta"},
+pt:{cockpit:"cabine de comando",captain:"comandante",pilot:"piloto",boy:"menino",girl:"menina",bee:"abelha",mountain:"montanha",city:"cidade",tower:"torre de observação",water:"água",ferry:"balsa",wing:"asa do avião",overhead:"controles superiores",instruments:"instrumentos de voo",screen:"tela de navegação",throttle:"manete de potência",headset:"fone de ouvido",controls:"controles da cabine",clouds:"nuvens",forest:"floresta"},
+no:{cockpit:"cockpit",captain:"kaptein",pilot:"pilot",boy:"gutt",girl:"jente",bee:"bie",mountain:"fjell",city:"by",tower:"utsiktstårn",water:"vann",ferry:"ferge",wing:"flyvinge",overhead:"overhead-kontroller",instruments:"flyinstrumenter",screen:"navigasjonsskjerm",throttle:"gasspak",headset:"hodesett",controls:"cockpit-kontroller",clouds:"skyer",forest:"skog"}};
+const SPEECH_LANG={es:"es-ES",fr:"fr-FR",en:"en-US",de:"de-DE",it:"it-IT",pt:"pt-PT",no:"nb-NO"};
+const lessons={
+en:{cockpit:["Welcome to the airplane cockpit.","The cockpit is where the pilots control the airplane."],takeoff:["The crew checks the airplane before takeoff.","Everyone gets ready before the airplane leaves the ground."],controls:["The cockpit has instruments, screens, switches, and throttles.","Pilots use these controls to safely fly the airplane."],view:["Look through the windows at the mountain, city, water, and clouds.","Everything looks different from high in the sky."],crew:["The captain and pilot work together in the cockpit.","Headsets help the crew communicate while flying."],flying:["The airplane flies high above the landscape.","Flying gives us a wonderful view of the world below."]},
+es:{cockpit:["Bienvenidos a la cabina del avión.","La cabina es donde los pilotos controlan el avión."],takeoff:["La tripulación revisa el avión antes del despegue.","Todos se preparan antes de que el avión deje el suelo."],controls:["La cabina tiene instrumentos, pantallas, interruptores y palancas.","Los pilotos usan estos controles para volar con seguridad."],view:["Mira por las ventanas la montaña, la ciudad, el agua y las nubes.","Todo se ve diferente desde lo alto del cielo."],crew:["El capitán y el piloto trabajan juntos en la cabina.","Los auriculares ayudan a la tripulación a comunicarse durante el vuelo."],flying:["El avión vuela alto sobre el paisaje.","Volar nos da una vista maravillosa del mundo de abajo."]},
+fr:{cockpit:["Bienvenue dans le poste de pilotage.","C'est ici que les pilotes contrôlent l'avion."],takeoff:["L'équipage vérifie l'avion avant le décollage.","Tout le monde se prépare avant que l'avion quitte le sol."],controls:["Le cockpit contient des instruments, des écrans, des interrupteurs et des manettes.","Les pilotes utilisent ces commandes pour voler en sécurité."],view:["Regarde par les fenêtres la montagne, la ville, l'eau et les nuages.","Tout semble différent vu du ciel."],crew:["Le commandant et le pilote travaillent ensemble dans le cockpit.","Les casques aident l'équipage à communiquer pendant le vol."],flying:["L'avion vole haut au-dessus du paysage.","Voler nous offre une vue magnifique du monde en dessous."]},
+de:{cockpit:["Willkommen im Cockpit des Flugzeugs.","Im Cockpit steuern die Piloten das Flugzeug."],takeoff:["Die Besatzung überprüft das Flugzeug vor dem Start.","Alle bereiten sich vor, bevor das Flugzeug abhebt."],controls:["Das Cockpit hat Instrumente, Bildschirme, Schalter und Schubhebel.","Die Piloten benutzen diese Bedienelemente für einen sicheren Flug."],view:["Schau aus den Fenstern auf den Berg, die Stadt, das Wasser und die Wolken.","Hoch am Himmel sieht alles anders aus."],crew:["Der Kapitän und der Pilot arbeiten im Cockpit zusammen.","Headsets helfen der Besatzung während des Fluges zu kommunizieren."],flying:["Das Flugzeug fliegt hoch über der Landschaft.","Beim Fliegen sehen wir die Welt von oben."]},
+it:{cockpit:["Benvenuti nella cabina di pilotaggio.","La cabina è il luogo dove i piloti controllano l'aereo."],takeoff:["L'equipaggio controlla l'aereo prima del decollo.","Tutti si preparano prima che l'aereo lasci il suolo."],controls:["La cabina ha strumenti, schermi, interruttori e manette.","I piloti usano questi comandi per volare in sicurezza."],view:["Guarda dai finestrini la montagna, la città, l'acqua e le nuvole.","Tutto sembra diverso dall'alto nel cielo."],crew:["Il comandante e il pilota lavorano insieme nella cabina.","Le cuffie aiutano l'equipaggio a comunicare durante il volo."],flying:["L'aereo vola alto sopra il paesaggio.","Volare ci offre una splendida vista del mondo sottostante."]},
+pt:{cockpit:["Bem-vindos à cabine do avião.","A cabine é onde os pilotos controlam o avião."],takeoff:["A tripulação verifica o avião antes da decolagem.","Todos se preparam antes de o avião sair do chão."],controls:["A cabine tem instrumentos, telas, interruptores e manetes.","Os pilotos usam esses controles para voar com segurança."],view:["Olhe pelas janelas para a montanha, a cidade, a água e as nuvens.","Tudo parece diferente do alto no céu."],crew:["O comandante e o piloto trabalham juntos na cabine.","Os fones ajudam a tripulação a se comunicar durante o voo."],flying:["O avião voa alto sobre a paisagem.","Voar nos dá uma vista maravilhosa do mundo abaixo."]},
+no:{cockpit:["Velkommen til cockpiten.","Cockpiten er stedet der pilotene styrer flyet."],takeoff:["Mannskapet sjekker flyet før avgang.","Alle gjør seg klare før flyet forlater bakken."],controls:["Cockpiten har instrumenter, skjermer, brytere og gasspaker.","Pilotene bruker kontrollene for å fly trygt."],view:["Se ut av vinduene på fjellet, byen, vannet og skyene.","Alt ser annerledes ut høyt oppe på himmelen."],crew:["Kapteinen og piloten jobber sammen i cockpiten.","Hodesett hjelper mannskapet med å kommunisere under flyturen."],flying:["Flyet flyr høyt over landskapet.","Å fly gir oss en fantastisk utsikt over verden nedenfor."]}};
+const challengeOrder=["throttle","headset","mountain","ferry","bee","wing"];
+const SOUND_MAP={};
+const langSel=document.getElementById("lang"),voiceSel=document.getElementById("voice");
+const title=document.getElementById("title"),prompt=document.getElementById("prompt"),line=document.getElementById("line"),translation=document.getElementById("translation"),status=document.getElementById("status"),world=document.getElementById("world");
+let lastWord="cockpit",activeLesson="",lessonPhrase=1,challenge=-1,lastSpoken="";
+function voices(){return ("speechSynthesis" in window)?speechSynthesis.getVoices():[]}
+function fillVoices(){const old=localStorage.getItem("talkabee-airplane-voice-"+langSel.value)||"";voiceSel.innerHTML='<option value="">Browser Default</option>';voices().forEach(v=>{const o=document.createElement("option");o.value=v.name;o.textContent=v.name+(v.lang?" — "+v.lang:"");voiceSel.appendChild(o)});if([...voiceSel.options].some(o=>o.value===old))voiceSel.value=old}
+if("speechSynthesis" in window){speechSynthesis.onvoiceschanged=fillVoices;fillVoices();setTimeout(fillVoices,150);setTimeout(fillVoices,600);setTimeout(fillVoices,1500)}
+voiceSel.onchange=()=>localStorage.setItem("talkabee-airplane-voice-"+langSel.value,voiceSel.value);
+function speak(text,rate=.88,onend=null){if(!text||!("speechSynthesis" in window)){if(onend)onend();return}speechSynthesis.cancel();setTimeout(()=>{const u=new SpeechSynthesisUtterance(text);u.lang=SPEECH_LANG[langSel.value]||langSel.value;u.rate=rate;const v=speechSynthesis.getVoices().find(x=>x.name===voiceSel.value);if(v)u.voice=v;if(onend)u.onend=onend;speechSynthesis.speak(u)},50);lastSpoken=text}
+function stopSound(){document.querySelectorAll("audio[data-talkabee-sound]").forEach(a=>{a.pause();a.currentTime=0;a.remove()})}
+function playSound(key){stopSound();const src=SOUND_MAP[key];if(!src)return;const a=new Audio(src);a.dataset.talkabeeSound="1";document.body.appendChild(a);a.play().catch(()=>{});a.onended=()=>a.remove()}
+function showWord(key){activeLesson="";lastWord=key;lessonPhrase=1;title.textContent="Click & Discover";prompt.textContent="You found "+(EN[key]||key)+".";line.textContent=WORDS[langSel.value][key]||EN[key]||key;translation.textContent=langSel.value==="en"?"":(EN[key]||key)}
+document.querySelectorAll(".hotspot").forEach(b=>b.onclick=()=>{const key=b.dataset.word;showWord(key);let played=false;const after=()=>{if(played)return;played=true;playSound(key)};speak(WORDS[langSel.value][key]||EN[key]||key,.82,after);setTimeout(after,1500);if(challenge>=0){if(key===challengeOrder[challenge]){status.textContent="✓ Nice find!";status.style.color="#9dffbf"}else{status.textContent="Not that one — keep looking.";status.style.color="#ffe28a"}}});
+function clearChallenge(){challenge=-1;world.classList.remove("challenge-mode");document.querySelectorAll(".hotspot").forEach(h=>h.classList.remove("target"));status.textContent=""}
+document.getElementById("discovery").onclick=()=>{clearChallenge();activeLesson="";lastWord="cockpit";title.textContent="Click & Discover";prompt.textContent="Click any object in the scene to hear its name.";line.textContent=WORDS[langSel.value].cockpit;translation.textContent=langSel.value==="en"?"":EN.cockpit};
+document.querySelectorAll("[data-ch]").forEach(b=>b.onclick=()=>{activeLesson="";lastWord="";challenge=+b.dataset.ch;world.classList.add("challenge-mode");document.querySelectorAll(".hotspot").forEach(h=>h.classList.toggle("target",h.dataset.word===challengeOrder[challenge]));title.textContent="Challenge "+(challenge+1)+" of 6";prompt.textContent=b.textContent.replace(/^[0-9]+\.\s*/,"");line.textContent=WORDS[langSel.value][challengeOrder[challenge]];translation.textContent=langSel.value==="en"?"":EN[challengeOrder[challenge]];status.textContent=""});
+function showLesson(key,speakIt=false){clearChallenge();activeLesson=key;lastWord="";lessonPhrase=Math.max(0,Math.min(1,lessonPhrase));const a=lessons[langSel.value][key],e=lessons.en[key],btn=document.querySelector(`[data-lesson="${key}"]`);title.textContent=btn?btn.textContent.replace(/^[0-9]+\.\s*/,""):"Airplane Flying Adventure";prompt.textContent=a[0];line.textContent=a[lessonPhrase];translation.textContent=langSel.value==="en"?"":e[lessonPhrase];if(speakIt)speak(a[lessonPhrase])}
+document.querySelectorAll("[data-lesson]").forEach(b=>b.onclick=()=>{lessonPhrase=1;showLesson(b.dataset.lesson,true)});
+function currentSpeechText(){if(activeLesson)return lessons[langSel.value][activeLesson][lessonPhrase];if(lastWord)return WORDS[langSel.value][lastWord]||EN[lastWord];return line.textContent}
+document.getElementById("normal").onclick=()=>speak(currentSpeechText(),.82);
+document.getElementById("slow").onclick=()=>speak(currentSpeechText(),.58);
+document.getElementById("replay").onclick=()=>speak(lastSpoken||currentSpeechText(),.82);
+document.getElementById("nextPhrase").onclick=()=>{if(!activeLesson){const keys=Object.keys(EN),i=Math.max(0,keys.indexOf(lastWord));showWord(keys[(i+1)%keys.length]);speak(currentSpeechText(),.82);return}lessonPhrase=(lessonPhrase+1)%2;showLesson(activeLesson,true)};
+langSel.onchange=()=>{fillVoices();if(activeLesson)showLesson(activeLesson,false);else if(lastWord)showWord(lastWord)};
+document.getElementById("sceneView").onclick=()=>document.body.classList.add("scene-view");
+document.getElementById("sceneReturn").onclick=()=>document.body.classList.remove("scene-view");
+showWord("cockpit");
+</script>
+</body>
+</html>
+
+<style id="talkabee-ski-panel-180">
+@media(min-width:761px){.panel{width:180px!important;min-width:180px!important;max-width:180px!important}}
+</style>
