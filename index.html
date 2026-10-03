@@ -959,6 +959,31 @@ header .brand-tagline{white-space:normal!important;line-height:1.12!important;}
   opacity:1;transform:scale(1);box-shadow:0 0 14px 5px rgba(151,92,255,.72),inset 0 0 10px rgba(205,175,255,.52);
 }
 #mainDirectory .landing-directory h2{padding-right:0!important;text-align:center!important;margin-top:0!important}
+/* Wandering pupils: slow, playful glances while preserving the keeper glasses PNG. */
+#mainDirectory .landing-directory .talkabee-eye-nav .wandering-pupil{
+  position:absolute!important;top:51.8%!important;width:13.5%!important;aspect-ratio:1/1!important;
+  margin-top:-6.75%!important;border-radius:50%!important;background:#050505!important;
+  box-shadow:inset -2px -2px 4px rgba(255,255,255,.05)!important;pointer-events:none!important;z-index:2!important;
+  animation:talkabee-eye-glance 8.4s ease-in-out infinite!important;
+}
+#mainDirectory .landing-directory .talkabee-eye-nav .wandering-pupil::before{
+  content:"";position:absolute;width:25%;height:25%;left:18%;top:14%;border-radius:50%;background:rgba(255,255,255,.94);
+}
+#mainDirectory .landing-directory .talkabee-eye-nav .wandering-pupil::after{
+  content:"";position:absolute;width:9%;height:9%;left:48%;top:28%;border-radius:50%;background:rgba(255,255,255,.94);
+}
+#mainDirectory .landing-directory .talkabee-eye-nav .pupil-left{left:31.2%!important}
+#mainDirectory .landing-directory .talkabee-eye-nav .pupil-right{left:68.7%!important}
+@keyframes talkabee-eye-glance{
+  0%,14%,100%{transform:translateX(0)}
+  20%,32%{transform:translateX(-24%)}
+  38%,55%{transform:translateX(0)}
+  62%,75%{transform:translateX(24%)}
+  81%,100%{transform:translateX(0)}
+}
+#mainDirectory .landing-directory .talkabee-eye-nav:hover .wandering-pupil,
+#mainDirectory .landing-directory .talkabee-eye-nav:focus-within .wandering-pupil{animation-play-state:paused!important}
+@media(prefers-reduced-motion:reduce){#mainDirectory .landing-directory .talkabee-eye-nav .wandering-pupil{animation:none!important}}
 @media(max-width:720px){#mainDirectory .landing-directory .talkabee-eye-nav{width:132px!important}}
 </style>
 </head>
@@ -990,6 +1015,8 @@ header .brand-tagline{white-space:normal!important;line-height:1.12!important;}
    <aside class="landing-directory" aria-label="Main directory">
     <nav class="talkabee-eye-nav" aria-label="Adventure navigation">
       <img src="images/talkabee-nav-eyes.png" alt="" aria-hidden="true">
+      <span class="wandering-pupil pupil-left" aria-hidden="true"></span>
+      <span class="wandering-pupil pupil-right" aria-hidden="true"></span>
       <a class="eye-prev" href="Talk-A-Bee-Nighttime-Campground-Adventure.html" aria-label="Previous adventure" title="Previous adventure"></a>
       <a class="eye-next" href="Talk-A-Bee-Grandma-Grandpas-Place.html" aria-label="Next adventure" title="Next adventure"></a>
     </nav>
