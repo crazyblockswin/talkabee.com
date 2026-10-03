@@ -930,6 +930,28 @@ header .brand-tagline{white-space:normal!important;line-height:1.12!important;}
 @media(max-width:720px){#mainDirectory .landing-directory .talkabee-prev-next-nav{top:16px;right:14px}#mainDirectory .landing-directory .talkabee-prev-next-nav a{width:32px;height:32px;font-size:26px}#mainDirectory .landing-directory h2{padding-right:76px}}
 </style>
 
+
+<style id="talkabee-main-eye-navigation">
+/* Main Directory eye navigator: separate transparent PNG, never baked into scene artwork. */
+#mainDirectory .landing-directory .talkabee-prev-next-nav{display:none!important}
+#mainDirectory .landing-directory .talkabee-eye-nav{
+  position:relative!important;display:block!important;width:150px!important;height:auto!important;
+  margin:0 auto 8px!important;padding:0!important;z-index:30!important;
+}
+#mainDirectory .landing-directory .talkabee-eye-nav img{
+  display:block!important;width:100%!important;height:auto!important;pointer-events:none!important;user-select:none!important;
+}
+#mainDirectory .landing-directory .talkabee-eye-nav a{
+  position:absolute!important;top:0!important;bottom:0!important;width:50%!important;
+  background:transparent!important;border:0!important;margin:0!important;padding:0!important;
+  min-height:0!important;box-shadow:none!important;cursor:pointer!important;
+}
+#mainDirectory .landing-directory .talkabee-eye-nav .eye-prev{left:0!important}
+#mainDirectory .landing-directory .talkabee-eye-nav .eye-next{right:0!important}
+#mainDirectory .landing-directory .talkabee-eye-nav a:focus-visible{outline:2px solid #fff!important;outline-offset:3px!important;border-radius:50%!important}
+#mainDirectory .landing-directory h2{padding-right:0!important;text-align:center!important;margin-top:0!important}
+@media(max-width:720px){#mainDirectory .landing-directory .talkabee-eye-nav{width:132px!important}}
+</style>
 </head>
 <body>
 <header>
@@ -957,8 +979,12 @@ header .brand-tagline{white-space:normal!important;line-height:1.12!important;}
  <div class="wrap">
   <div class="hero-layout hero-sidebar-layout">
    <aside class="landing-directory" aria-label="Main directory">
+    <nav class="talkabee-eye-nav" aria-label="Adventure navigation">
+      <img src="images/talkabee-nav-eyes.png" alt="" aria-hidden="true">
+      <a class="eye-prev" href="Talk-A-Bee-Nighttime-Campground-Adventure.html" aria-label="Previous adventure" title="Previous adventure"></a>
+      <a class="eye-next" href="Talk-A-Bee-Grandma-Grandpas-Place.html" aria-label="Next adventure" title="Next adventure"></a>
+    </nav>
     <h2>Main Directory</h2>
-    <nav class="talkabee-prev-next-nav" aria-label="Adventure navigation"><a href="Talk-A-Bee-Nighttime-Campground-Adventure.html" aria-label="Previous page" title="Previous">‹</a><a href="Talk-A-Bee-Grandma-Grandpas-Place.html" aria-label="Next page" title="Next">›</a></nav>
     <a class="directory-link" href="Talk-A-Bee-Grandma-Grandpas-Place.html">🏡 Grandma &amp; Grandpa’s Place</a>
     <a class="directory-link" href="Talk-A-Bee-Sea-Adventures.html">🌊 Sea Adventures</a>
     <a class="directory-link" href="Talk-A-Bee-Shopping-Market-Adventure.html">🛍️ Shopping Market</a>
