@@ -918,16 +918,19 @@ header .brand-tagline{white-space:normal!important;line-height:1.12!important;}
 </style>
 
 <style id="talkabee-prev-next-nav-style">
-.talkabee-prev-next-nav{position:fixed!important;top:18px!important;right:22px!important;z-index:10000!important;display:flex!important;visibility:visible!important;opacity:1!important;align-items:center;overflow:hidden;border:2px solid rgba(255,255,255,.82);border-radius:999px;background:rgba(11,22,42,.24);box-shadow:0 5px 16px rgba(0,0,0,.16);backdrop-filter:blur(3px);-webkit-backdrop-filter:blur(3px)}
-.talkabee-prev-next-nav a{width:48px;height:48px;display:grid;place-items:center;text-decoration:none;color:#fff;font:900 38px/1 Arial,sans-serif;text-shadow:0 1px 3px rgba(0,0,0,.42)}
+/* Exact Grandma & Grandpa chevron capsule; only its Main Directory position changes. */
+.talkabee-prev-next-nav{position:fixed;top:18px;right:22px;z-index:2147483000;display:flex;align-items:center;overflow:hidden;border:2px solid rgba(255,255,255,.82);border-radius:999px;background:rgba(11,22,42,.24);box-shadow:0 5px 16px rgba(0,0,0,.16);backdrop-filter:blur(3px);-webkit-backdrop-filter:blur(3px)}
+.talkabee-prev-next-nav a{width:48px;height:48px;display:grid;place-items:center;text-decoration:none;color:#fff;font:900 38px/1 Arial,sans-serif;text-shadow:0 1px 3px rgba(0,0,0,.42);transition:background .15s ease,transform .15s ease}
 .talkabee-prev-next-nav a+a{border-left:1px solid rgba(255,255,255,.36)}
 .talkabee-prev-next-nav a:hover,.talkabee-prev-next-nav a:focus-visible{background:rgba(255,255,255,.18);outline:none}
-@media(max-width:720px){.talkabee-prev-next-nav{top:12px!important;right:12px!important}.talkabee-prev-next-nav a{width:42px;height:42px;font-size:33px}}
+.talkabee-prev-next-nav a:active{transform:scale(.94)}
+#mainDirectory .landing-directory .talkabee-prev-next-nav{position:absolute;top:18px;right:18px;z-index:20}
+#mainDirectory .landing-directory h2{padding-right:112px}
+@media(max-width:720px){#mainDirectory .landing-directory .talkabee-prev-next-nav{top:14px;right:14px}.talkabee-prev-next-nav a{width:42px;height:42px;font-size:33px}#mainDirectory .landing-directory h2{padding-right:98px}}
 </style>
 
 </head>
 <body>
-<nav class="talkabee-prev-next-nav" aria-label="Adventure navigation"><a href="Talk-A-Bee-Nighttime-Campground-Adventure.html" aria-label="Previous page" title="Previous">‹</a><a href="Talk-A-Bee-Grandma-Grandpas-Place.html" aria-label="Next page" title="Next">›</a></nav>
 <header>
  <div class="wrap nav">
   <a class="brand" href="index.html" aria-label="Talk A Bee home"><div class="logo bee-logo" aria-hidden="true"><img src="images/talkabee-image-04.png" alt=""></div><div><span class="brand-name">Talk A Bee</span><small class="brand-domain">TalkABee.com</small></div><span class="brand-tagline">A Language-Learning Storybook<br>That Comes Alive</span></a>
@@ -954,6 +957,7 @@ header .brand-tagline{white-space:normal!important;line-height:1.12!important;}
   <div class="hero-layout hero-sidebar-layout">
    <aside class="landing-directory" aria-label="Main directory">
     <h2>Main Directory</h2>
+    <nav class="talkabee-prev-next-nav" aria-label="Adventure navigation"><a href="Talk-A-Bee-Nighttime-Campground-Adventure.html" aria-label="Previous page" title="Previous">‹</a><a href="Talk-A-Bee-Grandma-Grandpas-Place.html" aria-label="Next page" title="Next">›</a></nav>
     <a class="directory-link" href="Talk-A-Bee-Grandma-Grandpas-Place.html">🏡 Grandma &amp; Grandpa’s Place</a>
     <a class="directory-link" href="Talk-A-Bee-Sea-Adventures.html">🌊 Sea Adventures</a>
     <a class="directory-link" href="Talk-A-Bee-Shopping-Market-Adventure.html">🛍️ Shopping Market</a>
