@@ -219,6 +219,9 @@ const challengeOrder=["bee","earth","tether","solarpanels","station","moon"];
 const SOUND_MAP={};
 const langSel=document.getElementById("lang"),voiceSel=document.getElementById("voice");
 const title=document.getElementById("title"),prompt=document.getElementById("prompt"),line=document.getElementById("line"),translation=document.getElementById("translation"),status=document.getElementById("status"),world=document.getElementById("world");
+const LANGUAGE_STORAGE_KEY="talkabee-language";
+const savedLanguage=localStorage.getItem(LANGUAGE_STORAGE_KEY);
+if(savedLanguage && WORDS[savedLanguage] && [...langSel.options].some(o=>o.value===savedLanguage)){langSel.value=savedLanguage}
 let lastWord="game",activeLesson="",lessonPhrase=1,challenge=-1,lastSpoken="";
 function voices(){return ("speechSynthesis" in window)?speechSynthesis.getVoices():[]}
 function fillVoices(){const old=localStorage.getItem("talkabee-spacewalk-voice-"+langSel.value)||"";voiceSel.innerHTML='<option value="">Browser Default</option>';voices().forEach(v=>{const o=document.createElement("option");o.value=v.name;o.textContent=v.name+(v.lang?" — "+v.lang:"");voiceSel.appendChild(o)});if([...voiceSel.options].some(o=>o.value===old))voiceSel.value=old}
@@ -239,7 +242,14 @@ document.getElementById("normal").onclick=()=>speak(currentSpeechText(),.82);
 document.getElementById("slow").onclick=()=>speak(currentSpeechText(),.58);
 document.getElementById("replay").onclick=()=>speak(lastSpoken||currentSpeechText(),.82);
 document.getElementById("nextPhrase").onclick=()=>{if(!activeLesson){const keys=Object.keys(EN),i=Math.max(0,keys.indexOf(lastWord));showWord(keys[(i+1)%keys.length]);speak(currentSpeechText(),.82);return}lessonPhrase=(lessonPhrase+1)%2;showLesson(activeLesson,true)};
-langSel.onchange=()=>{fillVoices();if(activeLesson)showLesson(activeLesson,false);else if(lastWord)showWord(lastWord)};
+langSel.onchange=()=>{
+  localStorage.setItem(LANGUAGE_STORAGE_KEY,langSel.value);
+  speechSynthesis.cancel();
+  voiceSel.value="";
+  fillVoices();
+  if(activeLesson)showLesson(activeLesson,false);
+  else if(lastWord)showWord(lastWord);
+};
 document.getElementById("sceneView").onclick=()=>document.body.classList.add("scene-view");
 document.getElementById("sceneReturn").onclick=()=>document.body.classList.remove("scene-view");
 showWord("game");
