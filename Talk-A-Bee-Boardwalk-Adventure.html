@@ -312,6 +312,7 @@ function playBoardwalkSound(id){
 
 const challengeOrder=["ferris","carousel","lifeguard","kite","icecream","bear"];
 const langSel=document.getElementById("lang"),voiceSel=document.getElementById("voice");
+langSel.value=localStorage.getItem("talkabee-learn-language")||"es";
 const title=document.getElementById("title"),prompt=document.getElementById("prompt"),line=document.getElementById("line"),translation=document.getElementById("translation"),status=document.getElementById("status"),world=document.getElementById("world");
 let lastWord="ferris",challenge=-1;
 function selectedVoice(){
@@ -423,6 +424,8 @@ document.getElementById("normal").onclick=()=>speak(currentSpeechText(),.82);
 document.getElementById("slow").onclick=()=>speak(currentSpeechText(),.58);
 document.getElementById("replay").onclick=()=>speak(currentSpeechText(),.82);
 langSel.onchange=()=>{
+  localStorage.setItem("talkabee-learn-language",langSel.value);
+  refreshVoices();
   if(activeLesson)showLesson(activeLesson,false);
   else if(lastWord)showWord(lastWord);
 };
