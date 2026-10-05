@@ -319,13 +319,17 @@ function selectedVoice(){
  const vs=speechSynthesis.getVoices()||[];
  return vs.find(v=>v.voiceURI===voiceSel.value)||null;
 }
+function voiceStorageKey(){return "talkabee-voice-"+langSel.value}
 function refreshVoices(){
  if(!("speechSynthesis" in window))return;
  const vs=speechSynthesis.getVoices()||[];
  if(!vs.length)return;
- const saved=localStorage.getItem("talkabee-boardwalk-voice")||voiceSel.value||"";
+ const saved=localStorage.getItem(voiceStorageKey())||"";
+ const wanted=(LANGS[langSel.value].code||"").toLowerCase().split("-")[0];
+ const aliases=langSel.value==="no"?["nb","no","nn"]:[wanted];
+ const matching=vs.filter(v=>aliases.includes((v.lang||"").toLowerCase().split("-")[0]));
  voiceSel.innerHTML='<option value="">Browser Default</option>';
- vs.forEach(v=>voiceSel.add(new Option(v.name+" — "+(v.lang||""),v.voiceURI)));
+ matching.forEach(v=>voiceSel.add(new Option(v.name+" — "+(v.lang||""),v.voiceURI)));
  if([...voiceSel.options].some(o=>o.value===saved))voiceSel.value=saved;
 }
 if("speechSynthesis" in window){
@@ -333,7 +337,7 @@ if("speechSynthesis" in window){
  refreshVoices();
  setTimeout(refreshVoices,150);setTimeout(refreshVoices,600);setTimeout(refreshVoices,1500);
 }
-voiceSel.onchange=()=>localStorage.setItem("talkabee-boardwalk-voice",voiceSel.value);
+voiceSel.onchange=()=>localStorage.setItem(voiceStorageKey(),voiceSel.value);
 function speak(t,rate=.82,onend=null){if(!t||!("speechSynthesis" in window)){if(onend)onend();return;}try{speechSynthesis.cancel();const u=new SpeechSynthesisUtterance(t);u.lang=LANGS[langSel.value].code;u.rate=rate;const v=selectedVoice();if(v)u.voice=v;if(onend)u.onend=onend;setTimeout(()=>speechSynthesis.speak(u),40)}catch(e){if(onend)onend();}}
 function showWord(key){lastWord=key;const x=LANGS[langSel.value].words[key];line.textContent=x[0];translation.textContent=langSel.value==="en"?"":x[1]}
 document.querySelectorAll(".hotspot").forEach(b=>b.onclick=()=>{activeLesson="";const key=b.dataset.word,x=LANGS[langSel.value].words[key];showWord(key);speak(x[0],.82,()=>playBoardwalkSound(key));if(challenge>=0){if(key===challengeOrder[challenge]){status.textContent="✓ Nice find!";status.style.color="#9dffbf"}else{status.textContent="Not that one — keep looking.";status.style.color="#ffe28a"}}});
@@ -425,6 +429,7 @@ document.getElementById("slow").onclick=()=>speak(currentSpeechText(),.58);
 document.getElementById("replay").onclick=()=>speak(currentSpeechText(),.82);
 langSel.onchange=()=>{
   localStorage.setItem("talkabee-learn-language",langSel.value);
+  voiceSel.value="";
   refreshVoices();
   if(activeLesson)showLesson(activeLesson,false);
   else if(lastWord)showWord(lastWord);
