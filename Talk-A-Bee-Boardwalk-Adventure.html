@@ -325,11 +325,8 @@ function refreshVoices(){
  const vs=speechSynthesis.getVoices()||[];
  if(!vs.length)return;
  const saved=localStorage.getItem(voiceStorageKey())||"";
- const wanted=(LANGS[langSel.value].code||"").toLowerCase().split("-")[0];
- const aliases=langSel.value==="no"?["nb","no","nn"]:[wanted];
- const matching=vs.filter(v=>aliases.includes((v.lang||"").toLowerCase().split("-")[0]));
  voiceSel.innerHTML='<option value="">Browser Default</option>';
- matching.forEach(v=>voiceSel.add(new Option(v.name+" — "+(v.lang||""),v.voiceURI)));
+ vs.forEach(v=>voiceSel.add(new Option(v.name+" — "+(v.lang||""),v.voiceURI)));
  if([...voiceSel.options].some(o=>o.value===saved))voiceSel.value=saved;
 }
 if("speechSynthesis" in window){
