@@ -630,7 +630,7 @@ const voiceSelector=document.getElementById('adventureVoice');
 function fillFarmVoices(){
  if(!('speechSynthesis' in window))return;
  const base=data().speech.split('-')[0].toLowerCase();
- const saved=localStorage.getItem('talkabee-farm-voice-'+lang)||'';
+ const saved=localStorage.getItem('talkabee-voice-'+lang)||'';
  const voices=(speechSynthesis.getVoices()||[]).filter(v=>(v.lang||'').toLowerCase().startsWith(base));
  voiceSelector.innerHTML='<option value="">Browser Default Voice</option>';
  voices.forEach(v=>voiceSelector.add(new Option(v.name+' — '+v.lang,v.name)));
@@ -671,7 +671,7 @@ function speak(txt,rate=1,onend=null){
 }
 document.getElementById('sceneView').onclick=()=>world.classList.add('scene-only');
 document.getElementById('restorePanel').onclick=()=>world.classList.remove('scene-only');
-voiceSelector.addEventListener('change',()=>localStorage.setItem('talkabee-farm-voice-'+lang,voiceSelector.value));
+voiceSelector.addEventListener('change',()=>localStorage.setItem('talkabee-voice-'+lang,voiceSelector.value));
 if('speechSynthesis' in window){speechSynthesis.onvoiceschanged=fillFarmVoices;fillFarmVoices();}
 const audioButtons=[document.getElementById('normal'),document.getElementById('slow'),document.getElementById('replay')];
 function setAudioActive(button){audioButtons.forEach(b=>b.classList.remove('audio-active'));button.classList.add('audio-active')}
