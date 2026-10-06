@@ -824,20 +824,9 @@ body.adventure-locked #yachtWorld.open{inset:0!important;}
 }
 </style>
 
-
-<style id="talkabee-prev-next-nav-style">
-.talkabee-prev-next-nav{position:fixed;top:18px;right:22px;z-index:2147483000;display:flex;align-items:center;overflow:hidden;border:2px solid rgba(255,255,255,.82);border-radius:999px;background:rgba(11,22,42,.24);box-shadow:0 5px 16px rgba(0,0,0,.16);backdrop-filter:blur(3px);-webkit-backdrop-filter:blur(3px)}
-.talkabee-prev-next-nav a{width:48px;height:48px;display:grid;place-items:center;text-decoration:none;color:#fff;font:900 38px/1 Arial,sans-serif;text-shadow:0 1px 3px rgba(0,0,0,.42)}
-.talkabee-prev-next-nav a+a{border-left:1px solid rgba(255,255,255,.36)}
-.talkabee-prev-next-nav a:hover,.talkabee-prev-next-nav a:focus-visible{background:rgba(255,255,255,.18);outline:none}
-@media(max-width:720px){.talkabee-prev-next-nav{top:12px;right:12px}.talkabee-prev-next-nav a{width:42px;height:42px;font-size:33px}}
-</style>
 </head>
 <body>
-<nav class="talkabee-prev-next-nav" aria-label="Adventure navigation">
-  <a href="Talk-A-Bee-Aunt-Julies-Island-Retreat.html" aria-label="Previous adventure" title="Previous">‹</a>
-  <a href="Talk-A-Bee-Train-Station-Adventure.html" aria-label="Next adventure" title="Next">›</a>
-</nav>
+<nav class="talkabee-prev-next-nav" aria-label="Adventure navigation"><a href="Talk-A-Bee-Aunt-Julies-Island-Retreat.html" aria-label="Previous page" title="Previous">‹</a><a href="Talk-A-Bee-Train-Station-Adventure.html" aria-label="Next page" title="Next">›</a></nav>
 <nav aria-label="Adventure navigation" class="talkabee-prev-next-nav"><a aria-label="Previous page" href="Talk-A-Bee-Grandma-Grandpas-Place.html" title="Previous">‹</a><a aria-label="Next page" href="Talk-A-Bee-Shopping-Market-Adventure.html" title="Next">›</a></nav>
 <style id="sea-standalone-clean-shell">
 html,body{margin:0!important;padding:0!important;width:100%!important;height:100%!important;overflow:hidden!important;background:#101725!important;}
@@ -1267,8 +1256,8 @@ document.addEventListener('click',function(e){
      card.style.setProperty('transform-origin','top left','important');
      card.style.setProperty('transform','scale('+scale+')','important');
    }else{
-     card.style.removeProperty('transform-origin');
-     card.style.removeProperty('transform');
+     card.style.setProperty('transform-origin','bottom center','important');
+     card.style.setProperty('transform','translateX(-50%) scale('+scale+')','important');
    }
  }
  function applyFont(v,save=true){
@@ -1295,9 +1284,9 @@ document.addEventListener('click',function(e){
        card.style.setProperty('top',clamp(ps.top,8,innerHeight-80)+'px','important');
        card.style.setProperty('right','auto','important');
        card.style.setProperty('bottom','auto','important');
-       applyTransform();
      }
-   }catch(e){}
+     applyTransform();
+   }catch(e){applyTransform()}
  }
 
  if(down)down.addEventListener('click',()=>{scale=clamp(+(scale-.05).toFixed(2),.45,1.10);applyTransform();saveState()});
@@ -1414,6 +1403,85 @@ document.addEventListener('click',function(e){
  }
 }
 </style>
+
+
+<style id="talkabee-sea-script-card-master-fix">
+/* SEA SCRIPT CARD ONLY — match the approved Talk A Bee / Underwater card footprint. */
+#yachtWorld .yacht-panel.tab-master-card{
+  position:fixed!important;
+  left:50%!important;
+  right:auto!important;
+  bottom:16px!important;
+  top:auto!important;
+  width:520px!important;
+  min-width:520px!important;
+  max-width:520px!important;
+  height:auto!important;
+  min-height:0!important;
+  max-height:none!important;
+  margin:0!important;
+  padding:14px 16px!important;
+  overflow:visible!important;
+  overflow-x:visible!important;
+  overflow-y:visible!important;
+  scrollbar-width:none!important;
+  resize:none!important;
+  border-radius:20px!important;
+  border:1px solid rgba(255,255,255,.30)!important;
+  background:rgba(25,19,24,.14)!important;
+  box-shadow:0 12px 30px rgba(0,0,0,.28)!important;
+  backdrop-filter:blur(5px)!important;
+  -webkit-backdrop-filter:blur(5px)!important;
+}
+#yachtWorld .yacht-panel.tab-master-card::-webkit-scrollbar{display:none!important;width:0!important;height:0!important}
+
+/* Same single-row lesson controls as the approved card. */
+#yachtWorld .yacht-panel.tab-master-card .yacht-actions{
+  display:flex!important;
+  align-items:center!important;
+  gap:8px!important;
+  flex-wrap:nowrap!important;
+  overflow:visible!important;
+  margin-top:8px!important;
+}
+#yachtWorld .yacht-panel.tab-master-card .yacht-actions button,
+#yachtWorld .yacht-panel.tab-master-card #yachtNextPhrase{
+  width:auto!important;
+  min-width:0!important;
+  flex:0 0 auto!important;
+  padding:9px 13px!important;
+  margin:0!important;
+  white-space:nowrap!important;
+}
+#yachtWorld .yacht-panel.tab-master-card .yacht-nextrow{display:none!important}
+#yachtWorld .yacht-panel.tab-master-card #yachtNextPhrase{display:inline-block!important}
+
+/* Once moved, keep the exact same 520px footprint; only the global scale changes. */
+#yachtWorld .yacht-panel.tab-master-card[data-moved="1"]{
+  width:520px!important;
+  min-width:520px!important;
+  max-width:520px!important;
+  height:auto!important;
+  min-height:0!important;
+  max-height:none!important;
+  overflow:visible!important;
+}
+@media(max-width:760px){
+ #yachtWorld .yacht-panel.tab-master-card{
+   width:min(520px,calc(100vw - 32px))!important;
+   min-width:0!important;
+   max-width:520px!important;
+   bottom:10px!important;
+ }
+}
+</style>
+<script id="talkabee-sea-script-card-wheel-lock">
+(function(){
+ const card=document.querySelector('#yachtWorld .yacht-panel.tab-master-card');
+ if(!card)return;
+ card.addEventListener('wheel',function(e){e.preventDefault();},{passive:false});
+})();
+</script>
 
 </body>
 </html>
