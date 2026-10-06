@@ -1351,5 +1351,57 @@ document.addEventListener('click',function(e){
  restore();
 })();
 </script>\n
+
+<style id="talkabee-sea-underwater-card-final-fix">
+/* FINAL SEA CARD NORMALIZATION — Underwater Adventure behavior wins. */
+#yachtCard.tab-master-card,
+.yacht-panel.tab-master-card,
+.tab-master-card{
+  overflow:visible!important;
+  overflow-x:visible!important;
+  overflow-y:visible!important;
+  scrollbar-width:none!important;
+  resize:none!important;
+  height:auto!important;
+  min-height:0!important;
+  max-height:none!important;
+  width:520px!important;
+  min-width:0!important;
+  max-width:520px!important;
+}
+#yachtCard.tab-master-card::-webkit-scrollbar,
+.yacht-panel.tab-master-card::-webkit-scrollbar,
+.tab-master-card::-webkit-scrollbar{display:none!important;width:0!important;height:0!important}
+
+/* Keep the phrase controls on one clean row like Underwater. */
+.tab-master-card .controls,
+.tab-master-card .yacht-actions{
+  display:flex!important;align-items:center!important;gap:8px!important;
+  flex-wrap:nowrap!important;overflow:visible!important;
+}
+.tab-master-card .controls button,
+.tab-master-card .yacht-actions button{
+  width:auto!important;min-width:0!important;flex:0 0 auto!important;
+  padding:9px 13px!important;white-space:nowrap!important;
+}
+.tab-master-card #yachtNextPhrase{display:inline-block!important}
+
+/* The old Sea next-row must not create a second layout/scroll area. */
+.tab-master-card .yacht-nextrow{display:none!important}
+
+/* Critical: global A-/A+ and corner-resize own the scale.
+   Do not let old Sea width/height rules fight them after the card is moved. */
+.tab-master-card[data-moved="1"]{
+  width:520px!important;min-width:0!important;max-width:520px!important;
+  height:auto!important;min-height:0!important;max-height:none!important;
+  overflow:visible!important;
+}
+@media(max-width:760px){
+ #yachtCard.tab-master-card,.yacht-panel.tab-master-card,.tab-master-card{
+   width:min(520px,calc(100vw - 32px))!important;
+ }
+}
+</style>
+
 </body>
 </html>
