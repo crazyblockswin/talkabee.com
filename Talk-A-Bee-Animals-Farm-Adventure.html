@@ -770,7 +770,36 @@ showLesson('pets');
 }
 @media(max-width:760px){.tab-master-card{width:min(520px,calc(100vw - 32px))!important;transform:translateX(-50%) scale(.82)!important;}}
 </style>
-\n<script id="talkabee-accessibility-controls-script-v1">
+\n
+<script id="talkabee-ensure-card-tools">
+(function(){
+  const card=document.querySelector('.tab-master-card,.live-card,.script,.card');
+  if(!card)return;
+
+  /* Remove a misplaced/duplicate tool set, if one exists outside the real card. */
+  document.querySelectorAll('.tab-card-tools,.tab-card-resize').forEach(el=>{
+    if(!card.contains(el)) el.remove();
+  });
+
+  if(!card.querySelector('.tab-card-tools')){
+    const tools=document.createElement('div');
+    tools.className='tab-card-tools';
+    tools.setAttribute('aria-label','Script card controls');
+    tools.innerHTML='<button type="button" class="tab-card-drag" title="Move script card">↕ Move</button><button type="button" class="tab-card-font-down" title="Decrease text">A−</button><button type="button" class="tab-card-font-up" title="Increase text">A+</button><button type="button" class="tab-card-reset" title="Reset card">Reset</button>';
+    card.insertBefore(tools,card.firstChild);
+  }
+  if(!card.querySelector('.tab-card-resize')){
+    const resize=document.createElement('div');
+    resize.className='tab-card-resize';
+    resize.title='Drag to resize script card';
+    resize.setAttribute('aria-label','Resize script card');
+    resize.textContent='↘';
+    card.appendChild(resize);
+  }
+})();
+</script>
+
+<script id="talkabee-accessibility-controls-script-v1">
 (function(){
  const panel=document.querySelector('.tab-master-panel,.activity-panel,.panel');
  if(panel){
