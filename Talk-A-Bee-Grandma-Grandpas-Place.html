@@ -394,6 +394,52 @@ html,body,#homeWorld,#homeScene{
 }
 </style>
 
+
+<style id="grandparents-modern-card-layout-fix">
+/* Match the compact modern Adventure card layout without changing its content/behavior. */
+.tab-master-card{
+  width:520px!important;
+  min-width:520px!important;
+  max-width:520px!important;
+  padding:14px 16px!important;
+  overflow:visible!important;
+}
+.tab-master-card .home-actions{
+  display:flex!important;
+  flex-wrap:nowrap!important;
+  gap:8px!important;
+  align-items:center!important;
+}
+.tab-master-card .home-actions button{
+  flex:0 0 auto!important;
+  width:auto!important;
+  min-width:0!important;
+  padding:9px 13px!important;
+  font-size:13px!important;
+  white-space:nowrap!important;
+}
+.tab-master-card .home-nextrow{
+  display:flex!important;
+  align-items:center!important;
+  justify-content:space-between!important;
+  gap:10px!important;
+  margin-top:8px!important;
+}
+.tab-master-card .home-nextphrase{
+  flex:0 0 auto!important;
+  width:auto!important;
+  max-width:170px!important;
+  padding:9px 13px!important;
+  font-size:13px!important;
+  white-space:nowrap!important;
+  overflow:visible!important;
+}
+@media(max-width:760px){
+ .tab-master-card{width:min(520px,calc(100vw - 24px))!important;min-width:0!important}
+ .tab-master-card .home-actions{flex-wrap:wrap!important}
+}
+</style>
+
 </head>
 <body>
 <div class="talkabee-editions">
