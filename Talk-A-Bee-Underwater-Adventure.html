@@ -485,5 +485,52 @@ showWord("reef");
  if(resize){resize.addEventListener('pointerdown',e=>{if(innerWidth<=760)return;e.preventDefault();e.stopPropagation();const r=card.getBoundingClientRect(),sx=e.clientX,sy=e.clientY;card.style.setProperty('left',r.left+'px','important');card.style.setProperty('top',r.top+'px','important');card.style.setProperty('right','auto','important');card.style.setProperty('bottom','auto','important');card.style.setProperty('transform','none','important');card.style.setProperty('min-width','0','important');card.style.setProperty('max-width','none','important');card.style.setProperty('min-height','0','important');card.style.setProperty('max-height','none','important');resize.setPointerCapture(e.pointerId);const mv=ev=>{const maxW=Math.max(360,innerWidth-r.left-8),maxH=Math.max(260,innerHeight-r.top-8);card.style.setProperty('width',clamp(r.width+ev.clientX-sx,360,maxW)+'px','important');card.style.setProperty('height',clamp(r.height+ev.clientY-sy,260,maxH)+'px','important')};const end=()=>{resize.removeEventListener('pointermove',mv);saveGeom()};resize.addEventListener('pointermove',mv);resize.addEventListener('pointerup',end,{once:true});resize.addEventListener('pointercancel',end,{once:true})})}
  restore();
 })();
-</script>\n</body>
+</script>\n
+<!-- Talk A Bee universal script-card drag fallback -->
+<style id="talkabee-script-card-anywhere-drag-style">
+.tab-master-card,.script-card{touch-action:none;}
+.tab-master-card.tab-anywhere-dragging,.script-card.tab-anywhere-dragging{cursor:grabbing!important;}
+</style>
+<script id="talkabee-script-card-anywhere-drag">
+(function(){
+  const card=document.querySelector('.tab-master-card, .script-card');
+  if(!card || card.dataset.anywhereDragReady==='1') return;
+  card.dataset.anywhereDragReady='1';
+  const PK='talkabee-script-card-position';
+  const clamp=(n,a,b)=>Math.max(a,Math.min(b,n));
+  let state=null;
+  card.addEventListener('pointerdown',function(e){
+    if(window.innerWidth<=760 || e.button!==0) return;
+    if(e.target.closest('button,a,input,select,textarea,.tab-card-resize,.tab-card-drag')) return;
+    const r=card.getBoundingClientRect();
+    state={id:e.pointerId,sx:e.clientX,sy:e.clientY,left:r.left,top:r.top,w:r.width,h:r.height,moved:false};
+    card.setPointerCapture?.(e.pointerId);
+  });
+  card.addEventListener('pointermove',function(e){
+    if(!state || e.pointerId!==state.id) return;
+    const dx=e.clientX-state.sx,dy=e.clientY-state.sy;
+    if(!state.moved && Math.hypot(dx,dy)<4) return;
+    state.moved=true; e.preventDefault();
+    card.classList.add('tab-anywhere-dragging');
+    card.style.setProperty('left',clamp(state.left+dx,8,Math.max(8,innerWidth-state.w-8))+'px','important');
+    card.style.setProperty('top',clamp(state.top+dy,8,Math.max(8,innerHeight-state.h-8))+'px','important');
+    card.style.setProperty('right','auto','important');
+    card.style.setProperty('bottom','auto','important');
+    card.style.setProperty('transform','none','important');
+  });
+  function end(e){
+    if(!state || e.pointerId!==state.id) return;
+    if(state.moved){
+      const r=card.getBoundingClientRect();
+      try{localStorage.setItem(PK,JSON.stringify({left:r.left,top:r.top}))}catch(_){}
+    }
+    card.classList.remove('tab-anywhere-dragging');
+    try{card.releasePointerCapture?.(e.pointerId)}catch(_){}
+    state=null;
+  }
+  card.addEventListener('pointerup',end); card.addEventListener('pointercancel',end);
+})();
+</script>
+
+</body>
 </html>
