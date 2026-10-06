@@ -154,7 +154,39 @@
 
   <link rel="icon" type="image/png" href="images/talkabee-favicon.png">
   <link rel="shortcut icon" type="image/png" href="images/talkabee-favicon.png">
+
+<style id="talkabee-edition-menu-style">
+.talkabee-editions{position:fixed;top:16px;left:50%;transform:translateX(-50%);z-index:2147482998;font-family:Arial,sans-serif}
+.talkabee-editions details{position:relative}
+.talkabee-editions summary{list-style:none;cursor:pointer;border:1px solid rgba(255,255,255,.55);border-radius:999px;padding:10px 15px;background:rgba(7,23,39,.62);color:#fff;font-size:13px;font-weight:900;white-space:nowrap;box-shadow:0 8px 24px rgba(0,0,0,.22);backdrop-filter:blur(7px);-webkit-backdrop-filter:blur(7px)}
+.talkabee-editions summary::-webkit-details-marker{display:none}
+.talkabee-editions .edition-row{position:absolute;top:calc(100% + 8px);left:50%;transform:translateX(-50%);display:flex;gap:6px;padding:8px;border:1px solid rgba(255,255,255,.4);border-radius:15px;background:rgba(7,23,39,.80);box-shadow:0 12px 32px rgba(0,0,0,.28);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);white-space:nowrap}
+.talkabee-editions .edition-row a{display:block;padding:9px 11px;border-radius:10px;color:#fff;text-decoration:none;font-size:12px;font-weight:850;background:rgba(255,255,255,.07);transition:background .16s ease,box-shadow .16s ease,transform .16s ease,border-color .16s ease}
+.talkabee-editions .edition-row a:nth-child(1):hover,.talkabee-editions .edition-row a:nth-child(1):focus-visible{background:rgba(232,184,72,.28);box-shadow:inset 0 0 0 1px rgba(255,218,120,.36)}
+.talkabee-editions .edition-row a:nth-child(2):hover,.talkabee-editions .edition-row a:nth-child(2):focus-visible{background:rgba(67,181,164,.27);box-shadow:inset 0 0 0 1px rgba(122,224,207,.34)}
+.talkabee-editions .edition-row a:nth-child(3):hover,.talkabee-editions .edition-row a:nth-child(3):focus-visible{background:rgba(75,158,216,.28);box-shadow:inset 0 0 0 1px rgba(132,200,246,.34)}
+.talkabee-editions .edition-row a:nth-child(4):hover,.talkabee-editions .edition-row a:nth-child(4):focus-visible{background:rgba(83,166,103,.28);box-shadow:inset 0 0 0 1px rgba(139,215,157,.34)}
+.talkabee-editions .edition-row a:nth-child(5):hover,.talkabee-editions .edition-row a:nth-child(5):focus-visible{background:rgba(126,91,211,.31);box-shadow:inset 0 0 0 1px rgba(178,151,242,.36)}
+.talkabee-editions .edition-row a:nth-child(6):hover,.talkabee-editions .edition-row a:nth-child(6):focus-visible{background:rgba(211,107,91,.28);box-shadow:inset 0 0 0 1px rgba(245,157,143,.34)}
+.talkabee-editions .edition-row a:hover,.talkabee-editions .edition-row a:focus-visible{transform:translateY(-1px);outline:none}
+@media(max-width:900px){.talkabee-editions .edition-row{max-width:94vw;overflow-x:auto}}
+</style>
+
 </head><body>
+<div class="talkabee-editions">
+<details>
+<summary>Explore Adventures ▾</summary>
+<div class="edition-row" role="navigation" aria-label="Talk A Bee Editions">
+<a href="index.html">Main Adventures</a>
+<a href="Talk-A-Bee-More-Adventures.html">Community Edition</a>
+<a href="Talk-A-Bee-Directory-3.html">Travel Edition</a>
+<a href="Talk-A-Bee-Directory-4.html">Sports Edition</a>
+<a href="Talk-A-Bee-Directory-5.html">Space Edition</a>
+<a href="Talk-A-Bee-Directory-6.html">Family &amp; Special</a>
+</div>
+</details>
+</div>
+
 <nav class="talkabee-prev-next-nav" aria-label="Adventure navigation"><a href="Talk-A-Bee-Library.html" aria-label="Previous page" title="Previous">‹</a><a href="Talk-A-Bee-Hotel-Adventure.html" aria-label="Next page" title="Next">›</a></nav>
 <section id="world"><button class="restorePanel" id="restorePanel">← Return Panel</button><div class="scene"><img src="images/city-bus-adventure.jpg" alt="Nicole and Mitchell at a city bus stop with route map, bus, traffic lights and pedestrians"></div><aside class="directory tab-master-panel"><a class="dirhome" href="index.html">← Main Directory</a><button id="sceneView">◉ Scene View</button><div class="place">🚌 City Bus Adventure</div><div class="label">LANGUAGE</div><select id="busLanguage"><option value="es">Spanish</option><option value="fr">French</option><option value="en">English</option><option value="de">German</option><option value="it">Italian</option><option value="pt">Portuguese</option><option value="no">Norwegian</option></select><div class="label">VOICE</div><select id="busVoice"><option value="">Browser Default</option></select><div class="label">DISCOVERY</div><button data-discovery>🔎 Discovery — Click the Scene</button><div class="label">ACTIVITIES</div><button data-lesson="bus">1. 🚌 Find the Right Bus</button><button data-lesson="map">2. 🗺️ Read the Route Map</button><button data-lesson="pass">3. 🎫 Use a Bus Pass</button><button data-lesson="directions">4. 🧭 Ask for Directions</button><button data-lesson="waiting">5. 🚏 Wait for the Bus</button><button data-lesson="stop">6. 📍 Get Off Downtown</button><div class="label">CHALLENGES</div><button data-challenge="0">1. Find the Bus</button><button data-challenge="1">2. Find the Route Map</button><button data-challenge="2">3. Find the Bus Pass</button><button data-challenge="3">4. Find the Traffic Light</button><button data-challenge="4">5. Find Main Street</button><button data-challenge="5">6. Find the Crosswalk</button></aside><main class="panel tab-master-card"><div class="kicker">CITY BUS ADVENTURE</div><h2 id="title"></h2><p id="prompt"></p><div class="line" id="line"></div><div class="translation" id="translation"></div><div class="actions" id="actions"><button id="speak">🔊 Speak</button><button id="next">Next Phrase →</button></div><div class="find" id="find"><div class="count" id="count"></div><div class="status" id="status"></div><div class="hint" id="hint"></div><button class="challengeNext" id="challengeNext">Next Challenge →</button></div></main><div class="hotspots"><button class="hotspot" data-word="routemap" aria-label="routemap"></button><button class="hotspot" data-word="busstop" aria-label="busstop"></button><button class="hotspot" data-word="bus" aria-label="bus"></button><button class="hotspot" data-word="buspass" aria-label="buspass"></button><button class="hotspot" data-word="trafficlight" aria-label="trafficlight"></button><button class="hotspot" data-word="mainstreet" aria-label="mainstreet"></button><button class="hotspot" data-word="directions" aria-label="directions"></button><button class="hotspot" data-word="crosswalk" aria-label="crosswalk"></button><button class="hotspot" data-word="walksignal" aria-label="walksignal"></button><button class="hotspot" data-word="shelter" aria-label="shelter"></button><button class="hotspot" data-word="downtown" aria-label="downtown"></button><button class="hotspot" data-word="cafe" aria-label="cafe"></button></div></section><script>
 (()=>{const LANGS={es:"es-ES",fr:"fr-FR",en:"en-US",de:"de-DE",it:"it-IT",pt:"pt-PT",no:"nb-NO"};
@@ -258,4 +290,57 @@ if("speechSynthesis" in window){speechSynthesis.onvoiceschanged=refreshVoices;re
 }
 @media(max-width:760px){.tab-master-card{width:min(520px,calc(100vw - 32px))!important;transform:translateX(-50%) scale(.82)!important;}}
 </style>
+\n<!-- Talk A Bee global browser-voice bridge -->
+<script>
+(function(){
+  const GLOBAL_PREFIX='talkabee-voice-';
+  function controls(){
+    const selects=[...document.querySelectorAll('select')];
+    const voice=selects.find(s=>/voice/i.test((s.id||'')+' '+(s.name||'')+' '+(s.getAttribute('aria-label')||'')));
+    const language=selects.find(s=>/lang/i.test((s.id||'')+' '+(s.name||'')+' '+(s.getAttribute('aria-label')||'')));
+    return {language,voice};
+  }
+  function voices(){return ('speechSynthesis' in window)?(speechSynthesis.getVoices()||[]):[];}
+  function key(lang){return GLOBAL_PREFIX+lang;}
+  function selectedVoiceURI(sel){
+    if(!sel||!sel.value)return '';
+    const vs=voices(), opt=sel.options[sel.selectedIndex];
+    const raw=sel.value, label=(opt&&opt.textContent)||'';
+    let v=vs.find(x=>x.voiceURI===raw)||vs.find(x=>x.name===raw);
+    if(!v && label) v=vs.find(x=>label===x.name||label.startsWith(x.name+' —')||label.startsWith(x.name+' -'));
+    return v?v.voiceURI:'';
+  }
+  function restore(){
+    const {language,voice}=controls(); if(!language||!voice)return;
+    const saved=localStorage.getItem(key(language.value))||''; if(!saved)return;
+    const vs=voices(), target=vs.find(v=>v.voiceURI===saved); if(!target)return;
+    const opts=[...voice.options];
+    let opt=opts.find(o=>o.value===target.voiceURI)||opts.find(o=>o.value===target.name)||
+            opts.find(o=>o.textContent===target.name||o.textContent.startsWith(target.name+' —')||o.textContent.startsWith(target.name+' -'));
+    if(opt && voice.value!==opt.value){
+      voice.value=opt.value;
+      voice.dispatchEvent(new Event('change',{bubbles:true}));
+    }
+  }
+  function save(){
+    const {language,voice}=controls(); if(!language||!voice)return;
+    const uri=selectedVoiceURI(voice);
+    localStorage.setItem(key(language.value),uri);
+  }
+  function bind(){
+    const {language,voice}=controls(); if(!language||!voice)return;
+    if(!voice.dataset.tabGlobalVoice){ voice.addEventListener('change',save); voice.dataset.tabGlobalVoice='1'; }
+    if(!language.dataset.tabGlobalVoice){
+      language.addEventListener('change',()=>{setTimeout(restore,0);setTimeout(restore,120);setTimeout(restore,500)});
+      language.dataset.tabGlobalVoice='1';
+    }
+    restore(); setTimeout(restore,120); setTimeout(restore,500);
+  }
+  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',bind);else bind();
+  if('speechSynthesis' in window){
+    const prior=speechSynthesis.onvoiceschanged;
+    speechSynthesis.onvoiceschanged=function(e){if(typeof prior==='function')prior.call(this,e);setTimeout(bind,0);setTimeout(restore,120)};
+  }
+})();
+</script>
 </body></html>
