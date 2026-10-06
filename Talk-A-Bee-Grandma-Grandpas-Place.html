@@ -181,13 +181,6 @@ html,body,#homeWorld,#homeScene{
 .tab-master-card .home-nextrow{gap:10px!important;}
 .tab-master-card .home-nextphrase{white-space:nowrap!important;}
 </style>
-
-<style id="grandparents-card-position-only">
-/* Position only — shift the approved script card left. */
-.tab-master-card{left:46%!important;}
-@media(max-width:760px){.tab-master-card{left:46%!important;}}
-</style>
-
 <style id="talkabee-readable-supporting-text">
 /* Readability-only repair. Existing links, navigation, JS, hotspots and audio are untouched. */
 .tab-master-card p,
@@ -250,14 +243,7 @@ html,body,#homeWorld,#homeScene{
   height:auto !important;
 }
 </style>
-
-
-<style id="grandparents-card-height-only">
-/* Height only: give the approved Grandma & Grandpa script card more vertical room. */
-.tab-master-card{min-height:360px!important;}
-@media(max-width:760px){.tab-master-card{min-height:360px!important;}}
-</style>
-  <link rel="icon" type="image/png" href="images/talkabee-favicon.png">
+<link rel="icon" type="image/png" href="images/talkabee-favicon.png">
   <link rel="shortcut icon" type="image/png" href="images/talkabee-favicon.png">
 
 <style id="talkabee-edition-menu-style">
@@ -364,6 +350,30 @@ html,body,#homeWorld,#homeScene{
 .script button,.script a,.script input,.script select,.script textarea,
 .tab-master-card button,.tab-master-card a,.tab-master-card input,.tab-master-card select,.tab-master-card textarea{cursor:pointer!important}
 .card input,.card textarea,.script input,.script textarea,.tab-master-card input,.tab-master-card textarea{cursor:text!important}
+</style>
+
+
+<style id="talkabee-modern-script-card-normalizer">
+/* Modern Talk A Bee script-card proportions. Keeps page-specific content and JS intact. */
+.tab-master-card{
+  width:520px!important;
+  min-width:520px!important;
+  max-width:520px!important;
+  height:auto!important;
+  min-height:0!important;
+  max-height:44vh!important;
+  padding:14px 16px!important;
+  border-radius:20px!important;
+  background:rgba(25,19,24,.14)!important;
+  border:1px solid rgba(255,255,255,.30)!important;
+  box-shadow:0 12px 30px rgba(0,0,0,.28)!important;
+  backdrop-filter:blur(5px)!important;
+  -webkit-backdrop-filter:blur(5px)!important;
+}
+.tab-master-card .tab-card-tools{margin:-3px 0 7px!important}
+@media(max-width:760px){
+ .tab-master-card{width:min(520px,calc(100vw - 24px))!important;min-width:0!important;max-width:calc(100vw - 24px)!important;padding:12px!important}
+}
 </style>
 
 </head>

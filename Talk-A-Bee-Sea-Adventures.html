@@ -877,6 +877,30 @@ body.adventure-locked #yachtWorld.open{inset:0!important;}
 .card input,.card textarea,.script input,.script textarea,.tab-master-card input,.tab-master-card textarea{cursor:text!important}
 </style>
 
+
+<style id="talkabee-modern-script-card-normalizer">
+/* Modern Talk A Bee script-card proportions. Keeps page-specific content and JS intact. */
+.tab-master-card{
+  width:520px!important;
+  min-width:520px!important;
+  max-width:520px!important;
+  height:auto!important;
+  min-height:0!important;
+  max-height:44vh!important;
+  padding:14px 16px!important;
+  border-radius:20px!important;
+  background:rgba(25,19,24,.14)!important;
+  border:1px solid rgba(255,255,255,.30)!important;
+  box-shadow:0 12px 30px rgba(0,0,0,.28)!important;
+  backdrop-filter:blur(5px)!important;
+  -webkit-backdrop-filter:blur(5px)!important;
+}
+.tab-master-card .tab-card-tools{margin:-3px 0 7px!important}
+@media(max-width:760px){
+ .tab-master-card{width:min(520px,calc(100vw - 24px))!important;min-width:0!important;max-width:calc(100vw - 24px)!important;padding:12px!important}
+}
+</style>
+
 </head>
 <body>
 <nav aria-label="Adventure navigation" class="talkabee-prev-next-nav"><a aria-label="Previous page" href="Talk-A-Bee-Grandma-Grandpas-Place.html" title="Previous">‹</a><a aria-label="Next page" href="Talk-A-Bee-Shopping-Market-Adventure.html" title="Next">›</a></nav>
