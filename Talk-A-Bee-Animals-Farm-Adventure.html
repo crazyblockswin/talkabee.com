@@ -629,11 +629,10 @@ const selector=document.getElementById('adventureLanguage');selector.value=lang;
 const voiceSelector=document.getElementById('adventureVoice');
 function fillFarmVoices(){
  if(!('speechSynthesis' in window))return;
- const base=data().speech.split('-')[0].toLowerCase();
  const saved=localStorage.getItem('talkabee-voice-'+lang)||'';
- const voices=(speechSynthesis.getVoices()||[]).filter(v=>(v.lang||'').toLowerCase().startsWith(base));
+ const voices=speechSynthesis.getVoices()||[];
  voiceSelector.innerHTML='<option value="">Browser Default Voice</option>';
- voices.forEach(v=>voiceSelector.add(new Option(v.name+' — '+v.lang,v.name)));
+ voices.forEach(v=>voiceSelector.add(new Option(v.name+' — '+(v.lang||''),v.voiceURI)));
  if([...voiceSelector.options].some(o=>o.value===saved))voiceSelector.value=saved;
 }
 
@@ -664,7 +663,7 @@ function speak(txt,rate=1,onend=null){
  if(!('speechSynthesis' in window)){if(onend)onend();return;}
  speechSynthesis.cancel();
  const u=new SpeechSynthesisUtterance(txt);u.lang=data().speech;u.rate=rate;
- const chosen=speechSynthesis.getVoices().find(v=>v.name===voiceSelector.value);
+ const chosen=speechSynthesis.getVoices().find(v=>v.voiceURI===voiceSelector.value);
  if(chosen)u.voice=chosen;
  if(onend)u.onend=onend;
  speechSynthesis.speak(u);
