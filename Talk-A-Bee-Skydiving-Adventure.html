@@ -274,14 +274,25 @@ showWord("game");
     const uri=selectedVoiceURI(voice);
     localStorage.setItem(key(language.value),uri);
   }
+  function restoreLanguage(){
+    const {language}=controls(); if(!language)return;
+    const saved=localStorage.getItem('talkabee-learn-language')||'';
+    if(saved && [...language.options].some(o=>o.value===saved) && language.value!==saved){
+      language.value=saved;
+      language.dispatchEvent(new Event('change',{bubbles:true}));
+    }
+  }
+  function saveLanguage(){
+    const {language}=controls(); if(language) localStorage.setItem('talkabee-learn-language',language.value);
+  }
   function bind(){
     const {language,voice}=controls(); if(!language||!voice)return;
     if(!voice.dataset.tabGlobalVoice){ voice.addEventListener('change',save); voice.dataset.tabGlobalVoice='1'; }
     if(!language.dataset.tabGlobalVoice){
-      language.addEventListener('change',()=>{setTimeout(restore,0);setTimeout(restore,120);setTimeout(restore,500)});
+      language.addEventListener('change',()=>{saveLanguage();setTimeout(restore,0);setTimeout(restore,120);setTimeout(restore,500)});
       language.dataset.tabGlobalVoice='1';
     }
-    restore(); setTimeout(restore,120); setTimeout(restore,500);
+    restoreLanguage(); restore(); setTimeout(restore,120); setTimeout(restore,500); setTimeout(restore,1500);
   }
   if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',bind);else bind();
   if('speechSynthesis' in window){
