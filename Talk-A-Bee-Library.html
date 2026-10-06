@@ -209,7 +209,17 @@
 .card #line,.card .word strong,.script #line,.script .word strong,.tab-master-card #line,.tab-master-card .word strong{font-size:calc(1em * var(--tab-card-font-scale))!important}
 .card .translation,.script .translation,.tab-master-card .translation{font-size:calc(1em * var(--tab-card-font-scale))!important}
 @media(max-width:760px){.tab-panel-size-controls,.tab-card-tools,.tab-card-resize{display:none!important}}
-</style>\n</head><body>
+</style>\n
+<style id="talkabee-global-card-grab-cursor">
+.card,.script,.tab-master-card{cursor:grab!important}
+.card:active,.script:active,.tab-master-card:active{cursor:grabbing!important}
+.card button,.card a,.card input,.card select,.card textarea,
+.script button,.script a,.script input,.script select,.script textarea,
+.tab-master-card button,.tab-master-card a,.tab-master-card input,.tab-master-card select,.tab-master-card textarea{cursor:pointer!important}
+.card input,.card textarea,.script input,.script textarea,.tab-master-card input,.tab-master-card textarea{cursor:text!important}
+</style>
+
+</head><body>
 <div class="talkabee-editions">
 <details>
 <summary>Explore Adventures ▾</summary>
