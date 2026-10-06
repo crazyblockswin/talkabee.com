@@ -344,7 +344,7 @@ showWord("game");
  const panel=document.querySelector('.tab-master-panel,.activity-panel,.panel');
  if(panel){
   const minus=panel.querySelector('.tab-panel-minus'),plus=panel.querySelector('.tab-panel-plus'),reset=panel.querySelector('.tab-panel-reset');
-  const KEY='talkabee-activity-panel-size',DEFAULT=195,MIN=170,MAX=310,STEP=20;
+  const KEY='talkabee-global-activity-panel-size',DEFAULT=195,MIN=170,MAX=310,STEP=20;
   const clamp=(n,a,b)=>Math.max(a,Math.min(b,n));
   const apply=(width,save=true)=>{width=clamp(Math.round(Number(width)||DEFAULT),MIN,MAX);const scale=clamp(width/DEFAULT,.88,1.42);panel.style.setProperty('width',width+'px','important');panel.style.setProperty('min-width',width+'px','important');panel.style.setProperty('max-width',width+'px','important');panel.style.setProperty('--tab-panel-scale',scale.toFixed(3));if(save)try{localStorage.setItem(KEY,String(width))}catch(e){}};
   const current=()=>panel.getBoundingClientRect().width||DEFAULT;
@@ -357,7 +357,7 @@ showWord("game");
  const card=document.querySelector('.tab-master-card,.script,.card');
  if(!card)return;
  const drag=card.querySelector('.tab-card-drag'),down=card.querySelector('.tab-card-font-down'),up=card.querySelector('.tab-card-font-up'),reset=card.querySelector('.tab-card-reset'),resize=card.querySelector('.tab-card-resize');
- const PK='talkabee-script-card-position-v3',SK='talkabee-script-card-scale-v3',FK='talkabee-script-card-font-scale';
+ const PK='talkabee-global-script-card-position',SK='talkabee-global-script-card-scale',FK='talkabee-global-script-card-font-scale';
  const clamp=(n,a,b)=>Math.max(a,Math.min(b,n));
  const defaultScale=()=>matchMedia('(max-width:760px)').matches?.82:.67;
  let scale=defaultScale(),fontScale=1,dragState=null;
