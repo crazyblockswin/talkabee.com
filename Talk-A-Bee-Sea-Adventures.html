@@ -768,87 +768,7 @@ body.adventure-locked #yachtWorld.open{inset:0!important;}
 .tab-master-card .yacht-find{margin-top:8px!important;}
 @media(max-width:760px){.tab-master-panel{left:8px!important;top:8px!important;height:calc(100vh - 16px)!important;max-height:calc(100vh - 16px)!important;width:190px!important}.tab-master-card{width:min(520px,calc(100vw - 220px))!important;bottom:10px!important;}}
 </style>
-<style id="sea-card-position-only">
-/* Sea position only: move the actual legacy yacht card RIGHT. */
-#yachtWorld .yacht-panel.tab-master-card{
-  left:35%!important;
-  right:auto!important;
-  transform:none!important;
-  z-index:80!important;
-}
-@media(max-width:760px){
-  #yachtWorld .yacht-panel.tab-master-card{
-    left:48%!important;
-    right:auto!important;
-    transform:none!important;
-  }
-}
-</style>
-
-<style id="talkabee-readable-supporting-text">
-/* Readability-only repair. Existing links, navigation, JS, hotspots and audio are untouched. */
-.tab-master-card p,
-.tab-master-card .prompt,
-.tab-master-card #prompt,
-.tab-master-card .instruction,
-.tab-master-card .instructions,
-.tab-master-card .hint,
-.tab-master-card #hint,
-.tab-master-card .translation,
-.tab-master-card #translation,
-.tab-master-card .english,
-.tab-master-card [class*="subtitle"],
-.tab-master-card [class*="instruction"],
-.tab-master-card [class*="prompt"],
-.tab-master-card [class*="translation"],
-.tab-master-card [class*="hint"],
-.tab-master-card [class*="status"],
-.animal-lesson-card p,
-.animal-lesson-card .prompt,
-.animal-lesson-card .instruction,
-.animal-lesson-card .translation,
-.animal-lesson-card .hint {
-  font-size:18px !important;
-  line-height:1.35 !important;
-}
-
-/* Small location/progress/counter lines also need to be readable. */
-.tab-master-card .eyebrow,
-.tab-master-card .kicker,
-.tab-master-card .overline,
-.tab-master-card .location,
-.tab-master-card .activity-count,
-.tab-master-card .challenge-count,
-.tab-master-card [class*="count"],
-.animal-lesson-card .eyebrow,
-.animal-lesson-card [class*="count"] {
-  font-size:15px !important;
-  line-height:1.25 !important;
-  font-weight:800 !important;
-}
-
-/* Spoken/foreign-language line stays visually strongest. */
-.tab-master-card #line,
-.tab-master-card .line,
-.tab-master-card .train-line,
-.tab-master-card .words,
-.tab-master-card [class*="phrase"],
-.animal-lesson-card #line,
-.animal-lesson-card .line,
-.animal-lesson-card [class*="phrase"] {
-  font-size:22px !important;
-  line-height:1.28 !important;
-  font-weight:800 !important;
-}
-
-/* Let increased text wrap naturally instead of being clipped. */
-.tab-master-card,
-.animal-lesson-card {
-  height:auto !important;
-}
-</style>
-
-  <link rel="icon" type="image/png" href="images/talkabee-favicon.png">
+<link rel="icon" type="image/png" href="images/talkabee-favicon.png">
   <link rel="shortcut icon" type="image/png" href="images/talkabee-favicon.png">
 \n<style id="talkabee-accessibility-controls-v1">
 /* Talk A Bee adjustable Adventure controls */
@@ -878,26 +798,29 @@ body.adventure-locked #yachtWorld.open{inset:0!important;}
 </style>
 
 
-<style id="talkabee-modern-script-card-normalizer">
-/* Modern Talk A Bee script-card proportions. Keeps page-specific content and JS intact. */
+<style id="talkabee-underwater-card-master">
+/* COPIED MASTER: Underwater Adventure script-card component */
 .tab-master-card{
-  width:520px!important;
-  min-width:520px!important;
-  max-width:520px!important;
-  height:auto!important;
-  min-height:0!important;
-  max-height:44vh!important;
-  padding:14px 16px!important;
-  border-radius:20px!important;
-  background:rgba(25,19,24,.14)!important;
-  border:1px solid rgba(255,255,255,.30)!important;
-  box-shadow:0 12px 30px rgba(0,0,0,.28)!important;
-  backdrop-filter:blur(5px)!important;
-  -webkit-backdrop-filter:blur(5px)!important;
+ position:fixed!important;z-index:900!important;left:50%!important;right:auto!important;top:auto!important;bottom:16px!important;
+ width:520px!important;min-width:0!important;max-width:520px!important;height:auto!important;min-height:0!important;max-height:none!important;
+ padding:14px 16px!important;box-sizing:border-box!important;overflow:visible!important;
+ border-radius:20px!important;border:1px solid rgba(255,255,255,.30)!important;background:rgba(25,19,24,.14)!important;
+ box-shadow:0 12px 30px rgba(0,0,0,.28)!important;backdrop-filter:blur(5px)!important;-webkit-backdrop-filter:blur(5px)!important;
+ transform:translateX(-50%) scale(.67)!important;transform-origin:bottom center!important;color:#fff!important;
+ font-family:Arial,Helvetica,sans-serif!important;
 }
-.tab-master-card .tab-card-tools{margin:-3px 0 7px!important}
+.tab-master-card .kicker{font-size:15px!important;line-height:1.25!important;font-weight:900!important;letter-spacing:.10em!important;color:rgba(255,255,255,.96)!important;text-shadow:0 1px 3px rgba(0,0,0,.78)!important;margin:0 0 6px!important}
+.tab-master-card h2{font-size:22px!important;line-height:1.08!important;margin:4px 0 7px!important;color:#fff!important;text-shadow:0 1px 3px rgba(0,0,0,.55)!important}
+.tab-master-card p{font-size:18px!important;line-height:1.35!important;margin:4px 0 7px!important;color:#fff!important}
+.tab-master-card .word{margin-top:8px!important;padding:10px 12px!important;border-radius:14px!important;background:rgba(88,88,88,.72)!important;border:1px solid rgba(255,255,255,.20)!important;color:#fff!important}
+.tab-master-card .word,.tab-master-card .word *{font-size:22px!important;line-height:1.28!important;font-weight:900!important;color:#fff!important}
+.tab-master-card .translation{font-size:18px!important;line-height:1.35!important;margin-top:3px!important;color:#fff!important;font-weight:400!important}
+.tab-master-card .controls{display:flex!important;align-items:center!important;gap:8px!important;flex-wrap:nowrap!important;margin-top:8px!important}
+.tab-master-card .controls button{width:auto!important;min-width:0!important;padding:9px 13px!important;margin:0!important;border-radius:12px!important;border:1px solid rgba(255,255,255,.35)!important;background:rgba(255,255,255,.88)!important;color:#10283c!important;font:900 13px/1 Arial,sans-serif!important;white-space:nowrap!important}
+.tab-master-card .controls button:first-child{background:#6447e8!important;color:#fff!important}
+.tab-master-card .legacy-progress{display:none!important}
 @media(max-width:760px){
- .tab-master-card{width:min(520px,calc(100vw - 24px))!important;min-width:0!important;max-width:calc(100vw - 24px)!important;padding:12px!important}
+ .tab-master-card{width:min(520px,calc(100vw - 32px))!important;bottom:10px!important;transform:translateX(-50%) scale(.82)!important}
 }
 </style>
 
@@ -986,18 +909,18 @@ body>header,body>footer,.final-cta,.hero,#mainDirectory{display:none!important;}
 <div class="yacht-panel tab-master-card">
 <div class="tab-card-tools" aria-label="Script card controls"><button type="button" class="tab-card-drag" title="Move script card">↕ Move</button><button type="button" class="tab-card-font-down" title="Decrease text">A−</button><button type="button" class="tab-card-font-up" title="Increase text">A+</button><button type="button" class="tab-card-reset" title="Reset card">Reset</button></div><div class="tab-card-resize" title="Drag to resize script card" aria-label="Resize script card">↘</div>
 
-<div class="yacht-kicker" id="yachtKicker">ON DECK TALK</div>
+<div class="yacht-kicker kicker" id="yachtKicker">ON DECK TALK</div>
 <h2 id="yachtTitle">A beautiful evening on the water.</h2>
 <p id="yachtPrompt">Hear a short sentence, then click the words one at a time.</p>
-<div class="yacht-wordline" id="yachtWordline"></div>
-<div class="yacht-translation" id="yachtTranslation"></div>
-<div class="yacht-actions" id="yachtActions">
+<div class="yacht-wordline word" id="yachtWordline"></div>
+<div class="yacht-translation translation" id="yachtTranslation"></div>
+<div class="yacht-actions controls" id="yachtActions">
 <button class="primary" id="yachtPlay" type="button">🔊 Speak</button>
 <button id="yachtSlow" type="button">🐢 Slow</button>
 <button id="yachtReplay" type="button">↻ Replay</button>
 <button class="yacht-nextphrase" id="yachtNextPhrase" type="button">Next phrase →</button></div>
 <div class="yacht-nextrow" id="yachtNextRow">
-<span class="yacht-progress" id="yachtProgress">Phrase 1 of 4</span>
+<span class="yacht-progress legacy-progress" id="yachtProgress">Phrase 1 of 4</span>
 
 </div>
 <div class="yacht-list" id="yachtList"></div>

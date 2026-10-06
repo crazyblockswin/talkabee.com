@@ -150,99 +150,6 @@ html,body,#homeWorld,#homeScene{
 .tab-master-card .actions button,.tab-master-card [class*="actions"] button,.tab-master-card>button{width:auto!important;min-width:0!important;height:auto!important;padding:9px 13px!important;margin:0!important;border-radius:12px!important;font:900 13px/1 Arial,Helvetica,sans-serif!important;white-space:nowrap!important}
 @media(max-width:760px){.tab-master-panel{left:10px!important;top:10px!important;bottom:10px!important;width:190px!important;min-width:190px!important;max-width:190px!important;padding:11px!important}.tab-master-card{width:min(520px,calc(100vw - 24px))!important;min-width:0!important;bottom:10px!important;padding:12px!important}}
 </style>
-
-<style id="tab-spoken-phrase-readability">
-/* Locked spoken-language phrase treatment: gray field + white type. */
-.tab-master-card #line,
-.tab-master-card .line,
-.tab-master-card .words {
-  background:rgba(88,88,88,.72)!important;
-  color:#fff!important;
-  border:1px solid rgba(255,255,255,.20)!important;
-  border-radius:14px!important;
-  text-shadow:0 1px 2px rgba(0,0,0,.55)!important;
-}
-.tab-master-card #line *,
-.tab-master-card .line *,
-.tab-master-card .words * {color:#fff!important;}
-</style>
-
-
-<style id="grandparents-current-component-cleanup">
-/* Grandma & Grandpa now uses the current Talk A Bee visual components, not the old Lingo-era presentation. */
-.tab-master-panel{padding:14px!important;font-size:13px!important;line-height:1.18!important;}
-.tab-master-panel .activity-place{font-size:22px!important;line-height:1.05!important;margin:4px 0 12px!important;}
-.tab-master-panel .activity-label,.tab-master-panel .home-control-label{font-size:11px!important;letter-spacing:.10em!important;margin:10px 0 5px!important;}
-.tab-master-panel button,.tab-master-panel select,.tab-master-panel a{min-height:38px!important;padding:9px 10px!important;font:800 13px/1.16 Arial,Helvetica,sans-serif!important;margin:4px 0!important;}
-.tab-master-panel .activity-divider{margin:9px 2px!important;}
-.tab-master-card .home-wordline{display:block!important;padding:11px 13px!important;margin:7px 0!important;font-size:20px!important;line-height:1.15!important;font-weight:900!important;color:#fff!important;}
-.tab-master-card .home-actions{display:flex!important;gap:8px!important;flex-wrap:nowrap!important;}
-.tab-master-card .home-actions button{flex:1 1 0!important;text-align:center!important;}
-.tab-master-card .home-nextrow{gap:10px!important;}
-.tab-master-card .home-nextphrase{white-space:nowrap!important;}
-</style>
-<style id="talkabee-readable-supporting-text">
-/* Readability-only repair. Existing links, navigation, JS, hotspots and audio are untouched. */
-.tab-master-card p,
-.tab-master-card .prompt,
-.tab-master-card #prompt,
-.tab-master-card .instruction,
-.tab-master-card .instructions,
-.tab-master-card .hint,
-.tab-master-card #hint,
-.tab-master-card .translation,
-.tab-master-card #translation,
-.tab-master-card .english,
-.tab-master-card [class*="subtitle"],
-.tab-master-card [class*="instruction"],
-.tab-master-card [class*="prompt"],
-.tab-master-card [class*="translation"],
-.tab-master-card [class*="hint"],
-.tab-master-card [class*="status"],
-.animal-lesson-card p,
-.animal-lesson-card .prompt,
-.animal-lesson-card .instruction,
-.animal-lesson-card .translation,
-.animal-lesson-card .hint {
-  font-size:18px !important;
-  line-height:1.35 !important;
-}
-
-/* Small location/progress/counter lines also need to be readable. */
-.tab-master-card .eyebrow,
-.tab-master-card .kicker,
-.tab-master-card .overline,
-.tab-master-card .location,
-.tab-master-card .activity-count,
-.tab-master-card .challenge-count,
-.tab-master-card [class*="count"],
-.animal-lesson-card .eyebrow,
-.animal-lesson-card [class*="count"] {
-  font-size:15px !important;
-  line-height:1.25 !important;
-  font-weight:800 !important;
-}
-
-/* Spoken/foreign-language line stays visually strongest. */
-.tab-master-card #line,
-.tab-master-card .line,
-.tab-master-card .train-line,
-.tab-master-card .words,
-.tab-master-card [class*="phrase"],
-.animal-lesson-card #line,
-.animal-lesson-card .line,
-.animal-lesson-card [class*="phrase"] {
-  font-size:22px !important;
-  line-height:1.28 !important;
-  font-weight:800 !important;
-}
-
-/* Let increased text wrap naturally instead of being clipped. */
-.tab-master-card,
-.animal-lesson-card {
-  height:auto !important;
-}
-</style>
 <link rel="icon" type="image/png" href="images/talkabee-favicon.png">
   <link rel="shortcut icon" type="image/png" href="images/talkabee-favicon.png">
 
@@ -353,90 +260,29 @@ html,body,#homeWorld,#homeScene{
 </style>
 
 
-<style id="talkabee-modern-script-card-normalizer">
-/* Modern Talk A Bee script-card proportions. Keeps page-specific content and JS intact. */
+<style id="talkabee-underwater-card-master">
+/* COPIED MASTER: Underwater Adventure script-card component */
 .tab-master-card{
-  width:520px!important;
-  min-width:520px!important;
-  max-width:520px!important;
-  height:auto!important;
-  min-height:0!important;
-  max-height:44vh!important;
-  padding:14px 16px!important;
-  border-radius:20px!important;
-  background:rgba(25,19,24,.14)!important;
-  border:1px solid rgba(255,255,255,.30)!important;
-  box-shadow:0 12px 30px rgba(0,0,0,.28)!important;
-  backdrop-filter:blur(5px)!important;
-  -webkit-backdrop-filter:blur(5px)!important;
+ position:fixed!important;z-index:900!important;left:50%!important;right:auto!important;top:auto!important;bottom:16px!important;
+ width:520px!important;min-width:0!important;max-width:520px!important;height:auto!important;min-height:0!important;max-height:none!important;
+ padding:14px 16px!important;box-sizing:border-box!important;overflow:visible!important;
+ border-radius:20px!important;border:1px solid rgba(255,255,255,.30)!important;background:rgba(25,19,24,.14)!important;
+ box-shadow:0 12px 30px rgba(0,0,0,.28)!important;backdrop-filter:blur(5px)!important;-webkit-backdrop-filter:blur(5px)!important;
+ transform:translateX(-50%) scale(.67)!important;transform-origin:bottom center!important;color:#fff!important;
+ font-family:Arial,Helvetica,sans-serif!important;
 }
-.tab-master-card .tab-card-tools{margin:-3px 0 7px!important}
+.tab-master-card .kicker{font-size:15px!important;line-height:1.25!important;font-weight:900!important;letter-spacing:.10em!important;color:rgba(255,255,255,.96)!important;text-shadow:0 1px 3px rgba(0,0,0,.78)!important;margin:0 0 6px!important}
+.tab-master-card h2{font-size:22px!important;line-height:1.08!important;margin:4px 0 7px!important;color:#fff!important;text-shadow:0 1px 3px rgba(0,0,0,.55)!important}
+.tab-master-card p{font-size:18px!important;line-height:1.35!important;margin:4px 0 7px!important;color:#fff!important}
+.tab-master-card .word{margin-top:8px!important;padding:10px 12px!important;border-radius:14px!important;background:rgba(88,88,88,.72)!important;border:1px solid rgba(255,255,255,.20)!important;color:#fff!important}
+.tab-master-card .word,.tab-master-card .word *{font-size:22px!important;line-height:1.28!important;font-weight:900!important;color:#fff!important}
+.tab-master-card .translation{font-size:18px!important;line-height:1.35!important;margin-top:3px!important;color:#fff!important;font-weight:400!important}
+.tab-master-card .controls{display:flex!important;align-items:center!important;gap:8px!important;flex-wrap:nowrap!important;margin-top:8px!important}
+.tab-master-card .controls button{width:auto!important;min-width:0!important;padding:9px 13px!important;margin:0!important;border-radius:12px!important;border:1px solid rgba(255,255,255,.35)!important;background:rgba(255,255,255,.88)!important;color:#10283c!important;font:900 13px/1 Arial,sans-serif!important;white-space:nowrap!important}
+.tab-master-card .controls button:first-child{background:#6447e8!important;color:#fff!important}
+.tab-master-card .legacy-progress{display:none!important}
 @media(max-width:760px){
- .tab-master-card{width:min(520px,calc(100vw - 24px))!important;min-width:0!important;max-width:calc(100vw - 24px)!important;padding:12px!important}
-}
-</style>
-
-
-<style id="talkabee-modern-card-no-scroll">
-/* Modern compact card: grow to its content instead of showing an internal scrollbar. */
-.tab-master-card{
-  height:auto!important;
-  min-height:0!important;
-  max-height:none!important;
-  overflow:visible!important;
-  overflow-x:visible!important;
-  overflow-y:visible!important;
-  scrollbar-width:none!important;
-}
-.tab-master-card::-webkit-scrollbar{display:none!important}
-@media(max-width:760px){
- .tab-master-card{max-height:none!important;overflow:visible!important}
-}
-</style>
-
-
-<style id="grandparents-modern-card-layout-fix">
-/* Match the compact modern Adventure card layout without changing its content/behavior. */
-.tab-master-card{
-  width:520px!important;
-  min-width:520px!important;
-  max-width:520px!important;
-  padding:14px 16px!important;
-  overflow:visible!important;
-}
-.tab-master-card .home-actions{
-  display:flex!important;
-  flex-wrap:nowrap!important;
-  gap:8px!important;
-  align-items:center!important;
-}
-.tab-master-card .home-actions button{
-  flex:0 0 auto!important;
-  width:auto!important;
-  min-width:0!important;
-  padding:9px 13px!important;
-  font-size:13px!important;
-  white-space:nowrap!important;
-}
-.tab-master-card .home-nextrow{
-  display:flex!important;
-  align-items:center!important;
-  justify-content:space-between!important;
-  gap:10px!important;
-  margin-top:8px!important;
-}
-.tab-master-card .home-nextphrase{
-  flex:0 0 auto!important;
-  width:auto!important;
-  max-width:170px!important;
-  padding:9px 13px!important;
-  font-size:13px!important;
-  white-space:nowrap!important;
-  overflow:visible!important;
-}
-@media(max-width:760px){
- .tab-master-card{width:min(520px,calc(100vw - 24px))!important;min-width:0!important}
- .tab-master-card .home-actions{flex-wrap:wrap!important}
+ .tab-master-card{width:min(520px,calc(100vw - 32px))!important;bottom:10px!important;transform:translateX(-50%) scale(.82)!important}
 }
 </style>
 
@@ -554,18 +400,18 @@ html,body,#homeWorld,#homeScene{
         <button type="button" id="tabCardReset" class="tab-card-reset" title="Reset card">Reset</button>
       </div>
       <div class="tab-card-resize" id="tabCardResize" title="Drag to resize script card" aria-label="Resize script card">↘</div>
-      <div class="home-kicker" id="homeKicker">FAMILY TALK</div>
+      <div class="home-kicker kicker" id="homeKicker">FAMILY TALK</div>
       <h2 id="homeTitle">Meet Grandma Cathy and Grandpa Wally.</h2>
       <p id="homePrompt">Hear a simple family sentence, then click the words one at a time.</p>
-      <div class="home-wordline line" id="homeWordline"></div>
-      <div class="home-translation" id="homeTranslation"></div>
-      <div class="home-actions">
+      <div class="home-wordline line word" id="homeWordline"></div>
+      <div class="home-translation translation" id="homeTranslation"></div>
+      <div class="home-actions controls">
         <button class="primary" id="homePlay">🔊 Speak</button>
-        <button id="homeSlow">🐢 Slow</button><button id="homeReplay">↻ Replay</button>
+        <button id="homeSlow">🐢 Slow</button><button id="homeReplay">↻ Replay</button><button class="home-nextphrase" id="homeNextPhrase">Next phrase →</button>
       </div>
       <div class="home-nextrow" id="homeNextRow">
-        <span class="home-progress" id="homeProgress">Phrase 1 of 4</span>
-        <button class="home-nextphrase" id="homeNextPhrase">Next phrase →</button>
+        <span class="home-progress legacy-progress" id="homeProgress">Phrase 1 of 4</span>
+        
       </div>
       <div class="home-list" id="homeList"></div>
       <div class="home-find" id="homeFind">
@@ -871,82 +717,7 @@ Object.keys(extraDiscovery).forEach(lang=>{if(!languageData[lang].objects)langua
  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',run);else run();
 })();
 </script>
-
-<style id="talkabee-rendered-card-footprint-lock">
-/* Visual master: match the user-approved Grandma's Kitchen rendered footprint. */
-.tab-master-card{
-  width:520px!important; max-width:520px!important; min-width:0!important;
-  transform:translateX(-50%) scale(.67)!important;
-  transform-origin:bottom center!important;
-}
-@media(max-width:760px){.tab-master-card{width:min(520px,calc(100vw - 32px))!important;transform:translateX(-50%) scale(.82)!important;}}
-</style>
-
-<style id="talkabee-draggable-script-card">
-/* Drag the complete Script Card. Interactive controls still click normally. */
-.tab-master-card{touch-action:none;cursor:grab!important;}
-.tab-master-card.tab-dragging{cursor:grabbing!important;}
-.tab-master-card button,.tab-master-card a,.tab-master-card input,.tab-master-card select,.tab-master-card textarea{cursor:pointer!important;}
-</style>
-<script id="talkabee-draggable-script-card-behavior">
-(function(){
- function init(){
-  const card=document.querySelector('.tab-master-card');
-  if(!card||card.dataset.dragReady==='1') return;
-  card.dataset.dragReady='1';
-  card.title='Drag card to move • Double-click empty area to reset';
-  let dragging=false,startX=0,startY=0,startLeft=0,startTop=0,dragScale=1;
-  const interactive='button,a,input,select,textarea,option,label';
-
-  function currentScale(){
-   const tr=getComputedStyle(card).transform;
-   if(!tr||tr==='none') return 1;
-   const m=tr.match(/^matrix\(([^)]+)\)$/);
-   if(!m) return 1;
-   const a=parseFloat(m[1].split(',')[0]);
-   return Number.isFinite(a)&&a>0?a:1;
-  }
-  function pin(){
-   const r=card.getBoundingClientRect();
-   dragScale=currentScale();
-   card.style.setProperty('left',r.left+'px','important');
-   card.style.setProperty('top',r.top+'px','important');
-   card.style.setProperty('right','auto','important');
-   card.style.setProperty('bottom','auto','important');
-   card.style.setProperty('transform','scale('+dragScale+')','important');
-   card.style.setProperty('transform-origin','top left','important');
-  }
-  function bounds(left,top){
-   const r=card.getBoundingClientRect(),m=8;
-   return {left:Math.min(Math.max(m,left),Math.max(m,innerWidth-r.width-m)),top:Math.min(Math.max(m,top),Math.max(m,innerHeight-r.height-m))};
-  }
-  card.addEventListener('pointerdown',function(e){
-   if(e.button!==undefined&&e.button!==0) return;
-   if(e.target.closest(interactive)) return;
-   pin();
-   const r=card.getBoundingClientRect();
-   dragging=true; startX=e.clientX; startY=e.clientY; startLeft=r.left; startTop=r.top;
-   card.classList.add('tab-dragging');
-   card.setPointerCapture?.(e.pointerId);
-   e.preventDefault();
-  });
-  card.addEventListener('pointermove',function(e){
-   if(!dragging) return;
-   const p=bounds(startLeft+e.clientX-startX,startTop+e.clientY-startY);
-   card.style.setProperty('left',p.left+'px','important');
-   card.style.setProperty('top',p.top+'px','important');
-   e.preventDefault();
-  });
-  function stop(e){if(!dragging)return;dragging=false;card.classList.remove('tab-dragging');try{card.releasePointerCapture?.(e.pointerId)}catch(_){}}
-  card.addEventListener('pointerup',stop); card.addEventListener('pointercancel',stop);
-  card.addEventListener('dblclick',function(e){
-   if(e.target.closest(interactive)) return;
-   ['left','top','right','bottom','transform','transform-origin'].forEach(x=>card.style.removeProperty(x));
-  });
- }
- if(document.readyState==='loading') document.addEventListener('DOMContentLoaded',init); else init();
-})();
-</script>\n\n<!-- Talk A Bee global browser-voice bridge -->
+\n\n<!-- Talk A Bee global browser-voice bridge -->
 <script>
 (function(){
   const GLOBAL_PREFIX='talkabee-voice-';
