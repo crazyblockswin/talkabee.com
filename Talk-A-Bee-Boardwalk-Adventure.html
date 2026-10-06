@@ -325,7 +325,7 @@ function refreshVoices(){
  const vs=speechSynthesis.getVoices()||[];
  if(!vs.length)return;
  const saved=localStorage.getItem(voiceStorageKey())||"";
- voiceSel.innerHTML='<option value="">Browser Default</option>';
+ voiceSel.innerHTML='<option value="">Browser Default Voice</option>';
  vs.forEach(v=>voiceSel.add(new Option(v.name+" — "+(v.lang||""),v.voiceURI)));
  if([...voiceSel.options].some(o=>o.value===saved))voiceSel.value=saved;
 }

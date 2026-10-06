@@ -710,11 +710,12 @@ showLesson('pets');
   var p=document.querySelector('.tab-master-panel'); if(!p)return;
   var sel=[].slice.call(p.querySelectorAll('select')).find(function(s){return /voice/i.test(s.id||s.name||s.getAttribute('aria-label')||'')}) || [].slice.call(p.querySelectorAll('select'))[1];
   if(!sel)return;
-  var current=sel.value, voices=speechSynthesis.getVoices()||[];
+  var saved=localStorage.getItem('talkabee-voice-'+lang)||'';
+  var voices=speechSynthesis.getVoices()||[];
   if(!voices.length)return;
-  sel.innerHTML='<option value="">Browser Default</option>';
-  voices.forEach(function(v){var o=document.createElement('option');o.value=v.name;o.textContent=v.name+' — '+(v.lang||'');sel.appendChild(o)});
-  if([].slice.call(sel.options).some(function(o){return o.value===current}))sel.value=current;
+  sel.innerHTML='<option value="">Browser Default Voice</option>';
+  voices.forEach(function(v){var o=document.createElement('option');o.value=v.voiceURI;o.textContent=v.name+' — '+(v.lang||'');sel.appendChild(o)});
+  if([].slice.call(sel.options).some(function(o){return o.value===saved}))sel.value=saved;
  }
  function labels(){
   document.querySelectorAll('.tab-master-card button').forEach(function(b){
