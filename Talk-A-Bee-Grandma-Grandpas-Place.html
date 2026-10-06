@@ -138,7 +138,7 @@ html,body,#homeWorld,#homeScene{
  position:fixed!important;left:50%!important;right:auto!important;bottom:16px!important;top:auto!important;
  width:520px!important;min-width:520px!important;max-width:520px!important;height:auto!important;min-height:0!important;max-height:44vh!important;
  margin:0!important;padding:14px 16px!important;overflow:auto!important;transform:translateX(-50%)!important;scale:1!important;zoom:1!important;opacity:1!important;
- border-radius:20px!important;border:1px solid rgba(255,255,255,.30)!important;background:rgba(25,19,24,.38)!important;
+ border-radius:20px!important;border:1px solid rgba(255,255,255,.30)!important;background:rgba(25,19,24,.14)!important;
  box-shadow:0 12px 30px rgba(0,0,0,.28)!important;backdrop-filter:blur(5px)!important;-webkit-backdrop-filter:blur(5px)!important;
  color:#fff!important;z-index:900!important;font-family:Arial,Helvetica,sans-serif!important;
 }
@@ -277,6 +277,85 @@ html,body,#homeWorld,#homeScene{
 @media(max-width:900px){.talkabee-editions .edition-row{max-width:94vw;overflow-x:auto}}
 </style>
 
+<style id="talkabee-card-customizer">
+.tab-master-card{resize:none!important;min-width:360px!important;min-height:260px!important;max-width:calc(100vw - 24px)!important;max-height:calc(100vh - 24px)!important;--tab-font-scale:1}
+.tab-card-tools{display:flex!important;align-items:center!important;gap:6px!important;margin:-3px 0 7px!important;user-select:none!important}
+.tab-card-drag{margin-right:auto!important;padding:6px 9px!important;border-radius:10px!important;background:rgba(255,255,255,.14)!important;color:#fff!important;font:900 12px/1 Arial,sans-serif!important;cursor:grab!important;touch-action:none!important}
+.tab-card-drag:active{cursor:grabbing!important}
+.tab-card-tools button{width:auto!important;min-width:38px!important;min-height:30px!important;margin:0!important;padding:6px 9px!important;border-radius:10px!important;border:1px solid rgba(255,255,255,.38)!important;background:rgba(255,255,255,.90)!important;color:#423768!important;font:900 12px/1 Arial,sans-serif!important;cursor:pointer!important}
+.tab-master-card.tab-user-moved{transform:none!important;bottom:auto!important}
+.tab-master-card h1,.tab-master-card h2{font-size:calc(22px * var(--tab-font-scale))!important}
+.tab-master-card p,.tab-master-card .prompt,.tab-master-card #prompt,.tab-master-card .instruction,.tab-master-card .instructions,.tab-master-card .hint,.tab-master-card #hint,.tab-master-card .translation,.tab-master-card #translation,.tab-master-card .english,.tab-master-card [class*="subtitle"],.tab-master-card [class*="instruction"],.tab-master-card [class*="prompt"],.tab-master-card [class*="translation"],.tab-master-card [class*="hint"],.tab-master-card [class*="status"]{font-size:calc(18px * var(--tab-font-scale))!important}
+.tab-master-card #line,.tab-master-card .line,.tab-master-card .train-line,.tab-master-card .words,.tab-master-card [class*="phrase"]{font-size:calc(22px * var(--tab-font-scale))!important}
+.tab-master-card .eyebrow,.tab-master-card .kicker,.tab-master-card .overline,.tab-master-card .location,.tab-master-card .activity-count,.tab-master-card .challenge-count,.tab-master-card [class*="count"]{font-size:calc(15px * var(--tab-font-scale))!important}
+.tab-master-card .home-actions button,.tab-master-card .home-nextphrase,.tab-master-card .home-challenge-next{font-size:calc(13px * var(--tab-font-scale))!important}
+.tab-card-resize{position:absolute!important;right:6px!important;bottom:6px!important;width:36px!important;height:36px!important;display:grid!important;place-items:center!important;border-radius:9px!important;background:rgba(255,255,255,.92)!important;color:#423768!important;border:1px solid rgba(255,255,255,.5)!important;font:900 20px/1 Arial,sans-serif!important;cursor:nwse-resize!important;user-select:none!important;touch-action:none!important;z-index:200!important;box-shadow:0 2px 8px rgba(0,0,0,.28)!important}
+@media(max-width:760px){.tab-master-card{resize:none!important;min-width:0!important}.tab-card-resize{display:none!important}}
+</style>
+
+
+<style id="talkabee-panel-size-controls">
+.tab-master-panel{
+  --tab-panel-scale:1;
+  width:195px!important;
+  min-width:195px!important;
+  max-width:195px!important;
+  background:rgba(13,25,45,.14)!important;
+}
+.tab-panel-size-controls{
+  display:flex!important;
+  align-items:center!important;
+  justify-content:center!important;
+  gap:10px!important;
+  margin:3px 0 11px!important;
+  width:100%!important;
+}
+.tab-panel-size-controls #tabPanelMinus,
+.tab-panel-size-controls #tabPanelPlus{
+  width:28px!important;
+  min-width:28px!important;
+  height:28px!important;
+  margin:0!important;
+  padding:0!important;
+  display:grid!important;
+  place-items:center!important;
+  border:0!important;
+  border-radius:8px!important;
+  background:transparent!important;
+  color:#fff!important;
+  box-shadow:none!important;
+  text-shadow:0 2px 4px rgba(0,0,0,.75)!important;
+  font:900 17px/1 Arial,sans-serif!important;
+  cursor:pointer!important;
+}
+.tab-panel-size-controls #tabPanelReset{
+  width:auto!important;
+  min-width:0!important;
+  height:28px!important;
+  margin:0!important;
+  padding:0 8px!important;
+  border:0!important;
+  border-radius:8px!important;
+  background:transparent!important;
+  color:#fff!important;
+  box-shadow:none!important;
+  text-shadow:0 2px 4px rgba(0,0,0,.75)!important;
+  font:900 9px/1 Arial,sans-serif!important;
+  cursor:pointer!important;
+}
+.tab-master-panel .activity-place,
+.tab-master-panel .place,
+.tab-master-panel h1,
+.tab-master-panel .title{font-size:calc(19px * var(--tab-panel-scale))!important}
+.tab-master-panel .activity-label,
+.tab-master-panel .label,
+.tab-master-panel label{font-size:calc(9.5px * var(--tab-panel-scale))!important}
+.tab-master-panel button:not(.tab-panel-size-controls button),
+.tab-master-panel select,
+.tab-master-panel a{font-size:calc(12px * var(--tab-panel-scale))!important}
+@media(max-width:760px){.tab-panel-size-controls{display:none!important}}
+</style>
+
 </head>
 <body>
 <div class="talkabee-editions">
@@ -331,7 +410,14 @@ html,body,#homeWorld,#homeScene{
 </div>
 
     <aside class="activity-panel home-directory tab-master-panel" aria-label="Grandma and Grandpa activity menu">
+
       <div class="activity-place">🏡 Grandma<br>&amp; Grandpa’s<br>Place</div>
+  <div class="tab-panel-size-controls" aria-label="Activity panel size">
+    <button type="button" id="tabPanelMinus" title="Make activity panel smaller" aria-label="Make activity panel smaller">−</button>
+    <button type="button" id="tabPanelReset" title="Reset activity panel size">Reset</button>
+    <button type="button" id="tabPanelPlus" title="Make activity panel larger" aria-label="Make activity panel larger">+</button>
+  </div>
+
       <button type="button" class="activity-peek" id="activityPeek">◉ Scene View</button>
 
       <div class="activity-label">LANGUAGE</div>
@@ -377,6 +463,13 @@ html,body,#homeWorld,#homeScene{
     </div>
 
     <section class="home-panel tab-master-card" aria-label="Lesson script card">
+      <div class="tab-card-tools" aria-label="Script card controls">
+        <span class="tab-card-drag" title="Drag script card">↕ Move</span>
+        <button type="button" id="tabCardFontDown" title="Decrease text">A−</button>
+        <button type="button" id="tabCardFontUp" title="Increase text">A+</button>
+        <button type="button" id="tabCardReset" title="Reset card">Reset</button>
+      </div>
+      <div class="tab-card-resize" id="tabCardResize" title="Drag to resize script card" aria-label="Resize script card">↘</div>
       <div class="home-kicker" id="homeKicker">FAMILY TALK</div>
       <h2 id="homeTitle">Meet Grandma Cathy and Grandpa Wally.</h2>
       <p id="homePrompt">Hear a simple family sentence, then click the words one at a time.</p>
@@ -833,5 +926,128 @@ Object.keys(extraDiscovery).forEach(lang=>{if(!languageData[lang].objects)langua
   }
 })();
 </script>
+<script id="talkabee-card-customizer-js">
+(function(){
+const card=document.querySelector('.tab-master-card');if(!card)return;
+const handle=card.querySelector('.tab-card-drag'),minus=document.getElementById('tabCardFontDown'),plus=document.getElementById('tabCardFontUp'),reset=document.getElementById('tabCardReset');
+const PK='talkabee-script-card-position',SK='talkabee-script-card-size',FK='talkabee-script-card-font-scale';
+const clamp=(v,a,b)=>Math.max(a,Math.min(b,v)),mobile=()=>matchMedia('(max-width:760px)').matches;
+function font(v){v=clamp(Number(v)||1,.8,1.6);card.style.setProperty('--tab-font-scale',v);try{localStorage.setItem(FK,v)}catch(e){}}
+function savePos(){if(mobile()||!card.classList.contains('tab-user-moved'))return;try{localStorage.setItem(PK,JSON.stringify({left:card.offsetLeft,top:card.offsetTop}))}catch(e){}}
+function saveSize(){if(mobile())return;let r=card.getBoundingClientRect();try{localStorage.setItem(SK,JSON.stringify({width:Math.round(r.width),height:Math.round(r.height)}))}catch(e){}}
+function restore(){try{
+ font(localStorage.getItem(FK)||1);if(mobile())return;
+ let z=JSON.parse(localStorage.getItem(SK)||'null');if(z){let rw=clamp(z.width,360,innerWidth-24),rh=clamp(z.height,260,innerHeight-24);card.style.setProperty('width',rw+'px','important');card.style.setProperty('height',rh+'px','important')}
+ let p=JSON.parse(localStorage.getItem(PK)||'null');if(p){let r=card.getBoundingClientRect();card.classList.add('tab-user-moved');card.style.setProperty('left',clamp(p.left,0,Math.max(0,innerWidth-r.width))+'px','important');card.style.setProperty('top',clamp(p.top,0,Math.max(0,innerHeight-r.height))+'px','important')}
+}catch(e){font(1)}}
+let d=null;
+handle.addEventListener('pointerdown',e=>{if(mobile())return;e.preventDefault();let r=card.getBoundingClientRect();card.classList.add('tab-user-moved');card.style.setProperty('left',r.left+'px','important');card.style.setProperty('top',r.top+'px','important');d={x:e.clientX-r.left,y:e.clientY-r.top};handle.setPointerCapture(e.pointerId)});
+handle.addEventListener('pointermove',e=>{if(!d)return;let r=card.getBoundingClientRect();card.style.setProperty('left',clamp(e.clientX-d.x,0,Math.max(0,innerWidth-r.width))+'px','important');card.style.setProperty('top',clamp(e.clientY-d.y,0,Math.max(0,innerHeight-r.height))+'px','important')});
+function end(){if(d){d=null;savePos()}}handle.addEventListener('pointerup',end);handle.addEventListener('pointercancel',end);
+minus.addEventListener('click',()=>font((parseFloat(getComputedStyle(card).getPropertyValue('--tab-font-scale'))||1)-.1));
+plus.addEventListener('click',()=>font((parseFloat(getComputedStyle(card).getPropertyValue('--tab-font-scale'))||1)+.1));
+reset.addEventListener('click',()=>{try{localStorage.removeItem(PK);localStorage.removeItem(SK);localStorage.removeItem(FK)}catch(e){}card.classList.remove('tab-user-moved');['left','top','width','height','min-width','max-width','min-height','transform','bottom'].forEach(x=>card.style.removeProperty(x));font(1)});
+const resizeHandle=document.getElementById('tabCardResize');
+let resizing=null;
+
+resizeHandle.addEventListener('pointerdown',e=>{
+  if(mobile()) return;
+  e.preventDefault();
+  e.stopPropagation();
+  const r=card.getBoundingClientRect();
+
+  // Freeze the card exactly where it is, then resize from that rectangle.
+  card.classList.add('tab-user-moved');
+  card.style.setProperty('left',r.left+'px','important');
+  card.style.setProperty('top',r.top+'px','important');
+  card.style.setProperty('transform','none','important');
+  card.style.setProperty('bottom','auto','important');
+
+  // Clear old width constraints before starting.
+  card.style.removeProperty('min-width');
+  card.style.removeProperty('max-width');
+  card.style.removeProperty('min-height');
+
+  card.style.setProperty('width',r.width+'px','important');
+  card.style.setProperty('height',r.height+'px','important');
+
+  resizing={
+    pointerX:e.clientX,
+    pointerY:e.clientY,
+    startW:r.width,
+    startH:r.height,
+    left:r.left,
+    top:r.top
+  };
+  resizeHandle.setPointerCapture(e.pointerId);
+});
+
+resizeHandle.addEventListener('pointermove',e=>{
+  if(!resizing) return;
+  e.preventDefault();
+
+  const maxW=Math.max(360, window.innerWidth-resizing.left-8);
+  const maxH=Math.max(260, window.innerHeight-resizing.top-8);
+
+  const w=clamp(resizing.startW+(e.clientX-resizing.pointerX),360,maxW);
+  const h=clamp(resizing.startH+(e.clientY-resizing.pointerY),260,maxH);
+
+  card.style.setProperty('width',w+'px','important');
+  card.style.setProperty('height',h+'px','important');
+});
+
+function finishResize(){
+  if(!resizing) return;
+  resizing=null;
+  saveSize();
+  savePos();
+}
+resizeHandle.addEventListener('pointerup',finishResize);
+resizeHandle.addEventListener('pointercancel',finishResize);
+
+restore();
+})();
+</script>
+
+
+<script id="talkabee-panel-size-controls-js">
+(()=>{
+ const panel=document.querySelector('.tab-master-panel');
+ const minus=document.getElementById('tabPanelMinus');
+ const plus=document.getElementById('tabPanelPlus');
+ const reset=document.getElementById('tabPanelReset');
+ if(!panel||!minus||!plus||!reset)return;
+
+ const KEY='talkabee-activity-panel-size';
+ const DEFAULT=195, MIN=170, MAX=310, STEP=20;
+ const clamp=(n,a,b)=>Math.max(a,Math.min(b,n));
+
+ function apply(width,save=true){
+   width=clamp(Math.round(Number(width)||DEFAULT),MIN,MAX);
+   const scale=clamp(width/DEFAULT,.88,1.42);
+   panel.style.setProperty('width',width+'px','important');
+   panel.style.setProperty('min-width',width+'px','important');
+   panel.style.setProperty('max-width',width+'px','important');
+   panel.style.setProperty('--tab-panel-scale',scale.toFixed(3));
+   if(save){
+     try{localStorage.setItem(KEY,String(width))}catch(e){}
+   }
+ }
+ function current(){return panel.getBoundingClientRect().width||DEFAULT}
+
+ minus.addEventListener('click',()=>apply(current()-STEP));
+ plus.addEventListener('click',()=>apply(current()+STEP));
+ reset.addEventListener('click',()=>{
+   apply(DEFAULT,false);
+   try{localStorage.removeItem(KEY)}catch(e){}
+ });
+
+ try{
+   const saved=parseFloat(localStorage.getItem(KEY));
+   if(saved)apply(saved,false);
+ }catch(e){}
+})();
+</script>
+
 </body>
 </html>

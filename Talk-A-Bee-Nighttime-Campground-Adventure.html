@@ -158,7 +158,24 @@
 
   <link rel="icon" type="image/png" href="images/talkabee-favicon.png">
   <link rel="shortcut icon" type="image/png" href="images/talkabee-favicon.png">
-</head>
+\n<style id="talkabee-accessibility-controls-v1">
+/* Talk A Bee adjustable Adventure controls */
+.panel,.activity-panel,.tab-master-panel{--tab-panel-scale:1;background-color:rgba(13,25,45,.14)!important}
+.card,.script,.tab-master-card{--tab-card-font-scale:1;background-color:rgba(25,19,24,.14)!important;resize:none!important}
+.tab-panel-size-controls{display:flex!important;align-items:center!important;justify-content:center!important;gap:10px!important;width:100%!important;margin:2px 0 8px!important;position:relative!important;z-index:50!important}
+.tab-panel-size-controls button{width:auto!important;min-width:28px!important;height:28px!important;padding:0 5px!important;margin:0!important;border:0!important;background:transparent!important;color:#fff!important;box-shadow:none!important;font:800 17px/1 Arial,sans-serif!important;text-shadow:0 1px 3px rgba(0,0,0,.85)!important;cursor:pointer!important}
+.tab-panel-size-controls .tab-panel-reset{min-width:auto!important;font-size:12px!important;padding:0 2px!important}
+.panel h1,.activity-panel h1,.tab-master-panel h1{font-size:calc(19px * var(--tab-panel-scale))!important}
+.panel .label,.activity-panel .label,.tab-master-panel .label{font-size:calc(9.5px * var(--tab-panel-scale))!important}
+.panel button:not(.tab-panel-size-controls button),.panel select,.panel a,.activity-panel button:not(.tab-panel-size-controls button),.activity-panel select,.activity-panel a,.tab-master-panel button:not(.tab-panel-size-controls button),.tab-master-panel select,.tab-master-panel a{font-size:calc(12px * var(--tab-panel-scale))!important}
+.tab-card-tools{display:flex!important;align-items:center!important;justify-content:center!important;gap:6px!important;margin:0 0 6px!important;position:relative!important;z-index:150!important}
+.tab-card-tools button{width:auto!important;min-width:0!important;padding:5px 8px!important;margin:0!important;border-radius:8px!important;background:rgba(255,255,255,.90)!important;color:#423768!important;border:1px solid rgba(255,255,255,.45)!important;font:800 12px/1 Arial,sans-serif!important;cursor:pointer!important;box-shadow:0 2px 7px rgba(0,0,0,.18)!important}
+.tab-card-drag{cursor:move!important;touch-action:none!important}
+.tab-card-resize{position:absolute!important;right:6px!important;bottom:6px!important;width:36px!important;height:36px!important;display:grid!important;place-items:center!important;border-radius:9px!important;background:rgba(255,255,255,.92)!important;color:#423768!important;border:1px solid rgba(255,255,255,.5)!important;font:900 20px/1 Arial,sans-serif!important;cursor:nwse-resize!important;user-select:none!important;touch-action:none!important;z-index:200!important;box-shadow:0 2px 8px rgba(0,0,0,.28)!important}
+.card #line,.card .word strong,.script #line,.script .word strong,.tab-master-card #line,.tab-master-card .word strong{font-size:calc(1em * var(--tab-card-font-scale))!important}
+.card .translation,.script .translation,.tab-master-card .translation{font-size:calc(1em * var(--tab-card-font-scale))!important}
+@media(max-width:760px){.tab-panel-size-controls,.tab-card-tools,.tab-card-resize{display:none!important}}
+</style>\n</head>
 <body>
 <nav class="talkabee-prev-next-nav" aria-label="Adventure navigation"><a href="Talk-A-Bee-Aircraft-Carrier-Adventure.html" aria-label="Previous page" title="Previous">‹</a><a href="index.html" aria-label="Next page" title="Next">›</a></nav>
 
@@ -167,6 +184,8 @@
 <button class="scene-return" id="sceneReturn">Return to Adventure</button>
 <aside class="panel tab-master-panel">
 <h1>🏕️ Nighttime Campground</h1>
+<div class="tab-panel-size-controls" aria-label="Activity panel size"><button type="button" class="tab-panel-minus" title="Make activity panel smaller">−</button><button type="button" class="tab-panel-reset" title="Reset activity panel size">Reset</button><button type="button" class="tab-panel-plus" title="Make activity panel larger">+</button></div>
+
 <div class="label">LANGUAGE</div>
 <select id="lang"><option value="es">Spanish</option><option value="fr">French</option><option value="en">English</option><option value="de">German</option><option value="it">Italian</option><option value="pt">Portuguese</option><option value="no">Norwegian</option></select>
 <div class="label">VOICE</div><select id="voice"><option>Browser Default</option></select>
@@ -184,6 +203,8 @@
 <a href="index.html">← Return to Main Directory</a>
 </aside>
 <section class="card tab-master-card">
+<div class="tab-card-tools" aria-label="Script card controls"><button type="button" class="tab-card-drag" title="Move script card">↕ Move</button><button type="button" class="tab-card-font-down" title="Decrease text">A−</button><button type="button" class="tab-card-font-up" title="Increase text">A+</button><button type="button" class="tab-card-reset" title="Reset card">Reset</button></div><div class="tab-card-resize" title="Drag to resize script card" aria-label="Resize script card">↘</div>
+
 <h2 id="title">Nighttime Campground Adventure</h2><p id="prompt">Click any object in the scene to hear its name.</p>
 <div class="word"><strong id="line">campamento</strong><div class="translation" id="translation">campground</div></div>
 <p id="status"></p>
@@ -405,5 +426,33 @@ showWord("campground");
   }
 })();
 </script>
-</body>
+\n<script id="talkabee-accessibility-controls-script-v1">
+(function(){
+ const panel=document.querySelector('.tab-master-panel,.activity-panel,.panel');
+ if(panel){
+  const minus=panel.querySelector('.tab-panel-minus'),plus=panel.querySelector('.tab-panel-plus'),reset=panel.querySelector('.tab-panel-reset');
+  const KEY='talkabee-activity-panel-size',DEFAULT=195,MIN=170,MAX=310,STEP=20;
+  const clamp=(n,a,b)=>Math.max(a,Math.min(b,n));
+  const apply=(width,save=true)=>{width=clamp(Math.round(Number(width)||DEFAULT),MIN,MAX);const scale=clamp(width/DEFAULT,.88,1.42);panel.style.setProperty('width',width+'px','important');panel.style.setProperty('min-width',width+'px','important');panel.style.setProperty('max-width',width+'px','important');panel.style.setProperty('--tab-panel-scale',scale.toFixed(3));if(save)try{localStorage.setItem(KEY,String(width))}catch(e){}};
+  const current=()=>panel.getBoundingClientRect().width||DEFAULT;
+  if(minus)minus.addEventListener('click',()=>apply(current()-STEP));
+  if(plus)plus.addEventListener('click',()=>apply(current()+STEP));
+  if(reset)reset.addEventListener('click',()=>{apply(DEFAULT,false);try{localStorage.removeItem(KEY)}catch(e){}});
+  try{const saved=localStorage.getItem(KEY);if(saved)apply(saved,false)}catch(e){}
+ }
+ const card=document.querySelector('.tab-master-card,.script,.card');
+ if(!card)return;
+ const drag=card.querySelector('.tab-card-drag'),down=card.querySelector('.tab-card-font-down'),up=card.querySelector('.tab-card-font-up'),reset=card.querySelector('.tab-card-reset'),resize=card.querySelector('.tab-card-resize');
+ const PK='talkabee-script-card-position',SK='talkabee-script-card-size',FK='talkabee-script-card-font-scale';
+ const clamp=(n,a,b)=>Math.max(a,Math.min(b,n)); let fontScale=1;
+ function applyFont(v,save=true){fontScale=clamp(Number(v)||1,.75,1.6);card.style.setProperty('--tab-card-font-scale',fontScale.toFixed(2));if(save)try{localStorage.setItem(FK,String(fontScale))}catch(e){}}
+ function saveGeom(){try{const r=card.getBoundingClientRect();localStorage.setItem(SK,JSON.stringify({w:Math.round(r.width),h:Math.round(r.height)}));localStorage.setItem(PK,JSON.stringify({left:Math.round(r.left),top:Math.round(r.top)}))}catch(e){}}
+ function restore(){try{const fs=localStorage.getItem(FK);if(fs)applyFont(fs,false);const sz=JSON.parse(localStorage.getItem(SK)||'null');const ps=JSON.parse(localStorage.getItem(PK)||'null');if(sz&&innerWidth>760){card.style.setProperty('width',clamp(sz.w,360,innerWidth-16)+'px','important');card.style.setProperty('height',clamp(sz.h,260,innerHeight-16)+'px','important')}if(ps&&innerWidth>760){card.style.setProperty('left',clamp(ps.left,8,innerWidth-80)+'px','important');card.style.setProperty('top',clamp(ps.top,8,innerHeight-80)+'px','important');card.style.setProperty('right','auto','important');card.style.setProperty('bottom','auto','important');card.style.setProperty('transform','none','important')}}catch(e){}}
+ if(down)down.addEventListener('click',()=>applyFont(fontScale-.1)); if(up)up.addEventListener('click',()=>applyFont(fontScale+.1));
+ if(reset)reset.addEventListener('click',()=>{try{localStorage.removeItem(PK);localStorage.removeItem(SK);localStorage.removeItem(FK)}catch(e){};card.style.removeProperty('width');card.style.removeProperty('height');card.style.removeProperty('left');card.style.removeProperty('top');card.style.removeProperty('right');card.style.removeProperty('bottom');card.style.removeProperty('transform');applyFont(1,false)});
+ if(drag){drag.addEventListener('pointerdown',e=>{if(innerWidth<=760)return;e.preventDefault();const r=card.getBoundingClientRect(),sx=e.clientX,sy=e.clientY;card.style.setProperty('left',r.left+'px','important');card.style.setProperty('top',r.top+'px','important');card.style.setProperty('right','auto','important');card.style.setProperty('bottom','auto','important');card.style.setProperty('transform','none','important');drag.setPointerCapture(e.pointerId);const mv=ev=>{card.style.setProperty('left',clamp(r.left+ev.clientX-sx,8,innerWidth-r.width-8)+'px','important');card.style.setProperty('top',clamp(r.top+ev.clientY-sy,8,innerHeight-r.height-8)+'px','important')};const end=()=>{drag.removeEventListener('pointermove',mv);saveGeom()};drag.addEventListener('pointermove',mv);drag.addEventListener('pointerup',end,{once:true});drag.addEventListener('pointercancel',end,{once:true})})}
+ if(resize){resize.addEventListener('pointerdown',e=>{if(innerWidth<=760)return;e.preventDefault();e.stopPropagation();const r=card.getBoundingClientRect(),sx=e.clientX,sy=e.clientY;card.style.setProperty('left',r.left+'px','important');card.style.setProperty('top',r.top+'px','important');card.style.setProperty('right','auto','important');card.style.setProperty('bottom','auto','important');card.style.setProperty('transform','none','important');card.style.setProperty('min-width','0','important');card.style.setProperty('max-width','none','important');card.style.setProperty('min-height','0','important');card.style.setProperty('max-height','none','important');resize.setPointerCapture(e.pointerId);const mv=ev=>{const maxW=Math.max(360,innerWidth-r.left-8),maxH=Math.max(260,innerHeight-r.top-8);card.style.setProperty('width',clamp(r.width+ev.clientX-sx,360,maxW)+'px','important');card.style.setProperty('height',clamp(r.height+ev.clientY-sy,260,maxH)+'px','important')};const end=()=>{resize.removeEventListener('pointermove',mv);saveGeom()};resize.addEventListener('pointermove',mv);resize.addEventListener('pointerup',end,{once:true});resize.addEventListener('pointercancel',end,{once:true})})}
+ restore();
+})();
+</script>\n</body>
 </html>
