@@ -376,6 +376,24 @@ html,body,#homeWorld,#homeScene{
 }
 </style>
 
+
+<style id="talkabee-modern-card-no-scroll">
+/* Modern compact card: grow to its content instead of showing an internal scrollbar. */
+.tab-master-card{
+  height:auto!important;
+  min-height:0!important;
+  max-height:none!important;
+  overflow:visible!important;
+  overflow-x:visible!important;
+  overflow-y:visible!important;
+  scrollbar-width:none!important;
+}
+.tab-master-card::-webkit-scrollbar{display:none!important}
+@media(max-width:760px){
+ .tab-master-card{max-height:none!important;overflow:visible!important}
+}
+</style>
+
 </head>
 <body>
 <div class="talkabee-editions">
