@@ -413,9 +413,9 @@ html,body,#homeWorld,#homeScene{
 
       <div class="activity-place">🏡 Grandma<br>&amp; Grandpa’s<br>Place</div>
   <div class="tab-panel-size-controls" aria-label="Activity panel size">
-    <button type="button" id="tabPanelMinus" title="Make activity panel smaller" aria-label="Make activity panel smaller">−</button>
-    <button type="button" id="tabPanelReset" title="Reset activity panel size">Reset</button>
-    <button type="button" id="tabPanelPlus" title="Make activity panel larger" aria-label="Make activity panel larger">+</button>
+    <button type="button" id="tabPanelMinus" class="tab-panel-minus" title="Make activity panel smaller" aria-label="Make activity panel smaller">−</button>
+    <button type="button" id="tabPanelReset" class="tab-panel-reset" title="Reset activity panel size">Reset</button>
+    <button type="button" id="tabPanelPlus" class="tab-panel-plus" title="Make activity panel larger" aria-label="Make activity panel larger">+</button>
   </div>
 
       <button type="button" class="activity-peek" id="activityPeek">◉ Scene View</button>
@@ -465,9 +465,9 @@ html,body,#homeWorld,#homeScene{
     <section class="home-panel tab-master-card" aria-label="Lesson script card">
       <div class="tab-card-tools" aria-label="Script card controls">
         <span class="tab-card-drag" title="Drag script card">↕ Move</span>
-        <button type="button" id="tabCardFontDown" title="Decrease text">A−</button>
-        <button type="button" id="tabCardFontUp" title="Increase text">A+</button>
-        <button type="button" id="tabCardReset" title="Reset card">Reset</button>
+        <button type="button" id="tabCardFontDown" class="tab-card-font-down" title="Decrease text">A−</button>
+        <button type="button" id="tabCardFontUp" class="tab-card-font-up" title="Increase text">A+</button>
+        <button type="button" id="tabCardReset" class="tab-card-reset" title="Reset card">Reset</button>
       </div>
       <div class="tab-card-resize" id="tabCardResize" title="Drag to resize script card" aria-label="Resize script card">↘</div>
       <div class="home-kicker" id="homeKicker">FAMILY TALK</div>
@@ -926,86 +926,128 @@ Object.keys(extraDiscovery).forEach(lang=>{if(!languageData[lang].objects)langua
   }
 })();
 </script>
-<script id="talkabee-card-customizer-js">
+<script id="talkabee-accessibility-controls-script-v1">
 (function(){
-const card=document.querySelector('.tab-master-card');if(!card)return;
-const handle=card.querySelector('.tab-card-drag'),minus=document.getElementById('tabCardFontDown'),plus=document.getElementById('tabCardFontUp'),reset=document.getElementById('tabCardReset');
-const PK='talkabee-script-card-position',SK='talkabee-script-card-size',FK='talkabee-script-card-font-scale';
-const clamp=(v,a,b)=>Math.max(a,Math.min(b,v)),mobile=()=>matchMedia('(max-width:760px)').matches;
-function font(v){v=clamp(Number(v)||1,.8,1.6);card.style.setProperty('--tab-font-scale',v);try{localStorage.setItem(FK,v)}catch(e){}}
-function savePos(){if(mobile()||!card.classList.contains('tab-user-moved'))return;try{localStorage.setItem(PK,JSON.stringify({left:card.offsetLeft,top:card.offsetTop}))}catch(e){}}
-function saveSize(){if(mobile())return;let r=card.getBoundingClientRect();try{localStorage.setItem(SK,JSON.stringify({width:Math.round(r.width),height:Math.round(r.height)}))}catch(e){}}
-function restore(){try{
- font(localStorage.getItem(FK)||1);if(mobile())return;
- let z=JSON.parse(localStorage.getItem(SK)||'null');if(z){let rw=clamp(z.width,360,innerWidth-24),rh=clamp(z.height,260,innerHeight-24);card.style.setProperty('width',rw+'px','important');card.style.setProperty('height',rh+'px','important')}
- let p=JSON.parse(localStorage.getItem(PK)||'null');if(p){let r=card.getBoundingClientRect();card.classList.add('tab-user-moved');card.style.setProperty('left',clamp(p.left,0,Math.max(0,innerWidth-r.width))+'px','important');card.style.setProperty('top',clamp(p.top,0,Math.max(0,innerHeight-r.height))+'px','important')}
-}catch(e){font(1)}}
-let d=null;
-handle.addEventListener('pointerdown',e=>{if(mobile())return;e.preventDefault();let r=card.getBoundingClientRect();card.classList.add('tab-user-moved');card.style.setProperty('left',r.left+'px','important');card.style.setProperty('top',r.top+'px','important');d={x:e.clientX-r.left,y:e.clientY-r.top};handle.setPointerCapture(e.pointerId)});
-handle.addEventListener('pointermove',e=>{if(!d)return;let r=card.getBoundingClientRect();card.style.setProperty('left',clamp(e.clientX-d.x,0,Math.max(0,innerWidth-r.width))+'px','important');card.style.setProperty('top',clamp(e.clientY-d.y,0,Math.max(0,innerHeight-r.height))+'px','important')});
-function end(){if(d){d=null;savePos()}}handle.addEventListener('pointerup',end);handle.addEventListener('pointercancel',end);
-minus.addEventListener('click',()=>font((parseFloat(getComputedStyle(card).getPropertyValue('--tab-font-scale'))||1)-.1));
-plus.addEventListener('click',()=>font((parseFloat(getComputedStyle(card).getPropertyValue('--tab-font-scale'))||1)+.1));
-reset.addEventListener('click',()=>{try{localStorage.removeItem(PK);localStorage.removeItem(SK);localStorage.removeItem(FK)}catch(e){}card.classList.remove('tab-user-moved');['left','top','width','height','min-width','max-width','min-height','transform','bottom'].forEach(x=>card.style.removeProperty(x));font(1)});
-const resizeHandle=document.getElementById('tabCardResize');
-let resizing=null;
+ const panel=document.querySelector('.tab-master-panel,.activity-panel,.panel');
+ if(panel){
+  const minus=panel.querySelector('.tab-panel-minus'),plus=panel.querySelector('.tab-panel-plus'),reset=panel.querySelector('.tab-panel-reset');
+  const KEY='talkabee-global-activity-panel-size',DEFAULT=195,MIN=170,MAX=310,STEP=20;
+  const clamp=(n,a,b)=>Math.max(a,Math.min(b,n));
+  const apply=(width,save=true)=>{width=clamp(Math.round(Number(width)||DEFAULT),MIN,MAX);const scale=clamp(width/DEFAULT,.88,1.42);panel.style.setProperty('width',width+'px','important');panel.style.setProperty('min-width',width+'px','important');panel.style.setProperty('max-width',width+'px','important');panel.style.setProperty('--tab-panel-scale',scale.toFixed(3));if(save)try{localStorage.setItem(KEY,String(width))}catch(e){}};
+  const current=()=>panel.getBoundingClientRect().width||DEFAULT;
+  if(minus)minus.addEventListener('click',()=>apply(current()-STEP));
+  if(plus)plus.addEventListener('click',()=>apply(current()+STEP));
+  if(reset)reset.addEventListener('click',()=>{apply(DEFAULT,false);try{localStorage.removeItem(KEY)}catch(e){}});
+  try{const saved=localStorage.getItem(KEY);if(saved)apply(saved,false)}catch(e){}
+ }
 
-resizeHandle.addEventListener('pointerdown',e=>{
-  if(mobile()) return;
-  e.preventDefault();
-  e.stopPropagation();
-  const r=card.getBoundingClientRect();
+ const card=document.querySelector('.tab-master-card,.script,.card');
+ if(!card)return;
+ const drag=card.querySelector('.tab-card-drag'),down=card.querySelector('.tab-card-font-down'),up=card.querySelector('.tab-card-font-up'),reset=card.querySelector('.tab-card-reset'),resize=card.querySelector('.tab-card-resize');
+ const PK='talkabee-global-script-card-position',SK='talkabee-global-script-card-scale',FK='talkabee-global-script-card-font-scale';
+ const clamp=(n,a,b)=>Math.max(a,Math.min(b,n));
+ const defaultScale=()=>matchMedia('(max-width:760px)').matches?.82:.67;
+ let scale=defaultScale(),fontScale=1,dragState=null;
 
-  // Freeze the card exactly where it is, then resize from that rectangle.
-  card.classList.add('tab-user-moved');
-  card.style.setProperty('left',r.left+'px','important');
-  card.style.setProperty('top',r.top+'px','important');
-  card.style.setProperty('transform','none','important');
-  card.style.setProperty('bottom','auto','important');
+ function applyTransform(){
+   if(card.dataset.moved==='1'){
+     card.style.setProperty('transform-origin','top left','important');
+     card.style.setProperty('transform','scale('+scale+')','important');
+   }else{
+     card.style.removeProperty('transform-origin');
+     card.style.removeProperty('transform');
+   }
+ }
+ function applyFont(v,save=true){
+   fontScale=clamp(Number(v)||1,.75,1.6);
+   card.style.setProperty('--tab-card-font-scale',fontScale.toFixed(2));
+   if(save)try{localStorage.setItem(FK,String(fontScale))}catch(e){}
+ }
+ function saveState(){
+   try{
+     localStorage.setItem(SK,String(scale));
+     if(card.dataset.moved==='1'){
+       localStorage.setItem(PK,JSON.stringify({left:parseFloat(card.style.left)||card.getBoundingClientRect().left,top:parseFloat(card.style.top)||card.getBoundingClientRect().top}));
+     }
+   }catch(e){}
+ }
+ function restore(){
+   try{
+     const fs=localStorage.getItem(FK); if(fs)applyFont(fs,false);
+     const ss=parseFloat(localStorage.getItem(SK)); if(ss)scale=clamp(ss,.45,1.10);
+     const ps=JSON.parse(localStorage.getItem(PK)||'null');
+     if(ps&&innerWidth>760){
+       card.dataset.moved='1';
+       card.style.setProperty('left',clamp(ps.left,8,innerWidth-80)+'px','important');
+       card.style.setProperty('top',clamp(ps.top,8,innerHeight-80)+'px','important');
+       card.style.setProperty('right','auto','important');
+       card.style.setProperty('bottom','auto','important');
+       applyTransform();
+     }
+   }catch(e){}
+ }
 
-  // Clear old width constraints before starting.
-  card.style.removeProperty('min-width');
-  card.style.removeProperty('max-width');
-  card.style.removeProperty('min-height');
+ if(down)down.addEventListener('click',()=>{scale=clamp(+(scale-.05).toFixed(2),.45,1.10);applyTransform();saveState()});
+ if(up)up.addEventListener('click',()=>{scale=clamp(+(scale+.05).toFixed(2),.45,1.10);applyTransform();saveState()});
 
-  card.style.setProperty('width',r.width+'px','important');
-  card.style.setProperty('height',r.height+'px','important');
+ if(reset)reset.addEventListener('click',()=>{
+   try{localStorage.removeItem(PK);localStorage.removeItem(SK);localStorage.removeItem(FK)}catch(e){}
+   scale=defaultScale();fontScale=1;
+   delete card.dataset.moved;
+   ['width','height','left','top','right','bottom','transform','transform-origin','min-width','max-width','min-height','max-height'].forEach(p=>card.style.removeProperty(p));
+   applyFont(1,false);
+ });
 
-  resizing={
-    pointerX:e.clientX,
-    pointerY:e.clientY,
-    startW:r.width,
-    startH:r.height,
-    left:r.left,
-    top:r.top
-  };
-  resizeHandle.setPointerCapture(e.pointerId);
-});
+ function startDrag(e){
+   if(innerWidth<=760 || (typeof e.button==='number'&&e.button!==0))return;
+   if(e.target.closest('.tab-card-resize,.tab-card-font-down,.tab-card-font-up,.tab-card-reset,a,input,select,textarea'))return;
+   if(e.target.closest('button') && !e.target.closest('.tab-card-drag'))return;
+   e.preventDefault();
+   const r=card.getBoundingClientRect();
+   // Convert the visual top-left to fixed coordinates, while keeping the exact current scale.
+   card.dataset.moved='1';
+   card.style.setProperty('left',r.left+'px','important');
+   card.style.setProperty('top',r.top+'px','important');
+   card.style.setProperty('right','auto','important');
+   card.style.setProperty('bottom','auto','important');
+   applyTransform();
+   dragState={id:e.pointerId,sx:e.clientX,sy:e.clientY,left:r.left,top:r.top,w:r.width,h:r.height};
+   try{card.setPointerCapture(e.pointerId)}catch(_){}
+ }
+ function moveDrag(e){
+   if(!dragState||e.pointerId!==dragState.id)return;
+   e.preventDefault();
+   const x=clamp(dragState.left+e.clientX-dragState.sx,8,Math.max(8,innerWidth-dragState.w-8));
+   const y=clamp(dragState.top+e.clientY-dragState.sy,8,Math.max(8,innerHeight-dragState.h-8));
+   card.style.setProperty('left',x+'px','important');
+   card.style.setProperty('top',y+'px','important');
+ }
+ function endDrag(e){
+   if(!dragState||e.pointerId!==dragState.id)return;
+   dragState=null; saveState();
+   try{card.releasePointerCapture(e.pointerId)}catch(_){}
+ }
 
-resizeHandle.addEventListener('pointermove',e=>{
-  if(!resizing) return;
-  e.preventDefault();
+ // Drag from the Move button OR any non-interactive empty area of the card.
+ card.addEventListener('pointerdown',startDrag);
+ card.addEventListener('pointermove',moveDrag);
+ card.addEventListener('pointerup',endDrag);
+ card.addEventListener('pointercancel',endDrag);
 
-  const maxW=Math.max(360, window.innerWidth-resizing.left-8);
-  const maxH=Math.max(260, window.innerHeight-resizing.top-8);
+ // Keep the resize handle from changing the card's scale. It changes scale proportionally instead.
+ if(resize)resize.addEventListener('pointerdown',e=>{
+   if(innerWidth<=760)return;
+   e.preventDefault();e.stopPropagation();
+   const r=card.getBoundingClientRect(),sx=e.clientX,baseW=r.width,baseScale=scale;
+   resize.setPointerCapture(e.pointerId);
+   const mv=ev=>{scale=clamp(baseScale*((baseW+ev.clientX-sx)/baseW),.45,1.10);applyTransform()};
+   const end=()=>{resize.removeEventListener('pointermove',mv);saveState()};
+   resize.addEventListener('pointermove',mv);
+   resize.addEventListener('pointerup',end,{once:true});
+   resize.addEventListener('pointercancel',end,{once:true});
+ });
 
-  const w=clamp(resizing.startW+(e.clientX-resizing.pointerX),360,maxW);
-  const h=clamp(resizing.startH+(e.clientY-resizing.pointerY),260,maxH);
-
-  card.style.setProperty('width',w+'px','important');
-  card.style.setProperty('height',h+'px','important');
-});
-
-function finishResize(){
-  if(!resizing) return;
-  resizing=null;
-  saveSize();
-  savePos();
-}
-resizeHandle.addEventListener('pointerup',finishResize);
-resizeHandle.addEventListener('pointercancel',finishResize);
-
-restore();
+ restore();
 })();
 </script>
 
@@ -1046,64 +1088,6 @@ restore();
    const saved=parseFloat(localStorage.getItem(KEY));
    if(saved)apply(saved,false);
  }catch(e){}
-})();
-</script>
-
-
-
-<!-- Talk A Bee universal script-card drag v2 -->
-<style id="talkabee-script-card-anywhere-drag-style-v2">
-.tab-card-drag{cursor:grab!important;touch-action:none!important;}
-.tab-card-drag:active{cursor:grabbing!important;}
-.tab-anywhere-draggable{cursor:grab!important;touch-action:none!important;}
-.tab-anywhere-draggable.tab-anywhere-dragging{cursor:grabbing!important;}
-.tab-anywhere-draggable button,.tab-anywhere-draggable a,.tab-anywhere-draggable input,.tab-anywhere-draggable select,.tab-anywhere-draggable textarea{cursor:pointer;}
-.tab-anywhere-draggable input,.tab-anywhere-draggable textarea{cursor:text;}
-</style>
-<script id="talkabee-script-card-anywhere-drag-v2">
-(function(){
-  const move=document.querySelector('.tab-card-drag');
-  if(!move)return;
-  const card=move.closest('.tab-master-card,.script-card,.card,.script,.panel') || move.parentElement?.parentElement;
-  if(!card || card.dataset.anywhereDragV2==='1')return;
-  card.dataset.anywhereDragV2='1'; card.classList.add('tab-anywhere-draggable');
-  const PK='talkabee-script-card-position';
-  const clamp=(n,a,b)=>Math.max(a,Math.min(b,n));
-  let state=null;
-  function start(e){
-    if(innerWidth<=760 || (typeof e.button==='number' && e.button!==0))return;
-    if(e.target.closest('.tab-card-resize,.tab-card-font-down,.tab-card-font-up,.tab-card-reset,a,input,select,textarea'))return;
-    // The Move button and any otherwise non-interactive card area may start dragging.
-    if(e.target.closest('button') && !e.target.closest('.tab-card-drag'))return;
-    e.preventDefault();
-    const r=card.getBoundingClientRect();
-    card.style.setProperty('left',r.left+'px','important');
-    card.style.setProperty('top',r.top+'px','important');
-    card.style.setProperty('right','auto','important');
-    card.style.setProperty('bottom','auto','important');
-    card.style.setProperty('transform','none','important');
-    state={id:e.pointerId,sx:e.clientX,sy:e.clientY,left:r.left,top:r.top,w:r.width,h:r.height};
-    card.classList.add('tab-anywhere-dragging');
-    try{card.setPointerCapture(e.pointerId)}catch(_){}
-  }
-  function moveCard(e){
-    if(!state || e.pointerId!==state.id)return;
-    e.preventDefault();
-    const x=clamp(state.left+e.clientX-state.sx,8,Math.max(8,innerWidth-state.w-8));
-    const y=clamp(state.top+e.clientY-state.sy,8,Math.max(8,innerHeight-state.h-8));
-    card.style.setProperty('left',x+'px','important'); card.style.setProperty('top',y+'px','important');
-  }
-  function end(e){
-    if(!state || e.pointerId!==state.id)return;
-    const r=card.getBoundingClientRect();
-    try{localStorage.setItem(PK,JSON.stringify({left:Math.round(r.left),top:Math.round(r.top)}))}catch(_){}
-    card.classList.remove('tab-anywhere-dragging');
-    try{card.releasePointerCapture(e.pointerId)}catch(_){}
-    state=null;
-  }
-  card.addEventListener('pointerdown',start);
-  card.addEventListener('pointermove',moveCard);
-  card.addEventListener('pointerup',end); card.addEventListener('pointercancel',end);
 })();
 </script>
 </body>
