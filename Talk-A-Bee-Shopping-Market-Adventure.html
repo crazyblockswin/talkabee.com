@@ -588,8 +588,8 @@ document.querySelectorAll(".hotspot").forEach(b=>b.onclick=()=>{
    prompt.textContent="You found something in the scene.";
    line.textContent=target;
    translation.textContent=target+" — "+englishWords[key];
-   speak(target,.76,()=>playMarketSceneSound(key));
- }
+  }
+  speak(target,.76,()=>playMarketSceneSound(key));
 });
 
 function applyLanguage(lang){
