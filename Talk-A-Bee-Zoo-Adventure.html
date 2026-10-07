@@ -1,6 +1,5 @@
 <!doctype html>
-<html lang="en">
-<head>
+<html lang="en"><head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Talk A Bee — Zoo Adventure</title>
@@ -111,8 +110,17 @@ border:1px solid #fff;background:rgba(7,23,39,.65);color:#fff;font-weight:900}
 </style>
 
 <!-- TALK A BEE HOTSPOTS VISUALLY RECERTIFIED AGAINST CURRENT SCENE ARTWORK: 2026-10-07 -->
+<style id="talkabee-hotspot-editor-style">
+#tb-hs-editor{position:fixed;right:16px;bottom:16px;z-index:2147483646;font:700 12px Arial,sans-serif;display:flex;flex-wrap:wrap;justify-content:flex-end;gap:6px;max-width:650px}
+#tb-hs-editor button,#tb-hs-editor input{border:1px solid #fff;border-radius:10px;background:#000;color:#fff;padding:9px 11px;box-shadow:0 4px 14px #0006}
+#tb-hs-editor input{background:#fff;color:#111;min-width:180px;font-weight:400}#tb-hs-editor button{cursor:pointer}
+body.tb-hs-editing .hotspot,body.tb-hs-editing .home-hotspot,body.tb-hs-editing .yacht-hotspot,body.tb-hs-editing .hotspots button,body.tb-hs-editing .train-hotspots button{display:block!important;outline:2px solid #ffea00!important;background:rgba(255,234,0,.18)!important;pointer-events:auto!important;cursor:move!important;visibility:visible!important;opacity:1!important;z-index:2147483005!important}
+body.tb-hs-editing .tb-hs-active{outline:3px solid #00ffff!important;background:rgba(0,255,255,.18)!important}
+.tb-hs-handle{position:absolute!important;right:-7px!important;bottom:-7px!important;left:auto!important;top:auto!important;width:14px!important;height:14px!important;border-radius:3px!important;background:#00ffff!important;border:2px solid #000!important;z-index:2147483647!important;cursor:nwse-resize!important;display:none!important;transform:none!important}
+body.tb-hs-editing .tb-hs-active>.tb-hs-handle{display:block!important}
+</style>
 </head>
-<body>
+<body class="scene-view">
 <div class="talkabee-editions">
 <details>
 <summary>Explore Adventures ▾</summary>
@@ -140,12 +148,12 @@ border:1px solid #fff;background:rgba(7,23,39,.65);color:#fff;font-weight:900}
 <div class="tab-panel-size-controls" aria-label="Activity panel size"><button type="button" class="tab-panel-minus" title="Make activity panel smaller">−</button><button type="button" class="tab-panel-reset" title="Reset activity panel size">Reset</button><button type="button" class="tab-panel-plus" title="Make activity panel larger">+</button></div>
 
 <div class="label">LANGUAGE</div>
-<select id="lang">
+<select id="lang" data-tab-global-voice="1">
 <option value="es">Spanish</option><option value="fr">French</option><option value="en">English</option>
 <option value="de">German</option><option value="it">Italian</option><option value="pt">Portuguese</option><option value="no">Norwegian</option>
 </select>
 <div class="label">VOICE</div>
-<select id="voice"><option value="">Browser Default</option></select>
+<select id="voice" data-tab-global-voice="1"><option value="">Browser Default</option><option value="Microsoft David - English (United States)">Microsoft David - English (United States) — en-US</option><option value="Microsoft Mark - English (United States)">Microsoft Mark - English (United States) — en-US</option><option value="Microsoft Zira - English (United States)">Microsoft Zira - English (United States) — en-US</option><option value="Microsoft David Desktop - English (United States)">Microsoft David Desktop - English (United States) — en-US</option><option value="Microsoft Zira Desktop - English (United States)">Microsoft Zira Desktop - English (United States) — en-US</option></select>
 <button id="sceneView">◉ Scene View</button>
 
 <div class="label">DISCOVERY</div>
@@ -154,7 +162,7 @@ border:1px solid #fff;background:rgba(7,23,39,.65);color:#fff;font-weight:900}
 <div class="label">ACTIVITIES</div>
 <button data-lesson="welcome">1. Welcome to the Zoo</button>
 <button data-lesson="savanna">2. Savanna Animals</button>
-<button data-lesson="birds">3. Birds & Penguins</button>
+<button data-lesson="birds">3. Birds &amp; Penguins</button>
 <button data-lesson="water">4. Animals in the Water</button>
 <button data-lesson="sounds">5. Animal Sounds</button>
 <button data-lesson="explore">6. Explore the Zoo</button>
@@ -172,9 +180,9 @@ border:1px solid #fff;background:rgba(7,23,39,.65);color:#fff;font-weight:900}
 <div class="tab-card-tools" aria-label="Script card controls"><button type="button" class="tab-card-drag" title="Move script card">↕ Move</button><button type="button" class="tab-card-font-down" title="Decrease text">A−</button><button type="button" class="tab-card-font-up" title="Increase text">A+</button><button type="button" class="tab-card-reset" title="Reset card">Reset</button></div><div class="tab-card-resize" title="Drag to resize script card" aria-label="Resize script card">↘</div>
 
 <div class="kicker">AT THE ZOO</div>
-<h2 id="title">Zoo Adventure</h2>
-<p id="prompt">Click any object in the scene to hear its name.</p>
-<div class="word"><strong id="line">zoológico</strong><div class="translation" id="translation">zoo</div></div>
+<h2 id="title">Click &amp; Discover</h2>
+<p id="prompt">You found zoo sign.</p>
+<div class="word"><strong id="line">zoo sign</strong><div class="translation" id="translation"></div></div>
 <p id="status"></p>
 <div class="controls">
 <button id="normal">🔊 Speak</button><button id="slow">🐢 Slow</button><button id="replay">↻ Replay</button><button id="nextPhrase">Next phrase →</button>
@@ -185,27 +193,27 @@ border:1px solid #fff;background:rgba(7,23,39,.65);color:#fff;font-weight:900}
 
 
 <!-- Hotspots mapped to the approved wide Zoo Adventure JPG. -->
-<button class="hotspot" data-word="elephant" style="left:0%;top:5%;width:26%;height:54%" aria-label="Elephant"></button>
-<button class="hotspot" data-word="giraffe" style="left:23%;top:8%;width:18%;height:45%" aria-label="Giraffes"></button>
-<button class="hotspot" data-word="mountain" style="left:47%;top:8%;width:18%;height:20%" aria-label="Mountain"></button>
-<button class="hotspot" data-word="bee" style="left:60%;top:5%;width:11%;height:18%" aria-label="Bee"></button>
-<button class="hotspot" data-word="monkey" style="left:72%;top:1%;width:11%;height:17%" aria-label="Monkey"></button>
-<button class="hotspot" data-word="parrot" style="left:88%;top:2%;width:10%;height:17%" aria-label="Parrot"></button>
-<button class="hotspot" data-word="lion" style="left:78%;top:18%;width:21%;height:25%" aria-label="Lion"></button>
-<button class="hotspot" data-word="zoosign" style="left:49%;top:29%;width:20%;height:17%" aria-label="Zoo sign"></button>
-<button class="hotspot" data-word="zebra" style="left:49%;top:44%;width:15%;height:19%" aria-label="Zebra"></button>
-<button class="hotspot" data-word="tram" style="left:61%;top:45%;width:18%;height:16%" aria-label="Zoo tram"></button>
-<button class="hotspot" data-word="penguins" style="left:53%;top:62%;width:20%;height:24%" aria-label="Penguins"></button>
-<button class="hotspot" data-word="seal" style="left:78%;top:51%;width:21%;height:34%" aria-label="Sea lion"></button>
-<button class="hotspot" data-word="waterfall" style="left:91%;top:35%;width:9%;height:28%" aria-label="Waterfall"></button>
-<button class="hotspot" data-word="pool" style="left:68%;top:66%;width:31%;height:25%" aria-label="Pool"></button>
-<button class="hotspot" data-word="boy" style="left:23%;top:61%;width:18%;height:38%" aria-label="Boy"></button>
-<button class="hotspot" data-word="girl" style="left:39%;top:64%;width:20%;height:35%" aria-label="Girl"></button>
-<button class="hotspot" data-word="visitors" style="left:21%;top:45%;width:27%;height:26%" aria-label="Zoo visitors"></button>
-<button class="hotspot" data-word="trees" style="left:0%;top:0%;width:100%;height:18%" aria-label="Trees"></button>
-<button class="hotspot" data-word="path" style="left:28%;top:69%;width:19%;height:27%" aria-label="Zoo path"></button>
+<button class="hotspot" data-word="elephant" style="left: 7.13%; top: 6.95%; width: 18.86%; height: 41.5%;" aria-label="Elephant"></button>
+<button class="hotspot" data-word="giraffe" style="left: 33%; top: 13.83%; width: 11.65%; height: 28.61%;" aria-label="Giraffes"></button>
+<button class="hotspot" data-word="mountain" style="left: 48.56%; top: 12.63%; width: 11.28%; height: 12.59%;" aria-label="Mountain"></button>
+<button class="hotspot" data-word="bee" style="left: 61.51%; top: 7.78%; width: 7.46%; height: 10.59%;" aria-label="Bee"></button>
+<button class="hotspot" data-word="monkey" style="left: 73.93%; top: 3.31%; width: 7.25%; height: 10.06%;" aria-label="Monkey"></button>
+<button class="hotspot" data-word="parrot" style="left: 93.99%; top: 5.15%; width: 3.75%; height: 18.38%;" aria-label="Parrot"></button>
+<button class="hotspot" data-word="lion" style="left: 80.45%; top: 27.16%; width: 16.68%; height: 13.98%;" aria-label="Lion"></button>
+<button class="hotspot" data-word="zoosign" style="left: 53.8%; top: 35.2%; width: 18.44%; height: 7.93%;" aria-label="Zoo sign"></button>
+<button class="hotspot" data-word="zebra" style="left: 51.97%; top: 46.97%; width: 7.86%; height: 12.8%;" aria-label="Zebra"></button>
+<button class="hotspot" data-word="tram" style="left: 62.25%; top: 46.95%; width: 10.81%; height: 12.57%;" aria-label="Zoo tram"></button>
+<button class="hotspot" data-word="penguins" style="left: 60.24%; top: 66.07%; width: 12.6%; height: 12.06%;" aria-label="Penguins"></button>
+<button class="hotspot" data-word="seal" style="left: 86.8%; top: 53.5%; width: 9.02%; height: 16.69%;" aria-label="Sea lion"></button>
+<button class="hotspot" data-word="waterfall" style="left: 94.13%; top: 41.67%; width: 7.7%; height: 20.41%;" aria-label="Waterfall"></button>
+<button class="hotspot" data-word="pool" style="left: 75.13%; top: 72.86%; width: 11.36%; height: 9.73%;" aria-label="Pool"></button>
+<button class="hotspot" data-word="boy" style="left: 25.6%; top: 59.61%; width: 11.91%; height: 35.04%;" aria-label="Boy"></button>
+<button class="hotspot" data-word="girl" style="left: 40.67%; top: 72.06%; width: 17.92%; height: 15.83%;" aria-label="Girl"></button>
+<button class="hotspot" data-word="visitors" style="left: 21.99%; top: 46.12%; width: 24.81%; height: 14.7%;" aria-label="Zoo visitors"></button>
+<button class="hotspot" data-word="trees" style="left: 16.82%; top: -6.67%; width: 29.32%; height: 15.22%;" aria-label="Trees"></button>
+<button class="hotspot" data-word="path" style="left: 32.95%; top: 81.04%; width: 5.35%; height: 7.56%;" aria-label="Zoo path"></button>
 
-</main>
+<button type="button" class="hotspot" data-word="space needle" aria-label="space needle" style="left: 72.53%; top: 22.73%; width: 2.09%; height: 9.85%;"></button><button type="button" class="hotspot" data-word="buildings" aria-label="buildings" style="left: 65.04%; top: 24.87%; width: 6.68%; height: 7.54%;"></button><button type="button" class="hotspot" data-word="tree" aria-label="tree" style="left: 86.13%; top: 0.27%; width: 4.8%; height: 22.63%;"></button><button type="button" class="hotspot" data-word="cave" aria-label="cave" style="left: 77.79%; top: 52.53%; width: 6%; height: 8%;"></button></main>
 
 <script>
 const EN={zoo:"zoo",elephant:"elephant",giraffe:"giraffes",mountain:"mountain",bee:"bee",monkey:"monkey",parrot:"parrot",lion:"lion",zoosign:"zoo sign",zebra:"zebra",tram:"zoo tram",penguins:"penguins",seal:"sea lion",waterfall:"waterfall",pool:"pool",boy:"boy",girl:"girl",visitors:"zoo visitors",trees:"trees",path:"zoo path"};
@@ -443,9 +451,73 @@ showWord("zoo");
  restore();
 })();
 </script>
-</body>
-</html>
+<script id="talkabee-hotspot-editor-v10">
+(()=>{
+const SEL='.hotspot,.home-hotspot,.yacht-hotspot,.hotspots button,.train-hotspots button';
+let editing=false,active=null,adding=false,pendingName='';
+const all=()=>[...document.querySelectorAll(SEL)].filter(x=>!x.closest('#tb-hs-editor'));
+function parentFor(el){return el.offsetParent||el.parentElement||document.body}
+function pct(v,n){return +(v/n*100).toFixed(2)}
+function cleanActive(){if(active){active.classList.remove('tb-hs-active');active.querySelector(':scope > .tb-hs-handle')?.remove()} active=null}
+function select(el){if(!editing||!el)return;cleanActive();active=el;el.classList.add('tb-hs-active');let h=document.createElement('span');h.className='tb-hs-handle';el.appendChild(h)}
+function semanticNew(name){
+ const existing=all()[0]; if(!existing)return null;
+ const el=document.createElement('button');el.type='button';
+ if(existing.classList.contains('home-hotspot')){el.className='home-hotspot show';el.dataset.object=name;el.setAttribute('aria-label',name)}
+ else if(existing.classList.contains('yacht-hotspot')){el.className='yacht-hotspot';el.dataset.word=name;el.setAttribute('aria-label',name)}
+ else if(existing.classList.contains('hotspot')){el.className='hotspot';el.dataset.word=name;el.setAttribute('aria-label',name)}
+ else { if(existing.className)el.className=existing.className; el.dataset.word=name; if(existing.hasAttribute('data-en'))el.dataset.en=name; el.setAttribute('aria-label',name) }
+ return el
+}
+function hotspotContainer(){const e=all()[0];return e?e.parentElement:null}
+function placeAt(ev){
+ if(!editing||!adding)return;
+ const host=hotspotContainer();if(!host)return;
+ const el=semanticNew(pendingName);if(!el)return;
+ host.appendChild(el);
+ const r=parentFor(el).getBoundingClientRect();
+ el.style.left=pct(ev.clientX-r.left,r.width)+'%';el.style.top=pct(ev.clientY-r.top,r.height)+'%';el.style.width='6%';el.style.height='8%';
+ adding=false;pendingName='';nameBox.value='';select(el);ev.preventDefault();ev.stopPropagation();
+}
+function startDrag(ev,el){
+ if(!editing||adding)return; if(ev.target.classList.contains('tb-hs-handle'))return;
+ select(el);ev.preventDefault();ev.stopPropagation();
+ const p=parentFor(el),r=p.getBoundingClientRect();let sx=ev.clientX,sy=ev.clientY;
+ let l=parseFloat(el.style.left)||pct(el.offsetLeft,r.width),t=parseFloat(el.style.top)||pct(el.offsetTop,r.height);
+ const move=e=>{el.style.left=(l+(e.clientX-sx)/r.width*100).toFixed(2)+'%';el.style.top=(t+(e.clientY-sy)/r.height*100).toFixed(2)+'%'};
+ const up=()=>{window.removeEventListener('pointermove',move,true);window.removeEventListener('pointerup',up,true)};
+ window.addEventListener('pointermove',move,true);window.addEventListener('pointerup',up,true)
+}
+function startResize(ev,el){
+ if(!editing)return;ev.preventDefault();ev.stopPropagation();
+ const p=parentFor(el),r=p.getBoundingClientRect();let sx=ev.clientX,sy=ev.clientY;
+ let w=parseFloat(el.style.width)||pct(el.offsetWidth,r.width),h=parseFloat(el.style.height)||pct(el.offsetHeight,r.height);
+ const move=e=>{el.style.width=Math.max(1,w+(e.clientX-sx)/r.width*100).toFixed(2)+'%';el.style.height=Math.max(1,h+(e.clientY-sy)/r.height*100).toFixed(2)+'%'};
+ const up=()=>{window.removeEventListener('pointermove',move,true);window.removeEventListener('pointerup',up,true)};
+ window.addEventListener('pointermove',move,true);window.addEventListener('pointerup',up,true)
+}
+const bar=document.createElement('div');bar.id='tb-hs-editor';
+const edit=document.createElement('button');edit.textContent='Edit Hotspots';
+const nameBox=document.createElement('input');nameBox.placeholder='hotspot name';
+const add=document.createElement('button');add.textContent='Add Hotspot';
+const del=document.createElement('button');del.textContent='Delete Hotspot';
+const save=document.createElement('button');save.textContent='Save HTML';
+bar.append(edit,nameBox,add,del,save);document.body.appendChild(bar);nameBox.style.display=add.style.display=del.style.display=save.style.display='none';
+edit.onclick=()=>{editing=!editing;document.body.classList.toggle('tb-hs-editing',editing);edit.textContent=editing?'Exit Editor':'Edit Hotspots';nameBox.style.display=add.style.display=del.style.display=save.style.display=editing?'':'none';if(!editing){adding=false;cleanActive()}};
+add.onclick=()=>{if(!editing)return;const n=(nameBox.value||'').trim().toLowerCase().replace(/\s+/g,' ');if(!n){nameBox.focus();return}pendingName=n;adding=true;cleanActive()};
+del.onclick=()=>{if(active){active.remove();active=null}};
+save.onclick=()=>{
+ const clone=document.documentElement.cloneNode(true);clone.querySelector('#tb-hs-editor')?.remove();clone.querySelectorAll('.tb-hs-handle').forEach(x=>x.remove());clone.querySelectorAll('.tb-hs-active').forEach(x=>x.classList.remove('tb-hs-active'));clone.querySelector('body')?.classList.remove('tb-hs-editing');
+ const blob=new Blob(['<!doctype html>\n'+clone.outerHTML],{type:'text/html'}),a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download=(location.pathname.split('/').pop()||'adventure.html');a.click();setTimeout(()=>URL.revokeObjectURL(a.href),1000)
+};
+document.addEventListener('pointerdown',ev=>{if(!editing)return;const h=ev.target.closest('.tb-hs-handle');if(h){startResize(ev,h.parentElement);return}const el=ev.target.closest(SEL);if(el){startDrag(ev,el);return}},true);
+document.addEventListener('click',ev=>{if(!editing)return;if(ev.target.closest('#tb-hs-editor'))return;if(adding){placeAt(ev);return}const el=ev.target.closest(SEL);if(el){ev.preventDefault();ev.stopPropagation();select(el)}},true);
+})();
+</script>
+
+
 
 <style id="talkabee-ski-panel-180">
 @media(min-width:761px){.panel{width:180px!important;min-width:180px!important;max-width:180px!important}}
 </style>
+</body></html>
