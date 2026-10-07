@@ -1,4 +1,5 @@
-<!doctype html>\n<html lang="en"><head>
+<!doctype html>
+<html lang="en"><head></head><body class="">
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Talk A Bee — Aircraft Carrier Adventure</title>
@@ -119,8 +120,8 @@ body.tb-hs-editing .tb-hs-active{outline:3px solid #00ffff!important;background:
 .tb-hs-handle{position:absolute!important;right:-7px!important;bottom:-7px!important;left:auto!important;top:auto!important;width:14px!important;height:14px!important;border-radius:3px!important;background:#00ffff!important;border:2px solid #000!important;z-index:2147483647!important;cursor:nwse-resize!important;display:none!important;transform:none!important}
 body.tb-hs-editing .tb-hs-active>.tb-hs-handle{display:block!important}
 </style>
-</head>
-<body class="scene-view">
+
+
 <div class="talkabee-editions">
 <details>
 <summary>Explore Adventures ▾</summary>
@@ -224,10 +225,10 @@ body.tb-hs-editing .tb-hs-active>.tb-hs-handle{display:block!important}
 <button class="hotspot" data-word="sailor" style="left:23%;top:52%;width:10%;height:17%" aria-label="Sailor"></button>
 <button class="hotspot" data-word="jet" style="left:46%;top:40%;width:27%;height:19%" aria-label="Jet"></button>
 <button class="hotspot" data-word="jets" style="left: 14.86%; top: 37.89%; width: 27.05%; height: 13.31%;" aria-label="Carrier aircraft"></button>
-<button class="hotspot" data-word="helicopter" style="left: 66.19%; top: 9.7%; width: 15.47%; height: 16.11%;" aria-label="Helicopter"></button>
+<button class="hotspot" data-word="helicopter" style="left: 64.37%; top: 8.96%; width: 15.47%; height: 16.11%;" aria-label="Helicopter"></button>
 <button class="hotspot" data-word="island" style="left: 18.38%; top: 14.93%; width: 8.89%; height: 32.91%;" aria-label="Carrier island"></button>
 <button class="hotspot" data-word="flag" style="left: 28.45%; top: 11.65%; width: 7%; height: 12%;" aria-label="American flag"></button>
-<button class="hotspot" data-word="flightdeck" style="left: 33.32%; top: 14.37%; width: 19.66%; height: 14.46%;" aria-label="Flight deck"></button>
+<button class="hotspot" data-word="flightdeck" style="left: 40.56%; top: 9%; width: 19.66%; height: 14.46%;" aria-label="Flight deck"></button>
 <button class="hotspot" data-word="crew" style="left: 85.96%; top: 46.45%; width: 14.87%; height: 9.55%;" aria-label="Flight deck crew"></button>
 <button class="hotspot" data-word="yellowshirt" style="left: 85.08%; top: 60.74%; width: 8%; height: 18%;" aria-label="Yellow shirt director"></button>
 <button class="hotspot" data-word="greenshirt" style="left:76%;top:45%;width:8%;height:14%" aria-label="Green shirt crew member"></button>
@@ -493,7 +494,7 @@ const up=()=>{window.removeEventListener('pointermove',move,true);window.removeE
 document.addEventListener('pointerdown',ev=>{if(!editing)return;const h=ev.target.closest('.tb-hs-handle');if(h){dragStart(ev,h.parentElement,true);return}const el=ev.target.closest(SEL);if(el&&!el.closest('#tb-hs-editor'))dragStart(ev,el,false)},true);
 document.addEventListener('click',ev=>{if(editing&&ev.target.closest(SEL)){ev.preventDefault();ev.stopImmediatePropagation()}},true);
 toggle.onclick=()=>{editing=!editing;document.body.classList.toggle('tb-hs-editing',editing);toggle.textContent=editing?'Exit Editor':'Edit Hotspots';save.hidden=!editing;if(!editing&&active){active.classList.remove('tb-hs-active');active=null}show(active)};
-save.onclick=()=>{const clone=document.documentElement.cloneNode(true);clone.querySelectorAll('#tb-hs-editor,#tb-hs-readout,.tb-hs-handle').forEach(n=>n.remove());clone.querySelector('body')?.classList.remove('tb-hs-editing');clone.querySelectorAll('.tb-hs-active').forEach(n=>n.classList.remove('tb-hs-active'));const html='<!doctype html>\\n'+clone.outerHTML,a=document.createElement('a');a.href=URL.createObjectURL(new Blob([html],{type:'text/html'}));a.download=location.pathname.split('/').pop()||'adventure.html';a.click();setTimeout(()=>URL.revokeObjectURL(a.href),1500);dirty=false};
+save.onclick=()=>{const clone=document.documentElement.cloneNode(true);clone.querySelectorAll('#tb-hs-editor,#tb-hs-readout,.tb-hs-handle').forEach(n=>n.remove());clone.querySelector('body')?.classList.remove('tb-hs-editing');clone.querySelectorAll('.tb-hs-active').forEach(n=>n.classList.remove('tb-hs-active'));const html='<!doctype html>\n'+clone.outerHTML,a=document.createElement('a');a.href=URL.createObjectURL(new Blob([html],{type:'text/html'}));a.download=location.pathname.split('/').pop()||'adventure.html';a.click();setTimeout(()=>URL.revokeObjectURL(a.href),1500);dirty=false};
 window.addEventListener('beforeunload',e=>{if(dirty){e.preventDefault();e.returnValue=''}});
 })();
 </script>

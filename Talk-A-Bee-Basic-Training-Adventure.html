@@ -1,4 +1,6 @@
-<!doctype html>\n<html lang="en"><head>
+<!doctype html>
+<html lang="en">
+<head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Talk A Bee — Basic Training Adventure</title>
@@ -120,7 +122,7 @@ body.tb-hs-editing .tb-hs-active{outline:3px solid #00ffff!important;background:
 body.tb-hs-editing .tb-hs-active>.tb-hs-handle{display:block!important}
 </style>
 </head>
-<body class="">
+<body>
 <div class="talkabee-editions">
 <details>
 <summary>Explore Adventures ▾</summary>
@@ -148,12 +150,12 @@ body.tb-hs-editing .tb-hs-active>.tb-hs-handle{display:block!important}
 <div class="tab-panel-size-controls" aria-label="Activity panel size"><button type="button" class="tab-panel-minus" title="Make activity panel smaller">−</button><button type="button" class="tab-panel-reset" title="Reset activity panel size">Reset</button><button type="button" class="tab-panel-plus" title="Make activity panel larger">+</button></div>
 
 <div class="label">LANGUAGE</div>
-<select id="lang" data-tab-global-voice="1">
+<select id="lang">
 <option value="es">Spanish</option><option value="fr">French</option><option value="en">English</option>
 <option value="de">German</option><option value="it">Italian</option><option value="pt">Portuguese</option><option value="no">Norwegian</option>
 </select>
 <div class="label">VOICE</div>
-<select id="voice" data-tab-global-voice="1"><option value="">Browser Default</option><option value="Microsoft David - English (United States)">Microsoft David - English (United States) — en-US</option><option value="Microsoft Mark - English (United States)">Microsoft Mark - English (United States) — en-US</option><option value="Microsoft Zira - English (United States)">Microsoft Zira - English (United States) — en-US</option><option value="Microsoft David Desktop - English (United States)">Microsoft David Desktop - English (United States) — en-US</option><option value="Microsoft Zira Desktop - English (United States)">Microsoft Zira Desktop - English (United States) — en-US</option></select>
+<select id="voice"><option value="">Browser Default</option></select>
 <button id="sceneView">◉ Scene View</button>
 
 <div class="label">DISCOVERY</div>
@@ -165,7 +167,7 @@ body.tb-hs-editing .tb-hs-active>.tb-hs-handle{display:block!important}
 <button data-lesson="climb">3. Climb the Training Wall</button>
 <button data-lesson="gear">4. Explore Training Gear</button>
 <button data-lesson="fitness">5. Practice Fitness</button>
-<button data-lesson="values">6. Teamwork &amp; Discipline</button>
+<button data-lesson="values">6. Teamwork & Discipline</button>
 <div class="label">CHALLENGES</div>
 <button data-ch="0">1. Find Drill Sergeant Bee</button>
 <button data-ch="1">2. Find the American Flag</button>
@@ -180,8 +182,8 @@ body.tb-hs-editing .tb-hs-active>.tb-hs-handle{display:block!important}
 <div class="tab-card-tools" aria-label="Script card controls"><button type="button" class="tab-card-drag" title="Move script card">↕ Move</button><button type="button" class="tab-card-font-down" title="Decrease text">A−</button><button type="button" class="tab-card-font-up" title="Increase text">A+</button><button type="button" class="tab-card-reset" title="Reset card">Reset</button></div><div class="tab-card-resize" title="Drag to resize script card" aria-label="Resize script card">↘</div>
 
 <div class="kicker">AT BASIC TRAINING</div>
-<h2 id="title">Click &amp; Discover</h2>
-<p id="prompt">You found basic training.</p>
+<h2 id="title">Basic Training Adventure</h2>
+<p id="prompt">Click any object in the scene to hear its name.</p>
 <div class="word"><strong id="line">entrenamiento básico</strong><div class="translation" id="translation">basic training</div></div>
 <p id="status"></p>
 <div class="controls">
@@ -222,13 +224,13 @@ body.tb-hs-editing .tb-hs-active>.tb-hs-handle{display:block!important}
 <button class="hotspot" data-word="trainees" style="left:47%;top:70%;width:47%;height:23%" aria-label="Trainees"></button>
 <button class="hotspot" data-word="instructor" style="left:40%;top:47%;width:11%;height:23%" aria-label="Instructor"></button>
 <button class="hotspot" data-word="flag" style="left:13%;top:5%;width:13%;height:22%" aria-label="American flag"></button>
-<button class="hotspot" data-word="mountains" style="left: 27.28%; top: 7.98%; width: 33.73%; height: 12.17%;" aria-label="Mountains"></button>
+<button class="hotspot" data-word="mountains" style="left:24%;top:4%;width:43%;height:23%" aria-label="Mountains"></button>
 <button class="hotspot" data-word="forest" style="left:23%;top:22%;width:62%;height:18%" aria-label="Forest"></button>
-<button class="hotspot" data-word="wall" style="left: 51.85%; top: 27.19%; width: 7.42%; height: 23.89%;" aria-label="Climbing wall"></button>
+<button class="hotspot" data-word="wall" style="left:48%;top:17%;width:17%;height:35%" aria-label="Climbing wall"></button>
 <button class="hotspot" data-word="rope" style="left:55%;top:19%;width:9%;height:31%" aria-label="Climbing rope"></button>
 <button class="hotspot" data-word="tires" style="left:57%;top:54%;width:29%;height:14%" aria-label="Training tires"></button>
 <button class="hotspot" data-word="tunnel" style="left:88%;top:56%;width:12%;height:17%" aria-label="Training tunnel"></button>
-<button class="hotspot" data-word="helicopter" style="left: 68.44%; top: 9.34%; width: 12.03%; height: 9.98%;" aria-label="Helicopter"></button>
+<button class="hotspot" data-word="helicopter" style="left:65%;top:5%;width:19%;height:16%" aria-label="Helicopter"></button>
 <button class="hotspot" data-word="tower" style="left:85%;top:7%;width:10%;height:25%" aria-label="Observation tower"></button>
 <button class="hotspot" data-word="tents" style="left:4%;top:33%;width:39%;height:18%" aria-label="Training tents"></button>
 <button class="hotspot" data-word="truck" style="left:89%;top:37%;width:11%;height:15%" aria-label="Military truck"></button>
@@ -237,7 +239,7 @@ body.tb-hs-editing .tb-hs-active>.tb-hs-handle{display:block!important}
 <button class="hotspot" data-word="uniform" style="left:59%;top:72%;width:13%;height:19%" aria-label="Training uniform"></button>
 <button class="hotspot" data-word="boots" style="left:31%;top:75%;width:8%;height:13%" aria-label="Boots"></button>
 <button class="hotspot" data-word="obstacle" style="left:43%;top:50%;width:48%;height:22%" aria-label="Obstacle course"></button>
-<button class="hotspot" data-word="camp" style="left: 2.05%; top: 31.31%; width: 26.37%; height: 25.57%;" aria-label="Training camp"></button>
+<button class="hotspot" data-word="camp" style="left:7%;top:29%;width:87%;height:39%" aria-label="Training camp"></button>
 
 </main>
 
@@ -492,14 +494,13 @@ const up=()=>{window.removeEventListener('pointermove',move,true);window.removeE
 document.addEventListener('pointerdown',ev=>{if(!editing)return;const h=ev.target.closest('.tb-hs-handle');if(h){dragStart(ev,h.parentElement,true);return}const el=ev.target.closest(SEL);if(el&&!el.closest('#tb-hs-editor'))dragStart(ev,el,false)},true);
 document.addEventListener('click',ev=>{if(editing&&ev.target.closest(SEL)){ev.preventDefault();ev.stopImmediatePropagation()}},true);
 toggle.onclick=()=>{editing=!editing;document.body.classList.toggle('tb-hs-editing',editing);toggle.textContent=editing?'Exit Editor':'Edit Hotspots';save.hidden=!editing;if(!editing&&active){active.classList.remove('tb-hs-active');active=null}show(active)};
-save.onclick=()=>{const clone=document.documentElement.cloneNode(true);clone.querySelectorAll('#tb-hs-editor,#tb-hs-readout,.tb-hs-handle').forEach(n=>n.remove());clone.querySelector('body')?.classList.remove('tb-hs-editing');clone.querySelectorAll('.tb-hs-active').forEach(n=>n.classList.remove('tb-hs-active'));const html='<!doctype html>\\n'+clone.outerHTML,a=document.createElement('a');a.href=URL.createObjectURL(new Blob([html],{type:'text/html'}));a.download=location.pathname.split('/').pop()||'adventure.html';a.click();setTimeout(()=>URL.revokeObjectURL(a.href),1500);dirty=false};
+save.onclick=()=>{const clone=document.documentElement.cloneNode(true);clone.querySelectorAll('#tb-hs-editor,#tb-hs-readout,.tb-hs-handle').forEach(n=>n.remove());clone.querySelector('body')?.classList.remove('tb-hs-editing');clone.querySelectorAll('.tb-hs-active').forEach(n=>n.classList.remove('tb-hs-active'));const html='<!doctype html>\n'+clone.outerHTML,a=document.createElement('a');a.href=URL.createObjectURL(new Blob([html],{type:'text/html'}));a.download=location.pathname.split('/').pop()||'adventure.html';a.click();setTimeout(()=>URL.revokeObjectURL(a.href),1500);dirty=false};
 window.addEventListener('beforeunload',e=>{if(dirty){e.preventDefault();e.returnValue=''}});
 })();
 </script>
-
-
+</body>
+</html>
 
 <style id="talkabee-ski-panel-180">
 @media(min-width:761px){.panel{width:180px!important;min-width:180px!important;max-width:180px!important}}
 </style>
-</body></html>
