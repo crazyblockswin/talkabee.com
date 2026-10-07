@@ -111,11 +111,11 @@ border:1px solid #fff;background:rgba(7,23,39,.65);color:#fff;font-weight:900}
 
 <!-- TALK A BEE HOTSPOTS VISUALLY RECERTIFIED AGAINST CURRENT SCENE ARTWORK: 2026-10-07 -->
 <style id="talkabee-hotspot-editor-style">
-#tb-hs-editor{position:fixed;right:16px;bottom:16px;z-index:2147483646;font:700 12px Arial,sans-serif;display:flex;gap:6px}
+#tb-hs-editor{position:fixed;right:16px;bottom:16px;z-index:2147483646;font:700 12px Arial,sans-serif;display:flex;flex-wrap:wrap;justify-content:flex-end;gap:6px;max-width:520px}
 #tb-hs-editor button{border:1px solid #fff;border-radius:10px;background:#000;color:#fff;padding:9px 11px;cursor:pointer;box-shadow:0 4px 14px #0006}
 #tb-hs-readout{position:fixed;right:16px;bottom:60px;z-index:2147483646;max-width:460px;background:#000;color:#fff;border:1px solid #fff;border-radius:10px;padding:8px 10px;font:12px/1.35 Consolas,monospace;display:none}
 body.tb-hs-editing #tb-hs-readout{display:block}
-body.tb-hs-editing .hotspot,body.tb-hs-editing .home-hotspot,body.tb-hs-editing .yacht-hotspot,body.tb-hs-editing .train-hotspots button{outline:2px solid #ffea00!important;background:rgba(255,234,0,.18)!important;pointer-events:auto!important;cursor:move!important;visibility:visible!important;opacity:1!important}
+body.tb-hs-editing .hotspot,body.tb-hs-editing .home-hotspot,body.tb-hs-editing .yacht-hotspot,body.tb-hs-editing .train-hotspots button{outline:2px solid #ffea00!important;background:rgba(255,234,0,.18)!important;pointer-events:auto!important;cursor:move!important;visibility:visible!important;opacity:1!important;z-index:2147483005!important}
 body.tb-hs-editing .tb-hs-active{outline:3px solid #00ffff!important;background:rgba(0,255,255,.18)!important}
 .tb-hs-handle{position:absolute!important;right:-7px!important;bottom:-7px!important;left:auto!important;top:auto!important;width:14px!important;height:14px!important;border-radius:3px!important;background:#00ffff!important;border:2px solid #000!important;z-index:2147483647!important;cursor:nwse-resize!important;display:none!important;transform:none!important}
 body.tb-hs-editing .tb-hs-active>.tb-hs-handle{display:block!important}
@@ -182,8 +182,8 @@ body.tb-hs-editing .tb-hs-active>.tb-hs-handle{display:block!important}
 
 <div class="kicker">ON THE FLIGHT DECK</div>
 <h2 id="title">Click &amp; Discover</h2>
-<p id="prompt">You found aircraft carrier.</p>
-<div class="word"><strong id="line">portaaviones</strong><div class="translation" id="translation">aircraft carrier</div></div>
+<p id="prompt">You found ocean.</p>
+<div class="word"><strong id="line">ocean</strong><div class="translation" id="translation"></div></div>
 <p id="status"></p>
 <div class="controls">
 <button id="normal">🔊 Speak</button><button id="slow">🐢 Slow</button><button id="replay">↻ Replay</button><button id="nextPhrase">Next phrase →</button>
@@ -229,7 +229,7 @@ body.tb-hs-editing .tb-hs-active>.tb-hs-handle{display:block!important}
 <button class="hotspot" data-word="island" style="left: 18.38%; top: 14.93%; width: 8.89%; height: 32.91%;" aria-label="Carrier island"></button>
 <button class="hotspot" data-word="flag" style="left: 28.45%; top: 11.65%; width: 7%; height: 12%;" aria-label="American flag"></button>
 <button class="hotspot" data-word="flightdeck" style="left: 40.56%; top: 9%; width: 19.66%; height: 14.46%;" aria-label="Flight deck"></button>
-<button class="hotspot" data-word="crew" style="left: 85.96%; top: 46.45%; width: 14.87%; height: 9.55%;" aria-label="Flight deck crew"></button>
+<button class="hotspot" data-word="crew" style="left: 27.79%; top: 49.7%; width: 14.87%; height: 9.55%;" aria-label="Flight deck crew"></button>
 <button class="hotspot" data-word="yellowshirt" style="left: 85.08%; top: 60.74%; width: 8%; height: 18%;" aria-label="Yellow shirt director"></button>
 <button class="hotspot" data-word="greenshirt" style="left:76%;top:45%;width:8%;height:14%" aria-label="Green shirt crew member"></button>
 <button class="hotspot" data-word="towtractor" style="left: 90.14%; top: 57.2%; width: 10.79%; height: 8.44%;" aria-label="Tow tractor"></button>
@@ -241,7 +241,7 @@ body.tb-hs-editing .tb-hs-active>.tb-hs-handle{display:block!important}
 <button class="hotspot" data-word="equipment" style="left:0%;top:51%;width:17%;height:26%" aria-label="Deck equipment"></button>
 <button class="hotspot" data-word="sky" style="left: 78.17%; top: 76.02%; width: 24.11%; height: 24.52%;" aria-label="Sky"></button>
 
-</main>
+<button type="button" class="hotspot" data-word="jet airplane" data-tb-en="jet airplane" data-tb-es="avión a reacción" data-tb-fr="avion à réaction" data-tb-de="Düsenflugzeug" data-tb-it="aereo a reazione" data-tb-pt="avião a jato" data-tb-no="jetfly" style="left: 84.84%; top: 45.85%; width: 14.91%; height: 7.88%;"></button><button type="button" class="hotspot" data-word="clouds" data-tb-en="clouds" data-tb-es="nubes" data-tb-fr="nuages" data-tb-de="Wolken" data-tb-it="nuvole" data-tb-pt="nuvens" data-tb-no="skyer" style="left: 81.46%; top: 13.89%; width: 20.17%; height: 11.7%;"></button></main>
 
 <script>
 const EN={game:"aircraft carrier",bee:"Navy Bee",visitors:"visitors",sailor:"sailor",jet:"jet aircraft",jets:"carrier aircraft",helicopter:"helicopter",island:"carrier island",flag:"American flag",flightdeck:"flight deck",crew:"flight deck crew",yellowshirt:"aircraft director",greenshirt:"flight deck crew member",towtractor:"tow tractor",ocean:"ocean",ship:"Navy ship",decklines:"deck markings",railing:"safety railing",equipment:"deck equipment",sky:"sky"};
@@ -480,21 +480,26 @@ showWord("game");
 })();
 </script>
 <script id="talkabee-hotspot-editor-script">
-(()=>{const SEL='.hotspot,.home-hotspot,.yacht-hotspot,.train-hotspots button';let editing=false,active=null,dirty=false;
+(()=>{const SEL='.hotspot,.home-hotspot,.yacht-hotspot,.train-hotspots button';let editing=false,active=null,dirty=false,adding=false,pendingName='',pendingTranslations=null;
 const host=(location.hostname||'').toLowerCase();if(host==='talkabee.com'||host==='www.talkabee.com')return;
-const box=document.createElement('div');box.id='tb-hs-editor';box.innerHTML='<button type="button" id="tb-hs-toggle">Edit Hotspots</button><button type="button" id="tb-hs-save" hidden>Save HTML</button>';document.body.appendChild(box);
-const read=document.createElement('div');read.id='tb-hs-readout';document.body.appendChild(read);const toggle=box.querySelector('#tb-hs-toggle'),save=box.querySelector('#tb-hs-save');
+const box=document.createElement('div');box.id='tb-hs-editor';box.innerHTML='<button type="button" id="tb-hs-toggle">Edit Hotspots</button><input id="tb-hs-name" hidden type="text" placeholder="hotspot name" autocomplete="off" spellcheck="false"><button type="button" id="tb-hs-add" hidden>Add Hotspot</button><button type="button" id="tb-hs-delete" hidden disabled>Delete Hotspot</button><button type="button" id="tb-hs-save" hidden>Save HTML</button>';document.body.appendChild(box);
+const read=document.createElement('div');read.id='tb-hs-readout';read.style.display='none';document.body.appendChild(read);const toggle=box.querySelector('#tb-hs-toggle'),nameBox=box.querySelector('#tb-hs-name'),add=box.querySelector('#tb-hs-add'),del=box.querySelector('#tb-hs-delete'),save=box.querySelector('#tb-hs-save');
 function num(el,k){const m=(el.style[k]||'').match(/-?[\d.]+/);if(m)return +m[0];const p=el.offsetParent||document.documentElement,r=el.getBoundingClientRect(),pr=p.getBoundingClientRect();if(k==='left')return(r.left-pr.left)/pr.width*100;if(k==='top')return(r.top-pr.top)/pr.height*100;if(k==='width')return r.width/pr.width*100;return r.height/pr.height*100}
 const pct=n=>Math.round(n*100)/100+'%';const label=el=>el.dataset.word||el.dataset.object||el.dataset.label||el.getAttribute('aria-label')||el.title||el.textContent.trim()||'(unnamed)';
-function show(el){read.textContent=el?label(el)+' | left '+(el.style.left||'?')+' top '+(el.style.top||'?')+' width '+(el.style.width||'?')+' height '+(el.style.height||'?'):'Click a yellow hotspot. Drag to move; drag cyan square to resize.'}
-function select(el){if(active)active.classList.remove('tb-hs-active');active=el;el.classList.add('tb-hs-active');if(!el.querySelector(':scope > .tb-hs-handle')){const h=document.createElement('span');h.className='tb-hs-handle';h.setAttribute('aria-hidden','true');el.appendChild(h)}show(el)}
+function show(el){read.textContent=adding?'ADD MODE: click the object in the scene for "'+pendingName+'".':el?label(el)+' | left '+(el.style.left||'?')+' top '+(el.style.top||'?')+' width '+(el.style.width||'?')+' height '+(el.style.height||'?'):'Click a yellow hotspot. Drag to move; drag cyan square to resize.'}
+function select(el){if(active)active.classList.remove('tb-hs-active');active=el;if(!el){del.disabled=true;show(null);return}el.classList.add('tb-hs-active');del.disabled=false;if(!el.querySelector(':scope > .tb-hs-handle')){const h=document.createElement('span');h.className='tb-hs-handle';h.setAttribute('aria-hidden','true');el.appendChild(h)}show(el)}
 function dragStart(ev,el,resize){ev.preventDefault();ev.stopPropagation();select(el);const p=el.offsetParent||document.documentElement,pr=p.getBoundingClientRect(),sx=ev.clientX,sy=ev.clientY,L=num(el,'left'),T=num(el,'top'),W=num(el,'width'),H=num(el,'height');
 const move=e=>{const dx=(e.clientX-sx)/pr.width*100,dy=(e.clientY-sy)/pr.height*100;if(resize){el.style.width=pct(Math.max(1,W+dx));el.style.height=pct(Math.max(1,H+dy))}else{el.style.left=pct(L+dx);el.style.top=pct(T+dy)}dirty=true;show(el)};
 const up=()=>{window.removeEventListener('pointermove',move,true);window.removeEventListener('pointerup',up,true)};window.addEventListener('pointermove',move,true);window.addEventListener('pointerup',up,true)}
-document.addEventListener('pointerdown',ev=>{if(!editing)return;const h=ev.target.closest('.tb-hs-handle');if(h){dragStart(ev,h.parentElement,true);return}const el=ev.target.closest(SEL);if(el&&!el.closest('#tb-hs-editor'))dragStart(ev,el,false)},true);
+function hotspotHost(){return document.querySelector('.hotspots,.train-hotspots')||(document.querySelector(SEL)?.parentElement)||document.getElementById('world')||document.body}
+function addAt(ev){const host=hotspotHost(),r=host.getBoundingClientRect();if(!r.width||!r.height)return;const el=document.createElement('button');el.type='button';el.className='hotspot';el.dataset.word=pendingName;if(pendingTranslations){Object.entries(pendingTranslations).forEach(([k,v])=>{if(v)el.dataset['tb'+k.charAt(0).toUpperCase()+k.slice(1)]=v})}el.style.left=pct((ev.clientX-r.left)/r.width*100);el.style.top=pct((ev.clientY-r.top)/r.height*100);el.style.width='6%';el.style.height='8%';host.appendChild(el);adding=false;pendingTranslations=null;add.textContent='Add Hotspot';dirty=true;select(el)}
+document.addEventListener('pointerdown',ev=>{if(!editing)return;if(adding&&!ev.target.closest('#tb-hs-editor,#tb-hs-readout')){ev.preventDefault();ev.stopImmediatePropagation();addAt(ev);return}const h=ev.target.closest('.tb-hs-handle');if(h){dragStart(ev,h.parentElement,true);return}const el=ev.target.closest(SEL);if(el&&!el.closest('#tb-hs-editor'))dragStart(ev,el,false)},true);
 document.addEventListener('click',ev=>{if(editing&&ev.target.closest(SEL)){ev.preventDefault();ev.stopImmediatePropagation()}},true);
-toggle.onclick=()=>{editing=!editing;document.body.classList.toggle('tb-hs-editing',editing);toggle.textContent=editing?'Exit Editor':'Edit Hotspots';save.hidden=!editing;if(!editing&&active){active.classList.remove('tb-hs-active');active=null}show(active)};
-save.onclick=()=>{const clone=document.documentElement.cloneNode(true);clone.querySelectorAll('#tb-hs-editor,#tb-hs-readout,.tb-hs-handle').forEach(n=>n.remove());clone.querySelector('body')?.classList.remove('tb-hs-editing');clone.querySelectorAll('.tb-hs-active').forEach(n=>n.classList.remove('tb-hs-active'));const html='<!doctype html>\n'+clone.outerHTML,a=document.createElement('a');a.href=URL.createObjectURL(new Blob([html],{type:'text/html'}));a.download=location.pathname.split('/').pop()||'adventure.html';a.click();setTimeout(()=>URL.revokeObjectURL(a.href),1500);dirty=false};
+toggle.onclick=()=>{editing=!editing;adding=false;pendingName='';document.body.classList.toggle('tb-hs-editing',editing);toggle.textContent=editing?'Exit Editor':'Edit Hotspots';[nameBox,add,del,save].forEach(b=>b.hidden=!editing);add.textContent='Add Hotspot';if(!editing)select(null);show(active)};
+async function tbTranslate(text,lang){if(lang==='en')return text;const u='https://translate.googleapis.com/translate_a/single?client=gtx&sl=en&tl='+encodeURIComponent(lang)+'&dt=t&q='+encodeURIComponent(text);const r=await fetch(u);if(!r.ok)throw new Error('translation failed');const j=await r.json();return (j[0]||[]).map(x=>x[0]||'').join('').trim()||text}
+add.onclick=async()=>{if(adding){adding=false;pendingName='';pendingTranslations=null;add.textContent='Add Hotspot';show(active);return}const name=(nameBox.value||'').trim().toLowerCase().replace(/\s+/g,' ');if(!name){nameBox.focus();return}pendingName=name;add.disabled=true;add.textContent='Translating...';try{const codes={es:'es',fr:'fr',de:'de',it:'it',pt:'pt',no:'no'},vals=await Promise.all(Object.entries(codes).map(async([k,v])=>[k,await tbTranslate(name,v)]));pendingTranslations={en:name,...Object.fromEntries(vals)};adding=true;add.textContent='Click Scene'}catch(e){pendingTranslations={en:name};adding=true;add.textContent='Click Scene'}finally{add.disabled=false}show(null)};
+del.onclick=()=>{if(!active)return;const name=label(active);if(!confirm('Delete hotspot "'+name+'"?'))return;active.remove();active=null;del.disabled=true;dirty=true;show(null)};
+save.onclick=()=>{const clone=document.documentElement.cloneNode(true);clone.querySelectorAll('#tb-hs-editor,#tb-hs-readout,.tb-hs-handle').forEach(n=>n.remove());clone.querySelector('body')?.classList.remove('tb-hs-editing');clone.querySelectorAll('.tb-hs-active').forEach(n=>n.classList.remove('tb-hs-active'));clone.querySelectorAll('script[data-tb-custom-vocab]').forEach(n=>n.remove());const custom={};clone.querySelectorAll('[data-tb-en]').forEach(el=>{const k=el.dataset.word;if(!k)return;custom[k]={en:el.dataset.tbEn||k,es:el.dataset.tbEs||el.dataset.tbEn||k,fr:el.dataset.tbFr||el.dataset.tbEn||k,de:el.dataset.tbDe||el.dataset.tbEn||k,it:el.dataset.tbIt||el.dataset.tbEn||k,pt:el.dataset.tbPt||el.dataset.tbEn||k,no:el.dataset.tbNo||el.dataset.tbEn||k}});if(Object.keys(custom).length){const sc=document.createElement('script');sc.dataset.tbCustomVocab='1';sc.textContent=';(()=>{const C='+JSON.stringify(custom).replace(/<\/script/gi,'<\\/script')+';for(const [k,v] of Object.entries(C)){try{EN[k]=v.en||k;for(const L of [\"es\",\"fr\",\"en\",\"de\",\"it\",\"pt\",\"no\"]){if(WORDS[L])WORDS[L][k]=v[L]||v.en||k}}catch(e){}}})();';clone.querySelector('body').appendChild(sc)}const html='<!doctype html>\n'+clone.outerHTML,a=document.createElement('a');a.href=URL.createObjectURL(new Blob([html],{type:'text/html'}));a.download=location.pathname.split('/').pop()||'adventure.html';a.click();setTimeout(()=>URL.revokeObjectURL(a.href),1500);dirty=false};
 window.addEventListener('beforeunload',e=>{if(dirty){e.preventDefault();e.returnValue=''}});
 })();
 </script>
@@ -519,4 +524,4 @@ window.addEventListener('beforeunload',e=>{if(dirty){e.preventDefault();e.return
 <style id="talkabee-ski-panel-180">
 @media(min-width:761px){.panel{width:180px!important;min-width:180px!important;max-width:180px!important}}
 </style>
-</body></html>
+<audio preload="auto" src="sounds/ship-ambience.mp3" data-talkabee-sound="1"></audio><script data-tb-custom-vocab="1">;(()=>{const C={"jet airplane":{"en":"jet airplane","es":"avión a reacción","fr":"avion à réaction","de":"Düsenflugzeug","it":"aereo a reazione","pt":"avião a jato","no":"jetfly"},"clouds":{"en":"clouds","es":"nubes","fr":"nuages","de":"Wolken","it":"nuvole","pt":"nuvens","no":"skyer"}};for(const [k,v] of Object.entries(C)){try{EN[k]=v.en||k;for(const L of ["es","fr","en","de","it","pt","no"]){if(WORDS[L])WORDS[L][k]=v[L]||v.en||k}}catch(e){}}})();</script></body></html>
