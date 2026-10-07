@@ -500,7 +500,7 @@ body.tb-hs-editing .tb-hs-active>.tb-hs-handle{display:block!important}
 
 <nav class="talkabee-prev-next-nav" aria-label="Adventure navigation"><a href="index.html" aria-label="Previous page" title="Previous">‹</a><a href="Talk-A-Bee-Shopping-Market-Adventure.html" aria-label="Next page" title="Next">›</a></nav>
 
-<main id="homeWorld" class="open activity-collapsed" aria-label="Grandma and Grandpa's Place">
+<main id="homeWorld" class="open" aria-label="Grandma and Grandpa's Place">
 
   <div class="home-scene" id="homeScene">
     <img class="scene-main-image" id="homeSceneImage" src="images/grandma-grandpas-place.jpg" alt="" aria-hidden="true">
@@ -1241,4 +1241,20 @@ window.addEventListener('beforeunload',e=>{if(dirty){e.preventDefault();e.return
 })();
 </script>
 
-<script data-tb-custom-vocab="1">;(()=>{const C={"duck":{"en":"duck","es":"pato","fr":"canard","de":"Ente","it":"anatra","pt":"pato","no":"and"}};for(const [k,v] of Object.entries(C)){try{EN[k]=v.en||k;for(const L of ["es","fr","en","de","it","pt","no"]){if(WORDS[L])WORDS[L][k]=v[L]||v.en||k}}catch(e){}}})();</script></body></html>
+<script data-tb-custom-vocab="1">;(()=>{const C={"duck":{"en":"duck","es":"pato","fr":"canard","de":"Ente","it":"anatra","pt":"pato","no":"and"}};for(const [k,v] of Object.entries(C)){try{EN[k]=v.en||k;for(const L of ["es","fr","en","de","it","pt","no"]){if(WORDS[L])WORDS[L][k]=v[L]||v.en||k}}catch(e){}}})();</script>
+<script id="grandparents-scene-view-reset">
+(function(){
+  function resetGrandparentsSceneView(){
+    const world=document.getElementById('homeWorld');
+    if(world) world.classList.remove('activity-collapsed');
+  }
+  if(document.readyState==='loading'){
+    document.addEventListener('DOMContentLoaded',resetGrandparentsSceneView);
+  }else{
+    resetGrandparentsSceneView();
+  }
+  window.addEventListener('pageshow',resetGrandparentsSceneView);
+})();
+</script>
+
+</body></html>
