@@ -1,6 +1,5 @@
 <!doctype html>
-<html lang="en">
-<head>
+<html lang="en"><head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Talk A Bee — Spacewalk Adventure</title>
@@ -111,8 +110,17 @@ border:1px solid #fff;background:rgba(7,23,39,.65);color:#fff;font-weight:900}
 </style>
 
 <!-- TALK A BEE HOTSPOTS VISUALLY RECERTIFIED AGAINST CURRENT SCENE ARTWORK: 2026-10-07 -->
+<style id="talkabee-hotspot-editor-style">
+#tb-hs-editor{position:fixed;right:16px;bottom:16px;z-index:2147483646;font:700 12px Arial,sans-serif;display:flex;flex-wrap:wrap;justify-content:flex-end;gap:6px;max-width:650px}
+#tb-hs-editor button,#tb-hs-editor input{border:1px solid #fff;border-radius:10px;background:#000;color:#fff;padding:9px 11px;box-shadow:0 4px 14px #0006}
+#tb-hs-editor input{background:#fff;color:#111;min-width:180px;font-weight:400}#tb-hs-editor button{cursor:pointer}
+body.tb-hs-editing .hotspot,body.tb-hs-editing .home-hotspot,body.tb-hs-editing .yacht-hotspot,body.tb-hs-editing .hotspots button,body.tb-hs-editing .train-hotspots button{display:block!important;outline:2px solid #ffea00!important;background:rgba(255,234,0,.18)!important;pointer-events:auto!important;cursor:move!important;visibility:visible!important;opacity:1!important;z-index:2147483005!important}
+body.tb-hs-editing .tb-hs-active{outline:3px solid #00ffff!important;background:rgba(0,255,255,.18)!important}
+.tb-hs-handle{position:absolute!important;right:-7px!important;bottom:-7px!important;left:auto!important;top:auto!important;width:14px!important;height:14px!important;border-radius:3px!important;background:#00ffff!important;border:2px solid #000!important;z-index:2147483647!important;cursor:nwse-resize!important;display:none!important;transform:none!important}
+body.tb-hs-editing .tb-hs-active>.tb-hs-handle{display:block!important}
+</style>
 </head>
-<body>
+<body class="scene-view">
 <div class="talkabee-editions">
 <details>
 <summary>Explore Adventures ▾</summary>
@@ -140,12 +148,12 @@ border:1px solid #fff;background:rgba(7,23,39,.65);color:#fff;font-weight:900}
 <div class="tab-panel-size-controls" aria-label="Activity panel size"><button type="button" class="tab-panel-minus" title="Make activity panel smaller">−</button><button type="button" class="tab-panel-reset" title="Reset activity panel size">Reset</button><button type="button" class="tab-panel-plus" title="Make activity panel larger">+</button></div>
 
 <div class="label">LANGUAGE</div>
-<select id="lang">
+<select id="lang" data-tab-global-voice="1">
 <option value="es">Spanish</option><option value="fr">French</option><option value="en">English</option>
 <option value="de">German</option><option value="it">Italian</option><option value="pt">Portuguese</option><option value="no">Norwegian</option>
 </select>
 <div class="label">VOICE</div>
-<select id="voice"><option value="">Browser Default</option></select>
+<select id="voice" data-tab-global-voice="1"><option value="">Browser Default</option><option value="Microsoft David - English (United States)">Microsoft David - English (United States) — en-US</option><option value="Microsoft Mark - English (United States)">Microsoft Mark - English (United States) — en-US</option><option value="Microsoft Zira - English (United States)">Microsoft Zira - English (United States) — en-US</option><option value="Microsoft David Desktop - English (United States)">Microsoft David Desktop - English (United States) — en-US</option><option value="Microsoft Zira Desktop - English (United States)">Microsoft Zira Desktop - English (United States) — en-US</option></select>
 <button id="sceneView">◉ Scene View</button>
 
 <div class="label">DISCOVERY</div>
@@ -172,9 +180,9 @@ border:1px solid #fff;background:rgba(7,23,39,.65);color:#fff;font-weight:900}
 <div class="tab-card-tools" aria-label="Script card controls"><button type="button" class="tab-card-drag" title="Move script card">↕ Move</button><button type="button" class="tab-card-font-down" title="Decrease text">A−</button><button type="button" class="tab-card-font-up" title="Increase text">A+</button><button type="button" class="tab-card-reset" title="Reset card">Reset</button></div><div class="tab-card-resize" title="Drag to resize script card" aria-label="Resize script card">↘</div>
 
 <div class="kicker">SPACEWALK ABOVE EARTH</div>
-<h2 id="title">Spacewalk Adventure</h2>
-<p id="prompt">Click any object in the scene to hear its name.</p>
-<div class="word"><strong id="line">caminata espacial</strong><div class="translation" id="translation">spacewalk</div></div>
+<h2 id="title">Click &amp; Discover</h2>
+<p id="prompt">You found astronaut.</p>
+<div class="word"><strong id="line">astronaut</strong><div class="translation" id="translation"></div></div>
 <p id="status"></p>
 <div class="controls">
 <button id="normal">🔊 Speak</button><button id="slow">🐢 Slow</button><button id="replay">↻ Replay</button><button id="nextPhrase">Next phrase →</button>
@@ -205,28 +213,28 @@ border:1px solid #fff;background:rgba(7,23,39,.65);color:#fff;font-weight:900}
 
 
 <!-- Hotspots mapped to the approved Spacewalk keeper JPG. -->
-<button class="hotspot" data-word="bee" style="left:36%;top:32%;width:15%;height:28%" aria-label="Astronaut Bee"></button>
-<button class="hotspot" data-word="astronaut" style="left:25%;top:18%;width:17%;height:27%" aria-label="Astronaut"></button>
-<button class="hotspot" data-word="boy" style="left:54%;top:37%;width:27%;height:46%" aria-label="Boy astronaut"></button>
-<button class="hotspot" data-word="girl" style="left:72%;top:18%;width:24%;height:34%" aria-label="Girl astronaut"></button>
-<button class="hotspot" data-word="spacesuit" style="left:58%;top:40%;width:22%;height:40%" aria-label="Spacesuit"></button>
-<button class="hotspot" data-word="helmet" style="left:61%;top:36%;width:15%;height:22%" aria-label="Helmet"></button>
+<button class="hotspot" data-word="bee" style="left: 25.74%; top: 23.58%; width: 5.1%; height: 13.19%;" aria-label="Astronaut Bee"></button>
+<button class="hotspot" data-word="astronaut" style="left: 51.61%; top: 39.21%; width: 20.34%; height: 30.7%;" aria-label="Astronaut"></button>
+
+<button class="hotspot" data-word="girl" style="left: 73.56%; top: 20.68%; width: 12.02%; height: 15.02%;" aria-label="Girl astronaut"></button>
+<button class="hotspot" data-word="spacesuit" style="left: 60.91%; top: 47.22%; width: 22%; height: 40%;" aria-label="Spacesuit"></button>
+<button class="hotspot" data-word="helmet" style="left: 57.35%; top: 31.29%; width: 15%; height: 22%;" aria-label="Helmet"></button>
 <button class="hotspot" data-word="gloves" style="left:72%;top:57%;width:18%;height:22%" aria-label="Space gloves"></button>
-<button class="hotspot" data-word="tether" style="left:43%;top:52%;width:27%;height:18%" aria-label="Safety tether"></button>
-<button class="hotspot" data-word="station" style="left:57%;top:0%;width:43%;height:38%" aria-label="Space station"></button>
-<button class="hotspot" data-word="solarpanels" style="left:39%;top:0%;width:21%;height:54%" aria-label="Solar panels"></button>
-<button class="hotspot" data-word="truss" style="left:68%;top:0%;width:31%;height:25%" aria-label="Station truss"></button>
-<button class="hotspot" data-word="handrail" style="left:79%;top:37%;width:21%;height:29%" aria-label="Handrail"></button>
-<button class="hotspot" data-word="tools" style="left:86%;top:24%;width:14%;height:35%" aria-label="Space tools"></button>
-<button class="hotspot" data-word="earth" style="left:0%;top:22%;width:50%;height:78%" aria-label="Earth"></button>
-<button class="hotspot" data-word="ocean" style="left:3%;top:53%;width:35%;height:34%" aria-label="Ocean"></button>
-<button class="hotspot" data-word="clouds" style="left:0%;top:31%;width:38%;height:32%" aria-label="Clouds"></button>
-<button class="hotspot" data-word="atmosphere" style="left:0%;top:20%;width:39%;height:15%" aria-label="Atmosphere"></button>
+<button class="hotspot" data-word="tether" style="left: 30.87%; top: 48.79%; width: 19.6%; height: 16.65%;" aria-label="Safety tether"></button>
+<button class="hotspot" data-word="station" style="left: 67.11%; top: 2.06%; width: 32.95%; height: 11.15%;" aria-label="Space station"></button>
+<button class="hotspot" data-word="solarpanels" style="left: 40.66%; top: -2.04%; width: 13.5%; height: 39.46%;" aria-label="Solar panels"></button>
+
+<button class="hotspot" data-word="handrail" style="left: 88.01%; top: 43.3%; width: 6.94%; height: 27.61%;" aria-label="Handrail"></button>
+
+<button class="hotspot" data-word="earth" style="left: 1.3%; top: 19.86%; width: 19.89%; height: 24.64%;" aria-label="Earth"></button>
+<button class="hotspot" data-word="ocean" style="left: -0.39%; top: 45.93%; width: 25.89%; height: 23.35%;" aria-label="Ocean"></button>
+<button class="hotspot" data-word="clouds" style="left: 0.41%; top: 73.95%; width: 23.31%; height: 19.44%;" aria-label="Clouds"></button>
+<button class="hotspot" data-word="atmosphere" style="left: -2.6%; top: 17.76%; width: 27.75%; height: 1.55%;" aria-label="Atmosphere"></button>
 <button class="hotspot" data-word="moon" style="left:25%;top:2%;width:9%;height:14%" aria-label="Moon"></button>
 <button class="hotspot" data-word="sun" style="left:0%;top:0%;width:12%;height:19%" aria-label="Sun"></button>
-<button class="hotspot" data-word="stars" style="left:10%;top:0%;width:29%;height:23%" aria-label="Stars"></button>
 
-</main>
+
+<button type="button" class="hotspot" data-word="stars" aria-label="stars" style="left: 33.67%; top: 6.87%; width: 6%; height: 8%;"></button><button type="button" class="hotspot" data-word="stars" aria-label="stars" style="left: 18.36%; top: 5.73%; width: 6%; height: 8%;"></button><button type="button" class="hotspot" data-word="astronaught" aria-label="astronaught" style="left: 32.2%; top: 28.69%; width: 7.51%; height: 17.44%;"></button></main>
 
 <script>
 const EN={game:"spacewalk",bee:"astronaut Bee",astronaut:"astronaut",boy:"boy astronaut",girl:"girl astronaut",spacesuit:"spacesuit",helmet:"helmet",gloves:"space gloves",tether:"safety tether",station:"space station",solarpanels:"solar panels",truss:"station truss",handrail:"handrail",tools:"space tools",earth:"Earth",ocean:"ocean",clouds:"clouds",atmosphere:"atmosphere",moon:"Moon",sun:"Sun",stars:"stars"};
@@ -474,9 +482,73 @@ showWord("game");
  restore();
 })();
 </script>
-</body>
-</html>
+<script id="talkabee-hotspot-editor-v10">
+(()=>{
+const SEL='.hotspot,.home-hotspot,.yacht-hotspot,.hotspots button,.train-hotspots button';
+let editing=false,active=null,adding=false,pendingName='';
+const all=()=>[...document.querySelectorAll(SEL)].filter(x=>!x.closest('#tb-hs-editor'));
+function parentFor(el){return el.offsetParent||el.parentElement||document.body}
+function pct(v,n){return +(v/n*100).toFixed(2)}
+function cleanActive(){if(active){active.classList.remove('tb-hs-active');active.querySelector(':scope > .tb-hs-handle')?.remove()} active=null}
+function select(el){if(!editing||!el)return;cleanActive();active=el;el.classList.add('tb-hs-active');let h=document.createElement('span');h.className='tb-hs-handle';el.appendChild(h)}
+function semanticNew(name){
+ const existing=all()[0]; if(!existing)return null;
+ const el=document.createElement('button');el.type='button';
+ if(existing.classList.contains('home-hotspot')){el.className='home-hotspot show';el.dataset.object=name;el.setAttribute('aria-label',name)}
+ else if(existing.classList.contains('yacht-hotspot')){el.className='yacht-hotspot';el.dataset.word=name;el.setAttribute('aria-label',name)}
+ else if(existing.classList.contains('hotspot')){el.className='hotspot';el.dataset.word=name;el.setAttribute('aria-label',name)}
+ else { if(existing.className)el.className=existing.className; el.dataset.word=name; if(existing.hasAttribute('data-en'))el.dataset.en=name; el.setAttribute('aria-label',name) }
+ return el
+}
+function hotspotContainer(){const e=all()[0];return e?e.parentElement:null}
+function placeAt(ev){
+ if(!editing||!adding)return;
+ const host=hotspotContainer();if(!host)return;
+ const el=semanticNew(pendingName);if(!el)return;
+ host.appendChild(el);
+ const r=parentFor(el).getBoundingClientRect();
+ el.style.left=pct(ev.clientX-r.left,r.width)+'%';el.style.top=pct(ev.clientY-r.top,r.height)+'%';el.style.width='6%';el.style.height='8%';
+ adding=false;pendingName='';nameBox.value='';select(el);ev.preventDefault();ev.stopPropagation();
+}
+function startDrag(ev,el){
+ if(!editing||adding)return; if(ev.target.classList.contains('tb-hs-handle'))return;
+ select(el);ev.preventDefault();ev.stopPropagation();
+ const p=parentFor(el),r=p.getBoundingClientRect();let sx=ev.clientX,sy=ev.clientY;
+ let l=parseFloat(el.style.left)||pct(el.offsetLeft,r.width),t=parseFloat(el.style.top)||pct(el.offsetTop,r.height);
+ const move=e=>{el.style.left=(l+(e.clientX-sx)/r.width*100).toFixed(2)+'%';el.style.top=(t+(e.clientY-sy)/r.height*100).toFixed(2)+'%'};
+ const up=()=>{window.removeEventListener('pointermove',move,true);window.removeEventListener('pointerup',up,true)};
+ window.addEventListener('pointermove',move,true);window.addEventListener('pointerup',up,true)
+}
+function startResize(ev,el){
+ if(!editing)return;ev.preventDefault();ev.stopPropagation();
+ const p=parentFor(el),r=p.getBoundingClientRect();let sx=ev.clientX,sy=ev.clientY;
+ let w=parseFloat(el.style.width)||pct(el.offsetWidth,r.width),h=parseFloat(el.style.height)||pct(el.offsetHeight,r.height);
+ const move=e=>{el.style.width=Math.max(1,w+(e.clientX-sx)/r.width*100).toFixed(2)+'%';el.style.height=Math.max(1,h+(e.clientY-sy)/r.height*100).toFixed(2)+'%'};
+ const up=()=>{window.removeEventListener('pointermove',move,true);window.removeEventListener('pointerup',up,true)};
+ window.addEventListener('pointermove',move,true);window.addEventListener('pointerup',up,true)
+}
+const bar=document.createElement('div');bar.id='tb-hs-editor';
+const edit=document.createElement('button');edit.textContent='Edit Hotspots';
+const nameBox=document.createElement('input');nameBox.placeholder='hotspot name';
+const add=document.createElement('button');add.textContent='Add Hotspot';
+const del=document.createElement('button');del.textContent='Delete Hotspot';
+const save=document.createElement('button');save.textContent='Save HTML';
+bar.append(edit,nameBox,add,del,save);document.body.appendChild(bar);nameBox.style.display=add.style.display=del.style.display=save.style.display='none';
+edit.onclick=()=>{editing=!editing;document.body.classList.toggle('tb-hs-editing',editing);edit.textContent=editing?'Exit Editor':'Edit Hotspots';nameBox.style.display=add.style.display=del.style.display=save.style.display=editing?'':'none';if(!editing){adding=false;cleanActive()}};
+add.onclick=()=>{if(!editing)return;const n=(nameBox.value||'').trim().toLowerCase().replace(/\s+/g,' ');if(!n){nameBox.focus();return}pendingName=n;adding=true;cleanActive()};
+del.onclick=()=>{if(active){active.remove();active=null}};
+save.onclick=()=>{
+ const clone=document.documentElement.cloneNode(true);clone.querySelector('#tb-hs-editor')?.remove();clone.querySelectorAll('.tb-hs-handle').forEach(x=>x.remove());clone.querySelectorAll('.tb-hs-active').forEach(x=>x.classList.remove('tb-hs-active'));clone.querySelector('body')?.classList.remove('tb-hs-editing');
+ const blob=new Blob(['<!doctype html>\n'+clone.outerHTML],{type:'text/html'}),a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download=(location.pathname.split('/').pop()||'adventure.html');a.click();setTimeout(()=>URL.revokeObjectURL(a.href),1000)
+};
+document.addEventListener('pointerdown',ev=>{if(!editing)return;const h=ev.target.closest('.tb-hs-handle');if(h){startResize(ev,h.parentElement);return}const el=ev.target.closest(SEL);if(el){startDrag(ev,el);return}},true);
+document.addEventListener('click',ev=>{if(!editing)return;if(ev.target.closest('#tb-hs-editor'))return;if(adding){placeAt(ev);return}const el=ev.target.closest(SEL);if(el){ev.preventDefault();ev.stopPropagation();select(el)}},true);
+})();
+</script>
+
+
 
 <style id="talkabee-ski-panel-180">
 @media(min-width:761px){.panel{width:180px!important;min-width:180px!important;max-width:180px!important}}
 </style>
+</body></html>
