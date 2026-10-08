@@ -472,6 +472,8 @@ document.addEventListener('DOMContentLoaded',function(){
 </script>
 
 <!-- TALK A BEE HOTSPOTS VISUALLY RECERTIFIED AGAINST CURRENT SCENE ARTWORK: 2026-10-07 -->
+
+
 <style id="talkabee-bilingual-hotspot-popup-style">
 #talkabee-object-popup{position:fixed;z-index:2147482900;display:none;padding:8px 12px;border-radius:12px;background:rgba(20,20,20,.82);color:white;font-weight:900;font-size:14px;pointer-events:none}
 </style>
@@ -505,7 +507,7 @@ document.addEventListener('DOMContentLoaded',function(){
 <button type="button" class="home-hotspot show" data-object="girl" style="left: 88.01%; top: 62%; width: 5.2%; height: 18%;" aria-label="Girl"></button>
 <button type="button" class="home-hotspot show" data-object="boy" style="left:77.0%;top:58.0%;width:5.0%;height:18.0%" aria-label="Boy"></button>
 <button type="button" class="home-hotspot show" data-object="bee" style="left:82.8%;top:57.5%;width:3.8%;height:7.0%" aria-label="Bee"></button>
-<button type="button" class="home-hotspot show" data-object="dog" style="left: 22.67%; top: 58.39%; width: 3.55%; height: 12.35%;" aria-label="Dog"></button>
+<button type="button" class="home-hotspot show" data-object="dog" style="left: 22.57%; top: 63.02%; width: 4.85%; height: 28%;" aria-label="Dog"></button>
 <button type="button" class="home-hotspot show" data-object="rv" style="left: 40.84%; top: 26.41%; width: 25%; height: 16%;" aria-label="RV"></button>
 <button type="button" class="home-hotspot show" data-object="solar" style="left: 43.82%; top: 17.22%; width: 9.5%; height: 4%;" aria-label="Solar panels"></button>
 <button type="button" class="home-hotspot show" data-object="fishing" style="left: 74.74%; top: 66.76%; width: 6.13%; height: 5.24%;" aria-label="Fishing pole"></button>
@@ -527,7 +529,7 @@ document.addEventListener('DOMContentLoaded',function(){
 
 <button type="button" class="home-hotspot show" data-object="birdfeeder" style="left:79.0%;top:9.5%;width:4.0%;height:10.0%" aria-label="Bird feeder"></button>
 <button type="button" class="home-hotspot show" data-object="chair" style="left: 32.41%; top: 29.85%; width: 4%; height: 7%;" aria-label="Chair"></button>
-<button type="button" class="home-hotspot show" data-object="duck" data-word="duck" aria-label="Duck" data-tb-en="duck" data-tb-es="pato" data-tb-fr="canard" data-tb-de="Ente" data-tb-it="anatra" data-tb-pt="pato" data-tb-no="and" style="width: 12.77%; height: 8.93%; left: 48.91%; top: 78.24%;"></button></div>
+<button type="button" class="home-hotspot show" data-object="duck" data-word="duck" aria-label="Duck" data-tb-en="duck" data-tb-es="pato" data-tb-fr="canard" data-tb-de="Ente" data-tb-it="anatra" data-tb-pt="pato" data-tb-no="and" style="width: 12.77%; height: 8.93%; left: 50.05%; top: 77.82%;" data-sound="sounds/ducks.mp3"></button></div>
 
     <aside class="activity-panel home-directory tab-master-panel" aria-label="Grandma and Grandpa activity menu">
 
@@ -575,7 +577,7 @@ document.addEventListener('DOMContentLoaded',function(){
 
     <button type="button" class="activity-restore" id="activityRestore">☰ Return Panel</button>
 
-    <div class="home-pop show" id="homePop">
+    <div class="home-pop" id="homePop">
       <strong id="homePopWord">Grandpa</strong><small id="homePopEnglish">Grandpa</small>
       <div id="homePopSentence"></div>
       <button type="button" id="homePopWordSpeak">🔊 Word</button>
@@ -1210,7 +1212,27 @@ Object.keys(extraDiscovery).forEach(lang=>{if(!languageData[lang].objects)langua
  }catch(e){}
 })();
 </script>
-<script data-tb-custom-vocab="1">;(()=>{const C={"duck":{"en":"duck","es":"pato","fr":"canard","de":"Ente","it":"anatra","pt":"pato","no":"and"}};for(const [k,v] of Object.entries(C)){try{EN[k]=v.en||k;for(const L of ["es","fr","en","de","it","pt","no"]){if(WORDS[L])WORDS[L][k]=v[L]||v.en||k}}catch(e){}}})();</script>
+<script id="talkabee-hotspot-custom-sound">
+(function(){if(window.__talkabeeHotspotCustomSound)return;window.__talkabeeHotspotCustomSound=true;const SEL='.hotspot,.home-hotspot,.yacht-hotspot,.hotspots button,.train-hotspots button';let timer=0,current=null;function stop(){clearTimeout(timer);if(current){try{current.pause();current.currentTime=0}catch(e){}current=null}}document.addEventListener('click',function(ev){if(document.body.classList.contains('tb-hs-editing'))return;const h=ev.target.closest&&ev.target.closest(SEL);if(!h||!h.dataset.sound)return;stop();const src=h.dataset.sound;timer=setTimeout(function(){const a=new Audio(src);current=a;a.play().catch(()=>{});a.onended=function(){if(current===a)current=null}},1500)},false)})();
+</script>
+<script id="talkabee-new-hotspot-live-click">(()=>{
+if(window.__tbNewHotspotLiveClick)return;window.__tbNewHotspotLiveClick=true;
+const langs=['es','fr','en','de','it','pt','no'];
+function curLang(){try{return (typeof langSel!=='undefined'&&langSel&&langSel.value)||localStorage.getItem('talkabee-learn-language')||'en'}catch(e){return 'en'}}
+function cap(l){return 'tb'+l.charAt(0).toUpperCase()+l.slice(1)}
+function textFor(el,l){const en=el.dataset.tbEn||el.dataset.en||el.dataset.word||el.dataset.object||'';return l==='en'?en:(el.dataset[cap(l)]||en)}
+document.addEventListener('click',function(ev){
+ if(document.body.classList.contains('tb-hs-editing'))return;
+ const el=ev.target.closest&&ev.target.closest('[data-tb-custom="1"]');if(!el)return;
+ ev.preventDefault();ev.stopImmediatePropagation();
+ const l=curLang(),txt=textFor(el,l),en=textFor(el,'en'),key=el.dataset.word||el.dataset.object||en;
+ try{if(typeof showWord==='function')showWord(key);else{if(typeof line!=='undefined'&&line)line.textContent=txt;if(typeof translation!=='undefined'&&translation)translation.textContent=l==='en'?'':en}}catch(e){}
+ try{if(typeof speak==='function'){let done=false;const after=()=>{if(done)return;done=true;if(el.dataset.sound){try{const a=new Audio(el.dataset.sound);a.play().catch(()=>{})}catch(e){}}};speak(txt,.82,after);if(el.dataset.sound)setTimeout(after,1400)}else if('speechSynthesis'in window){speechSynthesis.cancel();const u=new SpeechSynthesisUtterance(txt);u.lang=({es:'es-ES',fr:'fr-FR',en:'en-US',de:'de-DE',it:'it-IT',pt:'pt-PT',no:'nb-NO'})[l]||l;speechSynthesis.speak(u)}}catch(e){}
+},true);
+})();</script>
+
+
+
 <script id="grandparents-scene-view-reset">
 (function(){
   function resetGrandparentsSceneView(){
@@ -1281,4 +1303,4 @@ Object.keys(extraDiscovery).forEach(lang=>{if(!languageData[lang].objects)langua
 })();
 </script>
 
-</body></html>
+<script data-tb-custom-vocab="1">;(()=>{const C={"duck":{"en":"duck","es":"pato","fr":"canard","de":"Ente","it":"anatra","pt":"pato","no":"and"}};for(const [k,v] of Object.entries(C)){try{EN[k]=v.en||k;for(const L of ["es","fr","en","de","it","pt","no"]){if(WORDS[L])WORDS[L][k]=v[L]||v.en||k}}catch(e){}}})();</script></body></html>

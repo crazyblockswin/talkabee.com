@@ -2,68 +2,492 @@
 <html lang="en"><head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Talk A Bee — Mountain Ski Resort Adventure</title>
-<link rel="icon" type="image/png" href="images/PNG/talkabee-favicon.png">
+<title>Talk A Bee — Animals — Farm Adventure</title>
 <style>
-*{box-sizing:border-box}
-html,body{margin:0;width:100%;height:100%;overflow:hidden;font-family:Arial,Helvetica,sans-serif;background:#063a66;color:#fff}
-.world{position:relative;width:100vw;height:100vh;background:url("images/Talk-A-Bee-Mountain-Ski-Resort-Adventure.jpg") center center/cover no-repeat}
+*{box-sizing:border-box}html,body{margin:0;width:100%;height:100%;overflow:hidden;background:#101827;font-family:Arial,Helvetica,sans-serif}
+.world{position:fixed;inset:0;background:#101827;overflow:hidden}
+.scene{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center center;display:block}
+.click{position:absolute;z-index:20;border:0;background:transparent;cursor:pointer;border-radius:14px;color:transparent;font-size:0}
+.click:focus-visible{outline:4px solid rgba(255,255,255,.95);outline-offset:-4px;background:rgba(255,215,90,.20)}
+#back{left:1.2%;top:9.2%;width:14.2%;height:7.3%}
+.activity{left:1.25%;width:14.2%;height:5.0%}.a1{top:28.4%}.a2{top:33.4%}.a3{top:38.5%}.a4{top:43.6%}.a5{top:48.6%}.a6{top:53.7%}.discovery{left:1.25%;top:58.1%;width:14.2%;height:5.2%}
+.challenge{left:1.25%;width:14.2%;height:4.4%}.c1{top:67.2%}.c2{top:71.6%}.c3{top:76.0%}.c4{top:80.4%}.c5{top:84.8%}.c6{top:89.2%}
+.script-mask{position:absolute;z-index:14;left:61.7%;top:61.2%;right:.8%;bottom:1.7%;border-radius:24px;background:#0d2b30;box-shadow:0 15px 35px rgba(0,0,0,.24)}
+.live-card{position:absolute;z-index:15;left:62.3%;top:65.6%;width:35.6%;height:28.3%;padding:18px 22px;color:#fff;border-radius:22px;background:#0d2b30;box-shadow:0 15px 35px rgba(0,0,0,.24);overflow:hidden}
+.kicker{font-size:clamp(10px,.9vw,15px);font-weight:950;letter-spacing:.12em;color:#ffe064}.live-card h1{font-size:clamp(18px,1.7vw,29px);margin:7px 0 8px;line-height:1.08}.prompt{font-size:clamp(10px,.9vw,15px);line-height:1.25;margin:0 0 8px}.target{font-size:clamp(18px,1.65vw,28px);font-weight:950;margin-top:3px}.translation{font-size:clamp(10px,.9vw,15px);margin-top:2px}.actions{display:flex;gap:9px;margin-top:10px;flex-wrap:wrap}.actions button{border:0;border-radius:10px;padding:9px 14px;font-weight:950;font-size:clamp(11px,.9vw,15px);cursor:pointer}.primary{background:#ffd45c;color:#2b2515}.actions button:not(.primary){background:#f6f7fa;color:#253047}
+.hotspot{display:block;position:absolute;z-index:30;transform:translate(-50%,-50%);width:5.2%;aspect-ratio:1/1;border:4px solid rgba(255,255,255,.94);border-radius:50%;background:rgba(255,195,55,.45);box-shadow:0 0 0 7px rgba(255,195,55,.18),0 8px 22px rgba(0,0,0,.28);cursor:pointer;animation:pulse 1.7s ease-in-out infinite}.discover .hotspot,.challenge-mode .hotspot.target-hotspot{display:block}.hotspot:hover{background:rgba(116,82,232,.55)}
+@keyframes pulse{50%{transform:translate(-50%,-50%) scale(1.08)}}
+#horse{left:24%;top:35%}#cow{left:43%;top:40%}#sheep{left:35%;top:48%}#goat{left:33%;top:59%}#pig{left:28%;top:68%}#dog{left:53%;top:64%}#rooster{left:82%;top:55%}#chicken{left:76%;top:60%}#rabbit{left:52%;top:88%}#squirrel{left:94%;top:47%}#bee{left:82%;top:14%}
+.status{font-weight:950;color:#ffe064;margin-top:8px;min-height:18px}
+@media(max-width:900px){.script-mask{left:59.3%;top:60.5%;right:.5%;bottom:1%}.live-card{left:60%;width:38%;padding:12px 14px}.actions{gap:5px}.actions button{padding:7px 9px}}
+</style>
 
-/* APPROVED TALK A BEE LEFT PANEL */
-.panel{position:fixed;z-index:1000;left:16px;top:16px;bottom:16px;width:180px;min-width:180px;max-width:180px;
-padding:14px;overflow-x:hidden;overflow-y:auto;border-radius:20px;border:1px solid rgba(255,255,255,.28);
-background:rgba(7,23,39,.31);box-shadow:0 12px 30px rgba(0,0,0,.24);backdrop-filter:blur(3px);-webkit-backdrop-filter:blur(3px)}
-.panel h1{font-size:19px;line-height:1.08;margin:4px 0 10px;text-shadow:0 2px 4px rgba(0,0,0,.55)}
-.label{font-size:9.5px;line-height:1.1;letter-spacing:.09em;font-weight:900;margin:9px 0 4px}
-.panel button,.panel select,.panel a{width:100%;min-height:34px;margin:4px 0;padding:8px 9px;border-radius:12px;
-border:1px solid rgba(255,255,255,.38);background:rgba(7,32,50,.54);color:#fff;font:800 12px/1.16 Arial,sans-serif;
-text-align:left;text-decoration:none}
-.panel button:hover,.panel a:hover{background:rgba(20,58,79,.70)}
-.panel button.active{background:rgba(78,69,219,.74)}
-.panel select{white-space:nowrap;text-overflow:ellipsis;overflow:hidden}
+<style id="farm-single-panel-final-fix">
+/* Final Farm fix: the approved scene already contains the original static course card.
+   Cover that exact footprint with the one live lesson card so only one layer is visible. */
+.script-mask{display:none!important;}
+.live-card{
+  left:62.30%!important; top:67.95%!important; width:36.55%!important; height:29.15%!important;
+  padding:14px 20px!important; border-radius:22px!important;
+  background:#12343b!important; opacity:1!important; overflow:hidden!important;
+  box-shadow:0 15px 35px rgba(0,0,0,.24)!important;
+}
+.live-card h1{margin:5px 0 6px!important;}
+.live-card .prompt{margin:0 0 6px!important;}
+.live-card .actions{margin-top:8px!important;}
+@media(max-width:900px){.live-card{padding:10px 13px!important;}}
+</style>
 
-/* APPROVED 520px SCRIPT CARD */
-.card{position:fixed;z-index:900;left:50%;bottom:16px;width:520px;max-width:520px;padding:14px 16px;
-border-radius:20px;border:1px solid rgba(255,255,255,.30);background:rgba(25,19,24,.38);
-box-shadow:0 12px 30px rgba(0,0,0,.28);backdrop-filter:blur(5px);-webkit-backdrop-filter:blur(5px);
-transform:translateX(-50%) scale(.67);transform-origin:bottom center}
-.card .kicker{font-size:15px;line-height:1.25;font-weight:900;letter-spacing:.10em;color:rgba(255,255,255,.96);
-text-shadow:0 1px 3px rgba(0,0,0,.78);margin:0 0 6px}
-.card h2{font-size:22px;line-height:1.08;margin:4px 0 7px;text-shadow:0 1px 3px rgba(0,0,0,.55)}
-.card p{font-size:18px;line-height:1.35;margin:4px 0 7px}
-.word{margin-top:8px;padding:10px 12px;border-radius:14px;background:rgba(88,88,88,.72);border:1px solid rgba(255,255,255,.20)}
-.word strong{display:block;font-size:22px;line-height:1.28}
-.translation{font-size:18px;line-height:1.35;margin-top:3px}
-.controls{display:flex;align-items:center;gap:8px;flex-wrap:nowrap;margin-top:8px}
-.controls button{width:auto;min-width:0;padding:9px 13px;border-radius:12px;border:1px solid rgba(255,255,255,.35);
-background:rgba(255,255,255,.88);color:#10283c;font:900 13px/1 Arial,sans-serif;white-space:nowrap}
+<style id="clean-keeper-ui">
+.left-panel{position:absolute;z-index:10;left:.45%;top:5.2%;width:16.2%;height:91%;border-radius:20px;background:rgba(9,38,43,.80);box-shadow:0 14px 32px rgba(0,0,0,.28);border:1px solid rgba(255,255,255,.18);pointer-events:none}
+.left-title{position:absolute;z-index:11;left:1.45%;top:16.5%;width:14%;color:white;pointer-events:none}.left-title b{display:block;font-size:clamp(22px,2vw,36px)}.left-title span{font-size:clamp(12px,1.05vw,18px);font-weight:700}.section-label{position:absolute;z-index:11;left:1.45%;color:#dce7e7;font-weight:900;letter-spacing:.08em;pointer-events:none}.activities-label{top:23.3%}.challenges-label{top:64.4%}
+.click{color:#fff!important;font-size:clamp(12px,1.05vw,18px)!important;text-align:left;padding:0 14px!important;background:rgba(255,255,255,.08)!important;border:1px solid rgba(255,255,255,.15)!important;font-weight:800!important}.click:hover{background:rgba(255,255,255,.18)!important}.activity.active-choice{background:rgba(255,211,83,.95)!important;color:#17212b!important}.discovery{background:rgba(91,174,255,.95)!important;color:#122231!important}#back{background:#fff!important;color:#24314b!important;text-align:center!important;font-size:clamp(12px,1.1vw,19px)!important}.challenge{font-size:clamp(10px,.9vw,16px)!important}
+#back{left:1.25%;top:7.2%;width:14.2%;height:7.2%}.activity{left:1.25%;width:14.2%;height:4.9%}.a1{top:26.0%}.a2{top:31.2%}.a3{top:36.4%}.a4{top:41.6%}.a5{top:46.8%}.a6{top:52.0%}.discovery{left:1.25%;top:57.3%;width:14.2%;height:5.2%}.challenge{left:1.25%;width:14.2%;height:4.15%}.c1{top:68.0%}.c2{top:72.4%}.c3{top:76.8%}.c4{top:81.2%}.c5{top:85.6%}.c6{top:90.0%}
+.live-card{left:62.2%!important;top:67.0%!important;width:36.5%!important;height:29.0%!important;background:rgba(9,45,51,.91)!important;opacity:1!important}
+#horse{left:25.8%;top:36.3%}#cow{left:44.2%;top:43.3%}#sheep{left:36.7%;top:49.4%}#goat{left:36.1%;top:60.7%}#pig{left:30.6%;top:71%}#dog{left:55.9%;top:65.2%}#rooster{left:83.5%;top:57.2%}#chicken{left:76.9%;top:61.4%}#rabbit{left:54.1%;top:90.8%}#squirrel{left:95%;top:47%}#bee{left:82.9%;top:13.9%}
+#butterfly{left:43.3%;top:89.7%}#barn{left:57.7%;top:34%}#windmill{left:61.9%;top:21.9%}#rv{left:78.1%;top:32%}#solar{left:84.7%;top:16.6%}#campfire{left:66.7%;top:64%}#fence{left:23.4%;top:50.7%}#flowers{left:9%;top:75%}#mountains{left:31%;top:19%}#chick{left:79.3%;top:62.5%}
+.hotspot{width:3.6%;border-width:3px}
+</style>
 
-/* HOTSPOTS */
-.hotspot{position:absolute;z-index:8;border:0;background:transparent;opacity:0;cursor:pointer;border-radius:16px}
-.hotspot:hover,.hotspot:focus-visible{opacity:1;background:rgba(255,220,72,.28);outline:2px solid rgba(255,255,255,.90)}
-.challenge-mode .hotspot.target{opacity:1;background:rgba(255,199,48,.38);outline:4px solid #fff;box-shadow:0 0 0 7px rgba(255,200,50,.20)}
+<style id="farm-ui-tuning">
+/* CSS-only tuning: preserve clean keeper artwork and all interactions. */
+.left-panel{background:rgba(9,38,43,.87)!important;}
+.live-card{
+  left:63.0%!important;
+  top:65.0%!important;
+  width:35.5%!important;
+  height:27.0%!important;
+  padding:13px 19px!important;
+  background:rgba(9,45,51,.78)!important;
+  overflow:hidden!important;
+}
+.live-card h1{margin:4px 0 5px!important;}
+.live-card .prompt{margin:0 0 5px!important;}
+.live-card .target{margin-top:2px!important;}
+.live-card .actions{margin-top:7px!important;}
+.live-card .actions button{padding:8px 13px!important;}
+.live-card .status{margin-top:5px!important;min-height:12px!important;}
+</style>
 
-/* APPROVED COMPACT PREVIOUS / NEXT CHEVRONS */
-.talkabee-prev-next-nav{position:fixed;top:18px;right:22px;z-index:2147483000;display:flex;align-items:center;overflow:hidden;
-border:2px solid rgba(255,255,255,.82);border-radius:999px;background:rgba(11,22,42,.24);
-box-shadow:0 5px 16px rgba(0,0,0,.16);backdrop-filter:blur(3px);-webkit-backdrop-filter:blur(3px)}
-.talkabee-prev-next-nav a{width:48px;height:48px;display:grid;place-items:center;text-decoration:none;color:#fff;
-font:900 38px/1 Arial,sans-serif;text-shadow:0 1px 3px rgba(0,0,0,.42)}
-.talkabee-prev-next-nav a+a{border-left:1px solid rgba(255,255,255,.36)}
-.talkabee-prev-next-nav a:hover,.talkabee-prev-next-nav a:focus-visible{background:rgba(255,255,255,.18);outline:none}
-
-/* SCENE VIEW */
-.scene-return{display:none;position:fixed;z-index:2147483001;left:18px;top:18px;padding:10px 14px;border-radius:12px;
-border:1px solid #fff;background:rgba(7,23,39,.65);color:#fff;font-weight:900}
-.scene-view .panel,.scene-view .card{display:none}
-.scene-view .scene-return{display:block}
-
-@media(max-width:760px){
- .panel{left:10px;top:10px;bottom:10px;width:180px;min-width:180px;max-width:180px;padding:11px}
- .card{width:min(520px,calc(100vw - 32px));bottom:10px;transform:translateX(-50%) scale(.82)}
- .talkabee-prev-next-nav{top:12px;right:12px}.talkabee-prev-next-nav a{width:42px;height:42px;font-size:33px}
+<style id="farm-match-train-transparency">
+/* Match Train Station panel transparencies only. */
+.left-panel{
+  background:rgba(9,38,43,.44)!important;
+}
+.live-card{
+  background:rgba(9,45,51,.30)!important;
 }
 </style>
+
+
+<style id="farm-panels-more-solid">
+/* Farm page only: strengthen panel backgrounds over the bright sunset scene. */
+.left-panel{
+  background:rgba(9,38,43,.72)!important;
+  backdrop-filter:blur(3px)!important;
+}
+.live-card{
+  background:rgba(9,45,51,.76)!important;
+  backdrop-filter:blur(2px)!important;
+}
+</style>
+
+
+<style id="farm-left-panel-visible-fix">
+/* LEFT PANEL ONLY — make the container itself visibly dark/translucent. */
+.left-panel{
+  background:rgba(7,31,35,.88)!important;
+  background-color:rgba(7,31,35,.88)!important;
+  border:1px solid rgba(255,255,255,.16)!important;
+  border-radius:24px!important;
+  box-shadow:0 14px 34px rgba(0,0,0,.22)!important;
+  backdrop-filter:none!important;
+  -webkit-backdrop-filter:none!important;
+}
+/* Do not alter the script box in this test. */
+</style>
+
+
+<style id="farm-left-panel-real-container-fix">
+.left-panel{
+  display:block!important;
+  position:absolute!important;
+  z-index:9!important;
+  left:.45%!important;
+  top:5.2%!important;
+  width:16.2%!important;
+  height:91%!important;
+  background:rgba(7,31,35,.78)!important;
+  border:1px solid rgba(255,255,255,.18)!important;
+  border-radius:20px!important;
+  box-shadow:0 14px 32px rgba(0,0,0,.28)!important;
+  pointer-events:none!important;
+}
+</style>
+
+
+<style id="farm-balanced-panel-transparency">
+/* Same green panel look, just lighter/more transparent. */
+.left-panel{
+  background:rgba(7,31,35,.58)!important;
+}
+.live-card{
+  background:rgba(9,45,51,.58)!important;
+}
+</style>
+
+
+<style id="farm-script-size-and-solar-hotspot-fix">
+/* Keep current transparency. Give the script card enough vertical room for all controls. */
+.live-card{
+  bottom:2.2%!important;
+  min-height:31%!important;
+  height:auto!important;
+  padding:1.45% 2.0%!important;
+  box-sizing:border-box!important;
+}
+/* Solar-panel Discovery hotspot: move off the bee/wings onto the visible roof panels. */
+.hotspot[data-id="solar"]{
+  left:78.5%!important;
+  top:17.0%!important;
+}
+</style>
+
+
+<style id="farm-solar-return-fix">
+/* Move solar-panel hotspot farther right, fully off Professor Bee. */
+.hotspot[data-id="solar"]{
+  left:91.0%!important;
+  top:17.0%!important;
+}
+
+/* Make Return to Main Directory blend into the left panel instead of white. */
+.back-link{
+  background:rgba(7,31,35,.58)!important;
+  color:#fff!important;
+  border:1px solid rgba(255,255,255,.20)!important;
+  box-shadow:none!important;
+}
+.back-link:hover{
+  background:rgba(7,31,35,.76)!important;
+  color:#fff!important;
+}
+</style>
+
+
+<style id="farm-solar-return-real-fix">
+/*
+REAL FIX:
+Earlier overrides targeted selectors that do not exist in this HTML:
+  .hotspot[data-id="solar"]  (solar uses id="solar", no data-id)
+  .back-link                 (return link uses id="back", class="click")
+Target the actual elements.
+*/
+#solar{
+  left:92.5%!important;
+  top:16.5%!important;
+}
+
+#back{
+  background:rgba(7,31,35,.58)!important;
+  color:#fff!important;
+  border:1px solid rgba(255,255,255,.20)!important;
+  box-shadow:none!important;
+  text-decoration:none!important;
+}
+#back:hover{
+  background:rgba(7,31,35,.72)!important;
+  color:#fff!important;
+}
+</style>
+
+
+<style id="farm-left-controls-and-scene-view">
+.farm-left-controls{position:absolute;z-index:40;left:1.25%;top:15.15%;width:14.2%;display:grid;gap:3px;color:#fff}
+.farm-left-controls button,.farm-left-controls select{width:100%;height:30px;border:1px solid rgba(255,255,255,.18);border-radius:9px;background:rgba(255,255,255,.10);color:#fff;font-size:clamp(9px,.72vw,12px);font-weight:850;padding:4px 7px}
+.farm-left-controls button{text-align:center;cursor:pointer}.farm-left-controls button:hover{background:rgba(255,255,255,.20)}
+.farm-left-controls select{background:rgba(7,31,35,.72)}.farm-left-controls option{color:#17212b;background:#fff}
+#restorePanel{display:none;position:absolute;z-index:80;left:12px;top:12px;border:1px solid rgba(255,255,255,.22);border-radius:11px;padding:9px 12px;background:rgba(7,31,35,.82);color:#fff;font-weight:900;cursor:pointer}
+#world.scene-only .left-panel,#world.scene-only #back,#world.scene-only .farm-left-controls,#world.scene-only .activity,#world.scene-only .discovery,#world.scene-only .challenge,#world.scene-only .live-card{display:none!important}
+#world.scene-only #restorePanel{display:block!important}
+</style>
+
+
+<style id="farm-left-panel-scroll-fix">
+/* Farm left panel: readable fixed-size rows with an internal scrollbar on shorter screens. */
+.left-panel{pointer-events:none!important;}
+.farm-panel-scroll{
+  position:absolute;z-index:40;left:.75%;top:6.2%;width:15.6%;height:89%;
+  overflow-y:auto;overflow-x:hidden;padding:0 .3% 14px .3%;
+  scrollbar-width:thin;scrollbar-color:rgba(255,255,255,.48) rgba(0,0,0,.10);
+}
+.farm-panel-scroll::-webkit-scrollbar{width:8px}
+.farm-panel-scroll::-webkit-scrollbar-track{background:rgba(0,0,0,.10);border-radius:10px}
+.farm-panel-scroll::-webkit-scrollbar-thumb{background:rgba(255,255,255,.48);border-radius:10px}
+.farm-panel-scroll #back,.farm-panel-scroll .farm-left-controls,.farm-panel-scroll .activity,.farm-panel-scroll .discovery,.farm-panel-scroll .challenge{
+  position:relative!important;left:auto!important;top:auto!important;width:100%!important;display:block!important;
+}
+.farm-panel-scroll #back{height:auto!important;min-height:72px!important;padding:10px 12px!important;display:flex!important;align-items:center;justify-content:center;margin:0 0 7px 0;}
+.farm-panel-scroll .farm-left-controls{display:grid!important;gap:6px!important;margin:0 0 8px 0;}
+.farm-panel-scroll .farm-left-controls button,.farm-panel-scroll .farm-left-controls select{height:54px!important;font-size:clamp(13px,1.05vw,18px)!important;}
+.farm-panel-scroll .activity,.farm-panel-scroll .discovery,.farm-panel-scroll .challenge{
+  height:auto!important;min-height:50px!important;margin:0 0 6px 0!important;padding:8px 14px!important;line-height:1.12!important;
+}
+.farm-panel-scroll .activity{font-size:clamp(14px,1.15vw,20px)!important;}
+.farm-panel-scroll .discovery{font-size:clamp(15px,1.2vw,21px)!important;text-align:center!important;}
+.farm-panel-scroll .challenge{font-size:clamp(13px,1.0vw,18px)!important;text-align:center!important;}
+.farm-panel-scroll .discovery{margin-top:3px!important;margin-bottom:42px!important;}
+#world.scene-only .farm-panel-scroll{display:none!important}
+@media(min-height:1050px){
+  .farm-panel-scroll{overflow-y:hidden;}
+  .farm-panel-scroll #back{min-height:64px!important;}
+  .farm-panel-scroll .farm-left-controls button,.farm-panel-scroll .farm-left-controls select{height:45px!important;}
+  .farm-panel-scroll .activity,.farm-panel-scroll .discovery,.farm-panel-scroll .challenge{min-height:44px!important;margin-bottom:4px!important;}
+  .farm-panel-scroll .discovery{margin-bottom:28px!important;}
+}
+</style>
+
+
+<style id="farm-left-panel-compact-and-return-fix">
+/* Compact the menu rows and keep the Scene View return control outside the hidden menu wrapper. */
+.farm-panel-scroll #back{min-height:60px!important;padding:7px 10px!important;margin-bottom:5px!important;}
+.farm-panel-scroll .farm-left-controls{gap:4px!important;margin-bottom:6px!important;}
+.farm-panel-scroll .farm-left-controls button,.farm-panel-scroll .farm-left-controls select{height:42px!important;font-size:clamp(12px,.9vw,16px)!important;}
+.farm-panel-scroll .activity,.farm-panel-scroll .discovery,.farm-panel-scroll .challenge{min-height:42px!important;margin-bottom:4px!important;padding:6px 12px!important;}
+.farm-panel-scroll .activity{font-size:clamp(13px,1vw,18px)!important;}
+.farm-panel-scroll .discovery{font-size:clamp(14px,1.05vw,19px)!important;margin-top:2px!important;margin-bottom:24px!important;}
+.farm-panel-scroll .challenge{font-size:clamp(12px,.9vw,16px)!important;}
+#restorePanel{left:16px!important;top:16px!important;padding:10px 15px!important;font-size:15px!important;background:rgba(7,31,35,.78)!important;}
+#world.scene-only #restorePanel{display:block!important;}
+</style>
+
+
+<style id="farm-active-button-fix">
+/* Selected menu item follows the user's click instead of Activity 1 staying yellow. */
+.activity.active-choice,.discovery.active-choice,.challenge.active-choice{
+  background:rgba(255,211,83,.95)!important;
+  color:#17212b!important;
+}
+</style>
+
+
+<style id="farm-audio-active-fix">
+/* Audio controls: highlight whichever button was last selected. */
+.live-card .actions button{background:#f6f7fa!important;color:#253047!important;}
+.live-card .actions button.audio-active{background:#ffd45c!important;color:#2b2515!important;}
+</style>
+
+
+<style id="farm-locked-template-final">
+/* LOCKED TALK-A-BEE TEMPLATE:
+   Hotspots are live from page load; Discovery is optional.
+   Challenge mode still identifies the requested target. */
+.hotspot{display:block!important;}
+
+/* Approved upper-right forward arrow. */
+.talkabee-forward-arrow{
+  position:fixed;z-index:10020;right:22px;top:18px;width:62px;height:62px;
+  border:2px solid rgba(255,255,255,.82);border-radius:50%;
+  background:rgba(11,22,42,.20);box-shadow:0 5px 16px rgba(0,0,0,.14);
+  backdrop-filter:blur(2px);display:grid;place-items:center;text-decoration:none;
+}
+.talkabee-forward-arrow::before{
+  content:"";width:17px;height:17px;border-top:5px solid #fff;border-right:5px solid #fff;
+  transform:rotate(45deg) translate(-2px,2px);filter:drop-shadow(0 1px 2px rgba(0,0,0,.35));
+}
+</style>
+
+
+<style id="farm-hotspots-hover-only-final">
+/* Always clickable, visually invisible until hover/focus.
+   Challenge target may still show when a challenge asks the learner to find it. */
+.hotspot{
+  display:block!important;
+  opacity:0!important;
+  animation:none!important;
+  background:transparent!important;
+  border-color:transparent!important;
+  box-shadow:none!important;
+}
+.hotspot:hover,
+.hotspot:focus-visible{
+  opacity:1!important;
+  background:rgba(255,195,55,.28)!important;
+  border-color:rgba(255,255,255,.90)!important;
+  box-shadow:0 0 0 5px rgba(255,195,55,.13)!important;
+}
+.challenge-mode .hotspot.target-hotspot{
+  opacity:1!important;
+  background:rgba(255,195,55,.38)!important;
+  border-color:rgba(255,255,255,.94)!important;
+  box-shadow:0 0 0 7px rgba(255,195,55,.18),0 8px 22px rgba(0,0,0,.20)!important;
+}
+</style>
+
+
+<style id="farm-rv-hotspot-enlarge-only">
+/* RV ONLY — larger clickable/hover target, same center position. */
+#rv{
+  width:12.5%!important;
+  aspect-ratio:1.75/1!important;
+  border-radius:24px!important;
+}
+</style>
+
+
+<style id="talkabee-prev-next-nav-style">
+/* Talk A Bee standard compact Previous / Next navigation. */
+.talkabee-prev-next-nav{position:fixed;top:18px;right:22px;z-index:2147483000;display:flex;align-items:center;overflow:hidden;border:2px solid rgba(255,255,255,.82);border-radius:999px;background:rgba(11,22,42,.24);box-shadow:0 5px 16px rgba(0,0,0,.16);backdrop-filter:blur(3px);-webkit-backdrop-filter:blur(3px)}
+.talkabee-prev-next-nav a{width:48px;height:48px;display:grid;place-items:center;text-decoration:none;color:#fff;font:900 38px/1 Arial,sans-serif;text-shadow:0 1px 3px rgba(0,0,0,.42);transition:background .15s ease,transform .15s ease}
+.talkabee-prev-next-nav a+a{border-left:1px solid rgba(255,255,255,.36)}
+.talkabee-prev-next-nav a:hover,.talkabee-prev-next-nav a:focus-visible{background:rgba(255,255,255,.18);outline:none}
+.talkabee-prev-next-nav a:active{transform:scale(.94)}
+@media(max-width:720px){.talkabee-prev-next-nav{top:12px;right:12px}.talkabee-prev-next-nav a{width:42px;height:42px;font-size:33px}}
+</style>
+
+<style id="farm-boardwalk-panel-master">
+/* Boardwalk-standard panel transplant — visual shell only. */
+.left-panel{display:none!important}
+.farm-panel-scroll{position:absolute!important;z-index:40!important;left:16px!important;top:16px!important;width:195px!important;height:auto!important;max-height:calc(100vh - 32px)!important;overflow:auto!important;padding:14px!important;border-radius:20px!important;background:rgba(7,23,39,.31)!important;border:1px solid rgba(255,255,255,.28)!important;box-shadow:0 10px 28px rgba(0,0,0,.22)!important;backdrop-filter:blur(3px)!important;scrollbar-width:thin!important;color:#fff!important}
+.farm-panel-scroll h1{font-size:22px!important;line-height:1.05!important;margin:0 0 10px!important;color:#fff!important;text-shadow:none!important}
+.farm-panel-scroll .label{display:block!important;margin:11px 0 5px!important;font-size:12px!important;font-weight:900!important;letter-spacing:.12em!important;color:#e9f7ff!important}
+.farm-panel-scroll #back,.farm-panel-scroll .farm-left-controls,.farm-panel-scroll .activity,.farm-panel-scroll .discovery,.farm-panel-scroll .challenge{position:relative!important;left:auto!important;top:auto!important;width:100%!important;height:auto!important;min-height:0!important}
+.farm-panel-scroll .farm-left-controls{display:block!important;margin:0!important}
+.farm-panel-scroll select,.farm-panel-scroll button,.farm-panel-scroll a{width:100%!important;display:block!important;margin:5px 0!important;padding:9px 10px!important;min-height:0!important;height:auto!important;border-radius:12px!important;border:1px solid rgba(255,255,255,.38)!important;background:rgba(7,32,50,.54)!important;color:#fff!important;font-size:13px!important;line-height:1.25!important;font-weight:800!important;text-decoration:none!important;text-align:left!important;box-shadow:none!important}
+.farm-panel-scroll select{appearance:auto!important}
+.farm-panel-scroll option{color:#17212b!important;background:#fff!important}
+.farm-panel-scroll button:hover,.farm-panel-scroll a:hover{background:rgba(255,255,255,.18)!important}
+.farm-panel-scroll .activity.active-choice,.farm-panel-scroll .discovery.active-choice,.farm-panel-scroll .challenge.active-choice{background:rgba(122,82,232,.86)!important;color:#fff!important;border-color:rgba(255,255,255,.62)!important}
+.farm-panel-scroll .discovery{margin:5px 0!important;text-align:left!important}
+.farm-panel-scroll .challenge{text-align:left!important}
+.farm-panel-scroll #back{display:block!important;margin-top:12px!important;padding:9px 10px!important;justify-content:initial!important;text-align:left!important;background:rgba(7,32,50,.54)!important}
+#restorePanel{position:fixed!important;z-index:10030!important;left:18px!important;top:18px!important;padding:10px 14px!important;border-radius:12px!important;border:1px solid #fff!important;background:rgba(7,23,39,.65)!important;color:#fff!important;font-size:14px!important;font-weight:900!important}
+#world.scene-only .farm-panel-scroll{display:none!important}
+#world.scene-only #restorePanel{display:block!important}
+@media(max-width:900px){.farm-panel-scroll{width:190px!important}}
+</style>
+<style id="talkabee-literal-master-template">
+/* ONE literal Talk A Bee Adventure shell. Legacy classes remain only as JS hooks. */
+.tab-master-panel,.tab-master-panel *,.tab-master-card,.tab-master-card *{box-sizing:border-box}
+.tab-master-panel{
+ position:fixed!important;left:16px!important;top:16px!important;bottom:16px!important;right:auto!important;
+ width:195px!important;min-width:195px!important;max-width:195px!important;height:auto!important;max-height:none!important;
+ margin:0!important;padding:14px!important;overflow-x:hidden!important;overflow-y:auto!important;
+ transform:none!important;scale:1!important;zoom:1!important;opacity:1!important;
+ border-radius:20px!important;border:1px solid rgba(255,255,255,.28)!important;
+ background:rgba(7,23,39,.31)!important;box-shadow:0 12px 30px rgba(0,0,0,.24)!important;
+ backdrop-filter:blur(3px)!important;-webkit-backdrop-filter:blur(3px)!important;color:#fff!important;z-index:1000!important;
+ font-family:Arial,Helvetica,sans-serif!important;font-size:12px!important;line-height:1.16!important;
+}
+.tab-master-panel .place,.tab-master-panel h1,.tab-master-panel .title{font-size:19px!important;line-height:1.08!important;font-weight:900!important;color:#fff!important;margin:4px 0 10px!important;text-shadow:0 2px 4px rgba(0,0,0,.55)!important}
+.tab-master-panel .label,.tab-master-panel label{font-size:9.5px!important;line-height:1.1!important;letter-spacing:.09em!important;font-weight:900!important;color:#fff!important;margin:9px 0 4px!important}
+.tab-master-panel button,.tab-master-panel select,.tab-master-panel a{
+ width:100%!important;max-width:100%!important;min-height:34px!important;height:auto!important;margin:4px 0!important;padding:8px 9px!important;
+ border-radius:12px!important;border:1px solid rgba(255,255,255,.38)!important;background:rgba(7,32,50,.54)!important;color:#fff!important;
+ font:800 12px/1.16 Arial,Helvetica,sans-serif!important;text-align:left!important;text-decoration:none!important;white-space:normal!important;
+ transform:none!important;box-shadow:none!important;
+}
+.tab-master-panel select{white-space:nowrap!important;text-overflow:ellipsis!important;overflow:hidden!important}
+.tab-master-panel button:hover,.tab-master-panel a:hover{background:rgba(20,58,79,.70)!important}
+.tab-master-panel .active,.tab-master-panel button.active{background:rgba(78,69,219,.74)!important;color:#fff!important}
+.tab-master-card{
+ position:fixed!important;left:50%!important;right:auto!important;bottom:16px!important;top:auto!important;
+ width:520px!important;min-width:520px!important;max-width:520px!important;height:auto!important;min-height:0!important;max-height:44vh!important;
+ margin:0!important;padding:14px 16px!important;overflow:auto!important;transform:translateX(-50%)!important;scale:1!important;zoom:1!important;opacity:1!important;
+ border-radius:20px!important;border:1px solid rgba(255,255,255,.30)!important;background:rgba(25,19,24,.38)!important;
+ box-shadow:0 12px 30px rgba(0,0,0,.28)!important;backdrop-filter:blur(5px)!important;-webkit-backdrop-filter:blur(5px)!important;
+ color:#fff!important;z-index:900!important;font-family:Arial,Helvetica,sans-serif!important;
+}
+.tab-master-card .kicker,.tab-master-card [class*="kicker"]{color:rgba(255,255,255,.94)!important;font-size:11px!important;line-height:1.1!important;font-weight:900!important;letter-spacing:.12em!important;text-shadow:0 1px 3px rgba(0,0,0,.78)!important;margin:0 0 7px!important}
+.tab-master-card h1,.tab-master-card h2{color:#fff!important;font-size:22px!important;line-height:1.08!important;margin:4px 0 7px!important;text-shadow:0 1px 3px rgba(0,0,0,.55)!important}
+.tab-master-card p,.tab-master-card .prompt,.tab-master-card .translation,.tab-master-card .tip{font-size:13px!important;line-height:1.25!important;margin:4px 0 7px!important;color:#fff!important}
+.tab-master-card .line,.tab-master-card .target,.tab-master-card #line,.tab-master-card #target{font-size:20px!important;line-height:1.12!important;font-weight:900!important;margin:7px 0!important;color:#fff!important}
+.tab-master-card .actions,.tab-master-card [class*="actions"]{display:flex!important;align-items:center!important;gap:8px!important;flex-wrap:nowrap!important;margin-top:8px!important}
+.tab-master-card .actions button,.tab-master-card [class*="actions"] button,.tab-master-card>button{width:auto!important;min-width:0!important;height:auto!important;padding:9px 13px!important;margin:0!important;border-radius:12px!important;font:900 13px/1 Arial,Helvetica,sans-serif!important;white-space:nowrap!important}
+@media(max-width:760px){.tab-master-panel{left:10px!important;top:10px!important;bottom:10px!important;width:190px!important;min-width:190px!important;max-width:190px!important;padding:11px!important}.tab-master-card{width:min(520px,calc(100vw - 24px))!important;min-width:0!important;bottom:10px!important;padding:12px!important}}
+</style>
+
+<style id="tab-spoken-phrase-readability">
+/* Locked spoken-language phrase treatment: gray field + white type. */
+.tab-master-card #line,
+.tab-master-card .line,
+.tab-master-card .words {
+  background:rgba(88,88,88,.72)!important;
+  color:#fff!important;
+  border:1px solid rgba(255,255,255,.20)!important;
+  border-radius:14px!important;
+  text-shadow:0 1px 2px rgba(0,0,0,.55)!important;
+}
+.tab-master-card #line *,
+.tab-master-card .line *,
+.tab-master-card .words * {color:#fff!important;}
+</style>
+
+<style id="talkabee-readable-supporting-text">
+/* Readability-only repair. Existing links, navigation, JS, hotspots and audio are untouched. */
+.tab-master-card p,
+.tab-master-card .prompt,
+.tab-master-card #prompt,
+.tab-master-card .instruction,
+.tab-master-card .instructions,
+.tab-master-card .hint,
+.tab-master-card #hint,
+.tab-master-card .translation,
+.tab-master-card #translation,
+.tab-master-card .english,
+.tab-master-card [class*="subtitle"],
+.tab-master-card [class*="instruction"],
+.tab-master-card [class*="prompt"],
+.tab-master-card [class*="translation"],
+.tab-master-card [class*="hint"],
+.tab-master-card [class*="status"],
+.animal-lesson-card p,
+.animal-lesson-card .prompt,
+.animal-lesson-card .instruction,
+.animal-lesson-card .translation,
+.animal-lesson-card .hint {
+  font-size:18px !important;
+  line-height:1.35 !important;
+}
+
+/* Small location/progress/counter lines also need to be readable. */
+.tab-master-card .eyebrow,
+.tab-master-card .kicker,
+.tab-master-card .overline,
+.tab-master-card .location,
+.tab-master-card .activity-count,
+.tab-master-card .challenge-count,
+.tab-master-card [class*="count"],
+.animal-lesson-card .eyebrow,
+.animal-lesson-card [class*="count"] {
+  font-size:15px !important;
+  line-height:1.25 !important;
+  font-weight:800 !important;
+}
+
+/* Spoken/foreign-language line stays visually strongest. */
+.tab-master-card #line,
+.tab-master-card .line,
+.tab-master-card .train-line,
+.tab-master-card .words,
+.tab-master-card [class*="phrase"],
+.animal-lesson-card #line,
+.animal-lesson-card .line,
+.animal-lesson-card [class*="phrase"] {
+  font-size:22px !important;
+  line-height:1.28 !important;
+  font-weight:800 !important;
+}
+
+/* Let increased text wrap naturally instead of being clipped. */
+.tab-master-card,
+.animal-lesson-card {
+  height:auto !important;
+}
+</style>
+
+  <link rel="icon" type="image/png" href="images/PNG/talkabee-favicon.png">
+  <link rel="shortcut icon" type="image/png" href="images/PNG/talkabee-favicon.png">
 
 <style id="talkabee-edition-menu-style">
 .talkabee-editions{position:fixed;top:16px;left:50%;transform:translateX(-50%);z-index:2147482998;font-family:Arial,sans-serif}
@@ -112,6 +536,7 @@ border:1px solid #fff;background:rgba(7,23,39,.65);color:#fff;font-weight:900}
 <!-- TALK A BEE HOTSPOTS VISUALLY RECERTIFIED AGAINST CURRENT SCENE ARTWORK: 2026-10-07 -->
 
 
+
 <style id="talkabee-bilingual-hotspot-popup-style">
 #talkabee-object-popup{position:fixed;z-index:2147482900;display:none;padding:8px 12px;border-radius:12px;background:rgba(20,20,20,.82);color:white;font-weight:900;font-size:14px;pointer-events:none}
 </style>
@@ -132,196 +557,256 @@ border:1px solid #fff;background:rgba(7,23,39,.65);color:#fff;font-weight:900}
 </details>
 </div>
 
-<nav class="talkabee-prev-next-nav" aria-label="Adventure navigation">
-  <a href="Talk-A-Bee-Underwater-Adventure.html" aria-label="Previous adventure" title="Previous">‹</a>
-  <a href="Talk-A-Bee-Airplane-Flying-Adventure.html" aria-label="Next adventure" title="Next">›</a>
-</nav>
+<nav class="talkabee-prev-next-nav" aria-label="Adventure navigation"><a href="Talk-A-Bee-Hotel-Adventure.html" aria-label="Previous page" title="Previous">‹</a><a href="Talk-A-Bee-Boardwalk-Adventure.html" aria-label="Next page" title="Next">›</a></nav>
 
 <main class="world" id="world">
-<button class="scene-return" id="sceneReturn">Return to Adventure</button>
 
-<aside class="panel">
-<h1>🏔️ Mountain Ski Resort</h1>
+
+<button id="restorePanel" type="button">Return to Adventure</button>
+<img class="scene" src="images/animals-farm-adventure.jpg" alt="Animals Farm Adventure">
+<div class="left-panel" aria-hidden="true"></div>
+<aside class="farm-panel-scroll tab-master-panel" aria-label="Animals Farm Adventure controls">
+<h1>🐝 Animals — Farm Adventure</h1>
 <div class="tab-panel-size-controls" aria-label="Activity panel size"><button type="button" class="tab-panel-minus" title="Make activity panel smaller">−</button><button type="button" class="tab-panel-reset" title="Reset activity panel size">Reset</button><button type="button" class="tab-panel-plus" title="Make activity panel larger">+</button></div>
 
 <div class="label">LANGUAGE</div>
-<select id="lang" data-tab-global-voice="1">
-<option value="es">Spanish</option><option value="fr">French</option><option value="en">English</option>
-<option value="de">German</option><option value="it">Italian</option><option value="pt">Portuguese</option><option value="no">Norwegian</option>
-</select>
+<div class="farm-left-controls">
+<select id="adventureLanguage" aria-label="Adventure language"><option value="es">🇪🇸 Spanish</option><option value="fr">🇫🇷 French</option><option value="en">🇺🇸 English</option><option value="de">🇩🇪 German</option><option value="it">🇮🇹 Italian</option><option value="pt">🇵🇹 Portuguese</option><option value="no">🇳🇴 Norwegian</option></select>
 <div class="label">VOICE</div>
-<select id="voice" data-tab-global-voice="1"><option value="">Browser Default</option><option value="Microsoft David - English (United States)">Microsoft David - English (United States) — en-US</option><option value="Microsoft Mark - English (United States)">Microsoft Mark - English (United States) — en-US</option><option value="Microsoft Zira - English (United States)">Microsoft Zira - English (United States) — en-US</option><option value="Microsoft David Desktop - English (United States)">Microsoft David Desktop - English (United States) — en-US</option><option value="Microsoft Zira Desktop - English (United States)">Microsoft Zira Desktop - English (United States) — en-US</option></select>
-<button id="sceneView" aria-pressed="false">◉ Scene View</button>
-
-<div class="label">DISCOVERY</div>
-<button id="discovery">🔎 Discovery — Click the Scene</button>
-
-<div class="label">ACTIVITIES</div>
-<button data-lesson="arrive">1. Arrive at the Resort</button>
-<button data-lesson="gear">2. Get Your Ski Gear</button>
-<button data-lesson="lift">3. Ride the Chairlift</button>
-<button data-lesson="slopes">4. Ski the Mountain</button>
-<button data-lesson="lodge">5. Visit the Lodge</button>
-<button data-lesson="winter">6. Winter Fun</button>
-<div class="label">CHALLENGES</div>
-<button data-ch="0">1. Find the Chairlift</button>
-<button data-ch="1">2. Find the Skis</button>
-<button data-ch="2">3. Find Grandma</button>
-<button data-ch="3">4. Find Grandpa</button>
-<button data-ch="4">5. Find the Bee</button>
-<button data-ch="5">6. Find the Fire Pit</button>
-<a href="index.html">← Return to Main Directory</a>
-</aside>
-
-<section class="card">
-<div class="tab-card-tools" aria-label="Script card controls"><button type="button" class="tab-card-drag" title="Move script card">↕ Move</button><button type="button" class="tab-card-font-down" title="Decrease text">A−</button><button type="button" class="tab-card-font-up" title="Increase text">A+</button><button type="button" class="tab-card-reset" title="Reset card">Reset</button></div><div class="tab-card-resize" title="Drag to resize script card" aria-label="Resize script card">↘</div>
-
-<div class="kicker">AT THE MOUNTAIN SKI RESORT</div>
-<h2 id="title">Click &amp; Discover</h2>
-<p id="prompt">You found pine trees.</p>
-<div class="word"><strong id="line">pine trees</strong><div class="translation" id="translation"></div></div>
-<p id="status"></p>
-<div class="controls">
-<button id="normal">🔊 Speak</button><button id="slow">🐢 Slow</button><button id="replay">↻ Replay</button><button id="nextPhrase">Next phrase →</button>
+<select id="adventureVoice" aria-label="Adventure voice"><option value="">Browser Default Voice</option><option value="urn:moz-tts:sapi:Microsoft David - English (United States)?en-US">Microsoft David - English (United States) — en-US</option><option value="urn:moz-tts:sapi:Microsoft Mark - English (United States)?en-US">Microsoft Mark - English (United States) — en-US</option><option value="urn:moz-tts:sapi:Microsoft Zira - English (United States)?en-US">Microsoft Zira - English (United States) — en-US</option><option value="urn:moz-tts:sapi:Microsoft David Desktop - English (United States)?en-US">Microsoft David Desktop - English (United States) — en-US</option><option value="urn:moz-tts:sapi:Microsoft Zira Desktop - English (United States)?en-US">Microsoft Zira Desktop - English (United States) — en-US</option></select>
+<button id="sceneView" type="button" aria-pressed="false">◉ Scene View</button>
 </div>
-</section>
+<div class="label">DISCOVERY</div>
+<button class="click discovery" data-key="discovery" aria-label="Discovery">🔎 Discovery — Click the Scene</button>
+<div class="label">ACTIVITIES</div>
+<button class="click activity a1 active-choice" data-key="pets" aria-label="Activity 1 Friendly Pets">1. Friendly Pets</button>
+<button class="click activity a2" data-key="farm" aria-label="Activity 2 Farm Animals">2. Farm Animals</button>
+<button class="click activity a3" data-key="wild" aria-label="Activity 3 Wild Neighbors">3. Wild Neighbors</button>
+<button class="click activity a4" data-key="birds" aria-label="Activity 4 Chickens and Rooster">4. Chickens &amp; Rooster</button>
+<button class="click activity a5" data-key="field" aria-label="Activity 5 Animals in the Field">5. Animals in the Field</button>
+<button class="click activity a6" data-key="actions" aria-label="Activity 6 Animal Actions">6. Animal Actions</button>
+<div class="label">CHALLENGES</div>
+<button class="click challenge c1" data-key="c1" aria-label="Challenge 1">1. Challenge 1 of 6</button>
+<button class="click challenge c2" data-key="c2" aria-label="Challenge 2">2. Challenge 2 of 6</button>
+<button class="click challenge c3" data-key="c3" aria-label="Challenge 3">3. Challenge 3 of 6</button>
+<button class="click challenge c4" data-key="c4" aria-label="Challenge 4">4. Challenge 4 of 6</button>
+<button class="click challenge c5" data-key="c5" aria-label="Challenge 5">5. Challenge 5 of 6</button>
+<button class="click challenge c6" data-key="c6" aria-label="Challenge 6">6. Challenge 6 of 6</button>
 
+<a id="back" class="click" href="index.html" aria-label="Return to Main Directory">← Return to Main Directory</a></aside><div class="script-mask" aria-hidden="true">
 
-<!-- Hotspots mapped to the approved wide ski-resort JPG. -->
-<button class="hotspot" data-word="mountain" style="left:19%;top:2%;width:38%;height:28%" aria-label="Mountain"></button>
-<button class="hotspot" data-word="chairlift" style="left:59%;top:0%;width:27%;height:22%" aria-label="Chairlift"></button>
-<button class="hotspot" data-word="skiers" style="left:48%;top:24%;width:20%;height:25%" aria-label="Skiers"></button>
-<button class="hotspot" data-word="trails" style="left:34%;top:34%;width:9%;height:8%" aria-label="Trails sign"></button>
-<button class="hotspot" data-word="lift" style="left:34%;top:40%;width:9%;height:7%" aria-label="Lift sign"></button>
-<button class="hotspot" data-word="rentals" style="left:34%;top:46%;width:9%;height:7%" aria-label="Rentals sign"></button>
-<button class="hotspot" data-word="school" style="left:34%;top:52%;width:10%;height:7%" aria-label="Ski school sign"></button>
-<button class="hotspot" data-word="cafe" style="left:34%;top:58%;width:9%;height:7%" aria-label="Cafe sign"></button>
-<button class="hotspot" data-word="skis" style="left:43%;top:46%;width:10%;height:21%" aria-label="Skis"></button>
-<button class="hotspot" data-word="snowboard" style="left:38%;top:59%;width:11%;height:9%" aria-label="Snowboard"></button>
-<button class="hotspot" data-word="bee" style="left: 42.14%; top: 59.93%; width: 10%; height: 22%;" aria-label="Skiing bee" data-sound="sounds/bee.mp3"></button>
-<button class="hotspot" data-word="grandma" style="left: 54.64%; top: 43.25%; width: 6.61%; height: 32.17%;" aria-label="Grandma"></button>
-<button class="hotspot" data-word="grandpa" style="left: 64.52%; top: 41%; width: 5.73%; height: 35.7%;" aria-label="Grandpa"></button>
-<button class="hotspot" data-word="lodge" style="left:70%;top:21%;width:30%;height:38%" aria-label="Ski lodge" data-sound="sounds/crowd-shopping.mp3"></button>
-<button class="hotspot" data-word="resortsign" style="left:86%;top:31%;width:13%;height:10%" aria-label="Ski resort sign"></button>
-<button class="hotspot" data-word="firepit" style="left: 86%; top: 58%; width: 10.15%; height: 12.69%;" aria-label="Fire pit"></button>
-<button class="hotspot" data-word="chairs" style="left:74%;top:59%;width:15%;height:19%" aria-label="Chairs"></button>
-<button class="hotspot" data-word="trees" style="left:0%;top:8%;width:28%;height:51%" aria-label="Snowy pine trees"></button>
-<button class="hotspot" data-word="snow" style="left: 20.86%; top: 71.87%; width: 21.8%; height: 19.06%;" aria-label="Snow"></button>
-
-</main>
-
+</div><section class="live-card tab-master-card" aria-live="polite" data-moved="1" style="inset: 327.75px auto auto 431.133px !important; transform-origin: left top 0px !important; transform: scale(0.67) !important;"><div class="tab-card-tools" aria-label="Script card controls"><button type="button" class="tab-card-drag" title="Move script card">↕ Move</button><button type="button" class="tab-card-font-down" title="Decrease text">A−</button><button type="button" class="tab-card-font-up" title="Increase text">A+</button><button type="button" class="tab-card-reset" title="Reset card">Reset</button></div><div class="kicker" id="kicker">ACTIVITY 1 • FRIENDLY PETS</div><h1 id="title">Meet Bear by the campfire.</h1><p class="prompt" id="prompt">Listen, repeat, and use the scene to connect the words with what you see.</p><div class="target" id="target">el cerdo</div><div class="translation" id="translation">Pig</div><div class="actions"><button class="primary audio-active" id="normal">🔊 Speak</button><button id="slow">🐢 Slow</button><button id="replay">↻ Replay</button></div><div class="status" id="status"></div><div class="tab-card-resize" title="Drag to resize script card" aria-label="Resize script card">↘</div></section>
+<button class="hotspot" id="horse" data-name="Horse" data-es="el caballo" style="width: 13.28%; height: 12.97%; left: 16.79%; top: 41.71%;"></button><button class="hotspot" id="cow" data-name="Cow" data-es="la vaca" style="left: 33.39%; top: 43.8%; width: 9.85%; height: 6.68%;"></button><button class="hotspot" id="sheep" data-name="Sheep" data-es="la oveja" style="left: 24.85%; top: 51.3%; width: 8.55%; height: 7.23%;"></button><button class="hotspot" id="goat" data-name="Goat" data-es="la cabra" style="left: 27.53%; top: 65.46%; width: 10.63%; height: 14.18%;"></button><button class="hotspot" id="pig" data-name="Pig" data-es="el cerdo" style="left: 15.2%; top: 72.89%; width: 10%; height: 14.92%;"></button><button class="hotspot" id="dog" data-name="Dog" data-es="el perro" style="left: 50.98%; top: 71.07%; width: 10.89%; height: 13.35%;"></button><button class="hotspot" id="rooster" data-name="Rooster" data-es="el gallo" style="width: 4.74%; height: 9.55%; left: 85.04%; top: 62.61%;"></button><button class="hotspot" id="chicken" data-name="Chicken" data-es="la gallina" style="left: 78.69%; top: 68.39%;"></button><button class="hotspot" id="rabbit" data-name="Rabbit" data-es="el conejo" style="width: 8.18%; height: 10.29%; left: 56.57%; top: 92.6%;"></button><button class="hotspot" id="squirrel" data-name="Squirrel" data-es="la ardilla" style="left: 94.98%; top: 47.32%; width: 7.14%; height: 12.6%;"></button><button class="hotspot" id="butterfly" data-name="Butterfly" data-es="la mariposa" style="left: 39.57%; top: 92.06%; width: 7.24%; height: 7.23%;"></button><button class="hotspot" id="barn" data-name="Barn" data-es="el granero" style="width: 7.61%; height: 13.71%; left: 56.35%; top: 38.44%;"></button><button class="hotspot" id="windmill" data-name="Windmill" data-es="el molino de viento" style="left: 63.23%; top: 22.13%; width: 3.81%; height: 12.6%;"></button><button class="hotspot" id="rv" data-name="Fifth-wheel RV" data-es="la casa rodante" style="left: 82.3%; top: 35.19%; width: 15.68%; height: 20.58%;"></button><button class="hotspot" id="campfire" data-name="Campfire" data-es="la fogata" style="left: 63.18%; top: 68.86%; width: 12.35%; height: 13.99%;"></button><button class="hotspot" id="fence" data-name="Fence" data-es="la cerca" style="left: 12.28%; top: 55.74%; width: 3.96%; height: 16.03%;"></button><button class="hotspot" id="flowers" data-name="Flowers" data-es="las flores" style="left: 8.6%; top: 92.17%; width: 10.63%; height: 13.8%;"></button><button class="hotspot" id="mountains" data-name="Mountains" data-es="las montañas" style="width: 15.83%; height: 11.22%; left: 29.15%; top: 19.46%;"></button><button class="hotspot" id="chick" data-name="Chick" data-es="el pollito" style="left: 87.44%; top: 74.31%; width: 5.89%; height: 8.53%;"></button>
+<button type="button" class="hotspot" data-word="chicken" id="chicken" aria-label="chicken" data-tb-custom="1" data-tb-en="chicken" data-tb-es="pollo" data-tb-fr="poulet" data-tb-de="Huhn" data-tb-it="pollo" data-tb-pt="frango" data-tb-no="kylling" style="left: 95.11%; top: 68.71%; width: 6%; height: 8%;" data-sound="sounds/chicken.mp3"></button><button type="button" class="hotspot" data-word="solar panel" id="solar-panel" aria-label="solar panel" data-tb-custom="1" data-tb-en="solar panel" data-tb-es="panel solar" data-tb-fr="panneau solaire" data-tb-de="Solarpanel" data-tb-it="pannello solare" data-tb-pt="painel solar" data-tb-no="solcellepanel" style="left: 73.5%; top: 21.9%; width: 6%; height: 8%;"></button><button type="button" class="hotspot" data-word="solar panel" id="solar-panel" aria-label="solar panel" data-tb-custom="1" data-tb-en="solar panel" data-tb-es="panel solar" data-tb-fr="panneau solaire" data-tb-de="Solarpanel" data-tb-it="pannello solare" data-tb-pt="painel solar" data-tb-no="solcellepanel" style="left: 85.35%; top: 18.58%; width: 6%; height: 8%;"></button><button type="button" class="hotspot" data-word="window" id="window" aria-label="window" data-tb-custom="1" data-tb-en="window" data-tb-es="ventana" data-tb-fr="fenêtre" data-tb-de="Fenster" data-tb-it="finestra" data-tb-pt="janela" data-tb-no="vindu" style="left: 94.27%; top: 28.47%; width: 6%; height: 8%;"></button><button type="button" class="hotspot" data-word="rear door" id="rear-door" aria-label="rear door" data-tb-custom="1" data-tb-en="rear door" data-tb-es="puerta trasera" data-tb-fr="porte arrière" data-tb-de="Hintertür" data-tb-it="porta posteriore" data-tb-pt="porta traseira" data-tb-no="bakdør" style="left: 70.77%; top: 37.96%; width: 3.29%; height: 9.2%;"></button><button type="button" class="hotspot" data-word="stairs" id="stairs" aria-label="stairs" data-tb-custom="1" data-tb-en="stairs" data-tb-es="escaleras" data-tb-fr="escaliers" data-tb-de="Treppe" data-tb-it="scale" data-tb-pt="escadaria" data-tb-no="trapp" style="left: 79.91%; top: 52.83%; width: 3.29%; height: 10.96%;"></button><button type="button" class="hotspot" data-word="girl" id="girl" aria-label="girl" data-tb-custom="1" data-tb-en="girl" data-tb-es="niña" data-tb-fr="fille" data-tb-de="Mädchen" data-tb-it="ragazza" data-tb-pt="menina" data-tb-no="jente" style="left: 41.44%; top: 61.17%; width: 5.74%; height: 20.03%;" data-sound="sounds/girl.mp3"></button><button type="button" class="hotspot" data-word="boy" id="boy" aria-label="boy" data-tb-custom="1" data-tb-en="boy" data-tb-es="niño" data-tb-fr="garçon" data-tb-de="Junge" data-tb-it="ragazzo" data-tb-pt="menino" data-tb-no="gutt" style="left: 48.18%; top: 61.59%; width: 4.85%; height: 12.44%;" data-sound="sounds/child-laughing.mp3"></button><button type="button" class="hotspot" data-word="field" id="field" aria-label="field" data-tb-custom="1" data-tb-en="field" data-tb-es="campo" data-tb-fr="champ" data-tb-de="Feld" data-tb-it="campo" data-tb-pt="campo" data-tb-no="felt" style="left: 40.79%; top: 39.18%; width: 7.25%; height: 4.76%;"></button></main>
 <script>
-const EN={resort:"ski resort",mountain:"mountain",chairlift:"chairlift",skiers:"skiers",trails:"trails",lift:"lift",rentals:"ski rentals",school:"ski school",cafe:"café",skis:"skis",snowboard:"snowboard",bee:"bee",grandma:"Grandma",grandpa:"Grandpa",lodge:"ski lodge",resortsign:"ski resort sign",firepit:"fire pit",chairs:"chairs",trees:"pine trees",snow:"snow"};
-const WORDS={
-es:{resort:"estación de esquí",mountain:"montaña",chairlift:"telesilla",skiers:"esquiadores",trails:"pistas",lift:"remonte",rentals:"alquiler de esquís",school:"escuela de esquí",cafe:"cafetería",skis:"esquís",snowboard:"tabla de snowboard",bee:"abeja",grandma:"abuela",grandpa:"abuelo",lodge:"refugio de esquí",resortsign:"letrero de la estación de esquí",firepit:"fogata",chairs:"sillas",trees:"pinos",snow:"nieve"},
-fr:{resort:"station de ski",mountain:"montagne",chairlift:"télésiège",skiers:"skieurs",trails:"pistes",lift:"remontée mécanique",rentals:"location de skis",school:"école de ski",cafe:"café",skis:"skis",snowboard:"snowboard",bee:"abeille",grandma:"grand-mère",grandpa:"grand-père",lodge:"chalet de ski",resortsign:"panneau de la station de ski",firepit:"brasero",chairs:"chaises",trees:"pins",snow:"neige"},
-en:{...EN},
-de:{resort:"Skigebiet",mountain:"Berg",chairlift:"Sessellift",skiers:"Skifahrer",trails:"Skipisten",lift:"Skilift",rentals:"Skiverleih",school:"Skischule",cafe:"Café",skis:"Skier",snowboard:"Snowboard",bee:"Biene",grandma:"Oma",grandpa:"Opa",lodge:"Skihütte",resortsign:"Skigebietsschild",firepit:"Feuerstelle",chairs:"Stühle",trees:"Kiefern",snow:"Schnee"},
-it:{resort:"stazione sciistica",mountain:"montagna",chairlift:"seggiovia",skiers:"sciatori",trails:"piste",lift:"impianto di risalita",rentals:"noleggio sci",school:"scuola di sci",cafe:"caffè",skis:"sci",snowboard:"snowboard",bee:"ape",grandma:"nonna",grandpa:"nonno",lodge:"rifugio sciistico",resortsign:"cartello della stazione sciistica",firepit:"braciere",chairs:"sedie",trees:"pini",snow:"neve"},
-pt:{resort:"estação de esqui",mountain:"montanha",chairlift:"teleférico",skiers:"esquiadores",trails:"pistas",lift:"elevador de esqui",rentals:"aluguel de esquis",school:"escola de esqui",cafe:"café",skis:"esquis",snowboard:"prancha de snowboard",bee:"abelha",grandma:"avó",grandpa:"avô",lodge:"chalé de esqui",resortsign:"placa da estação de esqui",firepit:"fogueira",chairs:"cadeiras",trees:"pinheiros",snow:"neve"},
-no:{resort:"skianlegg",mountain:"fjell",chairlift:"stolheis",skiers:"skiløpere",trails:"skiløyper",lift:"skiheis",rentals:"skiutleie",school:"skiskole",cafe:"kafé",skis:"ski",snowboard:"snøbrett",bee:"bie",grandma:"bestemor",grandpa:"bestefar",lodge:"skihytte",resortsign:"skianleggsskilt",firepit:"bålplass",chairs:"stoler",trees:"furutrær",snow:"snø"}};
-const SPEECH_LANG={es:"es-ES",fr:"fr-FR",en:"en-US",de:"de-DE",it:"it-IT",pt:"pt-PT",no:"nb-NO"};
-const lessons={
-en:{arrive:["We have arrived at the mountain ski resort.","The snowy mountain is ready for a day of adventure."],gear:["We need skis, boots, poles, and warm clothes.","The rental area has equipment for the slopes."],lift:["The chairlift carries skiers up the mountain.","We sit safely and enjoy the view on the way up."],slopes:["Skiers glide down the snowy trails.","Some trails are gentle and others are steep."],lodge:["The ski lodge is warm and cozy.","People can rest, eat, and warm up inside."],winter:["There are many ways to enjoy a snowy mountain.","We can ski, snowboard, relax by the fire, and play in the snow."]},
-es:{arrive:["Hemos llegado a la estación de esquí.","La montaña nevada está lista para un día de aventura."],gear:["Necesitamos esquís, botas, bastones y ropa abrigada.","La zona de alquiler tiene equipo para las pistas."],lift:["El telesilla lleva a los esquiadores montaña arriba.","Nos sentamos con seguridad y disfrutamos de la vista."],slopes:["Los esquiadores bajan por las pistas nevadas.","Algunas pistas son suaves y otras son empinadas."],lodge:["El refugio de esquí es cálido y acogedor.","La gente puede descansar, comer y calentarse dentro."],winter:["Hay muchas maneras de disfrutar de una montaña nevada.","Podemos esquiar, hacer snowboard, descansar junto al fuego y jugar en la nieve."]},
-fr:{arrive:["Nous sommes arrivés à la station de ski.","La montagne enneigée est prête pour une journée d'aventure."],gear:["Nous avons besoin de skis, de bottes, de bâtons et de vêtements chauds.","La location propose du matériel pour les pistes."],lift:["Le télésiège transporte les skieurs en haut de la montagne.","Nous nous asseyons en sécurité et profitons de la vue."],slopes:["Les skieurs glissent sur les pistes enneigées.","Certaines pistes sont douces et d'autres sont raides."],lodge:["Le chalet de ski est chaud et confortable.","On peut s'y reposer, manger et se réchauffer."],winter:["Il y a beaucoup de façons de profiter d'une montagne enneigée.","Nous pouvons skier, faire du snowboard, nous détendre près du feu et jouer dans la neige."]},
-de:{arrive:["Wir sind im Skigebiet angekommen.","Der verschneite Berg ist bereit für einen Abenteuertag."],gear:["Wir brauchen Skier, Stiefel, Stöcke und warme Kleidung.","Beim Skiverleih gibt es Ausrüstung für die Pisten."],lift:["Der Sessellift bringt Skifahrer den Berg hinauf.","Wir sitzen sicher und genießen die Aussicht."],slopes:["Skifahrer gleiten die verschneiten Pisten hinunter.","Manche Pisten sind sanft und andere steil."],lodge:["Die Skihütte ist warm und gemütlich.","Drinnen kann man sich ausruhen, essen und aufwärmen."],winter:["Auf einem verschneiten Berg gibt es viel zu erleben.","Wir können Ski fahren, snowboarden, am Feuer sitzen und im Schnee spielen."]},
-it:{arrive:["Siamo arrivati alla stazione sciistica.","La montagna innevata è pronta per una giornata di avventura."],gear:["Ci servono sci, scarponi, bastoncini e vestiti caldi.","Il noleggio ha l'attrezzatura per le piste."],lift:["La seggiovia porta gli sciatori sulla montagna.","Ci sediamo in sicurezza e ci godiamo il panorama."],slopes:["Gli sciatori scivolano sulle piste innevate.","Alcune piste sono dolci e altre sono ripide."],lodge:["Il rifugio sciistico è caldo e accogliente.","Dentro si può riposare, mangiare e riscaldarsi."],winter:["Ci sono molti modi per divertirsi su una montagna innevata.","Possiamo sciare, fare snowboard, rilassarci vicino al fuoco e giocare nella neve."]},
-pt:{arrive:["Chegamos à estação de esqui.","A montanha nevada está pronta para um dia de aventura."],gear:["Precisamos de esquis, botas, bastões e roupas quentes.","A área de aluguel tem equipamentos para as pistas."],lift:["O teleférico leva os esquiadores montanha acima.","Sentamos com segurança e apreciamos a vista."],slopes:["Os esquiadores deslizam pelas pistas nevadas.","Algumas pistas são suaves e outras são íngremes."],lodge:["O chalé de esqui é quente e aconchegante.","As pessoas podem descansar, comer e se aquecer lá dentro."],winter:["Há muitas maneiras de aproveitar uma montanha nevada.","Podemos esquiar, praticar snowboard, relaxar perto do fogo e brincar na neve."]},
-no:{arrive:["Vi har kommet til skianlegget.","Det snødekte fjellet er klart for en dag med eventyr."],gear:["Vi trenger ski, støvler, staver og varme klær.","Skiutleien har utstyr til bakkene."],lift:["Stolheisen frakter skiløpere opp fjellet.","Vi sitter trygt og nyter utsikten på vei opp."],slopes:["Skiløpere glir ned de snødekte løypene.","Noen løyper er slake og andre er bratte."],lodge:["Skihytta er varm og koselig.","Folk kan hvile, spise og varme seg inne."],winter:["Det finnes mange måter å nyte et snødekt fjell på.","Vi kan stå på ski, kjøre snowboard, slappe av ved bålet og leke i snøen."]}};
-const challengeOrder=["chairlift","skis","grandma","grandpa","bee","firepit"];
-const SOUND_MAP={firepit:"sounds/fire.mp3"};
-const langSel=document.getElementById("lang"),voiceSel=document.getElementById("voice");
-const title=document.getElementById("title"),prompt=document.getElementById("prompt"),line=document.getElementById("line"),translation=document.getElementById("translation"),status=document.getElementById("status"),world=document.getElementById("world");
-let lastWord="resort",activeLesson="",lessonPhrase=1,challenge=-1,lastSpoken="";
-function voices(){return ("speechSynthesis" in window)?speechSynthesis.getVoices():[]}
-function fillVoices(){const old=localStorage.getItem("talkabee-ski-voice-"+langSel.value)||"";voiceSel.innerHTML='<option value="">Browser Default</option>';voices().forEach(v=>{const o=document.createElement("option");o.value=v.name;o.textContent=v.name+(v.lang?" — "+v.lang:"");voiceSel.appendChild(o)});if([...voiceSel.options].some(o=>o.value===old))voiceSel.value=old}
-if("speechSynthesis" in window){speechSynthesis.onvoiceschanged=fillVoices;fillVoices();setTimeout(fillVoices,150);setTimeout(fillVoices,600);setTimeout(fillVoices,1500)}
-voiceSel.onchange=()=>localStorage.setItem("talkabee-ski-voice-"+langSel.value,voiceSel.value);
-function speak(text,rate=.88,onend=null){if(!text||!("speechSynthesis" in window)){if(onend)onend();return}speechSynthesis.cancel();setTimeout(()=>{const u=new SpeechSynthesisUtterance(text);u.lang=SPEECH_LANG[langSel.value]||langSel.value;u.rate=rate;const v=speechSynthesis.getVoices().find(x=>x.name===voiceSel.value);if(v)u.voice=v;if(onend)u.onend=onend;speechSynthesis.speak(u)},50);lastSpoken=text}
-function stopSound(){document.querySelectorAll("audio[data-talkabee-sound]").forEach(a=>{a.pause();a.currentTime=0;a.remove()})}
-function playSound(key){stopSound();const src=SOUND_MAP[key];if(!src)return;const a=new Audio(src);a.dataset.talkabeeSound="1";document.body.appendChild(a);a.play().catch(()=>{});a.onended=()=>a.remove()}
-function showWord(key){activeLesson="";lastWord=key;lessonPhrase=1;title.textContent="Click & Discover";prompt.textContent="You found "+(EN[key]||key)+".";line.textContent=WORDS[langSel.value][key]||EN[key]||key;translation.textContent=langSel.value==="en"?"":(EN[key]||key)}
-document.querySelectorAll(".hotspot").forEach(b=>b.onclick=()=>{const key=b.dataset.word;showWord(key);let played=false;const after=()=>{if(played)return;played=true;playSound(key)};speak(WORDS[langSel.value][key]||EN[key]||key,.82,after);setTimeout(after,1500);if(challenge>=0){if(key===challengeOrder[challenge]){status.textContent="✓ Nice find!";status.style.color="#9dffbf"}else{status.textContent="Not that one — keep looking.";status.style.color="#ffe28a"}}});
-function clearChallenge(){challenge=-1;world.classList.remove("challenge-mode");document.querySelectorAll(".hotspot").forEach(h=>h.classList.remove("target"));status.textContent=""}
-document.getElementById("discovery").onclick=()=>{clearChallenge();activeLesson="";lastWord="resort";title.textContent="Click & Discover";prompt.textContent="Click any object in the scene to hear its name.";line.textContent=WORDS[langSel.value].resort;translation.textContent=langSel.value==="en"?"":EN.resort};
-document.querySelectorAll("[data-ch]").forEach(b=>b.onclick=()=>{activeLesson="";lastWord="";challenge=+b.dataset.ch;world.classList.add("challenge-mode");document.querySelectorAll(".hotspot").forEach(h=>h.classList.toggle("target",h.dataset.word===challengeOrder[challenge]));title.textContent="Challenge "+(challenge+1)+" of 6";prompt.textContent=b.textContent.replace(/^[0-9]+\.\s*/,"");line.textContent=WORDS[langSel.value][challengeOrder[challenge]];translation.textContent=langSel.value==="en"?"":EN[challengeOrder[challenge]];status.textContent=""});
-function showLesson(key,speakIt=false){clearChallenge();activeLesson=key;lastWord="";lessonPhrase=Math.max(0,Math.min(1,lessonPhrase));const a=lessons[langSel.value][key],e=lessons.en[key],btn=document.querySelector(`[data-lesson="${key}"]`);title.textContent=btn?btn.textContent.replace(/^[0-9]+\.\s*/,""):"Mountain Ski Resort";prompt.textContent=a[0];line.textContent=a[lessonPhrase];translation.textContent=langSel.value==="en"?"":e[lessonPhrase];if(speakIt)speak(a[lessonPhrase])}
-document.querySelectorAll("[data-lesson]").forEach(b=>b.onclick=()=>{lessonPhrase=1;showLesson(b.dataset.lesson,true)});
-function currentSpeechText(){if(activeLesson)return lessons[langSel.value][activeLesson][lessonPhrase];if(lastWord)return WORDS[langSel.value][lastWord]||EN[lastWord]||lastWord;return line.textContent}
-document.getElementById("normal").onclick=()=>speak(currentSpeechText(),.82);
-document.getElementById("slow").onclick=()=>speak(currentSpeechText(),.58);
-document.getElementById("replay").onclick=()=>speak(lastSpoken||currentSpeechText(),.82);
-document.getElementById("nextPhrase").onclick=()=>{if(!activeLesson){const keys=Object.keys(EN),i=Math.max(0,keys.indexOf(lastWord));showWord(keys[(i+1)%keys.length]);speak(currentSpeechText(),.82);return}lessonPhrase=(lessonPhrase+1)%2;showLesson(activeLesson,true)};
-langSel.onchange=()=>{fillVoices();if(activeLesson)showLesson(activeLesson,false);else if(lastWord)showWord(lastWord)};
-document.getElementById("sceneView").onclick=()=>document.body.classList.add("scene-view");
-document.getElementById("sceneReturn").onclick=()=>document.body.classList.remove("scene-view");
-showWord("resort");
+const languageData={
+es:{
+ speech:'es-ES',name:'Spanish',
+ lessons:{
+  pets:['ACTIVITY 1 • FRIENDLY PETS','Meet Bear by the campfire.','Listen, repeat, and use the scene to connect the words with what you see.','El perro está junto al fuego.','The dog is beside the fire.'],
+  farm:['ACTIVITY 2 • FARM ANIMALS','Meet the animals on the farm.','Practice the names of familiar farm animals.','El caballo, la vaca y la oveja están en la granja.','The horse, cow, and sheep are on the farm.'],
+  wild:['ACTIVITY 3 • WILD NEIGHBORS','Look for the smaller visitors.','Some animals live around the farm without living in the barn.','La ardilla y el conejo están cerca del campo.','The squirrel and rabbit are near the field.'],
+  birds:['ACTIVITY 4 • CHICKENS & ROOSTER','Listen to the farm birds.','Practice easy sentences with the chickens and rooster.','El gallo está con las gallinas.','The rooster is with the chickens.'],
+  field:['ACTIVITY 5 • ANIMALS IN THE FIELD','Look across the farm field.','Use location words to describe where the animals are.','La vaca y la oveja están junto a la cerca.','The cow and sheep are beside the fence.'],
+  actions:['ACTIVITY 6 • ANIMAL ACTIONS','What are the animals doing?','Practice simple action words using the scene.','El perro descansa y el caballo está de pie.','The dog rests and the horse is standing.']},
+ challenges:{c1:['¿Dónde está el perro?','Where is the dog?'],c2:['¿Dónde está el caballo?','Where is the horse?'],c3:['¿Dónde está la vaca?','Where is the cow?'],c4:['¿Dónde está la oveja?','Where is the sheep?'],c5:['¿Dónde está el cerdo?','Where is the pig?'],c6:['¿Dónde está la abeja?','Where is the bee?']},
+ words:{horse:'el caballo',cow:'la vaca',sheep:'la oveja',goat:'la cabra',pig:'el cerdo',dog:'el perro',rooster:'el gallo',chicken:'la gallina',rabbit:'el conejo',squirrel:'la ardilla',bee:'la abeja',butterfly:'la mariposa',barn:'el granero',windmill:'el molino de viento',rv:'la casa rodante',solar:'los paneles solares',campfire:'la fogata',fence:'la cerca',flowers:'las flores',mountains:'las montañas',chick:'el pollito'}
+},
+fr:{
+ speech:'fr-FR',name:'French',
+ lessons:{
+  pets:['ACTIVITY 1 • FRIENDLY PETS','Meet Bear by the campfire.','Listen, repeat, and use the scene to connect the words with what you see.','Le chien est près du feu.','The dog is beside the fire.'],
+  farm:['ACTIVITY 2 • FARM ANIMALS','Meet the animals on the farm.','Practice the names of familiar farm animals.','Le cheval, la vache et le mouton sont à la ferme.','The horse, cow, and sheep are on the farm.'],
+  wild:['ACTIVITY 3 • WILD NEIGHBORS','Look for the smaller visitors.','Some animals live around the farm without living in the barn.','L’écureuil et le lapin sont près du champ.','The squirrel and rabbit are near the field.'],
+  birds:['ACTIVITY 4 • CHICKENS & ROOSTER','Listen to the farm birds.','Practice easy sentences with the chickens and rooster.','Le coq est avec les poules.','The rooster is with the chickens.'],
+  field:['ACTIVITY 5 • ANIMALS IN THE FIELD','Look across the farm field.','Use location words to describe where the animals are.','La vache et le mouton sont près de la clôture.','The cow and sheep are beside the fence.'],
+  actions:['ACTIVITY 6 • ANIMAL ACTIONS','What are the animals doing?','Practice simple action words using the scene.','Le chien se repose et le cheval est debout.','The dog rests and the horse is standing.']},
+ challenges:{c1:['Où est le chien ?','Where is the dog?'],c2:['Où est le cheval ?','Where is the horse?'],c3:['Où est la vache ?','Where is the cow?'],c4:['Où est le mouton ?','Where is the sheep?'],c5:['Où est le cochon ?','Where is the pig?'],c6:['Où est l’abeille ?','Where is the bee?']},
+ words:{horse:'le cheval',cow:'la vache',sheep:'le mouton',goat:'la chèvre',pig:'le cochon',dog:'le chien',rooster:'le coq',chicken:'la poule',rabbit:'le lapin',squirrel:'l’écureuil',bee:'l’abeille',butterfly:'le papillon',barn:'la grange',windmill:'le moulin à vent',rv:'le camping-car',solar:'les panneaux solaires',campfire:'le feu de camp',fence:'la clôture',flowers:'les fleurs',mountains:'les montagnes',chick:'le poussin'}
+},
+en:{
+ speech:'en-US',name:'English',
+ lessons:{
+  pets:['ACTIVITY 1 • FRIENDLY PETS','Meet Bear by the campfire.','Listen, repeat, and use the scene to connect the words with what you see.','The dog is beside the fire.',''],
+  farm:['ACTIVITY 2 • FARM ANIMALS','Meet the animals on the farm.','Practice the names of familiar farm animals.','The horse, cow, and sheep are on the farm.',''],
+  wild:['ACTIVITY 3 • WILD NEIGHBORS','Look for the smaller visitors.','Some animals live around the farm without living in the barn.','The squirrel and rabbit are near the field.',''],
+  birds:['ACTIVITY 4 • CHICKENS & ROOSTER','Listen to the farm birds.','Practice easy sentences with the chickens and rooster.','The rooster is with the chickens.',''],
+  field:['ACTIVITY 5 • ANIMALS IN THE FIELD','Look across the farm field.','Use location words to describe where the animals are.','The cow and sheep are beside the fence.',''],
+  actions:['ACTIVITY 6 • ANIMAL ACTIONS','What are the animals doing?','Practice simple action words using the scene.','The dog rests and the horse is standing.','']},
+ challenges:{c1:['Where is the dog?',''],c2:['Where is the horse?',''],c3:['Where is the cow?',''],c4:['Where is the sheep?',''],c5:['Where is the pig?',''],c6:['Where is the bee?','']},
+ words:{horse:'horse',cow:'cow',sheep:'sheep',goat:'goat',pig:'pig',dog:'dog',rooster:'rooster',chicken:'chicken',rabbit:'rabbit',squirrel:'squirrel',bee:'bee',butterfly:'butterfly',barn:'barn',windmill:'windmill',rv:'fifth-wheel RV',solar:'solar panels',campfire:'campfire',fence:'fence',flowers:'flowers',mountains:'mountains',chick:'chick'}
+},
+de:{speech:'de-DE',name:'German',lessons:{pets:['ACTIVITY 1 • FRIENDLY PETS','Meet Bear by the campfire.','Listen, repeat, and use the scene to connect the words with what you see.','Der Hund ist neben dem Feuer.','The dog is beside the fire.'],farm:['ACTIVITY 2 • FARM ANIMALS','Meet the animals on the farm.','Practice the names of familiar farm animals.','Das Pferd, die Kuh und das Schaf sind auf dem Bauernhof.','The horse, cow, and sheep are on the farm.'],wild:['ACTIVITY 3 • WILD NEIGHBORS','Look for the smaller visitors.','Some animals live around the farm without living in the barn.','Das Eichhörnchen und das Kaninchen sind in der Nähe des Feldes.','The squirrel and rabbit are near the field.'],birds:['ACTIVITY 4 • CHICKENS & ROOSTER','Listen to the farm birds.','Practice easy sentences with the chickens and rooster.','Der Hahn ist bei den Hühnern.','The rooster is with the chickens.'],field:['ACTIVITY 5 • ANIMALS IN THE FIELD','Look across the farm field.','Use location words to describe where the animals are.','Die Kuh und das Schaf sind neben dem Zaun.','The cow and sheep are beside the fence.'],actions:['ACTIVITY 6 • ANIMAL ACTIONS','What are the animals doing?','Practice simple action words using the scene.','Der Hund ruht sich aus und das Pferd steht.','The dog rests and the horse is standing.']},challenges:{c1:['Wo ist der Hund?','Where is the dog?'],c2:['Wo ist das Pferd?','Where is the horse?'],c3:['Wo ist die Kuh?','Where is the cow?'],c4:['Wo ist das Schaf?','Where is the sheep?'],c5:['Wo ist das Schwein?','Where is the pig?'],c6:['Wo ist die Biene?','Where is the bee?']},words:{horse:'das Pferd',cow:'die Kuh',sheep:'das Schaf',goat:'die Ziege',pig:'das Schwein',dog:'der Hund',rooster:'der Hahn',chicken:'das Huhn',rabbit:'das Kaninchen',squirrel:'das Eichhörnchen',bee:'die Biene',butterfly:'der Schmetterling',barn:'die Scheune',windmill:'die Windmühle',rv:'der Wohnwagen',solar:'die Solarmodule',campfire:'das Lagerfeuer',fence:'der Zaun',flowers:'die Blumen',mountains:'die Berge',chick:'das Küken'}},
+it:{speech:'it-IT',name:'Italian',lessons:{pets:['ACTIVITY 1 • FRIENDLY PETS','Meet Bear by the campfire.','Listen, repeat, and use the scene to connect the words with what you see.','Il cane è vicino al fuoco.','The dog is beside the fire.'],farm:['ACTIVITY 2 • FARM ANIMALS','Meet the animals on the farm.','Practice the names of familiar farm animals.','Il cavallo, la mucca e la pecora sono nella fattoria.','The horse, cow, and sheep are on the farm.'],wild:['ACTIVITY 3 • WILD NEIGHBORS','Look for the smaller visitors.','Some animals live around the farm without living in the barn.','Lo scoiattolo e il coniglio sono vicino al campo.','The squirrel and rabbit are near the field.'],birds:['ACTIVITY 4 • CHICKENS & ROOSTER','Listen to the farm birds.','Practice easy sentences with the chickens and rooster.','Il gallo è con le galline.','The rooster is with the chickens.'],field:['ACTIVITY 5 • ANIMALS IN THE FIELD','Look across the farm field.','Use location words to describe where the animals are.','La mucca e la pecora sono vicino alla recinzione.','The cow and sheep are beside the fence.'],actions:['ACTIVITY 6 • ANIMAL ACTIONS','What are the animals doing?','Practice simple action words using the scene.','Il cane riposa e il cavallo è in piedi.','The dog rests and the horse is standing.']},challenges:{c1:['Dov’è il cane?','Where is the dog?'],c2:['Dov’è il cavallo?','Where is the horse?'],c3:['Dov’è la mucca?','Where is the cow?'],c4:['Dov’è la pecora?','Where is the sheep?'],c5:['Dov’è il maiale?','Where is the pig?'],c6:['Dov’è l’ape?','Where is the bee?']},words:{horse:'il cavallo',cow:'la mucca',sheep:'la pecora',goat:'la capra',pig:'il maiale',dog:'il cane',rooster:'il gallo',chicken:'la gallina',rabbit:'il coniglio',squirrel:'lo scoiattolo',bee:'l’ape',butterfly:'la farfalla',barn:'il fienile',windmill:'il mulino a vento',rv:'il camper',solar:'i pannelli solari',campfire:'il falò',fence:'la recinzione',flowers:'i fiori',mountains:'le montagne',chick:'il pulcino'}},
+pt:{speech:'pt-PT',name:'Portuguese',lessons:{pets:['ACTIVITY 1 • FRIENDLY PETS','Meet Bear by the campfire.','Listen, repeat, and use the scene to connect the words with what you see.','O cão está junto ao fogo.','The dog is beside the fire.'],farm:['ACTIVITY 2 • FARM ANIMALS','Meet the animals on the farm.','Practice the names of familiar farm animals.','O cavalo, a vaca e a ovelha estão na quinta.','The horse, cow, and sheep are on the farm.'],wild:['ACTIVITY 3 • WILD NEIGHBORS','Look for the smaller visitors.','Some animals live around the farm without living in the barn.','O esquilo e o coelho estão perto do campo.','The squirrel and rabbit are near the field.'],birds:['ACTIVITY 4 • CHICKENS & ROOSTER','Listen to the farm birds.','Practice easy sentences with the chickens and rooster.','O galo está com as galinhas.','The rooster is with the chickens.'],field:['ACTIVITY 5 • ANIMALS IN THE FIELD','Look across the farm field.','Use location words to describe where the animals are.','A vaca e a ovelha estão junto à cerca.','The cow and sheep are beside the fence.'],actions:['ACTIVITY 6 • ANIMAL ACTIONS','What are the animals doing?','Practice simple action words using the scene.','O cão descansa e o cavalo está de pé.','The dog rests and the horse is standing.']},challenges:{c1:['Onde está o cão?','Where is the dog?'],c2:['Onde está o cavalo?','Where is the horse?'],c3:['Onde está a vaca?','Where is the cow?'],c4:['Onde está a ovelha?','Where is the sheep?'],c5:['Onde está o porco?','Where is the pig?'],c6:['Onde está a abelha?','Where is the bee?']},words:{horse:'o cavalo',cow:'a vaca',sheep:'a ovelha',goat:'a cabra',pig:'o porco',dog:'o cão',rooster:'o galo',chicken:'a galinha',rabbit:'o coelho',squirrel:'o esquilo',bee:'a abelha',butterfly:'a borboleta',barn:'o celeiro',windmill:'o moinho de vento',rv:'a autocaravana',solar:'os painéis solares',campfire:'a fogueira',fence:'a cerca',flowers:'as flores',mountains:'as montanhas',chick:'o pintainho'}},
+no:{speech:'nb-NO',name:'Norwegian',lessons:{pets:['ACTIVITY 1 • FRIENDLY PETS','Meet Bear by the campfire.','Listen, repeat, and use the scene to connect the words with what you see.','Hunden er ved bålet.','The dog is beside the fire.'],farm:['ACTIVITY 2 • FARM ANIMALS','Meet the animals on the farm.','Practice the names of familiar farm animals.','Hesten, kua og sauen er på gården.','The horse, cow, and sheep are on the farm.'],wild:['ACTIVITY 3 • WILD NEIGHBORS','Look for the smaller visitors.','Some animals live around the farm without living in the barn.','Ekornet og kaninen er nær jordet.','The squirrel and rabbit are near the field.'],birds:['ACTIVITY 4 • CHICKENS & ROOSTER','Listen to the farm birds.','Practice easy sentences with the chickens and rooster.','Hanen er sammen med hønene.','The rooster is with the chickens.'],field:['ACTIVITY 5 • ANIMALS IN THE FIELD','Look across the farm field.','Use location words to describe where the animals are.','Kua og sauen er ved gjerdet.','The cow and sheep are beside the fence.'],actions:['ACTIVITY 6 • ANIMAL ACTIONS','What are the animals doing?','Practice simple action words using the scene.','Hunden hviler og hesten står.','The dog rests and the horse is standing.']},challenges:{c1:['Hvor er hunden?','Where is the dog?'],c2:['Hvor er hesten?','Where is the horse?'],c3:['Hvor er kua?','Where is the cow?'],c4:['Hvor er sauen?','Where is the sheep?'],c5:['Hvor er grisen?','Where is the pig?'],c6:['Hvor er bien?','Where is the bee?']},words:{horse:'hesten',cow:'kua',sheep:'sauen',goat:'geita',pig:'grisen',dog:'hunden',rooster:'hanen',chicken:'høna',rabbit:'kaninen',squirrel:'ekornet',bee:'bien',butterfly:'sommerfuglen',barn:'låven',windmill:'vindmøllen',rv:'bobilen',solar:'solcellepanelene',campfire:'bålet',fence:'gjerdet',flowers:'blomstene',mountains:'fjellene',chick:'kyllingen'}}
+};
+
+const challengeMeta={
+ c1:{obj:'dog',title:'Find Bear.',prompt:'Click Bear in the scene.'},
+ c2:{obj:'horse',title:'Find the horse.',prompt:'Click the horse in the scene.'},
+ c3:{obj:'cow',title:'Find the cow.',prompt:'Click the cow in the scene.'},
+ c4:{obj:'sheep',title:'Find the sheep.',prompt:'Click the sheep in the scene.'},
+ c5:{obj:'pig',title:'Find the pig.',prompt:'Click the pig in the scene.'},
+ c6:{obj:'bee',title:'Find the Talk A Bee guide.',prompt:'Look on top of the fifth-wheel RV.'}
+};
+const englishNames={horse:'Horse',cow:'Cow',sheep:'Sheep',goat:'Goat',pig:'Pig',dog:'Dog',rooster:'Rooster',chicken:'Chicken',rabbit:'Rabbit',squirrel:'Squirrel',bee:'Bee',butterfly:'Butterfly',barn:'Barn',windmill:'Windmill',rv:'Fifth-wheel RV',solar:'Solar panels',campfire:'Campfire',fence:'Fence',flowers:'Flowers',mountains:'Mountains',chick:'Chick'};
+const discoverySounds={horse:'horse.mp3',cow:'cow.mp3',sheep:'sheep.mp3',goat:'goat.mp3',pig:'pig.mp3',dog:'dog.mp3',rooster:'rooster.mp3',chicken:'chicken.mp3',chick:'chicks.mp3',barn:'tractor.mp3',rv:'rv.mp3'};
+let discoverySound=null;
+function playDiscoverySound(id){
+ const file=discoverySounds[id]; if(!file)return;
+ if(discoverySound){discoverySound.pause();discoverySound.currentTime=0;}
+ discoverySound=new Audio('sounds/'+file);
+ discoverySound.play().catch(()=>{});
+}
+const KEY='talkabee-learn-language';
+const qsLang=new URLSearchParams(location.search).get('lang');
+let lang=languageData[qsLang]?qsLang:(languageData[localStorage.getItem(KEY)]?localStorage.getItem(KEY):'es');
+localStorage.setItem(KEY,lang);
+const selector=document.getElementById('adventureLanguage');selector.value=lang;
+const voiceSelector=document.getElementById('adventureVoice');
+function fillFarmVoices(){
+ if(!('speechSynthesis' in window))return;
+ const saved=localStorage.getItem('talkabee-voice-'+lang)||'';
+ const voices=speechSynthesis.getVoices()||[];
+ voiceSelector.innerHTML='<option value="">Browser Default Voice</option>';
+ voices.forEach(v=>voiceSelector.add(new Option(v.name+' — '+(v.lang||''),v.voiceURI)));
+ if([...voiceSelector.options].some(o=>o.value===saved))voiceSelector.value=saved;
+}
+
+let activeKey='pets',challengeTarget=null,mode='lesson';
+const world=document.getElementById('world');
+const els={kicker:document.getElementById('kicker'),title:document.getElementById('title'),prompt:document.getElementById('prompt'),target:document.getElementById('target'),translation:document.getElementById('translation'),status:document.getElementById('status')};
+
+function data(){return languageData[lang]}
+function setCard(v){['kicker','title','prompt','target','translation'].forEach((k,i)=>els[k].textContent=v[i]||'');els.status.textContent=''}
+function clearModes(){world.classList.remove('discover','challenge-mode');document.querySelectorAll('.hotspot').forEach(h=>h.classList.remove('target-hotspot'));document.querySelectorAll('[data-key]').forEach(b=>b.classList.remove('active-choice'));challengeTarget=null}
+function markActive(k){const b=document.querySelector('[data-key="'+k+'"]');if(b)b.classList.add('active-choice')}
+function showLesson(k){clearModes();mode='lesson';activeKey=k;markActive(k);setCard(data().lessons[k])}
+function showDiscovery(){
+ clearModes();mode='discovery';activeKey='discovery';markActive('discovery');world.classList.add('discover');
+ els.kicker.textContent='DISCOVERY';els.title.textContent='Explore the farm — click anything that glows.';
+ els.prompt.textContent='Animals, objects, and scenery all have '+data().name+' names to discover.';
+ els.target.textContent='Choose something in the scene.';els.translation.textContent='';els.status.textContent='';
+}
+function showChallenge(k){
+ clearModes();mode='challenge';activeKey=k;markActive(k);const m=challengeMeta[k],v=data().challenges[k];challengeTarget=m.obj;
+ setCard(['CHALLENGE '+k.slice(1)+' OF 6',m.title,m.prompt,v[0],v[1]]);
+ world.classList.add('challenge-mode');document.getElementById(m.obj).classList.add('target-hotspot');
+}
+function refresh(){if(mode==='discovery')showDiscovery();else if(mode==='challenge')showChallenge(activeKey);else showLesson(activeKey)}
+document.querySelectorAll('[data-key]').forEach(b=>b.addEventListener('click',()=>{const k=b.dataset.key;if(k==='discovery')showDiscovery();else if(challengeMeta[k])showChallenge(k);else showLesson(k)}));
+selector.addEventListener('change',()=>{lang=selector.value;localStorage.setItem(KEY,lang);fillFarmVoices();refresh()});
+function speak(txt,rate=1,onend=null){
+ if(!('speechSynthesis' in window)){if(onend)onend();return;}
+ speechSynthesis.cancel();
+ const u=new SpeechSynthesisUtterance(txt);u.lang=data().speech;u.rate=rate;
+ const chosen=speechSynthesis.getVoices().find(v=>v.voiceURI===voiceSelector.value);
+ if(chosen)u.voice=chosen;
+ if(onend)u.onend=onend;
+ speechSynthesis.speak(u);
+}
+document.getElementById('sceneView').onclick=()=>world.classList.add('scene-only');
+document.getElementById('restorePanel').onclick=()=>world.classList.remove('scene-only');
+voiceSelector.addEventListener('change',()=>localStorage.setItem('talkabee-voice-'+lang,voiceSelector.value));
+if('speechSynthesis' in window){speechSynthesis.onvoiceschanged=fillFarmVoices;fillFarmVoices();}
+const audioButtons=[document.getElementById('normal'),document.getElementById('slow'),document.getElementById('replay')];
+function setAudioActive(button){audioButtons.forEach(b=>b.classList.remove('audio-active'));button.classList.add('audio-active')}
+setAudioActive(document.getElementById('normal'));
+document.getElementById('normal').onclick=function(){setAudioActive(this);speak(els.target.textContent,1)};
+document.getElementById('slow').onclick=function(){setAudioActive(this);speak(els.target.textContent,.65)};
+document.getElementById('replay').onclick=function(){setAudioActive(this);speak(els.target.textContent,.9)};
+document.querySelectorAll('.hotspot').forEach(h=>h.addEventListener('click',()=>{
+ const key=h.dataset.word||h.dataset.object||h.id||h.getAttribute('aria-label')||'';
+ const word=data().words[key]||englishNames[key]||key;
+ if(challengeTarget){
+   if(key===challengeTarget){els.status.textContent='✓ Correct!';speak(word,.8)}
+   else{els.status.textContent='Try another animal.'}
+   return;
+ }
+ els.target.textContent=word;
+ els.translation.textContent=lang==='en'?'':(englishNames[key]||key);
+ speak(word,.8,()=>playDiscoverySound(key));
+}));
+showLesson('pets');
 </script>
-<!-- Talk A Bee global browser-voice bridge -->
-<script>
+<script id="talkabee-literal-master-behavior">
 (function(){
-  const GLOBAL_PREFIX='talkabee-voice-';
-  function controls(){
-    const selects=[...document.querySelectorAll('select')];
-    const voice=selects.find(s=>/voice/i.test((s.id||'')+' '+(s.name||'')+' '+(s.getAttribute('aria-label')||'')));
-    const language=selects.find(s=>/lang/i.test((s.id||'')+' '+(s.name||'')+' '+(s.getAttribute('aria-label')||'')));
-    return {language,voice};
+ function cleanActivityIcons(){
+  document.querySelectorAll('.tab-master-panel button').forEach(function(b){
+   if(b.matches('[data-lesson],[data-activity],[data-act],.activity,[data-train-activity],[data-home-activity]')){
+    b.innerHTML=b.innerHTML.replace(/(^\s*\d+\.\s*)(?:<[^>]+>\s*)?[\u{1F000}-\u{1FAFF}\u2600-\u27BF]\uFE0F?\s*/u,'$1');
+   }
+  });
+ }
+ function moveHomeToBottom(){
+  var p=document.querySelector('.tab-master-panel'); if(!p)return;
+  var links=[].slice.call(p.querySelectorAll('a[href="index.html"],a[href$="/index.html"]'));
+  links.forEach(function(a){p.appendChild(a)});
+ }
+ function inclusiveVoices(){
+  if(!('speechSynthesis' in window))return;
+  var p=document.querySelector('.tab-master-panel'); if(!p)return;
+  var sel=[].slice.call(p.querySelectorAll('select')).find(function(s){return /voice/i.test(s.id||s.name||s.getAttribute('aria-label')||'')}) || [].slice.call(p.querySelectorAll('select'))[1];
+  if(!sel)return;
+  var saved=localStorage.getItem('talkabee-voice-'+lang)||'';
+  var voices=speechSynthesis.getVoices()||[];
+  if(!voices.length)return;
+  sel.innerHTML='<option value="">Browser Default Voice</option>';
+  voices.forEach(function(v){var o=document.createElement('option');o.value=v.voiceURI;o.textContent=v.name+' — '+(v.lang||'');sel.appendChild(o)});
+  if([].slice.call(sel.options).some(function(o){return o.value===saved}))sel.value=saved;
+ }
+ function labels(){
+  document.querySelectorAll('.tab-master-card button').forEach(function(b){
+   var t=b.textContent.trim();
+   if(/normal/i.test(t)) b.textContent='🔊 Speak';
+   if(/^next\s*(line|phrase)?/i.test(t)) b.textContent='Next phrase →';
+  });
+ }
+ function run(){cleanActivityIcons();moveHomeToBottom();inclusiveVoices();labels()}
+ if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',run);else run();
+ if('speechSynthesis' in window){speechSynthesis.addEventListener&&speechSynthesis.addEventListener('voiceschanged',inclusiveVoices);setTimeout(inclusiveVoices,250);setTimeout(inclusiveVoices,1000)}
+})();
+</script>
+
+<style id="talkabee-rendered-card-footprint-lock">
+/* Visual master: match the user-approved Grandma's Kitchen rendered footprint. */
+.tab-master-card{
+  width:520px!important; max-width:520px!important; min-width:0!important;
+  transform:translateX(-50%) scale(.67)!important;
+  transform-origin:bottom center!important;
+}
+@media(max-width:760px){.tab-master-card{width:min(520px,calc(100vw - 32px))!important;transform:translateX(-50%) scale(.82)!important;}}
+</style>
+
+<script id="talkabee-ensure-card-tools">
+(function(){
+  const card=document.querySelector('.tab-master-card,.live-card,.script,.card');
+  if(!card)return;
+
+  /* Remove a misplaced/duplicate tool set, if one exists outside the real card. */
+  document.querySelectorAll('.tab-card-tools,.tab-card-resize').forEach(el=>{
+    if(!card.contains(el)) el.remove();
+  });
+
+  if(!card.querySelector('.tab-card-tools')){
+    const tools=document.createElement('div');
+    tools.className='tab-card-tools';
+    tools.setAttribute('aria-label','Script card controls');
+    tools.innerHTML='<button type="button" class="tab-card-drag" title="Move script card">↕ Move</button><button type="button" class="tab-card-font-down" title="Decrease text">A−</button><button type="button" class="tab-card-font-up" title="Increase text">A+</button><button type="button" class="tab-card-reset" title="Reset card">Reset</button>';
+    card.insertBefore(tools,card.firstChild);
   }
-  function voices(){return ('speechSynthesis' in window)?(speechSynthesis.getVoices()||[]):[];}
-  function key(lang){return GLOBAL_PREFIX+lang;}
-  function selectedVoiceURI(sel){
-    if(!sel||!sel.value)return '';
-    const vs=voices(), opt=sel.options[sel.selectedIndex];
-    const raw=sel.value, label=(opt&&opt.textContent)||'';
-    let v=vs.find(x=>x.voiceURI===raw)||vs.find(x=>x.name===raw);
-    if(!v && label) v=vs.find(x=>label===x.name||label.startsWith(x.name+' —')||label.startsWith(x.name+' -'));
-    return v?v.voiceURI:'';
-  }
-  function restore(){
-    const {language,voice}=controls(); if(!language||!voice)return;
-    const saved=localStorage.getItem(key(language.value))||''; if(!saved)return;
-    const vs=voices(), target=vs.find(v=>v.voiceURI===saved); if(!target)return;
-    const opts=[...voice.options];
-    let opt=opts.find(o=>o.value===target.voiceURI)||opts.find(o=>o.value===target.name)||
-            opts.find(o=>o.textContent===target.name||o.textContent.startsWith(target.name+' —')||o.textContent.startsWith(target.name+' -'));
-    if(opt && voice.value!==opt.value){
-      voice.value=opt.value;
-      voice.dispatchEvent(new Event('change',{bubbles:true}));
-    }
-  }
-  function save(){
-    const {language,voice}=controls(); if(!language||!voice)return;
-    const uri=selectedVoiceURI(voice);
-    localStorage.setItem(key(language.value),uri);
-  }
-  function restoreLanguage(){
-    const {language}=controls(); if(!language)return;
-    const saved=localStorage.getItem('talkabee-learn-language')||'';
-    if(saved && [...language.options].some(o=>o.value===saved) && language.value!==saved){
-      language.value=saved;
-      language.dispatchEvent(new Event('change',{bubbles:true}));
-    }
-  }
-  function saveLanguage(){
-    const {language}=controls(); if(language) localStorage.setItem('talkabee-learn-language',language.value);
-  }
-  function bind(){
-    const {language,voice}=controls(); if(!language||!voice)return;
-    if(!voice.dataset.tabGlobalVoice){ voice.addEventListener('change',save); voice.dataset.tabGlobalVoice='1'; }
-    if(!language.dataset.tabGlobalVoice){
-      language.addEventListener('change',()=>{saveLanguage();setTimeout(restore,0);setTimeout(restore,120);setTimeout(restore,500)});
-      language.dataset.tabGlobalVoice='1';
-    }
-    restoreLanguage(); restore(); setTimeout(restore,120); setTimeout(restore,500); setTimeout(restore,1500);
-  }
-  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',bind);else bind();
-  if('speechSynthesis' in window){
-    const prior=speechSynthesis.onvoiceschanged;
-    speechSynthesis.onvoiceschanged=function(e){if(typeof prior==='function')prior.call(this,e);setTimeout(bind,0);setTimeout(restore,120)};
+  if(!card.querySelector('.tab-card-resize')){
+    const resize=document.createElement('div');
+    resize.className='tab-card-resize';
+    resize.title='Drag to resize script card';
+    resize.setAttribute('aria-label','Resize script card');
+    resize.textContent='↘';
+    card.appendChild(resize);
   }
 })();
 </script>
+
 <script id="talkabee-accessibility-controls-script-v1">
 (function(){
  const panel=document.querySelector('.tab-master-panel,.activity-panel,.panel');
@@ -479,6 +964,24 @@ document.addEventListener('click',function(ev){
 })();</script>
 
 
+<script id="talkabee-farm-scene-view-reset">
+(function(){
+  function resetFarmSceneView(){
+    var world=document.getElementById('world');
+    if(world) world.classList.remove('scene-only');
+    var btn=document.getElementById('sceneView');
+    if(btn) btn.setAttribute('aria-pressed','false');
+  }
+  if(document.readyState==='loading'){
+    document.addEventListener('DOMContentLoaded',resetFarmSceneView);
+  }else{
+    resetFarmSceneView();
+  }
+  window.addEventListener('pageshow',resetFarmSceneView);
+})();
+</script>
+
+
 <script id="talkabee-scene-view-safe-reset">
 (function(){
   function resetTalkABeeSceneView(){
@@ -533,10 +1036,4 @@ document.addEventListener('click',function(ev){
 })();
 </script>
 
-
-
-
-<style id="talkabee-ski-panel-180">
-@media(min-width:761px){.panel{width:180px!important;min-width:180px!important;max-width:180px!important}}
-</style>
 </body></html>
