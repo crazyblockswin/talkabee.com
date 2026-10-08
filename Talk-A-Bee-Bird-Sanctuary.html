@@ -203,6 +203,15 @@ body.tb-hs-editing .tb-hs-active{outline:3px solid #00ffff!important;background:
 .tb-hs-handle{position:absolute!important;right:-7px!important;bottom:-7px!important;left:auto!important;top:auto!important;width:14px!important;height:14px!important;border-radius:3px!important;background:#00ffff!important;border:2px solid #000!important;z-index:2147483647!important;cursor:nwse-resize!important;display:none!important;transform:none!important}
 body.tb-hs-editing .tb-hs-active>.tb-hs-handle{display:block!important}
 </style>
+<style id="talkabee-hotspot-editor-style">
+#tb-hs-editor{position:fixed;right:16px;bottom:16px;z-index:2147483646;font:700 12px Arial,sans-serif;display:flex;flex-wrap:wrap;justify-content:flex-end;gap:6px;max-width:650px}
+#tb-hs-editor button,#tb-hs-editor input{border:1px solid #fff;border-radius:10px;background:#000;color:#fff;padding:9px 11px;box-shadow:0 4px 14px #0006}
+#tb-hs-editor input{background:#fff;color:#111;min-width:180px;font-weight:400}#tb-hs-editor button{cursor:pointer}
+body.tb-hs-editing .hotspot,body.tb-hs-editing .home-hotspot,body.tb-hs-editing .yacht-hotspot,body.tb-hs-editing .hotspots button,body.tb-hs-editing .train-hotspots button{display:block!important;outline:2px solid #ffea00!important;background:rgba(255,234,0,.18)!important;pointer-events:auto!important;cursor:move!important;visibility:visible!important;opacity:1!important;z-index:2147483005!important}
+body.tb-hs-editing .tb-hs-active{outline:3px solid #00ffff!important;background:rgba(0,255,255,.18)!important}
+.tb-hs-handle{position:absolute!important;right:-7px!important;bottom:-7px!important;left:auto!important;top:auto!important;width:14px!important;height:14px!important;border-radius:3px!important;background:#00ffff!important;border:2px solid #000!important;z-index:2147483647!important;cursor:nwse-resize!important;display:none!important;transform:none!important}
+body.tb-hs-editing .tb-hs-active>.tb-hs-handle{display:block!important}
+</style>
 </head>
 <body class="">
 <div class="talkabee-editions">
@@ -221,7 +230,7 @@ body.tb-hs-editing .tb-hs-active>.tb-hs-handle{display:block!important}
 
 <nav class="talkabee-prev-next-nav" aria-label="Adventure navigation"><a href="Talk-A-Bee-Train-Station-Adventure.html" aria-label="Previous page" title="Previous">‹</a><a href="Talk-A-Bee-Library.html" aria-label="Next page" title="Next">›</a></nav>
 
-<section id="birdWorld" class="scene-only">
+<section id="birdWorld">
  
  <button class="restorePanel" id="restorePanel" type="button">← Return Panel</button>
  <div class="scene">
@@ -796,5 +805,86 @@ window.addEventListener('beforeunload',e=>{if(dirty){e.preventDefault();e.return
 })();
 </script>
 
+
+<script id="talkabee-hotspot-editor-v10">
+(()=>{
+const SEL='.hotspot,.home-hotspot,.yacht-hotspot,.hotspots button,.train-hotspots button';
+let editing=false,active=null,adding=false,pendingName='';
+const all=()=>[...document.querySelectorAll(SEL)].filter(x=>!x.closest('#tb-hs-editor'));
+function parentFor(el){return el.offsetParent||el.parentElement||document.body}
+function pct(v,n){return +(v/n*100).toFixed(2)}
+function cleanActive(){if(active){active.classList.remove('tb-hs-active');active.querySelector(':scope > .tb-hs-handle')?.remove()} active=null}
+function select(el){if(!editing||!el)return;cleanActive();active=el;el.classList.add('tb-hs-active');let h=document.createElement('span');h.className='tb-hs-handle';el.appendChild(h)}
+function semanticNew(name){
+ const existing=all()[0]; if(!existing)return null;
+ const el=document.createElement('button');el.type='button';
+ if(existing.classList.contains('home-hotspot')){el.className='home-hotspot show';el.dataset.object=name;el.setAttribute('aria-label',name)}
+ else if(existing.classList.contains('yacht-hotspot')){el.className='yacht-hotspot';el.dataset.word=name;el.setAttribute('aria-label',name)}
+ else if(existing.classList.contains('hotspot')){el.className='hotspot';el.dataset.word=name;el.setAttribute('aria-label',name)}
+ else { if(existing.className)el.className=existing.className; el.dataset.word=name; if(existing.hasAttribute('data-en'))el.dataset.en=name; el.setAttribute('aria-label',name) }
+ return el
+}
+function hotspotContainer(){const e=all()[0];return e?e.parentElement:null}
+function placeAt(ev){
+ if(!editing||!adding)return;
+ const host=hotspotContainer();if(!host)return;
+ const el=semanticNew(pendingName);if(!el)return;
+ host.appendChild(el);
+ const r=parentFor(el).getBoundingClientRect();
+ el.style.left=pct(ev.clientX-r.left,r.width)+'%';el.style.top=pct(ev.clientY-r.top,r.height)+'%';el.style.width='6%';el.style.height='8%';
+ adding=false;pendingName='';nameBox.value='';select(el);ev.preventDefault();ev.stopPropagation();
+}
+function startDrag(ev,el){
+ if(!editing||adding)return; if(ev.target.classList.contains('tb-hs-handle'))return;
+ select(el);ev.preventDefault();ev.stopPropagation();
+ const p=parentFor(el),r=p.getBoundingClientRect();let sx=ev.clientX,sy=ev.clientY;
+ let l=parseFloat(el.style.left)||pct(el.offsetLeft,r.width),t=parseFloat(el.style.top)||pct(el.offsetTop,r.height);
+ const move=e=>{el.style.left=(l+(e.clientX-sx)/r.width*100).toFixed(2)+'%';el.style.top=(t+(e.clientY-sy)/r.height*100).toFixed(2)+'%'};
+ const up=()=>{window.removeEventListener('pointermove',move,true);window.removeEventListener('pointerup',up,true)};
+ window.addEventListener('pointermove',move,true);window.addEventListener('pointerup',up,true)
+}
+function startResize(ev,el){
+ if(!editing)return;ev.preventDefault();ev.stopPropagation();
+ const p=parentFor(el),r=p.getBoundingClientRect();let sx=ev.clientX,sy=ev.clientY;
+ let w=parseFloat(el.style.width)||pct(el.offsetWidth,r.width),h=parseFloat(el.style.height)||pct(el.offsetHeight,r.height);
+ const move=e=>{el.style.width=Math.max(1,w+(e.clientX-sx)/r.width*100).toFixed(2)+'%';el.style.height=Math.max(1,h+(e.clientY-sy)/r.height*100).toFixed(2)+'%'};
+ const up=()=>{window.removeEventListener('pointermove',move,true);window.removeEventListener('pointerup',up,true)};
+ window.addEventListener('pointermove',move,true);window.addEventListener('pointerup',up,true)
+}
+const bar=document.createElement('div');bar.id='tb-hs-editor';
+const edit=document.createElement('button');edit.textContent='Edit Hotspots';
+const nameBox=document.createElement('input');nameBox.placeholder='hotspot name';
+const add=document.createElement('button');add.textContent='Add Hotspot';
+const del=document.createElement('button');del.textContent='Delete Hotspot';
+const save=document.createElement('button');save.textContent='Save HTML';
+bar.append(edit,nameBox,add,del,save);document.body.appendChild(bar);nameBox.style.display=add.style.display=del.style.display=save.style.display='none';
+edit.onclick=()=>{editing=!editing;document.body.classList.toggle('tb-hs-editing',editing);edit.textContent=editing?'Exit Editor':'Edit Hotspots';nameBox.style.display=add.style.display=del.style.display=save.style.display=editing?'':'none';if(!editing){adding=false;cleanActive()}};
+add.onclick=()=>{if(!editing)return;const n=(nameBox.value||'').trim().toLowerCase().replace(/\s+/g,' ');if(!n){nameBox.focus();return}pendingName=n;adding=true;cleanActive()};
+del.onclick=()=>{if(active){active.remove();active=null}};
+save.onclick=()=>{
+ const clone=document.documentElement.cloneNode(true);clone.querySelector('#tb-hs-editor')?.remove();clone.querySelectorAll('.tb-hs-handle').forEach(x=>x.remove());clone.querySelectorAll('.tb-hs-active').forEach(x=>x.classList.remove('tb-hs-active'));clone.querySelector('body')?.classList.remove('tb-hs-editing');
+ const blob=new Blob(['<!doctype html>\n'+clone.outerHTML],{type:'text/html'}),a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download=(location.pathname.split('/').pop()||'adventure.html');a.click();setTimeout(()=>URL.revokeObjectURL(a.href),1000)
+};
+document.addEventListener('pointerdown',ev=>{if(!editing)return;const h=ev.target.closest('.tb-hs-handle');if(h){startResize(ev,h.parentElement);return}const el=ev.target.closest(SEL);if(el){startDrag(ev,el);return}},true);
+document.addEventListener('click',ev=>{if(!editing)return;if(ev.target.closest('#tb-hs-editor'))return;if(adding){placeAt(ev);return}const el=ev.target.closest(SEL);if(el){ev.preventDefault();ev.stopPropagation();select(el)}},true);
+})();
+</script>
+
+<script id="talkabee-bird-scene-view-reset">
+(function(){
+  function resetBirdSceneView(){
+    var world=document.getElementById('birdWorld');
+    var btn=document.getElementById('sceneView');
+    if(world) world.classList.remove('scene-only');
+    if(btn) btn.setAttribute('aria-pressed','false');
+  }
+  if(document.readyState==='loading'){
+    document.addEventListener('DOMContentLoaded', resetBirdSceneView, {once:true});
+  }else{
+    resetBirdSceneView();
+  }
+  window.addEventListener('pageshow', resetBirdSceneView);
+})();
+</script>
 
 </body></html>
