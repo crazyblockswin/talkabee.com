@@ -2,492 +2,68 @@
 <html lang="en"><head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Talk A Bee — Animals — Farm Adventure</title>
+<title>Talk A Bee — Mountain Ski Resort Adventure</title>
+<link rel="icon" type="image/png" href="images/PNG/talkabee-favicon.png">
 <style>
-*{box-sizing:border-box}html,body{margin:0;width:100%;height:100%;overflow:hidden;background:#101827;font-family:Arial,Helvetica,sans-serif}
-.world{position:fixed;inset:0;background:#101827;overflow:hidden}
-.scene{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center center;display:block}
-.click{position:absolute;z-index:20;border:0;background:transparent;cursor:pointer;border-radius:14px;color:transparent;font-size:0}
-.click:focus-visible{outline:4px solid rgba(255,255,255,.95);outline-offset:-4px;background:rgba(255,215,90,.20)}
-#back{left:1.2%;top:9.2%;width:14.2%;height:7.3%}
-.activity{left:1.25%;width:14.2%;height:5.0%}.a1{top:28.4%}.a2{top:33.4%}.a3{top:38.5%}.a4{top:43.6%}.a5{top:48.6%}.a6{top:53.7%}.discovery{left:1.25%;top:58.1%;width:14.2%;height:5.2%}
-.challenge{left:1.25%;width:14.2%;height:4.4%}.c1{top:67.2%}.c2{top:71.6%}.c3{top:76.0%}.c4{top:80.4%}.c5{top:84.8%}.c6{top:89.2%}
-.script-mask{position:absolute;z-index:14;left:61.7%;top:61.2%;right:.8%;bottom:1.7%;border-radius:24px;background:#0d2b30;box-shadow:0 15px 35px rgba(0,0,0,.24)}
-.live-card{position:absolute;z-index:15;left:62.3%;top:65.6%;width:35.6%;height:28.3%;padding:18px 22px;color:#fff;border-radius:22px;background:#0d2b30;box-shadow:0 15px 35px rgba(0,0,0,.24);overflow:hidden}
-.kicker{font-size:clamp(10px,.9vw,15px);font-weight:950;letter-spacing:.12em;color:#ffe064}.live-card h1{font-size:clamp(18px,1.7vw,29px);margin:7px 0 8px;line-height:1.08}.prompt{font-size:clamp(10px,.9vw,15px);line-height:1.25;margin:0 0 8px}.target{font-size:clamp(18px,1.65vw,28px);font-weight:950;margin-top:3px}.translation{font-size:clamp(10px,.9vw,15px);margin-top:2px}.actions{display:flex;gap:9px;margin-top:10px;flex-wrap:wrap}.actions button{border:0;border-radius:10px;padding:9px 14px;font-weight:950;font-size:clamp(11px,.9vw,15px);cursor:pointer}.primary{background:#ffd45c;color:#2b2515}.actions button:not(.primary){background:#f6f7fa;color:#253047}
-.hotspot{display:block;position:absolute;z-index:30;transform:translate(-50%,-50%);width:5.2%;aspect-ratio:1/1;border:4px solid rgba(255,255,255,.94);border-radius:50%;background:rgba(255,195,55,.45);box-shadow:0 0 0 7px rgba(255,195,55,.18),0 8px 22px rgba(0,0,0,.28);cursor:pointer;animation:pulse 1.7s ease-in-out infinite}.discover .hotspot,.challenge-mode .hotspot.target-hotspot{display:block}.hotspot:hover{background:rgba(116,82,232,.55)}
-@keyframes pulse{50%{transform:translate(-50%,-50%) scale(1.08)}}
-#horse{left:24%;top:35%}#cow{left:43%;top:40%}#sheep{left:35%;top:48%}#goat{left:33%;top:59%}#pig{left:28%;top:68%}#dog{left:53%;top:64%}#rooster{left:82%;top:55%}#chicken{left:76%;top:60%}#rabbit{left:52%;top:88%}#squirrel{left:94%;top:47%}#bee{left:82%;top:14%}
-.status{font-weight:950;color:#ffe064;margin-top:8px;min-height:18px}
-@media(max-width:900px){.script-mask{left:59.3%;top:60.5%;right:.5%;bottom:1%}.live-card{left:60%;width:38%;padding:12px 14px}.actions{gap:5px}.actions button{padding:7px 9px}}
-</style>
+*{box-sizing:border-box}
+html,body{margin:0;width:100%;height:100%;overflow:hidden;font-family:Arial,Helvetica,sans-serif;background:#063a66;color:#fff}
+.world{position:relative;width:100vw;height:100vh;background:url("images/Talk-A-Bee-Mountain-Ski-Resort-Adventure.jpg") center center/cover no-repeat}
 
-<style id="farm-single-panel-final-fix">
-/* Final Farm fix: the approved scene already contains the original static course card.
-   Cover that exact footprint with the one live lesson card so only one layer is visible. */
-.script-mask{display:none!important;}
-.live-card{
-  left:62.30%!important; top:67.95%!important; width:36.55%!important; height:29.15%!important;
-  padding:14px 20px!important; border-radius:22px!important;
-  background:#12343b!important; opacity:1!important; overflow:hidden!important;
-  box-shadow:0 15px 35px rgba(0,0,0,.24)!important;
-}
-.live-card h1{margin:5px 0 6px!important;}
-.live-card .prompt{margin:0 0 6px!important;}
-.live-card .actions{margin-top:8px!important;}
-@media(max-width:900px){.live-card{padding:10px 13px!important;}}
-</style>
+/* APPROVED TALK A BEE LEFT PANEL */
+.panel{position:fixed;z-index:1000;left:16px;top:16px;bottom:16px;width:180px;min-width:180px;max-width:180px;
+padding:14px;overflow-x:hidden;overflow-y:auto;border-radius:20px;border:1px solid rgba(255,255,255,.28);
+background:rgba(7,23,39,.31);box-shadow:0 12px 30px rgba(0,0,0,.24);backdrop-filter:blur(3px);-webkit-backdrop-filter:blur(3px)}
+.panel h1{font-size:19px;line-height:1.08;margin:4px 0 10px;text-shadow:0 2px 4px rgba(0,0,0,.55)}
+.label{font-size:9.5px;line-height:1.1;letter-spacing:.09em;font-weight:900;margin:9px 0 4px}
+.panel button,.panel select,.panel a{width:100%;min-height:34px;margin:4px 0;padding:8px 9px;border-radius:12px;
+border:1px solid rgba(255,255,255,.38);background:rgba(7,32,50,.54);color:#fff;font:800 12px/1.16 Arial,sans-serif;
+text-align:left;text-decoration:none}
+.panel button:hover,.panel a:hover{background:rgba(20,58,79,.70)}
+.panel button.active{background:rgba(78,69,219,.74)}
+.panel select{white-space:nowrap;text-overflow:ellipsis;overflow:hidden}
 
-<style id="clean-keeper-ui">
-.left-panel{position:absolute;z-index:10;left:.45%;top:5.2%;width:16.2%;height:91%;border-radius:20px;background:rgba(9,38,43,.80);box-shadow:0 14px 32px rgba(0,0,0,.28);border:1px solid rgba(255,255,255,.18);pointer-events:none}
-.left-title{position:absolute;z-index:11;left:1.45%;top:16.5%;width:14%;color:white;pointer-events:none}.left-title b{display:block;font-size:clamp(22px,2vw,36px)}.left-title span{font-size:clamp(12px,1.05vw,18px);font-weight:700}.section-label{position:absolute;z-index:11;left:1.45%;color:#dce7e7;font-weight:900;letter-spacing:.08em;pointer-events:none}.activities-label{top:23.3%}.challenges-label{top:64.4%}
-.click{color:#fff!important;font-size:clamp(12px,1.05vw,18px)!important;text-align:left;padding:0 14px!important;background:rgba(255,255,255,.08)!important;border:1px solid rgba(255,255,255,.15)!important;font-weight:800!important}.click:hover{background:rgba(255,255,255,.18)!important}.activity.active-choice{background:rgba(255,211,83,.95)!important;color:#17212b!important}.discovery{background:rgba(91,174,255,.95)!important;color:#122231!important}#back{background:#fff!important;color:#24314b!important;text-align:center!important;font-size:clamp(12px,1.1vw,19px)!important}.challenge{font-size:clamp(10px,.9vw,16px)!important}
-#back{left:1.25%;top:7.2%;width:14.2%;height:7.2%}.activity{left:1.25%;width:14.2%;height:4.9%}.a1{top:26.0%}.a2{top:31.2%}.a3{top:36.4%}.a4{top:41.6%}.a5{top:46.8%}.a6{top:52.0%}.discovery{left:1.25%;top:57.3%;width:14.2%;height:5.2%}.challenge{left:1.25%;width:14.2%;height:4.15%}.c1{top:68.0%}.c2{top:72.4%}.c3{top:76.8%}.c4{top:81.2%}.c5{top:85.6%}.c6{top:90.0%}
-.live-card{left:62.2%!important;top:67.0%!important;width:36.5%!important;height:29.0%!important;background:rgba(9,45,51,.91)!important;opacity:1!important}
-#horse{left:25.8%;top:36.3%}#cow{left:44.2%;top:43.3%}#sheep{left:36.7%;top:49.4%}#goat{left:36.1%;top:60.7%}#pig{left:30.6%;top:71%}#dog{left:55.9%;top:65.2%}#rooster{left:83.5%;top:57.2%}#chicken{left:76.9%;top:61.4%}#rabbit{left:54.1%;top:90.8%}#squirrel{left:95%;top:47%}#bee{left:82.9%;top:13.9%}
-#butterfly{left:43.3%;top:89.7%}#barn{left:57.7%;top:34%}#windmill{left:61.9%;top:21.9%}#rv{left:78.1%;top:32%}#solar{left:84.7%;top:16.6%}#campfire{left:66.7%;top:64%}#fence{left:23.4%;top:50.7%}#flowers{left:9%;top:75%}#mountains{left:31%;top:19%}#chick{left:79.3%;top:62.5%}
-.hotspot{width:3.6%;border-width:3px}
-</style>
+/* APPROVED 520px SCRIPT CARD */
+.card{position:fixed;z-index:900;left:50%;bottom:16px;width:520px;max-width:520px;padding:14px 16px;
+border-radius:20px;border:1px solid rgba(255,255,255,.30);background:rgba(25,19,24,.38);
+box-shadow:0 12px 30px rgba(0,0,0,.28);backdrop-filter:blur(5px);-webkit-backdrop-filter:blur(5px);
+transform:translateX(-50%) scale(.67);transform-origin:bottom center}
+.card .kicker{font-size:15px;line-height:1.25;font-weight:900;letter-spacing:.10em;color:rgba(255,255,255,.96);
+text-shadow:0 1px 3px rgba(0,0,0,.78);margin:0 0 6px}
+.card h2{font-size:22px;line-height:1.08;margin:4px 0 7px;text-shadow:0 1px 3px rgba(0,0,0,.55)}
+.card p{font-size:18px;line-height:1.35;margin:4px 0 7px}
+.word{margin-top:8px;padding:10px 12px;border-radius:14px;background:rgba(88,88,88,.72);border:1px solid rgba(255,255,255,.20)}
+.word strong{display:block;font-size:22px;line-height:1.28}
+.translation{font-size:18px;line-height:1.35;margin-top:3px}
+.controls{display:flex;align-items:center;gap:8px;flex-wrap:nowrap;margin-top:8px}
+.controls button{width:auto;min-width:0;padding:9px 13px;border-radius:12px;border:1px solid rgba(255,255,255,.35);
+background:rgba(255,255,255,.88);color:#10283c;font:900 13px/1 Arial,sans-serif;white-space:nowrap}
 
-<style id="farm-ui-tuning">
-/* CSS-only tuning: preserve clean keeper artwork and all interactions. */
-.left-panel{background:rgba(9,38,43,.87)!important;}
-.live-card{
-  left:63.0%!important;
-  top:65.0%!important;
-  width:35.5%!important;
-  height:27.0%!important;
-  padding:13px 19px!important;
-  background:rgba(9,45,51,.78)!important;
-  overflow:hidden!important;
-}
-.live-card h1{margin:4px 0 5px!important;}
-.live-card .prompt{margin:0 0 5px!important;}
-.live-card .target{margin-top:2px!important;}
-.live-card .actions{margin-top:7px!important;}
-.live-card .actions button{padding:8px 13px!important;}
-.live-card .status{margin-top:5px!important;min-height:12px!important;}
-</style>
+/* HOTSPOTS */
+.hotspot{position:absolute;z-index:8;border:0;background:transparent;opacity:0;cursor:pointer;border-radius:16px}
+.hotspot:hover,.hotspot:focus-visible{opacity:1;background:rgba(255,220,72,.28);outline:2px solid rgba(255,255,255,.90)}
+.challenge-mode .hotspot.target{opacity:1;background:rgba(255,199,48,.38);outline:4px solid #fff;box-shadow:0 0 0 7px rgba(255,200,50,.20)}
 
-<style id="farm-match-train-transparency">
-/* Match Train Station panel transparencies only. */
-.left-panel{
-  background:rgba(9,38,43,.44)!important;
-}
-.live-card{
-  background:rgba(9,45,51,.30)!important;
-}
-</style>
-
-
-<style id="farm-panels-more-solid">
-/* Farm page only: strengthen panel backgrounds over the bright sunset scene. */
-.left-panel{
-  background:rgba(9,38,43,.72)!important;
-  backdrop-filter:blur(3px)!important;
-}
-.live-card{
-  background:rgba(9,45,51,.76)!important;
-  backdrop-filter:blur(2px)!important;
-}
-</style>
-
-
-<style id="farm-left-panel-visible-fix">
-/* LEFT PANEL ONLY — make the container itself visibly dark/translucent. */
-.left-panel{
-  background:rgba(7,31,35,.88)!important;
-  background-color:rgba(7,31,35,.88)!important;
-  border:1px solid rgba(255,255,255,.16)!important;
-  border-radius:24px!important;
-  box-shadow:0 14px 34px rgba(0,0,0,.22)!important;
-  backdrop-filter:none!important;
-  -webkit-backdrop-filter:none!important;
-}
-/* Do not alter the script box in this test. */
-</style>
-
-
-<style id="farm-left-panel-real-container-fix">
-.left-panel{
-  display:block!important;
-  position:absolute!important;
-  z-index:9!important;
-  left:.45%!important;
-  top:5.2%!important;
-  width:16.2%!important;
-  height:91%!important;
-  background:rgba(7,31,35,.78)!important;
-  border:1px solid rgba(255,255,255,.18)!important;
-  border-radius:20px!important;
-  box-shadow:0 14px 32px rgba(0,0,0,.28)!important;
-  pointer-events:none!important;
-}
-</style>
-
-
-<style id="farm-balanced-panel-transparency">
-/* Same green panel look, just lighter/more transparent. */
-.left-panel{
-  background:rgba(7,31,35,.58)!important;
-}
-.live-card{
-  background:rgba(9,45,51,.58)!important;
-}
-</style>
-
-
-<style id="farm-script-size-and-solar-hotspot-fix">
-/* Keep current transparency. Give the script card enough vertical room for all controls. */
-.live-card{
-  bottom:2.2%!important;
-  min-height:31%!important;
-  height:auto!important;
-  padding:1.45% 2.0%!important;
-  box-sizing:border-box!important;
-}
-/* Solar-panel Discovery hotspot: move off the bee/wings onto the visible roof panels. */
-.hotspot[data-id="solar"]{
-  left:78.5%!important;
-  top:17.0%!important;
-}
-</style>
-
-
-<style id="farm-solar-return-fix">
-/* Move solar-panel hotspot farther right, fully off Professor Bee. */
-.hotspot[data-id="solar"]{
-  left:91.0%!important;
-  top:17.0%!important;
-}
-
-/* Make Return to Main Directory blend into the left panel instead of white. */
-.back-link{
-  background:rgba(7,31,35,.58)!important;
-  color:#fff!important;
-  border:1px solid rgba(255,255,255,.20)!important;
-  box-shadow:none!important;
-}
-.back-link:hover{
-  background:rgba(7,31,35,.76)!important;
-  color:#fff!important;
-}
-</style>
-
-
-<style id="farm-solar-return-real-fix">
-/*
-REAL FIX:
-Earlier overrides targeted selectors that do not exist in this HTML:
-  .hotspot[data-id="solar"]  (solar uses id="solar", no data-id)
-  .back-link                 (return link uses id="back", class="click")
-Target the actual elements.
-*/
-#solar{
-  left:92.5%!important;
-  top:16.5%!important;
-}
-
-#back{
-  background:rgba(7,31,35,.58)!important;
-  color:#fff!important;
-  border:1px solid rgba(255,255,255,.20)!important;
-  box-shadow:none!important;
-  text-decoration:none!important;
-}
-#back:hover{
-  background:rgba(7,31,35,.72)!important;
-  color:#fff!important;
-}
-</style>
-
-
-<style id="farm-left-controls-and-scene-view">
-.farm-left-controls{position:absolute;z-index:40;left:1.25%;top:15.15%;width:14.2%;display:grid;gap:3px;color:#fff}
-.farm-left-controls button,.farm-left-controls select{width:100%;height:30px;border:1px solid rgba(255,255,255,.18);border-radius:9px;background:rgba(255,255,255,.10);color:#fff;font-size:clamp(9px,.72vw,12px);font-weight:850;padding:4px 7px}
-.farm-left-controls button{text-align:center;cursor:pointer}.farm-left-controls button:hover{background:rgba(255,255,255,.20)}
-.farm-left-controls select{background:rgba(7,31,35,.72)}.farm-left-controls option{color:#17212b;background:#fff}
-#restorePanel{display:none;position:absolute;z-index:80;left:12px;top:12px;border:1px solid rgba(255,255,255,.22);border-radius:11px;padding:9px 12px;background:rgba(7,31,35,.82);color:#fff;font-weight:900;cursor:pointer}
-#world.scene-only .left-panel,#world.scene-only #back,#world.scene-only .farm-left-controls,#world.scene-only .activity,#world.scene-only .discovery,#world.scene-only .challenge,#world.scene-only .live-card{display:none!important}
-#world.scene-only #restorePanel{display:block!important}
-</style>
-
-
-<style id="farm-left-panel-scroll-fix">
-/* Farm left panel: readable fixed-size rows with an internal scrollbar on shorter screens. */
-.left-panel{pointer-events:none!important;}
-.farm-panel-scroll{
-  position:absolute;z-index:40;left:.75%;top:6.2%;width:15.6%;height:89%;
-  overflow-y:auto;overflow-x:hidden;padding:0 .3% 14px .3%;
-  scrollbar-width:thin;scrollbar-color:rgba(255,255,255,.48) rgba(0,0,0,.10);
-}
-.farm-panel-scroll::-webkit-scrollbar{width:8px}
-.farm-panel-scroll::-webkit-scrollbar-track{background:rgba(0,0,0,.10);border-radius:10px}
-.farm-panel-scroll::-webkit-scrollbar-thumb{background:rgba(255,255,255,.48);border-radius:10px}
-.farm-panel-scroll #back,.farm-panel-scroll .farm-left-controls,.farm-panel-scroll .activity,.farm-panel-scroll .discovery,.farm-panel-scroll .challenge{
-  position:relative!important;left:auto!important;top:auto!important;width:100%!important;display:block!important;
-}
-.farm-panel-scroll #back{height:auto!important;min-height:72px!important;padding:10px 12px!important;display:flex!important;align-items:center;justify-content:center;margin:0 0 7px 0;}
-.farm-panel-scroll .farm-left-controls{display:grid!important;gap:6px!important;margin:0 0 8px 0;}
-.farm-panel-scroll .farm-left-controls button,.farm-panel-scroll .farm-left-controls select{height:54px!important;font-size:clamp(13px,1.05vw,18px)!important;}
-.farm-panel-scroll .activity,.farm-panel-scroll .discovery,.farm-panel-scroll .challenge{
-  height:auto!important;min-height:50px!important;margin:0 0 6px 0!important;padding:8px 14px!important;line-height:1.12!important;
-}
-.farm-panel-scroll .activity{font-size:clamp(14px,1.15vw,20px)!important;}
-.farm-panel-scroll .discovery{font-size:clamp(15px,1.2vw,21px)!important;text-align:center!important;}
-.farm-panel-scroll .challenge{font-size:clamp(13px,1.0vw,18px)!important;text-align:center!important;}
-.farm-panel-scroll .discovery{margin-top:3px!important;margin-bottom:42px!important;}
-#world.scene-only .farm-panel-scroll{display:none!important}
-@media(min-height:1050px){
-  .farm-panel-scroll{overflow-y:hidden;}
-  .farm-panel-scroll #back{min-height:64px!important;}
-  .farm-panel-scroll .farm-left-controls button,.farm-panel-scroll .farm-left-controls select{height:45px!important;}
-  .farm-panel-scroll .activity,.farm-panel-scroll .discovery,.farm-panel-scroll .challenge{min-height:44px!important;margin-bottom:4px!important;}
-  .farm-panel-scroll .discovery{margin-bottom:28px!important;}
-}
-</style>
-
-
-<style id="farm-left-panel-compact-and-return-fix">
-/* Compact the menu rows and keep the Scene View return control outside the hidden menu wrapper. */
-.farm-panel-scroll #back{min-height:60px!important;padding:7px 10px!important;margin-bottom:5px!important;}
-.farm-panel-scroll .farm-left-controls{gap:4px!important;margin-bottom:6px!important;}
-.farm-panel-scroll .farm-left-controls button,.farm-panel-scroll .farm-left-controls select{height:42px!important;font-size:clamp(12px,.9vw,16px)!important;}
-.farm-panel-scroll .activity,.farm-panel-scroll .discovery,.farm-panel-scroll .challenge{min-height:42px!important;margin-bottom:4px!important;padding:6px 12px!important;}
-.farm-panel-scroll .activity{font-size:clamp(13px,1vw,18px)!important;}
-.farm-panel-scroll .discovery{font-size:clamp(14px,1.05vw,19px)!important;margin-top:2px!important;margin-bottom:24px!important;}
-.farm-panel-scroll .challenge{font-size:clamp(12px,.9vw,16px)!important;}
-#restorePanel{left:16px!important;top:16px!important;padding:10px 15px!important;font-size:15px!important;background:rgba(7,31,35,.78)!important;}
-#world.scene-only #restorePanel{display:block!important;}
-</style>
-
-
-<style id="farm-active-button-fix">
-/* Selected menu item follows the user's click instead of Activity 1 staying yellow. */
-.activity.active-choice,.discovery.active-choice,.challenge.active-choice{
-  background:rgba(255,211,83,.95)!important;
-  color:#17212b!important;
-}
-</style>
-
-
-<style id="farm-audio-active-fix">
-/* Audio controls: highlight whichever button was last selected. */
-.live-card .actions button{background:#f6f7fa!important;color:#253047!important;}
-.live-card .actions button.audio-active{background:#ffd45c!important;color:#2b2515!important;}
-</style>
-
-
-<style id="farm-locked-template-final">
-/* LOCKED TALK-A-BEE TEMPLATE:
-   Hotspots are live from page load; Discovery is optional.
-   Challenge mode still identifies the requested target. */
-.hotspot{display:block!important;}
-
-/* Approved upper-right forward arrow. */
-.talkabee-forward-arrow{
-  position:fixed;z-index:10020;right:22px;top:18px;width:62px;height:62px;
-  border:2px solid rgba(255,255,255,.82);border-radius:50%;
-  background:rgba(11,22,42,.20);box-shadow:0 5px 16px rgba(0,0,0,.14);
-  backdrop-filter:blur(2px);display:grid;place-items:center;text-decoration:none;
-}
-.talkabee-forward-arrow::before{
-  content:"";width:17px;height:17px;border-top:5px solid #fff;border-right:5px solid #fff;
-  transform:rotate(45deg) translate(-2px,2px);filter:drop-shadow(0 1px 2px rgba(0,0,0,.35));
-}
-</style>
-
-
-<style id="farm-hotspots-hover-only-final">
-/* Always clickable, visually invisible until hover/focus.
-   Challenge target may still show when a challenge asks the learner to find it. */
-.hotspot{
-  display:block!important;
-  opacity:0!important;
-  animation:none!important;
-  background:transparent!important;
-  border-color:transparent!important;
-  box-shadow:none!important;
-}
-.hotspot:hover,
-.hotspot:focus-visible{
-  opacity:1!important;
-  background:rgba(255,195,55,.28)!important;
-  border-color:rgba(255,255,255,.90)!important;
-  box-shadow:0 0 0 5px rgba(255,195,55,.13)!important;
-}
-.challenge-mode .hotspot.target-hotspot{
-  opacity:1!important;
-  background:rgba(255,195,55,.38)!important;
-  border-color:rgba(255,255,255,.94)!important;
-  box-shadow:0 0 0 7px rgba(255,195,55,.18),0 8px 22px rgba(0,0,0,.20)!important;
-}
-</style>
-
-
-<style id="farm-rv-hotspot-enlarge-only">
-/* RV ONLY — larger clickable/hover target, same center position. */
-#rv{
-  width:12.5%!important;
-  aspect-ratio:1.75/1!important;
-  border-radius:24px!important;
-}
-</style>
-
-
-<style id="talkabee-prev-next-nav-style">
-/* Talk A Bee standard compact Previous / Next navigation. */
-.talkabee-prev-next-nav{position:fixed;top:18px;right:22px;z-index:2147483000;display:flex;align-items:center;overflow:hidden;border:2px solid rgba(255,255,255,.82);border-radius:999px;background:rgba(11,22,42,.24);box-shadow:0 5px 16px rgba(0,0,0,.16);backdrop-filter:blur(3px);-webkit-backdrop-filter:blur(3px)}
-.talkabee-prev-next-nav a{width:48px;height:48px;display:grid;place-items:center;text-decoration:none;color:#fff;font:900 38px/1 Arial,sans-serif;text-shadow:0 1px 3px rgba(0,0,0,.42);transition:background .15s ease,transform .15s ease}
+/* APPROVED COMPACT PREVIOUS / NEXT CHEVRONS */
+.talkabee-prev-next-nav{position:fixed;top:18px;right:22px;z-index:2147483000;display:flex;align-items:center;overflow:hidden;
+border:2px solid rgba(255,255,255,.82);border-radius:999px;background:rgba(11,22,42,.24);
+box-shadow:0 5px 16px rgba(0,0,0,.16);backdrop-filter:blur(3px);-webkit-backdrop-filter:blur(3px)}
+.talkabee-prev-next-nav a{width:48px;height:48px;display:grid;place-items:center;text-decoration:none;color:#fff;
+font:900 38px/1 Arial,sans-serif;text-shadow:0 1px 3px rgba(0,0,0,.42)}
 .talkabee-prev-next-nav a+a{border-left:1px solid rgba(255,255,255,.36)}
 .talkabee-prev-next-nav a:hover,.talkabee-prev-next-nav a:focus-visible{background:rgba(255,255,255,.18);outline:none}
-.talkabee-prev-next-nav a:active{transform:scale(.94)}
-@media(max-width:720px){.talkabee-prev-next-nav{top:12px;right:12px}.talkabee-prev-next-nav a{width:42px;height:42px;font-size:33px}}
-</style>
 
-<style id="farm-boardwalk-panel-master">
-/* Boardwalk-standard panel transplant — visual shell only. */
-.left-panel{display:none!important}
-.farm-panel-scroll{position:absolute!important;z-index:40!important;left:16px!important;top:16px!important;width:195px!important;height:auto!important;max-height:calc(100vh - 32px)!important;overflow:auto!important;padding:14px!important;border-radius:20px!important;background:rgba(7,23,39,.31)!important;border:1px solid rgba(255,255,255,.28)!important;box-shadow:0 10px 28px rgba(0,0,0,.22)!important;backdrop-filter:blur(3px)!important;scrollbar-width:thin!important;color:#fff!important}
-.farm-panel-scroll h1{font-size:22px!important;line-height:1.05!important;margin:0 0 10px!important;color:#fff!important;text-shadow:none!important}
-.farm-panel-scroll .label{display:block!important;margin:11px 0 5px!important;font-size:12px!important;font-weight:900!important;letter-spacing:.12em!important;color:#e9f7ff!important}
-.farm-panel-scroll #back,.farm-panel-scroll .farm-left-controls,.farm-panel-scroll .activity,.farm-panel-scroll .discovery,.farm-panel-scroll .challenge{position:relative!important;left:auto!important;top:auto!important;width:100%!important;height:auto!important;min-height:0!important}
-.farm-panel-scroll .farm-left-controls{display:block!important;margin:0!important}
-.farm-panel-scroll select,.farm-panel-scroll button,.farm-panel-scroll a{width:100%!important;display:block!important;margin:5px 0!important;padding:9px 10px!important;min-height:0!important;height:auto!important;border-radius:12px!important;border:1px solid rgba(255,255,255,.38)!important;background:rgba(7,32,50,.54)!important;color:#fff!important;font-size:13px!important;line-height:1.25!important;font-weight:800!important;text-decoration:none!important;text-align:left!important;box-shadow:none!important}
-.farm-panel-scroll select{appearance:auto!important}
-.farm-panel-scroll option{color:#17212b!important;background:#fff!important}
-.farm-panel-scroll button:hover,.farm-panel-scroll a:hover{background:rgba(255,255,255,.18)!important}
-.farm-panel-scroll .activity.active-choice,.farm-panel-scroll .discovery.active-choice,.farm-panel-scroll .challenge.active-choice{background:rgba(122,82,232,.86)!important;color:#fff!important;border-color:rgba(255,255,255,.62)!important}
-.farm-panel-scroll .discovery{margin:5px 0!important;text-align:left!important}
-.farm-panel-scroll .challenge{text-align:left!important}
-.farm-panel-scroll #back{display:block!important;margin-top:12px!important;padding:9px 10px!important;justify-content:initial!important;text-align:left!important;background:rgba(7,32,50,.54)!important}
-#restorePanel{position:fixed!important;z-index:10030!important;left:18px!important;top:18px!important;padding:10px 14px!important;border-radius:12px!important;border:1px solid #fff!important;background:rgba(7,23,39,.65)!important;color:#fff!important;font-size:14px!important;font-weight:900!important}
-#world.scene-only .farm-panel-scroll{display:none!important}
-#world.scene-only #restorePanel{display:block!important}
-@media(max-width:900px){.farm-panel-scroll{width:190px!important}}
-</style>
-<style id="talkabee-literal-master-template">
-/* ONE literal Talk A Bee Adventure shell. Legacy classes remain only as JS hooks. */
-.tab-master-panel,.tab-master-panel *,.tab-master-card,.tab-master-card *{box-sizing:border-box}
-.tab-master-panel{
- position:fixed!important;left:16px!important;top:16px!important;bottom:16px!important;right:auto!important;
- width:195px!important;min-width:195px!important;max-width:195px!important;height:auto!important;max-height:none!important;
- margin:0!important;padding:14px!important;overflow-x:hidden!important;overflow-y:auto!important;
- transform:none!important;scale:1!important;zoom:1!important;opacity:1!important;
- border-radius:20px!important;border:1px solid rgba(255,255,255,.28)!important;
- background:rgba(7,23,39,.31)!important;box-shadow:0 12px 30px rgba(0,0,0,.24)!important;
- backdrop-filter:blur(3px)!important;-webkit-backdrop-filter:blur(3px)!important;color:#fff!important;z-index:1000!important;
- font-family:Arial,Helvetica,sans-serif!important;font-size:12px!important;line-height:1.16!important;
-}
-.tab-master-panel .place,.tab-master-panel h1,.tab-master-panel .title{font-size:19px!important;line-height:1.08!important;font-weight:900!important;color:#fff!important;margin:4px 0 10px!important;text-shadow:0 2px 4px rgba(0,0,0,.55)!important}
-.tab-master-panel .label,.tab-master-panel label{font-size:9.5px!important;line-height:1.1!important;letter-spacing:.09em!important;font-weight:900!important;color:#fff!important;margin:9px 0 4px!important}
-.tab-master-panel button,.tab-master-panel select,.tab-master-panel a{
- width:100%!important;max-width:100%!important;min-height:34px!important;height:auto!important;margin:4px 0!important;padding:8px 9px!important;
- border-radius:12px!important;border:1px solid rgba(255,255,255,.38)!important;background:rgba(7,32,50,.54)!important;color:#fff!important;
- font:800 12px/1.16 Arial,Helvetica,sans-serif!important;text-align:left!important;text-decoration:none!important;white-space:normal!important;
- transform:none!important;box-shadow:none!important;
-}
-.tab-master-panel select{white-space:nowrap!important;text-overflow:ellipsis!important;overflow:hidden!important}
-.tab-master-panel button:hover,.tab-master-panel a:hover{background:rgba(20,58,79,.70)!important}
-.tab-master-panel .active,.tab-master-panel button.active{background:rgba(78,69,219,.74)!important;color:#fff!important}
-.tab-master-card{
- position:fixed!important;left:50%!important;right:auto!important;bottom:16px!important;top:auto!important;
- width:520px!important;min-width:520px!important;max-width:520px!important;height:auto!important;min-height:0!important;max-height:44vh!important;
- margin:0!important;padding:14px 16px!important;overflow:auto!important;transform:translateX(-50%)!important;scale:1!important;zoom:1!important;opacity:1!important;
- border-radius:20px!important;border:1px solid rgba(255,255,255,.30)!important;background:rgba(25,19,24,.38)!important;
- box-shadow:0 12px 30px rgba(0,0,0,.28)!important;backdrop-filter:blur(5px)!important;-webkit-backdrop-filter:blur(5px)!important;
- color:#fff!important;z-index:900!important;font-family:Arial,Helvetica,sans-serif!important;
-}
-.tab-master-card .kicker,.tab-master-card [class*="kicker"]{color:rgba(255,255,255,.94)!important;font-size:11px!important;line-height:1.1!important;font-weight:900!important;letter-spacing:.12em!important;text-shadow:0 1px 3px rgba(0,0,0,.78)!important;margin:0 0 7px!important}
-.tab-master-card h1,.tab-master-card h2{color:#fff!important;font-size:22px!important;line-height:1.08!important;margin:4px 0 7px!important;text-shadow:0 1px 3px rgba(0,0,0,.55)!important}
-.tab-master-card p,.tab-master-card .prompt,.tab-master-card .translation,.tab-master-card .tip{font-size:13px!important;line-height:1.25!important;margin:4px 0 7px!important;color:#fff!important}
-.tab-master-card .line,.tab-master-card .target,.tab-master-card #line,.tab-master-card #target{font-size:20px!important;line-height:1.12!important;font-weight:900!important;margin:7px 0!important;color:#fff!important}
-.tab-master-card .actions,.tab-master-card [class*="actions"]{display:flex!important;align-items:center!important;gap:8px!important;flex-wrap:nowrap!important;margin-top:8px!important}
-.tab-master-card .actions button,.tab-master-card [class*="actions"] button,.tab-master-card>button{width:auto!important;min-width:0!important;height:auto!important;padding:9px 13px!important;margin:0!important;border-radius:12px!important;font:900 13px/1 Arial,Helvetica,sans-serif!important;white-space:nowrap!important}
-@media(max-width:760px){.tab-master-panel{left:10px!important;top:10px!important;bottom:10px!important;width:190px!important;min-width:190px!important;max-width:190px!important;padding:11px!important}.tab-master-card{width:min(520px,calc(100vw - 24px))!important;min-width:0!important;bottom:10px!important;padding:12px!important}}
-</style>
+/* SCENE VIEW */
+.scene-return{display:none;position:fixed;z-index:2147483001;left:18px;top:18px;padding:10px 14px;border-radius:12px;
+border:1px solid #fff;background:rgba(7,23,39,.65);color:#fff;font-weight:900}
+.scene-view .panel,.scene-view .card{display:none}
+.scene-view .scene-return{display:block}
 
-<style id="tab-spoken-phrase-readability">
-/* Locked spoken-language phrase treatment: gray field + white type. */
-.tab-master-card #line,
-.tab-master-card .line,
-.tab-master-card .words {
-  background:rgba(88,88,88,.72)!important;
-  color:#fff!important;
-  border:1px solid rgba(255,255,255,.20)!important;
-  border-radius:14px!important;
-  text-shadow:0 1px 2px rgba(0,0,0,.55)!important;
-}
-.tab-master-card #line *,
-.tab-master-card .line *,
-.tab-master-card .words * {color:#fff!important;}
-</style>
-
-<style id="talkabee-readable-supporting-text">
-/* Readability-only repair. Existing links, navigation, JS, hotspots and audio are untouched. */
-.tab-master-card p,
-.tab-master-card .prompt,
-.tab-master-card #prompt,
-.tab-master-card .instruction,
-.tab-master-card .instructions,
-.tab-master-card .hint,
-.tab-master-card #hint,
-.tab-master-card .translation,
-.tab-master-card #translation,
-.tab-master-card .english,
-.tab-master-card [class*="subtitle"],
-.tab-master-card [class*="instruction"],
-.tab-master-card [class*="prompt"],
-.tab-master-card [class*="translation"],
-.tab-master-card [class*="hint"],
-.tab-master-card [class*="status"],
-.animal-lesson-card p,
-.animal-lesson-card .prompt,
-.animal-lesson-card .instruction,
-.animal-lesson-card .translation,
-.animal-lesson-card .hint {
-  font-size:18px !important;
-  line-height:1.35 !important;
-}
-
-/* Small location/progress/counter lines also need to be readable. */
-.tab-master-card .eyebrow,
-.tab-master-card .kicker,
-.tab-master-card .overline,
-.tab-master-card .location,
-.tab-master-card .activity-count,
-.tab-master-card .challenge-count,
-.tab-master-card [class*="count"],
-.animal-lesson-card .eyebrow,
-.animal-lesson-card [class*="count"] {
-  font-size:15px !important;
-  line-height:1.25 !important;
-  font-weight:800 !important;
-}
-
-/* Spoken/foreign-language line stays visually strongest. */
-.tab-master-card #line,
-.tab-master-card .line,
-.tab-master-card .train-line,
-.tab-master-card .words,
-.tab-master-card [class*="phrase"],
-.animal-lesson-card #line,
-.animal-lesson-card .line,
-.animal-lesson-card [class*="phrase"] {
-  font-size:22px !important;
-  line-height:1.28 !important;
-  font-weight:800 !important;
-}
-
-/* Let increased text wrap naturally instead of being clipped. */
-.tab-master-card,
-.animal-lesson-card {
-  height:auto !important;
+@media(max-width:760px){
+ .panel{left:10px;top:10px;bottom:10px;width:180px;min-width:180px;max-width:180px;padding:11px}
+ .card{width:min(520px,calc(100vw - 32px));bottom:10px;transform:translateX(-50%) scale(.82)}
+ .talkabee-prev-next-nav{top:12px;right:12px}.talkabee-prev-next-nav a{width:42px;height:42px;font-size:33px}
 }
 </style>
-
-  <link rel="icon" type="image/png" href="images/PNG/talkabee-favicon.png">
-  <link rel="shortcut icon" type="image/png" href="images/PNG/talkabee-favicon.png">
 
 <style id="talkabee-edition-menu-style">
 .talkabee-editions{position:fixed;top:16px;left:50%;transform:translateX(-50%);z-index:2147482998;font-family:Arial,sans-serif}
@@ -535,6 +111,7 @@ Target the actual elements.
 
 <!-- TALK A BEE HOTSPOTS VISUALLY RECERTIFIED AGAINST CURRENT SCENE ARTWORK: 2026-10-07 -->
 
+
 <style id="talkabee-bilingual-hotspot-popup-style">
 #talkabee-object-popup{position:fixed;z-index:2147482900;display:none;padding:8px 12px;border-radius:12px;background:rgba(20,20,20,.82);color:white;font-weight:900;font-size:14px;pointer-events:none}
 </style>
@@ -555,255 +132,196 @@ Target the actual elements.
 </details>
 </div>
 
-<nav class="talkabee-prev-next-nav" aria-label="Adventure navigation"><a href="Talk-A-Bee-Hotel-Adventure.html" aria-label="Previous page" title="Previous">‹</a><a href="Talk-A-Bee-Boardwalk-Adventure.html" aria-label="Next page" title="Next">›</a></nav>
+<nav class="talkabee-prev-next-nav" aria-label="Adventure navigation">
+  <a href="Talk-A-Bee-Underwater-Adventure.html" aria-label="Previous adventure" title="Previous">‹</a>
+  <a href="Talk-A-Bee-Airplane-Flying-Adventure.html" aria-label="Next adventure" title="Next">›</a>
+</nav>
 
 <main class="world" id="world">
+<button class="scene-return" id="sceneReturn">Return to Adventure</button>
 
-
-<button id="restorePanel" type="button">Return to Adventure</button>
-<img class="scene" src="images/animals-farm-adventure.jpg" alt="Animals Farm Adventure">
-<div class="left-panel" aria-hidden="true"></div>
-<aside class="farm-panel-scroll tab-master-panel" aria-label="Animals Farm Adventure controls">
-<h1>🐝 Animals — Farm Adventure</h1>
+<aside class="panel">
+<h1>🏔️ Mountain Ski Resort</h1>
 <div class="tab-panel-size-controls" aria-label="Activity panel size"><button type="button" class="tab-panel-minus" title="Make activity panel smaller">−</button><button type="button" class="tab-panel-reset" title="Reset activity panel size">Reset</button><button type="button" class="tab-panel-plus" title="Make activity panel larger">+</button></div>
 
 <div class="label">LANGUAGE</div>
-<div class="farm-left-controls">
-<select id="adventureLanguage" aria-label="Adventure language"><option value="es">🇪🇸 Spanish</option><option value="fr">🇫🇷 French</option><option value="en">🇺🇸 English</option><option value="de">🇩🇪 German</option><option value="it">🇮🇹 Italian</option><option value="pt">🇵🇹 Portuguese</option><option value="no">🇳🇴 Norwegian</option></select>
+<select id="lang" data-tab-global-voice="1">
+<option value="es">Spanish</option><option value="fr">French</option><option value="en">English</option>
+<option value="de">German</option><option value="it">Italian</option><option value="pt">Portuguese</option><option value="no">Norwegian</option>
+</select>
 <div class="label">VOICE</div>
-<select id="adventureVoice" aria-label="Adventure voice"><option value="">Browser Default Voice</option><option value="urn:moz-tts:sapi:Microsoft David - English (United States)?en-US">Microsoft David - English (United States) — en-US</option><option value="urn:moz-tts:sapi:Microsoft Mark - English (United States)?en-US">Microsoft Mark - English (United States) — en-US</option><option value="urn:moz-tts:sapi:Microsoft Zira - English (United States)?en-US">Microsoft Zira - English (United States) — en-US</option><option value="urn:moz-tts:sapi:Microsoft David Desktop - English (United States)?en-US">Microsoft David Desktop - English (United States) — en-US</option><option value="urn:moz-tts:sapi:Microsoft Zira Desktop - English (United States)?en-US">Microsoft Zira Desktop - English (United States) — en-US</option></select>
-<button id="sceneView" type="button" aria-pressed="false">◉ Scene View</button>
-</div>
+<select id="voice" data-tab-global-voice="1"><option value="">Browser Default</option><option value="Microsoft David - English (United States)">Microsoft David - English (United States) — en-US</option><option value="Microsoft Mark - English (United States)">Microsoft Mark - English (United States) — en-US</option><option value="Microsoft Zira - English (United States)">Microsoft Zira - English (United States) — en-US</option><option value="Microsoft David Desktop - English (United States)">Microsoft David Desktop - English (United States) — en-US</option><option value="Microsoft Zira Desktop - English (United States)">Microsoft Zira Desktop - English (United States) — en-US</option></select>
+<button id="sceneView" aria-pressed="false">◉ Scene View</button>
+
 <div class="label">DISCOVERY</div>
-<button class="click discovery" data-key="discovery" aria-label="Discovery">🔎 Discovery — Click the Scene</button>
+<button id="discovery">🔎 Discovery — Click the Scene</button>
+
 <div class="label">ACTIVITIES</div>
-<button class="click activity a1 active-choice" data-key="pets" aria-label="Activity 1 Friendly Pets">1. Friendly Pets</button>
-<button class="click activity a2" data-key="farm" aria-label="Activity 2 Farm Animals">2. Farm Animals</button>
-<button class="click activity a3" data-key="wild" aria-label="Activity 3 Wild Neighbors">3. Wild Neighbors</button>
-<button class="click activity a4" data-key="birds" aria-label="Activity 4 Chickens and Rooster">4. Chickens &amp; Rooster</button>
-<button class="click activity a5" data-key="field" aria-label="Activity 5 Animals in the Field">5. Animals in the Field</button>
-<button class="click activity a6" data-key="actions" aria-label="Activity 6 Animal Actions">6. Animal Actions</button>
+<button data-lesson="arrive">1. Arrive at the Resort</button>
+<button data-lesson="gear">2. Get Your Ski Gear</button>
+<button data-lesson="lift">3. Ride the Chairlift</button>
+<button data-lesson="slopes">4. Ski the Mountain</button>
+<button data-lesson="lodge">5. Visit the Lodge</button>
+<button data-lesson="winter">6. Winter Fun</button>
 <div class="label">CHALLENGES</div>
-<button class="click challenge c1" data-key="c1" aria-label="Challenge 1">1. Challenge 1 of 6</button>
-<button class="click challenge c2" data-key="c2" aria-label="Challenge 2">2. Challenge 2 of 6</button>
-<button class="click challenge c3" data-key="c3" aria-label="Challenge 3">3. Challenge 3 of 6</button>
-<button class="click challenge c4" data-key="c4" aria-label="Challenge 4">4. Challenge 4 of 6</button>
-<button class="click challenge c5" data-key="c5" aria-label="Challenge 5">5. Challenge 5 of 6</button>
-<button class="click challenge c6" data-key="c6" aria-label="Challenge 6">6. Challenge 6 of 6</button>
+<button data-ch="0">1. Find the Chairlift</button>
+<button data-ch="1">2. Find the Skis</button>
+<button data-ch="2">3. Find Grandma</button>
+<button data-ch="3">4. Find Grandpa</button>
+<button data-ch="4">5. Find the Bee</button>
+<button data-ch="5">6. Find the Fire Pit</button>
+<a href="index.html">← Return to Main Directory</a>
+</aside>
 
-<a id="back" class="click" href="index.html" aria-label="Return to Main Directory">← Return to Main Directory</a></aside><div class="script-mask" aria-hidden="true">
+<section class="card">
+<div class="tab-card-tools" aria-label="Script card controls"><button type="button" class="tab-card-drag" title="Move script card">↕ Move</button><button type="button" class="tab-card-font-down" title="Decrease text">A−</button><button type="button" class="tab-card-font-up" title="Increase text">A+</button><button type="button" class="tab-card-reset" title="Reset card">Reset</button></div><div class="tab-card-resize" title="Drag to resize script card" aria-label="Resize script card">↘</div>
 
-</div><section class="live-card tab-master-card" aria-live="polite"><div class="tab-card-tools" aria-label="Script card controls"><button type="button" class="tab-card-drag" title="Move script card">↕ Move</button><button type="button" class="tab-card-font-down" title="Decrease text">A−</button><button type="button" class="tab-card-font-up" title="Increase text">A+</button><button type="button" class="tab-card-reset" title="Reset card">Reset</button></div><div class="kicker" id="kicker">ACTIVITY 1 • FRIENDLY PETS</div><h1 id="title">Meet Bear by the campfire.</h1><p class="prompt" id="prompt">Listen, repeat, and use the scene to connect the words with what you see.</p><div class="target" id="target">El perro está junto al fuego.</div><div class="translation" id="translation">The dog is beside the fire.</div><div class="actions"><button class="primary audio-active" id="normal">🔊 Speak</button><button id="slow">🐢 Slow</button><button id="replay">↻ Replay</button></div><div class="status" id="status"></div><div class="tab-card-resize" title="Drag to resize script card" aria-label="Resize script card">↘</div></section>
-<button class="hotspot" id="horse" data-name="Horse" data-es="el caballo" style="width: 13.28%; height: 12.97%; left: 16.79%; top: 41.71%;"></button><button class="hotspot" id="cow" data-name="Cow" data-es="la vaca" style="left: 33.39%; top: 43.8%; width: 9.85%; height: 6.68%;"></button><button class="hotspot" id="sheep" data-name="Sheep" data-es="la oveja" style="left: 24.85%; top: 51.3%; width: 8.55%; height: 7.23%;"></button><button class="hotspot" id="goat" data-name="Goat" data-es="la cabra" style="left: 27.53%; top: 65.46%; width: 10.63%; height: 14.18%;"></button><button class="hotspot" id="pig" data-name="Pig" data-es="el cerdo" style="left: 15.2%; top: 72.89%; width: 10%; height: 14.92%;"></button><button class="hotspot" id="dog" data-name="Dog" data-es="el perro" style="left: 50.98%; top: 71.07%; width: 10.89%; height: 13.35%;"></button><button class="hotspot" id="rooster" data-name="Rooster" data-es="el gallo" style="width: 4.74%; height: 9.55%; left: 85.04%; top: 62.61%;"></button><button class="hotspot" id="chicken" data-name="Chicken" data-es="la gallina" style="left: 78.69%; top: 68.39%;"></button><button class="hotspot" id="rabbit" data-name="Rabbit" data-es="el conejo" style="width: 8.18%; height: 10.29%; left: 56.57%; top: 92.6%;"></button><button class="hotspot" id="squirrel" data-name="Squirrel" data-es="la ardilla" style="left: 94.98%; top: 47.32%; width: 7.14%; height: 12.6%;"></button><button class="hotspot" id="bee" data-name="Bee" data-es="la abeja" style="width: 5.42%; height: 12.6%; left: 79.67%; top: 15.65%;"></button><button class="hotspot" id="butterfly" data-name="Butterfly" data-es="la mariposa" style="left: 39.57%; top: 92.06%; width: 7.24%; height: 7.23%;"></button><button class="hotspot" id="barn" data-name="Barn" data-es="el granero" style="width: 7.61%; height: 13.71%; left: 56.35%; top: 38.44%;"></button><button class="hotspot" id="windmill" data-name="Windmill" data-es="el molino de viento" style="left: 63.23%; top: 22.13%; width: 3.81%; height: 12.6%;"></button><button class="hotspot" id="rv" data-name="Fifth-wheel RV" data-es="la casa rodante"></button><button class="hotspot" id="solar" data-name="Solar panels" data-es="los paneles solares" style="left: 75.71%; top: 16.1%; width: 14.38%; height: 18.07%;"></button><button class="hotspot" id="campfire" data-name="Campfire" data-es="la fogata" style="left: 63.18%; top: 68.86%; width: 12.35%; height: 13.99%;"></button><button class="hotspot" id="fence" data-name="Fence" data-es="la cerca" style="left: 12.28%; top: 55.74%; width: 3.96%; height: 16.03%;"></button><button class="hotspot" id="flowers" data-name="Flowers" data-es="las flores" style="left: 8.6%; top: 92.17%; width: 10.63%; height: 13.8%;"></button><button class="hotspot" id="mountains" data-name="Mountains" data-es="las montañas" style="width: 15.83%; height: 11.22%; left: 29.15%; top: 19.46%;"></button><button class="hotspot" id="chick" data-name="Chick" data-es="el pollito" style="left: 87.44%; top: 74.31%; width: 5.89%; height: 8.53%;"></button>
+<div class="kicker">AT THE MOUNTAIN SKI RESORT</div>
+<h2 id="title">Click &amp; Discover</h2>
+<p id="prompt">You found pine trees.</p>
+<div class="word"><strong id="line">pine trees</strong><div class="translation" id="translation"></div></div>
+<p id="status"></p>
+<div class="controls">
+<button id="normal">🔊 Speak</button><button id="slow">🐢 Slow</button><button id="replay">↻ Replay</button><button id="nextPhrase">Next phrase →</button>
+</div>
+</section>
+
+
+<!-- Hotspots mapped to the approved wide ski-resort JPG. -->
+<button class="hotspot" data-word="mountain" style="left:19%;top:2%;width:38%;height:28%" aria-label="Mountain"></button>
+<button class="hotspot" data-word="chairlift" style="left:59%;top:0%;width:27%;height:22%" aria-label="Chairlift"></button>
+<button class="hotspot" data-word="skiers" style="left:48%;top:24%;width:20%;height:25%" aria-label="Skiers"></button>
+<button class="hotspot" data-word="trails" style="left:34%;top:34%;width:9%;height:8%" aria-label="Trails sign"></button>
+<button class="hotspot" data-word="lift" style="left:34%;top:40%;width:9%;height:7%" aria-label="Lift sign"></button>
+<button class="hotspot" data-word="rentals" style="left:34%;top:46%;width:9%;height:7%" aria-label="Rentals sign"></button>
+<button class="hotspot" data-word="school" style="left:34%;top:52%;width:10%;height:7%" aria-label="Ski school sign"></button>
+<button class="hotspot" data-word="cafe" style="left:34%;top:58%;width:9%;height:7%" aria-label="Cafe sign"></button>
+<button class="hotspot" data-word="skis" style="left:43%;top:46%;width:10%;height:21%" aria-label="Skis"></button>
+<button class="hotspot" data-word="snowboard" style="left:38%;top:59%;width:11%;height:9%" aria-label="Snowboard"></button>
+<button class="hotspot" data-word="bee" style="left: 42.14%; top: 59.93%; width: 10%; height: 22%;" aria-label="Skiing bee" data-sound="sounds/bee.mp3"></button>
+<button class="hotspot" data-word="grandma" style="left: 54.64%; top: 43.25%; width: 6.61%; height: 32.17%;" aria-label="Grandma"></button>
+<button class="hotspot" data-word="grandpa" style="left: 64.52%; top: 41%; width: 5.73%; height: 35.7%;" aria-label="Grandpa"></button>
+<button class="hotspot" data-word="lodge" style="left:70%;top:21%;width:30%;height:38%" aria-label="Ski lodge" data-sound="sounds/crowd-shopping.mp3"></button>
+<button class="hotspot" data-word="resortsign" style="left:86%;top:31%;width:13%;height:10%" aria-label="Ski resort sign"></button>
+<button class="hotspot" data-word="firepit" style="left: 86%; top: 58%; width: 10.15%; height: 12.69%;" aria-label="Fire pit"></button>
+<button class="hotspot" data-word="chairs" style="left:74%;top:59%;width:15%;height:19%" aria-label="Chairs"></button>
+<button class="hotspot" data-word="trees" style="left:0%;top:8%;width:28%;height:51%" aria-label="Snowy pine trees"></button>
+<button class="hotspot" data-word="snow" style="left: 20.86%; top: 71.87%; width: 21.8%; height: 19.06%;" aria-label="Snow"></button>
+
 </main>
+
 <script>
-const languageData={
-es:{
- speech:'es-ES',name:'Spanish',
- lessons:{
-  pets:['ACTIVITY 1 • FRIENDLY PETS','Meet Bear by the campfire.','Listen, repeat, and use the scene to connect the words with what you see.','El perro está junto al fuego.','The dog is beside the fire.'],
-  farm:['ACTIVITY 2 • FARM ANIMALS','Meet the animals on the farm.','Practice the names of familiar farm animals.','El caballo, la vaca y la oveja están en la granja.','The horse, cow, and sheep are on the farm.'],
-  wild:['ACTIVITY 3 • WILD NEIGHBORS','Look for the smaller visitors.','Some animals live around the farm without living in the barn.','La ardilla y el conejo están cerca del campo.','The squirrel and rabbit are near the field.'],
-  birds:['ACTIVITY 4 • CHICKENS & ROOSTER','Listen to the farm birds.','Practice easy sentences with the chickens and rooster.','El gallo está con las gallinas.','The rooster is with the chickens.'],
-  field:['ACTIVITY 5 • ANIMALS IN THE FIELD','Look across the farm field.','Use location words to describe where the animals are.','La vaca y la oveja están junto a la cerca.','The cow and sheep are beside the fence.'],
-  actions:['ACTIVITY 6 • ANIMAL ACTIONS','What are the animals doing?','Practice simple action words using the scene.','El perro descansa y el caballo está de pie.','The dog rests and the horse is standing.']},
- challenges:{c1:['¿Dónde está el perro?','Where is the dog?'],c2:['¿Dónde está el caballo?','Where is the horse?'],c3:['¿Dónde está la vaca?','Where is the cow?'],c4:['¿Dónde está la oveja?','Where is the sheep?'],c5:['¿Dónde está el cerdo?','Where is the pig?'],c6:['¿Dónde está la abeja?','Where is the bee?']},
- words:{horse:'el caballo',cow:'la vaca',sheep:'la oveja',goat:'la cabra',pig:'el cerdo',dog:'el perro',rooster:'el gallo',chicken:'la gallina',rabbit:'el conejo',squirrel:'la ardilla',bee:'la abeja',butterfly:'la mariposa',barn:'el granero',windmill:'el molino de viento',rv:'la casa rodante',solar:'los paneles solares',campfire:'la fogata',fence:'la cerca',flowers:'las flores',mountains:'las montañas',chick:'el pollito'}
-},
-fr:{
- speech:'fr-FR',name:'French',
- lessons:{
-  pets:['ACTIVITY 1 • FRIENDLY PETS','Meet Bear by the campfire.','Listen, repeat, and use the scene to connect the words with what you see.','Le chien est près du feu.','The dog is beside the fire.'],
-  farm:['ACTIVITY 2 • FARM ANIMALS','Meet the animals on the farm.','Practice the names of familiar farm animals.','Le cheval, la vache et le mouton sont à la ferme.','The horse, cow, and sheep are on the farm.'],
-  wild:['ACTIVITY 3 • WILD NEIGHBORS','Look for the smaller visitors.','Some animals live around the farm without living in the barn.','L’écureuil et le lapin sont près du champ.','The squirrel and rabbit are near the field.'],
-  birds:['ACTIVITY 4 • CHICKENS & ROOSTER','Listen to the farm birds.','Practice easy sentences with the chickens and rooster.','Le coq est avec les poules.','The rooster is with the chickens.'],
-  field:['ACTIVITY 5 • ANIMALS IN THE FIELD','Look across the farm field.','Use location words to describe where the animals are.','La vache et le mouton sont près de la clôture.','The cow and sheep are beside the fence.'],
-  actions:['ACTIVITY 6 • ANIMAL ACTIONS','What are the animals doing?','Practice simple action words using the scene.','Le chien se repose et le cheval est debout.','The dog rests and the horse is standing.']},
- challenges:{c1:['Où est le chien ?','Where is the dog?'],c2:['Où est le cheval ?','Where is the horse?'],c3:['Où est la vache ?','Where is the cow?'],c4:['Où est le mouton ?','Where is the sheep?'],c5:['Où est le cochon ?','Where is the pig?'],c6:['Où est l’abeille ?','Where is the bee?']},
- words:{horse:'le cheval',cow:'la vache',sheep:'le mouton',goat:'la chèvre',pig:'le cochon',dog:'le chien',rooster:'le coq',chicken:'la poule',rabbit:'le lapin',squirrel:'l’écureuil',bee:'l’abeille',butterfly:'le papillon',barn:'la grange',windmill:'le moulin à vent',rv:'le camping-car',solar:'les panneaux solaires',campfire:'le feu de camp',fence:'la clôture',flowers:'les fleurs',mountains:'les montagnes',chick:'le poussin'}
-},
-en:{
- speech:'en-US',name:'English',
- lessons:{
-  pets:['ACTIVITY 1 • FRIENDLY PETS','Meet Bear by the campfire.','Listen, repeat, and use the scene to connect the words with what you see.','The dog is beside the fire.',''],
-  farm:['ACTIVITY 2 • FARM ANIMALS','Meet the animals on the farm.','Practice the names of familiar farm animals.','The horse, cow, and sheep are on the farm.',''],
-  wild:['ACTIVITY 3 • WILD NEIGHBORS','Look for the smaller visitors.','Some animals live around the farm without living in the barn.','The squirrel and rabbit are near the field.',''],
-  birds:['ACTIVITY 4 • CHICKENS & ROOSTER','Listen to the farm birds.','Practice easy sentences with the chickens and rooster.','The rooster is with the chickens.',''],
-  field:['ACTIVITY 5 • ANIMALS IN THE FIELD','Look across the farm field.','Use location words to describe where the animals are.','The cow and sheep are beside the fence.',''],
-  actions:['ACTIVITY 6 • ANIMAL ACTIONS','What are the animals doing?','Practice simple action words using the scene.','The dog rests and the horse is standing.','']},
- challenges:{c1:['Where is the dog?',''],c2:['Where is the horse?',''],c3:['Where is the cow?',''],c4:['Where is the sheep?',''],c5:['Where is the pig?',''],c6:['Where is the bee?','']},
- words:{horse:'horse',cow:'cow',sheep:'sheep',goat:'goat',pig:'pig',dog:'dog',rooster:'rooster',chicken:'chicken',rabbit:'rabbit',squirrel:'squirrel',bee:'bee',butterfly:'butterfly',barn:'barn',windmill:'windmill',rv:'fifth-wheel RV',solar:'solar panels',campfire:'campfire',fence:'fence',flowers:'flowers',mountains:'mountains',chick:'chick'}
-},
-de:{speech:'de-DE',name:'German',lessons:{pets:['ACTIVITY 1 • FRIENDLY PETS','Meet Bear by the campfire.','Listen, repeat, and use the scene to connect the words with what you see.','Der Hund ist neben dem Feuer.','The dog is beside the fire.'],farm:['ACTIVITY 2 • FARM ANIMALS','Meet the animals on the farm.','Practice the names of familiar farm animals.','Das Pferd, die Kuh und das Schaf sind auf dem Bauernhof.','The horse, cow, and sheep are on the farm.'],wild:['ACTIVITY 3 • WILD NEIGHBORS','Look for the smaller visitors.','Some animals live around the farm without living in the barn.','Das Eichhörnchen und das Kaninchen sind in der Nähe des Feldes.','The squirrel and rabbit are near the field.'],birds:['ACTIVITY 4 • CHICKENS & ROOSTER','Listen to the farm birds.','Practice easy sentences with the chickens and rooster.','Der Hahn ist bei den Hühnern.','The rooster is with the chickens.'],field:['ACTIVITY 5 • ANIMALS IN THE FIELD','Look across the farm field.','Use location words to describe where the animals are.','Die Kuh und das Schaf sind neben dem Zaun.','The cow and sheep are beside the fence.'],actions:['ACTIVITY 6 • ANIMAL ACTIONS','What are the animals doing?','Practice simple action words using the scene.','Der Hund ruht sich aus und das Pferd steht.','The dog rests and the horse is standing.']},challenges:{c1:['Wo ist der Hund?','Where is the dog?'],c2:['Wo ist das Pferd?','Where is the horse?'],c3:['Wo ist die Kuh?','Where is the cow?'],c4:['Wo ist das Schaf?','Where is the sheep?'],c5:['Wo ist das Schwein?','Where is the pig?'],c6:['Wo ist die Biene?','Where is the bee?']},words:{horse:'das Pferd',cow:'die Kuh',sheep:'das Schaf',goat:'die Ziege',pig:'das Schwein',dog:'der Hund',rooster:'der Hahn',chicken:'das Huhn',rabbit:'das Kaninchen',squirrel:'das Eichhörnchen',bee:'die Biene',butterfly:'der Schmetterling',barn:'die Scheune',windmill:'die Windmühle',rv:'der Wohnwagen',solar:'die Solarmodule',campfire:'das Lagerfeuer',fence:'der Zaun',flowers:'die Blumen',mountains:'die Berge',chick:'das Küken'}},
-it:{speech:'it-IT',name:'Italian',lessons:{pets:['ACTIVITY 1 • FRIENDLY PETS','Meet Bear by the campfire.','Listen, repeat, and use the scene to connect the words with what you see.','Il cane è vicino al fuoco.','The dog is beside the fire.'],farm:['ACTIVITY 2 • FARM ANIMALS','Meet the animals on the farm.','Practice the names of familiar farm animals.','Il cavallo, la mucca e la pecora sono nella fattoria.','The horse, cow, and sheep are on the farm.'],wild:['ACTIVITY 3 • WILD NEIGHBORS','Look for the smaller visitors.','Some animals live around the farm without living in the barn.','Lo scoiattolo e il coniglio sono vicino al campo.','The squirrel and rabbit are near the field.'],birds:['ACTIVITY 4 • CHICKENS & ROOSTER','Listen to the farm birds.','Practice easy sentences with the chickens and rooster.','Il gallo è con le galline.','The rooster is with the chickens.'],field:['ACTIVITY 5 • ANIMALS IN THE FIELD','Look across the farm field.','Use location words to describe where the animals are.','La mucca e la pecora sono vicino alla recinzione.','The cow and sheep are beside the fence.'],actions:['ACTIVITY 6 • ANIMAL ACTIONS','What are the animals doing?','Practice simple action words using the scene.','Il cane riposa e il cavallo è in piedi.','The dog rests and the horse is standing.']},challenges:{c1:['Dov’è il cane?','Where is the dog?'],c2:['Dov’è il cavallo?','Where is the horse?'],c3:['Dov’è la mucca?','Where is the cow?'],c4:['Dov’è la pecora?','Where is the sheep?'],c5:['Dov’è il maiale?','Where is the pig?'],c6:['Dov’è l’ape?','Where is the bee?']},words:{horse:'il cavallo',cow:'la mucca',sheep:'la pecora',goat:'la capra',pig:'il maiale',dog:'il cane',rooster:'il gallo',chicken:'la gallina',rabbit:'il coniglio',squirrel:'lo scoiattolo',bee:'l’ape',butterfly:'la farfalla',barn:'il fienile',windmill:'il mulino a vento',rv:'il camper',solar:'i pannelli solari',campfire:'il falò',fence:'la recinzione',flowers:'i fiori',mountains:'le montagne',chick:'il pulcino'}},
-pt:{speech:'pt-PT',name:'Portuguese',lessons:{pets:['ACTIVITY 1 • FRIENDLY PETS','Meet Bear by the campfire.','Listen, repeat, and use the scene to connect the words with what you see.','O cão está junto ao fogo.','The dog is beside the fire.'],farm:['ACTIVITY 2 • FARM ANIMALS','Meet the animals on the farm.','Practice the names of familiar farm animals.','O cavalo, a vaca e a ovelha estão na quinta.','The horse, cow, and sheep are on the farm.'],wild:['ACTIVITY 3 • WILD NEIGHBORS','Look for the smaller visitors.','Some animals live around the farm without living in the barn.','O esquilo e o coelho estão perto do campo.','The squirrel and rabbit are near the field.'],birds:['ACTIVITY 4 • CHICKENS & ROOSTER','Listen to the farm birds.','Practice easy sentences with the chickens and rooster.','O galo está com as galinhas.','The rooster is with the chickens.'],field:['ACTIVITY 5 • ANIMALS IN THE FIELD','Look across the farm field.','Use location words to describe where the animals are.','A vaca e a ovelha estão junto à cerca.','The cow and sheep are beside the fence.'],actions:['ACTIVITY 6 • ANIMAL ACTIONS','What are the animals doing?','Practice simple action words using the scene.','O cão descansa e o cavalo está de pé.','The dog rests and the horse is standing.']},challenges:{c1:['Onde está o cão?','Where is the dog?'],c2:['Onde está o cavalo?','Where is the horse?'],c3:['Onde está a vaca?','Where is the cow?'],c4:['Onde está a ovelha?','Where is the sheep?'],c5:['Onde está o porco?','Where is the pig?'],c6:['Onde está a abelha?','Where is the bee?']},words:{horse:'o cavalo',cow:'a vaca',sheep:'a ovelha',goat:'a cabra',pig:'o porco',dog:'o cão',rooster:'o galo',chicken:'a galinha',rabbit:'o coelho',squirrel:'o esquilo',bee:'a abelha',butterfly:'a borboleta',barn:'o celeiro',windmill:'o moinho de vento',rv:'a autocaravana',solar:'os painéis solares',campfire:'a fogueira',fence:'a cerca',flowers:'as flores',mountains:'as montanhas',chick:'o pintainho'}},
-no:{speech:'nb-NO',name:'Norwegian',lessons:{pets:['ACTIVITY 1 • FRIENDLY PETS','Meet Bear by the campfire.','Listen, repeat, and use the scene to connect the words with what you see.','Hunden er ved bålet.','The dog is beside the fire.'],farm:['ACTIVITY 2 • FARM ANIMALS','Meet the animals on the farm.','Practice the names of familiar farm animals.','Hesten, kua og sauen er på gården.','The horse, cow, and sheep are on the farm.'],wild:['ACTIVITY 3 • WILD NEIGHBORS','Look for the smaller visitors.','Some animals live around the farm without living in the barn.','Ekornet og kaninen er nær jordet.','The squirrel and rabbit are near the field.'],birds:['ACTIVITY 4 • CHICKENS & ROOSTER','Listen to the farm birds.','Practice easy sentences with the chickens and rooster.','Hanen er sammen med hønene.','The rooster is with the chickens.'],field:['ACTIVITY 5 • ANIMALS IN THE FIELD','Look across the farm field.','Use location words to describe where the animals are.','Kua og sauen er ved gjerdet.','The cow and sheep are beside the fence.'],actions:['ACTIVITY 6 • ANIMAL ACTIONS','What are the animals doing?','Practice simple action words using the scene.','Hunden hviler og hesten står.','The dog rests and the horse is standing.']},challenges:{c1:['Hvor er hunden?','Where is the dog?'],c2:['Hvor er hesten?','Where is the horse?'],c3:['Hvor er kua?','Where is the cow?'],c4:['Hvor er sauen?','Where is the sheep?'],c5:['Hvor er grisen?','Where is the pig?'],c6:['Hvor er bien?','Where is the bee?']},words:{horse:'hesten',cow:'kua',sheep:'sauen',goat:'geita',pig:'grisen',dog:'hunden',rooster:'hanen',chicken:'høna',rabbit:'kaninen',squirrel:'ekornet',bee:'bien',butterfly:'sommerfuglen',barn:'låven',windmill:'vindmøllen',rv:'bobilen',solar:'solcellepanelene',campfire:'bålet',fence:'gjerdet',flowers:'blomstene',mountains:'fjellene',chick:'kyllingen'}}
-};
-
-const challengeMeta={
- c1:{obj:'dog',title:'Find Bear.',prompt:'Click Bear in the scene.'},
- c2:{obj:'horse',title:'Find the horse.',prompt:'Click the horse in the scene.'},
- c3:{obj:'cow',title:'Find the cow.',prompt:'Click the cow in the scene.'},
- c4:{obj:'sheep',title:'Find the sheep.',prompt:'Click the sheep in the scene.'},
- c5:{obj:'pig',title:'Find the pig.',prompt:'Click the pig in the scene.'},
- c6:{obj:'bee',title:'Find the Talk A Bee guide.',prompt:'Look on top of the fifth-wheel RV.'}
-};
-const englishNames={horse:'Horse',cow:'Cow',sheep:'Sheep',goat:'Goat',pig:'Pig',dog:'Dog',rooster:'Rooster',chicken:'Chicken',rabbit:'Rabbit',squirrel:'Squirrel',bee:'Bee',butterfly:'Butterfly',barn:'Barn',windmill:'Windmill',rv:'Fifth-wheel RV',solar:'Solar panels',campfire:'Campfire',fence:'Fence',flowers:'Flowers',mountains:'Mountains',chick:'Chick'};
-const discoverySounds={horse:'horse.mp3',cow:'cow.mp3',sheep:'sheep.mp3',goat:'goat.mp3',pig:'pig.mp3',dog:'dog.mp3',rooster:'rooster.mp3',chicken:'chicken.mp3',chick:'chicks.mp3',barn:'tractor.mp3',rv:'rv.mp3'};
-let discoverySound=null;
-function playDiscoverySound(id){
- const file=discoverySounds[id]; if(!file)return;
- if(discoverySound){discoverySound.pause();discoverySound.currentTime=0;}
- discoverySound=new Audio('sounds/'+file);
- discoverySound.play().catch(()=>{});
-}
-const KEY='talkabee-learn-language';
-const qsLang=new URLSearchParams(location.search).get('lang');
-let lang=languageData[qsLang]?qsLang:(languageData[localStorage.getItem(KEY)]?localStorage.getItem(KEY):'es');
-localStorage.setItem(KEY,lang);
-const selector=document.getElementById('adventureLanguage');selector.value=lang;
-const voiceSelector=document.getElementById('adventureVoice');
-function fillFarmVoices(){
- if(!('speechSynthesis' in window))return;
- const saved=localStorage.getItem('talkabee-voice-'+lang)||'';
- const voices=speechSynthesis.getVoices()||[];
- voiceSelector.innerHTML='<option value="">Browser Default Voice</option>';
- voices.forEach(v=>voiceSelector.add(new Option(v.name+' — '+(v.lang||''),v.voiceURI)));
- if([...voiceSelector.options].some(o=>o.value===saved))voiceSelector.value=saved;
-}
-
-let activeKey='pets',challengeTarget=null,mode='lesson';
-const world=document.getElementById('world');
-const els={kicker:document.getElementById('kicker'),title:document.getElementById('title'),prompt:document.getElementById('prompt'),target:document.getElementById('target'),translation:document.getElementById('translation'),status:document.getElementById('status')};
-
-function data(){return languageData[lang]}
-function setCard(v){['kicker','title','prompt','target','translation'].forEach((k,i)=>els[k].textContent=v[i]||'');els.status.textContent=''}
-function clearModes(){world.classList.remove('discover','challenge-mode');document.querySelectorAll('.hotspot').forEach(h=>h.classList.remove('target-hotspot'));document.querySelectorAll('[data-key]').forEach(b=>b.classList.remove('active-choice'));challengeTarget=null}
-function markActive(k){const b=document.querySelector('[data-key="'+k+'"]');if(b)b.classList.add('active-choice')}
-function showLesson(k){clearModes();mode='lesson';activeKey=k;markActive(k);setCard(data().lessons[k])}
-function showDiscovery(){
- clearModes();mode='discovery';activeKey='discovery';markActive('discovery');world.classList.add('discover');
- els.kicker.textContent='DISCOVERY';els.title.textContent='Explore the farm — click anything that glows.';
- els.prompt.textContent='Animals, objects, and scenery all have '+data().name+' names to discover.';
- els.target.textContent='Choose something in the scene.';els.translation.textContent='';els.status.textContent='';
-}
-function showChallenge(k){
- clearModes();mode='challenge';activeKey=k;markActive(k);const m=challengeMeta[k],v=data().challenges[k];challengeTarget=m.obj;
- setCard(['CHALLENGE '+k.slice(1)+' OF 6',m.title,m.prompt,v[0],v[1]]);
- world.classList.add('challenge-mode');document.getElementById(m.obj).classList.add('target-hotspot');
-}
-function refresh(){if(mode==='discovery')showDiscovery();else if(mode==='challenge')showChallenge(activeKey);else showLesson(activeKey)}
-document.querySelectorAll('[data-key]').forEach(b=>b.addEventListener('click',()=>{const k=b.dataset.key;if(k==='discovery')showDiscovery();else if(challengeMeta[k])showChallenge(k);else showLesson(k)}));
-selector.addEventListener('change',()=>{lang=selector.value;localStorage.setItem(KEY,lang);fillFarmVoices();refresh()});
-function speak(txt,rate=1,onend=null){
- if(!('speechSynthesis' in window)){if(onend)onend();return;}
- speechSynthesis.cancel();
- const u=new SpeechSynthesisUtterance(txt);u.lang=data().speech;u.rate=rate;
- const chosen=speechSynthesis.getVoices().find(v=>v.voiceURI===voiceSelector.value);
- if(chosen)u.voice=chosen;
- if(onend)u.onend=onend;
- speechSynthesis.speak(u);
-}
-document.getElementById('sceneView').onclick=()=>world.classList.add('scene-only');
-document.getElementById('restorePanel').onclick=()=>world.classList.remove('scene-only');
-voiceSelector.addEventListener('change',()=>localStorage.setItem('talkabee-voice-'+lang,voiceSelector.value));
-if('speechSynthesis' in window){speechSynthesis.onvoiceschanged=fillFarmVoices;fillFarmVoices();}
-const audioButtons=[document.getElementById('normal'),document.getElementById('slow'),document.getElementById('replay')];
-function setAudioActive(button){audioButtons.forEach(b=>b.classList.remove('audio-active'));button.classList.add('audio-active')}
-setAudioActive(document.getElementById('normal'));
-document.getElementById('normal').onclick=function(){setAudioActive(this);speak(els.target.textContent,1)};
-document.getElementById('slow').onclick=function(){setAudioActive(this);speak(els.target.textContent,.65)};
-document.getElementById('replay').onclick=function(){setAudioActive(this);speak(els.target.textContent,.9)};
-document.querySelectorAll('.hotspot').forEach(h=>h.addEventListener('click',()=>{
- const word=data().words[h.id]||englishNames[h.id]||h.id;
- if(challengeTarget){
-   if(h.id===challengeTarget){els.status.textContent='✓ Correct!';speak(word,.8)}
-   else{els.status.textContent='Try another animal.'}
-   return;
- }
- els.target.textContent=word;
- els.translation.textContent=lang==='en'?'':englishNames[h.id];
- speak(word,.8,()=>playDiscoverySound(h.id));
-}));
-showLesson('pets');
+const EN={resort:"ski resort",mountain:"mountain",chairlift:"chairlift",skiers:"skiers",trails:"trails",lift:"lift",rentals:"ski rentals",school:"ski school",cafe:"café",skis:"skis",snowboard:"snowboard",bee:"bee",grandma:"Grandma",grandpa:"Grandpa",lodge:"ski lodge",resortsign:"ski resort sign",firepit:"fire pit",chairs:"chairs",trees:"pine trees",snow:"snow"};
+const WORDS={
+es:{resort:"estación de esquí",mountain:"montaña",chairlift:"telesilla",skiers:"esquiadores",trails:"pistas",lift:"remonte",rentals:"alquiler de esquís",school:"escuela de esquí",cafe:"cafetería",skis:"esquís",snowboard:"tabla de snowboard",bee:"abeja",grandma:"abuela",grandpa:"abuelo",lodge:"refugio de esquí",resortsign:"letrero de la estación de esquí",firepit:"fogata",chairs:"sillas",trees:"pinos",snow:"nieve"},
+fr:{resort:"station de ski",mountain:"montagne",chairlift:"télésiège",skiers:"skieurs",trails:"pistes",lift:"remontée mécanique",rentals:"location de skis",school:"école de ski",cafe:"café",skis:"skis",snowboard:"snowboard",bee:"abeille",grandma:"grand-mère",grandpa:"grand-père",lodge:"chalet de ski",resortsign:"panneau de la station de ski",firepit:"brasero",chairs:"chaises",trees:"pins",snow:"neige"},
+en:{...EN},
+de:{resort:"Skigebiet",mountain:"Berg",chairlift:"Sessellift",skiers:"Skifahrer",trails:"Skipisten",lift:"Skilift",rentals:"Skiverleih",school:"Skischule",cafe:"Café",skis:"Skier",snowboard:"Snowboard",bee:"Biene",grandma:"Oma",grandpa:"Opa",lodge:"Skihütte",resortsign:"Skigebietsschild",firepit:"Feuerstelle",chairs:"Stühle",trees:"Kiefern",snow:"Schnee"},
+it:{resort:"stazione sciistica",mountain:"montagna",chairlift:"seggiovia",skiers:"sciatori",trails:"piste",lift:"impianto di risalita",rentals:"noleggio sci",school:"scuola di sci",cafe:"caffè",skis:"sci",snowboard:"snowboard",bee:"ape",grandma:"nonna",grandpa:"nonno",lodge:"rifugio sciistico",resortsign:"cartello della stazione sciistica",firepit:"braciere",chairs:"sedie",trees:"pini",snow:"neve"},
+pt:{resort:"estação de esqui",mountain:"montanha",chairlift:"teleférico",skiers:"esquiadores",trails:"pistas",lift:"elevador de esqui",rentals:"aluguel de esquis",school:"escola de esqui",cafe:"café",skis:"esquis",snowboard:"prancha de snowboard",bee:"abelha",grandma:"avó",grandpa:"avô",lodge:"chalé de esqui",resortsign:"placa da estação de esqui",firepit:"fogueira",chairs:"cadeiras",trees:"pinheiros",snow:"neve"},
+no:{resort:"skianlegg",mountain:"fjell",chairlift:"stolheis",skiers:"skiløpere",trails:"skiløyper",lift:"skiheis",rentals:"skiutleie",school:"skiskole",cafe:"kafé",skis:"ski",snowboard:"snøbrett",bee:"bie",grandma:"bestemor",grandpa:"bestefar",lodge:"skihytte",resortsign:"skianleggsskilt",firepit:"bålplass",chairs:"stoler",trees:"furutrær",snow:"snø"}};
+const SPEECH_LANG={es:"es-ES",fr:"fr-FR",en:"en-US",de:"de-DE",it:"it-IT",pt:"pt-PT",no:"nb-NO"};
+const lessons={
+en:{arrive:["We have arrived at the mountain ski resort.","The snowy mountain is ready for a day of adventure."],gear:["We need skis, boots, poles, and warm clothes.","The rental area has equipment for the slopes."],lift:["The chairlift carries skiers up the mountain.","We sit safely and enjoy the view on the way up."],slopes:["Skiers glide down the snowy trails.","Some trails are gentle and others are steep."],lodge:["The ski lodge is warm and cozy.","People can rest, eat, and warm up inside."],winter:["There are many ways to enjoy a snowy mountain.","We can ski, snowboard, relax by the fire, and play in the snow."]},
+es:{arrive:["Hemos llegado a la estación de esquí.","La montaña nevada está lista para un día de aventura."],gear:["Necesitamos esquís, botas, bastones y ropa abrigada.","La zona de alquiler tiene equipo para las pistas."],lift:["El telesilla lleva a los esquiadores montaña arriba.","Nos sentamos con seguridad y disfrutamos de la vista."],slopes:["Los esquiadores bajan por las pistas nevadas.","Algunas pistas son suaves y otras son empinadas."],lodge:["El refugio de esquí es cálido y acogedor.","La gente puede descansar, comer y calentarse dentro."],winter:["Hay muchas maneras de disfrutar de una montaña nevada.","Podemos esquiar, hacer snowboard, descansar junto al fuego y jugar en la nieve."]},
+fr:{arrive:["Nous sommes arrivés à la station de ski.","La montagne enneigée est prête pour une journée d'aventure."],gear:["Nous avons besoin de skis, de bottes, de bâtons et de vêtements chauds.","La location propose du matériel pour les pistes."],lift:["Le télésiège transporte les skieurs en haut de la montagne.","Nous nous asseyons en sécurité et profitons de la vue."],slopes:["Les skieurs glissent sur les pistes enneigées.","Certaines pistes sont douces et d'autres sont raides."],lodge:["Le chalet de ski est chaud et confortable.","On peut s'y reposer, manger et se réchauffer."],winter:["Il y a beaucoup de façons de profiter d'une montagne enneigée.","Nous pouvons skier, faire du snowboard, nous détendre près du feu et jouer dans la neige."]},
+de:{arrive:["Wir sind im Skigebiet angekommen.","Der verschneite Berg ist bereit für einen Abenteuertag."],gear:["Wir brauchen Skier, Stiefel, Stöcke und warme Kleidung.","Beim Skiverleih gibt es Ausrüstung für die Pisten."],lift:["Der Sessellift bringt Skifahrer den Berg hinauf.","Wir sitzen sicher und genießen die Aussicht."],slopes:["Skifahrer gleiten die verschneiten Pisten hinunter.","Manche Pisten sind sanft und andere steil."],lodge:["Die Skihütte ist warm und gemütlich.","Drinnen kann man sich ausruhen, essen und aufwärmen."],winter:["Auf einem verschneiten Berg gibt es viel zu erleben.","Wir können Ski fahren, snowboarden, am Feuer sitzen und im Schnee spielen."]},
+it:{arrive:["Siamo arrivati alla stazione sciistica.","La montagna innevata è pronta per una giornata di avventura."],gear:["Ci servono sci, scarponi, bastoncini e vestiti caldi.","Il noleggio ha l'attrezzatura per le piste."],lift:["La seggiovia porta gli sciatori sulla montagna.","Ci sediamo in sicurezza e ci godiamo il panorama."],slopes:["Gli sciatori scivolano sulle piste innevate.","Alcune piste sono dolci e altre sono ripide."],lodge:["Il rifugio sciistico è caldo e accogliente.","Dentro si può riposare, mangiare e riscaldarsi."],winter:["Ci sono molti modi per divertirsi su una montagna innevata.","Possiamo sciare, fare snowboard, rilassarci vicino al fuoco e giocare nella neve."]},
+pt:{arrive:["Chegamos à estação de esqui.","A montanha nevada está pronta para um dia de aventura."],gear:["Precisamos de esquis, botas, bastões e roupas quentes.","A área de aluguel tem equipamentos para as pistas."],lift:["O teleférico leva os esquiadores montanha acima.","Sentamos com segurança e apreciamos a vista."],slopes:["Os esquiadores deslizam pelas pistas nevadas.","Algumas pistas são suaves e outras são íngremes."],lodge:["O chalé de esqui é quente e aconchegante.","As pessoas podem descansar, comer e se aquecer lá dentro."],winter:["Há muitas maneiras de aproveitar uma montanha nevada.","Podemos esquiar, praticar snowboard, relaxar perto do fogo e brincar na neve."]},
+no:{arrive:["Vi har kommet til skianlegget.","Det snødekte fjellet er klart for en dag med eventyr."],gear:["Vi trenger ski, støvler, staver og varme klær.","Skiutleien har utstyr til bakkene."],lift:["Stolheisen frakter skiløpere opp fjellet.","Vi sitter trygt og nyter utsikten på vei opp."],slopes:["Skiløpere glir ned de snødekte løypene.","Noen løyper er slake og andre er bratte."],lodge:["Skihytta er varm og koselig.","Folk kan hvile, spise og varme seg inne."],winter:["Det finnes mange måter å nyte et snødekt fjell på.","Vi kan stå på ski, kjøre snowboard, slappe av ved bålet og leke i snøen."]}};
+const challengeOrder=["chairlift","skis","grandma","grandpa","bee","firepit"];
+const SOUND_MAP={firepit:"sounds/fire.mp3"};
+const langSel=document.getElementById("lang"),voiceSel=document.getElementById("voice");
+const title=document.getElementById("title"),prompt=document.getElementById("prompt"),line=document.getElementById("line"),translation=document.getElementById("translation"),status=document.getElementById("status"),world=document.getElementById("world");
+let lastWord="resort",activeLesson="",lessonPhrase=1,challenge=-1,lastSpoken="";
+function voices(){return ("speechSynthesis" in window)?speechSynthesis.getVoices():[]}
+function fillVoices(){const old=localStorage.getItem("talkabee-ski-voice-"+langSel.value)||"";voiceSel.innerHTML='<option value="">Browser Default</option>';voices().forEach(v=>{const o=document.createElement("option");o.value=v.name;o.textContent=v.name+(v.lang?" — "+v.lang:"");voiceSel.appendChild(o)});if([...voiceSel.options].some(o=>o.value===old))voiceSel.value=old}
+if("speechSynthesis" in window){speechSynthesis.onvoiceschanged=fillVoices;fillVoices();setTimeout(fillVoices,150);setTimeout(fillVoices,600);setTimeout(fillVoices,1500)}
+voiceSel.onchange=()=>localStorage.setItem("talkabee-ski-voice-"+langSel.value,voiceSel.value);
+function speak(text,rate=.88,onend=null){if(!text||!("speechSynthesis" in window)){if(onend)onend();return}speechSynthesis.cancel();setTimeout(()=>{const u=new SpeechSynthesisUtterance(text);u.lang=SPEECH_LANG[langSel.value]||langSel.value;u.rate=rate;const v=speechSynthesis.getVoices().find(x=>x.name===voiceSel.value);if(v)u.voice=v;if(onend)u.onend=onend;speechSynthesis.speak(u)},50);lastSpoken=text}
+function stopSound(){document.querySelectorAll("audio[data-talkabee-sound]").forEach(a=>{a.pause();a.currentTime=0;a.remove()})}
+function playSound(key){stopSound();const src=SOUND_MAP[key];if(!src)return;const a=new Audio(src);a.dataset.talkabeeSound="1";document.body.appendChild(a);a.play().catch(()=>{});a.onended=()=>a.remove()}
+function showWord(key){activeLesson="";lastWord=key;lessonPhrase=1;title.textContent="Click & Discover";prompt.textContent="You found "+(EN[key]||key)+".";line.textContent=WORDS[langSel.value][key]||EN[key]||key;translation.textContent=langSel.value==="en"?"":(EN[key]||key)}
+document.querySelectorAll(".hotspot").forEach(b=>b.onclick=()=>{const key=b.dataset.word;showWord(key);let played=false;const after=()=>{if(played)return;played=true;playSound(key)};speak(WORDS[langSel.value][key]||EN[key]||key,.82,after);setTimeout(after,1500);if(challenge>=0){if(key===challengeOrder[challenge]){status.textContent="✓ Nice find!";status.style.color="#9dffbf"}else{status.textContent="Not that one — keep looking.";status.style.color="#ffe28a"}}});
+function clearChallenge(){challenge=-1;world.classList.remove("challenge-mode");document.querySelectorAll(".hotspot").forEach(h=>h.classList.remove("target"));status.textContent=""}
+document.getElementById("discovery").onclick=()=>{clearChallenge();activeLesson="";lastWord="resort";title.textContent="Click & Discover";prompt.textContent="Click any object in the scene to hear its name.";line.textContent=WORDS[langSel.value].resort;translation.textContent=langSel.value==="en"?"":EN.resort};
+document.querySelectorAll("[data-ch]").forEach(b=>b.onclick=()=>{activeLesson="";lastWord="";challenge=+b.dataset.ch;world.classList.add("challenge-mode");document.querySelectorAll(".hotspot").forEach(h=>h.classList.toggle("target",h.dataset.word===challengeOrder[challenge]));title.textContent="Challenge "+(challenge+1)+" of 6";prompt.textContent=b.textContent.replace(/^[0-9]+\.\s*/,"");line.textContent=WORDS[langSel.value][challengeOrder[challenge]];translation.textContent=langSel.value==="en"?"":EN[challengeOrder[challenge]];status.textContent=""});
+function showLesson(key,speakIt=false){clearChallenge();activeLesson=key;lastWord="";lessonPhrase=Math.max(0,Math.min(1,lessonPhrase));const a=lessons[langSel.value][key],e=lessons.en[key],btn=document.querySelector(`[data-lesson="${key}"]`);title.textContent=btn?btn.textContent.replace(/^[0-9]+\.\s*/,""):"Mountain Ski Resort";prompt.textContent=a[0];line.textContent=a[lessonPhrase];translation.textContent=langSel.value==="en"?"":e[lessonPhrase];if(speakIt)speak(a[lessonPhrase])}
+document.querySelectorAll("[data-lesson]").forEach(b=>b.onclick=()=>{lessonPhrase=1;showLesson(b.dataset.lesson,true)});
+function currentSpeechText(){if(activeLesson)return lessons[langSel.value][activeLesson][lessonPhrase];if(lastWord)return WORDS[langSel.value][lastWord]||EN[lastWord]||lastWord;return line.textContent}
+document.getElementById("normal").onclick=()=>speak(currentSpeechText(),.82);
+document.getElementById("slow").onclick=()=>speak(currentSpeechText(),.58);
+document.getElementById("replay").onclick=()=>speak(lastSpoken||currentSpeechText(),.82);
+document.getElementById("nextPhrase").onclick=()=>{if(!activeLesson){const keys=Object.keys(EN),i=Math.max(0,keys.indexOf(lastWord));showWord(keys[(i+1)%keys.length]);speak(currentSpeechText(),.82);return}lessonPhrase=(lessonPhrase+1)%2;showLesson(activeLesson,true)};
+langSel.onchange=()=>{fillVoices();if(activeLesson)showLesson(activeLesson,false);else if(lastWord)showWord(lastWord)};
+document.getElementById("sceneView").onclick=()=>document.body.classList.add("scene-view");
+document.getElementById("sceneReturn").onclick=()=>document.body.classList.remove("scene-view");
+showWord("resort");
 </script>
-<script id="talkabee-literal-master-behavior">
+<!-- Talk A Bee global browser-voice bridge -->
+<script>
 (function(){
- function cleanActivityIcons(){
-  document.querySelectorAll('.tab-master-panel button').forEach(function(b){
-   if(b.matches('[data-lesson],[data-activity],[data-act],.activity,[data-train-activity],[data-home-activity]')){
-    b.innerHTML=b.innerHTML.replace(/(^\s*\d+\.\s*)(?:<[^>]+>\s*)?[\u{1F000}-\u{1FAFF}\u2600-\u27BF]\uFE0F?\s*/u,'$1');
-   }
-  });
- }
- function moveHomeToBottom(){
-  var p=document.querySelector('.tab-master-panel'); if(!p)return;
-  var links=[].slice.call(p.querySelectorAll('a[href="index.html"],a[href$="/index.html"]'));
-  links.forEach(function(a){p.appendChild(a)});
- }
- function inclusiveVoices(){
-  if(!('speechSynthesis' in window))return;
-  var p=document.querySelector('.tab-master-panel'); if(!p)return;
-  var sel=[].slice.call(p.querySelectorAll('select')).find(function(s){return /voice/i.test(s.id||s.name||s.getAttribute('aria-label')||'')}) || [].slice.call(p.querySelectorAll('select'))[1];
-  if(!sel)return;
-  var saved=localStorage.getItem('talkabee-voice-'+lang)||'';
-  var voices=speechSynthesis.getVoices()||[];
-  if(!voices.length)return;
-  sel.innerHTML='<option value="">Browser Default Voice</option>';
-  voices.forEach(function(v){var o=document.createElement('option');o.value=v.voiceURI;o.textContent=v.name+' — '+(v.lang||'');sel.appendChild(o)});
-  if([].slice.call(sel.options).some(function(o){return o.value===saved}))sel.value=saved;
- }
- function labels(){
-  document.querySelectorAll('.tab-master-card button').forEach(function(b){
-   var t=b.textContent.trim();
-   if(/normal/i.test(t)) b.textContent='🔊 Speak';
-   if(/^next\s*(line|phrase)?/i.test(t)) b.textContent='Next phrase →';
-  });
- }
- function run(){cleanActivityIcons();moveHomeToBottom();inclusiveVoices();labels()}
- if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',run);else run();
- if('speechSynthesis' in window){speechSynthesis.addEventListener&&speechSynthesis.addEventListener('voiceschanged',inclusiveVoices);setTimeout(inclusiveVoices,250);setTimeout(inclusiveVoices,1000)}
-})();
-</script>
-
-<style id="talkabee-rendered-card-footprint-lock">
-/* Visual master: match the user-approved Grandma's Kitchen rendered footprint. */
-.tab-master-card{
-  width:520px!important; max-width:520px!important; min-width:0!important;
-  transform:translateX(-50%) scale(.67)!important;
-  transform-origin:bottom center!important;
-}
-@media(max-width:760px){.tab-master-card{width:min(520px,calc(100vw - 32px))!important;transform:translateX(-50%) scale(.82)!important;}}
-</style>
-
-<script id="talkabee-ensure-card-tools">
-(function(){
-  const card=document.querySelector('.tab-master-card,.live-card,.script,.card');
-  if(!card)return;
-
-  /* Remove a misplaced/duplicate tool set, if one exists outside the real card. */
-  document.querySelectorAll('.tab-card-tools,.tab-card-resize').forEach(el=>{
-    if(!card.contains(el)) el.remove();
-  });
-
-  if(!card.querySelector('.tab-card-tools')){
-    const tools=document.createElement('div');
-    tools.className='tab-card-tools';
-    tools.setAttribute('aria-label','Script card controls');
-    tools.innerHTML='<button type="button" class="tab-card-drag" title="Move script card">↕ Move</button><button type="button" class="tab-card-font-down" title="Decrease text">A−</button><button type="button" class="tab-card-font-up" title="Increase text">A+</button><button type="button" class="tab-card-reset" title="Reset card">Reset</button>';
-    card.insertBefore(tools,card.firstChild);
+  const GLOBAL_PREFIX='talkabee-voice-';
+  function controls(){
+    const selects=[...document.querySelectorAll('select')];
+    const voice=selects.find(s=>/voice/i.test((s.id||'')+' '+(s.name||'')+' '+(s.getAttribute('aria-label')||'')));
+    const language=selects.find(s=>/lang/i.test((s.id||'')+' '+(s.name||'')+' '+(s.getAttribute('aria-label')||'')));
+    return {language,voice};
   }
-  if(!card.querySelector('.tab-card-resize')){
-    const resize=document.createElement('div');
-    resize.className='tab-card-resize';
-    resize.title='Drag to resize script card';
-    resize.setAttribute('aria-label','Resize script card');
-    resize.textContent='↘';
-    card.appendChild(resize);
+  function voices(){return ('speechSynthesis' in window)?(speechSynthesis.getVoices()||[]):[];}
+  function key(lang){return GLOBAL_PREFIX+lang;}
+  function selectedVoiceURI(sel){
+    if(!sel||!sel.value)return '';
+    const vs=voices(), opt=sel.options[sel.selectedIndex];
+    const raw=sel.value, label=(opt&&opt.textContent)||'';
+    let v=vs.find(x=>x.voiceURI===raw)||vs.find(x=>x.name===raw);
+    if(!v && label) v=vs.find(x=>label===x.name||label.startsWith(x.name+' —')||label.startsWith(x.name+' -'));
+    return v?v.voiceURI:'';
+  }
+  function restore(){
+    const {language,voice}=controls(); if(!language||!voice)return;
+    const saved=localStorage.getItem(key(language.value))||''; if(!saved)return;
+    const vs=voices(), target=vs.find(v=>v.voiceURI===saved); if(!target)return;
+    const opts=[...voice.options];
+    let opt=opts.find(o=>o.value===target.voiceURI)||opts.find(o=>o.value===target.name)||
+            opts.find(o=>o.textContent===target.name||o.textContent.startsWith(target.name+' —')||o.textContent.startsWith(target.name+' -'));
+    if(opt && voice.value!==opt.value){
+      voice.value=opt.value;
+      voice.dispatchEvent(new Event('change',{bubbles:true}));
+    }
+  }
+  function save(){
+    const {language,voice}=controls(); if(!language||!voice)return;
+    const uri=selectedVoiceURI(voice);
+    localStorage.setItem(key(language.value),uri);
+  }
+  function restoreLanguage(){
+    const {language}=controls(); if(!language)return;
+    const saved=localStorage.getItem('talkabee-learn-language')||'';
+    if(saved && [...language.options].some(o=>o.value===saved) && language.value!==saved){
+      language.value=saved;
+      language.dispatchEvent(new Event('change',{bubbles:true}));
+    }
+  }
+  function saveLanguage(){
+    const {language}=controls(); if(language) localStorage.setItem('talkabee-learn-language',language.value);
+  }
+  function bind(){
+    const {language,voice}=controls(); if(!language||!voice)return;
+    if(!voice.dataset.tabGlobalVoice){ voice.addEventListener('change',save); voice.dataset.tabGlobalVoice='1'; }
+    if(!language.dataset.tabGlobalVoice){
+      language.addEventListener('change',()=>{saveLanguage();setTimeout(restore,0);setTimeout(restore,120);setTimeout(restore,500)});
+      language.dataset.tabGlobalVoice='1';
+    }
+    restoreLanguage(); restore(); setTimeout(restore,120); setTimeout(restore,500); setTimeout(restore,1500);
+  }
+  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',bind);else bind();
+  if('speechSynthesis' in window){
+    const prior=speechSynthesis.onvoiceschanged;
+    speechSynthesis.onvoiceschanged=function(e){if(typeof prior==='function')prior.call(this,e);setTimeout(bind,0);setTimeout(restore,120)};
   }
 })();
 </script>
-
 <script id="talkabee-accessibility-controls-script-v1">
 (function(){
  const panel=document.querySelector('.tab-master-panel,.activity-panel,.panel');
@@ -928,22 +446,37 @@ showLesson('pets');
  restore();
 })();
 </script>
-<script id="talkabee-farm-scene-view-reset">
+<script id="talkabee-hotspot-custom-sound">
 (function(){
-  function resetFarmSceneView(){
-    var world=document.getElementById('world');
-    if(world) world.classList.remove('scene-only');
-    var btn=document.getElementById('sceneView');
-    if(btn) btn.setAttribute('aria-pressed','false');
-  }
-  if(document.readyState==='loading'){
-    document.addEventListener('DOMContentLoaded',resetFarmSceneView);
-  }else{
-    resetFarmSceneView();
-  }
-  window.addEventListener('pageshow',resetFarmSceneView);
+ if(window.__talkabeeHotspotCustomSound)return;window.__talkabeeHotspotCustomSound=true;
+ const SEL='.hotspot,.home-hotspot,.yacht-hotspot,.hotspots button,.train-hotspots button';
+ let timer=0,current=null;
+ function stop(){clearTimeout(timer);if(current){try{current.pause();current.currentTime=0}catch(e){}current=null}}
+ document.addEventListener('click',function(ev){
+  if(document.body.classList.contains('tb-hs-editing'))return;
+  const h=ev.target.closest&&ev.target.closest(SEL);if(!h||!h.dataset.sound)return;
+  stop();const src=h.dataset.sound;
+  // Keep Talk A Bee order: translated object speech first, then the real sound.
+  timer=setTimeout(function(){const a=new Audio(src);current=a;a.play().catch(()=>{});a.onended=function(){if(current===a)current=null}},1500);
+ },false);
 })();
 </script>
+<script id="talkabee-new-hotspot-language-bridge">(()=>{const LEX={"es":{"oval office":"Despacho Oval","bee":"abeja","resolute desk":"escritorio Resolute","desk chair":"silla de escritorio","american flag":"bandera estadounidense","presidential flag":"bandera presidencial","fireplace":"chimenea","george washington portrait":"retrato de George Washington","abraham lincoln portrait":"retrato de Abraham Lincoln","windows":"ventanas","washington monument":"Monumento a Washington","rug":"alfombra","sofa":"sofá","books":"libros","globe":"globo terráqueo","telephone":"teléfono","flowers":"flores","tour guide":"guía turístico","visitors":"visitantes","historical bust":"busto histórico","lamp":"lámpara","aircraft carrier":"portaaviones","navy bee":"abeja de la Marina","sailor":"marinero","jet aircraft":"avión a reacción","carrier aircraft":"aviones del portaaviones","helicopter":"helicóptero","carrier island":"isla del portaaviones","flight deck":"cubierta de vuelo","flight deck crew":"tripulación de cubierta","aircraft director":"director de aeronaves","flight deck crew member":"miembro de la tripulación de cubierta","tow tractor":"tractor de remolque","ocean":"océano","navy ship":"buque de la Marina","deck markings":"marcas de cubierta","safety railing":"barandilla de seguridad","deck equipment":"equipo de cubierta","sky":"cielo","zoo":"zoológico","elephant":"elefante","giraffes":"jirafas","mountain":"montaña","monkey":"mono","parrot":"loro","lion":"león","zoo sign":"letrero del zoológico","zebra":"cebra","zoo tram":"tranvía del zoológico","penguins":"pingüinos","sea lion":"león marino","waterfall":"cascada","pool":"estanque","boy":"niño","girl":"niña","zoo visitors":"visitantes del zoológico","trees":"árboles","zoo path":"sendero del zoológico","rowing regatta":"regata de remo","bee coxswain":"abeja timonel","megaphone":"megáfono","rowing crew":"equipo de remo","oars":"remos","racing shell":"bote de competición","red rowing crew":"equipo rojo de remo","lake water":"agua del lago","race buoys":"boyas de carrera","regatta banner":"pancarta de la regata","boathouse":"cobertizo para botes","spectators":"espectadores","dock":"muelle","sailboat":"velero","motorboat":"lancha motora","snowy mountains":"montañas nevadas","pine forest":"bosque de pinos","regatta flags":"banderas de la regata","oar splash":"salpicadura del remo","rower":"remero","race course":"recorrido de la carrera","boat lock":"esclusa para barcos","captain bee":"abeja capitana","steering wheel":"timón","cabin cruiser":"barco de recreo","dog":"perro","child":"niño","life jacket":"chaleco salvavidas","lock gate":"compuerta de la esclusa","flowing water":"agua corriente","boat behind us":"barco detrás de nosotros","yellow bollard":"bolardo amarillo","lock ladder":"escalera de la esclusa","lock wall":"muro de la esclusa","lock control building":"edificio de control","seagull":"gaviota","mountains":"montañas","lock water":"agua de la esclusa","boat fender":"defensa del barco","anchor":"ancla","rescue helicopter":"helicóptero de rescate","pilot":"piloto","grandpa":"abuelo","mitchell":"Mitchell","nicole":"Nicole","rescue dog":"perro de rescate","rescue cable":"cable de rescate","rescuer":"rescatista","rescue basket":"cesta de rescate","hiker":"excursionista","backpack":"mochila","mountain lake":"lago de montaña","eagle":"águila","forest":"bosque","campground":"campamento","rescue helmet":"casco de rescate","rocky ledge":"saliente rocoso","fishing boat":"barco de pesca","orca":"orca","dolphin":"delfín","space needle":"Aguja Espacial","seattle skyline":"horizonte de Seattle","mount rainier":"Monte Rainier","ferris wheel":"noria","seagulls":"gaviotas","fishing rods":"cañas de pescar","sophia":"Sophia","carlos":"Carlos","grandma":"abuela","life ring":"salvavidas","radar":"radar","fishing net":"red de pesca","camp sign":"letrero del campamento","rv":"casa rodante","solar panels":"paneles solares","rv door":"puerta de la casa rodante","bicycle":"bicicleta","picnic table":"mesa de picnic","guitar":"guitarra","family":"familia","campfire":"fogata","marshmallows":"malvaviscos","bear":"Bear","cooler":"nevera","tent":"tienda de campaña","lantern":"linterna","raccoon":"mapache","lake":"lago","canoe":"canoa","creek":"arroyo","moon":"luna","stars":"estrellas","pine trees":"pinos","firewood":"leña","cooking pot":"olla","movie studio":"estudio de cine","hollywood sign":"letrero de Hollywood","studio water tower":"torre de agua del estudio","camera helicopter":"helicóptero con cámara","camera drone":"dron con cámara","green screen":"pantalla verde","boom microphone":"micrófono de pértiga","stunt explosion":"explosión de acrobacia","stunt car":"coche de acrobacias","movie camera":"cámara de cine","director monitors":"monitores del director","clapperboard":"claqueta","director's chair":"silla del director","costumes":"vestuario","makeup station":"zona de maquillaje","studio lights":"luces de estudio","director bee":"abeja directora","cast members":"miembros del reparto","movie crew":"equipo de filmación","palm trees":"palmeras","coral reef":"arrecife de coral","dolphins":"delfines","shipwreck":"barco hundido","sea turtle":"tortuga marina","shark":"tiburón","clownfish":"pez payaso","tropical fish":"peces tropicales","pufferfish":"pez globo","moray eel":"morena","starfish":"estrella de mar","crab":"cangrejo","lobster":"langosta","octopus":"pulpo","coral":"coral","seaweed":"algas marinas","sand":"arena","scuba tank":"tanque de buceo","fins":"aletas","bicycle race":"carrera de bicicletas","bee racer":"abeja ciclista","starting line":"línea de salida","start gate":"arco de salida","race official":"oficial de carrera","start signal":"señal de salida","helmet":"casco","bicycle racer":"ciclista","bicycle racers":"ciclistas","bike trail sign":"señal de sendero para bicicletas","race flags":"banderas de carrera","race tent":"carpa de carrera","dirt race track":"pista de tierra","trail rocks":"rocas del sendero","softball game":"partido de sóftbol","bee pitcher":"abeja lanzadora","softball":"pelota de sóftbol","pitcher's mound":"montículo del lanzador","batter":"bateadora","softball bat":"bate de sóftbol","catcher":"receptora","umpire":"árbitro","home plate":"plato de home","scoreboard":"marcador","infielder":"jugadora de cuadro","softball glove":"guante de sóftbol","batting helmet":"casco de bateo","softball field":"campo de sóftbol","outfield fence":"valla del jardín","flag":"bandera","family picnic":"picnic familiar","picnic crew":"grupo del picnic","picnic food":"comida de picnic","hot dogs":"perritos calientes","hamburgers":"hamburguesas","golden dog":"perro dorado","german shepherd":"pastor alemán","canoes":"canoas","wildflowers":"flores silvestres","basic training":"entrenamiento básico","drill sergeant bee":"abeja sargento instructor","trainees":"reclutas","instructor":"instructor","climbing wall":"muro de escalada","climbing rope":"cuerda de escalada","training tires":"neumáticos de entrenamiento","training tunnel":"túnel de entrenamiento","observation tower":"torre de observación","training tents":"tiendas de entrenamiento","military truck":"camión militar","canteen":"cantimplora","training uniform":"uniforme de entrenamiento","boots":"botas","obstacle course":"pista de obstáculos","training camp":"campamento de entrenamiento","hot air balloon festival":"festival de globos aerostáticos","balloon bee":"abeja del globo","balloon crew":"tripulación del globo","balloon basket":"cesta del globo","balloon burner":"quemador del globo","burner flame":"llama del quemador","hot air balloon":"globo aerostático","balloon ropes":"cuerdas del globo","forest island":"isla boscosa","sunrise":"amanecer","blue sky":"cielo azul","balloons in flight":"globos en vuelo","festival field":"campo del festival","festival crowd":"multitud del festival","inflating balloons":"globos inflándose","festival tents":"carpas del festival","saturn":"Saturno","astronaut bee":"abeja astronauta","saturn's rings":"anillos de Saturno","milky way":"Vía Láctea","sunlight":"luz solar","spacecraft window":"ventana de la nave","solar system screen":"pantalla del sistema solar","control console":"consola de control","computer monitor":"monitor","astronaut":"astronauta","space crew":"tripulación espacial","spacecraft seat":"asiento de la nave","solar system hologram":"holograma del sistema solar","spacecraft ceiling":"techo de la nave","planet displays":"pantallas planetarias","spacesuit":"traje espacial","spacecraft controls":"controles de la nave","whitewater rafting":"rafting en aguas bravas","rafting bee":"abeja del rafting","rafting crew":"equipo de rafting","raft":"balsa","yellow paddle":"remo amarillo","blue paddle":"remo azul","huge rapids":"rápidos enormes","whitewater":"aguas bravas","river":"río","river rocks":"rocas del río","evergreen forest":"bosque de hoja perenne","snowy mountain":"montaña nevada","water spray":"rocío de agua","mountain valley":"valle de montaña","the moon":"la Luna","moon crew":"tripulación lunar","moon castle":"castillo lunar","moon rock":"roca lunar","lunar surface":"superficie lunar","crater":"cráter","lunar lander":"módulo lunar","lander ladder":"escalera del módulo","moon rover":"vehículo lunar","dish antenna":"antena parabólica","moon base":"base lunar","lunar habitat":"hábitat lunar","small rover":"vehículo pequeño","science instrument":"instrumento científico","earth":"Tierra","sun":"Sol","lunar mountains":"montañas lunares","footprints":"huellas","skydiving":"paracaidismo","flying bee":"abeja voladora","airplane":"avión","airplane door":"puerta del avión","crew member":"miembro de la tripulación","skydiving instructor":"instructor de paracaidismo","skydiver":"paracaidista","goggles":"gafas protectoras","skydiving harness":"arnés de paracaidismo","parachute pack":"mochila del paracaídas","airplane wing":"ala del avión","islands":"islas","clouds":"nubes","landing gear":"tren de aterrizaje","golf course":"campo de golf","golf bee":"abeja golfista","golfer":"golfista","golf crew":"grupo de golf","small dog":"perro pequeño","golf ball":"pelota de golf","yellow flag":"bandera amarilla","golf club":"palo de golf","putting green":"green","sand bunker":"búnker de arena","golf cart":"carrito de golf","pond":"estanque","clubhouse":"casa club","fairway":"calle","protect the earth":"proteger la Tierra","factories":"fábricas","smokestacks":"chimeneas","smoke":"humo","air pollution":"contaminación del aire","city":"ciudad","atmosphere":"atmósfera","ships":"barcos","environmental map":"mapa ambiental","pollution chart":"gráfico de contaminación","pollution monitor":"monitor de contaminación","satellite":"satélite","football game":"partido de fútbol americano","bee quarterback":"abeja mariscal de campo","football":"balón de fútbol americano","referee":"árbitro","offensive player":"jugador ofensivo","center":"centro","receiver":"receptor","defender":"defensor","football helmet":"casco de fútbol americano","football field":"campo de fútbol americano","yard line":"línea de yarda","crowd":"público","press box":"cabina de prensa","stadium lights":"luces del estadio","sailboats":"veleros","great wall of china":"Gran Muralla China","great wall":"Gran Muralla","watchtower":"torre de vigilancia","watchtowers":"torres de vigilancia","hot-air balloons":"globos aerostáticos","squirrel":"ardilla","village":"pueblo","bridge":"puente","stone walkway":"camino de piedra","spacewalk":"caminata espacial","boy astronaut":"niño astronauta","girl astronaut":"niña astronauta","space gloves":"guantes espaciales","safety tether":"cable de seguridad","space station":"estación espacial","station truss":"estructura de la estación","handrail":"pasamanos","space tools":"herramientas espaciales","dog show":"exposición canina","referee bee":"abeja árbitro","clipboard":"portapapeles","golden retriever":"Golden Retriever","small white dog":"perro blanco pequeño","border collie":"Border Collie","spaniel":"spaniel","brown dog":"perro marrón","dalmatian":"dálmata","bulldog":"bulldog","pomeranian":"pomerania","terrier":"terrier","dog handlers":"presentadores de perros","dog leash":"correa","dog show banner":"pancarta de la exposición canina","audience":"público","show ring fence":"valla de la pista","show ring turf":"césped de la pista","arena lights":"luces de la arena","cockpit":"cabina del piloto","captain":"capitán","water":"agua","ferry":"ferri","overhead controls":"controles superiores","flight instruments":"instrumentos de vuelo","navigation screen":"pantalla de navegación","throttle":"palanca de potencia","headset":"auriculares","cockpit controls":"controles de la cabina","cave":"cueva","stalactites":"estalactitas","stalagmites":"estalagmitas","bats":"murciélagos","cave waterfall":"cascada de la cueva","cave pool":"poza de la cueva","cave stream":"arroyo de la cueva","headlamp":"linterna frontal","bee explorer":"abeja exploradora","cave explorers":"exploradores de cuevas","cavern":"caverna","cave rocks":"rocas de la cueva","water reflection":"reflejo en el agua","cave passage":"pasaje de la cueva","dripstone":"formación calcárea","mission control center":"centro de control de misión","flight controllers":"controladores de vuelo","rocket":"cohete","launch pad":"plataforma de lanzamiento","countdown clock":"reloj de cuenta regresiva","mission screen":"pantalla de misión","observation gallery":"galería de observación","telemetry display":"pantalla de telemetría","mission map":"mapa de misión","control room chair":"silla de control","control room ceiling":"techo de la sala","ski resort":"estación de esquí","chairlift":"telesilla","skiers":"esquiadores","trails":"pistas","lift":"remonte","ski rentals":"alquiler de esquís","ski school":"escuela de esquí","café":"cafetería","skis":"esquís","snowboard":"tabla de snowboard","ski lodge":"refugio de esquí","ski resort sign":"letrero de la estación de esquí","fire pit":"fogata","chairs":"sillas","snow":"nieve","steam train":"tren de vapor","steam locomotive":"locomotora de vapor","engineer bee":"abeja maquinista","train bell":"campana del tren","headlight":"faro","smokestack":"chimenea","steam":"vapor","passengers":"pasajeros","passenger cars":"vagones de pasajeros","trestle bridge":"puente de caballetes","railroad tracks":"vías del tren","railroad depot":"estación de ferrocarril","railroad crossing":"cruce ferroviario","water tower":"torre de agua","bison":"bisontes","deer":"ciervo","hang glider":"ala delta","control bar":"barra de control","town":"pueblo","boat":"barco","train":"tren","rail bridge":"puente ferroviario","road":"carretera","cabin":"cabaña","stump":"tocón","trail":"sendero","jet airplane":"avión a reacción"},"fr":{"oval office":"Bureau ovale","bee":"abeille","resolute desk":"bureau Resolute","desk chair":"fauteuil de bureau","american flag":"drapeau américain","presidential flag":"drapeau présidentiel","fireplace":"cheminée","george washington portrait":"portrait de George Washington","abraham lincoln portrait":"portrait d'Abraham Lincoln","windows":"fenêtres","washington monument":"Washington Monument","rug":"tapis","sofa":"canapé","books":"livres","globe":"globe terrestre","telephone":"téléphone","flowers":"fleurs","tour guide":"guide","visitors":"visiteurs","historical bust":"buste historique","lamp":"lampe","aircraft carrier":"porte-avions","navy bee":"abeille de la Marine","sailor":"marin","jet aircraft":"avion à réaction","carrier aircraft":"avions embarqués","helicopter":"hélicoptère","carrier island":"îlot du porte-avions","flight deck":"pont d'envol","flight deck crew":"équipe du pont d'envol","aircraft director":"directeur d'aéronef","flight deck crew member":"membre d'équipe du pont","tow tractor":"tracteur de remorquage","ocean":"océan","navy ship":"navire de la Marine","deck markings":"marquages du pont","safety railing":"garde-corps de sécurité","deck equipment":"équipement du pont","sky":"ciel","zoo":"zoo","elephant":"éléphant","giraffes":"girafes","mountain":"montagne","monkey":"singe","parrot":"perroquet","lion":"lion","zoo sign":"panneau du zoo","zebra":"zèbre","zoo tram":"tram du zoo","penguins":"manchots","sea lion":"otarie","waterfall":"cascade","pool":"bassin","boy":"garçon","girl":"fille","zoo visitors":"visiteurs du zoo","trees":"arbres","zoo path":"chemin du zoo","rowing regatta":"régate d'aviron","bee coxswain":"abeille barreur","megaphone":"mégaphone","rowing crew":"équipe d'aviron","oars":"rames","racing shell":"coque de course","red rowing crew":"équipe rouge d'aviron","lake water":"eau du lac","race buoys":"bouées de course","regatta banner":"bannière de la régate","boathouse":"hangar à bateaux","spectators":"spectateurs","dock":"quai","sailboat":"voilier","motorboat":"bateau à moteur","snowy mountains":"montagnes enneigées","pine forest":"forêt de pins","regatta flags":"drapeaux de la régate","oar splash":"éclaboussure de rame","rower":"rameur","race course":"parcours de course","boat lock":"écluse à bateaux","captain bee":"abeille capitaine","steering wheel":"barre","cabin cruiser":"bateau de plaisance","dog":"chien","child":"enfant","life jacket":"gilet de sauvetage","lock gate":"porte d'écluse","flowing water":"eau qui coule","boat behind us":"bateau derrière nous","yellow bollard":"bollard jaune","lock ladder":"échelle de l'écluse","lock wall":"mur de l'écluse","lock control building":"bâtiment de contrôle","seagull":"mouette","mountains":"montagnes","lock water":"eau de l'écluse","boat fender":"pare-battage","anchor":"ancre","rescue helicopter":"hélicoptère de sauvetage","pilot":"pilote","grandpa":"grand-père","mitchell":"Mitchell","nicole":"Nicole","rescue dog":"chien de sauvetage","rescue cable":"câble de sauvetage","rescuer":"secouriste","rescue basket":"panier de sauvetage","hiker":"randonneur","backpack":"sac à dos","mountain lake":"lac de montagne","eagle":"aigle","forest":"forêt","campground":"camping","rescue helmet":"casque de sauvetage","rocky ledge":"corniche rocheuse","fishing boat":"bateau de pêche","orca":"orque","dolphin":"dauphin","space needle":"Space Needle","seattle skyline":"horizon de Seattle","mount rainier":"mont Rainier","ferris wheel":"grande roue","seagulls":"mouettes","fishing rods":"cannes à pêche","sophia":"Sophia","carlos":"Carlos","grandma":"grand-mère","life ring":"bouée de sauvetage","radar":"radar","fishing net":"filet de pêche","camp sign":"panneau du camping","rv":"camping-car","solar panels":"panneaux solaires","rv door":"porte du camping-car","bicycle":"vélo","picnic table":"table de pique-nique","guitar":"guitare","family":"famille","campfire":"feu de camp","marshmallows":"guimauves","bear":"Bear","cooler":"glacière","tent":"tente","lantern":"lanterne","raccoon":"raton laveur","lake":"lac","canoe":"canoë","creek":"ruisseau","moon":"lune","stars":"étoiles","pine trees":"pins","firewood":"bois de chauffage","cooking pot":"marmite","movie studio":"studio de cinéma","hollywood sign":"panneau Hollywood","studio water tower":"château d'eau du studio","camera helicopter":"hélicoptère caméra","camera drone":"drone caméra","green screen":"fond vert","boom microphone":"microphone perche","stunt explosion":"explosion de cascade","stunt car":"voiture de cascade","movie camera":"caméra de cinéma","director monitors":"moniteurs du réalisateur","clapperboard":"clap","director's chair":"fauteuil du réalisateur","costumes":"costumes","makeup station":"poste de maquillage","studio lights":"projecteurs de studio","director bee":"abeille réalisatrice","cast members":"acteurs","movie crew":"équipe de tournage","palm trees":"palmiers","coral reef":"récif corallien","dolphins":"dauphins","shipwreck":"épave","sea turtle":"tortue de mer","shark":"requin","clownfish":"poisson-clown","tropical fish":"poissons tropicaux","pufferfish":"poisson-globe","moray eel":"murène","starfish":"étoile de mer","crab":"crabe","lobster":"homard","octopus":"pieuvre","coral":"corail","seaweed":"algues","sand":"sable","scuba tank":"bouteille de plongée","fins":"palmes","bicycle race":"course de vélos","bee racer":"abeille cycliste","starting line":"ligne de départ","start gate":"portique de départ","race official":"officiel de course","start signal":"signal de départ","helmet":"casque","bicycle racer":"cycliste","bicycle racers":"cyclistes","bike trail sign":"panneau de piste cyclable","race flags":"drapeaux de course","race tent":"tente de course","dirt race track":"piste en terre","trail rocks":"rochers du sentier","softball game":"match de softball","bee pitcher":"abeille lanceuse","softball":"balle de softball","pitcher's mound":"monticule du lanceur","batter":"frappeuse","softball bat":"batte de softball","catcher":"receveuse","umpire":"arbitre","home plate":"marbre","scoreboard":"tableau d'affichage","infielder":"joueuse de champ intérieur","softball glove":"gant de softball","batting helmet":"casque de frappe","softball field":"terrain de softball","outfield fence":"clôture du champ extérieur","flag":"drapeau","family picnic":"pique-nique familial","picnic crew":"groupe du pique-nique","picnic food":"nourriture du pique-nique","hot dogs":"hot-dogs","hamburgers":"hamburgers","golden dog":"chien doré","german shepherd":"berger allemand","canoes":"canoës","wildflowers":"fleurs sauvages","basic training":"entraînement de base","drill sergeant bee":"abeille sergent instructeur","trainees":"stagiaires","instructor":"instructeur","climbing wall":"mur d'escalade","climbing rope":"corde d'escalade","training tires":"pneus d'entraînement","training tunnel":"tunnel d'entraînement","observation tower":"tour d'observation","training tents":"tentes d'entraînement","military truck":"camion militaire","canteen":"gourde","training uniform":"uniforme d'entraînement","boots":"bottes","obstacle course":"parcours d'obstacles","training camp":"camp d'entraînement","hot air balloon festival":"festival de montgolfières","balloon bee":"abeille en montgolfière","balloon crew":"équipage de la montgolfière","balloon basket":"nacelle","balloon burner":"brûleur","burner flame":"flamme du brûleur","hot air balloon":"montgolfière","balloon ropes":"cordages","forest island":"île boisée","sunrise":"lever du soleil","blue sky":"ciel bleu","balloons in flight":"montgolfières en vol","festival field":"terrain du festival","festival crowd":"foule du festival","inflating balloons":"montgolfières en gonflage","festival tents":"tentes du festival","saturn":"Saturne","astronaut bee":"abeille astronaute","saturn's rings":"anneaux de Saturne","milky way":"Voie lactée","sunlight":"lumière du Soleil","spacecraft window":"fenêtre du vaisseau","solar system screen":"écran du système solaire","control console":"console de contrôle","computer monitor":"écran","astronaut":"astronaute","space crew":"équipage spatial","spacecraft seat":"siège du vaisseau","solar system hologram":"hologramme du système solaire","spacecraft ceiling":"plafond du vaisseau","planet displays":"écrans planétaires","spacesuit":"combinaison spatiale","spacecraft controls":"commandes du vaisseau","whitewater rafting":"rafting en eaux vives","rafting bee":"abeille du rafting","rafting crew":"équipe de rafting","raft":"radeau","yellow paddle":"pagaie jaune","blue paddle":"pagaie bleue","huge rapids":"énormes rapides","whitewater":"eaux vives","river":"rivière","river rocks":"rochers de la rivière","evergreen forest":"forêt de conifères","snowy mountain":"montagne enneigée","water spray":"embruns","mountain valley":"vallée de montagne","the moon":"la Lune","moon crew":"équipage lunaire","moon castle":"château lunaire","moon rock":"roche lunaire","lunar surface":"surface lunaire","crater":"cratère","lunar lander":"module lunaire","lander ladder":"échelle du module","moon rover":"rover lunaire","dish antenna":"antenne parabolique","moon base":"base lunaire","lunar habitat":"habitat lunaire","small rover":"petit rover","science instrument":"instrument scientifique","earth":"Terre","sun":"Soleil","lunar mountains":"montagnes lunaires","footprints":"empreintes","skydiving":"parachutisme","flying bee":"abeille volante","airplane":"avion","airplane door":"porte de l'avion","crew member":"membre d'équipage","skydiving instructor":"instructeur de parachutisme","skydiver":"parachutiste","goggles":"lunettes de protection","skydiving harness":"harnais de parachutisme","parachute pack":"sac de parachute","airplane wing":"aile de l'avion","islands":"îles","clouds":"nuages","landing gear":"train d'atterrissage","golf course":"terrain de golf","golf bee":"abeille golfeuse","golfer":"golfeur","golf crew":"groupe de golf","small dog":"petit chien","golf ball":"balle de golf","yellow flag":"drapeau jaune","golf club":"club de golf","putting green":"green","sand bunker":"bunker de sable","golf cart":"voiturette de golf","pond":"étang","clubhouse":"club-house","fairway":"fairway","protect the earth":"protéger la Terre","factories":"usines","smokestacks":"cheminées","smoke":"fumée","air pollution":"pollution de l'air","city":"ville","atmosphere":"atmosphère","ships":"navires","environmental map":"carte environnementale","pollution chart":"graphique de pollution","pollution monitor":"moniteur de pollution","satellite":"satellite","football game":"match de football américain","bee quarterback":"abeille quarterback","football":"ballon de football américain","referee":"arbitre","offensive player":"joueur offensif","center":"centre","receiver":"receveur","defender":"défenseur","football helmet":"casque de football","football field":"terrain de football","yard line":"ligne de yard","crowd":"foule","press box":"tribune de presse","stadium lights":"projecteurs du stade","sailboats":"voiliers","great wall of china":"Grande Muraille de Chine","great wall":"Grande Muraille","watchtower":"tour de guet","watchtowers":"tours de guet","hot-air balloons":"montgolfières","squirrel":"écureuil","village":"village","bridge":"pont","stone walkway":"chemin de pierre","spacewalk":"sortie dans l'espace","boy astronaut":"garçon astronaute","girl astronaut":"fille astronaute","space gloves":"gants spatiaux","safety tether":"câble de sécurité","space station":"station spatiale","station truss":"structure de la station","handrail":"main courante","space tools":"outils spatiaux","dog show":"exposition canine","referee bee":"abeille arbitre","clipboard":"presse-papiers","golden retriever":"Golden Retriever","small white dog":"petit chien blanc","border collie":"Border Collie","spaniel":"épagneul","brown dog":"chien brun","dalmatian":"dalmatien","bulldog":"bouledogue","pomeranian":"spitz nain","terrier":"terrier","dog handlers":"présentateurs de chiens","dog leash":"laisse","dog show banner":"bannière de l'exposition canine","audience":"public","show ring fence":"barrière du ring","show ring turf":"gazon du ring","arena lights":"lumières de l'arène","cockpit":"poste de pilotage","captain":"commandant","water":"eau","ferry":"ferry","overhead controls":"commandes supérieures","flight instruments":"instruments de vol","navigation screen":"écran de navigation","throttle":"manette des gaz","headset":"casque","cockpit controls":"commandes du cockpit","cave":"grotte","stalactites":"stalactites","stalagmites":"stalagmites","bats":"chauves-souris","cave waterfall":"cascade de la grotte","cave pool":"bassin de la grotte","cave stream":"ruisseau de la grotte","headlamp":"lampe frontale","bee explorer":"abeille exploratrice","cave explorers":"explorateurs de grotte","cavern":"caverne","cave rocks":"rochers de la grotte","water reflection":"reflet dans l'eau","cave passage":"passage de la grotte","dripstone":"concrétion calcaire","mission control center":"centre de contrôle de mission","flight controllers":"contrôleurs de vol","rocket":"fusée","launch pad":"pas de tir","countdown clock":"compte à rebours","mission screen":"écran de mission","observation gallery":"galerie d'observation","telemetry display":"écran de télémétrie","mission map":"carte de mission","control room chair":"chaise de contrôle","control room ceiling":"plafond de la salle","ski resort":"station de ski","chairlift":"télésiège","skiers":"skieurs","trails":"pistes","lift":"remontée mécanique","ski rentals":"location de skis","ski school":"école de ski","café":"café","skis":"skis","snowboard":"snowboard","ski lodge":"chalet de ski","ski resort sign":"panneau de la station de ski","fire pit":"brasero","chairs":"chaises","snow":"neige","steam train":"train à vapeur","steam locomotive":"locomotive à vapeur","engineer bee":"abeille mécanicienne","train bell":"cloche du train","headlight":"phare","smokestack":"cheminée","steam":"vapeur","passengers":"passagers","passenger cars":"voitures de voyageurs","trestle bridge":"pont à tréteaux","railroad tracks":"voies ferrées","railroad depot":"gare ferroviaire","railroad crossing":"passage à niveau","water tower":"château d'eau","bison":"bisons","deer":"cerf","hang glider":"deltaplane","control bar":"barre de contrôle","town":"ville","boat":"bateau","train":"train","rail bridge":"pont ferroviaire","road":"route","cabin":"chalet","stump":"souche","trail":"sentier","jet airplane":"avion à réaction"},"de":{"oval office":"Oval Office","bee":"Biene","resolute desk":"Resolute-Schreibtisch","desk chair":"Schreibtischstuhl","american flag":"amerikanische Flagge","presidential flag":"Präsidentenflagge","fireplace":"Kamin","george washington portrait":"Porträt von George Washington","abraham lincoln portrait":"Porträt von Abraham Lincoln","windows":"Fenster","washington monument":"Washington Monument","rug":"Teppich","sofa":"Sofa","books":"Bücher","globe":"Globus","telephone":"Telefon","flowers":"Blumen","tour guide":"Reiseführer","visitors":"Besucher","historical bust":"historische Büste","lamp":"Lampe","aircraft carrier":"Flugzeugträger","navy bee":"Marine-Biene","sailor":"Matrose","jet aircraft":"Düsenflugzeug","carrier aircraft":"Trägerflugzeuge","helicopter":"Hubschrauber","carrier island":"Trägerinsel","flight deck":"Flugdeck","flight deck crew":"Flugdeckbesatzung","aircraft director":"Flugzeug-Einweiser","flight deck crew member":"Flugdeckmitglied","tow tractor":"Schleppfahrzeug","ocean":"Ozean","navy ship":"Marineschiff","deck markings":"Deckmarkierungen","safety railing":"Sicherheitsgeländer","deck equipment":"Deckausrüstung","sky":"Himmel","zoo":"Zoo","elephant":"Elefant","giraffes":"Giraffen","mountain":"Berg","monkey":"Affe","parrot":"Papagei","lion":"Löwe","zoo sign":"Zooschild","zebra":"Zebra","zoo tram":"Zoobahn","penguins":"Pinguine","sea lion":"Seelöwe","waterfall":"Wasserfall","pool":"Becken","boy":"Junge","girl":"Mädchen","zoo visitors":"Zoobesucher","trees":"Bäume","zoo path":"Zooweg","rowing regatta":"Ruderregatta","bee coxswain":"Steuermann-Biene","megaphone":"Megafon","rowing crew":"Rudermannschaft","oars":"Ruder","racing shell":"Rennboot","red rowing crew":"rote Rudermannschaft","lake water":"Seewasser","race buoys":"Rennbojen","regatta banner":"Regatta-Banner","boathouse":"Bootshaus","spectators":"Zuschauer","dock":"Steg","sailboat":"Segelboot","motorboat":"Motorboot","snowy mountains":"schneebedeckte Berge","pine forest":"Kiefernwald","regatta flags":"Regattaflaggen","oar splash":"Ruderspritzer","rower":"Ruderer","race course":"Rennstrecke","boat lock":"Bootsschleuse","captain bee":"Kapitänsbiene","steering wheel":"Steuerrad","cabin cruiser":"Kajütboot","dog":"Hund","child":"Kind","life jacket":"Rettungsweste","lock gate":"Schleusentor","flowing water":"fließendes Wasser","boat behind us":"Boot hinter uns","yellow bollard":"gelber Poller","lock ladder":"Schleusenleiter","lock wall":"Schleusenwand","lock control building":"Schleusenleitstand","seagull":"Möwe","mountains":"Berge","lock water":"Schleusenwasser","boat fender":"Bootsfender","anchor":"Anker","rescue helicopter":"Rettungshubschrauber","pilot":"Pilot","grandpa":"Opa","mitchell":"Mitchell","nicole":"Nicole","rescue dog":"Rettungshund","rescue cable":"Rettungsseil","rescuer":"Retter","rescue basket":"Rettungskorb","hiker":"Wanderer","backpack":"Rucksack","mountain lake":"Bergsee","eagle":"Adler","forest":"Wald","campground":"Campingplatz","rescue helmet":"Rettungshelm","rocky ledge":"Felsvorsprung","fishing boat":"Fischerboot","orca":"Orca","dolphin":"Delfin","space needle":"Space Needle","seattle skyline":"Skyline von Seattle","mount rainier":"Mount Rainier","ferris wheel":"Riesenrad","seagulls":"Möwen","fishing rods":"Angelruten","sophia":"Sophia","carlos":"Carlos","grandma":"Oma","life ring":"Rettungsring","radar":"Radar","fishing net":"Fischernetz","camp sign":"Campingschild","rv":"Wohnmobil","solar panels":"Solarmodule","rv door":"Wohnmobiltür","bicycle":"Fahrrad","picnic table":"Picknicktisch","guitar":"Gitarre","family":"Familie","campfire":"Lagerfeuer","marshmallows":"Marshmallows","bear":"Bear","cooler":"Kühlbox","tent":"Zelt","lantern":"Laterne","raccoon":"Waschbär","lake":"See","canoe":"Kanu","creek":"Bach","moon":"Mond","stars":"Sterne","pine trees":"Kiefern","firewood":"Feuerholz","cooking pot":"Kochtopf","movie studio":"Filmstudio","hollywood sign":"Hollywood-Schriftzug","studio water tower":"Studio-Wasserturm","camera helicopter":"Kamerahelikopter","camera drone":"Kameradrohne","green screen":"Greenscreen","boom microphone":"Angel-Mikrofon","stunt explosion":"Stunt-Explosion","stunt car":"Stuntauto","movie camera":"Filmkamera","director monitors":"Regiemonitore","clapperboard":"Filmklappe","director's chair":"Regiestuhl","costumes":"Kostüme","makeup station":"Schminkplatz","studio lights":"Studioleuchten","director bee":"Regisseur-Biene","cast members":"Darsteller","movie crew":"Filmcrew","palm trees":"Palmen","coral reef":"Korallenriff","dolphins":"Delfine","shipwreck":"Schiffswrack","sea turtle":"Meeresschildkröte","shark":"Hai","clownfish":"Clownfisch","tropical fish":"Tropenfische","pufferfish":"Kugelfisch","moray eel":"Muräne","starfish":"Seestern","crab":"Krabbe","lobster":"Hummer","octopus":"Oktopus","coral":"Koralle","seaweed":"Seetang","sand":"Sand","scuba tank":"Tauchflasche","fins":"Flossen","bicycle race":"Fahrradrennen","bee racer":"Rennfahrer-Biene","starting line":"Startlinie","start gate":"Starttor","race official":"Rennleiter","start signal":"Startsignal","helmet":"Helm","bicycle racer":"Radfahrer","bicycle racers":"Radfahrer","bike trail sign":"Radwegweiser","race flags":"Rennflaggen","race tent":"Rennzelt","dirt race track":"Schotterpiste","trail rocks":"Wegsteine","softball game":"Softballspiel","bee pitcher":"Pitcher-Biene","softball":"Softball","pitcher's mound":"Pitcherhügel","batter":"Schlagfrau","softball bat":"Softballschläger","catcher":"Catcherin","umpire":"Schiedsrichter","home plate":"Home Plate","scoreboard":"Anzeigetafel","infielder":"Infielderin","softball glove":"Softballhandschuh","batting helmet":"Schlaghelm","softball field":"Softballfeld","outfield fence":"Außenfeldzaun","flag":"Flagge","family picnic":"Familienpicknick","picnic crew":"Picknickgruppe","picnic food":"Picknickessen","hot dogs":"Hotdogs","hamburgers":"Hamburger","golden dog":"goldener Hund","german shepherd":"Deutscher Schäferhund","canoes":"Kanus","wildflowers":"Wildblumen","basic training":"Grundausbildung","drill sergeant bee":"Drill-Sergeant-Biene","trainees":"Auszubildende","instructor":"Ausbilder","climbing wall":"Kletterwand","climbing rope":"Kletterseil","training tires":"Trainingsreifen","training tunnel":"Trainingstunnel","observation tower":"Beobachtungsturm","training tents":"Trainingszelte","military truck":"Militärlastwagen","canteen":"Feldflasche","training uniform":"Trainingsuniform","boots":"Stiefel","obstacle course":"Hindernisparcours","training camp":"Trainingslager","hot air balloon festival":"Heißluftballon-Festival","balloon bee":"Ballon-Biene","balloon crew":"Ballonbesatzung","balloon basket":"Ballonkorb","balloon burner":"Ballonbrenner","burner flame":"Brennerflamme","hot air balloon":"Heißluftballon","balloon ropes":"Ballonseile","forest island":"Waldinsel","sunrise":"Sonnenaufgang","blue sky":"blauer Himmel","balloons in flight":"Ballons im Flug","festival field":"Festivalgelände","festival crowd":"Festivalbesucher","inflating balloons":"aufgeblasene Ballons","festival tents":"Festivalzelte","saturn":"Saturn","astronaut bee":"Astronauten-Biene","saturn's rings":"Saturnringe","milky way":"Milchstraße","sunlight":"Sonnenlicht","spacecraft window":"Raumschifffenster","solar system screen":"Sonnensystem-Bildschirm","control console":"Kontrollkonsole","computer monitor":"Computermonitor","astronaut":"Astronaut","space crew":"Raumbesatzung","spacecraft seat":"Raumschiffsitz","solar system hologram":"Sonnensystem-Hologramm","spacecraft ceiling":"Raumschiffdecke","planet displays":"Planetenanzeigen","spacesuit":"Raumanzug","spacecraft controls":"Raumschiffsteuerung","whitewater rafting":"Wildwasser-Rafting","rafting bee":"Rafting-Biene","rafting crew":"Rafting-Team","raft":"Schlauchboot","yellow paddle":"gelbes Paddel","blue paddle":"blaues Paddel","huge rapids":"riesige Stromschnellen","whitewater":"Wildwasser","river":"Fluss","river rocks":"Flussfelsen","evergreen forest":"Nadelwald","snowy mountain":"schneebedeckter Berg","water spray":"Wasserspritzer","mountain valley":"Bergtal","the moon":"der Mond","moon crew":"Mondbesatzung","moon castle":"Mondburg","moon rock":"Mondgestein","lunar surface":"Mondoberfläche","crater":"Krater","lunar lander":"Mondlandefähre","lander ladder":"Landefährenleiter","moon rover":"Mondrover","dish antenna":"Parabolantenne","moon base":"Mondbasis","lunar habitat":"Mondhabitat","small rover":"kleiner Rover","science instrument":"wissenschaftliches Instrument","earth":"Erde","sun":"Sonne","lunar mountains":"Mondberge","footprints":"Fußspuren","skydiving":"Fallschirmspringen","flying bee":"fliegende Biene","airplane":"Flugzeug","airplane door":"Flugzeugtür","crew member":"Besatzungsmitglied","skydiving instructor":"Fallschirmsprunglehrer","skydiver":"Fallschirmspringer","goggles":"Schutzbrille","skydiving harness":"Fallschirmgurt","parachute pack":"Fallschirmpaket","airplane wing":"Flugzeugflügel","islands":"Inseln","clouds":"Wolken","landing gear":"Fahrwerk","golf course":"Golfplatz","golf bee":"Golf-Biene","golfer":"Golfer","golf crew":"Golfgruppe","small dog":"kleiner Hund","golf ball":"Golfball","yellow flag":"gelbe Fahne","golf club":"Golfschläger","putting green":"Putting-Grün","sand bunker":"Sandbunker","golf cart":"Golfwagen","pond":"Teich","clubhouse":"Clubhaus","fairway":"Fairway","protect the earth":"die Erde schützen","factories":"Fabriken","smokestacks":"Schornsteine","smoke":"Rauch","air pollution":"Luftverschmutzung","city":"Stadt","atmosphere":"Atmosphäre","ships":"Schiffe","environmental map":"Umweltkarte","pollution chart":"Verschmutzungsdiagramm","pollution monitor":"Verschmutzungsmonitor","satellite":"Satellit","football game":"American-Football-Spiel","bee quarterback":"Quarterback-Biene","football":"Football","referee":"Schiedsrichter","offensive player":"Angriffsspieler","center":"Center","receiver":"Receiver","defender":"Verteidiger","football helmet":"Footballhelm","football field":"Footballfeld","yard line":"Yard-Linie","crowd":"Zuschauer","press box":"Pressetribüne","stadium lights":"Stadionlichter","sailboats":"Segelboote","great wall of china":"Chinesische Mauer","great wall":"Große Mauer","watchtower":"Wachturm","watchtowers":"Wachtürme","hot-air balloons":"Heißluftballons","squirrel":"Eichhörnchen","village":"Dorf","bridge":"Brücke","stone walkway":"Steinweg","spacewalk":"Weltraumspaziergang","boy astronaut":"Junge als Astronaut","girl astronaut":"Mädchen als Astronautin","space gloves":"Weltraumhandschuhe","safety tether":"Sicherungsleine","space station":"Raumstation","station truss":"Stationsgerüst","handrail":"Handlauf","space tools":"Weltraumwerkzeuge","dog show":"Hundeausstellung","referee bee":"Schiedsrichter-Biene","clipboard":"Klemmbrett","golden retriever":"Golden Retriever","small white dog":"kleiner weißer Hund","border collie":"Border Collie","spaniel":"Spaniel","brown dog":"brauner Hund","dalmatian":"Dalmatiner","bulldog":"Bulldogge","pomeranian":"Zwergspitz","terrier":"Terrier","dog handlers":"Hundeführer","dog leash":"Hundeleine","dog show banner":"Hundeausstellungsbanner","audience":"Publikum","show ring fence":"Ausstellungsring-Zaun","show ring turf":"Ringrasen","arena lights":"Hallenbeleuchtung","cockpit":"Cockpit","captain":"Kapitän","water":"Wasser","ferry":"Fähre","overhead controls":"Überkopfbedienfeld","flight instruments":"Fluginstrumente","navigation screen":"Navigationsbildschirm","throttle":"Schubhebel","headset":"Headset","cockpit controls":"Cockpit-Bedienelemente","cave":"Höhle","stalactites":"Stalaktiten","stalagmites":"Stalagmiten","bats":"Fledermäuse","cave waterfall":"Höhlenwasserfall","cave pool":"Höhlenbecken","cave stream":"Höhlenbach","headlamp":"Stirnlampe","bee explorer":"Forscherbiene","cave explorers":"Höhlenforscher","cavern":"Höhlenkammer","cave rocks":"Höhlenfelsen","water reflection":"Wasserspiegelung","cave passage":"Höhlengang","dripstone":"Tropfstein","mission control center":"Missionskontrollzentrum","flight controllers":"Flugkontrolleure","rocket":"Rakete","launch pad":"Startrampe","countdown clock":"Countdown-Uhr","mission screen":"Missionsbildschirm","observation gallery":"Beobachtungsgalerie","telemetry display":"Telemetrieanzeige","mission map":"Missionskarte","control room chair":"Kontrollraumstuhl","control room ceiling":"Kontrollraumdecke","ski resort":"Skigebiet","chairlift":"Sessellift","skiers":"Skifahrer","trails":"Skipisten","lift":"Skilift","ski rentals":"Skiverleih","ski school":"Skischule","café":"Café","skis":"Skier","snowboard":"Snowboard","ski lodge":"Skihütte","ski resort sign":"Skigebietsschild","fire pit":"Feuerstelle","chairs":"Stühle","snow":"Schnee","steam train":"Dampfzug","steam locomotive":"Dampflokomotive","engineer bee":"Lokführer-Biene","train bell":"Zugglocke","headlight":"Scheinwerfer","smokestack":"Schornstein","steam":"Dampf","passengers":"Fahrgäste","passenger cars":"Personenwagen","trestle bridge":"Bockbrücke","railroad tracks":"Eisenbahngleise","railroad depot":"Bahnhof","railroad crossing":"Bahnübergang","water tower":"Wasserturm","bison":"Bisone","deer":"Hirsch","hang glider":"Drachenflieger","control bar":"Steuerbügel","town":"Stadt","boat":"Boot","train":"Zug","rail bridge":"Eisenbahnbrücke","road":"Straße","cabin":"Hütte","stump":"Baumstumpf","trail":"Weg","jet airplane":"Düsenflugzeug"},"it":{"oval office":"Studio Ovale","bee":"ape","resolute desk":"scrivania Resolute","desk chair":"sedia da scrivania","american flag":"bandiera americana","presidential flag":"bandiera presidenziale","fireplace":"camino","george washington portrait":"ritratto di George Washington","abraham lincoln portrait":"ritratto di Abraham Lincoln","windows":"finestre","washington monument":"Monumento a Washington","rug":"tappeto","sofa":"divano","books":"libri","globe":"mappamondo","telephone":"telefono","flowers":"fiori","tour guide":"guida","visitors":"visitatori","historical bust":"busto storico","lamp":"lampada","aircraft carrier":"portaerei","navy bee":"ape della Marina","sailor":"marinaio","jet aircraft":"aereo a reazione","carrier aircraft":"aerei imbarcati","helicopter":"elicottero","carrier island":"isola della portaerei","flight deck":"ponte di volo","flight deck crew":"equipaggio del ponte di volo","aircraft director":"direttore degli aeromobili","flight deck crew member":"membro dell'equipaggio di coperta","tow tractor":"trattore da traino","ocean":"oceano","navy ship":"nave della Marina","deck markings":"segnaletica del ponte","safety railing":"ringhiera di sicurezza","deck equipment":"attrezzatura di coperta","sky":"cielo","zoo":"zoo","elephant":"elefante","giraffes":"giraffe","mountain":"montagna","monkey":"scimmia","parrot":"pappagallo","lion":"leone","zoo sign":"cartello dello zoo","zebra":"zebra","zoo tram":"trenino dello zoo","penguins":"pinguini","sea lion":"leone marino","waterfall":"cascata","pool":"vasca","boy":"ragazzo","girl":"ragazza","zoo visitors":"visitatori dello zoo","trees":"alberi","zoo path":"sentiero dello zoo","rowing regatta":"regata di canottaggio","bee coxswain":"ape timoniere","megaphone":"megafono","rowing crew":"equipaggio di canottaggio","oars":"remi","racing shell":"barca da gara","red rowing crew":"equipaggio rosso","lake water":"acqua del lago","race buoys":"boe di gara","regatta banner":"striscione della regata","boathouse":"rimessa per barche","spectators":"spettatori","dock":"molo","sailboat":"barca a vela","motorboat":"motoscafo","snowy mountains":"montagne innevate","pine forest":"foresta di pini","regatta flags":"bandiere della regata","oar splash":"spruzzo del remo","rower":"vogatore","race course":"percorso di gara","boat lock":"chiusa per barche","captain bee":"ape capitano","steering wheel":"timone","cabin cruiser":"barca cabinata","dog":"cane","child":"bambino","life jacket":"giubbotto di salvataggio","lock gate":"porta della chiusa","flowing water":"acqua corrente","boat behind us":"barca dietro di noi","yellow bollard":"bitta gialla","lock ladder":"scala della chiusa","lock wall":"muro della chiusa","lock control building":"edificio di controllo","seagull":"gabbiano","mountains":"montagne","lock water":"acqua della chiusa","boat fender":"parabordo","anchor":"ancora","rescue helicopter":"elicottero di soccorso","pilot":"pilota","grandpa":"nonno","mitchell":"Mitchell","nicole":"Nicole","rescue dog":"cane da soccorso","rescue cable":"cavo di soccorso","rescuer":"soccorritore","rescue basket":"cesta di soccorso","hiker":"escursionista","backpack":"zaino","mountain lake":"lago di montagna","eagle":"aquila","forest":"foresta","campground":"campeggio","rescue helmet":"casco di soccorso","rocky ledge":"sporgenza rocciosa","fishing boat":"barca da pesca","orca":"orca","dolphin":"delfino","space needle":"Space Needle","seattle skyline":"skyline di Seattle","mount rainier":"Monte Rainier","ferris wheel":"ruota panoramica","seagulls":"gabbiani","fishing rods":"canne da pesca","sophia":"Sophia","carlos":"Carlos","grandma":"nonna","life ring":"salvagente","radar":"radar","fishing net":"rete da pesca","camp sign":"cartello del campeggio","rv":"camper","solar panels":"pannelli solari","rv door":"porta del camper","bicycle":"bicicletta","picnic table":"tavolo da picnic","guitar":"chitarra","family":"famiglia","campfire":"falò","marshmallows":"marshmallow","bear":"Bear","cooler":"frigorifero portatile","tent":"tenda","lantern":"lanterna","raccoon":"procione","lake":"lago","canoe":"canoa","creek":"ruscello","moon":"luna","stars":"stelle","pine trees":"pini","firewood":"legna da ardere","cooking pot":"pentola","movie studio":"studio cinematografico","hollywood sign":"scritta Hollywood","studio water tower":"torre dell'acqua dello studio","camera helicopter":"elicottero con telecamera","camera drone":"drone con telecamera","green screen":"schermo verde","boom microphone":"microfono ad asta","stunt explosion":"esplosione acrobatica","stunt car":"auto acrobatica","movie camera":"cinepresa","director monitors":"monitor del regista","clapperboard":"ciak","director's chair":"sedia del regista","costumes":"costumi","makeup station":"postazione trucco","studio lights":"luci da studio","director bee":"ape regista","cast members":"attori","movie crew":"troupe cinematografica","palm trees":"palme","coral reef":"barriera corallina","dolphins":"delfini","shipwreck":"relitto","sea turtle":"tartaruga marina","shark":"squalo","clownfish":"pesce pagliaccio","tropical fish":"pesci tropicali","pufferfish":"pesce palla","moray eel":"murena","starfish":"stella marina","crab":"granchio","lobster":"aragosta","octopus":"polpo","coral":"corallo","seaweed":"alghe","sand":"sabbia","scuba tank":"bombola da sub","fins":"pinne","bicycle race":"gara di biciclette","bee racer":"ape ciclista","starting line":"linea di partenza","start gate":"arco di partenza","race official":"ufficiale di gara","start signal":"segnale di partenza","helmet":"casco","bicycle racer":"ciclista","bicycle racers":"ciclisti","bike trail sign":"cartello del percorso ciclabile","race flags":"bandiere di gara","race tent":"tenda della gara","dirt race track":"pista sterrata","trail rocks":"rocce del sentiero","softball game":"partita di softball","bee pitcher":"ape lanciatrice","softball":"palla da softball","pitcher's mound":"pedana del lanciatore","batter":"battitrice","softball bat":"mazza da softball","catcher":"ricevitrice","umpire":"arbitro","home plate":"casa base","scoreboard":"tabellone","infielder":"interno","softball glove":"guanto da softball","batting helmet":"casco da battuta","softball field":"campo da softball","outfield fence":"recinzione esterna","flag":"bandiera","family picnic":"picnic di famiglia","picnic crew":"gruppo del picnic","picnic food":"cibo da picnic","hot dogs":"hot dog","hamburgers":"hamburger","golden dog":"cane dorato","german shepherd":"pastore tedesco","canoes":"canoe","wildflowers":"fiori selvatici","basic training":"addestramento di base","drill sergeant bee":"ape sergente istruttore","trainees":"allievi","instructor":"istruttore","climbing wall":"parete da arrampicata","climbing rope":"corda da arrampicata","training tires":"pneumatici da allenamento","training tunnel":"tunnel di allenamento","observation tower":"torre di osservazione","training tents":"tende da addestramento","military truck":"camion militare","canteen":"borraccia","training uniform":"uniforme da addestramento","boots":"stivali","obstacle course":"percorso a ostacoli","training camp":"campo di addestramento","hot air balloon festival":"festival delle mongolfiere","balloon bee":"ape in mongolfiera","balloon crew":"equipaggio della mongolfiera","balloon basket":"cesto della mongolfiera","balloon burner":"bruciatore","burner flame":"fiamma del bruciatore","hot air balloon":"mongolfiera","balloon ropes":"corde della mongolfiera","forest island":"isola boscosa","sunrise":"alba","blue sky":"cielo blu","balloons in flight":"mongolfiere in volo","festival field":"campo del festival","festival crowd":"folla del festival","inflating balloons":"mongolfiere che si gonfiano","festival tents":"tende del festival","saturn":"Saturno","astronaut bee":"ape astronauta","saturn's rings":"anelli di Saturno","milky way":"Via Lattea","sunlight":"luce solare","spacecraft window":"finestra dell'astronave","solar system screen":"schermo del sistema solare","control console":"console di controllo","computer monitor":"monitor","astronaut":"astronauta","space crew":"equipaggio spaziale","spacecraft seat":"sedile dell'astronave","solar system hologram":"ologramma del sistema solare","spacecraft ceiling":"soffitto dell'astronave","planet displays":"schermi planetari","spacesuit":"tuta spaziale","spacecraft controls":"comandi dell'astronave","whitewater rafting":"rafting sulle rapide","rafting bee":"ape del rafting","rafting crew":"equipaggio del rafting","raft":"gommone","yellow paddle":"pagaia gialla","blue paddle":"pagaia blu","huge rapids":"rapide enormi","whitewater":"acque bianche","river":"fiume","river rocks":"rocce del fiume","evergreen forest":"foresta di conifere","snowy mountain":"montagna innevata","water spray":"spruzzi d'acqua","mountain valley":"valle di montagna","the moon":"la Luna","moon crew":"equipaggio lunare","moon castle":"castello lunare","moon rock":"roccia lunare","lunar surface":"superficie lunare","crater":"cratere","lunar lander":"modulo lunare","lander ladder":"scala del modulo","moon rover":"rover lunare","dish antenna":"antenna parabolica","moon base":"base lunare","lunar habitat":"habitat lunare","small rover":"piccolo rover","science instrument":"strumento scientifico","earth":"Terra","sun":"Sole","lunar mountains":"montagne lunari","footprints":"impronte","skydiving":"paracadutismo","flying bee":"ape volante","airplane":"aereo","airplane door":"porta dell'aereo","crew member":"membro dell'equipaggio","skydiving instructor":"istruttore di paracadutismo","skydiver":"paracadutista","goggles":"occhiali protettivi","skydiving harness":"imbracatura da paracadutismo","parachute pack":"zaino del paracadute","airplane wing":"ala dell'aereo","islands":"isole","clouds":"nuvole","landing gear":"carrello di atterraggio","golf course":"campo da golf","golf bee":"ape golfista","golfer":"golfista","golf crew":"gruppo di golf","small dog":"cane piccolo","golf ball":"pallina da golf","yellow flag":"bandiera gialla","golf club":"mazza da golf","putting green":"green","sand bunker":"bunker di sabbia","golf cart":"golf cart","pond":"laghetto","clubhouse":"clubhouse","fairway":"fairway","protect the earth":"proteggere la Terra","factories":"fabbriche","smokestacks":"ciminiere","smoke":"fumo","air pollution":"inquinamento dell'aria","city":"città","atmosphere":"atmosfera","ships":"navi","environmental map":"mappa ambientale","pollution chart":"grafico dell'inquinamento","pollution monitor":"monitor dell'inquinamento","satellite":"satellite","football game":"partita di football americano","bee quarterback":"ape quarterback","football":"pallone da football","referee":"arbitro","offensive player":"giocatore d'attacco","center":"centro","receiver":"ricevitore","defender":"difensore","football helmet":"casco da football","football field":"campo da football","yard line":"linea delle yard","crowd":"pubblico","press box":"cabina stampa","stadium lights":"luci dello stadio","sailboats":"barche a vela","great wall of china":"Grande Muraglia Cinese","great wall":"Grande Muraglia","watchtower":"torre di guardia","watchtowers":"torri di guardia","hot-air balloons":"mongolfiere","squirrel":"scoiattolo","village":"villaggio","bridge":"ponte","stone walkway":"sentiero di pietra","spacewalk":"passeggiata spaziale","boy astronaut":"ragazzo astronauta","girl astronaut":"ragazza astronauta","space gloves":"guanti spaziali","safety tether":"cavo di sicurezza","space station":"stazione spaziale","station truss":"struttura della stazione","handrail":"corrimano","space tools":"attrezzi spaziali","dog show":"mostra canina","referee bee":"ape arbitro","clipboard":"cartellina","golden retriever":"Golden Retriever","small white dog":"cagnolino bianco","border collie":"Border Collie","spaniel":"spaniel","brown dog":"cane marrone","dalmatian":"dalmata","bulldog":"bulldog","pomeranian":"volpino di Pomerania","terrier":"terrier","dog handlers":"conduttori dei cani","dog leash":"guinzaglio","dog show banner":"striscione della mostra canina","audience":"pubblico","show ring fence":"recinzione del ring","show ring turf":"prato del ring","arena lights":"luci dell'arena","cockpit":"cabina di pilotaggio","captain":"comandante","water":"acqua","ferry":"traghetto","overhead controls":"comandi superiori","flight instruments":"strumenti di volo","navigation screen":"schermo di navigazione","throttle":"manetta","headset":"cuffie","cockpit controls":"comandi della cabina","cave":"grotta","stalactites":"stalattiti","stalagmites":"stalagmiti","bats":"pipistrelli","cave waterfall":"cascata della grotta","cave pool":"pozza della grotta","cave stream":"ruscello della grotta","headlamp":"lampada frontale","bee explorer":"ape esploratrice","cave explorers":"esploratori della grotta","cavern":"caverna","cave rocks":"rocce della grotta","water reflection":"riflesso nell'acqua","cave passage":"passaggio della grotta","dripstone":"concrezione calcarea","mission control center":"centro di controllo missione","flight controllers":"controllori di volo","rocket":"razzo","launch pad":"rampa di lancio","countdown clock":"conto alla rovescia","mission screen":"schermo della missione","observation gallery":"galleria di osservazione","telemetry display":"schermo di telemetria","mission map":"mappa della missione","control room chair":"sedia della sala controllo","control room ceiling":"soffitto della sala","ski resort":"stazione sciistica","chairlift":"seggiovia","skiers":"sciatori","trails":"piste","lift":"impianto di risalita","ski rentals":"noleggio sci","ski school":"scuola di sci","café":"caffè","skis":"sci","snowboard":"snowboard","ski lodge":"rifugio sciistico","ski resort sign":"cartello della stazione sciistica","fire pit":"braciere","chairs":"sedie","snow":"neve","steam train":"treno a vapore","steam locomotive":"locomotiva a vapore","engineer bee":"ape macchinista","train bell":"campana del treno","headlight":"faro","smokestack":"ciminiera","steam":"vapore","passengers":"passeggeri","passenger cars":"carrozze passeggeri","trestle bridge":"ponte a traliccio","railroad tracks":"binari ferroviari","railroad depot":"stazione ferroviaria","railroad crossing":"passaggio a livello","water tower":"torre dell'acqua","bison":"bisonti","deer":"cervo","hang glider":"deltaplano","control bar":"barra di controllo","town":"città","boat":"barca","train":"treno","rail bridge":"ponte ferroviario","road":"strada","cabin":"baita","stump":"ceppo","trail":"sentiero","jet airplane":"aereo a reazione"},"pt":{"oval office":"Salão Oval","bee":"abelha","resolute desk":"mesa Resolute","desk chair":"cadeira de escritório","american flag":"bandeira americana","presidential flag":"bandeira presidencial","fireplace":"lareira","george washington portrait":"retrato de George Washington","abraham lincoln portrait":"retrato de Abraham Lincoln","windows":"janelas","washington monument":"Monumento de Washington","rug":"tapete","sofa":"sofá","books":"livros","globe":"globo terrestre","telephone":"telefone","flowers":"flores","tour guide":"guia","visitors":"visitantes","historical bust":"busto histórico","lamp":"lâmpada","aircraft carrier":"porta-aviões","navy bee":"abelha da Marinha","sailor":"marinheiro","jet aircraft":"avião a jato","carrier aircraft":"aeronaves do porta-aviões","helicopter":"helicóptero","carrier island":"ilha do porta-aviões","flight deck":"convés de voo","flight deck crew":"equipe do convés de voo","aircraft director":"diretor de aeronaves","flight deck crew member":"membro da equipe do convés","tow tractor":"trator de reboque","ocean":"oceano","navy ship":"navio da Marinha","deck markings":"marcações do convés","safety railing":"grade de segurança","deck equipment":"equipamento do convés","sky":"céu","zoo":"zoológico","elephant":"elefante","giraffes":"girafas","mountain":"montanha","monkey":"macaco","parrot":"papagaio","lion":"leão","zoo sign":"placa do zoológico","zebra":"zebra","zoo tram":"bonde do zoológico","penguins":"pinguins","sea lion":"leão-marinho","waterfall":"cachoeira","pool":"lago","boy":"menino","girl":"menina","zoo visitors":"visitantes do zoológico","trees":"árvores","zoo path":"caminho do zoológico","rowing regatta":"regata de remo","bee coxswain":"abelha timoneira","megaphone":"megafone","rowing crew":"equipe de remo","oars":"remos","racing shell":"barco de competição","red rowing crew":"equipe vermelha de remo","lake water":"água do lago","race buoys":"boias de corrida","regatta banner":"faixa da regata","boathouse":"casa de barcos","spectators":"espectadores","dock":"cais","sailboat":"veleiro","motorboat":"lancha","snowy mountains":"montanhas nevadas","pine forest":"floresta de pinheiros","regatta flags":"bandeiras da regata","oar splash":"respingo do remo","rower":"remador","race course":"percurso da corrida","boat lock":"eclusa para barcos","captain bee":"abelha capitã","steering wheel":"leme","cabin cruiser":"barco de cabine","dog":"cachorro","child":"criança","life jacket":"colete salva-vidas","lock gate":"portão da eclusa","flowing water":"água corrente","boat behind us":"barco atrás de nós","yellow bollard":"cabeço amarelo","lock ladder":"escada da eclusa","lock wall":"parede da eclusa","lock control building":"edifício de controle","seagull":"gaivota","mountains":"montanhas","lock water":"água da eclusa","boat fender":"defensa do barco","anchor":"âncora","rescue helicopter":"helicóptero de resgate","pilot":"piloto","grandpa":"avô","mitchell":"Mitchell","nicole":"Nicole","rescue dog":"cão de resgate","rescue cable":"cabo de resgate","rescuer":"socorrista","rescue basket":"cesta de resgate","hiker":"caminhante","backpack":"mochila","mountain lake":"lago de montanha","eagle":"águia","forest":"floresta","campground":"acampamento","rescue helmet":"capacete de resgate","rocky ledge":"saliência rochosa","fishing boat":"barco de pesca","orca":"orca","dolphin":"golfinho","space needle":"Space Needle","seattle skyline":"horizonte de Seattle","mount rainier":"Monte Rainier","ferris wheel":"roda-gigante","seagulls":"gaivotas","fishing rods":"varas de pesca","sophia":"Sophia","carlos":"Carlos","grandma":"avó","life ring":"boia salva-vidas","radar":"radar","fishing net":"rede de pesca","camp sign":"placa do acampamento","rv":"autocaravana","solar panels":"painéis solares","rv door":"porta da autocaravana","bicycle":"bicicleta","picnic table":"mesa de piquenique","guitar":"guitarra","family":"família","campfire":"fogueira","marshmallows":"marshmallows","bear":"Bear","cooler":"caixa térmica","tent":"tenda","lantern":"lanterna","raccoon":"guaxinim","lake":"lago","canoe":"canoa","creek":"riacho","moon":"lua","stars":"estrelas","pine trees":"pinheiros","firewood":"lenha","cooking pot":"panela","movie studio":"estúdio de cinema","hollywood sign":"letreiro de Hollywood","studio water tower":"torre de água do estúdio","camera helicopter":"helicóptero com câmera","camera drone":"drone com câmera","green screen":"tela verde","boom microphone":"microfone boom","stunt explosion":"explosão de dublê","stunt car":"carro de dublê","movie camera":"câmera de cinema","director monitors":"monitores do diretor","clapperboard":"claquete","director's chair":"cadeira do diretor","costumes":"figurinos","makeup station":"área de maquiagem","studio lights":"luzes de estúdio","director bee":"abelha diretora","cast members":"elenco","movie crew":"equipe de filmagem","palm trees":"palmeiras","coral reef":"recife de coral","dolphins":"golfinhos","shipwreck":"naufrágio","sea turtle":"tartaruga marinha","shark":"tubarão","clownfish":"peixe-palhaço","tropical fish":"peixes tropicais","pufferfish":"baiacu","moray eel":"moreia","starfish":"estrela-do-mar","crab":"caranguejo","lobster":"lagosta","octopus":"polvo","coral":"coral","seaweed":"algas marinhas","sand":"areia","scuba tank":"cilindro de mergulho","fins":"nadadeiras","bicycle race":"corrida de bicicletas","bee racer":"abelha ciclista","starting line":"linha de largada","start gate":"pórtico de largada","race official":"oficial da corrida","start signal":"sinal de largada","helmet":"capacete","bicycle racer":"ciclista","bicycle racers":"ciclistas","bike trail sign":"placa de trilha de bicicleta","race flags":"bandeiras da corrida","race tent":"tenda da corrida","dirt race track":"pista de terra","trail rocks":"rochas da trilha","softball game":"jogo de softball","bee pitcher":"abelha arremessadora","softball":"bola de softball","pitcher's mound":"monte do arremessador","batter":"rebatedora","softball bat":"taco de softball","catcher":"receptora","umpire":"árbitro","home plate":"base principal","scoreboard":"placar","infielder":"jogadora de campo interno","softball glove":"luva de softball","batting helmet":"capacete de rebatedor","softball field":"campo de softball","outfield fence":"cerca do campo externo","flag":"bandeira","family picnic":"piquenique em família","picnic crew":"grupo do piquenique","picnic food":"comida do piquenique","hot dogs":"cachorros-quentes","hamburgers":"hambúrgueres","golden dog":"cachorro dourado","german shepherd":"pastor alemão","canoes":"canoas","wildflowers":"flores silvestres","basic training":"treinamento básico","drill sergeant bee":"abelha sargento instrutor","trainees":"recrutas","instructor":"instrutor","climbing wall":"parede de escalada","climbing rope":"corda de escalada","training tires":"pneus de treinamento","training tunnel":"túnel de treinamento","observation tower":"torre de observação","training tents":"tendas de treinamento","military truck":"caminhão militar","canteen":"cantil","training uniform":"uniforme de treinamento","boots":"botas","obstacle course":"pista de obstáculos","training camp":"campo de treinamento","hot air balloon festival":"festival de balões de ar quente","balloon bee":"abelha do balão","balloon crew":"tripulação do balão","balloon basket":"cesto do balão","balloon burner":"queimador do balão","burner flame":"chama do queimador","hot air balloon":"balão de ar quente","balloon ropes":"cordas do balão","forest island":"ilha arborizada","sunrise":"nascer do sol","blue sky":"céu azul","balloons in flight":"balões em voo","festival field":"campo do festival","festival crowd":"multidão do festival","inflating balloons":"balões sendo inflados","festival tents":"tendas do festival","saturn":"Saturno","astronaut bee":"abelha astronauta","saturn's rings":"anéis de Saturno","milky way":"Via Láctea","sunlight":"luz solar","spacecraft window":"janela da nave","solar system screen":"tela do sistema solar","control console":"console de controle","computer monitor":"monitor","astronaut":"astronauta","space crew":"tripulação espacial","spacecraft seat":"assento da nave","solar system hologram":"holograma do sistema solar","spacecraft ceiling":"teto da nave","planet displays":"telas planetárias","spacesuit":"traje espacial","spacecraft controls":"controles da nave","whitewater rafting":"rafting em águas bravas","rafting bee":"abelha do rafting","rafting crew":"equipe de rafting","raft":"bote","yellow paddle":"remo amarelo","blue paddle":"remo azul","huge rapids":"corredeiras enormes","whitewater":"águas bravas","river":"rio","river rocks":"rochas do rio","evergreen forest":"floresta de coníferas","snowy mountain":"montanha nevada","water spray":"borrifo de água","mountain valley":"vale de montanha","the moon":"a Lua","moon crew":"tripulação lunar","moon castle":"castelo lunar","moon rock":"rocha lunar","lunar surface":"superfície lunar","crater":"cratera","lunar lander":"módulo lunar","lander ladder":"escada do módulo","moon rover":"veículo lunar","dish antenna":"antena parabólica","moon base":"base lunar","lunar habitat":"habitat lunar","small rover":"pequeno veículo","science instrument":"instrumento científico","earth":"Terra","sun":"Sol","lunar mountains":"montanhas lunares","footprints":"pegadas","skydiving":"paraquedismo","flying bee":"abelha voadora","airplane":"avião","airplane door":"porta do avião","crew member":"membro da tripulação","skydiving instructor":"instrutor de paraquedismo","skydiver":"paraquedista","goggles":"óculos de proteção","skydiving harness":"arnês de paraquedismo","parachute pack":"mochila do paraquedas","airplane wing":"asa do avião","islands":"ilhas","clouds":"nuvens","landing gear":"trem de pouso","golf course":"campo de golfe","golf bee":"abelha golfista","golfer":"golfista","golf crew":"grupo de golfe","small dog":"cachorro pequeno","golf ball":"bola de golfe","yellow flag":"bandeira amarela","golf club":"taco de golfe","putting green":"green","sand bunker":"bunker de areia","golf cart":"carrinho de golfe","pond":"lago","clubhouse":"clube","fairway":"fairway","protect the earth":"proteger a Terra","factories":"fábricas","smokestacks":"chaminés","smoke":"fumaça","air pollution":"poluição do ar","city":"cidade","atmosphere":"atmosfera","ships":"navios","environmental map":"mapa ambiental","pollution chart":"gráfico de poluição","pollution monitor":"monitor de poluição","satellite":"satélite","football game":"jogo de futebol americano","bee quarterback":"abelha quarterback","football":"bola de futebol americano","referee":"árbitro","offensive player":"jogador de ataque","center":"center","receiver":"recebedor","defender":"defensor","football helmet":"capacete de futebol americano","football field":"campo de futebol americano","yard line":"linha de jardas","crowd":"torcida","press box":"cabine de imprensa","stadium lights":"luzes do estádio","sailboats":"veleiros","great wall of china":"Grande Muralha da China","great wall":"Grande Muralha","watchtower":"torre de vigia","watchtowers":"torres de vigia","hot-air balloons":"balões de ar quente","squirrel":"esquilo","village":"vila","bridge":"ponte","stone walkway":"caminho de pedra","spacewalk":"caminhada espacial","boy astronaut":"menino astronauta","girl astronaut":"menina astronauta","space gloves":"luvas espaciais","safety tether":"cabo de segurança","space station":"estação espacial","station truss":"estrutura da estação","handrail":"corrimão","space tools":"ferramentas espaciais","dog show":"exposição canina","referee bee":"abelha árbitra","clipboard":"prancheta","golden retriever":"Golden Retriever","small white dog":"cachorro branco pequeno","border collie":"Border Collie","spaniel":"spaniel","brown dog":"cachorro marrom","dalmatian":"dálmata","bulldog":"buldogue","pomeranian":"lulu da Pomerânia","terrier":"terrier","dog handlers":"apresentadores de cães","dog leash":"guia","dog show banner":"faixa da exposição canina","audience":"público","show ring fence":"cerca da pista","show ring turf":"gramado da pista","arena lights":"luzes da arena","cockpit":"cabine de comando","captain":"comandante","water":"água","ferry":"balsa","overhead controls":"controles superiores","flight instruments":"instrumentos de voo","navigation screen":"tela de navegação","throttle":"manete de potência","headset":"fone de ouvido","cockpit controls":"controles da cabine","cave":"caverna","stalactites":"estalactites","stalagmites":"estalagmites","bats":"morcegos","cave waterfall":"cachoeira da caverna","cave pool":"poça da caverna","cave stream":"riacho da caverna","headlamp":"lanterna de cabeça","bee explorer":"abelha exploradora","cave explorers":"exploradores da caverna","cavern":"caverna","cave rocks":"rochas da caverna","water reflection":"reflexo na água","cave passage":"passagem da caverna","dripstone":"formação calcária","mission control center":"centro de controle da missão","flight controllers":"controladores de voo","rocket":"foguete","launch pad":"plataforma de lançamento","countdown clock":"relógio de contagem regressiva","mission screen":"tela da missão","observation gallery":"galeria de observação","telemetry display":"tela de telemetria","mission map":"mapa da missão","control room chair":"cadeira da sala de controle","control room ceiling":"teto da sala","ski resort":"estação de esqui","chairlift":"teleférico","skiers":"esquiadores","trails":"pistas","lift":"elevador de esqui","ski rentals":"aluguel de esquis","ski school":"escola de esqui","café":"café","skis":"esquis","snowboard":"prancha de snowboard","ski lodge":"chalé de esqui","ski resort sign":"placa da estação de esqui","fire pit":"fogueira","chairs":"cadeiras","snow":"neve","steam train":"trem a vapor","steam locomotive":"locomotiva a vapor","engineer bee":"abelha maquinista","train bell":"sino do trem","headlight":"farol","smokestack":"chaminé","steam":"vapor","passengers":"passageiros","passenger cars":"vagões de passageiros","trestle bridge":"ponte de cavaletes","railroad tracks":"trilhos","railroad depot":"estação ferroviária","railroad crossing":"passagem de nível","water tower":"torre de água","bison":"bisões","deer":"veado","hang glider":"asa-delta","control bar":"barra de controle","town":"cidade","boat":"barco","train":"trem","rail bridge":"ponte ferroviária","road":"estrada","cabin":"cabana","stump":"toco","trail":"trilha","jet airplane":"avião a jato"},"no":{"oval office":"Det ovale kontor","bee":"bie","resolute desk":"Resolute-skrivebordet","desk chair":"skrivebordsstol","american flag":"amerikansk flagg","presidential flag":"presidentflagget","fireplace":"peis","george washington portrait":"portrett av George Washington","abraham lincoln portrait":"portrett av Abraham Lincoln","windows":"vinduer","washington monument":"Washington-monumentet","rug":"teppe","sofa":"sofa","books":"bøker","globe":"globus","telephone":"telefon","flowers":"blomster","tour guide":"guide","visitors":"besøkende","historical bust":"historisk byste","lamp":"lampe","aircraft carrier":"hangarskip","navy bee":"marinebie","sailor":"sjømann","jet aircraft":"jetfly","carrier aircraft":"hangarskipfly","helicopter":"helikopter","carrier island":"kommandotårn","flight deck":"flydekk","flight deck crew":"flydekkmannskap","aircraft director":"flydirigent","flight deck crew member":"medlem av flydekkmannskapet","tow tractor":"slepekjøretøy","ocean":"hav","navy ship":"marineskip","deck markings":"dekkmarkeringer","safety railing":"sikkerhetsrekkverk","deck equipment":"dekkutstyr","sky":"himmel","zoo":"dyrehage","elephant":"elefant","giraffes":"sjiraffer","mountain":"fjell","monkey":"ape","parrot":"papegøye","lion":"løve","zoo sign":"dyrehageskilt","zebra":"sebra","zoo tram":"dyrehagetrikk","penguins":"pingviner","sea lion":"sjøløve","waterfall":"foss","pool":"basseng","boy":"gutt","girl":"jente","zoo visitors":"besøkende","trees":"trær","zoo path":"sti","rowing regatta":"roregatta","bee coxswain":"styrmannsbie","megaphone":"megafon","rowing crew":"roelag","oars":"årer","racing shell":"racerbåt","red rowing crew":"rødt roelag","lake water":"innsjøvann","race buoys":"løpsbøyer","regatta banner":"regattabanner","boathouse":"båthus","spectators":"tilskuere","dock":"brygge","sailboat":"seilbåt","motorboat":"motorbåt","snowy mountains":"snødekte fjell","pine forest":"furuskog","regatta flags":"regattaflagg","oar splash":"åresprut","rower":"roer","race course":"løpsbane","boat lock":"båtsluse","captain bee":"kapteinbie","steering wheel":"ratt","cabin cruiser":"kabinbåt","dog":"hund","child":"barn","life jacket":"redningsvest","lock gate":"sluseport","flowing water":"rennende vann","boat behind us":"båt bak oss","yellow bollard":"gul pullert","lock ladder":"slusestige","lock wall":"slusevegg","lock control building":"kontrollbygning","seagull":"måke","mountains":"fjell","lock water":"slusevann","boat fender":"båtfender","anchor":"anker","rescue helicopter":"redningshelikopter","pilot":"pilot","grandpa":"bestefar","mitchell":"Mitchell","nicole":"Nicole","rescue dog":"redningshund","rescue cable":"redningskabel","rescuer":"redningsarbeider","rescue basket":"redningskurv","hiker":"turgåer","backpack":"ryggsekk","mountain lake":"fjellvann","eagle":"ørn","forest":"skog","campground":"campingplass","rescue helmet":"redningshjelm","rocky ledge":"fjellhylle","fishing boat":"fiskebåt","orca":"spekkhogger","dolphin":"delfin","space needle":"Space Needle","seattle skyline":"Seattle-silhuetten","mount rainier":"Mount Rainier","ferris wheel":"pariserhjul","seagulls":"måker","fishing rods":"fiskestenger","sophia":"Sophia","carlos":"Carlos","grandma":"bestemor","life ring":"livbøye","radar":"radar","fishing net":"fiskenett","camp sign":"campingskilt","rv":"bobil","solar panels":"solcellepaneler","rv door":"bobildør","bicycle":"sykkel","picnic table":"piknikbord","guitar":"gitar","family":"familie","campfire":"leirbål","marshmallows":"marshmallows","bear":"Bear","cooler":"kjøleboks","tent":"telt","lantern":"lykt","raccoon":"vaskebjørn","lake":"innsjø","canoe":"kano","creek":"bekk","moon":"måne","stars":"stjerner","pine trees":"furutrær","firewood":"ved","cooking pot":"gryte","movie studio":"filmstudio","hollywood sign":"Hollywood-skilt","studio water tower":"studioets vanntårn","camera helicopter":"kamerahelikopter","camera drone":"kameradrone","green screen":"grønnskjerm","boom microphone":"bom-mikrofon","stunt explosion":"stunteksplosjon","stunt car":"stuntbil","movie camera":"filmkamera","director monitors":"regissørskjermer","clapperboard":"filmklapper","director's chair":"regissørstol","costumes":"kostymer","makeup station":"sminkestasjon","studio lights":"studiolys","director bee":"regissørbie","cast members":"skuespillere","movie crew":"filmteam","palm trees":"palmer","coral reef":"korallrev","dolphins":"delfiner","shipwreck":"skipsvrak","sea turtle":"havskilpadde","shark":"hai","clownfish":"klovnefisk","tropical fish":"tropiske fisk","pufferfish":"kulefisk","moray eel":"murene","starfish":"sjøstjerne","crab":"krabbe","lobster":"hummer","octopus":"blekksprut","coral":"korall","seaweed":"tang","sand":"sand","scuba tank":"dykkeflaske","fins":"svømmeføtter","bicycle race":"sykkelritt","bee racer":"sykkelbie","starting line":"startlinje","start gate":"startportal","race official":"løpsleder","start signal":"startsignal","helmet":"hjelm","bicycle racer":"syklist","bicycle racers":"syklister","bike trail sign":"sykkelstiskilt","race flags":"løpsflagg","race tent":"løpstelt","dirt race track":"grusbane","trail rocks":"steiner på stien","softball game":"softballkamp","bee pitcher":"pitcherbie","softball":"softball","pitcher's mound":"pitcherhaug","batter":"slagspiller","softball bat":"softballkølle","catcher":"catcher","umpire":"dommer","home plate":"hjemmeplate","scoreboard":"resultattavle","infielder":"infielder","softball glove":"softballhanske","batting helmet":"slaghjelm","softball field":"softballbane","outfield fence":"utegjerde","flag":"flagg","family picnic":"familiepiknik","picnic crew":"piknikgruppe","picnic food":"piknikmat","hot dogs":"pølser","hamburgers":"hamburgere","golden dog":"gyllen hund","german shepherd":"schæferhund","canoes":"kanoer","wildflowers":"villblomster","basic training":"grunntrening","drill sergeant bee":"drillinstruktørbie","trainees":"rekrutter","instructor":"instruktør","climbing wall":"klatrevegg","climbing rope":"klatretau","training tires":"treningsdekk","training tunnel":"treningstunnel","observation tower":"observasjonstårn","training tents":"treningstelt","military truck":"militærlastebil","canteen":"feltflaske","training uniform":"treningsuniform","boots":"støvler","obstacle course":"hinderløype","training camp":"treningsleir","hot air balloon festival":"varmluftballongfestival","balloon bee":"ballongbie","balloon crew":"ballongmannskap","balloon basket":"ballongkurv","balloon burner":"ballongbrenner","burner flame":"brennerflamme","hot air balloon":"varmluftballong","balloon ropes":"ballongtau","forest island":"skogkledd øy","sunrise":"soloppgang","blue sky":"blå himmel","balloons in flight":"ballonger i luften","festival field":"festivalområde","festival crowd":"festivalpublikum","inflating balloons":"ballonger som blåses opp","festival tents":"festivaltelt","saturn":"Saturn","astronaut bee":"astronautbie","saturn's rings":"Saturns ringer","milky way":"Melkeveien","sunlight":"sollys","spacecraft window":"romskipvindu","solar system screen":"solsystemskjerm","control console":"kontrollkonsoll","computer monitor":"dataskjerm","astronaut":"astronaut","space crew":"rommannskap","spacecraft seat":"romskipsete","solar system hologram":"solsystemhologram","spacecraft ceiling":"romskiptak","planet displays":"planetvisninger","spacesuit":"romdrakt","spacecraft controls":"romskipkontroller","whitewater rafting":"elverafting","rafting bee":"raftingbie","rafting crew":"raftinglag","raft":"flåte","yellow paddle":"gul padleåre","blue paddle":"blå padleåre","huge rapids":"enorme stryk","whitewater":"hvitt vann","river":"elv","river rocks":"elvesteiner","evergreen forest":"barskog","snowy mountain":"snødekt fjell","water spray":"vannsprut","mountain valley":"fjelldal","the moon":"månen","moon crew":"månemannskap","moon castle":"måneslott","moon rock":"månestein","lunar surface":"måneoverflaten","crater":"krater","lunar lander":"månelander","lander ladder":"landerens stige","moon rover":"månebil","dish antenna":"parabolantenne","moon base":"månebase","lunar habitat":"månehabitat","small rover":"liten rover","science instrument":"vitenskapelig instrument","earth":"jorden","sun":"solen","lunar mountains":"månefjell","footprints":"fotspor","skydiving":"fallskjermhopping","flying bee":"flygende bie","airplane":"fly","airplane door":"flydør","crew member":"besetningsmedlem","skydiving instructor":"fallskjerminstruktør","skydiver":"fallskjermhopper","goggles":"vernebriller","skydiving harness":"fallskjermsele","parachute pack":"fallskjermpakke","airplane wing":"flyvinge","islands":"øyer","clouds":"skyer","landing gear":"landingshjul","golf course":"golfbane","golf bee":"golfbie","golfer":"golfspiller","golf crew":"golfgruppe","small dog":"liten hund","golf ball":"golfball","yellow flag":"gult flagg","golf club":"golfkølle","putting green":"puttinggreen","sand bunker":"sandbunker","golf cart":"golfbil","pond":"dam","clubhouse":"klubbhus","fairway":"fairway","protect the earth":"beskytte jorden","factories":"fabrikker","smokestacks":"skorsteiner","smoke":"røyk","air pollution":"luftforurensning","city":"by","atmosphere":"atmosfære","ships":"skip","environmental map":"miljøkart","pollution chart":"forurensningsdiagram","pollution monitor":"forurensningsmåler","satellite":"satellitt","football game":"amerikansk fotballkamp","bee quarterback":"quarterbackbie","football":"amerikansk fotball","referee":"dommer","offensive player":"angrepsspiller","center":"center","receiver":"receiver","defender":"forsvarsspiller","football helmet":"fotballhjelm","football field":"fotballbane","yard line":"yardlinje","crowd":"publikum","press box":"presseboks","stadium lights":"stadionlys","sailboats":"seilbåter","great wall of china":"Den kinesiske mur","great wall":"Den kinesiske mur","watchtower":"vakttårn","watchtowers":"vakttårn","hot-air balloons":"varmluftsballonger","squirrel":"ekorn","village":"landsby","bridge":"bro","stone walkway":"steingang","spacewalk":"romvandring","boy astronaut":"gutt som astronaut","girl astronaut":"jente som astronaut","space gloves":"romhansker","safety tether":"sikkerhetsline","space station":"romstasjon","station truss":"stasjonsramme","handrail":"håndtak","space tools":"romverktøy","dog show":"hundeutstilling","referee bee":"dommerbie","clipboard":"skrivebrett","golden retriever":"Golden Retriever","small white dog":"liten hvit hund","border collie":"Border Collie","spaniel":"spaniel","brown dog":"brun hund","dalmatian":"dalmatiner","bulldog":"bulldog","pomeranian":"pomeranian","terrier":"terrier","dog handlers":"hundeførere","dog leash":"hundebånd","dog show banner":"hundeutstillingsbanner","audience":"publikum","show ring fence":"utstillingsringgjerde","show ring turf":"gress i ringen","arena lights":"arenalys","cockpit":"cockpit","captain":"kaptein","water":"vann","ferry":"ferge","overhead controls":"overhead-kontroller","flight instruments":"flyinstrumenter","navigation screen":"navigasjonsskjerm","throttle":"gasspak","headset":"hodesett","cockpit controls":"cockpit-kontroller","cave":"hule","stalactites":"stalaktitter","stalagmites":"stalagmitter","bats":"flaggermus","cave waterfall":"hulefoss","cave pool":"hulebasseng","cave stream":"hulebekk","headlamp":"hodelykt","bee explorer":"utforskerbie","cave explorers":"huleutforskere","cavern":"hulekammer","cave rocks":"hulesteiner","water reflection":"vannspeiling","cave passage":"hulegang","dripstone":"dryppstein","mission control center":"kontrollsenter for romferd","flight controllers":"flygeledere","rocket":"rakett","launch pad":"oppskytingsrampe","countdown clock":"nedtellingsklokke","mission screen":"oppdragsskjerm","observation gallery":"observasjonsgalleri","telemetry display":"telemetriskjerm","mission map":"oppdragskart","control room chair":"kontrollromstol","control room ceiling":"taket i kontrollrommet","ski resort":"skianlegg","chairlift":"stolheis","skiers":"skiløpere","trails":"skiløyper","lift":"skiheis","ski rentals":"skiutleie","ski school":"skiskole","café":"kafé","skis":"ski","snowboard":"snøbrett","ski lodge":"skihytte","ski resort sign":"skianleggsskilt","fire pit":"bålplass","chairs":"stoler","snow":"snø","steam train":"damptog","steam locomotive":"damplokomotiv","engineer bee":"lokførerbie","train bell":"togklokke","headlight":"frontlykt","smokestack":"skorstein","steam":"damp","passengers":"passasjerer","passenger cars":"passasjervogner","trestle bridge":"jernbanebro","railroad tracks":"jernbanespor","railroad depot":"jernbanestasjon","railroad crossing":"jernbaneovergang","water tower":"vanntårn","bison":"bison","deer":"hjort","hang glider":"hangglider","control bar":"styrebøyle","town":"by","boat":"båt","train":"tog","rail bridge":"jernbanebro","road":"vei","cabin":"hytte","stump":"trestubbe","trail":"sti","jet airplane":"jetfly"}};const ls=['es','fr','de','it','pt','no'],norm=s=>String(s||'').trim().toLowerCase().replace(/\s+/g,' ');window.TB_prepareNewHotspotTranslations=async function(name){const en=String(name||'').trim(),n=norm(en),r={en};await Promise.all(ls.map(async l=>{let v=LEX[l]&&LEX[l][n];if(!v){try{const u='https://translate.googleapis.com/translate_a/single?client=gtx&sl=en&tl='+l+'&dt=t&q='+encodeURIComponent(en),x=await fetch(u);if(x.ok){const j=await x.json();v=(j[0]||[]).map(a=>a[0]||'').join('').trim()}}catch(e){}}r[l]=v||en}));return r};window.TB_registerNewHotspot=function(el,row){if(!el||!row)return;const en=row.en||el.dataset.en||el.dataset.word||el.dataset.object||'';el.dataset.tbCustom='1';el.dataset.tbEn=en;for(const l of ls)el.dataset['tb'+l.charAt(0).toUpperCase()+l.slice(1)]=row[l]||en;const key=(el.dataset.word||el.dataset.object||en);try{if(typeof EN!=='undefined')EN[key]=en;if(typeof WORDS!=='undefined')for(const l of ['es','fr','en','de','it','pt','no'])if(WORDS[l])WORDS[l][key]=(l==='en'?en:(row[l]||en))}catch(e){}try{if(typeof LANGS!=='undefined')for(const l of ['es','fr','en','de','it','pt','no'])if(LANGS[l]&&LANGS[l].words)LANGS[l].words[key]=(l==='en'?[en,'']:[row[l]||en,en])}catch(e){}};function hydrate(){document.querySelectorAll('[data-tb-custom="1"]').forEach(el=>{const r={en:el.dataset.tbEn||el.dataset.en||el.dataset.word||el.dataset.object||''};for(const l of ls)r[l]=el.dataset['tb'+l.charAt(0).toUpperCase()+l.slice(1)]||r.en;window.TB_registerNewHotspot(el,r)})}if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',hydrate);else hydrate()})();</script>
+<script id="talkabee-new-hotspot-live-click">(()=>{
+if(window.__tbNewHotspotLiveClick)return;window.__tbNewHotspotLiveClick=true;
+const langs=['es','fr','en','de','it','pt','no'];
+function curLang(){try{return (typeof langSel!=='undefined'&&langSel&&langSel.value)||localStorage.getItem('talkabee-learn-language')||'en'}catch(e){return 'en'}}
+function cap(l){return 'tb'+l.charAt(0).toUpperCase()+l.slice(1)}
+function textFor(el,l){const en=el.dataset.tbEn||el.dataset.en||el.dataset.word||el.dataset.object||'';return l==='en'?en:(el.dataset[cap(l)]||en)}
+document.addEventListener('click',function(ev){
+ if(document.body.classList.contains('tb-hs-editing'))return;
+ const el=ev.target.closest&&ev.target.closest('[data-tb-custom="1"]');if(!el)return;
+ ev.preventDefault();ev.stopImmediatePropagation();
+ const l=curLang(),txt=textFor(el,l),en=textFor(el,'en'),key=el.dataset.word||el.dataset.object||en;
+ try{if(typeof showWord==='function')showWord(key);else{if(typeof line!=='undefined'&&line)line.textContent=txt;if(typeof translation!=='undefined'&&translation)translation.textContent=l==='en'?'':en}}catch(e){}
+ try{if(typeof speak==='function'){let done=false;const after=()=>{if(done)return;done=true;if(el.dataset.sound){try{const a=new Audio(el.dataset.sound);a.play().catch(()=>{})}catch(e){}}};speak(txt,.82,after);if(el.dataset.sound)setTimeout(after,1400)}else if('speechSynthesis'in window){speechSynthesis.cancel();const u=new SpeechSynthesisUtterance(txt);u.lang=({es:'es-ES',fr:'fr-FR',en:'en-US',de:'de-DE',it:'it-IT',pt:'pt-PT',no:'nb-NO'})[l]||l;speechSynthesis.speak(u)}}catch(e){}
+},true);
+})();</script>
 
 
 <script id="talkabee-scene-view-safe-reset">
@@ -1000,4 +533,10 @@ showLesson('pets');
 })();
 </script>
 
+
+
+
+<style id="talkabee-ski-panel-180">
+@media(min-width:761px){.panel{width:180px!important;min-width:180px!important;max-width:180px!important}}
+</style>
 </body></html>
