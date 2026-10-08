@@ -55,7 +55,7 @@ font:900 38px/1 Arial,sans-serif;text-shadow:0 1px 3px rgba(0,0,0,.42)}
 /* SCENE VIEW */
 .scene-return{display:none;position:fixed;z-index:2147483001;left:18px;top:18px;padding:10px 14px;border-radius:12px;
 border:1px solid #fff;background:rgba(7,23,39,.65);color:#fff;font-weight:900}
-.scene-view .panel,.scene-view .card,.scene-view .talkabee-prev-next-nav{display:none}
+.scene-view .panel,.scene-view .card{display:none}
 .scene-view .scene-return{display:block}
 
 @media(max-width:760px){
@@ -120,7 +120,7 @@ body.tb-hs-editing .tb-hs-active{outline:3px solid #00ffff!important;background:
 body.tb-hs-editing .tb-hs-active>.tb-hs-handle{display:block!important}
 </style>
 </head>
-<body class="scene-view">
+<body class="">
 <div class="talkabee-editions">
 <details>
 <summary>Explore Adventures ▾</summary>
@@ -538,7 +538,7 @@ edit.onclick=()=>{editing=!editing;document.body.classList.toggle('tb-hs-editing
 add.onclick=()=>{if(!editing)return;const n=(nameBox.value||'').trim().toLowerCase().replace(/\s+/g,' ');if(!n){nameBox.focus();return}pendingName=n;adding=true;cleanActive()};
 del.onclick=()=>{if(active){active.remove();active=null}};
 save.onclick=()=>{
- const clone=document.documentElement.cloneNode(true);clone.querySelector('#tb-hs-editor')?.remove();clone.querySelectorAll('.tb-hs-handle').forEach(x=>x.remove());clone.querySelectorAll('.tb-hs-active').forEach(x=>x.classList.remove('tb-hs-active'));clone.querySelector('body')?.classList.remove('tb-hs-editing');
+ const clone=document.documentElement.cloneNode(true);/* TALKABEE_SAFE_SAVE_SCENE_STATE */clone.querySelector('body')?.classList.remove('scene-view','tb-hs-editing');clone.querySelectorAll('.scene-only').forEach(el=>el.classList.remove('scene-only'));clone.querySelectorAll('.activity-collapsed').forEach(el=>el.classList.remove('activity-collapsed'));clone.querySelectorAll('#sceneView,#sceneViewToggle').forEach(el=>el.setAttribute('aria-pressed','false'));clone.querySelector('#tb-hs-editor')?.remove();clone.querySelectorAll('.tb-hs-handle').forEach(x=>x.remove());clone.querySelectorAll('.tb-hs-active').forEach(x=>x.classList.remove('tb-hs-active'));clone.querySelector('body')?.classList.remove('tb-hs-editing');
  const blob=new Blob(['<!doctype html>\n'+clone.outerHTML],{type:'text/html'}),a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download=(location.pathname.split('/').pop()||'adventure.html');a.click();setTimeout(()=>URL.revokeObjectURL(a.href),1000)
 };
 document.addEventListener('pointerdown',ev=>{if(!editing)return;const h=ev.target.closest('.tb-hs-handle');if(h){startResize(ev,h.parentElement);return}const el=ev.target.closest(SEL);if(el){startDrag(ev,el);return}},true);
@@ -551,4 +551,18 @@ document.addEventListener('click',ev=>{if(!editing)return;if(ev.target.closest('
 <style id="talkabee-ski-panel-180">
 @media(min-width:761px){.panel{width:180px!important;min-width:180px!important;max-width:180px!important}}
 </style>
+
+<script id="talkabee-scene-view-safe-reset">
+(function(){
+  function resetTalkABeeSceneView(){
+    document.body.classList.remove('scene-view');
+    document.querySelectorAll('.scene-only').forEach(function(el){el.classList.remove('scene-only');});
+    document.querySelectorAll('.activity-collapsed').forEach(function(el){el.classList.remove('activity-collapsed');});
+    ['sceneView','sceneViewToggle'].forEach(function(id){var b=document.getElementById(id);if(b)b.setAttribute('aria-pressed','false');});
+  }
+  if(document.readyState==='loading') document.addEventListener('DOMContentLoaded',resetTalkABeeSceneView);
+  else resetTalkABeeSceneView();
+  window.addEventListener('pageshow',resetTalkABeeSceneView);
+})();
+</script>
 </body></html>
