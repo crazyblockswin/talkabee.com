@@ -1,4 +1,5 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Talk A Bee — Library</title>
 <style>
 *{box-sizing:border-box}html,body{margin:0;width:100%;height:100%;overflow:hidden;font-family:Arial,sans-serif;background:#182238}button,select{font:inherit}
@@ -219,7 +220,26 @@
 .card input,.card textarea,.script input,.script textarea,.tab-master-card input,.tab-master-card textarea{cursor:text!important}
 </style>
 
-</head><body>
+<style id="talkabee-hotspot-editor-style">
+#tb-hs-editor{position:fixed;right:16px;bottom:16px;z-index:2147483646;font:700 12px Arial,sans-serif;display:flex;flex-wrap:wrap;justify-content:flex-end;gap:6px;max-width:650px}
+#tb-hs-editor button,#tb-hs-editor input{border:1px solid #fff;border-radius:10px;background:#000;color:#fff;padding:9px 11px;box-shadow:0 4px 14px #0006}
+#tb-hs-editor input{background:#fff;color:#111;min-width:180px;font-weight:400}#tb-hs-editor button{cursor:pointer}
+body.tb-hs-editing .hotspot,body.tb-hs-editing .home-hotspot,body.tb-hs-editing .yacht-hotspot,body.tb-hs-editing .hotspots button,body.tb-hs-editing .train-hotspots button{display:block!important;outline:2px solid #ffea00!important;background:rgba(255,234,0,.18)!important;pointer-events:auto!important;cursor:move!important;visibility:visible!important;opacity:1!important;z-index:2147483005!important}
+body.tb-hs-editing .tb-hs-active{outline:3px solid #00ffff!important;background:rgba(0,255,255,.18)!important}
+.tb-hs-handle{position:absolute!important;right:-7px!important;bottom:-7px!important;left:auto!important;top:auto!important;width:14px!important;height:14px!important;border-radius:3px!important;background:#00ffff!important;border:2px solid #000!important;z-index:2147483647!important;cursor:nwse-resize!important;display:none!important;transform:none!important}
+body.tb-hs-editing .tb-hs-active>.tb-hs-handle{display:block!important}
+</style>
+
+<style id="talkabee-library-modern-card-fix">
+/* Library now uses the current one-phrase Talk A Bee script card. */
+.tab-master-card{overflow:visible!important;max-height:none!important}
+.tab-master-card #line{cursor:pointer!important;padding:10px 12px!important;margin:7px 0 4px!important}
+.tab-master-card #translation{font-size:15px!important;line-height:1.25!important;color:#fff!important;margin:0 0 7px!important}
+.tab-master-card .actions{display:flex!important;align-items:center!important;gap:8px!important;flex-wrap:nowrap!important}
+.tab-master-card .actions button{cursor:pointer!important}
+</style>
+
+</head><body class="">
 <div class="talkabee-editions">
 <details>
 <summary>Explore Adventures ▾</summary>
@@ -236,29 +256,41 @@
 
 <nav class="talkabee-prev-next-nav" aria-label="Adventure navigation"><a href="Talk-A-Bee-Bird-Sanctuary.html" aria-label="Previous page" title="Previous">‹</a><a href="Talk-A-Bee-City-Bus-Adventure.html" aria-label="Next page" title="Next">›</a></nav>
 
-<section class="world" id="world"><button class="restore" id="restore">← Return Panel</button><div class="scene"><img class="bg" src="images/library-adventure.jpg" alt="Sofia and Daniel studying Italian in a beautiful library"></div>
+<section class="world scene-only" id="world"><button class="restore" id="restore">← Return Panel</button><div class="scene"><img class="bg" src="images/library-adventure.jpg" alt="Sofia and Daniel studying Italian in a beautiful library"></div>
 <aside class="dir tab-master-panel">
  <div class="place">📚 Library</div>
  <div class="tab-panel-size-controls" aria-label="Activity panel size"><button type="button" class="tab-panel-minus" title="Make activity panel smaller">−</button><button type="button" class="tab-panel-reset" title="Reset activity panel size">Reset</button><button type="button" class="tab-panel-plus" title="Make activity panel larger">+</button></div>
-<a href="index.html">← Main Directory</a><button id="sceneView">◉ Scene View</button>
+<button id="sceneView">◉ Scene View</button>
 <div class="label">LANGUAGE</div><select id="language"><option value="es">Spanish</option><option value="fr">French</option><option value="en">English</option><option value="de">German</option><option value="it">Italian</option><option value="pt">Portuguese</option><option value="no">Norwegian</option></select>
-<div class="label">VOICE</div><select id="voice"><option value="">Browser Default</option></select>
+<div class="label">VOICE</div><select id="voice"><option value="">Browser Default</option><option value="urn:moz-tts:sapi:Microsoft David - English (United States)?en-US">Microsoft David - English (United States) — en-US</option><option value="urn:moz-tts:sapi:Microsoft Mark - English (United States)?en-US">Microsoft Mark - English (United States) — en-US</option><option value="urn:moz-tts:sapi:Microsoft Zira - English (United States)?en-US">Microsoft Zira - English (United States) — en-US</option><option value="urn:moz-tts:sapi:Microsoft David Desktop - English (United States)?en-US">Microsoft David Desktop - English (United States) — en-US</option><option value="urn:moz-tts:sapi:Microsoft Zira Desktop - English (United States)?en-US">Microsoft Zira Desktop - English (United States) — en-US</option></select>
 <div class="label">DISCOVERY</div><button id="discovery">🔎 Discovery — Click the Scene</button>
 <div class="label">ACTIVITIES</div>
-<button data-lesson="conversation">1. 💬 Library Conversation</button><button data-lesson="books">2. 📖 Books & Reading</button><button data-lesson="study">3. ✏️ Studying Together</button><button data-lesson="travel">4. 🇮🇹 Italy & Travel</button><button data-lesson="phrases">5. 🗣️ Useful Phrases</button><button data-lesson="questions">6. ❓ Asking Questions</button>
+<button data-lesson="conversation" class="active">1. Library Conversation</button><button data-lesson="books">2. Books &amp; Reading</button><button data-lesson="study">3. Studying Together</button><button data-lesson="travel">4. 🇹 Italy &amp; Travel</button><button data-lesson="phrases">5. Useful Phrases</button><button data-lesson="questions">6. Asking Questions</button>
 <div class="label">CHALLENGES</div>
-<button data-ch="0">1. Find the book</button><button data-ch="1">2. Find the fountain</button><button data-ch="2">3. Find the cup</button><button data-ch="3">4. Find the notebook</button><button data-ch="4">5. Find the pen</button><button data-ch="5">6. Find the ladder</button></aside>
-<div class="hotspots"><button data-word="libro" data-en="book" style="left:36.14%;top:53.64%;width:23.05%;height:19.16%"></button><button data-word="fuente" data-en="fountain" style="left:81.82%;top:26.36%;width:4.98%;height:17.76%"></button><button data-word="taza" data-en="cup" style="left:82.24%;top:64.49%;width:7.07%;height:13.55%"></button><button data-word="cuaderno" data-en="notebook" style="left:39.81%;top:77.01%;width:26.72%;height:14.02%"></button><button data-word="bolígrafo" data-en="pen" style="left:58.15%;top:76.92%;width:11.79%;height:5.14%"></button><button data-word="escalera" data-en="ladder" style="left:21.22%;top:5.42%;width:3.93%;height:34.58%"></button></div><div class="wordpop" id="pop"></div>
-<div class="panel tab-master-card">
+<button data-ch="0">1. Find the book</button><button data-ch="1">2. Find the fountain</button><button data-ch="2">3. Find the cup</button><button data-ch="3">4. Find the notebook</button><button data-ch="4">5. Find the pen</button><button data-ch="5">6. Find the ladder</button><a href="index.html">← Main Directory</a></aside>
+<div class="hotspots"><button data-word="libro" data-en="book" style="left: 45.52%; top: 60.25%; width: 6.28%; height: 17.25%;" class=""></button><button data-word="fuente" data-en="fountain" style="left: 73.33%; top: 25.99%; width: 4.98%; height: 17.76%;" class=""></button><button data-word="taza" data-en="cup" style="left: 93.96%; top: 63.48%; width: 5.87%; height: 7.72%;" class=""></button><button data-word="cuaderno" data-en="notebook" style="left: 42.89%; top: 75.89%; width: 9.85%; height: 12.56%;" class=""></button><button data-word="bolígrafo" data-en="pen" style="left: 51.48%; top: 78.94%; width: 7%; height: 4.02%;" class=""></button><button data-word="escalera" data-en="ladder" style="left: 19.35%; top: 15.16%; width: 3.93%; height: 34.58%;" class=""></button><button type="button" data-word="camera" data-en="camera" aria-label="camera" style="left: 61.3%; top: 75.13%; width: 6%; height: 8%;" class=""></button><button type="button" data-word="books" data-en="books" aria-label="books" style="left: 25.49%; top: 69.67%; width: 10.69%; height: 16.41%;" class=""></button><button type="button" data-word="hat" data-en="hat" aria-label="hat" style="left: 6.06%; top: 73.07%; width: 10.43%; height: 15.85%;" class=""></button><button type="button" data-word="woman" data-en="woman" aria-label="woman" style="left: 72.66%; top: 50.74%; width: 5.22%; height: 18.99%;" class=""></button><button type="button" data-word="man" data-en="man" aria-label="man" style="left: 85.52%; top: 49.43%; width: 5.37%; height: 21.68%;" class=""></button><button type="button" data-word="chair" data-en="chair" aria-label="chair" style="left: 80.96%; top: 76.7%; width: 7.41%; height: 16.3%;" class=""></button><button type="button" data-word="watch" data-en="watch" aria-label="watch" style="left: 55.59%; top: 65.95%; width: 3.4%; height: 6.43%;" class=""></button><button type="button" data-word="shirt" data-en="shirt" aria-label="shirt" style="left: 59.39%; top: 52.91%; width: 3.55%; height: 13.83%;" class=""></button><button type="button" data-word="backpack" data-en="backpack" aria-label="backpack" style="left: 28.7%; top: 40.31%; width: 3.5%; height: 6.88%;" class=""></button><button type="button" data-word="hair" data-en="hair" aria-label="hair" style="left: 38.17%; top: 44.62%; width: 1.31%; height: 14.95%;" class=""></button><button type="button" data-word="flowers" data-en="flowers" aria-label="flowers" style="left: 88.85%; top: 13.78%; width: 3.71%; height: 20%;" class=""></button><button type="button" data-word="sign" data-en="sign" aria-label="sign" style="left: 93.8%; top: 17.47%; width: 5.22%; height: 23.46%;" class=""></button></div><div class="wordpop" id="pop" style="left: 489px; top: 263px; display: none;">book</div>
+<div class="panel tab-master-card" data-moved="1" style="inset: 273px auto auto 337.8px !important; transform-origin: left top 0px !important; transform: scale(0.67) !important;">
 <div class="tab-card-tools" aria-label="Script card controls"><button type="button" class="tab-card-drag" title="Move script card">↕ Move</button><button type="button" class="tab-card-font-down" title="Decrease text">A−</button><button type="button" class="tab-card-font-up" title="Increase text">A+</button><button type="button" class="tab-card-reset" title="Reset card">Reset</button></div><div class="tab-card-resize" title="Drag to resize script card" aria-label="Resize script card">↘</div>
-<div class="kicker" id="kicker">AT THE LIBRARY</div><h2 id="title">Sofia and Daniel study together.</h2><p id="prompt"></p><div id="lines"></div><div class="tip" id="tip"></div></div>
+<div class="kicker" id="kicker">AT THE LIBRARY</div>
+<h2 id="title">Sofia and Daniel are at the library.</h2>
+<p id="prompt">Practice one phrase at a time.</p>
+<div class="line" id="line" role="button" tabindex="0" aria-label="Current phrase">Sofia: We are in the library.</div>
+<div class="translation" id="translation"></div>
+<div class="actions">
+<button type="button" id="speakBtn">🔊 Speak</button>
+<button type="button" id="slowBtn">Slow</button>
+<button type="button" id="replayBtn">Replay</button>
+<button type="button" id="nextPhraseBtn">Next phrase →</button>
+</div>
+<div class="tip" id="tip">Choose another activity, Discovery, or a Challenge.</div></div>
 </section>
 <script>
 const LANGS={"es": {"name": "Spanish", "code": "es-ES"}, "fr": {"name": "French", "code": "fr-FR"}, "en": {"name": "English", "code": "en-US"}, "de": {"name": "German", "code": "de-DE"}, "it": {"name": "Italian", "code": "it-IT"}, "pt": {"name": "Portuguese", "code": "pt-PT"}, "no": {"name": "Norwegian", "code": "nb-NO"}};
 const LESSONS={"es": {"conversation": ["En la biblioteca", "Sofia y Daniel están en la biblioteca.", ["Sofia: Estamos en la biblioteca.", "Daniel: Busco un libro de italiano.", "Sofia: Aquí hay uno."]], "books": ["Libros y lectura", "Habla sobre libros y lectura.", ["Este libro es interesante.", "Me gusta leer.", "¿Dónde está el libro?"]], "study": ["Estudiando juntos", "Palabras útiles mientras estudian.", ["Tengo un cuaderno.", "Necesito un bolígrafo.", "Estudiamos juntos."]], "travel": ["Italia y viajes", "La biblioteca puede llevarte a muchos lugares.", ["Quiero viajar a Italia.", "Roma es una ciudad hermosa.", "Necesito una guía de viaje."]], "phrases": ["Frases útiles", "Practica frases sencillas.", ["Buenos días.", "¿Dónde se encuentra...?", "Un libro, por favor."]], "questions": ["Hacer preguntas", "Practica preguntas que puedes usar en cualquier lugar.", ["¿Qué significa esto?", "¿Cómo se dice en español?", "¿Puede repetir, por favor?"]]}, "fr": {"conversation": ["À la bibliothèque", "Sofia et Daniel sont à la bibliothèque.", ["Sofia : Nous sommes à la bibliothèque.", "Daniel : Je cherche un livre d’italien.", "Sofia : En voici un."]], "books": ["Livres et lecture", "Parlez des livres et de la lecture.", ["Ce livre est intéressant.", "J’aime lire.", "Où est le livre ?"]], "study": ["Étudier ensemble", "Des mots utiles pendant les études.", ["J’ai un cahier.", "J’ai besoin d’un stylo.", "Nous étudions ensemble."]], "travel": ["Italie et voyage", "La bibliothèque peut vous faire voyager.", ["Je veux voyager en Italie.", "Rome est une belle ville.", "J’ai besoin d’un guide de voyage."]], "phrases": ["Phrases utiles", "Pratiquez des phrases simples.", ["Bonjour.", "Où se trouve... ?", "Un livre, s’il vous plaît."]], "questions": ["Poser des questions", "Pratiquez des questions utiles partout.", ["Qu’est-ce que cela signifie ?", "Comment dit-on cela en français ?", "Pouvez-vous répéter, s’il vous plaît ?"]]}, "de": {"conversation": ["In der Bibliothek", "Sofia und Daniel sind in der Bibliothek.", ["Sofia: Wir sind in der Bibliothek.", "Daniel: Ich suche ein Italienischbuch.", "Sofia: Hier ist eins."]], "books": ["Bücher & Lesen", "Sprich über Bücher und Lesen.", ["Dieses Buch ist interessant.", "Ich lese gern.", "Wo ist das Buch?"]], "study": ["Gemeinsam lernen", "Nützliche Wörter beim Lernen.", ["Ich habe ein Notizbuch.", "Ich brauche einen Stift.", "Wir lernen zusammen."]], "travel": ["Italien & Reisen", "Die Bibliothek kann dich an viele Orte bringen.", ["Ich möchte nach Italien reisen.", "Rom ist eine schöne Stadt.", "Ich brauche einen Reiseführer."]], "phrases": ["Nützliche Sätze", "Übe einfache Sätze.", ["Guten Morgen.", "Wo befindet sich ...?", "Ein Buch, bitte."]], "questions": ["Fragen stellen", "Übe Fragen, die du überall verwenden kannst.", ["Was bedeutet das?", "Wie sagt man das auf Deutsch?", "Können Sie das bitte wiederholen?"]]}, "it": {"conversation": ["In biblioteca", "Sofia e Daniel sono in biblioteca.", ["Sofia: Siamo in biblioteca.", "Daniel: Cerco un libro d’italiano.", "Sofia: Eccone uno."]], "books": ["Libri e lettura", "Parla di libri e lettura.", ["Questo libro è interessante.", "Mi piace leggere.", "Dov’è il libro?"]], "study": ["Studiare insieme", "Parole utili mentre si studia.", ["Ho un quaderno.", "Ho bisogno di una penna.", "Studiamo insieme."]], "travel": ["Italia e viaggi", "La biblioteca può portarti in tanti luoghi.", ["Voglio viaggiare in Italia.", "Roma è una bella città.", "Ho bisogno di una guida turistica."]], "phrases": ["Frasi utili", "Esercitati con frasi semplici.", ["Buongiorno.", "Dove si trova...?", "Un libro, per favore."]], "questions": ["Fare domande", "Esercitati con domande utili ovunque.", ["Che cosa significa?", "Come si dice in italiano?", "Può ripetere, per favore?"]]}, "pt": {"conversation": ["Na biblioteca", "Sofia e Daniel estão na biblioteca.", ["Sofia: Estamos na biblioteca.", "Daniel: Estou procurando um livro de italiano.", "Sofia: Aqui está um."]], "books": ["Livros e leitura", "Fale sobre livros e leitura.", ["Este livro é interessante.", "Gosto de ler.", "Onde está o livro?"]], "study": ["Estudando juntos", "Palavras úteis durante o estudo.", ["Tenho um caderno.", "Preciso de uma caneta.", "Estudamos juntos."]], "travel": ["Itália e viagens", "A biblioteca pode levar você a muitos lugares.", ["Quero viajar para a Itália.", "Roma é uma cidade bonita.", "Preciso de um guia de viagem."]], "phrases": ["Frases úteis", "Pratique frases simples.", ["Bom dia.", "Onde fica...?", "Um livro, por favor."]], "questions": ["Fazer perguntas", "Pratique perguntas que você pode usar em qualquer lugar.", ["O que isso significa?", "Como se diz isso em português?", "Pode repetir, por favor?"]]}, "no": {"conversation": ["På biblioteket", "Sofia og Daniel er på biblioteket.", ["Sofia: Vi er på biblioteket.", "Daniel: Jeg leter etter en italienskbok.", "Sofia: Her er en."]], "books": ["Bøker og lesing", "Snakk om bøker og lesing.", ["Denne boken er interessant.", "Jeg liker å lese.", "Hvor er boken?"]], "study": ["Studere sammen", "Nyttige ord mens dere studerer.", ["Jeg har en notatbok.", "Jeg trenger en penn.", "Vi studerer sammen."]], "travel": ["Italia og reise", "Biblioteket kan ta deg til mange steder.", ["Jeg vil reise til Italia.", "Roma er en vakker by.", "Jeg trenger en reiseguide."]], "phrases": ["Nyttige uttrykk", "Øv på enkle uttrykk.", ["God morgen.", "Hvor er ...?", "En bok, takk."]], "questions": ["Stille spørsmål", "Øv på spørsmål du kan bruke hvor som helst.", ["Hva betyr dette?", "Hvordan sier man dette på norsk?", "Kan du gjenta, takk?"]]}, "en": {"conversation": ["At the Library", "Sofia and Daniel are at the library.", ["Sofia: We are in the library.", "Daniel: I am looking for an Italian book.", "Sofia: Here is one."]], "books": ["Books & Reading", "Talk about books and reading.", ["This book is interesting.", "I like to read.", "Where is the book?"]], "study": ["Studying Together", "Useful words while studying.", ["I have a notebook.", "I need a pen.", "We study together."]], "travel": ["Italy & Travel", "The library can take you places.", ["I want to travel to Italy.", "Rome is a beautiful city.", "I need a travel guide."]], "phrases": ["Useful Phrases", "Practice simple phrases.", ["Good morning.", "Where is ...?", "A book, please."]], "questions": ["Asking Questions", "Practice questions you can use anywhere.", ["What does this mean?", "How do you say it in this language?", "Can you repeat, please?"]]}};
 const WORDS={"es": [["libro", "book"], ["fuente", "fountain"], ["taza", "cup"], ["cuaderno", "notebook"], ["bolígrafo", "pen"], ["escalera", "ladder"]], "fr": [["livre", "book"], ["fontaine", "fountain"], ["tasse", "cup"], ["cahier", "notebook"], ["stylo", "pen"], ["échelle", "ladder"]], "en": [["book", "book"], ["fountain", "fountain"], ["cup", "cup"], ["notebook", "notebook"], ["pen", "pen"], ["ladder", "ladder"]], "de": [["Buch", "book"], ["Brunnen", "fountain"], ["Tasse", "cup"], ["Notizbuch", "notebook"], ["Stift", "pen"], ["Leiter", "ladder"]], "it": [["libro", "book"], ["fontana", "fountain"], ["tazza", "cup"], ["quaderno", "notebook"], ["penna", "pen"], ["scala", "ladder"]], "pt": [["livro", "book"], ["fonte", "fountain"], ["xícara", "cup"], ["caderno", "notebook"], ["caneta", "pen"], ["escada", "ladder"]], "no": [["bok", "book"], ["fontene", "fountain"], ["kopp", "cup"], ["notatbok", "notebook"], ["penn", "pen"], ["stige", "ladder"]]};
-const world=document.getElementById('world'),lines=document.getElementById('lines'),title=document.getElementById('title'),prompt=document.getElementById('prompt'),kicker=document.getElementById('kicker'),tip=document.getElementById('tip'),pop=document.getElementById('pop'),language=document.getElementById('language'),voice=document.getElementById('voice');
-let mode='lesson',active='conversation',challenge=-1,lastSpeech='';
+const world=document.getElementById('world'),line=document.getElementById('line'),translation=document.getElementById('translation'),title=document.getElementById('title'),prompt=document.getElementById('prompt'),kicker=document.getElementById('kicker'),tip=document.getElementById('tip'),pop=document.getElementById('pop'),language=document.getElementById('language'),voice=document.getElementById('voice');
+const speakBtn=document.getElementById('speakBtn'),slowBtn=document.getElementById('slowBtn'),replayBtn=document.getElementById('replayBtn'),nextPhraseBtn=document.getElementById('nextPhraseBtn');
+let mode='lesson',active='conversation',challenge=-1,lastSpeech='',phraseIndex=0,currentPhrase='';
 language.value=localStorage.getItem('talkabee-learn-language')||'es';
 function lang(){return language.value}
 function selectedVoice(){
@@ -279,11 +311,25 @@ function selectedVoice(){
 
 function speak(t,slow=false){if(!('speechSynthesis' in window))return;speechSynthesis.cancel();let u=new SpeechSynthesisUtterance(t);u.lang=LANGS[lang()].code;u.rate=slow?.62:.88;let v=selectedVoice();if(v)u.voice=v;lastSpeech=t;speechSynthesis.speak(u)}
 function clearActive(){document.querySelectorAll('.dir button').forEach(b=>b.classList.remove('active'))}
-function load(k){mode='lesson';active=k;challenge=-1;world.className='world';clearActive();let d=LESSONS[lang()][k],e=LESSONS.en[k];kicker.textContent=d[0].toUpperCase();title.textContent=d[1];prompt.textContent='Click a line to hear the selected language.';lines.innerHTML='';d[2].forEach((a,i)=>{let q=document.createElement('div');q.className='line';let en=e[2][i];q.innerHTML='<b>'+a+'</b>'+(lang()==='en'?'':'<br>'+en);q.onclick=()=>speak(a);lines.appendChild(q)});tip.textContent='Choose another activity, Discovery, or a Challenge.';let b=document.querySelector('[data-lesson="'+k+'"]');if(b)b.classList.add('active')}
-function loadDiscovery(){mode='discovery';challenge=-1;world.className='world discovery';clearActive();document.getElementById('discovery').classList.add('active');kicker.textContent='DISCOVERY';title.textContent='Explore the Library';prompt.textContent='Click highlighted objects to see the selected-language word and its English meaning.';lines.innerHTML='';tip.textContent='Try all six objects in the scene.'}
+function renderPhrase(){
+ let d=LESSONS[lang()][active],e=LESSONS.en[active],arr=d[2];
+ if(!arr.length)return;
+ phraseIndex=((phraseIndex%arr.length)+arr.length)%arr.length;
+ currentPhrase=arr[phraseIndex];
+ line.textContent=currentPhrase;
+ translation.textContent=lang()==='en'?'':e[2][phraseIndex];
+}
+function load(k){mode='lesson';active=k;challenge=-1;phraseIndex=0;world.className='world';clearActive();let d=LESSONS[lang()][k];kicker.textContent=d[0].toUpperCase();title.textContent=d[1];prompt.textContent='Practice one phrase at a time.';renderPhrase();tip.textContent='Choose another activity, Discovery, or a Challenge.';let b=document.querySelector('[data-lesson="'+k+'"]');if(b)b.classList.add('active')}
+function loadDiscovery(){mode='discovery';challenge=-1;world.className='world discovery';clearActive();document.getElementById('discovery').classList.add('active');kicker.textContent='DISCOVERY';title.textContent='Explore the Library';prompt.textContent='Click highlighted objects to see the selected-language word and its English meaning.';line.textContent='';translation.textContent='';currentPhrase='';tip.textContent='Try all six objects in the scene.'}
 const hs=[...document.querySelectorAll('.hotspots button')];
 hs.forEach((h,i)=>h.onclick=e=>{let pair=WORDS[lang()][i],w=pair[0],en=pair[1];pop.textContent=lang()==='en'?w:w+' — '+en;pop.style.left=Math.min(e.clientX+12,innerWidth-180)+'px';pop.style.top=Math.max(10,e.clientY-40)+'px';pop.style.display='block';speak(w);setTimeout(()=>pop.style.display='none',1800);if(mode==='challenge'){if(i===challenge)tip.textContent='✅ Correct! You found '+en+'.';else tip.textContent='Try again — look carefully.'}});
-function loadChallenge(n){mode='challenge';challenge=n;world.className='world challenge';clearActive();let pair=WORDS[lang()][n];kicker.textContent='CHALLENGE '+(n+1)+' OF 6';title.textContent='Find: '+pair[0];prompt.textContent='Click the correct object in the library scene.';lines.innerHTML='';tip.textContent='Find it to complete this challenge.';let b=document.querySelector('[data-ch="'+n+'"]');if(b)b.classList.add('active')}
+function loadChallenge(n){mode='challenge';challenge=n;world.className='world challenge';clearActive();let pair=WORDS[lang()][n];kicker.textContent='CHALLENGE '+(n+1)+' OF 6';title.textContent='Find: '+pair[0];prompt.textContent='Click the correct object in the library scene.';line.textContent='';translation.textContent='';currentPhrase='';tip.textContent='Find it to complete this challenge.';let b=document.querySelector('[data-ch="'+n+'"]');if(b)b.classList.add('active')}
+line.onclick=()=>{if(currentPhrase)speak(currentPhrase)};
+line.onkeydown=e=>{if((e.key==='Enter'||e.key===' ')&&currentPhrase){e.preventDefault();speak(currentPhrase)}};
+speakBtn.onclick=()=>{if(currentPhrase)speak(currentPhrase)};
+slowBtn.onclick=()=>{if(currentPhrase)speak(currentPhrase,true)};
+replayBtn.onclick=()=>{if(lastSpeech)speak(lastSpeech)};
+nextPhraseBtn.onclick=()=>{if(mode!=='lesson')return;phraseIndex++;renderPhrase()};
 document.querySelectorAll('[data-lesson]').forEach(b=>b.onclick=()=>load(b.dataset.lesson));
 document.getElementById('discovery').onclick=loadDiscovery;
 document.querySelectorAll('[data-ch]').forEach(b=>b.onclick=()=>loadChallenge(+b.dataset.ch));
@@ -450,6 +496,69 @@ load('conversation');
  });
 
  restore();
+})();
+</script>
+<script id="talkabee-hotspot-editor-v10">
+(()=>{
+const SEL='.hotspot,.home-hotspot,.yacht-hotspot,.hotspots button,.train-hotspots button';
+let editing=false,active=null,adding=false,pendingName='';
+const all=()=>[...document.querySelectorAll(SEL)].filter(x=>!x.closest('#tb-hs-editor'));
+function parentFor(el){return el.offsetParent||el.parentElement||document.body}
+function pct(v,n){return +(v/n*100).toFixed(2)}
+function cleanActive(){if(active){active.classList.remove('tb-hs-active');active.querySelector(':scope > .tb-hs-handle')?.remove()} active=null}
+function select(el){if(!editing||!el)return;cleanActive();active=el;el.classList.add('tb-hs-active');let h=document.createElement('span');h.className='tb-hs-handle';el.appendChild(h)}
+function semanticNew(name){
+ const existing=all()[0]; if(!existing)return null;
+ const el=document.createElement('button');el.type='button';
+ if(existing.classList.contains('home-hotspot')){el.className='home-hotspot show';el.dataset.object=name;el.setAttribute('aria-label',name)}
+ else if(existing.classList.contains('yacht-hotspot')){el.className='yacht-hotspot';el.dataset.word=name;el.setAttribute('aria-label',name)}
+ else if(existing.classList.contains('hotspot')){el.className='hotspot';el.dataset.word=name;el.setAttribute('aria-label',name)}
+ else { if(existing.className)el.className=existing.className; el.dataset.word=name; if(existing.hasAttribute('data-en'))el.dataset.en=name; el.setAttribute('aria-label',name) }
+ return el
+}
+function hotspotContainer(){const e=all()[0];return e?e.parentElement:null}
+function placeAt(ev){
+ if(!editing||!adding)return;
+ const host=hotspotContainer();if(!host)return;
+ const el=semanticNew(pendingName);if(!el)return;
+ host.appendChild(el);
+ const r=parentFor(el).getBoundingClientRect();
+ el.style.left=pct(ev.clientX-r.left,r.width)+'%';el.style.top=pct(ev.clientY-r.top,r.height)+'%';el.style.width='6%';el.style.height='8%';
+ adding=false;pendingName='';nameBox.value='';select(el);ev.preventDefault();ev.stopPropagation();
+}
+function startDrag(ev,el){
+ if(!editing||adding)return; if(ev.target.classList.contains('tb-hs-handle'))return;
+ select(el);ev.preventDefault();ev.stopPropagation();
+ const p=parentFor(el),r=p.getBoundingClientRect();let sx=ev.clientX,sy=ev.clientY;
+ let l=parseFloat(el.style.left)||pct(el.offsetLeft,r.width),t=parseFloat(el.style.top)||pct(el.offsetTop,r.height);
+ const move=e=>{el.style.left=(l+(e.clientX-sx)/r.width*100).toFixed(2)+'%';el.style.top=(t+(e.clientY-sy)/r.height*100).toFixed(2)+'%'};
+ const up=()=>{window.removeEventListener('pointermove',move,true);window.removeEventListener('pointerup',up,true)};
+ window.addEventListener('pointermove',move,true);window.addEventListener('pointerup',up,true)
+}
+function startResize(ev,el){
+ if(!editing)return;ev.preventDefault();ev.stopPropagation();
+ const p=parentFor(el),r=p.getBoundingClientRect();let sx=ev.clientX,sy=ev.clientY;
+ let w=parseFloat(el.style.width)||pct(el.offsetWidth,r.width),h=parseFloat(el.style.height)||pct(el.offsetHeight,r.height);
+ const move=e=>{el.style.width=Math.max(1,w+(e.clientX-sx)/r.width*100).toFixed(2)+'%';el.style.height=Math.max(1,h+(e.clientY-sy)/r.height*100).toFixed(2)+'%'};
+ const up=()=>{window.removeEventListener('pointermove',move,true);window.removeEventListener('pointerup',up,true)};
+ window.addEventListener('pointermove',move,true);window.addEventListener('pointerup',up,true)
+}
+const bar=document.createElement('div');bar.id='tb-hs-editor';
+const edit=document.createElement('button');edit.textContent='Edit Hotspots';
+const nameBox=document.createElement('input');nameBox.placeholder='hotspot name';
+const add=document.createElement('button');add.textContent='Add Hotspot';
+const del=document.createElement('button');del.textContent='Delete Hotspot';
+const save=document.createElement('button');save.textContent='Save HTML';
+bar.append(edit,nameBox,add,del,save);document.body.appendChild(bar);nameBox.style.display=add.style.display=del.style.display=save.style.display='none';
+edit.onclick=()=>{editing=!editing;document.body.classList.toggle('tb-hs-editing',editing);edit.textContent=editing?'Exit Editor':'Edit Hotspots';nameBox.style.display=add.style.display=del.style.display=save.style.display=editing?'':'none';if(!editing){adding=false;cleanActive()}};
+add.onclick=()=>{if(!editing)return;const n=(nameBox.value||'').trim().toLowerCase().replace(/\s+/g,' ');if(!n){nameBox.focus();return}pendingName=n;adding=true;cleanActive()};
+del.onclick=()=>{if(active){active.remove();active=null}};
+save.onclick=()=>{
+ const clone=document.documentElement.cloneNode(true);clone.querySelector('#tb-hs-editor')?.remove();clone.querySelectorAll('.tb-hs-handle').forEach(x=>x.remove());clone.querySelectorAll('.tb-hs-active').forEach(x=>x.classList.remove('tb-hs-active'));clone.querySelector('body')?.classList.remove('tb-hs-editing');
+ const blob=new Blob(['<!doctype html>\n'+clone.outerHTML],{type:'text/html'}),a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download=(location.pathname.split('/').pop()||'adventure.html');a.click();setTimeout(()=>URL.revokeObjectURL(a.href),1000)
+};
+document.addEventListener('pointerdown',ev=>{if(!editing)return;const h=ev.target.closest('.tb-hs-handle');if(h){startResize(ev,h.parentElement);return}const el=ev.target.closest(SEL);if(el){startDrag(ev,el);return}},true);
+document.addEventListener('click',ev=>{if(!editing)return;if(ev.target.closest('#tb-hs-editor'))return;if(adding){placeAt(ev);return}const el=ev.target.closest(SEL);if(el){ev.preventDefault();ev.stopPropagation();select(el)}},true);
 })();
 </script>
 </body></html>
