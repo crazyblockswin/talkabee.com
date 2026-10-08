@@ -116,6 +116,21 @@ border:1px solid #fff;background:rgba(7,23,39,.65);color:#fff;font-weight:900}
 </style>
 
 <!-- TALK A BEE HOTSPOTS VISUALLY RECERTIFIED AGAINST CURRENT SCENE ARTWORK: 2026-10-07 -->
+<style id="talkabee-hotspot-editor-style">
+#tb-hs-editor{position:fixed;right:16px;bottom:16px;z-index:2147483646;font:700 12px Arial,sans-serif;display:flex;flex-wrap:wrap;justify-content:flex-end;gap:6px;max-width:520px}
+#tb-hs-editor button{border:1px solid #fff;border-radius:10px;background:#000;color:#fff;padding:9px 11px;cursor:pointer;box-shadow:0 4px 14px #0006}
+#tb-hs-readout{position:fixed;right:16px;bottom:60px;z-index:2147483646;max-width:460px;background:#000;color:#fff;border:1px solid #fff;border-radius:10px;padding:8px 10px;font:12px/1.35 Consolas,monospace;display:none}
+body.tb-hs-editing #tb-hs-readout{display:block}
+body.tb-hs-editing .hotspot,body.tb-hs-editing .home-hotspot,body.tb-hs-editing .yacht-hotspot,body.tb-hs-editing .train-hotspots button{outline:2px solid #ffea00!important;background:rgba(255,234,0,.18)!important;pointer-events:auto!important;cursor:move!important;visibility:visible!important;opacity:1!important;z-index:2147483005!important}
+body.tb-hs-editing .tb-hs-active{outline:3px solid #00ffff!important;background:rgba(0,255,255,.18)!important}
+.tb-hs-handle{position:absolute!important;right:-7px!important;bottom:-7px!important;left:auto!important;top:auto!important;width:14px!important;height:14px!important;border-radius:3px!important;background:#00ffff!important;border:2px solid #000!important;z-index:2147483647!important;cursor:nwse-resize!important;display:none!important;transform:none!important}
+body.tb-hs-editing .tb-hs-active>.tb-hs-handle{display:block!important}
+
+#tb-hs-editor .tb-sound-name{min-width:150px;max-width:230px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font:12px/1.2 Arial,sans-serif;color:#fff;opacity:.9}
+#tb-hs-editor input[type="file"].tb-sound-file{display:none!important}
+</style>
+
+
 <div class="talkabee-editions">
 <details>
 <summary>Explore Adventures ▾</summary>
@@ -176,8 +191,8 @@ border:1px solid #fff;background:rgba(7,23,39,.65);color:#fff;font-weight:900}
 
 <div class="kicker">ON THE FLIGHT DECK</div>
 <h2 id="title">Click &amp; Discover</h2>
-<p id="prompt">You found ocean.</p>
-<div class="word"><strong id="line">ocean</strong><div class="translation" id="translation"></div></div>
+<p id="prompt">You found helicopter.</p>
+<div class="word"><strong id="line">helicopter</strong><div class="translation" id="translation"></div></div>
 <p id="status"></p>
 <div class="controls">
 <button id="normal">🔊 Speak</button><button id="slow">🐢 Slow</button><button id="replay">↻ Replay</button><button id="nextPhrase">Next phrase →</button>
@@ -226,7 +241,7 @@ border:1px solid #fff;background:rgba(7,23,39,.65);color:#fff;font-weight:900}
 <button class="hotspot" data-word="crew" style="left: 27.79%; top: 49.7%; width: 14.87%; height: 9.55%;" aria-label="Flight deck crew"></button>
 <button class="hotspot" data-word="yellowshirt" style="left: 85.08%; top: 60.74%; width: 8%; height: 18%;" aria-label="Yellow shirt director"></button>
 <button class="hotspot" data-word="greenshirt" style="left:76%;top:45%;width:8%;height:14%" aria-label="Green shirt crew member"></button>
-<button class="hotspot" data-word="towtractor" style="left: 90.14%; top: 57.2%; width: 10.79%; height: 8.44%;" aria-label="Tow tractor"></button>
+<button class="hotspot" data-word="towtractor" style="left: 90.14%; top: 57.42%; width: 10.79%; height: 8.44%;" aria-label="Tow tractor" data-sound="sounds/car-start.mp3"></button>
 <button class="hotspot" data-word="towtractor" style="left: 6%; top: 53.91%; width: 8.88%; height: 6.44%;" aria-label="Tow tractor"></button>
 <button class="hotspot" data-word="ocean" style="left: 65%; top: 39.57%; width: 34.27%; height: 2.98%;" aria-label="Ocean"></button>
 <button class="hotspot" data-word="ship" style="left: 18.26%; top: -0.48%; width: 10%; height: 10%;" aria-label="Navy ship"></button>
@@ -235,7 +250,7 @@ border:1px solid #fff;background:rgba(7,23,39,.65);color:#fff;font-weight:900}
 <button class="hotspot" data-word="equipment" style="left:0%;top:51%;width:17%;height:26%" aria-label="Deck equipment"></button>
 <button class="hotspot" data-word="sky" style="left: 78.17%; top: 76.02%; width: 24.11%; height: 24.52%;" aria-label="Sky"></button>
 
-<button type="button" class="hotspot" data-word="jet airplane" data-tb-en="jet airplane" data-tb-es="avión a reacción" data-tb-fr="avion à réaction" data-tb-de="Düsenflugzeug" data-tb-it="aereo a reazione" data-tb-pt="avião a jato" data-tb-no="jetfly" style="left: 84.84%; top: 45.85%; width: 14.91%; height: 7.88%;"></button><button type="button" class="hotspot" data-word="clouds" data-tb-en="clouds" data-tb-es="nubes" data-tb-fr="nuages" data-tb-de="Wolken" data-tb-it="nuvole" data-tb-pt="nuvens" data-tb-no="skyer" style="left: 81.46%; top: 13.89%; width: 20.17%; height: 11.7%;"></button></main>
+<button type="button" class="hotspot" data-word="jet airplane" data-tb-en="jet airplane" data-tb-es="avión a reacción" data-tb-fr="avion à réaction" data-tb-de="Düsenflugzeug" data-tb-it="aereo a reazione" data-tb-pt="avião a jato" data-tb-no="jetfly" style="left: 84.84%; top: 45.85%; width: 14.91%; height: 7.88%;" data-sound="sounds/jet-fly-by.mp3"></button><button type="button" class="hotspot" data-word="clouds" data-tb-en="clouds" data-tb-es="nubes" data-tb-fr="nuages" data-tb-de="Wolken" data-tb-it="nuvole" data-tb-pt="nuvens" data-tb-no="skyer" style="left: 81.46%; top: 13.89%; width: 20.17%; height: 11.7%;"></button></main>
 
 <script>
 const EN={game:"aircraft carrier",bee:"Navy Bee",visitors:"visitors",sailor:"sailor",jet:"jet aircraft",jets:"carrier aircraft",helicopter:"helicopter",island:"carrier island",flag:"American flag",flightdeck:"flight deck",crew:"flight deck crew",yellowshirt:"aircraft director",greenshirt:"flight deck crew member",towtractor:"tow tractor",ocean:"ocean",ship:"Navy ship",decklines:"deck markings",railing:"safety railing",equipment:"deck equipment",sky:"sky"};
@@ -476,7 +491,120 @@ showWord("game");
 <style id="talkabee-ski-panel-180">
 @media(min-width:761px){.panel{width:180px!important;min-width:180px!important;max-width:180px!important}}
 </style>
-<audio preload="auto" src="sounds/ship-ambience.mp3" data-talkabee-sound="1"></audio><script data-tb-custom-vocab="1">;(()=>{const C={"jet airplane":{"en":"jet airplane","es":"avión a reacción","fr":"avion à réaction","de":"Düsenflugzeug","it":"aereo a reazione","pt":"avião a jato","no":"jetfly"},"clouds":{"en":"clouds","es":"nubes","fr":"nuages","de":"Wolken","it":"nuvole","pt":"nuvens","no":"skyer"}};for(const [k,v] of Object.entries(C)){try{EN[k]=v.en||k;for(const L of ["es","fr","en","de","it","pt","no"]){if(WORDS[L])WORDS[L][k]=v[L]||v.en||k}}catch(e){}}})();</script><script id="talkabee-scene-view-safe-reset">
+<script data-tb-custom-vocab="1">;(()=>{const C={"jet airplane":{"en":"jet airplane","es":"avión a reacción","fr":"avion à réaction","de":"Düsenflugzeug","it":"aereo a reazione","pt":"avião a jato","no":"jetfly"},"clouds":{"en":"clouds","es":"nubes","fr":"nuages","de":"Wolken","it":"nuvole","pt":"nuvens","no":"skyer"}};for(const [k,v] of Object.entries(C)){try{EN[k]=v.en||k;for(const L of ["es","fr","en","de","it","pt","no"]){if(WORDS[L])WORDS[L][k]=v[L]||v.en||k}}catch(e){}}})();</script><script id="talkabee-hotspot-custom-sound">
+(function(){
+ if(window.__talkabeeHotspotCustomSound)return;window.__talkabeeHotspotCustomSound=true;
+ const SEL='.hotspot,.home-hotspot,.yacht-hotspot,.hotspots button,.train-hotspots button';
+ let timer=0,current=null;
+ function stop(){clearTimeout(timer);if(current){try{current.pause();current.currentTime=0}catch(e){}current=null}}
+ document.addEventListener('click',function(ev){
+  if(document.body.classList.contains('tb-hs-editing'))return;
+  const h=ev.target.closest&&ev.target.closest(SEL);if(!h||!h.dataset.sound)return;
+  stop();const src=h.dataset.sound;
+  // Keep Talk A Bee order: translated object speech first, then the real sound.
+  timer=setTimeout(function(){const a=new Audio(src);current=a;a.play().catch(()=>{});a.onended=function(){if(current===a)current=null}},1500);
+ },false);
+})();
+</script>
+<script id="talkabee-hotspot-editor-v10">
+(()=>{
+const SEL='.hotspot,.home-hotspot,.yacht-hotspot,.hotspots button,.train-hotspots button';
+let editing=false,active=null,adding=false,pendingName='';
+let selectedSoundFile=null;
+const all=()=>[...document.querySelectorAll(SEL)].filter(x=>!x.closest('#tb-hs-editor'));
+function parentFor(el){return el.offsetParent||el.parentElement||document.body}
+function pct(v,n){return +(v/n*100).toFixed(2)}
+function cleanActive(){if(active){active.classList.remove('tb-hs-active');active.querySelector(':scope > .tb-hs-handle')?.remove()} active=null}
+function select(el){if(!editing||!el)return;cleanActive();active=el;el.classList.add('tb-hs-active');let h=document.createElement('span');h.className='tb-hs-handle';el.appendChild(h);updateSoundUI()}
+function semanticNew(name){
+ const existing=all()[0]; if(!existing)return null;
+ const el=document.createElement('button');el.type='button';
+ if(existing.classList.contains('home-hotspot')){el.className='home-hotspot show';el.dataset.object=name;el.setAttribute('aria-label',name)}
+ else if(existing.classList.contains('yacht-hotspot')){el.className='yacht-hotspot';el.dataset.word=name;el.setAttribute('aria-label',name)}
+ else if(existing.classList.contains('hotspot')){el.className='hotspot';el.dataset.word=name;el.setAttribute('aria-label',name)}
+ else { if(existing.className)el.className=existing.className; el.dataset.word=name; if(existing.hasAttribute('data-en'))el.dataset.en=name; el.setAttribute('aria-label',name) }
+ return el
+}
+function hotspotContainer(){const e=all()[0];return e?e.parentElement:null}
+function placeAt(ev){
+ if(!editing||!adding)return;
+ const host=hotspotContainer();if(!host)return;
+ const el=semanticNew(pendingName);if(!el)return;
+ host.appendChild(el);
+ const r=parentFor(el).getBoundingClientRect();
+ el.style.left=pct(ev.clientX-r.left,r.width)+'%';el.style.top=pct(ev.clientY-r.top,r.height)+'%';el.style.width='6%';el.style.height='8%';
+ adding=false;pendingName='';nameBox.value='';select(el);ev.preventDefault();ev.stopPropagation();
+}
+function startDrag(ev,el){
+ if(!editing||adding)return; if(ev.target.classList.contains('tb-hs-handle'))return;
+ select(el);ev.preventDefault();ev.stopPropagation();
+ const p=parentFor(el),r=p.getBoundingClientRect();let sx=ev.clientX,sy=ev.clientY;
+ let l=parseFloat(el.style.left)||pct(el.offsetLeft,r.width),t=parseFloat(el.style.top)||pct(el.offsetTop,r.height);
+ const move=e=>{el.style.left=(l+(e.clientX-sx)/r.width*100).toFixed(2)+'%';el.style.top=(t+(e.clientY-sy)/r.height*100).toFixed(2)+'%'};
+ const up=()=>{window.removeEventListener('pointermove',move,true);window.removeEventListener('pointerup',up,true)};
+ window.addEventListener('pointermove',move,true);window.addEventListener('pointerup',up,true)
+}
+function startResize(ev,el){
+ if(!editing)return;ev.preventDefault();ev.stopPropagation();
+ const p=parentFor(el),r=p.getBoundingClientRect();let sx=ev.clientX,sy=ev.clientY;
+ let w=parseFloat(el.style.width)||pct(el.offsetWidth,r.width),h=parseFloat(el.style.height)||pct(el.offsetHeight,r.height);
+ const move=e=>{el.style.width=Math.max(1,w+(e.clientX-sx)/r.width*100).toFixed(2)+'%';el.style.height=Math.max(1,h+(e.clientY-sy)/r.height*100).toFixed(2)+'%'};
+ const up=()=>{window.removeEventListener('pointermove',move,true);window.removeEventListener('pointerup',up,true)};
+ window.addEventListener('pointermove',move,true);window.addEventListener('pointerup',up,true)
+}
+function soundPath(el){return el&&el.dataset?String(el.dataset.sound||'').trim():''}
+function soundLabel(path){return path?path.split('/').pop():'No sound'}
+function updateSoundUI(){if(typeof soundName==='undefined')return;const p=soundPath(active);soundName.textContent=active?soundLabel(p):'Select a hotspot';removeSound.disabled=testSound.disabled=!active||!p;chooseSound.disabled=!active}
+function stopEditorPreview(){if(window.__tbHsPreview){try{window.__tbHsPreview.pause();window.__tbHsPreview.currentTime=0}catch(e){}window.__tbHsPreview=null}}
+function previewSound(){if(!active)return;stopEditorPreview();let src='';if(selectedSoundFile&&soundPath(active)===selectedSoundFile.name)src=URL.createObjectURL(selectedSoundFile);else src=soundPath(active);if(!src)return;const a=new Audio(src);window.__tbHsPreview=a;a.play().catch(()=>{});a.onended=()=>{if(src.startsWith('blob:'))URL.revokeObjectURL(src);if(window.__tbHsPreview===a)window.__tbHsPreview=null}}
+function assignSoundFile(file){if(!active||!file)return;selectedSoundFile=file;active.dataset.sound='sounds/'+file.name;updateSoundUI();previewSound()}
+function removeAssignedSound(){if(!active)return;stopEditorPreview();active.removeAttribute('data-sound');selectedSoundFile=null;updateSoundUI()}
+const bar=document.createElement('div');bar.id='tb-hs-editor';
+const edit=document.createElement('button');edit.textContent='Edit Hotspots';
+const nameBox=document.createElement('input');nameBox.placeholder='hotspot name';
+const add=document.createElement('button');add.textContent='Add Hotspot';
+const del=document.createElement('button');del.textContent='Delete Hotspot';
+const save=document.createElement('button');save.textContent='Save Working HTML';
+const exportServer=document.createElement('button');exportServer.textContent='Export Server HTML';
+const soundFile=document.createElement('input');soundFile.type='file';soundFile.accept='audio/*,.mp3,.wav,.ogg,.m4a';soundFile.className='tb-sound-file';
+const chooseSound=document.createElement('button');chooseSound.textContent='Choose Sound';chooseSound.disabled=true;
+const testSound=document.createElement('button');testSound.textContent='Test Sound';testSound.disabled=true;
+const removeSound=document.createElement('button');removeSound.textContent='Remove Sound';removeSound.disabled=true;
+const soundName=document.createElement('span');soundName.className='tb-sound-name';soundName.textContent='Select a hotspot';
+bar.append(edit,nameBox,add,del,chooseSound,testSound,removeSound,soundName,save,exportServer,soundFile);document.body.appendChild(bar);nameBox.style.display=add.style.display=del.style.display=chooseSound.style.display=testSound.style.display=removeSound.style.display=soundName.style.display=save.style.display=exportServer.style.display='none';
+chooseSound.onclick=()=>{if(active){soundFile.value='';soundFile.click()}};
+soundFile.onchange=()=>{const f=soundFile.files&&soundFile.files[0];if(f)assignSoundFile(f)};
+testSound.onclick=previewSound;
+removeSound.onclick=removeAssignedSound;
+edit.onclick=()=>{editing=!editing;document.body.classList.toggle('tb-hs-editing',editing);edit.textContent=editing?'Exit Editor':'Edit Hotspots';nameBox.style.display=add.style.display=del.style.display=chooseSound.style.display=testSound.style.display=removeSound.style.display=soundName.style.display=save.style.display=exportServer.style.display=editing?'':'none';if(!editing){adding=false;stopEditorPreview();cleanActive()}updateSoundUI()};
+add.onclick=()=>{if(!editing)return;const n=(nameBox.value||'').trim().toLowerCase().replace(/\s+/g,' ');if(!n){nameBox.focus();return}pendingName=n;adding=true;cleanActive()};
+del.onclick=()=>{if(active){stopEditorPreview();active.remove();active=null;selectedSoundFile=null;updateSoundUI()}};
+function downloadableClone(stripEditor){
+ const clone=document.documentElement.cloneNode(true);
+ clone.querySelector('#tb-hs-editor')?.remove();
+ clone.querySelectorAll('.tb-hs-handle').forEach(function(n){n.remove()});
+ clone.querySelector('body')?.classList.remove('tb-hs-editing','scene-view');
+ clone.querySelectorAll('.tb-hs-active,.scene-only,.activity-collapsed').forEach(function(n){n.classList.remove('tb-hs-active','scene-only','activity-collapsed')});
+ clone.querySelectorAll('#sceneView,#sceneViewToggle').forEach(function(n){n.setAttribute('aria-pressed','false')});
+ if(stripEditor){
+  clone.querySelector('#talkabee-hotspot-editor-style')?.remove();
+  clone.querySelector('#talkabee-hotspot-editor-v10')?.remove();
+  clone.querySelector('#talkabee-hotspot-editor-script')?.remove();
+  clone.querySelector('#tb-hs-readout')?.remove();
+ }
+ return clone;
+}
+function downloadHTML(stripEditor){
+ const clone=downloadableClone(stripEditor),blob=new Blob(['<!doctype html>\n'+clone.outerHTML],{type:'text/html'}),a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download=(location.pathname.split('/').pop()||'adventure.html');a.click();setTimeout(()=>URL.revokeObjectURL(a.href),1000)
+}
+save.onclick=()=>downloadHTML(false);
+exportServer.onclick=()=>downloadHTML(true);
+document.addEventListener('pointerdown',ev=>{if(!editing)return;const h=ev.target.closest('.tb-hs-handle');if(h){startResize(ev,h.parentElement);return}const el=ev.target.closest(SEL);if(el){startDrag(ev,el);return}},true);
+document.addEventListener('click',ev=>{if(!editing)return;if(ev.target.closest('#tb-hs-editor'))return;if(adding){placeAt(ev);return}const el=ev.target.closest(SEL);if(el){ev.preventDefault();ev.stopPropagation();select(el)}},true);
+})();
+</script>
+
+<script id="talkabee-scene-view-safe-reset">
 (function(){
   function resetTalkABeeSceneView(){
     document.body.classList.remove('scene-view');
@@ -528,6 +656,6 @@ showWord("game");
  function show(el,e){if(document.body.classList.contains('tb-hs-editing'))return;var key=(el.dataset&&(el.dataset.word||el.dataset.key||el.dataset.object||el.dataset.en))||el.id||(el.dataset&&el.dataset.name)||el.getAttribute('aria-label')||'';if(!key)return;var l=lang(),en=cleanEnglish(el,key),word=lookup(el,key,l);if(!word)return;var same=String(word).replace(/^(the|a|an)\s+/i,'').toLowerCase()===String(en).toLowerCase();pop.textContent=(l==='en'||same)?en:(word+' — '+en);pop.style.display='block';var r=el.getBoundingClientRect(),x=(e&&e.clientX)||r.left+r.width/2,y=(e&&e.clientY)||r.top+r.height/2;var pr=pop.getBoundingClientRect();pop.style.left=Math.max(8,Math.min(innerWidth-pr.width-8,x+12))+'px';pop.style.top=Math.max(8,Math.min(innerHeight-pr.height-8,y-pr.height-10))+'px';clearTimeout(timer);timer=setTimeout(function(){pop.style.display='none'},1800)}
  document.addEventListener('click',function(e){var el=e.target.closest&&e.target.closest('.hotspot,.home-hotspot,.yacht-hotspot,.hotspots button,.train-hotspots button');if(el)show(el,e)},true);
 })();
-</script>
+</script><div id="talkabee-object-popup" style="display: none; left: 769px; top: 31.2667px;">helicopter</div><div id="talkabee-object-popup" style="display: none; left: 905.717px; top: 246.267px;">tow tractor</div>
 
-</body></html>
+<audio preload="auto" src="sounds/helicopter-flying.mp3" data-talkabee-sound="1"></audio></body></html>
