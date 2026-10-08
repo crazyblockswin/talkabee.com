@@ -1,4 +1,5 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Talk A Bee — Library</title>
 <style>
 *{box-sizing:border-box}html,body{margin:0;width:100%;height:100%;overflow:hidden;font-family:Arial,sans-serif;background:#182238}button,select{font:inherit}
@@ -238,7 +239,7 @@ body.tb-hs-editing .tb-hs-active>.tb-hs-handle{display:block!important}
 .tab-master-card .actions button{cursor:pointer!important}
 </style>
 
-</head><body>
+</head><body class="">
 <div class="talkabee-editions">
 <details>
 <summary>Explore Adventures ▾</summary>
@@ -259,21 +260,21 @@ body.tb-hs-editing .tb-hs-active>.tb-hs-handle{display:block!important}
 <aside class="dir tab-master-panel">
  <div class="place">📚 Library</div>
  <div class="tab-panel-size-controls" aria-label="Activity panel size"><button type="button" class="tab-panel-minus" title="Make activity panel smaller">−</button><button type="button" class="tab-panel-reset" title="Reset activity panel size">Reset</button><button type="button" class="tab-panel-plus" title="Make activity panel larger">+</button></div>
-<a href="index.html">← Main Directory</a><button id="sceneView">◉ Scene View</button>
+<button id="sceneView">◉ Scene View</button>
 <div class="label">LANGUAGE</div><select id="language"><option value="es">Spanish</option><option value="fr">French</option><option value="en">English</option><option value="de">German</option><option value="it">Italian</option><option value="pt">Portuguese</option><option value="no">Norwegian</option></select>
-<div class="label">VOICE</div><select id="voice"><option value="">Browser Default</option></select>
+<div class="label">VOICE</div><select id="voice"><option value="">Browser Default</option><option value="urn:moz-tts:sapi:Microsoft David - English (United States)?en-US">Microsoft David - English (United States) — en-US</option><option value="urn:moz-tts:sapi:Microsoft Mark - English (United States)?en-US">Microsoft Mark - English (United States) — en-US</option><option value="urn:moz-tts:sapi:Microsoft Zira - English (United States)?en-US">Microsoft Zira - English (United States) — en-US</option><option value="urn:moz-tts:sapi:Microsoft David Desktop - English (United States)?en-US">Microsoft David Desktop - English (United States) — en-US</option><option value="urn:moz-tts:sapi:Microsoft Zira Desktop - English (United States)?en-US">Microsoft Zira Desktop - English (United States) — en-US</option></select>
 <div class="label">DISCOVERY</div><button id="discovery">🔎 Discovery — Click the Scene</button>
 <div class="label">ACTIVITIES</div>
-<button data-lesson="conversation">1. 💬 Library Conversation</button><button data-lesson="books">2. 📖 Books & Reading</button><button data-lesson="study">3. ✏️ Studying Together</button><button data-lesson="travel">4. 🇮🇹 Italy & Travel</button><button data-lesson="phrases">5. 🗣️ Useful Phrases</button><button data-lesson="questions">6. ❓ Asking Questions</button>
+<button data-lesson="conversation" class="active">1. Library Conversation</button><button data-lesson="books">2. Books &amp; Reading</button><button data-lesson="study">3. Studying Together</button><button data-lesson="travel">4. 🇹 Italy &amp; Travel</button><button data-lesson="phrases">5. Useful Phrases</button><button data-lesson="questions">6. Asking Questions</button>
 <div class="label">CHALLENGES</div>
-<button data-ch="0">1. Find the book</button><button data-ch="1">2. Find the fountain</button><button data-ch="2">3. Find the cup</button><button data-ch="3">4. Find the notebook</button><button data-ch="4">5. Find the pen</button><button data-ch="5">6. Find the ladder</button></aside>
-<div class="hotspots"><button data-word="libro" data-en="book" style="left:36.14%;top:53.64%;width:23.05%;height:19.16%"></button><button data-word="fuente" data-en="fountain" style="left:81.82%;top:26.36%;width:4.98%;height:17.76%"></button><button data-word="taza" data-en="cup" style="left:82.24%;top:64.49%;width:7.07%;height:13.55%"></button><button data-word="cuaderno" data-en="notebook" style="left:39.81%;top:77.01%;width:26.72%;height:14.02%"></button><button data-word="bolígrafo" data-en="pen" style="left:58.15%;top:76.92%;width:11.79%;height:5.14%"></button><button data-word="escalera" data-en="ladder" style="left:21.22%;top:5.42%;width:3.93%;height:34.58%"></button></div><div class="wordpop" id="pop"></div>
-<div class="panel tab-master-card">
+<button data-ch="0">1. Find the book</button><button data-ch="1">2. Find the fountain</button><button data-ch="2">3. Find the cup</button><button data-ch="3">4. Find the notebook</button><button data-ch="4">5. Find the pen</button><button data-ch="5">6. Find the ladder</button><a href="index.html">← Main Directory</a></aside>
+<div class="hotspots"><button data-word="libro" data-en="book" style="left: 38.43%; top: 62.62%; width: 12.37%; height: 10.36%;" class=""></button><button data-word="fuente" data-en="fountain" style="left: 74.06%; top: 26.17%; width: 4.98%; height: 17.76%;" class=""></button><button data-word="taza" data-en="cup" style="left: 53.03%; top: 71.99%; width: 3.95%; height: 5.96%;" class=""></button><button data-word="cuaderno" data-en="notebook" style="left: 39.81%; top: 77.01%; width: 12.29%; height: 7.35%;" class=""></button><button data-word="bolígrafo" data-en="pen" style="left: 53.36%; top: 78.22%; width: 5.54%; height: 4.86%;" class=""></button><button data-word="escalera" data-en="ladder" style="left: 19.55%; top: 8.85%; width: 3.93%; height: 34.58%;" class=""></button><button type="button" data-word="camera" data-en="camera" aria-label="camera" style="left: 61.66%; top: 73.43%; width: 6%; height: 8%;" class=""></button><button type="button" data-word="man" data-en="man" aria-label="man" style="left: 83.66%; top: 55.61%; width: 6%; height: 8%;" class=""></button><button type="button" data-word="woman" data-en="woman" aria-label="woman" style="left: 73.14%; top: 54.95%; width: 6%; height: 8%;" class=""></button><button type="button" data-word="flowers" data-en="flowers" aria-label="flowers" style="left: 87.8%; top: 15.33%; width: 6%; height: 8%;" class=""></button><button type="button" data-word="sign" data-en="sign" aria-label="sign" style="left: 94.26%; top: 17.53%; width: 5.22%; height: 24.85%;" class=""></button></div><div class="wordpop" id="pop" style="left: 844px; top: 386px; display: none;">cup</div>
+<div class="panel tab-master-card" data-moved="1" style="inset: 273px auto auto 337.8px !important; transform-origin: left top 0px !important; transform: scale(0.67) !important;">
 <div class="tab-card-tools" aria-label="Script card controls"><button type="button" class="tab-card-drag" title="Move script card">↕ Move</button><button type="button" class="tab-card-font-down" title="Decrease text">A−</button><button type="button" class="tab-card-font-up" title="Increase text">A+</button><button type="button" class="tab-card-reset" title="Reset card">Reset</button></div><div class="tab-card-resize" title="Drag to resize script card" aria-label="Resize script card">↘</div>
 <div class="kicker" id="kicker">AT THE LIBRARY</div>
-<h2 id="title">Sofia and Daniel study together.</h2>
-<p id="prompt"></p>
-<div class="line" id="line" role="button" tabindex="0" aria-label="Current phrase"></div>
+<h2 id="title">Sofia and Daniel are at the library.</h2>
+<p id="prompt">Practice one phrase at a time.</p>
+<div class="line" id="line" role="button" tabindex="0" aria-label="Current phrase">Sofia: We are in the library.</div>
 <div class="translation" id="translation"></div>
 <div class="actions">
 <button type="button" id="speakBtn">🔊 Speak</button>
@@ -281,7 +282,7 @@ body.tb-hs-editing .tb-hs-active>.tb-hs-handle{display:block!important}
 <button type="button" id="replayBtn">Replay</button>
 <button type="button" id="nextPhraseBtn">Next phrase →</button>
 </div>
-<div class="tip" id="tip"></div></div>
+<div class="tip" id="tip">Choose another activity, Discovery, or a Challenge.</div></div>
 </section>
 <script>
 const LANGS={"es": {"name": "Spanish", "code": "es-ES"}, "fr": {"name": "French", "code": "fr-FR"}, "en": {"name": "English", "code": "en-US"}, "de": {"name": "German", "code": "de-DE"}, "it": {"name": "Italian", "code": "it-IT"}, "pt": {"name": "Portuguese", "code": "pt-PT"}, "no": {"name": "Norwegian", "code": "nb-NO"}};
