@@ -113,7 +113,7 @@ border:1px solid #fff;background:rgba(7,23,39,.65);color:#fff;font-weight:900}
 
 
 <style id="talkabee-bilingual-hotspot-popup-style">
-#talkabee-object-popup{position:fixed;z-index:2147482900;display:none;padding:8px 12px;border-radius:12px;background:rgba(91,52,24,.94);color:white;font-weight:900;font-size:14px;pointer-events:none;box-shadow:0 5px 18px rgba(0,0,0,.45);border:1px solid rgba(255,218,166,.65)}
+#talkabee-object-popup{position:fixed;z-index:2147482900;display:none;padding:8px 12px;border-radius:12px;background:rgba(20,20,20,.82);color:white;font-weight:900;font-size:14px;pointer-events:none}
 </style>
 
 </head>
@@ -178,8 +178,8 @@ border:1px solid #fff;background:rgba(7,23,39,.65);color:#fff;font-weight:900}
 
 <div class="kicker">AT THE MOUNTAIN BIKE START</div>
 <h2 id="title">Click &amp; Discover</h2>
-<p id="prompt">You found race official.</p>
-<div class="word"><strong id="line">race official</strong><div class="translation" id="translation"></div></div>
+<p id="prompt">You found bicycle racers.</p>
+<div class="word"><strong id="line">bicycle racers</strong><div class="translation" id="translation"></div></div>
 <p id="status"></p>
 <div class="controls">
 <button id="normal">🔊 Speak</button><button id="slow">🐢 Slow</button><button id="replay">↻ Replay</button><button id="nextPhrase">Next phrase →</button>
@@ -219,7 +219,7 @@ border:1px solid #fff;background:rgba(7,23,39,.65);color:#fff;font-weight:900}
 <button class="hotspot" data-word="track" style="left: 30.6%; top: 89.31%; width: 69.25%; height: 10.96%;" aria-label="Dirt race track"></button>
 <button class="hotspot" data-word="rocks" style="left: 2.71%; top: 54.04%; width: 16.43%; height: 31.35%;" aria-label="Trail rocks"></button>
 
-<button type="button" class="hotspot" data-word="bicycle racers" aria-label="bicycle racers" data-tb-custom="1" data-tb-en="bicycle racers" data-tb-es="ciclistas" data-tb-fr="cyclistes" data-tb-de="Radfahrer" data-tb-it="ciclisti" data-tb-pt="ciclistas" data-tb-no="syklister" style="left: 23.9%; top: 51.72%; width: 40.79%; height: 11.36%;" data-sound="sounds/bicycles.mp3"></button><button type="button" class="hotspot" data-word="she hit a rock and lost" aria-label="she hit a rock and lost" data-tb-custom="1" data-tb-en="she hit a rock and lost" data-tb-es="ella chocó contra una roca y perdió" data-tb-fr="elle a heurté un rocher et a perdu" data-tb-de="Sie prallte gegen einen Stein und verlor" data-tb-it="ha colpito una roccia e ha perso" data-tb-pt="ela bateu em uma pedra e perdeu" data-tb-no="hun traff en stein og tapte" style="left: 21.69%; top: 46.46%; width: 6.36%; height: 34.94%;"></button><button type="button" class="hotspot" data-word="why does the bee ride a bike when he can fly" aria-label="why does the bee ride a bike when he can fly" data-tb-custom="1" data-tb-en="why does the bee ride a bike when he can fly" data-tb-es="¿Por qué la abeja anda en bicicleta cuando puede volar?" data-tb-fr="pourquoi l'abeille fait-elle du vélo alors qu'elle peut voler" data-tb-de="Warum fährt die Biene Fahrrad, wenn sie fliegen kann?" data-tb-it="perché l'ape va in bicicletta quando può volare?" data-tb-pt="por que a abelha anda de bicicleta quando pode voar" data-tb-no="hvorfor sykler bien når den kan fly" style="left: 55.01%; top: 51.7%; width: 8.19%; height: 27.63%;"></button></main>
+<button type="button" class="hotspot" data-word="bicycle racers" aria-label="bicycle racers" data-tb-custom="1" data-tb-en="bicycle racers" data-tb-es="ciclistas" data-tb-fr="cyclistes" data-tb-de="Radfahrer" data-tb-it="ciclisti" data-tb-pt="ciclistas" data-tb-no="syklister" style="left: 23.9%; top: 51.72%; width: 40.79%; height: 11.36%;" data-sound="sounds/bicycles.mp3"></button><button type="button" class="hotspot" data-word="she hit a boulder and lost" aria-label="she hit a boulder and lost" data-tb-custom="1" data-tb-en="she hit a boulder and lost" data-tb-es="ella chocó contra una roca y perdió" data-tb-fr="elle a heurté un rocher et a perdu" data-tb-de="Sie traf einen Felsbrocken und verlor" data-tb-it="ha colpito un masso e ha perso" data-tb-pt="ela bateu em uma pedra e perdeu" data-tb-no="hun traff en stein og tapte" style="left: 22.26%; top: 39.88%; width: 6.47%; height: 47.54%;"></button><button type="button" class="hotspot" data-word="why is the bee riding a bike when he can fly" aria-label="why is the bee riding a bike when he can fly" data-tb-custom="1" data-tb-en="why is the bee riding a bike when he can fly" data-tb-es="¿Por qué la abeja anda en bicicleta cuando puede volar?" data-tb-fr="pourquoi l'abeille fait du vélo alors qu'elle peut voler" data-tb-de="Warum fährt die Biene Fahrrad, wenn sie fliegen kann?" data-tb-it="perché l'ape va in bicicletta quando può volare?" data-tb-pt="por que a abelha está andando de bicicleta quando pode voar" data-tb-no="hvorfor sykler bien når den kan fly" style="left: 55.25%; top: 50.41%; width: 7.56%; height: 32.26%;"></button></main>
 
 <script>
 const EN={race:"bicycle race",bee:"bee racer",startline:"starting line",startgate:"start gate",official:"race official",signal:"start signal",helmet:"helmet",bicycle:"bicycle",racer1:"bicycle racer",racer2:"bicycle racer",racer3:"bicycle racer",racers:"bicycle racers",trailsign:"bike trail sign",lake:"mountain lake",mountain:"mountain",forest:"forest",spectators:"spectators",flags:"race flags",tent:"race tent",track:"dirt race track",rocks:"trail rocks"};
@@ -482,7 +482,7 @@ function textFor(el,l){const en=el.dataset.tbEn||el.dataset.en||el.dataset.word|
 document.addEventListener('click',function(ev){
  if(document.body.classList.contains('tb-hs-editing'))return;
  const el=ev.target.closest&&ev.target.closest('[data-tb-custom="1"]');if(!el)return;
- ev.preventDefault();ev.stopImmediatePropagation();
+ ev.preventDefault();ev.stopPropagation();
  const l=curLang(),txt=textFor(el,l),en=textFor(el,'en'),key=el.dataset.word||el.dataset.object||en;
  try{if(typeof showWord==='function')showWord(key);else{if(typeof line!=='undefined'&&line)line.textContent=txt;if(typeof translation!=='undefined'&&translation)translation.textContent=l==='en'?'':en}}catch(e){}
  try{if(typeof speak==='function'){let done=false;const after=()=>{if(done)return;done=true;if(el.dataset.sound){try{const a=new Audio(el.dataset.sound);a.play().catch(()=>{})}catch(e){}}};speak(txt,.82,after);if(el.dataset.sound)setTimeout(after,1400)}else if('speechSynthesis'in window){speechSynthesis.cancel();const u=new SpeechSynthesisUtterance(txt);u.lang=({es:'es-ES',fr:'fr-FR',en:'en-US',de:'de-DE',it:'it-IT',pt:'pt-PT',no:'nb-NO'})[l]||l;speechSynthesis.speak(u)}}catch(e){}
@@ -508,7 +508,7 @@ document.addEventListener('click',function(ev){
 (function(){
  if(window.__talkabeeBilingualPopup)return; window.__talkabeeBilingualPopup=true;
  var pop=document.createElement('div');pop.id='talkabee-object-popup';document.body.appendChild(pop);var timer=0;
- function lang(){var s=document.getElementById('adventureLanguage')||document.getElementById('language')||document.querySelector('select[id*="Language"],select[id*="language"]')||document.getElementById('lang');var v=s&&s.value?s.value:(localStorage.getItem('talkabee-learn-language')||'en');return v==='nb'?'no':v}
+ function lang(){var s=document.getElementById('lang')||document.getElementById('adventureLanguage')||document.getElementById('language')||document.querySelector('select[id*="Language"],select[id*="language"]');var v=s&&s.value?s.value:'en';return v==='nb'?'no':v}
  function first(v){return Array.isArray(v)?String(v[0]??''):String(v??'')}
  function engval(v){return Array.isArray(v)?String((v.length>1&&v[1]?v[1]:v[0])??''):String(v??'')}
  function cleanEnglish(el,key){
@@ -539,7 +539,7 @@ document.addEventListener('click',function(ev){
   try{if(typeof EXTRA_WORDS!=='undefined'&&EXTRA_WORDS[l]&&EXTRA_WORDS[l][key])return first(EXTRA_WORDS[l][key])}catch(e){}
   return (el&&el.dataset&&(el.dataset.word||el.dataset.object||el.dataset.en))||key||'';
  }
- function show(el,e){if(document.body.classList.contains('tb-hs-editing'))return;var key=(el.dataset&&(el.dataset.word||el.dataset.key||el.dataset.object||el.dataset.en))||el.id||(el.dataset&&el.dataset.name)||el.getAttribute('aria-label')||'';if(!key)return;var l=lang(),en=cleanEnglish(el,key),word=lookup(el,key,l);if(!word)return;var same=String(word).replace(/^(the|a|an)\s+/i,'').toLowerCase()===String(en).toLowerCase();pop.textContent=(l==='en'||same)?en:(word+' — '+en);pop.style.display='block';var r=el.getBoundingClientRect(),x=(e&&e.clientX)||r.left+r.width/2,y=(e&&e.clientY)||r.top+r.height/2;var pr=pop.getBoundingClientRect();pop.style.left=Math.max(8,Math.min(innerWidth-pr.width-8,x+12))+'px';pop.style.top=Math.max(8,Math.min(innerHeight-pr.height-8,y-pr.height-10))+'px';clearTimeout(timer);timer=setTimeout(function(){pop.style.display='none'},1800)}
+ function show(el,e){if(document.body.classList.contains('tb-hs-editing'))return;var key=(el.dataset&&(el.dataset.word||el.dataset.key||el.dataset.object||el.dataset.en))||el.id||(el.dataset&&el.dataset.name)||el.getAttribute('aria-label')||'';if(!key)return;var l=lang(),en=cleanEnglish(el,key),word=lookup(el,key,l);if(!word)return;var same=String(word).replace(/^(the|a|an)\s+/i,'').toLowerCase()===String(en).toLowerCase();pop.textContent=word;pop.style.display='block';var r=el.getBoundingClientRect(),x=(e&&e.clientX)||r.left+r.width/2,y=(e&&e.clientY)||r.top+r.height/2;var pr=pop.getBoundingClientRect();pop.style.left=Math.max(8,Math.min(innerWidth-pr.width-8,x+12))+'px';pop.style.top=Math.max(8,Math.min(innerHeight-pr.height-8,y-pr.height-10))+'px';clearTimeout(timer);timer=setTimeout(function(){pop.style.display='none'},1800)}
  document.addEventListener('click',function(e){var el=e.target.closest&&e.target.closest('.hotspot,.home-hotspot,.yacht-hotspot,.hotspots button,.train-hotspots button');if(el)show(el,e)},true);
 })();
 </script>
