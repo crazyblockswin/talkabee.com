@@ -1546,7 +1546,28 @@ document.addEventListener('click',function(ev){
  ev.preventDefault();ev.stopPropagation();
  const l=curLang(),txt=textFor(el,l),en=textFor(el,'en'),key=el.dataset.word||el.dataset.object||en;
  try{if(typeof showWord==='function')showWord(key);else{if(typeof line!=='undefined'&&line)line.textContent=txt;if(typeof translation!=='undefined'&&translation)translation.textContent=l==='en'?'':en}}catch(e){}
- try{if(typeof speak==='function'){speak(txt,.82);if(el.dataset.sound){setTimeout(()=>{const a=new Audio(el.dataset.sound);a.play().catch(err=>console.warn('Talk A Bee sound failed:',el.dataset.sound,err))},1500)}}else if('speechSynthesis'in window){speechSynthesis.cancel();const u=new SpeechSynthesisUtterance(txt);u.lang=({es:'es-ES',fr:'fr-FR',en:'en-US',de:'de-DE',it:'it-IT',pt:'pt-PT',no:'nb-NO'})[l]||l;speechSynthesis.speak(u)}}catch(e){}
+ try{
+   // Sea Adventures uses a private `speak` function, so this document-level
+   // handler must play assigned audio independently of that function.
+   const src=el.getAttribute('data-sound');
+   let played=false;
+   const playAssigned=()=>{
+     if(played||!src)return;played=true;
+     if(window.__tbSeaAssignedAudio){try{window.__tbSeaAssignedAudio.pause()}catch(e){}}
+     const a=new Audio(src);window.__tbSeaAssignedAudio=a;
+     a.play().catch(err=>console.warn('Talk A Bee sound failed:',src,err));
+   };
+   if('speechSynthesis' in window&&txt){
+     speechSynthesis.cancel();
+     const u=new SpeechSynthesisUtterance(txt);
+     u.lang=({es:'es-ES',fr:'fr-FR',en:'en-US',de:'de-DE',it:'it-IT',pt:'pt-PT',no:'nb-NO'})[l]||l;
+     u.rate=.82;
+     u.onend=playAssigned;u.onerror=playAssigned;
+     speechSynthesis.speak(u);
+     // Some browser voices never dispatch onend: don't lose the real sound.
+     if(src)setTimeout(playAssigned,2200);
+   }else{playAssigned()}
+ }catch(e){console.warn('Sea hotspot audio:',e)}
 },true);
 })();</script>
 
