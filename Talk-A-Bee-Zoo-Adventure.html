@@ -111,7 +111,6 @@ border:1px solid #fff;background:rgba(7,23,39,.65);color:#fff;font-weight:900}
 
 <!-- TALK A BEE HOTSPOTS VISUALLY RECERTIFIED AGAINST CURRENT SCENE ARTWORK: 2026-10-07 -->
 
-
 <style id="talkabee-bilingual-hotspot-popup-style">
 #talkabee-object-popup{position:fixed;z-index:2147482900;display:none;padding:8px 12px;border-radius:12px;background:rgba(20,20,20,.82);color:white;font-weight:900;font-size:14px;pointer-events:none}
 </style>
@@ -473,13 +472,12 @@ function textFor(el,l){const en=el.dataset.tbEn||el.dataset.en||el.dataset.word|
 document.addEventListener('click',function(ev){
  if(document.body.classList.contains('tb-hs-editing'))return;
  const el=ev.target.closest&&ev.target.closest('[data-tb-custom="1"]');if(!el)return;
- ev.preventDefault();ev.stopImmediatePropagation();
+ ev.preventDefault();ev.stopPropagation();
  const l=curLang(),txt=textFor(el,l),en=textFor(el,'en'),key=el.dataset.word||el.dataset.object||en;
  try{if(typeof showWord==='function')showWord(key);else{if(typeof line!=='undefined'&&line)line.textContent=txt;if(typeof translation!=='undefined'&&translation)translation.textContent=l==='en'?'':en}}catch(e){}
  try{if(typeof speak==='function'){let done=false;const after=()=>{if(done)return;done=true;if(el.dataset.sound){try{const a=new Audio(el.dataset.sound);a.play().catch(()=>{})}catch(e){}}};speak(txt,.82,after);if(el.dataset.sound)setTimeout(after,1400)}else if('speechSynthesis'in window){speechSynthesis.cancel();const u=new SpeechSynthesisUtterance(txt);u.lang=({es:'es-ES',fr:'fr-FR',en:'en-US',de:'de-DE',it:'it-IT',pt:'pt-PT',no:'nb-NO'})[l]||l;speechSynthesis.speak(u)}}catch(e){}
 },true);
 })();</script>
-
 
 
 
@@ -505,7 +503,7 @@ document.addEventListener('click',function(ev){
 (function(){
  if(window.__talkabeeBilingualPopup)return; window.__talkabeeBilingualPopup=true;
  var pop=document.createElement('div');pop.id='talkabee-object-popup';document.body.appendChild(pop);var timer=0;
- function lang(){var s=document.getElementById('adventureLanguage')||document.getElementById('language')||document.querySelector('select[id*="Language"],select[id*="language"]');var v=s&&s.value?s.value:'en';return v==='nb'?'no':v}
+ function lang(){var s=document.getElementById('lang')||document.getElementById('adventureLanguage')||document.getElementById('language')||document.querySelector('select[id*="Language"],select[id*="language"]');var v=s&&s.value?s.value:'en';return v==='nb'?'no':v}
  function first(v){return Array.isArray(v)?String(v[0]??''):String(v??'')}
  function engval(v){return Array.isArray(v)?String((v.length>1&&v[1]?v[1]:v[0])??''):String(v??'')}
  function cleanEnglish(el,key){
