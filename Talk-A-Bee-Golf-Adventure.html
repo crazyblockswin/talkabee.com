@@ -1,6 +1,5 @@
 <!doctype html>
-<html lang="en">
-<head>
+<html lang="en"><head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Talk A Bee — Golf Adventure</title>
@@ -118,7 +117,7 @@ border:1px solid #fff;background:rgba(7,23,39,.65);color:#fff;font-weight:900}
 </style>
 
 </head>
-<body>
+<body class="">
 <div class="talkabee-editions">
 <details>
 <summary>Explore Adventures ▾</summary>
@@ -146,13 +145,13 @@ border:1px solid #fff;background:rgba(7,23,39,.65);color:#fff;font-weight:900}
 <div class="tab-panel-size-controls" aria-label="Activity panel size"><button type="button" class="tab-panel-minus" title="Make activity panel smaller">−</button><button type="button" class="tab-panel-reset" title="Reset activity panel size">Reset</button><button type="button" class="tab-panel-plus" title="Make activity panel larger">+</button></div>
 
 <div class="label">LANGUAGE</div>
-<select id="lang">
+<select id="lang" data-tab-global-voice="1">
 <option value="es">Spanish</option><option value="fr">French</option><option value="en">English</option>
 <option value="de">German</option><option value="it">Italian</option><option value="pt">Portuguese</option><option value="no">Norwegian</option>
 </select>
 <div class="label">VOICE</div>
-<select id="voice"><option value="">Browser Default</option></select>
-<button id="sceneView">◉ Scene View</button>
+<select id="voice" data-tab-global-voice="1"><option value="">Browser Default</option><option value="Microsoft David - English (United States)">Microsoft David - English (United States) — en-US</option><option value="Microsoft Mark - English (United States)">Microsoft Mark - English (United States) — en-US</option><option value="Microsoft Zira - English (United States)">Microsoft Zira - English (United States) — en-US</option><option value="Microsoft David Desktop - English (United States)">Microsoft David Desktop - English (United States) — en-US</option><option value="Microsoft Zira Desktop - English (United States)">Microsoft Zira Desktop - English (United States) — en-US</option></select>
+<button id="sceneView" aria-pressed="false">◉ Scene View</button>
 
 <div class="label">DISCOVERY</div>
 <button id="discovery">🔎 Discovery — Click the Scene</button>
@@ -178,9 +177,9 @@ border:1px solid #fff;background:rgba(7,23,39,.65);color:#fff;font-weight:900}
 <div class="tab-card-tools" aria-label="Script card controls"><button type="button" class="tab-card-drag" title="Move script card">↕ Move</button><button type="button" class="tab-card-font-down" title="Decrease text">A−</button><button type="button" class="tab-card-font-up" title="Increase text">A+</button><button type="button" class="tab-card-reset" title="Reset card">Reset</button></div><div class="tab-card-resize" title="Drag to resize script card" aria-label="Resize script card">↘</div>
 
 <div class="kicker">ON THE GOLF COURSE</div>
-<h2 id="title">Golf Adventure</h2>
-<p id="prompt">Click any object in the scene to hear its name.</p>
-<div class="word"><strong id="line">campo de golf</strong><div class="translation" id="translation">golf course</div></div>
+<h2 id="title">Click &amp; Discover</h2>
+<p id="prompt">You found clubhouse.</p>
+<div class="word"><strong id="line">clubhouse</strong><div class="translation" id="translation"></div></div>
 <p id="status"></p>
 <div class="controls">
 <button id="normal">🔊 Speak</button><button id="slow">🐢 Slow</button><button id="replay">↻ Replay</button><button id="nextPhrase">Next phrase →</button>
@@ -207,28 +206,28 @@ border:1px solid #fff;background:rgba(7,23,39,.65);color:#fff;font-weight:900}
 
 
 <!-- Hotspots mapped to the approved Golf keeper JPG. -->
-<button class="hotspot" data-word="grandpa" style="left:23%;top:49%;width:8%;height:25%" aria-label="Grandpa"></button>
-<button class="hotspot" data-word="grandma" style="left:29%;top:50%;width:7%;height:24%" aria-label="Grandma"></button>
-<button class="hotspot" data-word="bee" style="left:62%;top:53%;width:10%;height:23%" aria-label="Golf Bee"></button>
-<button class="hotspot" data-word="golfer" style="left:44%;top:51%;width:8%;height:26%" aria-label="Golfer"></button>
-<button class="hotspot" data-word="crew" style="left:19%;top:52%;width:56%;height:26%" aria-label="Golf crew"></button>
-<button class="hotspot" data-word="dog" style="left:69%;top:59%;width:7%;height:18%" aria-label="German Shepherd"></button>
-<button class="hotspot" data-word="smalldog" style="left:74%;top:68%;width:5%;height:10%" aria-label="Small dog"></button>
-<button class="hotspot" data-word="ball" style="left:60%;top:78%;width:5%;height:8%" aria-label="Golf ball"></button>
-<button class="hotspot" data-word="flag" style="left:66%;top:46%;width:7%;height:35%" aria-label="Yellow flag"></button>
-<button class="hotspot" data-word="club" style="left:46%;top:51%;width:11%;height:17%" aria-label="Golf club"></button>
-<button class="hotspot" data-word="green" style="left:18%;top:70%;width:68%;height:29%" aria-label="Putting green"></button>
-<button class="hotspot" data-word="bunker" style="left:84%;top:67%;width:16%;height:18%" aria-label="Sand bunker"></button>
-<button class="hotspot" data-word="cart" style="left:0%;top:50%;width:15%;height:20%" aria-label="Golf cart"></button>
-<button class="hotspot" data-word="carttwo" style="left:87%;top:50%;width:13%;height:17%" aria-label="Golf cart"></button>
-<button class="hotspot" data-word="pond" style="left:36%;top:44%;width:48%;height:19%" aria-label="Pond"></button>
-<button class="hotspot" data-word="waterfall" style="left:61%;top:39%;width:12%;height:13%" aria-label="Waterfall"></button>
-<button class="hotspot" data-word="clubhouse" style="left:77%;top:24%;width:23%;height:24%" aria-label="Clubhouse"></button>
-<button class="hotspot" data-word="mountain" style="left:39%;top:4%;width:45%;height:30%" aria-label="Snowy mountains"></button>
-<button class="hotspot" data-word="forest" style="left:0%;top:0%;width:35%;height:48%" aria-label="Pine forest"></button>
-<button class="hotspot" data-word="fairway" style="left:26%;top:33%;width:36%;height:19%" aria-label="Fairway"></button>
 
-</main>
+
+
+<button class="hotspot" data-word="golfer" style="left: 41.29%; top: 55.17%; width: 5.76%; height: 31%;" aria-label="Golfer" data-sound="sounds/golf-club-hit-series.mp3"></button>
+
+<button class="hotspot" data-word="dog" style="left: 67.85%; top: 61.13%; width: 7%; height: 18%;" aria-label="German Shepherd" data-sound="sounds/dog-panting.wav"></button>
+<button class="hotspot" data-word="smalldog" style="left: 73.43%; top: 73.37%; width: 5%; height: 10%;" aria-label="Small dog"></button>
+<button class="hotspot" data-word="ball" style="left:60%;top:78%;width:5%;height:8%" aria-label="Golf ball"></button>
+<button class="hotspot" data-word="flag" style="left: 66.63%; top: 49.24%; width: 2.1%; height: 17.13%;" aria-label="Yellow flag"></button>
+<button class="hotspot" data-word="club" style="left: 46.89%; top: 69.24%; width: 2.51%; height: 17.46%;" aria-label="Golf club"></button>
+<button class="hotspot" data-word="green" style="left: 24.35%; top: 93.55%; width: 52.48%; height: 7.7%;" aria-label="Putting green"></button>
+<button class="hotspot" data-word="bunker" style="left: 41.77%; top: 38.3%; width: 3.24%; height: 8.74%;" aria-label="Sand bunker"></button>
+<button class="hotspot" data-word="cart" style="left: 1.04%; top: 50%; width: 5.99%; height: 10.74%;" aria-label="Golf cart"></button>
+<button class="hotspot" data-word="carttwo" style="left: 87.26%; top: 47.96%; width: 13.68%; height: 9.13%;" aria-label="Golf cart"></button>
+
+<button class="hotspot" data-word="waterfall" style="left: 57.61%; top: 40.39%; width: 12%; height: 13%;" aria-label="Waterfall" data-sound="sounds/water-stream.mp3"></button>
+<button class="hotspot" data-word="clubhouse" style="left: 77.63%; top: 27.05%; width: 23.16%; height: 13.63%;" aria-label="Clubhouse" data-sound="sounds/crowd-shopping.mp3"></button>
+<button class="hotspot" data-word="mountain" style="left: 48.58%; top: 6.97%; width: 25.57%; height: 13.61%;" aria-label="Snowy mountains"></button>
+<button class="hotspot" data-word="forest" style="left: 11.3%; top: 21.02%; width: 36.82%; height: 15.59%;" aria-label="Pine forest" data-sound="sounds/birds-forest.mp3"></button>
+<button class="hotspot" data-word="fairway" style="left: 37.29%; top: 38.97%; width: 24.02%; height: 12.61%;" aria-label="Fairway"></button>
+
+<button type="button" class="hotspot" data-word="caddy" aria-label="caddy" data-tb-custom="1" data-tb-en="caddy" data-tb-es="caddie" data-tb-fr="caddie" data-tb-de="Caddie" data-tb-it="caddy" data-tb-pt="transportador" data-tb-no="caddie" style="left: 60.4%; top: 61.53%; width: 5.32%; height: 16.8%;"></button><button type="button" class="hotspot" data-word="pond" aria-label="pond" data-tb-custom="1" data-tb-en="pond" data-tb-es="estanque" data-tb-fr="étang" data-tb-de="Teich" data-tb-it="laghetto" data-tb-pt="lago" data-tb-no="dam" style="left: 45.03%; top: 51.51%; width: 18.71%; height: 4.68%;"></button><button type="button" class="hotspot" data-word="yellow lab" aria-label="yellow lab" data-tb-custom="1" data-tb-en="yellow lab" data-tb-es="laboratorio amarillo" data-tb-fr="laboratoire jaune" data-tb-de="gelbes Labor" data-tb-it="laboratorio giallo" data-tb-pt="laboratório amarelo" data-tb-no="gult laboratorium" style="left: 24.25%; top: 58.38%; width: 6.36%; height: 23.74%;" data-sound="sounds/dog-panting.wav"></button><button type="button" class="hotspot" data-word="spectator" aria-label="spectator" data-tb-custom="1" data-tb-en="spectator" data-tb-es="espectador" data-tb-fr="spectateur" data-tb-de="Zuschauer" data-tb-it="spettatore" data-tb-pt="espectador" data-tb-no="tilskuer" style="left: 32.2%; top: 62.69%; width: 4.7%; height: 13.09%;" data-sound="sounds/girl-laugh.mp3"></button><button type="button" class="hotspot" data-word="spectator" aria-label="spectator" data-tb-custom="1" data-tb-en="spectator" data-tb-es="espectador" data-tb-fr="spectateur" data-tb-de="Zuschauer" data-tb-it="spettatore" data-tb-pt="espectador" data-tb-no="tilskuer" style="left: 78.13%; top: 61.34%; width: 6.52%; height: 22.63%;" data-sound="sounds/soft-laughing.mp3"></button></main>
 
 <script>
 const EN={game:"golf course",grandpa:"Grandpa",grandma:"Grandma",bee:"golf bee",golfer:"golfer",crew:"golf crew",dog:"German Shepherd",smalldog:"small dog",ball:"golf ball",flag:"yellow flag",club:"golf club",green:"putting green",bunker:"sand bunker",cart:"golf cart",carttwo:"golf cart",pond:"pond",waterfall:"waterfall",clubhouse:"clubhouse",mountain:"snowy mountains",forest:"pine forest",fairway:"fairway"};
@@ -564,9 +563,10 @@ document.addEventListener('click',function(ev){
 })();
 </script>
 
-</body>
-</html>
+
+
 
 <style id="talkabee-ski-panel-180">
 @media(min-width:761px){.panel{width:180px!important;min-width:180px!important;max-width:180px!important}}
 </style>
+</body></html>
