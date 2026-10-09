@@ -1,6 +1,5 @@
 <!doctype html>
-<html lang="en">
-<head>
+<html lang="en"><head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Talk A Bee — Football Game Adventure</title>
@@ -112,12 +111,13 @@ border:1px solid #fff;background:rgba(7,23,39,.65);color:#fff;font-weight:900}
 
 <!-- TALK A BEE HOTSPOTS VISUALLY RECERTIFIED AGAINST CURRENT SCENE ARTWORK: 2026-10-07 -->
 
+
 <style id="talkabee-bilingual-hotspot-popup-style">
 #talkabee-object-popup{position:fixed;z-index:2147482900;display:none;padding:8px 12px;border-radius:12px;background:rgba(20,20,20,.82);color:white;font-weight:900;font-size:14px;pointer-events:none}
 </style>
 
 </head>
-<body>
+<body class="">
 <div class="talkabee-editions">
 <details>
 <summary>Explore Adventures ▾</summary>
@@ -145,13 +145,13 @@ border:1px solid #fff;background:rgba(7,23,39,.65);color:#fff;font-weight:900}
 <div class="tab-panel-size-controls" aria-label="Activity panel size"><button type="button" class="tab-panel-minus" title="Make activity panel smaller">−</button><button type="button" class="tab-panel-reset" title="Reset activity panel size">Reset</button><button type="button" class="tab-panel-plus" title="Make activity panel larger">+</button></div>
 
 <div class="label">LANGUAGE</div>
-<select id="lang">
+<select id="lang" data-tab-global-voice="1">
 <option value="es">Spanish</option><option value="fr">French</option><option value="en">English</option>
 <option value="de">German</option><option value="it">Italian</option><option value="pt">Portuguese</option><option value="no">Norwegian</option>
 </select>
 <div class="label">VOICE</div>
-<select id="voice"><option value="">Browser Default</option></select>
-<button id="sceneView">◉ Scene View</button>
+<select id="voice" data-tab-global-voice="1"><option value="">Browser Default</option><option value="Microsoft David - English (United States)">Microsoft David - English (United States) — en-US</option><option value="Microsoft Mark - English (United States)">Microsoft Mark - English (United States) — en-US</option><option value="Microsoft Zira - English (United States)">Microsoft Zira - English (United States) — en-US</option><option value="Microsoft David Desktop - English (United States)">Microsoft David Desktop - English (United States) — en-US</option><option value="Microsoft Zira Desktop - English (United States)">Microsoft Zira Desktop - English (United States) — en-US</option></select>
+<button id="sceneView" aria-pressed="false">◉ Scene View</button>
 
 <div class="label">DISCOVERY</div>
 <button id="discovery">🔎 Discovery — Click the Scene</button>
@@ -177,9 +177,9 @@ border:1px solid #fff;background:rgba(7,23,39,.65);color:#fff;font-weight:900}
 <div class="tab-card-tools" aria-label="Script card controls"><button type="button" class="tab-card-drag" title="Move script card">↕ Move</button><button type="button" class="tab-card-font-down" title="Decrease text">A−</button><button type="button" class="tab-card-font-up" title="Increase text">A+</button><button type="button" class="tab-card-reset" title="Reset card">Reset</button></div><div class="tab-card-resize" title="Drag to resize script card" aria-label="Resize script card">↘</div>
 
 <div class="kicker">AT THE FOOTBALL GAME</div>
-<h2 id="title">Football Game Adventure</h2>
-<p id="prompt">Click any object in the scene to hear its name.</p>
-<div class="word"><strong id="line">partido de fútbol americano</strong><div class="translation" id="translation">football game</div></div>
+<h2 id="title">Click &amp; Discover</h2>
+<p id="prompt">You found stadium lights.</p>
+<div class="word"><strong id="line">luces del estadio</strong><div class="translation" id="translation">stadium lights</div></div>
 <p id="status"></p>
 <div class="controls">
 <button id="normal">🔊 Speak</button><button id="slow">🐢 Slow</button><button id="replay">↻ Replay</button><button id="nextPhrase">Next phrase →</button>
@@ -200,28 +200,28 @@ border:1px solid #fff;background:rgba(7,23,39,.65);color:#fff;font-weight:900}
 
 
 <!-- Hotspots mapped to the approved wide Football Game Adventure JPG. -->
-<button class="hotspot" data-word="bee" style="left:43%;top:47%;width:13%;height:27%" aria-label="Bee quarterback"></button>
-<button class="hotspot" data-word="football" style="left:44%;top:49%;width:7%;height:10%" aria-label="Football"></button>
+<button class="hotspot" data-word="bee" style="left: 46.02%; top: 56.72%; width: 5.5%; height: 17.09%;" aria-label="Bee quarterback"></button>
+<button class="hotspot" data-word="football" style="left: 49.78%; top: 57.7%; width: 4.5%; height: 6.48%;" aria-label="Football"></button>
 <button class="hotspot" data-word="referee" style="left:33%;top:45%;width:9%;height:24%" aria-label="Referee"></button>
-<button class="hotspot" data-word="scoreboard" style="left:16%;top:28%;width:18%;height:22%" aria-label="Scoreboard"></button>
+<button class="hotspot" data-word="scoreboard" style="left: 18.86%; top: 31.52%; width: 14.09%; height: 15.52%;" aria-label="Scoreboard"></button>
 <button class="hotspot" data-word="lake" style="left:38%;top:36%;width:25%;height:13%" aria-label="Mountain lake"></button>
-<button class="hotspot" data-word="mountains" style="left:29%;top:13%;width:43%;height:25%" aria-label="Mountains"></button>
-<button class="hotspot" data-word="blueplayer" style="left:35%;top:51%;width:11%;height:23%" aria-label="Blue team player"></button>
-<button class="hotspot" data-word="center" style="left:55%;top:51%;width:12%;height:23%" aria-label="Center"></button>
-<button class="hotspot" data-word="receiver" style="left:82%;top:49%;width:10%;height:23%" aria-label="Receiver"></button>
-<button class="hotspot" data-word="defender" style="left:72%;top:47%;width:15%;height:29%" aria-label="Red defender"></button>
-<button class="hotspot" data-word="defender2" style="left:90%;top:45%;width:10%;height:31%" aria-label="Red defender"></button>
-<button class="hotspot" data-word="helmet" style="left:48%;top:45%;width:8%;height:12%" aria-label="Football helmet"></button>
-<button class="hotspot" data-word="field" style="left:0%;top:58%;width:100%;height:42%" aria-label="Football field"></button>
-<button class="hotspot" data-word="yardline" style="left:18%;top:69%;width:66%;height:19%" aria-label="Yard line"></button>
-<button class="hotspot" data-word="crowd" style="left:61%;top:35%;width:39%;height:23%" aria-label="Crowd"></button>
-<button class="hotspot" data-word="pressbox" style="left:82%;top:14%;width:18%;height:24%" aria-label="Press box"></button>
-<button class="hotspot" data-word="flag" style="left:24%;top:13%;width:10%;height:19%" aria-label="Flag"></button>
-<button class="hotspot" data-word="lights" style="left:69%;top:6%;width:12%;height:22%" aria-label="Stadium lights"></button>
-<button class="hotspot" data-word="sailboats" style="left:43%;top:35%;width:14%;height:11%" aria-label="Sailboats"></button>
-<button class="hotspot" data-word="forest" style="left:0%;top:8%;width:28%;height:50%" aria-label="Forest"></button>
+<button class="hotspot" data-word="mountains" style="left: 38.48%; top: 14.68%; width: 30.5%; height: 11.32%;" aria-label="Mountains"></button>
 
-</main>
+<button class="hotspot" data-word="center" style="left: 56.93%; top: 52.3%; width: 4.55%; height: 15.31%;" aria-label="Center"></button>
+<button class="hotspot" data-word="receiver" style="left: 82.89%; top: 49.93%; width: 5.83%; height: 17.72%;" aria-label="Receiver"></button>
+<button class="hotspot" data-word="defender" style="left: 72%; top: 47%; width: 7.86%; height: 23.63%;" aria-label="Red defender"></button>
+<button class="hotspot" data-word="defender2" style="left: 93.13%; top: 49.07%; width: 6.93%; height: 23.87%;" aria-label="Red defender"></button>
+<button class="hotspot" data-word="helmet" style="left: 48.78%; top: 47.96%; width: 4.77%; height: 11.26%;" aria-label="Football helmet"></button>
+<button class="hotspot" data-word="field" style="left: 9.37%; top: 69.95%; width: 25.42%; height: 24.5%;" aria-label="Football field"></button>
+<button class="hotspot" data-word="yardline" style="left: 28.94%; top: 81.46%; width: 64.65%; height: 6.67%;" aria-label="Yard line"></button>
+<button class="hotspot" data-word="crowd" style="left: 61.73%; top: 36.11%; width: 38.64%; height: 15.87%;" aria-label="Crowd" data-sound="sounds/football.mp3"></button>
+<button class="hotspot" data-word="pressbox" style="left: 81.27%; top: 23.16%; width: 17.32%; height: 11.78%;" aria-label="Press box" data-sound="sounds/football.mp3"></button>
+<button class="hotspot" data-word="flag" style="left: 26.97%; top: 14.57%; width: 4.69%; height: 10.94%;" aria-label="Flag"></button>
+<button class="hotspot" data-word="lights" style="left: 73.17%; top: 7.3%; width: 5.59%; height: 18.48%;" aria-label="Stadium lights"></button>
+<button class="hotspot" data-word="sailboats" style="left:43%;top:35%;width:14%;height:11%" aria-label="Sailboats"></button>
+<button class="hotspot" data-word="forest" style="left: 32.61%; top: 29.01%; width: 23.32%; height: 6.21%;" aria-label="Forest"></button>
+
+<button type="button" class="hotspot" data-word="referee" aria-label="referee" data-tb-custom="1" data-tb-en="referee" data-tb-es="árbitro" data-tb-fr="arbitre" data-tb-de="Schiedsrichter" data-tb-it="arbitro" data-tb-pt="árbitro" data-tb-no="dommer" style="left: 24.72%; top: 49.42%; width: 6.16%; height: 19.94%;" data-sound="sounds/referee-whistle.mp3"></button></main>
 
 <script>
 const EN={game:"football game",bee:"bee quarterback",football:"football",referee:"referee",scoreboard:"scoreboard",lake:"mountain lake",mountains:"mountains",blueplayer:"offensive player",center:"center",receiver:"receiver",defender:"defender",defender2:"defender",helmet:"football helmet",field:"football field",yardline:"yard line",crowd:"crowd",pressbox:"press box",flag:"flag",lights:"stadium lights",sailboats:"sailboats",forest:"forest"};
@@ -491,6 +491,7 @@ document.addEventListener('click',function(ev){
 },true);
 })();</script>
 
+
 <script id="talkabee-scene-view-safe-reset">
 (function(){
   function resetTalkABeeSceneView(){
@@ -545,9 +546,10 @@ document.addEventListener('click',function(ev){
 })();
 </script>
 
-</body>
-</html>
+
+
 
 <style id="talkabee-ski-panel-180">
 @media(min-width:761px){.panel{width:180px!important;min-width:180px!important;max-width:180px!important}}
 </style>
+</body></html>
