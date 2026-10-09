@@ -861,7 +861,6 @@ body.tb-hs-editing #yachtWorld .yacht-hotspot.tb-hs-active>.tb-hs-handle{
 </head>
 <body class="talkabee-world-open sea-adventures-open">
 <div id="talkabee-sea-explore"><details><summary>Explore Adventures ▾</summary><nav class="edition-row" aria-label="Talk A Bee Editions"><a href="index.html">Main Adventures</a><a href="Talk-A-Bee-More-Adventures.html">Community Edition</a><a href="Talk-A-Bee-Directory-3.html">Travel Edition</a><a href="Talk-A-Bee-Directory-4.html">Sports Edition</a><a href="Talk-A-Bee-Directory-5.html">Space Edition</a><a href="Talk-A-Bee-Directory-6.html">Family &amp; Special</a></nav></details></div>
-
 <nav class="talkabee-prev-next-nav" aria-label="Adventure navigation"><a href="Talk-A-Bee-Aunt-Julies-Island-Retreat.html" aria-label="Previous page" title="Previous">‹</a><a href="Talk-A-Bee-Train-Station-Adventure.html" aria-label="Next page" title="Next">›</a></nav>
 
 <style id="sea-standalone-clean-shell">
@@ -946,11 +945,11 @@ body>header,body>footer,.final-cta,.hero,#mainDirectory{display:none!important;}
 <div class="yacht-panel tab-master-card" style="transform-origin: center bottom 0px !important; transform: translateX(-50%) scale(0.67) !important;">
 <div class="tab-card-tools" aria-label="Script card controls"><button type="button" class="tab-card-drag" title="Move script card">↕ Move</button><button type="button" class="tab-card-font-down" title="Decrease text">A−</button><button type="button" class="tab-card-font-up" title="Increase text">A+</button><button type="button" class="tab-card-reset" title="Reset card">Reset</button></div><div class="tab-card-resize" title="Drag to resize script card" aria-label="Resize script card">↘</div>
 
-<div class="yacht-kicker kicker" id="yachtKicker">CLICK &amp; DISCOVER</div>
-<h2 id="yachtTitle">perro</h2>
-<p id="yachtPrompt">dog</p>
+<div class="yacht-kicker kicker" id="yachtKicker">ON DECK TALK</div>
+<h2 id="yachtTitle">A beautiful evening on the water.</h2>
+<p id="yachtPrompt">Hear a short sentence, then click the words one at a time.</p>
 <div class="yacht-wordline word" id="yachtWordline"><button type="button">Estamos</button><button type="button">en</button><button type="button">el</button><button type="button">yate.</button></div>
-<div class="yacht-translation translation" id="yachtTranslation">perro — dog</div>
+<div class="yacht-translation translation" id="yachtTranslation">We are on the yacht.</div>
 <div class="yacht-actions controls" id="yachtActions" style="display: flex;">
 <button class="primary" id="yachtPlay" type="button">🔊 Speak</button>
 <button id="yachtSlow" type="button">🐢 Slow</button>
@@ -1547,7 +1546,7 @@ document.addEventListener('click',function(ev){
  ev.preventDefault();ev.stopPropagation();
  const l=curLang(),txt=textFor(el,l),en=textFor(el,'en'),key=el.dataset.word||el.dataset.object||en;
  try{if(typeof showWord==='function')showWord(key);else{if(typeof line!=='undefined'&&line)line.textContent=txt;if(typeof translation!=='undefined'&&translation)translation.textContent=l==='en'?'':en}}catch(e){}
- try{if(typeof speak==='function'){let done=false;const after=()=>{if(done)return;done=true;if(el.dataset.sound){try{const a=new Audio(el.dataset.sound);a.play().catch(()=>{})}catch(e){}}};speak(txt,.82,after);if(el.dataset.sound)setTimeout(after,1400)}else if('speechSynthesis'in window){speechSynthesis.cancel();const u=new SpeechSynthesisUtterance(txt);u.lang=({es:'es-ES',fr:'fr-FR',en:'en-US',de:'de-DE',it:'it-IT',pt:'pt-PT',no:'nb-NO'})[l]||l;speechSynthesis.speak(u)}}catch(e){}
+ try{if(typeof speak==='function'){speak(txt,.82);if(el.dataset.sound){setTimeout(()=>{const a=new Audio(el.dataset.sound);a.play().catch(err=>console.warn('Talk A Bee sound failed:',el.dataset.sound,err))},1500)}}else if('speechSynthesis'in window){speechSynthesis.cancel();const u=new SpeechSynthesisUtterance(txt);u.lang=({es:'es-ES',fr:'fr-FR',en:'en-US',de:'de-DE',it:'it-IT',pt:'pt-PT',no:'nb-NO'})[l]||l;speechSynthesis.speak(u)}}catch(e){}
 },true);
 })();</script>
 
