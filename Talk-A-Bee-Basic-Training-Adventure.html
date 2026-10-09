@@ -111,6 +111,8 @@ border:1px solid #fff;background:rgba(7,23,39,.65);color:#fff;font-weight:900}
 
 <!-- TALK A BEE HOTSPOTS VISUALLY RECERTIFIED AGAINST CURRENT SCENE ARTWORK: 2026-10-07 -->
 
+
+
 <style id="talkabee-bilingual-hotspot-popup-style">
 #talkabee-object-popup{position:fixed;z-index:2147482900;display:none;padding:8px 12px;border-radius:12px;background:rgba(20,20,20,.82);color:white;font-weight:900;font-size:14px;pointer-events:none}
 </style>
@@ -224,7 +226,7 @@ border:1px solid #fff;background:rgba(7,23,39,.65);color:#fff;font-weight:900}
 <button class="hotspot" data-word="rope" style="left: 55.2%; top: 21.13%; width: 3.01%; height: 30.07%;" aria-label="Climbing rope"></button>
 <button class="hotspot" data-word="tires" style="left: 55.8%; top: 60.95%; width: 11.29%; height: 9.18%;" aria-label="Training tires"></button>
 <button class="hotspot" data-word="tunnel" style="left: 88.2%; top: 63.78%; width: 10.59%; height: 10.98%;" aria-label="Training tunnel"></button>
-<button class="hotspot" data-word="helicopter" style="left: 68.13%; top: 6.85%; width: 16.66%; height: 12.57%;" aria-label="Helicopter"></button>
+<button class="hotspot" data-word="helicopter" style="left: 68.13%; top: 6.85%; width: 16.66%; height: 12.57%;" aria-label="Helicopter" data-sound="sounds/helicopter-flying.mp3"></button>
 <button class="hotspot" data-word="tower" style="left: 87.87%; top: 21.54%; width: 6.15%; height: 15.28%;" aria-label="Observation tower"></button>
 <button class="hotspot" data-word="tents" style="left: 25.72%; top: 45.5%; width: 14.15%; height: 6.89%;" aria-label="Training tents"></button>
 <button class="hotspot" data-word="truck" style="left: 93.01%; top: 51.08%; width: 6.1%; height: 7.87%;" aria-label="Military truck"></button>
@@ -507,6 +509,7 @@ document.addEventListener('click',function(ev){
  try{if(typeof speak==='function'){let done=false;const after=()=>{if(done)return;done=true;if(el.dataset.sound){try{const a=new Audio(el.dataset.sound);a.play().catch(()=>{})}catch(e){}}};speak(txt,.82,after);if(el.dataset.sound)setTimeout(after,1400)}else if('speechSynthesis'in window){speechSynthesis.cancel();const u=new SpeechSynthesisUtterance(txt);u.lang=({es:'es-ES',fr:'fr-FR',en:'en-US',de:'de-DE',it:'it-IT',pt:'pt-PT',no:'nb-NO'})[l]||l;speechSynthesis.speak(u)}}catch(e){}
 },true);
 })();</script>
+
 
 <script id="talkabee-scene-view-safe-reset">
 (function(){
