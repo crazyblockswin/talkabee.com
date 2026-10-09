@@ -110,18 +110,7 @@ border:1px solid #fff;background:rgba(7,23,39,.65);color:#fff;font-weight:900}
 </style>
 
 <!-- TALK A BEE HOTSPOTS VISUALLY RECERTIFIED AGAINST CURRENT SCENE ARTWORK: 2026-10-07 -->
-<style id="talkabee-hotspot-editor-style">
-#tb-hs-editor{position:fixed;right:16px;bottom:16px;z-index:2147483646;font:700 12px Arial,sans-serif;display:flex;flex-wrap:wrap;justify-content:flex-end;gap:6px;max-width:650px}
-#tb-hs-editor button,#tb-hs-editor input{border:1px solid #fff;border-radius:10px;background:#000;color:#fff;padding:9px 11px;box-shadow:0 4px 14px #0006}
-#tb-hs-editor input{background:#fff;color:#111;min-width:180px;font-weight:400}#tb-hs-editor button{cursor:pointer}
-body.tb-hs-editing .hotspot,body.tb-hs-editing .home-hotspot,body.tb-hs-editing .yacht-hotspot,body.tb-hs-editing .hotspots button,body.tb-hs-editing .train-hotspots button{display:block!important;outline:2px solid #ffea00!important;background:rgba(255,234,0,.18)!important;pointer-events:auto!important;cursor:move!important;visibility:visible!important;opacity:1!important;z-index:2147483005!important}
-body.tb-hs-editing .tb-hs-active{outline:3px solid #00ffff!important;background:rgba(0,255,255,.18)!important}
-.tb-hs-handle{position:absolute!important;right:-7px!important;bottom:-7px!important;left:auto!important;top:auto!important;width:14px!important;height:14px!important;border-radius:3px!important;background:#00ffff!important;border:2px solid #000!important;z-index:2147483647!important;cursor:nwse-resize!important;display:none!important;transform:none!important}
-body.tb-hs-editing .tb-hs-active>.tb-hs-handle{display:block!important}
 
-#tb-hs-editor .tb-sound-name{min-width:150px;max-width:230px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font:12px/1.2 Arial,sans-serif;color:#fff;opacity:.9}
-#tb-hs-editor input[type="file"].tb-sound-file{display:none!important}
-</style>
 
 <style id="talkabee-bilingual-hotspot-popup-style">
 #talkabee-object-popup{position:fixed;z-index:2147482900;display:none;padding:8px 12px;border-radius:12px;background:rgba(20,20,20,.82);color:white;font-weight:900;font-size:14px;pointer-events:none}
@@ -155,7 +144,7 @@ body.tb-hs-editing .tb-hs-active>.tb-hs-handle{display:block!important}
 <h1>🚁 Helicopter Mountain Rescue Adventure</h1>
 <div class="tab-panel-size-controls" aria-label="Activity panel size"><button type="button" class="tab-panel-minus" title="Make activity panel smaller">−</button><button type="button" class="tab-panel-reset" title="Reset activity panel size">Reset</button><button type="button" class="tab-panel-plus" title="Make activity panel larger">+</button></div>
 
-<div class="label">MY LANGUAGE</div><div id="tb-native-panel-slot"></div><div class="label">LEARNING LANGUAGE</div>
+<div class="label">LANGUAGE</div>
 <select id="lang" data-tab-global-voice="1">
 <option value="es">Spanish</option><option value="fr">French</option><option value="en">English</option>
 <option value="de">German</option><option value="it">Italian</option><option value="pt">Portuguese</option><option value="no">Norwegian</option>
@@ -496,108 +485,7 @@ document.addEventListener('click',function(ev){
  try{if(typeof speak==='function'){let done=false;const after=()=>{if(done)return;done=true;if(el.dataset.sound){try{const a=new Audio(el.dataset.sound);a.play().catch(()=>{})}catch(e){}}};speak(txt,.82,after);if(el.dataset.sound)setTimeout(after,1400)}else if('speechSynthesis'in window){speechSynthesis.cancel();const u=new SpeechSynthesisUtterance(txt);u.lang=({es:'es-ES',fr:'fr-FR',en:'en-US',de:'de-DE',it:'it-IT',pt:'pt-PT',no:'nb-NO'})[l]||l;speechSynthesis.speak(u)}}catch(e){}
 },true);
 })();</script>
-<script id="talkabee-hotspot-editor-v10">
-(()=>{
-const SEL='.hotspot,.home-hotspot,.yacht-hotspot,.hotspots button,.train-hotspots button';
-let editing=false,active=null,adding=false,pendingName='',pendingTranslations=null;
-let selectedSoundFile=null;
-const all=()=>[...document.querySelectorAll(SEL)].filter(x=>!x.closest('#tb-hs-editor'));
-function parentFor(el){return el.offsetParent||el.parentElement||document.body}
-function pct(v,n){return +(v/n*100).toFixed(2)}
-function cleanActive(){if(active){active.classList.remove('tb-hs-active');active.querySelector(':scope > .tb-hs-handle')?.remove()} active=null}
-function select(el){if(!editing||!el)return;cleanActive();active=el;el.classList.add('tb-hs-active');let h=document.createElement('span');h.className='tb-hs-handle';el.appendChild(h);updateSoundUI()}
-function semanticNew(name){
- const existing=all()[0]; if(!existing)return null;
- const el=document.createElement('button');el.type='button';
- if(existing.classList.contains('home-hotspot')){el.className='home-hotspot show'}
- else if(existing.classList.contains('yacht-hotspot')){el.className='yacht-hotspot'}
- else if(existing.classList.contains('hotspot')){el.className='hotspot'}
- else if(existing.className)el.className=existing.className;
- if(existing.hasAttribute('data-object'))el.dataset.object=name;else el.dataset.word=name;
- if(existing.hasAttribute('data-en'))el.dataset.en=name;
- if(existing.id&&!existing.hasAttribute('data-word')&&!existing.hasAttribute('data-object'))el.id=name.toLowerCase().replace(/[^a-z0-9_-]+/g,'-').replace(/^-+|-+$/g,'');
- el.setAttribute('aria-label',name);if(pendingTranslations&&window.TB_registerNewHotspot)window.TB_registerNewHotspot(el,pendingTranslations);
- return el
-}
-function hotspotContainer(){const e=all()[0];return e?e.parentElement:null}
-function placeAt(ev){
- if(!editing||!adding)return;
- const host=hotspotContainer();if(!host)return;
- const el=semanticNew(pendingName);if(!el)return;
- host.appendChild(el);
- const r=parentFor(el).getBoundingClientRect();
- el.style.left=pct(ev.clientX-r.left,r.width)+'%';el.style.top=pct(ev.clientY-r.top,r.height)+'%';el.style.width='6%';el.style.height='8%';
- adding=false;pendingName='';pendingTranslations=null;nameBox.value='';select(el);ev.preventDefault();ev.stopPropagation();
-}
-function startDrag(ev,el){
- if(!editing||adding)return; if(ev.target.classList.contains('tb-hs-handle'))return;
- select(el);ev.preventDefault();ev.stopPropagation();
- const p=parentFor(el),r=p.getBoundingClientRect();let sx=ev.clientX,sy=ev.clientY;
- let l=parseFloat(el.style.left)||pct(el.offsetLeft,r.width),t=parseFloat(el.style.top)||pct(el.offsetTop,r.height);
- const move=e=>{el.style.left=(l+(e.clientX-sx)/r.width*100).toFixed(2)+'%';el.style.top=(t+(e.clientY-sy)/r.height*100).toFixed(2)+'%'};
- const up=()=>{window.removeEventListener('pointermove',move,true);window.removeEventListener('pointerup',up,true)};
- window.addEventListener('pointermove',move,true);window.addEventListener('pointerup',up,true)
-}
-function startResize(ev,el){
- if(!editing)return;ev.preventDefault();ev.stopPropagation();
- const p=parentFor(el),r=p.getBoundingClientRect();let sx=ev.clientX,sy=ev.clientY;
- let w=parseFloat(el.style.width)||pct(el.offsetWidth,r.width),h=parseFloat(el.style.height)||pct(el.offsetHeight,r.height);
- const move=e=>{el.style.width=Math.max(1,w+(e.clientX-sx)/r.width*100).toFixed(2)+'%';el.style.height=Math.max(1,h+(e.clientY-sy)/r.height*100).toFixed(2)+'%'};
- const up=()=>{window.removeEventListener('pointermove',move,true);window.removeEventListener('pointerup',up,true)};
- window.addEventListener('pointermove',move,true);window.addEventListener('pointerup',up,true)
-}
-function soundPath(el){return el&&el.dataset?String(el.dataset.sound||'').trim():''}
-function soundLabel(path){return path?path.split('/').pop():'No sound'}
-function updateSoundUI(){if(typeof soundName==='undefined')return;const p=soundPath(active);soundName.textContent=active?soundLabel(p):'Select a hotspot';removeSound.disabled=testSound.disabled=!active||!p;chooseSound.disabled=!active}
-function stopEditorPreview(){if(window.__tbHsPreview){try{window.__tbHsPreview.pause();window.__tbHsPreview.currentTime=0}catch(e){}window.__tbHsPreview=null}}
-function previewSound(){if(!active)return;stopEditorPreview();let src='';if(selectedSoundFile&&soundPath(active)===selectedSoundFile.name)src=URL.createObjectURL(selectedSoundFile);else src=soundPath(active);if(!src)return;const a=new Audio(src);window.__tbHsPreview=a;a.play().catch(()=>{});a.onended=()=>{if(src.startsWith('blob:'))URL.revokeObjectURL(src);if(window.__tbHsPreview===a)window.__tbHsPreview=null}}
-function assignSoundFile(file){if(!active||!file)return;selectedSoundFile=file;active.dataset.sound='sounds/'+file.name;updateSoundUI();previewSound()}
-function removeAssignedSound(){if(!active)return;stopEditorPreview();active.removeAttribute('data-sound');selectedSoundFile=null;updateSoundUI()}
-const bar=document.createElement('div');bar.id='tb-hs-editor';
-const edit=document.createElement('button');edit.textContent='Edit Hotspots';
-const nameBox=document.createElement('input');nameBox.placeholder='hotspot name';
-const add=document.createElement('button');add.textContent='Add Hotspot';
-const del=document.createElement('button');del.textContent='Delete Hotspot';
-const save=document.createElement('button');save.textContent='Save Working HTML';
-const exportServer=document.createElement('button');exportServer.textContent='Export Server HTML';
-const soundFile=document.createElement('input');soundFile.type='file';soundFile.accept='audio/*,.mp3,.wav,.ogg,.m4a';soundFile.className='tb-sound-file';
-const chooseSound=document.createElement('button');chooseSound.textContent='Choose Sound';chooseSound.disabled=true;
-const testSound=document.createElement('button');testSound.textContent='Test Sound';testSound.disabled=true;
-const removeSound=document.createElement('button');removeSound.textContent='Remove Sound';removeSound.disabled=true;
-const soundName=document.createElement('span');soundName.className='tb-sound-name';soundName.textContent='Select a hotspot';
-bar.append(edit,nameBox,add,del,chooseSound,testSound,removeSound,soundName,save,exportServer,soundFile);document.body.appendChild(bar);nameBox.style.display=add.style.display=del.style.display=chooseSound.style.display=testSound.style.display=removeSound.style.display=soundName.style.display=save.style.display=exportServer.style.display='none';
-chooseSound.onclick=()=>{if(active){soundFile.value='';soundFile.click()}};
-soundFile.onchange=()=>{const f=soundFile.files&&soundFile.files[0];if(f)assignSoundFile(f)};
-testSound.onclick=previewSound;
-removeSound.onclick=removeAssignedSound;
-edit.onclick=()=>{editing=!editing;document.body.classList.toggle('tb-hs-editing',editing);edit.textContent=editing?'Exit Editor':'Edit Hotspots';nameBox.style.display=add.style.display=del.style.display=chooseSound.style.display=testSound.style.display=removeSound.style.display=soundName.style.display=save.style.display=exportServer.style.display=editing?'':'none';if(!editing){adding=false;stopEditorPreview();cleanActive()}updateSoundUI()};
-add.onclick=async()=>{if(!editing)return;const n=(nameBox.value||'').trim().toLowerCase().replace(/\s+/g,' ');if(!n){nameBox.focus();return}pendingName=n;add.disabled=true;const oldText=add.textContent;add.textContent='Translating...';try{pendingTranslations=window.TB_prepareNewHotspotTranslations?await window.TB_prepareNewHotspotTranslations(n):{en:n}}catch(e){pendingTranslations={en:n}}finally{add.disabled=false;add.textContent=oldText}adding=true;cleanActive()};
-del.onclick=()=>{if(active){stopEditorPreview();active.remove();active=null;selectedSoundFile=null;updateSoundUI()}};
-function downloadableClone(stripEditor){
- const clone=document.documentElement.cloneNode(true);
- clone.querySelector('#tb-hs-editor')?.remove();
- clone.querySelectorAll('#talkabee-object-popup').forEach(function(n){n.remove()});
- clone.querySelectorAll('.tb-hs-handle').forEach(function(n){n.remove()});
- clone.querySelector('body')?.classList.remove('tb-hs-editing','scene-view');
- clone.querySelectorAll('.tb-hs-active,.scene-only,.activity-collapsed').forEach(function(n){n.classList.remove('tb-hs-active','scene-only','activity-collapsed')});
- clone.querySelectorAll('#sceneView,#sceneViewToggle').forEach(function(n){n.setAttribute('aria-pressed','false')});
- if(stripEditor){
-  clone.querySelector('#talkabee-hotspot-editor-style')?.remove();
-  clone.querySelector('#talkabee-hotspot-editor-v10')?.remove();
-  clone.querySelector('#talkabee-hotspot-editor-script')?.remove();
-  clone.querySelector('#tb-hs-readout')?.remove();
- }
- return clone;
-}
-function downloadHTML(stripEditor){
- const clone=downloadableClone(stripEditor),blob=new Blob(['<!doctype html>\n'+clone.outerHTML],{type:'text/html'}),a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download=(location.pathname.split('/').pop()||'adventure.html');a.click();setTimeout(()=>URL.revokeObjectURL(a.href),1000)
-}
-save.onclick=()=>downloadHTML(false);
-exportServer.onclick=()=>downloadHTML(true);
-document.addEventListener('pointerdown',ev=>{if(!editing)return;const h=ev.target.closest('.tb-hs-handle');if(h){startResize(ev,h.parentElement);return}const el=ev.target.closest(SEL);if(el){startDrag(ev,el);return}},true);
-document.addEventListener('click',ev=>{if(!editing)return;if(ev.target.closest('#tb-hs-editor'))return;if(adding){placeAt(ev);return}const el=ev.target.closest(SEL);if(el){ev.preventDefault();ev.stopPropagation();select(el)}},true);
-})();
-</script>
+
 
 <script id="talkabee-scene-view-safe-reset">
 (function(){
@@ -617,7 +505,7 @@ document.addEventListener('click',ev=>{if(!editing)return;if(ev.target.closest('
 (function(){
  if(window.__talkabeeBilingualPopup)return; window.__talkabeeBilingualPopup=true;
  var pop=document.createElement('div');pop.id='talkabee-object-popup';document.body.appendChild(pop);var timer=0;
- function lang(){var s=document.getElementById('adventureLanguage')||document.getElementById('language')||document.querySelector('select[id*="Language"],select[id*="language"]');var v=(document.getElementById('lang')||s);v=v&&v.value?v.value:'en';return v==='nb'?'no':v}
+ function lang(){var s=document.getElementById('adventureLanguage')||document.getElementById('language')||document.querySelector('select[id*="Language"],select[id*="language"]');var v=s&&s.value?s.value:'en';return v==='nb'?'no':v}
  function first(v){return Array.isArray(v)?String(v[0]??''):String(v??'')}
  function engval(v){return Array.isArray(v)?String((v.length>1&&v[1]?v[1]:v[0])??''):String(v??'')}
  function cleanEnglish(el,key){
@@ -648,16 +536,8 @@ document.addEventListener('click',ev=>{if(!editing)return;if(ev.target.closest('
   try{if(typeof EXTRA_WORDS!=='undefined'&&EXTRA_WORDS[l]&&EXTRA_WORDS[l][key])return first(EXTRA_WORDS[l][key])}catch(e){}
   return (el&&el.dataset&&(el.dataset.word||el.dataset.object||el.dataset.en))||key||'';
  }
- function preferred(){try{var saved=localStorage.getItem('talkabee-preferred-language');if(saved&&/^(en|es|fr|de|it|pt|no)$/.test(saved))return saved}catch(e){}var b=(navigator.languages&&navigator.languages[0])||navigator.language||'en';var v=b.toLowerCase().split('-')[0];return v==='nb'||v==='nn'?'no':/^(en|es|fr|de|it|pt|no)$/.test(v)?v:'en'}
- function languageSetting(){if(document.getElementById('tb-preferred-language-setting'))return;var wrap=document.createElement('div');wrap.id='tb-preferred-language-setting';wrap.style.cssText='width:100%;margin:4px 0 12px;display:block;font:inherit';var label=document.createElement('label');label.textContent='My language';label.htmlFor='tb-native-language';label.style.cssText='position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%)';var select=document.createElement('select');select.id='tb-native-language';select.setAttribute('aria-label','Preferred language for bilingual object popups');select.style.cssText='width:100%;box-sizing:border-box';[['en','English'],['es','Spanish'],['fr','French'],['de','German'],['it','Italian'],['pt','Portuguese'],['no','Norwegian']].forEach(function(item){var o=document.createElement('option');o.value=item[0];o.textContent=item[1];select.appendChild(o)});select.value=preferred();select.addEventListener('change',function(){try{localStorage.setItem('talkabee-preferred-language',select.value)}catch(e){}});wrap.appendChild(label);wrap.appendChild(select);(document.getElementById('tb-native-panel-slot')||document.querySelector('.panel')||document.body).appendChild(wrap)}
- languageSetting();
- function safeLookup(el,key,l,en){if(l==='en')return en;var d=el&&el.dataset||{},tag='tb'+l.charAt(0).toUpperCase()+l.slice(1);var value=d[tag]||d[l]||'';if(!value)value=lookup(el,key,l);value=String(value||'').trim();if(!value||value.toLocaleLowerCase()===String(en||'').trim().toLocaleLowerCase()&&l!=='en')return '';return value}
- function show(el,e){if(document.body.classList.contains('tb-hs-editing'))return;var key=(el.dataset&&(el.dataset.word||el.dataset.key||el.dataset.object||el.dataset.en))||el.id||(el.dataset&&el.dataset.name)||el.getAttribute('aria-label')||'';if(!key)return;var l=lang(),p=preferred(),en=cleanEnglish(el,key);if(!en)return;var nativeWord=safeLookup(el,key,p,en),learningWord=safeLookup(el,key,l,en);var names={en:'English',es:'Español',fr:'Français',de:'Deutsch',it:'Italiano',pt:'Português',no:'Norsk'};pop.replaceChildren();var firstLine=document.createElement('div');firstLine.textContent=(names[p]||p)+': '+(nativeWord||'Translation unavailable');var secondLine=document.createElement('div');secondLine.textContent=(names[l]||l)+': '+(learningWord||'Translation unavailable');firstLine.style.fontWeight='600';secondLine.style.marginTop='3px';pop.appendChild(firstLine);pop.appendChild(secondLine);pop.style.display='block';var r=el.getBoundingClientRect(),x=(e&&e.clientX)||r.left+r.width/2,y=(e&&e.clientY)||r.top+r.height/2;var pr=pop.getBoundingClientRect();pop.style.left=Math.max(8,Math.min(innerWidth-pr.width-8,x+12))+'px';pop.style.top=Math.max(8,Math.min(innerHeight-pr.height-8,y-pr.height-10))+'px';clearTimeout(timer);timer=setTimeout(function(){pop.style.display='none'},2600)}
-
- var selector='.hotspot,.home-hotspot,.yacht-hotspot,.hotspots button,.train-hotspots button';
- window.addEventListener('click',function(e){var el=e.target.closest&&e.target.closest(selector);if(el)show(el,e)},true);
- document.addEventListener('pointerover',function(e){var el=e.target.closest&&e.target.closest(selector);if(el&&!el.contains(e.relatedTarget))show(el,e)},true);
- document.addEventListener('focusin',function(e){var el=e.target.closest&&e.target.closest(selector);if(el)show(el,e)},true);
+ function show(el,e){if(document.body.classList.contains('tb-hs-editing'))return;var key=(el.dataset&&(el.dataset.word||el.dataset.key||el.dataset.object||el.dataset.en))||el.id||(el.dataset&&el.dataset.name)||el.getAttribute('aria-label')||'';if(!key)return;var l=lang(),en=cleanEnglish(el,key),word=lookup(el,key,l);if(!word)return;var same=String(word).replace(/^(the|a|an)\s+/i,'').toLowerCase()===String(en).toLowerCase();pop.textContent=(l==='en'||same)?en:(word+' — '+en);pop.style.display='block';var r=el.getBoundingClientRect(),x=(e&&e.clientX)||r.left+r.width/2,y=(e&&e.clientY)||r.top+r.height/2;var pr=pop.getBoundingClientRect();pop.style.left=Math.max(8,Math.min(innerWidth-pr.width-8,x+12))+'px';pop.style.top=Math.max(8,Math.min(innerHeight-pr.height-8,y-pr.height-10))+'px';clearTimeout(timer);timer=setTimeout(function(){pop.style.display='none'},1800)}
+ document.addEventListener('click',function(e){var el=e.target.closest&&e.target.closest('.hotspot,.home-hotspot,.yacht-hotspot,.hotspots button,.train-hotspots button');if(el)show(el,e)},true);
 })();
 </script>
 
