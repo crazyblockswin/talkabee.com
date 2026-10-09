@@ -472,6 +472,19 @@ document.addEventListener('DOMContentLoaded',function(){
 </script>
 
 <!-- TALK A BEE HOTSPOTS VISUALLY RECERTIFIED AGAINST CURRENT SCENE ARTWORK: 2026-10-07 -->
+<style id="talkabee-hotspot-editor-style">
+#tb-hs-editor{position:fixed;right:16px;bottom:16px;z-index:2147483646;font:700 12px Arial,sans-serif;display:flex;flex-wrap:wrap;justify-content:flex-end;gap:6px;max-width:520px}
+#tb-hs-editor button{border:1px solid #fff;border-radius:10px;background:#000;color:#fff;padding:9px 11px;cursor:pointer;box-shadow:0 4px 14px #0006}
+#tb-hs-readout{position:fixed;right:16px;bottom:60px;z-index:2147483646;max-width:460px;background:#000;color:#fff;border:1px solid #fff;border-radius:10px;padding:8px 10px;font:12px/1.35 Consolas,monospace;display:none}
+body.tb-hs-editing #tb-hs-readout{display:block}
+body.tb-hs-editing .hotspot,body.tb-hs-editing .home-hotspot,body.tb-hs-editing .yacht-hotspot,body.tb-hs-editing .train-hotspots button{outline:2px solid #ffea00!important;background:rgba(255,234,0,.18)!important;pointer-events:auto!important;cursor:move!important;visibility:visible!important;opacity:1!important;z-index:2147483005!important}
+body.tb-hs-editing .tb-hs-active{outline:3px solid #00ffff!important;background:rgba(0,255,255,.18)!important}
+.tb-hs-handle{position:absolute!important;right:-7px!important;bottom:-7px!important;left:auto!important;top:auto!important;width:14px!important;height:14px!important;border-radius:3px!important;background:#00ffff!important;border:2px solid #000!important;z-index:2147483647!important;cursor:nwse-resize!important;display:none!important;transform:none!important}
+body.tb-hs-editing .tb-hs-active>.tb-hs-handle{display:block!important}
+
+#tb-hs-editor .tb-sound-name{min-width:150px;max-width:230px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font:12px/1.2 Arial,sans-serif;color:#fff;opacity:.9}
+#tb-hs-editor input[type="file"].tb-sound-file{display:none!important}
+</style>
 
 <style id="talkabee-bilingual-hotspot-popup-style">
 #talkabee-object-popup{position:fixed;z-index:2147482900;display:none;padding:8px 12px;border-radius:12px;background:rgba(20,20,20,.82);color:white;font-weight:900;font-size:14px;pointer-events:none}
@@ -1214,21 +1227,32 @@ Object.keys(extraDiscovery).forEach(lang=>{if(!languageData[lang].objects)langua
 <script id="talkabee-hotspot-custom-sound">
 (function(){if(window.__talkabeeHotspotCustomSound)return;window.__talkabeeHotspotCustomSound=true;const SEL='.hotspot,.home-hotspot,.yacht-hotspot,.hotspots button,.train-hotspots button';let timer=0,current=null;function stop(){clearTimeout(timer);if(current){try{current.pause();current.currentTime=0}catch(e){}current=null}}document.addEventListener('click',function(ev){if(document.body.classList.contains('tb-hs-editing'))return;const h=ev.target.closest&&ev.target.closest(SEL);if(!h||!h.dataset.sound)return;stop();const src=h.dataset.sound;timer=setTimeout(function(){const a=new Audio(src);current=a;a.play().catch(()=>{});a.onended=function(){if(current===a)current=null}},1500)},false)})();
 </script>
-<script id="talkabee-new-hotspot-live-click">(()=>{
+<script id="talkabee-new-hotspot-live-click">
+(()=>{
 if(window.__tbNewHotspotLiveClick)return;window.__tbNewHotspotLiveClick=true;
-const langs=['es','fr','en','de','it','pt','no'];
-function curLang(){try{return (typeof langSel!=='undefined'&&langSel&&langSel.value)||localStorage.getItem('talkabee-learn-language')||'en'}catch(e){return 'en'}}
-function cap(l){return 'tb'+l.charAt(0).toUpperCase()+l.slice(1)}
-function textFor(el,l){const en=el.dataset.tbEn||el.dataset.en||el.dataset.word||el.dataset.object||'';return l==='en'?en:(el.dataset[cap(l)]||en)}
+const codes={es:'es-ES',fr:'fr-FR',en:'en-US',de:'de-DE',it:'it-IT',pt:'pt-PT',no:'nb-NO',el:'el-GR'};
+let currentSound=null, soundTimer=null;
+function lang(){try{return document.querySelector('[id$="Language"]')?.value||localStorage.getItem('talkabee-learn-language')||'en'}catch(e){return 'en'}}
+function translation(el,l){const en=el.dataset.tbEn||el.dataset.en||el.dataset.word||el.dataset.object||'';return l==='en'?en:(el.dataset['tb'+l.charAt(0).toUpperCase()+l.slice(1)]||en)}
+function soundAfterVoice(el){
+ clearTimeout(soundTimer);
+ if(currentSound){try{currentSound.pause();currentSound.currentTime=0}catch(e){}currentSound=null}
+ const path=(el.getAttribute('data-sound')||'').trim();if(!path)return;
+ // The editor stores a path relative to the HTML page. Use that exact saved path.
+ soundTimer=setTimeout(()=>{try{const audio=new Audio(path);currentSound=audio;audio.play().catch(e=>console.warn('Talk A Bee sound could not play:',path,e));audio.onended=()=>{if(currentSound===audio)currentSound=null}}catch(e){console.warn('Talk A Bee sound error:',path,e)}},1500);
+}
 document.addEventListener('click',function(ev){
  if(document.body.classList.contains('tb-hs-editing'))return;
  const el=ev.target.closest&&ev.target.closest('[data-tb-custom="1"]');if(!el)return;
  ev.preventDefault();ev.stopPropagation();
- const l=curLang(),txt=textFor(el,l),en=textFor(el,'en'),key=el.dataset.word||el.dataset.object||en;
- try{if(typeof showWord==='function')showWord(key);else{if(typeof line!=='undefined'&&line)line.textContent=txt;if(typeof translation!=='undefined'&&translation)translation.textContent=l==='en'?'':en}}catch(e){}
- try{if(typeof speak==='function'){let done=false;const after=()=>{if(done)return;done=true;if(el.dataset.sound){try{const a=new Audio(el.dataset.sound);a.play().catch(()=>{})}catch(e){}}};speak(txt,.82,after);if(el.dataset.sound)setTimeout(after,1400)}else if('speechSynthesis'in window){speechSynthesis.cancel();const u=new SpeechSynthesisUtterance(txt);u.lang=({es:'es-ES',fr:'fr-FR',en:'en-US',de:'de-DE',it:'it-IT',pt:'pt-PT',no:'nb-NO'})[l]||l;speechSynthesis.speak(u)}}catch(e){}
+ const l=lang(),txt=translation(el,l),en=translation(el,'en'),key=el.dataset.word||el.dataset.object||en;
+ try{if(typeof showWord==='function')showWord(key);else{const line=document.querySelector('[id$="Line"]');const trans=document.querySelector('[id$="Translation"]');if(line)line.textContent=txt;if(trans)trans.textContent=l==='en'?'':en}}catch(e){}
+ try{if(typeof speak==='function')speak(txt,.82);else if('speechSynthesis'in window){speechSynthesis.cancel();const u=new SpeechSynthesisUtterance(txt);u.lang=codes[l]||l;u.rate=.82;speechSynthesis.speak(u)}}catch(e){}
+ // Always schedule assigned MP3, regardless of which speech function exists.
+ soundAfterVoice(el);
 },true);
-})();</script>
+})();
+</script>
 <script id="talkabee-hotspot-editor-script">
 (()=>{const SEL='.hotspot,.home-hotspot,.yacht-hotspot,.train-hotspots button';let editing=false,active=null,dirty=false,adding=false,pendingName='',pendingTranslations=null;
 const host=(location.hostname||'').toLowerCase();if(host==='talkabee.com'||host==='www.talkabee.com')return;
