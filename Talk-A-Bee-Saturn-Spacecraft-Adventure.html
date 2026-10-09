@@ -1,6 +1,5 @@
 <!doctype html>
-<html lang="en">
-<head>
+<html lang="en"><head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Talk A Bee — Saturn Spacecraft Adventure</title>
@@ -118,7 +117,7 @@ border:1px solid #fff;background:rgba(7,23,39,.65);color:#fff;font-weight:900}
 </style>
 
 </head>
-<body>
+<body class="">
 <div class="talkabee-editions">
 <details>
 <summary>Explore Adventures ▾</summary>
@@ -146,13 +145,13 @@ border:1px solid #fff;background:rgba(7,23,39,.65);color:#fff;font-weight:900}
 <div class="tab-panel-size-controls" aria-label="Activity panel size"><button type="button" class="tab-panel-minus" title="Make activity panel smaller">−</button><button type="button" class="tab-panel-reset" title="Reset activity panel size">Reset</button><button type="button" class="tab-panel-plus" title="Make activity panel larger">+</button></div>
 
 <div class="label">LANGUAGE</div>
-<select id="lang">
+<select id="lang" data-tab-global-voice="1">
 <option value="es">Spanish</option><option value="fr">French</option><option value="en">English</option>
 <option value="de">German</option><option value="it">Italian</option><option value="pt">Portuguese</option><option value="no">Norwegian</option>
 </select>
 <div class="label">VOICE</div>
-<select id="voice"><option value="">Browser Default</option></select>
-<button id="sceneView">◉ Scene View</button>
+<select id="voice" data-tab-global-voice="1"><option value="">Browser Default</option><option value="Microsoft David - English (United States)">Microsoft David - English (United States) — en-US</option><option value="Microsoft Mark - English (United States)">Microsoft Mark - English (United States) — en-US</option><option value="Microsoft Zira - English (United States)">Microsoft Zira - English (United States) — en-US</option><option value="Microsoft David Desktop - English (United States)">Microsoft David Desktop - English (United States) — en-US</option><option value="Microsoft Zira Desktop - English (United States)">Microsoft Zira Desktop - English (United States) — en-US</option></select>
+<button id="sceneView" aria-pressed="false">◉ Scene View</button>
 
 <div class="label">DISCOVERY</div>
 <button id="discovery">🔎 Discovery — Click the Scene</button>
@@ -178,9 +177,9 @@ border:1px solid #fff;background:rgba(7,23,39,.65);color:#fff;font-weight:900}
 <div class="tab-card-tools" aria-label="Script card controls"><button type="button" class="tab-card-drag" title="Move script card">↕ Move</button><button type="button" class="tab-card-font-down" title="Decrease text">A−</button><button type="button" class="tab-card-font-up" title="Increase text">A+</button><button type="button" class="tab-card-reset" title="Reset card">Reset</button></div><div class="tab-card-resize" title="Drag to resize script card" aria-label="Resize script card">↘</div>
 
 <div class="kicker">FLYING PAST SATURN</div>
-<h2 id="title">Saturn Spacecraft Adventure</h2>
-<p id="prompt">Click any object in the scene to hear its name.</p>
-<div class="word"><strong id="line">Saturno</strong><div class="translation" id="translation">Saturn</div></div>
+<h2 id="title">Click &amp; Discover</h2>
+<p id="prompt">You found spacecraft controls.</p>
+<div class="word"><strong id="line">controles de la nave</strong><div class="translation" id="translation">spacecraft controls</div></div>
 <p id="status"></p>
 <div class="controls">
 <button id="normal">🔊 Speak</button><button id="slow">🐢 Slow</button><button id="replay">↻ Replay</button><button id="nextPhrase">Next phrase →</button>
@@ -220,20 +219,20 @@ border:1px solid #fff;background:rgba(7,23,39,.65);color:#fff;font-weight:900}
 <button class="hotspot" data-word="moon" style="left:89%;top:49%;width:11%;height:25%" aria-label="Moon"></button>
 <button class="hotspot" data-word="moon" style="left:55%;top:31%;width:8%;height:13%" aria-label="Moon"></button>
 <button class="hotspot" data-word="stars" style="left:48%;top:0%;width:50%;height:22%" aria-label="Stars"></button>
-<button class="hotspot" data-word="galaxy" style="left:55%;top:0%;width:38%;height:20%" aria-label="Milky Way"></button>
+<button class="hotspot" data-word="galaxy" style="left: 53.69%; top: 4.76%; width: 38%; height: 20%;" aria-label="Milky Way"></button>
 <button class="hotspot" data-word="sunlight" style="left:94%;top:0%;width:6%;height:17%" aria-label="Sunlight"></button>
-<button class="hotspot" data-word="window" style="left:45%;top:8%;width:55%;height:52%" aria-label="Spacecraft window"></button>
-<button class="hotspot" data-word="solarsystem" style="left:0%;top:26%;width:25%;height:29%" aria-label="Solar System screen"></button>
-<button class="hotspot" data-word="console" style="left:56%;top:60%;width:44%;height:24%" aria-label="Control console"></button>
+
+<button class="hotspot" data-word="solarsystem" style="left:0%;top:26%;width:25%;height:29%" aria-label="Solar System screen" data-sound="sounds/space-sound.mp3"></button>
+<button class="hotspot" data-word="console" style="left:56%;top:60%;width:44%;height:24%" aria-label="Control console" data-sound="sounds/ambient-spacecraft-hum.mp3"></button>
 <button class="hotspot" data-word="monitor" style="left:81%;top:61%;width:17%;height:19%" aria-label="Computer monitor"></button>
 <button class="hotspot" data-word="astronaut" style="left:0%;top:42%;width:13%;height:27%" aria-label="Astronaut"></button>
 <button class="hotspot" data-word="crew" style="left:20%;top:48%;width:36%;height:34%" aria-label="Space crew"></button>
 <button class="hotspot" data-word="seat" style="left:19%;top:68%;width:26%;height:28%" aria-label="Spacecraft seat"></button>
-<button class="hotspot" data-word="hologram" style="left:0%;top:68%;width:22%;height:26%" aria-label="Solar System hologram"></button>
+<button class="hotspot" data-word="hologram" style="left: 0%; top: 68.22%; width: 22%; height: 26%;" aria-label="Solar System hologram" data-sound="sounds/space-atmosphere.mp3"></button>
 <button class="hotspot" data-word="ceiling" style="left:0%;top:0%;width:45%;height:22%" aria-label="Spacecraft ceiling"></button>
 <button class="hotspot" data-word="planetdisplay" style="left:0%;top:9%;width:25%;height:18%" aria-label="Planet displays"></button>
 <button class="hotspot" data-word="spacesuit" style="left:52%;top:61%;width:9%;height:18%" aria-label="Bee spacesuit"></button>
-<button class="hotspot" data-word="controls" style="left:31%;top:54%;width:25%;height:17%" aria-label="Spacecraft controls"></button>
+<button class="hotspot" data-word="controls" style="left: 31.1%; top: 55.57%; width: 25%; height: 17%;" aria-label="Spacecraft controls" data-sound="sounds/resistance-is-futile.mp3"></button>
 
 </main>
 
@@ -571,9 +570,10 @@ document.addEventListener('click',function(ev){
 })();
 </script>
 
-</body>
-</html>
+
+
 
 <style id="talkabee-ski-panel-180">
 @media(min-width:761px){.panel{width:180px!important;min-width:180px!important;max-width:180px!important}}
 </style>
+</body></html>
