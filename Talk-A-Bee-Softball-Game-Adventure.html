@@ -1,6 +1,5 @@
 <!doctype html>
-<html lang="en">
-<head>
+<html lang="en"><head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Talk A Bee — Softball Game Adventure</title>
@@ -112,12 +111,13 @@ border:1px solid #fff;background:rgba(7,23,39,.65);color:#fff;font-weight:900}
 
 <!-- TALK A BEE HOTSPOTS VISUALLY RECERTIFIED AGAINST CURRENT SCENE ARTWORK: 2026-10-07 -->
 
+
 <style id="talkabee-bilingual-hotspot-popup-style">
 #talkabee-object-popup{position:fixed;z-index:2147482900;display:none;padding:8px 12px;border-radius:12px;background:rgba(20,20,20,.82);color:white;font-weight:900;font-size:14px;pointer-events:none}
 </style>
 
 </head>
-<body>
+<body class="">
 <div class="talkabee-editions">
 <details>
 <summary>Explore Adventures ▾</summary>
@@ -145,13 +145,13 @@ border:1px solid #fff;background:rgba(7,23,39,.65);color:#fff;font-weight:900}
 <div class="tab-panel-size-controls" aria-label="Activity panel size"><button type="button" class="tab-panel-minus" title="Make activity panel smaller">−</button><button type="button" class="tab-panel-reset" title="Reset activity panel size">Reset</button><button type="button" class="tab-panel-plus" title="Make activity panel larger">+</button></div>
 
 <div class="label">LANGUAGE</div>
-<select id="lang">
+<select id="lang" data-tab-global-voice="1">
 <option value="es">Spanish</option><option value="fr">French</option><option value="en">English</option>
 <option value="de">German</option><option value="it">Italian</option><option value="pt">Portuguese</option><option value="no">Norwegian</option>
 </select>
 <div class="label">VOICE</div>
-<select id="voice"><option value="">Browser Default</option></select>
-<button id="sceneView">◉ Scene View</button>
+<select id="voice" data-tab-global-voice="1"><option value="">Browser Default</option><option value="Microsoft David - English (United States)">Microsoft David - English (United States) — en-US</option><option value="Microsoft Mark - English (United States)">Microsoft Mark - English (United States) — en-US</option><option value="Microsoft Zira - English (United States)">Microsoft Zira - English (United States) — en-US</option><option value="Microsoft David Desktop - English (United States)">Microsoft David Desktop - English (United States) — en-US</option><option value="Microsoft Zira Desktop - English (United States)">Microsoft Zira Desktop - English (United States) — en-US</option></select>
+<button id="sceneView" aria-pressed="false">◉ Scene View</button>
 
 <div class="label">DISCOVERY</div>
 <button id="discovery">🔎 Discovery — Click the Scene</button>
@@ -177,9 +177,9 @@ border:1px solid #fff;background:rgba(7,23,39,.65);color:#fff;font-weight:900}
 <div class="tab-card-tools" aria-label="Script card controls"><button type="button" class="tab-card-drag" title="Move script card">↕ Move</button><button type="button" class="tab-card-font-down" title="Decrease text">A−</button><button type="button" class="tab-card-font-up" title="Increase text">A+</button><button type="button" class="tab-card-reset" title="Reset card">Reset</button></div><div class="tab-card-resize" title="Drag to resize script card" aria-label="Resize script card">↘</div>
 
 <div class="kicker">AT THE SOFTBALL GAME</div>
-<h2 id="title">Softball Game Adventure</h2>
-<p id="prompt">Click any object in the scene to hear its name.</p>
-<div class="word"><strong id="line">partido de sóftbol</strong><div class="translation" id="translation">softball game</div></div>
+<h2 id="title">Click &amp; Discover</h2>
+<p id="prompt">You found pitcher.</p>
+<div class="word"><strong id="line">lanzador</strong><div class="translation" id="translation">pitcher</div></div>
 <p id="status"></p>
 <div class="controls">
 <button id="normal">🔊 Speak</button><button id="slow">🐢 Slow</button><button id="replay">↻ Replay</button><button id="nextPhrase">Next phrase →</button>
@@ -199,28 +199,28 @@ border:1px solid #fff;background:rgba(7,23,39,.65);color:#fff;font-weight:900}
 
 
 <!-- Hotspots mapped to the approved clean Softball Game Adventure JPG. -->
-<button class="hotspot" data-word="bee" style="left:35%;top:43%;width:15%;height:29%" aria-label="Bee pitcher"></button>
-<button class="hotspot" data-word="softball" style="left:42%;top:48%;width:7%;height:10%" aria-label="Softball"></button>
-<button class="hotspot" data-word="pitchermound" style="left:32%;top:60%;width:25%;height:18%" aria-label="Pitcher's mound"></button>
-<button class="hotspot" data-word="batter" style="left:66%;top:36%;width:17%;height:45%" aria-label="Batter"></button>
-<button class="hotspot" data-word="bat" style="left:72%;top:28%;width:11%;height:24%" aria-label="Softball bat"></button>
-<button class="hotspot" data-word="catcher" style="left:77%;top:51%;width:17%;height:43%" aria-label="Catcher"></button>
-<button class="hotspot" data-word="umpire" style="left:91%;top:27%;width:9%;height:67%" aria-label="Umpire"></button>
-<button class="hotspot" data-word="homeplate" style="left:60%;top:82%;width:21%;height:16%" aria-label="Home plate"></button>
-<button class="hotspot" data-word="scoreboard" style="left:75%;top:8%;width:23%;height:27%" aria-label="Scoreboard"></button>
-<button class="hotspot" data-word="spectators" style="left:72%;top:29%;width:27%;height:27%" aria-label="Spectators"></button>
-<button class="hotspot" data-word="fielder1" style="left:7%;top:45%;width:13%;height:27%" aria-label="Infielder"></button>
-<button class="hotspot" data-word="fielder2" style="left:20%;top:44%;width:11%;height:25%" aria-label="Infielder"></button>
-<button class="hotspot" data-word="fielder3" style="left:55%;top:44%;width:11%;height:25%" aria-label="Infielder"></button>
-<button class="hotspot" data-word="glove" style="left:14%;top:53%;width:8%;height:14%" aria-label="Softball glove"></button>
-<button class="hotspot" data-word="helmet" style="left:70%;top:34%;width:10%;height:14%" aria-label="Batting helmet"></button>
-<button class="hotspot" data-word="field" style="left:0%;top:57%;width:65%;height:43%" aria-label="Softball field"></button>
-<button class="hotspot" data-word="fence" style="left:0%;top:38%;width:69%;height:20%" aria-label="Outfield fence"></button>
-<button class="hotspot" data-word="lake" style="left:32%;top:31%;width:28%;height:16%" aria-label="Lake"></button>
-<button class="hotspot" data-word="mountains" style="left:17%;top:11%;width:49%;height:29%" aria-label="Mountains"></button>
-<button class="hotspot" data-word="flag" style="left:69%;top:4%;width:12%;height:27%" aria-label="Flag"></button>
 
-</main>
+<button class="hotspot" data-word="softball" style="left: 49.35%; top: 48.18%; width: 6.22%; height: 8.15%;" aria-label="Softball"></button>
+<button class="hotspot" data-word="pitchermound" style="left: 34.19%; top: 64.35%; width: 13.28%; height: 10.59%;" aria-label="Pitcher's mound"></button>
+<button class="hotspot" data-word="batter" style="left: 74.22%; top: 46.84%; width: 7.1%; height: 18.61%;" aria-label="Batter" data-sound="sounds/baseball1.mp3"></button>
+<button class="hotspot" data-word="bat" style="left: 78.98%; top: 22.91%; width: 2.93%; height: 19.09%;" aria-label="Softball bat"></button>
+<button class="hotspot" data-word="catcher" style="left: 86.21%; top: 56.56%; width: 8.56%; height: 31.89%;" aria-label="Catcher"></button>
+<button class="hotspot" data-word="umpire" style="left: 93.19%; top: 28.85%; width: 9%; height: 67%;" aria-label="Umpire"></button>
+<button class="hotspot" data-word="homeplate" style="left:60%;top:82%;width:21%;height:16%" aria-label="Home plate"></button>
+<button class="hotspot" data-word="scoreboard" style="left: 78.75%; top: 14.3%; width: 15.71%; height: 12.19%;" aria-label="Scoreboard" data-sound="sounds/baseball2.mp3"></button>
+<button class="hotspot" data-word="spectators" style="left: 82.36%; top: 27.33%; width: 12.78%; height: 14.41%;" aria-label="Spectators" data-sound="sounds/soft-cheering-sports.mp3"></button>
+<button class="hotspot" data-word="fielder1" style="left: 8.98%; top: 42.5%; width: 6.49%; height: 16.81%;" aria-label="Infielder" data-sound="sounds/baseball1.mp3"></button>
+<button class="hotspot" data-word="fielder2" style="left: 25.68%; top: 46.69%; width: 7.51%; height: 15.09%;" aria-label="Infielder"></button>
+<button class="hotspot" data-word="fielder3" style="left: 57.08%; top: 45.39%; width: 6.47%; height: 14.13%;" aria-label="Infielder" data-sound="sounds/baseball1.mp3"></button>
+<button class="hotspot" data-word="glove" style="left: 12.44%; top: 58.56%; width: 4.35%; height: 7.52%;" aria-label="Softball glove"></button>
+<button class="hotspot" data-word="helmet" style="left: 71.51%; top: 35.57%; width: 7.03%; height: 9.19%;" aria-label="Batting helmet"></button>
+<button class="hotspot" data-word="field" style="left: 7.08%; top: 64.67%; width: 26.82%; height: 26.18%;" aria-label="Softball field"></button>
+
+<button class="hotspot" data-word="lake" style="left: 46.58%; top: 35.48%; width: 10.45%; height: 9.27%;" aria-label="Lake"></button>
+<button class="hotspot" data-word="mountains" style="left: 44.86%; top: 11.65%; width: 17.65%; height: 15.55%;" aria-label="Mountains"></button>
+<button class="hotspot" data-word="flag" style="left: 69.31%; top: 8.9%; width: 5.65%; height: 11.91%;" aria-label="Flag"></button>
+
+<button type="button" class="hotspot" data-word="team members" aria-label="team members" data-tb-custom="1" data-tb-en="team members" data-tb-es="miembros del equipo" data-tb-fr="membres de l'équipe" data-tb-de="Teammitglieder" data-tb-it="membri della squadra" data-tb-pt="membros da equipe" data-tb-no="teammedlemmer" style="left: 0.3%; top: 38.32%; width: 8.45%; height: 8.46%;" data-sound="sounds/baseball1.mp3"></button><button type="button" class="hotspot" data-word="spectators" aria-label="spectators" data-tb-custom="1" data-tb-en="spectators" data-tb-es="espectadores" data-tb-fr="spectateurs" data-tb-de="Zuschauer" data-tb-it="spettatori" data-tb-pt="espectadores" data-tb-no="tilskuere" style="left: 14.85%; top: 47.57%; width: 10.53%; height: 8.65%;" data-sound="sounds/soft-cheering-sports.mp3"></button><button type="button" class="hotspot" data-word="pitcher" aria-label="pitcher" data-tb-custom="1" data-tb-en="pitcher" data-tb-es="lanzador" data-tb-fr="lanceur" data-tb-de="Krug" data-tb-it="brocca" data-tb-pt="jarro" data-tb-no="mugge" style="left: 38.38%; top: 46.95%; width: 7.67%; height: 14.39%;"></button></main>
 
 <script>
 const EN={game:"softball game",bee:"bee pitcher",softball:"softball",pitchermound:"pitcher's mound",batter:"batter",bat:"softball bat",catcher:"catcher",umpire:"umpire",homeplate:"home plate",scoreboard:"scoreboard",spectators:"spectators",fielder1:"infielder",fielder2:"infielder",fielder3:"infielder",glove:"softball glove",helmet:"batting helmet",field:"softball field",fence:"outfield fence",lake:"lake",mountains:"mountains",flag:"flag"};
@@ -490,6 +490,7 @@ document.addEventListener('click',function(ev){
 },true);
 })();</script>
 
+
 <script id="talkabee-scene-view-safe-reset">
 (function(){
   function resetTalkABeeSceneView(){
@@ -544,9 +545,10 @@ document.addEventListener('click',function(ev){
 })();
 </script>
 
-</body>
-</html>
+
+
 
 <style id="talkabee-ski-panel-180">
 @media(min-width:761px){.panel{width:180px!important;min-width:180px!important;max-width:180px!important}}
 </style>
+</body></html>
