@@ -1,6 +1,5 @@
 <!doctype html>
-<html lang="en">
-<head>
+<html lang="en"><head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Talk A Bee — Skydiving Adventure</title>
@@ -118,7 +117,7 @@ border:1px solid #fff;background:rgba(7,23,39,.65);color:#fff;font-weight:900}
 </style>
 
 </head>
-<body>
+<body class="">
 <div class="talkabee-editions">
 <details>
 <summary>Explore Adventures ▾</summary>
@@ -146,13 +145,13 @@ border:1px solid #fff;background:rgba(7,23,39,.65);color:#fff;font-weight:900}
 <div class="tab-panel-size-controls" aria-label="Activity panel size"><button type="button" class="tab-panel-minus" title="Make activity panel smaller">−</button><button type="button" class="tab-panel-reset" title="Reset activity panel size">Reset</button><button type="button" class="tab-panel-plus" title="Make activity panel larger">+</button></div>
 
 <div class="label">LANGUAGE</div>
-<select id="lang">
+<select id="lang" data-tab-global-voice="1">
 <option value="es">Spanish</option><option value="fr">French</option><option value="en">English</option>
 <option value="de">German</option><option value="it">Italian</option><option value="pt">Portuguese</option><option value="no">Norwegian</option>
 </select>
 <div class="label">VOICE</div>
-<select id="voice"><option value="">Browser Default</option></select>
-<button id="sceneView">◉ Scene View</button>
+<select id="voice" data-tab-global-voice="1"><option value="">Browser Default</option><option value="Microsoft David - English (United States)">Microsoft David - English (United States) — en-US</option><option value="Microsoft Mark - English (United States)">Microsoft Mark - English (United States) — en-US</option><option value="Microsoft Zira - English (United States)">Microsoft Zira - English (United States) — en-US</option><option value="Microsoft David Desktop - English (United States)">Microsoft David Desktop - English (United States) — en-US</option><option value="Microsoft Zira Desktop - English (United States)">Microsoft Zira Desktop - English (United States) — en-US</option></select>
+<button id="sceneView" aria-pressed="false">◉ Scene View</button>
 
 <div class="label">DISCOVERY</div>
 <button id="discovery">🔎 Discovery — Click the Scene</button>
@@ -178,9 +177,9 @@ border:1px solid #fff;background:rgba(7,23,39,.65);color:#fff;font-weight:900}
 <div class="tab-card-tools" aria-label="Script card controls"><button type="button" class="tab-card-drag" title="Move script card">↕ Move</button><button type="button" class="tab-card-font-down" title="Decrease text">A−</button><button type="button" class="tab-card-font-up" title="Increase text">A+</button><button type="button" class="tab-card-reset" title="Reset card">Reset</button></div><div class="tab-card-resize" title="Drag to resize script card" aria-label="Resize script card">↘</div>
 
 <div class="kicker">SKYDIVING OVER THE MOUNTAINS</div>
-<h2 id="title">Skydiving Adventure</h2>
-<p id="prompt">Click any object in the scene to hear its name.</p>
-<div class="word"><strong id="line">paracaidismo</strong><div class="translation" id="translation">skydiving</div></div>
+<h2 id="title">Click &amp; Discover</h2>
+<p id="prompt">You found skydiver.</p>
+<div class="word"><strong id="line">paracaidista</strong><div class="translation" id="translation">skydiver</div></div>
 <p id="status"></p>
 <div class="controls">
 <button id="normal">🔊 Speak</button><button id="slow">🐢 Slow</button><button id="replay">↻ Replay</button><button id="nextPhrase">Next phrase →</button>
@@ -204,26 +203,26 @@ border:1px solid #fff;background:rgba(7,23,39,.65);color:#fff;font-weight:900}
 
 
 <!-- Hotspots mapped to the approved Skydiving keeper JPG. -->
-<button class="hotspot" data-word="bee" style="left:17%;top:13%;width:14%;height:21%" aria-label="Flying Bee"></button>
-<button class="hotspot" data-word="airplane" style="left:20%;top:0%;width:80%;height:43%" aria-label="Airplane"></button>
-<button class="hotspot" data-word="door" style="left:78%;top:0%;width:22%;height:36%" aria-label="Airplane door"></button>
-<button class="hotspot" data-word="crew" style="left:80%;top:3%;width:14%;height:24%" aria-label="Crew member"></button>
-<button class="hotspot" data-word="instructor" style="left:38%;top:17%;width:31%;height:28%" aria-label="Skydiving instructor"></button>
-<button class="hotspot" data-word="jumperblue" style="left:21%;top:28%;width:36%;height:35%" aria-label="Blue skydiver"></button>
-<button class="hotspot" data-word="jumperpink" style="left:57%;top:27%;width:29%;height:31%" aria-label="Pink skydiver"></button>
-<button class="hotspot" data-word="helmet" style="left:36%;top:27%;width:10%;height:14%" aria-label="Helmet"></button>
-<button class="hotspot" data-word="goggles" style="left:37%;top:32%;width:9%;height:9%" aria-label="Goggles"></button>
-<button class="hotspot" data-word="harness" style="left:39%;top:41%;width:12%;height:16%" aria-label="Skydiving harness"></button>
-<button class="hotspot" data-word="parachute" style="left:50%;top:17%;width:12%;height:22%" aria-label="Parachute pack"></button>
-<button class="hotspot" data-word="wing" style="left:18%;top:0%;width:55%;height:18%" aria-label="Airplane wing"></button>
-<button class="hotspot" data-word="mountain" style="left:39%;top:51%;width:31%;height:27%" aria-label="Snowy mountain"></button>
-<button class="hotspot" data-word="lake" style="left:8%;top:68%;width:67%;height:31%" aria-label="Mountain lake"></button>
+
+<button class="hotspot" data-word="airplane" style="left: 61.57%; top: 2.31%; width: 22.34%; height: 28.93%;" aria-label="Airplane" data-sound="sounds/cessna.mp3"></button>
+<button class="hotspot" data-word="door" style="left: 85.29%; top: 19.82%; width: 11.9%; height: 11%;" aria-label="Airplane door"></button>
+<button class="hotspot" data-word="crew" style="left: 86.87%; top: 5.23%; width: 9.57%; height: 15.94%;" aria-label="Crew member"></button>
+<button class="hotspot" data-word="instructor" style="left: 46.59%; top: 18.57%; width: 5.53%; height: 13.83%;" aria-label="Skydiving instructor"></button>
+<button class="hotspot" data-word="jumperblue" style="left: 28.92%; top: 15.5%; width: 11.84%; height: 12.41%;" aria-label="Blue skydiver" data-sound="sounds/wind.mp3"></button>
+<button class="hotspot" data-word="jumperpink" style="left: 57.01%; top: 32.64%; width: 6.09%; height: 10.16%;" aria-label="Pink skydiver" data-sound="sounds/wind.mp3"></button>
+<button class="hotspot" data-word="helmet" style="left: 42.1%; top: 32.18%; width: 4.43%; height: 7.33%;" aria-label="Helmet"></button>
+<button class="hotspot" data-word="goggles" style="left: 41.79%; top: 40.52%; width: 3.95%; height: 2.98%;" aria-label="Goggles"></button>
+<button class="hotspot" data-word="harness" style="left: 36.92%; top: 44.89%; width: 10.59%; height: 7.2%;" aria-label="Skydiving harness"></button>
+<button class="hotspot" data-word="parachute" style="left: 72.5%; top: 34.78%; width: 12%; height: 22%;" aria-label="Parachute pack"></button>
+<button class="hotspot" data-word="wing" style="left: 46.91%; top: 3.43%; width: 30.78%; height: 11.98%;" aria-label="Airplane wing"></button>
+<button class="hotspot" data-word="mountain" style="left: 55.09%; top: 52.75%; width: 10.43%; height: 12.65%;" aria-label="Snowy mountain"></button>
+<button class="hotspot" data-word="lake" style="left: 33.67%; top: 72.62%; width: 14.87%; height: 11.18%;" aria-label="Mountain lake"></button>
 <button class="hotspot" data-word="islands" style="left:25%;top:72%;width:43%;height:24%" aria-label="Islands"></button>
-<button class="hotspot" data-word="clouds" style="left:0%;top:37%;width:35%;height:28%" aria-label="Clouds"></button>
-<button class="hotspot" data-word="forest" style="left:0%;top:56%;width:35%;height:43%" aria-label="Forest"></button>
-<button class="hotspot" data-word="sky" style="left:0%;top:0%;width:22%;height:39%" aria-label="Blue sky"></button>
-<button class="hotspot" data-word="landinggear" style="left:94%;top:51%;width:6%;height:24%" aria-label="Landing gear"></button>
-<button class="hotspot" data-word="valley" style="left:66%;top:53%;width:34%;height:37%" aria-label="Mountain valley"></button>
+<button class="hotspot" data-word="clouds" style="left: -1.72%; top: 52.93%; width: 19.53%; height: 14.11%;" aria-label="Clouds"></button>
+<button class="hotspot" data-word="forest" style="left: 8.23%; top: 67.11%; width: 13.39%; height: 28.19%;" aria-label="Forest"></button>
+<button class="hotspot" data-word="sky" style="left: 18.7%; top: -1.67%; width: 18.25%; height: 11.31%;" aria-label="Blue sky"></button>
+<button class="hotspot" data-word="landinggear" style="left: 94.42%; top: 36.83%; width: 6%; height: 24%;" aria-label="Landing gear"></button>
+<button class="hotspot" data-word="valley" style="left: 74.03%; top: 59.3%; width: 12.64%; height: 9.41%;" aria-label="Mountain valley"></button>
 
 </main>
 
@@ -561,9 +560,10 @@ document.addEventListener('click',function(ev){
 })();
 </script>
 
-</body>
-</html>
+
+
 
 <style id="talkabee-ski-panel-180">
 @media(min-width:761px){.panel{width:180px!important;min-width:180px!important;max-width:180px!important}}
 </style>
+</body></html>
