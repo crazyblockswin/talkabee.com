@@ -1,6 +1,5 @@
 <!doctype html>
-<html lang="en">
-<head>
+<html lang="en"><head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Talk A Bee — River Rafting Adventure</title>
@@ -118,7 +117,7 @@ border:1px solid #fff;background:rgba(7,23,39,.65);color:#fff;font-weight:900}
 </style>
 
 </head>
-<body>
+<body class="">
 <div class="talkabee-editions">
 <details>
 <summary>Explore Adventures ▾</summary>
@@ -146,13 +145,13 @@ border:1px solid #fff;background:rgba(7,23,39,.65);color:#fff;font-weight:900}
 <div class="tab-panel-size-controls" aria-label="Activity panel size"><button type="button" class="tab-panel-minus" title="Make activity panel smaller">−</button><button type="button" class="tab-panel-reset" title="Reset activity panel size">Reset</button><button type="button" class="tab-panel-plus" title="Make activity panel larger">+</button></div>
 
 <div class="label">LANGUAGE</div>
-<select id="lang">
+<select id="lang" data-tab-global-voice="1">
 <option value="es">Spanish</option><option value="fr">French</option><option value="en">English</option>
 <option value="de">German</option><option value="it">Italian</option><option value="pt">Portuguese</option><option value="no">Norwegian</option>
 </select>
 <div class="label">VOICE</div>
-<select id="voice"><option value="">Browser Default</option></select>
-<button id="sceneView">◉ Scene View</button>
+<select id="voice" data-tab-global-voice="1"><option value="">Browser Default</option><option value="Microsoft David - English (United States)">Microsoft David - English (United States) — en-US</option><option value="Microsoft Mark - English (United States)">Microsoft Mark - English (United States) — en-US</option><option value="Microsoft Zira - English (United States)">Microsoft Zira - English (United States) — en-US</option><option value="Microsoft David Desktop - English (United States)">Microsoft David Desktop - English (United States) — en-US</option><option value="Microsoft Zira Desktop - English (United States)">Microsoft Zira Desktop - English (United States) — en-US</option></select>
+<button id="sceneView" aria-pressed="false">◉ Scene View</button>
 
 <div class="label">DISCOVERY</div>
 <button id="discovery">🔎 Discovery — Click the Scene</button>
@@ -178,9 +177,9 @@ border:1px solid #fff;background:rgba(7,23,39,.65);color:#fff;font-weight:900}
 <div class="tab-card-tools" aria-label="Script card controls"><button type="button" class="tab-card-drag" title="Move script card">↕ Move</button><button type="button" class="tab-card-font-down" title="Decrease text">A−</button><button type="button" class="tab-card-font-up" title="Increase text">A+</button><button type="button" class="tab-card-reset" title="Reset card">Reset</button></div><div class="tab-card-resize" title="Drag to resize script card" aria-label="Resize script card">↘</div>
 
 <div class="kicker">ON THE WHITEWATER RIVER</div>
-<h2 id="title">River Rafting Adventure</h2>
-<p id="prompt">Click any object in the scene to hear its name.</p>
-<div class="word"><strong id="line">rafting en aguas bravas</strong><div class="translation" id="translation">whitewater rafting</div></div>
+<h2 id="title">Click &amp; Discover</h2>
+<p id="prompt">You found evergreen forest.</p>
+<div class="word"><strong id="line">evergreen forest</strong><div class="translation" id="translation"></div></div>
 <p id="status"></p>
 <div class="controls">
 <button id="normal">🔊 Speak</button><button id="slow">🐢 Slow</button><button id="replay">↻ Replay</button><button id="nextPhrase">Next phrase →</button>
@@ -206,28 +205,28 @@ border:1px solid #fff;background:rgba(7,23,39,.65);color:#fff;font-weight:900}
 
 
 <!-- Hotspots mapped to the approved River Rafting keeper JPG. -->
-<button class="hotspot" data-word="grandma" style="left:37%;top:39%;width:8%;height:18%" aria-label="Grandma"></button>
-<button class="hotspot" data-word="grandpa" style="left:49%;top:39%;width:8%;height:18%" aria-label="Grandpa"></button>
-<button class="hotspot" data-word="bee" style="left:53%;top:36%;width:8%;height:16%" aria-label="Rafting Bee"></button>
-<button class="hotspot" data-word="dog" style="left:52%;top:52%;width:9%;height:17%" aria-label="Dog"></button>
-<button class="hotspot" data-word="family" style="left:38%;top:40%;width:29%;height:24%" aria-label="Rafting crew"></button>
-<button class="hotspot" data-word="raft" style="left:37%;top:54%;width:32%;height:17%" aria-label="Raft"></button>
-<button class="hotspot" data-word="paddle" style="left:33%;top:47%;width:18%;height:15%" aria-label="Yellow paddle"></button>
-<button class="hotspot" data-word="paddleblue" style="left:46%;top:50%;width:21%;height:14%" aria-label="Blue paddle"></button>
-<button class="hotspot" data-word="helmet" style="left:46%;top:46%;width:6%;height:9%" aria-label="Helmet"></button>
-<button class="hotspot" data-word="lifejacket" style="left:59%;top:50%;width:7%;height:12%" aria-label="Life jacket"></button>
-<button class="hotspot" data-word="rapids" style="left:25%;top:44%;width:55%;height:34%" aria-label="Huge rapids"></button>
-<button class="hotspot" data-word="whitewater" style="left:0%;top:57%;width:100%;height:42%" aria-label="Whitewater"></button>
-<button class="hotspot" data-word="river" style="left:18%;top:48%;width:67%;height:47%" aria-label="River"></button>
-<button class="hotspot" data-word="rocks" style="left:0%;top:28%;width:27%;height:48%" aria-label="River rocks"></button>
-<button class="hotspot" data-word="forest" style="left:0%;top:0%;width:31%;height:42%" aria-label="Evergreen forest"></button>
-<button class="hotspot" data-word="mountain" style="left:48%;top:0%;width:38%;height:32%" aria-label="Snowy mountain"></button>
-<button class="hotspot" data-word="trees" style="left:72%;top:5%;width:28%;height:43%" aria-label="Pine trees"></button>
-<button class="hotspot" data-word="sky" style="left:25%;top:0%;width:28%;height:24%" aria-label="Blue sky"></button>
-<button class="hotspot" data-word="spray" style="left:31%;top:52%;width:46%;height:25%" aria-label="Water spray"></button>
-<button class="hotspot" data-word="valley" style="left:29%;top:18%;width:55%;height:28%" aria-label="Mountain valley"></button>
 
-</main>
+
+
+
+
+
+<button class="hotspot" data-word="paddle" style="left: 30.14%; top: 47.74%; width: 5.6%; height: 9.81%;" aria-label="Yellow paddle"></button>
+
+
+
+<button class="hotspot" data-word="rapids" style="left: 16.67%; top: 7.61%; width: 46.3%; height: 22.7%;" aria-label="Huge rapids"></button>
+
+<button class="hotspot" data-word="river" style="left: 37.64%; top: 68.46%; width: 52.42%; height: 37.93%;" aria-label="River"></button>
+<button class="hotspot" data-word="rocks" style="left: 3.75%; top: 50.69%; width: 22.06%; height: 58.09%;" aria-label="River rocks"></button>
+<button class="hotspot" data-word="forest" style="left: 0%; top: 0%; width: 15.11%; height: 17%;" aria-label="Evergreen forest" data-sound="sounds/birds-forest.mp3"></button>
+<button class="hotspot" data-word="mountain" style="left: 57.64%; top: 8.52%; width: 21.07%; height: 10.33%;" aria-label="Snowy mountain"></button>
+<button class="hotspot" data-word="trees" style="left: 85.59%; top: 10%; width: 11.54%; height: 20.87%;" aria-label="Pine trees"></button>
+<button class="hotspot" data-word="sky" style="left: 22.14%; top: -2.78%; width: 17.32%; height: 9.19%;" aria-label="Blue sky"></button>
+
+<button class="hotspot" data-word="valley" style="left: 30.25%; top: 23.74%; width: 53.28%; height: 9.67%;" aria-label="Mountain valley"></button>
+
+<button type="button" class="hotspot" data-word="river rafting crew" aria-label="river rafting crew" data-tb-custom="1" data-tb-en="river rafting crew" data-tb-es="equipo de rafting en el río" data-tb-fr="équipage de rafting" data-tb-de="River-Rafting-Crew" data-tb-it="equipaggio di rafting sul fiume" data-tb-pt="tripulação de rafting" data-tb-no="elveraftingmannskap" style="left: 37.04%; top: 36.33%; width: 30.84%; height: 33.93%;" data-sound="sounds/River-Rafting.mp3"></button><button type="button" class="hotspot" data-word="laughing" aria-label="laughing" data-tb-custom="1" data-tb-en="laughing" data-tb-es="reír" data-tb-fr="en riant" data-tb-de="Lachen" data-tb-it="ridendo" data-tb-pt="rindo" data-tb-no="ler" style="left: 30.06%; top: 39.56%; width: 45.47%; height: 20.32%;"></button></main>
 
 <script>
 const EN={game:"whitewater rafting",grandma:"Grandma",grandpa:"Grandpa",bee:"rafting bee",dog:"dog",family:"rafting crew",raft:"raft",paddle:"yellow paddle",paddleblue:"blue paddle",helmet:"helmet",lifejacket:"life jacket",rapids:"huge rapids",whitewater:"whitewater",river:"river",rocks:"river rocks",forest:"evergreen forest",mountain:"snowy mountain",trees:"pine trees",sky:"blue sky",spray:"water spray",valley:"mountain valley"};
@@ -563,9 +562,10 @@ document.addEventListener('click',function(ev){
 })();
 </script>
 
-</body>
-</html>
+
+
 
 <style id="talkabee-ski-panel-180">
 @media(min-width:761px){.panel{width:180px!important;min-width:180px!important;max-width:180px!important}}
 </style>
+</body></html>
