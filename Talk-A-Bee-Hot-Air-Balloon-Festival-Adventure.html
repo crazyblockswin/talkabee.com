@@ -1,6 +1,5 @@
 <!doctype html>
-<html lang="en">
-<head>
+<html lang="en"><head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Talk A Bee — Hot Air Balloon Festival Adventure</title>
@@ -112,12 +111,13 @@ border:1px solid #fff;background:rgba(7,23,39,.65);color:#fff;font-weight:900}
 
 <!-- TALK A BEE HOTSPOTS VISUALLY RECERTIFIED AGAINST CURRENT SCENE ARTWORK: 2026-10-07 -->
 
+
 <style id="talkabee-bilingual-hotspot-popup-style">
 #talkabee-object-popup{position:fixed;z-index:2147482900;display:none;padding:8px 12px;border-radius:12px;background:rgba(20,20,20,.82);color:white;font-weight:900;font-size:14px;pointer-events:none}
 </style>
 
 </head>
-<body>
+<body class="">
 <div class="talkabee-editions">
 <details>
 <summary>Explore Adventures ▾</summary>
@@ -145,13 +145,13 @@ border:1px solid #fff;background:rgba(7,23,39,.65);color:#fff;font-weight:900}
 <div class="tab-panel-size-controls" aria-label="Activity panel size"><button type="button" class="tab-panel-minus" title="Make activity panel smaller">−</button><button type="button" class="tab-panel-reset" title="Reset activity panel size">Reset</button><button type="button" class="tab-panel-plus" title="Make activity panel larger">+</button></div>
 
 <div class="label">LANGUAGE</div>
-<select id="lang">
+<select id="lang" data-tab-global-voice="1">
 <option value="es">Spanish</option><option value="fr">French</option><option value="en">English</option>
 <option value="de">German</option><option value="it">Italian</option><option value="pt">Portuguese</option><option value="no">Norwegian</option>
 </select>
 <div class="label">VOICE</div>
-<select id="voice"><option value="">Browser Default</option></select>
-<button id="sceneView">◉ Scene View</button>
+<select id="voice" data-tab-global-voice="1"><option value="">Browser Default</option><option value="Microsoft David - English (United States)">Microsoft David - English (United States) — en-US</option><option value="Microsoft Mark - English (United States)">Microsoft Mark - English (United States) — en-US</option><option value="Microsoft Zira - English (United States)">Microsoft Zira - English (United States) — en-US</option><option value="Microsoft David Desktop - English (United States)">Microsoft David Desktop - English (United States) — en-US</option><option value="Microsoft Zira Desktop - English (United States)">Microsoft Zira Desktop - English (United States) — en-US</option></select>
+<button id="sceneView" aria-pressed="false">◉ Scene View</button>
 
 <div class="label">DISCOVERY</div>
 <button id="discovery">🔎 Discovery — Click the Scene</button>
@@ -177,9 +177,9 @@ border:1px solid #fff;background:rgba(7,23,39,.65);color:#fff;font-weight:900}
 <div class="tab-card-tools" aria-label="Script card controls"><button type="button" class="tab-card-drag" title="Move script card">↕ Move</button><button type="button" class="tab-card-font-down" title="Decrease text">A−</button><button type="button" class="tab-card-font-up" title="Increase text">A+</button><button type="button" class="tab-card-reset" title="Reset card">Reset</button></div><div class="tab-card-resize" title="Drag to resize script card" aria-label="Resize script card">↘</div>
 
 <div class="kicker">AT THE HOT AIR BALLOON FESTIVAL</div>
-<h2 id="title">Hot Air Balloon Festival</h2>
-<p id="prompt">Click any object in the scene to hear its name.</p>
-<div class="word"><strong id="line">festival de globos aerostáticos</strong><div class="translation" id="translation">hot air balloon festival</div></div>
+<h2 id="title">Click &amp; Discover</h2>
+<p id="prompt">You found blue sky.</p>
+<div class="word"><strong id="line">blue sky</strong><div class="translation" id="translation"></div></div>
 <p id="status"></p>
 <div class="controls">
 <button id="normal">🔊 Speak</button><button id="slow">🐢 Slow</button><button id="replay">↻ Replay</button><button id="nextPhrase">Next phrase →</button>
@@ -207,28 +207,28 @@ border:1px solid #fff;background:rgba(7,23,39,.65);color:#fff;font-weight:900}
 
 
 <!-- Hotspots mapped to the approved Hot Air Balloon Festival keeper JPG. -->
-<button class="hotspot" data-word="grandma" style="left:84%;top:42%;width:7%;height:20%" aria-label="Grandma"></button>
-<button class="hotspot" data-word="grandpa" style="left:91%;top:42%;width:8%;height:21%" aria-label="Grandpa"></button>
-<button class="hotspot" data-word="bee" style="left:64%;top:39%;width:10%;height:22%" aria-label="Balloon Bee"></button>
-<button class="hotspot" data-word="crew" style="left:64%;top:42%;width:35%;height:26%" aria-label="Balloon crew"></button>
-<button class="hotspot" data-word="basket" style="left:63%;top:62%;width:37%;height:37%" aria-label="Balloon basket"></button>
-<button class="hotspot" data-word="burner" style="left:79%;top:17%;width:12%;height:25%" aria-label="Balloon burner"></button>
-<button class="hotspot" data-word="flame" style="left:81%;top:15%;width:8%;height:20%" aria-label="Burner flame"></button>
-<button class="hotspot" data-word="balloon" style="left:57%;top:0%;width:43%;height:25%" aria-label="Hot air balloon"></button>
-<button class="hotspot" data-word="ropes" style="left:70%;top:17%;width:26%;height:34%" aria-label="Balloon ropes"></button>
-<button class="hotspot" data-word="lake" style="left:0%;top:39%;width:62%;height:25%" aria-label="Mountain lake"></button>
-<button class="hotspot" data-word="island" style="left:28%;top:42%;width:29%;height:17%" aria-label="Forest island"></button>
-<button class="hotspot" data-word="mountains" style="left:15%;top:24%;width:67%;height:20%" aria-label="Snowy mountains"></button>
-<button class="hotspot" data-word="sun" style="left:0%;top:22%;width:12%;height:19%" aria-label="Sunrise"></button>
-<button class="hotspot" data-word="sky" style="left:0%;top:0%;width:57%;height:25%" aria-label="Blue sky"></button>
-<button class="hotspot" data-word="balloons" style="left:5%;top:2%;width:59%;height:37%" aria-label="Balloons in flight"></button>
-<button class="hotspot" data-word="field" style="left:0%;top:64%;width:63%;height:35%" aria-label="Festival field"></button>
-<button class="hotspot" data-word="crowd" style="left:8%;top:67%;width:52%;height:22%" aria-label="Festival crowd"></button>
-<button class="hotspot" data-word="inflating" style="left:14%;top:65%;width:47%;height:22%" aria-label="Inflating balloons"></button>
-<button class="hotspot" data-word="tents" style="left:0%;top:64%;width:35%;height:15%" aria-label="Festival tents"></button>
-<button class="hotspot" data-word="forest" style="left:0%;top:48%;width:32%;height:18%" aria-label="Pine forest"></button>
 
-</main>
+
+
+<button class="hotspot" data-word="crew" style="left: 70.98%; top: 52.85%; width: 27.44%; height: 20.41%;" aria-label="Balloon crew"></button>
+<button class="hotspot" data-word="basket" style="left: 72.22%; top: 81.17%; width: 16.17%; height: 22.65%;" aria-label="Balloon basket"></button>
+<button class="hotspot" data-word="burner" style="left: 78.95%; top: 27.86%; width: 12%; height: 25%;" aria-label="Balloon burner" data-sound="sounds/hot-air-balloon.mp3"></button>
+<button class="hotspot" data-word="flame" style="left: 80.58%; top: 2.33%; width: 8.1%; height: 34.57%;" aria-label="Burner flame" data-sound="sounds/hot-air-balloon.mp3"></button>
+<button class="hotspot" data-word="balloon" style="left: 70.02%; top: -3.14%; width: 11.23%; height: 19.51%;" aria-label="Hot air balloon"></button>
+<button class="hotspot" data-word="ropes" style="left: 74.06%; top: 18.9%; width: 5.06%; height: 30.07%;" aria-label="Balloon ropes"></button>
+<button class="hotspot" data-word="lake" style="left: 10.72%; top: 62.77%; width: 18.3%; height: 7.74%;" aria-label="Mountain lake"></button>
+<button class="hotspot" data-word="island" style="left: 33.94%; top: 57.47%; width: 12.95%; height: 7.95%;" aria-label="Forest island"></button>
+<button class="hotspot" data-word="mountains" style="left: 55.94%; top: 36.5%; width: 19.34%; height: 5.85%;" aria-label="Snowy mountains"></button>
+<button class="hotspot" data-word="sun" style="left:0%;top:22%;width:12%;height:19%" aria-label="Sunrise"></button>
+<button class="hotspot" data-word="sky" style="left: 57.76%; top: 8.26%; width: 5.75%; height: 10.54%;" aria-label="Blue sky"></button>
+<button class="hotspot" data-word="balloons" style="left: 2.36%; top: -0.17%; width: 62.28%; height: 36.97%;" aria-label="Balloons in flight"></button>
+<button class="hotspot" data-word="field" style="left: 12.91%; top: 81.98%; width: 28.94%; height: 19.72%;" aria-label="Festival field"></button>
+<button class="hotspot" data-word="crowd" style="left: 9.14%; top: 73.3%; width: 37.57%; height: 13.11%;" aria-label="Festival crowd"></button>
+<button class="hotspot" data-word="inflating" style="left: 16.15%; top: 72.97%; width: 19.29%; height: 15.98%;" aria-label="Inflating balloons"></button>
+<button class="hotspot" data-word="tents" style="left: 2.66%; top: 77.1%; width: 48.65%; height: 3.05%;" aria-label="Festival tents"></button>
+<button class="hotspot" data-word="forest" style="left: 1.04%; top: 80.78%; width: 6.79%; height: 16.43%;" aria-label="Pine forest"></button>
+
+<button type="button" class="hotspot" data-word="sunset" aria-label="sunset" data-tb-custom="1" data-tb-en="sunset" data-tb-es="atardecer" data-tb-fr="coucher de soleil" data-tb-de="Sonnenuntergang" data-tb-it="tramonto" data-tb-pt="pôr do sol" data-tb-no="solnedgang" style="left: -2.64%; top: 35.82%; width: 17.61%; height: 12.17%;"></button></main>
 
 <script>
 const EN={game:"hot air balloon festival",grandma:"Grandma",grandpa:"Grandpa",bee:"balloon bee",crew:"balloon crew",basket:"balloon basket",burner:"balloon burner",flame:"burner flame",balloon:"hot air balloon",ropes:"balloon ropes",lake:"mountain lake",island:"forest island",mountains:"snowy mountains",sun:"sunrise",sky:"blue sky",balloons:"balloons in flight",field:"festival field",crowd:"festival crowd",inflating:"inflating balloons",tents:"festival tents",forest:"pine forest"};
@@ -498,6 +498,7 @@ document.addEventListener('click',function(ev){
 },true);
 })();</script>
 
+
 <script id="talkabee-scene-view-safe-reset">
 (function(){
   function resetTalkABeeSceneView(){
@@ -552,9 +553,10 @@ document.addEventListener('click',function(ev){
 })();
 </script>
 
-</body>
-</html>
+
+
 
 <style id="talkabee-ski-panel-180">
 @media(min-width:761px){.panel{width:180px!important;min-width:180px!important;max-width:180px!important}}
 </style>
+</body></html>
