@@ -1,6 +1,5 @@
 <!doctype html>
-<html lang="en">
-<head>
+<html lang="en"><head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Talk A Bee — Rowing Regatta Adventure</title>
@@ -118,7 +117,7 @@ border:1px solid #fff;background:rgba(7,23,39,.65);color:#fff;font-weight:900}
 </style>
 
 </head>
-<body>
+<body class="">
 <div class="talkabee-editions">
 <details>
 <summary>Explore Adventures ▾</summary>
@@ -146,13 +145,13 @@ border:1px solid #fff;background:rgba(7,23,39,.65);color:#fff;font-weight:900}
 <div class="tab-panel-size-controls" aria-label="Activity panel size"><button type="button" class="tab-panel-minus" title="Make activity panel smaller">−</button><button type="button" class="tab-panel-reset" title="Reset activity panel size">Reset</button><button type="button" class="tab-panel-plus" title="Make activity panel larger">+</button></div>
 
 <div class="label">LANGUAGE</div>
-<select id="lang">
+<select id="lang" data-tab-global-voice="1">
 <option value="es">Spanish</option><option value="fr">French</option><option value="en">English</option>
 <option value="de">German</option><option value="it">Italian</option><option value="pt">Portuguese</option><option value="no">Norwegian</option>
 </select>
 <div class="label">VOICE</div>
-<select id="voice"><option value="">Browser Default</option></select>
-<button id="sceneView">◉ Scene View</button>
+<select id="voice" data-tab-global-voice="1"><option value="">Browser Default</option><option value="Microsoft David - English (United States)">Microsoft David - English (United States) — en-US</option><option value="Microsoft Mark - English (United States)">Microsoft Mark - English (United States) — en-US</option><option value="Microsoft Zira - English (United States)">Microsoft Zira - English (United States) — en-US</option><option value="Microsoft David Desktop - English (United States)">Microsoft David Desktop - English (United States) — en-US</option><option value="Microsoft Zira Desktop - English (United States)">Microsoft Zira Desktop - English (United States) — en-US</option></select>
+<button id="sceneView" aria-pressed="false">◉ Scene View</button>
 
 <div class="label">DISCOVERY</div>
 <button id="discovery">🔎 Discovery — Click the Scene</button>
@@ -178,9 +177,9 @@ border:1px solid #fff;background:rgba(7,23,39,.65);color:#fff;font-weight:900}
 <div class="tab-card-tools" aria-label="Script card controls"><button type="button" class="tab-card-drag" title="Move script card">↕ Move</button><button type="button" class="tab-card-font-down" title="Decrease text">A−</button><button type="button" class="tab-card-font-up" title="Increase text">A+</button><button type="button" class="tab-card-reset" title="Reset card">Reset</button></div><div class="tab-card-resize" title="Drag to resize script card" aria-label="Resize script card">↘</div>
 
 <div class="kicker">AT THE LAKEVIEW REGATTA</div>
-<h2 id="title">Rowing Regatta Adventure</h2>
-<p id="prompt">Click any object in the scene to hear its name.</p>
-<div class="word"><strong id="line">regata de remo</strong><div class="translation" id="translation">rowing regatta</div></div>
+<h2 id="title">Click &amp; Discover</h2>
+<p id="prompt">You found regatta banner.</p>
+<div class="word"><strong id="line">regatta banner</strong><div class="translation" id="translation"></div></div>
 <p id="status"></p>
 <div class="controls">
 <button id="normal">🔊 Speak</button><button id="slow">🐢 Slow</button><button id="replay">↻ Replay</button><button id="nextPhrase">Next phrase →</button>
@@ -202,28 +201,28 @@ border:1px solid #fff;background:rgba(7,23,39,.65);color:#fff;font-weight:900}
 
 
 <!-- Hotspots mapped to the approved Rowing Regatta keeper JPG. -->
-<button class="hotspot" data-word="bee" style="left:75%;top:48%;width:11%;height:24%" aria-label="Bee coxswain"></button>
-<button class="hotspot" data-word="megaphone" style="left:72%;top:49%;width:8%;height:12%" aria-label="Megaphone"></button>
-<button class="hotspot" data-word="crew" style="left:29%;top:42%;width:46%;height:30%" aria-label="Rowing crew"></button>
-<button class="hotspot" data-word="oars" style="left:13%;top:52%;width:66%;height:21%" aria-label="Oars"></button>
-<button class="hotspot" data-word="shell" style="left:32%;top:65%;width:58%;height:18%" aria-label="Racing shell"></button>
-<button class="hotspot" data-word="redcrew" style="left:80%;top:38%;width:20%;height:22%" aria-label="Red rowing crew"></button>
-<button class="hotspot" data-word="water" style="left:0%;top:47%;width:100%;height:53%" aria-label="Lake water"></button>
-<button class="hotspot" data-word="buoys" style="left:0%;top:42%;width:35%;height:16%" aria-label="Race buoys"></button>
-<button class="hotspot" data-word="banner" style="left:80%;top:23%;width:20%;height:16%" aria-label="Lakeview Regatta banner"></button>
-<button class="hotspot" data-word="boathouse" style="left:78%;top:11%;width:22%;height:31%" aria-label="Regatta boathouse"></button>
-<button class="hotspot" data-word="spectators" style="left:73%;top:24%;width:27%;height:25%" aria-label="Spectators"></button>
-<button class="hotspot" data-word="dock" style="left:70%;top:37%;width:30%;height:18%" aria-label="Dock"></button>
-<button class="hotspot" data-word="sailboat" style="left:18%;top:35%;width:10%;height:17%" aria-label="Sailboat"></button>
-<button class="hotspot" data-word="boat" style="left:4%;top:37%;width:10%;height:15%" aria-label="Motorboat"></button>
-<button class="hotspot" data-word="mountains" style="left:17%;top:6%;width:49%;height:31%" aria-label="Snowy mountains"></button>
-<button class="hotspot" data-word="forest" style="left:0%;top:16%;width:32%;height:30%" aria-label="Pine forest"></button>
-<button class="hotspot" data-word="flags" style="left:67%;top:20%;width:17%;height:22%" aria-label="Regatta flags"></button>
-<button class="hotspot" data-word="splash" style="left:12%;top:55%;width:24%;height:21%" aria-label="Oar splash"></button>
-<button class="hotspot" data-word="rower" style="left:56%;top:42%;width:10%;height:26%" aria-label="Rower"></button>
-<button class="hotspot" data-word="finish" style="left:65%;top:31%;width:15%;height:25%" aria-label="Race course"></button>
 
-</main>
+<button class="hotspot" data-word="megaphone" style="left: 70.7%; top: 57.05%; width: 4.2%; height: 10.33%;" aria-label="Megaphone"></button>
+<button class="hotspot" data-word="crew" style="left: 35.4%; top: 47.27%; width: 14.33%; height: 15.56%;" aria-label="Rowing crew"></button>
+<button class="hotspot" data-word="oars" style="left: -7.42%; top: 15.71%; width: 24.96%; height: 14.98%;" aria-label="Oars"></button>
+<button class="hotspot" data-word="shell" style="left: 46.48%; top: 70.93%; width: 17.06%; height: 6.24%;" aria-label="Racing shell"></button>
+<button class="hotspot" data-word="redcrew" style="left: 77.75%; top: 47.91%; width: 19.01%; height: 8.11%;" aria-label="Red rowing crew"></button>
+<button class="hotspot" data-word="water" style="left: -13.96%; top: 12.02%; width: 30.21%; height: 30.35%;" aria-label="Lake water"></button>
+<button class="hotspot" data-word="buoys" style="left:0%;top:42%;width:35%;height:16%" aria-label="Race buoys"></button>
+<button class="hotspot" data-word="banner" style="left: 81.19%; top: 30.31%; width: 18.33%; height: 6.56%;" aria-label="Lakeview Regatta banner"></button>
+<button class="hotspot" data-word="boathouse" style="left: 78.16%; top: 14.62%; width: 21.37%; height: 13.59%;" aria-label="Regatta boathouse"></button>
+<button class="hotspot" data-word="spectators" style="left: 44.88%; top: 2.7%; width: 7.89%; height: 15.74%;" aria-label="Spectators"></button>
+<button class="hotspot" data-word="dock" style="left: 53.59%; top: 24.78%; width: 7.34%; height: 9.94%;" aria-label="Dock"></button>
+<button class="hotspot" data-word="sailboat" style="left: 19.25%; top: 38.15%; width: 5.21%; height: 9.59%;" aria-label="Sailboat"></button>
+<button class="hotspot" data-word="boat" style="left:4%;top:37%;width:10%;height:15%" aria-label="Motorboat"></button>
+<button class="hotspot" data-word="mountains" style="left: 53%; top: 9.91%; width: 13.43%; height: 9.82%;" aria-label="Snowy mountains"></button>
+<button class="hotspot" data-word="forest" style="left: 19.91%; top: 32.25%; width: 16.95%; height: 7.41%;" aria-label="Pine forest"></button>
+<button class="hotspot" data-word="flags" style="left: 66.95%; top: 1.58%; width: 5.39%; height: 12.09%;" aria-label="Regatta flags"></button>
+<button class="hotspot" data-word="splash" style="left: 19.29%; top: 61.94%; width: 18.69%; height: 14.06%;" aria-label="Oar splash"></button>
+<button class="hotspot" data-word="rower" style="left:56%;top:42%;width:10%;height:26%" aria-label="Rower"></button>
+<button class="hotspot" data-word="finish" style="left: 15.68%; top: 49.52%; width: 11.14%; height: 5.84%;" aria-label="Race course"></button>
+
+<button type="button" class="hotspot" data-word="rowing coxwayne" aria-label="rowing coxwayne" data-tb-custom="1" data-tb-en="rowing coxwayne" data-tb-es="coxwayne remando" data-tb-fr="Aviron Coxwayne" data-tb-de="Steuermann rudern" data-tb-it="canottaggio coxwayne" data-tb-pt="Remo Coxwayne" data-tb-no="roing coxwayne" style="left: 73.46%; top: 55.78%; width: 11.73%; height: 20.04%;" data-sound="sounds/rowing-announcer.mp3"></button></main>
 
 <script>
 const EN={game:"rowing regatta",bee:"bee coxswain",megaphone:"megaphone",crew:"rowing crew",oars:"oars",shell:"racing shell",redcrew:"red rowing crew",water:"lake water",buoys:"race buoys",banner:"regatta banner",boathouse:"boathouse",spectators:"spectators",dock:"dock",sailboat:"sailboat",boat:"motorboat",mountains:"snowy mountains",forest:"pine forest",flags:"regatta flags",splash:"oar splash",rower:"rower",finish:"race course"};
@@ -559,9 +558,10 @@ document.addEventListener('click',function(ev){
 })();
 </script>
 
-</body>
-</html>
+
+
 
 <style id="talkabee-ski-panel-180">
 @media(min-width:761px){.panel{width:180px!important;min-width:180px!important;max-width:180px!important}}
 </style>
+</body></html>
