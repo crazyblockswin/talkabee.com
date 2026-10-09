@@ -1,6 +1,5 @@
 <!doctype html>
-<html lang="en">
-<head>
+<html lang="en"><head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Talk A Bee — Moon Adventure</title>
@@ -118,7 +117,7 @@ border:1px solid #fff;background:rgba(7,23,39,.65);color:#fff;font-weight:900}
 </style>
 
 </head>
-<body>
+<body class="">
 <div class="talkabee-editions">
 <details>
 <summary>Explore Adventures ▾</summary>
@@ -146,13 +145,13 @@ border:1px solid #fff;background:rgba(7,23,39,.65);color:#fff;font-weight:900}
 <div class="tab-panel-size-controls" aria-label="Activity panel size"><button type="button" class="tab-panel-minus" title="Make activity panel smaller">−</button><button type="button" class="tab-panel-reset" title="Reset activity panel size">Reset</button><button type="button" class="tab-panel-plus" title="Make activity panel larger">+</button></div>
 
 <div class="label">LANGUAGE</div>
-<select id="lang">
+<select id="lang" data-tab-global-voice="1">
 <option value="es">Spanish</option><option value="fr">French</option><option value="en">English</option>
 <option value="de">German</option><option value="it">Italian</option><option value="pt">Portuguese</option><option value="no">Norwegian</option>
 </select>
 <div class="label">VOICE</div>
-<select id="voice"><option value="">Browser Default</option></select>
-<button id="sceneView">◉ Scene View</button>
+<select id="voice" data-tab-global-voice="1"><option value="">Browser Default</option><option value="Microsoft David - English (United States)">Microsoft David - English (United States) — en-US</option><option value="Microsoft Mark - English (United States)">Microsoft Mark - English (United States) — en-US</option><option value="Microsoft Zira - English (United States)">Microsoft Zira - English (United States) — en-US</option><option value="Microsoft David Desktop - English (United States)">Microsoft David Desktop - English (United States) — en-US</option><option value="Microsoft Zira Desktop - English (United States)">Microsoft Zira Desktop - English (United States) — en-US</option></select>
+<button id="sceneView" aria-pressed="false">◉ Scene View</button>
 
 <div class="label">DISCOVERY</div>
 <button id="discovery">🔎 Discovery — Click the Scene</button>
@@ -178,9 +177,9 @@ border:1px solid #fff;background:rgba(7,23,39,.65);color:#fff;font-weight:900}
 <div class="tab-card-tools" aria-label="Script card controls"><button type="button" class="tab-card-drag" title="Move script card">↕ Move</button><button type="button" class="tab-card-font-down" title="Decrease text">A−</button><button type="button" class="tab-card-font-up" title="Increase text">A+</button><button type="button" class="tab-card-reset" title="Reset card">Reset</button></div><div class="tab-card-resize" title="Drag to resize script card" aria-label="Resize script card">↘</div>
 
 <div class="kicker">EXPLORING THE MOON</div>
-<h2 id="title">Moon Adventure</h2>
-<p id="prompt">Click any object in the scene to hear its name.</p>
-<div class="word"><strong id="line">la Luna</strong><div class="translation" id="translation">the Moon</div></div>
+<h2 id="title">Click &amp; Discover</h2>
+<p id="prompt">You found stars.</p>
+<div class="word"><strong id="line">stars</strong><div class="translation" id="translation"></div></div>
 <p id="status"></p>
 <div class="controls">
 <button id="normal">🔊 Speak</button><button id="slow">🐢 Slow</button><button id="replay">↻ Replay</button><button id="nextPhrase">Next phrase →</button>
@@ -212,28 +211,28 @@ border:1px solid #fff;background:rgba(7,23,39,.65);color:#fff;font-weight:900}
 
 
 <!-- Hotspots mapped to the approved Moon keeper JPG. -->
-<button class="hotspot" data-word="bee" style="left:50%;top:58%;width:8%;height:14%" aria-label="Astronaut Bee"></button>
-<button class="hotspot" data-word="crew" style="left:42%;top:55%;width:31%;height:20%" aria-label="Moon crew"></button>
-<button class="hotspot" data-word="mooncastle" style="left:57%;top:65%;width:12%;height:11%" aria-label="Moon castle"></button>
-<button class="hotspot" data-word="moonrock" style="left:38%;top:65%;width:10%;height:12%" aria-label="Moon rock"></button>
-<button class="hotspot" data-word="surface" style="left:18%;top:58%;width:60%;height:42%" aria-label="Lunar surface"></button>
-<button class="hotspot" data-word="crater" style="left:19%;top:73%;width:22%;height:18%" aria-label="Crater"></button>
-<button class="hotspot" data-word="lander" style="left:19%;top:29%;width:20%;height:30%" aria-label="Lunar lander"></button>
-<button class="hotspot" data-word="ladder" style="left:31%;top:43%;width:8%;height:18%" aria-label="Lander ladder"></button>
-<button class="hotspot" data-word="flag" style="left:43%;top:43%;width:10%;height:17%" aria-label="American flag"></button>
-<button class="hotspot" data-word="rover" style="left:0%;top:45%;width:23%;height:22%" aria-label="Moon rover"></button>
-<button class="hotspot" data-word="antenna" style="left:8%;top:33%;width:11%;height:18%" aria-label="Dish antenna"></button>
+
+<button class="hotspot" data-word="crew" style="left: 22.68%; top: 51.57%; width: 46.47%; height: 20.19%;" aria-label="Moon crew"></button>
+<button class="hotspot" data-word="mooncastle" style="left: 41.48%; top: 75.37%; width: 12%; height: 11%;" aria-label="Moon castle"></button>
+<button class="hotspot" data-word="moonrock" style="left: 52.58%; top: 82.41%; width: 10%; height: 12%;" aria-label="Moon rock"></button>
+<button class="hotspot" data-word="surface" style="left: 73.21%; top: 67.16%; width: 27.45%; height: 20.06%;" aria-label="Lunar surface"></button>
+
+<button class="hotspot" data-word="lander" style="left: 1.65%; top: 19.01%; width: 14.58%; height: 23.33%;" aria-label="Lunar lander"></button>
+<button class="hotspot" data-word="ladder" style="left: 18.44%; top: 32.35%; width: 7.06%; height: 11.52%;" aria-label="Lander ladder"></button>
+<button class="hotspot" data-word="flag" style="left: 38.57%; top: 33.74%; width: 5.99%; height: 11.63%;" aria-label="American flag"></button>
+<button class="hotspot" data-word="rover" style="left: 81.77%; top: 31.03%; width: 23%; height: 22%;" aria-label="Moon rover"></button>
+<button class="hotspot" data-word="antenna" style="left: 12.17%; top: 5.22%; width: 11%; height: 18%;" aria-label="Dish antenna"></button>
 <button class="hotspot" data-word="base" style="left:68%;top:42%;width:29%;height:20%" aria-label="Moon base"></button>
 <button class="hotspot" data-word="habitat" style="left:72%;top:42%;width:18%;height:17%" aria-label="Lunar habitat"></button>
 <button class="hotspot" data-word="smallrover" style="left:86%;top:52%;width:12%;height:13%" aria-label="Small rover"></button>
 <button class="hotspot" data-word="instrument" style="left:91%;top:60%;width:9%;height:19%" aria-label="Science instrument"></button>
-<button class="hotspot" data-word="earth" style="left:58%;top:3%;width:19%;height:30%" aria-label="Earth"></button>
+<button class="hotspot" data-word="earth" style="left: 60.45%; top: 3.65%; width: 19%; height: 30%;" aria-label="Earth" data-sound="sounds/one-small-step-for-man.mp3"></button>
 <button class="hotspot" data-word="sun" style="left:0%;top:0%;width:12%;height:20%" aria-label="Sun"></button>
-<button class="hotspot" data-word="stars" style="left:13%;top:0%;width:43%;height:28%" aria-label="Stars"></button>
-<button class="hotspot" data-word="mountains" style="left:0%;top:31%;width:100%;height:18%" aria-label="Lunar mountains"></button>
-<button class="hotspot" data-word="footprints" style="left:46%;top:72%;width:26%;height:20%" aria-label="Footprints"></button>
+<button class="hotspot" data-word="stars" style="left: 24.51%; top: 6.02%; width: 21.28%; height: 17.72%;" aria-label="Stars"></button>
+<button class="hotspot" data-word="mountains" style="left: 12.35%; top: 24.89%; width: 41.14%; height: 9.67%;" aria-label="Lunar mountains"></button>
 
-</main>
+
+<button type="button" class="hotspot" data-word="camera" aria-label="camera" data-tb-custom="1" data-tb-en="camera" data-tb-es="cámara" data-tb-fr="caméra" data-tb-de="Kamera" data-tb-it="telecamera" data-tb-pt="câmera" data-tb-no="kamera" style="left: 2.02%; top: 49.13%; width: 8.34%; height: 18.37%;"></button><button type="button" class="hotspot" data-word="tool case" aria-label="tool case" data-tb-custom="1" data-tb-en="tool case" data-tb-es="caja de herramientas" data-tb-fr="mallette à outils" data-tb-de="Werkzeugkoffer" data-tb-it="valigetta degli attrezzi" data-tb-pt="maleta de ferramentas" data-tb-no="verktøykasse" style="left: 25.75%; top: 79.89%; width: 17.61%; height: 15.59%;"></button></main>
 
 <script>
 const EN={game:"the Moon",bee:"astronaut Bee",crew:"Moon crew",mooncastle:"Moon castle",moonrock:"Moon rock",surface:"lunar surface",crater:"crater",lander:"lunar lander",ladder:"lander ladder",flag:"American flag",rover:"Moon rover",antenna:"dish antenna",base:"Moon base",habitat:"lunar habitat",smallrover:"small rover",instrument:"science instrument",earth:"Earth",sun:"Sun",stars:"stars",mountains:"lunar mountains",footprints:"footprints"};
@@ -569,9 +568,10 @@ document.addEventListener('click',function(ev){
 })();
 </script>
 
-</body>
-</html>
+
+
 
 <style id="talkabee-ski-panel-180">
 @media(min-width:761px){.panel{width:180px!important;min-width:180px!important;max-width:180px!important}}
 </style>
+</body></html>
