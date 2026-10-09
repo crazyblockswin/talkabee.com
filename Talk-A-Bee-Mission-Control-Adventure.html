@@ -1,6 +1,5 @@
 <!doctype html>
-<html lang="en">
-<head>
+<html lang="en"><head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Talk A Bee — Mission Control Adventure</title>
@@ -112,12 +111,13 @@ border:1px solid #fff;background:rgba(7,23,39,.65);color:#fff;font-weight:900}
 
 <!-- TALK A BEE HOTSPOTS VISUALLY RECERTIFIED AGAINST CURRENT SCENE ARTWORK: 2026-10-07 -->
 
+
 <style id="talkabee-bilingual-hotspot-popup-style">
 #talkabee-object-popup{position:fixed;z-index:2147482900;display:none;padding:8px 12px;border-radius:12px;background:rgba(20,20,20,.82);color:white;font-weight:900;font-size:14px;pointer-events:none}
 </style>
 
 </head>
-<body>
+<body class="">
 <div class="talkabee-editions">
 <details>
 <summary>Explore Adventures ▾</summary>
@@ -145,13 +145,13 @@ border:1px solid #fff;background:rgba(7,23,39,.65);color:#fff;font-weight:900}
 <div class="tab-panel-size-controls" aria-label="Activity panel size"><button type="button" class="tab-panel-minus" title="Make activity panel smaller">−</button><button type="button" class="tab-panel-reset" title="Reset activity panel size">Reset</button><button type="button" class="tab-panel-plus" title="Make activity panel larger">+</button></div>
 
 <div class="label">LANGUAGE</div>
-<select id="lang">
+<select id="lang" data-tab-global-voice="1">
 <option value="es">Spanish</option><option value="fr">French</option><option value="en">English</option>
 <option value="de">German</option><option value="it">Italian</option><option value="pt">Portuguese</option><option value="no">Norwegian</option>
 </select>
 <div class="label">VOICE</div>
-<select id="voice"><option value="">Browser Default</option></select>
-<button id="sceneView">◉ Scene View</button>
+<select id="voice" data-tab-global-voice="1"><option value="">Browser Default</option><option value="Microsoft David - English (United States)">Microsoft David - English (United States) — en-US</option><option value="Microsoft Mark - English (United States)">Microsoft Mark - English (United States) — en-US</option><option value="Microsoft Zira - English (United States)">Microsoft Zira - English (United States) — en-US</option><option value="Microsoft David Desktop - English (United States)">Microsoft David Desktop - English (United States) — en-US</option><option value="Microsoft Zira Desktop - English (United States)">Microsoft Zira Desktop - English (United States) — en-US</option></select>
+<button id="sceneView" aria-pressed="false">◉ Scene View</button>
 
 <div class="label">DISCOVERY</div>
 <button id="discovery">🔎 Discovery — Click the Scene</button>
@@ -177,9 +177,9 @@ border:1px solid #fff;background:rgba(7,23,39,.65);color:#fff;font-weight:900}
 <div class="tab-card-tools" aria-label="Script card controls"><button type="button" class="tab-card-drag" title="Move script card">↕ Move</button><button type="button" class="tab-card-font-down" title="Decrease text">A−</button><button type="button" class="tab-card-font-up" title="Increase text">A+</button><button type="button" class="tab-card-reset" title="Reset card">Reset</button></div><div class="tab-card-resize" title="Drag to resize script card" aria-label="Resize script card">↘</div>
 
 <div class="kicker">INSIDE MISSION CONTROL</div>
-<h2 id="title">Mission Control Adventure</h2>
-<p id="prompt">Click any object in the scene to hear its name.</p>
-<div class="word"><strong id="line">centro de control de misión</strong><div class="translation" id="translation">mission control center</div></div>
+<h2 id="title">Click &amp; Discover</h2>
+<p id="prompt">You found flight controllers.</p>
+<div class="word"><strong id="line">controladores de vuelo</strong><div class="translation" id="translation">flight controllers</div></div>
 <p id="status"></p>
 <div class="controls">
 <button id="normal">🔊 Speak</button><button id="slow">🐢 Slow</button><button id="replay">↻ Replay</button><button id="nextPhrase">Next phrase →</button>
@@ -213,15 +213,15 @@ border:1px solid #fff;background:rgba(7,23,39,.65);color:#fff;font-weight:900}
 
 <!-- Hotspots mapped to the approved Mission Control keeper JPG. -->
 <button class="hotspot" data-word="bee" style="left:32%;top:72%;width:9%;height:22%" aria-label="Bee"></button>
-<button class="hotspot" data-word="visitors" style="left:12%;top:58%;width:32%;height:42%" aria-label="Visitors"></button>
-<button class="hotspot" data-word="controllers" style="left:25%;top:48%;width:65%;height:27%" aria-label="Flight controllers"></button>
+<button class="hotspot" data-word="visitors" style="left: 12%; top: 58%; width: 19.24%; height: 41.26%;" aria-label="Visitors"></button>
+<button class="hotspot" data-word="controllers" style="left:25%;top:48%;width:65%;height:27%" aria-label="Flight controllers" data-sound="sounds/crowd-cheering-nasa.mp3"></button>
 <button class="hotspot" data-word="console" style="left:41%;top:55%;width:18%;height:17%" aria-label="Control console"></button>
 <button class="hotspot" data-word="monitor" style="left:72%;top:55%;width:17%;height:17%" aria-label="Computer monitor"></button>
 <button class="hotspot" data-word="headset" style="left:91%;top:53%;width:8%;height:18%" aria-label="Headset"></button>
-<button class="hotspot" data-word="rocket" style="left:45%;top:28%;width:13%;height:22%" aria-label="Rocket"></button>
-<button class="hotspot" data-word="launchpad" style="left:82%;top:27%;width:18%;height:25%" aria-label="Launch pad"></button>
-<button class="hotspot" data-word="countdown" style="left:39%;top:12%;width:20%;height:11%" aria-label="Countdown clock"></button>
-<button class="hotspot" data-word="bigscreen" style="left:26%;top:7%;width:49%;height:44%" aria-label="Mission screen"></button>
+<button class="hotspot" data-word="rocket" style="left:45%;top:28%;width:13%;height:22%" aria-label="Rocket" data-sound="sounds/shuttle-launch.mp3"></button>
+<button class="hotspot" data-word="launchpad" style="left:82%;top:27%;width:18%;height:25%" aria-label="Launch pad" data-sound="sounds/shuttle-launch.mp3"></button>
+<button class="hotspot" data-word="countdown" style="left: 39.63%; top: 16.44%; width: 20%; height: 11%;" aria-label="Countdown clock" data-sound="sounds/rocket-launch.mp3"></button>
+<button class="hotspot" data-word="bigscreen" style="left: 27.31%; top: 9.69%; width: 45.77%; height: 7.79%;" aria-label="Mission screen"></button>
 <button class="hotspot" data-word="earth" style="left:32%;top:26%;width:11%;height:20%" aria-label="Earth display"></button>
 <button class="hotspot" data-word="flag" style="left:18%;top:21%;width:8%;height:24%" aria-label="American flag"></button>
 <button class="hotspot" data-word="moon" style="left:8%;top:12%;width:11%;height:19%" aria-label="Moon display"></button>
@@ -231,7 +231,7 @@ border:1px solid #fff;background:rgba(7,23,39,.65);color:#fff;font-weight:900}
 <button class="hotspot" data-word="map" style="left:69%;top:33%;width:10%;height:16%" aria-label="Mission map"></button>
 <button class="hotspot" data-word="chair" style="left:60%;top:57%;width:10%;height:20%" aria-label="Control room chair"></button>
 <button class="hotspot" data-word="telephone" style="left:88%;top:69%;width:8%;height:12%" aria-label="Telephone"></button>
-<button class="hotspot" data-word="ceiling" style="left:25%;top:0%;width:51%;height:12%" aria-label="Control room ceiling"></button>
+<button class="hotspot" data-word="ceiling" style="left: 37.7%; top: -8.13%; width: 51%; height: 12%;" aria-label="Control room ceiling"></button>
 
 </main>
 
@@ -503,6 +503,7 @@ document.addEventListener('click',function(ev){
 },true);
 })();</script>
 
+
 <script id="talkabee-scene-view-safe-reset">
 (function(){
   function resetTalkABeeSceneView(){
@@ -557,9 +558,10 @@ document.addEventListener('click',function(ev){
 })();
 </script>
 
-</body>
-</html>
+
+
 
 <style id="talkabee-ski-panel-180">
 @media(min-width:761px){.panel{width:180px!important;min-width:180px!important;max-width:180px!important}}
 </style>
+</body></html>
