@@ -1,6 +1,5 @@
 <!doctype html>
-<html lang="en">
-<head>
+<html lang="en"><head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Talk A Bee — Dog Show Adventure</title>
@@ -118,7 +117,7 @@ border:1px solid #fff;background:rgba(7,23,39,.65);color:#fff;font-weight:900}
 </style>
 
 </head>
-<body>
+<body class="">
 <div class="talkabee-editions">
 <details>
 <summary>Explore Adventures ▾</summary>
@@ -146,13 +145,13 @@ border:1px solid #fff;background:rgba(7,23,39,.65);color:#fff;font-weight:900}
 <div class="tab-panel-size-controls" aria-label="Activity panel size"><button type="button" class="tab-panel-minus" title="Make activity panel smaller">−</button><button type="button" class="tab-panel-reset" title="Reset activity panel size">Reset</button><button type="button" class="tab-panel-plus" title="Make activity panel larger">+</button></div>
 
 <div class="label">LANGUAGE</div>
-<select id="lang">
+<select id="lang" data-tab-global-voice="1">
 <option value="es">Spanish</option><option value="fr">French</option><option value="en">English</option>
 <option value="de">German</option><option value="it">Italian</option><option value="pt">Portuguese</option><option value="no">Norwegian</option>
 </select>
 <div class="label">VOICE</div>
-<select id="voice"><option value="">Browser Default</option></select>
-<button id="sceneView">◉ Scene View</button>
+<select id="voice" data-tab-global-voice="1"><option value="">Browser Default</option><option value="Microsoft David - English (United States)">Microsoft David - English (United States) — en-US</option><option value="Microsoft Mark - English (United States)">Microsoft Mark - English (United States) — en-US</option><option value="Microsoft Zira - English (United States)">Microsoft Zira - English (United States) — en-US</option><option value="Microsoft David Desktop - English (United States)">Microsoft David Desktop - English (United States) — en-US</option><option value="Microsoft Zira Desktop - English (United States)">Microsoft Zira Desktop - English (United States) — en-US</option></select>
+<button id="sceneView" aria-pressed="false">◉ Scene View</button>
 
 <div class="label">DISCOVERY</div>
 <button id="discovery">🔎 Discovery — Click the Scene</button>
@@ -178,9 +177,9 @@ border:1px solid #fff;background:rgba(7,23,39,.65);color:#fff;font-weight:900}
 <div class="tab-card-tools" aria-label="Script card controls"><button type="button" class="tab-card-drag" title="Move script card">↕ Move</button><button type="button" class="tab-card-font-down" title="Decrease text">A−</button><button type="button" class="tab-card-font-up" title="Increase text">A+</button><button type="button" class="tab-card-reset" title="Reset card">Reset</button></div><div class="tab-card-resize" title="Drag to resize script card" aria-label="Resize script card">↘</div>
 
 <div class="kicker">AT THE DOG SHOW</div>
-<h2 id="title">Dog Show Adventure</h2>
-<p id="prompt">Click any object in the scene to hear its name.</p>
-<div class="word"><strong id="line">exposición canina</strong><div class="translation" id="translation">dog show</div></div>
+<h2 id="title">Click &amp; Discover</h2>
+<p id="prompt">You found bulldog.</p>
+<div class="word"><strong id="line">bulldog</strong><div class="translation" id="translation"></div></div>
 <p id="status"></p>
 <div class="controls">
 <button id="normal">🔊 Speak</button><button id="slow">🐢 Slow</button><button id="replay">↻ Replay</button><button id="nextPhrase">Next phrase →</button>
@@ -205,28 +204,28 @@ border:1px solid #fff;background:rgba(7,23,39,.65);color:#fff;font-weight:900}
 
 
 <!-- Hotspots mapped to the approved Dog Show keeper JPG. -->
-<button class="hotspot" data-word="bee" style="left:10%;top:39%;width:13%;height:27%" aria-label="Referee Bee"></button>
-<button class="hotspot" data-word="clipboard" style="left:15%;top:51%;width:8%;height:12%" aria-label="Clipboard"></button>
-<button class="hotspot" data-word="golden" style="left:24%;top:52%;width:10%;height:20%" aria-label="Golden Retriever"></button>
-<button class="hotspot" data-word="smallwhite" style="left:32%;top:58%;width:7%;height:14%" aria-label="Small white dog"></button>
-<button class="hotspot" data-word="bordercollie" style="left:38%;top:55%;width:9%;height:18%" aria-label="Border Collie"></button>
-<button class="hotspot" data-word="spaniel" style="left:46%;top:58%;width:8%;height:16%" aria-label="Spaniel"></button>
-<button class="hotspot" data-word="brown" style="left:55%;top:53%;width:9%;height:21%" aria-label="Brown dog"></button>
-<button class="hotspot" data-word="dalmatian" style="left:64%;top:50%;width:9%;height:23%" aria-label="Dalmatian"></button>
-<button class="hotspot" data-word="bulldog" style="left:71%;top:59%;width:8%;height:15%" aria-label="Bulldog"></button>
-<button class="hotspot" data-word="pomeranian" style="left:77%;top:58%;width:8%;height:16%" aria-label="Pomeranian"></button>
-<button class="hotspot" data-word="shepherd" style="left:85%;top:51%;width:9%;height:24%" aria-label="German Shepherd"></button>
-<button class="hotspot" data-word="terrier" style="left:92%;top:59%;width:7%;height:17%" aria-label="Terrier"></button>
-<button class="hotspot" data-word="handlers" style="left:25%;top:41%;width:72%;height:27%" aria-label="Dog handlers"></button>
-<button class="hotspot" data-word="leash" style="left:51%;top:49%;width:7%;height:20%" aria-label="Dog leash"></button>
+
+<button class="hotspot" data-word="clipboard" style="left: 5.78%; top: 57.39%; width: 4.51%; height: 9.53%;" aria-label="Clipboard"></button>
+<button class="hotspot" data-word="golden" style="left: 15.35%; top: 61.98%; width: 10%; height: 20%;" aria-label="Golden Retriever" data-sound="sounds/dog-panting.wav"></button>
+
+<button class="hotspot" data-word="bordercollie" style="left: 25.76%; top: 61.95%; width: 9%; height: 18%;" aria-label="Border Collie" data-sound="sounds/dog-bark.mp3"></button>
+<button class="hotspot" data-word="spaniel" style="left: 58.76%; top: 69.88%; width: 8%; height: 16%;" aria-label="Spaniel"></button>
+<button class="hotspot" data-word="brown" style="left: 68.54%; top: 61.07%; width: 9%; height: 21%;" aria-label="Brown dog" data-sound="sounds/dog.mp3"></button>
+<button class="hotspot" data-word="dalmatian" style="left: 77.39%; top: 57.29%; width: 9%; height: 23%;" aria-label="Dalmatian" data-sound="sounds/dog-panting.wav"></button>
+
+<button class="hotspot" data-word="pomeranian" style="left: 87.52%; top: 74.48%; width: 8%; height: 16%;" aria-label="Pomeranian"></button>
+<button class="hotspot" data-word="shepherd" style="left: 44.75%; top: 59.97%; width: 9%; height: 24%;" aria-label="German Shepherd" data-sound="sounds/dog-bark.mp3"></button>
+
+<button class="hotspot" data-word="handlers" style="left: 13.08%; top: 39.43%; width: 85.96%; height: 16.58%;" aria-label="Dog handlers"></button>
+<button class="hotspot" data-word="leash" style="left: 48.5%; top: 53.15%; width: 1.53%; height: 11.59%;" aria-label="Dog leash"></button>
 <button class="hotspot" data-word="banner" style="left:47%;top:3%;width:39%;height:18%" aria-label="Dog Show banner"></button>
-<button class="hotspot" data-word="audience" style="left:33%;top:22%;width:64%;height:24%" aria-label="Audience"></button>
-<button class="hotspot" data-word="fence" style="left:17%;top:43%;width:83%;height:13%" aria-label="Show ring fence"></button>
-<button class="hotspot" data-word="flowers" style="left:0%;top:68%;width:22%;height:31%" aria-label="Flowers"></button>
-<button class="hotspot" data-word="turf" style="left:20%;top:72%;width:80%;height:28%" aria-label="Show ring turf"></button>
+<button class="hotspot" data-word="audience" style="left: 31.85%; top: 26.48%; width: 61.55%; height: 9.2%;" aria-label="Audience" data-sound="sounds/crowd-shopping.mp3"></button>
+
+<button class="hotspot" data-word="flowers" style="left: -2.03%; top: 83.7%; width: 11.22%; height: 16.99%;" aria-label="Flowers"></button>
+<button class="hotspot" data-word="turf" style="left: 14.01%; top: 87.47%; width: 70.1%; height: 8.72%;" aria-label="Show ring turf"></button>
 <button class="hotspot" data-word="lights" style="left:0%;top:0%;width:46%;height:21%" aria-label="Arena lights"></button>
 
-</main>
+<button type="button" class="hotspot" data-word="small white poodle" aria-label="small white poodle" data-tb-custom="1" data-tb-en="small white poodle" data-tb-es="pequeño caniche blanco" data-tb-fr="petit caniche blanc" data-tb-de="kleiner weißer Pudel" data-tb-it="piccolo barboncino bianco" data-tb-pt="poodle branco pequeno" data-tb-no="liten hvit puddel" style="left: 36.53%; top: 67.66%; width: 6.52%; height: 19.43%;" data-sound="sounds/dog-panting.wav"></button><button type="button" class="hotspot" data-word="judge" aria-label="judge" data-tb-custom="1" data-tb-en="judge" data-tb-es="juez" data-tb-fr="juge" data-tb-de="Richter" data-tb-it="giudice" data-tb-pt="juiz" data-tb-no="dømme" style="left: 5.85%; top: 48.29%; width: 6%; height: 8%;"></button></main>
 
 <script>
 const EN={game:"dog show",bee:"Referee Bee",clipboard:"clipboard",golden:"Golden Retriever",smallwhite:"small white dog",bordercollie:"Border Collie",spaniel:"spaniel",brown:"brown dog",dalmatian:"Dalmatian",bulldog:"bulldog",pomeranian:"Pomeranian",shepherd:"German Shepherd",terrier:"terrier",handlers:"dog handlers",leash:"dog leash",banner:"dog show banner",audience:"audience",fence:"show ring fence",flowers:"flowers",turf:"show ring turf",lights:"arena lights"};
@@ -562,9 +561,10 @@ document.addEventListener('click',function(ev){
 })();
 </script>
 
-</body>
-</html>
+
+
 
 <style id="talkabee-ski-panel-180">
 @media(min-width:761px){.panel{width:180px!important;min-width:180px!important;max-width:180px!important}}
 </style>
+</body></html>
