@@ -179,8 +179,8 @@ border:1px solid #fff;background:rgba(7,23,39,.65);color:#fff;font-weight:900}
 
 <div class="kicker">ON THE FLIGHT DECK</div>
 <h2 id="title">Click &amp; Discover</h2>
-<p id="prompt">You found tow tractor.</p>
-<div class="word"><strong id="line">tow tractor</strong><div class="translation" id="translation"></div></div>
+<p id="prompt">You found aircraft carrier.</p>
+<div class="word"><strong id="line">aircraft carrier</strong><div class="translation" id="translation"></div></div>
 <p id="status"></p>
 <div class="controls">
 <button id="normal">🔊 Speak</button><button id="slow">🐢 Slow</button><button id="replay">↻ Replay</button><button id="nextPhrase">Next phrase →</button>
@@ -575,4 +575,25 @@ document.addEventListener('click',function(ev){
  function show(el,e){if(document.body.classList.contains('tb-hs-editing'))return;var key=(el.dataset&&(el.dataset.word||el.dataset.key||el.dataset.object||el.dataset.en))||el.id||(el.dataset&&el.dataset.name)||el.getAttribute('aria-label')||'';if(!key)return;var l=lang(),en=cleanEnglish(el,key),word=lookup(el,key,l);if(!word)return;var same=String(word).replace(/^(the|a|an)\s+/i,'').toLowerCase()===String(en).toLowerCase();pop.textContent=(l==='en'||same)?en:(word+' — '+en);pop.style.display='block';var r=el.getBoundingClientRect(),x=(e&&e.clientX)||r.left+r.width/2,y=(e&&e.clientY)||r.top+r.height/2;var pr=pop.getBoundingClientRect();pop.style.left=Math.max(8,Math.min(innerWidth-pr.width-8,x+12))+'px';pop.style.top=Math.max(8,Math.min(innerHeight-pr.height-8,y-pr.height-10))+'px';clearTimeout(timer);timer=setTimeout(function(){pop.style.display='none'},1800)}
  document.addEventListener('click',function(e){var el=e.target.closest&&e.target.closest('.hotspot,.home-hotspot,.yacht-hotspot,.hotspots button,.train-hotspots button');if(el)show(el,e)},true);
 })();
-</script></body></html>
+</script><script id="talkabee-language-sync-repair-20261009">
+(function(){
+  const KEY='talkabee-learn-language';
+  const language=document.getElementById('lang');
+  if(!language)return;
+  function restore(){
+    let saved;
+    try{saved=localStorage.getItem(KEY)}catch(e){return}
+    if(saved && [...language.options].some(o=>o.value===saved) && language.value!==saved){
+      language.value=saved;
+      language.dispatchEvent(new Event('change',{bubbles:true}));
+    }
+  }
+  language.addEventListener('change',function(){
+    try{localStorage.setItem(KEY,language.value)}catch(e){}
+  },true);
+  restore();
+  window.addEventListener('pageshow',restore);
+  window.addEventListener('storage',function(e){if(e.key===KEY)restore()});
+})();
+</script>
+</body></html>

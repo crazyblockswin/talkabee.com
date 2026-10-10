@@ -178,8 +178,8 @@ border:1px solid #fff;background:rgba(7,23,39,.65);color:#fff;font-weight:900}
 
 <div class="kicker">VISITING THE OVAL OFFICE</div>
 <h2 id="title">Click &amp; Discover</h2>
-<p id="prompt">You found fireplace.</p>
-<div class="word"><strong id="line">chimenea</strong><div class="translation" id="translation">fireplace</div></div>
+<p id="prompt">You found Oval Office.</p>
+<div class="word"><strong id="line">Despacho Oval</strong><div class="translation" id="translation">Oval Office</div></div>
 <p id="status"></p>
 <div class="controls">
 <button id="normal">🔊 Speak</button><button id="slow">🐢 Slow</button><button id="replay">↻ Replay</button><button id="nextPhrase">Next phrase →</button>
@@ -572,4 +572,25 @@ document.addEventListener('click',function(ev){
 <style id="talkabee-ski-panel-180">
 @media(min-width:761px){.panel{width:180px!important;min-width:180px!important;max-width:180px!important}}
 </style>
+<script id="talkabee-language-sync-repair-20261009">
+(function(){
+  const KEY='talkabee-learn-language';
+  const language=document.getElementById('lang');
+  if(!language)return;
+  function restore(){
+    let saved;
+    try{saved=localStorage.getItem(KEY)}catch(e){return}
+    if(saved && [...language.options].some(o=>o.value===saved) && language.value!==saved){
+      language.value=saved;
+      language.dispatchEvent(new Event('change',{bubbles:true}));
+    }
+  }
+  language.addEventListener('change',function(){
+    try{localStorage.setItem(KEY,language.value)}catch(e){}
+  },true);
+  restore();
+  window.addEventListener('pageshow',restore);
+  window.addEventListener('storage',function(e){if(e.key===KEY)restore()});
+})();
+</script>
 </body></html>

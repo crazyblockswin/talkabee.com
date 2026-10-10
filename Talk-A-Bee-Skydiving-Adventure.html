@@ -178,8 +178,8 @@ border:1px solid #fff;background:rgba(7,23,39,.65);color:#fff;font-weight:900}
 
 <div class="kicker">SKYDIVING OVER THE MOUNTAINS</div>
 <h2 id="title">Click &amp; Discover</h2>
-<p id="prompt">You found skydiver.</p>
-<div class="word"><strong id="line">paracaidista</strong><div class="translation" id="translation">skydiver</div></div>
+<p id="prompt">You found skydiving.</p>
+<div class="word"><strong id="line">paracaidismo</strong><div class="translation" id="translation">skydiving</div></div>
 <p id="status"></p>
 <div class="controls">
 <button id="normal">🔊 Speak</button><button id="slow">🐢 Slow</button><button id="replay">↻ Replay</button><button id="nextPhrase">Next phrase →</button>
@@ -208,8 +208,8 @@ border:1px solid #fff;background:rgba(7,23,39,.65);color:#fff;font-weight:900}
 <button class="hotspot" data-word="door" style="left: 85.29%; top: 19.82%; width: 11.9%; height: 11%;" aria-label="Airplane door"></button>
 <button class="hotspot" data-word="crew" style="left: 86.87%; top: 5.23%; width: 9.57%; height: 15.94%;" aria-label="Crew member"></button>
 <button class="hotspot" data-word="instructor" style="left: 46.59%; top: 18.57%; width: 5.53%; height: 13.83%;" aria-label="Skydiving instructor"></button>
-<button class="hotspot" data-word="jumperblue" style="left: 28.92%; top: 15.5%; width: 11.84%; height: 12.41%;" aria-label="Blue skydiver" data-sound="sounds/wind.mp3"></button>
-<button class="hotspot" data-word="jumperpink" style="left: 57.01%; top: 32.64%; width: 6.09%; height: 10.16%;" aria-label="Pink skydiver" data-sound="sounds/wind.mp3"></button>
+<button class="hotspot" data-word="jumperblue" style="left: 28.92%; top: 15.5%; width: 11.84%; height: 12.41%;" aria-label="Blue skydiver"></button>
+<button class="hotspot" data-word="jumperpink" style="left: 57.01%; top: 32.64%; width: 6.09%; height: 10.16%;" aria-label="Pink skydiver"></button>
 <button class="hotspot" data-word="helmet" style="left: 42.1%; top: 32.18%; width: 4.43%; height: 7.33%;" aria-label="Helmet"></button>
 <button class="hotspot" data-word="goggles" style="left: 41.79%; top: 40.52%; width: 3.95%; height: 2.98%;" aria-label="Goggles"></button>
 <button class="hotspot" data-word="harness" style="left: 36.92%; top: 44.89%; width: 10.59%; height: 7.2%;" aria-label="Skydiving harness"></button>
@@ -566,4 +566,25 @@ document.addEventListener('click',function(ev){
 <style id="talkabee-ski-panel-180">
 @media(min-width:761px){.panel{width:180px!important;min-width:180px!important;max-width:180px!important}}
 </style>
+<script id="talkabee-language-sync-repair-20261009">
+(function(){
+  const KEY='talkabee-learn-language';
+  const language=document.getElementById('lang');
+  if(!language)return;
+  function restore(){
+    let saved;
+    try{saved=localStorage.getItem(KEY)}catch(e){return}
+    if(saved && [...language.options].some(o=>o.value===saved) && language.value!==saved){
+      language.value=saved;
+      language.dispatchEvent(new Event('change',{bubbles:true}));
+    }
+  }
+  language.addEventListener('change',function(){
+    try{localStorage.setItem(KEY,language.value)}catch(e){}
+  },true);
+  restore();
+  window.addEventListener('pageshow',restore);
+  window.addEventListener('storage',function(e){if(e.key===KEY)restore()});
+})();
+</script>
 </body></html>

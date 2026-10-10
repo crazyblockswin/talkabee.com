@@ -576,4 +576,25 @@ document.addEventListener('click',function(ev){
 })();
 </script>
 
+<script id="talkabee-language-sync-repair-20261009">
+(function(){
+  const KEY='talkabee-learn-language';
+  const language=document.getElementById('lang');
+  if(!language)return;
+  function restore(){
+    let saved;
+    try{saved=localStorage.getItem(KEY)}catch(e){return}
+    if(saved && [...language.options].some(o=>o.value===saved) && language.value!==saved){
+      language.value=saved;
+      language.dispatchEvent(new Event('change',{bubbles:true}));
+    }
+  }
+  language.addEventListener('change',function(){
+    try{localStorage.setItem(KEY,language.value)}catch(e){}
+  },true);
+  restore();
+  window.addEventListener('pageshow',restore);
+  window.addEventListener('storage',function(e){if(e.key===KEY)restore()});
+})();
+</script>
 </body></html>

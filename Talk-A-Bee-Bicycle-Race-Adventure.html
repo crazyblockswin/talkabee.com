@@ -178,8 +178,8 @@ border:1px solid #fff;background:rgba(7,23,39,.65);color:#fff;font-weight:900}
 
 <div class="kicker">AT THE MOUNTAIN BIKE START</div>
 <h2 id="title">Click &amp; Discover</h2>
-<p id="prompt">You found she hit a boulder and lost.</p>
-<div class="word"><strong id="line">ha colpito un masso e ha perso</strong><div class="translation" id="translation">she hit a boulder and lost</div></div>
+<p id="prompt">You found bicycle race.</p>
+<div class="word"><strong id="line">carrera de bicicletas</strong><div class="translation" id="translation">bicycle race</div></div>
 <p id="status"></p>
 <div class="controls">
 <button id="normal">🔊 Speak</button><button id="slow">🐢 Slow</button><button id="replay">↻ Replay</button><button id="nextPhrase">Next phrase →</button>
@@ -561,4 +561,25 @@ document.addEventListener('click',function(ev){
 <style id="talkabee-ski-panel-180">
 @media(min-width:761px){.panel{width:180px!important;min-width:180px!important;max-width:180px!important}}
 </style>
+<script id="talkabee-language-sync-repair-20261009">
+(function(){
+  const KEY='talkabee-learn-language';
+  const language=document.getElementById('lang');
+  if(!language)return;
+  function restore(){
+    let saved;
+    try{saved=localStorage.getItem(KEY)}catch(e){return}
+    if(saved && [...language.options].some(o=>o.value===saved) && language.value!==saved){
+      language.value=saved;
+      language.dispatchEvent(new Event('change',{bubbles:true}));
+    }
+  }
+  language.addEventListener('change',function(){
+    try{localStorage.setItem(KEY,language.value)}catch(e){}
+  },true);
+  restore();
+  window.addEventListener('pageshow',restore);
+  window.addEventListener('storage',function(e){if(e.key===KEY)restore()});
+})();
+</script>
 </body></html>
