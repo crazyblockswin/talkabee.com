@@ -164,10 +164,10 @@ border:1px solid #fff;background:rgba(7,23,39,.65);color:#fff;font-weight:900}
 <button data-lesson="parachute">5. Open the Parachute</button>
 <button data-lesson="view">6. Explore the View Below</button>
 <div class="label">CHALLENGES</div>
-<button data-ch="0">1. Find the Flying Bee</button>
-<button data-ch="1">2. Find the Airplane</button>
+<button data-ch="0">1. Find the Landing Gear</button>
+<button data-ch="1">2. Find the Instructor</button>
 <button data-ch="2">3. Find a Helmet</button>
-<button data-ch="3">4. Find a Parachute Pack</button>
+<button data-ch="3">4. Find the Goggles</button>
 <button data-ch="4">5. Find the Mountain</button>
 <button data-ch="5">6. Find the Lake</button>
 <a href="index.html">← Return to Main Directory</a>
@@ -587,4 +587,18 @@ document.addEventListener('click',function(ev){
   window.addEventListener('storage',function(e){if(e.key===KEY)restore()});
 })();
 </script>
+
+<script type="application/json" id="talkabee-challenge-data">[{"key":"landinggear","text":"Find the Landing Gear"},{"key":"instructor","text":"Find the Instructor"},{"key":"helmet","text":"Find a Helmet"},{"key":"goggles","text":"Find the Goggles"},{"key":"mountain","text":"Find the Mountain"},{"key":"lake","text":"Find the Lake"}]</script>
+<script id="talkabee-challenge-runtime">
+(function(){
+ const data=document.getElementById('talkabee-challenge-data');
+ if(!data)return;
+ try{const saved=JSON.parse(data.textContent||'[]');
+ saved.forEach((v,i)=>{const b=document.querySelector('[data-ch="'+i+'"]');if(!b||!v)return;
+ if(v.key)challengeOrder[i]=v.key;
+ if(v.text)b.textContent=(i+1)+'. '+v.text;
+ });}catch(e){console.warn('Challenge data could not be loaded',e)}
+})();
+</script>
+
 </body></html>
