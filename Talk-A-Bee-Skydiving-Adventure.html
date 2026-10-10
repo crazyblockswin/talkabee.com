@@ -140,7 +140,7 @@ border:1px solid #fff;background:rgba(7,23,39,.65);color:#fff;font-weight:900}
 <main class="world" id="world">
 <button class="scene-return" id="sceneReturn">Return to Adventure</button>
 
-<aside class="panel">
+<aside class="panel" style="width: 195px !important; min-width: 195px !important; max-width: 195px !important; --tab-panel-scale: 1.000;">
 <h1>🪂 Skydiving Adventure</h1>
 <div class="tab-panel-size-controls" aria-label="Activity panel size"><button type="button" class="tab-panel-minus" title="Make activity panel smaller">−</button><button type="button" class="tab-panel-reset" title="Reset activity panel size">Reset</button><button type="button" class="tab-panel-plus" title="Make activity panel larger">+</button></div>
 
@@ -169,7 +169,7 @@ border:1px solid #fff;background:rgba(7,23,39,.65);color:#fff;font-weight:900}
 <button data-ch="2">3. Find a Helmet</button>
 <button data-ch="3">4. Find the Goggles</button>
 <button data-ch="4">5. Find the Mountain</button>
-<button data-ch="5">6. Find the Lake</button>
+<button data-ch="5">6. Find the door</button>
 <a href="index.html">← Return to Main Directory</a>
 </aside>
 
@@ -178,8 +178,8 @@ border:1px solid #fff;background:rgba(7,23,39,.65);color:#fff;font-weight:900}
 
 <div class="kicker">SKYDIVING OVER THE MOUNTAINS</div>
 <h2 id="title">Click &amp; Discover</h2>
-<p id="prompt">You found skydiving.</p>
-<div class="word"><strong id="line">paracaidismo</strong><div class="translation" id="translation">skydiving</div></div>
+<p id="prompt">You found clouds.</p>
+<div class="word"><strong id="line">nubes</strong><div class="translation" id="translation">clouds</div></div>
 <p id="status"></p>
 <div class="controls">
 <button id="normal">🔊 Speak</button><button id="slow">🐢 Slow</button><button id="replay">↻ Replay</button><button id="nextPhrase">Next phrase →</button>
@@ -218,8 +218,8 @@ border:1px solid #fff;background:rgba(7,23,39,.65);color:#fff;font-weight:900}
 <button class="hotspot" data-word="mountain" style="left: 55.09%; top: 52.75%; width: 10.43%; height: 12.65%;" aria-label="Snowy mountain"></button>
 <button class="hotspot" data-word="lake" style="left: 33.67%; top: 72.62%; width: 14.87%; height: 11.18%;" aria-label="Mountain lake"></button>
 <button class="hotspot" data-word="islands" style="left:25%;top:72%;width:43%;height:24%" aria-label="Islands"></button>
-<button class="hotspot" data-word="clouds" style="left: -1.72%; top: 52.93%; width: 19.53%; height: 14.11%;" aria-label="Clouds"></button>
-<button class="hotspot" data-word="forest" style="left: 8.23%; top: 67.11%; width: 13.39%; height: 28.19%;" aria-label="Forest"></button>
+<button class="hotspot" data-word="clouds" style="left: 87.55%; top: 64.04%; width: 19.53%; height: 14.11%;" aria-label="Clouds"></button>
+<button class="hotspot" data-word="forest" style="left: 66.41%; top: 65.45%; width: 9.48%; height: 12.73%;" aria-label="Forest"></button>
 <button class="hotspot" data-word="sky" style="left: 18.7%; top: -1.67%; width: 18.25%; height: 11.31%;" aria-label="Blue sky"></button>
 <button class="hotspot" data-word="landinggear" style="left: 94.42%; top: 36.83%; width: 6%; height: 24%;" aria-label="Landing gear"></button>
 <button class="hotspot" data-word="valley" style="left: 74.03%; top: 59.3%; width: 12.64%; height: 9.41%;" aria-label="Mountain valley"></button>
@@ -588,7 +588,7 @@ document.addEventListener('click',function(ev){
 })();
 </script>
 
-<script type="application/json" id="talkabee-challenge-data">[{"key":"landinggear","text":"Find the Landing Gear"},{"key":"instructor","text":"Find the Instructor"},{"key":"helmet","text":"Find a Helmet"},{"key":"goggles","text":"Find the Goggles"},{"key":"mountain","text":"Find the Mountain"},{"key":"lake","text":"Find the Lake"}]</script>
+<script type="application/json" id="talkabee-challenge-data">[{"key":"landinggear","text":"Find the Landing Gear"},{"key":"instructor","text":"Find the Instructor"},{"key":"helmet","text":"Find a Helmet"},{"key":"goggles","text":"Find the Goggles"},{"key":"mountain","text":"Find the Mountain"},{"key":"door","text":"Find the door"}]</script>
 <script id="talkabee-challenge-runtime">
 (function(){
  const data=document.getElementById('talkabee-challenge-data');
@@ -600,5 +600,5 @@ document.addEventListener('click',function(ev){
  });}catch(e){console.warn('Challenge data could not be loaded',e)}
 })();
 </script>
-
+<div id="tb-challenge-panel" style="display: none;"><div id="tb-challenge-drag" title="Drag to move this editor"><h3>↕ Edit Six Challenges</h3><small>Drag here to move</small></div><div>Choose a challenge, then assign an existing hotspot. Changes are included when you save or export HTML.</div><label for="tb-ch-number">Challenge</label><select id="tb-ch-number"><option value="0">Challenge 1</option><option value="1">Challenge 2</option><option value="2">Challenge 3</option><option value="3">Challenge 4</option><option value="4">Challenge 5</option><option value="5">Challenge 6</option></select><label for="tb-ch-hotspot">Find this hotspot</label><select id="tb-ch-hotspot"><option value="airplane">Airplane [airplane]</option><option value="door">Airplane door [door]</option><option value="crew">Crew member [crew]</option><option value="instructor">Skydiving instructor [instructor]</option><option value="jumperblue">Blue skydiver [jumperblue]</option><option value="jumperpink">Pink skydiver [jumperpink]</option><option value="helmet">Helmet [helmet]</option><option value="goggles">Goggles [goggles]</option><option value="harness">Skydiving harness [harness]</option><option value="parachute">Parachute pack [parachute]</option><option value="wing">Airplane wing [wing]</option><option value="mountain">Snowy mountain [mountain]</option><option value="lake">Mountain lake [lake]</option><option value="islands">Islands [islands]</option><option value="clouds">Clouds [clouds]</option><option value="forest">Forest [forest]</option><option value="sky">Blue sky [sky]</option><option value="landinggear">Landing gear [landinggear]</option><option value="valley">Mountain valley [valley]</option></select><label for="tb-ch-text">Challenge wording (English)</label><input id="tb-ch-text" maxlength="110" placeholder="Find the balloon basket"><div class="tb-ch-warning" id="tb-ch-warning"></div><button type="button" id="tb-ch-apply">Apply Challenge</button><button type="button" id="tb-ch-close">Close</button></div>
 </body></html>
