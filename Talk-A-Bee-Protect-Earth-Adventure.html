@@ -178,8 +178,8 @@ border:1px solid #fff;background:rgba(7,23,39,.65);color:#fff;font-weight:900}
 
 <div class="kicker">PROTECT OUR EARTH</div>
 <h2 id="title">Click &amp; Discover</h2>
-<p id="prompt">You found smoke.</p>
-<div class="word"><strong id="line">humo</strong><div class="translation" id="translation">smoke</div></div>
+<p id="prompt">You found pollution critical warning.</p>
+<div class="word"><strong id="line">pollution critical warning</strong><div class="translation" id="translation"></div></div>
 <p id="status"></p>
 <div class="controls">
 <button id="normal">🔊 Speak</button><button id="slow">🐢 Slow</button><button id="replay">↻ Replay</button><button id="nextPhrase">Next phrase →</button>
@@ -492,26 +492,37 @@ showWord("game");
 <script id="talkabee-new-hotspot-live-click">
 (()=>{
 if(window.__tbNewHotspotLiveClick)return;window.__tbNewHotspotLiveClick=true;
-const codes={es:'es-ES',fr:'fr-FR',en:'en-US',de:'de-DE',it:'it-IT',pt:'pt-PT',no:'nb-NO',el:'el-GR'};
-let currentSound=null, soundTimer=null;
-function lang(){try{return document.querySelector('[id$="Language"]')?.value||localStorage.getItem('talkabee-learn-language')||'en'}catch(e){return 'en'}}
-function translation(el,l){const en=el.dataset.tbEn||el.dataset.en||el.dataset.word||el.dataset.object||'';return l==='en'?en:(el.dataset['tb'+l.charAt(0).toUpperCase()+l.slice(1)]||en)}
-function soundAfterVoice(el){
- clearTimeout(soundTimer);
- if(currentSound){try{currentSound.pause();currentSound.currentTime=0}catch(e){}currentSound=null}
- const path=(el.getAttribute('data-sound')||'').trim();if(!path)return;
- // The editor stores a path relative to the HTML page. Use that exact saved path.
- soundTimer=setTimeout(()=>{try{const audio=new Audio(path);currentSound=audio;audio.play().catch(e=>console.warn('Talk A Bee sound could not play:',path,e));audio.onended=()=>{if(currentSound===audio)currentSound=null}}catch(e){console.warn('Talk A Bee sound error:',path,e)}},1500);
-}
-document.addEventListener('click',function(ev){
+const codes={es:'es-ES',fr:'fr-FR',en:'en-US',de:'de-DE',it:'it-IT',pt:'pt-PT',no:'nb-NO'};
+let audio=null, pending=null, token=0;
+function language(){return document.getElementById('lang')?.value||localStorage.getItem('talkabee-learn-language')||'en'}
+function translated(el,l){const en=el.dataset.tbEn||el.dataset.word||'';return l==='en'?en:(el.dataset['tb'+l.charAt(0).toUpperCase()+l.slice(1)]||en)}
+function stop(){clearTimeout(pending);pending=null;if(audio){audio.pause();audio.currentTime=0;audio=null}}
+function play(el,id){if(id!==token)return;const path=(el.getAttribute('data-sound')||'').trim();if(!path)return;const a=new Audio(path);audio=a;a.play().catch(e=>console.warn('Talk A Bee MP3 playback failed:',path,e));a.onended=()=>{if(audio===a)audio=null}}
+document.addEventListener('click',ev=>{
  if(document.body.classList.contains('tb-hs-editing'))return;
- const el=ev.target.closest&&ev.target.closest('[data-tb-custom="1"]');if(!el)return;
- ev.preventDefault();ev.stopPropagation();
- const l=lang(),txt=translation(el,l),en=translation(el,'en'),key=el.dataset.word||el.dataset.object||en;
- try{if(typeof showWord==='function')showWord(key);else{const line=document.querySelector('[id$="Line"]');const trans=document.querySelector('[id$="Translation"]');if(line)line.textContent=txt;if(trans)trans.textContent=l==='en'?'':en}}catch(e){}
- try{if(typeof speak==='function')speak(txt,.82);else if('speechSynthesis'in window){speechSynthesis.cancel();const u=new SpeechSynthesisUtterance(txt);u.lang=codes[l]||l;u.rate=.82;speechSynthesis.speak(u)}}catch(e){}
- // Always schedule assigned MP3, regardless of which speech function exists.
- soundAfterVoice(el);
+ const el=ev.target.closest?.('[data-tb-custom="1"]');if(!el)return;
+ // Prevent the original hotspot and legacy sound handlers from speaking/playing a second time.
+ ev.preventDefault();ev.stopImmediatePropagation();
+ stop();const id=++token,l=language(),txt=translated(el,l),en=translated(el,'en');
+ try{if(typeof showWord==='function')showWord(el.dataset.word||en)}catch(e){}
+ const line=document.getElementById('line'),trans=document.getElementById('translation');
+ if(line)line.textContent=txt;if(trans)trans.textContent=l==='en'?'':en;
+ const popup=document.getElementById('talkabee-object-popup');
+ if(popup){popup.textContent=l==='en'?en:txt+' — '+en;popup.style.display='block';popup.style.left=Math.max(8,Math.min(innerWidth-260,ev.clientX+12))+'px';popup.style.top=Math.max(8,ev.clientY-42)+'px';clearTimeout(popup._tbHide);popup._tbHide=setTimeout(()=>popup.style.display='none',2200)}
+ let done=false;const finish=()=>{if(done||id!==token)return;done=true;clearTimeout(pending);play(el,id)};
+ if(!('speechSynthesis'in window)||!txt){finish();return}
+ try{
+  speechSynthesis.cancel();
+  const u=new SpeechSynthesisUtterance(txt);u.lang=codes[l]||l;u.rate=.82;
+  const selected=document.getElementById('voice')?.value;
+  const vs=speechSynthesis.getVoices();
+  const v=vs.find(x=>x.name===selected||x.voiceURI===selected);
+  if(v&&v.lang.toLowerCase().startsWith(l==='no'?'nb':l))u.voice=v;
+  else {const match=vs.find(x=>x.lang.toLowerCase().startsWith(l==='no'?'nb':l));if(match)u.voice=match}
+  u.onend=finish;u.onerror=finish;
+  speechSynthesis.speak(u);
+  pending=setTimeout(finish,Math.max(2400,txt.length*160));
+ }catch(e){finish()}
 },true);
 })();
 </script>
