@@ -472,26 +472,14 @@ document.addEventListener('DOMContentLoaded',function(){
 </script>
 
 <!-- TALK A BEE HOTSPOTS VISUALLY RECERTIFIED AGAINST CURRENT SCENE ARTWORK: 2026-10-07 -->
-<style id="talkabee-hotspot-editor-style">
-#tb-hs-editor{position:fixed;right:16px;bottom:16px;z-index:2147483646;font:700 12px Arial,sans-serif;display:flex;flex-wrap:wrap;justify-content:flex-end;gap:6px;max-width:520px}
-#tb-hs-editor button{border:1px solid #fff;border-radius:10px;background:#000;color:#fff;padding:9px 11px;cursor:pointer;box-shadow:0 4px 14px #0006}
-#tb-hs-readout{position:fixed;right:16px;bottom:60px;z-index:2147483646;max-width:460px;background:#000;color:#fff;border:1px solid #fff;border-radius:10px;padding:8px 10px;font:12px/1.35 Consolas,monospace;display:none}
-body.tb-hs-editing #tb-hs-readout{display:block}
-body.tb-hs-editing .hotspot,body.tb-hs-editing .home-hotspot,body.tb-hs-editing .yacht-hotspot,body.tb-hs-editing .train-hotspots button{outline:2px solid #ffea00!important;background:rgba(255,234,0,.18)!important;pointer-events:auto!important;cursor:move!important;visibility:visible!important;opacity:1!important;z-index:2147483005!important}
-body.tb-hs-editing .tb-hs-active{outline:3px solid #00ffff!important;background:rgba(0,255,255,.18)!important}
-.tb-hs-handle{position:absolute!important;right:-7px!important;bottom:-7px!important;left:auto!important;top:auto!important;width:14px!important;height:14px!important;border-radius:3px!important;background:#00ffff!important;border:2px solid #000!important;z-index:2147483647!important;cursor:nwse-resize!important;display:none!important;transform:none!important}
-body.tb-hs-editing .tb-hs-active>.tb-hs-handle{display:block!important}
 
-#tb-hs-editor .tb-sound-name{min-width:150px;max-width:230px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font:12px/1.2 Arial,sans-serif;color:#fff;opacity:.9}
-#tb-hs-editor input[type="file"].tb-sound-file{display:none!important}
-</style>
 
 <style id="talkabee-bilingual-hotspot-popup-style">
 #talkabee-object-popup{position:fixed;z-index:2147482900;display:none;padding:8px 12px;border-radius:12px;background:rgba(20,20,20,.82);color:white;font-weight:900;font-size:14px;pointer-events:none}
 </style>
 
 </head>
-<body class="">
+<body class="talkabee-world-open">
 <div class="talkabee-editions">
 <details>
 <summary>Explore Adventures ▾</summary>
@@ -508,7 +496,7 @@ body.tb-hs-editing .tb-hs-active>.tb-hs-handle{display:block!important}
 
 <nav class="talkabee-prev-next-nav" aria-label="Adventure navigation"><a href="index.html" aria-label="Previous page" title="Previous">‹</a><a href="Talk-A-Bee-Shopping-Market-Adventure.html" aria-label="Next page" title="Next">›</a></nav>
 
-<main id="homeWorld" class="open" aria-label="Grandma and Grandpa's Place">
+<main id="homeWorld" class="open challenge-mode" aria-label="Grandma and Grandpa's Place">
 
   <div class="home-scene" id="homeScene">
     <img class="scene-main-image" id="homeSceneImage" src="images/grandma-grandpas-place.jpg" alt="" aria-hidden="true">
@@ -567,7 +555,7 @@ body.tb-hs-editing .tb-hs-active>.tb-hs-handle{display:block!important}
 
       <div class="activity-divider"></div>
       <div class="activity-label">6 ACTIVITIES</div>
-      <button class="home-nav active" data-home-group="family">Family Talk</button>
+      <button class="home-nav" data-home-group="family">Family Talk</button>
       <button class="home-nav" data-home-group="garden">Garden Words</button>
       <button class="home-nav" data-home-group="birds">Birds</button>
       <button class="home-nav" data-home-group="hobbies">Hobbies &amp; Home</button>
@@ -576,12 +564,12 @@ body.tb-hs-editing .tb-hs-active>.tb-hs-handle{display:block!important}
 
       <div class="activity-divider"></div>
       <div class="activity-label">6 CHALLENGES</div>
-      <button class="home-challenge-nav" data-home-challenge="0"><span>1</span> Fishing Pole</button>
-      <button class="home-challenge-nav" data-home-challenge="1"><span>2</span> RV</button>
-      <button class="home-challenge-nav" data-home-challenge="2"><span>3</span> Birdhouse</button>
-      <button class="home-challenge-nav" data-home-challenge="3"><span>4</span> Pond</button>
-      <button class="home-challenge-nav" data-home-challenge="4"><span>5</span> Dog</button>
-      <button class="home-challenge-nav" data-home-challenge="5"><span>6</span> Bird</button>
+      <button class="home-challenge-nav done" data-home-challenge="0">1 Fishing Pole</button>
+      <button class="home-challenge-nav done" data-home-challenge="1">2 RV</button>
+      <button class="home-challenge-nav done" data-home-challenge="2">3 Birdhouse</button>
+      <button class="home-challenge-nav active done" data-home-challenge="3">4 Pond</button>
+      <button class="home-challenge-nav done" data-home-challenge="4">5 Dog</button>
+      <button class="home-challenge-nav" data-home-challenge="5">6 Bird</button>
 
       <div class="activity-divider"></div>
       <button type="button" class="activity-back" id="homeMainDirectory">← Main Directory</button>
@@ -596,7 +584,7 @@ body.tb-hs-editing .tb-hs-active>.tb-hs-handle{display:block!important}
       <button type="button" id="homePopSentenceSpeak" style="display:none">🔊 Sentence</button>
     </div>
 
-    <section class="home-panel tab-master-card" aria-label="Lesson script card" data-drag-ready="1" title="Drag card to move • Double-click empty area to reset">
+    <section class="home-panel tab-master-card" aria-label="Lesson script card" data-drag-ready="1" title="Drag card to move • Double-click empty area to reset" style="overflow: auto !important; --tab-card-font-scale: 1.15; inset: 188.333px auto auto 316.467px !important; transform-origin: left top 0px !important; transform: scale(0.67) !important;" data-moved="1">
       <div class="tab-card-tools" aria-label="Script card controls">
         <span class="tab-card-drag" title="Drag script card">↕ Move</span>
         <button type="button" id="tabCardFontDown" class="tab-card-font-down" title="Decrease text">A−</button>
@@ -604,25 +592,25 @@ body.tb-hs-editing .tb-hs-active>.tb-hs-handle{display:block!important}
         <button type="button" id="tabCardReset" class="tab-card-reset" title="Reset card">Reset</button>
       </div>
       <div class="tab-card-resize" id="tabCardResize" title="Drag to resize script card" aria-label="Resize script card">↘</div>
-      <div class="home-kicker" id="homeKicker">FAMILY TALK</div>
-      <h2 id="homeTitle">Meet Grandma Cathy and Grandpa Wally.</h2>
-      <p id="homePrompt">Hear a simple family sentence, then click the words one at a time.</p>
-      <div class="home-wordline line" id="homeWordline">This is my grandmother.</div>
-      <div class="home-translation" id="homeTranslation">This is my grandmother.</div>
-      <div class="home-actions" style="display: flex;">
-        <button class="primary" id="homePlay">🔊 Speak</button>
-        <button id="homeSlow">🐢 Slow</button><button id="homeReplay">↻ Replay</button>
-      <button class="home-nextphrase" id="homeNextPhrase">Next phrase →</button></div>
-      <div class="home-nextrow" id="homeNextRow" style="display: flex;">
-        <span class="home-progress" id="homeProgress">Phrase 1 of 4</span>
+      <div class="home-kicker" id="homeKicker" data-base-font="11px" style="font-size: 12.65px !important;">FIND IT CHALLENGE</div>
+      <h2 id="homeTitle" data-base-font="22px" style="font-size: 25.3px !important;">Challenge 4: Find the pond.</h2>
+      <p id="homePrompt" data-base-font="18px" style="font-size: 20.7px !important;">Everything stays in Grandma &amp; Grandpa’s yard. Find the requested object in this same picture.</p>
+      <div class="home-wordline line" id="homeWordline" data-base-font="22px" style="font-size: 25.3px !important;"></div>
+      <div class="home-translation" id="homeTranslation" data-base-font="18px" style="font-size: 20.7px !important;"></div>
+      <div class="home-actions" style="display: none;">
+        <button class="primary" id="homePlay" data-base-font="13px" style="font-size: 14.95px !important;">🔊 Speak</button>
+        <button id="homeSlow" data-base-font="13px" style="font-size: 14.95px !important;">🐢 Slow</button><button id="homeReplay" data-base-font="13px" style="font-size: 14.95px !important;">↻ Replay</button>
+      <button class="home-nextphrase" id="homeNextPhrase" data-base-font="13px" style="font-size: 14.95px !important;">Next phrase →</button></div>
+      <div class="home-nextrow" id="homeNextRow" style="display: none;">
+        <span class="home-progress" id="homeProgress" data-base-font="11px" style="font-size: 12.65px !important;">Phrase 1 of 4</span>
         
       </div>
-      <div class="home-list" id="homeList"><button type="button" class="home-pick active"><strong>1. This is my grandmother.</strong><br><span style="font-size:12px;color:#737c91">This is my grandmother.</span></button><button type="button" class="home-pick"><strong>2. This is my grandfather.</strong><br><span style="font-size:12px;color:#737c91">This is my grandfather.</span></button><button type="button" class="home-pick"><strong>3. My grandmother is in the garden.</strong><br><span style="font-size:12px;color:#737c91">My grandmother is in the garden.</span></button><button type="button" class="home-pick"><strong>4. My grandfather feeds the birds.</strong><br><span style="font-size:12px;color:#737c91">My grandfather feeds the birds.</span></button></div>
-      <div class="home-find" id="homeFind">
-        <div class="home-challenge-count" id="homeChallengeCount">CHALLENGE 1 OF 6</div>
-        <div id="homeFindPrompt"></div><div class="home-find-status" id="homeFindStatus"></div>
-        <div class="challenge-next-hint" id="challengeNextHint"></div>
-        <button class="home-challenge-next" id="homeChallengeNext">Next phrase →</button>
+      <div class="home-list" id="homeList" style="display: none;"><button type="button" class="home-pick active"><strong data-base-font="16px" style="font-size: 18.4px !important;">1. This is my grandmother.</strong><br><span style="font-size: 13.8px !important; color: rgb(115, 124, 145);" data-base-font="12px">This is my grandmother.</span></button><button type="button" class="home-pick"><strong data-base-font="16px" style="font-size: 18.4px !important;">2. This is my grandfather.</strong><br><span style="font-size: 13.8px !important; color: rgb(115, 124, 145);" data-base-font="12px">This is my grandfather.</span></button><button type="button" class="home-pick"><strong data-base-font="16px" style="font-size: 18.4px !important;">3. My grandmother is in the garden.</strong><br><span style="font-size: 13.8px !important; color: rgb(115, 124, 145);" data-base-font="12px">My grandmother is in the garden.</span></button><button type="button" class="home-pick"><strong data-base-font="16px" style="font-size: 18.4px !important;">4. My grandfather feeds the birds.</strong><br><span style="font-size: 13.8px !important; color: rgb(115, 124, 145);" data-base-font="12px">My grandfather feeds the birds.</span></button></div>
+      <div class="home-find show" id="homeFind">
+        <div class="home-challenge-count" id="homeChallengeCount" data-base-font="15px" style="font-size: 17.25px !important;">CHALLENGE 4 OF 6</div>
+        <div id="homeFindPrompt">Find: the pond — pond</div><div class="home-find-status" id="homeFindStatus" style="color: rgb(25, 116, 79);">✓ Correct! the pond</div>
+        <div class="challenge-next-hint" id="challengeNextHint">Nice work! Continue when you are ready.</div>
+        <button class="home-challenge-next show" id="homeChallengeNext" data-base-font="13px" style="font-size: 14.95px !important;">Next Challenge →</button>
       </div>
     </section>
   </div>
@@ -717,6 +705,7 @@ body.tb-hs-editing .tb-hs-active>.tb-hs-handle{display:block!important}
  };
 
  const homeChallengeOrder=['fishing','rv','birdhouse','pond','dog','bird'];
+ window.tbLegacySetChallengeTargets=function(targets){for(let i=0;i<6;i++)homeChallengeOrder[i]=targets[i]};
  let group='family',index=0,lastRate=.86,findTarget='fishing',homeChallengeIndex=0,homeChallengeSolved=false,currentObjectKey=null;
  const wordline=document.getElementById('homeWordline'),list=document.getElementById('homeList'),findBox=document.getElementById('homeFind'),pop=document.getElementById('homePop'),nextRow=document.getElementById('homeNextRow'),progress=document.getElementById('homeProgress');
  const languageSelect=document.getElementById('homeLanguage'),voiceSelect=document.getElementById('homeVoice');
@@ -1079,9 +1068,28 @@ Object.keys(extraDiscovery).forEach(lang=>{if(!languageData[lang].objects)langua
  if(!card)return;
  const drag=card.querySelector('.tab-card-drag'),down=card.querySelector('.tab-card-font-down'),up=card.querySelector('.tab-card-font-up'),reset=card.querySelector('.tab-card-reset'),resize=card.querySelector('.tab-card-resize');
  const PK='talkabee-global-script-card-position',SK='talkabee-global-script-card-scale',FK='talkabee-global-script-card-font-scale';
+ const pageKey=(location.pathname.split('/').pop()||'adventure').replace(/[^a-z0-9-]/gi,'_');
+ const WK='talkabee-script-card-width-'+pageKey,HK='talkabee-script-card-height-'+pageKey;
  const clamp=(n,a,b)=>Math.max(a,Math.min(b,n));
  const defaultScale=()=>matchMedia('(max-width:760px)').matches?.82:.67;
  let scale=defaultScale(),fontScale=1,dragState=null;
+ // Capture actual rendered font sizes, even on Adventures with older card markup.
+ // Never modify the Move / A- / A+ / Reset controls or resize handle.
+ const textNodes=Array.from(card.querySelectorAll('*')).filter(el=>{
+   if(el.closest('.tab-card-tools,.tab-card-resize'))return false;
+   if(el.matches('script,style,svg,path,select,input,textarea'))return false;
+   return Array.from(el.childNodes).some(n=>n.nodeType===3&&n.textContent.trim());
+ });
+ textNodes.forEach(el=>{el.dataset.baseFont=getComputedStyle(el).fontSize});
+ function applyBox(width,height,save=true){
+   card.style.setProperty('width',width+'px','important');
+   card.style.setProperty('max-width','none','important');
+   card.style.setProperty('min-width','0','important');
+   card.style.setProperty('min-height',height+'px','important');
+   card.style.setProperty('max-height','none','important');
+   card.style.setProperty('overflow','auto','important');
+   if(save)try{localStorage.setItem(WK,String(width));localStorage.setItem(HK,String(height))}catch(e){}
+ }
 
  function applyTransform(){
    if(card.dataset.moved==='1'){
@@ -1095,6 +1103,7 @@ Object.keys(extraDiscovery).forEach(lang=>{if(!languageData[lang].objects)langua
  function applyFont(v,save=true){
    fontScale=clamp(Number(v)||1,.75,1.6);
    card.style.setProperty('--tab-card-font-scale',fontScale.toFixed(2));
+   textNodes.forEach(el=>el.style.setProperty('font-size',(parseFloat(el.dataset.baseFont)*fontScale)+'px','important'));
    if(save)try{localStorage.setItem(FK,String(fontScale))}catch(e){}
  }
  function saveState(){
@@ -1108,7 +1117,9 @@ Object.keys(extraDiscovery).forEach(lang=>{if(!languageData[lang].objects)langua
  function restore(){
    try{
      const fs=localStorage.getItem(FK); if(fs)applyFont(fs,false);
-     const ss=parseFloat(localStorage.getItem(SK)); if(ss)scale=clamp(ss,.45,1.10);
+     // Older A+/A- controls stored a whole-card zoom. Ignore that legacy value.
+      const ww=parseFloat(localStorage.getItem(WK)),hh=parseFloat(localStorage.getItem(HK));
+      if(ww&&hh)applyBox(ww,hh,false);
      const ps=JSON.parse(localStorage.getItem(PK)||'null');
      if(ps&&innerWidth>760){
        card.dataset.moved='1';
@@ -1121,11 +1132,11 @@ Object.keys(extraDiscovery).forEach(lang=>{if(!languageData[lang].objects)langua
    }catch(e){}
  }
 
- if(down)down.addEventListener('click',()=>{scale=clamp(+(scale-.05).toFixed(2),.45,1.10);applyTransform();saveState()});
- if(up)up.addEventListener('click',()=>{scale=clamp(+(scale+.05).toFixed(2),.45,1.10);applyTransform();saveState()});
+ if(down)down.addEventListener('click',()=>applyFont(fontScale-.1));
+ if(up)up.addEventListener('click',()=>applyFont(fontScale+.1));
 
  if(reset)reset.addEventListener('click',()=>{
-   try{localStorage.removeItem(PK);localStorage.removeItem(SK);localStorage.removeItem(FK)}catch(e){}
+   try{localStorage.removeItem(PK);localStorage.removeItem(SK);localStorage.removeItem(FK);localStorage.removeItem(WK);localStorage.removeItem(HK)}catch(e){}
    scale=defaultScale();fontScale=1;
    delete card.dataset.moved;
    ['width','height','left','top','right','bottom','transform','transform-origin','min-width','max-width','min-height','max-height'].forEach(p=>card.style.removeProperty(p));
@@ -1168,17 +1179,16 @@ Object.keys(extraDiscovery).forEach(lang=>{if(!languageData[lang].objects)langua
  card.addEventListener('pointerup',endDrag);
  card.addEventListener('pointercancel',endDrag);
 
- // Keep the resize handle from changing the card's scale. It changes scale proportionally instead.
+ // Resize only the card's dimensions. The text and visual scale remain unchanged.
  if(resize)resize.addEventListener('pointerdown',e=>{
    if(innerWidth<=760)return;
    e.preventDefault();e.stopPropagation();
-   const r=card.getBoundingClientRect(),sx=e.clientX,baseW=r.width,baseScale=scale;
+   const sx=e.clientX,sy=e.clientY,baseW=parseFloat(getComputedStyle(card).width),baseH=parseFloat(getComputedStyle(card).height);
+   const effectiveScale=card.getBoundingClientRect().width/baseW||defaultScale();
    resize.setPointerCapture(e.pointerId);
-   const mv=ev=>{scale=clamp(baseScale*((baseW+ev.clientX-sx)/baseW),.45,1.10);applyTransform()};
-   const end=()=>{resize.removeEventListener('pointermove',mv);saveState()};
-   resize.addEventListener('pointermove',mv);
-   resize.addEventListener('pointerup',end,{once:true});
-   resize.addEventListener('pointercancel',end,{once:true});
+   const mv=ev=>{const width=clamp(baseW+(ev.clientX-sx)/effectiveScale,320,Math.max(520,innerWidth/effectiveScale-50));const height=clamp(baseH+(ev.clientY-sy)/effectiveScale,120,Math.max(250,innerHeight/effectiveScale-40));applyBox(width,height,false)};
+   const end=()=>{resize.removeEventListener('pointermove',mv);resize.removeEventListener('pointerup',end);resize.removeEventListener('pointercancel',end);applyBox(parseFloat(getComputedStyle(card).width),parseFloat(getComputedStyle(card).minHeight),true)};
+   resize.addEventListener('pointermove',mv);resize.addEventListener('pointerup',end);resize.addEventListener('pointercancel',end);
  });
 
  restore();
@@ -1253,43 +1263,7 @@ document.addEventListener('click',function(ev){
 },true);
 })();
 </script>
-<script id="talkabee-hotspot-editor-script">
-(()=>{const SEL='.hotspot,.home-hotspot,.yacht-hotspot,.train-hotspots button';let editing=false,active=null,dirty=false,adding=false,pendingName='',pendingTranslations=null;
-const host=(location.hostname||'').toLowerCase();if(host==='talkabee.com'||host==='www.talkabee.com')return;
-const box=document.createElement('div');box.id='tb-hs-editor';box.innerHTML='<button type="button" id="tb-hs-toggle">Edit Hotspots</button><input id="tb-hs-name" hidden type="text" placeholder="hotspot name" autocomplete="off" spellcheck="false"><button type="button" id="tb-hs-add" hidden>Add Hotspot</button><button type="button" id="tb-hs-delete" hidden disabled>Delete Hotspot</button><button type="button" id="tb-hs-save" hidden>Save Working HTML</button><button type="button" id="tb-hs-export" hidden>Export Server HTML</button>';document.body.appendChild(box);
-const soundFile=document.createElement('input');soundFile.type='file';soundFile.accept='audio/*,.mp3,.wav,.ogg,.m4a';soundFile.className='tb-sound-file';
-const chooseSound=document.createElement('button');chooseSound.type='button';chooseSound.textContent='Choose Sound';chooseSound.hidden=true;chooseSound.disabled=true;
-const testSound=document.createElement('button');testSound.type='button';testSound.textContent='Test Sound';testSound.hidden=true;testSound.disabled=true;
-const removeSound=document.createElement('button');removeSound.type='button';removeSound.textContent='Remove Sound';removeSound.hidden=true;removeSound.disabled=true;
-const soundName=document.createElement('span');soundName.className='tb-sound-name';soundName.hidden=true;soundName.textContent='Select a hotspot';
-box.insertBefore(chooseSound,box.querySelector('#tb-hs-save'));box.insertBefore(testSound,box.querySelector('#tb-hs-save'));box.insertBefore(removeSound,box.querySelector('#tb-hs-save'));box.insertBefore(soundName,box.querySelector('#tb-hs-save'));box.appendChild(soundFile);
-let selectedSoundFile=null,editorPreview=null;
-function stopEditorPreview(){if(editorPreview){try{editorPreview.pause();editorPreview.currentTime=0}catch(e){}editorPreview=null}}
-function updateSoundUI(){const path=active&&active.dataset?String(active.dataset.sound||'').trim():'';soundName.textContent=active?(path?path.split('/').pop():'No sound'):'Select a hotspot';chooseSound.disabled=!active;testSound.disabled=removeSound.disabled=!active||!path}
-function previewSound(){if(!active)return;stopEditorPreview();const path=String(active.dataset.sound||'').trim();if(!path)return;let src=(selectedSoundFile&&path===selectedSoundFile.name)?URL.createObjectURL(selectedSoundFile):path;const a=new Audio(src);editorPreview=a;a.play().catch(()=>{});a.onended=()=>{if(src.startsWith('blob:'))URL.revokeObjectURL(src);if(editorPreview===a)editorPreview=null}}
-chooseSound.onclick=()=>{if(active){soundFile.value='';soundFile.click()}};soundFile.onchange=()=>{const f=soundFile.files&&soundFile.files[0];if(!active||!f)return;selectedSoundFile=f;active.dataset.sound='sounds/'+f.name;dirty=true;updateSoundUI();previewSound()};testSound.onclick=previewSound;removeSound.onclick=()=>{if(!active)return;stopEditorPreview();active.removeAttribute('data-sound');selectedSoundFile=null;dirty=true;updateSoundUI()};
-const read=document.createElement('div');read.id='tb-hs-readout';read.style.display='none';document.body.appendChild(read);const toggle=box.querySelector('#tb-hs-toggle'),nameBox=box.querySelector('#tb-hs-name'),add=box.querySelector('#tb-hs-add'),del=box.querySelector('#tb-hs-delete'),save=box.querySelector('#tb-hs-save'),exportServer=box.querySelector('#tb-hs-export');
-function num(el,k){const m=(el.style[k]||'').match(/-?[\d.]+/);if(m)return +m[0];const p=el.offsetParent||document.documentElement,r=el.getBoundingClientRect(),pr=p.getBoundingClientRect();if(k==='left')return(r.left-pr.left)/pr.width*100;if(k==='top')return(r.top-pr.top)/pr.height*100;if(k==='width')return r.width/pr.width*100;return r.height/pr.height*100}
-const pct=n=>Math.round(n*100)/100+'%';const label=el=>el.dataset.word||el.dataset.object||el.dataset.label||el.getAttribute('aria-label')||el.title||el.textContent.trim()||'(unnamed)';
-function show(el){read.textContent=adding?'ADD MODE: click the object in the scene for "'+pendingName+'".':el?label(el)+' | left '+(el.style.left||'?')+' top '+(el.style.top||'?')+' width '+(el.style.width||'?')+' height '+(el.style.height||'?'):'Click a yellow hotspot. Drag to move; drag cyan square to resize.'}
-function select(el){if(active)active.classList.remove('tb-hs-active');active=el;if(!el){del.disabled=true;show(null);updateSoundUI();return}el.classList.add('tb-hs-active');del.disabled=false;if(!el.querySelector(':scope > .tb-hs-handle')){const h=document.createElement('span');h.className='tb-hs-handle';h.setAttribute('aria-hidden','true');el.appendChild(h)}show(el);updateSoundUI()}
-function dragStart(ev,el,resize){ev.preventDefault();ev.stopPropagation();select(el);const p=el.offsetParent||document.documentElement,pr=p.getBoundingClientRect(),sx=ev.clientX,sy=ev.clientY,L=num(el,'left'),T=num(el,'top'),W=num(el,'width'),H=num(el,'height');
-const move=e=>{const dx=(e.clientX-sx)/pr.width*100,dy=(e.clientY-sy)/pr.height*100;if(resize){el.style.width=pct(Math.max(1,W+dx));el.style.height=pct(Math.max(1,H+dy))}else{el.style.left=pct(L+dx);el.style.top=pct(T+dy)}dirty=true;show(el)};
-const up=()=>{window.removeEventListener('pointermove',move,true);window.removeEventListener('pointerup',up,true)};window.addEventListener('pointermove',move,true);window.addEventListener('pointerup',up,true)}
-function hotspotHost(){return document.querySelector('.hotspots,.train-hotspots')||(document.querySelector(SEL)?.parentElement)||document.getElementById('world')||document.body}
-function addAt(ev){const host=document.getElementById('homeHotspots')||document.querySelector('.scene-hotspots')||document.querySelector(SEL)?.parentElement||document.body,el=document.createElement('button');el.type='button';el.className='home-hotspot show';el.dataset.object=pendingName;el.dataset.word=pendingName;el.setAttribute('aria-label',pendingName.replace(/\b\w/g,c=>c.toUpperCase()));if(pendingTranslations){Object.entries(pendingTranslations).forEach(([k,v])=>{if(v)el.dataset['tb'+k.charAt(0).toUpperCase()+k.slice(1)]=v})}el.style.width='6%';el.style.height='8%';host.appendChild(el);const r=host.getBoundingClientRect();if(!r.width||!r.height){el.remove();return}el.style.left=pct((ev.clientX-r.left)/r.width*100);el.style.top=pct((ev.clientY-r.top)/r.height*100);adding=false;pendingTranslations=null;add.textContent='Add Hotspot';dirty=true;select(el)}
-document.addEventListener('pointerdown',ev=>{if(!editing)return;if(adding&&!ev.target.closest('#tb-hs-editor,#tb-hs-readout')){ev.preventDefault();ev.stopImmediatePropagation();addAt(ev);return}const h=ev.target.closest('.tb-hs-handle');if(h){dragStart(ev,h.parentElement,true);return}const el=ev.target.closest(SEL);if(el&&!el.closest('#tb-hs-editor'))dragStart(ev,el,false)},true);
-document.addEventListener('click',ev=>{if(editing&&ev.target.closest(SEL)){ev.preventDefault();ev.stopImmediatePropagation()}},true);
-toggle.onclick=()=>{editing=!editing;adding=false;pendingName='';document.body.classList.toggle('tb-hs-editing',editing);toggle.textContent=editing?'Exit Editor':'Edit Hotspots';[nameBox,add,del,chooseSound,testSound,removeSound,soundName,save,exportServer].forEach(b=>b.hidden=!editing);add.textContent='Add Hotspot';if(!editing){stopEditorPreview();select(null)}show(active);updateSoundUI()};
-async function tbTranslate(text,lang){if(lang==='en')return text;const u='https://translate.googleapis.com/translate_a/single?client=gtx&sl=en&tl='+encodeURIComponent(lang)+'&dt=t&q='+encodeURIComponent(text);const r=await fetch(u);if(!r.ok)throw new Error('translation failed');const j=await r.json();return (j[0]||[]).map(x=>x[0]||'').join('').trim()||text}
-add.onclick=async()=>{if(adding){adding=false;pendingName='';pendingTranslations=null;add.textContent='Add Hotspot';show(active);return}const name=(nameBox.value||'').trim().toLowerCase().replace(/\s+/g,' ');if(!name){nameBox.focus();return}pendingName=name;add.disabled=true;add.textContent='Translating...';try{const codes={es:'es',fr:'fr',de:'de',it:'it',pt:'pt',no:'no'},vals=await Promise.all(Object.entries(codes).map(async([k,v])=>[k,await tbTranslate(name,v)]));pendingTranslations={en:name,...Object.fromEntries(vals)};adding=true;add.textContent='Click Scene'}catch(e){pendingTranslations={en:name};adding=true;add.textContent='Click Scene'}finally{add.disabled=false}show(null)};
-del.onclick=()=>{if(!active)return;const name=label(active);if(!confirm('Delete hotspot "'+name+'"?'))return;stopEditorPreview();active.remove();active=null;selectedSoundFile=null;del.disabled=true;dirty=true;show(null);updateSoundUI()};
-function downloadableClone(stripEditor){const clone=document.documentElement.cloneNode(true);clone.querySelectorAll('#tb-hs-editor,#tb-hs-readout,.tb-hs-handle,#talkabee-object-popup').forEach(n=>n.remove());clone.querySelector('body')?.classList.remove('scene-view','tb-hs-editing');clone.querySelectorAll('.scene-only').forEach(el=>el.classList.remove('scene-only'));clone.querySelectorAll('.activity-collapsed').forEach(el=>el.classList.remove('activity-collapsed'));clone.querySelectorAll('#sceneView,#sceneViewToggle').forEach(el=>el.setAttribute('aria-pressed','false'));clone.querySelectorAll('.tb-hs-active').forEach(n=>n.classList.remove('tb-hs-active'));clone.querySelectorAll('script[data-tb-custom-vocab]').forEach(n=>n.remove());const custom={};clone.querySelectorAll('[data-tb-en]').forEach(el=>{const k=el.dataset.word;if(!k)return;custom[k]={en:el.dataset.tbEn||k,es:el.dataset.tbEs||el.dataset.tbEn||k,fr:el.dataset.tbFr||el.dataset.tbEn||k,de:el.dataset.tbDe||el.dataset.tbEn||k,it:el.dataset.tbIt||el.dataset.tbEn||k,pt:el.dataset.tbPt||el.dataset.tbEn||k,no:el.dataset.tbNo||el.dataset.tbEn||k}});if(Object.keys(custom).length){const sc=document.createElement('script');sc.dataset.tbCustomVocab='1';sc.textContent=';(()=>{const C='+JSON.stringify(custom).replace(/<\/script/gi,'<\/script')+';for(const [k,v] of Object.entries(C)){try{EN[k]=v.en||k;for(const L of ["es","fr","en","de","it","pt","no"]){if(WORDS[L])WORDS[L][k]=v[L]||v.en||k}}catch(e){}}})();';clone.querySelector('body').appendChild(sc)}if(stripEditor){clone.querySelector('#talkabee-hotspot-editor-style')?.remove();clone.querySelector('#talkabee-hotspot-editor-v10')?.remove();clone.querySelector('#talkabee-hotspot-editor-script')?.remove()}return clone}
-function downloadHTML(stripEditor){const clone=downloadableClone(stripEditor),html='<!doctype html>\n'+clone.outerHTML,a=document.createElement('a');a.href=URL.createObjectURL(new Blob([html],{type:'text/html'}));a.download=location.pathname.split('/').pop()||'adventure.html';a.click();setTimeout(()=>URL.revokeObjectURL(a.href),1500);dirty=false}
-save.onclick=()=>downloadHTML(false);exportServer.onclick=()=>downloadHTML(true);
-window.addEventListener('beforeunload',e=>{if(dirty){e.preventDefault();e.returnValue=''}});
-})();
-</script>
+
 
 
 <script id="grandparents-scene-view-reset">
@@ -1361,5 +1335,25 @@ window.addEventListener('beforeunload',e=>{if(dirty){e.preventDefault();e.return
  document.addEventListener('click',function(e){var el=e.target.closest&&e.target.closest('.hotspot,.home-hotspot,.yacht-hotspot,.hotspots button,.train-hotspots button');if(el)show(el,e)},true);
 })();
 </script>
+
+<script id="talkabee-legacy-challenge-data" type="application/json">{"targets":["fishing","rv","birdhouse","pond","dog","bird"],"labels":["Fishing Pole","RV","Birdhouse","Pond","Dog","Bird"]}</script>
+<script id="talkabee-legacy-challenge-runtime">
+(function(){
+ const node=document.getElementById('talkabee-legacy-challenge-data');
+ let data;try{data=JSON.parse(node.textContent)}catch(e){return}
+ if(!Array.isArray(data.targets)||data.targets.length!==6)return;
+ window.tbLegacyChallengeUpdate=function(){
+  try{window.tbLegacySetChallengeTargets(data.targets)}catch(e){return}
+  document.querySelectorAll('.home-challenge-nav[data-home-challenge]').forEach(b=>{
+   const i=Number(b.dataset.homeChallenge),name=data.labels[i]||data.targets[i];
+   b.textContent=(i+1)+' '+name;
+  });
+ };
+ window.tbLegacyChallengeSave=function(next){data=next;node.textContent=JSON.stringify(data);window.tbLegacyChallengeUpdate()};
+ window.tbLegacyChallengeRead=function(){return JSON.parse(node.textContent)};
+ window.tbLegacyChallengeUpdate();
+})();
+</script>
+
 
 <script data-tb-custom-vocab="1">;(()=>{const C={"duck":{"en":"duck","es":"pato","fr":"canard","de":"Ente","it":"anatra","pt":"pato","no":"and"}};for(const [k,v] of Object.entries(C)){try{EN[k]=v.en||k;for(const L of ["es","fr","en","de","it","pt","no"]){if(WORDS[L])WORDS[L][k]=v[L]||v.en||k}}catch(e){}}})();</script></body></html>

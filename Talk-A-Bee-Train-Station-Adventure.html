@@ -218,6 +218,15 @@
 #talkabee-object-popup{position:fixed;z-index:2147482900;display:none;padding:8px 12px;border-radius:12px;background:rgba(20,20,20,.82);color:white;font-weight:900;font-size:14px;pointer-events:none}
 </style>
 
+<script id="tb-legacy-challenge-data" type="application/json">{"targets": ["clock", "train", "departures sign", "platform", "luggage", "ticket"], "labels": ["clock", "train", "departures", "platform", "luggage", "ticket"]}</script>
+<style id="talkabee-train-correct-answer-green">
+/* Only the successful challenge answer line turns green. */
+#trainWorld .tab-master-card #trainFindStatus.tb-answer-correct,
+#trainWorld .tab-master-card #trainFindStatus.tb-answer-correct * {
+  color:#25e878!important;
+  text-shadow:0 1px 2px rgba(0,0,0,.55)!important;
+}
+</style>
 </head><body class="">
 <div class="talkabee-editions">
 <details>
@@ -287,7 +296,7 @@
     <option value="es">Spanish</option><option value="fr">French</option><option value="en">English</option><option value="de">German</option><option value="it">Italian</option><option value="pt">Portuguese</option><option value="no">Norwegian</option>
    </select>
    <label class="train-select-label" for="trainVoice">VOICE</label>
-   <select id="trainVoice" class="train-select" data-tab-global-voice="1"><option value="">Browser Default</option></select>
+   <select id="trainVoice" class="train-select" data-tab-global-voice="1"><option value="">Browser Default</option><option value="Microsoft David - English (United States)">Microsoft David - English (United States) — en-US</option><option value="Microsoft Mark - English (United States)">Microsoft Mark - English (United States) — en-US</option><option value="Microsoft Zira - English (United States)">Microsoft Zira - English (United States) — en-US</option><option value="Microsoft David Desktop - English (United States)">Microsoft David Desktop - English (United States) — en-US</option><option value="Microsoft Zira Desktop - English (United States)">Microsoft Zira Desktop - English (United States) — en-US</option></select>
    <div class="train-section-label">DISCOVERY</div>
    <button type="button" id="trainDiscovery" class="train-discovery">🔎 Discovery — Click the Scene</button>
    <div class="train-section-label">ACTIVITIES</div>
@@ -320,16 +329,16 @@
    <button data-word="lamp" style="left:42%;top:17%;width:4.5%" aria-label="Lamp"></button>
    <button data-word="sailboat" style="left: 13.06%; top: 46.28%; width: 4.5%;" aria-label="Sailboat" class=""></button>
   <button type="button" data-word="train station porter" aria-label="train station porter" data-tb-custom="1" data-tb-en="train station porter" data-tb-es="mozo de estación" data-tb-fr="porteur de gare" data-tb-de="Bahnhofgepäckträger" data-tb-it="facchino della stazione" data-tb-pt="carregador da estação" data-tb-no="bagasjebærer på stasjonen" style="left: 62.68%; top: 51.91%; width: 16.1%; height: 31.8%;" class=""></button><button type="button" data-word="pink coat" aria-label="pink coat" data-tb-custom="1" data-tb-en="pink coat" data-tb-es="abrigo rosa" data-tb-fr="manteau rose" data-tb-de="rosa Mantel" data-tb-it="cappotto rosa" data-tb-pt="casaco rosa" data-tb-no="rosa kåpe" style="left: 34.1%; top: 72.87%; width: 6.78%; height: 19.3%;" class=""></button><button type="button" data-word="long hair" aria-label="long hair" data-tb-custom="1" data-tb-en="long hair" data-tb-es="pelo largo" data-tb-fr="cheveux longs" data-tb-de="lange Haare" data-tb-it="capelli lunghi" data-tb-pt="cabelo comprido" data-tb-no="langt hår" style="left: 35.97%; top: 48.73%; width: 4.07%; height: 22.72%;" class=""></button><button type="button" data-word="hand" aria-label="hand" data-tb-custom="1" data-tb-en="hand" data-tb-es="mano" data-tb-fr="main" data-tb-de="Hand" data-tb-it="mano" data-tb-pt="mão" data-tb-no="hånd" style="left: 42.58%; top: 68.06%; width: 6%; height: 8%;" class=""></button><button type="button" data-word="smile" aria-label="smile" data-tb-custom="1" data-tb-en="smile" data-tb-es="sonrisa" data-tb-fr="sourire" data-tb-de="Lächeln" data-tb-it="sorriso" data-tb-pt="sorriso" data-tb-no="smil" style="left: 27.41%; top: 51.26%; width: 6%; height: 8%;" class=""></button><button type="button" data-word="bench" aria-label="bench" data-tb-custom="1" data-tb-en="bench" data-tb-es="banco" data-tb-fr="banc" data-tb-de="Bank" data-tb-it="panchina" data-tb-pt="banco" data-tb-no="benk" style="left: 83.83%; top: 73.33%; width: 6%; height: 8%;" class=""></button><button type="button" data-word="blue shirt" aria-label="blue shirt" data-tb-custom="1" data-tb-en="blue shirt" data-tb-es="camisa azul" data-tb-fr="chemise bleue" data-tb-de="blaues Hemd" data-tb-it="camicia blu" data-tb-pt="camisa azul" data-tb-no="blå skjorte" style="left: 74.65%; top: 43.29%; width: 8.76%; height: 12.35%;" class=""></button><button type="button" data-word="sunset" aria-label="sunset" data-tb-custom="1" data-tb-en="sunset" data-tb-es="puesta de sol" data-tb-fr="coucher de soleil" data-tb-de="Sonnenuntergang" data-tb-it="tramonto" data-tb-pt="pôr do sol" data-tb-no="solnedgang" style="left: 7.16%; top: 25.39%; width: 12.88%; height: 11.89%;" class=""></button><button type="button" data-word="buildings" aria-label="buildings" data-tb-custom="1" data-tb-en="buildings" data-tb-es="edificios" data-tb-fr="bâtiments" data-tb-de="Gebäude" data-tb-it="edifici" data-tb-pt="edifícios" data-tb-no="bygninger" style="left: 26.53%; top: 29.99%; width: 12.51%; height: 12.17%;" class=""></button><button type="button" data-word="flowers" aria-label="flowers" data-tb-custom="1" data-tb-en="flowers" data-tb-es="flores" data-tb-fr="fleurs" data-tb-de="Blumen" data-tb-it="fiori" data-tb-pt="flores" data-tb-no="blomster" style="left: 48.71%; top: 23.4%; width: 7.93%; height: 14.48%;" class=""></button><button type="button" data-word="hat" aria-label="hat" data-tb-custom="1" data-tb-en="hat" data-tb-es="sombrero" data-tb-fr="chapeau" data-tb-de="Hut" data-tb-it="cappello" data-tb-pt="chapéu" data-tb-no="hatt" style="left: 60.89%; top: 17%; width: 9.65%; height: 14.94%;" class=""></button><button type="button" data-word="ticket" aria-label="ticket" data-tb-custom="1" data-tb-en="ticket" data-tb-es="boleto" data-tb-fr="billet" data-tb-de="Ticket" data-tb-it="biglietto" data-tb-pt="bilhete" data-tb-no="billett" style="left: 50.49%; top: 61.28%; width: 8.5%; height: 11.52%;" class=""></button><button type="button" data-word="departures sign" aria-label="departures sign" data-tb-custom="1" data-tb-en="departures sign" data-tb-es="señal de salidas" data-tb-fr="signe des départs" data-tb-de="Abfahrtsschild" data-tb-it="cartello delle partenze" data-tb-pt="sinal de partidas" data-tb-no="avgang skilt" style="left: 84.05%; top: 14.18%; width: 22.04%; height: 24.02%;" class="" data-sound="sounds/train-station.mp3"></button><button type="button" data-word="train" aria-label="train" data-tb-custom="1" data-tb-en="train" data-tb-es="tren" data-tb-fr="train" data-tb-de="Zug" data-tb-it="treno" data-tb-pt="trem" data-tb-no="tog" style="left: 91.89%; top: 57.29%; width: 14.43%; height: 31.05%;" class="" data-sound="sounds/subway.mp3"></button></div>
-  <div class="train-panel tab-master-card">
+  <div class="train-panel tab-master-card" style="--tab-card-font-scale: 1.10; width: 609.95px !important; max-width: none !important; min-width: 0px !important; min-height: 475.194px !important; inset: 246.417px auto auto 322.533px !important; transform-origin: left top 0px !important; transform: scale(0.67) !important;" data-moved="1">
 <div class="tab-card-tools" aria-label="Script card controls"><button type="button" class="tab-card-drag" title="Move script card">↕ Move</button><button type="button" class="tab-card-font-down" title="Decrease text">A−</button><button type="button" class="tab-card-font-up" title="Increase text">A+</button><button type="button" class="tab-card-reset" title="Reset card">Reset</button></div><div class="tab-card-resize" title="Drag to resize script card" aria-label="Resize script card">↘</div>
 
-   <div class="train-kicker">AT THE TRAIN STATION</div>
-   <h2 id="trainTitle">Click &amp; Discover</h2>
-   <p id="trainPrompt">You found something at the train station.</p>
-   <div class="train-line" id="trainLine">el tablero de salidas</div>
-   <div class="train-translation" id="trainTranslation">Departure board</div>
-   <div class="train-actions" id="trainActions" style="display: flex;"><button id="trainSpeak">🔊 Speak</button><button id="trainNext">Next phrase →</button></div>
-   <div class="train-find" id="trainFind"><div class="train-challenge-count" id="trainChallengeCount">CHALLENGE 1 OF 6</div><div class="train-find-status" id="trainFindStatus"></div><div class="train-next-hint" id="trainNextHint">Find the correct object to unlock the next challenge.</div><button type="button" class="train-challenge-next" id="trainChallengeNext">Next phrase →</button></div>
+   <div class="train-kicker" data-base-font="11px" style="font-size: 12.1px !important;">AT THE TRAIN STATION</div>
+   <h2 id="trainTitle" data-base-font="22px" style="font-size: 24.2px !important;">Buying a train ticket.</h2>
+   <p id="trainPrompt" data-base-font="18px" style="font-size: 19.8px !important;">Ask for a ticket politely.</p>
+   <div class="train-line" id="trainLine" data-base-font="22px" style="font-size: 24.2px !important;">Quiero un billete, por favor.</div>
+   <div class="train-translation" id="trainTranslation" data-base-font="18px" style="font-size: 19.8px !important;">I would like a ticket, please.</div>
+   <div class="train-actions" id="trainActions" style="display: flex;"><button id="trainSpeak" data-base-font="13px" style="font-size: 14.3px !important;">🔊 Speak</button><button id="trainNext" data-base-font="13px" style="font-size: 14.3px !important;">Next phrase →</button></div>
+   <div class="train-find" id="trainFind" data-base-font="14px" style="font-size: 15.4px !important;"><div class="train-challenge-count" id="trainChallengeCount" data-base-font="15px" style="font-size: 16.5px !important;">CHALLENGE 1 OF 6</div><div class="train-find-status" id="trainFindStatus" data-base-font="18px" style="font-size: 19.8px !important;"></div><div class="train-next-hint" id="trainNextHint" data-base-font="18px" style="font-size: 19.8px !important;">Find the correct object to unlock the next challenge.</div><button type="button" class="train-challenge-next" id="trainChallengeNext" data-base-font="14px" style="font-size: 15.4px !important;">Next phrase →</button></div>
   </div>
  </div></div>
 </section>
@@ -352,10 +361,13 @@
  const W={es:{clock:'el reloj',train:'el tren',departures:'el tablero de salidas',platform:'el letrero del andén',luggage:'la maleta',ticket:'el billete',flowers:'las flores',hat:'el sombrero',worker:'el empleado del tren',backpack:'la mochila',lamp:'la lámpara',sailboat:'el velero'},fr:{clock:'l’horloge',train:'le train',departures:'le tableau des départs',platform:'le panneau du quai',luggage:'la valise',ticket:'le billet',flowers:'les fleurs',hat:'le chapeau',worker:'l’employé du train',backpack:'le sac à dos',lamp:'la lampe',sailboat:'le voilier'},en:Object.fromEntries(Object.entries(wordEN).map(([k,v])=>[k,v])),de:{clock:'die Uhr',train:'der Zug',departures:'die Abfahrtstafel',platform:'das Gleisschild',luggage:'der Koffer',ticket:'die Fahrkarte',flowers:'die Blumen',hat:'der Hut',worker:'der Bahnmitarbeiter',backpack:'der Rucksack',lamp:'die Lampe',sailboat:'das Segelboot'},it:{clock:'l’orologio',train:'il treno',departures:'il tabellone delle partenze',platform:'il cartello del binario',luggage:'la valigia',ticket:'il biglietto',flowers:'i fiori',hat:'il cappello',worker:'l’addetto del treno',backpack:'lo zaino',lamp:'la lampada',sailboat:'la barca a vela'},pt:{clock:'o relógio',train:'o trem',departures:'o painel de partidas',platform:'a placa da plataforma',luggage:'a mala',ticket:'o bilhete',flowers:'as flores',hat:'o chapéu',worker:'o funcionário do trem',backpack:'a mochila',lamp:'a lâmpada',sailboat:'o veleiro'},no:{clock:'klokken',train:'toget',departures:'avgangstavlen',platform:'sporskiltet',luggage:'kofferten',ticket:'billetten',flowers:'blomstene',hat:'hatten',worker:'togansatt',backpack:'ryggsekken',lamp:'lampen',sailboat:'seilbåten'}};
  const meta={ticket:['Buying a train ticket.','Ask for a ticket politely.'],platform:['Finding the platform.','Find out where your train leaves.'],time:['Asking about the time.','Practice asking when the train leaves.'],departure:['Reading the departure board.','Use the board to check your trip.'],luggage:['Luggage and travel.','Talk about the things you are carrying.'],boarding:['Boarding the train.','Practice the final steps before leaving.']};
 
- const trainSceneSounds={train:'sounds/subway.mp3',departures:'sounds/train-station.mp3'};
+ wordEN['departures sign']=wordEN.departures;for(const l of Object.keys(W))W[l]['departures sign']=W[l].departures;
+  const trainSceneSounds={train:'sounds/subway.mp3',departures:'sounds/train-station.mp3'};
  let trainSceneAudio=null;
  function playTrainSceneSound(key){const url=trainSceneSounds[key];if(!url)return;if(trainSceneAudio){trainSceneAudio.pause();trainSceneAudio.currentTime=0}trainSceneAudio=new Audio(url);trainSceneAudio.volume=.82;trainSceneAudio.play().catch(()=>{});}
- const challengeOrder=['clock','train','departures','platform','luggage','ticket']; let active='ticket',idx=0,challenge=-1,solved=false,lastText='';
+ const challengeOrder=['clock','train','departures sign','platform','luggage','ticket'];
+;(()=>{const node=document.getElementById('tb-legacy-challenge-data');let d;try{d=JSON.parse(node.textContent)}catch(e){return}if(!Array.isArray(d.targets)||d.targets.length!==6)return;function refresh(){for(let i=0;i<6;i++)challengeOrder[i]=d.targets[i];document.querySelectorAll('[data-challenge], [data-ch]').forEach(el=>{const i=Number(el.dataset.challenge??el.dataset.ch);if(i>=0&&i<6)el.textContent=(i+1)+'. '+(d.labels[i]||d.targets[i])})}window.tbLegacyChallengeGet=()=>JSON.parse(node.textContent);window.tbLegacyChallengeSet=next=>{d=next;node.textContent=JSON.stringify(d);refresh()};window.tbLegacyChallengeSelector='.train-hotspots button';refresh()})();
+ let active='ticket',idx=0,challenge=-1,solved=false,lastText='';
  function lang(){return langSel.value||'es'}
  function fillVoices(){const l=lang(),prefix=codes[l].split('-')[0].toLowerCase(),all=speechSynthesis.getVoices().filter(v=>(v.lang||'').toLowerCase().startsWith(prefix));voiceSel.innerHTML='<option value="">Browser Default</option>'+all.map(v=>'<option value="'+v.name.replace(/"/g,'&quot;')+'">'+v.name+'</option>').join('');const saved=localStorage.getItem('talkabee-train-voice-'+l)||'';if([...voiceSel.options].some(o=>o.value===saved))voiceSel.value=saved}
  function speak(t,rate=.82){if(!t)return;lastText=t;try{speechSynthesis.cancel();const u=new SpeechSynthesisUtterance(t);u.lang=codes[lang()];u.rate=rate;const v=speechSynthesis.getVoices().find(v=>v.name===voiceSel.value);if(v)u.voice=v;setTimeout(()=>speechSynthesis.speak(u),40)}catch(e){}}
@@ -363,12 +375,12 @@
  function render(){const l=lang(),t=L[l][active][idx];line.textContent=t;translation.textContent=en[active][idx][1];lastText=t}
  function loadLesson(key){active=key;idx=0;challenge=-1;solved=false;w.classList.remove('challenge-mode','discovery-mode');find.classList.remove('show');actions.style.display='flex';kicker.textContent='AT THE TRAIN STATION';title.textContent=meta[key][0];prompt.textContent=meta[key][1];render();clearActive();const b=w.querySelector('[data-train="'+key+'"]');if(b)b.classList.add('active')}
  function loadDiscovery(){challenge=-1;solved=false;lastText='';w.classList.remove('challenge-mode');w.classList.add('discovery-mode');find.classList.remove('show');actions.style.display='none';kicker.textContent='CLICK & DISCOVER';title.textContent='Explore the train station.';prompt.textContent='Click a glowing object to see its '+names[lang()]+' name and English meaning.';line.textContent='';translation.textContent='Choose any glowing train-station item.';clearActive();$('trainDiscovery').classList.add('active')}
- function loadChallenge(i){challenge=i;solved=false;lastText='';w.classList.remove('discovery-mode');w.classList.add('challenge-mode');find.classList.add('show');actions.style.display='none';const key=challengeOrder[i];kicker.textContent='FIND IT CHALLENGE';title.textContent='Challenge '+(i+1)+': Find '+wordEN[key]+'.';prompt.textContent='Search the train station scene and click the correct object.';line.textContent=W[lang()][key];translation.textContent=wordEN[key];count.textContent='CHALLENGE '+(i+1)+' OF 6';status.textContent='';hint.textContent='Find the correct object to unlock the next challenge.';nextChallenge.textContent=i<5?'Next Challenge →':'Finish Challenges ✓';clearActive();w.querySelector('[data-train-challenge="'+i+'"]').classList.add('active')}
+ function loadChallenge(i){challenge=i;solved=false;lastText='';w.classList.remove('discovery-mode');w.classList.add('challenge-mode');find.classList.add('show');actions.style.display='none';const key=challengeOrder[i];kicker.textContent='FIND IT CHALLENGE';title.textContent='Challenge '+(i+1)+': Find '+(wordEN[key]||key)+'.';prompt.textContent='Search the train station scene and click the correct object.';line.textContent=W[lang()][key]||key;translation.textContent=wordEN[key]||key;count.textContent='CHALLENGE '+(i+1)+' OF 6';status.textContent='';status.classList.remove('tb-answer-correct');hint.textContent='Find the correct object to unlock the next challenge.';nextChallenge.textContent=i<5?'Next Challenge →':'Finish Challenges ✓';clearActive();w.querySelector('[data-train-challenge="'+i+'"]').classList.add('active')}
  $('trainMainDirectory').addEventListener('click',()=>location.href='index.html'); $('trainSceneView').addEventListener('click',()=>w.classList.add('scene-only')); $('trainReturnPanel').addEventListener('click',()=>w.classList.remove('scene-only'));
  $('trainDiscovery').addEventListener('click',e=>{e.stopPropagation();loadDiscovery()}); $('trainNext').addEventListener('click',()=>{idx=(idx+1)%L[lang()][active].length;render()}); $('trainSpeak').addEventListener('click',()=>speak(L[lang()][active][idx]));
  w.querySelectorAll('[data-train]').forEach(b=>b.addEventListener('click',()=>loadLesson(b.dataset.train))); w.querySelectorAll('.train-challenge-nav').forEach(b=>b.addEventListener('click',()=>loadChallenge(Number(b.dataset.trainChallenge))));
- w.querySelectorAll('.train-hotspots button').forEach(b=>b.addEventListener('click',e=>{e.preventDefault();e.stopPropagation();const key=b.dataset.word,target=W[lang()][key]||key;playTrainSceneSound(key);if(challenge>=0){if(key===challengeOrder[challenge]){solved=true;status.textContent='✓ Nice find! '+target+' — '+(wordEN[key]||key);status.style.color='#19744f';hint.textContent='Challenge complete. You can move to the next one.';speak(target,.75)}else{status.textContent='Not that one — keep looking.';status.style.color='#8b5b13'}return}title.textContent='Click & Discover';prompt.textContent='You found something at the train station.';line.textContent=target;translation.textContent=wordEN[key];speak(target,.78)}));
- nextChallenge.addEventListener('click',()=>{if(!solved){status.textContent='Find the correct object first.';status.style.color='#8b5b13';return}if(challenge<5)loadChallenge(challenge+1);else{status.textContent='🏁 You completed all 6 Train Station challenges!';status.style.color='#19744f';hint.textContent='Great job exploring the station.'}});
+ w.querySelectorAll('.train-hotspots button').forEach(b=>b.addEventListener('click',e=>{e.preventDefault();e.stopPropagation();const key=b.dataset.word,target=W[lang()][key]||key;playTrainSceneSound(key);if(challenge>=0){if(key===challengeOrder[challenge]){solved=true;status.classList.add('tb-answer-correct');status.textContent='✓ Nice find! '+target+' — '+(wordEN[key]||key);status.style.color='#19744f';hint.textContent='Challenge complete. You can move to the next one.';speak(target,.75)}else{status.classList.remove('tb-answer-correct');status.textContent='Not that one — keep looking.';status.style.color='#8b5b13'}return}title.textContent='Click & Discover';prompt.textContent='You found something at the train station.';line.textContent=target;translation.textContent=wordEN[key];speak(target,.78)}));
+ nextChallenge.addEventListener('click',()=>{if(!solved){status.classList.remove('tb-answer-correct');status.textContent='Find the correct object first.';status.style.color='#8b5b13';return}if(challenge<5)loadChallenge(challenge+1);else{status.textContent='🏁 You completed all 6 Train Station challenges!';status.style.color='#19744f';hint.textContent='Great job exploring the station.'}});
  langSel.value=localStorage.getItem('talkabee-learn-language')||'es'; if(!codes[langSel.value])langSel.value='es'; langSel.addEventListener('change',()=>{localStorage.setItem('talkabee-learn-language',lang());fillVoices();if(challenge>=0)loadChallenge(challenge);else if(w.classList.contains('discovery-mode'))loadDiscovery();else loadLesson(active)}); voiceSel.addEventListener('change',()=>localStorage.setItem('talkabee-train-voice-'+lang(),voiceSel.value)); if(speechSynthesis.onvoiceschanged!==undefined)speechSynthesis.onvoiceschanged=fillVoices; fillVoices();loadLesson('ticket');
 })();
 </script>
@@ -504,9 +516,19 @@
  if(!card)return;
  const drag=card.querySelector('.tab-card-drag'),down=card.querySelector('.tab-card-font-down'),up=card.querySelector('.tab-card-font-up'),reset=card.querySelector('.tab-card-reset'),resize=card.querySelector('.tab-card-resize');
  const PK='talkabee-global-script-card-position',SK='talkabee-global-script-card-scale',FK='talkabee-global-script-card-font-scale';
+ const WK='talkabee-train-card-width',HK='talkabee-train-card-height';
  const clamp=(n,a,b)=>Math.max(a,Math.min(b,n));
  const defaultScale=()=>matchMedia('(max-width:760px)').matches?.82:.67;
  let scale=defaultScale(),fontScale=1,dragState=null;
+ const textNodes=card.querySelectorAll('.train-kicker,.train-panel h2,.train-panel p,.train-line,.train-translation,.train-find,.train-find-status,.train-next-hint,.train-challenge-count,.train-actions button,.train-challenge-next');
+ textNodes.forEach(el=>{el.dataset.baseFont=getComputedStyle(el).fontSize});
+ function applyBox(width,height,save=true){
+   card.style.setProperty('width',width+'px','important');
+   card.style.setProperty('max-width','none','important');
+   card.style.setProperty('min-width','0','important');
+   card.style.setProperty('min-height',height+'px','important');
+   if(save)try{localStorage.setItem(WK,String(width));localStorage.setItem(HK,String(height))}catch(e){}
+ }
 
  function applyTransform(){
    if(card.dataset.moved==='1'){
@@ -520,6 +542,7 @@
  function applyFont(v,save=true){
    fontScale=clamp(Number(v)||1,.75,1.6);
    card.style.setProperty('--tab-card-font-scale',fontScale.toFixed(2));
+   textNodes.forEach(el=>el.style.setProperty('font-size',(parseFloat(el.dataset.baseFont)*fontScale)+'px','important'));
    if(save)try{localStorage.setItem(FK,String(fontScale))}catch(e){}
  }
  function saveState(){
@@ -534,6 +557,8 @@
    try{
      const fs=localStorage.getItem(FK); if(fs)applyFont(fs,false);
      const ss=parseFloat(localStorage.getItem(SK)); if(ss)scale=clamp(ss,.45,1.10);
+      const ww=parseFloat(localStorage.getItem(WK)),hh=parseFloat(localStorage.getItem(HK));
+      if(ww&&hh)applyBox(ww,hh,false);
      const ps=JSON.parse(localStorage.getItem(PK)||'null');
      if(ps&&innerWidth>760){
        card.dataset.moved='1';
@@ -546,11 +571,11 @@
    }catch(e){}
  }
 
- if(down)down.addEventListener('click',()=>{scale=clamp(+(scale-.05).toFixed(2),.45,1.10);applyTransform();saveState()});
- if(up)up.addEventListener('click',()=>{scale=clamp(+(scale+.05).toFixed(2),.45,1.10);applyTransform();saveState()});
+ if(down)down.addEventListener('click',()=>applyFont(fontScale-.1));
+ if(up)up.addEventListener('click',()=>applyFont(fontScale+.1));
 
  if(reset)reset.addEventListener('click',()=>{
-   try{localStorage.removeItem(PK);localStorage.removeItem(SK);localStorage.removeItem(FK)}catch(e){}
+   try{localStorage.removeItem(PK);localStorage.removeItem(SK);localStorage.removeItem(FK);localStorage.removeItem(WK);localStorage.removeItem(HK)}catch(e){}
    scale=defaultScale();fontScale=1;
    delete card.dataset.moved;
    ['width','height','left','top','right','bottom','transform','transform-origin','min-width','max-width','min-height','max-height'].forEach(p=>card.style.removeProperty(p));
@@ -593,17 +618,16 @@
  card.addEventListener('pointerup',endDrag);
  card.addEventListener('pointercancel',endDrag);
 
- // Keep the resize handle from changing the card's scale. It changes scale proportionally instead.
+ // Resize only the card's dimensions. The text and visual scale remain unchanged.
  if(resize)resize.addEventListener('pointerdown',e=>{
    if(innerWidth<=760)return;
    e.preventDefault();e.stopPropagation();
-   const r=card.getBoundingClientRect(),sx=e.clientX,baseW=r.width,baseScale=scale;
+   const sx=e.clientX,sy=e.clientY,baseW=parseFloat(getComputedStyle(card).width),baseH=parseFloat(getComputedStyle(card).height);
+   const effectiveScale=card.getBoundingClientRect().width/baseW||defaultScale();
    resize.setPointerCapture(e.pointerId);
-   const mv=ev=>{scale=clamp(baseScale*((baseW+ev.clientX-sx)/baseW),.45,1.10);applyTransform()};
-   const end=()=>{resize.removeEventListener('pointermove',mv);saveState()};
-   resize.addEventListener('pointermove',mv);
-   resize.addEventListener('pointerup',end,{once:true});
-   resize.addEventListener('pointercancel',end,{once:true});
+   const mv=ev=>{const width=clamp(baseW+(ev.clientX-sx)/effectiveScale,320,Math.max(520,innerWidth/effectiveScale-50));const height=clamp(baseH+(ev.clientY-sy)/effectiveScale,120,Math.max(250,innerHeight/effectiveScale-40));applyBox(width,height,false)};
+   const end=()=>{resize.removeEventListener('pointermove',mv);resize.removeEventListener('pointerup',end);resize.removeEventListener('pointercancel',end);applyBox(parseFloat(getComputedStyle(card).width),parseFloat(getComputedStyle(card).minHeight),true)};
+   resize.addEventListener('pointermove',mv);resize.addEventListener('pointerup',end);resize.addEventListener('pointercancel',end);
  });
 
  restore();
@@ -642,7 +666,7 @@ function soundAfterVoice(el){
 document.addEventListener('click',function(ev){
  if(document.body.classList.contains('tb-hs-editing'))return;
  const el=ev.target.closest&&ev.target.closest('[data-tb-custom="1"]');if(!el)return;
- ev.preventDefault();ev.stopPropagation();
+ ev.preventDefault(); // Let the original Train Station challenge checker receive the click.
  const l=lang(),txt=translation(el,l),en=translation(el,'en'),key=el.dataset.word||el.dataset.object||en;
  try{if(typeof showWord==='function')showWord(key);else{const line=document.querySelector('[id$="Line"]');const trans=document.querySelector('[id$="Translation"]');if(line)line.textContent=txt;if(trans)trans.textContent=l==='en'?'':en}}catch(e){}
  try{if(typeof speak==='function')speak(txt,.82);else if('speechSynthesis'in window){speechSynthesis.cancel();const u=new SpeechSynthesisUtterance(txt);u.lang=codes[l]||l;u.rate=.82;speechSynthesis.speak(u)}}catch(e){}
@@ -706,5 +730,7 @@ document.addEventListener('click',function(ev){
  document.addEventListener('click',function(e){var el=e.target.closest&&e.target.closest('.hotspot,.home-hotspot,.yacht-hotspot,.hotspots button,.train-hotspots button');if(el)show(el,e)},true);
 })();
 </script>
+
+
 
 </body></html>

@@ -292,6 +292,7 @@ body.scene-view .return-panel-toggle{display:block!important}
 #talkabee-object-popup{position:fixed;z-index:2147482900;display:none;padding:8px 12px;border-radius:12px;background:rgba(20,20,20,.82);color:white;font-weight:900;font-size:14px;pointer-events:none}
 </style>
 
+<script id="tb-legacy-challenge-data" type="application/json">{"targets":["car","dog","parrot","cabin","palm","sailboat"],"labels":["Find the Gremlin","Find the Dog","Find the Parrot","Find the cabin","Find the palm tree","Find the Sailboat"]}</script>
 </head>
 <body class="">
 <div class="talkabee-editions">
@@ -327,7 +328,7 @@ body.scene-view .return-panel-toggle{display:block!important}
    <div class="label">DISCOVERY</div>
    <button data-discovery="">🔎 Discovery — Click the Scene</button>
    <div class="label">ACTIVITIES</div>
-   <button data-lesson="welcome" class="active">1. Island Welcome</button>
+   <button data-lesson="welcome" class="">1. Island Welcome</button>
    <button data-lesson="retreat">2. At the Retreat</button>
    <button data-lesson="animals">3. Julie's Animals</button>
    <button data-lesson="music">4. Music Time</button>
@@ -337,20 +338,20 @@ body.scene-view .return-panel-toggle{display:block!important}
    <button data-challenge="0">1. Find the Gremlin</button>
    <button data-challenge="1">2. Find the Dog</button>
    <button data-challenge="2">3. Find the Parrot</button>
-   <button data-challenge="3">4. Find the Bee</button>
-   <button data-challenge="4">5. Find the Hammock</button>
+   <button data-challenge="3" class="">4. Find the cabin</button>
+   <button data-challenge="4" class="active">5. Find the palm tree</button>
    <button data-challenge="5">6. Find the Sailboat</button>
   <a id="mainDirectory" class="main-directory" href="index.html" style="display:block;text-decoration:none;color:#fff;padding:8px;border-radius:10px;margin-bottom:8px;background:rgba(255,255,255,.12);font-size:11px;font-weight:950">← Main Directory</a></aside>
 
-  <div class="panel tab-master-card">
+  <div class="panel tab-master-card" data-moved="1" style="inset: 159.25px auto auto 381.633px !important; transform-origin: left top 0px !important; transform: scale(0.78) !important;">
 <div class="tab-card-tools" aria-label="Script card controls"><button type="button" class="tab-card-drag" title="Move script card">↕ Move</button><button type="button" class="tab-card-font-down" title="Decrease text">A−</button><button type="button" class="tab-card-font-up" title="Increase text">A+</button><button type="button" class="tab-card-reset" title="Reset card">Reset</button></div><div class="tab-card-resize" title="Drag to resize script card" aria-label="Resize script card">↘</div>
 
    <div class="kicker">AUNT JULIE'S ISLAND RETREAT</div>
-   <h2 id="title">Island Welcome</h2><p id="prompt">Practice a warm welcome at Aunt Julie's retreat.</p>
-   <div class="line" id="line">muelle o muelle</div>
-   <div class="translation" id="translation">pier or dock</div>
-   <div class="actions" id="actions" style="display: flex;"><button id="speak">🔊 Hear It</button><button id="next">Next phrase →</button></div>
-   <div class="find" id="find"><div class="count" id="count"></div><div class="status" id="status"></div><div class="hint" id="hint"></div><button class="challengeNext" id="challengeNext">Next phrase →</button></div>
+   <h2 id="title">Challenge 5: Find Palm tree.</h2><p id="prompt">Search the scene and click the correct object.</p>
+   <div class="line" id="line">La palmera.</div>
+   <div class="translation" id="translation">Palm tree.</div>
+   <div class="actions" id="actions" style="display: none;"><button id="speak">🔊 Hear It</button><button id="next">Next phrase →</button></div>
+   <div class="find show" id="find"><div class="count" id="count">CHALLENGE 5 OF 6</div><div class="status" id="status" style="color: rgb(23, 106, 72);">✓ Nice find! La palmera. Palm tree.</div><div class="hint" id="hint">Challenge complete. Move to the next one.</div><button class="challengeNext" id="challengeNext">Next Challenge →</button></div>
   </div>
 
   <div class="hotspots">
@@ -460,6 +461,8 @@ function playJulieSceneSound(key){
 }
 const englishWords={julie:"Aunt Julie",car:"1976 Gremlin",dog:"Dog",cabin:"Cabin",bee:"Bee",hammock:"Hammock",parrot:"Parrot",lantern:"Lantern",flowers:"Flowers",pier:"Pier",ocean:"Ocean",sailboat:"Sailboat",palm:"Palm tree",chair:"Chair",mug:"Mug"};
 const challengeOrder=["car","dog","parrot","bee","hammock","sailboat"];
+;(()=>{const node=document.getElementById('tb-legacy-challenge-data');let d;try{d=JSON.parse(node.textContent)}catch(e){return}if(!Array.isArray(d.targets)||d.targets.length!==6)return;function refresh(){for(let i=0;i<6;i++)challengeOrder[i]=d.targets[i];document.querySelectorAll('[data-challenge]').forEach(el=>{const i=Number(el.dataset.challenge??el.dataset.ch);if(i>=0&&i<6)el.textContent=(i+1)+'. '+(d.labels[i]||d.targets[i])})}window.tbLegacyChallengeGet=()=>JSON.parse(node.textContent);window.tbLegacyChallengeSet=next=>{d=next;node.textContent=JSON.stringify(d);refresh()};window.tbLegacyChallengeSelector='.hotspot';refresh()})();
+
 let active="welcome",index=0,challenge=-1,solved=false,discovery=false;
 const $=id=>document.getElementById(id),title=$("title"),prompt=$("prompt"),line=$("line"),translation=$("translation"),actions=$("actions"),find=$("find"),count=$("count"),status=$("status"),hint=$("hint"),challengeNext=$("challengeNext"),languageSelect=$("adventureLanguage"),voiceSelect=$("adventureVoice");
 const LANG_KEY="talkabee-learn-language",VOICE_KEY="talkabee-voice-";
@@ -860,6 +863,8 @@ document.addEventListener('click',function(ev){
  document.addEventListener('click',function(e){var el=e.target.closest&&e.target.closest('.hotspot,.home-hotspot,.yacht-hotspot,.hotspots button,.train-hotspots button');if(el)show(el,e)},true);
 })();
 </script>
+
+
 
 
 </body></html>
