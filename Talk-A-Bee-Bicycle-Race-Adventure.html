@@ -178,8 +178,8 @@ border:1px solid #fff;background:rgba(7,23,39,.65);color:#fff;font-weight:900}
 
 <div class="kicker">AT THE MOUNTAIN BIKE START</div>
 <h2 id="title">Click &amp; Discover</h2>
-<p id="prompt">You found bicycle racers.</p>
-<div class="word"><strong id="line">bicycle racers</strong><div class="translation" id="translation"></div></div>
+<p id="prompt">You found she hit a boulder and lost.</p>
+<div class="word"><strong id="line">ha colpito un masso e ha perso</strong><div class="translation" id="translation">she hit a boulder and lost</div></div>
 <p id="status"></p>
 <div class="controls">
 <button id="normal">🔊 Speak</button><button id="slow">🐢 Slow</button><button id="replay">↻ Replay</button><button id="nextPhrase">Next phrase →</button>
@@ -465,7 +465,7 @@ showWord("race");
  function stop(){clearTimeout(timer);if(current){try{current.pause();current.currentTime=0}catch(e){}current=null}}
  document.addEventListener('click',function(ev){
   if(document.body.classList.contains('tb-hs-editing'))return;
-  const h=ev.target.closest&&ev.target.closest(SEL);if(!h||!h.dataset.sound)return;
+  const h=ev.target.closest&&ev.target.closest(SEL);if(!h||!h.dataset.sound||h.dataset.tbCustom==='1')return;
   stop();const src=h.dataset.sound;
   // Keep Talk A Bee order: translated object speech first, then the real sound.
   timer=setTimeout(function(){const a=new Audio(src);current=a;a.play().catch(()=>{});a.onended=function(){if(current===a)current=null}},1500);
@@ -478,7 +478,7 @@ showWord("race");
 if(window.__tbNewHotspotLiveClick)return;window.__tbNewHotspotLiveClick=true;
 const codes={es:'es-ES',fr:'fr-FR',en:'en-US',de:'de-DE',it:'it-IT',pt:'pt-PT',no:'nb-NO',el:'el-GR'};
 let currentSound=null, soundTimer=null;
-function lang(){try{return document.querySelector('[id$="Language"]')?.value||localStorage.getItem('talkabee-learn-language')||'en'}catch(e){return 'en'}}
+function lang(){try{return document.getElementById('lang')?.value||document.querySelector('[id$="Language"]')?.value||localStorage.getItem('talkabee-learn-language')||'en'}catch(e){return 'en'}}
 function translation(el,l){const en=el.dataset.tbEn||el.dataset.en||el.dataset.word||el.dataset.object||'';return l==='en'?en:(el.dataset['tb'+l.charAt(0).toUpperCase()+l.slice(1)]||en)}
 function soundAfterVoice(el){
  clearTimeout(soundTimer);
