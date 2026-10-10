@@ -164,7 +164,7 @@ border:1px solid #fff;background:rgba(7,23,39,.65);color:#fff;font-weight:900}
 <button data-lesson="room">5. Furniture and Fireplace</button>
 <button data-lesson="view">6. Look Through the Windows</button>
 <div class="label">CHALLENGES</div>
-<button data-ch="0">1. Find Bee</button>
+<button data-ch="0">1. Find the oval office</button>
 <button data-ch="1">2. Find the Resolute Desk</button>
 <button data-ch="2">3. Find the American Flag</button>
 <button data-ch="3">4. Find the Fireplace</button>
@@ -178,8 +178,8 @@ border:1px solid #fff;background:rgba(7,23,39,.65);color:#fff;font-weight:900}
 
 <div class="kicker">VISITING THE OVAL OFFICE</div>
 <h2 id="title">Click &amp; Discover</h2>
-<p id="prompt">You found Oval Office.</p>
-<div class="word"><strong id="line">Despacho Oval</strong><div class="translation" id="translation">Oval Office</div></div>
+<p id="prompt">You found oval office.</p>
+<div class="word"><strong id="line">Despacho Oval</strong><div class="translation" id="translation">oval office</div></div>
 <p id="status"></p>
 <div class="controls">
 <button id="normal">🔊 Speak</button><button id="slow">🐢 Slow</button><button id="replay">↻ Replay</button><button id="nextPhrase">Next phrase →</button>
@@ -593,4 +593,18 @@ document.addEventListener('click',function(ev){
   window.addEventListener('storage',function(e){if(e.key===KEY)restore()});
 })();
 </script>
+
+<script type="application/json" id="talkabee-challenge-data">[{"key":"oval office","text":"Find the oval office"},{"key":"desk","text":"Find the Resolute Desk"},{"key":"flag","text":"Find the American Flag"},{"key":"fireplace","text":"Find the Fireplace"},{"key":"washington","text":"Find George Washington"},{"key":"monument","text":"Find the Washington Monument"}]</script>
+<script id="talkabee-challenge-runtime">
+(function(){
+ const data=document.getElementById('talkabee-challenge-data');
+ if(!data)return;
+ try{const saved=JSON.parse(data.textContent||'[]');
+ saved.forEach((v,i)=>{const b=document.querySelector('[data-ch="'+i+'"]');if(!b||!v)return;
+ if(v.key)challengeOrder[i]=v.key;
+ if(v.text)b.textContent=(i+1)+'. '+v.text;
+ });}catch(e){console.warn('Challenge data could not be loaded',e)}
+})();
+</script>
+
 </body></html>

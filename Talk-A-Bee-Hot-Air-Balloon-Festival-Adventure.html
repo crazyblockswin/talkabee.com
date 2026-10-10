@@ -164,9 +164,9 @@ border:1px solid #fff;background:rgba(7,23,39,.65);color:#fff;font-weight:900}
 <button data-lesson="flight">5. Balloons in Flight</button>
 <button data-lesson="view">6. Explore the Mountain Lake</button>
 <div class="label">CHALLENGES</div>
-<button data-ch="0">1. Find Grandma</button>
-<button data-ch="1">2. Find Grandpa</button>
-<button data-ch="2">3. Find the Bee</button>
+<button data-ch="0">1. Find the crew</button>
+<button data-ch="1">2. Find snowy mountains</button>
+<button data-ch="2">3. Find forest island</button>
 <button data-ch="3">4. Find the Burner Flame</button>
 <button data-ch="4">5. Find the Balloon Basket</button>
 <button data-ch="5">6. Find the Lake</button>
@@ -265,7 +265,7 @@ function showWord(key){activeLesson="";lastWord=key;lessonPhrase=1;title.textCon
 document.querySelectorAll(".hotspot").forEach(b=>b.onclick=()=>{const key=b.dataset.word;showWord(key);let played=false;const after=()=>{if(played)return;played=true;playSound(key)};speak(WORDS[langSel.value][key]||EN[key]||key,.82,after);setTimeout(after,1500);if(challenge>=0){if(key===challengeOrder[challenge]){status.textContent="✓ Nice find!";status.style.color="#9dffbf"}else{status.textContent="Not that one — keep looking.";status.style.color="#ffe28a"}}});
 function clearChallenge(){challenge=-1;world.classList.remove("challenge-mode");document.querySelectorAll(".hotspot").forEach(h=>h.classList.remove("target"));status.textContent=""}
 document.getElementById("discovery").onclick=()=>{clearChallenge();activeLesson="";lastWord="game";title.textContent="Click & Discover";prompt.textContent="Click any object in the scene to hear its name.";line.textContent=WORDS[langSel.value].game;translation.textContent=langSel.value==="en"?"":EN.game};
-document.querySelectorAll("[data-ch]").forEach(b=>b.onclick=()=>{activeLesson="";lastWord="";challenge=+b.dataset.ch;world.classList.add("challenge-mode");document.querySelectorAll(".hotspot").forEach(h=>h.classList.toggle("target",h.dataset.word===challengeOrder[challenge]));title.textContent="Challenge "+(challenge+1)+" of 6";prompt.textContent=b.textContent.replace(/^[0-9]+\.\s*/,"");line.textContent=WORDS[langSel.value][challengeOrder[challenge]];translation.textContent=langSel.value==="en"?"":EN[challengeOrder[challenge]];status.textContent=""});
+document.querySelectorAll("[data-ch]").forEach(b=>b.onclick=()=>{activeLesson="";lastWord="";challenge=+b.dataset.ch;world.classList.add("challenge-mode");document.querySelectorAll(".hotspot").forEach(h=>h.classList.toggle("target",h.dataset.word===challengeOrder[challenge]));title.textContent="Challenge "+(challenge+1)+" of 6";prompt.textContent=b.textContent.replace(/^[0-9]+\.\s*/,"");const targetKey=challengeOrder[challenge],targetHotspot=[...document.querySelectorAll(".hotspot")].find(h=>h.dataset.word===targetKey);line.textContent=WORDS[langSel.value][targetKey]||(targetHotspot&&targetHotspot.dataset["tb"+langSel.value.charAt(0).toUpperCase()+langSel.value.slice(1)])||EN[targetKey]||targetKey;translation.textContent=langSel.value==="en"?"":(EN[targetKey]||(targetHotspot&&targetHotspot.dataset.tbEn)||targetKey);status.textContent=""});
 function showLesson(key,speakIt=false){clearChallenge();activeLesson=key;lastWord="";lessonPhrase=Math.max(0,Math.min(1,lessonPhrase));const a=lessons[langSel.value][key],e=lessons.en[key],btn=document.querySelector(`[data-lesson="${key}"]`);title.textContent=btn?btn.textContent.replace(/^[0-9]+\.\s*/,""):"Hot Air Balloon Festival";prompt.textContent=a[0];line.textContent=a[lessonPhrase];translation.textContent=langSel.value==="en"?"":e[lessonPhrase];if(speakIt)speak(a[lessonPhrase])}
 document.querySelectorAll("[data-lesson]").forEach(b=>b.onclick=()=>{lessonPhrase=1;showLesson(b.dataset.lesson,true)});
 function currentSpeechText(){if(activeLesson)return lessons[langSel.value][activeLesson][lessonPhrase];if(lastWord)return WORDS[langSel.value][lastWord]||EN[lastWord]||lastWord;return line.textContent}
@@ -591,4 +591,18 @@ document.addEventListener('click',function(ev){
   window.addEventListener('storage',function(e){if(e.key===KEY)restore()});
 })();
 </script>
+
+<script type="application/json" id="talkabee-challenge-data">[{"key":"crew","text":"Find the crew"},{"key":"mountains","text":"Find snowy mountains"},{"key":"island","text":"Find forest island"},{"key":"flame","text":"Find the Burner Flame"},{"key":"basket","text":"Find the Balloon Basket"},{"key":"lake","text":"Find the Lake"}]</script>
+<script id="talkabee-challenge-runtime">
+(function(){
+ const data=document.getElementById('talkabee-challenge-data');
+ if(!data)return;
+ try{const saved=JSON.parse(data.textContent||'[]');
+ saved.forEach((v,i)=>{const b=document.querySelector('[data-ch="'+i+'"]');if(!b||!v)return;
+ if(v.key)challengeOrder[i]=v.key;
+ if(v.text)b.textContent=(i+1)+'. '+v.text;
+ });}catch(e){console.warn('Challenge data could not be loaded',e)}
+})();
+</script>
+<div id="tb-challenge-panel"><div id="tb-challenge-drag" title="Drag to move this editor"><h3>↕ Edit Six Challenges</h3><small>Drag here to move</small></div><div>Choose a challenge, then assign an existing hotspot. Changes are included when you save or export HTML.</div><label for="tb-ch-number">Challenge</label><select id="tb-ch-number"><option value="0">Challenge 1</option><option value="1">Challenge 2</option><option value="2">Challenge 3</option><option value="3">Challenge 4</option><option value="4">Challenge 5</option><option value="5">Challenge 6</option></select><label for="tb-ch-hotspot">Find this hotspot</label><select id="tb-ch-hotspot"></select><label for="tb-ch-text">Challenge wording (English)</label><input id="tb-ch-text" maxlength="110" placeholder="Find the balloon basket"><div class="tb-ch-warning" id="tb-ch-warning"></div><button type="button" id="tb-ch-apply">Apply Challenge</button><button type="button" id="tb-ch-close">Close</button></div><div id="tb-challenge-panel" style="display: none; inset: 25.3333px auto auto 284.933px;"><div id="tb-challenge-drag" title="Drag to move this editor"><h3>↕ Edit Six Challenges</h3><small>Drag here to move</small></div><div>Choose a challenge, then assign an existing hotspot. Changes are included when you save or export HTML.</div><label for="tb-ch-number">Challenge</label><select id="tb-ch-number"><option value="0">Challenge 1</option><option value="1">Challenge 2</option><option value="2">Challenge 3</option><option value="3">Challenge 4</option><option value="4">Challenge 5</option><option value="5">Challenge 6</option></select><label for="tb-ch-hotspot">Find this hotspot</label><select id="tb-ch-hotspot"><option value="crew">Balloon crew [crew]</option><option value="basket">Balloon basket [basket]</option><option value="burner">Balloon burner [burner]</option><option value="flame">Burner flame [flame]</option><option value="balloon">Hot air balloon [balloon]</option><option value="ropes">Balloon ropes [ropes]</option><option value="lake">Mountain lake [lake]</option><option value="island">Forest island [island]</option><option value="mountains">Snowy mountains [mountains]</option><option value="sun">Sunrise [sun]</option><option value="sky">Blue sky [sky]</option><option value="balloons">Balloons in flight [balloons]</option><option value="field">Festival field [field]</option><option value="crowd">Festival crowd [crowd]</option><option value="inflating">Inflating balloons [inflating]</option><option value="tents">Festival tents [tents]</option><option value="forest">Pine forest [forest]</option><option value="sunset">sunset [sunset]</option></select><label for="tb-ch-text">Challenge wording (English)</label><input id="tb-ch-text" maxlength="110" placeholder="Find the balloon basket"><div class="tb-ch-warning" id="tb-ch-warning">Saved into this page. Use Save Working HTML to keep it.</div><button type="button" id="tb-ch-apply">Apply Challenge</button><button type="button" id="tb-ch-close">Close</button></div>
 </body></html>

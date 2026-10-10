@@ -164,23 +164,23 @@ border:1px solid #fff;background:rgba(7,23,39,.65);color:#fff;font-weight:900}
 <button data-lesson="race">5. Race Across the Lake</button>
 <button data-lesson="regatta">6. Lakeview Regatta</button>
 <div class="label">CHALLENGES</div>
-<button data-ch="0">1. Find the Bee Coxswain</button>
-<button data-ch="1">2. Find an Oar</button>
+<button data-ch="0">1. Find the Bee Coxwayne</button>
+<button data-ch="1">2. Find the Banner</button>
 <button data-ch="2">3. Find the Racing Shell</button>
 <button data-ch="3">4. Find the Red Crew</button>
-<button data-ch="4">5. Find the Regatta Banner</button>
+<button data-ch="4">5. Find the flag</button>
 <button data-ch="5">6. Find the Sailboat</button>
 <a href="index.html">← Return to Main Directory</a>
 </aside>
 
-<section class="card">
+<section class="card" data-moved="1" style="inset: 88.1833px auto auto 233.8px !important; transform-origin: left top 0px !important; transform: scale(0.67) !important;">
 <div class="tab-card-tools" aria-label="Script card controls"><button type="button" class="tab-card-drag" title="Move script card">↕ Move</button><button type="button" class="tab-card-font-down" title="Decrease text">A−</button><button type="button" class="tab-card-font-up" title="Increase text">A+</button><button type="button" class="tab-card-reset" title="Reset card">Reset</button></div><div class="tab-card-resize" title="Drag to resize script card" aria-label="Resize script card">↘</div>
 
 <div class="kicker">AT THE LAKEVIEW REGATTA</div>
-<h2 id="title">Click &amp; Discover</h2>
-<p id="prompt">You found rowing regatta.</p>
-<div class="word"><strong id="line">rowing regatta</strong><div class="translation" id="translation"></div></div>
-<p id="status"></p>
+<h2 id="title">Challenge 2 of 6</h2>
+<p id="prompt">Find an Oar</p>
+<div class="word"><strong id="line">oars</strong><div class="translation" id="translation"></div></div>
+<p id="status" style="color: rgb(157, 255, 191);"></p>
 <div class="controls">
 <button id="normal">🔊 Speak</button><button id="slow">🐢 Slow</button><button id="replay">↻ Replay</button><button id="nextPhrase">Next phrase →</button>
 </div>
@@ -585,4 +585,18 @@ document.addEventListener('click',function(ev){
   window.addEventListener('storage',function(e){if(e.key===KEY)restore()});
 })();
 </script>
+
+<script type="application/json" id="talkabee-challenge-data">[{"key":"rowing coxwayne","text":"Find the Bee Coxwayne"},{"key":"banner","text":"Find the Banner"},{"key":"shell","text":"Find the Racing Shell"},{"key":"redcrew","text":"Find the Red Crew"},{"key":"flags","text":"Find the flag"},{"key":"sailboat","text":"Find the Sailboat"}]</script>
+<script id="talkabee-challenge-runtime">
+(function(){
+ const data=document.getElementById('talkabee-challenge-data');
+ if(!data)return;
+ try{const saved=JSON.parse(data.textContent||'[]');
+ saved.forEach((v,i)=>{const b=document.querySelector('[data-ch="'+i+'"]');if(!b||!v)return;
+ if(v.key)challengeOrder[i]=v.key;
+ if(v.text)b.textContent=(i+1)+'. '+v.text;
+ });}catch(e){console.warn('Challenge data could not be loaded',e)}
+})();
+</script>
+
 </body></html>
