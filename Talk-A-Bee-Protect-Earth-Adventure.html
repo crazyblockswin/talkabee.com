@@ -1,6 +1,5 @@
 <!doctype html>
-<html lang="en">
-<head>
+<html lang="en"><head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Talk A Bee — Protect Earth Adventure</title>
@@ -118,7 +117,7 @@ border:1px solid #fff;background:rgba(7,23,39,.65);color:#fff;font-weight:900}
 </style>
 
 </head>
-<body>
+<body class="">
 <div class="talkabee-editions">
 <details>
 <summary>Explore Adventures ▾</summary>
@@ -146,13 +145,13 @@ border:1px solid #fff;background:rgba(7,23,39,.65);color:#fff;font-weight:900}
 <div class="tab-panel-size-controls" aria-label="Activity panel size"><button type="button" class="tab-panel-minus" title="Make activity panel smaller">−</button><button type="button" class="tab-panel-reset" title="Reset activity panel size">Reset</button><button type="button" class="tab-panel-plus" title="Make activity panel larger">+</button></div>
 
 <div class="label">LANGUAGE</div>
-<select id="lang">
+<select id="lang" data-tab-global-voice="1">
 <option value="es">Spanish</option><option value="fr">French</option><option value="en">English</option>
 <option value="de">German</option><option value="it">Italian</option><option value="pt">Portuguese</option><option value="no">Norwegian</option>
 </select>
 <div class="label">VOICE</div>
-<select id="voice"><option value="">Browser Default</option></select>
-<button id="sceneView">◉ Scene View</button>
+<select id="voice" data-tab-global-voice="1"><option value="">Browser Default</option><option value="Microsoft David - English (United States)">Microsoft David - English (United States) — en-US</option><option value="Microsoft Mark - English (United States)">Microsoft Mark - English (United States) — en-US</option><option value="Microsoft Zira - English (United States)">Microsoft Zira - English (United States) — en-US</option><option value="Microsoft David Desktop - English (United States)">Microsoft David Desktop - English (United States) — en-US</option><option value="Microsoft Zira Desktop - English (United States)">Microsoft Zira Desktop - English (United States) — en-US</option></select>
+<button id="sceneView" aria-pressed="false">◉ Scene View</button>
 
 <div class="label">DISCOVERY</div>
 <button id="discovery">🔎 Discovery — Click the Scene</button>
@@ -160,7 +159,7 @@ border:1px solid #fff;background:rgba(7,23,39,.65);color:#fff;font-weight:900}
 <div class="label">ACTIVITIES</div>
 <button data-lesson="view">1. Look Down at Earth</button>
 <button data-lesson="pollution">2. What Is Air Pollution?</button>
-<button data-lesson="factories">3. Factories & Smokestacks</button>
+<button data-lesson="factories">3. Factories &amp; Smokestacks</button>
 <button data-lesson="water">4. Protect Our Water</button>
 <button data-lesson="choices">5. Make Cleaner Choices</button>
 <button data-lesson="protect">6. Protect Our Planet</button>
@@ -178,9 +177,9 @@ border:1px solid #fff;background:rgba(7,23,39,.65);color:#fff;font-weight:900}
 <div class="tab-card-tools" aria-label="Script card controls"><button type="button" class="tab-card-drag" title="Move script card">↕ Move</button><button type="button" class="tab-card-font-down" title="Decrease text">A−</button><button type="button" class="tab-card-font-up" title="Increase text">A+</button><button type="button" class="tab-card-reset" title="Reset card">Reset</button></div><div class="tab-card-resize" title="Drag to resize script card" aria-label="Resize script card">↘</div>
 
 <div class="kicker">PROTECT OUR EARTH</div>
-<h2 id="title">Protect Earth Adventure</h2>
-<p id="prompt">Click any object in the scene to hear its name.</p>
-<div class="word"><strong id="line">proteger la Tierra</strong><div class="translation" id="translation">protect the Earth</div></div>
+<h2 id="title">Click &amp; Discover</h2>
+<p id="prompt">You found smoke.</p>
+<div class="word"><strong id="line">humo</strong><div class="translation" id="translation">smoke</div></div>
 <p id="status"></p>
 <div class="controls">
 <button id="normal">🔊 Speak</button><button id="slow">🐢 Slow</button><button id="replay">↻ Replay</button><button id="nextPhrase">Next phrase →</button>
@@ -215,28 +214,28 @@ border:1px solid #fff;background:rgba(7,23,39,.65);color:#fff;font-weight:900}
 
 
 <!-- Hotspots mapped to the approved Protect Earth keeper JPG. -->
-<button class="hotspot" data-word="bee" style="left:63%;top:57%;width:13%;height:34%" aria-label="Bee"></button>
-<button class="hotspot" data-word="crew" style="left:16%;top:53%;width:48%;height:43%" aria-label="Space crew"></button>
-<button class="hotspot" data-word="earth" style="left:23%;top:7%;width:77%;height:57%" aria-label="Earth"></button>
-<button class="hotspot" data-word="factories" style="left:28%;top:29%;width:35%;height:28%" aria-label="Factories"></button>
-<button class="hotspot" data-word="smokestacks" style="left:30%;top:29%;width:31%;height:23%" aria-label="Smokestacks"></button>
+
+
+
+
+
 <button class="hotspot" data-word="smoke" style="left:29%;top:19%;width:39%;height:26%" aria-label="Smoke"></button>
-<button class="hotspot" data-word="haze" style="left:31%;top:20%;width:45%;height:34%" aria-label="Haze"></button>
-<button class="hotspot" data-word="city" style="left:43%;top:39%;width:36%;height:22%" aria-label="City"></button>
-<button class="hotspot" data-word="river" style="left:67%;top:31%;width:22%;height:24%" aria-label="River"></button>
+<button class="hotspot" data-word="haze" style="left: 26.94%; top: 16.98%; width: 27.55%; height: 22.22%;" aria-label="Haze" data-sound="sounds/factory.mp3"></button>
+
+<button class="hotspot" data-word="river" style="left: 83.08%; top: 23.94%; width: 3.1%; height: 16.94%;" aria-label="River"></button>
 <button class="hotspot" data-word="ocean" style="left:68%;top:45%;width:28%;height:19%" aria-label="Ocean"></button>
-<button class="hotspot" data-word="clouds" style="left:37%;top:9%;width:43%;height:18%" aria-label="Clouds"></button>
-<button class="hotspot" data-word="atmosphere" style="left:30%;top:4%;width:67%;height:12%" aria-label="Atmosphere"></button>
-<button class="hotspot" data-word="sunrise" style="left:88%;top:5%;width:12%;height:24%" aria-label="Sunrise"></button>
+
+<button class="hotspot" data-word="atmosphere" style="left: 24.01%; top: 13.07%; width: 67%; height: 12%;" aria-label="Atmosphere"></button>
+<button class="hotspot" data-word="sunrise" style="left: 94.35%; top: 14.75%; width: 5.49%; height: 19.29%;" aria-label="Sunrise"></button>
 <button class="hotspot" data-word="ships" style="left:76%;top:46%;width:22%;height:18%" aria-label="Ships"></button>
-<button class="hotspot" data-word="window" style="left:19%;top:4%;width:81%;height:62%" aria-label="Spacecraft window"></button>
-<button class="hotspot" data-word="map" style="left:0%;top:18%;width:17%;height:39%" aria-label="Environmental map"></button>
-<button class="hotspot" data-word="chart" style="left:0%;top:53%;width:16%;height:22%" aria-label="Pollution chart"></button>
-<button class="hotspot" data-word="console" style="left:38%;top:66%;width:62%;height:25%" aria-label="Control console"></button>
-<button class="hotspot" data-word="monitor" style="left:81%;top:66%;width:18%;height:22%" aria-label="Pollution monitor"></button>
+
+<button class="hotspot" data-word="map" style="left: -0.16%; top: 18%; width: 12.83%; height: 21.5%;" aria-label="Environmental map"></button>
+<button class="hotspot" data-word="chart" style="left: -1.15%; top: 43.46%; width: 15.48%; height: 11.54%;" aria-label="Pollution chart"></button>
+
+<button class="hotspot" data-word="monitor" style="left: 81.26%; top: 72.48%; width: 18%; height: 22%;" aria-label="Pollution monitor"></button>
 <button class="hotspot" data-word="satellite" style="left:9%;top:7%;width:12%;height:13%" aria-label="Satellite"></button>
 
-</main>
+<button type="button" class="hotspot" data-word="pollution critical warning" aria-label="pollution critical warning" data-tb-custom="1" data-tb-en="pollution critical warning" data-tb-es="advertencia crítica de contaminación" data-tb-fr="avertissement critique de pollution" data-tb-de="Warnung vor kritischer Verschmutzung" data-tb-it="avviso critico di inquinamento" data-tb-pt="aviso crítico de poluição" data-tb-no="forurensningskritisk advarsel" style="left: 21.36%; top: -1.04%; width: 74.44%; height: 77.73%;" data-sound="sounds/world-pollution-warning-message.mp3"></button></main>
 
 <script>
 const EN={game:"protect the Earth",bee:"Bee",crew:"space crew",earth:"Earth",factories:"factories",smokestacks:"smokestacks",smoke:"smoke",haze:"air pollution",city:"city",river:"river",ocean:"ocean",clouds:"clouds",atmosphere:"atmosphere",sunrise:"sunrise",ships:"ships",window:"spacecraft window",map:"environmental map",chart:"pollution chart",console:"control console",monitor:"pollution monitor",satellite:"satellite"};
@@ -572,9 +571,10 @@ document.addEventListener('click',function(ev){
 })();
 </script>
 
-</body>
-</html>
+
+
 
 <style id="talkabee-ski-panel-180">
 @media(min-width:761px){.panel{width:180px!important;min-width:180px!important;max-width:180px!important}}
 </style>
+</body></html>
