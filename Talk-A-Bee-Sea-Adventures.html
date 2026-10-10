@@ -858,6 +858,7 @@ body.tb-hs-editing #yachtWorld .yacht-hotspot.tb-hs-active>.tb-hs-handle{
 #talkabee-sea-explore .edition-row a{display:block;padding:9px 11px;border-radius:10px;color:#fff;text-decoration:none;font-size:12px;font-weight:850;background:rgba(255,255,255,.08)}
 #talkabee-sea-explore .edition-row a:hover{background:rgba(255,255,255,.22)}
 </style>
+<script id="tb-legacy-challenge-data" type="application/json">{"targets":["life jacket","cathy","fishing pole","whale","dolphin","seagull"],"labels":["life jacket","Grandma Cathy","Fishing Pole","Whale","Dolphin","Seagull"]}</script>
 </head>
 <body class="talkabee-world-open sea-adventures-open">
 <div id="talkabee-sea-explore"><details><summary>Explore Adventures ▾</summary><nav class="edition-row" aria-label="Talk A Bee Editions"><a href="index.html">Main Adventures</a><a href="Talk-A-Bee-More-Adventures.html">Community Edition</a><a href="Talk-A-Bee-Directory-3.html">Travel Edition</a><a href="Talk-A-Bee-Directory-4.html">Sports Edition</a><a href="Talk-A-Bee-Directory-5.html">Space Edition</a><a href="Talk-A-Bee-Directory-6.html">Family &amp; Special</a></nav></details></div>
@@ -870,7 +871,7 @@ body>header,body>footer,.final-cta,.hero,#mainDirectory{display:none!important;}
 </style>
 <section aria-label="Sea Adventures" class="section yacht-world open" id="yachtWorld">
 <div class="yacht-stage">
-<aside aria-label="Sea Adventures activity menu" class="yacht-directory tab-master-panel">
+<aside aria-label="Sea Adventures activity menu" class="yacht-directory tab-master-panel" style="width: 238px !important; min-width: 238px !important; max-width: 238px !important; --tab-panel-scale: 1.221;">
  <div class="yacht-place">🛥️ Sea Adventures</div>
  <div class="tab-panel-size-controls" aria-label="Activity panel size"><button type="button" class="tab-panel-minus" title="Make activity panel smaller">−</button><button type="button" class="tab-panel-reset" title="Reset activity panel size">Reset</button><button type="button" class="tab-panel-plus" title="Make activity panel larger">+</button></div>
 
@@ -889,12 +890,12 @@ body>header,body>footer,.final-cta,.hero,#mainDirectory{display:none!important;}
 <option value="no">Norwegian</option>
 </select>
 <label class="sea-control-label" for="seaVoice">VOICE</label>
-<select class="sea-select" id="seaVoice" data-tab-global-voice="1"><option value="">Browser Default</option><option value="Microsoft David - English (United States)">Microsoft David - English (United States) — en-US</option><option value="Microsoft David Desktop - English (United States)">Microsoft David Desktop - English (United States) — en-US</option><option value="Microsoft Mark - English (United States)">Microsoft Mark - English (United States) — en-US</option><option value="Microsoft Zira - English (United States)">Microsoft Zira - English (United States) — en-US</option><option value="Microsoft Zira Desktop - English (United States)">Microsoft Zira Desktop - English (United States) — en-US</option></select>
+<select class="sea-select" id="seaVoice" data-tab-global-voice="1"><option value="">Browser Default</option><option value="Microsoft David - English (United States)">★ Microsoft David - English (United States) — en-US</option><option value="Microsoft David Desktop - English (United States)">★ Microsoft David Desktop - English (United States) — en-US</option><option value="Microsoft Mark - English (United States)">★ Microsoft Mark - English (United States) — en-US</option><option value="Microsoft Zira - English (United States)">★ Microsoft Zira - English (United States) — en-US</option><option value="Microsoft Zira Desktop - English (United States)">★ Microsoft Zira Desktop - English (United States) — en-US</option></select>
 <div class="yacht-label">DISCOVERY</div>
 <button class="yacht-nav" data-yacht-group="discover" type="button">🔎 Click &amp; Discover</button>
 <div class="yacht-divider"></div>
 <div class="yacht-label">6 ACTIVITIES</div>
-<button class="yacht-nav active" data-yacht-group="deck" type="button">On Deck Talk</button>
+<button class="yacht-nav" data-yacht-group="deck" type="button">On Deck Talk</button>
 <button class="yacht-nav" data-yacht-group="boat" type="button">Boat Words</button>
 <button class="yacht-nav" data-yacht-group="ocean" type="button">Ocean Words</button>
 <button class="yacht-nav" data-yacht-group="animals" type="button">Animal Friends</button>
@@ -902,7 +903,7 @@ body>header,body>footer,.final-cta,.hero,#mainDirectory{display:none!important;}
 <button class="yacht-nav" data-yacht-group="weather" type="button">Sunset &amp; Weather</button>
 <div class="yacht-divider"></div>
 <div class="yacht-label">6 CHALLENGES</div>
-<button class="yacht-challenge-nav" data-yacht-challenge="0" type="button"><span>1</span> Grandpa Wally</button>
+<button class="yacht-challenge-nav active" data-yacht-challenge="0" type="button"><span>1</span> life jacket</button>
 <button class="yacht-challenge-nav" data-yacht-challenge="1" type="button"><span>2</span> Grandma Cathy</button>
 <button class="yacht-challenge-nav" data-yacht-challenge="2" type="button"><span>3</span> Fishing Pole</button>
 <button class="yacht-challenge-nav" data-yacht-challenge="3" type="button"><span>4</span> Whale</button>
@@ -912,59 +913,59 @@ body>header,body>footer,.final-cta,.hero,#mainDirectory{display:none!important;}
 <button class="yacht-restore" id="yachtRestore" type="button">☰ Activities</button>
 <div class="yacht-scene" id="yachtScene" style="background-image:url('images/talkabee-image-21.jpg')">
 <div class="yacht-hotspots" id="yachtHotspots">
-<button aria-label="Grandpa" class="yacht-hotspot" data-object="wally" style="left: 53.82%; top: 63.03%; width: 6.38% !important; height: 13.28% !important;" type="button"></button>
+<button aria-label="Grandpa" class="yacht-hotspot show" data-object="wally" style="left: 53.82%; top: 63.03%; width: 6.38% !important; height: 13.28% !important;" type="button"></button>
 
-<button aria-label="Boy" class="yacht-hotspot" data-object="boy" style="left:43.4%;top:58.0%" type="button"></button>
-<button aria-label="Girl" class="yacht-hotspot" data-object="girl" style="left: 72.72%; top: 56.8%; width: 4.84% !important; height: 8.78% !important;" type="button"></button>
-<button aria-label="Boy" class="yacht-hotspot" data-object="binocularboy" style="left:87.0%;top:57.5%" type="button"></button>
-
-
+<button aria-label="Boy" class="yacht-hotspot show" data-object="boy" style="left:43.4%;top:58.0%" type="button"></button>
+<button aria-label="Girl" class="yacht-hotspot show" data-object="girl" style="left: 72.72%; top: 56.8%; width: 4.84% !important; height: 8.78% !important;" type="button"></button>
+<button aria-label="Boy" class="yacht-hotspot show" data-object="binocularboy" style="left:87.0%;top:57.5%" type="button"></button>
 
 
 
-<button aria-label="Bee" class="yacht-hotspot" data-object="bee" style="left:74.8%;top:10.7%" type="button"></button>
 
-<button aria-label="Sailboat" class="yacht-hotspot" data-object="sailboat" style="left: 75.33%; top: 39.5%; width: 5.88% !important; height: 9.24% !important;" type="button"></button>
-<button aria-label="Lighthouse" class="yacht-hotspot" data-object="lighthouse" style="left:71.6%;top:27.0%" type="button"></button>
-<button aria-label="Ocean" class="yacht-hotspot" data-object="ocean" style="left: 48.3%; top: 43.7%; width: 14.51% !important; height: 7.83% !important;" type="button"></button>
-<button aria-label="Tackle" class="yacht-hotspot" data-object="tackle" style="left: 32.96%; top: 76.19%;" type="button"></button>
-<button aria-label="Flowers" class="yacht-hotspot" data-object="flowers" style="left: 68.6%; top: 73.5%;" type="button"></button>
-<button aria-label="Fruit" class="yacht-hotspot" data-object="fruit" style="left:74.0%;top:76.8%" type="button"></button>
-<button aria-label="Drink" class="yacht-hotspot" data-object="drink" style="left:79.0%;top:76.5%" type="button"></button>
-<button aria-label="Lantern" class="yacht-hotspot" data-object="lantern" style="left: 63.84%; top: 75.92%; width: 5.1% !important; height: 11.1% !important;" type="button"></button>
 
-<button aria-label="Table" class="yacht-hotspot" data-object="table" style="left:73.0%;top:84.0%" type="button"></button>
-<button aria-label="Rug" class="yacht-hotspot" data-object="rug" style="left:61.0%;top:91.0%" type="button"></button>
-<button aria-label="Rope" class="yacht-hotspot" data-object="rope" style="left: 17.5%; top: 87.54%;" type="button"></button>
-<button aria-label="Railing" class="yacht-hotspot" data-object="railing" style="left: 17.13%; top: 88.11%;" type="button"></button>
-<button aria-label="Stairs" class="yacht-hotspot" data-object="stairs" style="left: 82.29%; top: 42.69%;" type="button"></button>
-<button aria-label="Yacht" class="yacht-hotspot" data-object="yacht" style="left: 92.73%; top: 16.87%; width: 15.23% !important; height: 9.81% !important;" type="button" data-tb-en="yacht" data-tb-es="yate" data-tb-fr="yacht" data-tb-de="Yacht" data-tb-it="yacht" data-tb-pt="iate" data-tb-no="yacht"></button>
-<button aria-label="Lifering" class="yacht-hotspot" data-object="lifering" style="left: 93.38%; top: 88.89%; width: 9.24% !important; height: 25.51% !important;" type="button"></button>
-<button type="button" class="yacht-hotspot" data-object="flowers" aria-label="flowers" data-tb-custom="1" data-tb-en="flowers" data-tb-es="flores" data-tb-fr="fleurs" data-tb-de="Blumen" data-tb-it="fiori" data-tb-pt="flores" data-tb-no="blomster" style="left: 5.27%; top: 77.61%; width: 6%; height: 8%;"></button><button type="button" class="yacht-hotspot" data-object="fishing pole" aria-label="fishing pole" data-tb-custom="1" data-tb-en="fishing pole" data-tb-es="caña de pescar" data-tb-fr="canne à pêche" data-tb-de="Angel" data-tb-it="canna da pesca" data-tb-pt="vara de pesca" data-tb-no="fiskestang" style="left: 37.18%; top: 46.92%; width: 2.31% !important; height: 16.33% !important;"></button><button type="button" class="yacht-hotspot" data-object="sunset" aria-label="sunset" data-tb-custom="1" data-tb-en="sunset" data-tb-es="atardecer" data-tb-fr="coucher de soleil" data-tb-de="Sonnenuntergang" data-tb-it="tramonto" data-tb-pt="pôr do sol" data-tb-no="solnedgang" style="left: 44.13%; top: 29.06%; width: 27.2% !important; height: 11.7% !important;"></button><button type="button" class="yacht-hotspot" data-object="mountain" aria-label="mountain" data-tb-custom="1" data-tb-en="mountain" data-tb-es="montaña" data-tb-fr="montagne" data-tb-de="Berg" data-tb-it="montagna" data-tb-pt="montanha" data-tb-no="fjell" style="left: 46.74%; top: 36.31%; width: 8.71% !important; height: 4.48% !important;"></button><button type="button" class="yacht-hotspot" data-object="clouds" aria-label="clouds" data-tb-custom="1" data-tb-en="clouds" data-tb-es="nubes" data-tb-fr="nuages" data-tb-de="Wolken" data-tb-it="nuvole" data-tb-pt="nuvens" data-tb-no="skyer" style="left: 40.75%; top: 5.96%; width: 22.51% !important; height: 8.65% !important;"></button><button type="button" class="yacht-hotspot" data-object="railing" aria-label="railing" data-tb-custom="1" data-tb-en="railing" data-tb-es="barandilla" data-tb-fr="balustrade" data-tb-de="Geländer" data-tb-it="ringhiera" data-tb-pt="corrimão" data-tb-no="rekkverk" style="left: 83.08%; top: 8.87%; width: 8.55% !important; height: 5.41% !important;"></button><button type="button" class="yacht-hotspot" data-object="upper deck" aria-label="upper deck" data-tb-custom="1" data-tb-en="upper deck" data-tb-es="piso superior" data-tb-fr="pont supérieur" data-tb-de="Oberdeck" data-tb-it="ponte superiore" data-tb-pt="andar superior" data-tb-no="øvre dekk" style="left: 81.41%; top: 20.8%; width: 8.24% !important; height: 8.56% !important;"></button><button type="button" class="yacht-hotspot" data-object="lamp" aria-label="lamp" data-tb-custom="1" data-tb-en="lamp" data-tb-es="lámpara" data-tb-fr="lampe" data-tb-de="Lampe" data-tb-it="lampada" data-tb-pt="lâmpada" data-tb-no="lampe" style="left: 98.6%; top: 45.55%; width: 4.23% !important; height: 6.8% !important;"></button><button type="button" class="yacht-hotspot" data-object="pillow" aria-label="pillow" data-tb-custom="1" data-tb-en="pillow" data-tb-es="almohada" data-tb-fr="oreiller" data-tb-de="Kissen" data-tb-it="cuscino" data-tb-pt="travesseiro" data-tb-no="pute" style="left: 96.33%; top: 67.47%; width: 6.94% !important; height: 5.96% !important;"></button><button type="button" class="yacht-hotspot" data-object="hat" aria-label="hat" data-tb-custom="1" data-tb-en="hat" data-tb-es="sombrero" data-tb-fr="chapeau" data-tb-de="Hut" data-tb-it="cappello" data-tb-pt="chapéu" data-tb-no="hatt" style="left: 63.95%; top: 51.35%; width: 6.62% !important; height: 5.41% !important;"></button><button type="button" class="yacht-hotspot" data-object="hill" aria-label="hill" data-tb-custom="1" data-tb-en="hill" data-tb-es="colina" data-tb-fr="colline" data-tb-de="hügel" data-tb-it="collina" data-tb-pt="colina" data-tb-no="høyde" style="left: 66.86%; top: 35.38%; width: 4.96% !important; height: 6.8% !important;"></button><button type="button" class="yacht-hotspot" data-object="sliding glass door" aria-label="sliding glass door" data-tb-custom="1" data-tb-en="sliding glass door" data-tb-es="puerta corredera de cristal" data-tb-fr="porte coulissante en verre" data-tb-de="Schiebetür aus Glas" data-tb-it="porta scorrevole in vetro" data-tb-pt="porta de vidro deslizante" data-tb-no="skyvedør i glass" style="left: 94.66%; top: 45.61%; width: 3.92% !important; height: 34.57% !important;"></button><button type="button" class="yacht-hotspot" data-object="drinking glass" aria-label="drinking glass" data-tb-custom="1" data-tb-en="drinking glass" data-tb-es="vaso para beber" data-tb-fr="verre à boire" data-tb-de="Trinkglas" data-tb-it="bicchiere" data-tb-pt="copo" data-tb-no="drikkeglass" style="left: 85.17%; top: 77.44%; width: 5.48% !important; height: 7.81% !important;"></button><button type="button" class="yacht-hotspot" data-object="life jacket" aria-label="life jacket" data-tb-custom="1" data-tb-en="life jacket" data-tb-es="chaleco salvavidas" data-tb-fr="gilet de sauvetage" data-tb-de="Rettungsweste" data-tb-it="giubbotto di salvataggio" data-tb-pt="colete salva-vidas" data-tb-no="redningsvest" style="left: 74.05%; top: 64.94%; width: 4.23% !important; height: 4.57% !important;"></button><button type="button" class="yacht-hotspot" data-object="pointing finger" aria-label="pointing finger" data-tb-custom="1" data-tb-en="pointing finger" data-tb-es="pointing finger" data-tb-fr="pointing finger" data-tb-de="pointing finger" data-tb-it="pointing finger" data-tb-pt="pointing finger" data-tb-no="pointing finger" style="left: 80.11%; top: 54.97%; width: 3.76% !important; height: 5.22% !important;"></button><button type="button" class="yacht-hotspot" data-object="waves" aria-label="waves" data-tb-custom="1" data-tb-en="waves" data-tb-es="waves" data-tb-fr="waves" data-tb-de="waves" data-tb-it="waves" data-tb-pt="waves" data-tb-no="waves" style="left: 28.44%; top: 52.7%; width: 11.83% !important; height: 12.17% !important;" data-sound="sounds/ocean.mp3"></button><button type="button" class="yacht-hotspot" data-object="sun glasses" aria-label="sun glasses" data-tb-custom="1" data-tb-en="sun glasses" data-tb-es="sun glasses" data-tb-fr="sun glasses" data-tb-de="sun glasses" data-tb-it="sun glasses" data-tb-pt="sun glasses" data-tb-no="sun glasses" style="left: 53.95%; top: 51.24%; width: 4.49% !important; height: 3.37% !important;"></button><button type="button" class="yacht-hotspot" data-object="railing" aria-label="railing" data-tb-custom="1" data-tb-en="railing" data-tb-es="railing" data-tb-fr="railing" data-tb-de="railing" data-tb-it="railing" data-tb-pt="railing" data-tb-no="railing" style="left: 29.92%; top: 64.54%; width: 8.45% !important; height: 5.5% !important;"></button><button type="button" class="yacht-hotspot" data-object="sun" aria-label="sun" data-tb-custom="1" data-tb-en="sun" data-tb-es="Sol" data-tb-fr="Soleil" data-tb-de="Sonne" data-tb-it="Sole" data-tb-pt="Sol" data-tb-no="solen" style="left: 58.69%; top: 30.06%; width: 6%; height: 8%;"></button><button type="button" class="yacht-hotspot" data-object="whale" aria-label="whale" data-tb-custom="1" data-tb-en="whale" data-tb-es="ballena" data-tb-fr="baleine" data-tb-de="Wal" data-tb-it="balena" data-tb-pt="baleia" data-tb-no="hval" style="left: 26.98%; top: 34.88%; width: 6%; height: 8%;" data-sound="sounds/whale.mp3"></button><button type="button" class="yacht-hotspot" data-object="dolphin" aria-label="dolphin" data-tb-custom="1" data-tb-en="dolphin" data-tb-es="delfín" data-tb-fr="dauphin" data-tb-de="Delfin" data-tb-it="delfino" data-tb-pt="golfinho" data-tb-no="delfin" style="left: 68.36%; top: 43.93%; width: 6%; height: 8%;" data-sound="sounds/dolphin.mp3"></button><button type="button" class="yacht-hotspot" data-object="seagull" aria-label="seagull" data-tb-custom="1" data-tb-en="seagull" data-tb-es="gaviota" data-tb-fr="mouette" data-tb-de="Möwe" data-tb-it="gabbiano" data-tb-pt="gaivota" data-tb-no="måke" style="left: 16.29%; top: 60.61%; width: 6%; height: 8%;" data-sound="sounds/seagull.mp3"></button><button type="button" class="yacht-hotspot" data-object="cathy" aria-label="cathy" data-tb-custom="1" data-tb-en="cathy" data-tb-es="cathy" data-tb-fr="cathy" data-tb-de="Cathy" data-tb-it="cathy" data-tb-pt="cathy" data-tb-no="cathy" style="left: 63.02%; top: 62.55%; width: 5.06% !important; height: 11.14% !important;" data-sound="sounds/laughing-adult-woman.mp3"></button><button type="button" class="yacht-hotspot" data-object="dog" aria-label="dog" data-tb-custom="1" data-tb-en="dog" data-tb-es="perro" data-tb-fr="chien" data-tb-de="Hund" data-tb-it="cane" data-tb-pt="cachorro" data-tb-no="hund" style="left: 49.46%; top: 79.11%; width: 6%; height: 8%;" data-sound="sounds/dog-panting.wav"></button></div>
+<button aria-label="Bee" class="yacht-hotspot show" data-object="bee" style="left:74.8%;top:10.7%" type="button"></button>
+
+<button aria-label="Sailboat" class="yacht-hotspot show" data-object="sailboat" style="left: 75.33%; top: 39.5%; width: 5.88% !important; height: 9.24% !important;" type="button"></button>
+<button aria-label="Lighthouse" class="yacht-hotspot show" data-object="lighthouse" style="left:71.6%;top:27.0%" type="button"></button>
+<button aria-label="Ocean" class="yacht-hotspot show" data-object="ocean" style="left: 48.3%; top: 43.7%; width: 14.51% !important; height: 7.83% !important;" type="button"></button>
+<button aria-label="Tackle" class="yacht-hotspot show" data-object="tackle" style="left: 32.96%; top: 76.19%;" type="button"></button>
+<button aria-label="Flowers" class="yacht-hotspot show" data-object="flowers" style="left: 68.6%; top: 73.5%;" type="button"></button>
+<button aria-label="Fruit" class="yacht-hotspot show" data-object="fruit" style="left:74.0%;top:76.8%" type="button"></button>
+<button aria-label="Drink" class="yacht-hotspot show" data-object="drink" style="left:79.0%;top:76.5%" type="button"></button>
+<button aria-label="Lantern" class="yacht-hotspot show" data-object="lantern" style="left: 63.84%; top: 75.92%; width: 5.1% !important; height: 11.1% !important;" type="button"></button>
+
+<button aria-label="Table" class="yacht-hotspot show" data-object="table" style="left:73.0%;top:84.0%" type="button"></button>
+<button aria-label="Rug" class="yacht-hotspot show" data-object="rug" style="left:61.0%;top:91.0%" type="button"></button>
+<button aria-label="Rope" class="yacht-hotspot show" data-object="rope" style="left: 17.5%; top: 87.54%;" type="button"></button>
+<button aria-label="Railing" class="yacht-hotspot show" data-object="railing" style="left: 17.13%; top: 88.11%;" type="button"></button>
+<button aria-label="Stairs" class="yacht-hotspot show" data-object="stairs" style="left: 82.29%; top: 42.69%;" type="button"></button>
+<button aria-label="Yacht" class="yacht-hotspot show" data-object="yacht" style="left: 92.73%; top: 16.87%; width: 15.23% !important; height: 9.81% !important;" type="button" data-tb-en="yacht" data-tb-es="yate" data-tb-fr="yacht" data-tb-de="Yacht" data-tb-it="yacht" data-tb-pt="iate" data-tb-no="yacht"></button>
+<button aria-label="Lifering" class="yacht-hotspot show" data-object="lifering" style="left: 93.38%; top: 88.89%; width: 9.24% !important; height: 25.51% !important;" type="button"></button>
+<button type="button" class="yacht-hotspot show" data-object="flowers" aria-label="flowers" data-tb-custom="1" data-tb-en="flowers" data-tb-es="flores" data-tb-fr="fleurs" data-tb-de="Blumen" data-tb-it="fiori" data-tb-pt="flores" data-tb-no="blomster" style="left: 5.27%; top: 77.61%; width: 6%; height: 8%;"></button><button type="button" class="yacht-hotspot show" data-object="fishing pole" aria-label="fishing pole" data-tb-custom="1" data-tb-en="fishing pole" data-tb-es="caña de pescar" data-tb-fr="canne à pêche" data-tb-de="Angel" data-tb-it="canna da pesca" data-tb-pt="vara de pesca" data-tb-no="fiskestang" style="left: 37.18%; top: 46.92%; width: 2.31% !important; height: 16.33% !important;"></button><button type="button" class="yacht-hotspot show" data-object="sunset" aria-label="sunset" data-tb-custom="1" data-tb-en="sunset" data-tb-es="atardecer" data-tb-fr="coucher de soleil" data-tb-de="Sonnenuntergang" data-tb-it="tramonto" data-tb-pt="pôr do sol" data-tb-no="solnedgang" style="left: 44.13%; top: 29.06%; width: 27.2% !important; height: 11.7% !important;"></button><button type="button" class="yacht-hotspot show" data-object="mountain" aria-label="mountain" data-tb-custom="1" data-tb-en="mountain" data-tb-es="montaña" data-tb-fr="montagne" data-tb-de="Berg" data-tb-it="montagna" data-tb-pt="montanha" data-tb-no="fjell" style="left: 46.74%; top: 36.31%; width: 8.71% !important; height: 4.48% !important;"></button><button type="button" class="yacht-hotspot show" data-object="clouds" aria-label="clouds" data-tb-custom="1" data-tb-en="clouds" data-tb-es="nubes" data-tb-fr="nuages" data-tb-de="Wolken" data-tb-it="nuvole" data-tb-pt="nuvens" data-tb-no="skyer" style="left: 40.75%; top: 5.96%; width: 22.51% !important; height: 8.65% !important;"></button><button type="button" class="yacht-hotspot show" data-object="railing" aria-label="railing" data-tb-custom="1" data-tb-en="railing" data-tb-es="barandilla" data-tb-fr="balustrade" data-tb-de="Geländer" data-tb-it="ringhiera" data-tb-pt="corrimão" data-tb-no="rekkverk" style="left: 83.08%; top: 8.87%; width: 8.55% !important; height: 5.41% !important;"></button><button type="button" class="yacht-hotspot show" data-object="upper deck" aria-label="upper deck" data-tb-custom="1" data-tb-en="upper deck" data-tb-es="piso superior" data-tb-fr="pont supérieur" data-tb-de="Oberdeck" data-tb-it="ponte superiore" data-tb-pt="andar superior" data-tb-no="øvre dekk" style="left: 81.41%; top: 20.8%; width: 8.24% !important; height: 8.56% !important;"></button><button type="button" class="yacht-hotspot show" data-object="lamp" aria-label="lamp" data-tb-custom="1" data-tb-en="lamp" data-tb-es="lámpara" data-tb-fr="lampe" data-tb-de="Lampe" data-tb-it="lampada" data-tb-pt="lâmpada" data-tb-no="lampe" style="left: 98.6%; top: 45.55%; width: 4.23% !important; height: 6.8% !important;"></button><button type="button" class="yacht-hotspot show" data-object="pillow" aria-label="pillow" data-tb-custom="1" data-tb-en="pillow" data-tb-es="almohada" data-tb-fr="oreiller" data-tb-de="Kissen" data-tb-it="cuscino" data-tb-pt="travesseiro" data-tb-no="pute" style="left: 96.33%; top: 67.47%; width: 6.94% !important; height: 5.96% !important;"></button><button type="button" class="yacht-hotspot show" data-object="hat" aria-label="hat" data-tb-custom="1" data-tb-en="hat" data-tb-es="sombrero" data-tb-fr="chapeau" data-tb-de="Hut" data-tb-it="cappello" data-tb-pt="chapéu" data-tb-no="hatt" style="left: 63.95%; top: 51.35%; width: 6.62% !important; height: 5.41% !important;"></button><button type="button" class="yacht-hotspot show" data-object="hill" aria-label="hill" data-tb-custom="1" data-tb-en="hill" data-tb-es="colina" data-tb-fr="colline" data-tb-de="hügel" data-tb-it="collina" data-tb-pt="colina" data-tb-no="høyde" style="left: 66.86%; top: 35.38%; width: 4.96% !important; height: 6.8% !important;"></button><button type="button" class="yacht-hotspot show" data-object="sliding glass door" aria-label="sliding glass door" data-tb-custom="1" data-tb-en="sliding glass door" data-tb-es="puerta corredera de cristal" data-tb-fr="porte coulissante en verre" data-tb-de="Schiebetür aus Glas" data-tb-it="porta scorrevole in vetro" data-tb-pt="porta de vidro deslizante" data-tb-no="skyvedør i glass" style="left: 94.66%; top: 45.61%; width: 3.92% !important; height: 34.57% !important;"></button><button type="button" class="yacht-hotspot show" data-object="drinking glass" aria-label="drinking glass" data-tb-custom="1" data-tb-en="drinking glass" data-tb-es="vaso para beber" data-tb-fr="verre à boire" data-tb-de="Trinkglas" data-tb-it="bicchiere" data-tb-pt="copo" data-tb-no="drikkeglass" style="left: 85.17%; top: 77.44%; width: 5.48% !important; height: 7.81% !important;"></button><button type="button" class="yacht-hotspot show" data-object="life jacket" aria-label="life jacket" data-tb-custom="1" data-tb-en="life jacket" data-tb-es="chaleco salvavidas" data-tb-fr="gilet de sauvetage" data-tb-de="Rettungsweste" data-tb-it="giubbotto di salvataggio" data-tb-pt="colete salva-vidas" data-tb-no="redningsvest" style="left: 74.05%; top: 64.94%; width: 4.23% !important; height: 4.57% !important;"></button><button type="button" class="yacht-hotspot show" data-object="pointing finger" aria-label="pointing finger" data-tb-custom="1" data-tb-en="pointing finger" data-tb-es="pointing finger" data-tb-fr="pointing finger" data-tb-de="pointing finger" data-tb-it="pointing finger" data-tb-pt="pointing finger" data-tb-no="pointing finger" style="left: 80.11%; top: 54.97%; width: 3.76% !important; height: 5.22% !important;"></button><button type="button" class="yacht-hotspot show" data-object="waves" aria-label="waves" data-tb-custom="1" data-tb-en="waves" data-tb-es="waves" data-tb-fr="waves" data-tb-de="waves" data-tb-it="waves" data-tb-pt="waves" data-tb-no="waves" style="left: 28.44%; top: 52.7%; width: 11.83% !important; height: 12.17% !important;" data-sound="sounds/ocean.mp3"></button><button type="button" class="yacht-hotspot show" data-object="sun glasses" aria-label="sun glasses" data-tb-custom="1" data-tb-en="sun glasses" data-tb-es="sun glasses" data-tb-fr="sun glasses" data-tb-de="sun glasses" data-tb-it="sun glasses" data-tb-pt="sun glasses" data-tb-no="sun glasses" style="left: 53.95%; top: 51.24%; width: 4.49% !important; height: 3.37% !important;"></button><button type="button" class="yacht-hotspot show" data-object="railing" aria-label="railing" data-tb-custom="1" data-tb-en="railing" data-tb-es="railing" data-tb-fr="railing" data-tb-de="railing" data-tb-it="railing" data-tb-pt="railing" data-tb-no="railing" style="left: 29.92%; top: 64.54%; width: 8.45% !important; height: 5.5% !important;"></button><button type="button" class="yacht-hotspot show" data-object="sun" aria-label="sun" data-tb-custom="1" data-tb-en="sun" data-tb-es="Sol" data-tb-fr="Soleil" data-tb-de="Sonne" data-tb-it="Sole" data-tb-pt="Sol" data-tb-no="solen" style="left: 63.1%; top: 14.5%; width: 6%; height: 8%;"></button><button type="button" class="yacht-hotspot show" data-object="whale" aria-label="whale" data-tb-custom="1" data-tb-en="whale" data-tb-es="ballena" data-tb-fr="baleine" data-tb-de="Wal" data-tb-it="balena" data-tb-pt="baleia" data-tb-no="hval" style="left: 26.98%; top: 34.88%; width: 6%; height: 8%;" data-sound="sounds/whale.mp3"></button><button type="button" class="yacht-hotspot show" data-object="dolphin" aria-label="dolphin" data-tb-custom="1" data-tb-en="dolphin" data-tb-es="delfín" data-tb-fr="dauphin" data-tb-de="Delfin" data-tb-it="delfino" data-tb-pt="golfinho" data-tb-no="delfin" style="left: 68.36%; top: 43.93%; width: 6%; height: 8%;" data-sound="sounds/dolphin.mp3"></button><button type="button" class="yacht-hotspot show" data-object="seagull" aria-label="seagull" data-tb-custom="1" data-tb-en="seagull" data-tb-es="gaviota" data-tb-fr="mouette" data-tb-de="Möwe" data-tb-it="gabbiano" data-tb-pt="gaivota" data-tb-no="måke" style="left: 16.29%; top: 60.61%; width: 6%; height: 8%;" data-sound="sounds/seagull.mp3"></button><button type="button" class="yacht-hotspot show" data-object="cathy" aria-label="cathy" data-tb-custom="1" data-tb-en="cathy" data-tb-es="cathy" data-tb-fr="cathy" data-tb-de="Cathy" data-tb-it="cathy" data-tb-pt="cathy" data-tb-no="cathy" style="left: 63.02%; top: 62.55%; width: 5.06% !important; height: 11.14% !important;" data-sound="sounds/laughing-adult-woman.mp3"></button><button type="button" class="yacht-hotspot show" data-object="dog" aria-label="dog" data-tb-custom="1" data-tb-en="dog" data-tb-es="perro" data-tb-fr="chien" data-tb-de="Hund" data-tb-it="cane" data-tb-pt="cachorro" data-tb-no="hund" style="left: 49.46%; top: 79.11%; width: 6%; height: 8%;" data-sound="sounds/dog-panting.wav"></button></div>
 </div>
-<div class="yacht-panel tab-master-card" style="transform-origin: center bottom 0px !important; transform: translateX(-50%) scale(0.67) !important;">
+<div class="yacht-panel tab-master-card" style="transform-origin: left top 0px !important; transform: scale(0.67) !important; inset: 8px auto auto 253px !important;" data-moved="1">
 <div class="tab-card-tools" aria-label="Script card controls"><button type="button" class="tab-card-drag" title="Move script card">↕ Move</button><button type="button" class="tab-card-font-down" title="Decrease text">A−</button><button type="button" class="tab-card-font-up" title="Increase text">A+</button><button type="button" class="tab-card-reset" title="Reset card">Reset</button></div><div class="tab-card-resize" title="Drag to resize script card" aria-label="Resize script card">↘</div>
 
-<div class="yacht-kicker kicker" id="yachtKicker">ON DECK TALK</div>
-<h2 id="yachtTitle">A beautiful evening on the water.</h2>
-<p id="yachtPrompt">Hear a short sentence, then click the words one at a time.</p>
-<div class="yacht-wordline word" id="yachtWordline"><button type="button">Estamos</button><button type="button">en</button><button type="button">el</button><button type="button">yate.</button></div>
-<div class="yacht-translation translation" id="yachtTranslation">We are on the yacht.</div>
-<div class="yacht-actions controls" id="yachtActions" style="display: flex;">
+<div class="yacht-kicker kicker" id="yachtKicker">FIND IT CHALLENGE</div>
+<h2 id="yachtTitle">Challenge 1 of 6</h2>
+<p id="yachtPrompt">Find the requested person, animal or object in this same scene.</p>
+<div class="yacht-wordline word" id="yachtWordline"></div>
+<div class="yacht-translation translation" id="yachtTranslation"></div>
+<div class="yacht-actions controls" id="yachtActions" style="display: none;">
 <button class="primary" id="yachtPlay" type="button">🔊 Speak</button>
 <button id="yachtSlow" type="button">🐢 Slow</button>
 <button id="yachtReplay" type="button">↻ Replay</button>
 <button class="yacht-nextphrase" id="yachtNextPhrase" type="button">Next phrase →</button></div>
-<div class="yacht-nextrow" id="yachtNextRow" style="display: flex;">
+<div class="yacht-nextrow" id="yachtNextRow" style="display: none;">
 <span class="yacht-progress legacy-progress" id="yachtProgress">Phrase 1 of 4</span>
 
 </div>
-<div class="yacht-list" id="yachtList"><button type="button" class="active"><strong>1. Estamos en el yate.</strong><br><span style="font-size:12px;color:#737c91">We are on the yacht.</span></button><button type="button" class=""><strong>2. El atardecer es hermoso.</strong><br><span style="font-size:12px;color:#737c91">The sunset is beautiful.</span></button><button type="button" class=""><strong>3. Estamos juntos en la cubierta.</strong><br><span style="font-size:12px;color:#737c91">We are together on the deck.</span></button><button type="button" class=""><strong>4. Qué noche tan tranquila.</strong><br><span style="font-size:12px;color:#737c91">What a peaceful evening.</span></button></div>
-<div class="yacht-find" id="yachtFind">
+<div class="yacht-list" id="yachtList" style="display: none;"><button type="button" class="active"><strong>1. We are on the yacht.</strong><br><span style="font-size:12px;color:#737c91">We are on the yacht.</span></button><button type="button" class=""><strong>2. The sunset is beautiful.</strong><br><span style="font-size:12px;color:#737c91">The sunset is beautiful.</span></button><button type="button" class=""><strong>3. We are together on the deck.</strong><br><span style="font-size:12px;color:#737c91">We are together on the deck.</span></button><button type="button" class=""><strong>4. What a peaceful evening.</strong><br><span style="font-size:12px;color:#737c91">What a peaceful evening.</span></button></div>
+<div class="yacht-find show" id="yachtFind">
 <div class="yacht-challenge-count" id="yachtChallengeCount">CHALLENGE 1 OF 6</div>
-<div id="yachtFindPrompt">Find Grandpa Wally.</div>
-<div class="yacht-find-status" id="yachtFindStatus"></div>
-<div class="yacht-next-hint" id="yachtNextHint">Find the correct object to unlock the next challenge.</div>
+<div id="yachtFindPrompt">Find: life jacket</div>
+<div class="yacht-find-status" id="yachtFindStatus" style="color: rgb(25, 116, 79);">✓ Nice find! life jacket — life jacket.</div>
+<div class="yacht-next-hint" id="yachtNextHint">Challenge complete. You can move to the next one.</div>
 <button class="yacht-challenge-next" id="yachtChallengeNext" type="button">Next Challenge →</button>
 </div>
 </div>
@@ -1079,8 +1080,28 @@ document.addEventListener('DOMContentLoaded',function(){
    yachtSceneAudio.play().catch(()=>{});
  }
 
- const challengeOrder=['wally','cathy','fishing','whale','dolphin','seagull'];
+ const challengeOrder=['wally','cathy','fishing pole','whale','dolphin','seagull'];
+;(()=>{
+ const node=document.getElementById('tb-legacy-challenge-data');let d;
+ try{d=JSON.parse(node.textContent)}catch(e){return}
+ if(!Array.isArray(d.targets)||d.targets.length!==6)return;
+ function refresh(){
+   for(let i=0;i<6;i++){
+     challengeOrder[i]=d.targets[i];
+     const btn=document.querySelector('#yachtWorld .yacht-challenge-nav[data-yacht-challenge="'+i+'"]');
+     if(btn){let label=d.labels[i]||d.targets[i];btn.replaceChildren();const number=document.createElement('span');number.textContent=i+1;btn.append(number,document.createTextNode(' '+label));}
+   }
+   // Refresh the visible prompt when a challenge is currently selected.
+   if(window.tbSeaChallengeReady&&group==='find')render();
+ }
+ window.tbLegacyChallengeGet=()=>JSON.parse(node.textContent);
+ window.tbLegacyChallengeSet=next=>{d=next;node.textContent=JSON.stringify(d);refresh()};
+ window.tbLegacyChallengeSelector='#yachtWorld .yacht-hotspot';
+ refresh();
+})();
+
  let group='deck',index=0,lastRate=.86,challengeIndex=0,solved=false,lastText='';
+ window.tbSeaChallengeReady=true;
 
  function currentLang(){return $('seaLanguage')?.value||'es'}
  function currentItems(){return (lessons[currentLang()]||lessons.es)[group]||(lessons[currentLang()]||lessons.es).deck}
@@ -1121,8 +1142,8 @@ document.addEventListener('DOMContentLoaded',function(){
      $('yachtKicker').textContent='CLICK & DISCOVER';$('yachtTitle').textContent='Tap an object in the picture.';$('yachtPrompt').textContent='See the learning-language word and its English meaning. Audio speaks only the learning-language word.';$('yachtWordline').innerHTML='';$('yachtTranslation').textContent='Tap a hotspot in the scene.';$('yachtList').style.display='none';$('yachtActions').style.display='none';$('yachtNextRow').style.display='none';world.querySelectorAll('.yacht-hotspot').forEach(b=>b.classList.add('show'));return;
    }
    if(group==='find'){
-     const key=challengeOrder[challengeIndex],target=currentWord(key);solved=false;
-     $('yachtKicker').textContent='FIND IT CHALLENGE';$('yachtTitle').textContent='Challenge '+(challengeIndex+1)+' of 6';$('yachtPrompt').textContent='Find the requested person, animal or object in this same scene.';$('yachtWordline').innerHTML='';$('yachtTranslation').textContent='';$('yachtList').style.display='none';$('yachtActions').style.display='none';$('yachtNextRow').style.display='none';world.querySelectorAll('.yacht-hotspot').forEach(b=>b.classList.add('show'));$('yachtFind').classList.add('show');$('yachtChallengeCount').textContent='CHALLENGE '+(challengeIndex+1)+' OF 6';$('yachtFindPrompt').textContent='Find: '+target+' — '+english[key];$('yachtFindStatus').textContent='';$('yachtNextHint').textContent='Find the correct target to unlock the next challenge.';$('yachtChallengeNext').textContent=challengeIndex<5?'Next Challenge →':'Finish Challenges ✓';world.querySelectorAll('.yacht-challenge-nav').forEach((b,i)=>b.classList.toggle('active',i===challengeIndex));return;
+     const key=challengeOrder[challengeIndex],hotspot=Array.from(world.querySelectorAll('.yacht-hotspot')).find(b=>b.dataset.object===key),target=hotspot?.getAttribute('data-tb-'+currentLang())||currentWord(key);solved=false;
+     $('yachtKicker').textContent='FIND IT CHALLENGE';$('yachtTitle').textContent='Challenge '+(challengeIndex+1)+' of 6';$('yachtPrompt').textContent='Find the requested person, animal or object in this same scene.';$('yachtWordline').innerHTML='';$('yachtTranslation').textContent='';$('yachtList').style.display='none';$('yachtActions').style.display='none';$('yachtNextRow').style.display='none';world.querySelectorAll('.yacht-hotspot').forEach(b=>b.classList.add('show'));$('yachtFind').classList.add('show');$('yachtChallengeCount').textContent='CHALLENGE '+(challengeIndex+1)+' OF 6';$('yachtFindPrompt').textContent='Find: '+(window.tbLegacyChallengeGet?.().labels[challengeIndex]||english[key]||key);$('yachtFindStatus').textContent='';$('yachtNextHint').textContent='Find the correct target to unlock the next challenge.';$('yachtChallengeNext').textContent=challengeIndex<5?'Next Challenge →':'Finish Challenges ✓';world.querySelectorAll('.yacht-challenge-nav').forEach((b,i)=>b.classList.toggle('active',i===challengeIndex));return;
    }
    const m=meta[group]||meta.deck,items=currentItems(),item=items[index]||items[0];
    $('yachtKicker').textContent=m[0];$('yachtTitle').textContent=m[1];$('yachtPrompt').textContent=m[2];$('yachtTranslation').textContent=item[1];$('yachtProgress').textContent='Phrase '+(index+1)+' of '+items.length;$('yachtWordline').innerHTML='';
@@ -1150,11 +1171,11 @@ document.addEventListener('DOMContentLoaded',function(){
    const btn=e.target.closest('.yacht-hotspot');if(!btn||!hotspotLayer.contains(btn))return;
    e.preventDefault();e.stopPropagation();
    const key=btn.dataset.object;
-   if(!english[key])return;
-   const target=currentWord(key);
+   if(!key)return;
+   const target=btn.dataset['tb'+currentLang().charAt(0).toUpperCase()+currentLang().slice(1)]||currentWord(key);
    if(group==='find'){
      const wanted=challengeOrder[challengeIndex];
-     if(key===wanted){solved=true;$('yachtFindStatus').textContent='✓ Nice find! '+target+' means '+english[key]+'.';$('yachtFindStatus').style.color='#19744f';$('yachtNextHint').textContent='Challenge complete. You can move to the next one.';speakYachtAuto(key,target)}
+     if(key===wanted){solved=true;$('yachtFindStatus').textContent='✓ Nice find! '+target+' — '+(english[key]||btn.dataset.tbEn||key)+'.';$('yachtFindStatus').style.color='#19744f';$('yachtNextHint').textContent='Challenge complete. You can move to the next one.';speakYachtAuto(key,target)}
      else{$('yachtFindStatus').textContent='Not that one — keep looking.';$('yachtFindStatus').style.color='#8b5b13'}
      return;
    }
@@ -1551,6 +1572,9 @@ function soundAfterVoice(el){
 document.addEventListener('click',function(ev){
  if(document.body.classList.contains('tb-hs-editing'))return;
  const el=ev.target.closest&&ev.target.closest('[data-tb-custom="1"]');if(!el)return;
+ // Sea Adventures' challenge checker listens on the hotspot layer.
+ // Do not intercept its clicks in this older document-level voice bridge.
+ if(el.closest('#yachtWorld .yacht-hotspots'))return;
  ev.preventDefault();ev.stopPropagation();
  const l=lang(),txt=translation(el,l),en=translation(el,'en'),key=el.dataset.word||el.dataset.object||en;
  try{if(typeof showWord==='function')showWord(key);else{const line=document.querySelector('[id$="Line"]');const trans=document.querySelector('[id$="Translation"]');if(line)line.textContent=txt;if(trans)trans.textContent=l==='en'?'':en}}catch(e){}
@@ -1615,6 +1639,8 @@ document.addEventListener('click',function(ev){
  document.addEventListener('click',function(e){var el=e.target.closest&&e.target.closest('.hotspot,.home-hotspot,.yacht-hotspot,.hotspots button,.train-hotspots button');if(el)show(el,e)},true);
 })();
 </script>
+
+
 
 
 
