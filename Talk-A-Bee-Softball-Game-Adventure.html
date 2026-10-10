@@ -178,8 +178,8 @@ border:1px solid #fff;background:rgba(7,23,39,.65);color:#fff;font-weight:900}
 
 <div class="kicker">AT THE SOFTBALL GAME</div>
 <h2 id="title">Click &amp; Discover</h2>
-<p id="prompt">You found pitcher.</p>
-<div class="word"><strong id="line">lanzador</strong><div class="translation" id="translation">pitcher</div></div>
+<p id="prompt">You found infielder.</p>
+<div class="word"><strong id="line">infielder</strong><div class="translation" id="translation"></div></div>
 <p id="status"></p>
 <div class="controls">
 <button id="normal">🔊 Speak</button><button id="slow">🐢 Slow</button><button id="replay">↻ Replay</button><button id="nextPhrase">Next phrase →</button>
@@ -220,7 +220,7 @@ border:1px solid #fff;background:rgba(7,23,39,.65);color:#fff;font-weight:900}
 <button class="hotspot" data-word="mountains" style="left: 44.86%; top: 11.65%; width: 17.65%; height: 15.55%;" aria-label="Mountains"></button>
 <button class="hotspot" data-word="flag" style="left: 69.31%; top: 8.9%; width: 5.65%; height: 11.91%;" aria-label="Flag"></button>
 
-<button type="button" class="hotspot" data-word="team members" aria-label="team members" data-tb-custom="1" data-tb-en="team members" data-tb-es="miembros del equipo" data-tb-fr="membres de l'équipe" data-tb-de="Teammitglieder" data-tb-it="membri della squadra" data-tb-pt="membros da equipe" data-tb-no="teammedlemmer" style="left: 0.3%; top: 38.32%; width: 8.45%; height: 8.46%;" data-sound="sounds/baseball1.mp3"></button><button type="button" class="hotspot" data-word="spectators" aria-label="spectators" data-tb-custom="1" data-tb-en="spectators" data-tb-es="espectadores" data-tb-fr="spectateurs" data-tb-de="Zuschauer" data-tb-it="spettatori" data-tb-pt="espectadores" data-tb-no="tilskuere" style="left: 14.85%; top: 47.57%; width: 10.53%; height: 8.65%;" data-sound="sounds/soft-cheering-sports.mp3"></button><button type="button" class="hotspot" data-word="pitcher" aria-label="pitcher" data-tb-custom="1" data-tb-en="pitcher" data-tb-es="lanzador" data-tb-fr="lanceur" data-tb-de="Krug" data-tb-it="brocca" data-tb-pt="jarro" data-tb-no="mugge" style="left: 38.38%; top: 46.95%; width: 7.67%; height: 14.39%;"></button></main>
+<button type="button" class="hotspot" data-word="team members" aria-label="team members" data-tb-custom="1" data-tb-en="team members" data-tb-es="miembros del equipo" data-tb-fr="membres de l'équipe" data-tb-de="Teammitglieder" data-tb-it="membri della squadra" data-tb-pt="membros da equipe" data-tb-no="teammedlemmer" style="left: 0.3%; top: 38.32%; width: 8.45%; height: 8.46%;" data-sound="sounds/baseball1.mp3"></button><button type="button" class="hotspot" data-word="spectators" aria-label="spectators" data-tb-custom="1" data-tb-en="spectators" data-tb-es="espectadores" data-tb-fr="spectateurs" data-tb-de="Zuschauer" data-tb-it="spettatori" data-tb-pt="espectadores" data-tb-no="tilskuere" style="left: 14.85%; top: 47.57%; width: 10.53%; height: 8.65%;" data-sound="sounds/soft-cheering-sports.mp3"></button><button type="button" class="hotspot" data-word="pitcher" aria-label="pitcher" data-tb-custom="1" data-tb-en="pitcher" data-tb-es="lanzador" data-tb-fr="lanceur" data-tb-de="Krug" data-tb-it="brocca" data-tb-pt="jarro" data-tb-no="mugge" style="left: 38.38%; top: 46.95%; width: 7.67%; height: 14.39%;"></button><button type="button" class="hotspot" data-word="fence" aria-label="fence" data-tb-custom="1" data-tb-en="fence" data-tb-es="cerca" data-tb-fr="clôture" data-tb-de="Zaun" data-tb-it="recinzione" data-tb-pt="cerca" data-tb-no="gjerde" style="left: 65.18%; top: 45.53%; width: 8.08%; height: 18.09%;"></button></main>
 
 <script>
 const EN={game:"softball game",bee:"bee pitcher",softball:"softball",pitchermound:"pitcher's mound",batter:"batter",bat:"softball bat",catcher:"catcher",umpire:"umpire",homeplate:"home plate",scoreboard:"scoreboard",spectators:"spectators",fielder1:"infielder",fielder2:"infielder",fielder3:"infielder",glove:"softball glove",helmet:"batting helmet",field:"softball field",fence:"outfield fence",lake:"lake",mountains:"mountains",flag:"flag"};
@@ -478,25 +478,26 @@ showWord("game");
 (()=>{
 if(window.__tbNewHotspotLiveClick)return;window.__tbNewHotspotLiveClick=true;
 const codes={es:'es-ES',fr:'fr-FR',en:'en-US',de:'de-DE',it:'it-IT',pt:'pt-PT',no:'nb-NO',el:'el-GR'};
-let currentSound=null, soundTimer=null;
-function lang(){try{return document.querySelector('[id$="Language"]')?.value||localStorage.getItem('talkabee-learn-language')||'en'}catch(e){return 'en'}}
+let currentSound=null,soundTimer=null,token=0;
+function lang(){return document.querySelector('#lang,[id$="Language"],select[name="language"]')?.value||localStorage.getItem('talkabee-learn-language')||'en'}
 function translation(el,l){const en=el.dataset.tbEn||el.dataset.en||el.dataset.word||el.dataset.object||'';return l==='en'?en:(el.dataset['tb'+l.charAt(0).toUpperCase()+l.slice(1)]||en)}
-function soundAfterVoice(el){
- clearTimeout(soundTimer);
- if(currentSound){try{currentSound.pause();currentSound.currentTime=0}catch(e){}currentSound=null}
- const path=(el.getAttribute('data-sound')||'').trim();if(!path)return;
- // The editor stores a path relative to the HTML page. Use that exact saved path.
- soundTimer=setTimeout(()=>{try{const audio=new Audio(path);currentSound=audio;audio.play().catch(e=>console.warn('Talk A Bee sound could not play:',path,e));audio.onended=()=>{if(currentSound===audio)currentSound=null}}catch(e){console.warn('Talk A Bee sound error:',path,e)}},1500);
-}
+function stopAudio(){clearTimeout(soundTimer);if(currentSound){try{currentSound.pause();currentSound.currentTime=0}catch(e){}currentSound=null}}
+function playAssigned(el,id){if(id!==token)return;const path=(el.getAttribute('data-sound')||'').trim();if(!path)return;try{const a=new Audio(path);currentSound=a;a.play().catch(e=>console.warn('Talk A Bee sound could not play:',path,e));a.onended=()=>{if(currentSound===a)currentSound=null}}catch(e){console.warn('Talk A Bee sound error:',path,e)}}
+function popup(el,word,en,ev){const pop=document.getElementById('talkabee-object-popup');if(!pop)return;pop.textContent=word===en?en:word+' — '+en;pop.style.display='block';const r=el.getBoundingClientRect();const x=ev.clientX||r.left+r.width/2,y=ev.clientY||r.top+r.height/2;const pr=pop.getBoundingClientRect();pop.style.left=Math.max(8,Math.min(innerWidth-pr.width-8,x+12))+'px';pop.style.top=Math.max(8,Math.min(innerHeight-pr.height-8,y-pr.height-10))+'px';clearTimeout(pop.__tbTimer);pop.__tbTimer=setTimeout(()=>pop.style.display='none',1800)}
 document.addEventListener('click',function(ev){
  if(document.body.classList.contains('tb-hs-editing'))return;
  const el=ev.target.closest&&ev.target.closest('[data-tb-custom="1"]');if(!el)return;
- ev.preventDefault();ev.stopPropagation();
- const l=lang(),txt=translation(el,l),en=translation(el,'en'),key=el.dataset.word||el.dataset.object||en;
- try{if(typeof showWord==='function')showWord(key);else{const line=document.querySelector('[id$="Line"]');const trans=document.querySelector('[id$="Translation"]');if(line)line.textContent=txt;if(trans)trans.textContent=l==='en'?'':en}}catch(e){}
- try{if(typeof speak==='function')speak(txt,.82);else if('speechSynthesis'in window){speechSynthesis.cancel();const u=new SpeechSynthesisUtterance(txt);u.lang=codes[l]||l;u.rate=.82;speechSynthesis.speak(u)}}catch(e){}
- // Always schedule assigned MP3, regardless of which speech function exists.
- soundAfterVoice(el);
+ ev.preventDefault();ev.stopImmediatePropagation();
+ const l=lang(),txt=translation(el,l),en=translation(el,'en'),id=++token;
+ stopAudio();
+ try{if(typeof activeLesson!=='undefined')activeLesson='';if(typeof lastWord!=='undefined')lastWord='';const title=document.getElementById('title'),prompt=document.getElementById('prompt'),line=document.getElementById('line'),trans=document.getElementById('translation');if(title)title.textContent='Click & Discover';if(prompt)prompt.textContent='You found '+en+'.';if(line)line.textContent=txt;if(trans)trans.textContent=l==='en'?'':en}catch(e){}
+ popup(el,txt,en,ev);
+ const path=(el.getAttribute('data-sound')||'').trim();
+ // Use the adventure's existing speak function so the selected browser voice is honored.
+ try{if(typeof speak==='function'){
+   if(path){let played=false;const after=()=>{if(played)return;played=true;playAssigned(el,id)};speak(txt,.82,after);soundTimer=setTimeout(after,2200)}
+   else speak(txt,.82);
+ }else if('speechSynthesis'in window){speechSynthesis.cancel();const u=new SpeechSynthesisUtterance(txt);u.lang=codes[l]||l;u.rate=.82;const chosen=document.getElementById('voice')?.value;const v=speechSynthesis.getVoices().find(v=>v.name===chosen||v.voiceURI===chosen);if(v)u.voice=v;if(path)u.onend=()=>playAssigned(el,id);speechSynthesis.speak(u);if(path)soundTimer=setTimeout(()=>playAssigned(el,id),2200)}else if(path)playAssigned(el,id)}catch(e){if(path)playAssigned(el,id)}
 },true);
 })();
 </script>
