@@ -332,7 +332,7 @@ body:not(.tb-hs-editing) .challenge-mode .hotspot.target:not(:hover):not(:focus-
   <a href="Talk-A-Bee-Steam-Train-Adventure.html" aria-label="Next adventure" title="Next">›</a>
 </nav>
 
-<main class="world" id="world">
+<main class="world challenge-mode" id="world">
 <button class="scene-return" id="sceneReturn">Return to Adventure</button>
 
 <aside class="panel">
@@ -340,12 +340,12 @@ body:not(.tb-hs-editing) .challenge-mode .hotspot.target:not(:hover):not(:focus-
 <div class="tab-panel-size-controls" aria-label="Activity panel size"><button type="button" class="tab-panel-minus" title="Make activity panel smaller">−</button><button type="button" class="tab-panel-reset" title="Reset activity panel size">Reset</button><button type="button" class="tab-panel-plus" title="Make activity panel larger">+</button></div>
 
 <div class="label">LANGUAGE</div>
-<select id="lang">
+<select id="lang" data-tab-global-voice="1">
 <option value="es">Spanish</option><option value="fr">French</option><option value="en">English</option>
 <option value="de">German</option><option value="it">Italian</option><option value="pt">Portuguese</option><option value="no">Norwegian</option>
 </select>
 <div class="label">VOICE</div>
-<select id="voice"><option value="">Browser Default</option><option value="Microsoft David - English (United States)">Microsoft David - English (United States) — en-US</option><option value="Microsoft Mark - English (United States)">Microsoft Mark - English (United States) — en-US</option><option value="Microsoft Zira - English (United States)">Microsoft Zira - English (United States) — en-US</option><option value="Microsoft David Desktop - English (United States)">Microsoft David Desktop - English (United States) — en-US</option><option value="Microsoft Zira Desktop - English (United States)">Microsoft Zira Desktop - English (United States) — en-US</option></select>
+<select id="voice" data-tab-global-voice="1"><option value="">Browser Default</option><option value="Microsoft David - English (United States)">Microsoft David - English (United States) — en-US</option><option value="Microsoft Mark - English (United States)">Microsoft Mark - English (United States) — en-US</option><option value="Microsoft Zira - English (United States)">Microsoft Zira - English (United States) — en-US</option><option value="Microsoft David Desktop - English (United States)">Microsoft David Desktop - English (United States) — en-US</option><option value="Microsoft Zira Desktop - English (United States)">Microsoft Zira Desktop - English (United States) — en-US</option></select>
 <button id="sceneView" aria-pressed="false">◉ Scene View</button>
 
 <div class="label">DISCOVERY</div>
@@ -362,23 +362,23 @@ body:not(.tb-hs-editing) .challenge-mode .hotspot.target:not(:hover):not(:focus-
 <button data-ch="0">1. Find the Hiker</button>
 <button data-ch="1">2. Find the Rescue Basket</button>
 <button data-ch="2">3. Find the Waterfall</button>
-<button data-ch="3">4. Find the Eagle</button>
+<button data-ch="3">4. Find the Tail Rotor</button>
 <button data-ch="4">5. Find the Dog</button>
-<button data-ch="5">6. Find the Bee</button>
+<button data-ch="5">6. Find the turbo engine</button>
 <a href="index.html">← Return to Main Directory</a>
 </aside>
 
-<section class="card tab-master-card">
+<section class="card tab-master-card" style="height: auto !important; min-height: 0px !important; max-height: none !important; overflow: visible !important;">
 <div class="tab-card-tools" aria-label="Script card controls"><button type="button" class="tab-card-drag" title="Move script card">↕ Move</button><button type="button" class="tab-card-font-down" title="Decrease text">A−</button><button type="button" class="tab-card-font-up" title="Increase text">A+</button><button type="button" class="tab-card-reset" title="Reset card">Reset</button></div><div class="tab-card-resize" title="Drag to resize script card" aria-label="Resize script card">↘</div>
 
-<div class="kicker">ON A MOUNTAIN RESCUE</div>
-<h2 id="title">Click &amp; Discover</h2>
-<p id="prompt">You found rescue helicopter.</p>
-<div class="word"><strong id="line">helicóptero de rescate</strong><div class="translation" id="translation">rescue helicopter</div></div>
-<p id="status"></p>
+<div class="kicker" data-base-font="19px" style="font-size: 19px !important;">ON A MOUNTAIN RESCUE</div>
+<h2 id="title" data-base-font="28px" style="font-size: 28px !important;">Click &amp; Discover</h2>
+<p id="prompt" data-base-font="24px" style="font-size: 24px !important;">You found rescue dog.</p>
+<div class="word"><strong id="line" data-base-font="28px" style="font-size: 28px !important;">perro de rescate</strong><div class="translation" id="translation" data-base-font="24px" style="font-size: 24px !important;">rescue dog</div></div>
+<p id="status" style="color: rgb(53, 228, 106) !important;">✓ Nice find!</p>
 <div class="controls">
-<button id="normal">🔊 Speak</button><button id="slow">🐢 Slow</button><button id="replay">↻ Replay</button><button id="nextPhrase">Next phrase →</button>
-</div>
+<button id="normal" data-base-font="19px">🔊 Speak</button><button id="slow" data-base-font="19px">🐢 Slow</button><button id="replay" data-base-font="19px">↻ Replay</button><button id="nextPhrase" data-base-font="19px" hidden="" style="display: none !important;">Next →</button>
+<button id="nextChallenge" type="button" style="display: inline-block !important;">Next →</button></div>
 </section>
 
 
@@ -396,7 +396,7 @@ body:not(.tb-hs-editing) .challenge-mode .hotspot.target:not(:hover):not(:focus-
 
 
 
-<button class="hotspot" data-word="dog" style="left: 76.74%; top: 25.85%; width: 3.59%; height: 8.81%;" aria-label="Rescue dog" data-sound="sounds/dog.mp3"></button>
+<button class="hotspot target" data-word="dog" style="left: 76.74%; top: 25.85%; width: 3.59%; height: 8.81%;" aria-label="Rescue dog" data-sound="sounds/dog.mp3"></button>
 <button class="hotspot" data-word="cable" style="left: 64.3%; top: 33.91%; width: 2.94%; height: 16.36%;" aria-label="Rescue cable"></button>
 <button class="hotspot" data-word="rescuer" style="left: 64%; top: 46%; width: 7.43%; height: 14.89%;" aria-label="Rescuer"></button>
 <button class="hotspot" data-word="basket" style="left: 61.39%; top: 63.39%; width: 9.79%; height: 12.48%;" aria-label="Rescue basket"></button>
@@ -856,7 +856,7 @@ document.addEventListener('click',function(ev){
 })();
 </script>
 
-<script type="application/json" id="talkabee-challenge-data">[]</script>
+<script type="application/json" id="talkabee-challenge-data">[{"key":"hiker","text":"Find the Hiker"},{"key":"basket","text":"Find the Rescue Basket"},{"key":"waterfall","text":"Find the Waterfall"},{"key":"tail rotor","text":"Find the Tail Rotor"},{"key":"dog","text":"Find the Dog"},{"key":"turbo engine","text":"Find the turbo engine"}]</script>
 <script id="talkabee-challenge-runtime">
 (function(){
  const data=document.getElementById('talkabee-challenge-data');
