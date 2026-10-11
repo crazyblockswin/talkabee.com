@@ -15,7 +15,7 @@
 .controls{display:flex;gap:8px;margin-top:10px}.controls button{flex:1;padding:9px;border:0;border-radius:11px;font-weight:900}
 .hotspot{position:absolute;z-index:8;border:0;background:transparent;opacity:0;cursor:pointer;border-radius:16px}
 .hotspot:hover,.hotspot:focus-visible{opacity:.22;background:rgba(255,220,72,.55);outline:2px solid rgba(255,255,255,.8)}
-.challenge-mode .hotspot.target{opacity:1;background:rgba(255,199,48,.38);outline:4px solid #fff;box-shadow:0 0 0 7px rgba(255,200,50,.2)}
+.challenge-mode .hotspot.target{opacity:0;background:transparent;outline:none;box-shadow:none}
 .talkabee-forward-arrow{position:fixed;z-index:10020;right:22px;top:18px;width:62px;height:62px;border:2px solid rgba(255,255,255,.82);border-radius:50%;background:rgba(11,22,42,.20);box-shadow:0 5px 16px rgba(0,0,0,.14);backdrop-filter:blur(2px);display:grid;place-items:center;text-decoration:none}
 .talkabee-forward-arrow::before{content:"";width:17px;height:17px;border-top:5px solid #fff;border-right:5px solid #fff;transform:rotate(45deg) translate(-2px,2px);filter:drop-shadow(0 1px 2px rgba(0,0,0,.35))}
 .scene-view .panel,.scene-view .card{display:none}.scene-return{display:none;position:fixed;z-index:10030;left:18px;top:18px;padding:10px 14px;border-radius:12px;border:1px solid #fff;background:rgba(7,23,39,.65);color:#fff;font-weight:900}.scene-view .scene-return{display:block}
@@ -25,7 +25,7 @@
 <style id="boardwalk-hotspots-hover-only">
 .hotspot{display:block!important;opacity:0!important;background:transparent!important;outline:none!important;animation:none!important}
 .hotspot:hover,.hotspot:focus-visible{opacity:1!important;background:rgba(255,220,72,.28)!important;outline:2px solid rgba(255,255,255,.85)!important}
-.challenge-mode .hotspot.target{opacity:1!important;background:rgba(255,199,48,.38)!important;outline:4px solid #fff!important}
+.challenge-mode .hotspot.target:not(:hover):not(:focus-visible){opacity:0!important;background:transparent!important;outline:none!important;box-shadow:none!important}
 </style>
 
 
@@ -99,11 +99,7 @@
 .tab-master-card .word .translation {color:#fff!important;}
 </style>
 
-<style id="boardwalk-card-position-only">
-/* Position only — restore approved bottom height and shift right. */
-.tab-master-card{left:68%!important;top:auto!important;bottom:16px!important;transform-origin:bottom center!important;}
-@media(max-width:760px){.tab-master-card{left:68%!important;top:auto!important;bottom:10px!important;transform-origin:bottom center!important;}}
-</style>
+
 
 <style id="talkabee-readable-supporting-text">
 /* Readability-only repair. Existing links, navigation, JS, hotspots and audio are untouched. */
@@ -223,6 +219,39 @@
 #talkabee-object-popup{position:fixed;z-index:2147482900;display:none;padding:8px 12px;border-radius:12px;background:rgba(20,20,20,.82);color:white;font-weight:900;font-size:14px;pointer-events:none}
 </style>
 
+<style id="talkabee-boardwalk-card-readability-from-observation">
+/* Readability only: keep challenge logic, card geometry and editors unchanged.
+   Desktop card renders at 0.67 scale, so CSS sizes compensate visually. */
+.tab-master-card #status {
+  font-size:32px!important;
+  line-height:1.3!important;
+  font-weight:800!important;
+  min-height:0;
+  overflow-wrap:anywhere;
+}
+.tab-master-card .tab-card-tools button {
+  font-size:18px!important;
+  line-height:1.2!important;
+  padding:7px 11px!important;
+}
+@media(max-width:760px){
+  .tab-master-card #status{font-size:26px!important;}
+}
+</style>
+<style id="talkabee-boardwalk-auto-height-card">
+/* Grow naturally with the script, translated phrases and challenge feedback. */
+.tab-master-card {
+  height:auto!important;
+  max-height:none!important;
+  overflow:visible!important;
+  overflow-y:visible!important;
+  scrollbar-width:none!important;
+}
+.tab-master-card .word,.tab-master-card #prompt,.tab-master-card #status {
+  overflow-wrap:break-word;
+  white-space:normal;
+}
+</style>
 </head>
 <body class="">
 <div class="talkabee-editions">
@@ -241,7 +270,7 @@
 
 <nav class="talkabee-prev-next-nav" aria-label="Adventure navigation"><a href="Talk-A-Bee-Animals-Farm-Adventure.html" aria-label="Previous page" title="Previous">‹</a><a href="Talk-A-Bee-Observation-Deck-Adventure.html" aria-label="Next page" title="Next">›</a></nav>
 
-<main class="world" id="world">
+<main class="world challenge-mode" id="world">
 
 <button class="scene-return" id="sceneReturn">Return to Adventure</button>
 <aside class="panel tab-master-panel">
@@ -261,16 +290,15 @@
 <button data-lesson="safety">5. Stay Safe</button>
 <button data-lesson="things">6. Things We See</button>
 <div class="label">CHALLENGES</div>
-<button data-ch="0">1. Find the Ferris Wheel</button><button data-ch="1">2. Find the Carousel</button><button data-ch="2">3. Find the Lifeguard Tower</button><button data-ch="3">4. Find the Kite</button><button data-ch="4">5. Find the Ice Cream</button><button data-ch="5">6. Find Bear</button>
+<button data-ch="0">1. Find the Ferris Wheel</button><button data-ch="1">2. Find the Carousel</button><button data-ch="2">3. Find the Lifeguard Tower</button><button data-ch="3">4. Find the Kite</button><button data-ch="4">5. Find the Ice Cream</button><button data-ch="5">6. Find the Dog</button>
 
 <a href="index.html">← Return to Main Directory</a></aside>
-<section class="card tab-master-card">
-<div class="tab-card-tools" aria-label="Script card controls"><button type="button" class="tab-card-drag" title="Move script card">↕ Move</button><button type="button" class="tab-card-font-down" title="Decrease text">A−</button><button type="button" class="tab-card-font-up" title="Increase text">A+</button><button type="button" class="tab-card-reset" title="Reset card">Reset</button></div><div class="tab-card-resize" title="Drag to resize script card" aria-label="Resize script card">↘</div>
-
-<h2 id="title">Boardwalk Adventure</h2><p id="prompt">Click any object in the scene to hear its name.</p>
-<div class="word"><strong id="line">sunglasses</strong><div class="translation" id="translation"></div></div>
-<p id="status"></p>
-<div class="controls"><button id="normal">🔊 Speak</button><button id="slow">🐢 Slow</button><button id="replay">↻ Replay</button></div>
+<section class="card tab-master-card" style="--tab-card-font-scale: 1.40; width: 545.467px !important; max-width: none !important; min-width: 0px !important; max-height: none !important; overflow: visible !important;">
+<div aria-label="Script card controls" class="tab-card-tools"><button class="tab-card-drag" title="Move script card" type="button">↕ Move</button><button class="tab-card-font-down" title="Decrease text" type="button">A−</button><button class="tab-card-font-up" title="Increase text" type="button">A+</button><button class="tab-card-reset" title="Reset card" type="button">Reset</button></div><div aria-label="Resize script card" class="tab-card-resize" title="Drag to resize script card">↘</div>
+<h2 data-base-font="22px" id="title" style="font-size: 30.8px !important;">Challenge 4 of 6</h2><p data-base-font="18px" id="prompt" style="font-size: 25.2px !important;">Find the Kite</p>
+<div class="word"><strong data-base-font="22.4063px" id="line" style="font-size: 31.3688px !important;">cometa</strong><div class="translation" id="translation" data-base-font="18px" style="font-size: 25.2px !important;">kite</div></div>
+<p id="status" style="color: rgb(157, 255, 191) !important;">✓ Nice find!</p>
+<div class="controls"><button data-base-font="13.3281px" id="normal" style="font-size: 18.6593px !important;">🔊 Speak</button><button data-base-font="13.3281px" id="slow" style="font-size: 18.6593px !important;">🐢 Slow</button><button data-base-font="13.3281px" id="replay" style="font-size: 18.6593px !important;">↻ Replay</button></div>
 </section>
 
 
@@ -285,11 +313,11 @@
 <button class="hotspot" data-word="umbrella" style="left:61%;top:43%;width:12%;height:13%" aria-label="Beach umbrella"></button>
 <button class="hotspot" data-word="sandcastle" style="left: 65.41%; top: 61.6%; width: 6.55%; height: 9.22%;" aria-label="Sandcastle"></button>
 <button class="hotspot" data-word="seagull" style="left: 76.4%; top: 11.09%; width: 9%; height: 13%;" aria-label="Seagull"></button>
-<button class="hotspot" data-word="kite" style="left: 85.52%; top: 2.46%; width: 9%; height: 16%;" aria-label="Kite"></button>
+<button class="hotspot target" data-word="kite" style="left: 85.52%; top: 2.46%; width: 9%; height: 16%;" aria-label="Kite"></button>
 <button class="hotspot" data-word="bench" style="left: 0.42%; top: 72.22%; width: 8.08%; height: 26.18%;" aria-label="Bench"></button>
 <button class="hotspot" data-word="lamp" style="left: 25.05%; top: 10.36%; width: 6.81%; height: 20.19%;" aria-label="Lamp"></button>
 <button class="hotspot" data-word="flowers" style="left: 0.68%; top: 55.56%; width: 10.41%; height: 15.83%;" aria-label="Flowers"></button>
-<button class="hotspot" data-word="bear" style="left: 33.03%; top: 68.07%; width: 7.16%; height: 16.99%;" aria-label="Bear"></button>
+
 <button class="hotspot" data-word="ocean" style="left: 92.61%; top: 51.13%; width: 7.66%; height: 10.98%;" aria-label="Ocean"></button>
 <button class="hotspot" data-word="palmtree" style="left: 5.93%; top: -4.17%; width: 8.65%; height: 41.94%;" aria-label="Palm tree"></button>
 <button class="hotspot" data-word="flag" style="left:16%;top:24%;width:6%;height:11%" aria-label="American flag"></button>
@@ -310,7 +338,7 @@
 <button class="hotspot" data-word="grandpa" style="left: 21.64%; top: 38.08%; width: 5.42%; height: 15.28%;" aria-label="Grandpa"></button>
 <button class="hotspot" data-word="grandma" style="left: 29.92%; top: 39.68%; width: 4.57%; height: 13.23%;" aria-label="Grandma"></button>
 <button class="hotspot" data-word="beach" style="left: 87.9%; top: 66.44%; width: 15.65%; height: 11.33%;" aria-label="Beach"></button>
-</main>
+<button type="button" class="hotspot" data-word="dog" aria-label="dog" data-tb-custom="1" data-tb-en="dog" data-tb-es="perro" data-tb-fr="chien" data-tb-de="Hund" data-tb-it="cane" data-tb-pt="cachorro" data-tb-no="hund" style="left: 32.25%; top: 66.9%; width: 8.19%; height: 29.39%;" data-sound="sounds/dog.mp3"></button></main>
 <script>
 const LANGS={
 es:{code:"es-ES",words:{ferris:["noria","Ferris wheel"],carousel:["carrusel","carousel"],tickets:["taquilla","ticket booth"],icecream:["helado","ice cream"],popcorn:["palomitas","popcorn"],lifeguard:["torre de salvavidas","lifeguard tower"],surfboard:["tabla de surf","surfboard"],umbrella:["sombrilla","beach umbrella"],sandcastle:["castillo de arena","sandcastle"],seagull:["gaviota","seagull"],kite:["cometa","kite"],bicycle:["bicicleta","bicycle"],skateboard:["monopatín","skateboard"],trashcan:["papelera","trash can"],binoculars:["binoculares","binoculars"],sunglasses:["gafas de sol","sunglasses"],hat:["sombrero","hat"],bench:["banco","bench"],lamp:["farola","lamp"],flowers:["flores","flowers"],bear:["Bear","Bear"],ocean:["océano","ocean"]}},
@@ -348,7 +376,7 @@ function playBoardwalkSound(id){
   boardwalkSound.play().catch(()=>{});
 }
 
-const challengeOrder=["ferris","carousel","lifeguard","kite","icecream","bear"];
+const challengeOrder=["ferris","carousel","lifeguard","kite","icecream","dog"];
 const langSel=document.getElementById("lang"),voiceSel=document.getElementById("voice");
 langSel.value=localStorage.getItem("talkabee-learn-language")||"es";
 const title=document.getElementById("title"),prompt=document.getElementById("prompt"),line=document.getElementById("line"),translation=document.getElementById("translation"),status=document.getElementById("status"),world=document.getElementById("world");
@@ -375,7 +403,7 @@ if("speechSynthesis" in window){
 voiceSel.onchange=()=>localStorage.setItem(voiceStorageKey(),voiceSel.value);
 function speak(t,rate=.82,onend=null){if(!t||!("speechSynthesis" in window)){if(onend)onend();return;}try{speechSynthesis.cancel();const u=new SpeechSynthesisUtterance(t);u.lang=LANGS[langSel.value].code;u.rate=rate;const v=selectedVoice();if(v)u.voice=v;if(onend)u.onend=onend;setTimeout(()=>speechSynthesis.speak(u),40)}catch(e){if(onend)onend();}}
 function showWord(key){lastWord=key;const x=LANGS[langSel.value].words[key]||[key,key];line.textContent=x[0];translation.textContent=langSel.value==="en"?"":x[1]}
-document.querySelectorAll(".hotspot").forEach(b=>b.onclick=()=>{activeLesson="";const key=b.dataset.word,x=LANGS[langSel.value].words[key]||[key,key];showWord(key);speak(x[0],.82,()=>playBoardwalkSound(key));if(challenge>=0){if(key===challengeOrder[challenge]){status.textContent="✓ Nice find!";status.style.color="#9dffbf"}else{status.textContent="Not that one — keep looking.";status.style.color="#ffe28a"}}});
+document.querySelectorAll(".hotspot").forEach(b=>b.onclick=()=>{activeLesson="";const key=b.dataset.word,x=LANGS[langSel.value].words[key]||[key,key];showWord(key);speak(x[0],.82,()=>playBoardwalkSound(key));if(challenge>=0){if(key===challengeOrder[challenge]){status.textContent="✓ Nice find!";status.style.setProperty("color","#9dffbf","important")}else{status.textContent="Not that one — keep looking.";status.style.setProperty("color","#ffe28a","important")}}});
 document.getElementById("discovery").onclick=()=>{activeLesson="";challenge=-1;world.classList.remove("challenge-mode");title.textContent="Click & Discover";prompt.textContent="Click any object in the scene to hear its name.";status.textContent=""};
 document.querySelectorAll("[data-ch]").forEach(b=>b.onclick=()=>{activeLesson="";challenge=+b.dataset.ch;world.classList.add("challenge-mode");document.querySelectorAll(".hotspot").forEach(h=>h.classList.toggle("target",h.dataset.word===challengeOrder[challenge]));title.textContent="Challenge "+(challenge+1)+" of 6";prompt.textContent=b.textContent.replace(/^\d+\.\s*/,"");status.textContent=""});
 const lessons={
@@ -508,31 +536,7 @@ showWord("ferris");
 }
 @media(max-width:760px){.tab-master-card{width:min(520px,calc(100vw - 32px))!important;transform:translateX(-50%) scale(.82)!important;}}
 </style>
-<style id="talkabee-approved-farm-card-20261010">
-/* Talk A Bee — approved Animals Farm readability, 2026-10-10.
-   Card-only overrides: do not alter hotspots, editors, or Activity Panel. */
-.tab-master-card:not(.live-card){
- width:575px!important;max-width:575px!important;
- height:auto!important;min-height:0!important;
- background:rgba(25,19,24,.20)!important;
- background-color:rgba(25,19,24,.20)!important;
- backdrop-filter:blur(2px)!important;-webkit-backdrop-filter:blur(2px)!important;
- border:1px solid rgba(255,255,255,.30)!important;
- box-sizing:border-box!important;
-}
-.tab-master-card:not(.live-card) :is(h1,h2,#title,#cardTitle,#homeTitle,#yachtTitle,#trainTitle){font-size:32px!important;line-height:1.15!important;}
-.tab-master-card:not(.live-card) :is(#prompt,#homePrompt,#yachtPrompt,#trainPrompt,p:not(.status),.prompt){font-size:24px!important;line-height:1.28!important;}
-.tab-master-card:not(.live-card) :is(.line,.word,.words,.wordline,.home-wordline,.train-line,.yacht-wordline,#line){font-size:28px!important;line-height:1.25!important;}
-.tab-master-card:not(.live-card) :is(.translation,.home-translation,.train-translation,.yacht-translation,#translation){font-size:22px!important;line-height:1.3!important;}
-.tab-master-card:not(.live-card) :is(.kicker,.label,.home-kicker,.train-kicker,.yacht-kicker){font-size:15px!important;line-height:1.2!important;}
-.tab-master-card:not(.live-card) :is(.status,.hint,.tip,.count,#status){font-size:18px!important;line-height:1.25!important;}
-.tab-master-card:not(.live-card) :is(.actions,.controls,.home-actions,.train-actions,.yacht-actions) button{font-size:18px!important;line-height:1.2!important;padding:9px 13px!important;min-height:38px!important;}
-.tab-master-card:not(.live-card) .tab-card-tools button{font-size:18px!important;padding:7px 11px!important;}
-@media(max-width:760px){
- .tab-master-card:not(.live-card){width:min(575px,calc(100vw - 32px))!important;max-width:calc(100vw - 32px)!important;max-height:calc(100vh - 20px)!important;overflow:auto!important;}
- .tab-master-card:not(.live-card) :is(.actions,.controls,.home-actions,.train-actions,.yacht-actions){flex-wrap:wrap!important;}
-}
-</style>
+
 <script id="talkabee-accessibility-controls-script-v1">
 (function(){
  const panel=document.querySelector('.tab-master-panel,.activity-panel,.panel');
@@ -556,7 +560,7 @@ showWord("ferris");
  const WK='talkabee-script-card-width-'+pageKey,HK='talkabee-script-card-height-'+pageKey;
  const clamp=(n,a,b)=>Math.max(a,Math.min(b,n));
  const defaultScale=()=>matchMedia('(max-width:760px)').matches?.82:.67;
- let scale=defaultScale(),fontScale=1,dragState=null;
+ let scale=defaultScale(),fontScale=1.4,dragState=null;
  // Capture actual rendered font sizes, even on Adventures with older card markup.
  // Never modify the Move / A- / A+ / Reset controls or resize handle.
  const textNodes=Array.from(card.querySelectorAll('*')).filter(el=>{
@@ -571,7 +575,7 @@ showWord("ferris");
    card.style.setProperty('min-width','0','important');
    card.style.setProperty('min-height',height+'px','important');
    card.style.setProperty('max-height','none','important');
-   card.style.setProperty('overflow','auto','important');
+   card.style.setProperty('overflow','visible','important');
    if(save)try{localStorage.setItem(WK,String(width));localStorage.setItem(HK,String(height))}catch(e){}
  }
 
@@ -600,7 +604,10 @@ showWord("ferris");
  }
  function restore(){
    try{
-     const fs=localStorage.getItem(FK); if(fs)applyFont(fs,false);
+     const fs=localStorage.getItem(FK);
+     const migrated=localStorage.getItem('talkabee-boardwalk-observation-font-v1');
+     if(!migrated){applyFont(1.4,false);localStorage.setItem(FK,'1.4');localStorage.setItem('talkabee-boardwalk-observation-font-v1','1');}
+     else applyFont(fs||1.4,false);
      // Older A+/A- controls stored a whole-card zoom. Ignore that legacy value.
       const ww=parseFloat(localStorage.getItem(WK)),hh=parseFloat(localStorage.getItem(HK));
       if(ww&&hh)applyBox(ww,hh,false);
@@ -621,10 +628,10 @@ showWord("ferris");
 
  if(reset)reset.addEventListener('click',()=>{
    try{localStorage.removeItem(PK);localStorage.removeItem(SK);localStorage.removeItem(FK);localStorage.removeItem(WK);localStorage.removeItem(HK)}catch(e){}
-   scale=defaultScale();fontScale=1;
+   scale=defaultScale();fontScale=1.4;
    delete card.dataset.moved;
    ['width','height','left','top','right','bottom','transform','transform-origin','min-width','max-width','min-height','max-height'].forEach(p=>card.style.removeProperty(p));
-   applyFont(1,false);
+   applyFont(1.4,false);
  });
 
  function startDrag(e){
@@ -711,6 +718,9 @@ function soundAfterVoice(el){
 document.addEventListener('click',function(ev){
  if(document.body.classList.contains('tb-hs-editing'))return;
  const el=ev.target.closest&&ev.target.closest('[data-tb-custom="1"]');if(!el)return;
+ // Boardwalk's native hotspot handler already speaks, checks challenges, and
+ // the shared data-sound listener plays assigned audio. Do not intercept it.
+ if(typeof showWord==='function' && typeof speak==='function')return;
  ev.preventDefault();ev.stopPropagation();
  const l=lang(),txt=translation(el,l),en=translation(el,'en'),key=el.dataset.word||el.dataset.object||en;
  try{if(typeof showWord==='function')showWord(key);else{const line=document.querySelector('[id$="Line"]');const trans=document.querySelector('[id$="Translation"]');if(line)line.textContent=txt;if(trans)trans.textContent=l==='en'?'':en}}catch(e){}
@@ -777,7 +787,7 @@ document.addEventListener('click',function(ev){
 </script>
 
 
-<script type="application/json" id="talkabee-challenge-data">[]</script>
+<script type="application/json" id="talkabee-challenge-data">[{"key":"ferris","text":"Find the Ferris Wheel"},{"key":"carousel","text":"Find the Carousel"},{"key":"lifeguard","text":"Find the Lifeguard Tower"},{"key":"kite","text":"Find the Kite"},{"key":"icecream","text":"Find the Ice Cream"},{"key":"dog","text":"Find the Dog"}]</script>
 <script id="talkabee-challenge-runtime">
 (function(){
  const data=document.getElementById('talkabee-challenge-data');
@@ -789,5 +799,65 @@ document.addEventListener('click',function(ev){
  });}catch(e){console.warn('Challenge data could not be loaded',e)}
 })();
 </script>
-
+<div id="tb-challenge-panel" style="display: none;"><div id="tb-challenge-drag" title="Drag to move this editor"><h3>↕ Edit Six Challenges</h3><small>Drag here to move</small></div><div>Choose a challenge, then assign an existing hotspot. Changes are included when you save or export HTML.</div><label for="tb-ch-number">Challenge</label><select id="tb-ch-number"><option value="0">Challenge 1</option><option value="1">Challenge 2</option><option value="2">Challenge 3</option><option value="3">Challenge 4</option><option value="4">Challenge 5</option><option value="5">Challenge 6</option></select><label for="tb-ch-hotspot">Find this hotspot</label><select id="tb-ch-hotspot"><option value="ferris">Ferris wheel [ferris]</option><option value="carousel">Carousel [carousel]</option><option value="tickets">Ticket booth [tickets]</option><option value="icecream">Ice cream stand [icecream]</option><option value="popcorn">Popcorn stand [popcorn]</option><option value="lifeguard">Lifeguard tower [lifeguard]</option><option value="surfboard">Surfboards [surfboard]</option><option value="umbrella">Beach umbrella [umbrella]</option><option value="sandcastle">Sandcastle [sandcastle]</option><option value="seagull">Seagull [seagull]</option><option value="kite">Kite [kite]</option><option value="bench">Bench [bench]</option><option value="lamp">Lamp [lamp]</option><option value="flowers">Flowers [flowers]</option><option value="ocean">Ocean [ocean]</option><option value="palmtree">Palm tree [palmtree]</option><option value="flag">American flag [flag]</option><option value="icecreamcone">Ice cream cone [icecreamcone]</option><option value="rollercoaster">Roller coaster [rollercoaster]</option><option value="pier">Pier [pier]</option><option value="lifering">Life ring [lifering]</option><option value="binoculars">Binoculars [binoculars]</option><option value="beachchair">Beach chair [beachchair]</option><option value="bucket">Bucket [bucket]</option><option value="sailboat">Sailboat [sailboat]</option><option value="boardwalk">Boardwalk [boardwalk]</option><option value="backpack">Backpack [backpack]</option><option value="hat">Hat [hat]</option><option value="sunglasses">Sunglasses [sunglasses]</option><option value="boy">Boy [boy]</option><option value="girl">Girl [girl]</option><option value="grandpa">Grandpa [grandpa]</option><option value="grandma">Grandma [grandma]</option><option value="beach">Beach [beach]</option><option value="dog">dog [dog]</option></select><label for="tb-ch-text">Challenge wording (English)</label><input id="tb-ch-text" maxlength="110" placeholder="Find the balloon basket"><div class="tb-ch-warning" id="tb-ch-warning">Saved into this page. Use Save Working HTML to keep it.</div><button type="button" id="tb-ch-apply">Apply Challenge</button><button type="button" id="tb-ch-close">Close</button></div>
+<script id="talkabee-boardwalk-card-viewport-boundary">
+/* Keep the complete displayed script card inside the viewport after moving,
+   resizing, restoring its position, or growing to fit longer text. */
+(function(){
+  'use strict';
+  const card=document.querySelector('.tab-master-card');
+  if(!card)return;
+  const GAP=16;
+  let pending=false,adjusting=false;
+  function keepVisible(){
+    if(adjusting || document.body.classList.contains('scene-view'))return;
+    adjusting=true;
+    try{
+      const r=card.getBoundingClientRect();
+      if(!r.width||!r.height)return;
+      // Normal, bottom-anchored default remains untouched when already visible.
+      let dx=0,dy=0;
+      const vw=document.documentElement.clientWidth,vh=document.documentElement.clientHeight;
+      if(r.width<=vw-2*GAP){
+        if(r.left<GAP)dx=GAP-r.left;
+        else if(r.right>vw-GAP)dx=vw-GAP-r.right;
+      }else if(r.left>GAP)dx=GAP-r.left;
+      if(r.height<=vh-2*GAP){
+        if(r.top<GAP)dy=GAP-r.top;
+        else if(r.bottom>vh-GAP)dy=vh-GAP-r.bottom;
+      }else if(r.top>GAP)dy=GAP-r.top;
+      if(Math.abs(dx)<.5&&Math.abs(dy)<.5)return;
+      // Use the *rendered* rectangle, not the unscaled CSS width/height.
+      // This preserves the existing .67 card transform and drag behavior.
+      card.dataset.moved='1';
+      card.style.setProperty('left',(r.left+dx)+'px','important');
+      card.style.setProperty('top',(r.top+dy)+'px','important');
+      card.style.setProperty('right','auto','important');
+      card.style.setProperty('bottom','auto','important');
+      card.style.setProperty('transform-origin','top left','important');
+      const cssWidth=parseFloat(getComputedStyle(card).width)||r.width;
+      const factor=r.width/cssWidth;
+      card.style.setProperty('transform','scale('+factor+')','important');
+    }finally{adjusting=false;}
+  }
+  function schedule(){if(pending)return;pending=true;requestAnimationFrame(()=>{pending=false;keepVisible()});}
+  // Capture ensures the corrected position is saved by the existing drag handler.
+  // Reset restores CSS defaults first; then re-check the full rendered card.
+  // This also handles a reset that changes position without changing its size.
+  const resetButton=card.querySelector('.tab-card-reset');
+  if(resetButton)resetButton.addEventListener('click',()=>{
+    requestAnimationFrame(()=>{keepVisible();requestAnimationFrame(keepVisible);});
+  });
+  card.addEventListener('pointerup',keepVisible,true);
+  card.addEventListener('pointercancel',keepVisible,true);
+  card.addEventListener('pointermove',schedule);
+  const ro=new ResizeObserver(schedule);
+  ro.observe(card);
+  window.addEventListener('resize',schedule);
+  window.addEventListener('pageshow',schedule);
+  // Font changes, new challenge text and the status line can alter card height.
+  new MutationObserver(schedule).observe(card,{subtree:true,childList:true,characterData:true});
+  schedule();
+})();
+</script>
 </body></html>
