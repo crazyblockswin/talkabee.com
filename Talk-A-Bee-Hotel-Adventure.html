@@ -207,6 +207,51 @@
 #talkabee-object-popup{position:fixed;z-index:2147482900;display:none;padding:8px 12px;border-radius:12px;background:rgba(20,20,20,.82);color:white;font-weight:900;font-size:14px;pointer-events:none}
 </style>
 
+<script id="tb-special-challenge-data" type="application/json">{"targets": ["llave", "campana", "camara", "flores", "velero", "libro"], "labels": ["Find the Room Key", "Find the Bell", "Find the Camera", "Find the Flowers", "Find the Sailboat", "Find the Book"]}</script>
+<style id="talkabee-hotel-proven-card-v1">
+/* Bird Sanctuary / Train Station approved presentation, scoped to Hotel only. */
+#world>.hotel-train-card.tab-master-card{
+ position:fixed!important;left:62%!important;top:auto!important;right:auto!important;bottom:20px!important;
+ width:650px!important;min-width:650px!important;max-width:650px!important;
+ height:auto!important;min-height:0!important;max-height:calc(100vh - 42px)!important;
+ padding:17px 20px!important;overflow:auto!important;
+ transform:translateX(-50%) scale(.72)!important;transform-origin:bottom center!important;
+ background:rgba(27,32,50,.35)!important;backdrop-filter:blur(3px)!important;
+ border:1px solid rgba(255,255,255,.34)!important;border-radius:22px!important;
+ color:white!important;z-index:2000!important;pointer-events:auto!important;isolation:isolate!important;
+ touch-action:none!important;cursor:grab!important;
+}
+#world>.hotel-train-card:active{cursor:grabbing!important}
+#world>.hotel-train-card .tab-card-tools button{font-size:22px!important;padding:9px 13px!important}
+#world>.hotel-train-card .kicker{font:900 16px/1.15 Arial,sans-serif!important;color:#fff!important;letter-spacing:.06em!important}
+#world>.hotel-train-card #title{font:900 32px/1.12 Arial,sans-serif!important;color:#fff!important;margin:3px 0 8px!important}
+#world>.hotel-train-card #prompt{font:500 24px/1.24 Arial,sans-serif!important;color:#fff!important;margin:3px 0 10px!important}
+#world>.hotel-train-card #line{font:900 29px/1.25 Arial,sans-serif!important;color:white!important;padding:14px 16px!important;background:rgba(20,25,43,.65)!important;border-radius:15px!important}
+#world>.hotel-train-card #translation{font:500 23px/1.25 Arial,sans-serif!important;color:#fff!important}
+#world>.hotel-train-card #actions{display:flex!important;gap:8px!important;flex-wrap:nowrap!important;align-items:center!important}
+#world>.hotel-train-card #actions button{font:900 20px/1.1 Arial,sans-serif!important;padding:12px 13px!important;white-space:nowrap!important;background:#f2eaff!important;color:#30204b!important;border-radius:13px!important;flex:0 0 auto!important}
+#world>.hotel-train-card #speak{background:#6944ee!important;color:#fff!important}
+#world>.hotel-train-card #find{display:none!important}
+#world.hotel-challenge-mode>.hotel-train-card #find.show{display:flex!important;flex-direction:column!important;gap:12px!important;padding:18px 22px!important;margin-top:8px!important;border-radius:17px!important;border:1px solid rgba(255,255,255,.38)!important;background:rgba(16,24,43,.76)!important;color:#fff!important}
+#world.hotel-challenge-mode>.hotel-train-card #prompt,
+#world.hotel-challenge-mode>.hotel-train-card #line,
+#world.hotel-challenge-mode>.hotel-train-card #translation,
+#world.hotel-challenge-mode>.hotel-train-card #actions{display:none!important}
+#world>.hotel-train-card #count{font:900 19px/1.16 Arial,sans-serif!important;color:#ffe3a4!important;letter-spacing:.04em!important}
+#world>.hotel-train-card #hotelFindPrompt{font:900 34px/1.15 Arial,sans-serif!important;color:white!important}
+#world>.hotel-train-card #status{font:900 26px/1.18 Arial,sans-serif!important;color:#a5ffd0!important;min-height:0!important}
+#world>.hotel-train-card #status:empty{display:none!important}
+#world>.hotel-train-card #hint{font:700 20px/1.24 Arial,sans-serif!important;color:#fff!important}
+#world>.hotel-train-card #challengeNext{align-self:flex-start!important;width:auto!important;font:900 20px/1.15 Arial,sans-serif!important;padding:11px 16px!important;border-radius:13px!important;background:#f2eaff!important;color:#4b2abb!important}
+#world>.hotel-train-card.hotel-card-dragged{left:var(--hotel-card-x)!important;top:var(--hotel-card-y)!important;right:auto!important;bottom:auto!important;transform:scale(var(--hotel-card-scale))!important;transform-origin:top left!important}
+#world.scene-only>.hotel-train-card{display:none!important}
+@media(max-width:700px){#world>.hotel-train-card.tab-master-card{left:55%!important;bottom:10px!important;transform:translateX(-50%) scale(.60)!important}}
+/* Adjustable left-panel text; no changes to the existing activity and challenge lists. */
+#world .directory.tab-master-panel .place{font-size:calc(21px * var(--tab-panel-scale,1))!important}
+#world .directory.tab-master-panel .label{font-size:calc(12px * var(--tab-panel-scale,1))!important}
+#world .directory.tab-master-panel button:not(.tab-panel-size-controls button),
+#world .directory.tab-master-panel select,#world .directory.tab-master-panel a{font-size:calc(14px * var(--tab-panel-scale,1))!important}
+</style>
 </head><body class="">
 <div class="talkabee-editions">
 <details>
@@ -232,10 +277,14 @@
 <div class="label">VOICE</div><select id="hotelVoice" data-tab-global-voice="1"><option value="">Browser Default</option><option value="urn:moz-tts:sapi:Microsoft David - English (United States)?en-US">Microsoft David - English (United States) — en-US</option><option value="urn:moz-tts:sapi:Microsoft Mark - English (United States)?en-US">Microsoft Mark - English (United States) — en-US</option><option value="urn:moz-tts:sapi:Microsoft Zira - English (United States)?en-US">Microsoft Zira - English (United States) — en-US</option><option value="urn:moz-tts:sapi:Microsoft David Desktop - English (United States)?en-US">Microsoft David Desktop - English (United States) — en-US</option><option value="urn:moz-tts:sapi:Microsoft Zira Desktop - English (United States)?en-US">Microsoft Zira Desktop - English (United States) — en-US</option></select>
 <div class="label">DISCOVERY</div><button data-discovery="">🔎 Discovery — Click the Scene</button>
 <div class="label">ACTIVITIES</div><button data-lesson="checkin" class="active">1. Check In</button><button data-lesson="reservation">2. Find the Reservation</button><button data-lesson="key">3. Get the Room Key</button><button data-lesson="room">4. Ask About the Room</button><button data-lesson="bags">5. Ask About Luggage</button><button data-lesson="breakfast">6. Ask About Breakfast</button><div class="label">CHALLENGES</div><button data-challenge="0">1. Find the Room Key</button><button data-challenge="1">2. Find the Bell</button><button data-challenge="2">3. Find the Camera</button><button data-challenge="3">4. Find the Flowers</button><button data-challenge="4">5. Find the Sailboat</button><button data-challenge="5">6. Find the Guest Book</button><a class="dirhome" href="index.html">← Main Directory</a></aside>
-<main class="panel tab-master-card"><div class="tab-card-tools" aria-label="Script card controls"><button type="button" class="tab-card-drag" title="Move script card">↕ Move</button><button type="button" class="tab-card-font-down" title="Decrease text">A−</button><button type="button" class="tab-card-font-up" title="Increase text">A+</button><button type="button" class="tab-card-reset" title="Reset card">Reset</button></div><div class="kicker">HOTEL ADVENTURE</div><h2 id="title">Check In</h2><p id="prompt">Grandma Cathy and Grandpa Wally arrive at the hotel.</p><div class="line" id="line">Hello. We have a reservation.</div><div class="translation" id="translation"></div><div class="actions" id="actions" style="display: flex;"><button id="speak">🔊 Speak</button><button id="slow">🐢 Slow</button><button id="replay">↻ Replay</button><button id="next">Next phrase →</button></div><div class="find" id="find"><div class="count" id="count"></div><div class="status" id="status"></div><div class="hint" id="hint"></div><button class="challengeNext" id="challengeNext">Next phrase →</button></div><div class="tab-card-resize" title="Drag to resize script card" aria-label="Resize script card">↘</div></main>
+<main class="panel tab-master-card hotel-train-card"><div class="tab-card-tools" aria-label="Script card controls"><button type="button" class="tab-card-drag" title="Move script card">↕ Move</button><button type="button" class="tab-card-font-down" title="Decrease text">A−</button><button type="button" class="tab-card-font-up" title="Increase text">A+</button><button type="button" class="tab-card-reset" title="Reset card">Reset</button></div><div class="kicker">HOTEL ADVENTURE</div><h2 id="title">Check In</h2><p id="prompt">Grandma Cathy and Grandpa Wally arrive at the hotel.</p><div class="line" id="line">Hello. We have a reservation.</div><div class="translation" id="translation"></div><div class="actions" id="actions" style="display: flex;"><button id="speak">🔊 Speak</button><button id="slow">🐢 Slow</button><button id="replay">↻ Replay</button><button id="next">Next phrase →</button></div><div class="find" id="find"><div class="count" id="count"></div><div id="hotelFindPrompt" class="hotel-find-prompt"></div><div class="status" id="status"></div><div class="hint" id="hint"></div><button class="challengeNext" id="challengeNext">Next phrase →</button></div><div class="tab-card-resize" title="Drag to resize script card" aria-label="Resize script card">↘</div></main>
 <div class="hotspots"><button class="hotspot" data-word="llave" aria-label="llave" style="left: 64.09%; top: 52.02%; width: 4.58%; height: 9.48%;"></button><button class="hotspot" data-word="maleta" aria-label="maleta" style="left: 36.96%; top: 79.57%; width: 10.42%; height: 16.09%;"></button><button class="hotspot" data-word="camara" aria-label="camara" style="left: 46.82%; top: 57.35%; width: 6.9%; height: 10.99%;"></button><button class="hotspot" data-word="campana" aria-label="campana" style="left: 69.12%; top: 62.34%; width: 4.99%; height: 8.4%;"></button><button class="hotspot" data-word="libro" aria-label="libro" style="width: 10.74%; height: 8.03%; left: 77.97%; top: 63.89%;"></button><button class="hotspot" data-word="lampara" aria-label="lampara"></button><button class="hotspot" data-word="flores" aria-label="flores" style="left: 91.14%; top: 61.3%; width: 11.91%; height: 15.16%;"></button><button class="hotspot" data-word="velero" aria-label="velero" style="left: 55.69%; top: 47.98%;"></button><button class="hotspot" data-word="recepcionista" aria-label="recepcionista" style="left: 77.93%; top: 44.44%; width: 6.51%; height: 28.83%;"></button><button class="hotspot" data-word="mostrador" aria-label="mostrador" style="left: 68.58%; top: 73.82%; width: 23.07%; height: 10.04%;"></button><button type="button" class="hotspot" data-word="sunset" aria-label="sunset" data-tb-custom="1" data-tb-en="sunset" data-tb-es="atardecer" data-tb-fr="coucher de soleil" data-tb-de="Sonnenuntergang" data-tb-it="tramonto" data-tb-pt="pôr do sol" data-tb-no="solnedgang" style="left: 58.11%; top: 22.92%; width: 8.6%; height: 6.7%;"></button><button type="button" class="hotspot" data-word="sail boat" aria-label="sail boat" data-tb-custom="1" data-tb-en="sail boat" data-tb-es="barco de vela" data-tb-fr="bateau à voile" data-tb-de="Segelboot" data-tb-it="barca a vela" data-tb-pt="barco a vela" data-tb-no="seilbåt" style="left: 57.49%; top: 35.42%; width: 6%; height: 8%;"></button><button type="button" class="hotspot" data-word="marina" aria-label="marina" data-tb-custom="1" data-tb-en="marina" data-tb-es="puerto pequeño" data-tb-fr="marina" data-tb-de="Yachthafen" data-tb-it="marina" data-tb-pt="marina" data-tb-no="marina" style="left: 16.6%; top: 36.81%; width: 10.27%; height: 5.04%;"></button><button type="button" class="hotspot" data-word="rug" aria-label="rug" data-tb-custom="1" data-tb-en="rug" data-tb-es="alfombra" data-tb-fr="tapis" data-tb-de="Teppich" data-tb-it="tappeto" data-tb-pt="tapete" data-tb-no="teppe" style="left: 23.86%; top: 86.81%; width: 11.73%; height: 11.7%;"></button><button type="button" class="hotspot" data-word="purse" aria-label="purse" data-tb-custom="1" data-tb-en="purse" data-tb-es="cartera" data-tb-fr="bourse" data-tb-de="Geldbeutel" data-tb-it="borsa" data-tb-pt="bolsa" data-tb-no="pung" style="left: 50.1%; top: 71.05%; width: 6%; height: 8%;"></button><button type="button" class="hotspot" data-word="lamp" aria-label="lamp" data-tb-custom="1" data-tb-en="lamp" data-tb-es="lámpara" data-tb-fr="lampe" data-tb-de="Lampe" data-tb-it="lampada" data-tb-pt="lâmpada" data-tb-no="lampe" style="left: 69.12%; top: 10.82%; width: 4.33%; height: 10.96%;"></button><button type="button" class="hotspot" data-word="arch" aria-label="arch" data-tb-custom="1" data-tb-en="arch" data-tb-es="arco" data-tb-fr="cambre" data-tb-de="Bogen" data-tb-it="arco" data-tb-pt="arco" data-tb-no="bue" style="left: 34.16%; top: 5.14%; width: 10.32%; height: 8.93%;"></button><button type="button" class="hotspot" data-word="flowers" aria-label="flowers" data-tb-custom="1" data-tb-en="flowers" data-tb-es="flores" data-tb-fr="fleurs" data-tb-de="Blumen" data-tb-it="fiori" data-tb-pt="flores" data-tb-no="blomster" style="left: 26.58%; top: 17.56%; width: 4.54%; height: 19.76%;"></button><button type="button" class="hotspot" data-word="flower pot" aria-label="flower pot" data-tb-custom="1" data-tb-en="flower pot" data-tb-es="maceta" data-tb-fr="pot de fleur" data-tb-de="Blumentopf" data-tb-it="vaso di fiori" data-tb-pt="vaso de flores" data-tb-no="blomsterpotte" style="left: 26.46%; top: 58.09%; width: 6%; height: 8%;"></button><button type="button" class="hotspot" data-word="floor" aria-label="floor" data-tb-custom="1" data-tb-en="floor" data-tb-es="piso" data-tb-fr="sol" data-tb-de="Boden" data-tb-it="pavimento" data-tb-pt="chão" data-tb-no="gulv" style="left: 25.2%; top: 71.55%; width: 15.11%; height: 10.59%;"></button><button type="button" class="hotspot" data-word="chair" aria-label="chair" data-tb-custom="1" data-tb-en="chair" data-tb-es="silla" data-tb-fr="chaise" data-tb-de="Stuhl" data-tb-it="sedia" data-tb-pt="cadeira" data-tb-no="stol" style="left: 9.12%; top: 64.81%; width: 6%; height: 8%;"></button><button type="button" class="hotspot" data-word="table" aria-label="table" data-tb-custom="1" data-tb-en="table" data-tb-es="mesa" data-tb-fr="tableau" data-tb-de="Tisch" data-tb-it="tavolo" data-tb-pt="mesa" data-tb-no="bord" style="left: 16.89%; top: 60.31%; width: 6%; height: 8%;"></button><button type="button" class="hotspot" data-word="hat" aria-label="hat" data-tb-custom="1" data-tb-en="hat" data-tb-es="sombrero" data-tb-fr="chapeau" data-tb-de="Hut" data-tb-it="cappello" data-tb-pt="chapéu" data-tb-no="hatt" style="left: 47.53%; top: 36%; width: 6%; height: 8%;"></button><button type="button" class="hotspot" data-word="picture" aria-label="picture" data-tb-custom="1" data-tb-en="picture" data-tb-es="imagen" data-tb-fr="image" data-tb-de="Bild" data-tb-it="immagine" data-tb-pt="foto" data-tb-no="bilde" style="left: 72.02%; top: 27.91%; width: 4.33%; height: 14.67%;"></button><button type="button" class="hotspot" data-word="room keys" aria-label="room keys" data-tb-custom="1" data-tb-en="room keys" data-tb-es="llaves de la habitación" data-tb-fr="clés de la chambre" data-tb-de="Zimmerschlüssel" data-tb-it="chiavi della camera" data-tb-pt="chaves do quarto" data-tb-no="romnøkler" style="left: 88.12%; top: 28.82%; width: 12.51%; height: 24.11%;"></button><button type="button" class="hotspot" data-word="buildings" aria-label="buildings" data-tb-custom="1" data-tb-en="buildings" data-tb-es="edificios" data-tb-fr="bâtiments" data-tb-de="Gebäude" data-tb-it="edifici" data-tb-pt="edifícios" data-tb-no="bygninger" style="left: 17.05%; top: 28.75%; width: 6%; height: 8%;"></button><button type="button" class="hotspot" data-word="hotel sign" aria-label="hotel sign" data-tb-custom="1" data-tb-en="hotel sign" data-tb-es="señal de hotel" data-tb-fr="signe de l'hôtel" data-tb-de="Hotelschild" data-tb-it="insegna dell'hotel" data-tb-pt="sinal de hotel" data-tb-no="hotellskilt" style="left: 85.84%; top: 9.38%; width: 6%; height: 8%;"></button></div></section>
 <script>
 (()=>{const LANGS={"es": "es-ES", "fr": "fr-FR", "en": "en-US", "de": "de-DE", "it": "it-IT", "pt": "pt-PT", "no": "nb-NO"},LESSONS={"es": {"checkin": ["Registrarse", "La abuela Cathy y el abuelo Wally llegan al hotel.", ["Hola. Tenemos una reservación.", "Buenas tardes. ¿A nombre de quién?", "A nombre de Wally.", "Perfecto. Bienvenidos al hotel."]], "reservation": ["Encontrar la reservación", "Carlos busca la reservación.", ["¿Puede buscar nuestra reservación?", "Sí. ¿Me da su apellido, por favor?", "Aquí está su reservación.", "Gracias."]], "key": ["Obtener la llave", "Carlos les da la llave de la habitación.", ["Aquí tiene la llave de su habitación.", "¿Qué número de habitación tenemos?", "Su habitación está en el segundo piso.", "Muchas gracias."]], "room": ["Preguntar por la habitación", "Haz algunas preguntas útiles sobre el hotel.", ["¿Dónde está nuestra habitación?", "¿Hay un ascensor?", "Sí, está al lado del vestíbulo.", "¿A qué hora debemos salir?"]], "bags": ["Preguntar por el equipaje", "El abuelo Wally tiene una maleta y una mochila.", ["¿Puede ayudarnos con el equipaje?", "Por supuesto.", "Esta maleta es mía.", "Gracias por su ayuda."]], "breakfast": ["Preguntar por el desayuno", "Pregunta por el desayuno antes de ir a la habitación.", ["¿El desayuno está incluido?", "Sí, el desayuno está incluido.", "¿A qué hora sirven el desayuno?", "Perfecto. Nos vemos mañana."]]}, "fr": {"checkin": ["S'enregistrer", "Grand-mère Cathy et grand-père Wally arrivent à l'hôtel.", ["Bonjour. Nous avons une réservation.", "Bonsoir. À quel nom ?", "Au nom de Wally.", "Parfait. Bienvenue à l'hôtel."]], "reservation": ["Trouver la réservation", "Carlos vérifie la réservation.", ["Pouvez-vous chercher notre réservation ?", "Oui. Votre nom de famille, s'il vous plaît ?", "Voici votre réservation.", "Merci."]], "key": ["Obtenir la clé", "Carlos leur donne la clé de la chambre.", ["Voici la clé de votre chambre.", "Quel est le numéro de notre chambre ?", "Votre chambre est au deuxième étage.", "Merci beaucoup."]], "room": ["Demander des renseignements", "Posez quelques questions utiles sur l'hôtel.", ["Où est notre chambre ?", "Y a-t-il un ascenseur ?", "Oui, il est à côté du hall.", "À quelle heure devons-nous libérer la chambre ?"]], "bags": ["Demander de l'aide pour les bagages", "Grand-père Wally a une valise et un sac à dos.", ["Pouvez-vous nous aider avec les bagages ?", "Bien sûr.", "Cette valise est à moi.", "Merci pour votre aide."]], "breakfast": ["Demander pour le petit-déjeuner", "Renseignez-vous sur le petit-déjeuner.", ["Le petit-déjeuner est-il inclus ?", "Oui, le petit-déjeuner est inclus.", "À quelle heure servez-vous le petit-déjeuner ?", "Parfait. À demain."]]}, "en": {"checkin": ["Check In", "Grandma Cathy and Grandpa Wally arrive at the hotel.", ["Hello. We have a reservation.", "Good afternoon. Under what name?", "Under the name Wally.", "Perfect. Welcome to the hotel."]], "reservation": ["Find the Reservation", "Carlos checks the reservation.", ["Can you look up our reservation?", "Yes. May I have your last name, please?", "Here is your reservation.", "Thank you."]], "key": ["Get the Room Key", "Carlos gives them their room key.", ["Here is your room key.", "What room number do we have?", "Your room is on the second floor.", "Thank you very much."]], "room": ["Ask About the Room", "Ask Carlos a few useful hotel questions.", ["Where is our room?", "Is there an elevator?", "Yes, it is beside the lobby.", "What time do we need to check out?"]], "bags": ["Ask About Luggage", "Grandpa Wally has a suitcase and a backpack.", ["Can you help us with the luggage?", "Of course.", "This suitcase is mine.", "Thank you for your help."]], "breakfast": ["Ask About Breakfast", "Find out about breakfast before heading to the room.", ["Is breakfast included?", "Yes, breakfast is included.", "What time do you serve breakfast?", "Perfect. See you tomorrow."]]}, "de": {"checkin": ["Einchecken", "Oma Cathy und Opa Wally kommen im Hotel an.", ["Hallo. Wir haben eine Reservierung.", "Guten Abend. Auf welchen Namen?", "Auf den Namen Wally.", "Perfekt. Willkommen im Hotel."]], "reservation": ["Reservierung finden", "Carlos prüft die Reservierung.", ["Können Sie unsere Reservierung suchen?", "Ja. Ihren Nachnamen, bitte?", "Hier ist Ihre Reservierung.", "Danke."]], "key": ["Zimmerschlüssel bekommen", "Carlos gibt ihnen den Zimmerschlüssel.", ["Hier ist Ihr Zimmerschlüssel.", "Welche Zimmernummer haben wir?", "Ihr Zimmer ist im zweiten Stock.", "Vielen Dank."]], "room": ["Nach dem Zimmer fragen", "Stelle ein paar nützliche Hotelfragen.", ["Wo ist unser Zimmer?", "Gibt es einen Aufzug?", "Ja, er ist neben der Lobby.", "Wann müssen wir auschecken?"]], "bags": ["Nach dem Gepäck fragen", "Opa Wally hat einen Koffer und einen Rucksack.", ["Können Sie uns mit dem Gepäck helfen?", "Natürlich.", "Dieser Koffer gehört mir.", "Danke für Ihre Hilfe."]], "breakfast": ["Nach dem Frühstück fragen", "Frage nach dem Frühstück.", ["Ist das Frühstück inbegriffen?", "Ja, das Frühstück ist inbegriffen.", "Um wie viel Uhr gibt es Frühstück?", "Perfekt. Bis morgen."]]}, "it": {"checkin": ["Fare il check-in", "Nonna Cathy e nonno Wally arrivano in hotel.", ["Salve. Abbiamo una prenotazione.", "Buonasera. A che nome?", "A nome Wally.", "Perfetto. Benvenuti in hotel."]], "reservation": ["Trovare la prenotazione", "Carlos controlla la prenotazione.", ["Può cercare la nostra prenotazione?", "Sì. Il cognome, per favore?", "Ecco la vostra prenotazione.", "Grazie."]], "key": ["Ricevere la chiave", "Carlos dà loro la chiave della camera.", ["Ecco la chiave della vostra camera.", "Qual è il numero della nostra camera?", "La vostra camera è al secondo piano.", "Grazie mille."]], "room": ["Chiedere della camera", "Fai alcune domande utili sull'hotel.", ["Dov'è la nostra camera?", "C'è un ascensore?", "Sì, è accanto alla hall.", "A che ora dobbiamo fare il check-out?"]], "bags": ["Chiedere dei bagagli", "Nonno Wally ha una valigia e uno zaino.", ["Può aiutarci con i bagagli?", "Certo.", "Questa valigia è mia.", "Grazie per l'aiuto."]], "breakfast": ["Chiedere della colazione", "Chiedi informazioni sulla colazione.", ["La colazione è inclusa?", "Sì, la colazione è inclusa.", "A che ora servite la colazione?", "Perfetto. A domani."]]}, "pt": {"checkin": ["Fazer check-in", "Vovó Cathy e vovô Wally chegam ao hotel.", ["Olá. Temos uma reserva.", "Boa tarde. Em nome de quem?", "Em nome de Wally.", "Perfeito. Bem-vindos ao hotel."]], "reservation": ["Encontrar a reserva", "Carlos verifica a reserva.", ["Pode procurar nossa reserva?", "Sim. Seu sobrenome, por favor?", "Aqui está sua reserva.", "Obrigado."]], "key": ["Pegar a chave do quarto", "Carlos entrega a chave do quarto.", ["Aqui está a chave do seu quarto.", "Qual é o número do nosso quarto?", "Seu quarto fica no segundo andar.", "Muito obrigado."]], "room": ["Perguntar sobre o quarto", "Faça algumas perguntas úteis sobre o hotel.", ["Onde fica nosso quarto?", "Há um elevador?", "Sim, fica ao lado do saguão.", "A que horas precisamos fazer o check-out?"]], "bags": ["Perguntar sobre a bagagem", "Vovô Wally tem uma mala e uma mochila.", ["Pode nos ajudar com a bagagem?", "Claro.", "Esta mala é minha.", "Obrigado pela ajuda."]], "breakfast": ["Perguntar sobre o café da manhã", "Pergunte sobre o café da manhã.", ["O café da manhã está incluído?", "Sim, o café da manhã está incluído.", "A que horas servem o café da manhã?", "Perfeito. Até amanhã."]]}, "no": {"checkin": ["Sjekke inn", "Bestemor Cathy og bestefar Wally kommer til hotellet.", ["Hei. Vi har en reservasjon.", "God ettermiddag. Hvilket navn står den på?", "Den står på Wally.", "Perfekt. Velkommen til hotellet."]], "reservation": ["Finne reservasjonen", "Carlos sjekker reservasjonen.", ["Kan du finne reservasjonen vår?", "Ja. Etternavnet ditt, takk?", "Her er reservasjonen deres.", "Takk."]], "key": ["Få romnøkkelen", "Carlos gir dem romnøkkelen.", ["Her er romnøkkelen deres.", "Hvilket romnummer har vi?", "Rommet deres er i andre etasje.", "Tusen takk."]], "room": ["Spørre om rommet", "Still noen nyttige spørsmål om hotellet.", ["Hvor er rommet vårt?", "Er det en heis?", "Ja, den er ved siden av lobbyen.", "Når må vi sjekke ut?"]], "bags": ["Spørre om bagasjen", "Bestefar Wally har en koffert og en ryggsekk.", ["Kan du hjelpe oss med bagasjen?", "Selvfølgelig.", "Denne kofferten er min.", "Takk for hjelpen."]], "breakfast": ["Spørre om frokost", "Finn ut om frokosten før dere går til rommet.", ["Er frokost inkludert?", "Ja, frokost er inkludert.", "Når serverer dere frokost?", "Perfekt. Vi sees i morgen."]]}},WORDS={"es": {"llave": ["la llave", "the room key"], "maleta": ["la maleta", "the suitcase"], "camara": ["la cámara", "the camera"], "campana": ["la campana", "the bell"], "libro": ["el libro de huéspedes", "the guest book"], "boligrafo": ["el bolígrafo", "the pen"], "lampara": ["la lámpara", "the lamp"], "flores": ["las flores", "the flowers"], "velero": ["el velero", "the sailboat"], "recepcionista": ["el recepcionista", "the hotel clerk"], "mochila": ["la mochila", "the backpack"], "mostrador": ["el mostrador", "the front desk"]}, "fr": {"llave": ["la clé de la chambre", "the room key"], "maleta": ["la valise", "the suitcase"], "camara": ["l'appareil photo", "the camera"], "campana": ["la cloche", "the bell"], "libro": ["le livre d'or", "the guest book"], "boligrafo": ["le stylo", "the pen"], "lampara": ["la lampe", "the lamp"], "flores": ["les fleurs", "the flowers"], "velero": ["le voilier", "the sailboat"], "recepcionista": ["le réceptionniste", "the hotel clerk"], "mochila": ["le sac à dos", "the backpack"], "mostrador": ["la réception", "the front desk"]}, "en": {"llave": ["the room key", "the room key"], "maleta": ["the suitcase", "the suitcase"], "camara": ["the camera", "the camera"], "campana": ["the bell", "the bell"], "libro": ["the guest book", "the guest book"], "boligrafo": ["the pen", "the pen"], "lampara": ["the lamp", "the lamp"], "flores": ["the flowers", "the flowers"], "velero": ["the sailboat", "the sailboat"], "recepcionista": ["the hotel clerk", "the hotel clerk"], "mochila": ["the backpack", "the backpack"], "mostrador": ["the front desk", "the front desk"]}, "de": {"llave": ["der Zimmerschlüssel", "the room key"], "maleta": ["der Koffer", "the suitcase"], "camara": ["die Kamera", "the camera"], "campana": ["die Klingel", "the bell"], "libro": ["das Gästebuch", "the guest book"], "boligrafo": ["der Stift", "the pen"], "lampara": ["die Lampe", "the lamp"], "flores": ["die Blumen", "the flowers"], "velero": ["das Segelboot", "the sailboat"], "recepcionista": ["der Rezeptionist", "the hotel clerk"], "mochila": ["der Rucksack", "the backpack"], "mostrador": ["die Rezeption", "the front desk"]}, "it": {"llave": ["la chiave della camera", "the room key"], "maleta": ["la valigia", "the suitcase"], "camara": ["la macchina fotografica", "the camera"], "campana": ["il campanello", "the bell"], "libro": ["il registro degli ospiti", "the guest book"], "boligrafo": ["la penna", "the pen"], "lampara": ["la lampada", "the lamp"], "flores": ["i fiori", "the flowers"], "velero": ["la barca a vela", "the sailboat"], "recepcionista": ["il receptionist", "the hotel clerk"], "mochila": ["lo zaino", "the backpack"], "mostrador": ["la reception", "the front desk"]}, "pt": {"llave": ["a chave do quarto", "the room key"], "maleta": ["a mala", "the suitcase"], "camara": ["a câmera", "the camera"], "campana": ["a campainha", "the bell"], "libro": ["o livro de hóspedes", "the guest book"], "boligrafo": ["a caneta", "the pen"], "lampara": ["a luminária", "the lamp"], "flores": ["as flores", "the flowers"], "velero": ["o veleiro", "the sailboat"], "recepcionista": ["o recepcionista", "the hotel clerk"], "mochila": ["a mochila", "the backpack"], "mostrador": ["a recepção", "the front desk"]}, "no": {"llave": ["romnøkkelen", "the room key"], "maleta": ["kofferten", "the suitcase"], "camara": ["kameraet", "the camera"], "campana": ["klokken", "the bell"], "libro": ["gjesteboken", "the guest book"], "boligrafo": ["pennen", "the pen"], "lampara": ["lampen", "the lamp"], "flores": ["blomstene", "the flowers"], "velero": ["seilbåten", "the sailboat"], "recepcionista": ["resepsjonisten", "the hotel clerk"], "mochila": ["ryggsekken", "the backpack"], "mostrador": ["resepsjonen", "the front desk"]}},ORDER=["llave", "campana", "camara", "flores", "velero", "libro"];
+const tbSpecialNode=document.getElementById('tb-special-challenge-data');const tbSpecialData=JSON.parse(tbSpecialNode.textContent);
+function tbSpecialRefresh(){for(let i=0;i<6;i++){ORDER[i]=tbSpecialData.targets[i];let b=document.querySelector('[data-challenge="'+i+'"]');if(b)b.textContent=(i+1)+'. '+tbSpecialData.labels[i];}}
+window.tbSpecialChallengeGet=()=>JSON.parse(tbSpecialNode.textContent);
+window.tbSpecialChallengeSet=d=>{tbSpecialNode.textContent=JSON.stringify(d);tbSpecialData.targets=d.targets;tbSpecialData.labels=d.labels;tbSpecialRefresh()};window.tbSpecialChallengeSelector='.hotspot';tbSpecialRefresh();
 const hotelSceneSounds={
   campana:"sounds/bell.mp3",
   camara:"sounds/camera-shutter.mp3"
@@ -271,18 +320,27 @@ function refreshVoices(){
 }
 function speak(t,rate=.82){if(!("speechSynthesis" in window))return;speechSynthesis.cancel();let u=new SpeechSynthesisUtterance(t);u.lang=LANGS[lang()];u.rate=rate;let v=selectedVoice();if(v)u.voice=v;last=t;speechSynthesis.speak(u)}
 function clear(){document.querySelectorAll(".directory button").forEach(b=>b.classList.remove("active"))}
-function render(){let d=LESSONS[lang()][active],en=LESSONS.en[active],x=d[2][idx];title.textContent=d[0];prompt.textContent=d[1];line.textContent=x;translation.textContent=lang()==="en"?"":en[2][idx];actions.style.display="flex";find.classList.remove("show")}
+function render(){world.classList.remove("hotel-challenge-mode");let d=LESSONS[lang()][active],en=LESSONS.en[active],x=d[2][idx];title.textContent=d[0];prompt.textContent=d[1];line.textContent=x;translation.textContent=lang()==="en"?"":en[2][idx];actions.style.display="flex";find.classList.remove("show")}
 function lesson(k){active=k;idx=0;discovery=false;challenge=-1;clear();document.querySelector('[data-lesson="'+k+'"]').classList.add("active");render()}
-function discover(){discovery=true;challenge=-1;clear();document.querySelector("[data-discovery]").classList.add("active");title.textContent="Discovery";prompt.textContent="Click highlighted objects to see the selected-language name and its English meaning.";line.textContent="";translation.textContent="";actions.style.display="none";find.classList.remove("show")}
-function challengeLoad(n){challenge=n;discovery=false;solved=false;clear();document.querySelector('[data-challenge="'+n+'"]').classList.add("active");let x=WORDS[lang()][ORDER[n]];title.textContent="Challenge "+(n+1);prompt.textContent="Find the correct object in the hotel scene.";line.textContent=x[0];translation.textContent=lang()==="en"?"":x[1];actions.style.display="none";find.classList.add("show");count.textContent="CHALLENGE "+(n+1)+" OF 6";status.textContent="";hint.textContent="Click the correct object in the scene."}
+function discover(){world.classList.remove("hotel-challenge-mode");discovery=true;challenge=-1;clear();document.querySelector("[data-discovery]").classList.add("active");title.textContent="Discovery";prompt.textContent="Click highlighted objects to see the selected-language name and its English meaning.";line.textContent="";translation.textContent="";actions.style.display="none";find.classList.remove("show")}
+function challengeLoad(n){world.classList.add("hotel-challenge-mode");challenge=n;discovery=false;solved=false;clear();document.querySelector('[data-challenge="'+n+'"]').classList.add("active");let x=tbChallengeWord(ORDER[n]);title.textContent="Challenge "+(n+1);prompt.textContent="Find the correct object in the hotel scene.";line.textContent=x[0];translation.textContent=lang()==="en"?"":x[1];document.getElementById("hotelFindPrompt").textContent=x[0];actions.style.display="none";find.classList.add("show");count.textContent="CHALLENGE "+(n+1)+" OF 6";status.textContent="";hint.textContent="Click the correct object in the scene."}
 document.querySelectorAll("[data-lesson]").forEach(b=>b.onclick=()=>lesson(b.dataset.lesson));document.querySelector("[data-discovery]").onclick=discover;document.querySelectorAll("[data-challenge]").forEach(b=>b.onclick=()=>challengeLoad(+b.dataset.challenge));
 $("next").onclick=()=>{idx=(idx+1)%LESSONS[lang()][active][2].length;render()};$("speak").onclick=()=>speak(LESSONS[lang()][active][2][idx]);$("slow").onclick=()=>speak(LESSONS[lang()][active][2][idx],.60);$("replay").onclick=()=>speak(last||LESSONS[lang()][active][2][idx]);
-document.querySelectorAll(".hotspot").forEach(b=>b.onclick=()=>{
- let k=b.dataset.word,x=WORDS[lang()][k]||[k,k];playHotelSceneSound(k);
+function tbChallengeWord(key){
+ const original=WORDS[lang()]&&WORDS[lang()][key];
+ if(original){if(Array.isArray(original))return original;return [String(original),key]}
+ const el=[...document.querySelectorAll('.hotspots .hotspot')].find(h=>h.dataset.word===key);
+ const en=el?.dataset.tbEn||key;
+ const translated=lang()==='en'?en:(el?.dataset['tb'+lang().charAt(0).toUpperCase()+lang().slice(1)]||en);
+ return [translated,en];
+}
+document.querySelector(".hotspots").addEventListener("click",event=>{
+ const b=event.target.closest(".hotspot");if(!b)return;
+ let k=b.dataset.word,x=tbChallengeWord(k);playHotelSceneSound(k);
  if(challenge>=0){
    if(k===ORDER[challenge]){
      solved=true;status.textContent="✓ "+x[0]+(lang()==="en"?"":" — "+x[1]);
-     status.style.color="#176a48";hint.textContent="Challenge complete.";
+     status.style.color="#a5ffd0";hint.textContent="Challenge complete.";
    }else{
      status.textContent="Not that one — keep looking.";status.style.color="#85580f";
    }
@@ -426,6 +484,31 @@ if("speechSynthesis" in window){speechSynthesis.onvoiceschanged=refreshVoices;re
 })();
 </script>
 
+<style id="talkabee-approved-farm-card-20261010">
+/* Talk A Bee — approved Animals Farm readability, 2026-10-10.
+   Card-only overrides: do not alter hotspots, editors, or Activity Panel. */
+.tab-master-card:not(.live-card){
+ width:575px!important;max-width:575px!important;
+ height:auto!important;min-height:0!important;
+ background:rgba(25,19,24,.20)!important;
+ background-color:rgba(25,19,24,.20)!important;
+ backdrop-filter:blur(2px)!important;-webkit-backdrop-filter:blur(2px)!important;
+ border:1px solid rgba(255,255,255,.30)!important;
+ box-sizing:border-box!important;
+}
+.tab-master-card:not(.live-card) :is(h1,h2,#title,#cardTitle,#homeTitle,#yachtTitle,#trainTitle){font-size:32px!important;line-height:1.15!important;}
+.tab-master-card:not(.live-card) :is(#prompt,#homePrompt,#yachtPrompt,#trainPrompt,p:not(.status),.prompt){font-size:24px!important;line-height:1.28!important;}
+.tab-master-card:not(.live-card) :is(.line,.word,.words,.wordline,.home-wordline,.train-line,.yacht-wordline,#line){font-size:28px!important;line-height:1.25!important;}
+.tab-master-card:not(.live-card) :is(.translation,.home-translation,.train-translation,.yacht-translation,#translation){font-size:22px!important;line-height:1.3!important;}
+.tab-master-card:not(.live-card) :is(.kicker,.label,.home-kicker,.train-kicker,.yacht-kicker){font-size:15px!important;line-height:1.2!important;}
+.tab-master-card:not(.live-card) :is(.status,.hint,.tip,.count,#status){font-size:18px!important;line-height:1.25!important;}
+.tab-master-card:not(.live-card) :is(.actions,.controls,.home-actions,.train-actions,.yacht-actions) button{font-size:18px!important;line-height:1.2!important;padding:9px 13px!important;min-height:38px!important;}
+.tab-master-card:not(.live-card) .tab-card-tools button{font-size:18px!important;padding:7px 11px!important;}
+@media(max-width:760px){
+ .tab-master-card:not(.live-card){width:min(575px,calc(100vw - 32px))!important;max-width:calc(100vw - 32px)!important;max-height:calc(100vh - 20px)!important;overflow:auto!important;}
+ .tab-master-card:not(.live-card) :is(.actions,.controls,.home-actions,.train-actions,.yacht-actions){flex-wrap:wrap!important;}
+}
+</style>
 <script id="talkabee-accessibility-controls-script-v1">
 (function(){
  const panel=document.querySelector('.tab-master-panel,.activity-panel,.panel');
@@ -433,8 +516,8 @@ if("speechSynthesis" in window){speechSynthesis.onvoiceschanged=refreshVoices;re
   const minus=panel.querySelector('.tab-panel-minus'),plus=panel.querySelector('.tab-panel-plus'),reset=panel.querySelector('.tab-panel-reset');
   const KEY='talkabee-global-activity-panel-size',DEFAULT=195,MIN=170,MAX=310,STEP=20;
   const clamp=(n,a,b)=>Math.max(a,Math.min(b,n));
-  const apply=(width,save=true)=>{width=clamp(Math.round(Number(width)||DEFAULT),MIN,MAX);const scale=clamp(width/DEFAULT,.88,1.42);panel.style.setProperty('width',width+'px','important');panel.style.setProperty('min-width',width+'px','important');panel.style.setProperty('max-width',width+'px','important');panel.style.setProperty('--tab-panel-scale',scale.toFixed(3));if(save)try{localStorage.setItem(KEY,String(width))}catch(e){}};
-  const current=()=>panel.getBoundingClientRect().width||DEFAULT;
+  const apply=(width,save=true)=>{width=clamp(Math.round(Number(width)||DEFAULT),MIN,MAX);selectedPanelWidth=width;const scale=clamp(width/DEFAULT,.88,1.42);panel.style.setProperty('width',width+'px','important');panel.style.setProperty('min-width',width+'px','important');panel.style.setProperty('max-width',width+'px','important');panel.style.setProperty('--tab-panel-scale',scale.toFixed(3));if(save)try{localStorage.setItem(KEY,String(width))}catch(e){}};
+  let selectedPanelWidth=DEFAULT; const current=()=>selectedPanelWidth;
   if(minus)minus.addEventListener('click',()=>apply(current()-STEP));
   if(plus)plus.addEventListener('click',()=>apply(current()+STEP));
   if(reset)reset.addEventListener('click',()=>{apply(DEFAULT,false);try{localStorage.removeItem(KEY)}catch(e){}});
@@ -445,9 +528,28 @@ if("speechSynthesis" in window){speechSynthesis.onvoiceschanged=refreshVoices;re
  if(!card)return;
  const drag=card.querySelector('.tab-card-drag'),down=card.querySelector('.tab-card-font-down'),up=card.querySelector('.tab-card-font-up'),reset=card.querySelector('.tab-card-reset'),resize=card.querySelector('.tab-card-resize');
  const PK='talkabee-global-script-card-position',SK='talkabee-global-script-card-scale',FK='talkabee-global-script-card-font-scale';
+ const pageKey=(location.pathname.split('/').pop()||'adventure').replace(/[^a-z0-9-]/gi,'_');
+ const WK='talkabee-script-card-width-'+pageKey,HK='talkabee-script-card-height-'+pageKey;
  const clamp=(n,a,b)=>Math.max(a,Math.min(b,n));
  const defaultScale=()=>matchMedia('(max-width:760px)').matches?.82:.67;
  let scale=defaultScale(),fontScale=1,dragState=null;
+ // Capture actual rendered font sizes, even on Adventures with older card markup.
+ // Never modify the Move / A- / A+ / Reset controls or resize handle.
+ const textNodes=Array.from(card.querySelectorAll('*')).filter(el=>{
+   if(el.closest('.tab-card-tools,.tab-card-resize'))return false;
+   if(el.matches('script,style,svg,path,select,input,textarea'))return false;
+   return Array.from(el.childNodes).some(n=>n.nodeType===3&&n.textContent.trim());
+ });
+ textNodes.forEach(el=>{el.style.removeProperty("font-size");el.dataset.baseFont=getComputedStyle(el).fontSize});
+ function applyBox(width,height,save=true){
+   card.style.setProperty('width',width+'px','important');
+   card.style.setProperty('max-width','none','important');
+   card.style.setProperty('min-width','0','important');
+   card.style.setProperty('min-height',height+'px','important');
+   card.style.setProperty('max-height','none','important');
+   card.style.setProperty('overflow','auto','important');
+   if(save)try{localStorage.setItem(WK,String(width));localStorage.setItem(HK,String(height))}catch(e){}
+ }
 
  function applyTransform(){
    if(card.dataset.moved==='1'){
@@ -461,6 +563,7 @@ if("speechSynthesis" in window){speechSynthesis.onvoiceschanged=refreshVoices;re
  function applyFont(v,save=true){
    fontScale=clamp(Number(v)||1,.75,1.6);
    card.style.setProperty('--tab-card-font-scale',fontScale.toFixed(2));
+   textNodes.forEach(el=>el.style.setProperty('font-size',(parseFloat(el.dataset.baseFont)*fontScale)+'px','important'));
    if(save)try{localStorage.setItem(FK,String(fontScale))}catch(e){}
  }
  function saveState(){
@@ -474,7 +577,9 @@ if("speechSynthesis" in window){speechSynthesis.onvoiceschanged=refreshVoices;re
  function restore(){
    try{
      const fs=localStorage.getItem(FK); if(fs)applyFont(fs,false);
-     const ss=parseFloat(localStorage.getItem(SK)); if(ss)scale=clamp(ss,.45,1.10);
+     // Older A+/A- controls stored a whole-card zoom. Ignore that legacy value.
+      const ww=parseFloat(localStorage.getItem(WK)),hh=parseFloat(localStorage.getItem(HK));
+      if(ww&&hh)applyBox(ww,hh,false);
      const ps=JSON.parse(localStorage.getItem(PK)||'null');
      if(ps&&innerWidth>760){
        card.dataset.moved='1';
@@ -487,11 +592,11 @@ if("speechSynthesis" in window){speechSynthesis.onvoiceschanged=refreshVoices;re
    }catch(e){}
  }
 
- if(down)down.addEventListener('click',()=>{scale=clamp(+(scale-.05).toFixed(2),.45,1.10);applyTransform();saveState()});
- if(up)up.addEventListener('click',()=>{scale=clamp(+(scale+.05).toFixed(2),.45,1.10);applyTransform();saveState()});
+ if(down)down.addEventListener('click',()=>applyFont(fontScale-.1));
+ if(up)up.addEventListener('click',()=>applyFont(fontScale+.1));
 
  if(reset)reset.addEventListener('click',()=>{
-   try{localStorage.removeItem(PK);localStorage.removeItem(SK);localStorage.removeItem(FK)}catch(e){}
+   try{localStorage.removeItem(PK);localStorage.removeItem(SK);localStorage.removeItem(FK);localStorage.removeItem(WK);localStorage.removeItem(HK)}catch(e){}
    scale=defaultScale();fontScale=1;
    delete card.dataset.moved;
    ['width','height','left','top','right','bottom','transform','transform-origin','min-width','max-width','min-height','max-height'].forEach(p=>card.style.removeProperty(p));
@@ -529,22 +634,21 @@ if("speechSynthesis" in window){speechSynthesis.onvoiceschanged=refreshVoices;re
  }
 
  // Drag from the Move button OR any non-interactive empty area of the card.
- card.addEventListener('pointerdown',startDrag);
+ /* Hotel card surface drag handled by dedicated controller below. */
  card.addEventListener('pointermove',moveDrag);
  card.addEventListener('pointerup',endDrag);
  card.addEventListener('pointercancel',endDrag);
 
- // Keep the resize handle from changing the card's scale. It changes scale proportionally instead.
+ // Resize only the card's dimensions. The text and visual scale remain unchanged.
  if(resize)resize.addEventListener('pointerdown',e=>{
    if(innerWidth<=760)return;
    e.preventDefault();e.stopPropagation();
-   const r=card.getBoundingClientRect(),sx=e.clientX,baseW=r.width,baseScale=scale;
+   const sx=e.clientX,sy=e.clientY,baseW=parseFloat(getComputedStyle(card).width),baseH=parseFloat(getComputedStyle(card).height);
+   const effectiveScale=card.getBoundingClientRect().width/baseW||defaultScale();
    resize.setPointerCapture(e.pointerId);
-   const mv=ev=>{scale=clamp(baseScale*((baseW+ev.clientX-sx)/baseW),.45,1.10);applyTransform()};
-   const end=()=>{resize.removeEventListener('pointermove',mv);saveState()};
-   resize.addEventListener('pointermove',mv);
-   resize.addEventListener('pointerup',end,{once:true});
-   resize.addEventListener('pointercancel',end,{once:true});
+   const mv=ev=>{const width=clamp(baseW+(ev.clientX-sx)/effectiveScale,320,Math.max(520,innerWidth/effectiveScale-50));const height=clamp(baseH+(ev.clientY-sy)/effectiveScale,120,Math.max(250,innerHeight/effectiveScale-40));applyBox(width,height,false)};
+   const end=()=>{resize.removeEventListener('pointermove',mv);resize.removeEventListener('pointerup',end);resize.removeEventListener('pointercancel',end);applyBox(parseFloat(getComputedStyle(card).width),parseFloat(getComputedStyle(card).minHeight),true)};
+   resize.addEventListener('pointermove',mv);resize.addEventListener('pointerup',end);resize.addEventListener('pointercancel',end);
  });
 
  restore();
@@ -583,10 +687,11 @@ function soundAfterVoice(el){
 document.addEventListener('click',function(ev){
  if(document.body.classList.contains('tb-hs-editing'))return;
  const el=ev.target.closest&&ev.target.closest('[data-tb-custom="1"]');if(!el)return;
- ev.preventDefault();ev.stopPropagation();
+ // Let clicks reach the Adventure Challenge checker, including newly added hotspots.
+ ev.preventDefault();
  const l=lang(),txt=translation(el,l),en=translation(el,'en'),key=el.dataset.word||el.dataset.object||en;
  try{if(typeof showWord==='function')showWord(key);else{const line=document.querySelector('[id$="Line"]');const trans=document.querySelector('[id$="Translation"]');if(line)line.textContent=txt;if(trans)trans.textContent=l==='en'?'':en}}catch(e){}
- try{if(typeof speak==='function')speak(txt,.82);else if('speechSynthesis'in window){speechSynthesis.cancel();const u=new SpeechSynthesisUtterance(txt);u.lang=codes[l]||l;u.rate=.82;speechSynthesis.speak(u)}}catch(e){}
+ // Speech is handled by the Adventure hotspot click listener.
  // Always schedule assigned MP3, regardless of which speech function exists.
  soundAfterVoice(el);
 },true);
@@ -648,4 +753,63 @@ document.addEventListener('click',function(ev){
 })();
 </script>
 
+
+
+<script id="talkabee-hotel-surface-drag-v2">
+(function(){
+ const card=document.querySelector('#world > .hotel-train-card.tab-master-card');
+ if(!card)return;
+ const key='talkabee-hotel-card-surface-position-v2';
+ const clamp=(n,a,b)=>Math.max(a,Math.min(b,n));
+ let active=null;
+ function place(x,y,scale){
+   const w=card.offsetWidth*scale,h=card.offsetHeight*scale;
+   card.classList.add('hotel-card-dragged');
+   const set=(k,v)=>card.style.setProperty(k,v,'important');
+   set('position','fixed');set('left',clamp(x,8,Math.max(8,innerWidth-w-8))+'px');
+   set('top',clamp(y,8,Math.max(8,innerHeight-h-8))+'px');
+   set('right','auto');set('bottom','auto');
+   set('transform-origin','top left');set('transform','scale('+scale+')');
+ }
+ function start(e){
+   if(e.button!==0 || e.target.closest('a,input,select,textarea,.tab-card-resize,.tab-card-font-down,.tab-card-font-up,.tab-card-reset,#speak,#next,#challengeNext'))return;
+   // Move button AND noninteractive card surface are valid grab areas.
+   e.preventDefault();e.stopPropagation();
+   const r=card.getBoundingClientRect();
+   active={sx:e.clientX,sy:e.clientY,x:r.left,y:r.top,scale:r.width/card.offsetWidth,moved:false};
+ }
+ function move(e){
+   if(!active)return;
+   const dx=e.clientX-active.sx,dy=e.clientY-active.sy;
+   if(!active.moved && Math.hypot(dx,dy)<2)return;
+   active.moved=true;e.preventDefault();
+   place(active.x+dx,active.y+dy,active.scale);
+ }
+ function end(){
+   if(!active)return;
+   if(active.moved){
+     try{localStorage.setItem(key,JSON.stringify({
+       x:parseFloat(card.style.left),y:parseFloat(card.style.top),scale:active.scale
+     }))}catch(_){}
+   }
+   active=null;
+ }
+ card.addEventListener('mousedown',start,true);
+ window.addEventListener('mousemove',move,true);
+ window.addEventListener('mouseup',end,true);
+ window.addEventListener('blur',end);
+ const reset=card.querySelector('.tab-card-reset');
+ if(reset)reset.addEventListener('click',()=>{
+   for(const p of ['position','left','top','right','bottom','transform','transform-origin'])
+     card.style.removeProperty(p);
+   card.classList.remove('hotel-card-dragged');
+   try{localStorage.removeItem(key)}catch(_){}
+ });
+ try{
+   const saved=JSON.parse(localStorage.getItem(key)||'null');
+   if(saved && [saved.x,saved.y,saved.scale].every(Number.isFinite))
+     place(saved.x,saved.y,saved.scale);
+ }catch(_){}
+})();
+</script>
 </body></html>

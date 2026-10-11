@@ -541,6 +541,18 @@ Target the actual elements.
 #talkabee-object-popup{position:fixed;z-index:2147482900;display:none;padding:8px 12px;border-radius:12px;background:rgba(20,20,20,.82);color:white;font-weight:900;font-size:14px;pointer-events:none}
 </style>
 
+<script id="tb-special-challenge-data" type="application/json">{"targets": ["dog", "horse", "cow", "sheep", "pig", "bee"], "labels": ["Find Bear", "Find the horse", "Find the cow", "Find the sheep", "Find the pig", "Find the Talk A Bee guide"]}</script>
+<style id="talkabee-farm-no-challenge-answer-reveal">
+/* Challenge target class remains for answer checking, but never reveals its location. */
+#world.challenge-mode .hotspot.target-hotspot:not(:hover):not(:focus-visible){
+  opacity:0!important;
+  background:transparent!important;
+  border-color:transparent!important;
+  outline:none!important;
+  box-shadow:none!important;
+  animation:none!important;
+}
+</style>
 </head>
 <body class="">
 <div class="talkabee-editions">
@@ -595,7 +607,7 @@ Target the actual elements.
 
 <a id="back" class="click" href="index.html" aria-label="Return to Main Directory">← Return to Main Directory</a></aside><div class="script-mask" aria-hidden="true">
 
-</div><section class="live-card tab-master-card" aria-live="polite" data-moved="1" style="inset: 327.75px auto auto 431.133px !important; transform-origin: left top 0px !important; transform: scale(0.67) !important;"><div class="tab-card-tools" aria-label="Script card controls"><button type="button" class="tab-card-drag" title="Move script card">↕ Move</button><button type="button" class="tab-card-font-down" title="Decrease text">A−</button><button type="button" class="tab-card-font-up" title="Increase text">A+</button><button type="button" class="tab-card-reset" title="Reset card">Reset</button></div><div class="kicker" id="kicker">ACTIVITY 1 • FRIENDLY PETS</div><h1 id="title">Meet Bear by the campfire.</h1><p class="prompt" id="prompt">Listen, repeat, and use the scene to connect the words with what you see.</p><div class="target" id="target">El perro está junto al fuego.</div><div class="translation" id="translation">The dog is beside the fire.</div><div class="actions"><button class="primary audio-active" id="normal">🔊 Speak</button><button id="slow">🐢 Slow</button><button id="replay">↻ Replay</button></div><div class="status" id="status"></div><div class="tab-card-resize" title="Drag to resize script card" aria-label="Resize script card">↘</div></section>
+</div><section class="live-card tab-master-card" aria-live="polite" ><div class="tab-card-tools" aria-label="Script card controls"><button type="button" class="tab-card-drag" title="Move script card">↕ Move</button><button type="button" class="tab-card-font-down" title="Decrease text">A−</button><button type="button" class="tab-card-font-up" title="Increase text">A+</button><button type="button" class="tab-card-reset" title="Reset card">Reset</button></div><div class="kicker" id="kicker">ACTIVITY 1 • FRIENDLY PETS</div><h1 id="title">Meet Bear by the campfire.</h1><p class="prompt" id="prompt">Listen, repeat, and use the scene to connect the words with what you see.</p><div class="target" id="target">El perro está junto al fuego.</div><div class="translation" id="translation">The dog is beside the fire.</div><div class="actions"><button class="primary audio-active" id="normal">🔊 Speak</button><button id="slow">🐢 Slow</button><button id="replay">↻ Replay</button></div><div class="status" id="status"></div><div class="tab-card-resize" title="Drag to resize script card" aria-label="Resize script card">↘</div></section>
 <button class="hotspot" id="horse" data-name="Horse" data-es="el caballo" style="width: 13.28%; height: 12.97%; left: 16.79%; top: 41.71%;"></button><button class="hotspot" id="cow" data-name="Cow" data-es="la vaca" style="left: 33.39%; top: 43.8%; width: 9.85%; height: 6.68%;"></button><button class="hotspot" id="sheep" data-name="Sheep" data-es="la oveja" style="left: 24.85%; top: 51.3%; width: 8.55%; height: 7.23%;"></button><button class="hotspot" id="goat" data-name="Goat" data-es="la cabra" style="left: 27.53%; top: 65.46%; width: 10.63%; height: 14.18%;"></button><button class="hotspot" id="pig" data-name="Pig" data-es="el cerdo" style="left: 15.2%; top: 72.89%; width: 10%; height: 14.92%;"></button><button class="hotspot" id="dog" data-name="Dog" data-es="el perro" style="left: 50.98%; top: 71.07%; width: 10.89%; height: 13.35%;"></button><button class="hotspot" id="rooster" data-name="Rooster" data-es="el gallo" style="width: 4.74%; height: 9.55%; left: 85.04%; top: 62.61%;"></button><button class="hotspot" id="chicken" data-name="Chicken" data-es="la gallina" style="left: 78.69%; top: 68.39%;"></button><button class="hotspot" id="rabbit" data-name="Rabbit" data-es="el conejo" style="width: 8.18%; height: 10.29%; left: 56.57%; top: 92.6%;"></button><button class="hotspot" id="squirrel" data-name="Squirrel" data-es="la ardilla" style="left: 94.98%; top: 47.32%; width: 7.14%; height: 12.6%;" data-sound="sounds/squirrel.mp3"></button><button class="hotspot" id="butterfly" data-name="Butterfly" data-es="la mariposa" style="left: 39.57%; top: 92.06%; width: 7.24%; height: 7.23%;"></button><button class="hotspot" id="barn" data-name="Barn" data-es="el granero" style="width: 7.61%; height: 13.71%; left: 56.35%; top: 38.44%;"></button><button class="hotspot" id="windmill" data-name="Windmill" data-es="el molino de viento" style="left: 63.23%; top: 22.13%; width: 3.81%; height: 12.6%;"></button><button class="hotspot" id="rv" data-name="Fifth-wheel RV" data-es="la casa rodante" style="left: 82.3%; top: 35.19%; width: 15.68%; height: 20.58%;"></button><button class="hotspot" id="campfire" data-name="Campfire" data-es="la fogata" style="left: 63.18%; top: 68.86%; width: 12.35%; height: 13.99%;"></button><button class="hotspot" id="fence" data-name="Fence" data-es="la cerca" style="left: 12.28%; top: 55.74%; width: 3.96%; height: 16.03%;"></button><button class="hotspot" id="flowers" data-name="Flowers" data-es="las flores" style="left: 8.6%; top: 92.17%; width: 10.63%; height: 13.8%;"></button><button class="hotspot" id="mountains" data-name="Mountains" data-es="las montañas" style="width: 15.83%; height: 11.22%; left: 29.15%; top: 19.46%;"></button><button class="hotspot" id="chick" data-name="Chick" data-es="el pollito" style="left: 87.44%; top: 74.31%; width: 5.89%; height: 8.53%;"></button>
 <button type="button" class="hotspot" data-word="chicken" id="chicken" aria-label="chicken" data-tb-custom="1" data-tb-en="chicken" data-tb-es="pollo" data-tb-fr="poulet" data-tb-de="Huhn" data-tb-it="pollo" data-tb-pt="frango" data-tb-no="kylling" style="left: 95.11%; top: 68.71%; width: 6%; height: 8%;" data-sound="sounds/chicken.mp3"></button><button type="button" class="hotspot" data-word="solar panel" id="solar-panel" aria-label="solar panel" data-tb-custom="1" data-tb-en="solar panel" data-tb-es="panel solar" data-tb-fr="panneau solaire" data-tb-de="Solarpanel" data-tb-it="pannello solare" data-tb-pt="painel solar" data-tb-no="solcellepanel" style="left: 73.5%; top: 21.9%; width: 6%; height: 8%;"></button><button type="button" class="hotspot" data-word="solar panel" id="solar-panel" aria-label="solar panel" data-tb-custom="1" data-tb-en="solar panel" data-tb-es="panel solar" data-tb-fr="panneau solaire" data-tb-de="Solarpanel" data-tb-it="pannello solare" data-tb-pt="painel solar" data-tb-no="solcellepanel" style="left: 85.35%; top: 18.58%; width: 6%; height: 8%;"></button><button type="button" class="hotspot" data-word="window" id="window" aria-label="window" data-tb-custom="1" data-tb-en="window" data-tb-es="ventana" data-tb-fr="fenêtre" data-tb-de="Fenster" data-tb-it="finestra" data-tb-pt="janela" data-tb-no="vindu" style="left: 94.27%; top: 28.47%; width: 6%; height: 8%;"></button><button type="button" class="hotspot" data-word="rear door" id="rear-door" aria-label="rear door" data-tb-custom="1" data-tb-en="rear door" data-tb-es="puerta trasera" data-tb-fr="porte arrière" data-tb-de="Hintertür" data-tb-it="porta posteriore" data-tb-pt="porta traseira" data-tb-no="bakdør" style="left: 70.77%; top: 37.96%; width: 3.29%; height: 9.2%;"></button><button type="button" class="hotspot" data-word="stairs" id="stairs" aria-label="stairs" data-tb-custom="1" data-tb-en="stairs" data-tb-es="escaleras" data-tb-fr="escaliers" data-tb-de="Treppe" data-tb-it="scale" data-tb-pt="escadaria" data-tb-no="trapp" style="left: 79.91%; top: 52.83%; width: 3.29%; height: 10.96%;"></button><button type="button" class="hotspot" data-word="girl" id="girl" aria-label="girl" data-tb-custom="1" data-tb-en="girl" data-tb-es="niña" data-tb-fr="fille" data-tb-de="Mädchen" data-tb-it="ragazza" data-tb-pt="menina" data-tb-no="jente" style="left: 41.44%; top: 61.17%; width: 5.74%; height: 20.03%;" data-sound="sounds/girl.mp3"></button><button type="button" class="hotspot" data-word="boy" id="boy" aria-label="boy" data-tb-custom="1" data-tb-en="boy" data-tb-es="niño" data-tb-fr="garçon" data-tb-de="Junge" data-tb-it="ragazzo" data-tb-pt="menino" data-tb-no="gutt" style="left: 48.18%; top: 61.59%; width: 4.85%; height: 12.44%;" data-sound="sounds/child-laughing.mp3"></button><button type="button" class="hotspot" data-word="field" id="field" aria-label="field" data-tb-custom="1" data-tb-en="field" data-tb-es="campo" data-tb-fr="champ" data-tb-de="Feld" data-tb-it="campo" data-tb-pt="campo" data-tb-no="felt" style="left: 40.79%; top: 39.18%; width: 7.25%; height: 4.76%;"></button><button type="button" class="hotspot" data-word="sunset" id="sunset" aria-label="sunset" data-tb-custom="1" data-tb-en="sunset" data-tb-es="atardecer" data-tb-fr="coucher de soleil" data-tb-de="Sonnenuntergang" data-tb-it="tramonto" data-tb-pt="pôr do sol" data-tb-no="solnedgang" style="left: 53.56%; top: 24.66%; width: 10.95%; height: 5.96%;"></button></main>
 <script>
@@ -650,6 +662,12 @@ const challengeMeta={
  c5:{obj:'pig',title:'Find the pig.',prompt:'Click the pig in the scene.'},
  c6:{obj:'bee',title:'Find the Talk A Bee guide.',prompt:'Look on top of the fifth-wheel RV.'}
 };
+const tbSpecialNode=document.getElementById('tb-special-challenge-data');
+const tbSpecialData=JSON.parse(tbSpecialNode.textContent);
+function tbSpecialRefresh(){for(let i=0;i<6;i++){let c=challengeMeta['c'+(i+1)];c.obj=tbSpecialData.targets[i];c.title=tbSpecialData.labels[i];c.prompt='Click '+tbSpecialData.labels[i].replace(/^Find\s+/i,'')+' in the scene.';let b=document.querySelector('[data-key="c'+(i+1)+'"]');if(b)b.textContent=(i+1)+'. '+tbSpecialData.labels[i];}}
+window.tbSpecialChallengeGet=()=>JSON.parse(tbSpecialNode.textContent);
+window.tbSpecialChallengeSet=d=>{tbSpecialNode.textContent=JSON.stringify(d);tbSpecialData.targets=d.targets;tbSpecialData.labels=d.labels;tbSpecialRefresh()};
+window.tbSpecialChallengeSelector='.hotspot';tbSpecialRefresh();
 const englishNames={horse:'Horse',cow:'Cow',sheep:'Sheep',goat:'Goat',pig:'Pig',dog:'Dog',rooster:'Rooster',chicken:'Chicken',rabbit:'Rabbit',squirrel:'Squirrel',bee:'Bee',butterfly:'Butterfly',barn:'Barn',windmill:'Windmill',rv:'Fifth-wheel RV',solar:'Solar panels',campfire:'Campfire',fence:'Fence',flowers:'Flowers',mountains:'Mountains',chick:'Chick'};
 const discoverySounds={horse:'horse.mp3',cow:'cow.mp3',sheep:'sheep.mp3',goat:'goat.mp3',pig:'pig.mp3',dog:'dog.mp3',rooster:'rooster.mp3',chicken:'chicken.mp3',chick:'chicks.mp3',barn:'tractor.mp3',rv:'rv.mp3'};
 let discoverySound=null;
@@ -720,7 +738,7 @@ document.querySelectorAll('.hotspot').forEach(h=>h.addEventListener('click',()=>
  const key=h.dataset.word||h.dataset.object||h.id||h.getAttribute('aria-label')||'';
  const word=data().words[key]||englishNames[key]||key;
  if(challengeTarget){
-   if(key===challengeTarget){els.status.textContent='✓ Correct!';speak(word,.8)}
+   if(key===challengeTarget){els.status.textContent='✓ Nice find!';speak(word,.8)}
    else{els.status.textContent='Try another animal.'}
    return;
  }
@@ -826,9 +844,35 @@ showLesson('pets');
  if(!card)return;
  const drag=card.querySelector('.tab-card-drag'),down=card.querySelector('.tab-card-font-down'),up=card.querySelector('.tab-card-font-up'),reset=card.querySelector('.tab-card-reset'),resize=card.querySelector('.tab-card-resize');
  const PK='talkabee-global-script-card-position',SK='talkabee-global-script-card-scale',FK='talkabee-global-script-card-font-scale';
+ const pageKey=(location.pathname.split('/').pop()||'adventure').replace(/[^a-z0-9-]/gi,'_');
+ const WK='talkabee-script-card-width-'+pageKey,HK='talkabee-script-card-height-'+pageKey;
  const clamp=(n,a,b)=>Math.max(a,Math.min(b,n));
  const defaultScale=()=>matchMedia('(max-width:760px)').matches?.82:.67;
  let scale=defaultScale(),fontScale=1,dragState=null;
+ // Capture actual rendered font sizes, even on Adventures with older card markup.
+ // Never modify the Move / A- / A+ / Reset controls or resize handle.
+ const textNodes=Array.from(card.querySelectorAll('*')).filter(el=>{
+   if(el.closest('.tab-card-tools,.tab-card-resize'))return false;
+   if(el.matches('script,style,svg,path,select,input,textarea'))return false;
+   return Array.from(el.childNodes).some(n=>n.nodeType===3&&n.textContent.trim());
+ });
+ textNodes.forEach(el=>{el.dataset.baseFont=getComputedStyle(el).fontSize});
+ // This page's approved 575px typography CSS follows the legacy control script.
+ // Capture its final sizes only after the document finishes parsing.
+ document.addEventListener('DOMContentLoaded',()=>{
+   if(fontScale===1)textNodes.forEach(el=>{
+     if(!el.style.getPropertyValue('font-size'))el.dataset.baseFont=getComputedStyle(el).fontSize;
+   });
+ },{once:true});
+ function applyBox(width,height,save=true){
+   card.style.setProperty('width',width+'px','important');
+   card.style.setProperty('max-width','none','important');
+   card.style.setProperty('min-width','0','important');
+   card.style.setProperty('min-height',height+'px','important');
+   card.style.setProperty('max-height','none','important');
+   card.style.setProperty('overflow','auto','important');
+   if(save)try{localStorage.setItem(WK,String(width));localStorage.setItem(HK,String(height))}catch(e){}
+ }
 
  function applyTransform(){
    if(card.dataset.moved==='1'){
@@ -842,6 +886,7 @@ showLesson('pets');
  function applyFont(v,save=true){
    fontScale=clamp(Number(v)||1,.75,1.6);
    card.style.setProperty('--tab-card-font-scale',fontScale.toFixed(2));
+   textNodes.forEach(el=>el.style.setProperty('font-size',(parseFloat(el.dataset.baseFont)*fontScale)+'px','important'));
    if(save)try{localStorage.setItem(FK,String(fontScale))}catch(e){}
  }
  function saveState(){
@@ -855,7 +900,9 @@ showLesson('pets');
  function restore(){
    try{
      const fs=localStorage.getItem(FK); if(fs)applyFont(fs,false);
-     const ss=parseFloat(localStorage.getItem(SK)); if(ss)scale=clamp(ss,.45,1.10);
+     // Older A+/A- controls stored a whole-card zoom. Ignore that legacy value.
+      const ww=parseFloat(localStorage.getItem(WK)),hh=parseFloat(localStorage.getItem(HK));
+      if(ww&&hh)applyBox(ww,hh,false);
      const ps=JSON.parse(localStorage.getItem(PK)||'null');
      if(ps&&innerWidth>760){
        card.dataset.moved='1';
@@ -868,15 +915,20 @@ showLesson('pets');
    }catch(e){}
  }
 
- if(down)down.addEventListener('click',()=>{scale=clamp(+(scale-.05).toFixed(2),.45,1.10);applyTransform();saveState()});
- if(up)up.addEventListener('click',()=>{scale=clamp(+(scale+.05).toFixed(2),.45,1.10);applyTransform();saveState()});
+ if(down)down.addEventListener('click',()=>applyFont(fontScale-.1));
+ if(up)up.addEventListener('click',()=>applyFont(fontScale+.1));
 
  if(reset)reset.addEventListener('click',()=>{
-   try{localStorage.removeItem(PK);localStorage.removeItem(SK);localStorage.removeItem(FK)}catch(e){}
+   try{localStorage.removeItem(PK);localStorage.removeItem(SK);localStorage.removeItem(FK);localStorage.removeItem(WK);localStorage.removeItem(HK)}catch(e){}
    scale=defaultScale();fontScale=1;
    delete card.dataset.moved;
    ['width','height','left','top','right','bottom','transform','transform-origin','min-width','max-width','min-height','max-height'].forEach(p=>card.style.removeProperty(p));
-   applyFont(1,false);
+   // Restore the approved stylesheet's font sizes, not the older sizes
+   // captured before the final Farm card styling was parsed.
+   card.style.setProperty('--tab-card-font-scale','1');
+   textNodes.forEach(el=>el.style.removeProperty('font-size'));
+   // Refresh A+/A- baselines from the final, rendered approved card.
+   textNodes.forEach(el=>{el.dataset.baseFont=getComputedStyle(el).fontSize});
  });
 
  function startDrag(e){
@@ -915,17 +967,16 @@ showLesson('pets');
  card.addEventListener('pointerup',endDrag);
  card.addEventListener('pointercancel',endDrag);
 
- // Keep the resize handle from changing the card's scale. It changes scale proportionally instead.
+ // Resize only the card's dimensions. The text and visual scale remain unchanged.
  if(resize)resize.addEventListener('pointerdown',e=>{
    if(innerWidth<=760)return;
    e.preventDefault();e.stopPropagation();
-   const r=card.getBoundingClientRect(),sx=e.clientX,baseW=r.width,baseScale=scale;
+   const sx=e.clientX,sy=e.clientY,baseW=parseFloat(getComputedStyle(card).width),baseH=parseFloat(getComputedStyle(card).height);
+   const effectiveScale=card.getBoundingClientRect().width/baseW||defaultScale();
    resize.setPointerCapture(e.pointerId);
-   const mv=ev=>{scale=clamp(baseScale*((baseW+ev.clientX-sx)/baseW),.45,1.10);applyTransform()};
-   const end=()=>{resize.removeEventListener('pointermove',mv);saveState()};
-   resize.addEventListener('pointermove',mv);
-   resize.addEventListener('pointerup',end,{once:true});
-   resize.addEventListener('pointercancel',end,{once:true});
+   const mv=ev=>{const width=clamp(baseW+(ev.clientX-sx)/effectiveScale,320,Math.max(520,innerWidth/effectiveScale-50));const height=clamp(baseH+(ev.clientY-sy)/effectiveScale,120,Math.max(250,innerHeight/effectiveScale-40));applyBox(width,height,false)};
+   const end=()=>{resize.removeEventListener('pointermove',mv);resize.removeEventListener('pointerup',end);resize.removeEventListener('pointercancel',end);applyBox(parseFloat(getComputedStyle(card).width),parseFloat(getComputedStyle(card).minHeight),true)};
+   resize.addEventListener('pointermove',mv);resize.addEventListener('pointerup',end);resize.addEventListener('pointercancel',end);
  });
 
  restore();
@@ -1047,4 +1098,56 @@ document.addEventListener('click',function(ev){
 })();
 </script>
 
+
+
+
+<style id="talkabee-farm-approved-card-20261010">
+/* Match the approved later Adventures; Farm challenge and hotspot logic stays intact. */
+@media(min-width:761px){
+ .live-card.tab-master-card{
+  position:fixed!important;left:57%!important;right:auto!important;
+  top:auto!important;bottom:16px!important;width:575px!important;
+  max-width:575px!important;min-width:0!important;
+  height:auto!important;min-height:0!important;max-height:calc(100vh - 32px)!important;
+  padding:17px 20px!important;overflow:visible!important;
+  transform:translateX(-50%) scale(.67)!important;
+  transform-origin:bottom center!important;
+ }
+}
+.live-card.tab-master-card{
+ background:rgba(25,19,24,.20)!important;
+ background-color:rgba(25,19,24,.20)!important;
+ backdrop-filter:blur(2px)!important;
+ -webkit-backdrop-filter:blur(2px)!important;
+ border:1px solid rgba(255,255,255,.30)!important;
+ border-radius:20px!important;
+}
+.live-card.tab-master-card .kicker{font-size:19px!important;line-height:1.2!important;color:#fff!important;}
+.live-card.tab-master-card #title{font-size:28px!important;line-height:1.13!important;}
+.live-card.tab-master-card #prompt{font-size:24px!important;line-height:1.3!important;}
+.live-card.tab-master-card #target{
+ display:block!important;font-size:28px!important;line-height:1.3!important;
+ padding:13px 15px 2px!important;margin:8px 0 0!important;
+ border-radius:14px 14px 0 0!important;background:rgba(88,88,88,.46)!important;
+ color:#fff!important;text-shadow:0 1px 2px #0008!important;
+}
+.live-card.tab-master-card #translation{
+ font-size:24px!important;line-height:1.3!important;
+ padding:0 15px 13px!important;margin:0!important;
+ border-radius:0 0 14px 14px!important;background:rgba(88,88,88,.46)!important;
+}
+.live-card.tab-master-card .actions{display:flex!important;gap:10px!important;flex-wrap:nowrap!important;margin-top:11px!important;}
+.live-card.tab-master-card .actions button{
+ flex:1 1 0!important;min-height:51px!important;padding:13px 8px!important;
+ font:900 19px/1.18 Arial,Helvetica,sans-serif!important;
+ border-radius:12px!important;white-space:nowrap!important;
+}
+.live-card.tab-master-card #status{font-size:30px!important;line-height:1.2!important;margin-top:8px!important;min-height:0!important;color:#35e46a!important;}
+.live-card.tab-master-card .tab-card-tools button{font-size:18px!important;padding:7px 11px!important;}
+@media(max-width:760px){
+ .live-card.tab-master-card{width:min(575px,calc(100vw - 32px))!important;max-height:calc(100vh - 20px)!important;overflow:auto!important;}
+ .live-card.tab-master-card .actions{flex-wrap:wrap!important;}
+ .live-card.tab-master-card .actions button{flex:1 1 42%!important;font-size:17px!important;}
+}
+</style>
 </body></html>

@@ -113,21 +113,7 @@ button{font:inherit;cursor:pointer}
 .tab-master-panel select{white-space:nowrap!important;text-overflow:ellipsis!important;overflow:hidden!important}
 .tab-master-panel button:hover,.tab-master-panel a:hover{background:rgba(20,58,79,.70)!important}
 .tab-master-panel .active,.tab-master-panel button.active{background:rgba(78,69,219,.74)!important;color:#fff!important}
-.tab-master-card{
- position:fixed!important;left:50%!important;right:auto!important;bottom:16px!important;top:auto!important;
- width:520px!important;min-width:520px!important;max-width:520px!important;height:auto!important;min-height:0!important;max-height:44vh!important;
- margin:0!important;padding:14px 16px!important;overflow:auto!important;transform:translateX(-50%)!important;scale:1!important;zoom:1!important;opacity:1!important;
- border-radius:20px!important;border:1px solid rgba(255,255,255,.30)!important;background:rgba(25,19,24,.38)!important;
- box-shadow:0 12px 30px rgba(0,0,0,.28)!important;backdrop-filter:blur(5px)!important;-webkit-backdrop-filter:blur(5px)!important;
- color:#fff!important;z-index:900!important;font-family:Arial,Helvetica,sans-serif!important;
-}
-.tab-master-card .kicker,.tab-master-card [class*="kicker"]{color:rgba(255,255,255,.94)!important;font-size:11px!important;line-height:1.1!important;font-weight:900!important;letter-spacing:.12em!important;text-shadow:0 1px 3px rgba(0,0,0,.78)!important;margin:0 0 7px!important}
-.tab-master-card h1,.tab-master-card h2{color:#fff!important;font-size:22px!important;line-height:1.08!important;margin:4px 0 7px!important;text-shadow:0 1px 3px rgba(0,0,0,.55)!important}
-.tab-master-card p,.tab-master-card .prompt,.tab-master-card .translation,.tab-master-card .tip{font-size:13px!important;line-height:1.25!important;margin:4px 0 7px!important;color:#fff!important}
-.tab-master-card .line,.tab-master-card .target,.tab-master-card #line,.tab-master-card #target{font-size:20px!important;line-height:1.12!important;font-weight:900!important;margin:7px 0!important;color:#fff!important}
-.tab-master-card .actions,.tab-master-card [class*="actions"]{display:flex!important;align-items:center!important;gap:8px!important;flex-wrap:nowrap!important;margin-top:8px!important}
-.tab-master-card .actions button,.tab-master-card [class*="actions"] button,.tab-master-card>button{width:auto!important;min-width:0!important;height:auto!important;padding:9px 13px!important;margin:0!important;border-radius:12px!important;font:900 13px/1 Arial,Helvetica,sans-serif!important;white-space:nowrap!important}
-@media(max-width:760px){.tab-master-panel{left:10px!important;top:10px!important;bottom:10px!important;width:190px!important;min-width:190px!important;max-width:190px!important;padding:11px!important}.tab-master-card{width:min(520px,calc(100vw - 24px))!important;min-width:0!important;bottom:10px!important;padding:12px!important}}
+@media(max-width:760px){.tab-master-panel{left:10px!important;top:10px!important;bottom:10px!important;width:190px!important;min-width:190px!important;max-width:190px!important;padding:11px!important}}
 </style>
 
 <style id="tab-spoken-phrase-readability">
@@ -200,6 +186,132 @@ button{font:inherit;cursor:pointer}
 #talkabee-object-popup{position:fixed;z-index:2147482900;display:none;padding:8px 12px;border-radius:12px;background:rgba(20,20,20,.82);color:white;font-weight:900;font-size:14px;pointer-events:none}
 </style>
 
+<script id="tb-legacy-challenge-data" type="application/json">{"targets": ["birdhouse", "hammer", "paintbrush", "birdfeeder", "bluebird", "butterfly"], "labels": ["Find the Birdhouse", "Find the Hammer", "Find the Paintbrush", "Find the Bird Feeder", "Find the Bluebird", "Find the Butterfly"]}</script>
+<style id="bird-train-transplanted-card">
+/* Train Station: reproduce approved Sea Adventures geometry and real-element typography. */
+
+
+
+
+
+#birdWorld .bird-train-card.tab-master-card{
+ position:fixed!important;left:62%!important;right:auto!important;top:auto!important;bottom:20px!important;
+ width:650px!important;min-width:650px!important;max-width:650px!important;
+ height:auto!important;min-height:0!important;max-height:none!important;
+ padding:17px 20px!important;overflow:visible!important;
+ transform:translateX(-50%) scale(.72)!important;transform-origin:bottom center!important;
+ background:rgba(27,32,50,.35)!important;backdrop-filter:blur(3px)!important;
+ border:1px solid rgba(255,255,255,.34)!important;border-radius:22px!important;
+}
+#birdWorld .bird-train-card .tab-card-tools button{font-size:22px!important;padding:9px 13px!important}
+#birdWorld .bird-train-card #title{font:900 40px/1.12 Arial,sans-serif!important;color:white!important;text-shadow:0 2px 4px #0009!important;margin:3px 0 8px!important}
+#birdWorld .bird-train-card .train-kicker{font:900 16px/1.15 Arial,sans-serif!important;color:#fff!important;letter-spacing:.06em!important}
+#birdWorld .bird-train-card #prompt{font:500 29px/1.24 Arial,sans-serif!important;color:white!important;margin:3px 0 10px!important}
+#birdWorld .bird-train-card #line{font:900 32px/1.25 Arial,sans-serif!important;color:white!important;padding:14px 16px!important;background:rgba(20,25,43,.65)!important;border-radius:15px!important}
+#birdWorld .bird-train-card #translation{font:500 27px/1.25 Arial,sans-serif!important;color:white!important}
+#birdWorld .bird-train-card #actions{display:flex!important;gap:8px!important;flex-wrap:nowrap!important;align-items:center!important}
+#birdWorld .bird-train-card #actions button{font:900 20px/1.1 Arial,sans-serif!important;padding:12px 13px!important;white-space:nowrap!important;background:#f2eaff!important;color:#30204b!important;border-radius:13px!important;flex:0 0 auto!important}
+#birdWorld .bird-train-card #speak{background:#6944ee!important;color:white!important}
+#birdWorld .bird-train-card .train-spoken-word{display:inline!important;width:auto!important;min-width:0!important;border:0!important;padding:0 2px!important;margin:0!important;background:transparent!important;color:white!important;font:inherit!important;cursor:pointer!important;white-space:pre!important}
+#birdWorld .bird-train-card .train-spoken-word:hover,#birdWorld .bird-train-card .train-spoken-word.speaking{color:#ffe4a9!important;background:rgba(255,255,255,.12)!important;border-radius:4px!important}
+/* Challenge view has ONE dark inner box, no duplicated explanation or phrase tray. */
+#birdWorld.challenge-mode .train-panel #prompt,
+#birdWorld.challenge-mode .train-panel #line,
+#birdWorld.challenge-mode .train-panel #translation,
+#birdWorld.challenge-mode .train-panel #actions{display:none!important}
+#birdWorld .bird-train-card #find.show{
+ display:flex!important;flex-direction:column!important;gap:11px!important;
+ padding:18px 22px!important;margin-top:8px!important;
+ border-radius:17px!important;border:1px solid rgba(255,255,255,.38)!important;
+ background:rgba(16,24,43,.76)!important;color:white!important;
+}
+#birdWorld .bird-train-card #count{font:900 23px/1.16 Arial,sans-serif!important;letter-spacing:.04em!important;color:#ffe3a4!important;margin:0!important}
+#birdWorld .bird-train-card #findPrompt{font:900 43px/1.14 Arial,sans-serif!important;color:#fff!important;text-shadow:0 2px 4px #0009!important;margin:0!important}
+#birdWorld .bird-train-card #findStatus{font:900 36px/1.18 Arial,sans-serif!important;color:#a5ffd0!important;text-shadow:0 2px 4px #0009!important;margin:0!important;min-height:0!important}
+#birdWorld .bird-train-card #findStatus:empty{display:none!important}
+#birdWorld .bird-train-card #findStatus:not(.tb-answer-correct){color:#ffe4a9!important}
+#birdWorld .bird-train-card #nextHint{font:700 27px/1.24 Arial,sans-serif!important;color:white!important;margin:0!important}
+#birdWorld .bird-train-card #challengeNext{align-self:flex-start!important;width:auto!important;font:900 25px/1.15 Arial,sans-serif!important;padding:11px 16px!important;border-radius:13px!important;background:#f2eaff!important;color:#4b2abb!important}
+/* Keep answers invisible until hover, including in challenge mode. */
+#birdWorld.discovery-mode .train-hotspots button,#birdWorld.challenge-mode .train-hotspots button{opacity:.03!important;outline:none!important;background:transparent!important}
+
+@media(max-width:900px){#birdWorld .bird-train-card.tab-master-card{left:62%!important;transform:translateX(-50%) scale(.72)!important}}
+@media(max-width:700px){#birdWorld .bird-train-card.tab-master-card{left:55%!important;bottom:10px!important;transform:translateX(-50%) scale(.60)!important}}
+
+#birdWorld .bird-train-card{max-height:calc(100vh - 42px)!important;overflow:auto!important;}
+#birdWorld .bird-train-card #find{display:none!important;}
+#birdWorld.challenge-mode .bird-train-card #find.show{display:flex!important;}
+#birdWorld.challenge-mode .bird-train-card #prompt,
+#birdWorld.challenge-mode .bird-train-card #line,
+#birdWorld.challenge-mode .bird-train-card #translation,
+#birdWorld.challenge-mode .bird-train-card #actions{display:none!important;}
+#birdWorld .bird-train-card #birdFindPrompt{font:900 34px/1.15 Arial,sans-serif!important;color:white!important;}
+#birdWorld .bird-train-card #status{font-size:26px!important;}
+#birdWorld .bird-train-card #hint{font-size:20px!important;}
+#birdWorld .bird-train-card #count{font-size:19px!important;}
+#birdWorld .bird-train-card #challengeNext{font-size:20px!important;}
+#birdWorld .bird-train-card #title{font-size:32px!important;}
+#birdWorld .bird-train-card #prompt{font-size:24px!important;}
+#birdWorld .bird-train-card #line{font-size:29px!important;}
+#birdWorld .bird-train-card #translation{font-size:23px!important;}
+</style>
+<style id="bird-card-layer-and-pointer-fix">
+/* The card is a sibling of the transformed scenery, never its child. */
+#birdWorld > .bird-train-card{z-index:1000!important;pointer-events:auto!important;}
+#birdWorld > .bird-train-card, #birdWorld > .bird-train-card *{pointer-events:auto;}
+#birdWorld > .bird-train-card .tab-card-drag{touch-action:none!important;cursor:move!important;}
+#birdWorld > .bird-train-card[data-moved="1"]{transform-origin:top left!important;}
+</style>
+<style id="bird-card-actual-layer-repair">
+#birdWorld > .bird-train-card.tab-master-card {position:fixed!important;z-index:2000!important;pointer-events:auto!important;isolation:isolate!important;}
+#birdWorld > .bird-train-card.tab-master-card *{pointer-events:auto!important;}
+#birdWorld > .bird-train-card.tab-master-card[data-moved="1"]{transform-origin:top left!important;bottom:auto!important;right:auto!important;}
+#birdWorld.scene-only > .bird-train-card{display:none!important;}
+</style>
+<style id="bird-move-geometry-final">
+#birdWorld > .bird-train-card[data-moved="1"]{
+ transform-origin:top left!important;
+ top:var(--unused-top,auto);
+ bottom:auto!important;
+ right:auto!important;
+}
+#birdWorld > .bird-train-card .tab-card-drag{
+ pointer-events:auto!important;touch-action:none!important;cursor:move!important;
+}
+</style><style id="bird-card-drag-coordinate-system">
+#birdWorld > .bird-train-card.tab-master-card.bird-card-dragged {
+ position:fixed!important;
+ left:var(--bird-card-x)!important;
+ top:var(--bird-card-y)!important;
+ right:auto!important;
+ bottom:auto!important;
+ transform:scale(var(--bird-card-scale))!important;
+ transform-origin:top left!important;
+}
+#birdWorld > .bird-train-card .tab-card-drag {cursor:move!important;touch-action:none!important;user-select:none!important;}
+</style>
+<style id="bird-card-surface-drag">#birdWorld > .bird-train-card{touch-action:none!important;}#birdWorld > .bird-train-card:not(:has(button:hover)){cursor:grab;}#birdWorld > .bird-train-card:active{cursor:grabbing;}</style><style id="bird-panel-readable-adjustable-v1">
+/* Bird Sanctuary Activity Panel only. Script card and its working drag untouched. */
+#birdWorld .directory.tab-master-panel .place{
+ font-size:var(--bird-panel-title-font,21px)!important;line-height:1.16!important;
+}
+#birdWorld .directory.tab-master-panel .label,
+#birdWorld .directory.tab-master-panel label{
+ font-size:var(--bird-panel-label-font,12px)!important;line-height:1.2!important;
+}
+#birdWorld .directory.tab-master-panel button:not(.tab-panel-size-controls button),
+#birdWorld .directory.tab-master-panel select,
+#birdWorld .directory.tab-master-panel a{
+ font-size:var(--bird-panel-font,14.5px)!important;line-height:1.25!important;
+ min-height:37px!important;padding:8px 10px!important;
+}
+#birdWorld .directory.tab-master-panel .tab-panel-size-controls button{
+ font-size:19px!important;min-width:30px!important;
+}
+#birdWorld .directory.tab-master-panel .tab-panel-size-controls .tab-panel-reset{
+ font-size:12px!important;
+}
+</style>
 </head>
 <body class="">
 <div class="talkabee-editions">
@@ -257,25 +369,7 @@ button{font:inherit;cursor:pointer}
    <button data-challenge="5">6. Find the Butterfly</button>
   </aside>
 
-  <div class="panel tab-master-card">
-<div class="tab-card-tools" aria-label="Script card controls"><button type="button" class="tab-card-drag" title="Move script card">↕ Move</button><button type="button" class="tab-card-font-down" title="Decrease text">A−</button><button type="button" class="tab-card-font-up" title="Increase text">A+</button><button type="button" class="tab-card-reset" title="Reset card">Reset</button></div><div class="tab-card-resize" title="Drag to resize script card" aria-label="Resize script card">↘</div>
 
-   <div class="kicker">BIRD SANCTUARY</div>
-   <h2 id="title">Click &amp; Discover</h2>
-   <p id="prompt">You found something in the scene.</p>
-   <div class="line" id="line">La cascade</div>
-   <div class="translation" id="translation">waterfall</div>
-   <div class="actions" id="actions" style="display: flex;">
-    <button id="speak">🔊 Hear It</button>
-    <button id="next">Next phrase →</button>
-   </div>
-   <div class="find" id="find">
-    <div class="count" id="count"></div>
-    <div class="status" id="status"></div>
-    <div class="hint" id="hint"></div>
-    <button class="challengeNext" id="challengeNext">Next phrase →</button>
-   </div>
-  </div>
 
   <div class="hotspots">
    <button class="hotspot" data-word="ryder" aria-label="Ryder" style="width: 7.5%; height: 19.46%; left: 26.72%; top: 46.12%;"></button>
@@ -300,7 +394,18 @@ button{font:inherit;cursor:pointer}
    <button class="hotspot" data-word="tools" aria-label="Tools" style="left: 5.45%; top: 53.18%; width: 8.94%; height: 22.13%;"></button>
    <button class="hotspot" data-word="tree" aria-label="Tree" style="left: 98.83%; top: 31.98%; width: 8.43%; height: 32.65%;"></button>
   <button type="button" class="hotspot" data-word="pond" aria-label="pond" data-tb-custom="1" data-tb-en="pond" data-tb-es="estanque" data-tb-fr="étang" data-tb-de="Teich" data-tb-it="laghetto" data-tb-pt="lago" data-tb-no="dam" style="left: 78.45%; top: 74.26%; width: 12.88%; height: 11.52%;" data-sound="sounds/water-stream.mp3"></button><button type="button" class="hotspot" data-word="bird house" aria-label="bird house" data-tb-custom="1" data-tb-en="bird house" data-tb-es="casa de pájaros" data-tb-fr="maison d'oiseau" data-tb-de="Vogelhaus" data-tb-it="casa degli uccelli" data-tb-pt="casa de passarinho" data-tb-no="fuglehus" style="left: 90.25%; top: 20.68%; width: 5.48%; height: 12.17%;"></button><button type="button" class="hotspot" data-word="sail boat" aria-label="sail boat" data-tb-custom="1" data-tb-en="sail boat" data-tb-es="barco de vela" data-tb-fr="bateau à voile" data-tb-de="Segelboot" data-tb-it="barca a vela" data-tb-pt="barco a vela" data-tb-no="seilbåt" style="left: 70.64%; top: 36.98%; width: 6%; height: 8%;"></button><button type="button" class="hotspot" data-word="chair" aria-label="chair" data-tb-custom="1" data-tb-en="chair" data-tb-es="silla" data-tb-fr="chaise" data-tb-de="Stuhl" data-tb-it="sedia" data-tb-pt="cadeira" data-tb-no="stol" style="left: 64.55%; top: 44.27%; width: 6%; height: 8%;"></button><button type="button" class="hotspot" data-word="canoe" aria-label="canoe" data-tb-custom="1" data-tb-en="canoe" data-tb-es="canoa" data-tb-fr="canoë" data-tb-de="Kanu" data-tb-it="canoa" data-tb-pt="canoa" data-tb-no="kano" style="left: 85.53%; top: 48.26%; width: 8.45%; height: 5.22%;"></button><button type="button" class="hotspot" data-word="flowers" aria-label="flowers" data-tb-custom="1" data-tb-en="flowers" data-tb-es="flores" data-tb-fr="fleurs" data-tb-de="Blumen" data-tb-it="fiori" data-tb-pt="flores" data-tb-no="blomster" style="left: 81.44%; top: 54.86%; width: 9.28%; height: 11.7%;"></button><button type="button" class="hotspot" data-word="work table" aria-label="work table" data-tb-custom="1" data-tb-en="work table" data-tb-es="mesa de trabajo" data-tb-fr="table de travail" data-tb-de="Arbeitstisch" data-tb-it="tavolo da lavoro" data-tb-pt="mesa de trabalho" data-tb-no="arbeidsbord" style="left: 37.93%; top: 69.16%; width: 15.48%; height: 8.83%;"></button><button type="button" class="hotspot" data-word="stool" aria-label="stool" data-tb-custom="1" data-tb-en="stool" data-tb-es="heces" data-tb-fr="tabouret" data-tb-de="Hocker" data-tb-it="sgabello" data-tb-pt="banco" data-tb-no="avføring" style="left: 32.86%; top: 76.33%; width: 6%; height: 8%;"></button><button type="button" class="hotspot" data-word="dog" aria-label="dog" data-tb-custom="1" data-tb-en="dog" data-tb-es="perro" data-tb-fr="chien" data-tb-de="Hund" data-tb-it="cane" data-tb-pt="cachorro" data-tb-no="hund" style="left: 17.81%; top: 79.71%; width: 13.4%; height: 16.8%;" data-sound="sounds/dog-panting.wav"></button><button type="button" class="hotspot" data-word="flower pot" aria-label="flower pot" data-tb-custom="1" data-tb-en="flower pot" data-tb-es="maceta" data-tb-fr="pot de fleur" data-tb-de="Blumentopf" data-tb-it="vaso di fiori" data-tb-pt="vaso de flores" data-tb-no="blomsterpotte" style="left: 57.49%; top: 77.22%; width: 4.85%; height: 11.06%;"></button><button type="button" class="hotspot" data-word="tools" aria-label="tools" data-tb-custom="1" data-tb-en="tools" data-tb-es="herramientas" data-tb-fr="outils" data-tb-de="Werkzeuge" data-tb-it="utensili" data-tb-pt="ferramentas" data-tb-no="verktøy" style="left: 16.74%; top: 45.07%; width: 5.79%; height: 16.7%;"></button><button type="button" class="hotspot" data-word="humming bird feeder" aria-label="humming bird feeder" data-tb-custom="1" data-tb-en="humming bird feeder" data-tb-es="comedero para colibríes" data-tb-fr="mangeoire pour colibris" data-tb-de="Kolibri-Futterstation" data-tb-it="mangiatoia per colibrì" data-tb-pt="alimentador de beija-flor" data-tb-no="summende fuglemater" style="left: 23.15%; top: 26.62%; width: 4.7%; height: 10.13%;"></button></div>
- </div>
+   
+</div>
+<div class="train-panel tab-master-card bird-train-card">
+<div aria-label="Script card controls" class="tab-card-tools"><button class="tab-card-drag" title="Move script card" type="button">↕ Move</button><button class="tab-card-font-down" title="Decrease text" type="button">A−</button><button class="tab-card-font-up" title="Increase text" type="button">A+</button><button class="tab-card-reset" title="Reset card" type="button">Reset</button></div><div aria-label="Resize script card" class="tab-card-resize" title="Drag to resize script card">↘</div>
+<div class="train-kicker kicker">BIRD SANCTUARY</div>
+<h2 id="title">Click &amp; Discover</h2>
+<p id="prompt">You found something at the train station.</p>
+<div class="train-line line" id="line">el tablero de salidas</div>
+<div class="train-translation translation" id="translation">Departure board</div>
+<div class="train-actions actions" id="actions" style="display: flex;"><button id="speak">🔊 Hear It</button><button id="next">Next →</button></div>
+<div class="train-find find" id="find"><div class="train-challenge-count count" id="count">CHALLENGE 1 OF 6</div><div class="train-find-prompt" id="birdFindPrompt"></div><div class="train-find-status status" id="status"></div><div class="train-next-hint hint" id="hint">Find the correct object to unlock the next challenge.</div><button class="train-challenge-next challengeNext" id="challengeNext" type="button">Next phrase →</button></div>
+</div>
 </section>
 
 <script>
@@ -402,6 +507,8 @@ function playBirdSceneSound(key){
   birdSceneAudio.play().catch(()=>{});
 }
 const challengeOrder=["birdhouse","hammer","paintbrush","birdfeeder","bluebird","butterfly"];
+;(()=>{const node=document.getElementById('tb-legacy-challenge-data');let d;try{d=JSON.parse(node.textContent)}catch(e){return}if(!Array.isArray(d.targets)||d.targets.length!==6)return;function refresh(){for(let i=0;i<6;i++)challengeOrder[i]=d.targets[i];document.querySelectorAll('[data-challenge]').forEach(el=>{const i=Number(el.dataset.challenge??el.dataset.ch);if(i>=0&&i<6)el.textContent=(i+1)+'. '+(d.labels[i]||d.targets[i])})}window.tbLegacyChallengeGet=()=>JSON.parse(node.textContent);window.tbLegacyChallengeSet=next=>{d=next;node.textContent=JSON.stringify(d);refresh()};window.tbLegacyChallengeSelector='.hotspot';refresh()})();
+
 let active="meet",index=0,challenge=-1,solved=false,discovery=false;
 const $=id=>document.getElementById(id);
 const title=$("title"),prompt=$("prompt"),line=$("line"),translation=$("translation"),
@@ -438,7 +545,7 @@ function speakThenBirdSceneSound(t,key,rate=.82){
 function clearActive(){document.querySelectorAll(".directory button").forEach(b=>b.classList.remove("active"))}
 function render(){const x=lessons[active].lines[index];line.textContent=x[0];translation.textContent=x[1]}
 function loadLesson(k){
- active=k;index=0;challenge=-1;discovery=false;solved=false;
+ document.getElementById("birdWorld").classList.remove("challenge-mode");active=k;index=0;challenge=-1;discovery=false;solved=false;
  find.classList.remove("show");actions.style.display="flex";
  const raw=LESSONS7[currentLang()][k];
  const l={title:raw[0],prompt:raw[1],lines:raw[2]};
@@ -446,19 +553,19 @@ function loadLesson(k){
  clearActive();document.querySelector('[data-lesson="'+k+'"]').classList.add("active");
 }
 function loadDiscovery(){
- challenge=-1;discovery=true;find.classList.remove("show");actions.style.display="none";
+ document.getElementById("birdWorld").classList.remove("challenge-mode");challenge=-1;discovery=true;find.classList.remove("show");actions.style.display="none";
  const d=DISCOVERY7[currentLang()];
  title.textContent=d[0]; prompt.textContent=d[1]; line.textContent=d[2]; translation.textContent=d[3];
  clearActive();document.querySelector("[data-discovery]").classList.add("active");
 }
 function cleanEnglish(x){return x.replace(/^The /,"").replace(/\.$/,"")}
 function loadChallenge(i){
- challenge=i;discovery=false;solved=false;actions.style.display="none";find.classList.add("show");
+ challenge=i;discovery=false;solved=false;document.getElementById("birdWorld").classList.add("challenge-mode");actions.style.display="none";find.classList.add("show");
  const key=challengeOrder[i],x=objectWord(key);
  title.textContent="Challenge "+(i+1)+": Find "+cleanEnglish(x[1])+".";
  prompt.textContent="Search the scene and click the correct object.";
  line.textContent=x[0];translation.textContent=x[1];
- count.textContent="CHALLENGE "+(i+1)+" OF 6";
+ count.textContent="CHALLENGE "+(i+1)+" OF 6";document.getElementById("birdFindPrompt").textContent="Find: "+cleanEnglish(x[1]);
  status.textContent="";
  hint.textContent="Find the correct object to unlock the next challenge.";
  challengeNext.textContent=i<5?"Next Challenge →":"Finish Challenges ✓";
@@ -479,7 +586,7 @@ document.querySelectorAll(".hotspot").forEach(b=>b.onclick=()=>{
    if(correct){
      solved=true;
      status.textContent="✓ Nice find! "+x[0]+" "+x[1];
-     status.style.color="#176a48";
+     status.style.color="#a5ffd0";
      hint.textContent="Challenge complete. Move to the next one.";
      speakThenBirdSceneSound(x[0],key,.75);
    } else {
@@ -514,7 +621,7 @@ challengeNext.onclick=()=>{
  if(challenge<5) loadChallenge(challenge+1);
  else {
    status.textContent="🏁 You completed all 6 Bird Sanctuary challenges!";
-   status.style.color="#176a48";hint.textContent="Great job exploring with Ryder and Daniel.";
+   status.style.color="#a5ffd0";hint.textContent="Great job exploring with Ryder and Daniel.";
  }
 };
 loadLesson("meet");
@@ -639,23 +746,45 @@ loadLesson("meet");
  const panel=document.querySelector('.tab-master-panel,.activity-panel,.panel');
  if(panel){
   const minus=panel.querySelector('.tab-panel-minus'),plus=panel.querySelector('.tab-panel-plus'),reset=panel.querySelector('.tab-panel-reset');
-  const KEY='talkabee-global-activity-panel-size',DEFAULT=195,MIN=170,MAX=310,STEP=20;
+  const KEY='talkabee-bird-panel-font-and-width-v1',DEFAULT=245,MIN=195,MAX=350,STEP=20;
   const clamp=(n,a,b)=>Math.max(a,Math.min(b,n));
-  const apply=(width,save=true)=>{width=clamp(Math.round(Number(width)||DEFAULT),MIN,MAX);const scale=clamp(width/DEFAULT,.88,1.42);panel.style.setProperty('width',width+'px','important');panel.style.setProperty('min-width',width+'px','important');panel.style.setProperty('max-width',width+'px','important');panel.style.setProperty('--tab-panel-scale',scale.toFixed(3));if(save)try{localStorage.setItem(KEY,String(width))}catch(e){}};
-  const current=()=>panel.getBoundingClientRect().width||DEFAULT;
+  const apply=(width,save=true)=>{width=clamp(Math.round(Number(width)||DEFAULT),MIN,MAX);selectedWidth=width;const scale=clamp(width/DEFAULT,0.80,1.44);panel.style.setProperty('width',width+'px','important');panel.style.setProperty('min-width',width+'px','important');panel.style.setProperty('max-width',width+'px','important');panel.style.setProperty('--tab-panel-scale',scale.toFixed(3));panel.style.setProperty('--bird-panel-font',Math.round(14.5*scale*10)/10+'px');panel.style.setProperty('--bird-panel-label-font',Math.round(12*scale*10)/10+'px');panel.style.setProperty('--bird-panel-title-font',Math.round(21*scale*10)/10+'px');if(save)try{localStorage.setItem(KEY,String(width))}catch(e){}};
+  // Track the requested CSS width, not the transformed on-screen rectangle.
+  // getBoundingClientRect() is scaled by the adventure world and made + shrink.
+  let selectedWidth=DEFAULT;
+  const current=()=>selectedWidth;
   if(minus)minus.addEventListener('click',()=>apply(current()-STEP));
   if(plus)plus.addEventListener('click',()=>apply(current()+STEP));
   if(reset)reset.addEventListener('click',()=>{apply(DEFAULT,false);try{localStorage.removeItem(KEY)}catch(e){}});
-  try{const saved=localStorage.getItem(KEY);if(saved)apply(saved,false)}catch(e){}
+  try{const saved=localStorage.getItem(KEY);apply(saved||DEFAULT,false)}catch(e){apply(DEFAULT,false)}
  }
 
  const card=document.querySelector('.tab-master-card,.script,.card');
  if(!card)return;
  const drag=card.querySelector('.tab-card-drag'),down=card.querySelector('.tab-card-font-down'),up=card.querySelector('.tab-card-font-up'),reset=card.querySelector('.tab-card-reset'),resize=card.querySelector('.tab-card-resize');
- const PK='talkabee-global-script-card-position',SK='talkabee-global-script-card-scale',FK='talkabee-global-script-card-font-scale';
+ const PK='talkabee-bird-transplant-card-position-v5',SK='talkabee-bird-transplant-card-scale-v5',FK='talkabee-global-script-card-font-scale';
+ const pageKey=(location.pathname.split('/').pop()||'adventure').replace(/[^a-z0-9-]/gi,'_');
+ const WK='talkabee-script-card-width-'+pageKey,HK='talkabee-script-card-height-'+pageKey;
  const clamp=(n,a,b)=>Math.max(a,Math.min(b,n));
  const defaultScale=()=>matchMedia('(max-width:760px)').matches?.82:.67;
  let scale=defaultScale(),fontScale=1,dragState=null;
+ // Capture actual rendered font sizes, even on Adventures with older card markup.
+ // Never modify the Move / A- / A+ / Reset controls or resize handle.
+ const textNodes=Array.from(card.querySelectorAll('*')).filter(el=>{
+   if(el.closest('.tab-card-tools,.tab-card-resize'))return false;
+   if(el.matches('script,style,svg,path,select,input,textarea'))return false;
+   return Array.from(el.childNodes).some(n=>n.nodeType===3&&n.textContent.trim());
+ });
+ textNodes.forEach(el=>{el.dataset.baseFont=getComputedStyle(el).fontSize});
+ function applyBox(width,height,save=true){
+   card.style.setProperty('width',width+'px','important');
+   card.style.setProperty('max-width','none','important');
+   card.style.setProperty('min-width','0','important');
+   card.style.setProperty('min-height',height+'px','important');
+   card.style.setProperty('max-height','none','important');
+   card.style.setProperty('overflow','auto','important');
+   if(save)try{localStorage.setItem(WK,String(width));localStorage.setItem(HK,String(height))}catch(e){}
+ }
 
  function applyTransform(){
    if(card.dataset.moved==='1'){
@@ -669,6 +798,7 @@ loadLesson("meet");
  function applyFont(v,save=true){
    fontScale=clamp(Number(v)||1,.75,1.6);
    card.style.setProperty('--tab-card-font-scale',fontScale.toFixed(2));
+   textNodes.forEach(el=>el.style.setProperty('font-size',(parseFloat(el.dataset.baseFont)*fontScale)+'px','important'));
    if(save)try{localStorage.setItem(FK,String(fontScale))}catch(e){}
  }
  function saveState(){
@@ -682,7 +812,9 @@ loadLesson("meet");
  function restore(){
    try{
      const fs=localStorage.getItem(FK); if(fs)applyFont(fs,false);
-     const ss=parseFloat(localStorage.getItem(SK)); if(ss)scale=clamp(ss,.45,1.10);
+     // Older A+/A- controls stored a whole-card zoom. Ignore that legacy value.
+      const ww=parseFloat(localStorage.getItem(WK)),hh=parseFloat(localStorage.getItem(HK));
+      if(ww&&hh)applyBox(ww,hh,false);
      const ps=JSON.parse(localStorage.getItem(PK)||'null');
      if(ps&&innerWidth>760){
        card.dataset.moved='1';
@@ -695,64 +827,28 @@ loadLesson("meet");
    }catch(e){}
  }
 
- if(down)down.addEventListener('click',()=>{scale=clamp(+(scale-.05).toFixed(2),.45,1.10);applyTransform();saveState()});
- if(up)up.addEventListener('click',()=>{scale=clamp(+(scale+.05).toFixed(2),.45,1.10);applyTransform();saveState()});
+ if(down)down.addEventListener('click',()=>applyFont(fontScale-.1));
+ if(up)up.addEventListener('click',()=>applyFont(fontScale+.1));
 
  if(reset)reset.addEventListener('click',()=>{
-   try{localStorage.removeItem(PK);localStorage.removeItem(SK);localStorage.removeItem(FK)}catch(e){}
+   try{localStorage.removeItem(PK);localStorage.removeItem(SK);localStorage.removeItem(FK);localStorage.removeItem(WK);localStorage.removeItem(HK)}catch(e){}
    scale=defaultScale();fontScale=1;
    delete card.dataset.moved;
    ['width','height','left','top','right','bottom','transform','transform-origin','min-width','max-width','min-height','max-height'].forEach(p=>card.style.removeProperty(p));
    applyFont(1,false);
  });
 
- function startDrag(e){
-   if(innerWidth<=760 || (typeof e.button==='number'&&e.button!==0))return;
-   if(e.target.closest('.tab-card-resize,.tab-card-font-down,.tab-card-font-up,.tab-card-reset,a,input,select,textarea'))return;
-   if(e.target.closest('button') && !e.target.closest('.tab-card-drag'))return;
-   e.preventDefault();
-   const r=card.getBoundingClientRect();
-   // Convert the visual top-left to fixed coordinates, while keeping the exact current scale.
-   card.dataset.moved='1';
-   card.style.setProperty('left',r.left+'px','important');
-   card.style.setProperty('top',r.top+'px','important');
-   card.style.setProperty('right','auto','important');
-   card.style.setProperty('bottom','auto','important');
-   applyTransform();
-   dragState={id:e.pointerId,sx:e.clientX,sy:e.clientY,left:r.left,top:r.top,w:r.width,h:r.height};
-   try{card.setPointerCapture(e.pointerId)}catch(_){}
- }
- function moveDrag(e){
-   if(!dragState||e.pointerId!==dragState.id)return;
-   e.preventDefault();
-   const x=clamp(dragState.left+e.clientX-dragState.sx,8,Math.max(8,innerWidth-dragState.w-8));
-   const y=clamp(dragState.top+e.clientY-dragState.sy,8,Math.max(8,innerHeight-dragState.h-8));
-   card.style.setProperty('left',x+'px','important');
-   card.style.setProperty('top',y+'px','important');
- }
- function endDrag(e){
-   if(!dragState||e.pointerId!==dragState.id)return;
-   dragState=null; saveState();
-   try{card.releasePointerCapture(e.pointerId)}catch(_){}
- }
-
- // Drag from the Move button OR any non-interactive empty area of the card.
- card.addEventListener('pointerdown',startDrag);
- card.addEventListener('pointermove',moveDrag);
- card.addEventListener('pointerup',endDrag);
- card.addEventListener('pointercancel',endDrag);
-
- // Keep the resize handle from changing the card's scale. It changes scale proportionally instead.
+ // Card movement is owned exclusively by bird-card-drag-controller below.
+ // Resize only the card's dimensions. The text and visual scale remain unchanged.
  if(resize)resize.addEventListener('pointerdown',e=>{
    if(innerWidth<=760)return;
    e.preventDefault();e.stopPropagation();
-   const r=card.getBoundingClientRect(),sx=e.clientX,baseW=r.width,baseScale=scale;
+   const sx=e.clientX,sy=e.clientY,baseW=parseFloat(getComputedStyle(card).width),baseH=parseFloat(getComputedStyle(card).height);
+   const effectiveScale=card.getBoundingClientRect().width/baseW||defaultScale();
    resize.setPointerCapture(e.pointerId);
-   const mv=ev=>{scale=clamp(baseScale*((baseW+ev.clientX-sx)/baseW),.45,1.10);applyTransform()};
-   const end=()=>{resize.removeEventListener('pointermove',mv);saveState()};
-   resize.addEventListener('pointermove',mv);
-   resize.addEventListener('pointerup',end,{once:true});
-   resize.addEventListener('pointercancel',end,{once:true});
+   const mv=ev=>{const width=clamp(baseW+(ev.clientX-sx)/effectiveScale,320,Math.max(520,innerWidth/effectiveScale-50));const height=clamp(baseH+(ev.clientY-sy)/effectiveScale,120,Math.max(250,innerHeight/effectiveScale-40));applyBox(width,height,false)};
+   const end=()=>{resize.removeEventListener('pointermove',mv);resize.removeEventListener('pointerup',end);resize.removeEventListener('pointercancel',end);applyBox(parseFloat(getComputedStyle(card).width),parseFloat(getComputedStyle(card).minHeight),true)};
+   resize.addEventListener('pointermove',mv);resize.addEventListener('pointerup',end);resize.addEventListener('pointercancel',end);
  });
 
  restore();
@@ -874,4 +970,58 @@ document.addEventListener('click',function(ev){
 })();
 </script>
 
+
+
+<script id="bird-card-drag-controller">
+(function(){
+ const card=document.querySelector('#birdWorld > .bird-train-card.tab-master-card');
+ const handle=card&&card.querySelector('.tab-card-drag');
+ if(!card||!handle)return;
+ const KEY='talkabee-bird-card-drag-position-v7';
+ const clamp=(v,lo,hi)=>Math.min(hi,Math.max(lo,v));
+ let drag=null;
+ function position(x,y,scale){
+  const width=card.offsetWidth*scale,height=card.offsetHeight*scale;
+  card.style.setProperty('--bird-card-x',clamp(x,8,Math.max(8,innerWidth-width-8))+'px');
+  card.style.setProperty('--bird-card-y',clamp(y,8,Math.max(8,innerHeight-height-8))+'px');
+  card.style.setProperty('--bird-card-scale',String(scale));
+  card.classList.add('bird-card-dragged');
+ }
+ // Drag from the card surface, not only the Move button.
+ // Buttons, links, selectors and the resize corner keep their normal behavior.
+ card.addEventListener('pointerdown',function(e){
+  if(e.button!==0 || e.target.closest('button,a,input,select,textarea,.tab-card-resize'))return;
+  e.preventDefault();e.stopPropagation();
+  const r=card.getBoundingClientRect();
+  drag={id:e.pointerId,x:e.clientX,y:e.clientY,left:r.left,top:r.top,
+        scale:r.width/(card.offsetWidth||650),started:false};
+  try{card.setPointerCapture(e.pointerId)}catch(_){}
+ },true);
+ window.addEventListener('pointermove',function(e){
+  if(!drag||drag.id!==e.pointerId)return;
+  const dx=e.clientX-drag.x,dy=e.clientY-drag.y;
+  if(!drag.started&&Math.hypot(dx,dy)<3)return;
+  drag.started=true;
+  e.preventDefault();
+  position(drag.left+dx,drag.top+dy,drag.scale);
+ },true);
+ function finish(e){
+  if(!drag||drag.id!==e.pointerId)return;
+  if(drag.started){
+   try{localStorage.setItem(KEY,JSON.stringify({x:parseFloat(card.style.getPropertyValue('--bird-card-x')),y:parseFloat(card.style.getPropertyValue('--bird-card-y')),scale:drag.scale}))}catch(_){}
+  }
+  drag=null;
+  try{card.releasePointerCapture(e.pointerId)}catch(_){}
+ }
+ window.addEventListener('pointerup',finish,true);
+ window.addEventListener('pointercancel',finish,true);
+ const reset=card.querySelector('.tab-card-reset');
+ reset&&reset.addEventListener('click',()=>{
+  card.classList.remove('bird-card-dragged');
+  for(const name of ['--bird-card-x','--bird-card-y','--bird-card-scale'])card.style.removeProperty(name);
+  try{localStorage.removeItem(KEY)}catch(_){}
+ });
+ try{const saved=JSON.parse(localStorage.getItem(KEY)||'null');if(saved&&Number.isFinite(saved.x)&&Number.isFinite(saved.y)&&Number.isFinite(saved.scale))position(saved.x,saved.y,saved.scale)}catch(_){}
+})();
+</script>
 </body></html>

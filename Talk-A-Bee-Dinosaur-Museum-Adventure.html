@@ -25,7 +25,7 @@
 <style id="boardwalk-hotspots-hover-only">
 .hotspot{display:block!important;opacity:0!important;background:transparent!important;outline:none!important;animation:none!important}
 .hotspot:hover,.hotspot:focus-visible{opacity:1!important;background:rgba(255,220,72,.28)!important;outline:2px solid rgba(255,255,255,.85)!important}
-.challenge-mode .hotspot.target{opacity:1!important;background:rgba(255,199,48,.38)!important;outline:4px solid #fff!important}
+.challenge-mode .hotspot.target{opacity:0!important;background:transparent!important;outline:none!important}
 </style>
 
 
@@ -200,6 +200,25 @@
 .card .translation,.script .translation,.tab-master-card .translation{font-size:calc(1em * var(--tab-card-font-scale))!important}
 @media(max-width:760px){.tab-panel-size-controls,.tab-card-tools,.tab-card-resize{display:none!important}}
 </style>
+<style id="talkabee-dinosaur-card-readability-v2">
+/* Readability only: keep challenge logic, card geometry and editors unchanged.
+   Desktop card renders at 0.67 scale, so CSS sizes compensate visually. */
+.tab-master-card #status {
+  font-size:32px!important;
+  line-height:1.3!important;
+  font-weight:800!important;
+  min-height:0;
+  overflow-wrap:anywhere;
+}
+.tab-master-card .tab-card-tools button {
+  font-size:18px!important;
+  line-height:1.2!important;
+  padding:7px 11px!important;
+}
+@media(max-width:760px){
+  .tab-master-card #status{font-size:26px!important;}
+}
+</style>
 <style id="talkabee-global-card-grab-cursor">
 .card,.script,.tab-master-card{cursor:grab!important}
 .card:active,.script:active,.tab-master-card:active{cursor:grabbing!important}
@@ -217,6 +236,18 @@
 #talkabee-object-popup{position:fixed;z-index:2147482900;display:none;padding:8px 12px;border-radius:12px;background:rgba(20,20,20,.82);color:white;font-weight:900;font-size:14px;pointer-events:none}
 </style>
 
+<style id="talkabee-dinosaur-next-navigation-fit">
+/* Keep the fourth action on one line, without changing the card's size or controls. */
+.tab-master-card .controls button{min-width:0!important;}
+.tab-master-card .controls #nextChallenge,
+.tab-master-card .controls #nextPhrase{
+  flex:1.35 1 0!important;
+  white-space:nowrap!important;
+  font-size:12px!important;
+  padding-left:5px!important;
+  padding-right:5px!important;
+}
+</style>
 </head>
 <body class="">
 <div class="talkabee-editions">
@@ -243,8 +274,8 @@
 <div class="tab-panel-size-controls" aria-label="Activity panel size"><button type="button" class="tab-panel-minus" title="Make activity panel smaller">−</button><button type="button" class="tab-panel-reset" title="Reset activity panel size">Reset</button><button type="button" class="tab-panel-plus" title="Make activity panel larger">+</button></div>
 
 <div class="label">LANGUAGE</div>
-<select id="lang" data-tab-global-voice="1"><option value="es">Spanish</option><option value="fr">French</option><option value="en">English</option><option value="de">German</option><option value="it">Italian</option><option value="pt">Portuguese</option><option value="no">Norwegian</option></select>
-<div class="label">VOICE</div><select id="voice" data-tab-global-voice="1"><option value="">Browser Default</option><option value="urn:moz-tts:sapi:Microsoft David - English (United States)?en-US">Microsoft David - English (United States) — en-US</option><option value="urn:moz-tts:sapi:Microsoft Mark - English (United States)?en-US">Microsoft Mark - English (United States) — en-US</option><option value="urn:moz-tts:sapi:Microsoft Zira - English (United States)?en-US">Microsoft Zira - English (United States) — en-US</option><option value="urn:moz-tts:sapi:Microsoft David Desktop - English (United States)?en-US">Microsoft David Desktop - English (United States) — en-US</option><option value="urn:moz-tts:sapi:Microsoft Zira Desktop - English (United States)?en-US">Microsoft Zira Desktop - English (United States) — en-US</option></select>
+<select id="lang"><option value="es">Spanish</option><option value="fr">French</option><option value="en">English</option><option value="de">German</option><option value="it">Italian</option><option value="pt">Portuguese</option><option value="no">Norwegian</option></select>
+<div class="label">VOICE</div><select id="voice"><option value="">Browser Default</option><option value="urn:moz-tts:sapi:Microsoft David - English (United States)?en-US">Microsoft David - English (United States) — en-US</option><option value="urn:moz-tts:sapi:Microsoft Mark - English (United States)?en-US">Microsoft Mark - English (United States) — en-US</option><option value="urn:moz-tts:sapi:Microsoft Zira - English (United States)?en-US">Microsoft Zira - English (United States) — en-US</option><option value="urn:moz-tts:sapi:Microsoft David Desktop - English (United States)?en-US">Microsoft David Desktop - English (United States) — en-US</option><option value="urn:moz-tts:sapi:Microsoft Zira Desktop - English (United States)?en-US">Microsoft Zira Desktop - English (United States) — en-US</option></select>
 <button id="sceneView" aria-pressed="false">◉ Scene View</button>
 <div class="label">DISCOVERY</div><button id="discovery">🔎 Discovery — Click the Scene</button>
 <div class="label">ACTIVITIES</div>
@@ -264,7 +295,7 @@
 <h2 id="title">Dinosaur Museum Adventure</h2><p id="prompt">Click any object in the scene to hear its name.</p>
 <div class="word"><strong id="line">dinosaurio grande y gordo con sonido de delfín</strong><div class="translation" id="translation">big fat dinosaur with dolphin sound</div></div>
 <p id="status"></p>
-<div class="controls"><button id="normal">🔊 Speak</button><button id="slow">🐢 Slow</button><button id="replay">↻ Replay</button></div>
+<div class="controls"><button id="normal">🔊 Speak</button><button id="slow">🐢 Slow</button><button id="replay">↻ Replay</button><button id="nextChallenge" type="button" hidden>Next Challenge →</button><button id="nextPhrase" type="button" hidden>Next phrase →</button></div>
 </section>
 
 
@@ -306,6 +337,7 @@ const challengeOrder=["trex","triceratops","stegosaurus","pterosaur","eggs","foo
 const langSel=document.getElementById("lang"),voiceSel=document.getElementById("voice");
 const title=document.getElementById("title"),prompt=document.getElementById("prompt"),line=document.getElementById("line"),translation=document.getElementById("translation"),status=document.getElementById("status"),world=document.getElementById("world");
 let lastWord="trex",challenge=-1,activeLesson="";
+function clearChallengeHighlights(){world.classList.remove("challenge-mode");document.querySelectorAll(".hotspot.target").forEach(h=>h.classList.remove("target"));}
 function selectedVoice(){
  const vs=speechSynthesis.getVoices()||[];
  return vs.find(v=>v.voiceURI===voiceSel.value)||null;
@@ -327,9 +359,57 @@ if("speechSynthesis" in window){
 voiceSel.onchange=()=>localStorage.setItem("talkabee-dinosaur-voice",voiceSel.value);
 function speak(t,rate=.82,onend=null){if(!t||!("speechSynthesis" in window)){if(onend)onend();return;}try{speechSynthesis.cancel();const u=new SpeechSynthesisUtterance(t);u.lang=LANGS[langSel.value].code;u.rate=rate;const v=selectedVoice();if(v)u.voice=v;if(onend)u.onend=onend;setTimeout(()=>speechSynthesis.speak(u),40)}catch(e){if(onend)onend();}}
 function showWord(key){lastWord=key;const x=LANGS[langSel.value].words[key]||[key,key];line.textContent=x[0];translation.textContent=langSel.value==="en"?"":x[1]}
-document.querySelectorAll(".hotspot").forEach(b=>b.onclick=()=>{activeLesson="";const key=b.dataset.word,x=LANGS[langSel.value].words[key]||[key,key];showWord(key);let soundDone=false;const playSound=()=>{if(soundDone)return;soundDone=true;playMuseumSound(key)};speak(x[0],.82,playSound);setTimeout(playSound,1400);if(challenge>=0){if(key===challengeOrder[challenge]){status.textContent="✓ Nice find!";status.style.color="#9dffbf"}else{status.textContent="Not that one — keep looking.";status.style.color="#ffe28a"}}});
-document.getElementById("discovery").onclick=()=>{activeLesson="";challenge=-1;world.classList.remove("challenge-mode");title.textContent="Click & Discover";prompt.textContent="Click any object in the scene to hear its name.";status.textContent=""};
-document.querySelectorAll("[data-ch]").forEach(b=>b.onclick=()=>{activeLesson="";challenge=+b.dataset.ch;world.classList.add("challenge-mode");document.querySelectorAll(".hotspot").forEach(h=>h.classList.toggle("target",h.dataset.word===challengeOrder[challenge]));title.textContent="Challenge "+(challenge+1)+" of 6";prompt.textContent=b.textContent.replace(/^\d+\.\s*/,"");status.textContent=""});
+document.querySelectorAll(".hotspot").forEach(b=>b.onclick=()=>{activeLesson="";const key=b.dataset.word,x=LANGS[langSel.value].words[key]||[key,key];showWord(key);let soundDone=false;const playSound=()=>{if(soundDone)return;soundDone=true;playMuseumSound(key)};speak(x[0],.82,playSound);setTimeout(playSound,1400);if(challenge>=0){if(key===challengeOrder[challenge]){status.textContent="✓ Nice find!";status.style.setProperty("color","#35e46a","important");clearChallengeHighlights()}else{status.textContent="Not that one — keep looking.";status.style.color="#ffe28a"}}});
+// Newly created editor hotspots are inserted after the original onclick bindings.
+// Handle those dynamically, without processing existing hotspots twice.
+document.addEventListener('click',function(ev){
+ if(document.body.classList.contains('tb-hs-editing'))return;
+ const h=ev.target.closest&&ev.target.closest('.hotspot[data-word]');
+ if(!h || typeof h.onclick==='function')return;
+ const key=h.dataset.word;
+ activeLesson='';
+ showWord(key);
+ // The custom-hotspot bridge already speaks and plays its assigned sound.
+ if(h.dataset.tbCustom!=='1'){
+   const words=LANGS[langSel.value].words[key]||[key,key];
+   speak(words[0],.82);
+ }
+ if(challenge>=0){
+   if(key===challengeOrder[challenge]){
+     status.textContent='✓ Nice find!';
+     status.style.setProperty('color','#35e46a','important');
+     clearChallengeHighlights();
+   }else{
+     status.textContent='Not that one — keep looking.';
+     status.style.setProperty('color','#ffe28a','important');
+   }
+ }
+});
+document.getElementById("discovery").onclick=()=>{activeLesson="";challenge=-1;clearChallengeHighlights();title.textContent="Click & Discover";prompt.textContent="Click any object in the scene to hear its name.";status.textContent="";updateNextChallengeVisibility()};
+document.querySelectorAll("[data-ch]").forEach(b=>b.onclick=()=>{activeLesson="";challenge=+b.dataset.ch;clearChallengeHighlights();title.textContent="Challenge "+(challenge+1)+" of 6";prompt.textContent=b.textContent.replace(/^\d+\.\s*/,"");status.textContent=""});
+// Challenge-only navigation: reuse the actual left-panel challenge buttons,
+// including names and target assignments saved by the Challenge Editor.
+const nextChallengeButton=document.getElementById('nextChallenge');
+const nextPhraseButton=document.getElementById('nextPhrase');
+function updateNextChallengeVisibility(){
+  nextChallengeButton.hidden=challenge<0;
+  nextChallengeButton.style.setProperty('display',challenge>=0?'inline-block':'none','important');
+  nextPhraseButton.hidden=!activeLesson;
+  nextPhraseButton.style.setProperty('display',activeLesson?'inline-block':'none','important');
+}
+nextChallengeButton.addEventListener('click',function(){
+  if(challenge<0)return;
+  const buttons=[...document.querySelectorAll('.tab-master-panel [data-ch]')];
+  if(!buttons.length)return;
+  const current=buttons.findIndex(b=>Number(b.dataset.ch)===challenge);
+  buttons[(current+1)%buttons.length].click();
+  updateNextChallengeVisibility();
+});
+// Run after the existing button handlers, without changing challenge evaluation.
+document.querySelectorAll('.tab-master-panel [data-ch],.tab-master-panel [data-lesson],#discovery').forEach(function(b){
+  b.addEventListener('click',updateNextChallengeVisibility);
+});
+updateNextChallengeVisibility();
 const lessons={
 en:{arrive:["We are at the dinosaur museum.", "Look at the giant dinosaur skeletons."],rides:["The T. rex was a powerful dinosaur.", "Look at its enormous teeth."],snacks:["These are dinosaur eggs.", "The eggs are protected in the exhibit."],beach:["Follow the dinosaur footprints.", "Where do the tracks lead?"],safety:["Look up at the flying reptile.", "The pterosaur is above us."],things:["What do you see in the museum?", "I see fossils, skeletons, and dinosaurs."]},
 es:{arrive:["Estamos en el museo de dinosaurios.", "Mira los esqueletos gigantes de dinosaurios."],rides:["El T. rex era un dinosaurio poderoso.", "Mira sus enormes dientes."],snacks:["Estos son huevos de dinosaurio.", "Los huevos están protegidos en la exhibición."],beach:["Sigue las huellas de dinosaurio.", "¿Adónde llevan las huellas?"],safety:["Mira hacia arriba al reptil volador.", "El pterosaurio está sobre nosotros."],things:["¿Qué ves en el museo?", "Veo fósiles, esqueletos y dinosaurios."]},
@@ -339,17 +419,24 @@ it:{arrive:["Siamo al museo dei dinosauri.", "Guarda gli enormi scheletri di din
 pt:{arrive:["Estamos no museu de dinossauros.", "Olhe os esqueletos gigantes de dinossauros."],rides:["O T. rex era um dinossauro poderoso.", "Olhe seus dentes enormes."],snacks:["Estes são ovos de dinossauro.", "Os ovos estão protegidos na exposição."],beach:["Siga as pegadas de dinossauro.", "Aonde as pegadas levam?"],safety:["Olhe para o réptil voador acima de nós.", "O pterossauro está acima de nós."],things:["O que você vê no museu?", "Eu vejo fósseis, esqueletos e dinossauros."]},
 no:{arrive:["Vi er på dinosaurmuseet.", "Se på de enorme dinosaurskjelettene."],rides:["T. rex var en kraftig dinosaur.", "Se på de enorme tennene."],snacks:["Dette er dinosauregg.", "Eggene er beskyttet i utstillingen."],beach:["Følg dinosaursporene.", "Hvor fører sporene?"],safety:["Se opp på flygeøglen.", "Flygeøglen er over oss."],things:["Hva ser du i museet?", "Jeg ser fossiler, skjeletter og dinosaurer."]}
 };
+let lessonPhraseIndex=1;
 function showLesson(key,speakIt=false){
+  if(activeLesson!==key)lessonPhraseIndex=1;
   activeLesson=key;lastWord="";
   const a=lessons[langSel.value][key];
   const btn=document.querySelector(`[data-lesson="${key}"]`);
   title.textContent=btn?btn.textContent.replace(/^\d+\.\s*/,""):"Dinosaur Museum Adventure";
-  prompt.textContent=a[0];line.textContent=a[1];
-  translation.textContent=langSel.value==="en"?"":lessons.en[key][1];
-  if(speakIt)speak(a[1]);
+  prompt.textContent=a[0];line.textContent=a[lessonPhraseIndex];
+  translation.textContent=langSel.value==="en"?"":lessons.en[key][lessonPhraseIndex];
+  if(speakIt)speak(a[lessonPhraseIndex]);
 }
-document.querySelectorAll("[data-lesson]").forEach(b=>b.onclick=()=>{challenge=-1;world.classList.remove("challenge-mode");status.textContent="";showLesson(b.dataset.lesson,true)});
-function currentSpeechText(){if(activeLesson)return lessons[langSel.value][activeLesson][1];if(lastWord){const x=LANGS[langSel.value].words[lastWord]||[lastWord,lastWord];return x[0];}return line.textContent}
+document.querySelectorAll("[data-lesson]").forEach(b=>b.onclick=()=>{challenge=-1;clearChallengeHighlights();status.textContent="";showLesson(b.dataset.lesson,true);updateNextChallengeVisibility()});
+nextPhraseButton.addEventListener("click",()=>{
+  if(!activeLesson)return;
+  lessonPhraseIndex=lessonPhraseIndex===1?0:1;
+  showLesson(activeLesson,true);
+});
+function currentSpeechText(){if(activeLesson)return lessons[langSel.value][activeLesson][lessonPhraseIndex];if(lastWord){const x=LANGS[langSel.value].words[lastWord]||[lastWord,lastWord];return x[0];}return line.textContent}
 document.getElementById("normal").onclick=()=>speak(currentSpeechText(),.82);
 document.getElementById("slow").onclick=()=>speak(currentSpeechText(),.58);
 document.getElementById("replay").onclick=()=>speak(currentSpeechText(),.82);
@@ -376,7 +463,7 @@ showWord("trex");
   document.querySelectorAll('.tab-master-card button').forEach(function(b){
    var t=b.textContent.trim();
    if(/normal/i.test(t)) b.textContent='🔊 Speak';
-   if(/^next\s*(line|phrase)?/i.test(t)) b.textContent='Next phrase →';
+   if(/^next\s*(?:line|phrase)(?:\s*→)?$/i.test(t)) b.textContent='Next phrase →';
   });
  }
  function run(){cleanActivityIcons();moveHomeToBottom();labels()}
@@ -482,9 +569,28 @@ showWord("trex");
  if(!card)return;
  const drag=card.querySelector('.tab-card-drag'),down=card.querySelector('.tab-card-font-down'),up=card.querySelector('.tab-card-font-up'),reset=card.querySelector('.tab-card-reset'),resize=card.querySelector('.tab-card-resize');
  const PK='talkabee-global-script-card-position',SK='talkabee-global-script-card-scale',FK='talkabee-global-script-card-font-scale';
+ const pageKey=(location.pathname.split('/').pop()||'adventure').replace(/[^a-z0-9-]/gi,'_');
+ const WK='talkabee-script-card-width-'+pageKey,HK='talkabee-script-card-height-'+pageKey;
  const clamp=(n,a,b)=>Math.max(a,Math.min(b,n));
  const defaultScale=()=>matchMedia('(max-width:760px)').matches?.82:.67;
  let scale=defaultScale(),fontScale=1,dragState=null;
+ // Capture actual rendered font sizes, even on Adventures with older card markup.
+ // Never modify the Move / A- / A+ / Reset controls or resize handle.
+ const textNodes=Array.from(card.querySelectorAll('*')).filter(el=>{
+   if(el.closest('.tab-card-tools,.tab-card-resize'))return false;
+   if(el.matches('script,style,svg,path,select,input,textarea'))return false;
+   return Array.from(el.childNodes).some(n=>n.nodeType===3&&n.textContent.trim());
+ });
+ textNodes.forEach(el=>{el.dataset.baseFont=getComputedStyle(el).fontSize});
+ function applyBox(width,height,save=true){
+   card.style.setProperty('width',width+'px','important');
+   card.style.setProperty('max-width','none','important');
+   card.style.setProperty('min-width','0','important');
+   card.style.setProperty('min-height',height+'px','important');
+   card.style.setProperty('max-height','none','important');
+   card.style.setProperty('overflow','visible','important');
+   if(save)try{localStorage.setItem(WK,String(width));localStorage.setItem(HK,String(height))}catch(e){}
+ }
 
  function applyTransform(){
    if(card.dataset.moved==='1'){
@@ -498,6 +604,7 @@ showWord("trex");
  function applyFont(v,save=true){
    fontScale=clamp(Number(v)||1,.75,1.6);
    card.style.setProperty('--tab-card-font-scale',fontScale.toFixed(2));
+   textNodes.forEach(el=>el.style.setProperty('font-size',(parseFloat(el.dataset.baseFont)*fontScale)+'px','important'));
    if(save)try{localStorage.setItem(FK,String(fontScale))}catch(e){}
  }
  function saveState(){
@@ -511,7 +618,9 @@ showWord("trex");
  function restore(){
    try{
      const fs=localStorage.getItem(FK); if(fs)applyFont(fs,false);
-     const ss=parseFloat(localStorage.getItem(SK)); if(ss)scale=clamp(ss,.45,1.10);
+     // Older A+/A- controls stored a whole-card zoom. Ignore that legacy value.
+      const ww=parseFloat(localStorage.getItem(WK)),hh=parseFloat(localStorage.getItem(HK));
+      if(ww&&hh)applyBox(ww,hh,false);
      const ps=JSON.parse(localStorage.getItem(PK)||'null');
      if(ps&&innerWidth>760){
        card.dataset.moved='1';
@@ -524,15 +633,40 @@ showWord("trex");
    }catch(e){}
  }
 
- if(down)down.addEventListener('click',()=>{scale=clamp(+(scale-.05).toFixed(2),.45,1.10);applyTransform();saveState()});
- if(up)up.addEventListener('click',()=>{scale=clamp(+(scale+.05).toFixed(2),.45,1.10);applyTransform();saveState()});
+ if(down)down.addEventListener('click',()=>applyFont(fontScale-.1));
+ if(up)up.addEventListener('click',()=>applyFont(fontScale+.1));
 
  if(reset)reset.addEventListener('click',()=>{
-   try{localStorage.removeItem(PK);localStorage.removeItem(SK);localStorage.removeItem(FK)}catch(e){}
+   try{localStorage.removeItem(PK);localStorage.removeItem(SK);localStorage.removeItem(FK);localStorage.removeItem(WK);localStorage.removeItem(HK)}catch(e){}
    scale=defaultScale();fontScale=1;
    delete card.dataset.moved;
-   ['width','height','left','top','right','bottom','transform','transform-origin','min-width','max-width','min-height','max-height'].forEach(p=>card.style.removeProperty(p));
+   ['width','height','left','top','right','bottom','inset','transform','transform-origin','min-width','max-width','min-height','max-height'].forEach(p=>card.style.removeProperty(p));
    applyFont(1,false);
+   // Reset must restore the approved centered, bottom-anchored appearance
+   // without allowing any part of the card to fall outside the viewport.
+   // Do not rely on the later boundary observer: its correction can run
+   // before the browser has laid out the newly reset content.
+   const placeDefault=()=>{
+     naturalHeight();
+     const gap=16;
+     const cssWidth=card.getBoundingClientRect().width || 520;
+     const baseWidth=parseFloat(getComputedStyle(card).width)||520;
+     const visualScale=defaultScale();
+     const visualWidth=baseWidth*visualScale;
+     const visualHeight=card.scrollHeight*visualScale;
+     const vw=document.documentElement.clientWidth;
+     const vh=document.documentElement.clientHeight;
+     const x=Math.max(gap,(vw-visualWidth)/2);
+     const y=Math.max(gap,vh-gap-visualHeight);
+     card.dataset.moved='1';
+     card.style.setProperty('left',x+'px','important');
+     card.style.setProperty('top',y+'px','important');
+     card.style.setProperty('right','auto','important');
+     card.style.setProperty('bottom','auto','important');
+     card.style.setProperty('transform-origin','top left','important');
+     card.style.setProperty('transform','scale('+visualScale+')','important');
+   };
+   requestAnimationFrame(()=>requestAnimationFrame(placeDefault));
  });
 
  function startDrag(e){
@@ -571,20 +705,41 @@ showWord("trex");
  card.addEventListener('pointerup',endDrag);
  card.addEventListener('pointercancel',endDrag);
 
- // Keep the resize handle from changing the card's scale. It changes scale proportionally instead.
+ // Resize only the card's dimensions. The text and visual scale remain unchanged.
  if(resize)resize.addEventListener('pointerdown',e=>{
    if(innerWidth<=760)return;
    e.preventDefault();e.stopPropagation();
-   const r=card.getBoundingClientRect(),sx=e.clientX,baseW=r.width,baseScale=scale;
+   const sx=e.clientX,sy=e.clientY,baseW=parseFloat(getComputedStyle(card).width),baseH=parseFloat(getComputedStyle(card).height);
+   const effectiveScale=card.getBoundingClientRect().width/baseW||defaultScale();
    resize.setPointerCapture(e.pointerId);
-   const mv=ev=>{scale=clamp(baseScale*((baseW+ev.clientX-sx)/baseW),.45,1.10);applyTransform()};
-   const end=()=>{resize.removeEventListener('pointermove',mv);saveState()};
-   resize.addEventListener('pointermove',mv);
-   resize.addEventListener('pointerup',end,{once:true});
-   resize.addEventListener('pointercancel',end,{once:true});
+   const mv=ev=>{const width=clamp(baseW+(ev.clientX-sx)/effectiveScale,320,Math.max(520,innerWidth/effectiveScale-50));const height=clamp(baseH+(ev.clientY-sy)/effectiveScale,120,Math.max(250,innerHeight/effectiveScale-40));applyBox(width,height,false)};
+   const end=()=>{resize.removeEventListener('pointermove',mv);resize.removeEventListener('pointerup',end);resize.removeEventListener('pointercancel',end);applyBox(parseFloat(getComputedStyle(card).width),parseFloat(getComputedStyle(card).height),true);naturalHeight()};
+   resize.addEventListener('pointermove',mv);resize.addEventListener('pointerup',end);resize.addEventListener('pointercancel',end);
  });
 
- restore();
+  restore();
+
+  // Grandpa's Place behavior: the card follows its content rather than keeping
+  // a height left behind by an earlier challenge or a saved editor snapshot.
+  // A manual corner drag can temporarily set a preferred minimum height;
+  // the next phrase/challenge change returns the card to natural auto-height.
+  function naturalHeight(){
+    // The card must size to content, not become an internally scrolling pane.
+    // Preserve the user's chosen width and screen position.
+    card.style.setProperty('height','auto','important');
+    card.style.setProperty('min-height','0px','important');
+    card.style.setProperty('max-height','none','important');
+    card.style.setProperty('overflow','visible','important');
+    card.style.setProperty('overflow-y','visible','important');
+    try{localStorage.removeItem(HK)}catch(e){}
+  }
+  naturalHeight();
+  const contentFields=['title','prompt','line','translation','status']
+    .map(id=>document.getElementById(id)).filter(Boolean);
+  const contentWatcher=new MutationObserver(()=>naturalHeight());
+  contentFields.forEach(el=>contentWatcher.observe(el,{
+    subtree:true,childList:true,characterData:true
+  }));
 })();
 </script>
 <script id="talkabee-hotspot-custom-sound">
@@ -620,7 +775,7 @@ function soundAfterVoice(el){
 document.addEventListener('click',function(ev){
  if(document.body.classList.contains('tb-hs-editing'))return;
  const el=ev.target.closest&&ev.target.closest('[data-tb-custom="1"]');if(!el)return;
- ev.preventDefault();ev.stopPropagation();
+ // Let the click reach the Adventure challenge checker as well.
  const l=lang(),txt=translation(el,l),en=translation(el,'en'),key=el.dataset.word||el.dataset.object||en;
  try{if(typeof showWord==='function')showWord(key);else{const line=document.querySelector('[id$="Line"]');const trans=document.querySelector('[id$="Translation"]');if(line)line.textContent=txt;if(trans)trans.textContent=l==='en'?'':en}}catch(e){}
  try{if(typeof speak==='function')speak(txt,.82);else if('speechSynthesis'in window){speechSynthesis.cancel();const u=new SpeechSynthesisUtterance(txt);u.lang=codes[l]||l;u.rate=.82;speechSynthesis.speak(u)}}catch(e){}
@@ -685,4 +840,78 @@ document.addEventListener('click',function(ev){
 })();
 </script>
 
+
+<script type="application/json" id="talkabee-challenge-data">[]</script>
+<script id="talkabee-challenge-runtime">
+(function(){
+ const data=document.getElementById('talkabee-challenge-data');
+ if(!data)return;
+ try{const saved=JSON.parse(data.textContent||'[]');
+ saved.forEach((v,i)=>{const b=document.querySelector('[data-ch="'+i+'"]');if(!b||!v)return;
+ if(v.key)challengeOrder[i]=v.key;
+ if(v.text)b.textContent=(i+1)+'. '+v.text;
+ });}catch(e){console.warn('Challenge data could not be loaded',e)}
+})();
+</script>
+
+<script id="talkabee-dinosaur-card-viewport-boundary-v1">
+/* Keep the complete displayed script card inside the viewport after moving,
+   resizing, restoring its position, or growing to fit longer text. */
+(function(){
+  'use strict';
+  const card=document.querySelector('.tab-master-card');
+  if(!card)return;
+  const GAP=16;
+  let pending=false,adjusting=false;
+  function keepVisible(){
+    if(adjusting || document.body.classList.contains('scene-view'))return;
+    adjusting=true;
+    try{
+      const r=card.getBoundingClientRect();
+      if(!r.width||!r.height)return;
+      // Normal, bottom-anchored default remains untouched when already visible.
+      let dx=0,dy=0;
+      const vw=document.documentElement.clientWidth,vh=document.documentElement.clientHeight;
+      if(r.width<=vw-2*GAP){
+        if(r.left<GAP)dx=GAP-r.left;
+        else if(r.right>vw-GAP)dx=vw-GAP-r.right;
+      }else if(r.left>GAP)dx=GAP-r.left;
+      if(r.height<=vh-2*GAP){
+        if(r.top<GAP)dy=GAP-r.top;
+        else if(r.bottom>vh-GAP)dy=vh-GAP-r.bottom;
+      }else if(r.top>GAP)dy=GAP-r.top;
+      if(Math.abs(dx)<.5&&Math.abs(dy)<.5)return;
+      // Use the *rendered* rectangle, not the unscaled CSS width/height.
+      // This preserves the existing .67 card transform and drag behavior.
+      card.dataset.moved='1';
+      card.style.setProperty('left',(r.left+dx)+'px','important');
+      card.style.setProperty('top',(r.top+dy)+'px','important');
+      card.style.setProperty('right','auto','important');
+      card.style.setProperty('bottom','auto','important');
+      card.style.setProperty('transform-origin','top left','important');
+      const cssWidth=parseFloat(getComputedStyle(card).width)||r.width;
+      const factor=r.width/cssWidth;
+      card.style.setProperty('transform','scale('+factor+')','important');
+    }finally{adjusting=false;}
+  }
+  function schedule(){if(pending)return;pending=true;requestAnimationFrame(()=>{pending=false;keepVisible()});}
+  // Capture ensures the corrected position is saved by the existing drag handler.
+  // Reset restores CSS defaults first; then re-check the full rendered card.
+  // This also handles a reset that changes position without changing its size.
+  const resetButton=card.querySelector('.tab-card-reset');
+  if(resetButton)resetButton.addEventListener('click',()=>{
+    requestAnimationFrame(()=>{keepVisible();requestAnimationFrame(keepVisible);});
+  });
+  card.addEventListener('pointerup',keepVisible,true);
+  card.addEventListener('pointercancel',keepVisible,true);
+  card.addEventListener('pointermove',schedule);
+  const ro=new ResizeObserver(schedule);
+  ro.observe(card);
+  window.addEventListener('resize',schedule);
+  window.addEventListener('pageshow',schedule);
+  // Font changes, new challenge text and the status line can alter card height.
+  new MutationObserver(schedule).observe(card,{subtree:true,childList:true,characterData:true});
+  schedule();
+})();
+</script>
 </body></html>

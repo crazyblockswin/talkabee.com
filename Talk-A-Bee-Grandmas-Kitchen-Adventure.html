@@ -280,6 +280,7 @@ select{width:100%;padding:12px;border:0;border-radius:14px;font-size:17px;font-w
 #talkabee-object-popup{position:fixed;z-index:2147482900;display:none;padding:8px 12px;border-radius:12px;background:rgba(20,20,20,.82);color:white;font-weight:900;font-size:14px;pointer-events:none}
 </style>
 
+<script id="tb-legacy-challenge-data" type="application/json">{"targets": ["flour", "bowl", "rollingpin", "stove", "refrigerator", "bee"], "labels": ["Challenge 1", "Challenge 2", "Challenge 3", "Challenge 4", "Challenge 5", "Challenge 6"]}</script>
 </head><body class="">
 <div class="talkabee-editions">
 <details>
@@ -381,6 +382,8 @@ function playKitchenSceneSound(key){
  kitchenSceneAudio.play().catch(()=>{});
 }
 const challengeKeys=["flour", "bowl", "rollingpin", "stove", "refrigerator", "bee"];
+;(()=>{const node=document.getElementById('tb-legacy-challenge-data');let d;try{d=JSON.parse(node.textContent)}catch(e){return}if(!Array.isArray(d.targets)||d.targets.length!==6)return;function refresh(){for(let i=0;i<6;i++)challengeKeys[i]=d.targets[i];document.querySelectorAll('[data-challenge]').forEach(el=>{const i=Number(el.dataset.challenge??el.dataset.ch);if(i>=0&&i<6)el.textContent=(i+1)+'. '+(d.labels[i]||d.targets[i])})}window.tbLegacyChallengeGet=()=>JSON.parse(node.textContent);window.tbLegacyChallengeSet=next=>{d=next;node.textContent=JSON.stringify(d);refresh()};window.tbLegacyChallengeSelector='.hotspot';refresh()})();
+
 const activityTitles=["\ud83c\udf6a Baking Cookies", "\ud83e\udd63 Finding Ingredients", "\ud83e\udd44 Kitchen Actions", "\ud83d\udc75 Helping Grandma", "\u2b50 Colors & Counting", "\ud83e\udd67 Sharing the Treats"];
 const world=document.getElementById('world'),langSel=document.getElementById('language'),voiceSel=document.getElementById('voice');
 const lineEl=document.getElementById('line'),transEl=document.getElementById('translation'),pop=document.getElementById('pop');
@@ -545,6 +548,31 @@ render();
   }
 })();
 </script>
+<style id="talkabee-approved-farm-card-20261010">
+/* Talk A Bee — approved Animals Farm readability, 2026-10-10.
+   Card-only overrides: do not alter hotspots, editors, or Activity Panel. */
+.tab-master-card:not(.live-card){
+ width:575px!important;max-width:575px!important;
+ height:auto!important;min-height:0!important;
+ background:rgba(25,19,24,.20)!important;
+ background-color:rgba(25,19,24,.20)!important;
+ backdrop-filter:blur(2px)!important;-webkit-backdrop-filter:blur(2px)!important;
+ border:1px solid rgba(255,255,255,.30)!important;
+ box-sizing:border-box!important;
+}
+.tab-master-card:not(.live-card) :is(h1,h2,#title,#cardTitle,#homeTitle,#yachtTitle,#trainTitle){font-size:32px!important;line-height:1.15!important;}
+.tab-master-card:not(.live-card) :is(#prompt,#homePrompt,#yachtPrompt,#trainPrompt,p:not(.status),.prompt){font-size:24px!important;line-height:1.28!important;}
+.tab-master-card:not(.live-card) :is(.line,.word,.words,.wordline,.home-wordline,.train-line,.yacht-wordline,#line){font-size:28px!important;line-height:1.25!important;}
+.tab-master-card:not(.live-card) :is(.translation,.home-translation,.train-translation,.yacht-translation,#translation){font-size:22px!important;line-height:1.3!important;}
+.tab-master-card:not(.live-card) :is(.kicker,.label,.home-kicker,.train-kicker,.yacht-kicker){font-size:15px!important;line-height:1.2!important;}
+.tab-master-card:not(.live-card) :is(.status,.hint,.tip,.count,#status){font-size:18px!important;line-height:1.25!important;}
+.tab-master-card:not(.live-card) :is(.actions,.controls,.home-actions,.train-actions,.yacht-actions) button{font-size:18px!important;line-height:1.2!important;padding:9px 13px!important;min-height:38px!important;}
+.tab-master-card:not(.live-card) .tab-card-tools button{font-size:18px!important;padding:7px 11px!important;}
+@media(max-width:760px){
+ .tab-master-card:not(.live-card){width:min(575px,calc(100vw - 32px))!important;max-width:calc(100vw - 32px)!important;max-height:calc(100vh - 20px)!important;overflow:auto!important;}
+ .tab-master-card:not(.live-card) :is(.actions,.controls,.home-actions,.train-actions,.yacht-actions){flex-wrap:wrap!important;}
+}
+</style>
 <script id="talkabee-accessibility-controls-script-v1">
 (function(){
  const panel=document.querySelector('.tab-master-panel,.activity-panel,.panel');
@@ -564,9 +592,28 @@ render();
  if(!card)return;
  const drag=card.querySelector('.tab-card-drag'),down=card.querySelector('.tab-card-font-down'),up=card.querySelector('.tab-card-font-up'),reset=card.querySelector('.tab-card-reset'),resize=card.querySelector('.tab-card-resize');
  const PK='talkabee-global-script-card-position',SK='talkabee-global-script-card-scale',FK='talkabee-global-script-card-font-scale';
+ const pageKey=(location.pathname.split('/').pop()||'adventure').replace(/[^a-z0-9-]/gi,'_');
+ const WK='talkabee-script-card-width-'+pageKey,HK='talkabee-script-card-height-'+pageKey;
  const clamp=(n,a,b)=>Math.max(a,Math.min(b,n));
  const defaultScale=()=>matchMedia('(max-width:760px)').matches?.82:.67;
  let scale=defaultScale(),fontScale=1,dragState=null;
+ // Capture actual rendered font sizes, even on Adventures with older card markup.
+ // Never modify the Move / A- / A+ / Reset controls or resize handle.
+ const textNodes=Array.from(card.querySelectorAll('*')).filter(el=>{
+   if(el.closest('.tab-card-tools,.tab-card-resize'))return false;
+   if(el.matches('script,style,svg,path,select,input,textarea'))return false;
+   return Array.from(el.childNodes).some(n=>n.nodeType===3&&n.textContent.trim());
+ });
+ textNodes.forEach(el=>{el.style.removeProperty("font-size");el.dataset.baseFont=getComputedStyle(el).fontSize});
+ function applyBox(width,height,save=true){
+   card.style.setProperty('width',width+'px','important');
+   card.style.setProperty('max-width','none','important');
+   card.style.setProperty('min-width','0','important');
+   card.style.setProperty('min-height',height+'px','important');
+   card.style.setProperty('max-height','none','important');
+   card.style.setProperty('overflow','auto','important');
+   if(save)try{localStorage.setItem(WK,String(width));localStorage.setItem(HK,String(height))}catch(e){}
+ }
 
  function applyTransform(){
    if(card.dataset.moved==='1'){
@@ -580,6 +627,7 @@ render();
  function applyFont(v,save=true){
    fontScale=clamp(Number(v)||1,.75,1.6);
    card.style.setProperty('--tab-card-font-scale',fontScale.toFixed(2));
+   textNodes.forEach(el=>el.style.setProperty('font-size',(parseFloat(el.dataset.baseFont)*fontScale)+'px','important'));
    if(save)try{localStorage.setItem(FK,String(fontScale))}catch(e){}
  }
  function saveState(){
@@ -593,7 +641,9 @@ render();
  function restore(){
    try{
      const fs=localStorage.getItem(FK); if(fs)applyFont(fs,false);
-     const ss=parseFloat(localStorage.getItem(SK)); if(ss)scale=clamp(ss,.45,1.10);
+     // Older A+/A- controls stored a whole-card zoom. Ignore that legacy value.
+      const ww=parseFloat(localStorage.getItem(WK)),hh=parseFloat(localStorage.getItem(HK));
+      if(ww&&hh)applyBox(ww,hh,false);
      const ps=JSON.parse(localStorage.getItem(PK)||'null');
      if(ps&&innerWidth>760){
        card.dataset.moved='1';
@@ -606,11 +656,11 @@ render();
    }catch(e){}
  }
 
- if(down)down.addEventListener('click',()=>{scale=clamp(+(scale-.05).toFixed(2),.45,1.10);applyTransform();saveState()});
- if(up)up.addEventListener('click',()=>{scale=clamp(+(scale+.05).toFixed(2),.45,1.10);applyTransform();saveState()});
+ if(down)down.addEventListener('click',()=>applyFont(fontScale-.1));
+ if(up)up.addEventListener('click',()=>applyFont(fontScale+.1));
 
  if(reset)reset.addEventListener('click',()=>{
-   try{localStorage.removeItem(PK);localStorage.removeItem(SK);localStorage.removeItem(FK)}catch(e){}
+   try{localStorage.removeItem(PK);localStorage.removeItem(SK);localStorage.removeItem(FK);localStorage.removeItem(WK);localStorage.removeItem(HK)}catch(e){}
    scale=defaultScale();fontScale=1;
    delete card.dataset.moved;
    ['width','height','left','top','right','bottom','transform','transform-origin','min-width','max-width','min-height','max-height'].forEach(p=>card.style.removeProperty(p));
@@ -653,17 +703,16 @@ render();
  card.addEventListener('pointerup',endDrag);
  card.addEventListener('pointercancel',endDrag);
 
- // Keep the resize handle from changing the card's scale. It changes scale proportionally instead.
+ // Resize only the card's dimensions. The text and visual scale remain unchanged.
  if(resize)resize.addEventListener('pointerdown',e=>{
    if(innerWidth<=760)return;
    e.preventDefault();e.stopPropagation();
-   const r=card.getBoundingClientRect(),sx=e.clientX,baseW=r.width,baseScale=scale;
+   const sx=e.clientX,sy=e.clientY,baseW=parseFloat(getComputedStyle(card).width),baseH=parseFloat(getComputedStyle(card).height);
+   const effectiveScale=card.getBoundingClientRect().width/baseW||defaultScale();
    resize.setPointerCapture(e.pointerId);
-   const mv=ev=>{scale=clamp(baseScale*((baseW+ev.clientX-sx)/baseW),.45,1.10);applyTransform()};
-   const end=()=>{resize.removeEventListener('pointermove',mv);saveState()};
-   resize.addEventListener('pointermove',mv);
-   resize.addEventListener('pointerup',end,{once:true});
-   resize.addEventListener('pointercancel',end,{once:true});
+   const mv=ev=>{const width=clamp(baseW+(ev.clientX-sx)/effectiveScale,320,Math.max(520,innerWidth/effectiveScale-50));const height=clamp(baseH+(ev.clientY-sy)/effectiveScale,120,Math.max(250,innerHeight/effectiveScale-40));applyBox(width,height,false)};
+   const end=()=>{resize.removeEventListener('pointermove',mv);resize.removeEventListener('pointerup',end);resize.removeEventListener('pointercancel',end);applyBox(parseFloat(getComputedStyle(card).width),parseFloat(getComputedStyle(card).minHeight),true)};
+   resize.addEventListener('pointermove',mv);resize.addEventListener('pointerup',end);resize.addEventListener('pointercancel',end);
  });
 
  restore();
@@ -792,4 +841,6 @@ document.addEventListener('click',function(ev){
 #world .panel .label,#world .panel .activity-label,#world .panel .yacht-label,#world .panel .train-label{font-size:9.5px!important;}
 #world .panel .place,#world .panel .activity-place,#world .panel .yacht-place,#world .panel .train-place,#world .panel .title{font-size:19px!important;}
 </style>
+
+
 </body></html>

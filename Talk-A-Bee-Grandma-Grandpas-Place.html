@@ -478,8 +478,109 @@ document.addEventListener('DOMContentLoaded',function(){
 #talkabee-object-popup{position:fixed;z-index:2147482900;display:none;padding:8px 12px;border-radius:12px;background:rgba(20,20,20,.82);color:white;font-weight:900;font-size:14px;pointer-events:none}
 </style>
 
+<style id="talkabee-grandparents-single-card-20261010">
+/* Dinosaur Museum approved card styling, mapped onto Grandma's existing JS hooks.
+   The approved 0.67 card transform requires compensating text sizes. */
+#homeWorld .home-panel.tab-master-card{
+ width:575px!important;min-width:0!important;max-width:575px!important;
+ height:auto!important;min-height:0!important;max-height:none!important;
+ overflow:visible!important;padding:18px 20px!important;
+ transform:translateX(-50%) scale(.70)!important;
+ transform-origin:bottom center!important;
+ background:rgba(25,19,24,.20)!important;
+ backdrop-filter:blur(2px)!important;-webkit-backdrop-filter:blur(2px)!important;
+}
+#homeWorld .home-panel .home-kicker{font-size:22px!important;line-height:1.25!important;font-weight:900!important}
+#homeWorld .home-panel #homeTitle{font-size:32px!important;line-height:1.15!important;margin:8px 0 12px!important}
+#homeWorld .home-panel #homePrompt{font-size:30px!important;line-height:1.35!important;margin:7px 0 12px!important}
+#homeWorld .home-panel #homeWordline{font-size:32px!important;line-height:1.25!important}
+#homeWorld .home-panel #homeTranslation{font-size:29px!important;line-height:1.3!important}
+#homeWorld .home-panel .home-actions button,
+#homeWorld .home-panel #homeNextPhrase{font-size:25px!important;line-height:1.15!important;padding:12px 16px!important}
+#homeWorld .home-panel #homeProgress{font-size:22px!important;line-height:1.25!important}
+#homeWorld .home-panel .tab-card-tools button,
+#homeWorld .home-panel .tab-card-tools .tab-card-drag{font-size:18px!important;line-height:1.2!important;padding:7px 11px!important}
+#homeWorld.challenge-mode .home-panel #homePrompt,
+#homeWorld.challenge-mode .home-panel .home-actions,
+#homeWorld.challenge-mode .home-panel .home-nextrow,
+#homeWorld.challenge-mode .home-panel #homeWordline,
+#homeWorld.challenge-mode .home-panel #homeTranslation,
+#homeWorld.challenge-mode .home-panel #homeList{display:none!important}
+#homeWorld.challenge-mode .home-panel #homeFind{
+ display:block!important;margin:0!important;padding:0!important;
+ border:0!important;border-radius:0!important;background:transparent!important;
+ box-shadow:none!important;overflow:visible!important;
+}
+#homeWorld.challenge-mode .home-panel #homeChallengeCount{font-size:24px!important;line-height:1.3!important;margin:0 0 10px!important}
+#homeWorld.challenge-mode .home-panel #homeFindPrompt{font-size:34px!important;line-height:1.32!important;margin:7px 0 12px!important}
+#homeWorld.challenge-mode .home-panel #homeFindStatus{font-size:34px!important;line-height:1.25!important;margin:10px 0!important;font-weight:900!important;text-shadow:0 2px 4px rgba(0,0,0,.95),0 0 2px #071c16!important}
+#homeWorld.challenge-mode .home-panel #challengeNextHint{font-size:30px!important;line-height:1.3!important;margin:8px 0 12px!important}
+#homeWorld.challenge-mode .home-panel #homeChallengeNext{font-size:27px!important;line-height:1.15!important;padding:14px 20px!important;min-height:54px!important}
+@media(max-width:760px){#homeWorld .home-panel.tab-master-card{width:min(575px,calc(100vw - 24px))!important;max-width:calc(100vw - 24px)!important;transform:translateX(-50%) scale(.82)!important}}
+</style>
+
+<style id="grandparents-approved-card-finishing">
+/* Finishing pass: keep the Dinosaur typography, but fit every control inside the card. */
+#homeWorld .home-panel.tab-master-card{box-sizing:border-box!important;}
+#homeWorld .home-panel .home-actions{
+ display:flex!important;flex-wrap:wrap!important;align-items:center!important;
+ gap:9px!important;width:100%!important;max-width:100%!important;
+ margin:10px 0 3px!important;
+}
+#homeWorld .home-panel .home-actions button,
+#homeWorld .home-panel .home-actions #homeNextPhrase{
+ flex:0 1 auto!important;max-width:100%!important;min-width:0!important;
+ box-sizing:border-box!important;font-size:22px!important;
+ padding:11px 14px!important;line-height:1.15!important;
+ white-space:nowrap!important;
+}
+#homeWorld .home-panel .home-nextrow{margin-top:5px!important;padding:0!important;}
+#homeWorld .home-panel #homeProgress{margin:0!important;font-size:20px!important;}
+#homeWorld .home-panel .tab-card-tools{margin:0 0 8px!important;}
+#homeWorld .home-panel .tab-card-resize{z-index:20!important;}
+@media(max-width:760px){
+ #homeWorld .home-panel .home-actions button,
+ #homeWorld .home-panel .home-actions #homeNextPhrase{font-size:20px!important;padding:9px 12px!important}
+}
+</style>
+<style id="talkabee-grandma-clickable-words">
+/* One continuous phrase visually, individual accessible spoken-word buttons. */
+#homeWorld .home-panel #homeWordline{display:flex!important;flex-wrap:wrap!important;align-items:baseline!important;gap:0 .25em!important;}
+#homeWorld .home-panel #homeWordline .home-word{
+ appearance:none!important;border:0!important;border-radius:6px!important;
+ background:transparent!important;color:#fff!important;
+ font:inherit!important;font-size:inherit!important;font-weight:900!important;
+ line-height:inherit!important;padding:0 2px!important;margin:0!important;
+ cursor:pointer!important;text-shadow:0 2px 3px rgba(0,0,0,.7)!important;
+}
+#homeWorld .home-panel #homeWordline .home-word:hover,
+#homeWorld .home-panel #homeWordline .home-word:focus-visible,
+#homeWorld .home-panel #homeWordline .home-word.speaking{
+ background:rgba(255,220,80,.35)!important;outline:2px solid #ffe69c!important;
+}
+</style>
+<style id="talkabee-grandma-one-row-buttons">
+/* Keep Speak / Slow / Replay / Next on a single line, including when text grows. */
+#homeWorld .home-panel .home-actions{
+ display:flex!important;flex-wrap:nowrap!important;gap:6px!important;
+ align-items:center!important;width:100%!important;min-width:0!important;
+}
+#homeWorld .home-panel .home-actions button,
+#homeWorld .home-panel .home-actions #homeNextPhrase{
+ flex:0 1 auto!important;width:auto!important;min-width:0!important;
+ font-size:18px!important;line-height:1.1!important;
+ padding:9px 10px!important;white-space:nowrap!important;
+ letter-spacing:0!important;
+}
+#homeWorld .home-panel .home-actions #homeNextPhrase{margin-left:auto!important;}
+@media(max-width:760px){
+ #homeWorld .home-panel .home-actions{gap:4px!important}
+ #homeWorld .home-panel .home-actions button,
+ #homeWorld .home-panel .home-actions #homeNextPhrase{font-size:15px!important;padding:8px 6px!important}
+}
+</style>
 </head>
-<body class="talkabee-world-open">
+<body class="">
 <div class="talkabee-editions">
 <details>
 <summary>Explore Adventures ▾</summary>
@@ -496,7 +597,7 @@ document.addEventListener('DOMContentLoaded',function(){
 
 <nav class="talkabee-prev-next-nav" aria-label="Adventure navigation"><a href="index.html" aria-label="Previous page" title="Previous">‹</a><a href="Talk-A-Bee-Shopping-Market-Adventure.html" aria-label="Next page" title="Next">›</a></nav>
 
-<main id="homeWorld" class="open challenge-mode" aria-label="Grandma and Grandpa's Place">
+<main id="homeWorld" class="open" aria-label="Grandma and Grandpa's Place">
 
   <div class="home-scene" id="homeScene">
     <img class="scene-main-image" id="homeSceneImage" src="images/grandma-grandpas-place.jpg" alt="" aria-hidden="true">
@@ -555,7 +656,7 @@ document.addEventListener('DOMContentLoaded',function(){
 
       <div class="activity-divider"></div>
       <div class="activity-label">6 ACTIVITIES</div>
-      <button class="home-nav" data-home-group="family">Family Talk</button>
+      <button class="home-nav active" data-home-group="family">Family Talk</button>
       <button class="home-nav" data-home-group="garden">Garden Words</button>
       <button class="home-nav" data-home-group="birds">Birds</button>
       <button class="home-nav" data-home-group="hobbies">Hobbies &amp; Home</button>
@@ -564,12 +665,12 @@ document.addEventListener('DOMContentLoaded',function(){
 
       <div class="activity-divider"></div>
       <div class="activity-label">6 CHALLENGES</div>
-      <button class="home-challenge-nav done" data-home-challenge="0">1 Fishing Pole</button>
-      <button class="home-challenge-nav done" data-home-challenge="1">2 RV</button>
-      <button class="home-challenge-nav done" data-home-challenge="2">3 Birdhouse</button>
-      <button class="home-challenge-nav active done" data-home-challenge="3">4 Pond</button>
-      <button class="home-challenge-nav done" data-home-challenge="4">5 Dog</button>
-      <button class="home-challenge-nav" data-home-challenge="5">6 Bird</button>
+      <button class="home-challenge-nav" data-home-challenge="0"><span>1</span> Fishing Pole</button>
+      <button class="home-challenge-nav" data-home-challenge="1"><span>2</span> RV</button>
+      <button class="home-challenge-nav" data-home-challenge="2"><span>3</span> Birdhouse</button>
+      <button class="home-challenge-nav" data-home-challenge="3"><span>4</span> Pond</button>
+      <button class="home-challenge-nav" data-home-challenge="4"><span>5</span> Dog</button>
+      <button class="home-challenge-nav" data-home-challenge="5"><span>6</span> Bird</button>
 
       <div class="activity-divider"></div>
       <button type="button" class="activity-back" id="homeMainDirectory">← Main Directory</button>
@@ -584,7 +685,7 @@ document.addEventListener('DOMContentLoaded',function(){
       <button type="button" id="homePopSentenceSpeak" style="display:none">🔊 Sentence</button>
     </div>
 
-    <section class="home-panel tab-master-card" aria-label="Lesson script card" data-drag-ready="1" title="Drag card to move • Double-click empty area to reset" style="overflow: auto !important; --tab-card-font-scale: 1.15; inset: 188.333px auto auto 316.467px !important; transform-origin: left top 0px !important; transform: scale(0.67) !important;" data-moved="1">
+    <section class="home-panel tab-master-card" aria-label="Lesson script card" data-drag-ready="1">
       <div class="tab-card-tools" aria-label="Script card controls">
         <span class="tab-card-drag" title="Drag script card">↕ Move</span>
         <button type="button" id="tabCardFontDown" class="tab-card-font-down" title="Decrease text">A−</button>
@@ -592,25 +693,25 @@ document.addEventListener('DOMContentLoaded',function(){
         <button type="button" id="tabCardReset" class="tab-card-reset" title="Reset card">Reset</button>
       </div>
       <div class="tab-card-resize" id="tabCardResize" title="Drag to resize script card" aria-label="Resize script card">↘</div>
-      <div class="home-kicker" id="homeKicker" data-base-font="11px" style="font-size: 12.65px !important;">FIND IT CHALLENGE</div>
-      <h2 id="homeTitle" data-base-font="22px" style="font-size: 25.3px !important;">Challenge 4: Find the pond.</h2>
-      <p id="homePrompt" data-base-font="18px" style="font-size: 20.7px !important;">Everything stays in Grandma &amp; Grandpa’s yard. Find the requested object in this same picture.</p>
-      <div class="home-wordline line" id="homeWordline" data-base-font="22px" style="font-size: 25.3px !important;"></div>
-      <div class="home-translation" id="homeTranslation" data-base-font="18px" style="font-size: 20.7px !important;"></div>
-      <div class="home-actions" style="display: none;">
-        <button class="primary" id="homePlay" data-base-font="13px" style="font-size: 14.95px !important;">🔊 Speak</button>
-        <button id="homeSlow" data-base-font="13px" style="font-size: 14.95px !important;">🐢 Slow</button><button id="homeReplay" data-base-font="13px" style="font-size: 14.95px !important;">↻ Replay</button>
-      <button class="home-nextphrase" id="homeNextPhrase" data-base-font="13px" style="font-size: 14.95px !important;">Next phrase →</button></div>
-      <div class="home-nextrow" id="homeNextRow" style="display: none;">
-        <span class="home-progress" id="homeProgress" data-base-font="11px" style="font-size: 12.65px !important;">Phrase 1 of 4</span>
+      <div class="home-kicker" id="homeKicker">FAMILY TALK</div>
+      <h2 id="homeTitle">Meet Grandma Cathy and Grandpa Wally.</h2>
+      <p id="homePrompt">Hear a simple family sentence, then click the words one at a time.</p>
+      <div class="home-wordline line" id="homeWordline">This is my grandmother.</div>
+      <div class="home-translation" id="homeTranslation">This is my grandmother.</div>
+      <div class="home-actions" style="display: flex;">
+        <button class="primary" id="homePlay">🔊 Speak</button>
+        <button id="homeSlow">🐢 Slow</button><button id="homeReplay">↻ Replay</button>
+      <button class="home-nextphrase" id="homeNextPhrase">Next →</button></div>
+      <div class="home-nextrow" id="homeNextRow" style="display: flex;">
+        <span class="home-progress" id="homeProgress">Phrase 1 of 4</span>
         
       </div>
-      <div class="home-list" id="homeList" style="display: none;"><button type="button" class="home-pick active"><strong data-base-font="16px" style="font-size: 18.4px !important;">1. This is my grandmother.</strong><br><span style="font-size: 13.8px !important; color: rgb(115, 124, 145);" data-base-font="12px">This is my grandmother.</span></button><button type="button" class="home-pick"><strong data-base-font="16px" style="font-size: 18.4px !important;">2. This is my grandfather.</strong><br><span style="font-size: 13.8px !important; color: rgb(115, 124, 145);" data-base-font="12px">This is my grandfather.</span></button><button type="button" class="home-pick"><strong data-base-font="16px" style="font-size: 18.4px !important;">3. My grandmother is in the garden.</strong><br><span style="font-size: 13.8px !important; color: rgb(115, 124, 145);" data-base-font="12px">My grandmother is in the garden.</span></button><button type="button" class="home-pick"><strong data-base-font="16px" style="font-size: 18.4px !important;">4. My grandfather feeds the birds.</strong><br><span style="font-size: 13.8px !important; color: rgb(115, 124, 145);" data-base-font="12px">My grandfather feeds the birds.</span></button></div>
-      <div class="home-find show" id="homeFind">
-        <div class="home-challenge-count" id="homeChallengeCount" data-base-font="15px" style="font-size: 17.25px !important;">CHALLENGE 4 OF 6</div>
-        <div id="homeFindPrompt">Find: the pond — pond</div><div class="home-find-status" id="homeFindStatus" style="color: rgb(25, 116, 79);">✓ Correct! the pond</div>
-        <div class="challenge-next-hint" id="challengeNextHint">Nice work! Continue when you are ready.</div>
-        <button class="home-challenge-next show" id="homeChallengeNext" data-base-font="13px" style="font-size: 14.95px !important;">Next Challenge →</button>
+      <div class="home-list" id="homeList"><button type="button" class="home-pick active"><strong>1. This is my grandmother.</strong><br><span style="font-size:12px;color:#737c91">This is my grandmother.</span></button><button type="button" class="home-pick"><strong>2. This is my grandfather.</strong><br><span style="font-size:12px;color:#737c91">This is my grandfather.</span></button><button type="button" class="home-pick"><strong>3. My grandmother is in the garden.</strong><br><span style="font-size:12px;color:#737c91">My grandmother is in the garden.</span></button><button type="button" class="home-pick"><strong>4. My grandfather feeds the birds.</strong><br><span style="font-size:12px;color:#737c91">My grandfather feeds the birds.</span></button></div>
+      <div class="home-find" id="homeFind">
+        <div class="home-challenge-count" id="homeChallengeCount">CHALLENGE 1 OF 6</div>
+        <div id="homeFindPrompt"></div><div class="home-find-status" id="homeFindStatus"></div>
+        <div class="challenge-next-hint" id="challengeNextHint"></div>
+        <button class="home-challenge-next" id="homeChallengeNext">Next →</button>
       </div>
     </section>
   </div>
@@ -803,7 +904,7 @@ Object.keys(extraDiscovery).forEach(lang=>{if(!languageData[lang].objects)langua
      document.getElementById('homeChallengeCount').textContent='CHALLENGE '+(homeChallengeIndex+1)+' OF 6';
      document.getElementById('homeFindPrompt').textContent='Find: '+o.word+' — '+o.english;
      document.getElementById('homeFindStatus').textContent='';homeChallengeSolved=false;
-     const next=document.getElementById('homeChallengeNext');next.classList.add('show');next.disabled=false;next.textContent=homeChallengeIndex<5?'Next Challenge →':'Finish Challenges ✓';
+     const next=document.getElementById('homeChallengeNext');next.classList.add('show');next.disabled=false;next.textContent=homeChallengeIndex<5?'Next →':'Finish ✓';
      const hint=document.getElementById('challengeNextHint');if(hint)hint.textContent='Find the correct object to unlock the next challenge.';
      document.querySelectorAll('.home-challenge-nav').forEach((b,i)=>b.classList.toggle('active',i===homeChallengeIndex));return;
    }
@@ -811,7 +912,24 @@ Object.keys(extraDiscovery).forEach(lang=>{if(!languageData[lang].objects)langua
    nextRow.style.display='flex';progress.textContent='Phrase '+(index+1)+' of '+g.items.length;
    document.getElementById('homeKicker').textContent=g.kicker;document.getElementById('homeTitle').textContent=g.title;document.getElementById('homePrompt').textContent=g.prompt;
    document.getElementById('homeTranslation').textContent=item[1];wordline.innerHTML='';
-   wordline.textContent=item[0];
+   // Each word is a real button, so tapping it speaks that word rather than dragging the card.
+   wordline.replaceChildren();
+   const spokenWords=item[0].trim().split(/\s+/);
+   spokenWords.forEach((token,i)=>{
+     const button=document.createElement('button');
+     button.type='button';
+     button.className='home-word';
+     button.textContent=token;
+     button.setAttribute('aria-label','Hear '+clean(token));
+     button.addEventListener('click',ev=>{
+       ev.stopPropagation();
+       wordline.querySelectorAll('.home-word').forEach(w=>w.classList.remove('speaking'));
+       button.classList.add('speaking');
+       say(clean(token),.78,false);
+       window.setTimeout(()=>button.classList.remove('speaking'),900);
+     });
+     wordline.appendChild(button);
+   });
    list.innerHTML='';g.items.forEach((row,i)=>{const b=document.createElement('button');b.type='button';b.className='home-pick'+(i===index?' active':'');b.innerHTML='<strong>'+(i+1)+'. '+row[0]+'</strong><br><span style="font-size:12px;color:#737c91">'+row[1]+'</span>';b.addEventListener('click',()=>{index=i;render()});list.appendChild(b)});
  }
  function openHomeChallenge(i){
@@ -839,7 +957,7 @@ Object.keys(extraDiscovery).forEach(lang=>{if(!languageData[lang].objects)langua
    const status=document.getElementById('homeFindStatus'),hint=document.getElementById('challengeNextHint');
    if(!homeChallengeSolved){status.textContent='Find the correct object first.';status.style.color='#8b5b13';if(hint)hint.textContent='Complete this challenge, then click Next Challenge.';return}
    if(homeChallengeIndex<5)openHomeChallenge(homeChallengeIndex+1);
-   else{status.textContent='🏁 You completed all 6 challenges!';status.style.color='#19744f';const finishBtn=document.getElementById('homeChallengeNext');finishBtn.textContent='Challenges Complete ✓';if(hint)hint.textContent='All six challenges complete!'}
+   else{status.textContent='🏁 You completed all 6 challenges!';status.style.color='#A5FFD0';const finishBtn=document.getElementById('homeChallengeNext');finishBtn.textContent='Challenges Complete ✓';if(hint)hint.textContent='All six challenges complete!'}
  });
   function speakAutoObject(key){
     const o=obj(key),character=characterAudio[key];
@@ -863,7 +981,7 @@ Object.keys(extraDiscovery).forEach(lang=>{if(!languageData[lang].objects)langua
    const key=btn.dataset.object,o=obj(key);
    if(group==='find'){
      const status=document.getElementById('homeFindStatus');
-     if(key===findTarget || (findTarget==='bird' && key==='redbird')){homeChallengeSolved=true;status.textContent='✓ Correct! '+o.word;status.style.color='#19744f';say(o.word,.72,false);playSceneSound(key);const nav=document.querySelector('.home-challenge-nav[data-home-challenge="'+homeChallengeIndex+'"]');if(nav)nav.classList.add('done');const hint=document.getElementById('challengeNextHint');if(hint)hint.textContent='Nice work! Continue when you are ready.'}
+     if(key===findTarget || (findTarget==='bird' && key==='redbird')){homeChallengeSolved=true;status.textContent='✓ Correct! '+o.word;status.style.color='#A5FFD0';say(o.word,.72,false);playSceneSound(key);const nav=document.querySelector('.home-challenge-nav[data-home-challenge="'+homeChallengeIndex+'"]');if(nav)nav.classList.add('done');const hint=document.getElementById('challengeNextHint');if(hint)hint.textContent='Nice work! Continue when you are ready.'}
      else{status.textContent='Try another object.';status.style.color='#a2483d'}return;
    }
    currentObjectKey=key;document.getElementById('homePopWord').textContent=o.word;document.getElementById('homePopEnglish').textContent=o.english;
@@ -903,23 +1021,13 @@ Object.keys(extraDiscovery).forEach(lang=>{if(!languageData[lang].objects)langua
   document.querySelectorAll('.tab-master-card button').forEach(function(b){
    var t=b.textContent.trim();
    if(/normal/i.test(t)) b.textContent='🔊 Speak';
-   if(/^next\s*(line|phrase)?/i.test(t)) b.textContent='Next phrase →';
+   if(/^next\s*(line|phrase)?/i.test(t)) b.textContent='Next →';
   });
  }
  function run(){cleanActivityIcons();moveHomeToBottom();labels()}
  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',run);else run();
 })();
 </script>
-
-<style id="talkabee-rendered-card-footprint-lock">
-/* Visual master: match the user-approved Grandma's Kitchen rendered footprint. */
-.tab-master-card{
-  width:520px!important; max-width:520px!important; min-width:0!important;
-  transform:translateX(-50%) scale(.67)!important;
-  transform-origin:bottom center!important;
-}
-@media(max-width:760px){.tab-master-card{width:min(520px,calc(100vw - 32px))!important;transform:translateX(-50%) scale(.82)!important;}}
-</style>
 
 <style id="talkabee-draggable-script-card">
 /* Drag the complete Script Card. Interactive controls still click normally. */
@@ -1071,7 +1179,7 @@ Object.keys(extraDiscovery).forEach(lang=>{if(!languageData[lang].objects)langua
  const pageKey=(location.pathname.split('/').pop()||'adventure').replace(/[^a-z0-9-]/gi,'_');
  const WK='talkabee-script-card-width-'+pageKey,HK='talkabee-script-card-height-'+pageKey;
  const clamp=(n,a,b)=>Math.max(a,Math.min(b,n));
- const defaultScale=()=>matchMedia('(max-width:760px)').matches?.82:.67;
+ const defaultScale=()=>matchMedia('(max-width:760px)').matches?.82:.70;
  let scale=defaultScale(),fontScale=1,dragState=null;
  // Capture actual rendered font sizes, even on Adventures with older card markup.
  // Never modify the Move / A- / A+ / Reset controls or resize handle.
@@ -1085,9 +1193,9 @@ Object.keys(extraDiscovery).forEach(lang=>{if(!languageData[lang].objects)langua
    card.style.setProperty('width',width+'px','important');
    card.style.setProperty('max-width','none','important');
    card.style.setProperty('min-width','0','important');
-   card.style.setProperty('min-height',height+'px','important');
+   card.style.setProperty('min-height','0','important');
    card.style.setProperty('max-height','none','important');
-   card.style.setProperty('overflow','auto','important');
+   card.style.setProperty('overflow','visible','important');
    if(save)try{localStorage.setItem(WK,String(width));localStorage.setItem(HK,String(height))}catch(e){}
  }
 
@@ -1116,7 +1224,7 @@ Object.keys(extraDiscovery).forEach(lang=>{if(!languageData[lang].objects)langua
  }
  function restore(){
    try{
-     const fs=localStorage.getItem(FK); if(fs)applyFont(fs,false);
+     /* Ignore stale legacy font scaling; A+/A- still works after load. */
      // Older A+/A- controls stored a whole-card zoom. Ignore that legacy value.
       const ww=parseFloat(localStorage.getItem(WK)),hh=parseFloat(localStorage.getItem(HK));
       if(ww&&hh)applyBox(ww,hh,false);
@@ -1140,12 +1248,14 @@ Object.keys(extraDiscovery).forEach(lang=>{if(!languageData[lang].objects)langua
    scale=defaultScale();fontScale=1;
    delete card.dataset.moved;
    ['width','height','left','top','right','bottom','transform','transform-origin','min-width','max-width','min-height','max-height'].forEach(p=>card.style.removeProperty(p));
-   applyFont(1,false);
+   textNodes.forEach(el=>el.style.removeProperty('font-size'));
+   card.style.setProperty('--tab-card-font-scale','1');
  });
 
  function startDrag(e){
    if(innerWidth<=760 || (typeof e.button==='number'&&e.button!==0))return;
    if(e.target.closest('.tab-card-resize,.tab-card-font-down,.tab-card-font-up,.tab-card-reset,a,input,select,textarea'))return;
+   if(e.target.closest('#homeWordline'))return;
    if(e.target.closest('button') && !e.target.closest('.tab-card-drag'))return;
    e.preventDefault();
    const r=card.getBoundingClientRect();
@@ -1187,7 +1297,7 @@ Object.keys(extraDiscovery).forEach(lang=>{if(!languageData[lang].objects)langua
    const effectiveScale=card.getBoundingClientRect().width/baseW||defaultScale();
    resize.setPointerCapture(e.pointerId);
    const mv=ev=>{const width=clamp(baseW+(ev.clientX-sx)/effectiveScale,320,Math.max(520,innerWidth/effectiveScale-50));const height=clamp(baseH+(ev.clientY-sy)/effectiveScale,120,Math.max(250,innerHeight/effectiveScale-40));applyBox(width,height,false)};
-   const end=()=>{resize.removeEventListener('pointermove',mv);resize.removeEventListener('pointerup',end);resize.removeEventListener('pointercancel',end);applyBox(parseFloat(getComputedStyle(card).width),parseFloat(getComputedStyle(card).minHeight),true)};
+   const end=()=>{resize.removeEventListener('pointermove',mv);resize.removeEventListener('pointerup',end);resize.removeEventListener('pointercancel',end);applyBox(parseFloat(getComputedStyle(card).width),parseFloat(getComputedStyle(card).height),true)};
    resize.addEventListener('pointermove',mv);resize.addEventListener('pointerup',end);resize.addEventListener('pointercancel',end);
  });
 
@@ -1336,7 +1446,7 @@ document.addEventListener('click',function(ev){
 })();
 </script>
 
-<script id="talkabee-legacy-challenge-data" type="application/json">{"targets":["fishing","rv","birdhouse","pond","dog","bird"],"labels":["Fishing Pole","RV","Birdhouse","Pond","Dog","Bird"]}</script>
+<script data-tb-custom-vocab="1">;(()=>{const C={"duck":{"en":"duck","es":"pato","fr":"canard","de":"Ente","it":"anatra","pt":"pato","no":"and"}};for(const [k,v] of Object.entries(C)){try{EN[k]=v.en||k;for(const L of ["es","fr","en","de","it","pt","no"]){if(WORDS[L])WORDS[L][k]=v[L]||v.en||k}}catch(e){}}})();</script><script id="talkabee-legacy-challenge-data" type="application/json">{"targets":["fishing","rv","birdhouse","pond","dog","bird"],"labels":["Fishing Pole","RV","Birdhouse","Pond","Dog","Bird"]}</script>
 <script id="talkabee-legacy-challenge-runtime">
 (function(){
  const node=document.getElementById('talkabee-legacy-challenge-data');
@@ -1356,4 +1466,4 @@ document.addEventListener('click',function(ev){
 </script>
 
 
-<script data-tb-custom-vocab="1">;(()=>{const C={"duck":{"en":"duck","es":"pato","fr":"canard","de":"Ente","it":"anatra","pt":"pato","no":"and"}};for(const [k,v] of Object.entries(C)){try{EN[k]=v.en||k;for(const L of ["es","fr","en","de","it","pt","no"]){if(WORDS[L])WORDS[L][k]=v[L]||v.en||k}}catch(e){}}})();</script></body></html>
+</body></html>

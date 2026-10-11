@@ -116,6 +116,201 @@ border:1px solid #fff;background:rgba(7,23,39,.65);color:#fff;font-weight:900}
 #talkabee-object-popup{position:fixed;z-index:2147482900;display:none;padding:8px 12px;border-radius:12px;background:rgba(20,20,20,.82);color:white;font-weight:900;font-size:14px;pointer-events:none}
 </style>
 
+<style id="talkabee-approved-master-card-v2">
+/* ONE literal Talk A Bee Adventure shell. Legacy classes remain only as JS hooks. */
+.tab-master-panel,.tab-master-panel *,.tab-master-card,.tab-master-card *{box-sizing:border-box}
+.tab-master-panel{
+ position:fixed!important;left:16px!important;top:16px!important;bottom:16px!important;right:auto!important;
+ width:195px!important;min-width:195px!important;max-width:195px!important;height:auto!important;max-height:none!important;
+ margin:0!important;padding:14px!important;overflow-x:hidden!important;overflow-y:auto!important;
+ transform:none!important;scale:1!important;zoom:1!important;opacity:1!important;
+ border-radius:20px!important;border:1px solid rgba(255,255,255,.28)!important;
+ background:rgba(7,23,39,.31)!important;box-shadow:0 12px 30px rgba(0,0,0,.24)!important;
+ backdrop-filter:blur(3px)!important;-webkit-backdrop-filter:blur(3px)!important;color:#fff!important;z-index:1000!important;
+ font-family:Arial,Helvetica,sans-serif!important;font-size:12px!important;line-height:1.16!important;
+}
+.tab-master-panel .place,.tab-master-panel h1,.tab-master-panel .title{font-size:19px!important;line-height:1.08!important;font-weight:900!important;color:#fff!important;margin:4px 0 10px!important;text-shadow:0 2px 4px rgba(0,0,0,.55)!important}
+.tab-master-panel .label,.tab-master-panel label{font-size:9.5px!important;line-height:1.1!important;letter-spacing:.09em!important;font-weight:900!important;color:#fff!important;margin:9px 0 4px!important}
+.tab-master-panel button,.tab-master-panel select,.tab-master-panel a{
+ width:100%!important;max-width:100%!important;min-height:34px!important;height:auto!important;margin:4px 0!important;padding:8px 9px!important;
+ border-radius:12px!important;border:1px solid rgba(255,255,255,.38)!important;background:rgba(7,32,50,.54)!important;color:#fff!important;
+ font:800 12px/1.16 Arial,Helvetica,sans-serif!important;text-align:left!important;text-decoration:none!important;white-space:normal!important;
+ transform:none!important;box-shadow:none!important;
+}
+.tab-master-panel select{white-space:nowrap!important;text-overflow:ellipsis!important;overflow:hidden!important}
+.tab-master-panel button:hover,.tab-master-panel a:hover{background:rgba(20,58,79,.70)!important}
+.tab-master-panel .active,.tab-master-panel button.active{background:rgba(78,69,219,.74)!important;color:#fff!important}
+.tab-master-card{
+ position:fixed!important;left:50%!important;right:auto!important;bottom:16px!important;top:auto!important;
+ width:520px!important;min-width:520px!important;max-width:520px!important;height:auto!important;min-height:0!important;max-height:44vh!important;
+ margin:0!important;padding:14px 16px!important;overflow:auto!important;transform:translateX(-50%)!important;scale:1!important;zoom:1!important;opacity:1!important;
+ border-radius:20px!important;border:1px solid rgba(255,255,255,.30)!important;background:rgba(25,19,24,.38)!important;
+ box-shadow:0 12px 30px rgba(0,0,0,.28)!important;backdrop-filter:blur(5px)!important;-webkit-backdrop-filter:blur(5px)!important;
+ color:#fff!important;z-index:900!important;font-family:Arial,Helvetica,sans-serif!important;
+}
+.tab-master-card .kicker,.tab-master-card [class*="kicker"]{color:rgba(255,255,255,.94)!important;font-size:11px!important;line-height:1.1!important;font-weight:900!important;letter-spacing:.12em!important;text-shadow:0 1px 3px rgba(0,0,0,.78)!important;margin:0 0 7px!important}
+.tab-master-card h1,.tab-master-card h2{color:#fff!important;font-size:22px!important;line-height:1.08!important;margin:4px 0 7px!important;text-shadow:0 1px 3px rgba(0,0,0,.55)!important}
+.tab-master-card p,.tab-master-card .prompt,.tab-master-card .translation,.tab-master-card .tip{font-size:13px!important;line-height:1.25!important;margin:4px 0 7px!important;color:#fff!important}
+.tab-master-card .line,.tab-master-card .target,.tab-master-card #line,.tab-master-card #target{font-size:20px!important;line-height:1.12!important;font-weight:900!important;margin:7px 0!important;color:#fff!important}
+.tab-master-card .actions,.tab-master-card [class*="actions"]{display:flex!important;align-items:center!important;gap:8px!important;flex-wrap:nowrap!important;margin-top:8px!important}
+.tab-master-card .actions button,.tab-master-card [class*="actions"] button,.tab-master-card>button{width:auto!important;min-width:0!important;height:auto!important;padding:9px 13px!important;margin:0!important;border-radius:12px!important;font:900 13px/1 Arial,Helvetica,sans-serif!important;white-space:nowrap!important}
+@media(max-width:760px){.tab-master-panel{left:10px!important;top:10px!important;bottom:10px!important;width:190px!important;min-width:190px!important;max-width:190px!important;padding:11px!important}.tab-master-card{width:min(520px,calc(100vw - 24px))!important;min-width:0!important;bottom:10px!important;padding:12px!important}}
+</style>
+<style id="talkabee-approved-word-contrast-v2">
+/* Last-four phrase fix: style the full .word field, not the inner #line text. */
+.tab-master-card .word {
+  background:rgba(88,88,88,.72)!important;
+  color:#fff!important;
+  border:1px solid rgba(255,255,255,.20)!important;
+  border-radius:14px!important;
+  text-shadow:0 1px 2px rgba(0,0,0,.55)!important;
+}
+.tab-master-card .word #line,
+.tab-master-card .word .line {
+  background:transparent!important;
+  color:#fff!important;
+  border:0!important;
+  border-radius:0!important;
+  text-shadow:0 1px 2px rgba(0,0,0,.55)!important;
+}
+.tab-master-card .word .translation {color:#fff!important;}
+</style>
+<style id="talkabee-approved-card-text-v2">
+/* Readability-only repair. Existing links, navigation, JS, hotspots and audio are untouched. */
+.tab-master-card p,
+.tab-master-card .prompt,
+.tab-master-card #prompt,
+.tab-master-card .instruction,
+.tab-master-card .instructions,
+.tab-master-card .hint,
+.tab-master-card #hint,
+.tab-master-card .translation,
+.tab-master-card #translation,
+.tab-master-card .english,
+.tab-master-card [class*="subtitle"],
+.tab-master-card [class*="instruction"],
+.tab-master-card [class*="prompt"],
+.tab-master-card [class*="translation"],
+.tab-master-card [class*="hint"],
+.tab-master-card [class*="status"],
+.animal-lesson-card p,
+.animal-lesson-card .prompt,
+.animal-lesson-card .instruction,
+.animal-lesson-card .translation,
+.animal-lesson-card .hint {
+  font-size:18px !important;
+  line-height:1.35 !important;
+}
+
+/* Small location/progress/counter lines also need to be readable. */
+.tab-master-card .eyebrow,
+.tab-master-card .kicker,
+.tab-master-card .overline,
+.tab-master-card .location,
+.tab-master-card .activity-count,
+.tab-master-card .challenge-count,
+.tab-master-card [class*="count"],
+.animal-lesson-card .eyebrow,
+.animal-lesson-card [class*="count"] {
+  font-size:15px !important;
+  line-height:1.25 !important;
+  font-weight:800 !important;
+}
+
+/* Spoken/foreign-language line stays visually strongest. */
+.tab-master-card #line,
+.tab-master-card .line,
+.tab-master-card .train-line,
+.tab-master-card .words,
+.tab-master-card [class*="phrase"],
+.animal-lesson-card #line,
+.animal-lesson-card .line,
+.animal-lesson-card [class*="phrase"] {
+  font-size:22px !important;
+  line-height:1.28 !important;
+  font-weight:800 !important;
+}
+
+/* Let increased text wrap naturally instead of being clipped. */
+.tab-master-card,
+.animal-lesson-card {
+  height:auto !important;
+}
+</style>
+<style id="talkabee-approved-card-feedback-v2">
+/* Readability only: keep challenge logic, card geometry and editors unchanged.
+   Desktop card renders at 0.67 scale, so CSS sizes compensate visually. */
+.tab-master-card #status {
+  font-size:32px!important;
+  line-height:1.3!important;
+  font-weight:800!important;
+  min-height:0;
+  overflow-wrap:anywhere;
+}
+.tab-master-card .tab-card-tools button {
+  font-size:18px!important;
+  line-height:1.2!important;
+  padding:7px 11px!important;
+}
+@media(max-width:760px){
+  .tab-master-card #status{font-size:26px!important;}
+}
+</style>
+<style id="talkabee-approved-card-footprint-v2">
+/* Visual master: match the user-approved Grandma's Kitchen rendered footprint. */
+.tab-master-card{
+  width:520px!important; max-width:520px!important; min-width:0!important;
+  transform:translateX(-50%) scale(.67)!important;
+  transform-origin:bottom center!important;
+}
+@media(max-width:760px){.tab-master-card{width:min(520px,calc(100vw - 32px))!important;transform:translateX(-50%) scale(.82)!important;}}
+</style>
+<style id="talkabee-approved-next-buttons-v2">
+.tab-master-card .controls{display:flex!important;gap:8px!important;align-items:stretch!important;flex-wrap:nowrap!important}
+.tab-master-card .controls button{min-width:0!important;flex:1 1 0!important;white-space:nowrap!important;font-size:12px!important;padding:8px 5px!important}
+.tab-master-card .controls #nextChallenge,.tab-master-card .controls #nextPhrase{flex:1.4 1 0!important;font-size:12px!important;white-space:nowrap!important}
+.tab-master-card .controls button[hidden]{display:none!important}
+/* Do not reveal answers before a visitor finds the correct object. */
+body:not(.tb-hs-editing) .challenge-mode .hotspot.target:not(:hover):not(:focus-visible){opacity:0!important;background:transparent!important;outline:none!important;box-shadow:none!important}
+</style>
+<style id="talkabee-approved-575-card-readability">
+/* Approved Basic Training 575px card and readable button sizing. */
+@media (min-width:761px){
+ .tab-master-card{width:575px!important;max-width:575px!important;min-width:0!important;}
+ .tab-master-card .controls{gap:10px!important;align-items:stretch!important;}
+ .tab-master-card .controls button,
+ .tab-master-card .controls #nextPhrase,
+ .tab-master-card .controls #nextChallenge{
+   font:900 19px/1.18 Arial,Helvetica,sans-serif!important;
+   padding:13px 8px!important;
+   min-height:51px!important;
+   white-space:nowrap!important;
+   flex:1 1 0!important;
+ }
+ .tab-master-card .controls #nextPhrase,
+ .tab-master-card .controls #nextChallenge{flex:1.1 1 0!important;}
+}
+@media (max-width:760px){
+ .tab-master-card .controls{flex-wrap:wrap!important;}
+ .tab-master-card .controls button,
+ .tab-master-card .controls #nextPhrase,
+ .tab-master-card .controls #nextChallenge{
+   font:900 17px/1.2 Arial,Helvetica,sans-serif!important;
+   padding:11px 7px!important;
+   min-height:46px!important;
+   flex:1 1 42%!important;
+ }
+}
+</style>
+<style id="talkabee-approved-card-transparency-20pct">
+/* Approved: 20% opacity, 2px backdrop blur; script box only. */
+.tab-master-card {
+  background:rgba(25,19,24,.20)!important;
+  background-color:rgba(25,19,24,.20)!important;
+  backdrop-filter:blur(2px)!important;
+  -webkit-backdrop-filter:blur(2px)!important;
+}
+</style>
 </head>
 <body class="">
 <div class="talkabee-editions">
@@ -145,12 +340,12 @@ border:1px solid #fff;background:rgba(7,23,39,.65);color:#fff;font-weight:900}
 <div class="tab-panel-size-controls" aria-label="Activity panel size"><button type="button" class="tab-panel-minus" title="Make activity panel smaller">−</button><button type="button" class="tab-panel-reset" title="Reset activity panel size">Reset</button><button type="button" class="tab-panel-plus" title="Make activity panel larger">+</button></div>
 
 <div class="label">LANGUAGE</div>
-<select id="lang" data-tab-global-voice="1">
+<select id="lang">
 <option value="es">Spanish</option><option value="fr">French</option><option value="en">English</option>
 <option value="de">German</option><option value="it">Italian</option><option value="pt">Portuguese</option><option value="no">Norwegian</option>
 </select>
 <div class="label">VOICE</div>
-<select id="voice" data-tab-global-voice="1"><option value="">Browser Default</option><option value="Microsoft David - English (United States)">Microsoft David - English (United States) — en-US</option><option value="Microsoft Mark - English (United States)">Microsoft Mark - English (United States) — en-US</option><option value="Microsoft Zira - English (United States)">Microsoft Zira - English (United States) — en-US</option><option value="Microsoft David Desktop - English (United States)">Microsoft David Desktop - English (United States) — en-US</option><option value="Microsoft Zira Desktop - English (United States)">Microsoft Zira Desktop - English (United States) — en-US</option></select>
+<select id="voice"><option value="">Browser Default</option><option value="Microsoft David - English (United States)">Microsoft David - English (United States) — en-US</option><option value="Microsoft Mark - English (United States)">Microsoft Mark - English (United States) — en-US</option><option value="Microsoft Zira - English (United States)">Microsoft Zira - English (United States) — en-US</option><option value="Microsoft David Desktop - English (United States)">Microsoft David Desktop - English (United States) — en-US</option><option value="Microsoft Zira Desktop - English (United States)">Microsoft Zira Desktop - English (United States) — en-US</option></select>
 <button id="sceneView" aria-pressed="false">◉ Scene View</button>
 
 <div class="label">DISCOVERY</div>
@@ -173,13 +368,13 @@ border:1px solid #fff;background:rgba(7,23,39,.65);color:#fff;font-weight:900}
 <a href="index.html">← Return to Main Directory</a>
 </aside>
 
-<section class="card">
+<section class="card tab-master-card">
 <div class="tab-card-tools" aria-label="Script card controls"><button type="button" class="tab-card-drag" title="Move script card">↕ Move</button><button type="button" class="tab-card-font-down" title="Decrease text">A−</button><button type="button" class="tab-card-font-up" title="Increase text">A+</button><button type="button" class="tab-card-reset" title="Reset card">Reset</button></div><div class="tab-card-resize" title="Drag to resize script card" aria-label="Resize script card">↘</div>
 
 <div class="kicker">EXPLORING THE MOON</div>
 <h2 id="title">Click &amp; Discover</h2>
-<p id="prompt">You found the Moon.</p>
-<div class="word"><strong id="line">the Moon</strong><div class="translation" id="translation"></div></div>
+<p id="prompt">You found stars.</p>
+<div class="word"><strong id="line">stars</strong><div class="translation" id="translation"></div></div>
 <p id="status"></p>
 <div class="controls">
 <button id="normal">🔊 Speak</button><button id="slow">🐢 Slow</button><button id="replay">↻ Replay</button><button id="nextPhrase">Next phrase →</button>
@@ -266,7 +461,7 @@ function speak(text,rate=.88,onend=null){if(!text||!("speechSynthesis" in window
 function stopSound(){document.querySelectorAll("audio[data-talkabee-sound]").forEach(a=>{a.pause();a.currentTime=0;a.remove()})}
 function playSound(key){stopSound();const src=SOUND_MAP[key];if(!src)return;const a=new Audio(src);a.dataset.talkabeeSound="1";document.body.appendChild(a);a.play().catch(()=>{});a.onended=()=>a.remove()}
 function showWord(key){activeLesson="";lastWord=key;lessonPhrase=1;title.textContent="Click & Discover";prompt.textContent="You found "+(EN[key]||key)+".";line.textContent=WORDS[langSel.value][key]||EN[key]||key;translation.textContent=langSel.value==="en"?"":(EN[key]||key)}
-document.querySelectorAll(".hotspot").forEach(b=>b.onclick=()=>{const key=b.dataset.word;showWord(key);let played=false;const after=()=>{if(played)return;played=true;playSound(key)};speak(WORDS[langSel.value][key]||EN[key]||key,.82,after);setTimeout(after,1500);if(challenge>=0){if(key===challengeOrder[challenge]){status.textContent="✓ Nice find!";status.style.color="#9dffbf"}else{status.textContent="Not that one — keep looking.";status.style.color="#ffe28a"}}});
+document.querySelectorAll(".hotspot").forEach(b=>b.onclick=()=>{const key=b.dataset.word;showWord(key);let played=false;const after=()=>{if(played)return;played=true;playSound(key)};speak(WORDS[langSel.value][key]||EN[key]||key,.82,after);setTimeout(after,1500);if(challenge>=0){if(key===challengeOrder[challenge]){status.textContent="✓ Nice find!";status.style.setProperty("color","#35e46a","important")}else{status.textContent="Not that one — keep looking.";status.style.setProperty("color","#ffe28a","important")}}});
 function clearChallenge(){challenge=-1;world.classList.remove("challenge-mode");document.querySelectorAll(".hotspot").forEach(h=>h.classList.remove("target"));status.textContent=""}
 document.getElementById("discovery").onclick=()=>{clearChallenge();activeLesson="";lastWord="game";title.textContent="Click & Discover";prompt.textContent="Click any object in the scene to hear its name.";line.textContent=WORDS[langSel.value].game;translation.textContent=langSel.value==="en"?"":EN.game};
 document.querySelectorAll("[data-ch]").forEach(b=>b.onclick=()=>{activeLesson="";lastWord="";challenge=+b.dataset.ch;world.classList.add("challenge-mode");document.querySelectorAll(".hotspot").forEach(h=>h.classList.toggle("target",h.dataset.word===challengeOrder[challenge]));title.textContent="Challenge "+(challenge+1)+" of 6";prompt.textContent=b.textContent.replace(/^[0-9]+\.\s*/,"");line.textContent=WORDS[langSel.value][challengeOrder[challenge]];translation.textContent=langSel.value==="en"?"":EN[challengeOrder[challenge]];status.textContent=""});
@@ -365,9 +560,28 @@ showWord("game");
  if(!card)return;
  const drag=card.querySelector('.tab-card-drag'),down=card.querySelector('.tab-card-font-down'),up=card.querySelector('.tab-card-font-up'),reset=card.querySelector('.tab-card-reset'),resize=card.querySelector('.tab-card-resize');
  const PK='talkabee-global-script-card-position',SK='talkabee-global-script-card-scale',FK='talkabee-global-script-card-font-scale';
+ const pageKey=(location.pathname.split('/').pop()||'adventure').replace(/[^a-z0-9-]/gi,'_');
+ const WK='talkabee-script-card-width-'+pageKey,HK='talkabee-script-card-height-'+pageKey;
  const clamp=(n,a,b)=>Math.max(a,Math.min(b,n));
  const defaultScale=()=>matchMedia('(max-width:760px)').matches?.82:.67;
  let scale=defaultScale(),fontScale=1,dragState=null;
+ // Capture actual rendered font sizes, even on Adventures with older card markup.
+ // Never modify the Move / A- / A+ / Reset controls or resize handle.
+ const textNodes=Array.from(card.querySelectorAll('*')).filter(el=>{
+   if(el.closest('.tab-card-tools,.tab-card-resize'))return false;
+   if(el.matches('script,style,svg,path,select,input,textarea'))return false;
+   return Array.from(el.childNodes).some(n=>n.nodeType===3&&n.textContent.trim());
+ });
+ textNodes.forEach(el=>{el.dataset.baseFont=getComputedStyle(el).fontSize});
+ function applyBox(width,height,save=true){
+   card.style.setProperty('width',width+'px','important');
+   card.style.setProperty('max-width','none','important');
+   card.style.setProperty('min-width','0','important');
+   card.style.setProperty('min-height',height+'px','important');
+   card.style.setProperty('max-height','none','important');
+   card.style.setProperty('overflow','visible','important');
+   if(save)try{localStorage.setItem(WK,String(width));localStorage.setItem(HK,String(height))}catch(e){}
+ }
 
  function applyTransform(){
    if(card.dataset.moved==='1'){
@@ -381,6 +595,7 @@ showWord("game");
  function applyFont(v,save=true){
    fontScale=clamp(Number(v)||1,.75,1.6);
    card.style.setProperty('--tab-card-font-scale',fontScale.toFixed(2));
+   textNodes.forEach(el=>el.style.setProperty('font-size',(parseFloat(el.dataset.baseFont)*fontScale)+'px','important'));
    if(save)try{localStorage.setItem(FK,String(fontScale))}catch(e){}
  }
  function saveState(){
@@ -394,7 +609,9 @@ showWord("game");
  function restore(){
    try{
      const fs=localStorage.getItem(FK); if(fs)applyFont(fs,false);
-     const ss=parseFloat(localStorage.getItem(SK)); if(ss)scale=clamp(ss,.45,1.10);
+     // Older A+/A- controls stored a whole-card zoom. Ignore that legacy value.
+      const ww=parseFloat(localStorage.getItem(WK)),hh=parseFloat(localStorage.getItem(HK));
+      if(ww&&hh)applyBox(ww,hh,false);
      const ps=JSON.parse(localStorage.getItem(PK)||'null');
      if(ps&&innerWidth>760){
        card.dataset.moved='1';
@@ -407,15 +624,40 @@ showWord("game");
    }catch(e){}
  }
 
- if(down)down.addEventListener('click',()=>{scale=clamp(+(scale-.05).toFixed(2),.45,1.10);applyTransform();saveState()});
- if(up)up.addEventListener('click',()=>{scale=clamp(+(scale+.05).toFixed(2),.45,1.10);applyTransform();saveState()});
+ if(down)down.addEventListener('click',()=>applyFont(fontScale-.1));
+ if(up)up.addEventListener('click',()=>applyFont(fontScale+.1));
 
  if(reset)reset.addEventListener('click',()=>{
-   try{localStorage.removeItem(PK);localStorage.removeItem(SK);localStorage.removeItem(FK)}catch(e){}
+   try{localStorage.removeItem(PK);localStorage.removeItem(SK);localStorage.removeItem(FK);localStorage.removeItem(WK);localStorage.removeItem(HK)}catch(e){}
    scale=defaultScale();fontScale=1;
    delete card.dataset.moved;
-   ['width','height','left','top','right','bottom','transform','transform-origin','min-width','max-width','min-height','max-height'].forEach(p=>card.style.removeProperty(p));
+   ['width','height','left','top','right','bottom','inset','transform','transform-origin','min-width','max-width','min-height','max-height'].forEach(p=>card.style.removeProperty(p));
    applyFont(1,false);
+   // Reset must restore the approved centered, bottom-anchored appearance
+   // without allowing any part of the card to fall outside the viewport.
+   // Do not rely on the later boundary observer: its correction can run
+   // before the browser has laid out the newly reset content.
+   const placeDefault=()=>{
+     naturalHeight();
+     const gap=16;
+     const cssWidth=card.getBoundingClientRect().width || 520;
+     const baseWidth=parseFloat(getComputedStyle(card).width)||520;
+     const visualScale=defaultScale();
+     const visualWidth=baseWidth*visualScale;
+     const visualHeight=card.scrollHeight*visualScale;
+     const vw=document.documentElement.clientWidth;
+     const vh=document.documentElement.clientHeight;
+     const x=Math.max(gap,(vw-visualWidth)/2);
+     const y=Math.max(gap,vh-gap-visualHeight);
+     card.dataset.moved='1';
+     card.style.setProperty('left',x+'px','important');
+     card.style.setProperty('top',y+'px','important');
+     card.style.setProperty('right','auto','important');
+     card.style.setProperty('bottom','auto','important');
+     card.style.setProperty('transform-origin','top left','important');
+     card.style.setProperty('transform','scale('+visualScale+')','important');
+   };
+   requestAnimationFrame(()=>requestAnimationFrame(placeDefault));
  });
 
  function startDrag(e){
@@ -454,20 +696,41 @@ showWord("game");
  card.addEventListener('pointerup',endDrag);
  card.addEventListener('pointercancel',endDrag);
 
- // Keep the resize handle from changing the card's scale. It changes scale proportionally instead.
+ // Resize only the card's dimensions. The text and visual scale remain unchanged.
  if(resize)resize.addEventListener('pointerdown',e=>{
    if(innerWidth<=760)return;
    e.preventDefault();e.stopPropagation();
-   const r=card.getBoundingClientRect(),sx=e.clientX,baseW=r.width,baseScale=scale;
+   const sx=e.clientX,sy=e.clientY,baseW=parseFloat(getComputedStyle(card).width),baseH=parseFloat(getComputedStyle(card).height);
+   const effectiveScale=card.getBoundingClientRect().width/baseW||defaultScale();
    resize.setPointerCapture(e.pointerId);
-   const mv=ev=>{scale=clamp(baseScale*((baseW+ev.clientX-sx)/baseW),.45,1.10);applyTransform()};
-   const end=()=>{resize.removeEventListener('pointermove',mv);saveState()};
-   resize.addEventListener('pointermove',mv);
-   resize.addEventListener('pointerup',end,{once:true});
-   resize.addEventListener('pointercancel',end,{once:true});
+   const mv=ev=>{const width=clamp(baseW+(ev.clientX-sx)/effectiveScale,320,Math.max(520,innerWidth/effectiveScale-50));const height=clamp(baseH+(ev.clientY-sy)/effectiveScale,120,Math.max(250,innerHeight/effectiveScale-40));applyBox(width,height,false)};
+   const end=()=>{resize.removeEventListener('pointermove',mv);resize.removeEventListener('pointerup',end);resize.removeEventListener('pointercancel',end);applyBox(parseFloat(getComputedStyle(card).width),parseFloat(getComputedStyle(card).height),true);naturalHeight()};
+   resize.addEventListener('pointermove',mv);resize.addEventListener('pointerup',end);resize.addEventListener('pointercancel',end);
  });
 
- restore();
+  restore();
+
+  // Grandpa's Place behavior: the card follows its content rather than keeping
+  // a height left behind by an earlier challenge or a saved editor snapshot.
+  // A manual corner drag can temporarily set a preferred minimum height;
+  // the next phrase/challenge change returns the card to natural auto-height.
+  function naturalHeight(){
+    // The card must size to content, not become an internally scrolling pane.
+    // Preserve the user's chosen width and screen position.
+    card.style.setProperty('height','auto','important');
+    card.style.setProperty('min-height','0px','important');
+    card.style.setProperty('max-height','none','important');
+    card.style.setProperty('overflow','visible','important');
+    card.style.setProperty('overflow-y','visible','important');
+    try{localStorage.removeItem(HK)}catch(e){}
+  }
+  naturalHeight();
+  const contentFields=['title','prompt','line','translation','status']
+    .map(id=>document.getElementById(id)).filter(Boolean);
+  const contentWatcher=new MutationObserver(()=>naturalHeight());
+  contentFields.forEach(el=>contentWatcher.observe(el,{
+    subtree:true,childList:true,characterData:true
+  }));
 })();
 </script>
 <script id="talkabee-hotspot-custom-sound">
@@ -505,7 +768,20 @@ document.addEventListener('click',function(ev){
  const el=ev.target.closest&&ev.target.closest('[data-tb-custom="1"]');if(!el)return;
  ev.preventDefault();ev.stopPropagation();
  const l=lang(),txt=translation(el,l),en=translation(el,'en'),key=el.dataset.word||el.dataset.object||en;
- try{if(typeof showWord==='function')showWord(key);else{const line=document.querySelector('[id$="Line"]');const trans=document.querySelector('[id$="Translation"]');if(line)line.textContent=txt;if(trans)trans.textContent=l==='en'?'':en}}catch(e){}
+ try{
+   // Custom hotspots intercept clicks before the original challenge checker.
+   // Keep the challenge prompt intact and provide the same answer feedback.
+   const inChallenge=(typeof challenge==='number'&&challenge>=0);
+   if(inChallenge){
+     const correct=(typeof challengeOrder!=='undefined'&&key===challengeOrder[challenge]);
+     const feedback=document.getElementById('status');
+     if(feedback){
+       feedback.textContent=correct?'✓ Nice find!':'Not that one — keep looking.';
+       feedback.style.setProperty('color',correct?'#35e46a':'#ffe28a','important');
+     }
+   }else if(typeof showWord==='function')showWord(key);
+   else{const line=document.querySelector('[id$="Line"]');const trans=document.querySelector('[id$="Translation"]');if(line)line.textContent=txt;if(trans)trans.textContent=l==='en'?'':en}
+ }catch(e){console.warn('Talk A Bee challenge feedback:',e)}
  try{if(typeof speak==='function')speak(txt,.82);else if('speechSynthesis'in window){speechSynthesis.cancel();const u=new SpeechSynthesisUtterance(txt);u.lang=codes[l]||l;u.rate=.82;speechSynthesis.speak(u)}}catch(e){}
  // Always schedule assigned MP3, regardless of which speech function exists.
  soundAfterVoice(el);
@@ -593,6 +869,149 @@ document.addEventListener('click',function(ev){
   restore();
   window.addEventListener('pageshow',restore);
   window.addEventListener('storage',function(e){if(e.key===KEY)restore()});
+})();
+</script>
+
+<script type="application/json" id="talkabee-challenge-data">[]</script>
+<script id="talkabee-challenge-runtime">
+(function(){
+ const data=document.getElementById('talkabee-challenge-data');
+ if(!data)return;
+ try{const saved=JSON.parse(data.textContent||'[]');
+ saved.forEach((v,i)=>{const b=document.querySelector('[data-ch="'+i+'"]');if(!b||!v)return;
+ if(v.key)challengeOrder[i]=v.key;
+ if(v.text)b.textContent=(i+1)+'. '+v.text;
+ });}catch(e){console.warn('Challenge data could not be loaded',e)}
+})();
+</script>
+
+<script id="talkabee-approved-next-navigation-v2">
+(function(){
+ 'use strict';
+ const card=document.querySelector('.tab-master-card');
+ if(!card)return;
+ const row=card.querySelector('.controls');
+ if(!row)return;
+ let phrase=document.getElementById('nextPhrase');
+ let next=document.getElementById('nextChallenge');
+ if(!next){next=document.createElement('button');next.id='nextChallenge';next.type='button';next.textContent='Next →';next.hidden=true;row.appendChild(next)}
+ if(!phrase){phrase=document.createElement('button');phrase.id='nextPhrase';phrase.type='button';phrase.textContent='Next →';phrase.hidden=true;row.appendChild(phrase);
+   // Pages without an original Next phrase handler: alternate the two lesson sentences.
+   let index=1;
+   phrase.addEventListener('click',function(){
+     if(typeof activeLesson==='undefined'||!activeLesson||typeof lessons==='undefined')return;
+     const pair=lessons[document.getElementById('lang').value]?.[activeLesson];
+     if(!pair||pair.length<2)return;
+     index=1-index;
+     const text=pair[index];
+     const line=document.getElementById('line'),translation=document.getElementById('translation');
+     if(line)line.textContent=text;
+     if(translation)translation.textContent=document.getElementById('lang').value==='en'?'':(lessons.en?.[activeLesson]?.[index]||'');
+     if(typeof speak==='function')speak(text);
+   });
+   document.querySelectorAll('[data-lesson]').forEach(b=>b.addEventListener('click',()=>{index=1}));
+ }
+ // Some older master-template scripts rename every button beginning with "Next".
+ // Restore the correct labels after those scripts run.
+ function sync(){
+   const ch=(typeof challenge==='number'&&challenge>=0);
+   const act=(typeof activeLesson==='string'&&!!activeLesson&&!ch);
+   next.textContent='Next →';phrase.textContent='Next →';
+   next.hidden=!ch;phrase.hidden=!act;
+   next.style.setProperty('display',ch?'inline-block':'none','important');
+   phrase.style.setProperty('display',act?'inline-block':'none','important');
+ }
+ next.addEventListener('click',function(){
+   const buttons=[...document.querySelectorAll('.tab-master-panel [data-ch],.panel [data-ch]')];
+   if(!buttons.length||typeof challenge!=='number'||challenge<0)return;
+   const current=buttons.findIndex(b=>Number(b.dataset.ch)===challenge);
+   buttons[(current+1)%buttons.length].click();sync();
+ });
+ document.querySelectorAll('[data-ch],[data-lesson],#discovery').forEach(b=>b.addEventListener('click',sync));
+ // Original hotspot handlers may reset the active lesson without changing challenge mode.
+ document.querySelectorAll('.hotspot').forEach(h=>h.addEventListener('click',sync));
+ document.addEventListener('click',function(e){if(e.target.closest('.hotspot'))requestAnimationFrame(sync)});
+ if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',sync);else sync();
+})();
+</script>
+<script id="talkabee-shared-card-viewport-boundary-v1">
+/* Keep the complete displayed script card inside the viewport after moving,
+   resizing, restoring its position, or growing to fit longer text. */
+(function(){
+  'use strict';
+  const card=document.querySelector('.tab-master-card');
+  if(!card)return;
+  const GAP=16;
+  let pending=false,adjusting=false;
+  function keepVisible(){
+    if(adjusting || document.body.classList.contains('scene-view'))return;
+    adjusting=true;
+    try{
+      const r=card.getBoundingClientRect();
+      if(!r.width||!r.height)return;
+      // Normal, bottom-anchored default remains untouched when already visible.
+      let dx=0,dy=0;
+      const vw=document.documentElement.clientWidth,vh=document.documentElement.clientHeight;
+      if(r.width<=vw-2*GAP){
+        if(r.left<GAP)dx=GAP-r.left;
+        else if(r.right>vw-GAP)dx=vw-GAP-r.right;
+      }else if(r.left>GAP)dx=GAP-r.left;
+      if(r.height<=vh-2*GAP){
+        if(r.top<GAP)dy=GAP-r.top;
+        else if(r.bottom>vh-GAP)dy=vh-GAP-r.bottom;
+      }else if(r.top>GAP)dy=GAP-r.top;
+      if(Math.abs(dx)<.5&&Math.abs(dy)<.5)return;
+      // Use the *rendered* rectangle, not the unscaled CSS width/height.
+      // This preserves the existing .67 card transform and drag behavior.
+      card.dataset.moved='1';
+      card.style.setProperty('left',(r.left+dx)+'px','important');
+      card.style.setProperty('top',(r.top+dy)+'px','important');
+      card.style.setProperty('right','auto','important');
+      card.style.setProperty('bottom','auto','important');
+      card.style.setProperty('transform-origin','top left','important');
+      const cssWidth=parseFloat(getComputedStyle(card).width)||r.width;
+      const factor=r.width/cssWidth;
+      card.style.setProperty('transform','scale('+factor+')','important');
+    }finally{adjusting=false;}
+  }
+  function schedule(){if(pending)return;pending=true;requestAnimationFrame(()=>{pending=false;keepVisible()});}
+  // Capture ensures the corrected position is saved by the existing drag handler.
+  // Reset restores CSS defaults first; then re-check the full rendered card.
+  // This also handles a reset that changes position without changing its size.
+  const resetButton=card.querySelector('.tab-card-reset');
+  if(resetButton)resetButton.addEventListener('click',()=>{
+    requestAnimationFrame(()=>{keepVisible();requestAnimationFrame(keepVisible);});
+  });
+  card.addEventListener('pointerup',keepVisible,true);
+  card.addEventListener('pointercancel',keepVisible,true);
+  card.addEventListener('pointermove',schedule);
+  const ro=new ResizeObserver(schedule);
+  ro.observe(card);
+  window.addEventListener('resize',schedule);
+  window.addEventListener('pageshow',schedule);
+  // Font changes, new challenge text and the status line can alter card height.
+  new MutationObserver(schedule).observe(card,{subtree:true,childList:true,characterData:true});
+  schedule();
+})();
+</script>
+<script id="talkabee-approved-card-learning-text">
+/* Approved learning text sizes without changing A+/A- behavior.
+   The existing font controls use data-base-font, so update those baselines too. */
+(function(){
+  function enlarge(){
+    const card=document.querySelector('.tab-master-card');
+    if(!card)return;
+    const sizes={'.kicker':19,'#title':28,'#prompt':24,'#line':28,'#translation':24};
+    const factor=parseFloat(getComputedStyle(card).getPropertyValue('--tab-card-font-scale'))||1;
+    for(const [selector,base] of Object.entries(sizes)){
+      const el=card.querySelector(selector);
+      if(!el)return;
+      el.dataset.baseFont=base+'px';
+      el.style.setProperty('font-size',(base*factor)+'px','important');
+    }
+  }
+  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',enlarge);
+  else enlarge();
 })();
 </script>
 </body></html>
