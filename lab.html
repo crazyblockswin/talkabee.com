@@ -1224,6 +1224,7 @@ const status=document.getElementById('voiceLabStatus'), select=document.getEleme
 const show=(message)=>{status.textContent=message};
 let engine=null,audio=null,audioUrl=null,busy=false,models={};
 const localePrefix={en:'en_',es:'es_',fr:'fr_',de:'de_',it:'it_',pt:'pt_',no:'no_'};
+const isLanguageVoice=(id)=>Object.values(localePrefix).some(prefix=>id.toLowerCase().startsWith(prefix));
 const langSelect=document.getElementById('homeLanguage');
 const getSentence=()=>{
   const line=document.getElementById('homeWordline');
@@ -1231,7 +1232,7 @@ const getSentence=()=>{
 };
 function setRecommended(){
   const prefix=localePrefix[langSelect?.value]||'en_';
-  const options=[...select.options].filter(o=>o.value.startsWith(prefix));
+  const options=[...select.options].filter(o=>o.value.toLowerCase().startsWith(prefix));
   if(options.length) select.value=(options.find(o=>/medium/.test(o.value))||options[0]).value;
   else show('No Piper model listed for this language. Browser speech remains available.');
 }
@@ -1267,12 +1268,13 @@ try{
  show('Loading Piper browser engine and voice catalog…');
  engine=await import('https://esm.sh/@mintplex-labs/piper-tts-web@1.0.5?bundle');
  models=await engine.voices();
- const names=Object.keys(models).filter(x=>Object.values(localePrefix).some(prefix=>x.startsWith(prefix)));
+ const allNames=Array.isArray(models)?models.map(v=>typeof v==='string'?v:(v?.id||v?.key||v?.name||'')).filter(Boolean):Object.keys(models||{});
+ const names=allNames.filter(isLanguageVoice);
  select.replaceChildren();
  for(const name of names){const option=document.createElement('option');option.value=name;option.textContent=name;select.appendChild(option)}
- if(!names.length)throw new Error('No matching voices returned by catalog');
+ if(!names.length)throw new Error('Voice catalog returned '+allNames.length+' entries, but none matched the seven languages. Examples: '+allNames.slice(0,5).join(', '));
  setRecommended();show('Ready. Select an Activity, click “Use lesson sentence”, then “Neural Speak”. First use downloads the model.');
-}catch(e){show('Piper engine could not load: '+(e?.message||String(e))+'\nTry on an HTTPS website, not a file:// page.');console.error('Voice Lab init',e)}
+}catch(e){show('Piper engine could not load: '+(e?.message||String(e))+'\nCheck browser console for the exact catalog error. HTTPS is required for model storage; an empty catalog is a separate issue.');console.error('Voice Lab init',e)}
 </script>
 
 </body></html>
