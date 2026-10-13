@@ -1208,73 +1208,48 @@ document.addEventListener('click',function(ev){
 })();
 </script>
 <script data-tb-custom-vocab="1">;(()=>{const C={"boat":{"en":"boat","es":"bote","fr":"bateau","de":"Boot","it":"barca","pt":"barco","no":"båt"},"fire pit":{"en":"fire pit","es":"pozo de fuego","fr":"foyer","de":"Feuerstelle","it":"pozzo del fuoco","pt":"fogueira","no":"ildsted"},"guitar":{"en":"guitar","es":"guitarra","fr":"guitare","de":"Gitarre","it":"chitarra","pt":"guitarra","no":"gitar"}};for(const [k,v] of Object.entries(C)){try{EN[k]=v.en||k;for(const L of ["es","fr","en","de","it","pt","no"]){if(WORDS[L])WORDS[L][k]=v[L]||v.en||k}}catch(e){}}})();</script>
-<!-- Voice Lab: experimental Piper synthesis; original lesson speech is untouched. -->
+<!-- Isolated Talk A Bee voice laboratory; the Adventure speech controls remain unchanged. -->
 <style id="voice-lab-style">
-#voiceLab{position:fixed;z-index:2147483000;right:14px;top:85px;width:min(340px,calc(100vw - 28px));background:#172b36;color:white;border:1px solid #86bac2;border-radius:13px;padding:13px;box-shadow:0 6px 25px #0008;font:14px/1.4 system-ui,sans-serif}
-#voiceLab *{box-sizing:border-box}#voiceLab label{display:block;font-size:12px;margin:7px 0 3px}#voiceLab select,#voiceLab textarea{width:100%;padding:6px;border-radius:6px;color:#111;background:white}#voiceLab button{border:0;border-radius:7px;padding:8px 10px;margin:7px 4px 0 0;background:#b7e5d7;color:#123;cursor:pointer}#voiceLabStatus{font-size:12px;margin-top:8px;white-space:pre-wrap;overflow-wrap:anywhere}#voiceLab details summary{cursor:pointer;font-weight:700}#voiceLab textarea{min-height:62px;resize:vertical}
+#voiceLab{position:fixed;z-index:2147483000;right:14px;top:85px;width:min(355px,calc(100vw - 28px));background:#172b36;color:white;border:1px solid #86bac2;border-radius:13px;padding:13px;box-shadow:0 6px 25px #0008;font:14px/1.4 system-ui,sans-serif}
+#voiceLab *{box-sizing:border-box}#voiceLab label{display:block;font-size:12px;margin:9px 0 3px}#voiceLab select,#voiceLab textarea{width:100%;padding:7px;border-radius:6px;color:#111;background:white}#voiceLab button{border:0;border-radius:7px;padding:8px 10px;margin:7px 4px 0 0;background:#b7e5d7;color:#123;cursor:pointer}#voiceLab button:disabled{opacity:.55;cursor:wait}#voiceLabStatus{font-size:12px;margin-top:8px;white-space:pre-wrap;overflow-wrap:anywhere}#voiceLab details summary{cursor:pointer;font-weight:700}#voiceLab textarea{min-height:62px;resize:vertical}#voiceLab .lab-note{font-size:12px;color:#d1e6eb;margin-top:5px}
 </style>
-<div id="voiceLab"><details open><summary>🎙️ Voice Lab — Piper experiment</summary>
-<label for="voiceLabModel">Neural voice (choose a language model)</label><select id="voiceLabModel"><option value="">Loading voice catalog…</option></select>
+<div id="voiceLab"><details open><summary>🎙️ Voice Lab — two choices</summary>
+<label for="voiceLabMode">Voice quality</label><select id="voiceLabMode"><option value="standard">Standard — no model download</option><option value="enhanced">Enhanced — download neural voice</option></select>
+<div id="voiceLabNote" class="lab-note">Uses voices already available in your browser.</div>
+<div id="voiceLabNeural" hidden><label for="voiceLabModel">Neural voice model</label><select id="voiceLabModel"><option value="">Select Enhanced to load voices</option></select><button type="button" id="voiceLabLoad">Load enhanced engine</button></div>
 <label for="voiceLabText">Test sentence (or use current lesson)</label><textarea id="voiceLabText">Hello! Welcome to Talk A Bee.</textarea>
-<div><button type="button" id="voiceLabCurrent">Use lesson sentence</button><button type="button" id="voiceLabPlay">▶ Neural Speak</button><button type="button" id="voiceLabSlow">🐢 Slow</button><button type="button" id="voiceLabStop">■ Stop</button></div>
-<div id="voiceLabStatus" role="status">Browser voice remains unchanged. Neural voice requires an internet connection for the first model download.</div>
+<div><button type="button" id="voiceLabCurrent">Use lesson sentence</button><button type="button" id="voiceLabPlay">▶ Speak</button><button type="button" id="voiceLabSlow">🐢 Slow</button><button type="button" id="voiceLabStop">■ Stop</button></div>
+<div id="voiceLabStatus" role="status">Standard voice ready. Enhanced voices are optional.</div>
 </details></div>
-<script type="module" id="voice-lab-piper-module">
-const status=document.getElementById('voiceLabStatus'), select=document.getElementById('voiceLabModel'), field=document.getElementById('voiceLabText');
-const show=(message)=>{status.textContent=message};
-let engine=null,audio=null,audioUrl=null,busy=false,models={};
-const localePrefix={en:'en_',es:'es_',fr:'fr_',de:'de_',it:'it_',pt:'pt_',no:'no_'};
-const isLanguageVoice=(id)=>Object.values(localePrefix).some(prefix=>id.toLowerCase().startsWith(prefix));
-const langSelect=document.getElementById('homeLanguage');
-const getSentence=()=>{
-  const line=document.getElementById('homeWordline');
-  return (line?.innerText||line?.textContent||'').replace(/\s+/g,' ').trim();
-};
-function setRecommended(){
-  const prefix=localePrefix[langSelect?.value]||'en_';
-  const options=[...select.options].filter(o=>o.value.toLowerCase().startsWith(prefix));
-  if(options.length) select.value=(options.find(o=>/medium/.test(o.value))||options[0]).value;
-  else show('No Piper model listed for this language. Browser speech remains available.');
+<script type="module" id="voice-lab-dual-mode">
+const $=id=>document.getElementById(id), status=$('voiceLabStatus'), mode=$('voiceLabMode'), select=$('voiceLabModel'), field=$('voiceLabText');
+const show=message=>{status.textContent=message};
+const prefix={en:'en_',es:'es_',fr:'fr_',de:'de_',it:'it_',pt:'pt_',no:'no_'};
+const speechLang={en:'en-US',es:'es-ES',fr:'fr-FR',de:'de-DE',it:'it-IT',pt:'pt-BR',no:'nb-NO'};
+const lang=$('homeLanguage');
+let engine=null,loading=null,audio=null,audioUrl=null,busy=false,utterance=null;
+const sentence=()=>($('homeWordline')?.innerText||$('homeWordline')?.textContent||'').replace(/\s+/g,' ').trim();
+function stop(){if(audio){audio.pause();audio.currentTime=0}if('speechSynthesis' in window)window.speechSynthesis.cancel();utterance=null}
+function recommend(){const p=prefix[lang?.value]||'en_';const options=[...select.options].filter(o=>o.value.toLowerCase().startsWith(p));if(options.length)select.value=(options.find(o=>o.value.includes('medium'))||options[0]).value;else if(engine)show('No neural model listed for this language. Standard voice is available.');}
+function updateMode(){const enhanced=mode.value==='enhanced';$('voiceLabNeural').hidden=!enhanced;$('voiceLabNote').textContent=enhanced?'Optional neural model download. Model size depends on the voice; first use may take time.':'No neural model download. Uses voices installed in the browser.';try{localStorage.setItem('talkabee-lab-voice-mode',mode.value)}catch(_){};show(enhanced?'Enhanced selected. Click “Load enhanced engine” before speaking.':'Standard voice ready. No neural model download.');}
+try{if(localStorage.getItem('talkabee-lab-voice-mode')==='enhanced')mode.value='enhanced'}catch(_){}
+mode.addEventListener('change',()=>{stop();updateMode()});updateMode();
+$('voiceLabCurrent').addEventListener('click',()=>{const s=sentence();if(s)field.value=s;else show('Choose an Activity first, or type a test sentence.')});
+$('voiceLabStop').addEventListener('click',()=>{stop();show('Stopped.')});
+lang?.addEventListener('change',recommend);
+async function loadEngine(){if(engine)return engine;if(loading)return loading;
+ loading=(async()=>{show('Loading enhanced engine and voice catalog…');const m=await import('https://esm.sh/@mintplex-labs/piper-tts-web@1.0.5?bundle');const models=await m.voices();const all=Array.isArray(models)?models.map(v=>typeof v==='string'?v:(v?.id||v?.key||v?.name||'')).filter(Boolean):Object.keys(models||{});const names=all.filter(id=>Object.values(prefix).some(p=>id.toLowerCase().startsWith(p)));if(!names.length)throw Error('No matching neural voices in catalog.');select.replaceChildren();for(const id of names){const opt=document.createElement('option');opt.value=id;opt.textContent=id;select.appendChild(opt)}engine=m;recommend();show('Enhanced catalog ready. First speech may download a large model.');return engine})();
+ try{return await loading}catch(e){loading=null;show('Enhanced engine unavailable: '+(e?.message||e)+'\nChoose Standard to continue.');console.error('Voice Lab engine',e);throw e}
 }
-document.getElementById('voiceLabCurrent').addEventListener('click',()=>{
- const sentence=getSentence();if(sentence)field.value=sentence;
- else show('No lesson sentence visible yet. Select an Activity first, or type a test sentence.');
-});
-document.getElementById('voiceLabStop').addEventListener('click',()=>{if(audio)audio.pause();if(audio)audio.currentTime=0;show('Stopped.');});
-async function play(rate){
- if(busy)return;
- const text=field.value.trim(),voiceId=select.value;
- if(!text||!voiceId){show('Choose a model and enter a sentence first.');return}
- busy=true;
- document.getElementById('voiceLabPlay').disabled=true;
- document.getElementById('voiceLabSlow').disabled=true;
- try{
-   if(audio)audio.pause();if(audioUrl)URL.revokeObjectURL(audioUrl);
-   show('Generating neural speech… First use may download a large voice model.');
-   const start=performance.now();
-   const wav=await engine.predict({text,voiceId},p=>{
-      if(p?.total)show('Downloading voice model: '+Math.round(100*p.loaded/p.total)+'%');
-   });
-   audioUrl=URL.createObjectURL(wav);audio=new Audio(audioUrl);audio.playbackRate=rate;
-   await audio.play();
-   show('Piper voice playing. Generation: '+((performance.now()-start)/1000).toFixed(1)+' seconds.');
- }catch(e){show('Neural voice failed: '+(e?.message||String(e))+'\nBrowser speech is still available.');console.error('Voice Lab',e)}
- finally{busy=false;document.getElementById('voiceLabPlay').disabled=false;document.getElementById('voiceLabSlow').disabled=false}
+$('voiceLabLoad').addEventListener('click',()=>{loadEngine().catch(()=>{})});
+function standardSpeak(text,rate){if(!('speechSynthesis' in window)){show('Browser speech is not available.');return}stop();const u=new SpeechSynthesisUtterance(text);u.lang=speechLang[lang?.value]||'en-US';u.rate=rate;const voices=window.speechSynthesis.getVoices();const chosen=voices.find(v=>v.lang.toLowerCase()===u.lang.toLowerCase())||voices.find(v=>v.lang.toLowerCase().startsWith(u.lang.slice(0,2).toLowerCase()));if(chosen)u.voice=chosen;utterance=u;u.onerror=e=>show('Standard speech error: '+e.error);window.speechSynthesis.speak(u);show('Speaking with browser voice ('+u.lang+'). No model downloaded.')}
+async function speak(rate){const text=field.value.trim();if(!text){show('Enter a sentence first.');return}if(busy)return;
+ if(mode.value==='standard'){standardSpeak(text,rate);return}
+ busy=true;$('voiceLabPlay').disabled=true;$('voiceLabSlow').disabled=true;
+ try{const m=await loadEngine();if(!select.value)throw Error('No neural voice selected for this language.');stop();if(audioUrl){URL.revokeObjectURL(audioUrl);audioUrl=null}show('Generating neural speech… First use downloads a model.');const start=performance.now();const wav=await m.predict({text,voiceId:select.value},p=>{if(p?.total)show('Downloading model: '+Math.round(p.loaded/p.total*100)+'%')});audioUrl=URL.createObjectURL(wav);audio=new Audio(audioUrl);audio.playbackRate=rate;await audio.play();show('Enhanced voice playing. Generation: '+((performance.now()-start)/1000).toFixed(1)+' seconds.')}
+ catch(e){show('Enhanced voice failed: '+(e?.message||e)+'\nSwitch to Standard for reliable browser speech.');console.error('Voice Lab synthesis',e)}
+ finally{busy=false;$('voiceLabPlay').disabled=false;$('voiceLabSlow').disabled=false}
 }
-document.getElementById('voiceLabPlay').addEventListener('click',()=>play(1));
-document.getElementById('voiceLabSlow').addEventListener('click',()=>play(.78));
-langSelect?.addEventListener('change',setRecommended);
-try{
- show('Loading Piper browser engine and voice catalog…');
- engine=await import('https://esm.sh/@mintplex-labs/piper-tts-web@1.0.5?bundle');
- models=await engine.voices();
- const allNames=Array.isArray(models)?models.map(v=>typeof v==='string'?v:(v?.id||v?.key||v?.name||'')).filter(Boolean):Object.keys(models||{});
- const names=allNames.filter(isLanguageVoice);
- select.replaceChildren();
- for(const name of names){const option=document.createElement('option');option.value=name;option.textContent=name;select.appendChild(option)}
- if(!names.length)throw new Error('Voice catalog returned '+allNames.length+' entries, but none matched the seven languages. Examples: '+allNames.slice(0,5).join(', '));
- setRecommended();show('Ready. Select an Activity, click “Use lesson sentence”, then “Neural Speak”. First use downloads the model.');
-}catch(e){show('Piper engine could not load: '+(e?.message||String(e))+'\nCheck browser console for the exact catalog error. HTTPS is required for model storage; an empty catalog is a separate issue.');console.error('Voice Lab init',e)}
+$('voiceLabPlay').addEventListener('click',()=>speak(1));$('voiceLabSlow').addEventListener('click',()=>speak(.78));
 </script>
-
 </body></html>
