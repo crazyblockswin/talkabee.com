@@ -318,7 +318,7 @@ body:not(.tb-hs-editing) .challenge-mode .hotspot.target:not(:hover):not(:focus-
 <details>
 <summary>Explore Adventures ▾</summary>
 <div class="edition-row" role="navigation" aria-label="Talk A Bee Editions">
-<a href="index.html">Main Adventures</a>
+<a href="Talk-A-Bee-Main-Directory.html">Main Adventures</a>
 <a href="Talk-A-Bee-More-Adventures.html">Community Edition</a>
 <a href="Talk-A-Bee-Directory-3.html">Travel Edition</a>
 <a href="Talk-A-Bee-Directory-4.html">Sports Edition</a>
@@ -873,7 +873,7 @@ document.addEventListener('click',function(ev){
  });}catch(e){console.warn('Challenge data could not be loaded',e)}
 })();
 </script>
-
+<div id="tb-challenge-panel" style="display: none;"><div id="tb-challenge-drag" title="Drag to move this editor"><h3>↕ Edit Six Challenges</h3><small>Drag here to move</small></div><div>Choose a challenge, then assign an existing hotspot. Changes are included when you save or export HTML.</div><label for="tb-ch-number">Challenge</label><select id="tb-ch-number"><option value="0">Challenge 1</option><option value="1">Challenge 2</option><option value="2">Challenge 3</option><option value="3">Challenge 4</option><option value="4">Challenge 5</option><option value="5">Challenge 6</option></select><label for="tb-ch-hotspot">Find this hotspot</label><select id="tb-ch-hotspot"><option value="bee">Captain Bee [bee]</option><option value="wheel">Steering wheel [wheel]</option><option value="boat">Captain's boat [boat]</option><option value="dog">Dog [dog]</option><option value="child">Child in life jacket [child]</option><option value="lifejacket">Life jacket [lifejacket]</option><option value="lockgate">Lock gate [lockgate]</option><option value="waterfall">Water flowing through lock [waterfall]</option><option value="boatbehind">Boat behind us [boatbehind]</option><option value="bollard">Yellow bollard [bollard]</option><option value="ladder">Lock ladder [ladder]</option><option value="wall">Lock wall [wall]</option><option value="control">Lock control building [control]</option><option value="spectators">Spectators [spectators]</option><option value="seagull">Seagull [seagull]</option><option value="sailboat">Sailboat [sailboat]</option><option value="mountains">Mountains [mountains]</option><option value="water">Lock water [water]</option><option value="fender">Boat fender [fender]</option><option value="anchor">Anchor [anchor]</option></select><label for="tb-ch-text">Challenge wording (English)</label><input id="tb-ch-text" maxlength="110" placeholder="Find the balloon basket"><div class="tb-ch-warning" id="tb-ch-warning">Saved into this page. Use Save Working HTML to keep it.</div><button type="button" id="tb-ch-apply">Apply Challenge</button><button type="button" id="tb-ch-close">Close</button></div>
 <script id="talkabee-approved-next-navigation-v2">
 (function(){
  'use strict';

@@ -110,18 +110,7 @@ border:1px solid #fff;background:rgba(7,23,39,.65);color:#fff;font-weight:900}
 </style>
 
 <!-- TALK A BEE HOTSPOTS VISUALLY RECERTIFIED AGAINST CURRENT SCENE ARTWORK: 2026-10-07 -->
-<style id="talkabee-hotspot-editor-style">
-#tb-hs-editor{position:fixed;right:16px;bottom:16px;z-index:2147483646;font:700 12px Arial,sans-serif;display:flex;flex-wrap:wrap;justify-content:flex-end;gap:6px;max-width:650px}
-#tb-hs-editor button,#tb-hs-editor input{border:1px solid #fff;border-radius:10px;background:#000;color:#fff;padding:9px 11px;box-shadow:0 4px 14px #0006}
-#tb-hs-editor input{background:#fff;color:#111;min-width:180px;font-weight:400}#tb-hs-editor button{cursor:pointer}
-body.tb-hs-editing .hotspot,body.tb-hs-editing .home-hotspot,body.tb-hs-editing .yacht-hotspot,body.tb-hs-editing .hotspots button,body.tb-hs-editing .train-hotspots button{display:block!important;outline:2px solid #ffea00!important;background:rgba(255,234,0,.18)!important;pointer-events:auto!important;cursor:move!important;visibility:visible!important;opacity:1!important;z-index:2147483005!important}
-body.tb-hs-editing .tb-hs-active{outline:3px solid #00ffff!important;background:rgba(0,255,255,.18)!important}
-.tb-hs-handle{position:absolute!important;right:-7px!important;bottom:-7px!important;left:auto!important;top:auto!important;width:14px!important;height:14px!important;border-radius:3px!important;background:#00ffff!important;border:2px solid #000!important;z-index:2147483647!important;cursor:nwse-resize!important;display:none!important;transform:none!important}
-body.tb-hs-editing .tb-hs-active>.tb-hs-handle{display:block!important}
 
-#tb-hs-editor .tb-sound-name{min-width:150px;max-width:230px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font:12px/1.2 Arial,sans-serif;color:#fff;opacity:.9}
-#tb-hs-editor input[type="file"].tb-sound-file{display:none!important}
-</style>
 
 <style id="talkabee-bilingual-hotspot-popup-style">
 #talkabee-object-popup{position:fixed;z-index:2147482900;display:none;padding:8px 12px;border-radius:12px;background:rgba(20,20,20,.82);color:white;font-weight:900;font-size:14px;pointer-events:none}
@@ -328,7 +317,7 @@ body:not(.tb-hs-editing) .challenge-mode .hotspot.target:not(:hover):not(:focus-
 <details>
 <summary>Explore Adventures ▾</summary>
 <div class="edition-row" role="navigation" aria-label="Talk A Bee Editions">
-<a href="index.html">Main Adventures</a>
+<a href="Talk-A-Bee-Main-Directory.html">Main Adventures</a>
 <a href="Talk-A-Bee-More-Adventures.html">Community Edition</a>
 <a href="Talk-A-Bee-Directory-3.html">Travel Edition</a>
 <a href="Talk-A-Bee-Directory-4.html">Sports Edition</a>
@@ -789,111 +778,7 @@ document.addEventListener('click',function(ev){
 },true);
 })();
 </script>
-<script id="talkabee-hotspot-editor-v10">
-(()=>{
-const SEL='.hotspot,.home-hotspot,.yacht-hotspot,.hotspots button,.train-hotspots button';
-let editing=false,active=null,adding=false,pendingName='',pendingTranslations=null;
-let selectedSoundFile=null;
-const all=()=>[...document.querySelectorAll(SEL)].filter(x=>!x.closest('#tb-hs-editor'));
-function parentFor(el){return el.offsetParent||el.parentElement||document.body}
-function pct(v,n){return +(v/n*100).toFixed(2)}
-function cleanActive(){if(active){active.classList.remove('tb-hs-active');active.querySelector(':scope > .tb-hs-handle')?.remove()} active=null}
-function select(el){if(!editing||!el)return;cleanActive();active=el;el.classList.add('tb-hs-active');let h=document.createElement('span');h.className='tb-hs-handle';el.appendChild(h);updateSoundUI()}
-function semanticNew(name){
- const existing=all()[0]; if(!existing)return null;
- const el=document.createElement('button');el.type='button';
- if(existing.classList.contains('home-hotspot')){el.className='home-hotspot show'}
- else if(existing.classList.contains('yacht-hotspot')){el.className='yacht-hotspot'}
- else if(existing.classList.contains('hotspot')){el.className='hotspot'}
- else if(existing.className)el.className=existing.className;
- if(existing.hasAttribute('data-object'))el.dataset.object=name;else el.dataset.word=name;
- if(existing.hasAttribute('data-en'))el.dataset.en=name;
- if(existing.id&&!existing.hasAttribute('data-word')&&!existing.hasAttribute('data-object'))el.id=name.toLowerCase().replace(/[^a-z0-9_-]+/g,'-').replace(/^-+|-+$/g,'');
- el.setAttribute('aria-label',name);if(pendingTranslations&&window.TB_registerNewHotspot)window.TB_registerNewHotspot(el,pendingTranslations);
- return el
-}
-function hotspotContainer(){const e=all()[0];return e?e.parentElement:null}
-function placeAt(ev){
- if(!editing||!adding)return;
- const host=hotspotContainer();if(!host)return;
- const el=semanticNew(pendingName);if(!el)return;
- host.appendChild(el);
- const r=parentFor(el).getBoundingClientRect();
- el.style.left=pct(ev.clientX-r.left,r.width)+'%';el.style.top=pct(ev.clientY-r.top,r.height)+'%';el.style.width='6%';el.style.height='8%';
- adding=false;pendingName='';pendingTranslations=null;nameBox.value='';select(el);ev.preventDefault();ev.stopPropagation();
-}
-function startDrag(ev,el){
- if(!editing||adding)return; if(ev.target.classList.contains('tb-hs-handle'))return;
- select(el);ev.preventDefault();ev.stopPropagation();
- const p=parentFor(el),r=p.getBoundingClientRect();let sx=ev.clientX,sy=ev.clientY;
- let l=parseFloat(el.style.left)||pct(el.offsetLeft,r.width),t=parseFloat(el.style.top)||pct(el.offsetTop,r.height);
- const move=e=>{el.style.left=(l+(e.clientX-sx)/r.width*100).toFixed(2)+'%';el.style.top=(t+(e.clientY-sy)/r.height*100).toFixed(2)+'%'};
- const up=()=>{window.removeEventListener('pointermove',move,true);window.removeEventListener('pointerup',up,true)};
- window.addEventListener('pointermove',move,true);window.addEventListener('pointerup',up,true)
-}
-function startResize(ev,el){
- if(!editing)return;ev.preventDefault();ev.stopPropagation();
- const p=parentFor(el),r=p.getBoundingClientRect();let sx=ev.clientX,sy=ev.clientY;
- let w=parseFloat(el.style.width)||pct(el.offsetWidth,r.width),h=parseFloat(el.style.height)||pct(el.offsetHeight,r.height);
- const move=e=>{el.style.width=Math.max(1,w+(e.clientX-sx)/r.width*100).toFixed(2)+'%';el.style.height=Math.max(1,h+(e.clientY-sy)/r.height*100).toFixed(2)+'%'};
- const up=()=>{window.removeEventListener('pointermove',move,true);window.removeEventListener('pointerup',up,true)};
- window.addEventListener('pointermove',move,true);window.addEventListener('pointerup',up,true)
-}
-function soundPath(el){return el&&el.dataset?String(el.dataset.sound||'').trim():''}
-function soundLabel(path){return path?path.split('/').pop():'No sound'}
-function updateSoundUI(){if(typeof soundName==='undefined')return;const p=soundPath(active);soundName.textContent=active?soundLabel(p):'Select a hotspot';removeSound.disabled=testSound.disabled=!active||!p;chooseSound.disabled=!active}
-function stopEditorPreview(){if(window.__tbHsPreview){try{window.__tbHsPreview.pause();window.__tbHsPreview.currentTime=0}catch(e){}window.__tbHsPreview=null}}
-function previewSound(){if(!active)return;stopEditorPreview();let src='';if(selectedSoundFile&&soundPath(active)==='sounds/'+selectedSoundFile.name)src=URL.createObjectURL(selectedSoundFile);else src=soundPath(active);if(!src)return;const a=new Audio(src);window.__tbHsPreview=a;a.play().catch(()=>{});a.onended=()=>{if(src.startsWith('blob:'))URL.revokeObjectURL(src);if(window.__tbHsPreview===a)window.__tbHsPreview=null}}
-function assignSoundFile(file){if(!active||!file)return;selectedSoundFile=file;active.dataset.sound='sounds/'+file.name;updateSoundUI();previewSound()}
-function removeAssignedSound(){if(!active)return;stopEditorPreview();active.removeAttribute('data-sound');selectedSoundFile=null;updateSoundUI()}
-const bar=document.createElement('div');bar.id='tb-hs-editor';
-const edit=document.createElement('button');edit.textContent='Edit Hotspots';
-const nameBox=document.createElement('input');nameBox.placeholder='hotspot name';
-const add=document.createElement('button');add.textContent='Add Hotspot';
-const del=document.createElement('button');del.textContent='Delete Hotspot';
-const save=document.createElement('button');save.textContent='Save Working HTML';
-const exportServer=document.createElement('button');exportServer.textContent='Export Server HTML';
-const soundFile=document.createElement('input');soundFile.type='file';soundFile.accept='audio/*,.mp3,.wav,.ogg,.m4a';soundFile.className='tb-sound-file';
-const chooseSound=document.createElement('button');chooseSound.textContent='Choose Sound';chooseSound.disabled=true;
-const testSound=document.createElement('button');testSound.textContent='Test Sound';testSound.disabled=true;
-const removeSound=document.createElement('button');removeSound.textContent='Remove Sound';removeSound.disabled=true;
-const soundName=document.createElement('span');soundName.className='tb-sound-name';soundName.textContent='Select a hotspot';
-bar.append(edit,nameBox,add,del,chooseSound,testSound,removeSound,soundName,save,exportServer,soundFile);document.body.appendChild(bar);nameBox.style.display=add.style.display=del.style.display=chooseSound.style.display=testSound.style.display=removeSound.style.display=soundName.style.display=save.style.display=exportServer.style.display='none';
-chooseSound.onclick=()=>{if(active){soundFile.value='';soundFile.click()}};
-soundFile.onchange=()=>{const f=soundFile.files&&soundFile.files[0];if(f)assignSoundFile(f)};
-testSound.onclick=previewSound;
-removeSound.onclick=removeAssignedSound;
-edit.onclick=()=>{editing=!editing;document.body.classList.toggle('tb-hs-editing',editing);edit.textContent=editing?'Exit Editor':'Edit Hotspots';nameBox.style.display=add.style.display=del.style.display=chooseSound.style.display=testSound.style.display=removeSound.style.display=soundName.style.display=save.style.display=exportServer.style.display=editing?'':'none';if(!editing){adding=false;stopEditorPreview();cleanActive()}updateSoundUI()};
-add.onclick=async()=>{if(!editing)return;const n=(nameBox.value||'').trim().toLowerCase().replace(/\s+/g,' ');if(!n){nameBox.focus();return}pendingName=n;add.disabled=true;const oldText=add.textContent;add.textContent='Translating...';try{pendingTranslations=window.TB_prepareNewHotspotTranslations?await window.TB_prepareNewHotspotTranslations(n):{en:n}}catch(e){pendingTranslations={en:n}}finally{add.disabled=false;add.textContent=oldText}adding=true;cleanActive()};
-del.onclick=()=>{if(active){stopEditorPreview();active.remove();active=null;selectedSoundFile=null;updateSoundUI()}};
-function downloadableClone(stripEditor){
- const clone=document.documentElement.cloneNode(true);
- clone.querySelector('#tb-hs-editor')?.remove();
- clone.querySelectorAll('#talkabee-object-popup').forEach(function(n){n.remove()});
- clone.querySelectorAll('.tb-hs-handle').forEach(function(n){n.remove()});
- clone.querySelector('body')?.classList.remove('tb-hs-editing','scene-view');
- clone.querySelectorAll('.tb-hs-active,.scene-only,.activity-collapsed').forEach(function(n){n.classList.remove('tb-hs-active','scene-only','activity-collapsed')});
- clone.querySelectorAll('#sceneView,#sceneViewToggle').forEach(function(n){n.setAttribute('aria-pressed','false')});
- if(stripEditor){
-  clone.querySelector('#talkabee-challenge-editor-style')?.remove();
-  clone.querySelector('#talkabee-challenge-editor-script')?.remove();
-  clone.querySelector('#talkabee-hotspot-editor-style')?.remove();
-  clone.querySelector('#talkabee-hotspot-editor-v10')?.remove();
-  clone.querySelector('#talkabee-hotspot-editor-script')?.remove();
-  clone.querySelector('#tb-challenge-panel')?.remove();
-  clone.querySelector('#tb-hs-readout')?.remove();
- }
- return clone;
-}
-function downloadHTML(stripEditor){
- const clone=downloadableClone(stripEditor),blob=new Blob(['<!doctype html>\n'+clone.outerHTML],{type:'text/html'}),a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download=(location.pathname.split('/').pop()||'adventure.html');a.click();setTimeout(()=>URL.revokeObjectURL(a.href),1000)
-}
-save.onclick=()=>downloadHTML(false);
-exportServer.onclick=()=>downloadHTML(true);
-document.addEventListener('pointerdown',ev=>{if(!editing)return;const h=ev.target.closest('.tb-hs-handle');if(h){startResize(ev,h.parentElement);return}const el=ev.target.closest(SEL);if(el){startDrag(ev,el);return}},true);
-document.addEventListener('click',ev=>{if(!editing)return;if(ev.target.closest('#tb-hs-editor'))return;if(adding){placeAt(ev);return}const el=ev.target.closest(SEL);if(el){ev.preventDefault();ev.stopPropagation();select(el)}},true);
-})();
-</script>
+
 
 <script id="talkabee-scene-view-safe-reset">
 (function(){
@@ -976,17 +861,7 @@ document.addEventListener('click',ev=>{if(!editing)return;if(ev.target.closest('
   window.addEventListener('storage',function(e){if(e.key===KEY)restore()});
 })();
 </script>
-<style id="talkabee-challenge-editor-style">
-#tb-challenge-open{display:none}
-#tb-challenge-panel{position:fixed;z-index:2147483647;right:16px;bottom:92px;width:min(410px,calc(100vw - 32px));max-height:calc(100vh - 120px);overflow:auto;padding:16px;border:2px solid #f4d775;border-radius:16px;background:rgba(16,26,37,.97);color:#fff;font:14px/1.45 Arial,sans-serif;box-shadow:0 12px 38px #0009;display:none}
-#tb-challenge-panel h3{margin:0 0 8px;font-size:19px}
-#tb-challenge-drag{cursor:grab;touch-action:none;user-select:none;padding:5px 2px 10px;border-bottom:1px solid #ffffff40;margin-bottom:10px}
-#tb-challenge-drag:active{cursor:grabbing}
-#tb-challenge-panel label{display:block;margin:12px 0 4px;font-weight:bold}
-#tb-challenge-panel select,#tb-challenge-panel input{width:100%;padding:10px;border:1px solid #aab;border-radius:8px;background:#fff;color:#111;font-size:14px}
-#tb-challenge-panel button{margin:12px 7px 0 0;padding:9px 13px;border:1px solid #fff;border-radius:9px;background:#263e52;color:#fff;cursor:pointer}
-#tb-challenge-panel .tb-ch-warning{color:#ffdb80;font-size:12px;margin-top:8px}
-</style>
+
 <script type="application/json" id="talkabee-challenge-data">[{"key":"rowing coxwayne","text":"Find the Bee Coxwayne"},{"key":"banner","text":"Find the Banner"},{"key":"buoys","text":"Find the Buoys"},{"key":"redcrew","text":"Find the Red Crew"},{"key":"flags","text":"Find the flag"},{"key":"sailboat","text":"Find the Sailboat"}]</script>
 <script id="talkabee-challenge-runtime">
 (function(){
@@ -999,72 +874,7 @@ document.addEventListener('click',ev=>{if(!editing)return;if(ev.target.closest('
  });}catch(e){console.warn('Challenge data could not be loaded',e)}
 })();
 </script>
-<script id="talkabee-challenge-editor-script">
-(function(){
- const bar=document.getElementById('tb-hs-editor');if(!bar)return;
- const buttons=[...document.querySelectorAll('[data-ch]')];
- const dataTag=document.getElementById('talkabee-challenge-data');
- const btn=document.createElement('button');btn.id='tb-challenge-open';btn.type='button';btn.textContent='Edit Challenges';
- bar.insertBefore(btn,bar.querySelector('button:nth-last-child(2)'));
- const panel=document.createElement('div');panel.id='tb-challenge-panel';
- panel.innerHTML='<div id="tb-challenge-drag" title="Drag to move this editor"><h3>↕ Edit Six Challenges</h3><small>Drag here to move</small></div><div>Choose a challenge, then assign an existing hotspot. Changes are included when you save or export HTML.</div><label for="tb-ch-number">Challenge</label><select id="tb-ch-number"></select><label for="tb-ch-hotspot">Find this hotspot</label><select id="tb-ch-hotspot"></select><label for="tb-ch-text">Challenge wording (English)</label><input id="tb-ch-text" maxlength="110" placeholder="Find the balloon basket"><div class="tb-ch-warning" id="tb-ch-warning"></div><button type="button" id="tb-ch-apply">Apply Challenge</button><button type="button" id="tb-ch-close">Close</button>';
- document.body.appendChild(panel);
- // Drag the popup using its heading; leave form controls and hotspot editing alone.
- const handle=panel.querySelector('#tb-challenge-drag');
- let drag=null;
- const clamp=(v,min,max)=>Math.max(min,Math.min(max,v));
- handle.addEventListener('pointerdown',e=>{
-  if(e.button!==0)return;
-  e.preventDefault();
-  const r=panel.getBoundingClientRect();
-  panel.style.left=r.left+'px';panel.style.top=r.top+'px';
-  panel.style.right='auto';panel.style.bottom='auto';
-  drag={id:e.pointerId,x:e.clientX,y:e.clientY,left:r.left,top:r.top,w:r.width,h:r.height};
-  handle.setPointerCapture(e.pointerId);
- });
- handle.addEventListener('pointermove',e=>{
-  if(!drag||e.pointerId!==drag.id)return;
-  panel.style.left=clamp(drag.left+e.clientX-drag.x,0,Math.max(0,innerWidth-drag.w))+'px';
-  panel.style.top=clamp(drag.top+e.clientY-drag.y,0,Math.max(0,innerHeight-drag.h))+'px';
- });
- const finish=e=>{if(drag&&e.pointerId===drag.id){drag=null;if(handle.hasPointerCapture(e.pointerId))handle.releasePointerCapture(e.pointerId)}};
- handle.addEventListener('pointerup',finish);handle.addEventListener('pointercancel',finish);
- const number=panel.querySelector('#tb-ch-number'),target=panel.querySelector('#tb-ch-hotspot'),wording=panel.querySelector('#tb-ch-text'),warning=panel.querySelector('#tb-ch-warning');
- const all=()=>[...document.querySelectorAll('.hotspot[data-word]')];
- const nameOf=h=>h.dataset.tbEn||h.dataset.en||h.getAttribute('aria-label')||h.dataset.word;
- const existing=()=>{try{return JSON.parse(dataTag.textContent||'[]')}catch(e){return []}};
- function applySaved(){existing().forEach((v,i)=>{if(i>=buttons.length||!v)return;if(v.key)challengeOrder[i]=v.key;if(v.text)buttons[i].textContent=(i+1)+'. '+v.text})}
- applySaved();
- function refresh(){
-  const i=Number(number.value)||0, key=challengeOrder[i];
-  const found=new Map();all().forEach(h=>{if(!found.has(h.dataset.word))found.set(h.dataset.word,nameOf(h))});
-  target.replaceChildren();
-  for(const [k,label] of found){const o=document.createElement('option');o.value=k;o.textContent=label+' ['+k+']';target.appendChild(o)}
-  if(found.has(key))target.value=key;
-  wording.value=buttons[i].textContent.replace(/^\d+\.\s*/, '');
-  warning.textContent=!found.size?'No hotspots remain on this page.':(!found.has(key)?'This challenge points to a deleted or missing hotspot. Choose a replacement.':'');
- }
- buttons.forEach((b,i)=>{const o=document.createElement('option');o.value=i;o.textContent='Challenge '+(i+1);number.appendChild(o)});
- number.onchange=refresh;
- panel.querySelector('#tb-ch-close').onclick=()=>panel.style.display='none';
- panel.querySelector('#tb-ch-apply').onclick=()=>{
-  const i=Number(number.value),key=target.value,text=wording.value.trim();
-  if(!key||!all().some(h=>h.dataset.word===key)){warning.textContent='Select a hotspot that exists.';return}
-  if(!text){warning.textContent='Enter a challenge prompt.';return}
-  challengeOrder[i]=key;buttons[i].textContent=(i+1)+'. '+text;
-  const saved=buttons.map((b,j)=>({key:challengeOrder[j],text:b.textContent.replace(/^\d+\.\s*/, '')}));
-  dataTag.textContent=JSON.stringify(saved).replace(/</g,'\\u003c');
-  warning.textContent='Saved into this page. Use Save Working HTML to keep it.';
-  if(typeof clearChallenge==='function')clearChallenge();
- };
- btn.onclick=()=>{panel.style.display=panel.style.display==='block'?'none':'block';if(panel.style.display==='block')refresh()};
- // Follow the existing hotspot editor's open/close state without changing its behavior.
- const toggle=bar.querySelector('button');
- toggle.addEventListener('click',()=>{btn.style.display=document.body.classList.contains('tb-hs-editing')?'inline-block':'none';if(!document.body.classList.contains('tb-hs-editing'))panel.style.display='none'});
- // Keep the challenge picker updated after hotspot deletion.
- bar.addEventListener('click',e=>{if(e.target.textContent==='Delete Hotspot'&&panel.style.display==='block')setTimeout(refresh,0)});
-})();
-</script><div id="tb-challenge-panel" style="display: none;"><div id="tb-challenge-drag" title="Drag to move this editor"><h3>↕ Edit Six Challenges</h3><small>Drag here to move</small></div><div>Choose a challenge, then assign an existing hotspot. Changes are included when you save or export HTML.</div><label for="tb-ch-number">Challenge</label><select id="tb-ch-number"><option value="0">Challenge 1</option><option value="1">Challenge 2</option><option value="2">Challenge 3</option><option value="3">Challenge 4</option><option value="4">Challenge 5</option><option value="5">Challenge 6</option></select><label for="tb-ch-hotspot">Find this hotspot</label><select id="tb-ch-hotspot"><option value="megaphone">Megaphone [megaphone]</option><option value="crew">Rowing crew [crew]</option><option value="oars">Oars [oars]</option><option value="shell">Racing shell [shell]</option><option value="redcrew">Red rowing crew [redcrew]</option><option value="water">Lake water [water]</option><option value="buoys">Race buoys [buoys]</option><option value="banner">Lakeview Regatta banner [banner]</option><option value="boathouse">Regatta boathouse [boathouse]</option><option value="spectators">Spectators [spectators]</option><option value="dock">Dock [dock]</option><option value="sailboat">Sailboat [sailboat]</option><option value="boat">Motorboat [boat]</option><option value="mountains">Snowy mountains [mountains]</option><option value="forest">Pine forest [forest]</option><option value="flags">Regatta flags [flags]</option><option value="splash">Oar splash [splash]</option><option value="rower">Rower [rower]</option><option value="finish">Race course [finish]</option><option value="rowing coxwayne">rowing coxwayne [rowing coxwayne]</option></select><label for="tb-ch-text">Challenge wording (English)</label><input id="tb-ch-text" maxlength="110" placeholder="Find the balloon basket"><div class="tb-ch-warning" id="tb-ch-warning"></div><button type="button" id="tb-ch-apply">Apply Challenge</button><button type="button" id="tb-ch-close">Close</button></div><div id="tb-challenge-panel" style="display: none;"><div id="tb-challenge-drag" title="Drag to move this editor"><h3>↕ Edit Six Challenges</h3><small>Drag here to move</small></div><div>Choose a challenge, then assign an existing hotspot. Changes are included when you save or export HTML.</div><label for="tb-ch-number">Challenge</label><select id="tb-ch-number"><option value="0">Challenge 1</option><option value="1">Challenge 2</option><option value="2">Challenge 3</option><option value="3">Challenge 4</option><option value="4">Challenge 5</option><option value="5">Challenge 6</option></select><label for="tb-ch-hotspot">Find this hotspot</label><select id="tb-ch-hotspot"><option value="megaphone">Megaphone [megaphone]</option><option value="crew">Rowing crew [crew]</option><option value="oars">Oars [oars]</option><option value="shell">Racing shell [shell]</option><option value="redcrew">Red rowing crew [redcrew]</option><option value="water">Lake water [water]</option><option value="buoys">Race buoys [buoys]</option><option value="banner">Lakeview Regatta banner [banner]</option><option value="boathouse">Regatta boathouse [boathouse]</option><option value="spectators">Spectators [spectators]</option><option value="dock">Dock [dock]</option><option value="sailboat">Sailboat [sailboat]</option><option value="boat">Motorboat [boat]</option><option value="mountains">Snowy mountains [mountains]</option><option value="forest">Pine forest [forest]</option><option value="flags">Regatta flags [flags]</option><option value="splash">Oar splash [splash]</option><option value="rower">Rower [rower]</option><option value="finish">Race course [finish]</option><option value="rowing coxwayne">rowing coxwayne [rowing coxwayne]</option></select><label for="tb-ch-text">Challenge wording (English)</label><input id="tb-ch-text" maxlength="110" placeholder="Find the balloon basket"><div class="tb-ch-warning" id="tb-ch-warning">Saved into this page. Use Save Working HTML to keep it.</div><button type="button" id="tb-ch-apply">Apply Challenge</button><button type="button" id="tb-ch-close">Close</button></div>
+<div id="tb-challenge-panel" style="display: none;"><div id="tb-challenge-drag" title="Drag to move this editor"><h3>↕ Edit Six Challenges</h3><small>Drag here to move</small></div><div>Choose a challenge, then assign an existing hotspot. Changes are included when you save or export HTML.</div><label for="tb-ch-number">Challenge</label><select id="tb-ch-number"><option value="0">Challenge 1</option><option value="1">Challenge 2</option><option value="2">Challenge 3</option><option value="3">Challenge 4</option><option value="4">Challenge 5</option><option value="5">Challenge 6</option></select><label for="tb-ch-hotspot">Find this hotspot</label><select id="tb-ch-hotspot"><option value="megaphone">Megaphone [megaphone]</option><option value="crew">Rowing crew [crew]</option><option value="oars">Oars [oars]</option><option value="shell">Racing shell [shell]</option><option value="redcrew">Red rowing crew [redcrew]</option><option value="water">Lake water [water]</option><option value="buoys">Race buoys [buoys]</option><option value="banner">Lakeview Regatta banner [banner]</option><option value="boathouse">Regatta boathouse [boathouse]</option><option value="spectators">Spectators [spectators]</option><option value="dock">Dock [dock]</option><option value="sailboat">Sailboat [sailboat]</option><option value="boat">Motorboat [boat]</option><option value="mountains">Snowy mountains [mountains]</option><option value="forest">Pine forest [forest]</option><option value="flags">Regatta flags [flags]</option><option value="splash">Oar splash [splash]</option><option value="rower">Rower [rower]</option><option value="finish">Race course [finish]</option><option value="rowing coxwayne">rowing coxwayne [rowing coxwayne]</option></select><label for="tb-ch-text">Challenge wording (English)</label><input id="tb-ch-text" maxlength="110" placeholder="Find the balloon basket"><div class="tb-ch-warning" id="tb-ch-warning"></div><button type="button" id="tb-ch-apply">Apply Challenge</button><button type="button" id="tb-ch-close">Close</button></div><div id="tb-challenge-panel" style="display: none;"><div id="tb-challenge-drag" title="Drag to move this editor"><h3>↕ Edit Six Challenges</h3><small>Drag here to move</small></div><div>Choose a challenge, then assign an existing hotspot. Changes are included when you save or export HTML.</div><label for="tb-ch-number">Challenge</label><select id="tb-ch-number"><option value="0">Challenge 1</option><option value="1">Challenge 2</option><option value="2">Challenge 3</option><option value="3">Challenge 4</option><option value="4">Challenge 5</option><option value="5">Challenge 6</option></select><label for="tb-ch-hotspot">Find this hotspot</label><select id="tb-ch-hotspot"><option value="megaphone">Megaphone [megaphone]</option><option value="crew">Rowing crew [crew]</option><option value="oars">Oars [oars]</option><option value="shell">Racing shell [shell]</option><option value="redcrew">Red rowing crew [redcrew]</option><option value="water">Lake water [water]</option><option value="buoys">Race buoys [buoys]</option><option value="banner">Lakeview Regatta banner [banner]</option><option value="boathouse">Regatta boathouse [boathouse]</option><option value="spectators">Spectators [spectators]</option><option value="dock">Dock [dock]</option><option value="sailboat">Sailboat [sailboat]</option><option value="boat">Motorboat [boat]</option><option value="mountains">Snowy mountains [mountains]</option><option value="forest">Pine forest [forest]</option><option value="flags">Regatta flags [flags]</option><option value="splash">Oar splash [splash]</option><option value="rower">Rower [rower]</option><option value="finish">Race course [finish]</option><option value="rowing coxwayne">rowing coxwayne [rowing coxwayne]</option></select><label for="tb-ch-text">Challenge wording (English)</label><input id="tb-ch-text" maxlength="110" placeholder="Find the balloon basket"><div class="tb-ch-warning" id="tb-ch-warning">Saved into this page. Use Save Working HTML to keep it.</div><button type="button" id="tb-ch-apply">Apply Challenge</button><button type="button" id="tb-ch-close">Close</button></div>
 <script id="talkabee-approved-next-navigation-v2">
 (function(){
  'use strict';
