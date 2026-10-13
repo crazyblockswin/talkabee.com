@@ -333,7 +333,7 @@ body:not(.tb-hs-editing) .challenge-mode .hotspot.target:not(:hover):not(:focus-
   <a href="Talk-A-Bee-Zoo-Adventure.html" aria-label="Next adventure" title="Next">›</a>
 </nav>
 
-<main class="world" id="world">
+<main class="world challenge-mode" id="world">
 <button class="scene-return" id="sceneReturn">Return to Adventure</button>
 
 <aside class="panel">
@@ -365,30 +365,30 @@ body:not(.tb-hs-editing) .challenge-mode .hotspot.target:not(:hover):not(:focus-
 <button data-ch="2">3. Find the Mountain</button>
 <button data-ch="3">4. Find the Ferry</button>
 <button data-ch="4">5. Find the Bee</button>
-<button data-ch="5">6. Find the Airplane Wing</button>
+<button data-ch="5">6. Find the Captain</button>
 <a href="index.html">← Return to Main Directory</a>
 </aside>
 
-<section class="card tab-master-card">
+<section class="card tab-master-card" style="height: auto !important; min-height: 0px !important; max-height: none !important; overflow: visible !important;">
 <div class="tab-card-tools" aria-label="Script card controls"><button type="button" class="tab-card-drag" title="Move script card">↕ Move</button><button type="button" class="tab-card-font-down" title="Decrease text">A−</button><button type="button" class="tab-card-font-up" title="Increase text">A+</button><button type="button" class="tab-card-reset" title="Reset card">Reset</button></div><div class="tab-card-resize" title="Drag to resize script card" aria-label="Resize script card">↘</div>
 
-<div class="kicker">FLYING HIGH ABOVE THE CITY</div>
-<h2 id="title">Click &amp; Discover</h2>
-<p id="prompt">You found ferry.</p>
-<div class="word"><strong id="line">ferri</strong><div class="translation" id="translation">ferry</div></div>
-<p id="status"></p>
+<div class="kicker" data-base-font="19px" style="font-size: 19px !important;">FLYING HIGH ABOVE THE CITY</div>
+<h2 id="title" data-base-font="28px" style="font-size: 28px !important;">Click &amp; Discover</h2>
+<p id="prompt" data-base-font="24px" style="font-size: 24px !important;">You found girl.</p>
+<div class="word"><strong id="line" data-base-font="28px" style="font-size: 28px !important;">niña</strong><div class="translation" id="translation" data-base-font="24px" style="font-size: 24px !important;">girl</div></div>
+<p id="status" style="color: rgb(53, 228, 106) !important;" data-base-font="32px">✓ Nice find!</p>
 <div class="controls">
-<button id="normal">🔊 Speak</button><button id="slow">🐢 Slow</button><button id="replay">↻ Replay</button><button id="nextPhrase">Next phrase →</button>
-</div>
+<button id="normal" data-base-font="19px">🔊 Speak</button><button id="slow" data-base-font="19px">🐢 Slow</button><button id="replay" data-base-font="19px">↻ Replay</button><button id="nextPhrase" data-base-font="19px" hidden="" style="display: none !important;">Next →</button>
+<button id="nextChallenge" type="button" style="display: none !important;" data-base-font="19px" hidden="">Next →</button></div>
 </section>
 
 
 
 <!-- Hotspots mapped to the approved wide Airplane Flying Adventure JPG. -->
-<button class="hotspot" data-word="captain" style="left: 13.92%; top: 22.16%; width: 12.49%; height: 26.56%;" aria-label="Captain"></button>
-<button class="hotspot" data-word="pilot" style="left: 65.23%; top: 33.18%; width: 8.02%; height: 19.2%;" aria-label="Pilot"></button>
-<button class="hotspot" data-word="boy" style="left: 8.57%; top: 55.8%; width: 15.53%; height: 33.15%;" aria-label="Boy"></button>
-<button class="hotspot" data-word="girl" style="left: 69.09%; top: 59.31%; width: 12.97%; height: 20.55%;" aria-label="Girl"></button>
+<button class="hotspot target" data-word="captain" style="left: 13.92%; top: 22.16%; width: 12.49%; height: 26.56%;" aria-label="Captain" data-sound="sounds/Captain-tour-guide.mp3"></button>
+<button class="hotspot" data-word="pilot" style="left: 65.23%; top: 33.18%; width: 8.02%; height: 19.2%;" aria-label="Pilot" data-sound="sounds/airplane-news-heart.mp3"></button>
+<button class="hotspot" data-word="boy" style="left: 8.57%; top: 55.8%; width: 15.53%; height: 33.15%;" aria-label="Boy" data-sound="sounds/airplane-eric-fishing.mp3"></button>
+<button class="hotspot" data-word="girl" style="left: 69.09%; top: 59.56%; width: 12.97%; height: 20.55%;" aria-label="Girl" data-sound="sounds/airplane-bella-back-seat.mp3"></button>
 <button class="hotspot" data-word="bee" style="left: 85.92%; top: 17.1%; width: 7.57%; height: 9.07%;" aria-label="Bee" data-sound="sounds/bee.mp3"></button>
 <button class="hotspot" data-word="mountain" style="left: 53.18%; top: 12.31%; width: 12.12%; height: 14.67%;" aria-label="Mountain"></button>
 <button class="hotspot" data-word="city" style="left: 89.1%; top: 41.18%; width: 9.56%; height: 10.74%;" aria-label="City"></button>
@@ -820,7 +820,7 @@ document.addEventListener('click',function(ev){
 </script>
 
 
-<script type="application/json" id="talkabee-challenge-data">[]</script>
+<script type="application/json" id="talkabee-challenge-data">[{"key":"throttle","text":"Find the Throttle"},{"key":"headset","text":"Find the Headset"},{"key":"mountain","text":"Find the Mountain"},{"key":"ferry","text":"Find the Ferry"},{"key":"bee","text":"Find the Bee"},{"key":"captain","text":"Find the Captain"}]</script>
 <script id="talkabee-challenge-runtime">
 (function(){
  const data=document.getElementById('talkabee-challenge-data');
@@ -832,7 +832,7 @@ document.addEventListener('click',function(ev){
  });}catch(e){console.warn('Challenge data could not be loaded',e)}
 })();
 </script>
-
+<div id="tb-challenge-panel" style="display: none;"><div id="tb-challenge-drag" title="Drag to move this editor"><h3>↕ Edit Six Challenges</h3><small>Drag here to move</small></div><div>Choose a challenge, then assign an existing hotspot. Changes are included when you save or export HTML.</div><label for="tb-ch-number">Challenge</label><select id="tb-ch-number"><option value="0">Challenge 1</option><option value="1">Challenge 2</option><option value="2">Challenge 3</option><option value="3">Challenge 4</option><option value="4">Challenge 5</option><option value="5">Challenge 6</option></select><label for="tb-ch-hotspot">Find this hotspot</label><select id="tb-ch-hotspot"><option value="captain">Captain [captain]</option><option value="pilot">Pilot [pilot]</option><option value="boy">Boy [boy]</option><option value="girl">Girl [girl]</option><option value="bee">Bee [bee]</option><option value="mountain">Mountain [mountain]</option><option value="city">City [city]</option><option value="tower">Observation tower [tower]</option><option value="water">Water [water]</option><option value="ferry">Ferry [ferry]</option><option value="wing">Airplane wing [wing]</option><option value="overhead">Overhead controls [overhead]</option><option value="instruments">Flight instruments [instruments]</option><option value="screen">Navigation screen [screen]</option><option value="throttle">Throttle [throttle]</option><option value="headset">Headset [headset]</option><option value="controls">Cockpit controls [controls]</option><option value="clouds">Clouds [clouds]</option><option value="forest">Forest [forest]</option><option value="airplane">airplane [airplane]</option></select><label for="tb-ch-text">Challenge wording (English)</label><input id="tb-ch-text" maxlength="110" placeholder="Find the balloon basket"><div class="tb-ch-warning" id="tb-ch-warning">Saved into this page. Use Save Working HTML to keep it.</div><button type="button" id="tb-ch-apply">Apply Challenge</button><button type="button" id="tb-ch-close">Close</button></div>
 <script id="talkabee-approved-next-navigation-v2">
 (function(){
  'use strict';
