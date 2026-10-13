@@ -750,7 +750,8 @@ header .talkabee-comments:hover{transform:translateY(-1px);box-shadow:0 5px 14px
 <body>
 <header>
  <div class="wrap nav">
-  <a class="brand" href="index.html" aria-label="Return to Main Directory"><div class="logo bee-logo" aria-hidden="true"><img src="images/talkabee-image-04.png" alt=""></div><div><span class="brand-name">Talk A Bee</span><small class="brand-domain">TalkABee.com</small></div><span class="course-tagline">Interactive Language Adventures</span></a>
+  <a class="brand" href="index.html" aria-label="Return to Main Directory"><div class="logo bee-logo" aria-hidden="true"><img src="images/Talk-A-Bee-Header-Transparent.png" alt=""></div><div><span class="brand-name">Talk A Bee</span><small class="brand-domain">TalkABee.com</small></div></a>
+  <a class="course-adventures-link" href="adventures.html">Explore Adventures</a>
   <nav><a href="index.html">Explore</a><a href="#course">Course</a><a href="index.html">Main Directory</a><a href="index.html">Worlds</a></nav>
   <a class="talkabee-comments" href="#book" aria-label="Free downloadable language books">📚 Free Books &amp; Downloads</a>
   <a class="talkabee-donate" href="Talk-A-Bee-Support.html" target="_blank" rel="noopener noreferrer" aria-label="Donate to support Talk A Bee">❤️ Donate</a>
@@ -761,7 +762,7 @@ header .talkabee-comments:hover{transform:translateY(-1px);box-shadow:0 5px 14px
   </div>
  </div>
 </header>
-<button class="bee-guide-btn" id="beeGuideBtn" type="button" style="display:none!important" aria-label="Open Talk A Bee guide"><img src="images/talkabee-image-04.png" alt=""></button>
+<button class="bee-guide-btn" id="beeGuideBtn" type="button" style="display:none!important" aria-label="Open Talk A Bee guide"><img src="images/Talk-A-Bee-Header-Transparent.png" alt=""></button>
 </div>
 
 <!-- CHECKPOINT 40: Widescreen Grandma & Grandpa artwork installed; left activity panel remains live CSS -->
@@ -4714,4 +4715,56 @@ header .nav{height:72px!important;min-height:72px!important;max-height:72px!impo
 #kitchenWorld{top:72px!important;bottom:0!important;height:auto!important;overflow:hidden!important;background:#182238!important;}
 #kitchenWorld .train-stage,#kitchenWorld .train-scene{position:absolute!important;inset:0!important;width:100%!important;height:100%!important;overflow:hidden!important;background:#182238!important;}
 #kitchenWorld .train-main-image{position:absolute!important;inset:0!important;width:100%!important;height:100%!important;object-fit:contain!important;object-position:center center!important;background:#182238!important;}
+</style>
+
+
+<style id="course-readable-two-row-header">
+/* Header-only presentation. Course lessons and adventure overlays remain unchanged. */
+body:not(.adventure-locked) > header {height:auto!important;min-height:112px!important;max-height:none!important;overflow:visible!important;}
+body:not(.adventure-locked) > header .nav{
+ display:grid!important;grid-template-columns:minmax(185px,1fr) repeat(4,max-content);
+ grid-template-rows:auto auto;align-items:center;column-gap:14px;row-gap:9px;
+ height:auto!important;min-height:112px!important;max-height:none!important;
+ padding-top:12px;padding-bottom:10px;overflow:visible!important;
+}
+body:not(.adventure-locked) > header .brand{grid-column:1;grid-row:1/3;min-width:0;font-size:22px;}
+body:not(.adventure-locked) > header .brand-name{font-size:26px;line-height:1.05;}
+body:not(.adventure-locked) > header .brand-domain{font-size:12px;}
+body:not(.adventure-locked) > header .course-adventures-link{grid-column:2;grid-row:1;}
+body:not(.adventure-locked) > header a.talkabee-comments[href="#book"]{grid-column:3;grid-row:1;}
+body:not(.adventure-locked) > header .talkabee-donate{grid-column:4;grid-row:1;}
+body:not(.adventure-locked) > header a.talkabee-comments[href*="Comments"]{grid-column:5;grid-row:1;}
+body:not(.adventure-locked) > header .global-controls{grid-column:2/6;grid-row:2;justify-self:end;margin:0;gap:18px;}
+body:not(.adventure-locked) > header .global-controls label{font-size:14px;gap:8px;}
+body:not(.adventure-locked) > header .global-controls select{font-size:14px;padding:8px 12px;}
+body:not(.adventure-locked) > header .course-adventures-link,
+body:not(.adventure-locked) > header .talkabee-comments,
+body:not(.adventure-locked) > header .talkabee-donate{
+ display:inline-flex;align-items:center;justify-content:center;
+ font-size:17px!important;font-weight:850;line-height:1.25!important;
+ padding:11px 15px!important;margin:0!important;text-decoration:none;
+ color:#403550;background:#fff;border:1px solid #e3d9e8;border-radius:999px;
+ white-space:nowrap;box-shadow:0 2px 8px rgba(58,43,72,.08);
+}
+body:not(.adventure-locked) > header nav{display:none!important;}
+@media(max-width:1250px){
+ body:not(.adventure-locked) > header .nav{grid-template-columns:repeat(4,minmax(0,max-content));justify-content:center;}
+ body:not(.adventure-locked) > header .brand{grid-column:1/3;grid-row:1;}
+ body:not(.adventure-locked) > header .course-adventures-link{grid-column:3;grid-row:1;}
+ body:not(.adventure-locked) > header a.talkabee-comments[href="#book"]{grid-column:4;grid-row:1;}
+ body:not(.adventure-locked) > header .talkabee-donate{grid-column:1;grid-row:2;}
+ body:not(.adventure-locked) > header a.talkabee-comments[href*="Comments"]{grid-column:2;grid-row:2;}
+ body:not(.adventure-locked) > header .global-controls{grid-column:3/5;grid-row:2;}
+}
+@media(max-width:800px){
+ body:not(.adventure-locked) > header .nav{display:flex!important;flex-wrap:wrap!important;justify-content:center;gap:9px;}
+ body:not(.adventure-locked) > header .brand{width:100%;justify-content:center;}
+ body:not(.adventure-locked) > header .global-controls{width:100%;justify-content:center;}
+ body:not(.adventure-locked) > header .global-controls label.interface-control{display:flex!important;}
+ body:not(.adventure-locked) > header .course-adventures-link,
+ body:not(.adventure-locked) > header .talkabee-comments,
+ body:not(.adventure-locked) > header .talkabee-donate{font-size:15px!important;padding:9px 12px!important;}
+}
+/* Preserve the established compact header while a full-screen Adventure is open. */
+body.adventure-locked > header .course-adventures-link{display:none!important;}
 </style>
