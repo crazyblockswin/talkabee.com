@@ -439,7 +439,7 @@ document.addEventListener('DOMContentLoaded',function(){
 <button aria-label="Boy" class="home-hotspot show" data-object="boy" style="left:80.0%;top:56.0%;width:5.7%;height:13.5%;" type="button"></button>
 
 <button aria-label="Dog" class="home-hotspot show" data-object="dog" style="left:26.0%;top:70.5%;width:8.0%;height:22.0%;" type="button"></button>
-<button aria-label="RV" class="home-hotspot show" data-object="rv" style="left:32.0%;top:33.0%;width:25.5%;height:17.0%;" type="button"></button>
+<button aria-label="RV" class="home-hotspot show" data-object="rv" style="left:32.0%;top:33.0%;width:25.5%;height:17.0%;" type="button" data-sound="sounds/cabin-guitar.mp3"></button>
 <button aria-label="Solar panels" class="home-hotspot show" data-object="solar" style="left:35.0%;top:25.0%;width:10.0%;height:5.0%;" type="button"></button>
 
 
@@ -455,7 +455,7 @@ document.addEventListener('DOMContentLoaded',function(){
 <button aria-label="Hat" class="home-hotspot show" data-object="hat" style="left:39.0%;top:39.5%;width:6.0%;height:7.0%;" type="button"></button>
 <button aria-label="Bird feeder" class="home-hotspot show" data-object="birdfeeder" style="left:87.0%;top:20.0%;width:6.0%;height:13.0%;" type="button"></button>
 
-<button type="button" class="home-hotspot show" data-object="boat" data-word="boat" aria-label="Boat" data-tb-en="boat" data-tb-es="bote" data-tb-fr="bateau" data-tb-de="Boot" data-tb-it="barca" data-tb-pt="barco" data-tb-no="båt" style="width: 6%; height: 8%; left: 87.6%; top: 46.48%;"></button><button type="button" class="home-hotspot show" data-object="fire pit" data-word="fire pit" aria-label="Fire Pit" data-tb-en="fire pit" data-tb-es="pozo de fuego" data-tb-fr="foyer" data-tb-de="Feuerstelle" data-tb-it="pozzo del fuoco" data-tb-pt="fogueira" data-tb-no="ildsted" style="width: 6%; height: 8%; left: 73.49%; top: 61.76%;"></button><button type="button" class="home-hotspot show" data-object="guitar" data-word="guitar" aria-label="Guitar" data-tb-en="guitar" data-tb-es="guitarra" data-tb-fr="guitare" data-tb-de="Gitarre" data-tb-it="chitarra" data-tb-pt="guitarra" data-tb-no="gitar" style="width: 7.67%; height: 11.43%; left: 67.97%; top: 54.72%;" data-sound="sounds/guitar3.mp3"></button></div>
+<button type="button" class="home-hotspot show" data-object="boat" data-word="boat" aria-label="Boat" data-tb-en="boat" data-tb-es="bote" data-tb-fr="bateau" data-tb-de="Boot" data-tb-it="barca" data-tb-pt="barco" data-tb-no="båt" style="width: 6%; height: 8%; left: 87.6%; top: 46.48%;"></button><button type="button" class="home-hotspot show" data-object="fire pit" data-word="fire pit" aria-label="Fire Pit" data-tb-en="fire pit" data-tb-es="pozo de fuego" data-tb-fr="foyer" data-tb-de="Feuerstelle" data-tb-it="pozzo del fuoco" data-tb-pt="fogueira" data-tb-no="ildsted" style="width: 6%; height: 8%; left: 73.49%; top: 61.76%;" data-sound="sounds/fire.mp3"></button><button type="button" class="home-hotspot show" data-object="guitar" data-word="guitar" aria-label="Guitar" data-tb-en="guitar" data-tb-es="guitarra" data-tb-fr="guitare" data-tb-de="Gitarre" data-tb-it="chitarra" data-tb-pt="guitarra" data-tb-no="gitar" style="width: 7.67%; height: 11.43%; left: 67.97%; top: 54.72%;" data-sound="sounds/guitar3.mp3"></button></div>
 <aside aria-label="Grandma and Grandpa activity menu" class="activity-panel home-directory tab-master-panel" style="width: 210px !important; min-width: 210px !important; max-width: 210px !important; --tab-panel-scale: 1.077;">
 <div class="activity-place">🏡 Grandma<br>&amp; Grandpa’s<br>Place</div>
 <div aria-label="Activity panel size" class="tab-panel-size-controls">
@@ -483,17 +483,17 @@ document.addEventListener('DOMContentLoaded',function(){
 <button class="home-nav" data-home-group="everyday">Everyday Life</button>
 <div class="activity-divider"></div>
 <div class="activity-label">6 CHALLENGES</div>
-<button class="home-challenge-nav" data-home-challenge="0">1 Find the Solar Panels</button>
+<button class="home-challenge-nav" data-home-challenge="0">1 Find Grandma Cathy</button>
 <button class="home-challenge-nav done" data-home-challenge="1">2 Find Grandma Cathy</button>
 <button class="home-challenge-nav done" data-home-challenge="2">3 Find the Birdfeeder</button>
-<button class="home-challenge-nav done" data-home-challenge="3">4 Find the Boat</button>
+<button class="home-challenge-nav done" data-home-challenge="3">4 Find the RV</button>
 <button class="home-challenge-nav done active" data-home-challenge="4">5 Dog</button>
 <button class="home-challenge-nav done" data-home-challenge="5">6 Bird</button>
 <div class="activity-divider"></div>
 <button class="activity-back" id="homeMainDirectory" type="button">← Main Directory</button>
 </aside>
 <button class="activity-restore" id="activityRestore" type="button">☰ Return Panel</button>
-<section aria-label="Lesson script card" class="home-panel tab-master-card" style="">
+<section aria-label="Lesson script card" class="home-panel tab-master-card tab-user-moved" style="left: 106px !important; top: 151.583px !important;">
 <div aria-label="Script card controls" class="tab-card-tools">
 <span class="tab-card-drag" aria-hidden="true"></span>
 <button class="tab-card-font-down" id="tabCardFontDown" title="Decrease text" type="button" style="font-size: 12px !important;">A−</button>
@@ -1033,7 +1033,7 @@ document.addEventListener('click',function(ev){
  document.addEventListener('click',function(e){var el=e.target.closest&&e.target.closest('.hotspot,.home-hotspot,.yacht-hotspot,.hotspots button,.train-hotspots button');if(el)show(el,e)},true);
 })();
 </script>
-<script id="talkabee-legacy-challenge-data" type="application/json">{"targets":["solar","grandma","birdfeeder","boat","dog","bird"],"labels":["Find the Solar Panels","Find Grandma Cathy","Find the Birdfeeder","Find the Boat","Dog","Bird"]}</script>
+<script id="talkabee-legacy-challenge-data" type="application/json">{"targets":["grandma","grandma","birdfeeder","rv","dog","bird"],"labels":["Find Grandma Cathy","Find Grandma Cathy","Find the Birdfeeder","Find the RV","Dog","Bird"]}</script>
 <script id="talkabee-legacy-challenge-runtime">
 (function(){
  const node=document.getElementById('talkabee-legacy-challenge-data');
