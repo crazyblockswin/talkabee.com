@@ -1105,6 +1105,7 @@ header .brand-tagline{white-space:normal!important;line-height:1.12!important;}
   <a class="talkabee-donate" href="Talk-A-Bee-Support.html" target="_blank" rel="noopener noreferrer" aria-label="Donate to support Talk A Bee">❤️ Donate</a>
   <a class="talkabee-comments" href="Talk-A-Bee-Comments.html" aria-label="Comments and suggestions for Talk A Bee">💬 Comments</a>
   <a class="topbtn full-course-link" href="Talk-A-Bee-Course.html" aria-label="Open the standard course">Standard Course</a>
+  <button type="button" class="topbtn" id="tab-books-header" aria-haspopup="dialog" aria-controls="tab-books-dialog">📚 Free Books</button>
   <details class="talkabee-more">
    <summary class="talkabee-more-toggle" aria-label="Open more Talk A Bee links">More ▾</summary>
    <div class="talkabee-more-menu">
@@ -5086,6 +5087,39 @@ document.addEventListener('click',function(e){
 })();
 </script>
 
+
+<style id="tab-books-modal-style">
+#tab-books-header{white-space:nowrap;background:#f8d46c;color:#17243b;border:1px solid #d9b448;cursor:pointer}
+#tab-books-dialog{width:min(510px,calc(100% - 32px));max-height:calc(100vh - 40px);overflow:auto;border:1px solid #e1d8c5;border-radius:22px;padding:26px;background:#fffdf7;color:#17243b;box-shadow:0 24px 85px #0006}
+#tab-books-dialog::backdrop{background:rgba(10,20,40,.72)}
+#tab-books-dialog h2{margin:0 38px 10px 0;font-size:27px}
+#tab-books-dialog p{color:#536077;margin:0 0 17px;line-height:1.5}
+#tab-books-dialog .tab-book-link{display:block;text-decoration:none;background:#17243b;color:white;padding:13px 16px;border-radius:12px;font-weight:850;margin:10px 0}
+#tab-books-dialog .tab-book-link:hover{background:#5536c6}
+#tab-books-dialog .tab-book-desc{font-size:12px;color:#536077;margin:0 0 14px}
+#tab-books-dialog .tab-books-close{position:absolute;right:16px;top:13px;border:0;background:#f0ebdf;color:#17243b;border-radius:50%;width:34px;height:34px;font-size:23px;cursor:pointer}
+#tab-books-dialog .tab-books-note{font-size:12px;margin-top:16px;color:#536077}
+</style>
+<dialog id="tab-books-dialog" aria-labelledby="tab-books-title">
+  <button type="button" class="tab-books-close" aria-label="Close books window">×</button>
+  <h2 id="tab-books-title">📚 Free Language Books</h2>
+  <p>Prefer learning with a book? These illustrated PDF starter books are yours to download, keep, read offline, or print—completely free!</p>
+  <a class="tab-book-link" href="lingo-lane-spanish-starter-book-master-cast.pdf" download>📖 Download Spanish Starter Book</a>
+  <div class="tab-book-desc">An illustrated starter book for learning Spanish, with vocabulary and practice activities.</div>
+  <a class="tab-book-link" href="lingo-lane-english-starter-for-spanish-speakers-master-cast.pdf" download>📘 Download English for Spanish Speakers</a>
+  <div class="tab-book-desc">An English starter book designed for learners whose native language is Spanish.</div>
+  <p class="tab-books-note">PDF downloads. No sign-up or login required. The PDF files must be uploaded alongside adventures.html for downloads to work.</p>
+</dialog>
+<script id="tab-books-modal-logic">
+(function(){
+ const trigger=document.getElementById('tab-books-header');
+ const dialog=document.getElementById('tab-books-dialog');
+ if(!trigger||!dialog)return;
+ trigger.addEventListener('click',()=>dialog.showModal());
+ dialog.querySelector('.tab-books-close').addEventListener('click',()=>dialog.close());
+ dialog.addEventListener('click',e=>{if(e.target===dialog)dialog.close()});
+})();
+</script>
 </body>
 </html>
 <style>#homeWorld .scene-hotspots .home-hotspot{
