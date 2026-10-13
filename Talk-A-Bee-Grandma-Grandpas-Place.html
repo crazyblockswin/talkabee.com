@@ -413,6 +413,8 @@ document.addEventListener('DOMContentLoaded',function(){
  #homeWorld.challenge-mode .home-scene > #homeFind.show {right:12px!important;bottom:12px!important;width:calc(100vw - 24px)!important;max-width:calc(100vw - 24px)!important;}
 }
 </style>
+
+
 </head>
 <body class="talkabee-world-open">
 <div class="talkabee-editions">
@@ -543,7 +545,8 @@ document.addEventListener('DOMContentLoaded',function(){
  };
  let currentSceneSound=null;
  function playSceneSound(key){
-   const url=sceneSoundUrls[key];
+   const hotspot=Array.from(document.querySelectorAll('.home-hotspot')).find(h=>h.dataset.object===key);
+    const url=(hotspot && hotspot.dataset.sound) || sceneSoundUrls[key];
    if(!url)return;
    if(currentSceneSound){currentSceneSound.pause();currentSceneSound.currentTime=0}
    currentSceneSound=new Audio(url);
@@ -663,7 +666,7 @@ Object.keys(extraDiscovery).forEach(lang=>{if(!languageData[lang].objects)langua
    }
    speechSynthesis.speak(u);
  }
- const characterAudio={grandpa:new Audio('sounds/wally.mp3'),grandma:new Audio('sounds/cathy.mp3')};
+ const characterAudio={grandpa:new Audio(document.querySelector('.home-hotspot[data-object="grandpa"]')?.dataset.sound || 'sounds/wally.mp3'),grandma:new Audio(document.querySelector('.home-hotspot[data-object="grandma"]')?.dataset.sound || 'sounds/cathy.mp3')};
  function speakDiscoveryObject(key){
    const o=obj(key),audio=characterAudio[key];
    if(audio){
@@ -937,9 +940,6 @@ Object.keys(extraDiscovery).forEach(lang=>{if(!languageData[lang].objects)langua
  }catch(e){}
 })();
 </script>
-<script id="talkabee-hotspot-custom-sound">
-(function(){if(window.__talkabeeHotspotCustomSound)return;window.__talkabeeHotspotCustomSound=true;const SEL='.hotspot,.home-hotspot,.yacht-hotspot,.hotspots button,.train-hotspots button';let timer=0,current=null;function stop(){clearTimeout(timer);if(current){try{current.pause();current.currentTime=0}catch(e){}current=null}}document.addEventListener('click',function(ev){if(document.body.classList.contains('tb-hs-editing'))return;const h=ev.target.closest&&ev.target.closest(SEL);if(!h||!h.dataset.sound)return;stop();const src=h.dataset.sound;timer=setTimeout(function(){const a=new Audio(src);current=a;a.play().catch(()=>{});a.onended=function(){if(current===a)current=null}},1500)},false)})();
-</script>
 <script id="talkabee-new-hotspot-live-click">
 (()=>{
 if(window.__tbNewHotspotLiveClick)return;window.__tbNewHotspotLiveClick=true;
@@ -1207,4 +1207,6 @@ document.addEventListener('click',function(ev){
  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',init);else init();
 })();
 </script>
+
+
 <script data-tb-custom-vocab="1">;(()=>{const C={"boat":{"en":"boat","es":"bote","fr":"bateau","de":"Boot","it":"barca","pt":"barco","no":"båt"},"fire pit":{"en":"fire pit","es":"pozo de fuego","fr":"foyer","de":"Feuerstelle","it":"pozzo del fuoco","pt":"fogueira","no":"ildsted"},"guitar":{"en":"guitar","es":"guitarra","fr":"guitare","de":"Gitarre","it":"chitarra","pt":"guitarra","no":"gitar"}};for(const [k,v] of Object.entries(C)){try{EN[k]=v.en||k;for(const L of ["es","fr","en","de","it","pt","no"]){if(WORDS[L])WORDS[L][k]=v[L]||v.en||k}}catch(e){}}})();</script></body></html>
