@@ -1101,11 +1101,10 @@ header .brand-tagline{white-space:normal!important;line-height:1.12!important;}
 <header>
  <div class="wrap nav">
   <a class="brand" href="index.html" aria-label="Talk A Bee home"><div class="logo bee-logo" aria-hidden="true"><img src="images/Talk-A-Bee-Header-Transparent.png" alt=""></div><div><span class="brand-name">Talk A Bee</span><small class="brand-domain">TalkABee.com</small></div><span class="brand-tagline">A Language-Learning Storybook<br>That Comes Alive</span></a>
-  <nav><a href="#explore">Explore</a><a href="Talk-A-Bee-Course.html">Course</a><a href="#book">Digital book</a><a href="#world">Worlds</a></nav>
+  <nav><a href="#explore">Explore</a><a href="Talk-A-Bee-Course.html">Course</a><a href="#world">Worlds</a></nav>
   <a class="talkabee-donate" href="Talk-A-Bee-Support.html" target="_blank" rel="noopener noreferrer" aria-label="Donate to support Talk A Bee">❤️ Donate</a>
   <a class="talkabee-comments" href="Talk-A-Bee-Comments.html" aria-label="Comments and suggestions for Talk A Bee">💬 Comments</a>
   <a class="topbtn full-course-link" href="Talk-A-Bee-Course.html" aria-label="Open the standard course">Standard Course</a>
-  <button type="button" class="topbtn" id="tab-books-header" aria-haspopup="dialog" aria-controls="tab-books-dialog">📚 Free Books</button>
   <details class="talkabee-more">
    <summary class="talkabee-more-toggle" aria-label="Open more Talk A Bee links">More ▾</summary>
    <div class="talkabee-more-menu">
@@ -1167,16 +1166,7 @@ header .brand-tagline{white-space:normal!important;line-height:1.12!important;}
  </div>
 </section>
 
-<section id="ways" class="section">
- <div class="wrap">
-  <div class="head"><div class="kick">LEARN YOUR WAY</div><h2>One language world. More than one way in.</h2><p>Some people love clicking, listening and speaking. Others want a beautiful book they can keep. Talk A Bee is designed for both.</p></div>
-  <div class="choice-grid">
-   <article class="choice"><span class="tag">INTERACTIVE</span><div class="icon">💬</div><h3>Talk A Bee Online</h3><p>The full interactive experience for learning by doing.</p><ul><li>Character conversations</li><li>Audio + slow playback</li><li>Sentence builder</li><li>Speaking practice</li><li>Saved progress</li></ul><button onclick="document.querySelector('#course').scrollIntoView()">Try the course</button></article>
-   <article class="choice"><span class="tag">YOURS TO KEEP</span><div class="icon">📖</div><h3>Digital Language Book</h3><p>A richly illustrated course you can read on a PC, laptop, phone or tablet.</p><ul><li>Spanish starter book</li><li>English for Spanish speakers</li><li>Character-led lessons</li><li>Visual vocabulary</li><li>Printable practice</li></ul><a href="lingo-lane-spanish-starter-book-master-cast.pdf" target="_blank" rel="noopener">Open Spanish book</a><a href="lingo-lane-english-starter-for-spanish-speakers-master-cast.pdf" target="_blank" rel="noopener" style="margin-left:8px">Open English book</a><div style="font-size:11px;color:#66738a;margin-top:10px">Online note: keep both PDF book files in the same folder as this HTML page so these buttons work after upload.</div></article>
-   <article class="choice featured"><span class="tag">COMPLETE EXPERIENCE</span><div class="icon">✨</div><h3>Talk A Bee Complete</h3><p>Use the online course and keep the illustrated book beside you.</p><ul><li>Online lessons</li><li>Digital book</li><li>Audio practice</li><li>Review activities</li><li>Learn anywhere</li></ul><button onclick="document.querySelector('#book').scrollIntoView()">Explore the bundle</button></article>
-  </div>
- </div>
-</section>
+
 
 <section class="section soft">
  <div class="wrap story-grid">
@@ -1561,15 +1551,7 @@ header .brand-tagline{white-space:normal!important;line-height:1.12!important;}
  </div>
 </section>
 
-<section id="book" class="section">
- <div class="wrap book-section">
-  <div class="book-mock"><div class="book"><div class="book-cover"><div class="tiny">TALK A BEE · SPANISH</div><h3>Beginner<br>Adventure</h3><p>Illustrated conversations, visual vocabulary and practice you can keep.</p></div></div></div>
-  <div class="book-copy"><div class="kick">DOWNLOADABLE BOOKS</div><h2>Keep the course on your bookshelf—even if the bookshelf is a phone.</h2><p>The digital editions carry the same characters and world into downloadable PDFs. Learners can read offline, print exercises, keep the books permanently, or use them beside the interactive course.</p>
-   <div class="book-features"><div class="book-feat">✓ Works on PC & Mac</div><div class="book-feat">✓ Phone & tablet friendly</div><div class="book-feat">✓ Printable exercises</div><div class="book-feat">✓ No login needed to read</div><div class="book-feat">✓ Character conversations</div><div class="book-feat">✓ 9 starter lessons each</div></div>
-   <div style="display:flex;gap:12px;flex-wrap:wrap"><a class="download" href="lingo-lane-spanish-starter-book-master-cast.pdf">📖 Spanish Starter Book</a><a class="download" href="lingo-lane-english-starter-for-spanish-speakers-master-cast.pdf">📘 English for Spanish Speakers</a></div>
-  </div>
- </div>
-</section>
+
 
 <section id="world" class="section soft">
  <div class="wrap">
@@ -5088,38 +5070,6 @@ document.addEventListener('click',function(e){
 </script>
 
 
-<style id="tab-books-modal-style">
-#tab-books-header{white-space:nowrap;background:#f8d46c;color:#17243b;border:1px solid #d9b448;cursor:pointer}
-#tab-books-dialog{width:min(510px,calc(100% - 32px));max-height:calc(100vh - 40px);overflow:auto;border:1px solid #e1d8c5;border-radius:22px;padding:26px;background:#fffdf7;color:#17243b;box-shadow:0 24px 85px #0006}
-#tab-books-dialog::backdrop{background:rgba(10,20,40,.72)}
-#tab-books-dialog h2{margin:0 38px 10px 0;font-size:27px}
-#tab-books-dialog p{color:#536077;margin:0 0 17px;line-height:1.5}
-#tab-books-dialog .tab-book-link{display:block;text-decoration:none;background:#17243b;color:white;padding:13px 16px;border-radius:12px;font-weight:850;margin:10px 0}
-#tab-books-dialog .tab-book-link:hover{background:#5536c6}
-#tab-books-dialog .tab-book-desc{font-size:12px;color:#536077;margin:0 0 14px}
-#tab-books-dialog .tab-books-close{position:absolute;right:16px;top:13px;border:0;background:#f0ebdf;color:#17243b;border-radius:50%;width:34px;height:34px;font-size:23px;cursor:pointer}
-#tab-books-dialog .tab-books-note{font-size:12px;margin-top:16px;color:#536077}
-</style>
-<dialog id="tab-books-dialog" aria-labelledby="tab-books-title">
-  <button type="button" class="tab-books-close" aria-label="Close books window">×</button>
-  <h2 id="tab-books-title">📚 Free Language Books</h2>
-  <p>Prefer learning with a book? These illustrated PDF starter books are yours to download, keep, read offline, or print—completely free!</p>
-  <a class="tab-book-link" href="lingo-lane-spanish-starter-book-master-cast.pdf" download>📖 Download Spanish Starter Book</a>
-  <div class="tab-book-desc">An illustrated starter book for learning Spanish, with vocabulary and practice activities.</div>
-  <a class="tab-book-link" href="lingo-lane-english-starter-for-spanish-speakers-master-cast.pdf" download>📘 Download English for Spanish Speakers</a>
-  <div class="tab-book-desc">An English starter book designed for learners whose native language is Spanish.</div>
-  <p class="tab-books-note">PDF downloads. No sign-up or login required. The PDF files must be uploaded alongside adventures.html for downloads to work.</p>
-</dialog>
-<script id="tab-books-modal-logic">
-(function(){
- const trigger=document.getElementById('tab-books-header');
- const dialog=document.getElementById('tab-books-dialog');
- if(!trigger||!dialog)return;
- trigger.addEventListener('click',()=>dialog.showModal());
- dialog.querySelector('.tab-books-close').addEventListener('click',()=>dialog.close());
- dialog.addEventListener('click',e=>{if(e.target===dialog)dialog.close()});
-})();
-</script>
 </body>
 </html>
 <style>#homeWorld .scene-hotspots .home-hotspot{
