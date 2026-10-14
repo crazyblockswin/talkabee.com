@@ -1210,7 +1210,7 @@ document.addEventListener('click',function(ev){
 <script data-tb-custom-vocab="1">;(()=>{const C={"boat":{"en":"boat","es":"bote","fr":"bateau","de":"Boot","it":"barca","pt":"barco","no":"båt"},"fire pit":{"en":"fire pit","es":"pozo de fuego","fr":"foyer","de":"Feuerstelle","it":"pozzo del fuoco","pt":"fogueira","no":"ildsted"},"guitar":{"en":"guitar","es":"guitarra","fr":"guitare","de":"Gitarre","it":"chitarra","pt":"guitarra","no":"gitar"}};for(const [k,v] of Object.entries(C)){try{EN[k]=v.en||k;for(const L of ["es","fr","en","de","it","pt","no"]){if(WORDS[L])WORDS[L][k]=v[L]||v.en||k}}catch(e){}}})();</script>
 <!-- Isolated Talk A Bee voice laboratory; the Adventure speech controls remain unchanged. -->
 <style id="voice-lab-style">
-#voiceLab{position:fixed;z-index:2147483000;right:14px;top:85px;width:min(355px,calc(100vw - 28px));background:#172b36;color:white;border:1px solid #86bac2;border-radius:13px;padding:13px;box-shadow:0 6px 25px #0008;font:14px/1.4 system-ui,sans-serif}
+#voiceLab{position:fixed;z-index:2147483000;right:14px;top:12px;max-height:calc(100dvh - 24px);overflow-y:auto;overscroll-behavior:contain;scrollbar-width:thin;width:min(355px,calc(100vw - 28px));background:#172b36;color:white;border:1px solid #86bac2;border-radius:13px;padding:13px;box-shadow:0 6px 25px #0008;font:14px/1.4 system-ui,sans-serif}
 #voiceLab *{box-sizing:border-box}#voiceLab label{display:block;font-size:12px;margin:9px 0 3px}#voiceLab select,#voiceLab textarea{width:100%;padding:7px;border-radius:6px;color:#111;background:white}#voiceLab button{border:0;border-radius:7px;padding:8px 10px;margin:7px 4px 0 0;background:#b7e5d7;color:#123;cursor:pointer}#voiceLab button:disabled{opacity:.55;cursor:wait}#voiceLabStatus{font-size:12px;margin-top:8px;white-space:pre-wrap;overflow-wrap:anywhere}#voiceLab details summary{cursor:pointer;font-weight:700}#voiceLab textarea{min-height:62px;resize:vertical}#voiceLab .lab-note{font-size:12px;color:#d1e6eb;margin-top:5px}
 </style>
 <div id="voiceLab"><details open><summary>🎙️ Voice Lab — two choices</summary>
@@ -1221,10 +1221,6 @@ document.addEventListener('click',function(ev){
 <div><button type="button" id="voiceLabCurrent">Use lesson sentence</button><button type="button" id="voiceLabPlay">▶ Speak</button><button type="button" id="voiceLabSlow">🐢 Slow</button><button type="button" id="voiceLabStop">■ Stop</button></div>
 <div id="voiceLabStatus" role="status">Standard voice ready. Enhanced voices are optional.</div>
 </details></div>
-<!-- Voice Lab only: one pinned ONNX JS version, with matching local WASM assets. -->
-<script type="importmap" id="talkabee-piper-onnx-importmap">
-{"imports":{"onnxruntime-web":"https://esm.sh/onnxruntime-web@1.19.0/wasm?bundle","onnxruntime-web/wasm":"https://esm.sh/onnxruntime-web@1.19.0/wasm?bundle"}}
-</script>
 <script type="module" id="voice-lab-dual-mode">
 const $=id=>document.getElementById(id), status=$('voiceLabStatus'), mode=$('voiceLabMode'), select=$('voiceLabModel'), field=$('voiceLabText');
 const show=message=>{status.textContent=message};
@@ -1242,13 +1238,7 @@ $('voiceLabCurrent').addEventListener('click',()=>{const s=sentence();if(s)field
 $('voiceLabStop').addEventListener('click',()=>{stop();show('Stopped.')});
 lang?.addEventListener('change',recommend);
 async function loadEngine(){if(engine)return engine;if(loading)return loading;
- loading=(async()=>{show('Loading matched ONNX 1.19.0 engine and Piper voice catalog…');const ort=await import('onnxruntime-web');
-// Match ONNX Runtime 1.19.0 JavaScript to the exact 1.19.0 WASM files
-// in the neighboring onnxruntime directory. Disable threads to avoid
-// cross-origin-isolation requirements on ordinary GitHub Pages hosting.
-ort.env.wasm.wasmPaths=new URL('./onnxruntime/',document.baseURI).href;
-ort.env.wasm.numThreads=1;
-const m=await import('https://esm.sh/@mintplex-labs/piper-tts-web@1.0.5?external=onnxruntime-web');const models=await m.voices();const all=Array.isArray(models)?models.map(v=>typeof v==='string'?v:(v?.id||v?.key||v?.name||'')).filter(Boolean):Object.keys(models||{});const names=all.filter(id=>Object.values(prefix).some(p=>id.toLowerCase().startsWith(p)));if(!names.length)throw Error('No matching neural voices in catalog.');select.replaceChildren();for(const id of names){const opt=document.createElement('option');opt.value=id;opt.textContent=id;select.appendChild(opt)}engine=m;recommend();show('Enhanced catalog ready. First speech may download a large model.');return engine})();
+ loading=(async()=>{show('Loading enhanced engine and voice catalog…');const m=await import('https://esm.sh/@mintplex-labs/piper-tts-web@1.0.5?bundle');const models=await m.voices();const all=Array.isArray(models)?models.map(v=>typeof v==='string'?v:(v?.id||v?.key||v?.name||'')).filter(Boolean):Object.keys(models||{});const names=all.filter(id=>Object.values(prefix).some(p=>id.toLowerCase().startsWith(p)));if(!names.length)throw Error('No matching neural voices in catalog.');select.replaceChildren();for(const id of names){const opt=document.createElement('option');opt.value=id;opt.textContent=id;select.appendChild(opt)}engine=m;recommend();show('Enhanced catalog ready. First speech may download a large model.');return engine})();
  try{return await loading}catch(e){loading=null;show('Enhanced engine unavailable: '+(e?.message||e)+'\nChoose Standard to continue.');console.error('Voice Lab engine',e);throw e}
 }
 $('voiceLabLoad').addEventListener('click',()=>{loadEngine().catch(()=>{})});
@@ -1257,7 +1247,7 @@ async function speak(rate){const text=field.value.trim();if(!text){show('Enter a
  if(mode.value==='standard'){standardSpeak(text,rate);return}
  busy=true;$('voiceLabPlay').disabled=true;$('voiceLabSlow').disabled=true;
  try{const m=await loadEngine();if(!select.value)throw Error('No neural voice selected for this language.');stop();if(audioUrl){URL.revokeObjectURL(audioUrl);audioUrl=null}show('Generating neural speech… First use downloads a model.');const start=performance.now();const wav=await m.predict({text,voiceId:select.value},p=>{if(p?.total)show('Downloading model: '+Math.round(p.loaded/p.total*100)+'%')});audioUrl=URL.createObjectURL(wav);audio=new Audio(audioUrl);audio.playbackRate=rate;await audio.play();show('Enhanced voice playing. Generation: '+((performance.now()-start)/1000).toFixed(1)+' seconds.')}
- catch(e){show('Enhanced voice failed: '+(e?.message||e)+'\nSwitch to Standard for reliable browser speech.');console.error('Voice Lab synthesis',e)}
+ catch(e){const msg=String(e?.message||e);show('Enhanced voice failed: '+msg+(msg.includes('cdnjs.cloudflare.com/ajax/libs/onnxruntime-web/1.18.0')?'\nDiagnosis: Piper is still hardcoded to the old ONNX 1.18.0 Cloudflare runtime. Local ONNX 1.19.0 files are not being used by this bundle.':'')+'\nSwitch to Standard for reliable browser speech.');console.error('Voice Lab synthesis',e)}
  finally{busy=false;$('voiceLabPlay').disabled=false;$('voiceLabSlow').disabled=false}
 }
 $('voiceLabPlay').addEventListener('click',()=>speak(1));$('voiceLabSlow').addEventListener('click',()=>speak(.78));
