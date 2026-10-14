@@ -1242,10 +1242,10 @@ document.addEventListener('click',function(ev){
 .voice-info-box p{margin:9px 0}
 #voiceInfoClose{position:absolute;right:10px;top:7px;border:0;background:transparent;color:white;font-size:28px;cursor:pointer}
 </style>
-<div id="voiceLab"><details open><summary>🎙️ Enhanced Voice <button type="button" id="voiceLabInfo" aria-label="About voice options" title="About voice options">ⓘ</button></summary>
-<label for="voiceLabMode">Voice type</label><select id="voiceLabMode"><option value="standard">Standard — no model download</option><option value="enhanced">Enhanced — download neural voice</option></select>
+<div id="voiceLab"><details open><summary>🎙️ Choose Voice <button type="button" id="voiceLabInfo" aria-label="About voice options" title="About voice options">ⓘ</button></summary>
+<label for="voiceLabMode">Voice type</label><select id="voiceLabMode"><option value="standard">Standard</option><option value="enhanced">Enhanced</option></select>
 <div id="voiceLabNote" class="lab-note" hidden>Uses voices already available in your browser.</div>
-<div id="voiceLabNeural" hidden><label for="voiceLabModel">Choose neural voice</label><select id="voiceLabModel"><option value="">Select Enhanced to load voices</option></select><button type="button" id="voiceLabLoad">Load voice</button></div>
+<div id="voiceLabNeural" hidden><label for="voiceLabModel">Choose voice</label><select id="voiceLabModel"><option value="">Select Enhanced to see voices</option></select><button type="button" id="voiceLabLoad">Load voice</button></div>
 <label for="voiceLabText">Test sentence (or use current lesson)</label><textarea id="voiceLabText">Hello! Welcome to Talk A Bee.</textarea>
 <div><button type="button" id="voiceLabCurrent">Use lesson sentence</button><button type="button" id="voiceLabPlay">▶ Speak</button><button type="button" id="voiceLabSlow">🐢 Slow</button><button type="button" id="voiceLabStop">■ Stop</button></div>
 <div id="voiceLabStatus" role="status" aria-live="polite">Standard voice ready.</div>
@@ -1255,7 +1255,7 @@ document.addEventListener('click',function(ev){
   <button type="button" id="voiceInfoClose" aria-label="Close voice information">×</button>
   <h2 id="voiceInfoTitle">About voice options</h2>
   <p><strong>Standard:</strong> Uses the voices available in your browser. No download needed.</p>
-  <p><strong>Enhanced:</strong> Downloads a more natural neural voice to your device. It is optional and free. Your browser may reuse the downloaded model on future visits.</p>
+  <p><strong>Enhanced:</strong> Downloads a more natural-sounding voice to your device. It is optional and free. Your browser may reuse the downloaded model on future visits.</p>
   <p>Choose a voice, select <strong>Load voice</strong>, then use the lesson's Speak, Slow, and Replay buttons.</p>
  </div>
 </div>
@@ -1283,24 +1283,24 @@ let engine=null,loading=null,audio=null,audioUrl=null,busy=false,utterance=null,
 const sentence=()=>($('homeWordline')?.innerText||$('homeWordline')?.textContent||'').replace(/\s+/g,' ').trim();
 function stop(){runId++;if(audio){audio.pause();audio.currentTime=0}if('speechSynthesis' in window)window.speechSynthesis.cancel();utterance=null}
 let voiceCatalog=[];
-function recommend(){if(!voiceCatalog.length)return;const p=prefix[lang?.value]||'en_';const previous=select.value;const options=voiceCatalog.filter(id=>id.toLowerCase().startsWith(p));select.replaceChildren();for(const id of options){const opt=document.createElement('option');opt.value=id;opt.textContent=id;select.appendChild(opt)}if(options.includes(previous))select.value=previous;else if(options.length)select.value=options.find(id=>id.includes('medium'))||options[0];else{const opt=document.createElement('option');opt.value='';opt.textContent='No neural voice available';select.appendChild(opt);show('No Enhanced voice for this language. Choose Standard.')}}
-function updateMode(){const enhanced=mode.value==='enhanced';$('voiceLabNeural').hidden=!enhanced;$('voiceLabNote').textContent=enhanced?'Download once per voice. First use may take a moment.':'No neural model download. Uses voices installed in the browser.';try{localStorage.setItem('talkabee-lab-voice-mode',mode.value)}catch(_){};show(enhanced?'Enhanced selected. Click “Load enhanced engine” before speaking.':'Standard voice ready. No neural model download.');}
+function recommend(){if(!voiceCatalog.length)return;const p=prefix[lang?.value]||'en_';const previous=select.value;const options=voiceCatalog.filter(id=>id.toLowerCase().startsWith(p));select.replaceChildren();for(const id of options){const opt=document.createElement('option');opt.value=id;opt.textContent=id;select.appendChild(opt)}if(options.includes(previous))select.value=previous;else if(options.length)select.value=options.find(id=>id.includes('medium'))||options[0];else{const opt=document.createElement('option');opt.value='';opt.textContent='No enhanced voice available';select.appendChild(opt);show('No Enhanced voice for this language. Choose Standard.')}}
+function updateMode(){const enhanced=mode.value==='enhanced';$('voiceLabNeural').hidden=!enhanced;$('voiceLabNote').textContent=enhanced?'Download once per voice. First use may take a moment.':'Uses voices installed in your browser.';try{localStorage.setItem('talkabee-lab-voice-mode',mode.value)}catch(_){};show(enhanced?'Enhanced selected. Click “Load voice” before speaking.':'Standard voice ready.');}
 try{if(localStorage.getItem('talkabee-lab-voice-mode')==='enhanced')mode.value='enhanced'}catch(_){}
 mode.addEventListener('change',()=>{stop();updateMode()});updateMode();
 $('voiceLabCurrent').addEventListener('click',()=>{const s=sentence();if(s)field.value=s;else show('Choose an Activity first, or type a test sentence.')});
 $('voiceLabStop').addEventListener('click',()=>{stop();show('Stopped.')});
 lang?.addEventListener('change',recommend);
 async function loadEngine(){if(engine)return engine;if(loading)return loading;
- loading=(async()=>{show('Loading enhanced engine and voice catalog…');const m=await import('./piper-matched-118/piper-tts-web.js?voice-switch=1');const models=await m.voices();const all=Array.isArray(models)?models.map(v=>typeof v==='string'?v:(v?.id||v?.key||v?.name||'')).filter(Boolean):Object.keys(models||{});const names=all.filter(id=>Object.values(prefix).some(p=>id.toLowerCase().startsWith(p)));if(!names.length)throw Error('No matching neural voices in catalog.');voiceCatalog=names;engine=m;recommend();show('Enhanced catalog ready. First speech may download a large model.');return engine})();
+ loading=(async()=>{show('Loading enhanced engine and voice catalog…');const m=await import('./piper-matched-118/piper-tts-web.js?voice-switch=1');const models=await m.voices();const all=Array.isArray(models)?models.map(v=>typeof v==='string'?v:(v?.id||v?.key||v?.name||'')).filter(Boolean):Object.keys(models||{});const names=all.filter(id=>Object.values(prefix).some(p=>id.toLowerCase().startsWith(p)));if(!names.length)throw Error('No matching voices in catalog.');voiceCatalog=names;engine=m;recommend();show('Enhanced catalog ready. First speech may download a large model.');return engine})();
  try{return await loading}catch(e){loading=null;show('Enhanced engine unavailable: '+(e?.message||e)+'\nChoose Standard to continue.');console.error('Voice Lab engine',e);throw e}
 }
-$('voiceLabLoad').addEventListener('click',()=>{loadEngine().then(()=>show('Enhanced engine ready. Select any voice and press Speak.')).catch(()=>{})});
+$('voiceLabLoad').addEventListener('click',()=>{loadEngine().then(()=>show('Voice list ready. Select a voice and press Speak.')).catch(()=>{})});
 select.addEventListener('change',()=>{stop();if(engine)show('Voice selected: '+select.value+'. Press Speak to use it; no refresh needed.');});
 function standardSpeak(text,rate){if(!('speechSynthesis' in window)){show('Browser speech is not available.');return}stop();const u=new SpeechSynthesisUtterance(text);u.lang=speechLang[lang?.value]||'en-US';u.rate=rate;const voices=window.speechSynthesis.getVoices();const chosen=voices.find(v=>v.lang.toLowerCase()===u.lang.toLowerCase())||voices.find(v=>v.lang.toLowerCase().startsWith(u.lang.slice(0,2).toLowerCase()));if(chosen)u.voice=chosen;utterance=u;u.onerror=e=>show('Standard speech error: '+e.error);window.speechSynthesis.speak(u);show('Speaking with browser voice ('+u.lang+'). No model downloaded.')}
 async function speak(rate,textOverride){const text=(textOverride===undefined?field.value:textOverride).trim();if(!text){show('Enter a sentence first.');return}if(busy)return;
  if(mode.value==='standard'){standardSpeak(text,rate);return}
  busy=true;$('voiceLabPlay').disabled=true;$('voiceLabSlow').disabled=true;
- try{const m=await loadEngine();if(!select.value)throw Error('No neural voice selected for this language.');stop();if(audioUrl){URL.revokeObjectURL(audioUrl);audioUrl=null}show('Generating neural speech… First use downloads a model.');const start=performance.now();const wav=await m.predict({text,voiceId:select.value},p=>{if(p?.total)show('Downloading model: '+Math.round(p.loaded/p.total*100)+'%')});audioUrl=URL.createObjectURL(wav);audio=new Audio(audioUrl);audio.playbackRate=rate;await audio.play();show('Enhanced voice playing. Generation: '+((performance.now()-start)/1000).toFixed(1)+' seconds.')}
+ try{const m=await loadEngine();if(!select.value)throw Error('No voice selected for this language.');stop();if(audioUrl){URL.revokeObjectURL(audioUrl);audioUrl=null}show('Preparing voice… First use may require a download.');const start=performance.now();const wav=await m.predict({text,voiceId:select.value},p=>{if(p?.total)show('Downloading model: '+Math.round(p.loaded/p.total*100)+'%')});audioUrl=URL.createObjectURL(wav);audio=new Audio(audioUrl);audio.playbackRate=rate;await audio.play();show('Enhanced voice playing. Generation: '+((performance.now()-start)/1000).toFixed(1)+' seconds.')}
  catch(e){const msg=String(e?.message||e);show('Enhanced voice failed: '+msg+(msg.includes('cdnjs.cloudflare.com/ajax/libs/onnxruntime-web/1.18.0')?'\nDiagnosis: Piper is still hardcoded to the old ONNX 1.18.0 Cloudflare runtime. Local ONNX 1.19.0 files are not being used by this bundle.':'')+'\nSwitch to Standard for reliable browser speech.');console.error('Voice Lab synthesis',e)}
  finally{busy=false;$('voiceLabPlay').disabled=false;$('voiceLabSlow').disabled=false}
 }
