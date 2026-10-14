@@ -1237,8 +1237,36 @@ mode.addEventListener('change',()=>{stop();updateMode()});updateMode();
 $('voiceLabCurrent').addEventListener('click',()=>{const s=sentence();if(s)field.value=s;else show('Choose an Activity first, or type a test sentence.')});
 $('voiceLabStop').addEventListener('click',()=>{stop();show('Stopped.')});
 lang?.addEventListener('change',recommend);
+// Isolated experimental loader: rewrite Piper's obsolete CDN runtime URL in its
+// downloaded ESM bundle before importing. No changes to the original Adventures.
+async function loadPatchedPiper(){
+ const entry='https://esm.sh/@mintplex-labs/piper-tts-web@1.0.5?bundle';
+ const response=await fetch(entry,{cache:'no-store'});
+ if(!response.ok)throw Error('Cannot fetch Piper bundle (HTTP '+response.status+').');
+ let code=await response.text();
+ // esm.sh often serves a tiny entry module which re-exports the real bundle.
+ const reexport=code.match(/(?:export\s+\*\s+from|export\s*\{[^}]*\}\s*from)\s*["']([^"']+)["']/);
+ if(reexport){
+  const bundleURL=new URL(reexport[1],response.url).href;
+  const bundleResponse=await fetch(bundleURL,{cache:'no-store'});
+  if(!bundleResponse.ok)throw Error('Cannot fetch Piper implementation (HTTP '+bundleResponse.status+').');
+  code=await bundleResponse.text();
+ }
+ const obsolete='https://cdnjs.cloudflare.com/ajax/libs/onnxruntime-web/1.18.0/';
+ const local=new URL('./onnxruntime/',location.href).href;
+ const hits=code.split(obsolete).length-1;
+ if(!hits)throw Error('Piper bundle did not contain the expected old CDN URL. No unsafe replacement attempted.');
+ code=code.split(obsolete).join(local);
+ // Blob modules cannot resolve bare or relative imports. Rewrite esm.sh
+ // absolute-path imports to fully qualified URLs before importing.
+ code=code.replace(/(\b(?:from\s*|import\s*\(|import\s*)["'])(\/[^"']+)(["'])/g,(_,a,b,c)=>a+new URL(b,'https://esm.sh').href+c);
+ const unresolved=code.match(/(?:from\s*|import\s*\()["'](?:\.\.?\/|onnxruntime-web\/)[^"']+/);
+ if(unresolved)throw Error('Unresolved import in Piper bundle: '+unresolved[0].slice(0,100));
+ const blob=URL.createObjectURL(new Blob([code],{type:'text/javascript'}));
+ try{return await import(blob)}finally{URL.revokeObjectURL(blob)}
+}
 async function loadEngine(){if(engine)return engine;if(loading)return loading;
- loading=(async()=>{show('Loading enhanced engine and voice catalog…');const m=await import('https://esm.sh/@mintplex-labs/piper-tts-web@1.0.5?bundle');const models=await m.voices();const all=Array.isArray(models)?models.map(v=>typeof v==='string'?v:(v?.id||v?.key||v?.name||'')).filter(Boolean):Object.keys(models||{});const names=all.filter(id=>Object.values(prefix).some(p=>id.toLowerCase().startsWith(p)));if(!names.length)throw Error('No matching neural voices in catalog.');select.replaceChildren();for(const id of names){const opt=document.createElement('option');opt.value=id;opt.textContent=id;select.appendChild(opt)}engine=m;recommend();show('Enhanced catalog ready. First speech may download a large model.');return engine})();
+ loading=(async()=>{show('Loading enhanced engine and voice catalog…');const m=await loadPatchedPiper();const models=await m.voices();const all=Array.isArray(models)?models.map(v=>typeof v==='string'?v:(v?.id||v?.key||v?.name||'')).filter(Boolean):Object.keys(models||{});const names=all.filter(id=>Object.values(prefix).some(p=>id.toLowerCase().startsWith(p)));if(!names.length)throw Error('No matching neural voices in catalog.');select.replaceChildren();for(const id of names){const opt=document.createElement('option');opt.value=id;opt.textContent=id;select.appendChild(opt)}engine=m;recommend();show('Patched Piper bundle loaded. Old runtime references redirected to local ONNX files. First speech may download a large model.');return engine})();
  try{return await loading}catch(e){loading=null;show('Enhanced engine unavailable: '+(e?.message||e)+'\nChoose Standard to continue.');console.error('Voice Lab engine',e);throw e}
 }
 $('voiceLabLoad').addEventListener('click',()=>{loadEngine().catch(()=>{})});
