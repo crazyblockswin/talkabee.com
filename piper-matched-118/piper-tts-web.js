@@ -448,6 +448,12 @@ function splitIntoChunks(text, maxLength = MAX_CHUNK_LENGTH) {
   return chunks;
 }
 async function predict(config, callback) {
+  // Piper 1.0.5 caches one inference session. Its original constructor changes
+  // voiceId without replacing the ONNX model, so changing voices needs a new session.
+  if (TtsSession._instance && TtsSession._instance.voiceId !== config.voiceId) {
+    await TtsSession._instance.waitReady;
+    TtsSession._instance = null;
+  }
   const session = new TtsSession({
     voiceId: config.voiceId,
     progress: callback
