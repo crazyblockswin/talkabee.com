@@ -1,9 +1,10 @@
-<!doctype html>
+<!DOCTYPE html>
+
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Comments & Suggestions — Talk A Bee</title>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<title>Comments &amp; Suggestions — Talk A Bee</title>
 <style>
 *{box-sizing:border-box}
 html,body{margin:0;min-height:100%;font-family:Arial,Helvetica,sans-serif;color:#332b3d}
@@ -41,61 +42,54 @@ button:disabled{opacity:.55;cursor:wait;transform:none}
 .note{grid-column:1/-1;text-align:center;margin:0;color:#776d7d;font-size:11px;line-height:1.45}
 @media(max-width:650px){header{padding:9px 12px}.tagline{display:none}.card{padding:24px 19px}form{grid-template-columns:1fr}.full,.submit-row,.note{grid-column:1}}
 </style>
-  <link rel="icon" type="image/png" href="images/talkabee-favicon.png">
-  <link rel="shortcut icon" type="image/png" href="images/talkabee-favicon.png">
+<link href="images/talkabee-favicon.png" rel="icon" type="image/png"/>
+<link href="images/talkabee-favicon.png" rel="shortcut icon" type="image/png"/>
 </head>
 <body>
 <header>
- <a class="brand" href="index.html" aria-label="Return to Main Directory">
-  <img src="images/talkabee-image-04.png" alt="">
-  <span><span class="brand-name">Talk A Bee</span><span class="brand-domain">TalkABee.com</span></span>
-  <span class="tagline">Interactive Language Adventures</span>
- </a>
- <a class="back" href="index.html">← Main Directory</a>
+<a aria-label="Return to Main Directory" class="brand" href="index.html">
+<img alt="" src="images/talkabee-image-04.png"/>
+<span><span class="brand-name">Talk A Bee</span><span class="brand-domain">TalkABee.com</span></span>
+<span class="tagline">Interactive Language Adventures</span>
+</a>
+<a class="back" href="index.html">← Main Directory</a>
 </header>
-
 <main>
 <section class="card">
- <h1>💬 Comments & Suggestions</h1>
- <p class="intro">Tell me what you think about Talk A Bee. Found a gremlin? Have an adventure idea? Want to suggest a language, activity, or improvement? Send it my way. 🐝</p>
-
- <form id="talkabeeCommentForm" action="https://formsubmit.co/wallyjcass@gmail.com" method="POST">
-  <input type="hidden" name="_subject" value="Talk A Bee — New Comment">
-  <input type="hidden" name="_captcha" value="false">
-  <input type="hidden" name="_template" value="table">
-  <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
-
-  <label>Your name
-   <input type="text" name="name" maxlength="80" placeholder="Optional">
-  </label>
-  <label>Your email
-   <input type="email" name="email" maxlength="140" placeholder="Optional">
-  </label>
-
-  <label class="full">What kind of message?
+<h1>💬 Comments &amp; Suggestions</h1>
+<p class="intro">Tell me what you think about Talk A Bee. Found a gremlin? Have an adventure idea? Want to suggest a language, activity, or improvement? Send it my way. 🐝</p>
+<form action="https://formsubmit.co/wallyjcass@gmail.com" id="talkabeeCommentForm" method="POST">
+<input name="_subject" type="hidden" value="Talk A Bee — New Comment"/>
+<input name="_captcha" type="hidden" value="false"/>
+<input name="_template" type="hidden" value="table"/>
+<input autocomplete="off" name="_honey" style="display:none" tabindex="-1" type="text"/>
+<label>Your name
+   <input maxlength="80" name="name" placeholder="Optional" type="text"/>
+</label>
+<label>Your email
+   <input maxlength="140" name="email" placeholder="Optional" type="email"/>
+</label>
+<label class="full">What kind of message?
    <select name="message_type">
-    <option>Comment</option>
-    <option>Suggestion</option>
-    <option>Found a Problem</option>
-    <option>New Adventure Idea</option>
-    <option>Language Idea</option>
-    <option>Other</option>
-   </select>
-  </label>
-
-  <label class="full">Your message
-   <textarea name="comment" maxlength="2000" required placeholder="Write your comment or suggestion here..."></textarea>
-  </label>
-
-  <div class="submit-row">
-   <button id="commentSubmit" type="submit">SEND COMMENT</button>
-   <div class="status" id="commentStatus" aria-live="polite"></div>
-  </div>
-  <p class="note">Comments are sent privately to Talk A Bee. Your email is optional and is only needed if you'd like a reply.</p>
- </form>
+<option>Comment</option>
+<option>Suggestion</option>
+<option>Found a Problem</option>
+<option>New Adventure Idea</option>
+<option>Language Idea</option>
+<option>Other</option>
+</select>
+</label>
+<label class="full">Your message
+   <textarea maxlength="2000" name="comment" placeholder="Write your comment or suggestion here..." required=""></textarea>
+</label>
+<div class="submit-row">
+<button id="commentSubmit" type="submit">SEND COMMENT</button>
+<div aria-live="polite" class="status" id="commentStatus"></div>
+</div>
+<p class="note">Comments are sent privately to Talk A Bee. Your email is optional and is only needed if you'd like a reply.</p>
+</form>
 </section>
 </main>
-
 <script>
 const form=document.getElementById('talkabeeCommentForm');
 const statusBox=document.getElementById('commentStatus');

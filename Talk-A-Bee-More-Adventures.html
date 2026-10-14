@@ -1,32 +1,14 @@
-<!doctype html>
+<!DOCTYPE html>
+
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
 <title>Talk A Bee — Community Edition</title>
-<style>
-*{box-sizing:border-box}html,body{margin:0;width:100%;height:100%;overflow:hidden;font-family:Arial,sans-serif;background:#071526;color:#fff}
-.world{position:relative;width:100vw;height:100vh;background:#071526 url("images/talkabee-main-entrance.webp") center center/cover no-repeat}
-.panel{position:absolute;z-index:20;left:16px;top:16px;width:350px;max-height:calc(100vh - 32px);overflow:auto;padding:14px;border-radius:20px;background:rgba(7,23,39,.31);border:1px solid rgba(255,255,255,.28);box-shadow:0 10px 28px rgba(0,0,0,.22);backdrop-filter:blur(3px);-webkit-backdrop-filter:blur(3px)}
-.panel h1{font-size:28px;line-height:1.08;margin:0 0 13px;font-weight:950}
-.panel a{width:100%;display:block;margin:5px 0;padding:9px 10px;border-radius:12px;border:1px solid rgba(255,255,255,.38);background:rgba(7,32,50,.54);color:#fff;font-size:17px;line-height:1.28;font-weight:850;text-decoration:none;text-align:left}
-.panel a:hover{background:rgba(255,255,255,.18)}
-.panel .back{margin-top:10px;background:rgba(80,59,150,.64);border-color:rgba(255,255,255,.52)}
-@media(max-width:900px){.panel{width:190px}}
-</style>
-
-<style id="talkabee-prev-next-nav-style">
-/* Talk A Bee standard compact Previous / Next navigation. */
-.talkabee-prev-next-nav{position:fixed;top:18px;right:22px;z-index:2147483000;display:flex;align-items:center;overflow:hidden;border:2px solid rgba(255,255,255,.82);border-radius:999px;background:rgba(11,22,42,.24);box-shadow:0 5px 16px rgba(0,0,0,.16);backdrop-filter:blur(3px);-webkit-backdrop-filter:blur(3px)}
-.talkabee-prev-next-nav a{width:48px;height:48px;display:grid;place-items:center;text-decoration:none;color:#fff;font:900 38px/1 Arial,sans-serif;text-shadow:0 1px 3px rgba(0,0,0,.42);transition:background .15s ease,transform .15s ease}
-.talkabee-prev-next-nav a+a{border-left:1px solid rgba(255,255,255,.36)}
-.talkabee-prev-next-nav a:hover,.talkabee-prev-next-nav a:focus-visible{background:rgba(255,255,255,.18);outline:none}
-.talkabee-prev-next-nav a:active{transform:scale(.94)}
-@media(max-width:720px){.talkabee-prev-next-nav{top:12px;right:12px}.talkabee-prev-next-nav a{width:42px;height:42px;font-size:33px}}
-</style>
-  <link rel="icon" type="image/png" href="images/talkabee-favicon.png">
-  <link rel="shortcut icon" type="image/png" href="images/talkabee-favicon.png">
-
+<link href="css/shared-c4108956dcc5d431.css" rel="stylesheet"/>
+<link href="css/common-inline-102fc1d7383d.css" id="talkabee-prev-next-nav-style" rel="stylesheet"/>
+<link href="images/talkabee-favicon.png" rel="icon" type="image/png"/>
+<link href="images/talkabee-favicon.png" rel="shortcut icon" type="image/png"/>
 <style id="talkabee-edition-menu-style">
 .talkabee-editions{position:fixed;top:16px;left:50%;transform:translateX(-50%);z-index:2147482998;font-family:Arial,sans-serif}
 .talkabee-editions details{position:relative}
@@ -38,8 +20,6 @@
 .talkabee-editions.on-main{top:82px}
 @media(max-width:900px){.talkabee-editions .edition-row{max-width:94vw;overflow-x:auto}.talkabee-editions.on-main{top:72px}}
 </style>
-
-
 <style id="talkabee-edition-hover-colors">
 /* Subtle category color only on hover/focus. Normal menu appearance is unchanged. */
 .talkabee-editions .edition-row a{transition:background .16s ease,box-shadow .16s ease,transform .16s ease,border-color .16s ease}
@@ -58,13 +38,12 @@
 .talkabee-editions .edition-row a:hover,
 .talkabee-editions .edition-row a:focus-visible{transform:translateY(-1px)}
 </style>
-
 </head>
 <body>
 <div class="talkabee-editions">
 <details>
 <summary>Explore Adventures ▾</summary>
-<div class="edition-row" role="navigation" aria-label="Talk A Bee Editions">
+<div aria-label="Talk A Bee Editions" class="edition-row" role="navigation">
 <a href="adventures.html">Main Adventures</a>
 <a href="Talk-A-Bee-More-Adventures.html">Community Edition</a>
 <a href="Talk-A-Bee-Directory-3.html">Travel Edition</a>
@@ -74,10 +53,9 @@
 </div>
 </details>
 </div>
-<nav class="talkabee-prev-next-nav" aria-label="Edition navigation"><a href="Talk-A-Bee-Bird-Sanctuary.html" aria-label="Previous adventure" title="Previous">‹</a><a href="Talk-A-Bee-Library.html" aria-label="Next adventure" title="Next">›</a></nav>
-
+<nav aria-label="Edition navigation" class="talkabee-prev-next-nav"><a aria-label="Previous adventure" href="Talk-A-Bee-Bird-Sanctuary.html" title="Previous">‹</a><a aria-label="Next adventure" href="Talk-A-Bee-Library.html" title="Next">›</a></nav>
 <main class="world">
-<aside class="panel" aria-label="Community Edition">
+<aside aria-label="Community Edition" class="panel">
 <h1>🐝 Community Edition</h1>
 <a href="Talk-A-Bee-Library.html">📚 Library</a>
 <a href="Talk-A-Bee-City-Bus-Adventure.html">🚌 City Bus Adventure</a>

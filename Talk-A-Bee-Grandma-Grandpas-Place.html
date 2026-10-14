@@ -1,314 +1,18 @@
-<!doctype html>
+<!DOCTYPE html>
+
 <html lang="en"><head>
-<meta charset="utf-8">
-<meta content="width=device-width,initial-scale=1" name="viewport">
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
 <title>Talk A Bee — Grandma &amp; Grandpa's Place</title>
-<style>
-*{box-sizing:border-box}
-html,body{margin:0;width:100%;height:100%;overflow:hidden;font-family:Arial,Helvetica,sans-serif;background:#17243a;color:#15223a}
-button,select{font:inherit}
-#homeWorld{position:fixed;inset:0;overflow:hidden;background:#17243a}
-.home-scene{position:absolute;inset:0;width:100vw;height:100vh;overflow:hidden;background-image:url("images/grandma-grandpas-place.jpg");background-size:cover;background-position:center center;background-repeat:no-repeat}
-.scene-main-image{display:none!important}
-.scene-hotspots{position:absolute;inset:0;z-index:20;pointer-events:none}
-.home-hotspot{display:none;position:absolute;transform:translate(-50%,-50%);width:52px;height:52px;border:0;border-radius:50%;background:rgba(255,255,255,.08);color:transparent;cursor:pointer;pointer-events:auto}
-.home-hotspot.show{display:block}
-.home-hotspot.show:hover,.home-hotspot.show:focus-visible{outline:3px solid rgba(255,255,255,.95);background:rgba(50,190,180,.28)}
-
-.activity-panel{position:absolute;z-index:60;left:18px;top:18px;bottom:18px;width:270px;padding:14px;border-radius:28px;overflow-y:auto;scrollbar-width:none;background:rgba(13,25,45,.28);border:1px solid rgba(255,255,255,.28);box-shadow:0 12px 30px rgba(0,0,0,.18);backdrop-filter:blur(8px)}
-.activity-panel::-webkit-scrollbar{display:none}
-.activity-back,.activity-peek,.home-nav,.home-challenge-nav{width:100%;border:1px solid rgba(255,255,255,.18);border-radius:15px;background:rgba(20,30,48,.40);color:#fff;font-weight:900;text-align:left;padding:10px 11px;margin:3px 0;cursor:pointer;text-shadow:0 1px 2px #0006}
-.activity-back,.activity-peek{padding:12px}
-.activity-place{font-size:25px;line-height:1.05;color:#fff;font-weight:950;margin:10px 7px 14px;text-shadow:0 2px 4px #0008}
-.activity-label{font-size:11px;letter-spacing:.16em;color:#fff;font-weight:950;margin:12px 7px 5px}
-.activity-divider{height:1px;background:#ffffff35;margin:10px 2px}
-.home-nav.active,.home-challenge-nav.active{background:rgba(22,163,157,.86)}
-.home-challenge-nav.done{box-shadow:inset 0 0 0 2px rgba(90,220,160,.7)}
-.home-control-label{display:block;color:#fff;font-size:10px;font-weight:950;letter-spacing:.08em;margin:6px 6px 3px;text-transform:uppercase}
-.home-control-select{width:100%;padding:9px 10px;margin-bottom:5px;border:0;border-radius:12px;background:rgba(255,255,255,.92);color:#26334b;font-weight:850}
-
-.home-panel{position:absolute;z-index:50;right:24px;bottom:22px;width:455px;padding:13px 15px;border-radius:22px;background:rgba(247,242,232,.14);border:1px solid rgba(255,255,255,.30);box-shadow:0 9px 24px rgba(0,0,0,.10);backdrop-filter:blur(4px)}
-.home-kicker{font-size:10px;letter-spacing:.16em;font-weight:950;color:#9b612e;margin-bottom:3px}
-.home-panel h2{font-size:20px;line-height:1.06;margin:2px 0 4px}
-.home-panel p{font-size:13px;line-height:1.22;margin:3px 0 7px}
-.home-wordline{display:flex;gap:6px;flex-wrap:wrap;padding:7px;margin:6px 0;border-radius:15px;background:rgba(255,255,255,.16)}
-.home-word{border:1px solid #ffffff80;border-radius:12px;background:rgba(255,255,255,.84);color:#17243a;font-size:15px;font-weight:900;padding:8px 10px;cursor:pointer}
-.home-word.speaking{outline:3px solid #5f46e8}
-.home-translation{font-size:13px;font-weight:850;margin:5px 0}
-.home-actions{display:flex;gap:6px;flex-wrap:wrap;margin-top:6px}
-.home-actions button,.home-nextphrase,.home-challenge-next{border:0;border-radius:13px;background:rgba(255,255,255,.90);color:#423768;font-weight:900;padding:8px 10px;cursor:pointer}
-.home-actions .primary{background:#6144e5;color:#fff}
-.home-nextrow{display:flex;align-items:center;justify-content:space-between;margin-top:7px}
-.home-progress{font-size:11px;font-weight:900;color:#fff;text-shadow:0 1px 2px #0007}
-.home-list{display:none}
-.home-find{display:none;margin-top:7px;padding:10px;border-radius:14px;background:rgba(255,255,255,.28)}
-.home-find.show{display:block}
-.home-challenge-count{font-size:10px;font-weight:950;letter-spacing:.12em}
-.home-find-status{font-weight:900;margin-top:5px}
-.challenge-next-hint{font-size:11px;margin:5px 0}
-.home-challenge-next{display:none}.home-challenge-next.show{display:inline-block}
-
-
-.activity-restore{display:none;position:absolute;z-index:80;left:18px;top:18px;border:1px solid #ffffff60;border-radius:15px;padding:11px 14px;background:rgba(15,25,42,.48);color:#fff;font-weight:900;cursor:pointer;backdrop-filter:blur(7px)}
-#homeWorld.activity-collapsed .activity-panel{display:none}
-#homeWorld.activity-collapsed .home-panel{display:none}
-#homeWorld.activity-collapsed .activity-restore{display:block}
-
-@media(max-width:850px){
- .activity-panel{width:240px}
- .home-panel{width:390px;right:12px;bottom:12px}
-}
-</style>
-<style id="grandparents-direct-viewport-background">
-html,body,#homeWorld,#homeScene{
-  width:100vw!important;height:100vh!important;
-  min-width:100vw!important;min-height:100vh!important;
-  max-width:none!important;max-height:none!important;
-  margin:0!important;padding:0!important;
-}
-#homeWorld{position:fixed!important;inset:0!important;overflow:hidden!important}
-#homeScene{
-  position:absolute!important;inset:0!important;
-  background-image:url("images/grandma-grandpas-place.jpg")!important;
-  background-size:cover!important;
-  background-position:center center!important;
-  background-repeat:no-repeat!important;
-}
-#homeSceneImage{display:none!important}
-</style>
-<style id="talkabee-forward-arrow-style">
-.talkabee-forward-arrow{position:fixed;top:22px;right:24px;z-index:120;width:62px;height:62px;border-radius:50%;border:2px solid rgba(255,255,255,.82);background:rgba(91,58,31,.16);box-shadow:0 5px 16px rgba(0,0,0,.12);backdrop-filter:blur(2px);display:grid;place-items:center;text-decoration:none;cursor:pointer;transition:background .16s ease,transform .16s ease}
-.talkabee-forward-arrow:hover{background:rgba(91,58,31,.24);transform:scale(1.04)}
-.talkabee-forward-arrow::before{content:"";width:17px;height:17px;border-top:5px solid #fff;border-right:5px solid #fff;transform:rotate(45deg) translate(-2px,2px);filter:drop-shadow(0 1px 2px rgba(0,0,0,.35))}
-</style>
-<style id="grandparents-auto-discovery-locked-template">
-.home-hotspot{display:block!important;pointer-events:auto!important;cursor:pointer!important;opacity:0!important;background:transparent!important;outline:none!important;animation:none!important}
-.home-hotspot:hover,.home-hotspot:focus-visible{opacity:1!important;background:rgba(50,190,180,.22)!important;outline:3px solid rgba(255,255,255,.95)!important}
-</style>
-<style id="talkabee-prev-next-nav-style">
-/* Talk A Bee standard compact Previous / Next navigation. */
-.talkabee-prev-next-nav{position:fixed;top:18px;right:22px;z-index:2147483000;display:flex;align-items:center;overflow:hidden;border:2px solid rgba(255,255,255,.82);border-radius:999px;background:rgba(11,22,42,.24);box-shadow:0 5px 16px rgba(0,0,0,.16);backdrop-filter:blur(3px);-webkit-backdrop-filter:blur(3px)}
-.talkabee-prev-next-nav a{width:48px;height:48px;display:grid;place-items:center;text-decoration:none;color:#fff;font:900 38px/1 Arial,sans-serif;text-shadow:0 1px 3px rgba(0,0,0,.42);transition:background .15s ease,transform .15s ease}
-.talkabee-prev-next-nav a+a{border-left:1px solid rgba(255,255,255,.36)}
-.talkabee-prev-next-nav a:hover,.talkabee-prev-next-nav a:focus-visible{background:rgba(255,255,255,.18);outline:none}
-.talkabee-prev-next-nav a:active{transform:scale(.94)}
-@media(max-width:720px){.talkabee-prev-next-nav{top:12px;right:12px}.talkabee-prev-next-nav a{width:42px;height:42px;font-size:33px}}
-</style>
-<style id="talkabee-literal-master-template">
-/* ONE literal Talk A Bee Adventure shell. Legacy classes remain only as JS hooks. */
-.tab-master-panel,.tab-master-panel *,.tab-master-card,.tab-master-card *{box-sizing:border-box}
-.tab-master-panel{
- position:fixed!important;left:16px!important;top:16px!important;bottom:16px!important;right:auto!important;
- width:195px!important;min-width:195px!important;max-width:195px!important;height:auto!important;max-height:none!important;
- margin:0!important;padding:14px!important;overflow-x:hidden!important;overflow-y:auto!important;
- transform:none!important;scale:1!important;zoom:1!important;opacity:1!important;
- border-radius:20px!important;border:1px solid rgba(255,255,255,.28)!important;
- background:rgba(7,23,39,.31)!important;box-shadow:0 12px 30px rgba(0,0,0,.24)!important;
- backdrop-filter:blur(3px)!important;-webkit-backdrop-filter:blur(3px)!important;color:#fff!important;z-index:1000!important;
- font-family:Arial,Helvetica,sans-serif!important;font-size:12px!important;line-height:1.16!important;
-}
-.tab-master-panel .place,.tab-master-panel h1,.tab-master-panel .title{font-size:19px!important;line-height:1.08!important;font-weight:900!important;color:#fff!important;margin:4px 0 10px!important;text-shadow:0 2px 4px rgba(0,0,0,.55)!important}
-.tab-master-panel .label,.tab-master-panel label{font-size:9.5px!important;line-height:1.1!important;letter-spacing:.09em!important;font-weight:900!important;color:#fff!important;margin:9px 0 4px!important}
-.tab-master-panel button,.tab-master-panel select,.tab-master-panel a{
- width:100%!important;max-width:100%!important;min-height:34px!important;height:auto!important;margin:4px 0!important;padding:8px 9px!important;
- border-radius:12px!important;border:1px solid rgba(255,255,255,.38)!important;background:rgba(7,32,50,.54)!important;color:#fff!important;
- font:800 12px/1.16 Arial,Helvetica,sans-serif!important;text-align:left!important;text-decoration:none!important;white-space:normal!important;
- transform:none!important;box-shadow:none!important;
-}
-.tab-master-panel select{white-space:nowrap!important;text-overflow:ellipsis!important;overflow:hidden!important}
-.tab-master-panel button:hover,.tab-master-panel a:hover{background:rgba(20,58,79,.70)!important}
-.tab-master-panel .active,.tab-master-panel button.active{background:rgba(78,69,219,.74)!important;color:#fff!important}
-.tab-master-card{
- position:fixed!important;left:50%!important;right:auto!important;bottom:16px!important;top:auto!important;
- width:520px!important;min-width:520px!important;max-width:520px!important;height:auto!important;min-height:0!important;max-height:44vh!important;
- margin:0!important;padding:14px 16px!important;overflow:auto!important;transform:translateX(-50%)!important;scale:1!important;zoom:1!important;opacity:1!important;
- border-radius:20px!important;border:1px solid rgba(255,255,255,.30)!important;background:rgba(25,19,24,.14)!important;
- box-shadow:0 12px 30px rgba(0,0,0,.28)!important;backdrop-filter:blur(5px)!important;-webkit-backdrop-filter:blur(5px)!important;
- color:#fff!important;z-index:900!important;font-family:Arial,Helvetica,sans-serif!important;
-}
-.tab-master-card .kicker,.tab-master-card [class*="kicker"]{color:rgba(255,255,255,.94)!important;font-size:11px!important;line-height:1.1!important;font-weight:900!important;letter-spacing:.12em!important;text-shadow:0 1px 3px rgba(0,0,0,.78)!important;margin:0 0 7px!important}
-.tab-master-card h1,.tab-master-card h2{color:#fff!important;font-size:22px!important;line-height:1.08!important;margin:4px 0 7px!important;text-shadow:0 1px 3px rgba(0,0,0,.55)!important}
-.tab-master-card p,.tab-master-card .prompt,.tab-master-card .translation,.tab-master-card .tip{font-size:13px!important;line-height:1.25!important;margin:4px 0 7px!important;color:#fff!important}
-.tab-master-card .line,.tab-master-card .target,.tab-master-card #line,.tab-master-card #target{font-size:20px!important;line-height:1.12!important;font-weight:900!important;margin:7px 0!important;color:#fff!important}
-.tab-master-card .actions,.tab-master-card [class*="actions"]{display:flex!important;align-items:center!important;gap:8px!important;flex-wrap:nowrap!important;margin-top:8px!important}
-.tab-master-card .actions button,.tab-master-card [class*="actions"] button,.tab-master-card>button{width:auto!important;min-width:0!important;height:auto!important;padding:9px 13px!important;margin:0!important;border-radius:12px!important;font:900 13px/1 Arial,Helvetica,sans-serif!important;white-space:nowrap!important}
-@media(max-width:760px){.tab-master-panel{left:10px!important;top:10px!important;bottom:10px!important;width:190px!important;min-width:190px!important;max-width:190px!important;padding:11px!important}.tab-master-card{width:min(520px,calc(100vw - 24px))!important;min-width:0!important;bottom:10px!important;padding:12px!important}}
-</style>
-<style id="tab-spoken-phrase-readability">
-/* Locked spoken-language phrase treatment: gray field + white type. */
-.tab-master-card #line,
-.tab-master-card .line,
-.tab-master-card .words {
-  background:rgba(88,88,88,.72)!important;
-  color:#fff!important;
-  border:1px solid rgba(255,255,255,.20)!important;
-  border-radius:14px!important;
-  text-shadow:0 1px 2px rgba(0,0,0,.55)!important;
-}
-.tab-master-card #line *,
-.tab-master-card .line *,
-.tab-master-card .words * {color:#fff!important;}
-</style>
-<style id="grandparents-current-component-cleanup">
-/* Grandma & Grandpa now uses the current Talk A Bee visual components, not the old Lingo-era presentation. */
-.tab-master-panel{padding:14px!important;font-size:13px!important;line-height:1.18!important;}
-.tab-master-panel .activity-place{font-size:22px!important;line-height:1.05!important;margin:4px 0 12px!important;}
-.tab-master-panel .activity-label,.tab-master-panel .home-control-label{font-size:11px!important;letter-spacing:.10em!important;margin:10px 0 5px!important;}
-.tab-master-panel button,.tab-master-panel select,.tab-master-panel a{min-height:38px!important;padding:9px 10px!important;font:800 13px/1.16 Arial,Helvetica,sans-serif!important;margin:4px 0!important;}
-.tab-master-panel .activity-divider{margin:9px 2px!important;}
-.tab-master-card .home-wordline{display:block!important;padding:11px 13px!important;margin:7px 0!important;font-size:20px!important;line-height:1.15!important;font-weight:900!important;color:#fff!important;}
-.tab-master-card .home-actions{display:flex!important;gap:8px!important;flex-wrap:nowrap!important;}
-.tab-master-card .home-actions button{flex:1 1 0!important;text-align:center!important;}
-.tab-master-card .home-nextrow{gap:10px!important;}
-.tab-master-card .home-nextphrase{white-space:nowrap!important;}
-</style>
-<style id="talkabee-readable-supporting-text">
-/* Readability-only repair. Existing links, navigation, JS, hotspots and audio are untouched. */
-.tab-master-card p,
-.tab-master-card .prompt,
-.tab-master-card #prompt,
-.tab-master-card .instruction,
-.tab-master-card .instructions,
-.tab-master-card .hint,
-.tab-master-card #hint,
-.tab-master-card .translation,
-.tab-master-card #translation,
-.tab-master-card .english,
-.tab-master-card [class*="subtitle"],
-.tab-master-card [class*="instruction"],
-.tab-master-card [class*="prompt"],
-.tab-master-card [class*="translation"],
-.tab-master-card [class*="hint"],
-.tab-master-card [class*="status"],
-.animal-lesson-card p,
-.animal-lesson-card .prompt,
-.animal-lesson-card .instruction,
-.animal-lesson-card .translation,
-.animal-lesson-card .hint {
-  font-size:18px !important;
-  line-height:1.35 !important;
-}
-
-/* Small location/progress/counter lines also need to be readable. */
-.tab-master-card .eyebrow,
-.tab-master-card .kicker,
-.tab-master-card .overline,
-.tab-master-card .location,
-.tab-master-card .activity-count,
-.tab-master-card .challenge-count,
-.tab-master-card [class*="count"],
-.animal-lesson-card .eyebrow,
-.animal-lesson-card [class*="count"] {
-  font-size:15px !important;
-  line-height:1.25 !important;
-  font-weight:800 !important;
-}
-
-/* Spoken/foreign-language line stays visually strongest. */
-.tab-master-card #line,
-.tab-master-card .line,
-.tab-master-card .train-line,
-.tab-master-card .words,
-.tab-master-card [class*="phrase"],
-.animal-lesson-card #line,
-.animal-lesson-card .line,
-.animal-lesson-card [class*="phrase"] {
-  font-size:22px !important;
-  line-height:1.28 !important;
-  font-weight:800 !important;
-}
-
-/* Let increased text wrap naturally instead of being clipped. */
-.tab-master-card,
-.animal-lesson-card {
-  height:auto !important;
-}
-</style>
-<link href="images/PNG/talkabee-favicon.png" rel="icon" type="image/png">
-<link href="images/PNG/talkabee-favicon.png" rel="shortcut icon" type="image/png">
-<style id="talkabee-edition-menu-style">
-.talkabee-editions{position:fixed;top:16px;left:50%;transform:translateX(-50%);z-index:2147482998;font-family:Arial,sans-serif}
-.talkabee-editions details{position:relative}
-.talkabee-editions summary{list-style:none;cursor:pointer;border:1px solid rgba(255,255,255,.55);border-radius:999px;padding:10px 15px;background:rgba(7,23,39,.62);color:#fff;font-size:13px;font-weight:900;white-space:nowrap;box-shadow:0 8px 24px rgba(0,0,0,.22);backdrop-filter:blur(7px);-webkit-backdrop-filter:blur(7px)}
-.talkabee-editions summary::-webkit-details-marker{display:none}
-.talkabee-editions .edition-row{position:absolute;top:calc(100% + 8px);left:50%;transform:translateX(-50%);display:flex;gap:6px;padding:8px;border:1px solid rgba(255,255,255,.4);border-radius:15px;background:rgba(7,23,39,.80);box-shadow:0 12px 32px rgba(0,0,0,.28);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);white-space:nowrap}
-.talkabee-editions .edition-row a{display:block;padding:9px 11px;border-radius:10px;color:#fff;text-decoration:none;font-size:12px;font-weight:850;background:rgba(255,255,255,.07);transition:background .16s ease,box-shadow .16s ease,transform .16s ease,border-color .16s ease}
-.talkabee-editions .edition-row a:nth-child(1):hover,.talkabee-editions .edition-row a:nth-child(1):focus-visible{background:rgba(232,184,72,.28);box-shadow:inset 0 0 0 1px rgba(255,218,120,.36)}
-.talkabee-editions .edition-row a:nth-child(2):hover,.talkabee-editions .edition-row a:nth-child(2):focus-visible{background:rgba(67,181,164,.27);box-shadow:inset 0 0 0 1px rgba(122,224,207,.34)}
-.talkabee-editions .edition-row a:nth-child(3):hover,.talkabee-editions .edition-row a:nth-child(3):focus-visible{background:rgba(75,158,216,.28);box-shadow:inset 0 0 0 1px rgba(132,200,246,.34)}
-.talkabee-editions .edition-row a:nth-child(4):hover,.talkabee-editions .edition-row a:nth-child(4):focus-visible{background:rgba(83,166,103,.28);box-shadow:inset 0 0 0 1px rgba(139,215,157,.34)}
-.talkabee-editions .edition-row a:nth-child(5):hover,.talkabee-editions .edition-row a:nth-child(5):focus-visible{background:rgba(126,91,211,.31);box-shadow:inset 0 0 0 1px rgba(178,151,242,.36)}
-.talkabee-editions .edition-row a:nth-child(6):hover,.talkabee-editions .edition-row a:nth-child(6):focus-visible{background:rgba(211,107,91,.28);box-shadow:inset 0 0 0 1px rgba(245,157,143,.34)}
-.talkabee-editions .edition-row a:hover,.talkabee-editions .edition-row a:focus-visible{transform:translateY(-1px);outline:none}
-@media(max-width:900px){.talkabee-editions .edition-row{max-width:94vw;overflow-x:auto}}
-</style>
-
-<style id="talkabee-panel-size-controls">
-.tab-master-panel{
-  --tab-panel-scale:1;
-  width:195px!important;
-  min-width:195px!important;
-  max-width:195px!important;
-  background:rgba(13,25,45,.14)!important;
-}
-.tab-panel-size-controls{
-  display:flex!important;
-  align-items:center!important;
-  justify-content:center!important;
-  gap:10px!important;
-  margin:3px 0 11px!important;
-  width:100%!important;
-}
-.tab-panel-size-controls #tabPanelMinus,
-.tab-panel-size-controls #tabPanelPlus{
-  width:28px!important;
-  min-width:28px!important;
-  height:28px!important;
-  margin:0!important;
-  padding:0!important;
-  display:grid!important;
-  place-items:center!important;
-  border:0!important;
-  border-radius:8px!important;
-  background:transparent!important;
-  color:#fff!important;
-  box-shadow:none!important;
-  text-shadow:0 2px 4px rgba(0,0,0,.75)!important;
-  font:900 17px/1 Arial,sans-serif!important;
-  cursor:pointer!important;
-}
-.tab-panel-size-controls #tabPanelReset{
-  width:auto!important;
-  min-width:0!important;
-  height:28px!important;
-  margin:0!important;
-  padding:0 8px!important;
-  border:0!important;
-  border-radius:8px!important;
-  background:transparent!important;
-  color:#fff!important;
-  box-shadow:none!important;
-  text-shadow:0 2px 4px rgba(0,0,0,.75)!important;
-  font:900 9px/1 Arial,sans-serif!important;
-  cursor:pointer!important;
-}
-.tab-master-panel .activity-place,
-.tab-master-panel .place,
-.tab-master-panel h1,
-.tab-master-panel .title{font-size:calc(19px * var(--tab-panel-scale))!important}
-.tab-master-panel .activity-label,
-.tab-master-panel .label,
-.tab-master-panel label{font-size:calc(9.5px * var(--tab-panel-scale))!important}
-.tab-master-panel button:not(.tab-panel-size-controls button),
-.tab-master-panel select,
-.tab-master-panel a{font-size:calc(12px * var(--tab-panel-scale))!important}
-@media(max-width:760px){.tab-panel-size-controls{display:none!important}}
-</style>
-
-
-
-
-
+<link href="css/grandma-styles-01.css" rel="stylesheet"/>
+<link data-extracted-style="talkabee-prev-next-nav-style" href="css/talkabee-prev-next-nav-style.css" rel="stylesheet"/>
+<link href="css/talkabee-master-layout.css" rel="stylesheet"/>
+<link href="css/grandma-styles-02.css" rel="stylesheet"/>
+<link data-extracted-style="talkabee-readable-supporting-text" href="css/talkabee-readable-supporting-text.css" rel="stylesheet"/>
+<link href="images/PNG/talkabee-favicon.png" rel="icon" type="image/png"/>
+<link href="images/PNG/talkabee-favicon.png" rel="shortcut icon" type="image/png"/>
+<link data-extracted-style="talkabee-edition-menu-style" href="css/talkabee-edition-menu-style.css" rel="stylesheet"/>
+<link href="css/grandma-panel-size-controls.css" id="talkabee-panel-size-controls" rel="stylesheet"/>
 <script id="grandparents-nextphrase-row-script">
 document.addEventListener('DOMContentLoaded',function(){
  const card=document.querySelector('.tab-master-card');
@@ -319,103 +23,18 @@ document.addEventListener('DOMContentLoaded',function(){
 });
 </script>
 <!-- TALK A BEE HOTSPOTS VISUALLY RECERTIFIED AGAINST CURRENT SCENE ARTWORK: 2026-10-07 -->
+<link data-extracted-style="talkabee-bilingual-hotspot-popup-style" href="css/talkabee-bilingual-hotspot-popup-style.css" rel="stylesheet"/>
+<link data-migrated-style="talkabee-grandma-clickable-words" href="css/grandma-grandpa-talkabee-grandma-clickable-words.css" rel="stylesheet"/>
+<link href="css/grandma-rebuilt-script-card.css" id="talkabee-rebuilt-script-card" rel="stylesheet"/>
+<link data-migrated-style="talkabee-separate-challenge-card" href="css/grandma-grandpa-talkabee-separate-challenge-card.css" rel="stylesheet"/>
 
-<style id="talkabee-bilingual-hotspot-popup-style">
-#talkabee-object-popup{position:fixed;z-index:2147482900;display:none;padding:8px 12px;border-radius:12px;background:rgba(20,20,20,.82);color:white;font-weight:900;font-size:14px;pointer-events:none}
+
+<style id="talkabee-legacy-challenge-editor-style">
+#tb-challenge-panel{position:fixed;right:20px;top:18%;z-index:2147483647;width:min(345px,calc(100vw - 25px));max-height:75vh;overflow:auto;padding:0 14px 14px;background:#17243a;color:#fff;border:2px solid #c9ad75;border-radius:15px;box-shadow:0 12px 35px #0009;font:13px Arial,sans-serif;display:none}
+#tb-challenge-panel.open{display:block}#tb-challenge-drag{cursor:grab;touch-action:none;background:#354664;margin:0 -14px 12px;padding:12px 14px;border-radius:13px 13px 0 0;user-select:none}#tb-challenge-drag:active{cursor:grabbing}#tb-challenge-panel label{display:block;margin:10px 0 4px;font-weight:bold}#tb-challenge-panel input,#tb-challenge-panel select{display:block;width:100%;padding:8px;border-radius:7px;border:1px solid #aaa;color:#111;background:white}#tb-challenge-panel button{margin-top:12px;padding:8px 11px;border:1px solid white;border-radius:9px;background:#111;color:white;cursor:pointer}#tb-challenge-panel small{opacity:.8}
 </style>
-
-
-<style id="talkabee-grandma-clickable-words">
-/* One continuous phrase visually, individual accessible spoken-word buttons. */
-#homeWorld .home-panel #homeWordline{display:flex!important;flex-wrap:wrap!important;align-items:baseline!important;gap:0 .25em!important;}
-#homeWorld .home-panel #homeWordline .home-word{
- appearance:none!important;border:0!important;border-radius:6px!important;
- background:transparent!important;color:#fff!important;
- font:inherit!important;font-size:inherit!important;font-weight:900!important;
- line-height:inherit!important;padding:0 2px!important;margin:0!important;
- cursor:pointer!important;text-shadow:0 2px 3px rgba(0,0,0,.7)!important;
-}
-#homeWorld .home-panel #homeWordline .home-word:hover,
-#homeWorld .home-panel #homeWordline .home-word:focus-visible,
-#homeWorld .home-panel #homeWordline .home-word.speaking{
- background:rgba(255,220,80,.35)!important;outline:2px solid #ffe69c!important;
-}
-</style>
-
-
-
-
-<style id="talkabee-rebuilt-script-card">
-/* REBUILT SCRIPT CARD — one stable size and one drag controller. */
-#homeWorld .home-panel.tab-master-card {
- position:fixed!important;top:auto!important;left:auto!important;right:22px!important;bottom:18px!important;
- transform:none!important;transform-origin:top left!important;
- box-sizing:border-box!important;width:520px!important;min-width:0!important;max-width:calc(100vw - 245px)!important;
- height:auto!important;min-height:0!important;max-height:none!important;overflow:visible!important;
- padding:14px 16px!important;border-radius:20px!important;
- background:rgba(25,19,24,.20)!important;backdrop-filter:blur(2px)!important;
- color:white!important;cursor:grab!important;touch-action:none;
-}
-#homeWorld .home-panel.tab-master-card.tab-user-moved {right:auto!important;bottom:auto!important;}
-#homeWorld .home-panel .tab-card-tools {display:flex!important;align-items:center!important;gap:6px!important;margin:0 0 8px!important;}
-#homeWorld .home-panel .tab-card-drag {margin-right:auto!important;font:700 12px Arial,sans-serif!important;cursor:grab!important;}
-#homeWorld .home-panel .tab-card-tools button {font:700 12px Arial,sans-serif!important;min-height:28px!important;padding:5px 9px!important;}
-#homeWorld .home-panel .home-kicker {font-size:11px!important;line-height:1.2!important;margin:0 0 5px!important;}
-#homeWorld .home-panel #homeTitle {font-size:22px!important;line-height:1.18!important;margin:0 0 6px!important;}
-#homeWorld .home-panel #homePrompt {font-size:20px!important;line-height:1.3!important;margin:4px 0 8px!important;}
-#homeWorld .home-panel #homeWordline {font-size:21px!important;line-height:1.24!important;padding:10px 12px!important;margin:8px 0!important;background:rgba(88,88,88,.72)!important;color:white!important;}
-#homeWorld .home-panel #homeTranslation {font-size:20px!important;line-height:1.25!important;margin:4px 0 7px!important;}
-#homeWorld .home-panel .home-actions {display:flex!important;gap:6px!important;flex-wrap:nowrap!important;align-items:center!important;margin:8px 0 4px!important;}
-#homeWorld .home-panel .home-actions button {font-size:13px!important;line-height:1.2!important;padding:8px 7px!important;min-height:34px!important;flex:1 1 0!important;min-width:0!important;white-space:nowrap!important;}
-#homeWorld .home-panel .home-nextrow {display:flex!important;margin-top:5px!important;}
-#homeWorld .home-panel #homeProgress {font-size:13px!important;}
-#homeWorld .home-panel #homeFindPrompt,#homeWorld .home-panel #homeFindStatus {font-size:16px!important;line-height:1.3!important;}
-#homeWorld .home-panel #homeChallengeCount {font-size:12px!important;}
-#homeWorld .home-panel .home-list {max-height:none!important;overflow:visible!important;}
-#homeWorld .home-panel.tab-master-card .tab-card-resize {
- display:grid!important;place-items:center!important;
- position:absolute!important;right:3px!important;bottom:3px!important;
- width:24px!important;height:24px!important;
- color:#fff!important;background:rgba(30,25,36,.30)!important;
- border-radius:0 0 14px 0!important;font:900 18px/1 Arial,sans-serif!important;
- cursor:nwse-resize!important;touch-action:none!important;user-select:none!important;
- z-index:4!important;
-}
-@media(max-width:760px){#homeWorld .home-panel.tab-master-card .tab-card-resize{display:none!important;}}
-@media(max-width:760px){
- #homeWorld .home-panel.tab-master-card {right:12px!important;bottom:12px!important;width:calc(100vw - 24px)!important;max-width:calc(100vw - 24px)!important;max-height:none!important;overflow:visible!important;}
- #homeWorld .home-panel .home-actions {flex-wrap:wrap!important;}
- #homeWorld .home-panel .home-actions button {flex:1 1 42%!important;}
-}
-</style>
-<style id="talkabee-separate-challenge-card">
-/* Separate compact challenge box, independent from the script/lesson card. */
-#homeWorld.challenge-mode .home-scene > .home-panel.tab-master-card {display:none!important;}
-#homeWorld .home-scene > #homeFind {display:none!important;}
-#homeWorld.challenge-mode .home-scene > #homeFind.show {
- display:block!important;position:fixed!important;right:22px!important;bottom:24px!important;
- top:auto!important;left:auto!important;width:420px!important;max-width:calc(100vw - 245px)!important;
- box-sizing:border-box!important;margin:0!important;padding:16px 18px!important;
- border-radius:18px!important;background:rgba(25,19,24,.20)!important;
- backdrop-filter:blur(2px)!important;border:1px solid rgba(255,255,255,.35)!important;
- color:#fff!important;box-shadow:0 6px 20px rgba(0,0,0,.18)!important;
- z-index:30!important;font-size:17px!important;line-height:1.35!important;
-}
-#homeWorld.challenge-mode .home-scene > #homeFind.show:before {
- content:"FIND IT CHALLENGE";display:block;font-size:13px;font-weight:900;
- letter-spacing:1.4px;margin-bottom:12px;color:white;
-}
-#homeWorld.challenge-mode #homeFindPrompt {font-size:20px!important;font-weight:800!important;line-height:1.3!important;}
-#homeWorld.challenge-mode #homeFindStatus {font-size:17px!important;}
-#homeWorld.challenge-mode #challengeNextHint {font-size:13px!important;margin:10px 0!important;}
-#homeWorld.challenge-mode #homeChallengeNext {margin-top:10px!important;}
-@media(max-width:760px){
- #homeWorld.challenge-mode .home-scene > #homeFind.show {right:12px!important;bottom:12px!important;width:calc(100vw - 24px)!important;max-width:calc(100vw - 24px)!important;}
-}
-</style>
-
-
-</head>
+<link href="css/talkabee-enhanced-voice.css" rel="stylesheet">
+</link></head>
 <body class="talkabee-world-open">
 <div class="talkabee-editions">
 <details>
@@ -433,18 +52,15 @@ document.addEventListener('DOMContentLoaded',function(){
 <nav aria-label="Adventure navigation" class="talkabee-prev-next-nav"><a aria-label="Previous page" href="index.html" title="Previous">‹</a><a aria-label="Next page" href="Talk-A-Bee-Shopping-Market-Adventure.html" title="Next">›</a></nav>
 <main aria-label="Grandma and Grandpa's Place" class="open" id="homeWorld">
 <div class="home-scene" id="homeScene">
-<img alt="" aria-hidden="true" class="scene-main-image" id="homeSceneImage" src="images/grandma-grandpas-place.jpg">
+<img alt="" aria-hidden="true" class="scene-main-image" id="homeSceneImage" src="images/grandma-grandpas-place.jpg"/>
 <div class="scene-hotspots" id="homeHotspots">
-<button aria-label="Grandma" class="home-hotspot show" data-object="grandma" style="left:34.4%;top:60.3%;width:7.2%;height:43%;" type="button" data-sound="sounds/Grandma-Cathy.mp3"></button>
-<button aria-label="Grandpa" class="home-hotspot show" data-object="grandpa" style="left:40.0%;top:59.8%;width:7.3%;height:44%;" type="button" data-sound="sounds/grandpa-main-intro.mp3"></button>
+<button aria-label="Grandma" class="home-hotspot show" data-object="grandma" data-sound="sounds/Grandma-Cathy.mp3" style="left:34.4%;top:60.3%;width:7.2%;height:43%;" type="button"></button>
+<button aria-label="Grandpa" class="home-hotspot show" data-object="grandpa" data-sound="sounds/grandpa-main-intro.mp3" style="left:40.0%;top:59.8%;width:7.3%;height:44%;" type="button"></button>
 <button aria-label="Girl" class="home-hotspot show" data-object="girl" style="left:85.0%;top:56.0%;width:5.6%;height:13.5%;" type="button"></button>
 <button aria-label="Boy" class="home-hotspot show" data-object="boy" style="left:80.0%;top:56.0%;width:5.7%;height:13.5%;" type="button"></button>
-
-<button aria-label="Dog" class="home-hotspot show" data-object="dog" style="left: 27.15%; top: 71.36%; width: 8%; height: 22%;" type="button" data-sound="sounds/dog-panting.wav"></button>
-<button aria-label="RV" class="home-hotspot show" data-object="rv" style="left: 32%; top: 32.72%; width: 25.5%; height: 17%;" type="button" data-sound="sounds/Blues.mp3"></button>
+<button aria-label="Dog" class="home-hotspot show" data-object="dog" data-sound="sounds/dog-panting.wav" style="left: 27.15%; top: 71.36%; width: 8%; height: 22%;" type="button"></button>
+<button aria-label="RV" class="home-hotspot show" data-object="rv" data-sound="sounds/Blues.mp3" style="left: 32%; top: 32.72%; width: 25.5%; height: 17%;" type="button"></button>
 <button aria-label="Solar panels" class="home-hotspot show" data-object="solar" style="left:35.0%;top:25.0%;width:10.0%;height:5.0%;" type="button"></button>
-
-
 <button aria-label="Lake" class="home-hotspot show" data-object="lake" style="left: 74.14%; top: 43.15%; width: 20%; height: 9%;" type="button"></button>
 <button aria-label="Mountains" class="home-hotspot show" data-object="mountains" style="left:64.0%;top:27.0%;width:36.0%;height:17.0%;" type="button"></button>
 <button aria-label="Trees" class="home-hotspot show" data-object="trees" style="left:56.0%;top:34.0%;width:10.0%;height:31.0%;" type="button"></button>
@@ -453,13 +69,11 @@ document.addEventListener('DOMContentLoaded',function(){
 <button aria-label="Birdhouse" class="home-hotspot show" data-object="birdhouse" style="left:98.0%;top:21.0%;width:4.0%;height:11.0%;" type="button"></button>
 <button aria-label="Bird" class="home-hotspot show" data-object="bird" style="left: 52.06%; top: 45.28%; width: 4%; height: 7%;" type="button"></button>
 <button aria-label="Red bird" class="home-hotspot show" data-object="redbird" style="left:98.0%;top:31.0%;width:4.0%;height:9.0%;" type="button"></button>
-
 <button aria-label="Hat" class="home-hotspot show" data-object="hat" style="left:39.0%;top:39.5%;width:6.0%;height:7.0%;" type="button"></button>
 <button aria-label="Bird feeder" class="home-hotspot show" data-object="birdfeeder" style="left:87.0%;top:20.0%;width:6.0%;height:13.0%;" type="button"></button>
-
-<button type="button" class="home-hotspot show" data-object="boat" data-word="boat" aria-label="Boat" data-tb-en="boat" data-tb-es="bote" data-tb-fr="bateau" data-tb-de="Boot" data-tb-it="barca" data-tb-pt="barco" data-tb-no="båt" style="width: 6%; height: 8%; left: 87.6%; top: 46.48%;"></button><button type="button" class="home-hotspot show" data-object="fire pit" data-word="fire pit" aria-label="Fire Pit" data-tb-en="fire pit" data-tb-es="pozo de fuego" data-tb-fr="foyer" data-tb-de="Feuerstelle" data-tb-it="pozzo del fuoco" data-tb-pt="fogueira" data-tb-no="ildsted" style="width: 6%; height: 8%; left: 73.49%; top: 61.76%;" data-sound="sounds/fire.mp3"></button><button type="button" class="home-hotspot show" data-object="guitar" data-word="guitar" aria-label="Guitar" data-tb-en="guitar" data-tb-es="guitarra" data-tb-fr="guitare" data-tb-de="Gitarre" data-tb-it="chitarra" data-tb-pt="guitarra" data-tb-no="gitar" style="width: 7.67%; height: 11.43%; left: 67.97%; top: 54.72%;" data-sound="sounds/guitar3.mp3"></button></div>
+<button aria-label="Boat" class="home-hotspot show" data-object="boat" data-tb-de="Boot" data-tb-en="boat" data-tb-es="bote" data-tb-fr="bateau" data-tb-it="barca" data-tb-no="båt" data-tb-pt="barco" data-word="boat" style="width: 6%; height: 8%; left: 87.6%; top: 46.48%;" type="button"></button><button aria-label="Fire Pit" class="home-hotspot show" data-object="fire pit" data-sound="sounds/fire.mp3" data-tb-de="Feuerstelle" data-tb-en="fire pit" data-tb-es="pozo de fuego" data-tb-fr="foyer" data-tb-it="pozzo del fuoco" data-tb-no="ildsted" data-tb-pt="fogueira" data-word="fire pit" style="width: 6%; height: 8%; left: 73.49%; top: 61.76%;" type="button"></button><button aria-label="Guitar" class="home-hotspot show" data-object="guitar" data-sound="sounds/guitar3.mp3" data-tb-de="Gitarre" data-tb-en="guitar" data-tb-es="guitarra" data-tb-fr="guitare" data-tb-it="chitarra" data-tb-no="gitar" data-tb-pt="guitarra" data-word="guitar" style="width: 7.67%; height: 11.43%; left: 67.97%; top: 54.72%;" type="button"></button></div>
 <aside aria-label="Grandma and Grandpa activity menu" class="activity-panel home-directory tab-master-panel" style="width: 210px !important; min-width: 210px !important; max-width: 210px !important; --tab-panel-scale: 1.077;">
-<div class="activity-place">🏡 Grandma<br>&amp; Grandpa’s<br>Place</div>
+<div class="activity-place">🏡 Grandma<br/>&amp; Grandpa’s<br/>Place</div>
 <div aria-label="Activity panel size" class="tab-panel-size-controls">
 <button aria-label="Make activity panel smaller" class="tab-panel-minus" id="tabPanelMinus" title="Make activity panel smaller" type="button">−</button>
 <button class="tab-panel-reset" id="tabPanelReset" title="Reset activity panel size" type="button">Reset</button>
@@ -497,16 +111,16 @@ document.addEventListener('DOMContentLoaded',function(){
 <button class="activity-restore" id="activityRestore" type="button">☰ Return Panel</button>
 <section aria-label="Lesson script card" class="home-panel tab-master-card">
 <div aria-label="Script card controls" class="tab-card-tools">
-<span class="tab-card-drag" aria-hidden="true"></span>
-<button class="tab-card-font-down" id="tabCardFontDown" title="Decrease text" type="button" style="font-size: 12px !important;">A−</button>
-<button class="tab-card-font-up" id="tabCardFontUp" title="Increase text" type="button" style="font-size: 12px !important;">A+</button>
-<button class="tab-card-reset" id="tabCardReset" title="Reset card" type="button" style="font-size: 12px !important;">Reset</button>
+<span aria-hidden="true" class="tab-card-drag"></span>
+<button class="tab-card-font-down" id="tabCardFontDown" style="font-size: 12px !important;" title="Decrease text" type="button">A−</button>
+<button class="tab-card-font-up" id="tabCardFontUp" style="font-size: 12px !important;" title="Increase text" type="button">A+</button>
+<button class="tab-card-reset" id="tabCardReset" style="font-size: 12px !important;" title="Reset card" type="button">Reset</button>
 </div>
 <div aria-label="Resize script card" class="tab-card-resize" id="tabCardResize" title="Drag to resize script card">↘</div>
 <div class="home-kicker" id="homeKicker" style="font-size: 11px !important;">CHARLA FAMILIAR</div>
 <h2 id="homeTitle" style="font-size: 17.6px !important;">Conoce a la abuela Cathy y al abuelo Wally.</h2>
 <p id="homePrompt" style="font-size: 16px !important;">Escucha una frase familiar y luego toca las palabras una por una.</p>
-<div class="home-wordline line" id="homeWordline" style="font-size: 16.8px !important;"><button type="button" class="home-word" aria-label="Hear Esta">Esta</button><button type="button" class="home-word" aria-label="Hear es">es</button><button type="button" class="home-word" aria-label="Hear mi">mi</button><button type="button" class="home-word" aria-label="Hear abuela">abuela.</button></div>
+<div class="home-wordline line" id="homeWordline" style="font-size: 16.8px !important;"><button aria-label="Hear Esta" class="home-word" type="button">Esta</button><button aria-label="Hear es" class="home-word" type="button">es</button><button aria-label="Hear mi" class="home-word" type="button">mi</button><button aria-label="Hear abuela" class="home-word" type="button">abuela.</button></div>
 <div class="home-translation" id="homeTranslation" style="font-size: 16px !important;">This is my grandmother.</div>
 <div class="home-actions" style="display: flex;">
 <button class="primary" id="homePlay" style="font-size: 13px !important;">🔊 Speak</button>
@@ -515,9 +129,9 @@ document.addEventListener('DOMContentLoaded',function(){
 <div class="home-nextrow" id="homeNextRow" style="display: flex;">
 <span class="home-progress" id="homeProgress" style="font-size: 13px !important;">Phrase 1 of 4</span>
 </div>
-<div class="home-list" id="homeList" style=""><button type="button" class="home-pick active"><strong>1. Esta es mi abuela.</strong><br><span style="font-size:12px;color:#737c91">This is my grandmother.</span></button><button type="button" class="home-pick"><strong>2. Este es mi abuelo.</strong><br><span style="font-size:12px;color:#737c91">This is my grandfather.</span></button><button type="button" class="home-pick"><strong>3. Mi abuela está en el jardín.</strong><br><span style="font-size:12px;color:#737c91">My grandmother is in the garden.</span></button><button type="button" class="home-pick"><strong>4. Mi abuelo alimenta a los pájaros.</strong><br><span style="font-size:12px;color:#737c91">My grandfather feeds the birds.</span></button></div>
+<div class="home-list" id="homeList" style=""><button class="home-pick active" type="button"><strong>1. Esta es mi abuela.</strong><br/><span style="font-size:12px;color:#737c91">This is my grandmother.</span></button><button class="home-pick" type="button"><strong>2. Este es mi abuelo.</strong><br/><span style="font-size:12px;color:#737c91">This is my grandfather.</span></button><button class="home-pick" type="button"><strong>3. Mi abuela está en el jardín.</strong><br/><span style="font-size:12px;color:#737c91">My grandmother is in the garden.</span></button><button class="home-pick" type="button"><strong>4. Mi abuelo alimenta a los pájaros.</strong><br/><span style="font-size:12px;color:#737c91">My grandfather feeds the birds.</span></button></div>
 </section>
-<div class="home-find" id="homeFind" data-challenge-drag-wired="1">
+<div class="home-find" data-challenge-drag-wired="1" id="homeFind">
 <div class="home-challenge-count" id="homeChallengeCount">CHALLENGE 5 OF 6</div>
 <div id="homeFindPrompt">Find: the dog — dog</div><div class="home-find-status" id="homeFindStatus" style="color: rgb(165, 255, 208);">✓ Correct! the dog</div>
 <div class="challenge-next-hint" id="challengeNextHint">Nice work! Continue when you are ready.</div>
@@ -838,70 +452,7 @@ Object.keys(extraDiscovery).forEach(lang=>{if(!languageData[lang].objects)langua
 </script>
 
 \n\n<!-- Talk A Bee global browser-voice bridge -->
-<script>
-(function(){
-  const GLOBAL_PREFIX='talkabee-voice-';
-  function controls(){
-    const selects=[...document.querySelectorAll('select')];
-    const voice=selects.find(s=>/voice/i.test((s.id||'')+' '+(s.name||'')+' '+(s.getAttribute('aria-label')||'')));
-    const language=selects.find(s=>/lang/i.test((s.id||'')+' '+(s.name||'')+' '+(s.getAttribute('aria-label')||'')));
-    return {language,voice};
-  }
-  function voices(){return ('speechSynthesis' in window)?(speechSynthesis.getVoices()||[]):[];}
-  function key(lang){return GLOBAL_PREFIX+lang;}
-  function selectedVoiceURI(sel){
-    if(!sel||!sel.value)return '';
-    const vs=voices(), opt=sel.options[sel.selectedIndex];
-    const raw=sel.value, label=(opt&&opt.textContent)||'';
-    let v=vs.find(x=>x.voiceURI===raw)||vs.find(x=>x.name===raw);
-    if(!v && label) v=vs.find(x=>label===x.name||label.startsWith(x.name+' —')||label.startsWith(x.name+' -'));
-    return v?v.voiceURI:'';
-  }
-  function restore(){
-    const {language,voice}=controls(); if(!language||!voice)return;
-    const saved=localStorage.getItem(key(language.value))||''; if(!saved)return;
-    const vs=voices(), target=vs.find(v=>v.voiceURI===saved); if(!target)return;
-    const opts=[...voice.options];
-    let opt=opts.find(o=>o.value===target.voiceURI)||opts.find(o=>o.value===target.name)||
-            opts.find(o=>o.textContent===target.name||o.textContent.startsWith(target.name+' —')||o.textContent.startsWith(target.name+' -'));
-    if(opt && voice.value!==opt.value){
-      voice.value=opt.value;
-      voice.dispatchEvent(new Event('change',{bubbles:true}));
-    }
-  }
-  function save(){
-    const {language,voice}=controls(); if(!language||!voice)return;
-    const uri=selectedVoiceURI(voice);
-    localStorage.setItem(key(language.value),uri);
-  }
-  function restoreLanguage(){
-    const {language}=controls(); if(!language)return;
-    const saved=localStorage.getItem('talkabee-learn-language')||'';
-    if(saved && [...language.options].some(o=>o.value===saved) && language.value!==saved){
-      language.value=saved;
-      language.dispatchEvent(new Event('change',{bubbles:true}));
-    }
-  }
-  function saveLanguage(){
-    const {language}=controls(); if(language) localStorage.setItem('talkabee-learn-language',language.value);
-  }
-  function bind(){
-    const {language,voice}=controls(); if(!language||!voice)return;
-    if(!voice.dataset.tabGlobalVoice){ voice.addEventListener('change',save); voice.dataset.tabGlobalVoice='1'; }
-    if(!language.dataset.tabGlobalVoice){
-      language.addEventListener('change',()=>{saveLanguage();setTimeout(restore,0);setTimeout(restore,120);setTimeout(restore,500)});
-      language.dataset.tabGlobalVoice='1';
-    }
-    restoreLanguage(); restore(); setTimeout(restore,120); setTimeout(restore,500); setTimeout(restore,1500);
-  }
-  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',bind);else bind();
-  if('speechSynthesis' in window){
-    const prior=speechSynthesis.onvoiceschanged;
-    speechSynthesis.onvoiceschanged=function(e){if(typeof prior==='function')prior.call(this,e);setTimeout(bind,0);setTimeout(restore,120)};
-  }
-})();
-</script>
-
+<script src="js/talkabee-global-voice-sync.js"></script>
 <script id="talkabee-panel-size-controls-js">
 (()=>{
  const panel=document.querySelector('.tab-master-panel');
@@ -966,7 +517,6 @@ document.addEventListener('click',function(ev){
 },true);
 })();
 </script>
-
 <script id="grandparents-scene-view-reset">
 (function(){
   function resetGrandparentsSceneView(){
@@ -981,58 +531,8 @@ document.addEventListener('click',function(ev){
   window.addEventListener('pageshow',resetGrandparentsSceneView);
 })();
 </script>
-<script id="talkabee-scene-view-safe-reset">
-(function(){
-  function resetTalkABeeSceneView(){
-    document.body.classList.remove('scene-view');
-    document.querySelectorAll('.scene-only').forEach(function(el){el.classList.remove('scene-only');});
-    document.querySelectorAll('.activity-collapsed').forEach(function(el){el.classList.remove('activity-collapsed');});
-    ['sceneView','sceneViewToggle'].forEach(function(id){var b=document.getElementById(id);if(b)b.setAttribute('aria-pressed','false');});
-  }
-  if(document.readyState==='loading') document.addEventListener('DOMContentLoaded',resetTalkABeeSceneView);
-  else resetTalkABeeSceneView();
-  window.addEventListener('pageshow',resetTalkABeeSceneView);
-})();
-</script>
-<script id="talkabee-bilingual-hotspot-popup">
-(function(){
- if(window.__talkabeeBilingualPopup)return; window.__talkabeeBilingualPopup=true;
- var pop=document.createElement('div');pop.id='talkabee-object-popup';document.body.appendChild(pop);var timer=0;
- function lang(){var s=document.getElementById('lang')||document.getElementById('adventureLanguage')||document.getElementById('language')||document.querySelector('select[id*="Language"],select[id*="language"]');var v=s&&s.value?s.value:'en';return v==='nb'?'no':v}
- function first(v){return Array.isArray(v)?String(v[0]??''):String(v??'')}
- function engval(v){return Array.isArray(v)?String((v.length>1&&v[1]?v[1]:v[0])??''):String(v??'')}
- function cleanEnglish(el,key){
-  var x=(el&&el.dataset&&(el.dataset.en||el.dataset.english||el.dataset.tbEn||el.dataset.name))||'';if(x)return String(x).replace(/^(the|a|an)\s+/i,'').trim();
-  try{if(typeof EN!=='undefined'&&EN[key])return engval(EN[key]).replace(/^(the|a|an)\s+/i,'').trim()}catch(e){}
-  try{if(typeof englishWords!=='undefined'&&englishWords[key])return engval(englishWords[key]).replace(/^(the|a|an)\s+/i,'').trim()}catch(e){}
-  try{if(typeof wordEN!=='undefined'&&wordEN[key])return engval(wordEN[key]).replace(/^(the|a|an)\s+/i,'').trim()}catch(e){}
-  try{if(typeof WORDS!=='undefined'&&WORDS.en&&!Array.isArray(WORDS.en)&&WORDS.en[key])return engval(WORDS.en[key]).replace(/^(the|a|an)\s+/i,'').trim()}catch(e){}
-  try{if(typeof WORDS7!=='undefined'&&WORDS7.en&&WORDS7.en[key])return engval(WORDS7.en[key]).replace(/^(the|a|an)\s+/i,'').trim()}catch(e){}
-  try{if(typeof LANGS!=='undefined'&&LANGS.en&&LANGS.en.words&&LANGS.en.words[key])return engval(LANGS.en.words[key]).replace(/^(the|a|an)\s+/i,'').trim()}catch(e){}
-  try{if(typeof words!=='undefined'&&words.en&&words.en[key])return engval(words.en[key]).replace(/^(the|a|an)\s+/i,'').trim()}catch(e){}
-  try{if(typeof languageData!=='undefined'&&languageData.en){if(languageData.en.objects&&languageData.en.objects[key])return engval(languageData.en.objects[key]).replace(/^(the|a|an)\s+/i,'').trim();if(languageData.en.words&&languageData.en.words[key])return engval(languageData.en.words[key]).replace(/^(the|a|an)\s+/i,'').trim()}}catch(e){}
-  try{if(typeof objects!=='undefined'&&objects.en&&objects.en[key])return engval(objects.en[key]).replace(/^(the|a|an)\s+/i,'').trim()}catch(e){}
-  try{if(typeof discoveryEnglish!=='undefined'&&discoveryEnglish[key])return engval(discoveryEnglish[key]).replace(/^(the|a|an)\s+/i,'').trim()}catch(e){}
-  try{if(typeof EXTRA_WORDS!=='undefined'&&EXTRA_WORDS.en&&EXTRA_WORDS.en[key])return engval(EXTRA_WORDS.en[key]).replace(/^(the|a|an)\s+/i,'').trim()}catch(e){}
-  return String(key||'').replace(/^(the|a|an)\s+/i,'').trim();
- }
- function lookup(el,key,l){
-  if(el&&el.dataset){if(el.dataset[l])return el.dataset[l];var tb=el.dataset['tb'+l.charAt(0).toUpperCase()+l.slice(1)];if(tb)return tb}
-  try{if(typeof languageData!=='undefined'&&languageData[l]){if(languageData[l].objects&&languageData[l].objects[key])return first(languageData[l].objects[key]);if(languageData[l].words&&languageData[l].words[key])return first(languageData[l].words[key])}}catch(e){}
-  try{if(typeof objects!=='undefined'&&objects[l]&&objects[l][key])return first(objects[l][key])}catch(e){}
-  try{if(typeof extraDiscovery!=='undefined'&&extraDiscovery[l]&&extraDiscovery[l][key])return first(extraDiscovery[l][key])}catch(e){}
-  try{if(typeof WORDS!=='undefined'&&WORDS[l]){var w=WORDS[l];if(!Array.isArray(w)&&w[key])return first(w[key]);if(Array.isArray(w)&&WORDS.en){var en=cleanEnglish(el,key).toLowerCase(),ix=WORDS.en.findIndex(function(x){return engval(x).replace(/^(the|a|an)\s+/i,'').toLowerCase()===en});if(ix>=0&&w[ix])return first(w[ix])}}}catch(e){}
-  try{if(typeof WORDS7!=='undefined'&&WORDS7[l]&&WORDS7[l][key])return first(WORDS7[l][key])}catch(e){}
-  try{if(typeof LANGS!=='undefined'&&LANGS[l]&&LANGS[l].words&&LANGS[l].words[key])return first(LANGS[l].words[key])}catch(e){}
-  try{if(typeof words!=='undefined'&&words[l]&&words[l][key])return first(words[l][key])}catch(e){}
-  try{if(typeof W!=='undefined'&&W[l]&&W[l][key])return first(W[l][key])}catch(e){}
-  try{if(typeof EXTRA_WORDS!=='undefined'&&EXTRA_WORDS[l]&&EXTRA_WORDS[l][key])return first(EXTRA_WORDS[l][key])}catch(e){}
-  return (el&&el.dataset&&(el.dataset.word||el.dataset.object||el.dataset.en))||key||'';
- }
- function show(el,e){if(document.body.classList.contains('tb-hs-editing'))return;var key=(el.dataset&&(el.dataset.word||el.dataset.key||el.dataset.object||el.dataset.en))||el.id||(el.dataset&&el.dataset.name)||el.getAttribute('aria-label')||'';if(!key)return;var l=lang(),en=cleanEnglish(el,key),word=lookup(el,key,l);if(!word)return;var same=String(word).replace(/^(the|a|an)\s+/i,'').toLowerCase()===String(en).toLowerCase();pop.textContent=(l==='en'||same)?en:(word+' — '+en);pop.style.display='block';var r=el.getBoundingClientRect(),x=(e&&e.clientX)||r.left+r.width/2,y=(e&&e.clientY)||r.top+r.height/2;var pr=pop.getBoundingClientRect();pop.style.left=Math.max(8,Math.min(innerWidth-pr.width-8,x+12))+'px';pop.style.top=Math.max(8,Math.min(innerHeight-pr.height-8,y-pr.height-10))+'px';clearTimeout(timer);timer=setTimeout(function(){pop.style.display='none'},1800)}
- document.addEventListener('click',function(e){var el=e.target.closest&&e.target.closest('.hotspot,.home-hotspot,.yacht-hotspot,.hotspots button,.train-hotspots button');if(el)show(el,e)},true);
-})();
-</script>
+<script id="talkabee-scene-view-safe-reset" src="js/talkabee-scene-view-reset.js"></script>
+<script id="talkabee-bilingual-hotspot-popup" src="js/talkabee-bilingual-popup.js"></script>
 <script id="talkabee-legacy-challenge-data" type="application/json">{"targets":["grandma","grandma","birdfeeder","rv","dog","bird"],"labels":["Find Grandma Cathy","Find Grandma Cathy","Find the Birdfeeder","Find the RV","Dog","Bird"]}</script>
 <script id="talkabee-legacy-challenge-runtime">
 (function(){
@@ -1051,8 +551,6 @@ document.addEventListener('click',function(ev){
  window.tbLegacyChallengeUpdate();
 })();
 </script>
-
-
 <script id="talkabee-rebuilt-script-card-js">
 /* Single replacement controller. No scaling on click or reset. */
 (function(){
@@ -1154,22 +652,7 @@ document.addEventListener('click',function(ev){
  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',init);else init();
 })();
 </script>
-<style id="tab-challenge-card-drag-and-readability">
-/* Challenge card: readable, independently draggable, without altering lesson card. */
-#homeWorld.challenge-mode .home-scene > #homeFind.show {
-  cursor:grab!important;touch-action:none!important;
-  user-select:none!important;-webkit-user-select:none!important;
-}
-#homeWorld.challenge-mode .home-scene > #homeFind.show.tab-challenge-moved {
-  right:auto!important;bottom:auto!important;
-}
-#homeWorld.challenge-mode .home-scene > #homeFind.show:active {cursor:grabbing!important;}
-#homeWorld.challenge-mode #homeFindPrompt {font-size:24px!important;line-height:1.35!important;}
-#homeWorld.challenge-mode #homeFindStatus {font-size:21px!important;line-height:1.35!important;}
-#homeWorld.challenge-mode #challengeNextHint {font-size:17px!important;line-height:1.4!important;}
-#homeWorld.challenge-mode #homeChallengeCount {font-size:15px!important;letter-spacing:.08em!important;}
-@media(max-width:760px){#homeWorld.challenge-mode .home-scene > #homeFind.show {touch-action:auto!important;}}
-</style>
+<link data-migrated-style="tab-challenge-card-drag-and-readability" href="css/grandma-grandpa-tab-challenge-card-drag-and-readability.css" rel="stylesheet"/>
 <script id="tab-challenge-card-drag-script">
 (function(){
  function init(){
@@ -1207,58 +690,79 @@ document.addEventListener('click',function(ev){
  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',init);else init();
 })();
 </script>
-<script data-tb-custom-vocab="1">;(()=>{const C={"boat":{"en":"boat","es":"bote","fr":"bateau","de":"Boot","it":"barca","pt":"barco","no":"båt"},"fire pit":{"en":"fire pit","es":"pozo de fuego","fr":"foyer","de":"Feuerstelle","it":"pozzo del fuoco","pt":"fogueira","no":"ildsted"},"guitar":{"en":"guitar","es":"guitarra","fr":"guitare","de":"Gitarre","it":"chitarra","pt":"guitarra","no":"gitar"}};for(const [k,v] of Object.entries(C)){try{EN[k]=v.en||k;for(const L of ["es","fr","en","de","it","pt","no"]){if(WORDS[L])WORDS[L][k]=v[L]||v.en||k}}catch(e){}}})();</script>
-
-<!-- Integrated neural voice test in the left Activity Panel. -->
-<style id="voice-lab-style">
-#voiceLab{position:relative;z-index:auto;width:100%;max-height:none;overflow:visible;background:rgba(7,23,39,.26);color:white;border:1px solid #ffffff55;border-radius:12px;padding:8px 6px;margin:7px 0 10px;box-shadow:none;font:12px/1.25 Arial,sans-serif}
-#voiceLab *{box-sizing:border-box}#voiceLab label{display:block;font-size:12px;margin:9px 0 3px}#voiceLab select,#voiceLab textarea{width:100%;padding:7px;border-radius:6px;color:#111;background:white}#voiceLab button{border:0;border-radius:7px;padding:8px 10px;margin:7px 4px 0 0;background:#b7e5d7;color:#123;cursor:pointer}#voiceLab button:disabled{opacity:.55;cursor:wait}#voiceLabStatus{font-size:12px;margin-top:8px;white-space:pre-wrap;overflow-wrap:anywhere}#voiceLab details summary{cursor:pointer;font-weight:700}#voiceLab textarea{min-height:62px;resize:vertical}#voiceLabText,#voiceLabCurrent,#voiceLabPlay,#voiceLabSlow,#voiceLabStop,#voiceLab label[for="voiceLabText"]{display:none!important}#voiceLab .lab-note{font-size:11px}#voiceLabStatus{font-size:11px}#voiceLab button{width:100%;font-size:11px!important;padding:7px!important}#voiceLab select{font-size:11px!important;padding:7px 3px!important;background:rgba(255,255,255,.94)!important;color:#15223a!important}#voiceLab details summary{font-size:12px}#voiceLab .lab-note{font-size:12px;color:#d1e6eb;margin-top:5px}
-/* Compact readable Voice Lab controls — panel only; engine logic untouched. */
-#voiceLab{padding:9px 8px!important;margin:9px 0 12px!important;background:rgba(7,23,39,.34)!important;border-radius:12px!important}
-#voiceLab details summary{font-size:15px!important;line-height:1.3!important;padding:3px 0 5px!important}
-#voiceLab label{font-size:14px!important;line-height:1.3!important;margin:10px 0 5px!important;letter-spacing:0!important;text-transform:none!important}
-#voiceLab select{font-size:14px!important;font-weight:750!important;line-height:1.3!important;min-height:41px!important;padding:8px 7px!important;text-overflow:ellipsis!important}
-#voiceLab button{font-size:14px!important;line-height:1.3!important;min-height:39px!important;padding:9px 8px!important;text-align:center!important;background:rgba(183,229,215,.92)!important;color:#14283a!important;font-weight:800!important}
-#voiceLab .lab-note{font-size:13px!important;line-height:1.35!important;margin:7px 0!important}
-#voiceLabStatus{font-size:13px!important;line-height:1.35!important;margin-top:9px!important;overflow-wrap:anywhere}
-#voiceLabNeural[hidden]{display:none!important}
-</style>
-<style id="voice-lab-matched-panel-design">
-/* Match the Adventure panel's translucent dark controls, with larger legible type. */
-#voiceLab{background:rgba(7,23,39,.20)!important;border:1px solid rgba(255,255,255,.28)!important;padding:8px!important;margin:8px 0 10px!important}
-#voiceLab details summary{display:flex;align-items:center;justify-content:space-between;gap:5px;font-size:14px!important;font-weight:900!important;color:white!important;list-style:none;padding:3px 0 7px!important}
-#voiceLab details summary::-webkit-details-marker{display:none}
-#voiceLab label{font-size:14px!important;font-weight:850!important;color:white!important;margin:7px 0 4px!important}
-#voiceLab select,#voiceLab button:not(#voiceLabInfo){background:rgba(7,32,50,.54)!important;color:#fff!important;border:1px solid rgba(255,255,255,.38)!important;border-radius:12px!important;min-height:40px!important;padding:9px 8px!important;font:800 14px/1.25 Arial,sans-serif!important;box-shadow:none!important}
-#voiceLab select{color-scheme:dark;max-width:100%;text-overflow:ellipsis!important}
-#voiceLab select option{background:#162b3a;color:white}
-#voiceLab button:not(#voiceLabInfo):hover{background:rgba(20,58,79,.70)!important}
-#voiceLab #voiceLabInfo{width:27px!important;min-width:27px!important;min-height:27px!important;height:27px!important;padding:0!important;margin:0!important;border:1px solid rgba(255,255,255,.55)!important;border-radius:50%!important;background:rgba(7,32,50,.54)!important;color:white!important;text-align:center!important;font:900 17px/1 Arial,sans-serif!important;cursor:pointer!important}
-#voiceLabNote{display:none!important}
-#voiceLabStatus{font-size:14px!important;line-height:1.3!important;color:white!important;margin:7px 0 2px!important;overflow-wrap:anywhere}
-.voice-info-overlay[hidden]{display:none!important}
-.voice-info-overlay{position:fixed;inset:0;z-index:2147483600;display:flex;align-items:center;justify-content:center;padding:18px;background:rgba(0,0,0,.65)}
-.voice-info-box{position:relative;width:min(420px,100%);max-height:85vh;overflow:auto;padding:22px;border:1px solid rgba(255,255,255,.5);border-radius:18px;background:#172c3b;color:#fff;box-shadow:0 16px 45px #0008;font:16px/1.45 Arial,sans-serif}
-.voice-info-box h2{font-size:21px;color:white;margin:0 28px 12px 0}
-.voice-info-box p{margin:9px 0}
-#voiceInfoClose{position:absolute;right:10px;top:7px;border:0;background:transparent;color:white;font-size:28px;cursor:pointer}
-</style>
-<div id="voiceLab"><details open><summary>🎙️ Choose Voice <button type="button" id="voiceLabInfo" aria-label="About voice options" title="About voice options">ⓘ</button></summary>
+<script data-tb-custom-vocab="1">;(()=>{const C={"boat":{"en":"boat","es":"bote","fr":"bateau","de":"Boot","it":"barca","pt":"barco","no":"båt"},"fire pit":{"en":"fire pit","es":"pozo de fuego","fr":"foyer","de":"Feuerstelle","it":"pozzo del fuoco","pt":"fogueira","no":"ildsted"},"guitar":{"en":"guitar","es":"guitarra","fr":"guitare","de":"Gitarre","it":"chitarra","pt":"guitarra","no":"gitar"}};for(const [k,v] of Object.entries(C)){try{EN[k]=v.en||k;for(const L of ["es","fr","en","de","it","pt","no"]){if(WORDS[L])WORDS[L][k]=v[L]||v.en||k}}catch(e){}}})();</script><script id="talkabee-hotspot-editor-script">
+(()=>{const SEL='.hotspot,.home-hotspot,.yacht-hotspot,.train-hotspots button';let editing=false,active=null,dirty=false,adding=false,pendingName='',pendingTranslations=null;
+const host=(location.hostname||'').toLowerCase();if(host==='talkabee.com'||host==='www.talkabee.com')return;
+const box=document.createElement('div');box.id='tb-hs-editor';box.innerHTML='<button type="button" id="tb-hs-toggle">Edit Hotspots</button><input id="tb-hs-name" hidden type="text" placeholder="hotspot name" autocomplete="off" spellcheck="false"><button type="button" id="tb-hs-add" hidden>Add Hotspot</button><button type="button" id="tb-hs-delete" hidden disabled>Delete Hotspot</button><button type="button" id="tb-hs-save" hidden>Save Working HTML</button><button type="button" id="tb-hs-export" hidden>Export Server HTML</button>';document.body.appendChild(box);
+const soundFile=document.createElement('input');soundFile.type='file';soundFile.accept='audio/*,.mp3,.wav,.ogg,.m4a';soundFile.className='tb-sound-file';
+const chooseSound=document.createElement('button');chooseSound.type='button';chooseSound.textContent='Choose Sound';chooseSound.hidden=true;chooseSound.disabled=true;
+const testSound=document.createElement('button');testSound.type='button';testSound.textContent='Test Sound';testSound.hidden=true;testSound.disabled=true;
+const removeSound=document.createElement('button');removeSound.type='button';removeSound.textContent='Remove Sound';removeSound.hidden=true;removeSound.disabled=true;
+const soundName=document.createElement('span');soundName.className='tb-sound-name';soundName.hidden=true;soundName.textContent='Select a hotspot';
+box.insertBefore(chooseSound,box.querySelector('#tb-hs-save'));box.insertBefore(testSound,box.querySelector('#tb-hs-save'));box.insertBefore(removeSound,box.querySelector('#tb-hs-save'));box.insertBefore(soundName,box.querySelector('#tb-hs-save'));box.appendChild(soundFile);
+let selectedSoundFile=null,editorPreview=null;
+function stopEditorPreview(){if(editorPreview){try{editorPreview.pause();editorPreview.currentTime=0}catch(e){}editorPreview=null}}
+function updateSoundUI(){const path=active&&active.dataset?String(active.dataset.sound||'').trim():'';soundName.textContent=active?(path?path.split('/').pop():'No sound'):'Select a hotspot';chooseSound.disabled=!active;testSound.disabled=removeSound.disabled=!active||!path}
+function previewSound(){if(!active)return;stopEditorPreview();const path=String(active.dataset.sound||'').trim();if(!path)return;let src=(selectedSoundFile&&path===selectedSoundFile.name)?URL.createObjectURL(selectedSoundFile):path;const a=new Audio(src);editorPreview=a;a.play().catch(()=>{});a.onended=()=>{if(src.startsWith('blob:'))URL.revokeObjectURL(src);if(editorPreview===a)editorPreview=null}}
+chooseSound.onclick=()=>{if(active){soundFile.value='';soundFile.click()}};soundFile.onchange=()=>{const f=soundFile.files&&soundFile.files[0];if(!active||!f)return;selectedSoundFile=f;active.dataset.sound='sounds/'+f.name;dirty=true;updateSoundUI();previewSound()};testSound.onclick=previewSound;removeSound.onclick=()=>{if(!active)return;stopEditorPreview();active.removeAttribute('data-sound');selectedSoundFile=null;dirty=true;updateSoundUI()};
+const read=document.createElement('div');read.id='tb-hs-readout';read.style.display='none';document.body.appendChild(read);const toggle=box.querySelector('#tb-hs-toggle'),nameBox=box.querySelector('#tb-hs-name'),add=box.querySelector('#tb-hs-add'),del=box.querySelector('#tb-hs-delete'),save=box.querySelector('#tb-hs-save'),exportServer=box.querySelector('#tb-hs-export');
+function num(el,k){const m=(el.style[k]||'').match(/-?[\d.]+/);if(m)return +m[0];const p=el.offsetParent||document.documentElement,r=el.getBoundingClientRect(),pr=p.getBoundingClientRect();if(k==='left')return(r.left-pr.left)/pr.width*100;if(k==='top')return(r.top-pr.top)/pr.height*100;if(k==='width')return r.width/pr.width*100;return r.height/pr.height*100}
+const pct=n=>Math.round(n*100)/100+'%';const label=el=>el.dataset.word||el.dataset.object||el.dataset.label||el.getAttribute('aria-label')||el.title||el.textContent.trim()||'(unnamed)';
+function show(el){read.textContent=adding?'ADD MODE: click the object in the scene for "'+pendingName+'".':el?label(el)+' | left '+(el.style.left||'?')+' top '+(el.style.top||'?')+' width '+(el.style.width||'?')+' height '+(el.style.height||'?'):'Click a yellow hotspot. Drag to move; drag cyan square to resize.'}
+function select(el){if(active)active.classList.remove('tb-hs-active');active=el;if(!el){del.disabled=true;show(null);updateSoundUI();return}el.classList.add('tb-hs-active');del.disabled=false;if(!el.querySelector(':scope > .tb-hs-handle')){const h=document.createElement('span');h.className='tb-hs-handle';h.setAttribute('aria-hidden','true');el.appendChild(h)}show(el);updateSoundUI()}
+function dragStart(ev,el,resize){ev.preventDefault();ev.stopPropagation();select(el);const p=el.offsetParent||document.documentElement,pr=p.getBoundingClientRect(),sx=ev.clientX,sy=ev.clientY,L=num(el,'left'),T=num(el,'top'),W=num(el,'width'),H=num(el,'height');
+const move=e=>{const dx=(e.clientX-sx)/pr.width*100,dy=(e.clientY-sy)/pr.height*100;if(resize){el.style.width=pct(Math.max(1,W+dx));el.style.height=pct(Math.max(1,H+dy))}else{el.style.left=pct(L+dx);el.style.top=pct(T+dy)}dirty=true;show(el)};
+const up=()=>{window.removeEventListener('pointermove',move,true);window.removeEventListener('pointerup',up,true)};window.addEventListener('pointermove',move,true);window.addEventListener('pointerup',up,true)}
+function hotspotHost(){return document.querySelector('.hotspots,.train-hotspots')||(document.querySelector(SEL)?.parentElement)||document.getElementById('world')||document.body}
+function addAt(ev){const host=document.getElementById('homeHotspots')||document.querySelector('.scene-hotspots')||document.querySelector(SEL)?.parentElement||document.body,el=document.createElement('button');el.type='button';el.className='home-hotspot show';el.dataset.object=pendingName;el.dataset.word=pendingName;el.setAttribute('aria-label',pendingName.replace(/\b\w/g,c=>c.toUpperCase()));if(pendingTranslations){Object.entries(pendingTranslations).forEach(([k,v])=>{if(v)el.dataset['tb'+k.charAt(0).toUpperCase()+k.slice(1)]=v})}el.style.width='6%';el.style.height='8%';host.appendChild(el);const r=host.getBoundingClientRect();if(!r.width||!r.height){el.remove();return}el.style.left=pct((ev.clientX-r.left)/r.width*100);el.style.top=pct((ev.clientY-r.top)/r.height*100);adding=false;pendingTranslations=null;add.textContent='Add Hotspot';dirty=true;select(el)}
+document.addEventListener('pointerdown',ev=>{if(!editing)return;if(adding&&!ev.target.closest('#tb-hs-editor,#tb-hs-readout')){ev.preventDefault();ev.stopImmediatePropagation();addAt(ev);return}const h=ev.target.closest('.tb-hs-handle');if(h){dragStart(ev,h.parentElement,true);return}const el=ev.target.closest(SEL);if(el&&!el.closest('#tb-hs-editor'))dragStart(ev,el,false)},true);
+document.addEventListener('click',ev=>{if(editing&&ev.target.closest(SEL)){ev.preventDefault();ev.stopImmediatePropagation()}},true);
+toggle.onclick=()=>{editing=!editing;adding=false;pendingName='';document.body.classList.toggle('tb-hs-editing',editing);toggle.textContent=editing?'Exit Editor':'Edit Hotspots';[nameBox,add,del,chooseSound,testSound,removeSound,soundName,save,exportServer].forEach(b=>b.hidden=!editing);add.textContent='Add Hotspot';if(!editing){stopEditorPreview();select(null)}show(active);updateSoundUI()};
+async function tbTranslate(text,lang){if(lang==='en')return text;const u='https://translate.googleapis.com/translate_a/single?client=gtx&sl=en&tl='+encodeURIComponent(lang)+'&dt=t&q='+encodeURIComponent(text);const r=await fetch(u);if(!r.ok)throw new Error('translation failed');const j=await r.json();return (j[0]||[]).map(x=>x[0]||'').join('').trim()||text}
+add.onclick=async()=>{if(adding){adding=false;pendingName='';pendingTranslations=null;add.textContent='Add Hotspot';show(active);return}const name=(nameBox.value||'').trim().toLowerCase().replace(/\s+/g,' ');if(!name){nameBox.focus();return}pendingName=name;add.disabled=true;add.textContent='Translating...';try{const codes={es:'es',fr:'fr',de:'de',it:'it',pt:'pt',no:'no'},vals=await Promise.all(Object.entries(codes).map(async([k,v])=>[k,await tbTranslate(name,v)]));pendingTranslations={en:name,...Object.fromEntries(vals)};adding=true;add.textContent='Click Scene'}catch(e){pendingTranslations={en:name};adding=true;add.textContent='Click Scene'}finally{add.disabled=false}show(null)};
+del.onclick=()=>{if(!active)return;const name=label(active);if(!confirm('Delete hotspot "'+name+'"?'))return;stopEditorPreview();active.remove();active=null;selectedSoundFile=null;del.disabled=true;dirty=true;show(null);updateSoundUI()};
+function downloadableClone(stripEditor){const clone=document.documentElement.cloneNode(true);clone.querySelectorAll('#tb-hs-editor,#tb-hs-readout,#tb-challenge-panel,.tb-hs-handle,#talkabee-object-popup').forEach(n=>n.remove());clone.querySelector('body')?.classList.remove('scene-view','tb-hs-editing');clone.querySelectorAll('.scene-only').forEach(el=>el.classList.remove('scene-only'));clone.querySelectorAll('.activity-collapsed').forEach(el=>el.classList.remove('activity-collapsed'));clone.querySelectorAll('#sceneView,#sceneViewToggle').forEach(el=>el.setAttribute('aria-pressed','false'));clone.querySelectorAll('.tb-hs-active').forEach(n=>n.classList.remove('tb-hs-active'));clone.querySelectorAll('script[data-tb-custom-vocab]').forEach(n=>n.remove());const custom={};clone.querySelectorAll('[data-tb-en]').forEach(el=>{const k=el.dataset.word;if(!k)return;custom[k]={en:el.dataset.tbEn||k,es:el.dataset.tbEs||el.dataset.tbEn||k,fr:el.dataset.tbFr||el.dataset.tbEn||k,de:el.dataset.tbDe||el.dataset.tbEn||k,it:el.dataset.tbIt||el.dataset.tbEn||k,pt:el.dataset.tbPt||el.dataset.tbEn||k,no:el.dataset.tbNo||el.dataset.tbEn||k}});if(Object.keys(custom).length){const sc=document.createElement('script');sc.dataset.tbCustomVocab='1';sc.textContent=';(()=>{const C='+JSON.stringify(custom).replace(/<\/script/gi,'<\/script')+';for(const [k,v] of Object.entries(C)){try{EN[k]=v.en||k;for(const L of ["es","fr","en","de","it","pt","no"]){if(WORDS[L])WORDS[L][k]=v[L]||v.en||k}}catch(e){}}})();';clone.querySelector('body').appendChild(sc)}if(stripEditor){clone.querySelector('#talkabee-hotspot-editor-style')?.remove();clone.querySelector('#talkabee-hotspot-editor-v10')?.remove();clone.querySelector('#talkabee-hotspot-editor-script')?.remove();clone.querySelector('#talkabee-legacy-challenge-editor-script')?.remove();clone.querySelector('#talkabee-legacy-challenge-editor-style')?.remove()}return clone}
+function downloadHTML(stripEditor){const clone=downloadableClone(stripEditor),html='<!doctype html>\n'+clone.outerHTML,a=document.createElement('a');a.href=URL.createObjectURL(new Blob([html],{type:'text/html'}));a.download=location.pathname.split('/').pop()||'adventure.html';a.click();setTimeout(()=>URL.revokeObjectURL(a.href),1500);dirty=false}
+save.onclick=()=>downloadHTML(false);exportServer.onclick=()=>downloadHTML(true);
+window.addEventListener('beforeunload',e=>{if(dirty){e.preventDefault();e.returnValue=''}});
+})();
+</script>
+<script id="talkabee-legacy-challenge-editor-script">
+(function(){
+ const bar=document.getElementById('tb-hs-editor');if(!bar||!window.tbLegacyChallengeRead)return;
+ const btn=document.createElement('button');btn.type='button';btn.id='tb-challenge-open';btn.hidden=true;btn.textContent='Edit Challenges';bar.insertBefore(btn,bar.querySelector('#tb-hs-save'));
+ const toggle=bar.querySelector('#tb-hs-toggle');toggle.addEventListener('click',()=>{btn.hidden=!document.body.classList.contains('tb-hs-editing');if(btn.hidden)panel.classList.remove('open')});
+ const panel=document.createElement('div');panel.id='tb-challenge-panel';panel.innerHTML='<div id="tb-challenge-drag"><strong>↕ Edit Six Challenges</strong><div><small>Drag here to move</small></div></div><p>Assign any challenge to an existing hotspot.</p><label>Challenge</label><select id="tb-ch-number"></select><label>Find this hotspot</label><select id="tb-ch-hotspot"></select><label>Challenge label (English)</label><input id="tb-ch-label"><button id="tb-ch-apply" type="button">Apply Challenge</button> <button id="tb-ch-close" type="button">Close</button><p id="tb-ch-status" aria-live="polite"></p>';document.body.appendChild(panel);
+ const num=panel.querySelector('#tb-ch-number'),target=panel.querySelector('#tb-ch-hotspot'),label=panel.querySelector('#tb-ch-label'),status=panel.querySelector('#tb-ch-status');
+ for(let i=0;i<6;i++)num.add(new Option('Challenge '+(i+1),String(i)));
+ function choices(){const current=target.value;target.replaceChildren();const found=new Set();document.querySelectorAll('.home-hotspot[data-object],.home-hotspot[data-word]').forEach(el=>{const k=el.dataset.object||el.dataset.word;if(k&&!found.has(k)){found.add(k);target.add(new Option(k,k))}});if([...target.options].some(o=>o.value===current))target.value=current}
+ function fill(){const d=window.tbLegacyChallengeRead(),i=+num.value;choices();target.value=d.targets[i];label.value=d.labels[i]||d.targets[i];status.textContent=''}
+ num.onchange=fill;
+ btn.onclick=()=>{panel.classList.toggle('open');if(panel.classList.contains('open'))fill()};
+ panel.querySelector('#tb-ch-close').onclick=()=>panel.classList.remove('open');
+ panel.querySelector('#tb-ch-apply').onclick=()=>{if(!target.value){status.textContent='Choose an existing hotspot first.';return}const d=window.tbLegacyChallengeRead(),i=+num.value;d.targets[i]=target.value;d.labels[i]=label.value.trim()||target.value;window.tbLegacyChallengeSave(d);status.textContent='Challenge '+(i+1)+' updated. Save Working HTML or Export Server HTML to keep it.'};
+ const handle=panel.querySelector('#tb-challenge-drag');let drag=null;
+ handle.addEventListener('pointerdown',e=>{if(e.button!==0)return;e.preventDefault();const r=panel.getBoundingClientRect();panel.style.left=r.left+'px';panel.style.top=r.top+'px';panel.style.right='auto';drag={x:e.clientX,y:e.clientY,left:r.left,top:r.top,id:e.pointerId};handle.setPointerCapture(e.pointerId)});
+ handle.addEventListener('pointermove',e=>{if(!drag)return;panel.style.left=Math.max(0,Math.min(innerWidth-65,drag.left+e.clientX-drag.x))+'px';panel.style.top=Math.max(0,Math.min(innerHeight-50,drag.top+e.clientY-drag.y))+'px'});
+ const stop=()=>drag=null;handle.addEventListener('pointerup',stop);handle.addEventListener('pointercancel',stop);
+})();
+</script>
+<div id="voiceLab"><details open=""><summary>🎙️ Choose Voice <button aria-label="About voice options" id="voiceLabInfo" title="About voice options" type="button">ⓘ</button></summary>
 <label for="voiceLabMode">Voice type</label><select id="voiceLabMode"><option value="standard">Standard</option><option value="enhanced">Enhanced</option></select>
-<div id="voiceLabNote" class="lab-note" hidden>Uses voices already available in your browser.</div>
-<div id="voiceLabNeural" hidden><label for="voiceLabModel">Choose voice</label><select id="voiceLabModel"><option value="">Select Enhanced to see voices</option></select><button type="button" id="voiceLabLoad">Load voice</button></div>
+<div class="lab-note" hidden="" id="voiceLabNote">Uses voices already available in your browser.</div>
+<div hidden="" id="voiceLabNeural"><label for="voiceLabModel">Choose voice</label><select id="voiceLabModel"><option value="">Select Enhanced to see voices</option></select><button id="voiceLabLoad" type="button">Load voice</button></div>
 <label for="voiceLabText">Test sentence (or use current lesson)</label><textarea id="voiceLabText">Hello! Welcome to Talk A Bee.</textarea>
-<div><button type="button" id="voiceLabCurrent">Use lesson sentence</button><button type="button" id="voiceLabPlay">▶ Speak</button><button type="button" id="voiceLabSlow">🐢 Slow</button><button type="button" id="voiceLabStop">■ Stop</button></div>
-<div id="voiceLabStatus" role="status" aria-live="polite">Standard voice ready.</div>
+<div><button id="voiceLabCurrent" type="button">Use lesson sentence</button><button id="voiceLabPlay" type="button">▶ Speak</button><button id="voiceLabSlow" type="button">🐢 Slow</button><button id="voiceLabStop" type="button">■ Stop</button></div>
+<div aria-live="polite" id="voiceLabStatus" role="status">Standard voice ready.</div>
 </details></div>
-<div id="voiceLabInfoDialog" class="voice-info-overlay" hidden>
- <div class="voice-info-box" role="dialog" aria-modal="true" aria-labelledby="voiceInfoTitle" tabindex="-1">
-  <button type="button" id="voiceInfoClose" aria-label="Close voice information">×</button>
-  <h2 id="voiceInfoTitle">About voice options</h2>
-  <p><strong>Standard:</strong> Uses the voices available in your browser. No download needed.</p>
-  <p><strong>Enhanced:</strong> Downloads a more natural-sounding voice to your device. It is optional and free. Your browser may reuse the downloaded model on future visits.</p>
-  <p>Choose a voice, select <strong>Load voice</strong>, then use the lesson's Speak, Slow, and Replay buttons.</p>
- </div>
+<div class="voice-info-overlay" hidden="" id="voiceLabInfoDialog">
+<div aria-labelledby="voiceInfoTitle" aria-modal="true" class="voice-info-box" role="dialog" tabindex="-1">
+<button aria-label="Close voice information" id="voiceInfoClose" type="button">×</button>
+<h2 id="voiceInfoTitle">About voice options</h2>
+<p><strong>Standard:</strong> Uses the voices available in your browser. No download needed.</p>
+<p><strong>Enhanced:</strong> Downloads a more natural-sounding voice to your device. It is optional and free. Your browser may reuse the downloaded model on future visits.</p>
+<p>Choose a voice, select <strong>Load voice</strong>, then use the lesson's Speak, Slow, and Replay buttons.</p>
+</div>
 </div>
 <script id="voice-lab-info-controller">
 (()=>{
@@ -1271,49 +775,5 @@ document.addEventListener('click',function(ev){
  document.addEventListener('keydown',e=>{if(e.key==='Escape'&&!overlay.hidden)hide()});
 })();
 </script>
-<script type="module" id="voice-lab-dual-mode">
-const $=id=>document.getElementById(id), status=$('voiceLabStatus'), mode=$('voiceLabMode'), select=$('voiceLabModel'), field=$('voiceLabText');
-const show=message=>{status.textContent=message};
-const prefix={en:'en_',es:'es_',fr:'fr_',de:'de_',it:'it_',pt:'pt_',no:'no_'};
-const speechLang={en:'en-US',es:'es-ES',fr:'fr-FR',de:'de-DE',it:'it-IT',pt:'pt-BR',no:'nb-NO'};
-const lang=$('homeLanguage');
-// Place the existing, proven neural engine controls beneath the browser voice selector.
-const voicePanel=$('homeVoice');voicePanel?.insertAdjacentElement('afterend',$('voiceLab'));
-
-let engine=null,loading=null,audio=null,audioUrl=null,busy=false,utterance=null,lastLessonText="",lastLessonRate=.86,runId=0;
-const sentence=()=>($('homeWordline')?.innerText||$('homeWordline')?.textContent||'').replace(/\s+/g,' ').trim();
-function stop(){runId++;if(audio){audio.pause();audio.currentTime=0;audio=null}if('speechSynthesis' in window)window.speechSynthesis.cancel();utterance=null}
-let voiceCatalog=[];
-function recommend(){if(!voiceCatalog.length)return;const p=prefix[lang?.value]||'en_';const previous=select.value;const options=voiceCatalog.filter(id=>id.toLowerCase().startsWith(p));select.replaceChildren();for(const id of options){const opt=document.createElement('option');opt.value=id;opt.textContent=id;select.appendChild(opt)}if(options.includes(previous))select.value=previous;else if(options.length)select.value=options.find(id=>id.includes('medium'))||options[0];else{const opt=document.createElement('option');opt.value='';opt.textContent='No enhanced voice available';select.appendChild(opt);show('No Enhanced voice for this language. Choose Standard.')}}
-function updateMode(){const enhanced=mode.value==='enhanced';$('voiceLabNeural').hidden=!enhanced;$('voiceLabNote').textContent=enhanced?'Download once per voice. First use may take a moment.':'Uses voices installed in your browser.';try{localStorage.setItem('talkabee-lab-voice-mode',mode.value)}catch(_){};show(enhanced?'Enhanced selected. Click “Load voice” before speaking.':'Standard voice ready.');}
-try{if(localStorage.getItem('talkabee-lab-voice-mode')==='enhanced')mode.value='enhanced'}catch(_){}
-mode.addEventListener('change',()=>{stop();updateMode()});updateMode();
-$('voiceLabCurrent').addEventListener('click',()=>{const s=sentence();if(s)field.value=s;else show('Choose an Activity first, or type a test sentence.')});
-$('voiceLabStop').addEventListener('click',()=>{stop();show('Stopped.')});
-lang?.addEventListener('change',recommend);
-async function loadEngine(){if(engine)return engine;if(loading)return loading;
- loading=(async()=>{show('Loading enhanced engine and voice catalog…');const m=await import('./piper-matched-118/piper-tts-web.js?voice-switch=1');const models=await m.voices();const all=Array.isArray(models)?models.map(v=>typeof v==='string'?v:(v?.id||v?.key||v?.name||'')).filter(Boolean):Object.keys(models||{});const names=all.filter(id=>Object.values(prefix).some(p=>id.toLowerCase().startsWith(p)));if(!names.length)throw Error('No matching voices in catalog.');voiceCatalog=names;engine=m;recommend();show('Enhanced catalog ready. First speech may download a large model.');return engine})();
- try{return await loading}catch(e){loading=null;show('Enhanced engine unavailable: '+(e?.message||e)+'\nChoose Standard to continue.');console.error('Voice Lab engine',e);throw e}
-}
-$('voiceLabLoad').addEventListener('click',()=>{loadEngine().then(()=>show('Voice list ready. Select a voice and press Speak.')).catch(()=>{})});
-select.addEventListener('change',()=>{stop();if(engine)show('Voice selected: '+select.value+'. Press Speak to use it; no refresh needed.');});
-function standardSpeak(text,rate){if(!('speechSynthesis' in window)){show('Browser speech is not available.');return}stop();const u=new SpeechSynthesisUtterance(text);u.lang=speechLang[lang?.value]||'en-US';u.rate=rate;const voices=window.speechSynthesis.getVoices();const preferred=$('homeVoice')?.value;const chosen=voices.find(v=>v.voiceURI===preferred||v.name===preferred)||voices.find(v=>v.lang.toLowerCase()===u.lang.toLowerCase())||voices.find(v=>v.lang.toLowerCase().startsWith(u.lang.slice(0,2).toLowerCase()));if(chosen)u.voice=chosen;utterance=u;u.onerror=e=>show('Standard speech error: '+e.error);window.speechSynthesis.speak(u);show('Speaking with browser voice ('+u.lang+'). No model downloaded.')}
-async function speak(rate,textOverride){const text=(textOverride===undefined?field.value:textOverride).trim();if(!text){show('Enter a sentence first.');return}
- if(mode.value==='standard'){standardSpeak(text,rate);return}
- stop();const requestId=runId;busy=true;$('voiceLabPlay').disabled=true;$('voiceLabSlow').disabled=true;
- try{const m=await loadEngine();if(requestId!==runId)return;const selectedVoice=select.value;if(!selectedVoice)throw Error('No voice selected for this language.');if(audioUrl){URL.revokeObjectURL(audioUrl);audioUrl=null}show('Preparing voice… First use may require a download.');const start=performance.now();const wav=await m.predict({text,voiceId:selectedVoice},p=>{if(requestId===runId&&p?.total)show('Downloading model: '+Math.round(p.loaded/p.total*100)+'%')});if(requestId!==runId||mode.value!=='enhanced'||select.value!==selectedVoice)return;audioUrl=URL.createObjectURL(wav);audio=new Audio(audioUrl);audio.playbackRate=rate;await audio.play();if(requestId===runId)show('Enhanced voice playing. Generation: '+((performance.now()-start)/1000).toFixed(1)+' seconds.')}
- catch(e){if(requestId!==runId)return;const msg=String(e?.message||e);show('Enhanced voice failed: '+msg+(msg.includes('cdnjs.cloudflare.com/ajax/libs/onnxruntime-web/1.18.0')?'\nDiagnosis: Piper is still hardcoded to the old ONNX 1.18.0 Cloudflare runtime. Local ONNX 1.19.0 files are not being used by this bundle.':'')+'\nSwitch to Standard for reliable browser speech.');console.error('Voice Lab synthesis',e)}
- finally{busy=false;$('voiceLabPlay').disabled=false;$('voiceLabSlow').disabled=false}
-}
-$('voiceLabPlay').addEventListener('click',()=>speak(1));$('voiceLabSlow').addEventListener('click',()=>speak(.78));
-// Capture lesson buttons before the original browser-speech handlers when Enhanced is active.
-function neuralLesson(text,rate){if(!text)return;lastLessonText=text;lastLessonRate=rate;speak(rate,text)}
-for(const [id,rate] of [['homePlay',.86],['homeSlow',.58],['homeReplay',null]]){
- $(id)?.addEventListener('click',ev=>{if(mode.value!=='enhanced')return;ev.preventDefault();ev.stopImmediatePropagation();const t=rate===null?(lastLessonText||sentence()):sentence();neuralLesson(t,rate===null?lastLessonRate:rate)},true);
-}
-$('homeWordline')?.addEventListener('click',ev=>{if(mode.value!=='enhanced')return;const btn=ev.target.closest('.home-word');if(!btn)return;ev.preventDefault();ev.stopImmediatePropagation();neuralLesson(btn.textContent.trim().replace(/[.,!?;:]+$/,''),.78)},true);
-// Hotspots still run their original challenge and scene-sound logic. Standard is unchanged.
-
-</script>
-
+<script id="voice-lab-dual-mode" src="js/talkabee-enhanced-voice-grandma.js" type="module"></script>
 </body></html>

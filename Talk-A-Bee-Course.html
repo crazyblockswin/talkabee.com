@@ -1,11 +1,12 @@
-<!doctype html>
+<!DOCTYPE html>
+
 <!-- Talk A Bee Checkpoint 52. Sea Adventures updated from V51/V50;  Corrected Challenge Trail: all six challenges now stay inside Grandma & Grandpa’s single home scene. Added a Back to Main Directory control, numbered challenge links in the home directory, fixed challenge order, and Next Challenge progression. -->
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
 <title>Talk A Bee — Adventure-First Language World</title>
-<meta name="description" content="A character-driven language course with beautiful scenes, conversation practice, sentence building, audio, speaking and downloadable illustrated books.">
+<meta content="A character-driven language course with beautiful scenes, conversation practice, sentence building, audio, speaking and downloadable illustrated books." name="description"/>
 <style>
 :root{
  --ink:#142239;--muted:#66738a;--cream:#fffaf1;--paper:#fff;--line:#e8e1d8;
@@ -448,10 +449,6 @@ footer{padding:25px 0 45px;color:#778296;font-size:12px} .foot{display:flex;just
 }
 
 </style>
-
-
-
-
 <style id="checkpoint-45-clean-widescreen-scene">
 /* CHECKPOINT 45 — clean redrawn widescreen scene only. No filler side panels. */
 #homeWorld .scene-fill-layer{display:none !important;}
@@ -460,7 +457,6 @@ footer{padding:25px 0 45px;color:#778296;font-size:12px} .foot{display:flex;just
 #homeWorld .scene-main-image{width:100% !important;height:100% !important;object-fit:cover !important;object-position:center center !important;}
 #homeWorld .home-scene:after{background:linear-gradient(180deg,rgba(8,14,28,0),rgba(8,14,28,.035)) !important;}
 </style>
-
 <style id="checkpoint-51-yacht-adventure">
 #yachtWorld{display:none;padding:0!important;background:#0d1724!important;}
 #yachtWorld.open{display:block!important;position:fixed;inset:72px 0 0 0;z-index:85;}
@@ -503,7 +499,6 @@ footer{padding:25px 0 45px;color:#778296;font-size:12px} .foot{display:flex;just
 #yachtWorld .yacht-next-hint{font-size:11px;color:#737b8e;margin:7px 0;}
 @media(max-width:820px){#yachtWorld.open{inset:64px 0 0 0}#yachtWorld .yacht-directory{width:220px}#yachtWorld .yacht-panel{left:250px;width:calc(100% - 266px)}#yachtWorld .yacht-hotspot{width:66px;height:66px;font-size:25px}}
 </style>
-
 <style id="checkpoint-52-sea-adventures-tuning">
 /* V52: newest Sea Adventures artwork is a complete 16:9 interface scene.
    Put the live controls directly over their matching artwork so there is no double header/panel effect. */
@@ -542,7 +537,6 @@ footer{padding:25px 0 45px;color:#778296;font-size:12px} .foot{display:flex;just
 #yachtWorld .yacht-hotspot[data-object="yacht"]{width:10%!important;}
 @media(max-width:900px){#yachtWorld .yacht-directory{min-width:165px!important;width:16%!important;}#yachtWorld .yacht-panel{left:30%!important;width:43%!important;}}
 </style>
-
 <style id="checkpoint-54-v50-layout-fix">
 /* V54 — use the proven V50 glass-panel behavior and align the live controls
    with the interface areas already present in the Sea Adventures artwork. */
@@ -617,7 +611,6 @@ footer{padding:25px 0 45px;color:#778296;font-size:12px} .foot{display:flex;just
   #yachtWorld .yacht-panel p{font-size:10.5px!important;}
 }
 </style>
-
 <style id="kitchen-v50-fullscreen-fix">
 /* V68: Grandma's Kitchen uses the exact V50 full-screen world geometry. */
 #kitchenWorld{display:none!important;padding:0!important;background:#0d1724!important;overflow:hidden!important;}
@@ -628,19 +621,6 @@ footer{padding:25px 0 45px;color:#778296;font-size:12px} .foot{display:flex;just
 /* keep the lesson card away from Grandma's face */
 #kitchenWorld .kitchen-panel{right:1.4%!important;top:3.5%!important;width:27%!important;max-width:430px!important;}
 </style>
-
-<style id="checkpoint-69-header-and-kitchen-ratio-fix">
-/* V69 — corrected master header: no stray literal newline text and no header scrollbar. */
-html,body{overflow-x:hidden!important;}
-header{height:72px!important;min-height:72px!important;max-height:72px!important;overflow:hidden!important;}
-header .nav{height:72px!important;min-height:72px!important;max-height:72px!important;overflow:hidden!important;flex-wrap:nowrap!important;}
-
-/* Keep V50's full-screen adventure area, but never stretch Grandma's Kitchen artwork. */
-#kitchenWorld{top:72px!important;bottom:0!important;height:auto!important;overflow:hidden!important;background:#182238!important;}
-#kitchenWorld .train-stage,#kitchenWorld .train-scene{position:absolute!important;inset:0!important;width:100%!important;height:100%!important;overflow:hidden!important;background:#182238!important;}
-#kitchenWorld .train-main-image{position:absolute!important;inset:0!important;width:100%!important;height:100%!important;object-fit:contain!important;object-position:center center!important;background:#182238!important;}
-</style>
-
 <style id="checkpoint-71-adventure-viewport-lock">
 /* V71 master fix: when an adventure is open, the original page underneath cannot scroll. */
 html.adventure-locked, body.adventure-locked{
@@ -651,7 +631,6 @@ body.adventure-locked > header{position:fixed !important; top:0 !important; left
 body.adventure-locked #kitchenWorld.open{position:fixed !important; inset:72px 0 0 0 !important; overflow:hidden !important;}
 body.adventure-locked #kitchenWorld .kitchen-directory{overflow-y:auto !important; overscroll-behavior:contain !important;}
 </style>
-
 <style id="checkpoint79-main-directory-glass">
 #mainDirectory .landing-directory{
   background:rgba(13,19,38,.14) !important;
@@ -661,7 +640,6 @@ body.adventure-locked #kitchenWorld .kitchen-directory{overflow-y:auto !importan
   box-shadow:0 10px 28px rgba(8,12,28,.16) !important;
 }
 </style>
-
 <style id="checkpoint80-outer-directory-clear">
 #mainDirectory .landing-directory,
 #mainDirectory .directory-panel,
@@ -673,11 +651,9 @@ body.adventure-locked #kitchenWorld .kitchen-directory{overflow-y:auto !importan
     box-shadow: none !important;
 }
 </style>
-
 <style id="checkpoint81-directory-return">
 #mainDirectory{scroll-margin-top:0!important;}
 </style>
-
 <style id="course-safe-header-fixes">
 header .brand{text-decoration:none;color:inherit}
 header .bee-logo{
@@ -702,8 +678,6 @@ header .course-tagline{
   header .course-tagline{display:none}
 }
 </style>
-
-
 <style id="talkabee-donate-style">
 header .talkabee-donate{
   display:inline-flex;
@@ -731,8 +705,6 @@ header .talkabee-donate:hover{
   header .talkabee-donate{margin:0 5px;padding:7px 10px}
 }
 </style>
-
-
 <style id="talkabee-comments-style">
 header .talkabee-comments{
  display:inline-flex;align-items:center;justify-content:center;margin:0 4px;
@@ -743,486 +715,453 @@ header .talkabee-comments{
 header .talkabee-comments:hover{transform:translateY(-1px);box-shadow:0 5px 14px rgba(58,43,72,.14)}
 @media(max-width:900px){header .talkabee-comments{margin:0 3px;padding:7px 10px}}
 </style>
-
-  <link rel="icon" type="image/png" href="images/talkabee-favicon.png">
-  <link rel="shortcut icon" type="image/png" href="images/talkabee-favicon.png">
+<link href="images/talkabee-favicon.png" rel="icon" type="image/png"/>
+<link href="images/talkabee-favicon.png" rel="shortcut icon" type="image/png"/>
 </head>
 <body>
 <header>
- <div class="wrap nav">
-  <a class="brand" href="index.html" aria-label="Return to Main Directory"><div class="logo bee-logo" aria-hidden="true"><img src="images/Talk-A-Bee-Header-Transparent.png" alt=""></div><div><span class="brand-name">Talk A Bee</span><small class="brand-domain">TalkABee.com</small></div></a>
-  <a class="course-adventures-link" href="adventures.html">Explore Adventures</a>
-  <nav><a href="index.html">Explore</a><a href="#course">Course</a><a href="index.html">Main Directory</a><a href="index.html">Worlds</a></nav>
-  <a class="talkabee-comments" href="#book" aria-label="Free downloadable language books">📚 Free Books &amp; Downloads</a>
-  <a class="talkabee-donate" href="Talk-A-Bee-Support.html" target="_blank" rel="noopener noreferrer" aria-label="Donate to support Talk A Bee">❤️ Donate</a>
-  <a class="talkabee-comments" href="Talk-A-Bee-Comments.html" aria-label="Comments and suggestions for Talk A Bee">💬 Comments</a>
-  <div class="global-controls">
-   <label class="interface-control">Site <select id="siteLanguage"><option value="en">🇺🇸 English</option><option value="es">🇪🇸 Español</option><option value="fr">🇫🇷 Français</option><option value="de">🇩🇪 Deutsch</option><option value="it">🇮🇹 Italiano</option><option value="no">🇳🇴 Norsk</option><option value="pt">🇵🇹 Português</option></select></label>
-   <label>Learn <select id="learnLanguageTop"><option value="es">🇪🇸 Spanish</option><option value="fr">🇫🇷 French</option><option value="en">🇺🇸 English</option><option value="de">🇩🇪 German</option><option value="it">🇮🇹 Italian</option><option value="pt">🇵🇹 Portuguese</option><option value="no">🇳🇴 Norwegian</option></select></label>
-  </div>
- </div>
-</header>
-<button class="bee-guide-btn" id="beeGuideBtn" type="button" style="display:none!important" aria-label="Open Talk A Bee guide"><img src="images/Talk-A-Bee-Header-Transparent.png" alt=""></button>
+<div class="wrap nav">
+<a aria-label="Return to Main Directory" class="brand" href="index.html"><div aria-hidden="true" class="logo bee-logo"><img alt="" src="images/Talk-A-Bee-Header-Transparent.png"/></div><div><span class="brand-name">Talk A Bee</span><small class="brand-domain">TalkABee.com</small></div></a>
+<a class="course-adventures-link" href="adventures.html">Explore Adventures</a>
+<nav><a href="index.html">Explore</a><a href="#course">Course</a><a href="index.html">Main Directory</a><a href="index.html">Worlds</a></nav>
+<a aria-label="Free downloadable language books" class="talkabee-comments" href="#book">📚 Free Books &amp; Downloads</a>
+<a aria-label="Donate to support Talk A Bee" class="talkabee-donate" href="Talk-A-Bee-Support.html" rel="noopener noreferrer" target="_blank">❤️ Donate</a>
+<a aria-label="Comments and suggestions for Talk A Bee" class="talkabee-comments" href="Talk-A-Bee-Comments.html">💬 Comments</a>
+<div class="global-controls">
+<label class="interface-control">Site <select id="siteLanguage"><option value="en">🇺🇸 English</option><option value="es">🇪🇸 Español</option><option value="fr">🇫🇷 Français</option><option value="de">🇩🇪 Deutsch</option><option value="it">🇮🇹 Italiano</option><option value="no">🇳🇴 Norsk</option><option value="pt">🇵🇹 Português</option></select></label>
+<label>Learn <select id="learnLanguageTop"><option value="es">🇪🇸 Spanish</option><option value="fr">🇫🇷 French</option><option value="en">🇺🇸 English</option><option value="de">🇩🇪 German</option><option value="it">🇮🇹 Italian</option><option value="pt">🇵🇹 Portuguese</option><option value="no">🇳🇴 Norwegian</option></select></label>
 </div>
+</div>
+</header>
+<button aria-label="Open Talk A Bee guide" class="bee-guide-btn" id="beeGuideBtn" style="display:none!important" type="button"><img alt="" src="images/Talk-A-Bee-Header-Transparent.png"/></button>
 
 <!-- CHECKPOINT 40: Widescreen Grandma & Grandpa artwork installed; left activity panel remains live CSS -->
 <section class="hero" id="mainDirectory">
- <div class="wrap">
-  <div class="hero-layout hero-sidebar-layout">
-   <aside class="landing-directory" aria-label="Main directory">
-    <div class="landing-dir-kick">MAIN DIRECTORY</div>
-    <h2>Main Directory</h2>
-    
-    <a class="directory-link world-start-link" href="#homeWorld" data-world="homeWorld">🏡 Grandma &amp; Grandpa’s Place</a>
-    <a class="directory-link world-start-link" href="#yachtWorld" data-world="yachtWorld">🌊 Sea Adventures</a>
-    <a class="directory-link world-start-link" href="#marketWorld" data-world="marketWorld">🛍️ Shopping Market</a>
-    <a class="directory-link world-start-link" href="#kitchenWorld" data-world="kitchenWorld">🍪 Grandma's Kitchen</a>
+<div class="wrap">
+<div class="hero-layout hero-sidebar-layout">
+<aside aria-label="Main directory" class="landing-directory">
+<div class="landing-dir-kick">MAIN DIRECTORY</div>
+<h2>Main Directory</h2>
+<a class="directory-link world-start-link" data-world="homeWorld" href="#homeWorld">🏡 Grandma &amp; Grandpa’s Place</a>
+<a class="directory-link world-start-link" data-world="yachtWorld" href="#yachtWorld">🌊 Sea Adventures</a>
+<a class="directory-link world-start-link" data-world="marketWorld" href="#marketWorld">🛍️ Shopping Market</a>
+<a class="directory-link world-start-link" data-world="kitchenWorld" href="#kitchenWorld">🍪 Grandma's Kitchen</a>
 <a class="directory-link" href="#lakeWorldHost" id="openLakeWorld">🏞️ Lake &amp; Mountain Adventure</a>
-    <a class="directory-link" href="#auntJulieWorldHost" id="openAuntJulieWorld">🌴 Aunt Julie&#39;s Island Retreat</a>
-    <a class="directory-link world-start-link" href="#animalWorld" data-world="animalWorld">🐾 Animal World</a>
-    <a class="directory-link" href="#explore">🗺️ Paris &amp; Travel World</a>
-    <a class="directory-link" href="#course">🎓 Talk A Bee Course</a>
-    <a class="directory-link" href="#book">📘 Illustrated Book</a>
-    <a class="directory-link" href="#world">🌍 More Worlds</a>
-   </aside>
-   <div class="hero-right">
-    <div class="hero-feature-card" style="background-image:url('images/talkabee-image-05.png')">
-      <div class="hero-feature-overlay hero-copy-overlay">
-       <span class="eyebrow">FOLLOW THE BEE. FIND YOUR WORDS.</span>
-       <h1>Talk A Bee puts the adventure first.</h1>
-       <p>Open the directory, jump into a beautiful world, meet familiar characters, and use the course when you want it—not as the first thing in your face.</p>
-       <div class="actions">
-        <button class="primary" onclick="document.querySelector('#homeWorld').scrollIntoView({behavior:'smooth'})">Go to Grandma &amp; Grandpa’s Place</button>
-        <button class="ghost" onclick="document.querySelector('#animalWorld').scrollIntoView({behavior:'smooth'})">See Animal World</button>
-       </div>
-       <div class="hero-note">Spanish · French · English &nbsp; • &nbsp; Interactive worlds first &nbsp; • &nbsp; Course and book included</div>
-      </div>
-    </div>
-   </div>
-  </div>
- </div>
+<a class="directory-link" href="#auntJulieWorldHost" id="openAuntJulieWorld">🌴 Aunt Julie's Island Retreat</a>
+<a class="directory-link world-start-link" data-world="animalWorld" href="#animalWorld">🐾 Animal World</a>
+<a class="directory-link" href="#explore">🗺️ Paris &amp; Travel World</a>
+<a class="directory-link" href="#course">🎓 Talk A Bee Course</a>
+<a class="directory-link" href="#book">📘 Illustrated Book</a>
+<a class="directory-link" href="#world">🌍 More Worlds</a>
+</aside>
+<div class="hero-right">
+<div class="hero-feature-card" style="background-image:url('images/talkabee-image-05.png')">
+<div class="hero-feature-overlay hero-copy-overlay">
+<span class="eyebrow">FOLLOW THE BEE. FIND YOUR WORDS.</span>
+<h1>Talk A Bee puts the adventure first.</h1>
+<p>Open the directory, jump into a beautiful world, meet familiar characters, and use the course when you want it—not as the first thing in your face.</p>
+<div class="actions">
+<button class="primary" onclick="document.querySelector('#homeWorld').scrollIntoView({behavior:'smooth'})">Go to Grandma &amp; Grandpa’s Place</button>
+<button class="ghost" onclick="document.querySelector('#animalWorld').scrollIntoView({behavior:'smooth'})">See Animal World</button>
+</div>
+<div class="hero-note">Spanish · French · English   •   Interactive worlds first   •   Course and book included</div>
+</div>
+</div>
+</div>
+</div>
+</div>
 </section>
-
-<section id="ways" class="section">
- <div class="wrap">
-  <div class="head"><div class="kick">LEARN YOUR WAY</div><h2>One language world. More than one way in.</h2><p>Some people love clicking, listening and speaking. Others want a beautiful book they can keep. Talk A Bee is designed for both.</p></div>
-  <div class="choice-grid">
-   <article class="choice"><span class="tag">INTERACTIVE</span><div class="icon">💬</div><h3>Talk A Bee Online</h3><p>The full interactive experience for learning by doing.</p><ul><li>Character conversations</li><li>Audio + slow playback</li><li>Sentence builder</li><li>Speaking practice</li><li>Saved progress</li></ul><button onclick="document.querySelector('#course').scrollIntoView()">Try the course</button></article>
-   <article class="choice"><span class="tag">YOURS TO KEEP</span><div class="icon">📖</div><h3>Digital Language Book</h3><p>A richly illustrated course you can read on a PC, laptop, phone or tablet.</p><ul><li>Spanish starter book</li><li>Original Spanish edition</li><li>Character-led lessons</li><li>Visual vocabulary</li><li>Printable practice</li></ul><a href="spanish-starter-book-master-cast.pdf" target="_blank" rel="noopener">Open Spanish book</a><a href="spanish-starter-book.pdf" target="_blank" rel="noopener" style="margin-left:8px">Open Original Spanish Edition</a><div style="font-size:11px;color:#66738a;margin-top:10px">Online note: keep both Spanish PDF book files in the same folder as this HTML page so these buttons work after upload.</div></article>
-   <article class="choice featured"><span class="tag">COMPLETE EXPERIENCE</span><div class="icon">✨</div><h3>Talk A Bee Complete</h3><p>Use the online course and keep the illustrated book beside you.</p><ul><li>Online lessons</li><li>Digital book</li><li>Audio practice</li><li>Review activities</li><li>Learn anywhere</li></ul><button onclick="document.querySelector('#book').scrollIntoView()">Explore the bundle</button></article>
-  </div>
- </div>
+<section class="section" id="ways">
+<div class="wrap">
+<div class="head"><div class="kick">LEARN YOUR WAY</div><h2>One language world. More than one way in.</h2><p>Some people love clicking, listening and speaking. Others want a beautiful book they can keep. Talk A Bee is designed for both.</p></div>
+<div class="choice-grid">
+<article class="choice"><span class="tag">INTERACTIVE</span><div class="icon">💬</div><h3>Talk A Bee Online</h3><p>The full interactive experience for learning by doing.</p><ul><li>Character conversations</li><li>Audio + slow playback</li><li>Sentence builder</li><li>Speaking practice</li><li>Saved progress</li></ul><button onclick="document.querySelector('#course').scrollIntoView()">Try the course</button></article>
+<article class="choice"><span class="tag">YOURS TO KEEP</span><div class="icon">📖</div><h3>Digital Language Book</h3><p>A richly illustrated course you can read on a PC, laptop, phone or tablet.</p><ul><li>Spanish starter book</li><li>Original Spanish edition</li><li>Character-led lessons</li><li>Visual vocabulary</li><li>Printable practice</li></ul><a href="spanish-starter-book-master-cast.pdf" rel="noopener" target="_blank">Open Spanish book</a><a href="spanish-starter-book.pdf" rel="noopener" style="margin-left:8px" target="_blank">Open Original Spanish Edition</a><div style="font-size:11px;color:#66738a;margin-top:10px">Online note: keep both Spanish PDF book files in the same folder as this HTML page so these buttons work after upload.</div></article>
+<article class="choice featured"><span class="tag">COMPLETE EXPERIENCE</span><div class="icon">✨</div><h3>Talk A Bee Complete</h3><p>Use the online course and keep the illustrated book beside you.</p><ul><li>Online lessons</li><li>Digital book</li><li>Audio practice</li><li>Review activities</li><li>Learn anywhere</li></ul><button onclick="document.querySelector('#book').scrollIntoView()">Explore the bundle</button></article>
+</div>
+</div>
 </section>
-
 <section class="section soft">
- <div class="wrap story-grid">
-  <div class="story-img"></div>
-  <div class="story-copy"><div class="kick">THE TALK A BEE IDEA</div><h2>Don't memorize the trip. Take the trip.</h2><p>A phrase is easier to remember when it belongs to a person, a place and a moment. So our lessons happen in cafés, markets, hotels, Grandma's kitchens and streets—not in empty boxes.</p>
-   <div class="steps">
-    <div class="step"><b>1</b><div><strong>See it</strong><span>Use a beautiful scene and visual clue to understand the situation.</span></div></div>
-    <div class="step"><b>2</b><div><strong>Hear it</strong><span>Listen to the characters speak naturally, then slow it down.</span></div></div>
-    <div class="step"><b>3</b><div><strong>Build it</strong><span>Put the sentence together so the structure starts making sense.</span></div></div>
-    <div class="step"><b>4</b><div><strong>Say it</strong><span>Take a character's part and use the phrase yourself.</span></div></div>
-   </div>
-  </div>
- </div>
+<div class="wrap story-grid">
+<div class="story-img"></div>
+<div class="story-copy"><div class="kick">THE TALK A BEE IDEA</div><h2>Don't memorize the trip. Take the trip.</h2><p>A phrase is easier to remember when it belongs to a person, a place and a moment. So our lessons happen in cafés, markets, hotels, Grandma's kitchens and streets—not in empty boxes.</p>
+<div class="steps">
+<div class="step"><b>1</b><div><strong>See it</strong><span>Use a beautiful scene and visual clue to understand the situation.</span></div></div>
+<div class="step"><b>2</b><div><strong>Hear it</strong><span>Listen to the characters speak naturally, then slow it down.</span></div></div>
+<div class="step"><b>3</b><div><strong>Build it</strong><span>Put the sentence together so the structure starts making sense.</span></div></div>
+<div class="step"><b>4</b><div><strong>Say it</strong><span>Take a character's part and use the phrase yourself.</span></div></div>
+</div>
+</div>
+</div>
 </section>
-
 <section class="section">
- <div class="wrap">
-  <div class="head"><div class="kick">MEET THE CAST</div><h2>Familiar faces make the language feel familiar too.</h2><p>Characters return throughout the course so every lesson feels like another chapter instead of another worksheet.</p></div>
-  
-<div class="master-cast-banner" style="margin:0 0 24px;border-radius:24px;overflow:hidden;box-shadow:0 16px 40px rgba(35,28,61,.16);background:white"><img src="images/talkabee-image-06.png" alt="Lingo Lane master cast" style="display:block;width:100%;height:auto"></div>
+<div class="wrap">
+<div class="head"><div class="kick">MEET THE CAST</div><h2>Familiar faces make the language feel familiar too.</h2><p>Characters return throughout the course so every lesson feels like another chapter instead of another worksheet.</p></div>
+<div class="master-cast-banner" style="margin:0 0 24px;border-radius:24px;overflow:hidden;box-shadow:0 16px 40px rgba(35,28,61,.16);background:white"><img alt="Lingo Lane master cast" src="images/talkabee-image-06.png" style="display:block;width:100%;height:auto"/></div>
 <div class="cast-grid">
-   <div class="cast"><img class="portrait-card" src="images/talkabee-image-07.jpg" alt="Carlos"><b>Carlos</b><small>welcoming host</small></div>
-   <div class="cast"><img class="portrait-card" src="images/talkabee-image-08.jpg" alt="Maria"><b>Maria</b><small>confident learner</small></div>
-   <div class="cast"><img class="portrait-card" src="images/talkabee-image-09.jpg" alt="Grandpa Wally"><b>Grandpa Wally</b><small>curious photographer</small></div>
-   <div class="cast"><img class="portrait-card" src="images/talkabee-image-10.jpg" alt="Grandma Cathy"><b>Grandma Cathy</b><small>warm storyteller</small></div>
-   <div class="cast"><img class="portrait-card" src="images/talkabee-image-11.jpg" alt="Aunt Julie"><b>Aunt Julie</b><small>free-spirited musician</small></div>
-   <div class="cast"><img class="portrait-card" src="images/talkabee-image-12.jpg" alt="Nicole"><b>Nicole</b><small>bright explorer</small></div>
-   <div class="cast"><img class="portrait-card" src="images/talkabee-image-13.jpg" alt="Sofia"><b>Sofia</b><small>curious traveler</small></div>
-   <div class="cast"><img class="portrait-card" src="images/talkabee-image-14.jpg" alt="Mitchell"><b>Mitchell</b><small>eager learner</small></div>
-   <div class="cast"><img class="portrait-card" src="images/talkabee-image-15.jpg" alt="Bear"><b>Bear</b><small>loyal sidekick</small></div>
-   <div class="cast"><img class="portrait-card" src="images/talkabee-image-16.jpg" alt="Daniel"><b>Daniel</b><small>easygoing local</small></div>
-   <div class="cast"><img class="portrait-card" src="images/talkabee-image-17.jpg" alt="Emma"><b>Emma</b><small>new explorer</small></div>
-   <div class="cast"><img class="portrait-card" src="images/talkabee-image-18.jpg" alt="Ryder"><b>Ryder</b><small>outdoor adventurer</small></div>
-  </div>
- </div>
+<div class="cast"><img alt="Carlos" class="portrait-card" src="images/talkabee-image-07.jpg"/><b>Carlos</b><small>welcoming host</small></div>
+<div class="cast"><img alt="Maria" class="portrait-card" src="images/talkabee-image-08.jpg"/><b>Maria</b><small>confident learner</small></div>
+<div class="cast"><img alt="Grandpa Wally" class="portrait-card" src="images/talkabee-image-09.jpg"/><b>Grandpa Wally</b><small>curious photographer</small></div>
+<div class="cast"><img alt="Grandma Cathy" class="portrait-card" src="images/talkabee-image-10.jpg"/><b>Grandma Cathy</b><small>warm storyteller</small></div>
+<div class="cast"><img alt="Aunt Julie" class="portrait-card" src="images/talkabee-image-11.jpg"/><b>Aunt Julie</b><small>free-spirited musician</small></div>
+<div class="cast"><img alt="Nicole" class="portrait-card" src="images/talkabee-image-12.jpg"/><b>Nicole</b><small>bright explorer</small></div>
+<div class="cast"><img alt="Sofia" class="portrait-card" src="images/talkabee-image-13.jpg"/><b>Sofia</b><small>curious traveler</small></div>
+<div class="cast"><img alt="Mitchell" class="portrait-card" src="images/talkabee-image-14.jpg"/><b>Mitchell</b><small>eager learner</small></div>
+<div class="cast"><img alt="Bear" class="portrait-card" src="images/talkabee-image-15.jpg"/><b>Bear</b><small>loyal sidekick</small></div>
+<div class="cast"><img alt="Daniel" class="portrait-card" src="images/talkabee-image-16.jpg"/><b>Daniel</b><small>easygoing local</small></div>
+<div class="cast"><img alt="Emma" class="portrait-card" src="images/talkabee-image-17.jpg"/><b>Emma</b><small>new explorer</small></div>
+<div class="cast"><img alt="Ryder" class="portrait-card" src="images/talkabee-image-18.jpg"/><b>Ryder</b><small>outdoor adventurer</small></div>
+</div>
+</div>
 </section>
-
-
 <section class="section" id="explore">
- <div class="wrap">
-  <div class="explore-shell">
-   <aside class="topic-directory" aria-label="Explore Talk A Bee topics">
-    <h3>Explore Talk A Bee</h3><p>Jump straight into the kind of conversation you want to practice.</p>
-    <button class="topic-link active" data-topic="travel">🧳 Travel <small>Paris</small></button>
-    <button class="topic-link" data-topic="cafe">☕ Café & Food <small>Ordering</small></button>
-    <button class="topic-link" data-topic="shopping">🛍 Shopping <small>Prices</small></button>
-    <button class="topic-link" data-topic="animals">🐶 Animals <small>Friends</small></button>
-    <button class="topic-link" data-topic="family">🏡 Home & Family <small>Everyday</small></button>
-    <button class="topic-link" data-topic="outdoors">🌳 Outdoors <small>Adventure</small></button>
-    <button class="topic-link" data-topic="music">🎵 Music & Fun <small>Julie</small></button>
-    <button class="topic-link" data-topic="talk">💬 Everyday Talk <small>Basics</small></button>
-    <div class="directory-divider"></div>
-    <div class="directory-label">More places to practice</div>
-    <button class="topic-link" data-topic="hotel">🏨 Hotel & Stay <small>Check-in</small></button>
-    <button class="topic-link" data-topic="transport">🚉 Getting Around <small>Station</small></button>
-    <button class="topic-link" data-topic="farmworld">🌾 Farm & Nature <small>Outside</small></button>
-    <button class="topic-link" data-topic="challenges">⭐ Grandma & Grandpa Challenges <small>1–6</small></button>
-   </aside>
-   <div class="topic-stage">
-    <div class="topic-hero" id="topicHero">
-     <div class="topic-overlay">
-      <div class="topic-kicker" id="topicKicker">TRAVEL • PARIS</div>
-      <h2 id="topicTitle">Find your way through Paris.</h2>
-      <p id="topicBlurb">Learn useful travel phrases inside the story instead of staring at a plain worksheet.</p>
-      <div class="phrase-card">
-       <strong>Today’s phrase</strong>
-       <div class="target" id="topicPhrase">¿Dónde está la estación?</div>
-       <div class="translation" id="topicTranslation">Where is the station?</div>
-       <div class="topic-action-row"><button type="button" class="topic-action" id="topicAction" hidden>Enter Animal World →</button><button type="button" class="topic-action" id="homeAction" hidden>Enter Grandma & Grandpa’s Place →</button><button type="button" class="topic-action" id="challengeAction" hidden>Start Challenge 1 →</button></div>
-      </div>
-     </div>
-    </div>
-   </div>
-  </div>
- </div>
+<div class="wrap">
+<div class="explore-shell">
+<aside aria-label="Explore Talk A Bee topics" class="topic-directory">
+<h3>Explore Talk A Bee</h3><p>Jump straight into the kind of conversation you want to practice.</p>
+<button class="topic-link active" data-topic="travel">🧳 Travel <small>Paris</small></button>
+<button class="topic-link" data-topic="cafe">☕ Café &amp; Food <small>Ordering</small></button>
+<button class="topic-link" data-topic="shopping">🛍 Shopping <small>Prices</small></button>
+<button class="topic-link" data-topic="animals">🐶 Animals <small>Friends</small></button>
+<button class="topic-link" data-topic="family">🏡 Home &amp; Family <small>Everyday</small></button>
+<button class="topic-link" data-topic="outdoors">🌳 Outdoors <small>Adventure</small></button>
+<button class="topic-link" data-topic="music">🎵 Music &amp; Fun <small>Julie</small></button>
+<button class="topic-link" data-topic="talk">💬 Everyday Talk <small>Basics</small></button>
+<div class="directory-divider"></div>
+<div class="directory-label">More places to practice</div>
+<button class="topic-link" data-topic="hotel">🏨 Hotel &amp; Stay <small>Check-in</small></button>
+<button class="topic-link" data-topic="transport">🚉 Getting Around <small>Station</small></button>
+<button class="topic-link" data-topic="farmworld">🌾 Farm &amp; Nature <small>Outside</small></button>
+<button class="topic-link" data-topic="challenges">⭐ Grandma &amp; Grandpa Challenges <small>1–6</small></button>
+</aside>
+<div class="topic-stage">
+<div class="topic-hero" id="topicHero">
+<div class="topic-overlay">
+<div class="topic-kicker" id="topicKicker">TRAVEL • PARIS</div>
+<h2 id="topicTitle">Find your way through Paris.</h2>
+<p id="topicBlurb">Learn useful travel phrases inside the story instead of staring at a plain worksheet.</p>
+<div class="phrase-card">
+<strong>Today’s phrase</strong>
+<div class="target" id="topicPhrase">¿Dónde está la estación?</div>
+<div class="translation" id="topicTranslation">Where is the station?</div>
+<div class="topic-action-row"><button class="topic-action" hidden="" id="topicAction" type="button">Enter Animal World →</button><button class="topic-action" hidden="" id="homeAction" type="button">Enter Grandma &amp; Grandpa’s Place →</button><button class="topic-action" hidden="" id="challengeAction" type="button">Start Challenge 1 →</button></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
 </section>
-
-
-<section id="animalWorld" class="section animal-world" aria-label="Animal World">
- <div class="wrap">
-  <div class="head"><div class="kick">ANIMAL WORLD</div><h2>Learn inside the scene.</h2><p>Pick a trail, hear a sentence, follow the highlighted words, then try individual words yourself.</p></div>
-  <div class="animal-shell">
-   <aside class="animal-directory" aria-label="Animal practice menu">
-    <h3>🐾 Animal Trails</h3>
-    <p>Choose what you want to practice.</p>
-    <button type="button" class="animal-nav active" data-animal-group="pets">🐶 Pets</button>
-    <button type="button" class="animal-nav" data-animal-group="farm">🐄 Farm Friends</button>
-    <button type="button" class="animal-nav" data-animal-group="actions">🏃 Actions</button>
-    <button type="button" class="animal-nav" data-animal-group="sounds">🔊 Sounds</button>
-    <button type="button" class="animal-nav" data-animal-group="challenge">⭐ Challenge</button>
-   </aside>
-   <div class="animal-stage">
-    <div class="animal-scene">
-     <div class="animal-lesson-card">
-      <div class="animal-kicker" id="animalKicker">PETS • FRIENDLY WORDS</div>
-      <h2 id="animalTitle">Meet the dogs.</h2>
-      <p id="animalPrompt">Follow the words while the sentence is spoken. Click any word to hear it by itself.</p>
-      <div class="animal-sentence" id="animalSentence" aria-live="polite"></div>
-      <div class="animal-translation" id="animalTranslation"></div>
-      <div class="animal-actions">
-       <button type="button" class="primary" id="animalPlay">🔊 Speak + Highlight</button>
-       <button type="button" id="animalSlow">🐢 Slow</button>
-       <button type="button" id="animalReplay">↻ Replay</button>
-      </div>
-      <div class="animal-sentence-list" id="animalSentenceList"></div>
-      <div class="animal-tip">💡 Try this: listen once, then tap each word, then play the full sentence again. The scene gives the sentence a memory to stick to.</div>
-      <div class="animal-challenge" id="animalChallenge">
-       <strong>Quick challenge</strong>
-       <div id="animalChallengeText">Which sentence means “The horse is eating”?</div>
-       <div class="animal-challenge-inputrow">
-        <input id="animalChallengeInput" type="text" autocomplete="off" spellcheck="false" placeholder="Type the Spanish sentence here">
-        <button type="button" id="animalChallengeCheck">✓ Check answer</button>
-       </div>
-       <div id="animalChallengeFeedback" aria-live="polite"></div>
-       <button type="button" id="animalChallengeAnswer">Show answer</button>
-       <div id="animalChallengeResult" style="margin-top:8px;font-weight:850"></div>
-      </div>
-     </div>
-    </div>
-   </div>
-  </div>
- </div>
+<section aria-label="Animal World" class="section animal-world" id="animalWorld">
+<div class="wrap">
+<div class="head"><div class="kick">ANIMAL WORLD</div><h2>Learn inside the scene.</h2><p>Pick a trail, hear a sentence, follow the highlighted words, then try individual words yourself.</p></div>
+<div class="animal-shell">
+<aside aria-label="Animal practice menu" class="animal-directory">
+<h3>🐾 Animal Trails</h3>
+<p>Choose what you want to practice.</p>
+<button class="animal-nav active" data-animal-group="pets" type="button">🐶 Pets</button>
+<button class="animal-nav" data-animal-group="farm" type="button">🐄 Farm Friends</button>
+<button class="animal-nav" data-animal-group="actions" type="button">🏃 Actions</button>
+<button class="animal-nav" data-animal-group="sounds" type="button">🔊 Sounds</button>
+<button class="animal-nav" data-animal-group="challenge" type="button">⭐ Challenge</button>
+</aside>
+<div class="animal-stage">
+<div class="animal-scene">
+<div class="animal-lesson-card">
+<div class="animal-kicker" id="animalKicker">PETS • FRIENDLY WORDS</div>
+<h2 id="animalTitle">Meet the dogs.</h2>
+<p id="animalPrompt">Follow the words while the sentence is spoken. Click any word to hear it by itself.</p>
+<div aria-live="polite" class="animal-sentence" id="animalSentence"></div>
+<div class="animal-translation" id="animalTranslation"></div>
+<div class="animal-actions">
+<button class="primary" id="animalPlay" type="button">🔊 Speak + Highlight</button>
+<button id="animalSlow" type="button">🐢 Slow</button>
+<button id="animalReplay" type="button">↻ Replay</button>
+</div>
+<div class="animal-sentence-list" id="animalSentenceList"></div>
+<div class="animal-tip">💡 Try this: listen once, then tap each word, then play the full sentence again. The scene gives the sentence a memory to stick to.</div>
+<div class="animal-challenge" id="animalChallenge">
+<strong>Quick challenge</strong>
+<div id="animalChallengeText">Which sentence means “The horse is eating”?</div>
+<div class="animal-challenge-inputrow">
+<input autocomplete="off" id="animalChallengeInput" placeholder="Type the Spanish sentence here" spellcheck="false" type="text"/>
+<button id="animalChallengeCheck" type="button">✓ Check answer</button>
+</div>
+<div aria-live="polite" id="animalChallengeFeedback"></div>
+<button id="animalChallengeAnswer" type="button">Show answer</button>
+<div id="animalChallengeResult" style="margin-top:8px;font-weight:850"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
 </section>
-
-
-<section id="homeWorld" class="section home-world" aria-label="Grandma and Grandpa's Place">
- <div class="wrap">
-  <div class="head"><div class="kick">HOME & FAMILY</div><h2>Grandma & Grandpa’s Place</h2><p>Explore the scene, click real objects, hear words, practice family phrases, and play a find-it challenge.</p></div>
-  <div class="home-shell">
-
-   <aside class="home-directory activity-panel" aria-label="Grandma and Grandpa activity menu">
-    <div class="activity-place">🏡 Grandma &amp; Grandpa’s Place</div>
-    <button type="button" class="activity-peek" id="activityPeek">👁 Scene View</button>
-    <div class="activity-label">ACTIVITIES</div>
-    <button type="button" class="home-nav active" data-home-group="family">👨‍👩‍👧 Family Talk</button>
-    <button type="button" class="home-nav" data-home-group="garden">🌷 Garden Words</button>
-    <button type="button" class="home-nav" data-home-group="birds">🐦 Birds</button>
-    <button type="button" class="home-nav" data-home-group="discover">🎣 Click &amp; Discover</button>
-    <button type="button" class="home-nav" data-home-group="hobbies">🧺 Hobbies &amp; Home</button>
-    <button type="button" class="home-nav" data-home-group="find">⭐ Find It Challenge</button>
-
-    <div class="activity-divider"></div>
-    <div class="activity-label">6 CHALLENGES</div>
-    <button type="button" class="home-challenge-nav" data-home-challenge="0"><span>1</span> Fishing Pole</button>
-    <button type="button" class="home-challenge-nav" data-home-challenge="1"><span>2</span> RV</button>
-    <button type="button" class="home-challenge-nav" data-home-challenge="2"><span>3</span> Birdhouse</button>
-    <button type="button" class="home-challenge-nav" data-home-challenge="3"><span>4</span> Pond</button>
-    <button type="button" class="home-challenge-nav" data-home-challenge="4"><span>5</span> Dog</button>
-    <button type="button" class="home-challenge-nav" data-home-challenge="5"><span>6</span> Bird</button>
-
-    <div class="activity-divider"></div>
-    <button type="button" class="activity-back" id="homeMainDirectory">← Main Directory</button>
-   </aside>
-
-   <button type="button" class="activity-restore" id="activityRestore">☰ Activities</button>
-   <div class="home-stage">
-    <div class="home-scene" id="homeScene">
-     <div class="scene-fill-layer" aria-hidden="true" style="background-image:url(&quot;images/talkabee-image-19.png&quot;)"></div>
-     <div class="scene-artboard" id="homeArtboard">
-      <img class="scene-main-image" id="homeSceneImage" src="images/talkabee-image-20.png" alt="Grandma and Grandpa yard scene">
-     </div>
-     
-     <div class="scene-hotspots" id="homeHotspots">
-      <button type="button" class="home-hotspot" data-object="fishing" style="left:72%;top:64%" aria-label="Fishing pole">🎣</button>
-      <button type="button" class="home-hotspot" data-object="birdhouse" style="left:60%;top:34%" aria-label="Birdhouse">🏠</button>
-      <button type="button" class="home-hotspot" data-object="pond" style="left:92%;top:77%" aria-label="Pond">🪷</button>
-      <button type="button" class="home-hotspot" data-object="dog" style="left:82%;top:78%" aria-label="Dog">🐶</button>
-      <button type="button" class="home-hotspot" data-object="rv" style="left:19%;top:16.5%" aria-label="RV">🚐</button>
-      <button type="button" class="home-hotspot" data-object="bird" style="left:72%;top:18%" aria-label="Bird">🐦</button>
-     </div>
-     </div>
-     <div class="home-pop" id="homePop">
-      <strong id="homePopWord"></strong>
-      <small id="homePopEnglish"></small>
-      <div id="homePopSentence" style="font-weight:850;margin-bottom:10px"></div>
-      <button type="button" id="homePopWordSpeak">🔊 Word</button>
-      <button type="button" id="homePopSentenceSpeak">🔊 Sentence</button>
-     </div>
-     <div class="home-panel">
-      <div class="home-kicker" id="homeKicker">FAMILY TALK</div>
-      <h2 id="homeTitle">Meet Grandma Cathy and Grandpa Wally.</h2>
-      <p id="homePrompt">Hear a simple family sentence, then click the words one at a time.</p>
-      <div class="home-wordline" id="homeWordline"></div>
-      <div class="home-translation" id="homeTranslation"></div>
-      <div class="home-actions">
-       <button type="button" class="primary" id="homePlay">🔊 Speak + Highlight</button>
-       <button type="button" id="homeSlow">🐢 Slow</button>
-       <button type="button" id="homeReplay">↻ Replay</button>
-      </div>
-      <div class="home-nextrow" id="homeNextRow">
-       <span class="home-progress" id="homeProgress">Phrase 1 of 4</span>
-       <button type="button" class="home-nextphrase" id="homeNextPhrase">Next phrase →</button>
-      </div>
-      <div class="home-list" id="homeList"></div>
-      <div class="home-find" id="homeFind">
-       <div class="home-challenge-count" id="homeChallengeCount">CHALLENGE 1 OF 6</div>
-       <div id="homeFindPrompt">Find the fishing pole.</div>
-       <div class="home-find-status" id="homeFindStatus"></div>
-       <div class="challenge-next-hint" id="challengeNextHint">Find the correct object to unlock the next challenge.</div>
-       <div class="challenge-next-slot"><button type="button" class="home-challenge-next visible-next" id="homeChallengeNext">Next Challenge →</button></div>
-      </div>
-     </div>
-    </div>
-   </div>
-  </div>
- </div>
-</section>
-
-
-<section id="yachtWorld" class="section yacht-world" aria-label="Sea Adventures">
- <div class="yacht-stage">
-  <aside class="yacht-directory" aria-label="Sea Adventures activity menu">
-   <div class="yacht-place">🛥️ Sea Adventures</div>
-   <button type="button" class="yacht-peek" id="yachtPeek">👁 Scene View</button>
-   <div class="yacht-label">ACTIVITIES</div>
-   <button type="button" class="yacht-nav active" data-yacht-group="deck">👋 On Deck Talk</button>
-   <button type="button" class="yacht-nav" data-yacht-group="boat">🛥️ Boat Words</button>
-   <button type="button" class="yacht-nav" data-yacht-group="ocean">🌊 Ocean Words</button>
-   <button type="button" class="yacht-nav" data-yacht-group="animals">🦜 Animal Friends</button>
-   <button type="button" class="yacht-nav" data-yacht-group="marina">🗺️ At the Marina</button>
-   <button type="button" class="yacht-nav" data-yacht-group="discover">🔎 Click &amp; Discover</button>
-   <button type="button" class="yacht-nav" data-yacht-group="find">⭐ Find It Challenge</button>
-   <div class="yacht-divider"></div>
-   <div class="yacht-label">6 CHALLENGES</div>
-   <button type="button" class="yacht-challenge-nav" data-yacht-challenge="0"><span>1</span> Grandpa Wally</button>
-   <button type="button" class="yacht-challenge-nav" data-yacht-challenge="1"><span>2</span> Grandma Cathy</button>
-   <button type="button" class="yacht-challenge-nav" data-yacht-challenge="2"><span>3</span> Fishing Pole</button>
-   <button type="button" class="yacht-challenge-nav" data-yacht-challenge="3"><span>4</span> Whale</button>
-   <button type="button" class="yacht-challenge-nav" data-yacht-challenge="4"><span>5</span> Dolphin</button>
-   <button type="button" class="yacht-challenge-nav" data-yacht-challenge="5"><span>6</span> Seagull</button>
-   <div class="yacht-divider"></div>
-   <button type="button" class="yacht-back" id="yachtMainDirectory">← Main Directory</button>
-  </aside>
-
-  <button type="button" class="yacht-restore" id="yachtRestore">☰ Activities</button>
-
-  <div class="yacht-scene" id="yachtScene" style="background-image:url('images/talkabee-image-21.png')">
-   <div class="yacht-hotspots" id="yachtHotspots">
-     <button type="button" class="yacht-hotspot" data-object="wally" style="left:27%;top:57%" aria-label="Grandpa Wally"></button>
-     <button type="button" class="yacht-hotspot" data-object="cathy" style="left:77%;top:59%" aria-label="Grandma Cathy"></button>
-     <button type="button" class="yacht-hotspot" data-object="fishing" style="left:38%;top:29%" aria-label="Fishing pole"></button>
-     <button type="button" class="yacht-hotspot" data-object="fish" style="left:31.5%;top:35%" aria-label="Fish"></button>
-     <button type="button" class="yacht-hotspot" data-object="whale" style="left:83.3%;top:27%" aria-label="Whale"></button>
-     <button type="button" class="yacht-hotspot" data-object="dolphin" style="left:94.4%;top:39%" aria-label="Dolphin"></button>
-     <button type="button" class="yacht-hotspot" data-object="seagull" style="left:94.1%;top:55.0%" aria-label="Seagull"></button>
-     <button type="button" class="yacht-hotspot" data-object="tackle" style="left:28.4%;top:86.6%" aria-label="Tackle box"></button>
-     <button type="button" class="yacht-hotspot table-hotspot" data-object="flowers" style="left:51.6%;top:81.0%" aria-label="Flowers on the table"></button>
-     <button type="button" class="yacht-hotspot table-hotspot" data-object="drink" style="left:59.7%;top:85.8%" aria-label="Drink on the table"></button>
-   <button type="button" class="yacht-hotspot table-hotspot" data-object="tray" style="left:54.4%;top:88.0%" aria-label="Tray on the table"></button>
-   <button type="button" class="yacht-hotspot table-wide-hotspot" data-object="table" style="left:57.0%;top:94.0%" aria-label="Table"></button>
-     <button type="button" class="yacht-hotspot" data-object="lifering" style="left:95.7%;top:87.0%" aria-label="Life ring"></button>
-     <button type="button" class="yacht-hotspot" data-object="yacht" style="left:19.0%;top:22.0%" aria-label="Yacht"></button>
-     <button type="button" class="yacht-hotspot" data-object="ocean" style="left:74%;top:44%" aria-label="Ocean"></button>
-    </div>
-   </div>
-
-   <div class="yacht-panel">
-   <div class="yacht-kicker" id="yachtKicker">ON DECK TALK</div>
-   <h2 id="yachtTitle">A beautiful evening on the water.</h2>
-   <p id="yachtPrompt">Hear a short sentence, then click the words one at a time.</p>
-   <div class="yacht-wordline" id="yachtWordline"></div>
-   <div class="yacht-translation" id="yachtTranslation"></div>
-   <div class="yacht-actions" id="yachtActions">
-    <button type="button" class="primary" id="yachtPlay">🔊 Speak + Highlight</button>
-    <button type="button" id="yachtSlow">🐢 Slow</button>
-    <button type="button" id="yachtReplay">↻ Replay</button>
-   </div>
-   <div class="yacht-nextrow" id="yachtNextRow">
-    <span class="yacht-progress" id="yachtProgress">Phrase 1 of 4</span>
-    <button type="button" class="yacht-nextphrase" id="yachtNextPhrase">Next phrase →</button>
-   </div>
-   <div class="yacht-list" id="yachtList"></div>
-   <div class="yacht-find" id="yachtFind">
-    <div class="yacht-challenge-count" id="yachtChallengeCount">CHALLENGE 1 OF 6</div>
-    <div id="yachtFindPrompt">Find Grandpa Wally.</div>
-    <div class="yacht-find-status" id="yachtFindStatus"></div>
-    <div class="yacht-next-hint" id="yachtNextHint">Find the correct object to unlock the next challenge.</div>
-    <button type="button" class="yacht-challenge-next" id="yachtChallengeNext">Next Challenge →</button>
-   </div>
-  </div>
- </div>
-</section>
-
-
-<section id="marketWorld" class="market-world" aria-label="Shopping Market">
- <div class="market-stage"><div class="market-scene">
-  <img class="market-main-image" src="images/talkabee-image-22.png" alt="Romantic sunset seaside market">
-  <button class="market-back" type="button">← Main Directory</button>
-  <aside class="market-directory">
-   <button type="button" id="marketMainDirectory" class="market-main-directory">← Main Directory</button>
-   <div class="market-place">🛍️ Shopping Market</div>
-   <div class="market-section-label">ACTIVITIES</div>
-   <button data-market="conversation">1. 💬 Market Conversation</button>
-   <button data-market="prices">2. 💶 Asking Prices</button>
-   <button data-market="buying">3. 🧺 Buying Something</button>
-   <button data-market="polite">4. 🙂 Please &amp; Thank You</button>
-   <button data-market="produce">5. 🍊 Choosing Produce</button>
-   <button data-market="quantity">6. 🔢 Numbers &amp; Quantities</button>
-   <button type="button" id="marketDiscovery" class="market-discovery">7. 🔎 Discovery</button>
-   <div class="market-section-label market-challenge-label">CHALLENGES</div>
-   <button class="market-challenge-nav" data-market-challenge="0">Challenge 1</button>
-   <button class="market-challenge-nav" data-market-challenge="1">Challenge 2</button>
-   <button class="market-challenge-nav" data-market-challenge="2">Challenge 3</button>
-   <button class="market-challenge-nav" data-market-challenge="3">Challenge 4</button>
-   <button class="market-challenge-nav" data-market-challenge="4">Challenge 5</button>
-   <button class="market-challenge-nav" data-market-challenge="5">Challenge 6</button>
-  </aside>
-  <div class="market-panel">
-   <div class="market-kicker">AT THE MARKET</div>
-   <h2 id="marketTitle">Buying lemons at the seaside market.</h2>
-   <p id="marketPrompt">Listen to the short conversation, then practice each line.</p>
-   <div class="market-line" id="marketLine">¿Cuánto cuestan los limones?</div>
-   <div class="market-translation" id="marketTranslation">How much are the lemons?</div>
-   <div class="market-actions" id="marketActions"><button id="marketSpeak">🔊 Speak</button><button id="marketNext">Next line →</button></div>
-   <div class="market-find" id="marketFind">
-    <div class="market-challenge-count" id="marketChallengeCount">CHALLENGE 1 OF 6</div>
-    <div class="market-find-status" id="marketFindStatus"></div>
-    <div class="market-next-hint" id="marketNextHint">Find the correct object in the market scene.</div>
-    <button type="button" class="market-challenge-next" id="marketChallengeNext">Next Challenge →</button>
-   </div>
-  </div>
-  <div class="market-hotspots">
-   <button data-word="limones" style="left:42.5%;top:74.5%" aria-label="Lemons"></button>
-   <button data-word="naranjas" style="left:28.8%;top:91.0%" aria-label="Oranges"></button>
-   <button data-word="tomates" style="left:56.8%;top:84.0%" aria-label="Tomatoes"></button>
-   <button data-word="pan" style="left:83.0%;top:80.0%" aria-label="Bread"></button>
-   <button data-word="aceitunas" style="left:67.3%;top:76.0%" aria-label="Olives"></button>
-   <button data-word="flores" style="left:79.2%;top:62.5%" aria-label="Flowers"></button>
-  </div>
- </div></div>
-</section>
-
-<div class="course-return-bar"><a href="index.html">← Main Directory</a></div>
-<section id="course" class="section soft">
- <div class="wrap">
-  <div class="head"><div class="kick">TRY IT</div><h2>Choose any of the 9 starter lessons.</h2><p>The full course path is visible here. Pick a lesson directly, or use Next Lesson when you finish one.</p></div>
-  <div class="course-path" id="coursePath">
-   <div class="course-unit"><div class="course-unit-kicker">UNIT 01</div><h3>First conversations</h3>
-    <button class="course-lesson-btn" data-course-lesson="0"><span class="course-lesson-num">1</span>Hello &amp; goodbye<span class="free-chip">FREE</span></button>
-    <button class="course-lesson-btn" data-course-lesson="1"><span class="course-lesson-num">2</span>Introduce yourself</button>
-    <button class="course-lesson-btn" data-course-lesson="2"><span class="course-lesson-num">3</span>Everyday politeness</button>
-   </div>
-   <div class="course-unit"><div class="course-unit-kicker">UNIT 02</div><h3>Food &amp; everyday life</h3>
-    <button class="course-lesson-btn" data-course-lesson="3"><span class="course-lesson-num">4</span>Food &amp; drinks</button>
-    <button class="course-lesson-btn" data-course-lesson="4"><span class="course-lesson-num">5</span>At the café</button>
-    <button class="course-lesson-btn" data-course-lesson="5"><span class="course-lesson-num">6</span>Out shopping</button>
-   </div>
-   <div class="course-unit"><div class="course-unit-kicker">UNIT 03</div><h3>Out in the world</h3>
-    <button class="course-lesson-btn" data-course-lesson="6"><span class="course-lesson-num">7</span>Ask for directions</button>
-    <button class="course-lesson-btn" data-course-lesson="7"><span class="course-lesson-num">8</span>Getting around</button>
-    <button class="course-lesson-btn" data-course-lesson="8"><span class="course-lesson-num">9</span>At the hotel</button>
-   </div>
-  </div>
-  <p class="course-hint">Tip: the green lessons are ones you have completed on this device.</p>
-  <div class="course-shell">
-   <div class="course-top"><div><div style="font-size:10px;color:#cfc5ff;font-weight:950;letter-spacing:.09em">INTERACTIVE LESSON</div><h2 id="lessonTitle">Hello &amp; goodbye</h2><div class="lesson-meta" id="lessonMeta">Lesson 1 of 9 · Unit 1 of 3</div></div>
-    <div class="course-controls"><select id="lang"><option value="es">Spanish</option><option value="fr">French</option><option value="en">English</option><option value="de">German</option><option value="it">Italian</option><option value="pt">Portuguese</option><option value="no">Norwegian</option></select><select id="lesson"></select><button id="trans">Hide translation</button></div>
-   </div>
-   <div class="lesson-grid">
-    <div class="scene" id="scene"><div class="scene-overlay"></div><div class="scene-caption"><div class="label">TODAY'S SCENE</div><h3 id="sceneTitle">A café above the bay</h3><p id="sceneText">Sofia and Daniel meet over coffee.</p></div></div>
-    <div class="exercise">
-     <div class="progress"><div id="prog"></div></div><div class="ex-type" id="etype">SEE + HEAR</div><h3 id="prompt">Listen to the conversation.</h3><div class="help" id="help">Use the scene to understand the situation before relying on translation.</div>
-     <div class="dialogue" id="dialogue"></div>
-     <div class="btnrow"><button class="smallbtn" id="play">🔊 Play conversation</button><button class="smallbtn" id="slow">🐢 Slow</button><button class="smallbtn" id="speak">🎤 Speak a line</button></div>
-     
-<div class="guided-reading" id="guidedReading">
-  <div class="guided-reading-label">FOLLOW THE WORDS</div>
-  <div class="guided-sentence" id="guidedSentence"></div>
-  <div class="guided-translation" id="guidedTranslation"></div>
-  <div class="guided-actions">
-    <button id="guidedPlay">▶ Follow along</button>
-    <button id="guidedSlow">🐢 Slow follow</button>
-    <button id="guidedReplay">↻ Replay</button>
-  </div>
+<section aria-label="Grandma and Grandpa's Place" class="section home-world" id="homeWorld">
+<div class="wrap">
+<div class="head"><div class="kick">HOME &amp; FAMILY</div><h2>Grandma &amp; Grandpa’s Place</h2><p>Explore the scene, click real objects, hear words, practice family phrases, and play a find-it challenge.</p></div>
+<div class="home-shell">
+<aside aria-label="Grandma and Grandpa activity menu" class="home-directory activity-panel">
+<div class="activity-place">🏡 Grandma &amp; Grandpa’s Place</div>
+<button class="activity-peek" id="activityPeek" type="button">👁 Scene View</button>
+<div class="activity-label">ACTIVITIES</div>
+<button class="home-nav active" data-home-group="family" type="button">👨‍👩‍👧 Family Talk</button>
+<button class="home-nav" data-home-group="garden" type="button">🌷 Garden Words</button>
+<button class="home-nav" data-home-group="birds" type="button">🐦 Birds</button>
+<button class="home-nav" data-home-group="discover" type="button">🎣 Click &amp; Discover</button>
+<button class="home-nav" data-home-group="hobbies" type="button">🧺 Hobbies &amp; Home</button>
+<button class="home-nav" data-home-group="find" type="button">⭐ Find It Challenge</button>
+<div class="activity-divider"></div>
+<div class="activity-label">6 CHALLENGES</div>
+<button class="home-challenge-nav" data-home-challenge="0" type="button"><span>1</span> Fishing Pole</button>
+<button class="home-challenge-nav" data-home-challenge="1" type="button"><span>2</span> RV</button>
+<button class="home-challenge-nav" data-home-challenge="2" type="button"><span>3</span> Birdhouse</button>
+<button class="home-challenge-nav" data-home-challenge="3" type="button"><span>4</span> Pond</button>
+<button class="home-challenge-nav" data-home-challenge="4" type="button"><span>5</span> Dog</button>
+<button class="home-challenge-nav" data-home-challenge="5" type="button"><span>6</span> Bird</button>
+<div class="activity-divider"></div>
+<button class="activity-back" id="homeMainDirectory" type="button">← Main Directory</button>
+</aside>
+<button class="activity-restore" id="activityRestore" type="button">☰ Activities</button>
+<div class="home-stage">
+<div class="home-scene" id="homeScene">
+<div aria-hidden="true" class="scene-fill-layer" style='background-image:url("images/talkabee-image-19.png")'></div>
+<div class="scene-artboard" id="homeArtboard">
+<img alt="Grandma and Grandpa yard scene" class="scene-main-image" id="homeSceneImage" src="images/talkabee-image-20.png"/>
+</div>
+<div class="scene-hotspots" id="homeHotspots">
+<button aria-label="Fishing pole" class="home-hotspot" data-object="fishing" style="left:72%;top:64%" type="button">🎣</button>
+<button aria-label="Birdhouse" class="home-hotspot" data-object="birdhouse" style="left:60%;top:34%" type="button">🏠</button>
+<button aria-label="Pond" class="home-hotspot" data-object="pond" style="left:92%;top:77%" type="button">🪷</button>
+<button aria-label="Dog" class="home-hotspot" data-object="dog" style="left:82%;top:78%" type="button">🐶</button>
+<button aria-label="RV" class="home-hotspot" data-object="rv" style="left:19%;top:16.5%" type="button">🚐</button>
+<button aria-label="Bird" class="home-hotspot" data-object="bird" style="left:72%;top:18%" type="button">🐦</button>
+</div>
+</div>
+<div class="home-pop" id="homePop">
+<strong id="homePopWord"></strong>
+<small id="homePopEnglish"></small>
+<div id="homePopSentence" style="font-weight:850;margin-bottom:10px"></div>
+<button id="homePopWordSpeak" type="button">🔊 Word</button>
+<button id="homePopSentenceSpeak" type="button">🔊 Sentence</button>
+</div>
+<div class="home-panel">
+<div class="home-kicker" id="homeKicker">FAMILY TALK</div>
+<h2 id="homeTitle">Meet Grandma Cathy and Grandpa Wally.</h2>
+<p id="homePrompt">Hear a simple family sentence, then click the words one at a time.</p>
+<div class="home-wordline" id="homeWordline"></div>
+<div class="home-translation" id="homeTranslation"></div>
+<div class="home-actions">
+<button class="primary" id="homePlay" type="button">🔊 Speak + Highlight</button>
+<button id="homeSlow" type="button">🐢 Slow</button>
+<button id="homeReplay" type="button">↻ Replay</button>
+</div>
+<div class="home-nextrow" id="homeNextRow">
+<span class="home-progress" id="homeProgress">Phrase 1 of 4</span>
+<button class="home-nextphrase" id="homeNextPhrase" type="button">Next phrase →</button>
+</div>
+<div class="home-list" id="homeList"></div>
+<div class="home-find" id="homeFind">
+<div class="home-challenge-count" id="homeChallengeCount">CHALLENGE 1 OF 6</div>
+<div id="homeFindPrompt">Find the fishing pole.</div>
+<div class="home-find-status" id="homeFindStatus"></div>
+<div class="challenge-next-hint" id="challengeNextHint">Find the correct object to unlock the next challenge.</div>
+<div class="challenge-next-slot"><button class="home-challenge-next visible-next" id="homeChallengeNext" type="button">Next Challenge →</button></div>
+</div>
+</div>
+</div>
+</div>
 </div>
 
+</section>
+<section aria-label="Sea Adventures" class="section yacht-world" id="yachtWorld">
+<div class="yacht-stage">
+<aside aria-label="Sea Adventures activity menu" class="yacht-directory">
+<div class="yacht-place">🛥️ Sea Adventures</div>
+<button class="yacht-peek" id="yachtPeek" type="button">👁 Scene View</button>
+<div class="yacht-label">ACTIVITIES</div>
+<button class="yacht-nav active" data-yacht-group="deck" type="button">👋 On Deck Talk</button>
+<button class="yacht-nav" data-yacht-group="boat" type="button">🛥️ Boat Words</button>
+<button class="yacht-nav" data-yacht-group="ocean" type="button">🌊 Ocean Words</button>
+<button class="yacht-nav" data-yacht-group="animals" type="button">🦜 Animal Friends</button>
+<button class="yacht-nav" data-yacht-group="marina" type="button">🗺️ At the Marina</button>
+<button class="yacht-nav" data-yacht-group="discover" type="button">🔎 Click &amp; Discover</button>
+<button class="yacht-nav" data-yacht-group="find" type="button">⭐ Find It Challenge</button>
+<div class="yacht-divider"></div>
+<div class="yacht-label">6 CHALLENGES</div>
+<button class="yacht-challenge-nav" data-yacht-challenge="0" type="button"><span>1</span> Grandpa Wally</button>
+<button class="yacht-challenge-nav" data-yacht-challenge="1" type="button"><span>2</span> Grandma Cathy</button>
+<button class="yacht-challenge-nav" data-yacht-challenge="2" type="button"><span>3</span> Fishing Pole</button>
+<button class="yacht-challenge-nav" data-yacht-challenge="3" type="button"><span>4</span> Whale</button>
+<button class="yacht-challenge-nav" data-yacht-challenge="4" type="button"><span>5</span> Dolphin</button>
+<button class="yacht-challenge-nav" data-yacht-challenge="5" type="button"><span>6</span> Seagull</button>
+<div class="yacht-divider"></div>
+<button class="yacht-back" id="yachtMainDirectory" type="button">← Main Directory</button>
+</aside>
+<button class="yacht-restore" id="yachtRestore" type="button">☰ Activities</button>
+<div class="yacht-scene" id="yachtScene" style="background-image:url('images/talkabee-image-21.png')">
+<div class="yacht-hotspots" id="yachtHotspots">
+<button aria-label="Grandpa Wally" class="yacht-hotspot" data-object="wally" style="left:27%;top:57%" type="button"></button>
+<button aria-label="Grandma Cathy" class="yacht-hotspot" data-object="cathy" style="left:77%;top:59%" type="button"></button>
+<button aria-label="Fishing pole" class="yacht-hotspot" data-object="fishing" style="left:38%;top:29%" type="button"></button>
+<button aria-label="Fish" class="yacht-hotspot" data-object="fish" style="left:31.5%;top:35%" type="button"></button>
+<button aria-label="Whale" class="yacht-hotspot" data-object="whale" style="left:83.3%;top:27%" type="button"></button>
+<button aria-label="Dolphin" class="yacht-hotspot" data-object="dolphin" style="left:94.4%;top:39%" type="button"></button>
+<button aria-label="Seagull" class="yacht-hotspot" data-object="seagull" style="left:94.1%;top:55.0%" type="button"></button>
+<button aria-label="Tackle box" class="yacht-hotspot" data-object="tackle" style="left:28.4%;top:86.6%" type="button"></button>
+<button aria-label="Flowers on the table" class="yacht-hotspot table-hotspot" data-object="flowers" style="left:51.6%;top:81.0%" type="button"></button>
+<button aria-label="Drink on the table" class="yacht-hotspot table-hotspot" data-object="drink" style="left:59.7%;top:85.8%" type="button"></button>
+<button aria-label="Tray on the table" class="yacht-hotspot table-hotspot" data-object="tray" style="left:54.4%;top:88.0%" type="button"></button>
+<button aria-label="Table" class="yacht-hotspot table-wide-hotspot" data-object="table" style="left:57.0%;top:94.0%" type="button"></button>
+<button aria-label="Life ring" class="yacht-hotspot" data-object="lifering" style="left:95.7%;top:87.0%" type="button"></button>
+<button aria-label="Yacht" class="yacht-hotspot" data-object="yacht" style="left:19.0%;top:22.0%" type="button"></button>
+<button aria-label="Ocean" class="yacht-hotspot" data-object="ocean" style="left:74%;top:44%" type="button"></button>
+</div>
+</div>
+<div class="yacht-panel">
+<div class="yacht-kicker" id="yachtKicker">ON DECK TALK</div>
+<h2 id="yachtTitle">A beautiful evening on the water.</h2>
+<p id="yachtPrompt">Hear a short sentence, then click the words one at a time.</p>
+<div class="yacht-wordline" id="yachtWordline"></div>
+<div class="yacht-translation" id="yachtTranslation"></div>
+<div class="yacht-actions" id="yachtActions">
+<button class="primary" id="yachtPlay" type="button">🔊 Speak + Highlight</button>
+<button id="yachtSlow" type="button">🐢 Slow</button>
+<button id="yachtReplay" type="button">↻ Replay</button>
+</div>
+<div class="yacht-nextrow" id="yachtNextRow">
+<span class="yacht-progress" id="yachtProgress">Phrase 1 of 4</span>
+<button class="yacht-nextphrase" id="yachtNextPhrase" type="button">Next phrase →</button>
+</div>
+<div class="yacht-list" id="yachtList"></div>
+<div class="yacht-find" id="yachtFind">
+<div class="yacht-challenge-count" id="yachtChallengeCount">CHALLENGE 1 OF 6</div>
+<div id="yachtFindPrompt">Find Grandpa Wally.</div>
+<div class="yacht-find-status" id="yachtFindStatus"></div>
+<div class="yacht-next-hint" id="yachtNextHint">Find the correct object to unlock the next challenge.</div>
+<button class="yacht-challenge-next" id="yachtChallengeNext" type="button">Next Challenge →</button>
+</div>
+</div>
+</div>
+</section>
+<section aria-label="Shopping Market" class="market-world" id="marketWorld">
+<div class="market-stage"><div class="market-scene">
+<img alt="Romantic sunset seaside market" class="market-main-image" src="images/talkabee-image-22.png"/>
+<button class="market-back" type="button">← Main Directory</button>
+<aside class="market-directory">
+<button class="market-main-directory" id="marketMainDirectory" type="button">← Main Directory</button>
+<div class="market-place">🛍️ Shopping Market</div>
+<div class="market-section-label">ACTIVITIES</div>
+<button data-market="conversation">1. 💬 Market Conversation</button>
+<button data-market="prices">2. 💶 Asking Prices</button>
+<button data-market="buying">3. 🧺 Buying Something</button>
+<button data-market="polite">4. 🙂 Please &amp; Thank You</button>
+<button data-market="produce">5. 🍊 Choosing Produce</button>
+<button data-market="quantity">6. 🔢 Numbers &amp; Quantities</button>
+<button class="market-discovery" id="marketDiscovery" type="button">7. 🔎 Discovery</button>
+<div class="market-section-label market-challenge-label">CHALLENGES</div>
+<button class="market-challenge-nav" data-market-challenge="0">Challenge 1</button>
+<button class="market-challenge-nav" data-market-challenge="1">Challenge 2</button>
+<button class="market-challenge-nav" data-market-challenge="2">Challenge 3</button>
+<button class="market-challenge-nav" data-market-challenge="3">Challenge 4</button>
+<button class="market-challenge-nav" data-market-challenge="4">Challenge 5</button>
+<button class="market-challenge-nav" data-market-challenge="5">Challenge 6</button>
+</aside>
+<div class="market-panel">
+<div class="market-kicker">AT THE MARKET</div>
+<h2 id="marketTitle">Buying lemons at the seaside market.</h2>
+<p id="marketPrompt">Listen to the short conversation, then practice each line.</p>
+<div class="market-line" id="marketLine">¿Cuánto cuestan los limones?</div>
+<div class="market-translation" id="marketTranslation">How much are the lemons?</div>
+<div class="market-actions" id="marketActions"><button id="marketSpeak">🔊 Speak</button><button id="marketNext">Next line →</button></div>
+<div class="market-find" id="marketFind">
+<div class="market-challenge-count" id="marketChallengeCount">CHALLENGE 1 OF 6</div>
+<div class="market-find-status" id="marketFindStatus"></div>
+<div class="market-next-hint" id="marketNextHint">Find the correct object in the market scene.</div>
+<button class="market-challenge-next" id="marketChallengeNext" type="button">Next Challenge →</button>
+</div>
+</div>
+<div class="market-hotspots">
+<button aria-label="Lemons" data-word="limones" style="left:42.5%;top:74.5%"></button>
+<button aria-label="Oranges" data-word="naranjas" style="left:28.8%;top:91.0%"></button>
+<button aria-label="Tomatoes" data-word="tomates" style="left:56.8%;top:84.0%"></button>
+<button aria-label="Bread" data-word="pan" style="left:83.0%;top:80.0%"></button>
+<button aria-label="Olives" data-word="aceitunas" style="left:67.3%;top:76.0%"></button>
+<button aria-label="Flowers" data-word="flores" style="left:79.2%;top:62.5%"></button>
+</div>
+</div></div>
+</section>
+<div class="course-return-bar"><a href="index.html">← Main Directory</a></div>
+<section class="section soft" id="course">
+<div class="wrap">
+<div class="head"><div class="kick">TRY IT</div><h2>Choose any of the 9 starter lessons.</h2><p>The full course path is visible here. Pick a lesson directly, or use Next Lesson when you finish one.</p></div>
+<div class="course-path" id="coursePath">
+<div class="course-unit"><div class="course-unit-kicker">UNIT 01</div><h3>First conversations</h3>
+<button class="course-lesson-btn" data-course-lesson="0"><span class="course-lesson-num">1</span>Hello &amp; goodbye<span class="free-chip">FREE</span></button>
+<button class="course-lesson-btn" data-course-lesson="1"><span class="course-lesson-num">2</span>Introduce yourself</button>
+<button class="course-lesson-btn" data-course-lesson="2"><span class="course-lesson-num">3</span>Everyday politeness</button>
+</div>
+<div class="course-unit"><div class="course-unit-kicker">UNIT 02</div><h3>Food &amp; everyday life</h3>
+<button class="course-lesson-btn" data-course-lesson="3"><span class="course-lesson-num">4</span>Food &amp; drinks</button>
+<button class="course-lesson-btn" data-course-lesson="4"><span class="course-lesson-num">5</span>At the café</button>
+<button class="course-lesson-btn" data-course-lesson="5"><span class="course-lesson-num">6</span>Out shopping</button>
+</div>
+<div class="course-unit"><div class="course-unit-kicker">UNIT 03</div><h3>Out in the world</h3>
+<button class="course-lesson-btn" data-course-lesson="6"><span class="course-lesson-num">7</span>Ask for directions</button>
+<button class="course-lesson-btn" data-course-lesson="7"><span class="course-lesson-num">8</span>Getting around</button>
+<button class="course-lesson-btn" data-course-lesson="8"><span class="course-lesson-num">9</span>At the hotel</button>
+</div>
+</div>
+<p class="course-hint">Tip: the green lessons are ones you have completed on this device.</p>
+<div class="course-shell">
+<div class="course-top"><div><div style="font-size:10px;color:#cfc5ff;font-weight:950;letter-spacing:.09em">INTERACTIVE LESSON</div><h2 id="lessonTitle">Hello &amp; goodbye</h2><div class="lesson-meta" id="lessonMeta">Lesson 1 of 9 · Unit 1 of 3</div></div>
+<div class="course-controls"><select id="lang"><option value="es">Spanish</option><option value="fr">French</option><option value="en">English</option><option value="de">German</option><option value="it">Italian</option><option value="pt">Portuguese</option><option value="no">Norwegian</option></select><select id="lesson"></select><button id="trans">Hide translation</button></div>
+</div>
+<div class="lesson-grid">
+<div class="scene" id="scene"><div class="scene-overlay"></div><div class="scene-caption"><div class="label">TODAY'S SCENE</div><h3 id="sceneTitle">A café above the bay</h3><p id="sceneText">Sofia and Daniel meet over coffee.</p></div></div>
+<div class="exercise">
+<div class="progress"><div id="prog"></div></div><div class="ex-type" id="etype">SEE + HEAR</div><h3 id="prompt">Listen to the conversation.</h3><div class="help" id="help">Use the scene to understand the situation before relying on translation.</div>
+<div class="dialogue" id="dialogue"></div>
+<div class="btnrow"><button class="smallbtn" id="play">🔊 Play conversation</button><button class="smallbtn" id="slow">🐢 Slow</button><button class="smallbtn" id="speak">🎤 Speak a line</button></div>
+<div class="guided-reading" id="guidedReading">
+<div class="guided-reading-label">FOLLOW THE WORDS</div>
+<div class="guided-sentence" id="guidedSentence"></div>
+<div class="guided-translation" id="guidedTranslation"></div>
+<div class="guided-actions">
+<button id="guidedPlay">▶ Follow along</button>
+<button id="guidedSlow">🐢 Slow follow</button>
+<button id="guidedReplay">↻ Replay</button>
+</div>
+</div>
 <div class="builder"><h4 id="buildPrompt"></h4><div class="answer" id="answer"></div><div class="words" id="words"></div><div class="feedback" id="feedback"></div><div class="btnrow"><button class="smallbtn" id="undo">↶ Undo</button><button class="smallbtn" id="reset">Reset</button><button class="smallbtn" id="check">✓ Check</button></div></div>
-     <div class="navrow"><button type="button" class="prev" id="back" onclick="window.lingoBack && window.lingoBack()">← Back</button><button type="button" class="next" id="next" onclick="window.lingoNext && window.lingoNext()">Next →</button></div>
-    </div>
-   </div>
-  </div>
- </div>
+<div class="navrow"><button class="prev" id="back" onclick="window.lingoBack &amp;&amp; window.lingoBack()" type="button">← Back</button><button class="next" id="next" onclick="window.lingoNext &amp;&amp; window.lingoNext()" type="button">Next →</button></div>
+</div>
+</div>
+</div>
+</div>
 </section>
-
-<section id="book" class="section">
- <div class="wrap book-section">
-  <div class="book-mock"><div class="book"><div class="book-cover"><div class="tiny">TALK A BEE · SPANISH</div><h3>Beginner<br>Adventure</h3><p>Illustrated conversations, visual vocabulary and practice you can keep.</p></div></div></div>
-  <div class="book-copy"><div class="kick">DOWNLOADABLE BOOKS</div><h2>Keep the course on your bookshelf—even if the bookshelf is a phone.</h2><p>The digital editions carry the same characters and world into downloadable PDFs. Learners can read offline, print exercises, keep the books permanently, or use them beside the interactive course.</p>
-   <div class="book-features"><div class="book-feat">✓ Works on PC & Mac</div><div class="book-feat">✓ Phone & tablet friendly</div><div class="book-feat">✓ Printable exercises</div><div class="book-feat">✓ No login needed to read</div><div class="book-feat">✓ Character conversations</div><div class="book-feat">✓ 9 starter lessons each</div></div>
-   <div style="display:flex;gap:12px;flex-wrap:wrap"><a class="download" href="spanish-starter-book-master-cast.pdf" download>📖 Spanish Starter Book — Master Cast</a><a class="download" href="spanish-starter-book.pdf" download>📘 Original Spanish Edition</a></div>
-  </div>
- </div>
+<section class="section" id="book">
+<div class="wrap book-section">
+<div class="book-mock"><div class="book"><div class="book-cover"><div class="tiny">TALK A BEE · SPANISH</div><h3>Beginner<br/>Adventure</h3><p>Illustrated conversations, visual vocabulary and practice you can keep.</p></div></div></div>
+<div class="book-copy"><div class="kick">DOWNLOADABLE BOOKS</div><h2>Keep the course on your bookshelf—even if the bookshelf is a phone.</h2><p>The digital editions carry the same characters and world into downloadable PDFs. Learners can read offline, print exercises, keep the books permanently, or use them beside the interactive course.</p>
+<div class="book-features"><div class="book-feat">✓ Works on PC &amp; Mac</div><div class="book-feat">✓ Phone &amp; tablet friendly</div><div class="book-feat">✓ Printable exercises</div><div class="book-feat">✓ No login needed to read</div><div class="book-feat">✓ Character conversations</div><div class="book-feat">✓ 9 starter lessons each</div></div>
+<div style="display:flex;gap:12px;flex-wrap:wrap"><a class="download" download="" href="spanish-starter-book-master-cast.pdf">📖 Spanish Starter Book — Master Cast</a><a class="download" download="" href="spanish-starter-book.pdf">📘 Original Spanish Edition</a></div>
+</div>
+</div>
 </section>
-
-<section id="world" class="section soft">
- <div class="wrap">
-  <div class="head"><div class="kick">A WORLD TO LEARN IN</div><h2>Everyday language deserves memorable places.</h2><p>The setting changes with the lesson, while the visual style keeps Talk A Bee feeling like one connected world.</p></div>
-  <div class="world">
-   <div class="world-card" style="background-image:url('images/talkabee-image-23.jpg')"><h3>Shop at the market</h3></div>
-   <div class="world-card" style="background-image:url('images/talkabee-image-02.jpg')"><h3>Find your train</h3></div>
-   <div class="world-card" style="background-image:url('images/talkabee-image-24.jpg')"><h3>Check into the hotel</h3></div>
-  </div>
- </div>
+<section class="section soft" id="world">
+<div class="wrap">
+<div class="head"><div class="kick">A WORLD TO LEARN IN</div><h2>Everyday language deserves memorable places.</h2><p>The setting changes with the lesson, while the visual style keeps Talk A Bee feeling like one connected world.</p></div>
+<div class="world">
+<div class="world-card" style="background-image:url('images/talkabee-image-23.jpg')"><h3>Shop at the market</h3></div>
+<div class="world-card" style="background-image:url('images/talkabee-image-02.jpg')"><h3>Find your train</h3></div>
+<div class="world-card" style="background-image:url('images/talkabee-image-24.jpg')"><h3>Check into the hotel</h3></div>
+</div>
+</div>
 </section>
-
 <section class="wrap final-cta"><div><h2>Learn your way.</h2><p>Interactive course, illustrated digital book, or both together.</p></div><button id="trial">Start 7-day explorer</button></section>
 <footer><div class="wrap foot"><b>Talk A Bee</b><span>Learn through stories, scenes and conversation.</span><span>Spanish · French · English · German · Italian · Portuguese · Norwegian · Greek</span></div></footer>
-
 <div class="modal" id="modal"><div class="modal-card"><h3>Your 7-day explorer is ready.</h3><p>This prototype stores the start date and lesson progress only in this browser. There is no payment system connected.</p><div class="modal-actions"><button class="close" id="close">Close</button><button class="start" onclick="document.querySelector('#course').scrollIntoView();document.getElementById('modal').classList.remove('open')">Start learning</button></div></div></div>
-
 <script>
 
 const PORTRAITS={
@@ -1573,7 +1512,6 @@ wireGuidedControls();
 fillLessons();render();
 renderGuidedSentence();
 </script>
-
 <script>
 (function(){
  const topics={
@@ -1830,7 +1768,6 @@ renderGuidedSentence();
  renderAnimal();
 })();
 </script>
-
 <script>
 (function(){
  const groups={
@@ -2088,8 +2025,6 @@ renderGuidedSentence();
  render();
 })();
 </script>
-
-
 <script>
 (function(){
  const guide=document.getElementById('beeGuide');
@@ -2130,7 +2065,6 @@ renderGuidedSentence();
  const saved=localStorage.getItem('talkabee-site-language'); if(saved) siteLang.value=saved;}
 })();
 </script>
-
 <style id="checkpoint-24-true-left-directory">
 /* CHECKPOINT 24 — true left navigation panel, even on scaled Windows displays */
 
@@ -2240,8 +2174,6 @@ renderGuidedSentence();
   }
 }
 </style>
-
-
 <style id="checkpoint-25-floating-directory-full-background">
 /* CHECKPOINT 25
    One full-width scene behind everything.
@@ -2386,8 +2318,6 @@ renderGuidedSentence();
   }
 }
 </style>
-
-
 <style id="checkpoint-26-clean-hero">
 /* CHECKPOINT 26 — cleaner hero and a slimmer floating directory */
 
@@ -2504,10 +2434,6 @@ html{scroll-behavior:smooth !important;}
   }
 }
 </style>
-
-
-
-
 <script id="checkpoint-28-screen-swap">
 document.addEventListener('DOMContentLoaded', function(){
   var main = document.getElementById('mainDirectory');
@@ -2547,10 +2473,6 @@ document.addEventListener('DOMContentLoaded', function(){
   });
 });
 </script>
-
-
-
-
 <style id="checkpoint-27-one-main-directory">
 /* CHECKPOINT 27 — there is only ONE main directory now. */
 
@@ -2627,8 +2549,6 @@ document.addEventListener('DOMContentLoaded', function(){
   }
 }
 </style>
-
-
 <style id="checkpoint-28-screen-swap-world">
 /* CHECKPOINT 28 — app-like screen swap. No scroll from Main Directory into Grandma & Grandpa. */
 
@@ -2823,8 +2743,6 @@ body.talkabee-world-open{
   }
 }
 </style>
-
-
 <style id="checkpoint-29-visibility-pass">
 /* CHECKPOINT 29
    Goal: expose more of the picture, shrink the left panel,
@@ -2946,8 +2864,6 @@ body.talkabee-world-open{
   }
 }
 </style>
-
-
 <style id="checkpoint-30-balance-pass">
 /* CHECKPOINT 30
    Bring the scene back up to size, remove the dead right-side space,
@@ -3080,8 +2996,6 @@ body.talkabee-world-open{
   }
 }
 </style>
-
-
 <style id="checkpoint-31-scene-first">
 /* CHECKPOINT 31 — prioritize the interactive picture during challenges. */
 
@@ -3259,8 +3173,6 @@ body.talkabee-world-open{
   }
 }
 </style>
-
-
 <style id="checkpoint-32-challenge-panel-fix">
 /* CHECKPOINT 32
    Fix the cut-off challenge panel and make Next Challenge fully visible.
@@ -3392,8 +3304,6 @@ body.talkabee-world-open{
   }
 }
 </style>
-
-
 <style id="checkpoint-33-next-button-fix">
 /* CHECKPOINT 33 — Next Challenge should always behave like a real button. */
 #homeWorld .home-challenge-next.visible-next,
@@ -3406,8 +3316,6 @@ body.talkabee-world-open{
   color:#fff !important;
 }
 </style>
-
-
 <style id="checkpoint-35-restore-scene">
 /* CHECKPOINT 35 — restore the actual background image safely.
    Show the whole scene edge-to-edge with no black side bars. */
@@ -3423,8 +3331,6 @@ body.talkabee-world-open{
   background:linear-gradient(180deg,rgba(8,14,28,.01),rgba(8,14,28,.07)) !important;
 }
 </style>
-
-
 <style id="checkpoint-38-static-stage-css">
 #homeWorld .home-scene{
   background:none !important;
@@ -3484,8 +3390,6 @@ body.talkabee-world-open{
   background:linear-gradient(180deg,rgba(8,14,28,.01),rgba(8,14,28,.06)) !important;
 }
 </style>
-
-
 <style id="checkpoint-39-scene-tuning">
 /* CHECKPOINT 39
    Preserve the real image proportions, but enlarge the artboard enough to
@@ -3521,8 +3425,6 @@ body.talkabee-world-open{
   display:none !important;
 }
 </style>
-
-
 <style id="checkpoint-40-live-css-panel">
 /* CHECKPOINT 40 — real widened artwork + live CSS activity panel. */
 
@@ -3570,7 +3472,6 @@ body.talkabee-world-open{
   object-fit:cover !important;
 }
 </style>
-
 <style id="checkpoint-46-smaller-activity-script-panel">
 /* CHECKPOINT 46 — compact Activity Script Panel. */
 #homeWorld:not(.challenge-mode) .home-panel{
@@ -3628,8 +3529,6 @@ body.talkabee-world-open{
   }
 }
 </style>
-
-
 <script id="checkpoint-52-sea-adventures-script">
 document.addEventListener('DOMContentLoaded',function(){
  const main=document.getElementById('mainDirectory');
@@ -3701,7 +3600,6 @@ document.addEventListener('DOMContentLoaded',function(){
  render();
 });
 </script>
-
 <style id="checkpoint-58-shopping-market">
 /* V58 Shopping Market — V50 visual master: same full-scene dimensions/framing, 182px glass directory, compact translucent script card. */
 #marketWorld{display:none;position:fixed;inset:0;z-index:10020;background:#182238;overflow:hidden}
@@ -3738,7 +3636,6 @@ document.addEventListener('DOMContentLoaded',function(){
 
 @media(max-width:759px){#marketWorld .market-directory{width:160px}#marketWorld .market-panel{left:auto;right:10px;width:calc(100% - 184px)}}
 </style>
-
 <script id="checkpoint-61-shopping-market-js">
 (function(){
  const w=document.getElementById('marketWorld'); if(!w)return;
@@ -3775,7 +3672,6 @@ document.addEventListener('DOMContentLoaded',function(){
  loadLesson('conversation');
 })();
 </script>
-
 <style id="checkpoint-63-market-hotspot-alignment">
 /* V63 — hotspot centers recalibrated from the user's actual rendered 1648×927 market screenshot.
    Script box, V50 scene dimensions, framing, transparency, and left panel are unchanged. */
@@ -3815,52 +3711,52 @@ document.addEventListener('DOMContentLoaded',function(){
 #kitchenWorld .kitchen-find.show{display:block}.kitchen-challenge-count{font-size:9px;font-weight:950;letter-spacing:.12em;color:#6445c4;margin-bottom:5px}.kitchen-find-status{min-height:20px;margin:5px 0;font-weight:900}.kitchen-next-hint{font-size:10px;color:#596174;margin:4px 0 7px}
 @media(max-width:759px){#kitchenWorld .kitchen-directory{width:160px}#kitchenWorld .kitchen-panel{right:10px;width:calc(100% - 184px)}}
 </style>
-<section id="kitchenWorld" aria-label="Grandma's Kitchen">
- <div class="train-stage"><div class="train-scene">
-  <img src="images/talkabee-image-35.png" alt="Grandma's Kitchen baking scene">
-  <aside class="kitchen-directory">
-   <button type="button" id="kitchenMainDirectory" class="kitchen-main-directory">← Main Directory</button>
-   <div class="kitchen-place">🍪 Grandma's Kitchen</div>
-   <div class="kitchen-section-label">ACTIVITIES</div>
-   <button data-kitchen="baking">1. 🍪 Baking Cookies</button>
-   <button data-kitchen="ingredients">2. 🥣 Finding Ingredients</button>
-   <button data-kitchen="actions">3. 🥄 Kitchen Actions</button>
-   <button data-kitchen="helping">4. 👵 Helping Grandma</button>
-   <button data-kitchen="counting">5. ⭐ Colors &amp; Counting</button>
-   <button data-kitchen="sharing">6. 🥧 Sharing the Treats</button>
-   <button type="button" id="kitchenDiscovery" class="kitchen-discovery">7. 🔎 Discovery</button>
-   <div class="kitchen-section-label">CHALLENGES</div>
-   <button class="kitchen-challenge-nav" data-kitchen-challenge="0">Challenge 1</button>
-   <button class="kitchen-challenge-nav" data-kitchen-challenge="1">Challenge 2</button>
-   <button class="kitchen-challenge-nav" data-kitchen-challenge="2">Challenge 3</button>
-   <button class="kitchen-challenge-nav" data-kitchen-challenge="3">Challenge 4</button>
-   <button class="kitchen-challenge-nav" data-kitchen-challenge="4">Challenge 5</button>
-   <button class="kitchen-challenge-nav" data-kitchen-challenge="5">Challenge 6</button>
-  </aside>
-  <div class="kitchen-hotspots" aria-label="Grandma's Kitchen discovery objects">
-   <button data-word="flour" style="left:92%;top:91%;width:7%" aria-label="Flour"></button>
-   <button data-word="sugar" style="left:13%;top:15%;width:5%" aria-label="Sugar"></button>
-   <button data-word="bowl" style="left:23%;top:61%;width:8%" aria-label="Bowl"></button>
-   <button data-word="rollingpin" style="left:49%;top:63%;width:12%" aria-label="Rolling pin"></button>
-   <button data-word="pie" style="left:35%;top:78%;width:13%" aria-label="Pie"></button>
-   <button data-word="cookies" style="left:70%;top:84%;width:13%" aria-label="Cookies"></button>
-   <button data-word="eggs" style="left:86%;top:81%;width:7%" aria-label="Eggs"></button>
-   <button data-word="apples" style="left:95%;top:65%;width:7%" aria-label="Apples"></button>
-   <button data-word="berries" style="left:11%;top:86%;width:8%" aria-label="Berries"></button>
-   <button data-word="flowers" style="left:3%;top:39%;width:7%" aria-label="Flowers"></button>
-   <button data-word="bear" style="left:88%;top:48%;width:8%" aria-label="Bear"></button>
-   <button data-word="chicken" style="left:96%;top:40%;width:5%" aria-label="Chicken"></button>
-  </div>
-  <div class="kitchen-panel">
-   <div class="kitchen-kicker">IN GRANDMA'S KITCHEN</div>
-   <h2 id="kitchenTitle">Baking cookies with Grandma.</h2>
-   <p id="kitchenPrompt">Listen, then practice each useful kitchen sentence.</p>
-   <div class="kitchen-line" id="kitchenLine">Estamos haciendo galletas.</div>
-   <div class="kitchen-translation" id="kitchenTranslation">We are making cookies.</div>
-   <div class="kitchen-actions" id="kitchenActions"><button id="kitchenSpeak">🔊 Speak</button><button id="kitchenNext">Next line →</button></div>
-   <div class="kitchen-find" id="kitchenFind"><div class="kitchen-challenge-count" id="kitchenChallengeCount">CHALLENGE 1 OF 6</div><div class="kitchen-find-status" id="kitchenFindStatus"></div><div class="kitchen-next-hint" id="kitchenNextHint">Find the correct object to unlock the next challenge.</div><button type="button" class="kitchen-challenge-next" id="kitchenChallengeNext">Next Challenge →</button></div>
-  </div>
- </div></div>
+<section aria-label="Grandma's Kitchen" id="kitchenWorld">
+<div class="train-stage"><div class="train-scene">
+<img alt="Grandma's Kitchen baking scene" src="images/talkabee-image-35.png"/>
+<aside class="kitchen-directory">
+<button class="kitchen-main-directory" id="kitchenMainDirectory" type="button">← Main Directory</button>
+<div class="kitchen-place">🍪 Grandma's Kitchen</div>
+<div class="kitchen-section-label">ACTIVITIES</div>
+<button data-kitchen="baking">1. 🍪 Baking Cookies</button>
+<button data-kitchen="ingredients">2. 🥣 Finding Ingredients</button>
+<button data-kitchen="actions">3. 🥄 Kitchen Actions</button>
+<button data-kitchen="helping">4. 👵 Helping Grandma</button>
+<button data-kitchen="counting">5. ⭐ Colors &amp; Counting</button>
+<button data-kitchen="sharing">6. 🥧 Sharing the Treats</button>
+<button class="kitchen-discovery" id="kitchenDiscovery" type="button">7. 🔎 Discovery</button>
+<div class="kitchen-section-label">CHALLENGES</div>
+<button class="kitchen-challenge-nav" data-kitchen-challenge="0">Challenge 1</button>
+<button class="kitchen-challenge-nav" data-kitchen-challenge="1">Challenge 2</button>
+<button class="kitchen-challenge-nav" data-kitchen-challenge="2">Challenge 3</button>
+<button class="kitchen-challenge-nav" data-kitchen-challenge="3">Challenge 4</button>
+<button class="kitchen-challenge-nav" data-kitchen-challenge="4">Challenge 5</button>
+<button class="kitchen-challenge-nav" data-kitchen-challenge="5">Challenge 6</button>
+</aside>
+<div aria-label="Grandma's Kitchen discovery objects" class="kitchen-hotspots">
+<button aria-label="Flour" data-word="flour" style="left:92%;top:91%;width:7%"></button>
+<button aria-label="Sugar" data-word="sugar" style="left:13%;top:15%;width:5%"></button>
+<button aria-label="Bowl" data-word="bowl" style="left:23%;top:61%;width:8%"></button>
+<button aria-label="Rolling pin" data-word="rollingpin" style="left:49%;top:63%;width:12%"></button>
+<button aria-label="Pie" data-word="pie" style="left:35%;top:78%;width:13%"></button>
+<button aria-label="Cookies" data-word="cookies" style="left:70%;top:84%;width:13%"></button>
+<button aria-label="Eggs" data-word="eggs" style="left:86%;top:81%;width:7%"></button>
+<button aria-label="Apples" data-word="apples" style="left:95%;top:65%;width:7%"></button>
+<button aria-label="Berries" data-word="berries" style="left:11%;top:86%;width:8%"></button>
+<button aria-label="Flowers" data-word="flowers" style="left:3%;top:39%;width:7%"></button>
+<button aria-label="Bear" data-word="bear" style="left:88%;top:48%;width:8%"></button>
+<button aria-label="Chicken" data-word="chicken" style="left:96%;top:40%;width:5%"></button>
+</div>
+<div class="kitchen-panel">
+<div class="kitchen-kicker">IN GRANDMA'S KITCHEN</div>
+<h2 id="kitchenTitle">Baking cookies with Grandma.</h2>
+<p id="kitchenPrompt">Listen, then practice each useful kitchen sentence.</p>
+<div class="kitchen-line" id="kitchenLine">Estamos haciendo galletas.</div>
+<div class="kitchen-translation" id="kitchenTranslation">We are making cookies.</div>
+<div class="kitchen-actions" id="kitchenActions"><button id="kitchenSpeak">🔊 Speak</button><button id="kitchenNext">Next line →</button></div>
+<div class="kitchen-find" id="kitchenFind"><div class="kitchen-challenge-count" id="kitchenChallengeCount">CHALLENGE 1 OF 6</div><div class="kitchen-find-status" id="kitchenFindStatus"></div><div class="kitchen-next-hint" id="kitchenNextHint">Find the correct object to unlock the next challenge.</div><button class="kitchen-challenge-next" id="kitchenChallengeNext" type="button">Next Challenge →</button></div>
+</div>
+</div></div>
 </section>
 <script id="checkpoint-65-grandmas-kitchen-js">
 (function(){
@@ -3892,7 +3788,6 @@ document.addEventListener('DOMContentLoaded',function(){
  loadLesson('baking');
 })();
 </script>
-
 <script id="checkpoint-71-adventure-scroll-lock">
 (function(){
   const world=document.getElementById('kitchenWorld');
@@ -3908,15 +3803,14 @@ document.addEventListener('DOMContentLoaded',function(){
   syncLock();
 })();
 </script>
-
 <style id="lake-world-host-style">
 #lakeWorldHost{display:none;position:fixed;inset:0;z-index:99999;background:#172335;overflow:hidden}
 #lakeWorldHost.open{display:block}
 #lakeWorldHost iframe{display:block;width:100%;height:100%;border:0;margin:0;padding:0}
 body.lake-world-open{overflow:hidden!important}
 </style>
-<div id="lakeWorldHost" aria-label="Lake and Mountain Adventure">
-  <iframe id="lakeWorldFrame" title="Lake &amp; Mountain Adventure" srcdoc="&lt;!doctype html&gt;
+<div aria-label="Lake and Mountain Adventure" id="lakeWorldHost">
+<iframe id="lakeWorldFrame" srcdoc="&lt;!doctype html&gt;
 &lt;html lang=&quot;en&quot;&gt;
 &lt;head&gt;
 &lt;meta charset=&quot;utf-8&quot;&gt;
@@ -3981,7 +3875,7 @@ button{font:inherit;cursor:pointer}
  &lt;div class=&quot;scene&quot;&gt;
   &lt;img src=&quot;images/talkabee-image-36.png&quot; alt=&quot;Grandparents and family enjoying a mountain lake adventure&quot;&gt;
   &lt;aside class=&quot;directory&quot;&gt;
-   &lt;button type=&quot;button&quot; class=&quot;main-directory&quot; onclick=&quot;parent.postMessage(&#x27;talkabee-main-directory&#x27;,&#x27;*&#x27;)&quot;&gt;← Main Directory&lt;/button&gt;
+   &lt;button type=&quot;button&quot; class=&quot;main-directory&quot; onclick=&quot;parent.postMessage('talkabee-main-directory','*')&quot;&gt;← Main Directory&lt;/button&gt;
    &lt;div class=&quot;place&quot;&gt;🏞️ Lake &amp;amp; Mountain Adventure&lt;/div&gt;
    &lt;div class=&quot;label&quot;&gt;ACTIVITIES&lt;/div&gt;
    &lt;button data-lesson=&quot;fishing&quot;&gt;1. 🎣 Fishing Trip&lt;/button&gt;
@@ -4071,9 +3965,9 @@ const title=$(&quot;title&quot;),prompt=$(&quot;prompt&quot;),line=$(&quot;line&
 function speak(t){if(!(&quot;speechSynthesis&quot; in window))return;speechSynthesis.cancel();let u=new SpeechSynthesisUtterance(t);u.lang=&quot;es-ES&quot;;u.rate=.82;speechSynthesis.speak(u)}
 function clearActive(){document.querySelectorAll(&quot;.directory button&quot;).forEach(b=&gt;b.classList.remove(&quot;active&quot;))}
 function render(){let x=lessons[active].lines[index];line.textContent=x[0];translation.textContent=x[1]}
-function loadLesson(k){active=k;index=0;challenge=-1;discovery=false;solved=false;find.classList.remove(&quot;show&quot;);actions.style.display=&quot;flex&quot;;let l=lessons[k];title.textContent=l.title;prompt.textContent=l.prompt;render();clearActive();document.querySelector(&#x27;[data-lesson=&quot;&#x27;+k+&#x27;&quot;]&#x27;).classList.add(&quot;active&quot;)}
+function loadLesson(k){active=k;index=0;challenge=-1;discovery=false;solved=false;find.classList.remove(&quot;show&quot;);actions.style.display=&quot;flex&quot;;let l=lessons[k];title.textContent=l.title;prompt.textContent=l.prompt;render();clearActive();document.querySelector('[data-lesson=&quot;'+k+'&quot;]').classList.add(&quot;active&quot;)}
 function loadDiscovery(){challenge=-1;discovery=true;find.classList.remove(&quot;show&quot;);actions.style.display=&quot;none&quot;;title.textContent=&quot;Click &amp; Discover&quot;;prompt.textContent=&quot;Click objects anywhere in the scene to learn their names.&quot;;line.textContent=&quot;Explora la escena.&quot;;translation.textContent=&quot;Explore the scene.&quot;;clearActive();document.querySelector(&quot;[data-discovery]&quot;).classList.add(&quot;active&quot;)}
-function loadChallenge(i){challenge=i;discovery=false;solved=false;actions.style.display=&quot;none&quot;;find.classList.add(&quot;show&quot;);let key=challengeOrder[i],x=words[key];title.textContent=&quot;Challenge &quot;+(i+1)+&quot;: Find &quot;+x[1].replace(/^The /,&quot;&quot;).replace(/\.$/,&quot;&quot;)+&quot;.&quot;;prompt.textContent=&quot;Search the scene and click the correct object.&quot;;line.textContent=x[0];translation.textContent=x[1];count.textContent=&quot;CHALLENGE &quot;+(i+1)+&quot; OF 6&quot;;status.textContent=&quot;&quot;;hint.textContent=&quot;Find the correct object to unlock the next challenge.&quot;;challengeNext.textContent=i&lt;5?&quot;Next Challenge →&quot;:&quot;Finish Challenges ✓&quot;;clearActive();document.querySelector(&#x27;[data-challenge=&quot;&#x27;+i+&#x27;&quot;]&#x27;).classList.add(&quot;active&quot;)}
+function loadChallenge(i){challenge=i;discovery=false;solved=false;actions.style.display=&quot;none&quot;;find.classList.add(&quot;show&quot;);let key=challengeOrder[i],x=words[key];title.textContent=&quot;Challenge &quot;+(i+1)+&quot;: Find &quot;+x[1].replace(/^The /,&quot;&quot;).replace(/\.$/,&quot;&quot;)+&quot;.&quot;;prompt.textContent=&quot;Search the scene and click the correct object.&quot;;line.textContent=x[0];translation.textContent=x[1];count.textContent=&quot;CHALLENGE &quot;+(i+1)+&quot; OF 6&quot;;status.textContent=&quot;&quot;;hint.textContent=&quot;Find the correct object to unlock the next challenge.&quot;;challengeNext.textContent=i&lt;5?&quot;Next Challenge →&quot;:&quot;Finish Challenges ✓&quot;;clearActive();document.querySelector('[data-challenge=&quot;'+i+'&quot;]').classList.add(&quot;active&quot;)}
 document.querySelectorAll(&quot;[data-lesson]&quot;).forEach(b=&gt;b.onclick=()=&gt;loadLesson(b.dataset.lesson));
 document.querySelector(&quot;[data-discovery]&quot;).onclick=loadDiscovery;
 document.querySelectorAll(&quot;[data-challenge]&quot;).forEach(b=&gt;b.onclick=()=&gt;loadChallenge(Number(b.dataset.challenge)));
@@ -4085,7 +3979,7 @@ loadLesson(&quot;fishing&quot;);
 })();
 &lt;/script&gt;
 &lt;/body&gt;
-&lt;/html&gt;"></iframe>
+&lt;/html&gt;" title="Lake &amp; Mountain Adventure"></iframe>
 </div>
 <script id="lake-world-host-script">
 (function(){
@@ -4106,16 +4000,13 @@ loadLesson(&quot;fishing&quot;);
   });
 })();
 </script>
-
-
 <div id="auntJulieWorldHost" style="display:none;position:fixed;inset:0;z-index:999999;background:#142d35;">
-  <iframe id="auntJulieFrame" title="Aunt Julie's Island Retreat"
-    style="width:100%;height:100%;border:0;display:block;" srcdoc="&lt;!doctype html&gt;
+<iframe id="auntJulieFrame" srcdoc="&lt;!doctype html&gt;
 &lt;html lang=&quot;en&quot;&gt;
 &lt;head&gt;
 &lt;meta charset=&quot;utf-8&quot;&gt;
 &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width,initial-scale=1&quot;&gt;
-&lt;title&gt;Talk A Bee — Aunt Julie&#x27;s Island Retreat&lt;/title&gt;
+&lt;title&gt;Talk A Bee — Aunt Julie's Island Retreat&lt;/title&gt;
 &lt;style&gt;
 *{box-sizing:border-box}
 html,body{margin:0;width:100%;height:100%;overflow:hidden;font-family:Inter,Segoe UI,Arial,sans-serif;background:#142d35;color:#172335}
@@ -4168,14 +4059,14 @@ button{font:inherit;cursor:pointer}
 &lt;body&gt;
 &lt;section id=&quot;world&quot;&gt;
  &lt;div class=&quot;scene&quot;&gt;
-  &lt;img src=&quot;images/talkabee-image-37.png&quot; alt=&quot;Aunt Julie&#x27;s Island Retreat&quot;&gt;
+  &lt;img src=&quot;images/talkabee-image-37.png&quot; alt=&quot;Aunt Julie's Island Retreat&quot;&gt;
   &lt;aside class=&quot;directory&quot;&gt;
-   &lt;a id=&quot;mainDirectory&quot; class=&quot;main-directory&quot; href=&quot;#&quot; onclick=&quot;parent.postMessage(&#x27;closeAuntJulie&#x27;,&#x27;*&#x27;);return false;&quot; style=&quot;display:block;text-decoration:none;color:#fff;padding:8px;border-radius:10px;margin-bottom:8px;background:rgba(255,255,255,.12);font-size:11px;font-weight:950&quot;&gt;← Main Directory&lt;/a&gt;
-   &lt;div class=&quot;place&quot;&gt;🌴 Aunt Julie&#x27;s Island Retreat&lt;/div&gt;
+   &lt;a id=&quot;mainDirectory&quot; class=&quot;main-directory&quot; href=&quot;#&quot; onclick=&quot;parent.postMessage('closeAuntJulie','*');return false;&quot; style=&quot;display:block;text-decoration:none;color:#fff;padding:8px;border-radius:10px;margin-bottom:8px;background:rgba(255,255,255,.12);font-size:11px;font-weight:950&quot;&gt;← Main Directory&lt;/a&gt;
+   &lt;div class=&quot;place&quot;&gt;🌴 Aunt Julie's Island Retreat&lt;/div&gt;
    &lt;div class=&quot;label&quot;&gt;ACTIVITIES&lt;/div&gt;
    &lt;button data-lesson=&quot;welcome&quot;&gt;1. 👋 Island Welcome&lt;/button&gt;
    &lt;button data-lesson=&quot;retreat&quot;&gt;2. 🏝️ At the Retreat&lt;/button&gt;
-   &lt;button data-lesson=&quot;animals&quot;&gt;3. 🐾 Julie&#x27;s Animals&lt;/button&gt;
+   &lt;button data-lesson=&quot;animals&quot;&gt;3. 🐾 Julie's Animals&lt;/button&gt;
    &lt;button data-lesson=&quot;music&quot;&gt;4. 🎸 Music Time&lt;/button&gt;
    &lt;button data-lesson=&quot;nature&quot;&gt;5. 🌺 Tropical Nature&lt;/button&gt;
    &lt;button data-lesson=&quot;island&quot;&gt;6. ⭐ Island Life&lt;/button&gt;
@@ -4191,7 +4082,7 @@ button{font:inherit;cursor:pointer}
   &lt;/aside&gt;
 
   &lt;div class=&quot;panel&quot;&gt;
-   &lt;div class=&quot;kicker&quot;&gt;AUNT JULIE&#x27;S ISLAND RETREAT&lt;/div&gt;
+   &lt;div class=&quot;kicker&quot;&gt;AUNT JULIE'S ISLAND RETREAT&lt;/div&gt;
    &lt;h2 id=&quot;title&quot;&gt;&lt;/h2&gt;&lt;p id=&quot;prompt&quot;&gt;&lt;/p&gt;
    &lt;div class=&quot;line&quot; id=&quot;line&quot;&gt;&lt;/div&gt;
    &lt;div class=&quot;translation&quot; id=&quot;translation&quot;&gt;&lt;/div&gt;
@@ -4221,11 +4112,11 @@ button{font:inherit;cursor:pointer}
 &lt;script&gt;
 (()=&gt;{
 const lessons={
-welcome:{title:&quot;Island Welcome&quot;,prompt:&quot;Practice a warm welcome at Aunt Julie&#x27;s retreat.&quot;,lines:[
+welcome:{title:&quot;Island Welcome&quot;,prompt:&quot;Practice a warm welcome at Aunt Julie's retreat.&quot;,lines:[
 [&quot;Bienvenidos a la isla.&quot;,&quot;Welcome to the island.&quot;],[&quot;Hola, me llamo Julie.&quot;,&quot;Hello, my name is Julie.&quot;],[&quot;Me alegra verte.&quot;,&quot;I am happy to see you.&quot;],[&quot;Ven y siéntate conmigo.&quot;,&quot;Come and sit with me.&quot;]]},
 retreat:{title:&quot;At the Retreat&quot;,prompt:&quot;Talk about things around the island retreat.&quot;,lines:[
 [&quot;Estamos junto al océano.&quot;,&quot;We are beside the ocean.&quot;],[&quot;El muelle llega hasta el agua.&quot;,&quot;The pier reaches the water.&quot;],[&quot;La hamaca está bajo las palmeras.&quot;,&quot;The hammock is under the palm trees.&quot;],[&quot;La mesa está llena de cosas bonitas.&quot;,&quot;The table is full of pretty things.&quot;]]},
-animals:{title:&quot;Julie&#x27;s Animals&quot;,prompt:&quot;Meet Aunt Julie&#x27;s island companions.&quot;,lines:[
+animals:{title:&quot;Julie's Animals&quot;,prompt:&quot;Meet Aunt Julie's island companions.&quot;,lines:[
 [&quot;El perro está junto a Julie.&quot;,&quot;The dog is beside Julie.&quot;],[&quot;El gato está sentado cerca.&quot;,&quot;The cat is sitting nearby.&quot;],[&quot;El cerdito lleva un pañuelo.&quot;,&quot;The little pig is wearing a bandana.&quot;],[&quot;Los animales están tranquilos.&quot;,&quot;The animals are calm.&quot;]]},
 music:{title:&quot;Music Time&quot;,prompt:&quot;Practice sentences about Aunt Julie and her music.&quot;,lines:[
 [&quot;Julie toca la guitarra.&quot;,&quot;Julie plays the guitar.&quot;],[&quot;La guitarra tiene muchos colores.&quot;,&quot;The guitar has many colors.&quot;],[&quot;Cantamos juntos al atardecer.&quot;,&quot;We sing together at sunset.&quot;],[&quot;La música suena junto al mar.&quot;,&quot;The music plays beside the sea.&quot;]]},
@@ -4245,9 +4136,9 @@ const $=id=&gt;document.getElementById(id),title=$(&quot;title&quot;),prompt=$(&
 function speak(t){if(!(&quot;speechSynthesis&quot; in window))return;speechSynthesis.cancel();const u=new SpeechSynthesisUtterance(t);u.lang=&quot;es-ES&quot;;u.rate=.82;speechSynthesis.speak(u)}
 function clearActive(){document.querySelectorAll(&quot;.directory button&quot;).forEach(b=&gt;b.classList.remove(&quot;active&quot;))}
 function render(){const x=lessons[active].lines[index];line.textContent=x[0];translation.textContent=x[1]}
-function loadLesson(k){active=k;index=0;challenge=-1;discovery=false;solved=false;find.classList.remove(&quot;show&quot;);actions.style.display=&quot;flex&quot;;const l=lessons[k];title.textContent=l.title;prompt.textContent=l.prompt;render();clearActive();document.querySelector(&#x27;[data-lesson=&quot;&#x27;+k+&#x27;&quot;]&#x27;).classList.add(&quot;active&quot;)}
+function loadLesson(k){active=k;index=0;challenge=-1;discovery=false;solved=false;find.classList.remove(&quot;show&quot;);actions.style.display=&quot;flex&quot;;const l=lessons[k];title.textContent=l.title;prompt.textContent=l.prompt;render();clearActive();document.querySelector('[data-lesson=&quot;'+k+'&quot;]').classList.add(&quot;active&quot;)}
 function loadDiscovery(){challenge=-1;discovery=true;find.classList.remove(&quot;show&quot;);actions.style.display=&quot;none&quot;;title.textContent=&quot;Click &amp; Discover&quot;;prompt.textContent=&quot;Click objects anywhere in the scene to learn their names.&quot;;line.textContent=&quot;Explora la escena.&quot;;translation.textContent=&quot;Explore the scene.&quot;;clearActive();document.querySelector(&quot;[data-discovery]&quot;).classList.add(&quot;active&quot;)}
-function loadChallenge(i){challenge=i;discovery=false;solved=false;actions.style.display=&quot;none&quot;;find.classList.add(&quot;show&quot;);const key=challengeOrder[i],x=words[key];title.textContent=&quot;Challenge &quot;+(i+1)+&quot;: Find &quot;+x[1].replace(/^The /,&quot;&quot;).replace(/\.$/,&quot;&quot;)+&quot;.&quot;;prompt.textContent=&quot;Search the scene and click the correct object.&quot;;line.textContent=x[0];translation.textContent=x[1];count.textContent=&quot;CHALLENGE &quot;+(i+1)+&quot; OF 6&quot;;status.textContent=&quot;&quot;;hint.textContent=&quot;Find the correct object to unlock the next challenge.&quot;;challengeNext.textContent=i&lt;5?&quot;Next Challenge →&quot;:&quot;Finish Challenges ✓&quot;;clearActive();document.querySelector(&#x27;[data-challenge=&quot;&#x27;+i+&#x27;&quot;]&#x27;).classList.add(&quot;active&quot;)}
+function loadChallenge(i){challenge=i;discovery=false;solved=false;actions.style.display=&quot;none&quot;;find.classList.add(&quot;show&quot;);const key=challengeOrder[i],x=words[key];title.textContent=&quot;Challenge &quot;+(i+1)+&quot;: Find &quot;+x[1].replace(/^The /,&quot;&quot;).replace(/\.$/,&quot;&quot;)+&quot;.&quot;;prompt.textContent=&quot;Search the scene and click the correct object.&quot;;line.textContent=x[0];translation.textContent=x[1];count.textContent=&quot;CHALLENGE &quot;+(i+1)+&quot; OF 6&quot;;status.textContent=&quot;&quot;;hint.textContent=&quot;Find the correct object to unlock the next challenge.&quot;;challengeNext.textContent=i&lt;5?&quot;Next Challenge →&quot;:&quot;Finish Challenges ✓&quot;;clearActive();document.querySelector('[data-challenge=&quot;'+i+'&quot;]').classList.add(&quot;active&quot;)}
 document.querySelectorAll(&quot;[data-lesson]&quot;).forEach(b=&gt;b.onclick=()=&gt;loadLesson(b.dataset.lesson));
 document.querySelector(&quot;[data-discovery]&quot;).onclick=loadDiscovery;
 document.querySelectorAll(&quot;[data-challenge]&quot;).forEach(b=&gt;b.onclick=()=&gt;loadChallenge(Number(b.dataset.challenge)));
@@ -4255,12 +4146,12 @@ document.querySelectorAll(&quot;[data-challenge]&quot;).forEach(b=&gt;b.onclick=
 $(&quot;next&quot;).onclick=()=&gt;{index=(index+1)%lessons[active].lines.length;render()};
 $(&quot;speak&quot;).onclick=()=&gt;speak(lessons[active].lines[index][0]);
 document.querySelectorAll(&quot;.hotspot&quot;).forEach(b=&gt;b.onclick=()=&gt;{const key=b.dataset.word,x=words[key];if(challenge&gt;=0){if(key===challengeOrder[challenge]){solved=true;status.textContent=&quot;✓ Nice find! &quot;+x[0]+&quot; &quot;+x[1];status.style.color=&quot;#176a48&quot;;hint.textContent=&quot;Challenge complete. Move to the next one.&quot;;speak(x[0])}else{status.textContent=&quot;Not that one — keep looking.&quot;;status.style.color=&quot;#85580f&quot;}return}if(discovery){title.textContent=&quot;Click &amp; Discover&quot;;prompt.textContent=&quot;You found something in the scene.&quot;;line.textContent=x[0];translation.textContent=x[1];speak(x[0])}});
-challengeNext.onclick=()=&gt;{if(!solved){status.textContent=&quot;Find the correct object first.&quot;;status.style.color=&quot;#85580f&quot;;return}if(challenge&lt;5)loadChallenge(challenge+1);else{status.textContent=&quot;🏁 You completed all 6 Island Retreat challenges!&quot;;status.style.color=&quot;#176a48&quot;;hint.textContent=&quot;Great job exploring Aunt Julie&#x27;s island.&quot;}};
+challengeNext.onclick=()=&gt;{if(!solved){status.textContent=&quot;Find the correct object first.&quot;;status.style.color=&quot;#85580f&quot;;return}if(challenge&lt;5)loadChallenge(challenge+1);else{status.textContent=&quot;🏁 You completed all 6 Island Retreat challenges!&quot;;status.style.color=&quot;#176a48&quot;;hint.textContent=&quot;Great job exploring Aunt Julie's island.&quot;}};
 loadLesson(&quot;welcome&quot;);
 })();
 &lt;/script&gt;
 &lt;/body&gt;
-&lt;/html&gt;"></iframe>
+&lt;/html&gt;" style="width:100%;height:100%;border:0;display:block;" title="Aunt Julie's Island Retreat"></iframe>
 </div>
 <script>
 (function(){
@@ -4277,8 +4168,6 @@ loadLesson(&quot;welcome&quot;);
   });
 })();
 </script>
-
-
 <style id="checkpoint82-main-directory-actual-fix">
 /* Actual Main Directory panel: override historical CP25/CP26 opaque !important rules. */
 #mainDirectory .landing-directory{
@@ -4290,8 +4179,6 @@ loadLesson(&quot;welcome&quot;);
   border:1px solid rgba(255,255,255,.20) !important;
 }
 </style>
-
-
 <style id="checkpoint83-main-directory-keeper">
 #mainDirectory .hero-feature-card{
   background-image:url("images/main-directory-keeper.png") !important;
@@ -4307,8 +4194,6 @@ loadLesson(&quot;welcome&quot;);
   border:1px solid rgba(255,255,255,.22) !important;
 }
 </style>
-
-
 <style id="checkpoint84-single-live-ui">
 /* V84: keep ONE live header + ONE live Main Directory.
    Crop the keeper artwork so its baked-in UI is not visible behind the live controls. */
@@ -4319,8 +4204,6 @@ loadLesson(&quot;welcome&quot;);
   background-color:#dcecff !important;
 }
 </style>
-
-
 <style id="checkpoint85-remove-baked-duplicate">
 /* One real HTML header + one real HTML Main Directory only.
    Use the clean scenic background; do not use artwork with UI baked into it. */
@@ -4331,8 +4214,6 @@ loadLesson(&quot;welcome&quot;);
   background-repeat:no-repeat !important;
 }
 </style>
-
-
 <style id="checkpoint86-main-directory-final">
 #mainDirectory .hero-feature-card{
   background-image:url("images/main-directory-zoomed-out-clean.png") !important;
@@ -4349,8 +4230,6 @@ loadLesson(&quot;welcome&quot;);
   border:1px solid rgba(255,255,255,.24) !important;
 }
 </style>
-
-
 <style id="checkpoint87-locked-directory">
 html,body{
   margin:0 !important;
@@ -4379,8 +4258,6 @@ html,body{
   -webkit-backdrop-filter:blur(2px) !important;
 }
 </style>
-
-
 <style id="checkpoint89-final-fit">
 html,body{
   margin:0!important;
@@ -4427,8 +4304,6 @@ html,body{
 }
 #mainDirectory .directory-link:last-child{margin-bottom:0!important;}
 </style>
-
-
 <style id="checkpoint90-exact-viewport">
 html,body{
   width:100%!important;
@@ -4495,8 +4370,6 @@ header,
   line-height:1.05!important;
 }
 </style>
-
-
 <style id="checkpoint92-course-page">
 html,body{
   margin:0!important;
@@ -4550,8 +4423,6 @@ section.wrap.final-cta,
   font-weight:900;
 }
 </style>
-
-
 <script id="course-safe-language-switch">
 (function(){
   const site = document.getElementById('siteLanguage');
@@ -4654,7 +4525,6 @@ section.wrap.final-cta,
   applyLanguage();
 })();
 </script>
-
 </body>
 </html>
 <style>#homeWorld .scene-hotspots .home-hotspot{
@@ -4683,7 +4553,6 @@ section.wrap.final-cta,
   height:58px !important;
 }
 </style>
-
 <style id="checkpoint-55-one-click-one-hotspot">
 /* V55 — Discover safety: tighter crowded targets; one click is handled by one hotspot only. */
 #yachtWorld .yacht-hotspot[data-object="flowers"]{width:4.8%!important;}
@@ -4693,9 +4562,7 @@ section.wrap.final-cta,
 #yachtWorld .yacht-hotspot[data-object="tackle"]{width:6.2%!important;}
 #yachtWorld .yacht-hotspot[data-object="lifering"]{width:5.4%!important;}
 </style>
-
 <style id="checkpoint-56-hotspot-handler">#yachtWorld .yacht-hotspot[data-object="seagull"]{width:5.2%!important;}</style>
-
 <style id="checkpoint-67-kitchen-framing-fix">
 /* V67: exact supplied Grandma's Kitchen image + face-safe script placement */
 #kitchenWorld .train-main-image{width:100vw!important;height:100vh!important;object-fit:contain!important;object-position:center center!important;background:#182238!important;}
@@ -4704,7 +4571,6 @@ section.wrap.final-cta,
 #kitchenWorld .kitchen-panel p,#kitchenWorld .kitchen-translation{font-size:11px!important;margin:4px 0 5px!important;}
 #kitchenWorld .kitchen-line{font-size:14px!important;padding:7px 9px!important;}
 </style>
-
 <style id="checkpoint-69-header-and-kitchen-ratio-fix">
 /* V69 — corrected master header: no stray literal newline text and no header scrollbar. */
 html,body{overflow-x:hidden!important;}
@@ -4716,8 +4582,6 @@ header .nav{height:72px!important;min-height:72px!important;max-height:72px!impo
 #kitchenWorld .train-stage,#kitchenWorld .train-scene{position:absolute!important;inset:0!important;width:100%!important;height:100%!important;overflow:hidden!important;background:#182238!important;}
 #kitchenWorld .train-main-image{position:absolute!important;inset:0!important;width:100%!important;height:100%!important;object-fit:contain!important;object-position:center center!important;background:#182238!important;}
 </style>
-
-
 <style id="course-readable-two-row-header">
 /* Header-only presentation. Course lessons and adventure overlays remain unchanged. */
 body:not(.adventure-locked) > header {height:auto!important;min-height:112px!important;max-height:none!important;overflow:visible!important;}

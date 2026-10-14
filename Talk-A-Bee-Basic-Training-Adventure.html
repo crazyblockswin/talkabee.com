@@ -1,279 +1,23 @@
-<!doctype html>
+<!DOCTYPE html>
+
 <html lang="en"><head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
 <title>Talk A Bee — Basic Training Adventure</title>
-<link rel="icon" type="image/png" href="images/PNG/talkabee-favicon.png">
-<style>
-*{box-sizing:border-box}
-html,body{margin:0;width:100%;height:100%;overflow:hidden;font-family:Arial,Helvetica,sans-serif;background:#063a66;color:#fff}
-.world{position:relative;width:100vw;height:100vh;background:url("images/Talk-A-Bee-Basic-Training-Adventure.jpg") center center/cover no-repeat}
-
-/* APPROVED TALK A BEE LEFT PANEL */
-.panel{position:fixed;z-index:1000;left:16px;top:16px;bottom:16px;width:180px;min-width:180px;max-width:180px;
-padding:14px;overflow-x:hidden;overflow-y:auto;border-radius:20px;border:1px solid rgba(255,255,255,.28);
-background:rgba(7,23,39,.31);box-shadow:0 12px 30px rgba(0,0,0,.24);backdrop-filter:blur(3px);-webkit-backdrop-filter:blur(3px)}
-.panel h1{font-size:19px;line-height:1.08;margin:4px 0 10px;text-shadow:0 2px 4px rgba(0,0,0,.55)}
-.label{font-size:9.5px;line-height:1.1;letter-spacing:.09em;font-weight:900;margin:9px 0 4px}
-.panel button,.panel select,.panel a{width:100%;min-height:34px;margin:4px 0;padding:8px 9px;border-radius:12px;
-border:1px solid rgba(255,255,255,.38);background:rgba(7,32,50,.54);color:#fff;font:800 12px/1.16 Arial,sans-serif;
-text-align:left;text-decoration:none}
-.panel button:hover,.panel a:hover{background:rgba(20,58,79,.70)}
-.panel button.active{background:rgba(78,69,219,.74)}
-.panel select{white-space:nowrap;text-overflow:ellipsis;overflow:hidden}
-
-/* APPROVED 520px SCRIPT CARD */
-.card{position:fixed;z-index:900;left:50%;bottom:16px;width:520px;max-width:520px;padding:14px 16px;
-border-radius:20px;border:1px solid rgba(255,255,255,.30);background:rgba(25,19,24,.38);
-box-shadow:0 12px 30px rgba(0,0,0,.28);backdrop-filter:blur(5px);-webkit-backdrop-filter:blur(5px);
-transform:translateX(-50%) scale(.67);transform-origin:bottom center}
-.card .kicker{font-size:15px;line-height:1.25;font-weight:900;letter-spacing:.10em;color:rgba(255,255,255,.96);
-text-shadow:0 1px 3px rgba(0,0,0,.78);margin:0 0 6px}
-.card h2{font-size:22px;line-height:1.08;margin:4px 0 7px;text-shadow:0 1px 3px rgba(0,0,0,.55)}
-.card p{font-size:18px;line-height:1.35;margin:4px 0 7px}
-.word{margin-top:8px;padding:10px 12px;border-radius:14px;background:rgba(88,88,88,.72);border:1px solid rgba(255,255,255,.20)}
-.word strong{display:block;font-size:22px;line-height:1.28}
-.translation{font-size:18px;line-height:1.35;margin-top:3px}
-.controls{display:flex;align-items:center;gap:8px;flex-wrap:nowrap;margin-top:8px}
-.controls button{width:auto;min-width:0;padding:9px 13px;border-radius:12px;border:1px solid rgba(255,255,255,.35);
-background:rgba(255,255,255,.88);color:#10283c;font:900 13px/1 Arial,sans-serif;white-space:nowrap}
-
-/* HOTSPOTS */
-.hotspot{position:absolute;z-index:8;border:0;background:transparent;opacity:0;cursor:pointer;border-radius:16px}
-.hotspot:hover,.hotspot:focus-visible{opacity:1;background:rgba(255,220,72,.28);outline:2px solid rgba(255,255,255,.90)}
-.challenge-mode .hotspot.target{opacity:1;background:rgba(255,199,48,.38);outline:4px solid #fff;box-shadow:0 0 0 7px rgba(255,200,50,.20)}
-
-/* APPROVED COMPACT PREVIOUS / NEXT CHEVRONS */
-.talkabee-prev-next-nav{position:fixed;top:18px;right:22px;z-index:2147483000;display:flex;align-items:center;overflow:hidden;
-border:2px solid rgba(255,255,255,.82);border-radius:999px;background:rgba(11,22,42,.24);
-box-shadow:0 5px 16px rgba(0,0,0,.16);backdrop-filter:blur(3px);-webkit-backdrop-filter:blur(3px)}
-.talkabee-prev-next-nav a{width:48px;height:48px;display:grid;place-items:center;text-decoration:none;color:#fff;
-font:900 38px/1 Arial,sans-serif;text-shadow:0 1px 3px rgba(0,0,0,.42)}
-.talkabee-prev-next-nav a+a{border-left:1px solid rgba(255,255,255,.36)}
-.talkabee-prev-next-nav a:hover,.talkabee-prev-next-nav a:focus-visible{background:rgba(255,255,255,.18);outline:none}
-
-/* SCENE VIEW */
-.scene-return{display:none;position:fixed;z-index:2147483001;left:18px;top:18px;padding:10px 14px;border-radius:12px;
-border:1px solid #fff;background:rgba(7,23,39,.65);color:#fff;font-weight:900}
-.scene-view .panel,.scene-view .card{display:none}
-.scene-view .scene-return{display:block}
-
-@media(max-width:760px){
- .panel{left:10px;top:10px;bottom:10px;width:180px;min-width:180px;max-width:180px;padding:11px}
- .card{width:min(520px,calc(100vw - 32px));bottom:10px;transform:translateX(-50%) scale(.82)}
- .talkabee-prev-next-nav{top:12px;right:12px}.talkabee-prev-next-nav a{width:42px;height:42px;font-size:33px}
-}
-</style>
-
-<style id="talkabee-edition-menu-style">
-.talkabee-editions{position:fixed;top:16px;left:50%;transform:translateX(-50%);z-index:2147482998;font-family:Arial,sans-serif}
-.talkabee-editions details{position:relative}
-.talkabee-editions summary{list-style:none;cursor:pointer;border:1px solid rgba(255,255,255,.55);border-radius:999px;padding:10px 15px;background:rgba(7,23,39,.62);color:#fff;font-size:13px;font-weight:900;white-space:nowrap;box-shadow:0 8px 24px rgba(0,0,0,.22);backdrop-filter:blur(7px);-webkit-backdrop-filter:blur(7px)}
-.talkabee-editions summary::-webkit-details-marker{display:none}
-.talkabee-editions .edition-row{position:absolute;top:calc(100% + 8px);left:50%;transform:translateX(-50%);display:flex;gap:6px;padding:8px;border:1px solid rgba(255,255,255,.4);border-radius:15px;background:rgba(7,23,39,.80);box-shadow:0 12px 32px rgba(0,0,0,.28);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);white-space:nowrap}
-.talkabee-editions .edition-row a{display:block;padding:9px 11px;border-radius:10px;color:#fff;text-decoration:none;font-size:12px;font-weight:850;background:rgba(255,255,255,.07);transition:background .16s ease,box-shadow .16s ease,transform .16s ease,border-color .16s ease}
-.talkabee-editions .edition-row a:nth-child(1):hover,.talkabee-editions .edition-row a:nth-child(1):focus-visible{background:rgba(232,184,72,.28);box-shadow:inset 0 0 0 1px rgba(255,218,120,.36)}
-.talkabee-editions .edition-row a:nth-child(2):hover,.talkabee-editions .edition-row a:nth-child(2):focus-visible{background:rgba(67,181,164,.27);box-shadow:inset 0 0 0 1px rgba(122,224,207,.34)}
-.talkabee-editions .edition-row a:nth-child(3):hover,.talkabee-editions .edition-row a:nth-child(3):focus-visible{background:rgba(75,158,216,.28);box-shadow:inset 0 0 0 1px rgba(132,200,246,.34)}
-.talkabee-editions .edition-row a:nth-child(4):hover,.talkabee-editions .edition-row a:nth-child(4):focus-visible{background:rgba(83,166,103,.28);box-shadow:inset 0 0 0 1px rgba(139,215,157,.34)}
-.talkabee-editions .edition-row a:nth-child(5):hover,.talkabee-editions .edition-row a:nth-child(5):focus-visible{background:rgba(126,91,211,.31);box-shadow:inset 0 0 0 1px rgba(178,151,242,.36)}
-.talkabee-editions .edition-row a:nth-child(6):hover,.talkabee-editions .edition-row a:nth-child(6):focus-visible{background:rgba(211,107,91,.28);box-shadow:inset 0 0 0 1px rgba(245,157,143,.34)}
-.talkabee-editions .edition-row a:hover,.talkabee-editions .edition-row a:focus-visible{transform:translateY(-1px);outline:none}
-@media(max-width:900px){.talkabee-editions .edition-row{max-width:94vw;overflow-x:auto}}
-</style>
-
-<style id="talkabee-accessibility-controls-v1">
-/* Talk A Bee adjustable Adventure controls */
-.panel,.activity-panel,.tab-master-panel{--tab-panel-scale:1;background-color:rgba(13,25,45,.14)!important}
-.card,.script,.tab-master-card{--tab-card-font-scale:1;background-color:rgba(25,19,24,.14)!important;resize:none!important}
-.tab-panel-size-controls{display:flex!important;align-items:center!important;justify-content:center!important;gap:10px!important;width:100%!important;margin:2px 0 8px!important;position:relative!important;z-index:50!important}
-.tab-panel-size-controls button{width:auto!important;min-width:28px!important;height:28px!important;padding:0 5px!important;margin:0!important;border:0!important;background:transparent!important;color:#fff!important;box-shadow:none!important;font:800 17px/1 Arial,sans-serif!important;text-shadow:0 1px 3px rgba(0,0,0,.85)!important;cursor:pointer!important}
-.tab-panel-size-controls .tab-panel-reset{min-width:auto!important;font-size:12px!important;padding:0 2px!important}
-.panel h1,.activity-panel h1,.tab-master-panel h1{font-size:calc(19px * var(--tab-panel-scale))!important}
-.panel .label,.activity-panel .label,.tab-master-panel .label{font-size:calc(9.5px * var(--tab-panel-scale))!important}
-.panel button:not(.tab-panel-size-controls button),.panel select,.panel a,.activity-panel button:not(.tab-panel-size-controls button),.activity-panel select,.activity-panel a,.tab-master-panel button:not(.tab-panel-size-controls button),.tab-master-panel select,.tab-master-panel a{font-size:calc(12px * var(--tab-panel-scale))!important}
-.tab-card-tools{display:flex!important;align-items:center!important;justify-content:center!important;gap:6px!important;margin:0 0 6px!important;position:relative!important;z-index:150!important}
-.tab-card-tools button{width:auto!important;min-width:0!important;padding:5px 8px!important;margin:0!important;border-radius:8px!important;background:rgba(255,255,255,.90)!important;color:#423768!important;border:1px solid rgba(255,255,255,.45)!important;font:800 12px/1 Arial,sans-serif!important;cursor:pointer!important;box-shadow:0 2px 7px rgba(0,0,0,.18)!important}
-.tab-card-drag{cursor:move!important;touch-action:none!important}
-.tab-card-resize{position:absolute!important;right:6px!important;bottom:6px!important;width:36px!important;height:36px!important;display:grid!important;place-items:center!important;border-radius:9px!important;background:rgba(255,255,255,.92)!important;color:#423768!important;border:1px solid rgba(255,255,255,.5)!important;font:900 20px/1 Arial,sans-serif!important;cursor:nwse-resize!important;user-select:none!important;touch-action:none!important;z-index:200!important;box-shadow:0 2px 8px rgba(0,0,0,.28)!important}
-.card #line,.card .word strong,.script #line,.script .word strong,.tab-master-card #line,.tab-master-card .word strong{font-size:calc(1em * var(--tab-card-font-scale))!important}
-.card .translation,.script .translation,.tab-master-card .translation{font-size:calc(1em * var(--tab-card-font-scale))!important}
-@media(max-width:760px){.tab-panel-size-controls,.tab-card-tools,.tab-card-resize{display:none!important}}
-</style>
-<style id="talkabee-global-card-grab-cursor">
-.card,.script,.tab-master-card{cursor:grab!important}
-.card:active,.script:active,.tab-master-card:active{cursor:grabbing!important}
-.card button,.card a,.card input,.card select,.card textarea,
-.script button,.script a,.script input,.script select,.script textarea,
-.tab-master-card button,.tab-master-card a,.tab-master-card input,.tab-master-card select,.tab-master-card textarea{cursor:pointer!important}
-.card input,.card textarea,.script input,.script textarea,.tab-master-card input,.tab-master-card textarea{cursor:text!important}
-</style>
-
+<link href="images/PNG/talkabee-favicon.png" rel="icon" type="image/png"/>
+<link href="css/shared-f4263065d8f4b99e.css" rel="stylesheet"/>
+<link href="css/common-inline-e41b546ea686.css" id="talkabee-edition-menu-style" rel="stylesheet"/>
+<link href="css/talkabee-shared-ecfa9fc689a3.css" id="talkabee-accessibility-controls-v1" rel="stylesheet"/>
+<link href="css/talkabee-shared-43ddae767bb7.css" id="talkabee-global-card-grab-cursor" rel="stylesheet"/>
 <!-- TALK A BEE HOTSPOTS VISUALLY RECERTIFIED AGAINST CURRENT SCENE ARTWORK: 2026-10-07 -->
 
-
-
-<style id="talkabee-bilingual-hotspot-popup-style">
-#talkabee-object-popup{position:fixed;z-index:2147482900;display:none;padding:8px 12px;border-radius:12px;background:rgba(20,20,20,.82);color:white;font-weight:900;font-size:14px;pointer-events:none}
-</style>
-
-<style id="talkabee-approved-master-card-v2">
-/* ONE literal Talk A Bee Adventure shell. Legacy classes remain only as JS hooks. */
-.tab-master-panel,.tab-master-panel *,.tab-master-card,.tab-master-card *{box-sizing:border-box}
-.tab-master-panel{
- position:fixed!important;left:16px!important;top:16px!important;bottom:16px!important;right:auto!important;
- width:195px!important;min-width:195px!important;max-width:195px!important;height:auto!important;max-height:none!important;
- margin:0!important;padding:14px!important;overflow-x:hidden!important;overflow-y:auto!important;
- transform:none!important;scale:1!important;zoom:1!important;opacity:1!important;
- border-radius:20px!important;border:1px solid rgba(255,255,255,.28)!important;
- background:rgba(7,23,39,.31)!important;box-shadow:0 12px 30px rgba(0,0,0,.24)!important;
- backdrop-filter:blur(3px)!important;-webkit-backdrop-filter:blur(3px)!important;color:#fff!important;z-index:1000!important;
- font-family:Arial,Helvetica,sans-serif!important;font-size:12px!important;line-height:1.16!important;
-}
-.tab-master-panel .place,.tab-master-panel h1,.tab-master-panel .title{font-size:19px!important;line-height:1.08!important;font-weight:900!important;color:#fff!important;margin:4px 0 10px!important;text-shadow:0 2px 4px rgba(0,0,0,.55)!important}
-.tab-master-panel .label,.tab-master-panel label{font-size:9.5px!important;line-height:1.1!important;letter-spacing:.09em!important;font-weight:900!important;color:#fff!important;margin:9px 0 4px!important}
-.tab-master-panel button,.tab-master-panel select,.tab-master-panel a{
- width:100%!important;max-width:100%!important;min-height:34px!important;height:auto!important;margin:4px 0!important;padding:8px 9px!important;
- border-radius:12px!important;border:1px solid rgba(255,255,255,.38)!important;background:rgba(7,32,50,.54)!important;color:#fff!important;
- font:800 12px/1.16 Arial,Helvetica,sans-serif!important;text-align:left!important;text-decoration:none!important;white-space:normal!important;
- transform:none!important;box-shadow:none!important;
-}
-.tab-master-panel select{white-space:nowrap!important;text-overflow:ellipsis!important;overflow:hidden!important}
-.tab-master-panel button:hover,.tab-master-panel a:hover{background:rgba(20,58,79,.70)!important}
-.tab-master-panel .active,.tab-master-panel button.active{background:rgba(78,69,219,.74)!important;color:#fff!important}
-.tab-master-card{
- position:fixed!important;left:50%!important;right:auto!important;bottom:16px!important;top:auto!important;
- width:520px!important;min-width:520px!important;max-width:520px!important;height:auto!important;min-height:0!important;max-height:44vh!important;
- margin:0!important;padding:14px 16px!important;overflow:auto!important;transform:translateX(-50%)!important;scale:1!important;zoom:1!important;opacity:1!important;
- border-radius:20px!important;border:1px solid rgba(255,255,255,.30)!important;background:rgba(25,19,24,.38)!important;
- box-shadow:0 12px 30px rgba(0,0,0,.28)!important;backdrop-filter:blur(5px)!important;-webkit-backdrop-filter:blur(5px)!important;
- color:#fff!important;z-index:900!important;font-family:Arial,Helvetica,sans-serif!important;
-}
-.tab-master-card .kicker,.tab-master-card [class*="kicker"]{color:rgba(255,255,255,.94)!important;font-size:11px!important;line-height:1.1!important;font-weight:900!important;letter-spacing:.12em!important;text-shadow:0 1px 3px rgba(0,0,0,.78)!important;margin:0 0 7px!important}
-.tab-master-card h1,.tab-master-card h2{color:#fff!important;font-size:22px!important;line-height:1.08!important;margin:4px 0 7px!important;text-shadow:0 1px 3px rgba(0,0,0,.55)!important}
-.tab-master-card p,.tab-master-card .prompt,.tab-master-card .translation,.tab-master-card .tip{font-size:13px!important;line-height:1.25!important;margin:4px 0 7px!important;color:#fff!important}
-.tab-master-card .line,.tab-master-card .target,.tab-master-card #line,.tab-master-card #target{font-size:20px!important;line-height:1.12!important;font-weight:900!important;margin:7px 0!important;color:#fff!important}
-.tab-master-card .actions,.tab-master-card [class*="actions"]{display:flex!important;align-items:center!important;gap:8px!important;flex-wrap:nowrap!important;margin-top:8px!important}
-.tab-master-card .actions button,.tab-master-card [class*="actions"] button,.tab-master-card>button{width:auto!important;min-width:0!important;height:auto!important;padding:9px 13px!important;margin:0!important;border-radius:12px!important;font:900 13px/1 Arial,Helvetica,sans-serif!important;white-space:nowrap!important}
-@media(max-width:760px){.tab-master-panel{left:10px!important;top:10px!important;bottom:10px!important;width:190px!important;min-width:190px!important;max-width:190px!important;padding:11px!important}.tab-master-card{width:min(520px,calc(100vw - 24px))!important;min-width:0!important;bottom:10px!important;padding:12px!important}}
-</style>
-<style id="talkabee-approved-word-contrast-v2">
-/* Last-four phrase fix: style the full .word field, not the inner #line text. */
-.tab-master-card .word {
-  background:rgba(88,88,88,.72)!important;
-  color:#fff!important;
-  border:1px solid rgba(255,255,255,.20)!important;
-  border-radius:14px!important;
-  text-shadow:0 1px 2px rgba(0,0,0,.55)!important;
-}
-.tab-master-card .word #line,
-.tab-master-card .word .line {
-  background:transparent!important;
-  color:#fff!important;
-  border:0!important;
-  border-radius:0!important;
-  text-shadow:0 1px 2px rgba(0,0,0,.55)!important;
-}
-.tab-master-card .word .translation {color:#fff!important;}
-</style>
-<style id="talkabee-approved-card-text-v2">
-/* Readability-only repair. Existing links, navigation, JS, hotspots and audio are untouched. */
-.tab-master-card p,
-.tab-master-card .prompt,
-.tab-master-card #prompt,
-.tab-master-card .instruction,
-.tab-master-card .instructions,
-.tab-master-card .hint,
-.tab-master-card #hint,
-.tab-master-card .translation,
-.tab-master-card #translation,
-.tab-master-card .english,
-.tab-master-card [class*="subtitle"],
-.tab-master-card [class*="instruction"],
-.tab-master-card [class*="prompt"],
-.tab-master-card [class*="translation"],
-.tab-master-card [class*="hint"],
-.tab-master-card [class*="status"],
-.animal-lesson-card p,
-.animal-lesson-card .prompt,
-.animal-lesson-card .instruction,
-.animal-lesson-card .translation,
-.animal-lesson-card .hint {
-  font-size:18px !important;
-  line-height:1.35 !important;
-}
-
-/* Small location/progress/counter lines also need to be readable. */
-.tab-master-card .eyebrow,
-.tab-master-card .kicker,
-.tab-master-card .overline,
-.tab-master-card .location,
-.tab-master-card .activity-count,
-.tab-master-card .challenge-count,
-.tab-master-card [class*="count"],
-.animal-lesson-card .eyebrow,
-.animal-lesson-card [class*="count"] {
-  font-size:15px !important;
-  line-height:1.25 !important;
-  font-weight:800 !important;
-}
-
-/* Spoken/foreign-language line stays visually strongest. */
-.tab-master-card #line,
-.tab-master-card .line,
-.tab-master-card .train-line,
-.tab-master-card .words,
-.tab-master-card [class*="phrase"],
-.animal-lesson-card #line,
-.animal-lesson-card .line,
-.animal-lesson-card [class*="phrase"] {
-  font-size:22px !important;
-  line-height:1.28 !important;
-  font-weight:800 !important;
-}
-
-/* Let increased text wrap naturally instead of being clipped. */
-.tab-master-card,
-.animal-lesson-card {
-  height:auto !important;
-}
-</style>
-<style id="talkabee-approved-card-feedback-v2">
-/* Readability only: keep challenge logic, card geometry and editors unchanged.
-   Desktop card renders at 0.67 scale, so CSS sizes compensate visually. */
-.tab-master-card #status {
-  font-size:32px!important;
-  line-height:1.3!important;
-  font-weight:800!important;
-  min-height:0;
-  overflow-wrap:anywhere;
-}
-.tab-master-card .tab-card-tools button {
-  font-size:18px!important;
-  line-height:1.2!important;
-  padding:7px 11px!important;
-}
-@media(max-width:760px){
-  .tab-master-card #status{font-size:26px!important;}
-}
-</style>
-<style id="talkabee-approved-card-footprint-v2">
-/* Visual master: match the user-approved Grandma's Kitchen rendered footprint. */
-.tab-master-card{
-  width:520px!important; max-width:520px!important; min-width:0!important;
-  transform:translateX(-50%) scale(.67)!important;
-  transform-origin:bottom center!important;
-}
-@media(max-width:760px){.tab-master-card{width:min(520px,calc(100vw - 32px))!important;transform:translateX(-50%) scale(.82)!important;}}
-</style>
-<style id="talkabee-approved-next-buttons-v2">
-.tab-master-card .controls{display:flex!important;gap:8px!important;align-items:stretch!important;flex-wrap:nowrap!important}
-.tab-master-card .controls button{min-width:0!important;flex:1 1 0!important;white-space:nowrap!important;font-size:12px!important;padding:8px 5px!important}
-.tab-master-card .controls #nextChallenge,.tab-master-card .controls #nextPhrase{flex:1.4 1 0!important;font-size:12px!important;white-space:nowrap!important}
-.tab-master-card .controls button[hidden]{display:none!important}
-/* Do not reveal answers before a visitor finds the correct object. */
-body:not(.tb-hs-editing) .challenge-mode .hotspot.target:not(:hover):not(:focus-visible){opacity:0!important;background:transparent!important;outline:none!important;box-shadow:none!important}
-</style>
+<link href="css/common-inline-8492e8692583.css" id="talkabee-bilingual-hotspot-popup-style" rel="stylesheet"/>
+<link href="css/talkabee-shared-5d2499d81b6e.css" id="talkabee-approved-master-card-v2" rel="stylesheet"/>
+<link href="css/common-inline-168e9ff67f7e.css" id="talkabee-approved-word-contrast-v2" rel="stylesheet"/>
+<link href="css/common-inline-a202e810d91a.css" id="talkabee-approved-card-text-v2" rel="stylesheet"/>
+<link href="css/talkabee-shared-6083deff3ef2.css" id="talkabee-approved-card-feedback-v2" rel="stylesheet"/>
+<link href="css/common-inline-0d6913d7d62e.css" id="talkabee-approved-card-footprint-v2" rel="stylesheet"/>
+<link href="css/talkabee-shared-f1c50eb608fd.css" id="talkabee-approved-next-buttons-v2" rel="stylesheet"/>
 <style id="talkabee-basic-training-button-readability-test">
 /* Single-page readability trial: ~15-16px rendered labels at .67 card scale. */
 @media (min-width:761px){
@@ -332,12 +76,14 @@ body:not(.tb-hs-editing) .challenge-mode .hotspot.target:not(:hover):not(:focus-
   -webkit-backdrop-filter:blur(2px)!important;
 }
 </style>
+<link href="css/talkabee-panel-pilot-safe.css" id="talkabee-panel-typography-standard" rel="stylesheet"/>
+<link href="css/talkabee-card-typography-safe.css" rel="stylesheet"/>
 </head>
 <body class="">
 <div class="talkabee-editions">
 <details>
 <summary>Explore Adventures ▾</summary>
-<div class="edition-row" role="navigation" aria-label="Talk A Bee Editions">
+<div aria-label="Talk A Bee Editions" class="edition-row" role="navigation">
 <a href="adventures.html">Main Adventures</a>
 <a href="Talk-A-Bee-More-Adventures.html">Community Edition</a>
 <a href="Talk-A-Bee-Directory-3.html">Travel Edition</a>
@@ -347,19 +93,15 @@ body:not(.tb-hs-editing) .challenge-mode .hotspot.target:not(:hover):not(:focus-
 </div>
 </details>
 </div>
-
-<nav class="talkabee-prev-next-nav" aria-label="Adventure navigation">
-  <a href="Talk-A-Bee-Protect-Earth-Adventure.html" aria-label="Previous adventure" title="Previous">‹</a>
-  <a href="Talk-A-Bee-Aircraft-Carrier-Adventure.html" aria-label="Next adventure" title="Next">›</a>
+<nav aria-label="Adventure navigation" class="talkabee-prev-next-nav">
+<a aria-label="Previous adventure" href="Talk-A-Bee-Protect-Earth-Adventure.html" title="Previous">‹</a>
+<a aria-label="Next adventure" href="Talk-A-Bee-Aircraft-Carrier-Adventure.html" title="Next">›</a>
 </nav>
-
 <main class="world" id="world">
 <button class="scene-return" id="sceneReturn">Return to Adventure</button>
-
-<aside class="panel">
+<aside class="panel tab-pilot-panel">
 <h1>🫡 Basic Training Adventure</h1>
-<div class="tab-panel-size-controls" aria-label="Activity panel size"><button type="button" class="tab-panel-minus" title="Make activity panel smaller">−</button><button type="button" class="tab-panel-reset" title="Reset activity panel size">Reset</button><button type="button" class="tab-panel-plus" title="Make activity panel larger">+</button></div>
-
+<div aria-label="Activity panel size" class="tab-panel-size-controls"><button class="tab-panel-minus" title="Make activity panel smaller" type="button">−</button><button class="tab-panel-reset" title="Reset activity panel size" type="button">Reset</button><button class="tab-panel-plus" title="Make activity panel larger" type="button">+</button></div>
 <div class="label">LANGUAGE</div>
 <select id="lang">
 <option value="es">Spanish</option><option value="fr">French</option><option value="en">English</option>
@@ -367,11 +109,9 @@ body:not(.tb-hs-editing) .challenge-mode .hotspot.target:not(:hover):not(:focus-
 </select>
 <div class="label">VOICE</div>
 <select id="voice"><option value="">Browser Default</option><option value="Microsoft David - English (United States)">Microsoft David - English (United States) — en-US</option><option value="Microsoft Mark - English (United States)">Microsoft Mark - English (United States) — en-US</option><option value="Microsoft Zira - English (United States)">Microsoft Zira - English (United States) — en-US</option><option value="Microsoft David Desktop - English (United States)">Microsoft David Desktop - English (United States) — en-US</option><option value="Microsoft Zira Desktop - English (United States)">Microsoft Zira Desktop - English (United States) — en-US</option></select>
-<button id="sceneView" aria-pressed="false">◉ Scene View</button>
-
+<button aria-pressed="false" id="sceneView">◉ Scene View</button>
 <div class="label">DISCOVERY</div>
 <button id="discovery">🔎 Discovery — Click the Scene</button>
-
 <div class="label">ACTIVITIES</div>
 <button data-lesson="team">1. Meet the Training Team</button>
 <button data-lesson="course">2. Run the Obstacle Course</button>
@@ -388,10 +128,8 @@ body:not(.tb-hs-editing) .challenge-mode .hotspot.target:not(:hover):not(:focus-
 <button data-ch="5">6. Find a Backpack</button>
 <a href="index.html">← Return to Main Directory</a>
 </aside>
-
 <section class="card tab-master-card">
-<div class="tab-card-tools" aria-label="Script card controls"><button type="button" class="tab-card-drag" title="Move script card">↕ Move</button><button type="button" class="tab-card-font-down" title="Decrease text">A−</button><button type="button" class="tab-card-font-up" title="Increase text">A+</button><button type="button" class="tab-card-reset" title="Reset card">Reset</button></div><div class="tab-card-resize" title="Drag to resize script card" aria-label="Resize script card">↘</div>
-
+<div aria-label="Script card controls" class="tab-card-tools"><button class="tab-card-drag" title="Move script card" type="button">↕ Move</button><button class="tab-card-font-down" title="Decrease text" type="button">A−</button><button class="tab-card-font-up" title="Increase text" type="button">A+</button><button class="tab-card-reset" title="Reset card" type="button">Reset</button></div><div aria-label="Resize script card" class="tab-card-resize" title="Drag to resize script card">↘</div>
 <div class="kicker">AT BASIC TRAINING</div>
 <h2 id="title">Click &amp; Discover</h2>
 <p id="prompt">You found basic training.</p>
@@ -401,59 +139,28 @@ body:not(.tb-hs-editing) .challenge-mode .hotspot.target:not(:hover):not(:focus-
 <button id="normal">🔊 Speak</button><button id="slow">🐢 Slow</button><button id="replay">↻ Replay</button><button id="nextPhrase">Next phrase →</button>
 </div>
 </section>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 <!-- Hotspots mapped to the approved Basic Training keeper JPG. -->
-<button class="hotspot" data-word="bee" style="left:28%;top:53%;width:12%;height:29%" aria-label="Drill Sergeant Bee"></button>
-<button class="hotspot" data-word="trainees" style="left: 30.96%; top: 57.87%; width: 44.4%; height: 14.39%;" aria-label="Trainees"></button>
-<button class="hotspot" data-word="instructor" style="left:40%;top:47%;width:11%;height:23%" aria-label="Instructor"></button>
-<button class="hotspot" data-word="flag" style="left:13%;top:5%;width:13%;height:22%" aria-label="American flag"></button>
-<button class="hotspot" data-word="mountains" style="left: 28.9%; top: 10.59%; width: 36.49%; height: 11.79%;" aria-label="Mountains"></button>
-<button class="hotspot" data-word="forest" style="left: 65.19%; top: 27.61%; width: 21.79%; height: 11.95%;" aria-label="Forest"></button>
-<button class="hotspot" data-word="wall" style="left: 50.81%; top: 26.17%; width: 4.24%; height: 31.3%;" aria-label="Climbing wall"></button>
-<button class="hotspot" data-word="rope" style="left: 55.2%; top: 21.13%; width: 3.01%; height: 30.07%;" aria-label="Climbing rope"></button>
-<button class="hotspot" data-word="tires" style="left: 55.8%; top: 60.95%; width: 11.29%; height: 9.18%;" aria-label="Training tires"></button>
-<button class="hotspot" data-word="tunnel" style="left: 88.2%; top: 63.78%; width: 10.59%; height: 10.98%;" aria-label="Training tunnel"></button>
-<button class="hotspot" data-word="helicopter" style="left: 68.13%; top: 6.85%; width: 16.66%; height: 12.57%;" aria-label="Helicopter" data-sound="sounds/helicopter-flying.mp3"></button>
-<button class="hotspot" data-word="tower" style="left: 87.87%; top: 21.54%; width: 6.15%; height: 15.28%;" aria-label="Observation tower"></button>
-<button class="hotspot" data-word="tents" style="left: 25.72%; top: 45.5%; width: 14.15%; height: 6.89%;" aria-label="Training tents"></button>
-<button class="hotspot" data-word="truck" style="left: 93.01%; top: 51.08%; width: 6.1%; height: 7.87%;" aria-label="Military truck"></button>
-<button class="hotspot" data-word="backpack" style="left: 0.08%; top: 74.62%; width: 13%; height: 17%;" aria-label="Backpack"></button>
-<button class="hotspot" data-word="canteen" style="left: 15.53%; top: 79.26%; width: 8%; height: 12%;" aria-label="Canteen"></button>
-<button class="hotspot" data-word="uniform" style="left: 66.19%; top: 68.02%; width: 13%; height: 19%;" aria-label="Training uniform"></button>
-<button class="hotspot" data-word="boots" style="left: 67.82%; top: 94.63%; width: 7.48%; height: 7.44%;" aria-label="Boots"></button>
-<button class="hotspot" data-word="obstacle" style="left: 27.43%; top: 57.69%; width: 14.67%; height: 7.38%;" aria-label="Obstacle course"></button>
-<button class="hotspot" data-word="camp" style="left: 5.7%; top: 36.69%; width: 19.19%; height: 30.59%;" aria-label="Training camp"></button>
-
+<button aria-label="Drill Sergeant Bee" class="hotspot" data-word="bee" style="left:28%;top:53%;width:12%;height:29%"></button>
+<button aria-label="Trainees" class="hotspot" data-word="trainees" style="left: 30.96%; top: 57.87%; width: 44.4%; height: 14.39%;"></button>
+<button aria-label="Instructor" class="hotspot" data-word="instructor" style="left:40%;top:47%;width:11%;height:23%"></button>
+<button aria-label="American flag" class="hotspot" data-word="flag" style="left:13%;top:5%;width:13%;height:22%"></button>
+<button aria-label="Mountains" class="hotspot" data-word="mountains" style="left: 28.9%; top: 10.59%; width: 36.49%; height: 11.79%;"></button>
+<button aria-label="Forest" class="hotspot" data-word="forest" style="left: 65.19%; top: 27.61%; width: 21.79%; height: 11.95%;"></button>
+<button aria-label="Climbing wall" class="hotspot" data-word="wall" style="left: 50.81%; top: 26.17%; width: 4.24%; height: 31.3%;"></button>
+<button aria-label="Climbing rope" class="hotspot" data-word="rope" style="left: 55.2%; top: 21.13%; width: 3.01%; height: 30.07%;"></button>
+<button aria-label="Training tires" class="hotspot" data-word="tires" style="left: 55.8%; top: 60.95%; width: 11.29%; height: 9.18%;"></button>
+<button aria-label="Training tunnel" class="hotspot" data-word="tunnel" style="left: 88.2%; top: 63.78%; width: 10.59%; height: 10.98%;"></button>
+<button aria-label="Helicopter" class="hotspot" data-sound="sounds/helicopter-flying.mp3" data-word="helicopter" style="left: 68.13%; top: 6.85%; width: 16.66%; height: 12.57%;"></button>
+<button aria-label="Observation tower" class="hotspot" data-word="tower" style="left: 87.87%; top: 21.54%; width: 6.15%; height: 15.28%;"></button>
+<button aria-label="Training tents" class="hotspot" data-word="tents" style="left: 25.72%; top: 45.5%; width: 14.15%; height: 6.89%;"></button>
+<button aria-label="Military truck" class="hotspot" data-word="truck" style="left: 93.01%; top: 51.08%; width: 6.1%; height: 7.87%;"></button>
+<button aria-label="Backpack" class="hotspot" data-word="backpack" style="left: 0.08%; top: 74.62%; width: 13%; height: 17%;"></button>
+<button aria-label="Canteen" class="hotspot" data-word="canteen" style="left: 15.53%; top: 79.26%; width: 8%; height: 12%;"></button>
+<button aria-label="Training uniform" class="hotspot" data-word="uniform" style="left: 66.19%; top: 68.02%; width: 13%; height: 19%;"></button>
+<button aria-label="Boots" class="hotspot" data-word="boots" style="left: 67.82%; top: 94.63%; width: 7.48%; height: 7.44%;"></button>
+<button aria-label="Obstacle course" class="hotspot" data-word="obstacle" style="left: 27.43%; top: 57.69%; width: 14.67%; height: 7.38%;"></button>
+<button aria-label="Training camp" class="hotspot" data-word="camp" style="left: 5.7%; top: 36.69%; width: 19.19%; height: 30.59%;"></button>
 </main>
-
 <script>
 const EN={game:"basic training",bee:"drill sergeant Bee",trainees:"trainees",instructor:"instructor",flag:"American flag",mountains:"mountains",forest:"forest",wall:"climbing wall",rope:"climbing rope",tires:"training tires",tunnel:"training tunnel",helicopter:"helicopter",tower:"observation tower",tents:"training tents",truck:"military truck",backpack:"backpack",canteen:"canteen",uniform:"training uniform",boots:"boots",obstacle:"obstacle course",camp:"training camp"};
 const WORDS={
@@ -503,264 +210,9 @@ document.getElementById("sceneReturn").onclick=()=>document.body.classList.remov
 showWord("game");
 </script>
 <!-- Talk A Bee global browser-voice bridge -->
-<script>
-(function(){
-  const GLOBAL_PREFIX='talkabee-voice-';
-  function controls(){
-    const selects=[...document.querySelectorAll('select')];
-    const voice=selects.find(s=>/voice/i.test((s.id||'')+' '+(s.name||'')+' '+(s.getAttribute('aria-label')||'')));
-    const language=selects.find(s=>/lang/i.test((s.id||'')+' '+(s.name||'')+' '+(s.getAttribute('aria-label')||'')));
-    return {language,voice};
-  }
-  function voices(){return ('speechSynthesis' in window)?(speechSynthesis.getVoices()||[]):[];}
-  function key(lang){return GLOBAL_PREFIX+lang;}
-  function selectedVoiceURI(sel){
-    if(!sel||!sel.value)return '';
-    const vs=voices(), opt=sel.options[sel.selectedIndex];
-    const raw=sel.value, label=(opt&&opt.textContent)||'';
-    let v=vs.find(x=>x.voiceURI===raw)||vs.find(x=>x.name===raw);
-    if(!v && label) v=vs.find(x=>label===x.name||label.startsWith(x.name+' —')||label.startsWith(x.name+' -'));
-    return v?v.voiceURI:'';
-  }
-  function restore(){
-    const {language,voice}=controls(); if(!language||!voice)return;
-    const saved=localStorage.getItem(key(language.value))||''; if(!saved)return;
-    const vs=voices(), target=vs.find(v=>v.voiceURI===saved); if(!target)return;
-    const opts=[...voice.options];
-    let opt=opts.find(o=>o.value===target.voiceURI)||opts.find(o=>o.value===target.name)||
-            opts.find(o=>o.textContent===target.name||o.textContent.startsWith(target.name+' —')||o.textContent.startsWith(target.name+' -'));
-    if(opt && voice.value!==opt.value){
-      voice.value=opt.value;
-      voice.dispatchEvent(new Event('change',{bubbles:true}));
-    }
-  }
-  function save(){
-    const {language,voice}=controls(); if(!language||!voice)return;
-    const uri=selectedVoiceURI(voice);
-    localStorage.setItem(key(language.value),uri);
-  }
-  function restoreLanguage(){
-    const {language}=controls(); if(!language)return;
-    const saved=localStorage.getItem('talkabee-learn-language')||'';
-    if(saved && [...language.options].some(o=>o.value===saved) && language.value!==saved){
-      language.value=saved;
-      language.dispatchEvent(new Event('change',{bubbles:true}));
-    }
-  }
-  function saveLanguage(){
-    const {language}=controls(); if(language) localStorage.setItem('talkabee-learn-language',language.value);
-  }
-  function bind(){
-    const {language,voice}=controls(); if(!language||!voice)return;
-    if(!voice.dataset.tabGlobalVoice){ voice.addEventListener('change',save); voice.dataset.tabGlobalVoice='1'; }
-    if(!language.dataset.tabGlobalVoice){
-      language.addEventListener('change',()=>{saveLanguage();setTimeout(restore,0);setTimeout(restore,120);setTimeout(restore,500)});
-      language.dataset.tabGlobalVoice='1';
-    }
-    restoreLanguage(); restore(); setTimeout(restore,120); setTimeout(restore,500); setTimeout(restore,1500);
-  }
-  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',bind);else bind();
-  if('speechSynthesis' in window){
-    const prior=speechSynthesis.onvoiceschanged;
-    speechSynthesis.onvoiceschanged=function(e){if(typeof prior==='function')prior.call(this,e);setTimeout(bind,0);setTimeout(restore,120)};
-  }
-})();
-</script>
-<script id="talkabee-accessibility-controls-script-v1">
-(function(){
- const panel=document.querySelector('.tab-master-panel,.activity-panel,.panel');
- if(panel){
-  const minus=panel.querySelector('.tab-panel-minus'),plus=panel.querySelector('.tab-panel-plus'),reset=panel.querySelector('.tab-panel-reset');
-  const KEY='talkabee-global-activity-panel-size',DEFAULT=195,MIN=170,MAX=310,STEP=20;
-  const clamp=(n,a,b)=>Math.max(a,Math.min(b,n));
-  const apply=(width,save=true)=>{width=clamp(Math.round(Number(width)||DEFAULT),MIN,MAX);const scale=clamp(width/DEFAULT,.88,1.42);panel.style.setProperty('width',width+'px','important');panel.style.setProperty('min-width',width+'px','important');panel.style.setProperty('max-width',width+'px','important');panel.style.setProperty('--tab-panel-scale',scale.toFixed(3));if(save)try{localStorage.setItem(KEY,String(width))}catch(e){}};
-  const current=()=>panel.getBoundingClientRect().width||DEFAULT;
-  if(minus)minus.addEventListener('click',()=>apply(current()-STEP));
-  if(plus)plus.addEventListener('click',()=>apply(current()+STEP));
-  if(reset)reset.addEventListener('click',()=>{apply(DEFAULT,false);try{localStorage.removeItem(KEY)}catch(e){}});
-  try{const saved=localStorage.getItem(KEY);if(saved)apply(saved,false)}catch(e){}
- }
-
- const card=document.querySelector('.tab-master-card,.script,.card');
- if(!card)return;
- const drag=card.querySelector('.tab-card-drag'),down=card.querySelector('.tab-card-font-down'),up=card.querySelector('.tab-card-font-up'),reset=card.querySelector('.tab-card-reset'),resize=card.querySelector('.tab-card-resize');
- const PK='talkabee-global-script-card-position',SK='talkabee-global-script-card-scale',FK='talkabee-global-script-card-font-scale';
- const pageKey=(location.pathname.split('/').pop()||'adventure').replace(/[^a-z0-9-]/gi,'_');
- const WK='talkabee-script-card-width-'+pageKey,HK='talkabee-script-card-height-'+pageKey;
- const clamp=(n,a,b)=>Math.max(a,Math.min(b,n));
- const defaultScale=()=>matchMedia('(max-width:760px)').matches?.82:.67;
- let scale=defaultScale(),fontScale=1,dragState=null;
- // Capture actual rendered font sizes, even on Adventures with older card markup.
- // Never modify the Move / A- / A+ / Reset controls or resize handle.
- const textNodes=Array.from(card.querySelectorAll('*')).filter(el=>{
-   if(el.closest('.tab-card-tools,.tab-card-resize'))return false;
-   if(el.matches('script,style,svg,path,select,input,textarea'))return false;
-   return Array.from(el.childNodes).some(n=>n.nodeType===3&&n.textContent.trim());
- });
- textNodes.forEach(el=>{el.dataset.baseFont=getComputedStyle(el).fontSize});
- function applyBox(width,height,save=true){
-   card.style.setProperty('width',width+'px','important');
-   card.style.setProperty('max-width','none','important');
-   card.style.setProperty('min-width','0','important');
-   card.style.setProperty('min-height',height+'px','important');
-   card.style.setProperty('max-height','none','important');
-   card.style.setProperty('overflow','visible','important');
-   if(save)try{localStorage.setItem(WK,String(width));localStorage.setItem(HK,String(height))}catch(e){}
- }
-
- function applyTransform(){
-   if(card.dataset.moved==='1'){
-     card.style.setProperty('transform-origin','top left','important');
-     card.style.setProperty('transform','scale('+scale+')','important');
-   }else{
-     card.style.removeProperty('transform-origin');
-     card.style.removeProperty('transform');
-   }
- }
- function applyFont(v,save=true){
-   fontScale=clamp(Number(v)||1,.75,1.6);
-   card.style.setProperty('--tab-card-font-scale',fontScale.toFixed(2));
-   textNodes.forEach(el=>el.style.setProperty('font-size',(parseFloat(el.dataset.baseFont)*fontScale)+'px','important'));
-   if(save)try{localStorage.setItem(FK,String(fontScale))}catch(e){}
- }
- function saveState(){
-   try{
-     localStorage.setItem(SK,String(scale));
-     if(card.dataset.moved==='1'){
-       localStorage.setItem(PK,JSON.stringify({left:parseFloat(card.style.left)||card.getBoundingClientRect().left,top:parseFloat(card.style.top)||card.getBoundingClientRect().top}));
-     }
-   }catch(e){}
- }
- function restore(){
-   try{
-     const fs=localStorage.getItem(FK); if(fs)applyFont(fs,false);
-     // Older A+/A- controls stored a whole-card zoom. Ignore that legacy value.
-      const ww=parseFloat(localStorage.getItem(WK)),hh=parseFloat(localStorage.getItem(HK));
-      if(ww&&hh)applyBox(ww,hh,false);
-     const ps=JSON.parse(localStorage.getItem(PK)||'null');
-     if(ps&&innerWidth>760){
-       card.dataset.moved='1';
-       card.style.setProperty('left',clamp(ps.left,8,innerWidth-80)+'px','important');
-       card.style.setProperty('top',clamp(ps.top,8,innerHeight-80)+'px','important');
-       card.style.setProperty('right','auto','important');
-       card.style.setProperty('bottom','auto','important');
-       applyTransform();
-     }
-   }catch(e){}
- }
-
- if(down)down.addEventListener('click',()=>applyFont(fontScale-.1));
- if(up)up.addEventListener('click',()=>applyFont(fontScale+.1));
-
- if(reset)reset.addEventListener('click',()=>{
-   try{localStorage.removeItem(PK);localStorage.removeItem(SK);localStorage.removeItem(FK);localStorage.removeItem(WK);localStorage.removeItem(HK)}catch(e){}
-   scale=defaultScale();fontScale=1;
-   delete card.dataset.moved;
-   ['width','height','left','top','right','bottom','inset','transform','transform-origin','min-width','max-width','min-height','max-height'].forEach(p=>card.style.removeProperty(p));
-   applyFont(1,false);
-   // Reset must restore the approved centered, bottom-anchored appearance
-   // without allowing any part of the card to fall outside the viewport.
-   // Do not rely on the later boundary observer: its correction can run
-   // before the browser has laid out the newly reset content.
-   const placeDefault=()=>{
-     naturalHeight();
-     const gap=16;
-     const cssWidth=card.getBoundingClientRect().width || 520;
-     const baseWidth=parseFloat(getComputedStyle(card).width)||520;
-     const visualScale=defaultScale();
-     const visualWidth=baseWidth*visualScale;
-     const visualHeight=card.scrollHeight*visualScale;
-     const vw=document.documentElement.clientWidth;
-     const vh=document.documentElement.clientHeight;
-     const x=Math.max(gap,(vw-visualWidth)/2);
-     const y=Math.max(gap,vh-gap-visualHeight);
-     card.dataset.moved='1';
-     card.style.setProperty('left',x+'px','important');
-     card.style.setProperty('top',y+'px','important');
-     card.style.setProperty('right','auto','important');
-     card.style.setProperty('bottom','auto','important');
-     card.style.setProperty('transform-origin','top left','important');
-     card.style.setProperty('transform','scale('+visualScale+')','important');
-   };
-   requestAnimationFrame(()=>requestAnimationFrame(placeDefault));
- });
-
- function startDrag(e){
-   if(innerWidth<=760 || (typeof e.button==='number'&&e.button!==0))return;
-   if(e.target.closest('.tab-card-resize,.tab-card-font-down,.tab-card-font-up,.tab-card-reset,a,input,select,textarea'))return;
-   if(e.target.closest('button') && !e.target.closest('.tab-card-drag'))return;
-   e.preventDefault();
-   const r=card.getBoundingClientRect();
-   // Convert the visual top-left to fixed coordinates, while keeping the exact current scale.
-   card.dataset.moved='1';
-   card.style.setProperty('left',r.left+'px','important');
-   card.style.setProperty('top',r.top+'px','important');
-   card.style.setProperty('right','auto','important');
-   card.style.setProperty('bottom','auto','important');
-   applyTransform();
-   dragState={id:e.pointerId,sx:e.clientX,sy:e.clientY,left:r.left,top:r.top,w:r.width,h:r.height};
-   try{card.setPointerCapture(e.pointerId)}catch(_){}
- }
- function moveDrag(e){
-   if(!dragState||e.pointerId!==dragState.id)return;
-   e.preventDefault();
-   const x=clamp(dragState.left+e.clientX-dragState.sx,8,Math.max(8,innerWidth-dragState.w-8));
-   const y=clamp(dragState.top+e.clientY-dragState.sy,8,Math.max(8,innerHeight-dragState.h-8));
-   card.style.setProperty('left',x+'px','important');
-   card.style.setProperty('top',y+'px','important');
- }
- function endDrag(e){
-   if(!dragState||e.pointerId!==dragState.id)return;
-   dragState=null; saveState();
-   try{card.releasePointerCapture(e.pointerId)}catch(_){}
- }
-
- // Drag from the Move button OR any non-interactive empty area of the card.
- card.addEventListener('pointerdown',startDrag);
- card.addEventListener('pointermove',moveDrag);
- card.addEventListener('pointerup',endDrag);
- card.addEventListener('pointercancel',endDrag);
-
- // Resize only the card's dimensions. The text and visual scale remain unchanged.
- if(resize)resize.addEventListener('pointerdown',e=>{
-   if(innerWidth<=760)return;
-   e.preventDefault();e.stopPropagation();
-   const sx=e.clientX,sy=e.clientY,baseW=parseFloat(getComputedStyle(card).width),baseH=parseFloat(getComputedStyle(card).height);
-   const effectiveScale=card.getBoundingClientRect().width/baseW||defaultScale();
-   resize.setPointerCapture(e.pointerId);
-   const mv=ev=>{const width=clamp(baseW+(ev.clientX-sx)/effectiveScale,320,Math.max(520,innerWidth/effectiveScale-50));const height=clamp(baseH+(ev.clientY-sy)/effectiveScale,120,Math.max(250,innerHeight/effectiveScale-40));applyBox(width,height,false)};
-   const end=()=>{resize.removeEventListener('pointermove',mv);resize.removeEventListener('pointerup',end);resize.removeEventListener('pointercancel',end);applyBox(parseFloat(getComputedStyle(card).width),parseFloat(getComputedStyle(card).height),true);naturalHeight()};
-   resize.addEventListener('pointermove',mv);resize.addEventListener('pointerup',end);resize.addEventListener('pointercancel',end);
- });
-
-  restore();
-
-  // Grandpa's Place behavior: the card follows its content rather than keeping
-  // a height left behind by an earlier challenge or a saved editor snapshot.
-  // A manual corner drag can temporarily set a preferred minimum height;
-  // the next phrase/challenge change returns the card to natural auto-height.
-  function naturalHeight(){
-    // The card must size to content, not become an internally scrolling pane.
-    // Preserve the user's chosen width and screen position.
-    card.style.setProperty('height','auto','important');
-    card.style.setProperty('min-height','0px','important');
-    card.style.setProperty('max-height','none','important');
-    card.style.setProperty('overflow','visible','important');
-    card.style.setProperty('overflow-y','visible','important');
-    try{localStorage.removeItem(HK)}catch(e){}
-  }
-  naturalHeight();
-  const contentFields=['title','prompt','line','translation','status']
-    .map(id=>document.getElementById(id)).filter(Boolean);
-  const contentWatcher=new MutationObserver(()=>naturalHeight());
-  contentFields.forEach(el=>contentWatcher.observe(el,{
-    subtree:true,childList:true,characterData:true
-  }));
-})();
-</script>
-<style id="talkabee-ski-panel-180">
-@media(min-width:761px){.panel{width:180px!important;min-width:180px!important;max-width:180px!important}}
-</style>
+<script src="js/talkabee-global-voice-sync.js"></script>
+<script id="talkabee-accessibility-controls-script-v1" src="js/talkabee-common-a79292d4e248.js"></script>
+<link href="css/talkabee-shared-cfa4d1155267.css" id="talkabee-ski-panel-180" rel="stylesheet"/>
 <script id="talkabee-hotspot-custom-sound">
 (function(){
  if(window.__talkabeeHotspotCustomSound)return;window.__talkabeeHotspotCustomSound=true;
@@ -776,47 +228,8 @@ showWord("game");
  },false);
 })();
 </script>
-<script id="talkabee-new-hotspot-language-bridge">(()=>{const LEX={"es":{"oval office":"Despacho Oval","bee":"abeja","resolute desk":"escritorio Resolute","desk chair":"silla de escritorio","american flag":"bandera estadounidense","presidential flag":"bandera presidencial","fireplace":"chimenea","george washington portrait":"retrato de George Washington","abraham lincoln portrait":"retrato de Abraham Lincoln","windows":"ventanas","washington monument":"Monumento a Washington","rug":"alfombra","sofa":"sofá","books":"libros","globe":"globo terráqueo","telephone":"teléfono","flowers":"flores","tour guide":"guía turístico","visitors":"visitantes","historical bust":"busto histórico","lamp":"lámpara","aircraft carrier":"portaaviones","navy bee":"abeja de la Marina","sailor":"marinero","jet aircraft":"avión a reacción","carrier aircraft":"aviones del portaaviones","helicopter":"helicóptero","carrier island":"isla del portaaviones","flight deck":"cubierta de vuelo","flight deck crew":"tripulación de cubierta","aircraft director":"director de aeronaves","flight deck crew member":"miembro de la tripulación de cubierta","tow tractor":"tractor de remolque","ocean":"océano","navy ship":"buque de la Marina","deck markings":"marcas de cubierta","safety railing":"barandilla de seguridad","deck equipment":"equipo de cubierta","sky":"cielo","zoo":"zoológico","elephant":"elefante","giraffes":"jirafas","mountain":"montaña","monkey":"mono","parrot":"loro","lion":"león","zoo sign":"letrero del zoológico","zebra":"cebra","zoo tram":"tranvía del zoológico","penguins":"pingüinos","sea lion":"león marino","waterfall":"cascada","pool":"estanque","boy":"niño","girl":"niña","zoo visitors":"visitantes del zoológico","trees":"árboles","zoo path":"sendero del zoológico","rowing regatta":"regata de remo","bee coxswain":"abeja timonel","megaphone":"megáfono","rowing crew":"equipo de remo","oars":"remos","racing shell":"bote de competición","red rowing crew":"equipo rojo de remo","lake water":"agua del lago","race buoys":"boyas de carrera","regatta banner":"pancarta de la regata","boathouse":"cobertizo para botes","spectators":"espectadores","dock":"muelle","sailboat":"velero","motorboat":"lancha motora","snowy mountains":"montañas nevadas","pine forest":"bosque de pinos","regatta flags":"banderas de la regata","oar splash":"salpicadura del remo","rower":"remero","race course":"recorrido de la carrera","boat lock":"esclusa para barcos","captain bee":"abeja capitana","steering wheel":"timón","cabin cruiser":"barco de recreo","dog":"perro","child":"niño","life jacket":"chaleco salvavidas","lock gate":"compuerta de la esclusa","flowing water":"agua corriente","boat behind us":"barco detrás de nosotros","yellow bollard":"bolardo amarillo","lock ladder":"escalera de la esclusa","lock wall":"muro de la esclusa","lock control building":"edificio de control","seagull":"gaviota","mountains":"montañas","lock water":"agua de la esclusa","boat fender":"defensa del barco","anchor":"ancla","rescue helicopter":"helicóptero de rescate","pilot":"piloto","grandpa":"abuelo","mitchell":"Mitchell","nicole":"Nicole","rescue dog":"perro de rescate","rescue cable":"cable de rescate","rescuer":"rescatista","rescue basket":"cesta de rescate","hiker":"excursionista","backpack":"mochila","mountain lake":"lago de montaña","eagle":"águila","forest":"bosque","campground":"campamento","rescue helmet":"casco de rescate","rocky ledge":"saliente rocoso","fishing boat":"barco de pesca","orca":"orca","dolphin":"delfín","space needle":"Aguja Espacial","seattle skyline":"horizonte de Seattle","mount rainier":"Monte Rainier","ferris wheel":"noria","seagulls":"gaviotas","fishing rods":"cañas de pescar","sophia":"Sophia","carlos":"Carlos","grandma":"abuela","life ring":"salvavidas","radar":"radar","fishing net":"red de pesca","camp sign":"letrero del campamento","rv":"casa rodante","solar panels":"paneles solares","rv door":"puerta de la casa rodante","bicycle":"bicicleta","picnic table":"mesa de picnic","guitar":"guitarra","family":"familia","campfire":"fogata","marshmallows":"malvaviscos","bear":"Bear","cooler":"nevera","tent":"tienda de campaña","lantern":"linterna","raccoon":"mapache","lake":"lago","canoe":"canoa","creek":"arroyo","moon":"luna","stars":"estrellas","pine trees":"pinos","firewood":"leña","cooking pot":"olla","movie studio":"estudio de cine","hollywood sign":"letrero de Hollywood","studio water tower":"torre de agua del estudio","camera helicopter":"helicóptero con cámara","camera drone":"dron con cámara","green screen":"pantalla verde","boom microphone":"micrófono de pértiga","stunt explosion":"explosión de acrobacia","stunt car":"coche de acrobacias","movie camera":"cámara de cine","director monitors":"monitores del director","clapperboard":"claqueta","director's chair":"silla del director","costumes":"vestuario","makeup station":"zona de maquillaje","studio lights":"luces de estudio","director bee":"abeja directora","cast members":"miembros del reparto","movie crew":"equipo de filmación","palm trees":"palmeras","coral reef":"arrecife de coral","dolphins":"delfines","shipwreck":"barco hundido","sea turtle":"tortuga marina","shark":"tiburón","clownfish":"pez payaso","tropical fish":"peces tropicales","pufferfish":"pez globo","moray eel":"morena","starfish":"estrella de mar","crab":"cangrejo","lobster":"langosta","octopus":"pulpo","coral":"coral","seaweed":"algas marinas","sand":"arena","scuba tank":"tanque de buceo","fins":"aletas","bicycle race":"carrera de bicicletas","bee racer":"abeja ciclista","starting line":"línea de salida","start gate":"arco de salida","race official":"oficial de carrera","start signal":"señal de salida","helmet":"casco","bicycle racer":"ciclista","bicycle racers":"ciclistas","bike trail sign":"señal de sendero para bicicletas","race flags":"banderas de carrera","race tent":"carpa de carrera","dirt race track":"pista de tierra","trail rocks":"rocas del sendero","softball game":"partido de sóftbol","bee pitcher":"abeja lanzadora","softball":"pelota de sóftbol","pitcher's mound":"montículo del lanzador","batter":"bateadora","softball bat":"bate de sóftbol","catcher":"receptora","umpire":"árbitro","home plate":"plato de home","scoreboard":"marcador","infielder":"jugadora de cuadro","softball glove":"guante de sóftbol","batting helmet":"casco de bateo","softball field":"campo de sóftbol","outfield fence":"valla del jardín","flag":"bandera","family picnic":"picnic familiar","picnic crew":"grupo del picnic","picnic food":"comida de picnic","hot dogs":"perritos calientes","hamburgers":"hamburguesas","golden dog":"perro dorado","german shepherd":"pastor alemán","canoes":"canoas","wildflowers":"flores silvestres","basic training":"entrenamiento básico","drill sergeant bee":"abeja sargento instructor","trainees":"reclutas","instructor":"instructor","climbing wall":"muro de escalada","climbing rope":"cuerda de escalada","training tires":"neumáticos de entrenamiento","training tunnel":"túnel de entrenamiento","observation tower":"torre de observación","training tents":"tiendas de entrenamiento","military truck":"camión militar","canteen":"cantimplora","training uniform":"uniforme de entrenamiento","boots":"botas","obstacle course":"pista de obstáculos","training camp":"campamento de entrenamiento","hot air balloon festival":"festival de globos aerostáticos","balloon bee":"abeja del globo","balloon crew":"tripulación del globo","balloon basket":"cesta del globo","balloon burner":"quemador del globo","burner flame":"llama del quemador","hot air balloon":"globo aerostático","balloon ropes":"cuerdas del globo","forest island":"isla boscosa","sunrise":"amanecer","blue sky":"cielo azul","balloons in flight":"globos en vuelo","festival field":"campo del festival","festival crowd":"multitud del festival","inflating balloons":"globos inflándose","festival tents":"carpas del festival","saturn":"Saturno","astronaut bee":"abeja astronauta","saturn's rings":"anillos de Saturno","milky way":"Vía Láctea","sunlight":"luz solar","spacecraft window":"ventana de la nave","solar system screen":"pantalla del sistema solar","control console":"consola de control","computer monitor":"monitor","astronaut":"astronauta","space crew":"tripulación espacial","spacecraft seat":"asiento de la nave","solar system hologram":"holograma del sistema solar","spacecraft ceiling":"techo de la nave","planet displays":"pantallas planetarias","spacesuit":"traje espacial","spacecraft controls":"controles de la nave","whitewater rafting":"rafting en aguas bravas","rafting bee":"abeja del rafting","rafting crew":"equipo de rafting","raft":"balsa","yellow paddle":"remo amarillo","blue paddle":"remo azul","huge rapids":"rápidos enormes","whitewater":"aguas bravas","river":"río","river rocks":"rocas del río","evergreen forest":"bosque de hoja perenne","snowy mountain":"montaña nevada","water spray":"rocío de agua","mountain valley":"valle de montaña","the moon":"la Luna","moon crew":"tripulación lunar","moon castle":"castillo lunar","moon rock":"roca lunar","lunar surface":"superficie lunar","crater":"cráter","lunar lander":"módulo lunar","lander ladder":"escalera del módulo","moon rover":"vehículo lunar","dish antenna":"antena parabólica","moon base":"base lunar","lunar habitat":"hábitat lunar","small rover":"vehículo pequeño","science instrument":"instrumento científico","earth":"Tierra","sun":"Sol","lunar mountains":"montañas lunares","footprints":"huellas","skydiving":"paracaidismo","flying bee":"abeja voladora","airplane":"avión","airplane door":"puerta del avión","crew member":"miembro de la tripulación","skydiving instructor":"instructor de paracaidismo","skydiver":"paracaidista","goggles":"gafas protectoras","skydiving harness":"arnés de paracaidismo","parachute pack":"mochila del paracaídas","airplane wing":"ala del avión","islands":"islas","clouds":"nubes","landing gear":"tren de aterrizaje","golf course":"campo de golf","golf bee":"abeja golfista","golfer":"golfista","golf crew":"grupo de golf","small dog":"perro pequeño","golf ball":"pelota de golf","yellow flag":"bandera amarilla","golf club":"palo de golf","putting green":"green","sand bunker":"búnker de arena","golf cart":"carrito de golf","pond":"estanque","clubhouse":"casa club","fairway":"calle","protect the earth":"proteger la Tierra","factories":"fábricas","smokestacks":"chimeneas","smoke":"humo","air pollution":"contaminación del aire","city":"ciudad","atmosphere":"atmósfera","ships":"barcos","environmental map":"mapa ambiental","pollution chart":"gráfico de contaminación","pollution monitor":"monitor de contaminación","satellite":"satélite","football game":"partido de fútbol americano","bee quarterback":"abeja mariscal de campo","football":"balón de fútbol americano","referee":"árbitro","offensive player":"jugador ofensivo","center":"centro","receiver":"receptor","defender":"defensor","football helmet":"casco de fútbol americano","football field":"campo de fútbol americano","yard line":"línea de yarda","crowd":"público","press box":"cabina de prensa","stadium lights":"luces del estadio","sailboats":"veleros","great wall of china":"Gran Muralla China","great wall":"Gran Muralla","watchtower":"torre de vigilancia","watchtowers":"torres de vigilancia","hot-air balloons":"globos aerostáticos","squirrel":"ardilla","village":"pueblo","bridge":"puente","stone walkway":"camino de piedra","spacewalk":"caminata espacial","boy astronaut":"niño astronauta","girl astronaut":"niña astronauta","space gloves":"guantes espaciales","safety tether":"cable de seguridad","space station":"estación espacial","station truss":"estructura de la estación","handrail":"pasamanos","space tools":"herramientas espaciales","dog show":"exposición canina","referee bee":"abeja árbitro","clipboard":"portapapeles","golden retriever":"Golden Retriever","small white dog":"perro blanco pequeño","border collie":"Border Collie","spaniel":"spaniel","brown dog":"perro marrón","dalmatian":"dálmata","bulldog":"bulldog","pomeranian":"pomerania","terrier":"terrier","dog handlers":"presentadores de perros","dog leash":"correa","dog show banner":"pancarta de la exposición canina","audience":"público","show ring fence":"valla de la pista","show ring turf":"césped de la pista","arena lights":"luces de la arena","cockpit":"cabina del piloto","captain":"capitán","water":"agua","ferry":"ferri","overhead controls":"controles superiores","flight instruments":"instrumentos de vuelo","navigation screen":"pantalla de navegación","throttle":"palanca de potencia","headset":"auriculares","cockpit controls":"controles de la cabina","cave":"cueva","stalactites":"estalactitas","stalagmites":"estalagmitas","bats":"murciélagos","cave waterfall":"cascada de la cueva","cave pool":"poza de la cueva","cave stream":"arroyo de la cueva","headlamp":"linterna frontal","bee explorer":"abeja exploradora","cave explorers":"exploradores de cuevas","cavern":"caverna","cave rocks":"rocas de la cueva","water reflection":"reflejo en el agua","cave passage":"pasaje de la cueva","dripstone":"formación calcárea","mission control center":"centro de control de misión","flight controllers":"controladores de vuelo","rocket":"cohete","launch pad":"plataforma de lanzamiento","countdown clock":"reloj de cuenta regresiva","mission screen":"pantalla de misión","observation gallery":"galería de observación","telemetry display":"pantalla de telemetría","mission map":"mapa de misión","control room chair":"silla de control","control room ceiling":"techo de la sala","ski resort":"estación de esquí","chairlift":"telesilla","skiers":"esquiadores","trails":"pistas","lift":"remonte","ski rentals":"alquiler de esquís","ski school":"escuela de esquí","café":"cafetería","skis":"esquís","snowboard":"tabla de snowboard","ski lodge":"refugio de esquí","ski resort sign":"letrero de la estación de esquí","fire pit":"fogata","chairs":"sillas","snow":"nieve","steam train":"tren de vapor","steam locomotive":"locomotora de vapor","engineer bee":"abeja maquinista","train bell":"campana del tren","headlight":"faro","smokestack":"chimenea","steam":"vapor","passengers":"pasajeros","passenger cars":"vagones de pasajeros","trestle bridge":"puente de caballetes","railroad tracks":"vías del tren","railroad depot":"estación de ferrocarril","railroad crossing":"cruce ferroviario","water tower":"torre de agua","bison":"bisontes","deer":"ciervo","hang glider":"ala delta","control bar":"barra de control","town":"pueblo","boat":"barco","train":"tren","rail bridge":"puente ferroviario","road":"carretera","cabin":"cabaña","stump":"tocón","trail":"sendero","jet airplane":"avión a reacción"},"fr":{"oval office":"Bureau ovale","bee":"abeille","resolute desk":"bureau Resolute","desk chair":"fauteuil de bureau","american flag":"drapeau américain","presidential flag":"drapeau présidentiel","fireplace":"cheminée","george washington portrait":"portrait de George Washington","abraham lincoln portrait":"portrait d'Abraham Lincoln","windows":"fenêtres","washington monument":"Washington Monument","rug":"tapis","sofa":"canapé","books":"livres","globe":"globe terrestre","telephone":"téléphone","flowers":"fleurs","tour guide":"guide","visitors":"visiteurs","historical bust":"buste historique","lamp":"lampe","aircraft carrier":"porte-avions","navy bee":"abeille de la Marine","sailor":"marin","jet aircraft":"avion à réaction","carrier aircraft":"avions embarqués","helicopter":"hélicoptère","carrier island":"îlot du porte-avions","flight deck":"pont d'envol","flight deck crew":"équipe du pont d'envol","aircraft director":"directeur d'aéronef","flight deck crew member":"membre d'équipe du pont","tow tractor":"tracteur de remorquage","ocean":"océan","navy ship":"navire de la Marine","deck markings":"marquages du pont","safety railing":"garde-corps de sécurité","deck equipment":"équipement du pont","sky":"ciel","zoo":"zoo","elephant":"éléphant","giraffes":"girafes","mountain":"montagne","monkey":"singe","parrot":"perroquet","lion":"lion","zoo sign":"panneau du zoo","zebra":"zèbre","zoo tram":"tram du zoo","penguins":"manchots","sea lion":"otarie","waterfall":"cascade","pool":"bassin","boy":"garçon","girl":"fille","zoo visitors":"visiteurs du zoo","trees":"arbres","zoo path":"chemin du zoo","rowing regatta":"régate d'aviron","bee coxswain":"abeille barreur","megaphone":"mégaphone","rowing crew":"équipe d'aviron","oars":"rames","racing shell":"coque de course","red rowing crew":"équipe rouge d'aviron","lake water":"eau du lac","race buoys":"bouées de course","regatta banner":"bannière de la régate","boathouse":"hangar à bateaux","spectators":"spectateurs","dock":"quai","sailboat":"voilier","motorboat":"bateau à moteur","snowy mountains":"montagnes enneigées","pine forest":"forêt de pins","regatta flags":"drapeaux de la régate","oar splash":"éclaboussure de rame","rower":"rameur","race course":"parcours de course","boat lock":"écluse à bateaux","captain bee":"abeille capitaine","steering wheel":"barre","cabin cruiser":"bateau de plaisance","dog":"chien","child":"enfant","life jacket":"gilet de sauvetage","lock gate":"porte d'écluse","flowing water":"eau qui coule","boat behind us":"bateau derrière nous","yellow bollard":"bollard jaune","lock ladder":"échelle de l'écluse","lock wall":"mur de l'écluse","lock control building":"bâtiment de contrôle","seagull":"mouette","mountains":"montagnes","lock water":"eau de l'écluse","boat fender":"pare-battage","anchor":"ancre","rescue helicopter":"hélicoptère de sauvetage","pilot":"pilote","grandpa":"grand-père","mitchell":"Mitchell","nicole":"Nicole","rescue dog":"chien de sauvetage","rescue cable":"câble de sauvetage","rescuer":"secouriste","rescue basket":"panier de sauvetage","hiker":"randonneur","backpack":"sac à dos","mountain lake":"lac de montagne","eagle":"aigle","forest":"forêt","campground":"camping","rescue helmet":"casque de sauvetage","rocky ledge":"corniche rocheuse","fishing boat":"bateau de pêche","orca":"orque","dolphin":"dauphin","space needle":"Space Needle","seattle skyline":"horizon de Seattle","mount rainier":"mont Rainier","ferris wheel":"grande roue","seagulls":"mouettes","fishing rods":"cannes à pêche","sophia":"Sophia","carlos":"Carlos","grandma":"grand-mère","life ring":"bouée de sauvetage","radar":"radar","fishing net":"filet de pêche","camp sign":"panneau du camping","rv":"camping-car","solar panels":"panneaux solaires","rv door":"porte du camping-car","bicycle":"vélo","picnic table":"table de pique-nique","guitar":"guitare","family":"famille","campfire":"feu de camp","marshmallows":"guimauves","bear":"Bear","cooler":"glacière","tent":"tente","lantern":"lanterne","raccoon":"raton laveur","lake":"lac","canoe":"canoë","creek":"ruisseau","moon":"lune","stars":"étoiles","pine trees":"pins","firewood":"bois de chauffage","cooking pot":"marmite","movie studio":"studio de cinéma","hollywood sign":"panneau Hollywood","studio water tower":"château d'eau du studio","camera helicopter":"hélicoptère caméra","camera drone":"drone caméra","green screen":"fond vert","boom microphone":"microphone perche","stunt explosion":"explosion de cascade","stunt car":"voiture de cascade","movie camera":"caméra de cinéma","director monitors":"moniteurs du réalisateur","clapperboard":"clap","director's chair":"fauteuil du réalisateur","costumes":"costumes","makeup station":"poste de maquillage","studio lights":"projecteurs de studio","director bee":"abeille réalisatrice","cast members":"acteurs","movie crew":"équipe de tournage","palm trees":"palmiers","coral reef":"récif corallien","dolphins":"dauphins","shipwreck":"épave","sea turtle":"tortue de mer","shark":"requin","clownfish":"poisson-clown","tropical fish":"poissons tropicaux","pufferfish":"poisson-globe","moray eel":"murène","starfish":"étoile de mer","crab":"crabe","lobster":"homard","octopus":"pieuvre","coral":"corail","seaweed":"algues","sand":"sable","scuba tank":"bouteille de plongée","fins":"palmes","bicycle race":"course de vélos","bee racer":"abeille cycliste","starting line":"ligne de départ","start gate":"portique de départ","race official":"officiel de course","start signal":"signal de départ","helmet":"casque","bicycle racer":"cycliste","bicycle racers":"cyclistes","bike trail sign":"panneau de piste cyclable","race flags":"drapeaux de course","race tent":"tente de course","dirt race track":"piste en terre","trail rocks":"rochers du sentier","softball game":"match de softball","bee pitcher":"abeille lanceuse","softball":"balle de softball","pitcher's mound":"monticule du lanceur","batter":"frappeuse","softball bat":"batte de softball","catcher":"receveuse","umpire":"arbitre","home plate":"marbre","scoreboard":"tableau d'affichage","infielder":"joueuse de champ intérieur","softball glove":"gant de softball","batting helmet":"casque de frappe","softball field":"terrain de softball","outfield fence":"clôture du champ extérieur","flag":"drapeau","family picnic":"pique-nique familial","picnic crew":"groupe du pique-nique","picnic food":"nourriture du pique-nique","hot dogs":"hot-dogs","hamburgers":"hamburgers","golden dog":"chien doré","german shepherd":"berger allemand","canoes":"canoës","wildflowers":"fleurs sauvages","basic training":"entraînement de base","drill sergeant bee":"abeille sergent instructeur","trainees":"stagiaires","instructor":"instructeur","climbing wall":"mur d'escalade","climbing rope":"corde d'escalade","training tires":"pneus d'entraînement","training tunnel":"tunnel d'entraînement","observation tower":"tour d'observation","training tents":"tentes d'entraînement","military truck":"camion militaire","canteen":"gourde","training uniform":"uniforme d'entraînement","boots":"bottes","obstacle course":"parcours d'obstacles","training camp":"camp d'entraînement","hot air balloon festival":"festival de montgolfières","balloon bee":"abeille en montgolfière","balloon crew":"équipage de la montgolfière","balloon basket":"nacelle","balloon burner":"brûleur","burner flame":"flamme du brûleur","hot air balloon":"montgolfière","balloon ropes":"cordages","forest island":"île boisée","sunrise":"lever du soleil","blue sky":"ciel bleu","balloons in flight":"montgolfières en vol","festival field":"terrain du festival","festival crowd":"foule du festival","inflating balloons":"montgolfières en gonflage","festival tents":"tentes du festival","saturn":"Saturne","astronaut bee":"abeille astronaute","saturn's rings":"anneaux de Saturne","milky way":"Voie lactée","sunlight":"lumière du Soleil","spacecraft window":"fenêtre du vaisseau","solar system screen":"écran du système solaire","control console":"console de contrôle","computer monitor":"écran","astronaut":"astronaute","space crew":"équipage spatial","spacecraft seat":"siège du vaisseau","solar system hologram":"hologramme du système solaire","spacecraft ceiling":"plafond du vaisseau","planet displays":"écrans planétaires","spacesuit":"combinaison spatiale","spacecraft controls":"commandes du vaisseau","whitewater rafting":"rafting en eaux vives","rafting bee":"abeille du rafting","rafting crew":"équipe de rafting","raft":"radeau","yellow paddle":"pagaie jaune","blue paddle":"pagaie bleue","huge rapids":"énormes rapides","whitewater":"eaux vives","river":"rivière","river rocks":"rochers de la rivière","evergreen forest":"forêt de conifères","snowy mountain":"montagne enneigée","water spray":"embruns","mountain valley":"vallée de montagne","the moon":"la Lune","moon crew":"équipage lunaire","moon castle":"château lunaire","moon rock":"roche lunaire","lunar surface":"surface lunaire","crater":"cratère","lunar lander":"module lunaire","lander ladder":"échelle du module","moon rover":"rover lunaire","dish antenna":"antenne parabolique","moon base":"base lunaire","lunar habitat":"habitat lunaire","small rover":"petit rover","science instrument":"instrument scientifique","earth":"Terre","sun":"Soleil","lunar mountains":"montagnes lunaires","footprints":"empreintes","skydiving":"parachutisme","flying bee":"abeille volante","airplane":"avion","airplane door":"porte de l'avion","crew member":"membre d'équipage","skydiving instructor":"instructeur de parachutisme","skydiver":"parachutiste","goggles":"lunettes de protection","skydiving harness":"harnais de parachutisme","parachute pack":"sac de parachute","airplane wing":"aile de l'avion","islands":"îles","clouds":"nuages","landing gear":"train d'atterrissage","golf course":"terrain de golf","golf bee":"abeille golfeuse","golfer":"golfeur","golf crew":"groupe de golf","small dog":"petit chien","golf ball":"balle de golf","yellow flag":"drapeau jaune","golf club":"club de golf","putting green":"green","sand bunker":"bunker de sable","golf cart":"voiturette de golf","pond":"étang","clubhouse":"club-house","fairway":"fairway","protect the earth":"protéger la Terre","factories":"usines","smokestacks":"cheminées","smoke":"fumée","air pollution":"pollution de l'air","city":"ville","atmosphere":"atmosphère","ships":"navires","environmental map":"carte environnementale","pollution chart":"graphique de pollution","pollution monitor":"moniteur de pollution","satellite":"satellite","football game":"match de football américain","bee quarterback":"abeille quarterback","football":"ballon de football américain","referee":"arbitre","offensive player":"joueur offensif","center":"centre","receiver":"receveur","defender":"défenseur","football helmet":"casque de football","football field":"terrain de football","yard line":"ligne de yard","crowd":"foule","press box":"tribune de presse","stadium lights":"projecteurs du stade","sailboats":"voiliers","great wall of china":"Grande Muraille de Chine","great wall":"Grande Muraille","watchtower":"tour de guet","watchtowers":"tours de guet","hot-air balloons":"montgolfières","squirrel":"écureuil","village":"village","bridge":"pont","stone walkway":"chemin de pierre","spacewalk":"sortie dans l'espace","boy astronaut":"garçon astronaute","girl astronaut":"fille astronaute","space gloves":"gants spatiaux","safety tether":"câble de sécurité","space station":"station spatiale","station truss":"structure de la station","handrail":"main courante","space tools":"outils spatiaux","dog show":"exposition canine","referee bee":"abeille arbitre","clipboard":"presse-papiers","golden retriever":"Golden Retriever","small white dog":"petit chien blanc","border collie":"Border Collie","spaniel":"épagneul","brown dog":"chien brun","dalmatian":"dalmatien","bulldog":"bouledogue","pomeranian":"spitz nain","terrier":"terrier","dog handlers":"présentateurs de chiens","dog leash":"laisse","dog show banner":"bannière de l'exposition canine","audience":"public","show ring fence":"barrière du ring","show ring turf":"gazon du ring","arena lights":"lumières de l'arène","cockpit":"poste de pilotage","captain":"commandant","water":"eau","ferry":"ferry","overhead controls":"commandes supérieures","flight instruments":"instruments de vol","navigation screen":"écran de navigation","throttle":"manette des gaz","headset":"casque","cockpit controls":"commandes du cockpit","cave":"grotte","stalactites":"stalactites","stalagmites":"stalagmites","bats":"chauves-souris","cave waterfall":"cascade de la grotte","cave pool":"bassin de la grotte","cave stream":"ruisseau de la grotte","headlamp":"lampe frontale","bee explorer":"abeille exploratrice","cave explorers":"explorateurs de grotte","cavern":"caverne","cave rocks":"rochers de la grotte","water reflection":"reflet dans l'eau","cave passage":"passage de la grotte","dripstone":"concrétion calcaire","mission control center":"centre de contrôle de mission","flight controllers":"contrôleurs de vol","rocket":"fusée","launch pad":"pas de tir","countdown clock":"compte à rebours","mission screen":"écran de mission","observation gallery":"galerie d'observation","telemetry display":"écran de télémétrie","mission map":"carte de mission","control room chair":"chaise de contrôle","control room ceiling":"plafond de la salle","ski resort":"station de ski","chairlift":"télésiège","skiers":"skieurs","trails":"pistes","lift":"remontée mécanique","ski rentals":"location de skis","ski school":"école de ski","café":"café","skis":"skis","snowboard":"snowboard","ski lodge":"chalet de ski","ski resort sign":"panneau de la station de ski","fire pit":"brasero","chairs":"chaises","snow":"neige","steam train":"train à vapeur","steam locomotive":"locomotive à vapeur","engineer bee":"abeille mécanicienne","train bell":"cloche du train","headlight":"phare","smokestack":"cheminée","steam":"vapeur","passengers":"passagers","passenger cars":"voitures de voyageurs","trestle bridge":"pont à tréteaux","railroad tracks":"voies ferrées","railroad depot":"gare ferroviaire","railroad crossing":"passage à niveau","water tower":"château d'eau","bison":"bisons","deer":"cerf","hang glider":"deltaplane","control bar":"barre de contrôle","town":"ville","boat":"bateau","train":"train","rail bridge":"pont ferroviaire","road":"route","cabin":"chalet","stump":"souche","trail":"sentier","jet airplane":"avion à réaction"},"de":{"oval office":"Oval Office","bee":"Biene","resolute desk":"Resolute-Schreibtisch","desk chair":"Schreibtischstuhl","american flag":"amerikanische Flagge","presidential flag":"Präsidentenflagge","fireplace":"Kamin","george washington portrait":"Porträt von George Washington","abraham lincoln portrait":"Porträt von Abraham Lincoln","windows":"Fenster","washington monument":"Washington Monument","rug":"Teppich","sofa":"Sofa","books":"Bücher","globe":"Globus","telephone":"Telefon","flowers":"Blumen","tour guide":"Reiseführer","visitors":"Besucher","historical bust":"historische Büste","lamp":"Lampe","aircraft carrier":"Flugzeugträger","navy bee":"Marine-Biene","sailor":"Matrose","jet aircraft":"Düsenflugzeug","carrier aircraft":"Trägerflugzeuge","helicopter":"Hubschrauber","carrier island":"Trägerinsel","flight deck":"Flugdeck","flight deck crew":"Flugdeckbesatzung","aircraft director":"Flugzeug-Einweiser","flight deck crew member":"Flugdeckmitglied","tow tractor":"Schleppfahrzeug","ocean":"Ozean","navy ship":"Marineschiff","deck markings":"Deckmarkierungen","safety railing":"Sicherheitsgeländer","deck equipment":"Deckausrüstung","sky":"Himmel","zoo":"Zoo","elephant":"Elefant","giraffes":"Giraffen","mountain":"Berg","monkey":"Affe","parrot":"Papagei","lion":"Löwe","zoo sign":"Zooschild","zebra":"Zebra","zoo tram":"Zoobahn","penguins":"Pinguine","sea lion":"Seelöwe","waterfall":"Wasserfall","pool":"Becken","boy":"Junge","girl":"Mädchen","zoo visitors":"Zoobesucher","trees":"Bäume","zoo path":"Zooweg","rowing regatta":"Ruderregatta","bee coxswain":"Steuermann-Biene","megaphone":"Megafon","rowing crew":"Rudermannschaft","oars":"Ruder","racing shell":"Rennboot","red rowing crew":"rote Rudermannschaft","lake water":"Seewasser","race buoys":"Rennbojen","regatta banner":"Regatta-Banner","boathouse":"Bootshaus","spectators":"Zuschauer","dock":"Steg","sailboat":"Segelboot","motorboat":"Motorboot","snowy mountains":"schneebedeckte Berge","pine forest":"Kiefernwald","regatta flags":"Regattaflaggen","oar splash":"Ruderspritzer","rower":"Ruderer","race course":"Rennstrecke","boat lock":"Bootsschleuse","captain bee":"Kapitänsbiene","steering wheel":"Steuerrad","cabin cruiser":"Kajütboot","dog":"Hund","child":"Kind","life jacket":"Rettungsweste","lock gate":"Schleusentor","flowing water":"fließendes Wasser","boat behind us":"Boot hinter uns","yellow bollard":"gelber Poller","lock ladder":"Schleusenleiter","lock wall":"Schleusenwand","lock control building":"Schleusenleitstand","seagull":"Möwe","mountains":"Berge","lock water":"Schleusenwasser","boat fender":"Bootsfender","anchor":"Anker","rescue helicopter":"Rettungshubschrauber","pilot":"Pilot","grandpa":"Opa","mitchell":"Mitchell","nicole":"Nicole","rescue dog":"Rettungshund","rescue cable":"Rettungsseil","rescuer":"Retter","rescue basket":"Rettungskorb","hiker":"Wanderer","backpack":"Rucksack","mountain lake":"Bergsee","eagle":"Adler","forest":"Wald","campground":"Campingplatz","rescue helmet":"Rettungshelm","rocky ledge":"Felsvorsprung","fishing boat":"Fischerboot","orca":"Orca","dolphin":"Delfin","space needle":"Space Needle","seattle skyline":"Skyline von Seattle","mount rainier":"Mount Rainier","ferris wheel":"Riesenrad","seagulls":"Möwen","fishing rods":"Angelruten","sophia":"Sophia","carlos":"Carlos","grandma":"Oma","life ring":"Rettungsring","radar":"Radar","fishing net":"Fischernetz","camp sign":"Campingschild","rv":"Wohnmobil","solar panels":"Solarmodule","rv door":"Wohnmobiltür","bicycle":"Fahrrad","picnic table":"Picknicktisch","guitar":"Gitarre","family":"Familie","campfire":"Lagerfeuer","marshmallows":"Marshmallows","bear":"Bear","cooler":"Kühlbox","tent":"Zelt","lantern":"Laterne","raccoon":"Waschbär","lake":"See","canoe":"Kanu","creek":"Bach","moon":"Mond","stars":"Sterne","pine trees":"Kiefern","firewood":"Feuerholz","cooking pot":"Kochtopf","movie studio":"Filmstudio","hollywood sign":"Hollywood-Schriftzug","studio water tower":"Studio-Wasserturm","camera helicopter":"Kamerahelikopter","camera drone":"Kameradrohne","green screen":"Greenscreen","boom microphone":"Angel-Mikrofon","stunt explosion":"Stunt-Explosion","stunt car":"Stuntauto","movie camera":"Filmkamera","director monitors":"Regiemonitore","clapperboard":"Filmklappe","director's chair":"Regiestuhl","costumes":"Kostüme","makeup station":"Schminkplatz","studio lights":"Studioleuchten","director bee":"Regisseur-Biene","cast members":"Darsteller","movie crew":"Filmcrew","palm trees":"Palmen","coral reef":"Korallenriff","dolphins":"Delfine","shipwreck":"Schiffswrack","sea turtle":"Meeresschildkröte","shark":"Hai","clownfish":"Clownfisch","tropical fish":"Tropenfische","pufferfish":"Kugelfisch","moray eel":"Muräne","starfish":"Seestern","crab":"Krabbe","lobster":"Hummer","octopus":"Oktopus","coral":"Koralle","seaweed":"Seetang","sand":"Sand","scuba tank":"Tauchflasche","fins":"Flossen","bicycle race":"Fahrradrennen","bee racer":"Rennfahrer-Biene","starting line":"Startlinie","start gate":"Starttor","race official":"Rennleiter","start signal":"Startsignal","helmet":"Helm","bicycle racer":"Radfahrer","bicycle racers":"Radfahrer","bike trail sign":"Radwegweiser","race flags":"Rennflaggen","race tent":"Rennzelt","dirt race track":"Schotterpiste","trail rocks":"Wegsteine","softball game":"Softballspiel","bee pitcher":"Pitcher-Biene","softball":"Softball","pitcher's mound":"Pitcherhügel","batter":"Schlagfrau","softball bat":"Softballschläger","catcher":"Catcherin","umpire":"Schiedsrichter","home plate":"Home Plate","scoreboard":"Anzeigetafel","infielder":"Infielderin","softball glove":"Softballhandschuh","batting helmet":"Schlaghelm","softball field":"Softballfeld","outfield fence":"Außenfeldzaun","flag":"Flagge","family picnic":"Familienpicknick","picnic crew":"Picknickgruppe","picnic food":"Picknickessen","hot dogs":"Hotdogs","hamburgers":"Hamburger","golden dog":"goldener Hund","german shepherd":"Deutscher Schäferhund","canoes":"Kanus","wildflowers":"Wildblumen","basic training":"Grundausbildung","drill sergeant bee":"Drill-Sergeant-Biene","trainees":"Auszubildende","instructor":"Ausbilder","climbing wall":"Kletterwand","climbing rope":"Kletterseil","training tires":"Trainingsreifen","training tunnel":"Trainingstunnel","observation tower":"Beobachtungsturm","training tents":"Trainingszelte","military truck":"Militärlastwagen","canteen":"Feldflasche","training uniform":"Trainingsuniform","boots":"Stiefel","obstacle course":"Hindernisparcours","training camp":"Trainingslager","hot air balloon festival":"Heißluftballon-Festival","balloon bee":"Ballon-Biene","balloon crew":"Ballonbesatzung","balloon basket":"Ballonkorb","balloon burner":"Ballonbrenner","burner flame":"Brennerflamme","hot air balloon":"Heißluftballon","balloon ropes":"Ballonseile","forest island":"Waldinsel","sunrise":"Sonnenaufgang","blue sky":"blauer Himmel","balloons in flight":"Ballons im Flug","festival field":"Festivalgelände","festival crowd":"Festivalbesucher","inflating balloons":"aufgeblasene Ballons","festival tents":"Festivalzelte","saturn":"Saturn","astronaut bee":"Astronauten-Biene","saturn's rings":"Saturnringe","milky way":"Milchstraße","sunlight":"Sonnenlicht","spacecraft window":"Raumschifffenster","solar system screen":"Sonnensystem-Bildschirm","control console":"Kontrollkonsole","computer monitor":"Computermonitor","astronaut":"Astronaut","space crew":"Raumbesatzung","spacecraft seat":"Raumschiffsitz","solar system hologram":"Sonnensystem-Hologramm","spacecraft ceiling":"Raumschiffdecke","planet displays":"Planetenanzeigen","spacesuit":"Raumanzug","spacecraft controls":"Raumschiffsteuerung","whitewater rafting":"Wildwasser-Rafting","rafting bee":"Rafting-Biene","rafting crew":"Rafting-Team","raft":"Schlauchboot","yellow paddle":"gelbes Paddel","blue paddle":"blaues Paddel","huge rapids":"riesige Stromschnellen","whitewater":"Wildwasser","river":"Fluss","river rocks":"Flussfelsen","evergreen forest":"Nadelwald","snowy mountain":"schneebedeckter Berg","water spray":"Wasserspritzer","mountain valley":"Bergtal","the moon":"der Mond","moon crew":"Mondbesatzung","moon castle":"Mondburg","moon rock":"Mondgestein","lunar surface":"Mondoberfläche","crater":"Krater","lunar lander":"Mondlandefähre","lander ladder":"Landefährenleiter","moon rover":"Mondrover","dish antenna":"Parabolantenne","moon base":"Mondbasis","lunar habitat":"Mondhabitat","small rover":"kleiner Rover","science instrument":"wissenschaftliches Instrument","earth":"Erde","sun":"Sonne","lunar mountains":"Mondberge","footprints":"Fußspuren","skydiving":"Fallschirmspringen","flying bee":"fliegende Biene","airplane":"Flugzeug","airplane door":"Flugzeugtür","crew member":"Besatzungsmitglied","skydiving instructor":"Fallschirmsprunglehrer","skydiver":"Fallschirmspringer","goggles":"Schutzbrille","skydiving harness":"Fallschirmgurt","parachute pack":"Fallschirmpaket","airplane wing":"Flugzeugflügel","islands":"Inseln","clouds":"Wolken","landing gear":"Fahrwerk","golf course":"Golfplatz","golf bee":"Golf-Biene","golfer":"Golfer","golf crew":"Golfgruppe","small dog":"kleiner Hund","golf ball":"Golfball","yellow flag":"gelbe Fahne","golf club":"Golfschläger","putting green":"Putting-Grün","sand bunker":"Sandbunker","golf cart":"Golfwagen","pond":"Teich","clubhouse":"Clubhaus","fairway":"Fairway","protect the earth":"die Erde schützen","factories":"Fabriken","smokestacks":"Schornsteine","smoke":"Rauch","air pollution":"Luftverschmutzung","city":"Stadt","atmosphere":"Atmosphäre","ships":"Schiffe","environmental map":"Umweltkarte","pollution chart":"Verschmutzungsdiagramm","pollution monitor":"Verschmutzungsmonitor","satellite":"Satellit","football game":"American-Football-Spiel","bee quarterback":"Quarterback-Biene","football":"Football","referee":"Schiedsrichter","offensive player":"Angriffsspieler","center":"Center","receiver":"Receiver","defender":"Verteidiger","football helmet":"Footballhelm","football field":"Footballfeld","yard line":"Yard-Linie","crowd":"Zuschauer","press box":"Pressetribüne","stadium lights":"Stadionlichter","sailboats":"Segelboote","great wall of china":"Chinesische Mauer","great wall":"Große Mauer","watchtower":"Wachturm","watchtowers":"Wachtürme","hot-air balloons":"Heißluftballons","squirrel":"Eichhörnchen","village":"Dorf","bridge":"Brücke","stone walkway":"Steinweg","spacewalk":"Weltraumspaziergang","boy astronaut":"Junge als Astronaut","girl astronaut":"Mädchen als Astronautin","space gloves":"Weltraumhandschuhe","safety tether":"Sicherungsleine","space station":"Raumstation","station truss":"Stationsgerüst","handrail":"Handlauf","space tools":"Weltraumwerkzeuge","dog show":"Hundeausstellung","referee bee":"Schiedsrichter-Biene","clipboard":"Klemmbrett","golden retriever":"Golden Retriever","small white dog":"kleiner weißer Hund","border collie":"Border Collie","spaniel":"Spaniel","brown dog":"brauner Hund","dalmatian":"Dalmatiner","bulldog":"Bulldogge","pomeranian":"Zwergspitz","terrier":"Terrier","dog handlers":"Hundeführer","dog leash":"Hundeleine","dog show banner":"Hundeausstellungsbanner","audience":"Publikum","show ring fence":"Ausstellungsring-Zaun","show ring turf":"Ringrasen","arena lights":"Hallenbeleuchtung","cockpit":"Cockpit","captain":"Kapitän","water":"Wasser","ferry":"Fähre","overhead controls":"Überkopfbedienfeld","flight instruments":"Fluginstrumente","navigation screen":"Navigationsbildschirm","throttle":"Schubhebel","headset":"Headset","cockpit controls":"Cockpit-Bedienelemente","cave":"Höhle","stalactites":"Stalaktiten","stalagmites":"Stalagmiten","bats":"Fledermäuse","cave waterfall":"Höhlenwasserfall","cave pool":"Höhlenbecken","cave stream":"Höhlenbach","headlamp":"Stirnlampe","bee explorer":"Forscherbiene","cave explorers":"Höhlenforscher","cavern":"Höhlenkammer","cave rocks":"Höhlenfelsen","water reflection":"Wasserspiegelung","cave passage":"Höhlengang","dripstone":"Tropfstein","mission control center":"Missionskontrollzentrum","flight controllers":"Flugkontrolleure","rocket":"Rakete","launch pad":"Startrampe","countdown clock":"Countdown-Uhr","mission screen":"Missionsbildschirm","observation gallery":"Beobachtungsgalerie","telemetry display":"Telemetrieanzeige","mission map":"Missionskarte","control room chair":"Kontrollraumstuhl","control room ceiling":"Kontrollraumdecke","ski resort":"Skigebiet","chairlift":"Sessellift","skiers":"Skifahrer","trails":"Skipisten","lift":"Skilift","ski rentals":"Skiverleih","ski school":"Skischule","café":"Café","skis":"Skier","snowboard":"Snowboard","ski lodge":"Skihütte","ski resort sign":"Skigebietsschild","fire pit":"Feuerstelle","chairs":"Stühle","snow":"Schnee","steam train":"Dampfzug","steam locomotive":"Dampflokomotive","engineer bee":"Lokführer-Biene","train bell":"Zugglocke","headlight":"Scheinwerfer","smokestack":"Schornstein","steam":"Dampf","passengers":"Fahrgäste","passenger cars":"Personenwagen","trestle bridge":"Bockbrücke","railroad tracks":"Eisenbahngleise","railroad depot":"Bahnhof","railroad crossing":"Bahnübergang","water tower":"Wasserturm","bison":"Bisone","deer":"Hirsch","hang glider":"Drachenflieger","control bar":"Steuerbügel","town":"Stadt","boat":"Boot","train":"Zug","rail bridge":"Eisenbahnbrücke","road":"Straße","cabin":"Hütte","stump":"Baumstumpf","trail":"Weg","jet airplane":"Düsenflugzeug"},"it":{"oval office":"Studio Ovale","bee":"ape","resolute desk":"scrivania Resolute","desk chair":"sedia da scrivania","american flag":"bandiera americana","presidential flag":"bandiera presidenziale","fireplace":"camino","george washington portrait":"ritratto di George Washington","abraham lincoln portrait":"ritratto di Abraham Lincoln","windows":"finestre","washington monument":"Monumento a Washington","rug":"tappeto","sofa":"divano","books":"libri","globe":"mappamondo","telephone":"telefono","flowers":"fiori","tour guide":"guida","visitors":"visitatori","historical bust":"busto storico","lamp":"lampada","aircraft carrier":"portaerei","navy bee":"ape della Marina","sailor":"marinaio","jet aircraft":"aereo a reazione","carrier aircraft":"aerei imbarcati","helicopter":"elicottero","carrier island":"isola della portaerei","flight deck":"ponte di volo","flight deck crew":"equipaggio del ponte di volo","aircraft director":"direttore degli aeromobili","flight deck crew member":"membro dell'equipaggio di coperta","tow tractor":"trattore da traino","ocean":"oceano","navy ship":"nave della Marina","deck markings":"segnaletica del ponte","safety railing":"ringhiera di sicurezza","deck equipment":"attrezzatura di coperta","sky":"cielo","zoo":"zoo","elephant":"elefante","giraffes":"giraffe","mountain":"montagna","monkey":"scimmia","parrot":"pappagallo","lion":"leone","zoo sign":"cartello dello zoo","zebra":"zebra","zoo tram":"trenino dello zoo","penguins":"pinguini","sea lion":"leone marino","waterfall":"cascata","pool":"vasca","boy":"ragazzo","girl":"ragazza","zoo visitors":"visitatori dello zoo","trees":"alberi","zoo path":"sentiero dello zoo","rowing regatta":"regata di canottaggio","bee coxswain":"ape timoniere","megaphone":"megafono","rowing crew":"equipaggio di canottaggio","oars":"remi","racing shell":"barca da gara","red rowing crew":"equipaggio rosso","lake water":"acqua del lago","race buoys":"boe di gara","regatta banner":"striscione della regata","boathouse":"rimessa per barche","spectators":"spettatori","dock":"molo","sailboat":"barca a vela","motorboat":"motoscafo","snowy mountains":"montagne innevate","pine forest":"foresta di pini","regatta flags":"bandiere della regata","oar splash":"spruzzo del remo","rower":"vogatore","race course":"percorso di gara","boat lock":"chiusa per barche","captain bee":"ape capitano","steering wheel":"timone","cabin cruiser":"barca cabinata","dog":"cane","child":"bambino","life jacket":"giubbotto di salvataggio","lock gate":"porta della chiusa","flowing water":"acqua corrente","boat behind us":"barca dietro di noi","yellow bollard":"bitta gialla","lock ladder":"scala della chiusa","lock wall":"muro della chiusa","lock control building":"edificio di controllo","seagull":"gabbiano","mountains":"montagne","lock water":"acqua della chiusa","boat fender":"parabordo","anchor":"ancora","rescue helicopter":"elicottero di soccorso","pilot":"pilota","grandpa":"nonno","mitchell":"Mitchell","nicole":"Nicole","rescue dog":"cane da soccorso","rescue cable":"cavo di soccorso","rescuer":"soccorritore","rescue basket":"cesta di soccorso","hiker":"escursionista","backpack":"zaino","mountain lake":"lago di montagna","eagle":"aquila","forest":"foresta","campground":"campeggio","rescue helmet":"casco di soccorso","rocky ledge":"sporgenza rocciosa","fishing boat":"barca da pesca","orca":"orca","dolphin":"delfino","space needle":"Space Needle","seattle skyline":"skyline di Seattle","mount rainier":"Monte Rainier","ferris wheel":"ruota panoramica","seagulls":"gabbiani","fishing rods":"canne da pesca","sophia":"Sophia","carlos":"Carlos","grandma":"nonna","life ring":"salvagente","radar":"radar","fishing net":"rete da pesca","camp sign":"cartello del campeggio","rv":"camper","solar panels":"pannelli solari","rv door":"porta del camper","bicycle":"bicicletta","picnic table":"tavolo da picnic","guitar":"chitarra","family":"famiglia","campfire":"falò","marshmallows":"marshmallow","bear":"Bear","cooler":"frigorifero portatile","tent":"tenda","lantern":"lanterna","raccoon":"procione","lake":"lago","canoe":"canoa","creek":"ruscello","moon":"luna","stars":"stelle","pine trees":"pini","firewood":"legna da ardere","cooking pot":"pentola","movie studio":"studio cinematografico","hollywood sign":"scritta Hollywood","studio water tower":"torre dell'acqua dello studio","camera helicopter":"elicottero con telecamera","camera drone":"drone con telecamera","green screen":"schermo verde","boom microphone":"microfono ad asta","stunt explosion":"esplosione acrobatica","stunt car":"auto acrobatica","movie camera":"cinepresa","director monitors":"monitor del regista","clapperboard":"ciak","director's chair":"sedia del regista","costumes":"costumi","makeup station":"postazione trucco","studio lights":"luci da studio","director bee":"ape regista","cast members":"attori","movie crew":"troupe cinematografica","palm trees":"palme","coral reef":"barriera corallina","dolphins":"delfini","shipwreck":"relitto","sea turtle":"tartaruga marina","shark":"squalo","clownfish":"pesce pagliaccio","tropical fish":"pesci tropicali","pufferfish":"pesce palla","moray eel":"murena","starfish":"stella marina","crab":"granchio","lobster":"aragosta","octopus":"polpo","coral":"corallo","seaweed":"alghe","sand":"sabbia","scuba tank":"bombola da sub","fins":"pinne","bicycle race":"gara di biciclette","bee racer":"ape ciclista","starting line":"linea di partenza","start gate":"arco di partenza","race official":"ufficiale di gara","start signal":"segnale di partenza","helmet":"casco","bicycle racer":"ciclista","bicycle racers":"ciclisti","bike trail sign":"cartello del percorso ciclabile","race flags":"bandiere di gara","race tent":"tenda della gara","dirt race track":"pista sterrata","trail rocks":"rocce del sentiero","softball game":"partita di softball","bee pitcher":"ape lanciatrice","softball":"palla da softball","pitcher's mound":"pedana del lanciatore","batter":"battitrice","softball bat":"mazza da softball","catcher":"ricevitrice","umpire":"arbitro","home plate":"casa base","scoreboard":"tabellone","infielder":"interno","softball glove":"guanto da softball","batting helmet":"casco da battuta","softball field":"campo da softball","outfield fence":"recinzione esterna","flag":"bandiera","family picnic":"picnic di famiglia","picnic crew":"gruppo del picnic","picnic food":"cibo da picnic","hot dogs":"hot dog","hamburgers":"hamburger","golden dog":"cane dorato","german shepherd":"pastore tedesco","canoes":"canoe","wildflowers":"fiori selvatici","basic training":"addestramento di base","drill sergeant bee":"ape sergente istruttore","trainees":"allievi","instructor":"istruttore","climbing wall":"parete da arrampicata","climbing rope":"corda da arrampicata","training tires":"pneumatici da allenamento","training tunnel":"tunnel di allenamento","observation tower":"torre di osservazione","training tents":"tende da addestramento","military truck":"camion militare","canteen":"borraccia","training uniform":"uniforme da addestramento","boots":"stivali","obstacle course":"percorso a ostacoli","training camp":"campo di addestramento","hot air balloon festival":"festival delle mongolfiere","balloon bee":"ape in mongolfiera","balloon crew":"equipaggio della mongolfiera","balloon basket":"cesto della mongolfiera","balloon burner":"bruciatore","burner flame":"fiamma del bruciatore","hot air balloon":"mongolfiera","balloon ropes":"corde della mongolfiera","forest island":"isola boscosa","sunrise":"alba","blue sky":"cielo blu","balloons in flight":"mongolfiere in volo","festival field":"campo del festival","festival crowd":"folla del festival","inflating balloons":"mongolfiere che si gonfiano","festival tents":"tende del festival","saturn":"Saturno","astronaut bee":"ape astronauta","saturn's rings":"anelli di Saturno","milky way":"Via Lattea","sunlight":"luce solare","spacecraft window":"finestra dell'astronave","solar system screen":"schermo del sistema solare","control console":"console di controllo","computer monitor":"monitor","astronaut":"astronauta","space crew":"equipaggio spaziale","spacecraft seat":"sedile dell'astronave","solar system hologram":"ologramma del sistema solare","spacecraft ceiling":"soffitto dell'astronave","planet displays":"schermi planetari","spacesuit":"tuta spaziale","spacecraft controls":"comandi dell'astronave","whitewater rafting":"rafting sulle rapide","rafting bee":"ape del rafting","rafting crew":"equipaggio del rafting","raft":"gommone","yellow paddle":"pagaia gialla","blue paddle":"pagaia blu","huge rapids":"rapide enormi","whitewater":"acque bianche","river":"fiume","river rocks":"rocce del fiume","evergreen forest":"foresta di conifere","snowy mountain":"montagna innevata","water spray":"spruzzi d'acqua","mountain valley":"valle di montagna","the moon":"la Luna","moon crew":"equipaggio lunare","moon castle":"castello lunare","moon rock":"roccia lunare","lunar surface":"superficie lunare","crater":"cratere","lunar lander":"modulo lunare","lander ladder":"scala del modulo","moon rover":"rover lunare","dish antenna":"antenna parabolica","moon base":"base lunare","lunar habitat":"habitat lunare","small rover":"piccolo rover","science instrument":"strumento scientifico","earth":"Terra","sun":"Sole","lunar mountains":"montagne lunari","footprints":"impronte","skydiving":"paracadutismo","flying bee":"ape volante","airplane":"aereo","airplane door":"porta dell'aereo","crew member":"membro dell'equipaggio","skydiving instructor":"istruttore di paracadutismo","skydiver":"paracadutista","goggles":"occhiali protettivi","skydiving harness":"imbracatura da paracadutismo","parachute pack":"zaino del paracadute","airplane wing":"ala dell'aereo","islands":"isole","clouds":"nuvole","landing gear":"carrello di atterraggio","golf course":"campo da golf","golf bee":"ape golfista","golfer":"golfista","golf crew":"gruppo di golf","small dog":"cane piccolo","golf ball":"pallina da golf","yellow flag":"bandiera gialla","golf club":"mazza da golf","putting green":"green","sand bunker":"bunker di sabbia","golf cart":"golf cart","pond":"laghetto","clubhouse":"clubhouse","fairway":"fairway","protect the earth":"proteggere la Terra","factories":"fabbriche","smokestacks":"ciminiere","smoke":"fumo","air pollution":"inquinamento dell'aria","city":"città","atmosphere":"atmosfera","ships":"navi","environmental map":"mappa ambientale","pollution chart":"grafico dell'inquinamento","pollution monitor":"monitor dell'inquinamento","satellite":"satellite","football game":"partita di football americano","bee quarterback":"ape quarterback","football":"pallone da football","referee":"arbitro","offensive player":"giocatore d'attacco","center":"centro","receiver":"ricevitore","defender":"difensore","football helmet":"casco da football","football field":"campo da football","yard line":"linea delle yard","crowd":"pubblico","press box":"cabina stampa","stadium lights":"luci dello stadio","sailboats":"barche a vela","great wall of china":"Grande Muraglia Cinese","great wall":"Grande Muraglia","watchtower":"torre di guardia","watchtowers":"torri di guardia","hot-air balloons":"mongolfiere","squirrel":"scoiattolo","village":"villaggio","bridge":"ponte","stone walkway":"sentiero di pietra","spacewalk":"passeggiata spaziale","boy astronaut":"ragazzo astronauta","girl astronaut":"ragazza astronauta","space gloves":"guanti spaziali","safety tether":"cavo di sicurezza","space station":"stazione spaziale","station truss":"struttura della stazione","handrail":"corrimano","space tools":"attrezzi spaziali","dog show":"mostra canina","referee bee":"ape arbitro","clipboard":"cartellina","golden retriever":"Golden Retriever","small white dog":"cagnolino bianco","border collie":"Border Collie","spaniel":"spaniel","brown dog":"cane marrone","dalmatian":"dalmata","bulldog":"bulldog","pomeranian":"volpino di Pomerania","terrier":"terrier","dog handlers":"conduttori dei cani","dog leash":"guinzaglio","dog show banner":"striscione della mostra canina","audience":"pubblico","show ring fence":"recinzione del ring","show ring turf":"prato del ring","arena lights":"luci dell'arena","cockpit":"cabina di pilotaggio","captain":"comandante","water":"acqua","ferry":"traghetto","overhead controls":"comandi superiori","flight instruments":"strumenti di volo","navigation screen":"schermo di navigazione","throttle":"manetta","headset":"cuffie","cockpit controls":"comandi della cabina","cave":"grotta","stalactites":"stalattiti","stalagmites":"stalagmiti","bats":"pipistrelli","cave waterfall":"cascata della grotta","cave pool":"pozza della grotta","cave stream":"ruscello della grotta","headlamp":"lampada frontale","bee explorer":"ape esploratrice","cave explorers":"esploratori della grotta","cavern":"caverna","cave rocks":"rocce della grotta","water reflection":"riflesso nell'acqua","cave passage":"passaggio della grotta","dripstone":"concrezione calcarea","mission control center":"centro di controllo missione","flight controllers":"controllori di volo","rocket":"razzo","launch pad":"rampa di lancio","countdown clock":"conto alla rovescia","mission screen":"schermo della missione","observation gallery":"galleria di osservazione","telemetry display":"schermo di telemetria","mission map":"mappa della missione","control room chair":"sedia della sala controllo","control room ceiling":"soffitto della sala","ski resort":"stazione sciistica","chairlift":"seggiovia","skiers":"sciatori","trails":"piste","lift":"impianto di risalita","ski rentals":"noleggio sci","ski school":"scuola di sci","café":"caffè","skis":"sci","snowboard":"snowboard","ski lodge":"rifugio sciistico","ski resort sign":"cartello della stazione sciistica","fire pit":"braciere","chairs":"sedie","snow":"neve","steam train":"treno a vapore","steam locomotive":"locomotiva a vapore","engineer bee":"ape macchinista","train bell":"campana del treno","headlight":"faro","smokestack":"ciminiera","steam":"vapore","passengers":"passeggeri","passenger cars":"carrozze passeggeri","trestle bridge":"ponte a traliccio","railroad tracks":"binari ferroviari","railroad depot":"stazione ferroviaria","railroad crossing":"passaggio a livello","water tower":"torre dell'acqua","bison":"bisonti","deer":"cervo","hang glider":"deltaplano","control bar":"barra di controllo","town":"città","boat":"barca","train":"treno","rail bridge":"ponte ferroviario","road":"strada","cabin":"baita","stump":"ceppo","trail":"sentiero","jet airplane":"aereo a reazione"},"pt":{"oval office":"Salão Oval","bee":"abelha","resolute desk":"mesa Resolute","desk chair":"cadeira de escritório","american flag":"bandeira americana","presidential flag":"bandeira presidencial","fireplace":"lareira","george washington portrait":"retrato de George Washington","abraham lincoln portrait":"retrato de Abraham Lincoln","windows":"janelas","washington monument":"Monumento de Washington","rug":"tapete","sofa":"sofá","books":"livros","globe":"globo terrestre","telephone":"telefone","flowers":"flores","tour guide":"guia","visitors":"visitantes","historical bust":"busto histórico","lamp":"lâmpada","aircraft carrier":"porta-aviões","navy bee":"abelha da Marinha","sailor":"marinheiro","jet aircraft":"avião a jato","carrier aircraft":"aeronaves do porta-aviões","helicopter":"helicóptero","carrier island":"ilha do porta-aviões","flight deck":"convés de voo","flight deck crew":"equipe do convés de voo","aircraft director":"diretor de aeronaves","flight deck crew member":"membro da equipe do convés","tow tractor":"trator de reboque","ocean":"oceano","navy ship":"navio da Marinha","deck markings":"marcações do convés","safety railing":"grade de segurança","deck equipment":"equipamento do convés","sky":"céu","zoo":"zoológico","elephant":"elefante","giraffes":"girafas","mountain":"montanha","monkey":"macaco","parrot":"papagaio","lion":"leão","zoo sign":"placa do zoológico","zebra":"zebra","zoo tram":"bonde do zoológico","penguins":"pinguins","sea lion":"leão-marinho","waterfall":"cachoeira","pool":"lago","boy":"menino","girl":"menina","zoo visitors":"visitantes do zoológico","trees":"árvores","zoo path":"caminho do zoológico","rowing regatta":"regata de remo","bee coxswain":"abelha timoneira","megaphone":"megafone","rowing crew":"equipe de remo","oars":"remos","racing shell":"barco de competição","red rowing crew":"equipe vermelha de remo","lake water":"água do lago","race buoys":"boias de corrida","regatta banner":"faixa da regata","boathouse":"casa de barcos","spectators":"espectadores","dock":"cais","sailboat":"veleiro","motorboat":"lancha","snowy mountains":"montanhas nevadas","pine forest":"floresta de pinheiros","regatta flags":"bandeiras da regata","oar splash":"respingo do remo","rower":"remador","race course":"percurso da corrida","boat lock":"eclusa para barcos","captain bee":"abelha capitã","steering wheel":"leme","cabin cruiser":"barco de cabine","dog":"cachorro","child":"criança","life jacket":"colete salva-vidas","lock gate":"portão da eclusa","flowing water":"água corrente","boat behind us":"barco atrás de nós","yellow bollard":"cabeço amarelo","lock ladder":"escada da eclusa","lock wall":"parede da eclusa","lock control building":"edifício de controle","seagull":"gaivota","mountains":"montanhas","lock water":"água da eclusa","boat fender":"defensa do barco","anchor":"âncora","rescue helicopter":"helicóptero de resgate","pilot":"piloto","grandpa":"avô","mitchell":"Mitchell","nicole":"Nicole","rescue dog":"cão de resgate","rescue cable":"cabo de resgate","rescuer":"socorrista","rescue basket":"cesta de resgate","hiker":"caminhante","backpack":"mochila","mountain lake":"lago de montanha","eagle":"águia","forest":"floresta","campground":"acampamento","rescue helmet":"capacete de resgate","rocky ledge":"saliência rochosa","fishing boat":"barco de pesca","orca":"orca","dolphin":"golfinho","space needle":"Space Needle","seattle skyline":"horizonte de Seattle","mount rainier":"Monte Rainier","ferris wheel":"roda-gigante","seagulls":"gaivotas","fishing rods":"varas de pesca","sophia":"Sophia","carlos":"Carlos","grandma":"avó","life ring":"boia salva-vidas","radar":"radar","fishing net":"rede de pesca","camp sign":"placa do acampamento","rv":"autocaravana","solar panels":"painéis solares","rv door":"porta da autocaravana","bicycle":"bicicleta","picnic table":"mesa de piquenique","guitar":"guitarra","family":"família","campfire":"fogueira","marshmallows":"marshmallows","bear":"Bear","cooler":"caixa térmica","tent":"tenda","lantern":"lanterna","raccoon":"guaxinim","lake":"lago","canoe":"canoa","creek":"riacho","moon":"lua","stars":"estrelas","pine trees":"pinheiros","firewood":"lenha","cooking pot":"panela","movie studio":"estúdio de cinema","hollywood sign":"letreiro de Hollywood","studio water tower":"torre de água do estúdio","camera helicopter":"helicóptero com câmera","camera drone":"drone com câmera","green screen":"tela verde","boom microphone":"microfone boom","stunt explosion":"explosão de dublê","stunt car":"carro de dublê","movie camera":"câmera de cinema","director monitors":"monitores do diretor","clapperboard":"claquete","director's chair":"cadeira do diretor","costumes":"figurinos","makeup station":"área de maquiagem","studio lights":"luzes de estúdio","director bee":"abelha diretora","cast members":"elenco","movie crew":"equipe de filmagem","palm trees":"palmeiras","coral reef":"recife de coral","dolphins":"golfinhos","shipwreck":"naufrágio","sea turtle":"tartaruga marinha","shark":"tubarão","clownfish":"peixe-palhaço","tropical fish":"peixes tropicais","pufferfish":"baiacu","moray eel":"moreia","starfish":"estrela-do-mar","crab":"caranguejo","lobster":"lagosta","octopus":"polvo","coral":"coral","seaweed":"algas marinhas","sand":"areia","scuba tank":"cilindro de mergulho","fins":"nadadeiras","bicycle race":"corrida de bicicletas","bee racer":"abelha ciclista","starting line":"linha de largada","start gate":"pórtico de largada","race official":"oficial da corrida","start signal":"sinal de largada","helmet":"capacete","bicycle racer":"ciclista","bicycle racers":"ciclistas","bike trail sign":"placa de trilha de bicicleta","race flags":"bandeiras da corrida","race tent":"tenda da corrida","dirt race track":"pista de terra","trail rocks":"rochas da trilha","softball game":"jogo de softball","bee pitcher":"abelha arremessadora","softball":"bola de softball","pitcher's mound":"monte do arremessador","batter":"rebatedora","softball bat":"taco de softball","catcher":"receptora","umpire":"árbitro","home plate":"base principal","scoreboard":"placar","infielder":"jogadora de campo interno","softball glove":"luva de softball","batting helmet":"capacete de rebatedor","softball field":"campo de softball","outfield fence":"cerca do campo externo","flag":"bandeira","family picnic":"piquenique em família","picnic crew":"grupo do piquenique","picnic food":"comida do piquenique","hot dogs":"cachorros-quentes","hamburgers":"hambúrgueres","golden dog":"cachorro dourado","german shepherd":"pastor alemão","canoes":"canoas","wildflowers":"flores silvestres","basic training":"treinamento básico","drill sergeant bee":"abelha sargento instrutor","trainees":"recrutas","instructor":"instrutor","climbing wall":"parede de escalada","climbing rope":"corda de escalada","training tires":"pneus de treinamento","training tunnel":"túnel de treinamento","observation tower":"torre de observação","training tents":"tendas de treinamento","military truck":"caminhão militar","canteen":"cantil","training uniform":"uniforme de treinamento","boots":"botas","obstacle course":"pista de obstáculos","training camp":"campo de treinamento","hot air balloon festival":"festival de balões de ar quente","balloon bee":"abelha do balão","balloon crew":"tripulação do balão","balloon basket":"cesto do balão","balloon burner":"queimador do balão","burner flame":"chama do queimador","hot air balloon":"balão de ar quente","balloon ropes":"cordas do balão","forest island":"ilha arborizada","sunrise":"nascer do sol","blue sky":"céu azul","balloons in flight":"balões em voo","festival field":"campo do festival","festival crowd":"multidão do festival","inflating balloons":"balões sendo inflados","festival tents":"tendas do festival","saturn":"Saturno","astronaut bee":"abelha astronauta","saturn's rings":"anéis de Saturno","milky way":"Via Láctea","sunlight":"luz solar","spacecraft window":"janela da nave","solar system screen":"tela do sistema solar","control console":"console de controle","computer monitor":"monitor","astronaut":"astronauta","space crew":"tripulação espacial","spacecraft seat":"assento da nave","solar system hologram":"holograma do sistema solar","spacecraft ceiling":"teto da nave","planet displays":"telas planetárias","spacesuit":"traje espacial","spacecraft controls":"controles da nave","whitewater rafting":"rafting em águas bravas","rafting bee":"abelha do rafting","rafting crew":"equipe de rafting","raft":"bote","yellow paddle":"remo amarelo","blue paddle":"remo azul","huge rapids":"corredeiras enormes","whitewater":"águas bravas","river":"rio","river rocks":"rochas do rio","evergreen forest":"floresta de coníferas","snowy mountain":"montanha nevada","water spray":"borrifo de água","mountain valley":"vale de montanha","the moon":"a Lua","moon crew":"tripulação lunar","moon castle":"castelo lunar","moon rock":"rocha lunar","lunar surface":"superfície lunar","crater":"cratera","lunar lander":"módulo lunar","lander ladder":"escada do módulo","moon rover":"veículo lunar","dish antenna":"antena parabólica","moon base":"base lunar","lunar habitat":"habitat lunar","small rover":"pequeno veículo","science instrument":"instrumento científico","earth":"Terra","sun":"Sol","lunar mountains":"montanhas lunares","footprints":"pegadas","skydiving":"paraquedismo","flying bee":"abelha voadora","airplane":"avião","airplane door":"porta do avião","crew member":"membro da tripulação","skydiving instructor":"instrutor de paraquedismo","skydiver":"paraquedista","goggles":"óculos de proteção","skydiving harness":"arnês de paraquedismo","parachute pack":"mochila do paraquedas","airplane wing":"asa do avião","islands":"ilhas","clouds":"nuvens","landing gear":"trem de pouso","golf course":"campo de golfe","golf bee":"abelha golfista","golfer":"golfista","golf crew":"grupo de golfe","small dog":"cachorro pequeno","golf ball":"bola de golfe","yellow flag":"bandeira amarela","golf club":"taco de golfe","putting green":"green","sand bunker":"bunker de areia","golf cart":"carrinho de golfe","pond":"lago","clubhouse":"clube","fairway":"fairway","protect the earth":"proteger a Terra","factories":"fábricas","smokestacks":"chaminés","smoke":"fumaça","air pollution":"poluição do ar","city":"cidade","atmosphere":"atmosfera","ships":"navios","environmental map":"mapa ambiental","pollution chart":"gráfico de poluição","pollution monitor":"monitor de poluição","satellite":"satélite","football game":"jogo de futebol americano","bee quarterback":"abelha quarterback","football":"bola de futebol americano","referee":"árbitro","offensive player":"jogador de ataque","center":"center","receiver":"recebedor","defender":"defensor","football helmet":"capacete de futebol americano","football field":"campo de futebol americano","yard line":"linha de jardas","crowd":"torcida","press box":"cabine de imprensa","stadium lights":"luzes do estádio","sailboats":"veleiros","great wall of china":"Grande Muralha da China","great wall":"Grande Muralha","watchtower":"torre de vigia","watchtowers":"torres de vigia","hot-air balloons":"balões de ar quente","squirrel":"esquilo","village":"vila","bridge":"ponte","stone walkway":"caminho de pedra","spacewalk":"caminhada espacial","boy astronaut":"menino astronauta","girl astronaut":"menina astronauta","space gloves":"luvas espaciais","safety tether":"cabo de segurança","space station":"estação espacial","station truss":"estrutura da estação","handrail":"corrimão","space tools":"ferramentas espaciais","dog show":"exposição canina","referee bee":"abelha árbitra","clipboard":"prancheta","golden retriever":"Golden Retriever","small white dog":"cachorro branco pequeno","border collie":"Border Collie","spaniel":"spaniel","brown dog":"cachorro marrom","dalmatian":"dálmata","bulldog":"buldogue","pomeranian":"lulu da Pomerânia","terrier":"terrier","dog handlers":"apresentadores de cães","dog leash":"guia","dog show banner":"faixa da exposição canina","audience":"público","show ring fence":"cerca da pista","show ring turf":"gramado da pista","arena lights":"luzes da arena","cockpit":"cabine de comando","captain":"comandante","water":"água","ferry":"balsa","overhead controls":"controles superiores","flight instruments":"instrumentos de voo","navigation screen":"tela de navegação","throttle":"manete de potência","headset":"fone de ouvido","cockpit controls":"controles da cabine","cave":"caverna","stalactites":"estalactites","stalagmites":"estalagmites","bats":"morcegos","cave waterfall":"cachoeira da caverna","cave pool":"poça da caverna","cave stream":"riacho da caverna","headlamp":"lanterna de cabeça","bee explorer":"abelha exploradora","cave explorers":"exploradores da caverna","cavern":"caverna","cave rocks":"rochas da caverna","water reflection":"reflexo na água","cave passage":"passagem da caverna","dripstone":"formação calcária","mission control center":"centro de controle da missão","flight controllers":"controladores de voo","rocket":"foguete","launch pad":"plataforma de lançamento","countdown clock":"relógio de contagem regressiva","mission screen":"tela da missão","observation gallery":"galeria de observação","telemetry display":"tela de telemetria","mission map":"mapa da missão","control room chair":"cadeira da sala de controle","control room ceiling":"teto da sala","ski resort":"estação de esqui","chairlift":"teleférico","skiers":"esquiadores","trails":"pistas","lift":"elevador de esqui","ski rentals":"aluguel de esquis","ski school":"escola de esqui","café":"café","skis":"esquis","snowboard":"prancha de snowboard","ski lodge":"chalé de esqui","ski resort sign":"placa da estação de esqui","fire pit":"fogueira","chairs":"cadeiras","snow":"neve","steam train":"trem a vapor","steam locomotive":"locomotiva a vapor","engineer bee":"abelha maquinista","train bell":"sino do trem","headlight":"farol","smokestack":"chaminé","steam":"vapor","passengers":"passageiros","passenger cars":"vagões de passageiros","trestle bridge":"ponte de cavaletes","railroad tracks":"trilhos","railroad depot":"estação ferroviária","railroad crossing":"passagem de nível","water tower":"torre de água","bison":"bisões","deer":"veado","hang glider":"asa-delta","control bar":"barra de controle","town":"cidade","boat":"barco","train":"trem","rail bridge":"ponte ferroviária","road":"estrada","cabin":"cabana","stump":"toco","trail":"trilha","jet airplane":"avião a jato"},"no":{"oval office":"Det ovale kontor","bee":"bie","resolute desk":"Resolute-skrivebordet","desk chair":"skrivebordsstol","american flag":"amerikansk flagg","presidential flag":"presidentflagget","fireplace":"peis","george washington portrait":"portrett av George Washington","abraham lincoln portrait":"portrett av Abraham Lincoln","windows":"vinduer","washington monument":"Washington-monumentet","rug":"teppe","sofa":"sofa","books":"bøker","globe":"globus","telephone":"telefon","flowers":"blomster","tour guide":"guide","visitors":"besøkende","historical bust":"historisk byste","lamp":"lampe","aircraft carrier":"hangarskip","navy bee":"marinebie","sailor":"sjømann","jet aircraft":"jetfly","carrier aircraft":"hangarskipfly","helicopter":"helikopter","carrier island":"kommandotårn","flight deck":"flydekk","flight deck crew":"flydekkmannskap","aircraft director":"flydirigent","flight deck crew member":"medlem av flydekkmannskapet","tow tractor":"slepekjøretøy","ocean":"hav","navy ship":"marineskip","deck markings":"dekkmarkeringer","safety railing":"sikkerhetsrekkverk","deck equipment":"dekkutstyr","sky":"himmel","zoo":"dyrehage","elephant":"elefant","giraffes":"sjiraffer","mountain":"fjell","monkey":"ape","parrot":"papegøye","lion":"løve","zoo sign":"dyrehageskilt","zebra":"sebra","zoo tram":"dyrehagetrikk","penguins":"pingviner","sea lion":"sjøløve","waterfall":"foss","pool":"basseng","boy":"gutt","girl":"jente","zoo visitors":"besøkende","trees":"trær","zoo path":"sti","rowing regatta":"roregatta","bee coxswain":"styrmannsbie","megaphone":"megafon","rowing crew":"roelag","oars":"årer","racing shell":"racerbåt","red rowing crew":"rødt roelag","lake water":"innsjøvann","race buoys":"løpsbøyer","regatta banner":"regattabanner","boathouse":"båthus","spectators":"tilskuere","dock":"brygge","sailboat":"seilbåt","motorboat":"motorbåt","snowy mountains":"snødekte fjell","pine forest":"furuskog","regatta flags":"regattaflagg","oar splash":"åresprut","rower":"roer","race course":"løpsbane","boat lock":"båtsluse","captain bee":"kapteinbie","steering wheel":"ratt","cabin cruiser":"kabinbåt","dog":"hund","child":"barn","life jacket":"redningsvest","lock gate":"sluseport","flowing water":"rennende vann","boat behind us":"båt bak oss","yellow bollard":"gul pullert","lock ladder":"slusestige","lock wall":"slusevegg","lock control building":"kontrollbygning","seagull":"måke","mountains":"fjell","lock water":"slusevann","boat fender":"båtfender","anchor":"anker","rescue helicopter":"redningshelikopter","pilot":"pilot","grandpa":"bestefar","mitchell":"Mitchell","nicole":"Nicole","rescue dog":"redningshund","rescue cable":"redningskabel","rescuer":"redningsarbeider","rescue basket":"redningskurv","hiker":"turgåer","backpack":"ryggsekk","mountain lake":"fjellvann","eagle":"ørn","forest":"skog","campground":"campingplass","rescue helmet":"redningshjelm","rocky ledge":"fjellhylle","fishing boat":"fiskebåt","orca":"spekkhogger","dolphin":"delfin","space needle":"Space Needle","seattle skyline":"Seattle-silhuetten","mount rainier":"Mount Rainier","ferris wheel":"pariserhjul","seagulls":"måker","fishing rods":"fiskestenger","sophia":"Sophia","carlos":"Carlos","grandma":"bestemor","life ring":"livbøye","radar":"radar","fishing net":"fiskenett","camp sign":"campingskilt","rv":"bobil","solar panels":"solcellepaneler","rv door":"bobildør","bicycle":"sykkel","picnic table":"piknikbord","guitar":"gitar","family":"familie","campfire":"leirbål","marshmallows":"marshmallows","bear":"Bear","cooler":"kjøleboks","tent":"telt","lantern":"lykt","raccoon":"vaskebjørn","lake":"innsjø","canoe":"kano","creek":"bekk","moon":"måne","stars":"stjerner","pine trees":"furutrær","firewood":"ved","cooking pot":"gryte","movie studio":"filmstudio","hollywood sign":"Hollywood-skilt","studio water tower":"studioets vanntårn","camera helicopter":"kamerahelikopter","camera drone":"kameradrone","green screen":"grønnskjerm","boom microphone":"bom-mikrofon","stunt explosion":"stunteksplosjon","stunt car":"stuntbil","movie camera":"filmkamera","director monitors":"regissørskjermer","clapperboard":"filmklapper","director's chair":"regissørstol","costumes":"kostymer","makeup station":"sminkestasjon","studio lights":"studiolys","director bee":"regissørbie","cast members":"skuespillere","movie crew":"filmteam","palm trees":"palmer","coral reef":"korallrev","dolphins":"delfiner","shipwreck":"skipsvrak","sea turtle":"havskilpadde","shark":"hai","clownfish":"klovnefisk","tropical fish":"tropiske fisk","pufferfish":"kulefisk","moray eel":"murene","starfish":"sjøstjerne","crab":"krabbe","lobster":"hummer","octopus":"blekksprut","coral":"korall","seaweed":"tang","sand":"sand","scuba tank":"dykkeflaske","fins":"svømmeføtter","bicycle race":"sykkelritt","bee racer":"sykkelbie","starting line":"startlinje","start gate":"startportal","race official":"løpsleder","start signal":"startsignal","helmet":"hjelm","bicycle racer":"syklist","bicycle racers":"syklister","bike trail sign":"sykkelstiskilt","race flags":"løpsflagg","race tent":"løpstelt","dirt race track":"grusbane","trail rocks":"steiner på stien","softball game":"softballkamp","bee pitcher":"pitcherbie","softball":"softball","pitcher's mound":"pitcherhaug","batter":"slagspiller","softball bat":"softballkølle","catcher":"catcher","umpire":"dommer","home plate":"hjemmeplate","scoreboard":"resultattavle","infielder":"infielder","softball glove":"softballhanske","batting helmet":"slaghjelm","softball field":"softballbane","outfield fence":"utegjerde","flag":"flagg","family picnic":"familiepiknik","picnic crew":"piknikgruppe","picnic food":"piknikmat","hot dogs":"pølser","hamburgers":"hamburgere","golden dog":"gyllen hund","german shepherd":"schæferhund","canoes":"kanoer","wildflowers":"villblomster","basic training":"grunntrening","drill sergeant bee":"drillinstruktørbie","trainees":"rekrutter","instructor":"instruktør","climbing wall":"klatrevegg","climbing rope":"klatretau","training tires":"treningsdekk","training tunnel":"treningstunnel","observation tower":"observasjonstårn","training tents":"treningstelt","military truck":"militærlastebil","canteen":"feltflaske","training uniform":"treningsuniform","boots":"støvler","obstacle course":"hinderløype","training camp":"treningsleir","hot air balloon festival":"varmluftballongfestival","balloon bee":"ballongbie","balloon crew":"ballongmannskap","balloon basket":"ballongkurv","balloon burner":"ballongbrenner","burner flame":"brennerflamme","hot air balloon":"varmluftballong","balloon ropes":"ballongtau","forest island":"skogkledd øy","sunrise":"soloppgang","blue sky":"blå himmel","balloons in flight":"ballonger i luften","festival field":"festivalområde","festival crowd":"festivalpublikum","inflating balloons":"ballonger som blåses opp","festival tents":"festivaltelt","saturn":"Saturn","astronaut bee":"astronautbie","saturn's rings":"Saturns ringer","milky way":"Melkeveien","sunlight":"sollys","spacecraft window":"romskipvindu","solar system screen":"solsystemskjerm","control console":"kontrollkonsoll","computer monitor":"dataskjerm","astronaut":"astronaut","space crew":"rommannskap","spacecraft seat":"romskipsete","solar system hologram":"solsystemhologram","spacecraft ceiling":"romskiptak","planet displays":"planetvisninger","spacesuit":"romdrakt","spacecraft controls":"romskipkontroller","whitewater rafting":"elverafting","rafting bee":"raftingbie","rafting crew":"raftinglag","raft":"flåte","yellow paddle":"gul padleåre","blue paddle":"blå padleåre","huge rapids":"enorme stryk","whitewater":"hvitt vann","river":"elv","river rocks":"elvesteiner","evergreen forest":"barskog","snowy mountain":"snødekt fjell","water spray":"vannsprut","mountain valley":"fjelldal","the moon":"månen","moon crew":"månemannskap","moon castle":"måneslott","moon rock":"månestein","lunar surface":"måneoverflaten","crater":"krater","lunar lander":"månelander","lander ladder":"landerens stige","moon rover":"månebil","dish antenna":"parabolantenne","moon base":"månebase","lunar habitat":"månehabitat","small rover":"liten rover","science instrument":"vitenskapelig instrument","earth":"jorden","sun":"solen","lunar mountains":"månefjell","footprints":"fotspor","skydiving":"fallskjermhopping","flying bee":"flygende bie","airplane":"fly","airplane door":"flydør","crew member":"besetningsmedlem","skydiving instructor":"fallskjerminstruktør","skydiver":"fallskjermhopper","goggles":"vernebriller","skydiving harness":"fallskjermsele","parachute pack":"fallskjermpakke","airplane wing":"flyvinge","islands":"øyer","clouds":"skyer","landing gear":"landingshjul","golf course":"golfbane","golf bee":"golfbie","golfer":"golfspiller","golf crew":"golfgruppe","small dog":"liten hund","golf ball":"golfball","yellow flag":"gult flagg","golf club":"golfkølle","putting green":"puttinggreen","sand bunker":"sandbunker","golf cart":"golfbil","pond":"dam","clubhouse":"klubbhus","fairway":"fairway","protect the earth":"beskytte jorden","factories":"fabrikker","smokestacks":"skorsteiner","smoke":"røyk","air pollution":"luftforurensning","city":"by","atmosphere":"atmosfære","ships":"skip","environmental map":"miljøkart","pollution chart":"forurensningsdiagram","pollution monitor":"forurensningsmåler","satellite":"satellitt","football game":"amerikansk fotballkamp","bee quarterback":"quarterbackbie","football":"amerikansk fotball","referee":"dommer","offensive player":"angrepsspiller","center":"center","receiver":"receiver","defender":"forsvarsspiller","football helmet":"fotballhjelm","football field":"fotballbane","yard line":"yardlinje","crowd":"publikum","press box":"presseboks","stadium lights":"stadionlys","sailboats":"seilbåter","great wall of china":"Den kinesiske mur","great wall":"Den kinesiske mur","watchtower":"vakttårn","watchtowers":"vakttårn","hot-air balloons":"varmluftsballonger","squirrel":"ekorn","village":"landsby","bridge":"bro","stone walkway":"steingang","spacewalk":"romvandring","boy astronaut":"gutt som astronaut","girl astronaut":"jente som astronaut","space gloves":"romhansker","safety tether":"sikkerhetsline","space station":"romstasjon","station truss":"stasjonsramme","handrail":"håndtak","space tools":"romverktøy","dog show":"hundeutstilling","referee bee":"dommerbie","clipboard":"skrivebrett","golden retriever":"Golden Retriever","small white dog":"liten hvit hund","border collie":"Border Collie","spaniel":"spaniel","brown dog":"brun hund","dalmatian":"dalmatiner","bulldog":"bulldog","pomeranian":"pomeranian","terrier":"terrier","dog handlers":"hundeførere","dog leash":"hundebånd","dog show banner":"hundeutstillingsbanner","audience":"publikum","show ring fence":"utstillingsringgjerde","show ring turf":"gress i ringen","arena lights":"arenalys","cockpit":"cockpit","captain":"kaptein","water":"vann","ferry":"ferge","overhead controls":"overhead-kontroller","flight instruments":"flyinstrumenter","navigation screen":"navigasjonsskjerm","throttle":"gasspak","headset":"hodesett","cockpit controls":"cockpit-kontroller","cave":"hule","stalactites":"stalaktitter","stalagmites":"stalagmitter","bats":"flaggermus","cave waterfall":"hulefoss","cave pool":"hulebasseng","cave stream":"hulebekk","headlamp":"hodelykt","bee explorer":"utforskerbie","cave explorers":"huleutforskere","cavern":"hulekammer","cave rocks":"hulesteiner","water reflection":"vannspeiling","cave passage":"hulegang","dripstone":"dryppstein","mission control center":"kontrollsenter for romferd","flight controllers":"flygeledere","rocket":"rakett","launch pad":"oppskytingsrampe","countdown clock":"nedtellingsklokke","mission screen":"oppdragsskjerm","observation gallery":"observasjonsgalleri","telemetry display":"telemetriskjerm","mission map":"oppdragskart","control room chair":"kontrollromstol","control room ceiling":"taket i kontrollrommet","ski resort":"skianlegg","chairlift":"stolheis","skiers":"skiløpere","trails":"skiløyper","lift":"skiheis","ski rentals":"skiutleie","ski school":"skiskole","café":"kafé","skis":"ski","snowboard":"snøbrett","ski lodge":"skihytte","ski resort sign":"skianleggsskilt","fire pit":"bålplass","chairs":"stoler","snow":"snø","steam train":"damptog","steam locomotive":"damplokomotiv","engineer bee":"lokførerbie","train bell":"togklokke","headlight":"frontlykt","smokestack":"skorstein","steam":"damp","passengers":"passasjerer","passenger cars":"passasjervogner","trestle bridge":"jernbanebro","railroad tracks":"jernbanespor","railroad depot":"jernbanestasjon","railroad crossing":"jernbaneovergang","water tower":"vanntårn","bison":"bison","deer":"hjort","hang glider":"hangglider","control bar":"styrebøyle","town":"by","boat":"båt","train":"tog","rail bridge":"jernbanebro","road":"vei","cabin":"hytte","stump":"trestubbe","trail":"sti","jet airplane":"jetfly"}};const ls=['es','fr','de','it','pt','no'],norm=s=>String(s||'').trim().toLowerCase().replace(/\s+/g,' ');window.TB_prepareNewHotspotTranslations=async function(name){const en=String(name||'').trim(),n=norm(en),r={en};await Promise.all(ls.map(async l=>{let v=LEX[l]&&LEX[l][n];if(!v){try{const u='https://translate.googleapis.com/translate_a/single?client=gtx&sl=en&tl='+l+'&dt=t&q='+encodeURIComponent(en),x=await fetch(u);if(x.ok){const j=await x.json();v=(j[0]||[]).map(a=>a[0]||'').join('').trim()}}catch(e){}}r[l]=v||en}));return r};window.TB_registerNewHotspot=function(el,row){if(!el||!row)return;const en=row.en||el.dataset.en||el.dataset.word||el.dataset.object||'';el.dataset.tbCustom='1';el.dataset.tbEn=en;for(const l of ls)el.dataset['tb'+l.charAt(0).toUpperCase()+l.slice(1)]=row[l]||en;const key=(el.dataset.word||el.dataset.object||en);try{if(typeof EN!=='undefined')EN[key]=en;if(typeof WORDS!=='undefined')for(const l of ['es','fr','en','de','it','pt','no'])if(WORDS[l])WORDS[l][key]=(l==='en'?en:(row[l]||en))}catch(e){}try{if(typeof LANGS!=='undefined')for(const l of ['es','fr','en','de','it','pt','no'])if(LANGS[l]&&LANGS[l].words)LANGS[l].words[key]=(l==='en'?[en,'']:[row[l]||en,en])}catch(e){}};function hydrate(){document.querySelectorAll('[data-tb-custom="1"]').forEach(el=>{const r={en:el.dataset.tbEn||el.dataset.en||el.dataset.word||el.dataset.object||''};for(const l of ls)r[l]=el.dataset['tb'+l.charAt(0).toUpperCase()+l.slice(1)]||r.en;window.TB_registerNewHotspot(el,r)})}if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',hydrate);else hydrate()})();</script>
-<script id="talkabee-new-hotspot-live-click">
-(()=>{
-if(window.__tbNewHotspotLiveClick)return;window.__tbNewHotspotLiveClick=true;
-const codes={es:'es-ES',fr:'fr-FR',en:'en-US',de:'de-DE',it:'it-IT',pt:'pt-PT',no:'nb-NO',el:'el-GR'};
-let currentSound=null, soundTimer=null;
-function lang(){try{return document.querySelector('[id$="Language"]')?.value||localStorage.getItem('talkabee-learn-language')||'en'}catch(e){return 'en'}}
-function translation(el,l){const en=el.dataset.tbEn||el.dataset.en||el.dataset.word||el.dataset.object||'';return l==='en'?en:(el.dataset['tb'+l.charAt(0).toUpperCase()+l.slice(1)]||en)}
-function soundAfterVoice(el){
- clearTimeout(soundTimer);
- if(currentSound){try{currentSound.pause();currentSound.currentTime=0}catch(e){}currentSound=null}
- const path=(el.getAttribute('data-sound')||'').trim();if(!path)return;
- // The editor stores a path relative to the HTML page. Use that exact saved path.
- soundTimer=setTimeout(()=>{try{const audio=new Audio(path);currentSound=audio;audio.play().catch(e=>console.warn('Talk A Bee sound could not play:',path,e));audio.onended=()=>{if(currentSound===audio)currentSound=null}}catch(e){console.warn('Talk A Bee sound error:',path,e)}},1500);
-}
-document.addEventListener('click',function(ev){
- if(document.body.classList.contains('tb-hs-editing'))return;
- const el=ev.target.closest&&ev.target.closest('[data-tb-custom="1"]');if(!el)return;
- ev.preventDefault();ev.stopPropagation();
- const l=lang(),txt=translation(el,l),en=translation(el,'en'),key=el.dataset.word||el.dataset.object||en;
- try{
-   // Custom hotspots intercept clicks before the original challenge checker.
-   // Keep the challenge prompt intact and provide the same answer feedback.
-   const inChallenge=(typeof challenge==='number'&&challenge>=0);
-   if(inChallenge){
-     const correct=(typeof challengeOrder!=='undefined'&&key===challengeOrder[challenge]);
-     const feedback=document.getElementById('status');
-     if(feedback){
-       feedback.textContent=correct?'✓ Nice find!':'Not that one — keep looking.';
-       feedback.style.setProperty('color',correct?'#35e46a':'#ffe28a','important');
-     }
-   }else if(typeof showWord==='function')showWord(key);
-   else{const line=document.querySelector('[id$="Line"]');const trans=document.querySelector('[id$="Translation"]');if(line)line.textContent=txt;if(trans)trans.textContent=l==='en'?'':en}
- }catch(e){console.warn('Talk A Bee challenge feedback:',e)}
- try{if(typeof speak==='function')speak(txt,.82);else if('speechSynthesis'in window){speechSynthesis.cancel();const u=new SpeechSynthesisUtterance(txt);u.lang=codes[l]||l;u.rate=.82;speechSynthesis.speak(u)}}catch(e){}
- // Always schedule assigned MP3, regardless of which speech function exists.
- soundAfterVoice(el);
-},true);
-})();
-</script>
-
+<script id="talkabee-new-hotspot-language-bridge" src="js/talkabee-common-061ada9dc93c.js"></script>
+<script id="talkabee-new-hotspot-live-click" src="js/talkabee-common-bb7c92713084.js"></script>
 
 <script id="talkabee-scene-view-safe-reset">
 (function(){
@@ -831,47 +244,7 @@ document.addEventListener('click',function(ev){
   window.addEventListener('pageshow',resetTalkABeeSceneView);
 })();
 </script>
-
-<script id="talkabee-bilingual-hotspot-popup">
-(function(){
- if(window.__talkabeeBilingualPopup)return; window.__talkabeeBilingualPopup=true;
- var pop=document.createElement('div');pop.id='talkabee-object-popup';document.body.appendChild(pop);var timer=0;
- function lang(){var s=document.getElementById('lang')||document.getElementById('adventureLanguage')||document.getElementById('language')||document.querySelector('select[id*="Language"],select[id*="language"]');var v=s&&s.value?s.value:'en';return v==='nb'?'no':v}
- function first(v){return Array.isArray(v)?String(v[0]??''):String(v??'')}
- function engval(v){return Array.isArray(v)?String((v.length>1&&v[1]?v[1]:v[0])??''):String(v??'')}
- function cleanEnglish(el,key){
-  var x=(el&&el.dataset&&(el.dataset.en||el.dataset.english||el.dataset.tbEn||el.dataset.name))||'';if(x)return String(x).replace(/^(the|a|an)\s+/i,'').trim();
-  try{if(typeof EN!=='undefined'&&EN[key])return engval(EN[key]).replace(/^(the|a|an)\s+/i,'').trim()}catch(e){}
-  try{if(typeof englishWords!=='undefined'&&englishWords[key])return engval(englishWords[key]).replace(/^(the|a|an)\s+/i,'').trim()}catch(e){}
-  try{if(typeof wordEN!=='undefined'&&wordEN[key])return engval(wordEN[key]).replace(/^(the|a|an)\s+/i,'').trim()}catch(e){}
-  try{if(typeof WORDS!=='undefined'&&WORDS.en&&!Array.isArray(WORDS.en)&&WORDS.en[key])return engval(WORDS.en[key]).replace(/^(the|a|an)\s+/i,'').trim()}catch(e){}
-  try{if(typeof WORDS7!=='undefined'&&WORDS7.en&&WORDS7.en[key])return engval(WORDS7.en[key]).replace(/^(the|a|an)\s+/i,'').trim()}catch(e){}
-  try{if(typeof LANGS!=='undefined'&&LANGS.en&&LANGS.en.words&&LANGS.en.words[key])return engval(LANGS.en.words[key]).replace(/^(the|a|an)\s+/i,'').trim()}catch(e){}
-  try{if(typeof words!=='undefined'&&words.en&&words.en[key])return engval(words.en[key]).replace(/^(the|a|an)\s+/i,'').trim()}catch(e){}
-  try{if(typeof languageData!=='undefined'&&languageData.en){if(languageData.en.objects&&languageData.en.objects[key])return engval(languageData.en.objects[key]).replace(/^(the|a|an)\s+/i,'').trim();if(languageData.en.words&&languageData.en.words[key])return engval(languageData.en.words[key]).replace(/^(the|a|an)\s+/i,'').trim()}}catch(e){}
-  try{if(typeof objects!=='undefined'&&objects.en&&objects.en[key])return engval(objects.en[key]).replace(/^(the|a|an)\s+/i,'').trim()}catch(e){}
-  try{if(typeof discoveryEnglish!=='undefined'&&discoveryEnglish[key])return engval(discoveryEnglish[key]).replace(/^(the|a|an)\s+/i,'').trim()}catch(e){}
-  try{if(typeof EXTRA_WORDS!=='undefined'&&EXTRA_WORDS.en&&EXTRA_WORDS.en[key])return engval(EXTRA_WORDS.en[key]).replace(/^(the|a|an)\s+/i,'').trim()}catch(e){}
-  return String(key||'').replace(/^(the|a|an)\s+/i,'').trim();
- }
- function lookup(el,key,l){
-  if(el&&el.dataset){if(el.dataset[l])return el.dataset[l];var tb=el.dataset['tb'+l.charAt(0).toUpperCase()+l.slice(1)];if(tb)return tb}
-  try{if(typeof languageData!=='undefined'&&languageData[l]){if(languageData[l].objects&&languageData[l].objects[key])return first(languageData[l].objects[key]);if(languageData[l].words&&languageData[l].words[key])return first(languageData[l].words[key])}}catch(e){}
-  try{if(typeof objects!=='undefined'&&objects[l]&&objects[l][key])return first(objects[l][key])}catch(e){}
-  try{if(typeof extraDiscovery!=='undefined'&&extraDiscovery[l]&&extraDiscovery[l][key])return first(extraDiscovery[l][key])}catch(e){}
-  try{if(typeof WORDS!=='undefined'&&WORDS[l]){var w=WORDS[l];if(!Array.isArray(w)&&w[key])return first(w[key]);if(Array.isArray(w)&&WORDS.en){var en=cleanEnglish(el,key).toLowerCase(),ix=WORDS.en.findIndex(function(x){return engval(x).replace(/^(the|a|an)\s+/i,'').toLowerCase()===en});if(ix>=0&&w[ix])return first(w[ix])}}}catch(e){}
-  try{if(typeof WORDS7!=='undefined'&&WORDS7[l]&&WORDS7[l][key])return first(WORDS7[l][key])}catch(e){}
-  try{if(typeof LANGS!=='undefined'&&LANGS[l]&&LANGS[l].words&&LANGS[l].words[key])return first(LANGS[l].words[key])}catch(e){}
-  try{if(typeof words!=='undefined'&&words[l]&&words[l][key])return first(words[l][key])}catch(e){}
-  try{if(typeof W!=='undefined'&&W[l]&&W[l][key])return first(W[l][key])}catch(e){}
-  try{if(typeof EXTRA_WORDS!=='undefined'&&EXTRA_WORDS[l]&&EXTRA_WORDS[l][key])return first(EXTRA_WORDS[l][key])}catch(e){}
-  return (el&&el.dataset&&(el.dataset.word||el.dataset.object||el.dataset.en))||key||'';
- }
- function show(el,e){if(document.body.classList.contains('tb-hs-editing'))return;var key=(el.dataset&&(el.dataset.word||el.dataset.key||el.dataset.object||el.dataset.en))||el.id||(el.dataset&&el.dataset.name)||el.getAttribute('aria-label')||'';if(!key)return;var l=lang(),en=cleanEnglish(el,key),word=lookup(el,key,l);if(!word)return;var same=String(word).replace(/^(the|a|an)\s+/i,'').toLowerCase()===String(en).toLowerCase();pop.textContent=(l==='en'||same)?en:(word+' — '+en);pop.style.display='block';var r=el.getBoundingClientRect(),x=(e&&e.clientX)||r.left+r.width/2,y=(e&&e.clientY)||r.top+r.height/2;var pr=pop.getBoundingClientRect();pop.style.left=Math.max(8,Math.min(innerWidth-pr.width-8,x+12))+'px';pop.style.top=Math.max(8,Math.min(innerHeight-pr.height-8,y-pr.height-10))+'px';clearTimeout(timer);timer=setTimeout(function(){pop.style.display='none'},1800)}
- document.addEventListener('click',function(e){var el=e.target.closest&&e.target.closest('.hotspot,.home-hotspot,.yacht-hotspot,.hotspots button,.train-hotspots button');if(el)show(el,e)},true);
-})();
-</script>
-
+<script id="talkabee-bilingual-hotspot-popup" src="js/talkabee-common-cffcf34e5d12.js"></script>
 <script id="talkabee-language-sync-repair-20261009">
 (function(){
   const KEY='talkabee-learn-language';
@@ -894,7 +267,7 @@ document.addEventListener('click',function(ev){
 })();
 </script>
 
-<script type="application/json" id="talkabee-challenge-data">[]</script>
+<script id="talkabee-challenge-data" type="application/json">[]</script>
 <script id="talkabee-challenge-runtime">
 (function(){
  const data=document.getElementById('talkabee-challenge-data');
@@ -907,113 +280,6 @@ document.addEventListener('click',function(ev){
 })();
 </script>
 
-<script id="talkabee-approved-next-navigation-v2">
-(function(){
- 'use strict';
- const card=document.querySelector('.tab-master-card');
- if(!card)return;
- const row=card.querySelector('.controls');
- if(!row)return;
- let phrase=document.getElementById('nextPhrase');
- let next=document.getElementById('nextChallenge');
- if(!next){next=document.createElement('button');next.id='nextChallenge';next.type='button';next.textContent='Next →';next.hidden=true;row.appendChild(next)}
- if(!phrase){phrase=document.createElement('button');phrase.id='nextPhrase';phrase.type='button';phrase.textContent='Next →';phrase.hidden=true;row.appendChild(phrase);
-   // Pages without an original Next phrase handler: alternate the two lesson sentences.
-   let index=1;
-   phrase.addEventListener('click',function(){
-     if(typeof activeLesson==='undefined'||!activeLesson||typeof lessons==='undefined')return;
-     const pair=lessons[document.getElementById('lang').value]?.[activeLesson];
-     if(!pair||pair.length<2)return;
-     index=1-index;
-     const text=pair[index];
-     const line=document.getElementById('line'),translation=document.getElementById('translation');
-     if(line)line.textContent=text;
-     if(translation)translation.textContent=document.getElementById('lang').value==='en'?'':(lessons.en?.[activeLesson]?.[index]||'');
-     if(typeof speak==='function')speak(text);
-   });
-   document.querySelectorAll('[data-lesson]').forEach(b=>b.addEventListener('click',()=>{index=1}));
- }
- // Some older master-template scripts rename every button beginning with "Next".
- // Restore the correct labels after those scripts run.
- function sync(){
-   const ch=(typeof challenge==='number'&&challenge>=0);
-   const act=(typeof activeLesson==='string'&&!!activeLesson&&!ch);
-   next.textContent='Next →';phrase.textContent='Next →';
-   next.hidden=!ch;phrase.hidden=!act;
-   next.style.setProperty('display',ch?'inline-block':'none','important');
-   phrase.style.setProperty('display',act?'inline-block':'none','important');
- }
- next.addEventListener('click',function(){
-   const buttons=[...document.querySelectorAll('.tab-master-panel [data-ch],.panel [data-ch]')];
-   if(!buttons.length||typeof challenge!=='number'||challenge<0)return;
-   const current=buttons.findIndex(b=>Number(b.dataset.ch)===challenge);
-   buttons[(current+1)%buttons.length].click();sync();
- });
- document.querySelectorAll('[data-ch],[data-lesson],#discovery').forEach(b=>b.addEventListener('click',sync));
- // Original hotspot handlers may reset the active lesson without changing challenge mode.
- document.querySelectorAll('.hotspot').forEach(h=>h.addEventListener('click',sync));
- document.addEventListener('click',function(e){if(e.target.closest('.hotspot'))requestAnimationFrame(sync)});
- if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',sync);else sync();
-})();
-</script>
-<script id="talkabee-shared-card-viewport-boundary-v1">
-/* Keep the complete displayed script card inside the viewport after moving,
-   resizing, restoring its position, or growing to fit longer text. */
-(function(){
-  'use strict';
-  const card=document.querySelector('.tab-master-card');
-  if(!card)return;
-  const GAP=16;
-  let pending=false,adjusting=false;
-  function keepVisible(){
-    if(adjusting || document.body.classList.contains('scene-view'))return;
-    adjusting=true;
-    try{
-      const r=card.getBoundingClientRect();
-      if(!r.width||!r.height)return;
-      // Normal, bottom-anchored default remains untouched when already visible.
-      let dx=0,dy=0;
-      const vw=document.documentElement.clientWidth,vh=document.documentElement.clientHeight;
-      if(r.width<=vw-2*GAP){
-        if(r.left<GAP)dx=GAP-r.left;
-        else if(r.right>vw-GAP)dx=vw-GAP-r.right;
-      }else if(r.left>GAP)dx=GAP-r.left;
-      if(r.height<=vh-2*GAP){
-        if(r.top<GAP)dy=GAP-r.top;
-        else if(r.bottom>vh-GAP)dy=vh-GAP-r.bottom;
-      }else if(r.top>GAP)dy=GAP-r.top;
-      if(Math.abs(dx)<.5&&Math.abs(dy)<.5)return;
-      // Use the *rendered* rectangle, not the unscaled CSS width/height.
-      // This preserves the existing .67 card transform and drag behavior.
-      card.dataset.moved='1';
-      card.style.setProperty('left',(r.left+dx)+'px','important');
-      card.style.setProperty('top',(r.top+dy)+'px','important');
-      card.style.setProperty('right','auto','important');
-      card.style.setProperty('bottom','auto','important');
-      card.style.setProperty('transform-origin','top left','important');
-      const cssWidth=parseFloat(getComputedStyle(card).width)||r.width;
-      const factor=r.width/cssWidth;
-      card.style.setProperty('transform','scale('+factor+')','important');
-    }finally{adjusting=false;}
-  }
-  function schedule(){if(pending)return;pending=true;requestAnimationFrame(()=>{pending=false;keepVisible()});}
-  // Capture ensures the corrected position is saved by the existing drag handler.
-  // Reset restores CSS defaults first; then re-check the full rendered card.
-  // This also handles a reset that changes position without changing its size.
-  const resetButton=card.querySelector('.tab-card-reset');
-  if(resetButton)resetButton.addEventListener('click',()=>{
-    requestAnimationFrame(()=>{keepVisible();requestAnimationFrame(keepVisible);});
-  });
-  card.addEventListener('pointerup',keepVisible,true);
-  card.addEventListener('pointercancel',keepVisible,true);
-  card.addEventListener('pointermove',schedule);
-  const ro=new ResizeObserver(schedule);
-  ro.observe(card);
-  window.addEventListener('resize',schedule);
-  window.addEventListener('pageshow',schedule);
-  // Font changes, new challenge text and the status line can alter card height.
-  new MutationObserver(schedule).observe(card,{subtree:true,childList:true,characterData:true});
-  schedule();
-})();
-</script>
+<script id="talkabee-approved-next-navigation-v2" src="js/talkabee-common-058157d34e0b.js"></script>
+<script id="talkabee-shared-card-viewport-boundary-v1" src="js/talkabee-common-3bf84d442532.js"></script>
 </body></html>
