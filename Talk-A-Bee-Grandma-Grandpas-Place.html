@@ -1209,4 +1209,111 @@ document.addEventListener('click',function(ev){
 </script>
 <script data-tb-custom-vocab="1">;(()=>{const C={"boat":{"en":"boat","es":"bote","fr":"bateau","de":"Boot","it":"barca","pt":"barco","no":"båt"},"fire pit":{"en":"fire pit","es":"pozo de fuego","fr":"foyer","de":"Feuerstelle","it":"pozzo del fuoco","pt":"fogueira","no":"ildsted"},"guitar":{"en":"guitar","es":"guitarra","fr":"guitare","de":"Gitarre","it":"chitarra","pt":"guitarra","no":"gitar"}};for(const [k,v] of Object.entries(C)){try{EN[k]=v.en||k;for(const L of ["es","fr","en","de","it","pt","no"]){if(WORDS[L])WORDS[L][k]=v[L]||v.en||k}}catch(e){}}})();</script>
 
+<!-- Integrated neural voice test in the left Activity Panel. -->
+<style id="voice-lab-style">
+#voiceLab{position:relative;z-index:auto;width:100%;max-height:none;overflow:visible;background:rgba(7,23,39,.26);color:white;border:1px solid #ffffff55;border-radius:12px;padding:8px 6px;margin:7px 0 10px;box-shadow:none;font:12px/1.25 Arial,sans-serif}
+#voiceLab *{box-sizing:border-box}#voiceLab label{display:block;font-size:12px;margin:9px 0 3px}#voiceLab select,#voiceLab textarea{width:100%;padding:7px;border-radius:6px;color:#111;background:white}#voiceLab button{border:0;border-radius:7px;padding:8px 10px;margin:7px 4px 0 0;background:#b7e5d7;color:#123;cursor:pointer}#voiceLab button:disabled{opacity:.55;cursor:wait}#voiceLabStatus{font-size:12px;margin-top:8px;white-space:pre-wrap;overflow-wrap:anywhere}#voiceLab details summary{cursor:pointer;font-weight:700}#voiceLab textarea{min-height:62px;resize:vertical}#voiceLabText,#voiceLabCurrent,#voiceLabPlay,#voiceLabSlow,#voiceLabStop,#voiceLab label[for="voiceLabText"]{display:none!important}#voiceLab .lab-note{font-size:11px}#voiceLabStatus{font-size:11px}#voiceLab button{width:100%;font-size:11px!important;padding:7px!important}#voiceLab select{font-size:11px!important;padding:7px 3px!important;background:rgba(255,255,255,.94)!important;color:#15223a!important}#voiceLab details summary{font-size:12px}#voiceLab .lab-note{font-size:12px;color:#d1e6eb;margin-top:5px}
+/* Compact readable Voice Lab controls — panel only; engine logic untouched. */
+#voiceLab{padding:9px 8px!important;margin:9px 0 12px!important;background:rgba(7,23,39,.34)!important;border-radius:12px!important}
+#voiceLab details summary{font-size:15px!important;line-height:1.3!important;padding:3px 0 5px!important}
+#voiceLab label{font-size:14px!important;line-height:1.3!important;margin:10px 0 5px!important;letter-spacing:0!important;text-transform:none!important}
+#voiceLab select{font-size:14px!important;font-weight:750!important;line-height:1.3!important;min-height:41px!important;padding:8px 7px!important;text-overflow:ellipsis!important}
+#voiceLab button{font-size:14px!important;line-height:1.3!important;min-height:39px!important;padding:9px 8px!important;text-align:center!important;background:rgba(183,229,215,.92)!important;color:#14283a!important;font-weight:800!important}
+#voiceLab .lab-note{font-size:13px!important;line-height:1.35!important;margin:7px 0!important}
+#voiceLabStatus{font-size:13px!important;line-height:1.35!important;margin-top:9px!important;overflow-wrap:anywhere}
+#voiceLabNeural[hidden]{display:none!important}
+</style>
+<style id="voice-lab-matched-panel-design">
+/* Match the Adventure panel's translucent dark controls, with larger legible type. */
+#voiceLab{background:rgba(7,23,39,.20)!important;border:1px solid rgba(255,255,255,.28)!important;padding:8px!important;margin:8px 0 10px!important}
+#voiceLab details summary{display:flex;align-items:center;justify-content:space-between;gap:5px;font-size:14px!important;font-weight:900!important;color:white!important;list-style:none;padding:3px 0 7px!important}
+#voiceLab details summary::-webkit-details-marker{display:none}
+#voiceLab label{font-size:14px!important;font-weight:850!important;color:white!important;margin:7px 0 4px!important}
+#voiceLab select,#voiceLab button:not(#voiceLabInfo){background:rgba(7,32,50,.54)!important;color:#fff!important;border:1px solid rgba(255,255,255,.38)!important;border-radius:12px!important;min-height:40px!important;padding:9px 8px!important;font:800 14px/1.25 Arial,sans-serif!important;box-shadow:none!important}
+#voiceLab select{color-scheme:dark;max-width:100%;text-overflow:ellipsis!important}
+#voiceLab select option{background:#162b3a;color:white}
+#voiceLab button:not(#voiceLabInfo):hover{background:rgba(20,58,79,.70)!important}
+#voiceLab #voiceLabInfo{width:27px!important;min-width:27px!important;min-height:27px!important;height:27px!important;padding:0!important;margin:0!important;border:1px solid rgba(255,255,255,.55)!important;border-radius:50%!important;background:rgba(7,32,50,.54)!important;color:white!important;text-align:center!important;font:900 17px/1 Arial,sans-serif!important;cursor:pointer!important}
+#voiceLabNote{display:none!important}
+#voiceLabStatus{font-size:14px!important;line-height:1.3!important;color:white!important;margin:7px 0 2px!important;overflow-wrap:anywhere}
+.voice-info-overlay[hidden]{display:none!important}
+.voice-info-overlay{position:fixed;inset:0;z-index:2147483600;display:flex;align-items:center;justify-content:center;padding:18px;background:rgba(0,0,0,.65)}
+.voice-info-box{position:relative;width:min(420px,100%);max-height:85vh;overflow:auto;padding:22px;border:1px solid rgba(255,255,255,.5);border-radius:18px;background:#172c3b;color:#fff;box-shadow:0 16px 45px #0008;font:16px/1.45 Arial,sans-serif}
+.voice-info-box h2{font-size:21px;color:white;margin:0 28px 12px 0}
+.voice-info-box p{margin:9px 0}
+#voiceInfoClose{position:absolute;right:10px;top:7px;border:0;background:transparent;color:white;font-size:28px;cursor:pointer}
+</style>
+<div id="voiceLab"><details open><summary>🎙️ Choose Voice <button type="button" id="voiceLabInfo" aria-label="About voice options" title="About voice options">ⓘ</button></summary>
+<label for="voiceLabMode">Voice type</label><select id="voiceLabMode"><option value="standard">Standard</option><option value="enhanced">Enhanced</option></select>
+<div id="voiceLabNote" class="lab-note" hidden>Uses voices already available in your browser.</div>
+<div id="voiceLabNeural" hidden><label for="voiceLabModel">Choose voice</label><select id="voiceLabModel"><option value="">Select Enhanced to see voices</option></select><button type="button" id="voiceLabLoad">Load voice</button></div>
+<label for="voiceLabText">Test sentence (or use current lesson)</label><textarea id="voiceLabText">Hello! Welcome to Talk A Bee.</textarea>
+<div><button type="button" id="voiceLabCurrent">Use lesson sentence</button><button type="button" id="voiceLabPlay">▶ Speak</button><button type="button" id="voiceLabSlow">🐢 Slow</button><button type="button" id="voiceLabStop">■ Stop</button></div>
+<div id="voiceLabStatus" role="status" aria-live="polite">Standard voice ready.</div>
+</details></div>
+<div id="voiceLabInfoDialog" class="voice-info-overlay" hidden>
+ <div class="voice-info-box" role="dialog" aria-modal="true" aria-labelledby="voiceInfoTitle" tabindex="-1">
+  <button type="button" id="voiceInfoClose" aria-label="Close voice information">×</button>
+  <h2 id="voiceInfoTitle">About voice options</h2>
+  <p><strong>Standard:</strong> Uses the voices available in your browser. No download needed.</p>
+  <p><strong>Enhanced:</strong> Downloads a more natural-sounding voice to your device. It is optional and free. Your browser may reuse the downloaded model on future visits.</p>
+  <p>Choose a voice, select <strong>Load voice</strong>, then use the lesson's Speak, Slow, and Replay buttons.</p>
+ </div>
+</div>
+<script id="voice-lab-info-controller">
+(()=>{
+ const info=document.getElementById('voiceLabInfo'), overlay=document.getElementById('voiceLabInfoDialog'), close=document.getElementById('voiceInfoClose'), box=overlay.querySelector('.voice-info-box');
+ let previous=null;
+ const hide=()=>{overlay.hidden=true;previous?.focus?.()};
+ info.addEventListener('click',e=>{e.preventDefault();e.stopPropagation();previous=document.activeElement;overlay.hidden=false;box.focus()});
+ close.addEventListener('click',hide);
+ overlay.addEventListener('click',e=>{if(e.target===overlay)hide()});
+ document.addEventListener('keydown',e=>{if(e.key==='Escape'&&!overlay.hidden)hide()});
+})();
+</script>
+<script type="module" id="voice-lab-dual-mode">
+const $=id=>document.getElementById(id), status=$('voiceLabStatus'), mode=$('voiceLabMode'), select=$('voiceLabModel'), field=$('voiceLabText');
+const show=message=>{status.textContent=message};
+const prefix={en:'en_',es:'es_',fr:'fr_',de:'de_',it:'it_',pt:'pt_',no:'no_'};
+const speechLang={en:'en-US',es:'es-ES',fr:'fr-FR',de:'de-DE',it:'it-IT',pt:'pt-BR',no:'nb-NO'};
+const lang=$('homeLanguage');
+// Place the existing, proven neural engine controls beneath the browser voice selector.
+const voicePanel=$('homeVoice');voicePanel?.insertAdjacentElement('afterend',$('voiceLab'));
+
+let engine=null,loading=null,audio=null,audioUrl=null,busy=false,utterance=null,lastLessonText="",lastLessonRate=.86,runId=0;
+const sentence=()=>($('homeWordline')?.innerText||$('homeWordline')?.textContent||'').replace(/\s+/g,' ').trim();
+function stop(){runId++;if(audio){audio.pause();audio.currentTime=0;audio=null}if('speechSynthesis' in window)window.speechSynthesis.cancel();utterance=null}
+let voiceCatalog=[];
+function recommend(){if(!voiceCatalog.length)return;const p=prefix[lang?.value]||'en_';const previous=select.value;const options=voiceCatalog.filter(id=>id.toLowerCase().startsWith(p));select.replaceChildren();for(const id of options){const opt=document.createElement('option');opt.value=id;opt.textContent=id;select.appendChild(opt)}if(options.includes(previous))select.value=previous;else if(options.length)select.value=options.find(id=>id.includes('medium'))||options[0];else{const opt=document.createElement('option');opt.value='';opt.textContent='No enhanced voice available';select.appendChild(opt);show('No Enhanced voice for this language. Choose Standard.')}}
+function updateMode(){const enhanced=mode.value==='enhanced';$('voiceLabNeural').hidden=!enhanced;$('voiceLabNote').textContent=enhanced?'Download once per voice. First use may take a moment.':'Uses voices installed in your browser.';try{localStorage.setItem('talkabee-lab-voice-mode',mode.value)}catch(_){};show(enhanced?'Enhanced selected. Click “Load voice” before speaking.':'Standard voice ready.');}
+try{if(localStorage.getItem('talkabee-lab-voice-mode')==='enhanced')mode.value='enhanced'}catch(_){}
+mode.addEventListener('change',()=>{stop();updateMode()});updateMode();
+$('voiceLabCurrent').addEventListener('click',()=>{const s=sentence();if(s)field.value=s;else show('Choose an Activity first, or type a test sentence.')});
+$('voiceLabStop').addEventListener('click',()=>{stop();show('Stopped.')});
+lang?.addEventListener('change',recommend);
+async function loadEngine(){if(engine)return engine;if(loading)return loading;
+ loading=(async()=>{show('Loading enhanced engine and voice catalog…');const m=await import('./piper-matched-118/piper-tts-web.js?voice-switch=1');const models=await m.voices();const all=Array.isArray(models)?models.map(v=>typeof v==='string'?v:(v?.id||v?.key||v?.name||'')).filter(Boolean):Object.keys(models||{});const names=all.filter(id=>Object.values(prefix).some(p=>id.toLowerCase().startsWith(p)));if(!names.length)throw Error('No matching voices in catalog.');voiceCatalog=names;engine=m;recommend();show('Enhanced catalog ready. First speech may download a large model.');return engine})();
+ try{return await loading}catch(e){loading=null;show('Enhanced engine unavailable: '+(e?.message||e)+'\nChoose Standard to continue.');console.error('Voice Lab engine',e);throw e}
+}
+$('voiceLabLoad').addEventListener('click',()=>{loadEngine().then(()=>show('Voice list ready. Select a voice and press Speak.')).catch(()=>{})});
+select.addEventListener('change',()=>{stop();if(engine)show('Voice selected: '+select.value+'. Press Speak to use it; no refresh needed.');});
+function standardSpeak(text,rate){if(!('speechSynthesis' in window)){show('Browser speech is not available.');return}stop();const u=new SpeechSynthesisUtterance(text);u.lang=speechLang[lang?.value]||'en-US';u.rate=rate;const voices=window.speechSynthesis.getVoices();const preferred=$('homeVoice')?.value;const chosen=voices.find(v=>v.voiceURI===preferred||v.name===preferred)||voices.find(v=>v.lang.toLowerCase()===u.lang.toLowerCase())||voices.find(v=>v.lang.toLowerCase().startsWith(u.lang.slice(0,2).toLowerCase()));if(chosen)u.voice=chosen;utterance=u;u.onerror=e=>show('Standard speech error: '+e.error);window.speechSynthesis.speak(u);show('Speaking with browser voice ('+u.lang+'). No model downloaded.')}
+async function speak(rate,textOverride){const text=(textOverride===undefined?field.value:textOverride).trim();if(!text){show('Enter a sentence first.');return}
+ if(mode.value==='standard'){standardSpeak(text,rate);return}
+ stop();const requestId=runId;busy=true;$('voiceLabPlay').disabled=true;$('voiceLabSlow').disabled=true;
+ try{const m=await loadEngine();if(requestId!==runId)return;const selectedVoice=select.value;if(!selectedVoice)throw Error('No voice selected for this language.');if(audioUrl){URL.revokeObjectURL(audioUrl);audioUrl=null}show('Preparing voice… First use may require a download.');const start=performance.now();const wav=await m.predict({text,voiceId:selectedVoice},p=>{if(requestId===runId&&p?.total)show('Downloading model: '+Math.round(p.loaded/p.total*100)+'%')});if(requestId!==runId||mode.value!=='enhanced'||select.value!==selectedVoice)return;audioUrl=URL.createObjectURL(wav);audio=new Audio(audioUrl);audio.playbackRate=rate;await audio.play();if(requestId===runId)show('Enhanced voice playing. Generation: '+((performance.now()-start)/1000).toFixed(1)+' seconds.')}
+ catch(e){if(requestId!==runId)return;const msg=String(e?.message||e);show('Enhanced voice failed: '+msg+(msg.includes('cdnjs.cloudflare.com/ajax/libs/onnxruntime-web/1.18.0')?'\nDiagnosis: Piper is still hardcoded to the old ONNX 1.18.0 Cloudflare runtime. Local ONNX 1.19.0 files are not being used by this bundle.':'')+'\nSwitch to Standard for reliable browser speech.');console.error('Voice Lab synthesis',e)}
+ finally{busy=false;$('voiceLabPlay').disabled=false;$('voiceLabSlow').disabled=false}
+}
+$('voiceLabPlay').addEventListener('click',()=>speak(1));$('voiceLabSlow').addEventListener('click',()=>speak(.78));
+// Capture lesson buttons before the original browser-speech handlers when Enhanced is active.
+function neuralLesson(text,rate){if(!text)return;lastLessonText=text;lastLessonRate=rate;speak(rate,text)}
+for(const [id,rate] of [['homePlay',.86],['homeSlow',.58],['homeReplay',null]]){
+ $(id)?.addEventListener('click',ev=>{if(mode.value!=='enhanced')return;ev.preventDefault();ev.stopImmediatePropagation();const t=rate===null?(lastLessonText||sentence()):sentence();neuralLesson(t,rate===null?lastLessonRate:rate)},true);
+}
+$('homeWordline')?.addEventListener('click',ev=>{if(mode.value!=='enhanced')return;const btn=ev.target.closest('.home-word');if(!btn)return;ev.preventDefault();ev.stopImmediatePropagation();neuralLesson(btn.textContent.trim().replace(/[.,!?;:]+$/,''),.78)},true);
+// Hotspots still run their original challenge and scene-sound logic. Standard is unchanged.
+
+</script>
+
 </body></html>
