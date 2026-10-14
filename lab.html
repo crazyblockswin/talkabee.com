@@ -1221,6 +1221,10 @@ document.addEventListener('click',function(ev){
 <div><button type="button" id="voiceLabCurrent">Use lesson sentence</button><button type="button" id="voiceLabPlay">▶ Speak</button><button type="button" id="voiceLabSlow">🐢 Slow</button><button type="button" id="voiceLabStop">■ Stop</button></div>
 <div id="voiceLabStatus" role="status">Standard voice ready. Enhanced voices are optional.</div>
 </details></div>
+<!-- Voice Lab only: one pinned ONNX JS version, with matching local WASM assets. -->
+<script type="importmap" id="talkabee-piper-onnx-importmap">
+{"imports":{"onnxruntime-web":"https://esm.sh/onnxruntime-web@1.19.0?bundle"}}
+</script>
 <script type="module" id="voice-lab-dual-mode">
 const $=id=>document.getElementById(id), status=$('voiceLabStatus'), mode=$('voiceLabMode'), select=$('voiceLabModel'), field=$('voiceLabText');
 const show=message=>{status.textContent=message};
@@ -1238,7 +1242,13 @@ $('voiceLabCurrent').addEventListener('click',()=>{const s=sentence();if(s)field
 $('voiceLabStop').addEventListener('click',()=>{stop();show('Stopped.')});
 lang?.addEventListener('change',recommend);
 async function loadEngine(){if(engine)return engine;if(loading)return loading;
- loading=(async()=>{show('Loading enhanced engine and voice catalog…');const m=await import('https://esm.sh/@mintplex-labs/piper-tts-web@1.0.5?bundle');const models=await m.voices();const all=Array.isArray(models)?models.map(v=>typeof v==='string'?v:(v?.id||v?.key||v?.name||'')).filter(Boolean):Object.keys(models||{});const names=all.filter(id=>Object.values(prefix).some(p=>id.toLowerCase().startsWith(p)));if(!names.length)throw Error('No matching neural voices in catalog.');select.replaceChildren();for(const id of names){const opt=document.createElement('option');opt.value=id;opt.textContent=id;select.appendChild(opt)}engine=m;recommend();show('Enhanced catalog ready. First speech may download a large model.');return engine})();
+ loading=(async()=>{show('Loading matched ONNX 1.19.0 engine and Piper voice catalog…');const ort=await import('onnxruntime-web');
+// Match ONNX Runtime 1.19.0 JavaScript to the exact 1.19.0 WASM files
+// in the neighboring onnxruntime directory. Disable threads to avoid
+// cross-origin-isolation requirements on ordinary GitHub Pages hosting.
+ort.env.wasm.wasmPaths=new URL('./onnxruntime/',document.baseURI).href;
+ort.env.wasm.numThreads=1;
+const m=await import('https://esm.sh/@mintplex-labs/piper-tts-web@1.0.5?external=onnxruntime-web');const models=await m.voices();const all=Array.isArray(models)?models.map(v=>typeof v==='string'?v:(v?.id||v?.key||v?.name||'')).filter(Boolean):Object.keys(models||{});const names=all.filter(id=>Object.values(prefix).some(p=>id.toLowerCase().startsWith(p)));if(!names.length)throw Error('No matching neural voices in catalog.');select.replaceChildren();for(const id of names){const opt=document.createElement('option');opt.value=id;opt.textContent=id;select.appendChild(opt)}engine=m;recommend();show('Enhanced catalog ready. First speech may download a large model.');return engine})();
  try{return await loading}catch(e){loading=null;show('Enhanced engine unavailable: '+(e?.message||e)+'\nChoose Standard to continue.');console.error('Voice Lab engine',e);throw e}
 }
 $('voiceLabLoad').addEventListener('click',()=>{loadEngine().catch(()=>{})});
