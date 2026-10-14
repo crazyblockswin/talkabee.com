@@ -1223,7 +1223,7 @@ document.addEventListener('click',function(ev){
 </details></div>
 <!-- Voice Lab only: one pinned ONNX JS version, with matching local WASM assets. -->
 <script type="importmap" id="talkabee-piper-onnx-importmap">
-{"imports":{"onnxruntime-web":"https://esm.sh/onnxruntime-web@1.19.0?bundle"}}
+{"imports":{"onnxruntime-web":"https://esm.sh/onnxruntime-web@1.19.0/wasm?bundle","onnxruntime-web/wasm":"https://esm.sh/onnxruntime-web@1.19.0/wasm?bundle"}}
 </script>
 <script type="module" id="voice-lab-dual-mode">
 const $=id=>document.getElementById(id), status=$('voiceLabStatus'), mode=$('voiceLabMode'), select=$('voiceLabModel'), field=$('voiceLabText');
