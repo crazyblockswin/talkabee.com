@@ -38,5 +38,47 @@ document.addEventListener('visibilitychange',()=>{if(!document.hidden&&mode.valu
 update();
 // Show the saved voice immediately; the catalog later validates and replaces this option.
 if(mode.value==='enhanced'&&!engine){const saved=savedVoice();if(saved){select.replaceChildren(new Option(saved,saved));select.value=saved;}}
-window.tbAdventurePiperSpeak=function(text,rate,onComplete){if(mode.value!=='enhanced'||!text||!engine||!select.value)return false;stop();const ticket=request;const voiceId=select.value;(async()=>{try{show('Preparing Piper voice…');const wav=await engine.predict({text:String(text),voiceId},p=>{if(ticket===request&&p?.total)show('Downloading voice: '+Math.round(p.loaded/p.total*100)+'%')});if(ticket!==request||mode.value!=='enhanced'||select.value!==voiceId)return;audioUrl=URL.createObjectURL(wav);audio=new Audio(audioUrl);audio.playbackRate=typeof rate==='number'&&rate>0?rate:1;const current=audio;current.addEventListener('ended',()=>{if(audio!==current)return;audio=null;if(audioUrl){URL.revokeObjectURL(audioUrl);audioUrl=null}if(ticket===request){show('Piper finished.');onComplete?.()}},{once:true});await current.play();if(ticket===request)show('Enhanced voice playing.')}catch(e){if(ticket!==request)return;console.error('Talk A Bee Piper:',e);show('Piper failed: '+(e?.message||e));onComplete?.()}})();return true;};
+// Claim Enhanced speech immediately, even while the Piper catalog is still loading.
+// Returning false here previously handed speech back to the Adventure's browser TTS.
+window.tbAdventurePiperSpeak=function(text,rate,onComplete){
+  if(mode.value!=='enhanced'||!text)return false;
+  stop();
+  const ticket=request;
+  (async()=>{
+    try{
+      if(!engine){
+        show('Preparing Piper…');
+        await load();
+      }
+      if(ticket!==request||mode.value!=='enhanced')return;
+      // The catalog is ready now. Restore the persisted voice for this language.
+      if(!select.value)restoreVoice();
+      const voiceId=select.value;
+      if(!voiceId)throw new Error('No Piper voice for the selected language');
+      show('Preparing Piper voice…');
+      const wav=await engine.predict({text:String(text),voiceId},p=>{
+        if(ticket===request&&p?.total)show('Downloading voice: '+Math.round(p.loaded/p.total*100)+'%');
+      });
+      if(ticket!==request||mode.value!=='enhanced'||select.value!==voiceId)return;
+      audioUrl=URL.createObjectURL(wav);
+      audio=new Audio(audioUrl);
+      audio.playbackRate=typeof rate==='number'&&rate>0?rate:1;
+      const current=audio;
+      current.addEventListener('ended',()=>{
+        if(audio!==current)return;
+        audio=null;
+        if(audioUrl){URL.revokeObjectURL(audioUrl);audioUrl=null;}
+        if(ticket===request){show('Piper finished.');onComplete?.();}
+      },{once:true});
+      await current.play();
+      if(ticket===request)show('Enhanced voice playing.');
+    }catch(e){
+      if(ticket!==request)return;
+      console.error('Talk A Bee Piper:',e);
+      show('Piper failed: '+(e?.message||e));
+      onComplete?.();
+    }
+  })();
+  return true;
+};
 })();
