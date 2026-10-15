@@ -21,7 +21,7 @@ const voiceKey='talkabee-piper-voice-';
 function savedVoice(){try{return localStorage.getItem(voiceKey+language.value)||''}catch(_){return ''}}
 function rememberVoice(){if(select.value)try{localStorage.setItem(voiceKey+language.value,select.value)}catch(_){}}
 let selectedLanguage=language.value;
-function restoreVoice(){if(!engine)return;selectedLanguage=language.value;choose();show('Piper ready: '+(select.value||'no voice available'));}
+function restoreVoice(){selectedLanguage=language.value;if(engine){choose();show('Piper ready: '+(select.value||'no voice available'));}else{show('Restoring saved Piper voice…');load().catch(()=>{});}}
 
 function stop(){request++;if(audio){try{audio.pause()}catch(_){}audio=null}if(audioUrl){URL.revokeObjectURL(audioUrl);audioUrl=null}try{speechSynthesis.cancel()}catch(_){}}
 function choose(){const p=prefix[language.value]||'en_',old=savedVoice();const matching=catalog.filter(v=>v.toLowerCase().startsWith(p));select.replaceChildren();for(const id of matching)select.add(new Option(id,id));if(matching.includes(old))select.value=old;else if(matching.length)select.value=matching.find(v=>v.includes('medium'))||matching[0];else select.add(new Option('No Piper voice for this language',''));}
@@ -31,7 +31,12 @@ try{if(localStorage.getItem('talkabee-lab-voice-mode')==='enhanced')mode.value='
 mode.addEventListener('change',()=>{stop();update()});language.addEventListener('change',()=>{stop();if(engine){restoreVoice();}});select.addEventListener('change',()=>{stop();rememberVoice();show('Voice selected: '+select.value)});select.addEventListener('input',rememberVoice);$('tbPiperLoad').addEventListener('click',()=>load().catch(()=>{}));
 // Some Adventures restore the global learning language after Piper starts.
 // Keep the Piper catalog in sync even when those scripts change select.value silently.
-setInterval(()=>{if(language.value!==selectedLanguage){selectedLanguage=language.value;if(engine)restoreVoice();}},400);
+setInterval(()=>{if(language.value!==selectedLanguage){restoreVoice();}},400);
+// Firefox navigation restoration (including back/forward cache).
+window.addEventListener('pageshow',()=>{if(mode.value==='enhanced')restoreVoice();});
+document.addEventListener('visibilitychange',()=>{if(!document.hidden&&mode.value==='enhanced'&&engine)restoreVoice();});
 update();
+// Show the saved voice immediately; the catalog later validates and replaces this option.
+if(mode.value==='enhanced'&&!engine){const saved=savedVoice();if(saved){select.replaceChildren(new Option(saved,saved));select.value=saved;}}
 window.tbAdventurePiperSpeak=function(text,rate,onComplete){if(mode.value!=='enhanced'||!text||!engine||!select.value)return false;stop();const ticket=request;const voiceId=select.value;(async()=>{try{show('Preparing Piper voice…');const wav=await engine.predict({text:String(text),voiceId},p=>{if(ticket===request&&p?.total)show('Downloading voice: '+Math.round(p.loaded/p.total*100)+'%')});if(ticket!==request||mode.value!=='enhanced'||select.value!==voiceId)return;audioUrl=URL.createObjectURL(wav);audio=new Audio(audioUrl);audio.playbackRate=typeof rate==='number'&&rate>0?rate:1;const current=audio;current.addEventListener('ended',()=>{if(audio!==current)return;audio=null;if(audioUrl){URL.revokeObjectURL(audioUrl);audioUrl=null}if(ticket===request){show('Piper finished.');onComplete?.()}},{once:true});await current.play();if(ticket===request)show('Enhanced voice playing.')}catch(e){if(ticket!==request)return;console.error('Talk A Bee Piper:',e);show('Piper failed: '+(e?.message||e));onComplete?.()}})();return true;};
 })();
