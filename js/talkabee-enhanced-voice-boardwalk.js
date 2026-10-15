@@ -1,5 +1,7 @@
 // Boardwalk adapter for the proven Grandma & Grandpa Piper runtime.
 // Preserves native Boardwalk click handlers, challenges, popups, and MP3s.
+// Initialize controls as a classic script; import Piper only when requested.
+const piperModuleUrl = new URL('../piper-matched-118/piper-tts-web.js?voice-switch=1', document.currentScript.src).href;
 const $=id=>document.getElementById(id);
 const mode=$('voiceLabMode'),select=$('voiceLabModel'),status=$('voiceLabStatus');
 const lang=$('lang');
@@ -27,7 +29,7 @@ async function loadEngine(){
  if(loading)return loading;
  loading=(async()=>{
    show('Loading Piper voice catalog…');
-   const m=await import('../piper-matched-118/piper-tts-web.js?voice-switch=1');
+   const m=await import(piperModuleUrl);
    const voices=await m.voices();
    const all=Array.isArray(voices)?voices.map(v=>typeof v==='string'?v:(v?.id||v?.key||v?.name||'')).filter(Boolean):Object.keys(voices||{});
    catalog=all.filter(id=>Object.values(prefix).some(p=>id.toLowerCase().startsWith(p)));
