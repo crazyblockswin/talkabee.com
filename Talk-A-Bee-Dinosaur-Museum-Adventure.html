@@ -1,28 +1,37 @@
-<!DOCTYPE html>
-
+<!doctype html>
 <html lang="en"><head>
-<meta charset="utf-8"/>
-<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Talk A Bee — Dinosaur Museum Adventure</title>
-<link href="css/shared-63cf4d8cc89d329a.css" rel="stylesheet"/>
+<link rel="stylesheet" href="css/shared-63cf4d8cc89d329a.css">
+
 <style id="boardwalk-hotspots-hover-only">
 .hotspot{display:block!important;opacity:0!important;background:transparent!important;outline:none!important;animation:none!important}
 .hotspot:hover,.hotspot:focus-visible{opacity:1!important;background:rgba(255,220,72,.28)!important;outline:2px solid rgba(255,255,255,.85)!important}
 .challenge-mode .hotspot.target{opacity:0!important;background:transparent!important;outline:none!important}
 </style>
-<link href="css/common-inline-102fc1d7383d.css" id="talkabee-prev-next-nav-style" rel="stylesheet"/>
-<link href="css/talkabee-shared-5d2499d81b6e.css" id="talkabee-literal-master-template" rel="stylesheet"/>
-<link href="css/common-inline-168e9ff67f7e.css" id="tab-spoken-phrase-readability" rel="stylesheet"/>
-<link href="css/common-inline-a202e810d91a.css" id="talkabee-readable-supporting-text" rel="stylesheet"/>
-<link href="images/PNG/talkabee-favicon.png" rel="icon" type="image/png"/>
-<link href="images/PNG/talkabee-favicon.png" rel="shortcut icon" type="image/png"/>
-<link href="css/common-inline-e41b546ea686.css" id="talkabee-edition-menu-style" rel="stylesheet"/>
-<link href="css/talkabee-shared-ecfa9fc689a3.css" id="talkabee-accessibility-controls-v1" rel="stylesheet"/>
-<link href="css/talkabee-shared-6083deff3ef2.css" id="talkabee-dinosaur-card-readability-v2" rel="stylesheet"/>
-<link href="css/talkabee-shared-43ddae767bb7.css" id="talkabee-global-card-grab-cursor" rel="stylesheet"/>
+
+
+<link rel="stylesheet" href="css/common-inline-102fc1d7383d.css" id="talkabee-prev-next-nav-style">
+<link rel="stylesheet" href="css/talkabee-shared-5d2499d81b6e.css" id="talkabee-literal-master-template">
+
+<link rel="stylesheet" href="css/common-inline-168e9ff67f7e.css" id="tab-spoken-phrase-readability">
+
+<link rel="stylesheet" href="css/common-inline-a202e810d91a.css" id="talkabee-readable-supporting-text">
+
+  <link rel="icon" type="image/png" href="images/PNG/talkabee-favicon.png">
+  <link rel="shortcut icon" type="image/png" href="images/PNG/talkabee-favicon.png">
+
+<link rel="stylesheet" href="css/common-inline-e41b546ea686.css" id="talkabee-edition-menu-style">
+
+<link rel="stylesheet" href="css/talkabee-shared-ecfa9fc689a3.css" id="talkabee-accessibility-controls-v1">
+<link rel="stylesheet" href="css/talkabee-shared-6083deff3ef2.css" id="talkabee-dinosaur-card-readability-v2">
+<link rel="stylesheet" href="css/talkabee-shared-43ddae767bb7.css" id="talkabee-global-card-grab-cursor">
+
 <!-- TALK A BEE HOTSPOTS VISUALLY RECERTIFIED AGAINST CURRENT SCENE ARTWORK: 2026-10-07 -->
 
-<link href="css/common-inline-8492e8692583.css" id="talkabee-bilingual-hotspot-popup-style" rel="stylesheet"/>
+<link rel="stylesheet" href="css/common-inline-8492e8692583.css" id="talkabee-bilingual-hotspot-popup-style">
+
 <style id="talkabee-dinosaur-next-navigation-fit">
 /* Keep the fourth action on one line, without changing the card's size or controls. */
 .tab-master-card .controls button{min-width:0!important;}
@@ -35,13 +44,13 @@
   padding-right:5px!important;
 }
 </style>
-<link href="css/talkabee-card-typography-safe.css" rel="stylesheet"/>
+<link rel="stylesheet" href="css/talkabee-card-typography-safe.css">
 </head>
 <body class="">
 <div class="talkabee-editions">
 <details>
 <summary>Explore Adventures ▾</summary>
-<div aria-label="Talk A Bee Editions" class="edition-row" role="navigation">
+<div class="edition-row" role="navigation" aria-label="Talk A Bee Editions">
 <a href="adventures.html">Main Adventures</a>
 <a href="Talk-A-Bee-More-Adventures.html">Community Edition</a>
 <a href="Talk-A-Bee-Directory-3.html">Travel Edition</a>
@@ -51,16 +60,20 @@
 </div>
 </details>
 </div>
-<nav aria-label="Adventure navigation" class="talkabee-prev-next-nav"><a aria-label="Previous page" href="Talk-A-Bee-Observation-Deck-Adventure.html" title="Previous">‹</a><a aria-label="Next page" href="Talk-A-Bee-Underwater-Adventure.html" title="Next">›</a></nav>
+
+<nav class="talkabee-prev-next-nav" aria-label="Adventure navigation"><a href="Talk-A-Bee-Observation-Deck-Adventure.html" aria-label="Previous page" title="Previous">‹</a><a href="Talk-A-Bee-Underwater-Adventure.html" aria-label="Next page" title="Next">›</a></nav>
+
 <main class="world" id="world">
+
 <button class="scene-return" id="sceneReturn">Return to Adventure</button>
 <aside class="panel tab-master-panel">
 <h1>🦖 Dinosaur Museum</h1>
-<div aria-label="Activity panel size" class="tab-panel-size-controls"><button class="tab-panel-minus" title="Make activity panel smaller" type="button">−</button><button class="tab-panel-reset" title="Reset activity panel size" type="button">Reset</button><button class="tab-panel-plus" title="Make activity panel larger" type="button">+</button></div>
+<div class="tab-panel-size-controls" aria-label="Activity panel size"><button type="button" class="tab-panel-minus" title="Make activity panel smaller">−</button><button type="button" class="tab-panel-reset" title="Reset activity panel size">Reset</button><button type="button" class="tab-panel-plus" title="Make activity panel larger">+</button></div>
+
 <div class="label">LANGUAGE</div>
 <select id="lang"><option value="es">Spanish</option><option value="fr">French</option><option value="en">English</option><option value="de">German</option><option value="it">Italian</option><option value="pt">Portuguese</option><option value="no">Norwegian</option></select>
 <div class="label">VOICE</div><select id="voice"><option value="">Browser Default</option><option value="urn:moz-tts:sapi:Microsoft David - English (United States)?en-US">Microsoft David - English (United States) — en-US</option><option value="urn:moz-tts:sapi:Microsoft Mark - English (United States)?en-US">Microsoft Mark - English (United States) — en-US</option><option value="urn:moz-tts:sapi:Microsoft Zira - English (United States)?en-US">Microsoft Zira - English (United States) — en-US</option><option value="urn:moz-tts:sapi:Microsoft David Desktop - English (United States)?en-US">Microsoft David Desktop - English (United States) — en-US</option><option value="urn:moz-tts:sapi:Microsoft Zira Desktop - English (United States)?en-US">Microsoft Zira Desktop - English (United States) — en-US</option></select>
-<button aria-pressed="false" id="sceneView">◉ Scene View</button>
+<button id="sceneView" aria-pressed="false">◉ Scene View</button>
 <div class="label">DISCOVERY</div><button id="discovery">🔎 Discovery — Click the Scene</button>
 <div class="label">ACTIVITIES</div>
 <button data-lesson="arrive">1. Meet the Dinosaurs</button>
@@ -71,29 +84,34 @@
 <button data-lesson="things">6. Explore the Museum</button>
 <div class="label">CHALLENGES</div>
 <button data-ch="0">1. Find the T. rex</button><button data-ch="1">2. Find the Triceratops</button><button data-ch="2">3. Find the Stegosaurus</button><button data-ch="3">4. Find the Pterosaur</button><button data-ch="4">5. Find the Dinosaur Eggs</button><button data-ch="5">6. Find the Footprints</button>
+
 <a href="index.html">← Return to Main Directory</a></aside>
 <section class="card tab-master-card">
-<div aria-label="Script card controls" class="tab-card-tools"><button class="tab-card-drag" title="Move script card" type="button">↕ Move</button><button class="tab-card-font-down" title="Decrease text" type="button">A−</button><button class="tab-card-font-up" title="Increase text" type="button">A+</button><button class="tab-card-reset" title="Reset card" type="button">Reset</button></div><div aria-label="Resize script card" class="tab-card-resize" title="Drag to resize script card">↘</div>
+<div class="tab-card-tools" aria-label="Script card controls"><button type="button" class="tab-card-drag" title="Move script card">↕ Move</button><button type="button" class="tab-card-font-down" title="Decrease text">A−</button><button type="button" class="tab-card-font-up" title="Increase text">A+</button><button type="button" class="tab-card-reset" title="Reset card">Reset</button></div><div class="tab-card-resize" title="Drag to resize script card" aria-label="Resize script card">↘</div>
+
 <h2 id="title">Dinosaur Museum Adventure</h2><p id="prompt">Click any object in the scene to hear its name.</p>
 <div class="word"><strong id="line">dinosaurio grande y gordo con sonido de delfín</strong><div class="translation" id="translation">big fat dinosaur with dolphin sound</div></div>
 <p id="status"></p>
-<div class="controls"><button id="normal">🔊 Speak</button><button id="slow">🐢 Slow</button><button id="replay">↻ Replay</button><button hidden="" id="nextChallenge" type="button">Next Challenge →</button><button hidden="" id="nextPhrase" type="button">Next phrase →</button></div>
+<div class="controls"><button id="normal">🔊 Speak</button><button id="slow">🐢 Slow</button><button id="replay">↻ Replay</button><button id="nextChallenge" type="button" hidden>Next Challenge →</button><button id="nextPhrase" type="button" hidden>Next phrase →</button></div>
 </section>
-<button aria-label="T. rex" class="hotspot" data-word="trex" style="left: 28.37%; top: -1.56%; width: 23.91%; height: 33.67%;"></button>
-<button aria-label="Triceratops" class="hotspot" data-word="triceratops" style="left: 83.31%; top: 27.85%; width: 18.61%; height: 28.56%;"></button>
-<button aria-label="Stegosaurus" class="hotspot" data-word="stegosaurus" style="left: 59.76%; top: 45.85%; width: 15.59%; height: 16.52%;"></button>
-<button aria-label="Sauropod" class="hotspot" data-word="sauropod" style="left: 38.84%; top: 31%; width: 27%; height: 31%;"></button>
-<button aria-label="Pterosaur" class="hotspot" data-word="pterosaur" style="left:73%;top:3%;width:24%;height:28%"></button>
-<button aria-label="Bee" class="hotspot" data-word="bee" style="left:57%;top:10%;width:14%;height:19%"></button>
-<button aria-label="Dinosaur eggs" class="hotspot" data-word="eggs" style="left: 45.86%; top: 65.5%; width: 1%; height: 2.89%;"></button>
-<button aria-label="Dinosaur footprints" class="hotspot" data-word="footprints" style="left: 48.46%; top: 85.24%; width: 22%; height: 16%;"></button>
-<button aria-label="Girl" class="hotspot" data-word="girl" style="left: 14.07%; top: 59.93%; width: 13%; height: 34%;"></button>
-<button aria-label="Boy" class="hotspot" data-word="boy" style="left: 32.4%; top: 60.19%; width: 11%; height: 29%;"></button>
-<button aria-label="Fossil" class="hotspot" data-word="fossil" style="left:82%;top:61%;width:17%;height:18%"></button>
-<button aria-label="Dinosaur skeleton" class="hotspot" data-word="skeleton" style="left:41%;top:38%;width:15%;height:25%"></button>
-<button aria-label="Museum" class="hotspot" data-word="museum" style="left: 52.14%; top: 6.84%; width: 22.03%; height: 15.87%;"></button>
-<button aria-label="Plants" class="hotspot" data-word="plants" style="left: 1.88%; top: 69.84%; width: 10.59%; height: 32.5%;"></button>
-<button aria-label="Glass dome" class="hotspot" data-word="glassdome" style="left: 57.32%; top: -2.78%; width: 16.19%; height: 9.02%;"></button>
+
+
+
+<button class="hotspot" data-word="trex" style="left: 28.37%; top: -1.56%; width: 23.91%; height: 33.67%;" aria-label="T. rex"></button>
+<button class="hotspot" data-word="triceratops" style="left: 83.31%; top: 27.85%; width: 18.61%; height: 28.56%;" aria-label="Triceratops"></button>
+<button class="hotspot" data-word="stegosaurus" style="left: 59.76%; top: 45.85%; width: 15.59%; height: 16.52%;" aria-label="Stegosaurus"></button>
+<button class="hotspot" data-word="sauropod" style="left: 38.84%; top: 31%; width: 27%; height: 31%;" aria-label="Sauropod"></button>
+<button class="hotspot" data-word="pterosaur" style="left:73%;top:3%;width:24%;height:28%" aria-label="Pterosaur"></button>
+<button class="hotspot" data-word="bee" style="left:57%;top:10%;width:14%;height:19%" aria-label="Bee"></button>
+<button class="hotspot" data-word="eggs" style="left: 45.86%; top: 65.5%; width: 1%; height: 2.89%;" aria-label="Dinosaur eggs"></button>
+<button class="hotspot" data-word="footprints" style="left: 48.46%; top: 85.24%; width: 22%; height: 16%;" aria-label="Dinosaur footprints"></button>
+<button class="hotspot" data-word="girl" style="left: 14.07%; top: 59.93%; width: 13%; height: 34%;" aria-label="Girl"></button>
+<button class="hotspot" data-word="boy" style="left: 32.4%; top: 60.19%; width: 11%; height: 29%;" aria-label="Boy"></button>
+<button class="hotspot" data-word="fossil" style="left:82%;top:61%;width:17%;height:18%" aria-label="Fossil"></button>
+<button class="hotspot" data-word="skeleton" style="left:41%;top:38%;width:15%;height:25%" aria-label="Dinosaur skeleton"></button>
+<button class="hotspot" data-word="museum" style="left: 52.14%; top: 6.84%; width: 22.03%; height: 15.87%;" aria-label="Museum"></button>
+<button class="hotspot" data-word="plants" style="left: 1.88%; top: 69.84%; width: 10.59%; height: 32.5%;" aria-label="Plants"></button>
+<button class="hotspot" data-word="glassdome" style="left: 57.32%; top: -2.78%; width: 16.19%; height: 9.02%;" aria-label="Glass dome"></button>
 </main>
 <script>
 const LANGS={
@@ -249,7 +267,9 @@ showWord("trex");
  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',run);else run();
 })();
 </script>
-<link href="css/common-inline-0d6913d7d62e.css" id="talkabee-rendered-card-footprint-lock" rel="stylesheet"/>
+
+<link rel="stylesheet" href="css/common-inline-0d6913d7d62e.css" id="talkabee-rendered-card-footprint-lock">
+
 <style id="talkabee-dinosaur-card-position">
 /* Position only: move the approved card to the right. */
 .tab-master-card{left:66%!important;}
@@ -300,7 +320,6 @@ document.addEventListener('click',function(ev){
 },true);
 })();
 </script>
-
 <script id="talkabee-scene-view-safe-reset">
 (function(){
   function resetTalkABeeSceneView(){
@@ -314,9 +333,10 @@ document.addEventListener('click',function(ev){
   window.addEventListener('pageshow',resetTalkABeeSceneView);
 })();
 </script>
+
 <script id="talkabee-bilingual-hotspot-popup" src="js/talkabee-common-cffcf34e5d12.js"></script>
 
-<script id="talkabee-challenge-data" type="application/json">[]</script>
+<script type="application/json" id="talkabee-challenge-data">[]</script>
 <script id="talkabee-challenge-runtime">
 (function(){
  const data=document.getElementById('talkabee-challenge-data');
@@ -328,6 +348,8 @@ document.addEventListener('click',function(ev){
  });}catch(e){console.warn('Challenge data could not be loaded',e)}
 })();
 </script>
-
 <script id="talkabee-dinosaur-card-viewport-boundary-v1" src="js/talkabee-common-3bf84d442532.js"></script>
-</body></html>
+<!-- Talk A Bee Editing Studio pilot: isolated from Adventure lesson/challenge logic. -->
+
+<script type="application/json" id="tb-overlay-data">[]</script>
+<style id="tb-overlay-public-style">#world>.tab-master-card,#world>.card{position:relative;z-index:2147483007!important}#tb-overlay-layer,#tb-overlay-back-layer{position:absolute;inset:0;pointer-events:none}#tb-overlay-layer{z-index:2147483008}#tb-overlay-back-layer{z-index:2147483006}#tb-overlay-layer img,#tb-overlay-back-layer img{position:absolute;pointer-events:none;user-select:none;transform-origin:center;object-fit:contain}</style><script id="tb-overlay-public-runtime">(function(){const scene=document.getElementById('world'),data=document.getElementById('tb-overlay-data');if(!scene||!data)return;let items=[];try{items=JSON.parse(data.textContent||'[]')}catch(e){};const back=document.createElement('div');back.id='tb-overlay-back-layer';scene.appendChild(back);const layer=document.createElement('div');layer.id='tb-overlay-layer';scene.appendChild(layer);items.forEach(o=>{if(!o||typeof o.src!=='string')return;const im=document.createElement('img');im.src=o.src;im.alt='';im.draggable=false;im.style.left=Number(o.x||0)+'%';im.style.top=Number(o.y||0)+'%';im.style.width=Number(o.w||12)+'%';im.style.transform='rotate('+Number(o.rotation||0)+'deg)';im.style.zIndex=String(Number(o.z||1));(o.plane==='back'?back:layer).appendChild(im)})})();</script></body></html>
