@@ -1,5 +1,10 @@
 (function(){
 'use strict';
+// Only one shared controller and one Piper panel per Adventure.
+if(window.__talkabeeSharedPiperControllerActive)return;
+window.__talkabeeSharedPiperControllerActive=true;
+// Remove leftover static/legacy Piper panels before creating the shared control.
+document.querySelectorAll('#tbPiperPanel').forEach(el=>el.remove());
 // Shared Piper controller, isolated to avoid collisions with Adventure globals.
 const base=new URL('../piper-matched-118/piper-tts-web.js?voice-switch=1',document.currentScript.src).href;
 const language=document.getElementById('lang')||document.getElementById('adventureLanguage')||document.getElementById('trainLanguage')||document.getElementById('busLanguage')||document.getElementById('seaLanguage')||document.getElementById('language');
