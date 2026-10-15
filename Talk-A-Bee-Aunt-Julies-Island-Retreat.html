@@ -1,17 +1,17 @@
 <!doctype html>
-<!DOCTYPE html>
-
 <html lang="en"><head>
-<meta charset="utf-8"/>
-<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Talk A Bee — Aunt Julie's Island Retreat</title>
-<link href="css/shared-c965778b3d10b4f5.css" rel="stylesheet"/>
+<link rel="stylesheet" href="css/shared-c965778b3d10b4f5.css">
 <style id="talkabee-forward-arrow-style">
 .talkabee-forward-arrow{position:fixed;top:22px;right:24px;z-index:10050;width:62px;height:62px;border-radius:50%;border:2px solid rgba(255,255,255,.82);background:rgba(91,58,31,.16);box-shadow:0 5px 16px rgba(0,0,0,.12);backdrop-filter:blur(2px);display:grid;place-items:center;text-decoration:none;cursor:pointer}
 .talkabee-forward-arrow::before{content:"";width:17px;height:17px;border-top:5px solid #fff;border-right:5px solid #fff;transform:rotate(45deg) translate(-2px,2px);filter:drop-shadow(0 1px 2px rgba(0,0,0,.35))}
 </style>
-<link href="css/common-inline-102fc1d7383d.css" id="talkabee-prev-next-nav-style" rel="stylesheet"/>
-<link href="css/talkabee-shared-5d2499d81b6e.css" id="talkabee-literal-master-template" rel="stylesheet"/>
+
+<link rel="stylesheet" href="css/common-inline-102fc1d7383d.css" id="talkabee-prev-next-nav-style">
+<link rel="stylesheet" href="css/talkabee-shared-5d2499d81b6e.css" id="talkabee-literal-master-template">
+
 <style id="tab-spoken-phrase-readability">
 /* Locked spoken-language phrase treatment: gray field + white type. */
 .tab-master-card #line,
@@ -27,6 +27,7 @@
 .tab-master-card .line *,
 .tab-master-card .words * {color:#fff!important;}
 </style>
+
 <style id="julie-challenge-readability-fix">
 /* Challenge readability only — do not resize/reposition the master card. */
 .tab-master-card #prompt{
@@ -62,6 +63,8 @@
   font-weight:800 !important;
 }
 </style>
+
+
 <style id="julie-card-far-right-position">
 /* Position only: move Julie's script/challenge card far right. */
 .tab-master-card{
@@ -71,22 +74,49 @@
   .tab-master-card{left:76% !important;}
 }
 </style>
-<link href="css/common-inline-a202e810d91a.css" id="talkabee-readable-supporting-text" rel="stylesheet"/>
-<link href="images/PNG/talkabee-favicon.png" rel="icon" type="image/png"/>
-<link href="images/PNG/talkabee-favicon.png" rel="shortcut icon" type="image/png"/>
-<link href="css/common-inline-e41b546ea686.css" id="talkabee-edition-menu-style" rel="stylesheet"/>
-<link href="css/talkabee-shared-ecfa9fc689a3.css" id="talkabee-accessibility-controls-v1" rel="stylesheet"/>
-<link href="css/talkabee-shared-43ddae767bb7.css" id="talkabee-global-card-grab-cursor" rel="stylesheet"/>
-<!-- TALK A BEE HOTSPOTS VISUALLY RECERTIFIED AGAINST CURRENT SCENE ARTWORK: 2026-10-07 -->
 
-<link href="css/common-inline-8492e8692583.css" id="talkabee-bilingual-hotspot-popup-style" rel="stylesheet"/>
+<link rel="stylesheet" href="css/common-inline-a202e810d91a.css" id="talkabee-readable-supporting-text">
+
+  <link rel="icon" type="image/png" href="images/PNG/talkabee-favicon.png">
+  <link rel="shortcut icon" type="image/png" href="images/PNG/talkabee-favicon.png">
+
+<link rel="stylesheet" href="css/common-inline-e41b546ea686.css" id="talkabee-edition-menu-style">
+
+<link rel="stylesheet" href="css/talkabee-shared-ecfa9fc689a3.css" id="talkabee-accessibility-controls-v1">
+<link rel="stylesheet" href="css/talkabee-shared-43ddae767bb7.css" id="talkabee-global-card-grab-cursor">
+
+<!-- TALK A BEE HOTSPOTS VISUALLY RECERTIFIED AGAINST CURRENT SCENE ARTWORK: 2026-10-07 -->
+<style id="talkabee-hotspot-editor-style">
+#tb-hs-editor{position:fixed;right:16px;bottom:16px;z-index:2147483646;font:700 12px Arial,sans-serif;display:flex;flex-wrap:wrap;justify-content:flex-end;gap:6px;max-width:650px}
+#tb-hs-editor button,#tb-hs-editor input{border:1px solid #fff;border-radius:10px;background:#000;color:#fff;padding:9px 11px;box-shadow:0 4px 14px #0006}
+#tb-hs-editor input{background:#fff;color:#111;min-width:180px;font-weight:400}#tb-hs-editor button{cursor:pointer}
+body.tb-hs-editing .hotspot,body.tb-hs-editing .home-hotspot,body.tb-hs-editing .yacht-hotspot,body.tb-hs-editing .hotspots button,body.tb-hs-editing .train-hotspots button{display:block!important;outline:2px solid #ffea00!important;background:rgba(255,234,0,.18)!important;pointer-events:auto!important;cursor:move!important;visibility:visible!important;opacity:1!important;z-index:2147483005!important}
+body.tb-hs-editing .tb-hs-active{outline:3px solid #00ffff!important;background:rgba(0,255,255,.18)!important}
+.tb-hs-handle{position:absolute!important;right:-7px!important;bottom:-7px!important;left:auto!important;top:auto!important;width:14px!important;height:14px!important;border-radius:3px!important;background:#00ffff!important;border:2px solid #000!important;z-index:2147483647!important;cursor:nwse-resize!important;display:none!important;transform:none!important}
+body.tb-hs-editing .tb-hs-active>.tb-hs-handle{display:block!important}
+
+#tb-hs-editor .tb-sound-name{min-width:150px;max-width:230px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font:12px/1.2 Arial,sans-serif;color:#fff;opacity:.9}
+#tb-hs-editor input[type="file"].tb-sound-file{display:none!important}
+</style>
+
+<link rel="stylesheet" href="css/common-inline-8492e8692583.css" id="talkabee-bilingual-hotspot-popup-style">
+
 <script id="tb-legacy-challenge-data" type="application/json">{"targets":["car","dog","parrot","cabin","palm","sailboat"],"labels":["Find the Gremlin","Find the Dog","Find the Parrot","Find the cabin","Find the palm tree","Find the Sailboat"]}</script>
+<link rel="stylesheet" href="css/talkabee-enhanced-voice.css">
+<style id="tb-piper-controls">
+#voiceLab{position:relative;z-index:2;width:100%;margin:8px 0;font-size:12px}
+#voiceLab select,#voiceLab button{box-sizing:border-box;width:100%;max-width:100%}
+#voiceLabStatus{font-size:11px;line-height:1.4;overflow-wrap:anywhere}
+#voiceLabText,#voiceLabTestActions,#voiceLabCurrent,#voiceLabPlay,#voiceLabSlow,#voiceLabStop{display:none!important}
+#voiceLabNeural[hidden]{display:none!important}
+</style>
+<style id="tb-server-hide-editor-ui">#tb-studio,#tb-studio-launch,#tb-hs-editor,#tb-challenge-editor,#tb-overlay-editor,#tb-challenge-panel,.tb-hs-handle,[data-tb-editor-only]{display:none!important}</style>
 </head>
 <body class="">
 <div class="talkabee-editions">
 <details>
 <summary>Explore Adventures ▾</summary>
-<div aria-label="Talk A Bee Editions" class="edition-row" role="navigation">
+<div class="edition-row" role="navigation" aria-label="Talk A Bee Editions">
 <a href="adventures.html">Main Adventures</a>
 <a href="Talk-A-Bee-More-Adventures.html">Community Edition</a>
 <a href="Talk-A-Bee-Directory-3.html">Travel Edition</a>
@@ -96,55 +126,75 @@
 </div>
 </details>
 </div>
-<nav aria-label="Adventure navigation" class="talkabee-prev-next-nav"><a aria-label="Previous page" href="Talk-A-Bee-Lake-Mountain-Adventure.html" title="Previous">‹</a><a aria-label="Next page" href="Talk-A-Bee-Sea-Adventures.html" title="Next">›</a></nav>
-<button class="return-panel-toggle" id="returnPanelToggle" type="button">Return Panel</button>
+
+<nav class="talkabee-prev-next-nav" aria-label="Adventure navigation"><a href="Talk-A-Bee-Lake-Mountain-Adventure.html" aria-label="Previous page" title="Previous">‹</a><a href="Talk-A-Bee-Sea-Adventures.html" aria-label="Next page" title="Next">›</a></nav>
+
+
+<button id="returnPanelToggle" class="return-panel-toggle" type="button">Return Panel</button>
 <section id="world">
-<div class="scene">
-<img alt="Aunt Julie's Island Retreat" src="images/aunt-julies-island-retreat.jpg"/>
-<aside class="directory tab-master-panel">
-<div class="place">🌴 Aunt Julie's Island Retreat</div>
-<div aria-label="Activity panel size" class="tab-panel-size-controls"><button class="tab-panel-minus" title="Make activity panel smaller" type="button">−</button><button class="tab-panel-reset" title="Reset activity panel size" type="button">Reset</button><button class="tab-panel-plus" title="Make activity panel larger" type="button">+</button></div>
-<button aria-pressed="false" class="scene-view-toggle" id="sceneViewToggle" type="button">Scene View</button>
-<div class="language-row" style="margin:5px 0 7px"><label for="adventureLanguage" style="display:block;font-size:9px;font-weight:950;letter-spacing:.10em;margin:0 0 3px 4px">LEARNING LANGUAGE — 7</label><select aria-label="Learning language" data-tab-global-voice="1" id="adventureLanguage" style="width:100%;padding:6px 8px;border:1px solid rgba(255,255,255,.55);border-radius:9px;background:rgba(10,37,42,.82);color:#fff;font-size:11px;font-weight:900"><option value="es">Spanish</option><option value="fr">French</option><option value="en">English</option><option value="de">German</option><option value="it">Italian</option><option value="pt">Portuguese</option><option value="no">Norwegian</option></select></div>
-<div class="voice-row" style="margin:0 0 7px"><label for="adventureVoice" style="display:block;font-size:9px;font-weight:950;letter-spacing:.10em;margin:0 0 3px 4px">VOICE</label><select aria-label="Voice" data-tab-global-voice="1" id="adventureVoice" style="width:100%;padding:6px 8px;border:1px solid rgba(255,255,255,.55);border-radius:9px;background:rgba(10,37,42,.82);color:#fff;font-size:11px;font-weight:900"><option value="">Browser Default</option><option data-voice-id="urn:moz-tts:sapi:Microsoft David - English (United States)?en-US|||en-US" value="0">Microsoft David - English (United States) — en-US</option><option data-voice-id="urn:moz-tts:sapi:Microsoft Mark - English (United States)?en-US|||en-US" value="1">Microsoft Mark - English (United States) — en-US</option><option data-voice-id="urn:moz-tts:sapi:Microsoft Zira - English (United States)?en-US|||en-US" value="2">Microsoft Zira - English (United States) — en-US</option><option data-voice-id="urn:moz-tts:sapi:Microsoft David Desktop - English (United States)?en-US|||en-US" value="3">Microsoft David Desktop - English (United States) — en-US</option><option data-voice-id="urn:moz-tts:sapi:Microsoft Zira Desktop - English (United States)?en-US|||en-US" value="4">Microsoft Zira Desktop - English (United States) — en-US</option></select></div>
-<div class="label">DISCOVERY</div>
-<button data-discovery="">🔎 Discovery — Click the Scene</button>
-<div class="label">ACTIVITIES</div>
-<button class="" data-lesson="welcome">1. Island Welcome</button>
-<button data-lesson="retreat">2. At the Retreat</button>
-<button data-lesson="animals">3. Julie's Animals</button>
-<button data-lesson="music">4. Music Time</button>
-<button data-lesson="nature">5. Tropical Nature</button>
-<button data-lesson="island">6. ⭐ Island Life</button>
-<div class="label">CHALLENGES</div>
-<button data-challenge="0">1. Find the Gremlin</button>
-<button data-challenge="1">2. Find the Dog</button>
-<button data-challenge="2">3. Find the Parrot</button>
-<button class="" data-challenge="3">4. Find the cabin</button>
-<button class="active" data-challenge="4">5. Find the palm tree</button>
-<button data-challenge="5">6. Find the Sailboat</button>
-<a class="main-directory" href="index.html" id="mainDirectory" style="display:block;text-decoration:none;color:#fff;padding:8px;border-radius:10px;margin-bottom:8px;background:rgba(255,255,255,.12);font-size:11px;font-weight:950">← Main Directory</a></aside>
-<div class="panel tab-master-card">
-<div aria-label="Script card controls" class="tab-card-tools"><button class="tab-card-drag" title="Move script card" type="button">↕ Move</button><button class="tab-card-font-down" title="Decrease text" type="button">A−</button><button class="tab-card-font-up" title="Increase text" type="button">A+</button><button class="tab-card-reset" title="Reset card" type="button">Reset</button></div><div aria-label="Resize script card" class="tab-card-resize" title="Drag to resize script card">↘</div>
-<div class="kicker">AUNT JULIE'S ISLAND RETREAT</div>
-<h2 id="title">Challenge 5: Find Palm tree.</h2><p id="prompt">Search the scene and click the correct object.</p>
-<div class="line" id="line">La palmera.</div>
-<div class="translation" id="translation">Palm tree.</div>
-<div class="actions" id="actions" style="display: none;"><button id="speak">🔊 Hear It</button><button id="next">Next phrase →</button></div>
-<div class="find show" id="find"><div class="count" id="count">CHALLENGE 5 OF 6</div><div class="status" id="status" style="color: rgb(23, 106, 72);">✓ Nice find! La palmera. Palm tree.</div><div class="hint" id="hint">Challenge complete. Move to the next one.</div><button class="challengeNext" id="challengeNext">Next Challenge →</button></div>
-</div>
-<div class="hotspots">
-<button aria-label="Aunt Julie" class="hotspot" data-word="julie" style="width: 8.53%; height: 34.4%; left: 54.92%; top: 63.53%;"></button>
-<button aria-label="1976 Gremlin" class="hotspot" data-word="car" style="width: 23.82%; height: 21.11%; left: 26.96%; top: 52.91%;"></button>
-<button aria-label="Dog" class="hotspot" data-word="dog" style="left: 41.56%; top: 71.36%;"></button>
-<button aria-label="Cabin" class="hotspot" data-word="cabin" style="left: 36.16%; top: 33.86%; width: 24.01%; height: 26.16%;"></button>
-<button aria-label="Parrot" class="hotspot" data-word="parrot" style="left: 95.65%; top: 46.88%;"></button>
-<button aria-label="Lantern" class="hotspot" data-word="lantern" style="left: 90.89%; top: 56.1%;"></button>
-<button aria-label="Ocean" class="hotspot" data-word="ocean" style="left: 87.59%; top: 47.05%; width: 6.41%; height: 12.38%;"></button>
-<button aria-label="Sailboat" class="hotspot" data-word="sailboat" style="left: 78.58%; top: 43.18%;"></button>
-<button aria-label="Palm tree" class="hotspot" data-word="palm" style="left: 51.79%; top: 12.5%;"></button>
-<button aria-label="sun" class="hotspot" data-tb-custom="1" data-tb-de="Sonne" data-tb-en="sun" data-tb-es="Sol" data-tb-fr="Soleil" data-tb-it="Sole" data-tb-no="solen" data-tb-pt="Sol" data-word="sun" style="left: 93.05%; top: 35.72%; width: 6%; height: 8%;" type="button"></button><button aria-label="sunset" class="hotspot" data-tb-custom="1" data-tb-de="sunset" data-tb-en="sunset" data-tb-es="atardecer" data-tb-fr="sunset" data-tb-it="sunset" data-tb-no="solnedgang" data-tb-pt="sunset" data-word="sunset" style="left: 88.31%; top: 22.69%; width: 20.9%; height: 18.37%;" type="button"></button><button aria-label="mountain" class="hotspot" data-tb-custom="1" data-tb-de="Berg" data-tb-en="mountain" data-tb-es="montaña" data-tb-fr="montagne" data-tb-it="montagna" data-tb-no="fjell" data-tb-pt="montanha" data-word="mountain" style="left: 71.4%; top: 30.86%; width: 9.75%; height: 14.48%;" type="button"></button><button aria-label="parrot" class="hotspot" data-sound="sounds/parrot.mp3" data-tb-custom="1" data-tb-de="Papagei" data-tb-en="parrot" data-tb-es="loro" data-tb-fr="perroquet" data-tb-it="pappagallo" data-tb-no="papegøye" data-tb-pt="papagaio" data-word="parrot" style="left: 58.77%; top: 34.9%; width: 6%; height: 8%;" type="button"></button><button aria-label="log" class="hotspot" data-tb-custom="1" data-tb-de="Protokoll" data-tb-en="log" data-tb-es="registro" data-tb-fr="enregistrer" data-tb-it="tronco d'albero" data-tb-no="logg" data-tb-pt="registro" data-word="log" style="left: 23.53%; top: 78.2%; width: 6%; height: 8%;" type="button"></button><button aria-label="stump" class="hotspot" data-tb-custom="1" data-tb-de="Baumstumpf" data-tb-en="stump" data-tb-es="tocón" data-tb-fr="souche" data-tb-it="ceppo" data-tb-no="trestubbe" data-tb-pt="toco" data-word="stump" style="left: 69.73%; top: 74.15%; width: 6%; height: 8%;" type="button"></button><button aria-label="stairs" class="hotspot" data-tb-custom="1" data-tb-de="Treppe" data-tb-en="stairs" data-tb-es="escaleras" data-tb-fr="escaliers" data-tb-it="scale" data-tb-no="trapp" data-tb-pt="escadaria" data-word="stairs" style="left: 45.55%; top: 53.65%; width: 7.2%; height: 12.35%;" type="button"></button><button aria-label="roof" class="hotspot" data-tb-custom="1" data-tb-de="Dach" data-tb-en="roof" data-tb-es="techo" data-tb-fr="toit" data-tb-it="tetto" data-tb-no="tak" data-tb-pt="teto" data-word="roof" style="left: 26.2%; top: 21.25%; width: 6%; height: 8%;" type="button"></button><button aria-label="sand" class="hotspot" data-tb-custom="1" data-tb-de="Sand" data-tb-en="sand" data-tb-es="arena" data-tb-fr="sable" data-tb-it="sabbia" data-tb-no="sand" data-tb-pt="areia" data-word="sand" style="left: 37.14%; top: 85.01%; width: 6%; height: 8%;" type="button"></button><button aria-label="pole" class="hotspot" data-tb-custom="1" data-tb-de="Pole" data-tb-en="pole" data-tb-es="polo" data-tb-fr="pôle" data-tb-it="palo" data-tb-no="stang" data-tb-pt="pólo" data-word="pole" style="left: 95.88%; top: 63.26%; width: 3.4%; height: 12.81%;" type="button"></button><button aria-label="foot" class="hotspot" data-tb-custom="1" data-tb-de="Fuß" data-tb-en="foot" data-tb-es="pie" data-tb-fr="pied" data-tb-it="piede" data-tb-no="fot" data-tb-pt="pé" data-word="foot" style="left: 61.89%; top: 81.79%; width: 6%; height: 8%;" type="button"></button><button aria-label="hand" class="hotspot" data-tb-custom="1" data-tb-de="Hand" data-tb-en="hand" data-tb-es="mano" data-tb-fr="main" data-tb-it="mano" data-tb-no="hånd" data-tb-pt="mão" data-word="hand" style="left: 64.65%; top: 65.81%; width: 4.59%; height: 6.43%;" type="button"></button><button aria-label="sky" class="hotspot" data-tb-custom="1" data-tb-de="Himmel" data-tb-en="sky" data-tb-es="cielo" data-tb-fr="ciel" data-tb-it="cielo" data-tb-no="himmel" data-tb-pt="céu" data-word="sky" style="left: 69.7%; top: 4.93%; width: 10.95%; height: 10.31%;" type="button"></button><button aria-label="hammock" class="hotspot" data-tb-custom="1" data-tb-de="Hängematte" data-tb-en="hammock" data-tb-es="hamaca" data-tb-fr="hamac" data-tb-it="amaca" data-tb-no="hengekøye" data-tb-pt="rede" data-word="hammock" style="left: 54.17%; top: 42.54%; width: 11.89%; height: 8.46%;" type="button"></button><button aria-label="coffee mug" class="hotspot" data-tb-custom="1" data-tb-de="Kaffeebecher" data-tb-en="coffee mug" data-tb-es="taza de café" data-tb-fr="tasse à café" data-tb-it="tazza di caffè" data-tb-no="kaffekrus" data-tb-pt="caneca de café" data-word="coffee mug" style="left: 51.49%; top: 60.53%; width: 6%; height: 8%;" type="button"></button><button aria-label="chair" class="hotspot" data-tb-custom="1" data-tb-de="Stuhl" data-tb-en="chair" data-tb-es="silla" data-tb-fr="chaise" data-tb-it="sedia" data-tb-no="stol" data-tb-pt="cadeira" data-word="chair" style="left: 75.45%; top: 53.93%; width: 6%; height: 8%;" type="button"></button><button aria-label="flower" class="hotspot" data-tb-custom="1" data-tb-de="Blume" data-tb-en="flower" data-tb-es="flor" data-tb-fr="fleur" data-tb-it="fiore" data-tb-no="blomst" data-tb-pt="flor" data-word="flower" style="left: 91.8%; top: 80.36%; width: 6%; height: 8%;" type="button"></button><button aria-label="dock" class="hotspot" data-tb-custom="1" data-tb-de="Steg" data-tb-en="dock" data-tb-es="muelle" data-tb-fr="quai" data-tb-it="molo" data-tb-no="brygge" data-tb-pt="cais" data-word="dock" style="left: 81.93%; top: 61.87%; width: 18.5%; height: 7.81%;" type="button"></button></div>
-</div>
+ <div class="scene">
+  <img src="images/aunt-julies-island-retreat.jpg" alt="Aunt Julie's Island Retreat">
+  <aside class="directory tab-master-panel">
+ <div class="place">🌴 Aunt Julie's Island Retreat</div>
+ <div class="tab-panel-size-controls" aria-label="Activity panel size"><button type="button" class="tab-panel-minus" title="Make activity panel smaller">−</button><button type="button" class="tab-panel-reset" title="Reset activity panel size">Reset</button><button type="button" class="tab-panel-plus" title="Make activity panel larger">+</button></div>
+
+   
+   
+   <button id="sceneViewToggle" class="scene-view-toggle" type="button" aria-pressed="false">Scene View</button>
+   <div class="language-row" style="margin:5px 0 7px"><label for="adventureLanguage" style="display:block;font-size:9px;font-weight:950;letter-spacing:.10em;margin:0 0 3px 4px">LEARNING LANGUAGE — 7</label><select id="adventureLanguage" aria-label="Learning language" style="width:100%;padding:6px 8px;border:1px solid rgba(255,255,255,.55);border-radius:9px;background:rgba(10,37,42,.82);color:#fff;font-size:11px;font-weight:900" data-tab-global-voice="1"><option value="es">Spanish</option><option value="fr">French</option><option value="en">English</option><option value="de">German</option><option value="it">Italian</option><option value="pt">Portuguese</option><option value="no">Norwegian</option></select></div>
+   <div class="voice-row" style="margin:0 0 7px"><label for="adventureVoice" style="display:block;font-size:9px;font-weight:950;letter-spacing:.10em;margin:0 0 3px 4px">VOICE</label><select id="adventureVoice" aria-label="Voice" style="width:100%;padding:6px 8px;border:1px solid rgba(255,255,255,.55);border-radius:9px;background:rgba(10,37,42,.82);color:#fff;font-size:11px;font-weight:900" data-tab-global-voice="1"><option value="">Browser Default</option><option value="0" data-voice-id="urn:moz-tts:sapi:Microsoft David - English (United States)?en-US|||en-US">Microsoft David - English (United States) — en-US</option><option value="1" data-voice-id="urn:moz-tts:sapi:Microsoft Mark - English (United States)?en-US|||en-US">Microsoft Mark - English (United States) — en-US</option><option value="2" data-voice-id="urn:moz-tts:sapi:Microsoft Zira - English (United States)?en-US|||en-US">Microsoft Zira - English (United States) — en-US</option><option value="3" data-voice-id="urn:moz-tts:sapi:Microsoft David Desktop - English (United States)?en-US|||en-US">Microsoft David Desktop - English (United States) — en-US</option><option value="4" data-voice-id="urn:moz-tts:sapi:Microsoft Zira Desktop - English (United States)?en-US|||en-US">Microsoft Zira Desktop - English (United States) — en-US</option></select>
+<div id="voiceLab"><details open><summary>🎙️ Choose Voice</summary>
+<label for="voiceLabMode">Voice type</label><select id="voiceLabMode"><option value="standard">Standard</option><option value="enhanced">Enhanced</option></select>
+<div id="voiceLabNote" class="lab-note">Uses voices available in your browser.</div>
+<div id="voiceLabNeural" hidden><label for="voiceLabModel">Choose voice</label><select id="voiceLabModel"><option value="">Load voice catalog</option></select><button type="button" id="voiceLabLoad">Load voice</button></div>
+<div id="voiceLabStatus" role="status" aria-live="polite">Standard voice ready.</div></details></div></div>
+   <div class="label">DISCOVERY</div>
+   <button data-discovery="">🔎 Discovery — Click the Scene</button>
+   <div class="label">ACTIVITIES</div>
+   <button data-lesson="welcome" class="">1. Island Welcome</button>
+   <button data-lesson="retreat">2. At the Retreat</button>
+   <button data-lesson="animals">3. Julie's Animals</button>
+   <button data-lesson="music">4. Music Time</button>
+   <button data-lesson="nature">5. Tropical Nature</button>
+   <button data-lesson="island">6. ⭐ Island Life</button>
+   <div class="label">CHALLENGES</div>
+   <button data-challenge="0">1. Find the Gremlin</button>
+   <button data-challenge="1">2. Find the Dog</button>
+   <button data-challenge="2">3. Find the Parrot</button>
+   <button data-challenge="3" class="">4. Find the cabin</button>
+   <button data-challenge="4" class="active">5. Find the palm tree</button>
+   <button data-challenge="5">6. Find the Sailboat</button>
+  <a id="mainDirectory" class="main-directory" href="index.html" style="display:block;text-decoration:none;color:#fff;padding:8px;border-radius:10px;margin-bottom:8px;background:rgba(255,255,255,.12);font-size:11px;font-weight:950">← Main Directory</a></aside>
+
+  <div class="panel tab-master-card">
+<div class="tab-card-tools" aria-label="Script card controls"><button type="button" class="tab-card-drag" title="Move script card">↕ Move</button><button type="button" class="tab-card-font-down" title="Decrease text">A−</button><button type="button" class="tab-card-font-up" title="Increase text">A+</button><button type="button" class="tab-card-reset" title="Reset card">Reset</button></div><div class="tab-card-resize" title="Drag to resize script card" aria-label="Resize script card">↘</div>
+
+   <div class="kicker">AUNT JULIE'S ISLAND RETREAT</div>
+   <h2 id="title">Challenge 5: Find Palm tree.</h2><p id="prompt">Search the scene and click the correct object.</p>
+   <div class="line" id="line">La palmera.</div>
+   <div class="translation" id="translation">Palm tree.</div>
+   <div class="actions" id="actions" style="display: none;"><button id="speak">🔊 Hear It</button><button id="next">Next phrase →</button></div>
+   <div class="find show" id="find"><div class="count" id="count">CHALLENGE 5 OF 6</div><div class="status" id="status" style="color: rgb(23, 106, 72);">✓ Nice find! La palmera. Palm tree.</div><div class="hint" id="hint">Challenge complete. Move to the next one.</div><button class="challengeNext" id="challengeNext">Next Challenge →</button></div>
+  </div>
+
+  <div class="hotspots">
+   <button class="hotspot" data-word="julie" aria-label="Aunt Julie" style="width: 8.53%; height: 34.4%; left: 54.92%; top: 63.53%;"></button>
+   <button class="hotspot" data-word="car" aria-label="1976 Gremlin" style="width: 23.82%; height: 21.11%; left: 26.96%; top: 52.91%;"></button>
+   <button class="hotspot" data-word="dog" aria-label="Dog" style="left: 41.56%; top: 71.36%;"></button>
+   <button class="hotspot" data-word="cabin" aria-label="Cabin" style="left: 36.16%; top: 33.86%; width: 24.01%; height: 26.16%;"></button>
+   
+   
+   <button class="hotspot" data-word="parrot" aria-label="Parrot" style="left: 95.65%; top: 46.88%;"></button>
+   <button class="hotspot" data-word="lantern" aria-label="Lantern" style="left: 90.89%; top: 56.1%;"></button>
+   
+   
+   <button class="hotspot" data-word="ocean" aria-label="Ocean" style="left: 87.59%; top: 47.05%; width: 6.41%; height: 12.38%;"></button>
+   <button class="hotspot" data-word="sailboat" aria-label="Sailboat" style="left: 78.58%; top: 43.18%;"></button>
+   <button class="hotspot" data-word="palm" aria-label="Palm tree" style="left: 51.79%; top: 12.5%;"></button>
+   
+   
+  <button type="button" class="hotspot" data-word="sun" aria-label="sun" data-tb-custom="1" data-tb-en="sun" data-tb-es="Sol" data-tb-fr="Soleil" data-tb-de="Sonne" data-tb-it="Sole" data-tb-pt="Sol" data-tb-no="solen" style="left: 93.05%; top: 35.72%; width: 6%; height: 8%;"></button><button type="button" class="hotspot" data-word="sunset" aria-label="sunset" data-tb-custom="1" data-tb-en="sunset" data-tb-es="atardecer" data-tb-fr="sunset" data-tb-de="sunset" data-tb-it="sunset" data-tb-pt="sunset" data-tb-no="solnedgang" style="left: 88.31%; top: 22.69%; width: 20.9%; height: 18.37%;"></button><button type="button" class="hotspot" data-word="mountain" aria-label="mountain" data-tb-custom="1" data-tb-en="mountain" data-tb-es="montaña" data-tb-fr="montagne" data-tb-de="Berg" data-tb-it="montagna" data-tb-pt="montanha" data-tb-no="fjell" style="left: 71.4%; top: 30.86%; width: 9.75%; height: 14.48%;"></button><button type="button" class="hotspot" data-word="parrot" aria-label="parrot" data-tb-custom="1" data-tb-en="parrot" data-tb-es="loro" data-tb-fr="perroquet" data-tb-de="Papagei" data-tb-it="pappagallo" data-tb-pt="papagaio" data-tb-no="papegøye" style="left: 58.77%; top: 34.9%; width: 6%; height: 8%;" data-sound="sounds/parrot.mp3"></button><button type="button" class="hotspot" data-word="log" aria-label="log" data-tb-custom="1" data-tb-en="log" data-tb-es="registro" data-tb-fr="enregistrer" data-tb-de="Protokoll" data-tb-it="tronco d'albero" data-tb-pt="registro" data-tb-no="logg" style="left: 23.53%; top: 78.2%; width: 6%; height: 8%;"></button><button type="button" class="hotspot" data-word="stump" aria-label="stump" data-tb-custom="1" data-tb-en="stump" data-tb-es="tocón" data-tb-fr="souche" data-tb-de="Baumstumpf" data-tb-it="ceppo" data-tb-pt="toco" data-tb-no="trestubbe" style="left: 69.73%; top: 74.15%; width: 6%; height: 8%;"></button><button type="button" class="hotspot" data-word="stairs" aria-label="stairs" data-tb-custom="1" data-tb-en="stairs" data-tb-es="escaleras" data-tb-fr="escaliers" data-tb-de="Treppe" data-tb-it="scale" data-tb-pt="escadaria" data-tb-no="trapp" style="left: 45.55%; top: 53.65%; width: 7.2%; height: 12.35%;"></button><button type="button" class="hotspot" data-word="roof" aria-label="roof" data-tb-custom="1" data-tb-en="roof" data-tb-es="techo" data-tb-fr="toit" data-tb-de="Dach" data-tb-it="tetto" data-tb-pt="teto" data-tb-no="tak" style="left: 26.2%; top: 21.25%; width: 6%; height: 8%;"></button><button type="button" class="hotspot" data-word="sand" aria-label="sand" data-tb-custom="1" data-tb-en="sand" data-tb-es="arena" data-tb-fr="sable" data-tb-de="Sand" data-tb-it="sabbia" data-tb-pt="areia" data-tb-no="sand" style="left: 37.14%; top: 85.01%; width: 6%; height: 8%;"></button><button type="button" class="hotspot" data-word="pole" aria-label="pole" data-tb-custom="1" data-tb-en="pole" data-tb-es="polo" data-tb-fr="pôle" data-tb-de="Pole" data-tb-it="palo" data-tb-pt="pólo" data-tb-no="stang" style="left: 95.88%; top: 63.26%; width: 3.4%; height: 12.81%;"></button><button type="button" class="hotspot" data-word="foot" aria-label="foot" data-tb-custom="1" data-tb-en="foot" data-tb-es="pie" data-tb-fr="pied" data-tb-de="Fuß" data-tb-it="piede" data-tb-pt="pé" data-tb-no="fot" style="left: 61.89%; top: 81.79%; width: 6%; height: 8%;"></button><button type="button" class="hotspot" data-word="hand" aria-label="hand" data-tb-custom="1" data-tb-en="hand" data-tb-es="mano" data-tb-fr="main" data-tb-de="Hand" data-tb-it="mano" data-tb-pt="mão" data-tb-no="hånd" style="left: 64.65%; top: 65.81%; width: 4.59%; height: 6.43%;"></button><button type="button" class="hotspot" data-word="sky" aria-label="sky" data-tb-custom="1" data-tb-en="sky" data-tb-es="cielo" data-tb-fr="ciel" data-tb-de="Himmel" data-tb-it="cielo" data-tb-pt="céu" data-tb-no="himmel" style="left: 69.7%; top: 4.93%; width: 10.95%; height: 10.31%;"></button><button type="button" class="hotspot" data-word="hammock" aria-label="hammock" data-tb-custom="1" data-tb-en="hammock" data-tb-es="hamaca" data-tb-fr="hamac" data-tb-de="Hängematte" data-tb-it="amaca" data-tb-pt="rede" data-tb-no="hengekøye" style="left: 54.17%; top: 42.54%; width: 11.89%; height: 8.46%;"></button><button type="button" class="hotspot" data-word="coffee mug" aria-label="coffee mug" data-tb-custom="1" data-tb-en="coffee mug" data-tb-es="taza de café" data-tb-fr="tasse à café" data-tb-de="Kaffeebecher" data-tb-it="tazza di caffè" data-tb-pt="caneca de café" data-tb-no="kaffekrus" style="left: 51.49%; top: 60.53%; width: 6%; height: 8%;"></button><button type="button" class="hotspot" data-word="chair" aria-label="chair" data-tb-custom="1" data-tb-en="chair" data-tb-es="silla" data-tb-fr="chaise" data-tb-de="Stuhl" data-tb-it="sedia" data-tb-pt="cadeira" data-tb-no="stol" style="left: 75.45%; top: 53.93%; width: 6%; height: 8%;"></button><button type="button" class="hotspot" data-word="flower" aria-label="flower" data-tb-custom="1" data-tb-en="flower" data-tb-es="flor" data-tb-fr="fleur" data-tb-de="Blume" data-tb-it="fiore" data-tb-pt="flor" data-tb-no="blomst" style="left: 91.8%; top: 80.36%; width: 6%; height: 8%;"></button><button type="button" class="hotspot" data-word="dock" aria-label="dock" data-tb-custom="1" data-tb-en="dock" data-tb-es="muelle" data-tb-fr="quai" data-tb-de="Steg" data-tb-it="molo" data-tb-pt="cais" data-tb-no="brygge" style="left: 81.93%; top: 61.87%; width: 18.5%; height: 7.81%;"></button></div>
+ </div>
 </section>
 <script>
 (()=>{
@@ -274,6 +324,7 @@ function selectedVoice(){
  return Number.isInteger(i)?(availableVoices[i]||null):null;
 }
 function speak(t){
+ if(window.tbBoardwalkEnhancedSpeak?.(t,.82))return;
  if(!("speechSynthesis" in window))return;
  speechSynthesis.cancel();
  const u=new SpeechSynthesisUtterance(t);
@@ -305,6 +356,7 @@ voiceSelect.addEventListener("change",()=>{
 if("speechSynthesis" in window){refreshVoices();speechSynthesis.onvoiceschanged=refreshVoices;setTimeout(refreshVoices,250);setTimeout(refreshVoices,1000)}
 })();
 </script>
+
 <script id="julie-diagnostic-reset">
 window.addEventListener('pageshow', function(){
   const panel=document.querySelector('.directory');
@@ -340,7 +392,8 @@ window.addEventListener('pageshow', function(){
  if('speechSynthesis' in window){speechSynthesis.addEventListener&&speechSynthesis.addEventListener('voiceschanged',inclusiveVoices);setTimeout(inclusiveVoices,250);setTimeout(inclusiveVoices,1000)}
 })();
 </script>
-<link href="css/common-inline-0d6913d7d62e.css" id="talkabee-rendered-card-footprint-lock" rel="stylesheet"/>
+
+<link rel="stylesheet" href="css/common-inline-0d6913d7d62e.css" id="talkabee-rendered-card-footprint-lock">
 <!-- Talk A Bee global browser-voice bridge -->
 <script src="js/talkabee-global-voice-sync.js"></script>
 <style id="talkabee-approved-farm-card-20261010">
@@ -628,6 +681,108 @@ document.addEventListener('click',function(ev){
 },true);
 })();
 </script>
+<script id="talkabee-hotspot-editor-v10">
+(()=>{
+const SEL='.hotspot,.home-hotspot,.yacht-hotspot,.hotspots button,.train-hotspots button';
+let editing=false,active=null,adding=false,pendingName='',pendingTranslations=null;
+let selectedSoundFile=null;
+const all=()=>[...document.querySelectorAll(SEL)].filter(x=>!x.closest('#tb-hs-editor'));
+function parentFor(el){return el.offsetParent||el.parentElement||document.body}
+function pct(v,n){return +(v/n*100).toFixed(2)}
+function cleanActive(){if(active){active.classList.remove('tb-hs-active');active.querySelector(':scope > .tb-hs-handle')?.remove()} active=null}
+function select(el){if(!editing||!el)return;cleanActive();active=el;el.classList.add('tb-hs-active');let h=document.createElement('span');h.className='tb-hs-handle';el.appendChild(h);updateSoundUI()}
+function semanticNew(name){
+ const existing=all()[0]; if(!existing)return null;
+ const el=document.createElement('button');el.type='button';
+ if(existing.classList.contains('home-hotspot')){el.className='home-hotspot show'}
+ else if(existing.classList.contains('yacht-hotspot')){el.className='yacht-hotspot'}
+ else if(existing.classList.contains('hotspot')){el.className='hotspot'}
+ else if(existing.className)el.className=existing.className;
+ if(existing.hasAttribute('data-object'))el.dataset.object=name;else el.dataset.word=name;
+ if(existing.hasAttribute('data-en'))el.dataset.en=name;
+ if(existing.id&&!existing.hasAttribute('data-word')&&!existing.hasAttribute('data-object'))el.id=name.toLowerCase().replace(/[^a-z0-9_-]+/g,'-').replace(/^-+|-+$/g,'');
+ el.setAttribute('aria-label',name);if(pendingTranslations&&window.TB_registerNewHotspot)window.TB_registerNewHotspot(el,pendingTranslations);
+ return el
+}
+function hotspotContainer(){const e=all()[0];return e?e.parentElement:null}
+function placeAt(ev){
+ if(!editing||!adding)return;
+ const host=hotspotContainer();if(!host)return;
+ const el=semanticNew(pendingName);if(!el)return;
+ host.appendChild(el);
+ const r=parentFor(el).getBoundingClientRect();
+ el.style.left=pct(ev.clientX-r.left,r.width)+'%';el.style.top=pct(ev.clientY-r.top,r.height)+'%';el.style.width='6%';el.style.height='8%';
+ adding=false;pendingName='';pendingTranslations=null;nameBox.value='';select(el);ev.preventDefault();ev.stopPropagation();
+}
+function startDrag(ev,el){
+ if(!editing||adding)return; if(ev.target.classList.contains('tb-hs-handle'))return;
+ select(el);ev.preventDefault();ev.stopPropagation();
+ const p=parentFor(el),r=p.getBoundingClientRect();let sx=ev.clientX,sy=ev.clientY;
+ let l=parseFloat(el.style.left)||pct(el.offsetLeft,r.width),t=parseFloat(el.style.top)||pct(el.offsetTop,r.height);
+ const move=e=>{el.style.left=(l+(e.clientX-sx)/r.width*100).toFixed(2)+'%';el.style.top=(t+(e.clientY-sy)/r.height*100).toFixed(2)+'%'};
+ const up=()=>{window.removeEventListener('pointermove',move,true);window.removeEventListener('pointerup',up,true)};
+ window.addEventListener('pointermove',move,true);window.addEventListener('pointerup',up,true)
+}
+function startResize(ev,el){
+ if(!editing)return;ev.preventDefault();ev.stopPropagation();
+ const p=parentFor(el),r=p.getBoundingClientRect();let sx=ev.clientX,sy=ev.clientY;
+ let w=parseFloat(el.style.width)||pct(el.offsetWidth,r.width),h=parseFloat(el.style.height)||pct(el.offsetHeight,r.height);
+ const move=e=>{el.style.width=Math.max(1,w+(e.clientX-sx)/r.width*100).toFixed(2)+'%';el.style.height=Math.max(1,h+(e.clientY-sy)/r.height*100).toFixed(2)+'%'};
+ const up=()=>{window.removeEventListener('pointermove',move,true);window.removeEventListener('pointerup',up,true)};
+ window.addEventListener('pointermove',move,true);window.addEventListener('pointerup',up,true)
+}
+function soundPath(el){return el&&el.dataset?String(el.dataset.sound||'').trim():''}
+function soundLabel(path){return path?path.split('/').pop():'No sound'}
+function updateSoundUI(){if(typeof soundName==='undefined')return;const p=soundPath(active);soundName.textContent=active?soundLabel(p):'Select a hotspot';removeSound.disabled=testSound.disabled=!active||!p;chooseSound.disabled=!active}
+function stopEditorPreview(){if(window.__tbHsPreview){try{window.__tbHsPreview.pause();window.__tbHsPreview.currentTime=0}catch(e){}window.__tbHsPreview=null}}
+function previewSound(){if(!active)return;stopEditorPreview();let src='';if(selectedSoundFile&&soundPath(active)==='sounds/'+selectedSoundFile.name)src=URL.createObjectURL(selectedSoundFile);else src=soundPath(active);if(!src)return;const a=new Audio(src);window.__tbHsPreview=a;a.play().catch(()=>{});a.onended=()=>{if(src.startsWith('blob:'))URL.revokeObjectURL(src);if(window.__tbHsPreview===a)window.__tbHsPreview=null}}
+function assignSoundFile(file){if(!active||!file)return;selectedSoundFile=file;active.dataset.sound='sounds/'+file.name;updateSoundUI();previewSound()}
+function removeAssignedSound(){if(!active)return;stopEditorPreview();active.removeAttribute('data-sound');selectedSoundFile=null;updateSoundUI()}
+const bar=document.createElement('div');bar.id='tb-hs-editor';
+const edit=document.createElement('button');edit.textContent='Edit Hotspots';
+const nameBox=document.createElement('input');nameBox.placeholder='hotspot name';
+const add=document.createElement('button');add.textContent='Add Hotspot';
+const del=document.createElement('button');del.textContent='Delete Hotspot';
+const save=document.createElement('button');save.textContent='Save Working HTML';
+const exportServer=document.createElement('button');exportServer.textContent='Export Server HTML';
+const soundFile=document.createElement('input');soundFile.type='file';soundFile.accept='audio/*,.mp3,.wav,.ogg,.m4a';soundFile.className='tb-sound-file';
+const chooseSound=document.createElement('button');chooseSound.textContent='Choose Sound';chooseSound.disabled=true;
+const testSound=document.createElement('button');testSound.textContent='Test Sound';testSound.disabled=true;
+const removeSound=document.createElement('button');removeSound.textContent='Remove Sound';removeSound.disabled=true;
+const soundName=document.createElement('span');soundName.className='tb-sound-name';soundName.textContent='Select a hotspot';
+bar.append(edit,nameBox,add,del,chooseSound,testSound,removeSound,soundName,save,exportServer,soundFile);document.body.appendChild(bar);nameBox.style.display=add.style.display=del.style.display=chooseSound.style.display=testSound.style.display=removeSound.style.display=soundName.style.display=save.style.display=exportServer.style.display='none';
+chooseSound.onclick=()=>{if(active){soundFile.value='';soundFile.click()}};
+soundFile.onchange=()=>{const f=soundFile.files&&soundFile.files[0];if(f)assignSoundFile(f)};
+testSound.onclick=previewSound;
+removeSound.onclick=removeAssignedSound;
+edit.onclick=()=>{editing=!editing;document.body.classList.toggle('tb-hs-editing',editing);edit.textContent=editing?'Exit Editor':'Edit Hotspots';nameBox.style.display=add.style.display=del.style.display=chooseSound.style.display=testSound.style.display=removeSound.style.display=soundName.style.display=save.style.display=exportServer.style.display=editing?'':'none';if(!editing){adding=false;stopEditorPreview();cleanActive()}updateSoundUI()};
+add.onclick=async()=>{if(!editing)return;const n=(nameBox.value||'').trim().toLowerCase().replace(/\s+/g,' ');if(!n){nameBox.focus();return}pendingName=n;add.disabled=true;const oldText=add.textContent;add.textContent='Translating...';try{pendingTranslations=window.TB_prepareNewHotspotTranslations?await window.TB_prepareNewHotspotTranslations(n):{en:n}}catch(e){pendingTranslations={en:n}}finally{add.disabled=false;add.textContent=oldText}adding=true;cleanActive()};
+del.onclick=()=>{if(active){stopEditorPreview();active.remove();active=null;selectedSoundFile=null;updateSoundUI()}};
+function downloadableClone(stripEditor){
+ const clone=document.documentElement.cloneNode(true);
+ clone.querySelector('#tb-hs-editor')?.remove();
+ clone.querySelectorAll('#talkabee-object-popup').forEach(function(n){n.remove()});clone.querySelectorAll('#tb-legacy-challenge-panel,#tb-legacy-challenge-open').forEach(n=>n.remove());
+ clone.querySelectorAll('.tb-hs-handle').forEach(function(n){n.remove()});
+ clone.querySelector('body')?.classList.remove('tb-hs-editing','scene-view');
+ clone.querySelectorAll('.tb-hs-active,.scene-only,.activity-collapsed').forEach(function(n){n.classList.remove('tb-hs-active','scene-only','activity-collapsed')});
+ clone.querySelectorAll('#sceneView,#sceneViewToggle').forEach(function(n){n.setAttribute('aria-pressed','false')});
+ if(stripEditor){
+  clone.querySelector('#talkabee-hotspot-editor-style')?.remove();
+  clone.querySelector('#talkabee-hotspot-editor-v10')?.remove();
+  clone.querySelector('#talkabee-hotspot-editor-script')?.remove();clone.querySelector('#tb-legacy-challenge-editor-script')?.remove();clone.querySelector('#tb-legacy-challenge-style')?.remove();
+  clone.querySelector('#tb-hs-readout')?.remove();
+ }
+ return clone;
+}
+function downloadHTML(stripEditor){
+ const clone=downloadableClone(stripEditor),blob=new Blob(['<!doctype html>\n'+clone.outerHTML],{type:'text/html'}),a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download=(location.pathname.split('/').pop()||'adventure.html');a.click();setTimeout(()=>URL.revokeObjectURL(a.href),1000)
+}
+save.onclick=()=>downloadHTML(false);
+exportServer.onclick=()=>downloadHTML(true);
+document.addEventListener('pointerdown',ev=>{if(!editing)return;const h=ev.target.closest('.tb-hs-handle');if(h){startResize(ev,h.parentElement);return}const el=ev.target.closest(SEL);if(el){startDrag(ev,el);return}},true);
+document.addEventListener('click',ev=>{if(!editing)return;if(ev.target.closest('#tb-hs-editor'))return;if(adding){placeAt(ev);return}const el=ev.target.closest(SEL);if(el){ev.preventDefault();ev.stopPropagation();select(el)}},true);
+})();
+</script>
 
 <script id="talkabee-scene-view-safe-reset">
 (function(){
@@ -642,7 +797,10 @@ document.addEventListener('click',function(ev){
   window.addEventListener('pageshow',resetTalkABeeSceneView);
 })();
 </script>
+
 <script id="talkabee-bilingual-hotspot-popup" src="js/talkabee-common-cffcf34e5d12.js"></script>
+
+
 <style id="tb-legacy-challenge-style">#tb-legacy-challenge-panel{position:fixed;right:18px;top:16%;width:min(360px,calc(100vw - 24px));max-height:75vh;overflow:auto;z-index:2147483647;background:#17243a;color:white;border:2px solid #c9ad75;border-radius:14px;padding:0 14px 14px;box-shadow:0 12px 35px #0009;font:13px Arial,sans-serif;display:none}#tb-legacy-challenge-panel.open{display:block}#tb-legacy-challenge-panel .drag{padding:12px 14px;margin:0 -14px 12px;background:#354664;border-radius:12px 12px 0 0;cursor:grab;user-select:none;touch-action:none}#tb-legacy-challenge-panel label{display:block;margin:10px 0 4px;font-weight:bold}#tb-legacy-challenge-panel select,#tb-legacy-challenge-panel input{display:block;width:100%;box-sizing:border-box;padding:8px;color:#111;background:#fff;border:1px solid #aaa;border-radius:7px}#tb-legacy-challenge-panel button{padding:8px;margin-top:12px;background:#101827;color:white;border:1px solid white;border-radius:8px;cursor:pointer}</style>
 <script id="tb-legacy-challenge-editor-script">
 (()=>{
@@ -658,10 +816,144 @@ const observer=new MutationObserver(()=>{const editing=document.body.classList.c
 const handle=panel.querySelector('.drag');let drag=null;handle.addEventListener('pointerdown',e=>{if(e.button!==0)return;e.preventDefault();const r=panel.getBoundingClientRect();panel.style.left=r.left+'px';panel.style.top=r.top+'px';panel.style.right='auto';drag={x:e.clientX,y:e.clientY,l:r.left,t:r.top};handle.setPointerCapture(e.pointerId)});handle.addEventListener('pointermove',e=>{if(!drag)return;panel.style.left=Math.max(0,Math.min(innerWidth-60,drag.l+e.clientX-drag.x))+'px';panel.style.top=Math.max(0,Math.min(innerHeight-50,drag.t+e.clientY-drag.y))+'px'});handle.addEventListener('pointerup',()=>drag=null);handle.addEventListener('pointercancel',()=>drag=null);
 })();
 </script>
-
+<link rel="stylesheet" data-tb-shared-studio="1" href="css/talkabee-editing-studio.css">
 <!-- Talk A Bee Editing Studio pilot: isolated from Adventure lesson/challenge logic. -->
 
+<button id="tb-studio-launch" type="button" style="">✦ Editing Studio</button>
+<div id="tb-studio" aria-label="Talk A Bee Editing Studio" style="display: none;">
+ <div class="tb-studio-head" id="tb-studio-drag"><span>✦ TALK A BEE STUDIO</span><span><button type="button" id="tb-studio-min" title="Minimize">−</button><button type="button" id="tb-studio-close" title="Close">×</button></span></div>
+ <div class="tb-studio-main" id="tb-studio-main">
+  <section id="tb-studio-music" aria-label="Local music player">
+    <div class="tb-music-top"><strong>🎵 STUDIO MUSIC</strong><button type="button" id="tb-music-choose">Choose MP3</button></div>
+    <input type="file" id="tb-music-file" accept="audio/*,.mp3,.wav,.ogg,.m4a" hidden="">
+    <div class="tb-music-track" id="tb-music-track">No music selected</div>
+    <div class="tb-music-controls"><button type="button" id="tb-music-play" disabled="">▶ Play</button><button type="button" id="tb-music-stop" disabled="">■ Stop</button><label for="tb-music-volume">Volume</label><input type="range" id="tb-music-volume" min="0" max="100" value="35" aria-label="Music volume"></div>
+    <audio id="tb-music-audio"></audio>
+  </section>
+  <section id="tb-studio-savebar" aria-label="Save and export">
+    <div class="tb-save-title">SAVE YOUR WORK <span id="tb-studio-save-status" class="">Ready</span></div>
+    <div class="tb-save-buttons">
+      <button type="button" id="tb-studio-save-local">💾 Save Local Master</button>
+      <button type="button" id="tb-studio-save-server">🌐 Export Server Version</button>
+    </div>
+    <div class="tb-save-help">Both downloads include your latest hotspots, challenges, and image overlays.</div>
+  </section>
+  <label for="tb-studio-mode">EDITOR SELECTOR</label><select id="tb-studio-mode"><option value="none">Choose an editor...</option><option value="hotspot">Hotspot Editor</option><option value="challenge">Challenge Editor</option><option value="overlay">Image Overlay Editor</option></select>
+  <div id="tb-studio-hotspot" class="tb-studio-panel"><p class="tb-note">Select a hotspot in the scene to edit it. Move this whole window by its title bar.</p></div>
+  <div id="tb-studio-challenge" class="tb-studio-panel"><p class="tb-note">Choose a challenge and assign its answer below.</p></div>
+  <div id="tb-studio-overlay" class="tb-studio-panel">
+   <label for="tb-overlay-file">ADD TRANSPARENT PNG / IMAGE</label><input type="file" id="tb-overlay-file" accept="image/png,image/webp,image/jpeg,image/gif" multiple="">
+   <label for="tb-overlay-path">Or use an existing website image path</label><input type="text" id="tb-overlay-path" placeholder="images/PNG/bee.png"><button type="button" id="tb-overlay-add-path">Add Existing Image</button>
+   <label for="tb-overlay-items">SELECT IMAGE</label><select id="tb-overlay-items"><option value="">Select an overlay</option></select>
+   <div class="tb-smallrow"><div><label for="tb-overlay-width">Width (%)</label><input type="number" id="tb-overlay-width" min="1" max="100" step="0.5"></div><div><label for="tb-overlay-rotate">Rotation (°)</label><input type="number" id="tb-overlay-rotate" min="-360" max="360" step="5"></div></div>
+   <button type="button" id="tb-overlay-front">Bring Forward</button><button type="button" id="tb-overlay-back">Send Back</button><button type="button" id="tb-overlay-delete" class="tb-danger">Remove</button>
+   <p class="tb-note">Drag an image on the scene to move it. Use the width control to resize. Changes appear in your exported HTML.</p>
+   <button type="button" id="tb-overlay-undo">Undo</button><button type="button" id="tb-overlay-redo">Redo</button>
+   <button type="button" id="tb-overlay-export">Save Updated HTML</button>
+   <p class="tb-note">For reliable publishing, use existing website image paths. Uploaded local images are embedded in the exported HTML, which can make it large.</p>
+  </div>
+ </div>
+</div>
+<script type="application/json" id="tb-overlay-data">[]</script>
 
-<script id="tb-overlay-data" type="application/json">[]</script>
 
+<script>
+(function(){
+'use strict';
+// Boardwalk adapter for the proven Grandma & Grandpa Piper runtime.
+// Preserves native Boardwalk click handlers, challenges, popups, and MP3s.
+// Initialize controls as a classic script; import Piper only when requested.
+const piperModuleUrl = new URL('piper-matched-118/piper-tts-web.js?voice-switch=1', location.href).href;
+const $=id=>document.getElementById(id);
+const mode=$('voiceLabMode'),select=$('voiceLabModel'),status=$('voiceLabStatus');
+const lang=$('adventureLanguage');
+const prefix={en:'en_',es:'es_',fr:'fr_',de:'de_',it:'it_',pt:'pt_',no:'no_'};
+let engine=null,loading=null,catalog=[],audio=null,url=null,request=0;
+let lastText='',lastRate=.82;
+const show=s=>{if(status)status.textContent=s};
+function stop(){
+ request++;
+ if(audio){try{audio.pause();audio.currentTime=0}catch(_){}audio=null}
+ if(url){URL.revokeObjectURL(url);url=null}
+ try{speechSynthesis.cancel()}catch(_){}
+}
+function recommend(){
+ const p=prefix[lang.value]||'en_',old=select.value;
+ const matches=catalog.filter(v=>v.toLowerCase().startsWith(p));
+ select.replaceChildren();
+ for(const id of matches)select.add(new Option(id,id));
+ if(matches.includes(old))select.value=old;
+ else if(matches.length)select.value=matches.find(v=>v.includes('medium'))||matches[0];
+ else select.add(new Option('No enhanced voice for this language',''));
+}
+async function loadEngine(){
+ if(engine)return engine;
+ if(loading)return loading;
+ loading=(async()=>{
+   show('Loading Piper voice catalog…');
+   const m=await import(piperModuleUrl);
+   const voices=await m.voices();
+   const all=Array.isArray(voices)?voices.map(v=>typeof v==='string'?v:(v?.id||v?.key||v?.name||'')).filter(Boolean):Object.keys(voices||{});
+   catalog=all.filter(id=>Object.values(prefix).some(p=>id.toLowerCase().startsWith(p)));
+   if(!catalog.length)throw Error('No matching Piper voices found');
+   engine=m;recommend();show('Voice catalog ready. First speech may download a model.');
+   return engine;
+ })();
+ try{return await loading}catch(e){loading=null;show('Piper unavailable: '+(e?.message||e));console.error(e);throw e}
+}
+function updateMode(){
+ const enabled=mode.value==='enhanced';
+ $('voiceLabNeural').hidden=!enabled; $('voiceLabNeural').style.setProperty('display',enabled?'block':'none','important');
+ $('voiceLabNote').textContent=enabled?'Load a voice before speaking.':'Uses voices available in your browser.';
+ try{localStorage.setItem('talkabee-lab-voice-mode',mode.value)}catch(_){}
+ show(enabled?'Enhanced selected. Click Load voice.':'Standard voice ready.');
+}
+try{if(localStorage.getItem('talkabee-lab-voice-mode')==='enhanced')mode.value='enhanced'}catch(_){}
+mode.addEventListener('change',()=>{stop();updateMode()});
+lang.addEventListener('change',()=>{stop();recommend()});
+select.addEventListener('change',()=>{stop();show('Voice selected: '+select.value)});
+$('voiceLabLoad').addEventListener('click',()=>loadEngine().catch(()=>{}));
+updateMode();
+
+async function enhancedSpeak(text,rate,onComplete){
+ stop();const ticket=request;
+ try{
+   const m=await loadEngine();if(ticket!==request||mode.value!=='enhanced')return;
+   const voiceId=select.value;
+   if(!voiceId)throw Error('No Piper voice available for this language');
+   show('Preparing enhanced voice…');
+   const wav=await m.predict({text,voiceId},p=>{
+     if(ticket===request&&p?.total)show('Downloading voice: '+Math.round(p.loaded/p.total*100)+'%');
+   });
+   if(ticket!==request||mode.value!=='enhanced'||select.value!==voiceId)return;
+   url=URL.createObjectURL(wav);audio=new Audio(url);audio.playbackRate=rate;
+   const current=audio;
+   current.addEventListener('ended',()=>{
+     if(audio!==current)return;
+     audio=null;if(url){URL.revokeObjectURL(url);url=null}
+     if(ticket===request){show('Voice finished.');onComplete?.()}
+   },{once:true});
+   await current.play();
+   if(ticket===request)show('Enhanced voice playing.');
+ }catch(e){
+   if(ticket!==request)return;
+   console.error('Boardwalk Piper:',e);show('Piper failed: '+(e?.message||e)+'. Standard voice is available.');
+   // Preserve audio completion for original Boardwalk sound effects.
+   onComplete?.();
+ }
+}
+window.tbBoardwalkEnhancedSpeak=function(text,rate,onComplete){
+ if(mode.value!=='enhanced'||!text)return false;
+ // Let the existing browser voice work until Piper is explicitly loaded.
+ if(!engine||!select.value)return false;
+ lastText=text;lastRate=rate||.82;
+ enhancedSpeak(text,rate||.82,onComplete);
+ return true;
+};
+// The original script-card handlers already call speak(), so no duplicate
+// click interception is necessary. Replay and Slow use the same route.
+
+})();
+
+</script>
 </body></html>

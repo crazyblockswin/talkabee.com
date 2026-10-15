@@ -1,29 +1,43 @@
 <!doctype html>
-<!DOCTYPE html>
-
 <html lang="en"><head>
-<meta charset="utf-8"/>
-<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Talk A Bee — Helicopter Mountain Rescue Adventure</title>
-<link href="images/PNG/talkabee-favicon.png" rel="icon" type="image/png"/>
-<link href="css/shared-2e6c2acb7b9c55fa.css" rel="stylesheet"/>
-<link href="css/common-inline-e41b546ea686.css" id="talkabee-edition-menu-style" rel="stylesheet"/>
-<link href="css/talkabee-shared-ecfa9fc689a3.css" id="talkabee-accessibility-controls-v1" rel="stylesheet"/>
-<link href="css/talkabee-shared-43ddae767bb7.css" id="talkabee-global-card-grab-cursor" rel="stylesheet"/>
-<!-- TALK A BEE HOTSPOTS VISUALLY RECERTIFIED AGAINST CURRENT SCENE ARTWORK: 2026-10-07 -->
+<link rel="icon" type="image/png" href="images/PNG/talkabee-favicon.png">
+<link rel="stylesheet" href="css/shared-2e6c2acb7b9c55fa.css">
 
-<link href="css/common-inline-8492e8692583.css" id="talkabee-bilingual-hotspot-popup-style" rel="stylesheet"/>
-<link href="css/talkabee-shared-5d2499d81b6e.css" id="talkabee-approved-master-card-v2" rel="stylesheet"/>
-<link href="css/common-inline-168e9ff67f7e.css" id="talkabee-approved-word-contrast-v2" rel="stylesheet"/>
-<link href="css/common-inline-a202e810d91a.css" id="talkabee-approved-card-text-v2" rel="stylesheet"/>
-<link href="css/talkabee-shared-6083deff3ef2.css" id="talkabee-approved-card-feedback-v2" rel="stylesheet"/>
-<link href="css/common-inline-0d6913d7d62e.css" id="talkabee-approved-card-footprint-v2" rel="stylesheet"/>
-<link href="css/talkabee-shared-f1c50eb608fd.css" id="talkabee-approved-next-buttons-v2" rel="stylesheet"/>
-<link href="css/talkabee-shared-7d895e90433e.css" id="talkabee-approved-575-card-readability" rel="stylesheet"/>
-<link href="css/talkabee-shared-04ae840c01bf.css" id="talkabee-approved-card-transparency-20pct" rel="stylesheet"/>
-<link href="css/talkabee-panel-pilot-safe.css" id="talkabee-panel-typography-standard" rel="stylesheet"/>
-<link href="css/talkabee-card-typography-safe.css" id="talkabee-card-typography-standard" rel="stylesheet"/>
-<link href="css/talkabee-enhanced-voice.css" rel="stylesheet"/>
+<link rel="stylesheet" href="css/common-inline-e41b546ea686.css" id="talkabee-edition-menu-style">
+
+<link rel="stylesheet" href="css/talkabee-shared-ecfa9fc689a3.css" id="talkabee-accessibility-controls-v1">
+<link rel="stylesheet" href="css/talkabee-shared-43ddae767bb7.css" id="talkabee-global-card-grab-cursor">
+
+<!-- TALK A BEE HOTSPOTS VISUALLY RECERTIFIED AGAINST CURRENT SCENE ARTWORK: 2026-10-07 -->
+<style id="talkabee-hotspot-editor-style">
+#tb-hs-editor{position:fixed;right:16px;bottom:16px;z-index:2147483646;font:700 12px Arial,sans-serif;display:flex;flex-wrap:wrap;justify-content:flex-end;gap:6px;max-width:650px}
+#tb-hs-editor button,#tb-hs-editor input{border:1px solid #fff;border-radius:10px;background:#000;color:#fff;padding:9px 11px;box-shadow:0 4px 14px #0006}
+#tb-hs-editor input{background:#fff;color:#111;min-width:180px;font-weight:400}#tb-hs-editor button{cursor:pointer}
+body.tb-hs-editing .hotspot,body.tb-hs-editing .home-hotspot,body.tb-hs-editing .yacht-hotspot,body.tb-hs-editing .hotspots button,body.tb-hs-editing .train-hotspots button{display:block!important;outline:2px solid #ffea00!important;background:rgba(255,234,0,.18)!important;pointer-events:auto!important;cursor:move!important;visibility:visible!important;opacity:1!important;z-index:2147483005!important}
+body.tb-hs-editing .tb-hs-active{outline:3px solid #00ffff!important;background:rgba(0,255,255,.18)!important}
+.tb-hs-handle{position:absolute!important;right:-7px!important;bottom:-7px!important;left:auto!important;top:auto!important;width:14px!important;height:14px!important;border-radius:3px!important;background:#00ffff!important;border:2px solid #000!important;z-index:2147483647!important;cursor:nwse-resize!important;display:none!important;transform:none!important}
+body.tb-hs-editing .tb-hs-active>.tb-hs-handle{display:block!important}
+
+#tb-hs-editor .tb-sound-name{min-width:150px;max-width:230px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font:12px/1.2 Arial,sans-serif;color:#fff;opacity:.9}
+#tb-hs-editor input[type="file"].tb-sound-file{display:none!important}
+</style>
+
+<link rel="stylesheet" href="css/common-inline-8492e8692583.css" id="talkabee-bilingual-hotspot-popup-style">
+
+<link rel="stylesheet" href="css/talkabee-shared-5d2499d81b6e.css" id="talkabee-approved-master-card-v2">
+<link rel="stylesheet" href="css/common-inline-168e9ff67f7e.css" id="talkabee-approved-word-contrast-v2">
+<link rel="stylesheet" href="css/common-inline-a202e810d91a.css" id="talkabee-approved-card-text-v2">
+<link rel="stylesheet" href="css/talkabee-shared-6083deff3ef2.css" id="talkabee-approved-card-feedback-v2">
+<link rel="stylesheet" href="css/common-inline-0d6913d7d62e.css" id="talkabee-approved-card-footprint-v2">
+<link rel="stylesheet" href="css/talkabee-shared-f1c50eb608fd.css" id="talkabee-approved-next-buttons-v2">
+<link rel="stylesheet" href="css/talkabee-shared-7d895e90433e.css" id="talkabee-approved-575-card-readability">
+<link rel="stylesheet" href="css/talkabee-shared-04ae840c01bf.css" id="talkabee-approved-card-transparency-20pct">
+<link rel="stylesheet" href="css/talkabee-panel-pilot-safe.css" id="talkabee-panel-typography-standard">
+<link rel="stylesheet" href="css/talkabee-card-typography-safe.css" id="talkabee-card-typography-standard">
+<link rel="stylesheet" href="css/talkabee-enhanced-voice.css">
 <style id="tab-piper-controls">
 #voiceLab{position:relative;z-index:2;width:100%;margin:8px 0;font-size:12px}
 #voiceLab select,#voiceLab button{box-sizing:border-box;width:100%;max-width:100%}
@@ -31,12 +45,13 @@
 #voiceLabText,#voiceLabTestActions,#voiceLabCurrent,#voiceLabPlay,#voiceLabSlow,#voiceLabStop{display:none!important}
 #voiceLabNeural[hidden]{display:none!important}
 </style>
+<style id="tb-server-hide-editor-ui">#tb-studio,#tb-studio-launch,#tb-hs-editor,#tb-challenge-editor,#tb-overlay-editor,#tb-challenge-panel,.tb-hs-handle,[data-tb-editor-only]{display:none!important}</style>
 </head>
 <body class="">
 <div class="talkabee-editions">
 <details>
 <summary>Explore Adventures ▾</summary>
-<div aria-label="Talk A Bee Editions" class="edition-row" role="navigation">
+<div class="edition-row" role="navigation" aria-label="Talk A Bee Editions">
 <a href="adventures.html">Main Adventures</a>
 <a href="Talk-A-Bee-More-Adventures.html">Community Edition</a>
 <a href="Talk-A-Bee-Directory-3.html">Travel Edition</a>
@@ -46,30 +61,36 @@
 </div>
 </details>
 </div>
-<nav aria-label="Adventure navigation" class="talkabee-prev-next-nav">
-<a aria-label="Previous adventure" href="Talk-A-Bee-Seattle-Fishing-Adventure.html" title="Previous">‹</a>
-<a aria-label="Next adventure" href="Talk-A-Bee-Steam-Train-Adventure.html" title="Next">›</a>
+
+<nav class="talkabee-prev-next-nav" aria-label="Adventure navigation">
+  <a href="Talk-A-Bee-Seattle-Fishing-Adventure.html" aria-label="Previous adventure" title="Previous">‹</a>
+  <a href="Talk-A-Bee-Steam-Train-Adventure.html" aria-label="Next adventure" title="Next">›</a>
 </nav>
+
 <main class="world challenge-mode" id="world">
 <button class="scene-return" id="sceneReturn">Return to Adventure</button>
+
 <aside class="panel tab-pilot-panel">
 <h1>🚁 Helicopter Mountain Rescue Adventure</h1>
-<div aria-label="Activity panel size" class="tab-panel-size-controls"><button class="tab-panel-minus" title="Make activity panel smaller" type="button">−</button><button class="tab-panel-reset" title="Reset activity panel size" type="button">Reset</button><button class="tab-panel-plus" title="Make activity panel larger" type="button">+</button></div>
+<div class="tab-panel-size-controls" aria-label="Activity panel size"><button type="button" class="tab-panel-minus" title="Make activity panel smaller">−</button><button type="button" class="tab-panel-reset" title="Reset activity panel size">Reset</button><button type="button" class="tab-panel-plus" title="Make activity panel larger">+</button></div>
+
 <div class="label">LANGUAGE</div>
-<select data-tab-global-voice="1" id="lang">
+<select id="lang" data-tab-global-voice="1">
 <option value="es">Spanish</option><option value="fr">French</option><option value="en">English</option>
 <option value="de">German</option><option value="it">Italian</option><option value="pt">Portuguese</option><option value="no">Norwegian</option>
 </select>
 <div class="label">VOICE</div>
-<select data-tab-global-voice="1" id="voice"><option value="">Browser Default</option><option value="Microsoft David - English (United States)">Microsoft David - English (United States) — en-US</option><option value="Microsoft Mark - English (United States)">Microsoft Mark - English (United States) — en-US</option><option value="Microsoft Zira - English (United States)">Microsoft Zira - English (United States) — en-US</option><option value="Microsoft David Desktop - English (United States)">Microsoft David Desktop - English (United States) — en-US</option><option value="Microsoft Zira Desktop - English (United States)">Microsoft Zira Desktop - English (United States) — en-US</option></select>
-<div id="voiceLab"><details open=""><summary>🎙️ Choose Voice</summary>
+<select id="voice" data-tab-global-voice="1"><option value="">Browser Default</option><option value="Microsoft David - English (United States)">Microsoft David - English (United States) — en-US</option><option value="Microsoft Mark - English (United States)">Microsoft Mark - English (United States) — en-US</option><option value="Microsoft Zira - English (United States)">Microsoft Zira - English (United States) — en-US</option><option value="Microsoft David Desktop - English (United States)">Microsoft David Desktop - English (United States) — en-US</option><option value="Microsoft Zira Desktop - English (United States)">Microsoft Zira Desktop - English (United States) — en-US</option></select>
+<div id="voiceLab"><details open><summary>🎙️ Choose Voice</summary>
 <label for="voiceLabMode">Voice type</label><select id="voiceLabMode"><option value="standard">Standard</option><option value="enhanced">Enhanced</option></select>
-<div class="lab-note" id="voiceLabNote">Uses voices available in your browser.</div>
-<div hidden="" id="voiceLabNeural"><label for="voiceLabModel">Choose voice</label><select id="voiceLabModel"><option value="">Load voice catalog</option></select><button id="voiceLabLoad" type="button">Load voice</button></div>
-<div aria-live="polite" id="voiceLabStatus" role="status">Standard voice ready.</div></details></div>
-<button aria-pressed="false" id="sceneView">◉ Scene View</button>
+<div id="voiceLabNote" class="lab-note">Uses voices available in your browser.</div>
+<div id="voiceLabNeural" hidden><label for="voiceLabModel">Choose voice</label><select id="voiceLabModel"><option value="">Load voice catalog</option></select><button type="button" id="voiceLabLoad">Load voice</button></div>
+<div id="voiceLabStatus" role="status" aria-live="polite">Standard voice ready.</div></details></div>
+<button id="sceneView" aria-pressed="false">◉ Scene View</button>
+
 <div class="label">DISCOVERY</div>
 <button id="discovery">🔎 Discovery — Click the Scene</button>
+
 <div class="label">ACTIVITIES</div>
 <button data-lesson="mission">1. Begin the Rescue Mission</button>
 <button data-lesson="helicopter">2. Explore the Helicopter</button>
@@ -86,35 +107,52 @@
 <button data-ch="5">6. Find the turbo engine</button>
 <a href="index.html">← Return to Main Directory</a>
 </aside>
+
 <section class="card tab-master-card" style="height: auto !important; min-height: 0px !important; max-height: none !important; overflow: visible !important;">
-<div aria-label="Script card controls" class="tab-card-tools"><button class="tab-card-drag" title="Move script card" type="button">↕ Move</button><button class="tab-card-font-down" title="Decrease text" type="button">A−</button><button class="tab-card-font-up" title="Increase text" type="button">A+</button><button class="tab-card-reset" title="Reset card" type="button">Reset</button></div><div aria-label="Resize script card" class="tab-card-resize" title="Drag to resize script card">↘</div>
+<div class="tab-card-tools" aria-label="Script card controls"><button type="button" class="tab-card-drag" title="Move script card">↕ Move</button><button type="button" class="tab-card-font-down" title="Decrease text">A−</button><button type="button" class="tab-card-font-up" title="Increase text">A+</button><button type="button" class="tab-card-reset" title="Reset card">Reset</button></div><div class="tab-card-resize" title="Drag to resize script card" aria-label="Resize script card">↘</div>
+
 <div class="kicker" data-base-font="19px" style="font-size: 19px !important;">ON A MOUNTAIN RESCUE</div>
-<h2 data-base-font="28px" id="title" style="font-size: 28px !important;">Click &amp; Discover</h2>
-<p data-base-font="24px" id="prompt" style="font-size: 24px !important;">You found rescue dog.</p>
-<div class="word"><strong data-base-font="28px" id="line" style="font-size: 28px !important;">perro de rescate</strong><div class="translation" data-base-font="24px" id="translation" style="font-size: 24px !important;">rescue dog</div></div>
+<h2 id="title" data-base-font="28px" style="font-size: 28px !important;">Click &amp; Discover</h2>
+<p id="prompt" data-base-font="24px" style="font-size: 24px !important;">You found rescue dog.</p>
+<div class="word"><strong id="line" data-base-font="28px" style="font-size: 28px !important;">perro de rescate</strong><div class="translation" id="translation" data-base-font="24px" style="font-size: 24px !important;">rescue dog</div></div>
 <p id="status" style="color: rgb(53, 228, 106) !important;">✓ Nice find!</p>
 <div class="controls">
-<button data-base-font="19px" id="normal">🔊 Speak</button><button data-base-font="19px" id="slow">🐢 Slow</button><button data-base-font="19px" id="replay">↻ Replay</button><button data-base-font="19px" hidden="" id="nextPhrase" style="display: none !important;">Next →</button>
-<button id="nextChallenge" style="display: inline-block !important;" type="button">Next →</button></div>
+<button id="normal" data-base-font="19px">🔊 Speak</button><button id="slow" data-base-font="19px">🐢 Slow</button><button id="replay" data-base-font="19px">↻ Replay</button><button id="nextPhrase" data-base-font="19px" hidden="" style="display: none !important;">Next →</button>
+<button id="nextChallenge" type="button" style="display: inline-block !important;">Next →</button></div>
 </section>
+
+
+
+
+
+
+
+
+
 <!-- Hotspots mapped to the approved clean Helicopter Mountain Rescue JPG. -->
-<button aria-label="Rescue helicopter" class="hotspot" data-word="helicopter" style="left: 37.68%; top: 15.89%; width: 14.56%; height: 16.87%;"></button>
-<button aria-label="Pilot" class="hotspot" data-word="pilot" style="left: 53.4%; top: 14.31%; width: 4.33%; height: 8.88%;"></button>
-<button aria-label="Rescue dog" class="hotspot target" data-sound="sounds/dog.mp3" data-word="dog" style="left: 76.74%; top: 25.85%; width: 3.59%; height: 8.81%;"></button>
-<button aria-label="Rescue cable" class="hotspot" data-word="cable" style="left: 64.3%; top: 33.91%; width: 2.94%; height: 16.36%;"></button>
-<button aria-label="Rescuer" class="hotspot" data-word="rescuer" style="left: 64%; top: 46%; width: 7.43%; height: 14.89%;"></button>
-<button aria-label="Rescue basket" class="hotspot" data-word="basket" style="left: 61.39%; top: 63.39%; width: 9.79%; height: 12.48%;"></button>
-<button aria-label="Hiker" class="hotspot" data-word="hiker" style="left: 80.19%; top: 58.24%; width: 4.2%; height: 21.13%;"></button>
-<button aria-label="Backpack" class="hotspot" data-word="backpack" style="left: 85.44%; top: 62.46%; width: 3.9%; height: 16.96%;"></button>
-<button aria-label="Mountain" class="hotspot" data-word="mountain" style="left: 14.49%; top: 21.16%; width: 18.8%; height: 17.89%;"></button>
-<button aria-label="Waterfall" class="hotspot" data-sound="sounds/waterfall.mp3" data-word="waterfall" style="left: 12.08%; top: 48%; width: 10.89%; height: 25.44%;"></button>
-<button aria-label="Mountain lake" class="hotspot" data-word="lake" style="left: 51.48%; top: 57.64%; width: 9.94%; height: 6.3%;"></button>
-<button aria-label="Eagle" class="hotspot" data-sound="sounds/eagle.mp3" data-word="eagle" style="left:2%;top:4%;width:13%;height:16%"></button>
-<button aria-label="Forest" class="hotspot" data-sound="sounds/birds-forest.mp3" data-word="forest" style="left: 10.71%; top: 72.76%; width: 18.99%; height: 32.72%;"></button>
-<button aria-label="Campground" class="hotspot" data-word="campground" style="left:36%;top:82%;width:16%;height:15%"></button>
-<button aria-label="Rescue helmet" class="hotspot" data-word="helmet" style="left: 70.82%; top: 47.13%; width: 4.09%; height: 7.19%;"></button>
-<button aria-label="Rocky ledge" class="hotspot" data-word="ledge" style="left: 82.99%; top: 82.28%; width: 9.82%; height: 20.8%;"></button>
-<button aria-label="cliff" class="hotspot" data-tb-custom="1" data-tb-de="Cliff" data-tb-en="cliff" data-tb-es="acantilado" data-tb-fr="falaise" data-tb-it="scogliera" data-tb-no="klippe" data-tb-pt="penhasco" data-word="cliff" style="left: 68.29%; top: 83.62%; width: 12.77%; height: 28.09%;" type="button"></button><button aria-label="rescue crew" class="hotspot" data-tb-custom="1" data-tb-de="Rettungsmannschaft" data-tb-en="rescue crew" data-tb-es="equipo de rescate" data-tb-fr="équipe de secours" data-tb-it="equipaggio di soccorso" data-tb-no="redningsmannskap" data-tb-pt="equipe de resgate" data-word="rescue crew" style="left: 63.32%; top: 13.78%; width: 9.39%; height: 20.04%;" type="button"></button><button aria-label="rescue helicopter" class="hotspot" data-sound="sounds/helicopter.mp3" data-tb-custom="1" data-tb-de="Rettungshubschrauber" data-tb-en="rescue helicopter" data-tb-es="helicóptero de rescate" data-tb-fr="hélicoptère de sauvetage" data-tb-it="elicottero di soccorso" data-tb-no="redningshelikopter" data-tb-pt="helicóptero de resgate" data-word="rescue helicopter" style="left: 81.13%; top: 21.17%; width: 10.84%; height: 8.65%;" type="button"></button><button aria-label="tail rotor" class="hotspot" data-tb-custom="1" data-tb-de="Heckrotor" data-tb-en="tail rotor" data-tb-es="rotor de cola" data-tb-fr="rotor de queue" data-tb-it="rotore di coda" data-tb-no="halerotor" data-tb-pt="rotor de cauda" data-word="tail rotor" style="left: 91.74%; top: 4.8%; width: 8.08%; height: 25.87%;" type="button"></button><button aria-label="propeller blades" class="hotspot" data-tb-custom="1" data-tb-de="Propellerblätter" data-tb-en="propeller blades" data-tb-es="palas de hélice" data-tb-fr="pales d'hélice" data-tb-it="pale dell'elica" data-tb-no="propellblader" data-tb-pt="pás da hélice" data-word="propeller blades" style="left: 33.13%; top: 0.12%; width: 62.61%; height: 4.57%;" type="button"></button><button aria-label="turbo engine" class="hotspot" data-tb-custom="1" data-tb-de="Turbomotor" data-tb-en="turbo engine" data-tb-es="motor turbo" data-tb-fr="moteur turbo" data-tb-it="motore turbo" data-tb-no="turbo motor" data-tb-pt="motor turbo" data-word="turbo engine" style="left: 70.64%; top: 8.72%; width: 13.29%; height: 7.07%;" type="button"></button><button aria-label="landing struts" class="hotspot" data-tb-custom="1" data-tb-de="Landestreben" data-tb-en="landing struts" data-tb-es="puntales de aterrizaje" data-tb-fr="jambes d'atterrissage" data-tb-it="montanti di atterraggio" data-tb-no="landingsstag" data-tb-pt="suportes de pouso" data-word="landing struts" style="left: 43.17%; top: 38.21%; width: 36.57%; height: 8.92%;" type="button"></button></main>
+<button class="hotspot" data-word="helicopter" style="left: 37.68%; top: 15.89%; width: 14.56%; height: 16.87%;" aria-label="Rescue helicopter"></button>
+<button class="hotspot" data-word="pilot" style="left: 53.4%; top: 14.31%; width: 4.33%; height: 8.88%;" aria-label="Pilot"></button>
+
+
+
+
+<button class="hotspot target" data-word="dog" style="left: 76.74%; top: 25.85%; width: 3.59%; height: 8.81%;" aria-label="Rescue dog" data-sound="sounds/dog.mp3"></button>
+<button class="hotspot" data-word="cable" style="left: 64.3%; top: 33.91%; width: 2.94%; height: 16.36%;" aria-label="Rescue cable"></button>
+<button class="hotspot" data-word="rescuer" style="left: 64%; top: 46%; width: 7.43%; height: 14.89%;" aria-label="Rescuer"></button>
+<button class="hotspot" data-word="basket" style="left: 61.39%; top: 63.39%; width: 9.79%; height: 12.48%;" aria-label="Rescue basket"></button>
+<button class="hotspot" data-word="hiker" style="left: 80.19%; top: 58.24%; width: 4.2%; height: 21.13%;" aria-label="Hiker"></button>
+<button class="hotspot" data-word="backpack" style="left: 85.44%; top: 62.46%; width: 3.9%; height: 16.96%;" aria-label="Backpack"></button>
+<button class="hotspot" data-word="mountain" style="left: 14.49%; top: 21.16%; width: 18.8%; height: 17.89%;" aria-label="Mountain"></button>
+<button class="hotspot" data-word="waterfall" style="left: 12.08%; top: 48%; width: 10.89%; height: 25.44%;" aria-label="Waterfall" data-sound="sounds/waterfall.mp3"></button>
+<button class="hotspot" data-word="lake" style="left: 51.48%; top: 57.64%; width: 9.94%; height: 6.3%;" aria-label="Mountain lake"></button>
+<button class="hotspot" data-word="eagle" style="left:2%;top:4%;width:13%;height:16%" aria-label="Eagle" data-sound="sounds/eagle.mp3"></button>
+<button class="hotspot" data-word="forest" style="left: 10.71%; top: 72.76%; width: 18.99%; height: 32.72%;" aria-label="Forest" data-sound="sounds/birds-forest.mp3"></button>
+<button class="hotspot" data-word="campground" style="left:36%;top:82%;width:16%;height:15%" aria-label="Campground"></button>
+<button class="hotspot" data-word="helmet" style="left: 70.82%; top: 47.13%; width: 4.09%; height: 7.19%;" aria-label="Rescue helmet"></button>
+<button class="hotspot" data-word="ledge" style="left: 82.99%; top: 82.28%; width: 9.82%; height: 20.8%;" aria-label="Rocky ledge"></button>
+
+<button type="button" class="hotspot" data-word="cliff" aria-label="cliff" data-tb-custom="1" data-tb-en="cliff" data-tb-es="acantilado" data-tb-fr="falaise" data-tb-de="Cliff" data-tb-it="scogliera" data-tb-pt="penhasco" data-tb-no="klippe" style="left: 68.29%; top: 83.62%; width: 12.77%; height: 28.09%;"></button><button type="button" class="hotspot" data-word="rescue crew" aria-label="rescue crew" data-tb-custom="1" data-tb-en="rescue crew" data-tb-es="equipo de rescate" data-tb-fr="équipe de secours" data-tb-de="Rettungsmannschaft" data-tb-it="equipaggio di soccorso" data-tb-pt="equipe de resgate" data-tb-no="redningsmannskap" style="left: 63.32%; top: 13.78%; width: 9.39%; height: 20.04%;"></button><button type="button" class="hotspot" data-word="rescue helicopter" aria-label="rescue helicopter" data-tb-custom="1" data-tb-en="rescue helicopter" data-tb-es="helicóptero de rescate" data-tb-fr="hélicoptère de sauvetage" data-tb-de="Rettungshubschrauber" data-tb-it="elicottero di soccorso" data-tb-pt="helicóptero de resgate" data-tb-no="redningshelikopter" style="left: 81.13%; top: 21.17%; width: 10.84%; height: 8.65%;" data-sound="sounds/helicopter.mp3"></button><button type="button" class="hotspot" data-word="tail rotor" aria-label="tail rotor" data-tb-custom="1" data-tb-en="tail rotor" data-tb-es="rotor de cola" data-tb-fr="rotor de queue" data-tb-de="Heckrotor" data-tb-it="rotore di coda" data-tb-pt="rotor de cauda" data-tb-no="halerotor" style="left: 91.74%; top: 4.8%; width: 8.08%; height: 25.87%;"></button><button type="button" class="hotspot" data-word="propeller blades" aria-label="propeller blades" data-tb-custom="1" data-tb-en="propeller blades" data-tb-es="palas de hélice" data-tb-fr="pales d'hélice" data-tb-de="Propellerblätter" data-tb-it="pale dell'elica" data-tb-pt="pás da hélice" data-tb-no="propellblader" style="left: 33.13%; top: 0.12%; width: 62.61%; height: 4.57%;"></button><button type="button" class="hotspot" data-word="turbo engine" aria-label="turbo engine" data-tb-custom="1" data-tb-en="turbo engine" data-tb-es="motor turbo" data-tb-fr="moteur turbo" data-tb-de="Turbomotor" data-tb-it="motore turbo" data-tb-pt="motor turbo" data-tb-no="turbo motor" style="left: 70.64%; top: 8.72%; width: 13.29%; height: 7.07%;"></button><button type="button" class="hotspot" data-word="landing struts" aria-label="landing struts" data-tb-custom="1" data-tb-en="landing struts" data-tb-es="puntales de aterrizaje" data-tb-fr="jambes d'atterrissage" data-tb-de="Landestreben" data-tb-it="montanti di atterraggio" data-tb-pt="suportes de pouso" data-tb-no="landingsstag" style="left: 43.17%; top: 38.21%; width: 36.57%; height: 8.92%;"></button></main>
+
 <script>
 const EN={rescue:"rescue helicopter",helicopter:"rescue helicopter",pilot:"pilot",grandpa:"Grandpa",mitchell:"Mitchell",nicole:"Nicole",bee:"bee",dog:"rescue dog",cable:"rescue cable",rescuer:"rescuer",basket:"rescue basket",hiker:"hiker",backpack:"backpack",mountain:"mountain",waterfall:"waterfall",lake:"mountain lake",eagle:"eagle",forest:"forest",campground:"campground",helmet:"rescue helmet",ledge:"rocky ledge"};
 const WORDS={
@@ -183,6 +221,7 @@ showWord("rescue");
 </script>
 <script id="talkabee-new-hotspot-language-bridge" src="js/talkabee-common-061ada9dc93c.js"></script>
 <script id="talkabee-new-hotspot-live-click" src="js/talkabee-common-bb7c92713084.js"></script>
+<script id="talkabee-hotspot-editor-v10" src="js/talkabee-common-9462cfe6bdf1.js"></script>
 
 <script id="talkabee-scene-view-safe-reset">
 (function(){
@@ -197,8 +236,13 @@ showWord("rescue");
   window.addEventListener('pageshow',resetTalkABeeSceneView);
 })();
 </script>
+
 <script id="talkabee-bilingual-hotspot-popup" src="js/talkabee-common-cffcf34e5d12.js"></script>
-<link href="css/talkabee-shared-cfa4d1155267.css" id="talkabee-ski-panel-180" rel="stylesheet"/>
+
+
+
+
+<link rel="stylesheet" href="css/talkabee-shared-cfa4d1155267.css" id="talkabee-ski-panel-180">
 <script id="talkabee-language-sync-repair-20261009">
 (function(){
   const KEY='talkabee-learn-language';
@@ -220,8 +264,18 @@ showWord("rescue");
   window.addEventListener('storage',function(e){if(e.key===KEY)restore()});
 })();
 </script>
-
-<script id="talkabee-challenge-data" type="application/json">[{"key":"hiker","text":"Find the Hiker"},{"key":"basket","text":"Find the Rescue Basket"},{"key":"waterfall","text":"Find the Waterfall"},{"key":"tail rotor","text":"Find the Tail Rotor"},{"key":"dog","text":"Find the Dog"},{"key":"turbo engine","text":"Find the turbo engine"}]</script>
+<style id="talkabee-challenge-editor-style">
+#tb-challenge-open{display:none}
+#tb-challenge-panel{position:fixed;z-index:2147483647;right:16px;bottom:92px;width:min(410px,calc(100vw - 32px));max-height:calc(100vh - 120px);overflow:auto;padding:16px;border:2px solid #f4d775;border-radius:16px;background:rgba(16,26,37,.97);color:#fff;font:14px/1.45 Arial,sans-serif;box-shadow:0 12px 38px #0009;display:none}
+#tb-challenge-panel h3{margin:0 0 8px;font-size:19px}
+#tb-challenge-drag{cursor:grab;touch-action:none;user-select:none;padding:5px 2px 10px;border-bottom:1px solid #ffffff40;margin-bottom:10px}
+#tb-challenge-drag:active{cursor:grabbing}
+#tb-challenge-panel label{display:block;margin:12px 0 4px;font-weight:bold}
+#tb-challenge-panel select,#tb-challenge-panel input{width:100%;padding:10px;border:1px solid #aab;border-radius:8px;background:#fff;color:#111;font-size:14px}
+#tb-challenge-panel button{margin:12px 7px 0 0;padding:9px 13px;border:1px solid #fff;border-radius:9px;background:#263e52;color:#fff;cursor:pointer}
+#tb-challenge-panel .tb-ch-warning{color:#ffdb80;font-size:12px;margin-top:8px}
+</style>
+<script type="application/json" id="talkabee-challenge-data">[{"key":"hiker","text":"Find the Hiker"},{"key":"basket","text":"Find the Rescue Basket"},{"key":"waterfall","text":"Find the Waterfall"},{"key":"tail rotor","text":"Find the Tail Rotor"},{"key":"dog","text":"Find the Dog"},{"key":"turbo engine","text":"Find the turbo engine"}]</script>
 <script id="talkabee-challenge-runtime">
 (function(){
  const data=document.getElementById('talkabee-challenge-data');
@@ -233,7 +287,7 @@ showWord("rescue");
  });}catch(e){console.warn('Challenge data could not be loaded',e)}
 })();
 </script>
-
+<script id="talkabee-challenge-editor-script" src="js/talkabee-common-6b65d9ee1a33.js"></script><div id="tb-challenge-panel" style="display: none;"><div id="tb-challenge-drag" title="Drag to move this editor"><h3>↕ Edit Six Challenges</h3><small>Drag here to move</small></div><div>Choose a challenge, then assign an existing hotspot. Changes are included when you save or export HTML.</div><label for="tb-ch-number">Challenge</label><select id="tb-ch-number"><option value="0">Challenge 1</option><option value="1">Challenge 2</option><option value="2">Challenge 3</option><option value="3">Challenge 4</option><option value="4">Challenge 5</option><option value="5">Challenge 6</option></select><label for="tb-ch-hotspot">Find this hotspot</label><select id="tb-ch-hotspot"><option value="helicopter">Rescue helicopter [helicopter]</option><option value="pilot">Pilot [pilot]</option><option value="dog">Rescue dog [dog]</option><option value="cable">Rescue cable [cable]</option><option value="rescuer">Rescuer [rescuer]</option><option value="basket">Rescue basket [basket]</option><option value="hiker">Hiker [hiker]</option><option value="backpack">Backpack [backpack]</option><option value="mountain">Mountain [mountain]</option><option value="waterfall">Waterfall [waterfall]</option><option value="lake">Mountain lake [lake]</option><option value="eagle">Eagle [eagle]</option><option value="forest">Forest [forest]</option><option value="campground">Campground [campground]</option><option value="helmet">Rescue helmet [helmet]</option><option value="ledge">Rocky ledge [ledge]</option><option value="cliff">cliff [cliff]</option><option value="rescue crew">rescue crew [rescue crew]</option><option value="rescue helicopter">rescue helicopter [rescue helicopter]</option><option value="tail rotor">tail rotor [tail rotor]</option><option value="propeller blades">propeller blades [propeller blades]</option><option value="turbo engine">turbo engine [turbo engine]</option><option value="landing struts">landing struts [landing struts]</option></select><label for="tb-ch-text">Challenge wording (English)</label><input id="tb-ch-text" maxlength="110" placeholder="Find the balloon basket"><div class="tb-ch-warning" id="tb-ch-warning">Saved into this page. Use Save Working HTML to keep it.</div><button type="button" id="tb-ch-apply">Apply Challenge</button><button type="button" id="tb-ch-close">Close</button></div>
 <script id="talkabee-approved-next-navigation-v2" src="js/talkabee-common-058157d34e0b.js"></script>
 <script id="talkabee-shared-card-viewport-boundary-v1" src="js/talkabee-common-3bf84d442532.js"></script>
 <script id="talkabee-approved-card-learning-text">
@@ -256,11 +310,46 @@ showWord("rescue");
   else enlarge();
 })();
 </script>
-
+<link rel="stylesheet" data-tb-shared-studio="1" href="css/talkabee-editing-studio.css">
 <!-- Talk A Bee Editing Studio pilot: isolated from Adventure lesson/challenge logic. -->
 
+<button id="tb-studio-launch" type="button" style="">✦ Editing Studio</button>
+<div id="tb-studio" aria-label="Talk A Bee Editing Studio" style="display: none;">
+ <div class="tb-studio-head" id="tb-studio-drag"><span>✦ TALK A BEE STUDIO</span><span><button type="button" id="tb-studio-min" title="Minimize">−</button><button type="button" id="tb-studio-close" title="Close">×</button></span></div>
+ <div class="tb-studio-main" id="tb-studio-main">
+  <section id="tb-studio-music" aria-label="Local music player">
+    <div class="tb-music-top"><strong>🎵 STUDIO MUSIC</strong><button type="button" id="tb-music-choose">Choose MP3</button></div>
+    <input type="file" id="tb-music-file" accept="audio/*,.mp3,.wav,.ogg,.m4a" hidden="">
+    <div class="tb-music-track" id="tb-music-track">No music selected</div>
+    <div class="tb-music-controls"><button type="button" id="tb-music-play" disabled="">▶ Play</button><button type="button" id="tb-music-stop" disabled="">■ Stop</button><label for="tb-music-volume">Volume</label><input type="range" id="tb-music-volume" min="0" max="100" value="35" aria-label="Music volume"></div>
+    <audio id="tb-music-audio"></audio>
+  </section>
+  <section id="tb-studio-savebar" aria-label="Save and export">
+    <div class="tb-save-title">SAVE YOUR WORK <span id="tb-studio-save-status" class="">Ready</span></div>
+    <div class="tb-save-buttons">
+      <button type="button" id="tb-studio-save-local">💾 Save Local Master</button>
+      <button type="button" id="tb-studio-save-server">🌐 Export Server Version</button>
+    </div>
+    <div class="tb-save-help">Both downloads include your latest hotspots, challenges, and image overlays.</div>
+  </section>
+  <label for="tb-studio-mode">EDITOR SELECTOR</label><select id="tb-studio-mode"><option value="none">Choose an editor...</option><option value="hotspot">Hotspot Editor</option><option value="challenge">Challenge Editor</option><option value="overlay">Image Overlay Editor</option></select>
+  <div id="tb-studio-hotspot" class="tb-studio-panel"><p class="tb-note">Select a hotspot in the scene to edit it. Move this whole window by its title bar.</p></div>
+  <div id="tb-studio-challenge" class="tb-studio-panel"><p class="tb-note">Choose a challenge and assign its answer below.</p></div>
+  <div id="tb-studio-overlay" class="tb-studio-panel">
+   <label for="tb-overlay-file">ADD TRANSPARENT PNG / IMAGE</label><input type="file" id="tb-overlay-file" accept="image/png,image/webp,image/jpeg,image/gif" multiple="">
+   <label for="tb-overlay-path">Or use an existing website image path</label><input type="text" id="tb-overlay-path" placeholder="images/PNG/bee.png"><button type="button" id="tb-overlay-add-path">Add Existing Image</button>
+   <label for="tb-overlay-items">SELECT IMAGE</label><select id="tb-overlay-items"><option value="">Select an overlay</option></select>
+   <div class="tb-smallrow"><div><label for="tb-overlay-width">Width (%)</label><input type="number" id="tb-overlay-width" min="1" max="100" step="0.5"></div><div><label for="tb-overlay-rotate">Rotation (°)</label><input type="number" id="tb-overlay-rotate" min="-360" max="360" step="5"></div></div>
+   <button type="button" id="tb-overlay-front">Bring Forward</button><button type="button" id="tb-overlay-back">Send Back</button><button type="button" id="tb-overlay-delete" class="tb-danger">Remove</button>
+   <p class="tb-note">Drag an image on the scene to move it. Use the width control to resize. Changes appear in your exported HTML.</p>
+   <button type="button" id="tb-overlay-undo">Undo</button><button type="button" id="tb-overlay-redo">Redo</button>
+   <button type="button" id="tb-overlay-export">Save Updated HTML</button>
+   <p class="tb-note">For reliable publishing, use existing website image paths. Uploaded local images are embedded in the exported HTML, which can make it large.</p>
+  </div>
+ </div>
+</div>
+<script type="application/json" id="tb-overlay-data">[]</script>
 
-<script id="tb-overlay-data" type="application/json">[]</script>
 
 <script src="js/talkabee-enhanced-voice-boardwalk.js"></script>
 </body></html>

@@ -1,29 +1,44 @@
 <!doctype html>
-<!DOCTYPE html>
-
 <html lang="en"><head>
-<meta charset="utf-8"/>
-<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Talk A Bee — Protect Earth Adventure</title>
-<link href="images/PNG/talkabee-favicon.png" rel="icon" type="image/png"/>
-<link href="css/shared-538893dbbcfc0c68.css" rel="stylesheet"/>
-<link href="css/common-inline-e41b546ea686.css" id="talkabee-edition-menu-style" rel="stylesheet"/>
-<link href="css/talkabee-shared-ecfa9fc689a3.css" id="talkabee-accessibility-controls-v1" rel="stylesheet"/>
-<link href="css/talkabee-shared-43ddae767bb7.css" id="talkabee-global-card-grab-cursor" rel="stylesheet"/>
+<link rel="icon" type="image/png" href="images/PNG/talkabee-favicon.png">
+<link rel="stylesheet" href="css/shared-538893dbbcfc0c68.css">
+
+<link rel="stylesheet" href="css/common-inline-e41b546ea686.css" id="talkabee-edition-menu-style">
+
+<link rel="stylesheet" href="css/talkabee-shared-ecfa9fc689a3.css" id="talkabee-accessibility-controls-v1">
+<link rel="stylesheet" href="css/talkabee-shared-43ddae767bb7.css" id="talkabee-global-card-grab-cursor">
+
 <!-- TALK A BEE HOTSPOTS VISUALLY RECERTIFIED AGAINST CURRENT SCENE ARTWORK: 2026-10-07 -->
 
-<link href="css/common-inline-8492e8692583.css" id="talkabee-bilingual-hotspot-popup-style" rel="stylesheet"/>
-<link href="css/talkabee-shared-5d2499d81b6e.css" id="talkabee-approved-master-card-v2" rel="stylesheet"/>
-<link href="css/common-inline-168e9ff67f7e.css" id="talkabee-approved-word-contrast-v2" rel="stylesheet"/>
-<link href="css/common-inline-a202e810d91a.css" id="talkabee-approved-card-text-v2" rel="stylesheet"/>
-<link href="css/talkabee-shared-6083deff3ef2.css" id="talkabee-approved-card-feedback-v2" rel="stylesheet"/>
-<link href="css/common-inline-0d6913d7d62e.css" id="talkabee-approved-card-footprint-v2" rel="stylesheet"/>
-<link href="css/talkabee-shared-f1c50eb608fd.css" id="talkabee-approved-next-buttons-v2" rel="stylesheet"/>
-<link href="css/talkabee-shared-7d895e90433e.css" id="talkabee-approved-575-card-readability" rel="stylesheet"/>
-<link href="css/talkabee-shared-04ae840c01bf.css" id="talkabee-approved-card-transparency-20pct" rel="stylesheet"/>
-<link href="css/talkabee-panel-pilot-safe.css" id="talkabee-panel-typography-standard" rel="stylesheet"/>
-<link href="css/talkabee-card-typography-safe.css" rel="stylesheet"/>
-<link href="css/talkabee-enhanced-voice.css" rel="stylesheet"/>
+
+<style id="talkabee-hotspot-editor-style">
+#tb-hs-editor{position:fixed;right:16px;bottom:16px;z-index:2147483646;font:700 12px Arial,sans-serif;display:flex;flex-wrap:wrap;justify-content:flex-end;gap:6px;max-width:650px}
+#tb-hs-editor button,#tb-hs-editor input{border:1px solid #fff;border-radius:10px;background:#000;color:#fff;padding:9px 11px;box-shadow:0 4px 14px #0006}
+#tb-hs-editor input{background:#fff;color:#111;min-width:180px;font-weight:400}#tb-hs-editor button{cursor:pointer}
+body.tb-hs-editing .hotspot,body.tb-hs-editing .home-hotspot,body.tb-hs-editing .yacht-hotspot,body.tb-hs-editing .hotspots button,body.tb-hs-editing .train-hotspots button{display:block!important;outline:2px solid #ffea00!important;background:rgba(255,234,0,.18)!important;pointer-events:auto!important;cursor:move!important;visibility:visible!important;opacity:1!important;z-index:2147483005!important}
+body.tb-hs-editing .tb-hs-active{outline:3px solid #00ffff!important;background:rgba(0,255,255,.18)!important}
+.tb-hs-handle{position:absolute!important;right:-7px!important;bottom:-7px!important;left:auto!important;top:auto!important;width:14px!important;height:14px!important;border-radius:3px!important;background:#00ffff!important;border:2px solid #000!important;z-index:2147483647!important;cursor:nwse-resize!important;display:none!important;transform:none!important}
+body.tb-hs-editing .tb-hs-active>.tb-hs-handle{display:block!important}
+
+#tb-hs-editor .tb-sound-name{min-width:150px;max-width:230px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font:12px/1.2 Arial,sans-serif;color:#fff;opacity:.9}
+#tb-hs-editor input[type="file"].tb-sound-file{display:none!important}
+</style>
+<link rel="stylesheet" href="css/common-inline-8492e8692583.css" id="talkabee-bilingual-hotspot-popup-style">
+
+<link rel="stylesheet" href="css/talkabee-shared-5d2499d81b6e.css" id="talkabee-approved-master-card-v2">
+<link rel="stylesheet" href="css/common-inline-168e9ff67f7e.css" id="talkabee-approved-word-contrast-v2">
+<link rel="stylesheet" href="css/common-inline-a202e810d91a.css" id="talkabee-approved-card-text-v2">
+<link rel="stylesheet" href="css/talkabee-shared-6083deff3ef2.css" id="talkabee-approved-card-feedback-v2">
+<link rel="stylesheet" href="css/common-inline-0d6913d7d62e.css" id="talkabee-approved-card-footprint-v2">
+<link rel="stylesheet" href="css/talkabee-shared-f1c50eb608fd.css" id="talkabee-approved-next-buttons-v2">
+<link rel="stylesheet" href="css/talkabee-shared-7d895e90433e.css" id="talkabee-approved-575-card-readability">
+<link rel="stylesheet" href="css/talkabee-shared-04ae840c01bf.css" id="talkabee-approved-card-transparency-20pct">
+<link rel="stylesheet" href="css/talkabee-panel-pilot-safe.css" id="talkabee-panel-typography-standard">
+<link rel="stylesheet" href="css/talkabee-card-typography-safe.css">
+<link rel="stylesheet" href="css/talkabee-enhanced-voice.css">
 <style id="tab-piper-controls">
 #voiceLab{position:relative;z-index:2;width:100%;margin:8px 0;font-size:12px}
 #voiceLab select,#voiceLab button{box-sizing:border-box;width:100%;max-width:100%}
@@ -31,12 +46,13 @@
 #voiceLabText,#voiceLabTestActions,#voiceLabCurrent,#voiceLabPlay,#voiceLabSlow,#voiceLabStop{display:none!important}
 #voiceLabNeural[hidden]{display:none!important}
 </style>
+<style id="tb-server-hide-editor-ui">#tb-studio,#tb-studio-launch,#tb-hs-editor,#tb-challenge-editor,#tb-overlay-editor,#tb-challenge-panel,.tb-hs-handle,[data-tb-editor-only]{display:none!important}</style>
 </head>
 <body class="">
 <div class="talkabee-editions">
 <details>
 <summary>Explore Adventures ▾</summary>
-<div aria-label="Talk A Bee Editions" class="edition-row" role="navigation">
+<div class="edition-row" role="navigation" aria-label="Talk A Bee Editions">
 <a href="adventures.html">Main Adventures</a>
 <a href="Talk-A-Bee-More-Adventures.html">Community Edition</a>
 <a href="Talk-A-Bee-Directory-3.html">Travel Edition</a>
@@ -46,15 +62,19 @@
 </div>
 </details>
 </div>
-<nav aria-label="Adventure navigation" class="talkabee-prev-next-nav">
-<a aria-label="Previous adventure" href="Talk-A-Bee-Saturn-Spacecraft-Adventure.html" title="Previous">‹</a>
-<a aria-label="Next adventure" href="Talk-A-Bee-Basic-Training-Adventure.html" title="Next">›</a>
+
+<nav class="talkabee-prev-next-nav" aria-label="Adventure navigation">
+  <a href="Talk-A-Bee-Saturn-Spacecraft-Adventure.html" aria-label="Previous adventure" title="Previous">‹</a>
+  <a href="Talk-A-Bee-Basic-Training-Adventure.html" aria-label="Next adventure" title="Next">›</a>
 </nav>
+
 <main class="world" id="world">
 <button class="scene-return" id="sceneReturn">Return to Adventure</button>
+
 <aside class="panel tab-pilot-panel">
 <h1>🌎 Protect Earth Adventure</h1>
-<div aria-label="Activity panel size" class="tab-panel-size-controls"><button class="tab-panel-minus" title="Make activity panel smaller" type="button">−</button><button class="tab-panel-reset" title="Reset activity panel size" type="button">Reset</button><button class="tab-panel-plus" title="Make activity panel larger" type="button">+</button></div>
+<div class="tab-panel-size-controls" aria-label="Activity panel size"><button type="button" class="tab-panel-minus" title="Make activity panel smaller">−</button><button type="button" class="tab-panel-reset" title="Reset activity panel size">Reset</button><button type="button" class="tab-panel-plus" title="Make activity panel larger">+</button></div>
+
 <div class="label">LANGUAGE</div>
 <select id="lang">
 <option value="es">Spanish</option><option value="fr">French</option><option value="en">English</option>
@@ -62,14 +82,16 @@
 </select>
 <div class="label">VOICE</div>
 <select id="voice"><option value="">Browser Default</option><option value="Microsoft David - English (United States)">Microsoft David - English (United States) — en-US</option><option value="Microsoft Mark - English (United States)">Microsoft Mark - English (United States) — en-US</option><option value="Microsoft Zira - English (United States)">Microsoft Zira - English (United States) — en-US</option><option value="Microsoft David Desktop - English (United States)">Microsoft David Desktop - English (United States) — en-US</option><option value="Microsoft Zira Desktop - English (United States)">Microsoft Zira Desktop - English (United States) — en-US</option></select>
-<div id="voiceLab"><details open=""><summary>🎙️ Choose Voice</summary>
+<div id="voiceLab"><details open><summary>🎙️ Choose Voice</summary>
 <label for="voiceLabMode">Voice type</label><select id="voiceLabMode"><option value="standard">Standard</option><option value="enhanced">Enhanced</option></select>
-<div class="lab-note" id="voiceLabNote">Uses voices available in your browser.</div>
-<div hidden="" id="voiceLabNeural"><label for="voiceLabModel">Choose voice</label><select id="voiceLabModel"><option value="">Load voice catalog</option></select><button id="voiceLabLoad" type="button">Load voice</button></div>
-<div aria-live="polite" id="voiceLabStatus" role="status">Standard voice ready.</div></details></div>
-<button aria-pressed="false" id="sceneView">◉ Scene View</button>
+<div id="voiceLabNote" class="lab-note">Uses voices available in your browser.</div>
+<div id="voiceLabNeural" hidden><label for="voiceLabModel">Choose voice</label><select id="voiceLabModel"><option value="">Load voice catalog</option></select><button type="button" id="voiceLabLoad">Load voice</button></div>
+<div id="voiceLabStatus" role="status" aria-live="polite">Standard voice ready.</div></details></div>
+<button id="sceneView" aria-pressed="false">◉ Scene View</button>
+
 <div class="label">DISCOVERY</div>
 <button id="discovery">🔎 Discovery — Click the Scene</button>
+
 <div class="label">ACTIVITIES</div>
 <button data-lesson="view">1. Look Down at Earth</button>
 <button data-lesson="pollution">2. What Is Air Pollution?</button>
@@ -86,8 +108,10 @@
 <button data-ch="5">6. Find Clean Clouds</button>
 <a href="index.html">← Return to Main Directory</a>
 </aside>
+
 <section class="card tab-master-card">
-<div aria-label="Script card controls" class="tab-card-tools"><button class="tab-card-drag" title="Move script card" type="button">↕ Move</button><button class="tab-card-font-down" title="Decrease text" type="button">A−</button><button class="tab-card-font-up" title="Increase text" type="button">A+</button><button class="tab-card-reset" title="Reset card" type="button">Reset</button></div><div aria-label="Resize script card" class="tab-card-resize" title="Drag to resize script card">↘</div>
+<div class="tab-card-tools" aria-label="Script card controls"><button type="button" class="tab-card-drag" title="Move script card">↕ Move</button><button type="button" class="tab-card-font-down" title="Decrease text">A−</button><button type="button" class="tab-card-font-up" title="Increase text">A+</button><button type="button" class="tab-card-reset" title="Reset card">Reset</button></div><div class="tab-card-resize" title="Drag to resize script card" aria-label="Resize script card">↘</div>
+
 <div class="kicker">PROTECT OUR EARTH</div>
 <h2 id="title">Click &amp; Discover</h2>
 <p id="prompt">You found protect the Earth.</p>
@@ -97,19 +121,58 @@
 <button id="normal">🔊 Speak</button><button id="slow">🐢 Slow</button><button id="replay">↻ Replay</button><button id="nextPhrase">Next phrase →</button>
 </div>
 </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <!-- Hotspots mapped to the approved Protect Earth keeper JPG. -->
-<button aria-label="Smoke" class="hotspot" data-word="smoke" style="left:29%;top:19%;width:39%;height:26%"></button>
-<button aria-label="Haze" class="hotspot" data-sound="sounds/factory.mp3" data-word="haze" style="left: 26.94%; top: 16.98%; width: 27.55%; height: 22.22%;"></button>
-<button aria-label="River" class="hotspot" data-word="river" style="left: 83.08%; top: 23.94%; width: 3.1%; height: 16.94%;"></button>
-<button aria-label="Ocean" class="hotspot" data-word="ocean" style="left:68%;top:45%;width:28%;height:19%"></button>
-<button aria-label="Atmosphere" class="hotspot" data-word="atmosphere" style="left: 24.01%; top: 13.07%; width: 67%; height: 12%;"></button>
-<button aria-label="Sunrise" class="hotspot" data-word="sunrise" style="left: 94.35%; top: 14.75%; width: 5.49%; height: 19.29%;"></button>
-<button aria-label="Ships" class="hotspot" data-word="ships" style="left:76%;top:46%;width:22%;height:18%"></button>
-<button aria-label="Environmental map" class="hotspot" data-word="map" style="left: -0.16%; top: 18%; width: 12.83%; height: 21.5%;"></button>
-<button aria-label="Pollution chart" class="hotspot" data-word="chart" style="left: -1.15%; top: 43.46%; width: 15.48%; height: 11.54%;"></button>
-<button aria-label="Pollution monitor" class="hotspot" data-word="monitor" style="left: 81.26%; top: 72.48%; width: 18%; height: 22%;"></button>
-<button aria-label="Satellite" class="hotspot" data-word="satellite" style="left:9%;top:7%;width:12%;height:13%"></button>
-<button aria-label="pollution critical warning" class="hotspot" data-sound="sounds/world-pollution-warning-message.mp3" data-tb-custom="1" data-tb-de="Warnung vor kritischer Verschmutzung" data-tb-en="pollution critical warning" data-tb-es="advertencia crítica de contaminación" data-tb-fr="avertissement critique de pollution" data-tb-it="avviso critico di inquinamento" data-tb-no="forurensningskritisk advarsel" data-tb-pt="aviso crítico de poluição" data-word="pollution critical warning" style="left: 21.36%; top: -1.04%; width: 74.44%; height: 77.73%;" type="button"></button></main>
+
+
+
+
+
+<button class="hotspot" data-word="smoke" style="left:29%;top:19%;width:39%;height:26%" aria-label="Smoke"></button>
+<button class="hotspot" data-word="haze" style="left: 26.94%; top: 16.98%; width: 27.55%; height: 22.22%;" aria-label="Haze" data-sound="sounds/factory.mp3"></button>
+
+<button class="hotspot" data-word="river" style="left: 83.08%; top: 23.94%; width: 3.1%; height: 16.94%;" aria-label="River"></button>
+<button class="hotspot" data-word="ocean" style="left:68%;top:45%;width:28%;height:19%" aria-label="Ocean"></button>
+
+<button class="hotspot" data-word="atmosphere" style="left: 24.01%; top: 13.07%; width: 67%; height: 12%;" aria-label="Atmosphere"></button>
+<button class="hotspot" data-word="sunrise" style="left: 94.35%; top: 14.75%; width: 5.49%; height: 19.29%;" aria-label="Sunrise"></button>
+<button class="hotspot" data-word="ships" style="left:76%;top:46%;width:22%;height:18%" aria-label="Ships"></button>
+
+<button class="hotspot" data-word="map" style="left: -0.16%; top: 18%; width: 12.83%; height: 21.5%;" aria-label="Environmental map"></button>
+<button class="hotspot" data-word="chart" style="left: -1.15%; top: 43.46%; width: 15.48%; height: 11.54%;" aria-label="Pollution chart"></button>
+
+<button class="hotspot" data-word="monitor" style="left: 81.26%; top: 72.48%; width: 18%; height: 22%;" aria-label="Pollution monitor"></button>
+<button class="hotspot" data-word="satellite" style="left:9%;top:7%;width:12%;height:13%" aria-label="Satellite"></button>
+
+<button type="button" class="hotspot" data-word="pollution critical warning" aria-label="pollution critical warning" data-tb-custom="1" data-tb-en="pollution critical warning" data-tb-es="advertencia crítica de contaminación" data-tb-fr="avertissement critique de pollution" data-tb-de="Warnung vor kritischer Verschmutzung" data-tb-it="avviso critico di inquinamento" data-tb-pt="aviso crítico de poluição" data-tb-no="forurensningskritisk advarsel" style="left: 21.36%; top: -1.04%; width: 74.44%; height: 77.73%;" data-sound="sounds/world-pollution-warning-message.mp3"></button></main>
+
 <script>
 const EN={game:"protect the Earth",bee:"Bee",crew:"space crew",earth:"Earth",factories:"factories",smokestacks:"smokestacks",smoke:"smoke",haze:"air pollution",city:"city",river:"river",ocean:"ocean",clouds:"clouds",atmosphere:"atmosphere",sunrise:"sunrise",ships:"ships",window:"spacecraft window",map:"environmental map",chart:"pollution chart",console:"control console",monitor:"pollution monitor",satellite:"satellite"};
 const WORDS={
@@ -209,6 +272,8 @@ document.addEventListener('click',function(ev){
 },true);
 })();</script>
 
+
+<script id="talkabee-hotspot-editor-v10" src="js/talkabee-common-9462cfe6bdf1.js"></script>
 <script id="talkabee-scene-view-safe-reset">
 (function(){
   function resetTalkABeeSceneView(){
@@ -222,8 +287,13 @@ document.addEventListener('click',function(ev){
   window.addEventListener('pageshow',resetTalkABeeSceneView);
 })();
 </script>
+
 <script id="talkabee-bilingual-hotspot-popup" src="js/talkabee-common-cffcf34e5d12.js"></script>
-<link href="css/talkabee-shared-cfa4d1155267.css" id="talkabee-ski-panel-180" rel="stylesheet"/>
+
+
+
+
+<link rel="stylesheet" href="css/talkabee-shared-cfa4d1155267.css" id="talkabee-ski-panel-180">
 <script id="talkabee-language-sync-repair-20261009">
 (function(){
   const KEY='talkabee-learn-language';
@@ -245,8 +315,18 @@ document.addEventListener('click',function(ev){
   window.addEventListener('storage',function(e){if(e.key===KEY)restore()});
 })();
 </script>
-
-<script id="talkabee-challenge-data" type="application/json">[]</script>
+<style id="talkabee-challenge-editor-style">
+#tb-challenge-open{display:none}
+#tb-challenge-panel{position:fixed;z-index:2147483647;right:16px;bottom:92px;width:min(410px,calc(100vw - 32px));max-height:calc(100vh - 120px);overflow:auto;padding:16px;border:2px solid #f4d775;border-radius:16px;background:rgba(16,26,37,.97);color:#fff;font:14px/1.45 Arial,sans-serif;box-shadow:0 12px 38px #0009;display:none}
+#tb-challenge-panel h3{margin:0 0 8px;font-size:19px}
+#tb-challenge-drag{cursor:grab;touch-action:none;user-select:none;padding:5px 2px 10px;border-bottom:1px solid #ffffff40;margin-bottom:10px}
+#tb-challenge-drag:active{cursor:grabbing}
+#tb-challenge-panel label{display:block;margin:12px 0 4px;font-weight:bold}
+#tb-challenge-panel select,#tb-challenge-panel input{width:100%;padding:10px;border:1px solid #aab;border-radius:8px;background:#fff;color:#111;font-size:14px}
+#tb-challenge-panel button{margin:12px 7px 0 0;padding:9px 13px;border:1px solid #fff;border-radius:9px;background:#263e52;color:#fff;cursor:pointer}
+#tb-challenge-panel .tb-ch-warning{color:#ffdb80;font-size:12px;margin-top:8px}
+</style>
+<script type="application/json" id="talkabee-challenge-data">[]</script>
 <script id="talkabee-challenge-runtime">
 (function(){
  const data=document.getElementById('talkabee-challenge-data');
@@ -258,7 +338,7 @@ document.addEventListener('click',function(ev){
  });}catch(e){console.warn('Challenge data could not be loaded',e)}
 })();
 </script>
-
+<script id="talkabee-challenge-editor-script" src="js/talkabee-common-6b65d9ee1a33.js"></script>
 <script id="talkabee-approved-next-navigation-v2" src="js/talkabee-common-058157d34e0b.js"></script>
 <script id="talkabee-shared-card-viewport-boundary-v1" src="js/talkabee-common-3bf84d442532.js"></script>
 <script id="talkabee-approved-card-learning-text">
@@ -281,11 +361,46 @@ document.addEventListener('click',function(ev){
   else enlarge();
 })();
 </script>
-
+<link rel="stylesheet" data-tb-shared-studio="1" href="css/talkabee-editing-studio.css">
 <!-- Talk A Bee Editing Studio pilot: isolated from Adventure lesson/challenge logic. -->
 
+<button id="tb-studio-launch" type="button" style="">✦ Editing Studio</button>
+<div id="tb-studio" aria-label="Talk A Bee Editing Studio" style="display: none;">
+ <div class="tb-studio-head" id="tb-studio-drag"><span>✦ TALK A BEE STUDIO</span><span><button type="button" id="tb-studio-min" title="Minimize">−</button><button type="button" id="tb-studio-close" title="Close">×</button></span></div>
+ <div class="tb-studio-main" id="tb-studio-main">
+  <section id="tb-studio-music" aria-label="Local music player">
+    <div class="tb-music-top"><strong>🎵 STUDIO MUSIC</strong><button type="button" id="tb-music-choose">Choose MP3</button></div>
+    <input type="file" id="tb-music-file" accept="audio/*,.mp3,.wav,.ogg,.m4a" hidden="">
+    <div class="tb-music-track" id="tb-music-track">No music selected</div>
+    <div class="tb-music-controls"><button type="button" id="tb-music-play" disabled="">▶ Play</button><button type="button" id="tb-music-stop" disabled="">■ Stop</button><label for="tb-music-volume">Volume</label><input type="range" id="tb-music-volume" min="0" max="100" value="35" aria-label="Music volume"></div>
+    <audio id="tb-music-audio"></audio>
+  </section>
+  <section id="tb-studio-savebar" aria-label="Save and export">
+    <div class="tb-save-title">SAVE YOUR WORK <span id="tb-studio-save-status" class="">Ready</span></div>
+    <div class="tb-save-buttons">
+      <button type="button" id="tb-studio-save-local">💾 Save Local Master</button>
+      <button type="button" id="tb-studio-save-server">🌐 Export Server Version</button>
+    </div>
+    <div class="tb-save-help">Both downloads include your latest hotspots, challenges, and image overlays.</div>
+  </section>
+  <label for="tb-studio-mode">EDITOR SELECTOR</label><select id="tb-studio-mode"><option value="none">Choose an editor...</option><option value="hotspot">Hotspot Editor</option><option value="challenge">Challenge Editor</option><option value="overlay">Image Overlay Editor</option></select>
+  <div id="tb-studio-hotspot" class="tb-studio-panel"><p class="tb-note">Select a hotspot in the scene to edit it. Move this whole window by its title bar.</p></div>
+  <div id="tb-studio-challenge" class="tb-studio-panel"><p class="tb-note">Choose a challenge and assign its answer below.</p></div>
+  <div id="tb-studio-overlay" class="tb-studio-panel">
+   <label for="tb-overlay-file">ADD TRANSPARENT PNG / IMAGE</label><input type="file" id="tb-overlay-file" accept="image/png,image/webp,image/jpeg,image/gif" multiple="">
+   <label for="tb-overlay-path">Or use an existing website image path</label><input type="text" id="tb-overlay-path" placeholder="images/PNG/bee.png"><button type="button" id="tb-overlay-add-path">Add Existing Image</button>
+   <label for="tb-overlay-items">SELECT IMAGE</label><select id="tb-overlay-items"><option value="">Select an overlay</option></select>
+   <div class="tb-smallrow"><div><label for="tb-overlay-width">Width (%)</label><input type="number" id="tb-overlay-width" min="1" max="100" step="0.5"></div><div><label for="tb-overlay-rotate">Rotation (°)</label><input type="number" id="tb-overlay-rotate" min="-360" max="360" step="5"></div></div>
+   <button type="button" id="tb-overlay-front">Bring Forward</button><button type="button" id="tb-overlay-back">Send Back</button><button type="button" id="tb-overlay-delete" class="tb-danger">Remove</button>
+   <p class="tb-note">Drag an image on the scene to move it. Use the width control to resize. Changes appear in your exported HTML.</p>
+   <button type="button" id="tb-overlay-undo">Undo</button><button type="button" id="tb-overlay-redo">Redo</button>
+   <button type="button" id="tb-overlay-export">Save Updated HTML</button>
+   <p class="tb-note">For reliable publishing, use existing website image paths. Uploaded local images are embedded in the exported HTML, which can make it large.</p>
+  </div>
+ </div>
+</div>
+<script type="application/json" id="tb-overlay-data">[]</script>
 
-<script id="tb-overlay-data" type="application/json">[]</script>
 
 <script src="js/talkabee-enhanced-voice-boardwalk.js"></script>
 </body></html>
