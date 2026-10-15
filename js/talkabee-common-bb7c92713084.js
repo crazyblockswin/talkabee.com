@@ -15,6 +15,10 @@ function soundAfterVoice(el){
 document.addEventListener('click',function(ev){
  if(document.body.classList.contains('tb-hs-editing'))return;
  const el=ev.target.closest&&ev.target.closest('[data-tb-custom="1"]');if(!el)return;
+ // If the Adventure already owns this hotspot's click handler, let it run.
+ // Blocking propagation here previously prevented native challenge scoring.
+ // The batch-repaired HTML keeps the challenge card visible during scoring.
+ if(typeof el.onclick==='function')return;
  ev.preventDefault();ev.stopPropagation();
  const l=lang(),txt=translation(el,l),en=translation(el,'en'),key=el.dataset.word||el.dataset.object||en;
  try{
