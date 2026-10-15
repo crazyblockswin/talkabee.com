@@ -14,13 +14,6 @@
 <link rel="stylesheet" href="css/talkabee-panel-pilot-safe.css" id="talkabee-panel-typography-standard">
 <link rel="stylesheet" href="css/talkabee-card-typography-safe.css">
 <link rel="stylesheet" href="css/talkabee-enhanced-voice.css">
-<style id="tab-piper-controls">
-#voiceLab{position:relative;z-index:2;width:100%;margin:8px 0;font-size:12px}
-#voiceLab select,#voiceLab button{box-sizing:border-box;width:100%;max-width:100%}
-#voiceLabStatus{font-size:11px;line-height:1.4;overflow-wrap:anywhere}
-#voiceLabText,#voiceLabTestActions,#voiceLabCurrent,#voiceLabPlay,#voiceLabSlow,#voiceLabStop{display:none!important}
-#voiceLabNeural[hidden]{display:none!important}
-</style>
 <style id="tb-server-hide-editor-ui">#tb-studio,#tb-studio-launch,#tb-hs-editor,#tb-challenge-editor,#tb-overlay-editor,#tb-challenge-panel,.tb-hs-handle,[data-tb-editor-only]{display:none!important}</style>
 </head><body class="">
 <meta charset="utf-8">
@@ -142,11 +135,6 @@ body.tb-hs-editing .tb-hs-active>.tb-hs-handle{display:block!important}
 </select>
 <div class="label">VOICE</div>
 <select id="voice"><option value="">Browser Default</option><option value="Microsoft David - English (United States)">Microsoft David - English (United States) — en-US</option><option value="Microsoft Mark - English (United States)">Microsoft Mark - English (United States) — en-US</option><option value="Microsoft Zira - English (United States)">Microsoft Zira - English (United States) — en-US</option><option value="Microsoft David Desktop - English (United States)">Microsoft David Desktop - English (United States) — en-US</option><option value="Microsoft Zira Desktop - English (United States)">Microsoft Zira Desktop - English (United States) — en-US</option></select>
-<div id="voiceLab"><details open><summary>🎙️ Choose Voice</summary>
-<label for="voiceLabMode">Voice type</label><select id="voiceLabMode"><option value="standard">Standard</option><option value="enhanced">Enhanced</option></select>
-<div id="voiceLabNote" class="lab-note">Uses voices available in your browser.</div>
-<div id="voiceLabNeural" hidden><label for="voiceLabModel">Choose voice</label><select id="voiceLabModel"><option value="">Load voice catalog</option></select><button type="button" id="voiceLabLoad">Load voice</button></div>
-<div id="voiceLabStatus" role="status" aria-live="polite">Standard voice ready.</div></details></div>
 <button id="sceneView" aria-pressed="false">◉ Scene View</button>
 
 <div class="label">DISCOVERY</div>
@@ -263,7 +251,7 @@ function voices(){return ("speechSynthesis" in window)?speechSynthesis.getVoices
 function fillVoices(){const old=localStorage.getItem("talkabee-carrier-voice-"+langSel.value)||"";voiceSel.innerHTML='<option value="">Browser Default</option>';voices().forEach(v=>{const o=document.createElement("option");o.value=v.name;o.textContent=v.name+(v.lang?" — "+v.lang:"");voiceSel.appendChild(o)});if([...voiceSel.options].some(o=>o.value===old))voiceSel.value=old}
 if("speechSynthesis" in window){speechSynthesis.onvoiceschanged=fillVoices;fillVoices();setTimeout(fillVoices,150);setTimeout(fillVoices,600);setTimeout(fillVoices,1500)}
 voiceSel.onchange=()=>localStorage.setItem("talkabee-carrier-voice-"+langSel.value,voiceSel.value);
-function speak(text,rate=.88,onend=null){if(window.tbBoardwalkEnhancedSpeak?.(text,(typeof rate==="boolean"?(rate?0.65:0.88):(typeof rate==="number"?rate:0.82)),onend))return;if(!text||!("speechSynthesis" in window)){if(onend)onend();return}speechSynthesis.cancel();setTimeout(()=>{const u=new SpeechSynthesisUtterance(text);u.lang=SPEECH_LANG[langSel.value]||langSel.value;u.rate=rate;const v=speechSynthesis.getVoices().find(x=>x.name===voiceSel.value);if(v)u.voice=v;if(onend)u.onend=onend;speechSynthesis.speak(u)},50);lastSpoken=text}
+function speak(text,rate=.88,onend=null){if(window.tbAdventurePiperSpeak?.(text,rate,onend))return;if(!text||!("speechSynthesis" in window)){if(onend)onend();return}speechSynthesis.cancel();setTimeout(()=>{const u=new SpeechSynthesisUtterance(text);u.lang=SPEECH_LANG[langSel.value]||langSel.value;u.rate=rate;const v=speechSynthesis.getVoices().find(x=>x.name===voiceSel.value);if(v)u.voice=v;if(onend)u.onend=onend;speechSynthesis.speak(u)},50);lastSpoken=text}
 function stopSound(){document.querySelectorAll("audio[data-talkabee-sound]").forEach(a=>{a.pause();a.currentTime=0;a.remove()})}
 function playSound(key){stopSound();const src=SOUND_MAP[key];if(!src)return;const a=new Audio(src);a.dataset.talkabeeSound="1";document.body.appendChild(a);a.play().catch(()=>{});a.onended=()=>a.remove()}
 function showWord(key){activeLesson="";lastWord=key;lessonPhrase=1;title.textContent="Click & Discover";prompt.textContent="You found "+(EN[key]||key)+".";line.textContent=WORDS[langSel.value][key]||EN[key]||key;translation.textContent=langSel.value==="en"?"":(EN[key]||key)}
@@ -428,5 +416,5 @@ showWord("game");
 <script type="application/json" id="tb-overlay-data">[]</script>
 
 
-<script src="js/talkabee-enhanced-voice-boardwalk.js"></script>
+<script src="js/talkabee-enhanced-voice-adventures.js"></script>
 </body></html>
