@@ -10,6 +10,10 @@ const lang=$('lang');
 const prefix={en:'en_',es:'es_',fr:'fr_',de:'de_',it:'it_',pt:'pt_',no:'no_'};
 let engine=null,loading=null,catalog=[],audio=null,url=null,request=0;
 let lastText='',lastRate=.82;
+const voiceKey=()=> 'talkabee-piper-voice-'+lang.value;
+function savedVoice(){try{return localStorage.getItem(voiceKey())||''}catch(_){return ''}}
+function saveVoice(){try{if(select.value)localStorage.setItem(voiceKey(),select.value)}catch(_){}}
+
 const show=s=>{if(status)status.textContent=s};
 function stop(){
  request++;
@@ -18,12 +22,13 @@ function stop(){
  try{speechSynthesis.cancel()}catch(_){}
 }
 function recommend(){
- const p=prefix[lang.value]||'en_',old=select.value;
+ const p=prefix[lang.value]||'en_',old=select.value,saved=savedVoice();
  const matches=catalog.filter(v=>v.toLowerCase().startsWith(p));
  select.replaceChildren();
  for(const id of matches)select.add(new Option(id,id));
- if(matches.includes(old))select.value=old;
- else if(matches.length)select.value=matches.find(v=>v.includes('medium'))||matches[0];
+ if(matches.includes(saved))select.value=saved;
+ else if(matches.includes(old))select.value=old;
+ else if(matches.length)select.value=matches.find(v=>/hfc[_-]female/i.test(v)&&/medium/i.test(v))||matches.find(v=>/hfc[_-]female/i.test(v))||matches.find(v=>v.includes('medium'))||matches[0];
  else select.add(new Option('No enhanced voice for this language',''));
 }
 async function loadEngine(){
@@ -36,7 +41,7 @@ async function loadEngine(){
    const all=Array.isArray(voices)?voices.map(v=>typeof v==='string'?v:(v?.id||v?.key||v?.name||'')).filter(Boolean):Object.keys(voices||{});
    catalog=all.filter(id=>Object.values(prefix).some(p=>id.toLowerCase().startsWith(p)));
    if(!catalog.length)throw Error('No matching Piper voices found');
-   engine=m;recommend();show('Voice catalog ready. First speech may download a model.');
+   engine=m;recommend();show('Piper ready: '+(select.value||'choose a voice')+'. First speech may download the voice model.');
    return engine;
  })();
  try{return await loading}catch(e){loading=null;show('Piper unavailable: '+(e?.message||e));console.error(e);throw e}
@@ -46,12 +51,13 @@ function updateMode(){
  $('voiceLabNeural').hidden=!enabled; $('voiceLabNeural').style.setProperty('display',enabled?'block':'none','important');
  $('voiceLabNote').textContent=enabled?'Load a voice before speaking.':'Uses voices available in your browser.';
  try{localStorage.setItem('talkabee-lab-voice-mode',mode.value)}catch(_){}
- show(enabled?'Enhanced selected. Click Load voice.':'Standard voice ready.');
+ show(enabled?(engine?'Piper ready: '+(select.value||'choose a voice')+'. First speech may download the voice model.':'Loading Piper voice catalog…'):'Standard voice ready.');
+ if(enabled&&!engine)loadEngine().catch(()=>{});
 }
 try{if(localStorage.getItem('talkabee-lab-voice-mode')==='enhanced')mode.value='enhanced'}catch(_){}
 mode.addEventListener('change',()=>{stop();updateMode()});
-lang.addEventListener('change',()=>{stop();recommend()});
-select.addEventListener('change',()=>{stop();show('Voice selected: '+select.value)});
+lang.addEventListener('change',()=>{stop();if(engine){recommend();show('Piper ready: '+(select.value||'choose a voice')+'. First speech may download the voice model.')}else if(mode.value==='enhanced')loadEngine().catch(()=>{})});
+select.addEventListener('change',()=>{stop();saveVoice();show('Piper ready: '+select.value+'. First speech may download the voice model.')});
 $('voiceLabLoad').addEventListener('click',()=>loadEngine().catch(()=>{}));
 updateMode();
 
@@ -84,8 +90,8 @@ async function enhancedSpeak(text,rate,onComplete){
 }
 window.tbBoardwalkEnhancedSpeak=function(text,rate,onComplete){
  if(mode.value!=='enhanced'||!text)return false;
- // Let the existing browser voice work until Piper is explicitly loaded.
- if(!engine||!select.value)return false;
+ // Allow the first speech to initialize Piper after the catalog is ready.
+ if(!select.value){if(!engine)loadEngine().catch(()=>{});return false;}
  lastText=text;lastRate=rate||.82;
  enhancedSpeak(text,rate||.82,onComplete);
  return true;
