@@ -27,11 +27,11 @@
  const title=$('tb-studio-drag');title.addEventListener('pointerdown',e=>{if(e.target.closest('button'))return;const r=studio.getBoundingClientRect();drag={type:'studio',dx:e.clientX-r.left,dy:e.clientY-r.top};title.setPointerCapture(e.pointerId)});
  title.addEventListener('pointermove',e=>{if(!drag||drag.type!=='studio')return;studio.style.left=Math.max(0,Math.min(innerWidth-60,e.clientX-drag.dx))+'px';studio.style.top=Math.max(0,Math.min(innerHeight-35,e.clientY-drag.dy))+'px';});title.addEventListener('pointerup',()=>drag=null);title.addEventListener('pointercancel',()=>drag=null);
  function add(src){if(!src)return;snapshot();const id='overlay-'+Date.now()+'-'+Math.random().toString(36).slice(2,7);overlays.push({id,src,x:45,y:35,w:12,rotation:0,z:overlays.length+1,plane:'front'});choose(id)}
- $('tb-overlay-add-path').onclick=()=>{const src=$('tb-overlay-path').value.trim();if(!src||/^(javascript:|https?:|\/\/)/i.test(src)){alert('Enter a relative image path from your website, such as images/PNG/bee.png');return;}add(src)};
+ $('tb-overlay-add-path').onclick=()=>{const src=$('tb-overlay-path').value.trim();if(!src||/^(javascript:|https?:|\/\/)/i.test(src)){alert('Enter a relative image path from your website, such as images/png/bee.png');return;}add(src)};
  // Keep image bytes outside the HTML. Firefox downloads the chosen files;
- // the user places them in images/PNG/ before publishing the HTML.
+ // the user places them in images/png/ before publishing the HTML.
  const pendingOverlayFiles=new Map();
- const overlayFolder='images/PNG/';
+ const overlayFolder='images/png/';
  function overlayFilename(name){return String(name||'overlay.png').replace(/[\\/]/g,'_').replace(/[^a-zA-Z0-9._-]/g,'_');}
  function downloadOverlayFile(file){
    const url=URL.createObjectURL(file),a=document.createElement('a');
@@ -58,7 +58,7 @@
    download:downloadOverlayFile
  };
  const overlayNote=document.querySelector('#tb-studio-overlay .tb-note:last-of-type');
- if(overlayNote)overlayNote.textContent='Overlays use images/PNG/ file paths. Save Local Master and Export Server Version download HTML only.';
+ if(overlayNote)overlayNote.textContent='Overlays use images/png/ file paths. Save Local Master and Export Server Version download HTML only.';
  $('tb-overlay-items').onchange=e=>choose(e.target.value);
  function edit(prop,value){const o=overlays.find(x=>x.id===selected);if(!o||!Number.isFinite(value))return;snapshot();o[prop]=value;refresh()}
  $('tb-overlay-width').onchange=e=>edit('w',Math.max(1,Math.min(100,Number(e.target.value))));$('tb-overlay-rotate').onchange=e=>edit('rotation',Number(e.target.value));
