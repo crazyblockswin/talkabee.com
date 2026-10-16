@@ -64,18 +64,18 @@
  function edit(prop,value){const o=overlays.find(x=>x.id===selected);if(!o||!Number.isFinite(value))return;snapshot();o[prop]=value;refresh()}
  $('tb-overlay-width').onchange=e=>edit('w',Math.max(1,Math.min(100,Number(e.target.value))));$('tb-overlay-rotate').onchange=e=>edit('rotation',Number(e.target.value));
 
- // The Adventure HTML already contains stepper buttons. Reuse them; never nest more.
+ // Rebuild each entire control cell once. Old builds left buttons in outer
+ // wrappers, so cleaning only the innermost stepper did not remove duplicates.
  function wireStepper(inputId,prop,step,min,max){
-   const input=$(inputId);
-   if(!input)return;
-   let group=input.closest('.tb-overlay-stepper');
-   if(!group){
-     group=document.createElement('div');group.className='tb-overlay-stepper';
-     input.parentNode.insertBefore(group,input);group.appendChild(input);
-   }
-   // Remove accidental nested/duplicate controls left by older editor builds.
-   const buttons=[...group.querySelectorAll('.tb-overlay-step-button')];
-   buttons.forEach(b=>b.remove());
+   const input=$(inputId);if(!input)return;
+   const cell=input.closest('.tb-smallrow > div');if(!cell)return;
+   const label=cell.querySelector('label[for="'+inputId+'"]');
+   // Detach the original input to preserve its onchange handler and value.
+   input.remove();
+   // Remove every stale nested wrapper, stray button, and duplicate control.
+   cell.replaceChildren();
+   if(label)cell.appendChild(label);
+   const group=document.createElement('div');group.className='tb-overlay-stepper';
    const minus=document.createElement('button'),plus=document.createElement('button');
    for(const [button,direction] of [[minus,-1],[plus,1]]){
      button.type='button';button.className='tb-overlay-step-button';
@@ -87,8 +87,8 @@
        edit(prop,Math.round(Math.max(min,Math.min(max,Number(o[prop])+direction*step))*100)/100);
      });
    }
-   group.insertBefore(minus,input);group.appendChild(plus);
-   input.classList.add('tb-overlay-step-input');input.setAttribute('inputmode','decimal');
+   input.className='tb-overlay-step-input';input.setAttribute('inputmode','decimal');
+   group.append(minus,input,plus);cell.appendChild(group);
  }
  wireStepper('tb-overlay-width','w',0.5,1,100);
  wireStepper('tb-overlay-rotate','rotation',5,-360,360);
@@ -270,18 +270,21 @@ function serialize(server){
    clone.querySelectorAll('.tb-studio-panel').forEach(x=>x.classList.remove('active'));
    // Export the canonical controls, not runtime-added wrappers or messages.
    clone.querySelector('#tb-overlay-stepper-repair')?.remove();
+   // Save a clean canonical stepper even if a previous build left nested buttons.
    for(const id of ['tb-overlay-width','tb-overlay-rotate']){
-     const input=clone.querySelector('#'+id);
-     if(!input)continue;
-     let group=input.closest('.tb-overlay-stepper');
-     while(group && group.parentElement?.classList.contains('tb-overlay-stepper')){
-       const outer=group.parentElement;outer.parentNode.insertBefore(group,outer);outer.remove();
+     const input=clone.querySelector('#'+id);if(!input)continue;
+     const cell=input.closest('.tb-smallrow > div');if(!cell)continue;
+     const label=cell.querySelector('label[for="'+id+'"]');
+     input.remove();cell.replaceChildren();
+     if(label)cell.appendChild(label);
+     const group=clone.ownerDocument.createElement('div');group.className='tb-overlay-stepper';
+     for(const sign of ['−','+']){
+       const button=clone.ownerDocument.createElement('button');
+       button.type='button';button.className='tb-overlay-step-button';button.textContent=sign;
+       if(sign==='−')group.appendChild(button);
+       else {group.appendChild(input);group.appendChild(button);}
      }
-     group=input.closest('.tb-overlay-stepper');
-     if(group){
-       const btns=[...group.querySelectorAll('.tb-overlay-step-button')];
-       btns.slice(2).forEach(b=>b.remove());
-     }
+     cell.appendChild(group);
    }
    const depthNotes=[...clone.querySelectorAll('#tb-studio-overlay .tb-note')].filter(n=>n.textContent.trim().startsWith('Front/Back places the selected image'));
    depthNotes.slice(1).forEach(n=>n.remove());
