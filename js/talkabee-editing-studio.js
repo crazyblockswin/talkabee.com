@@ -7,7 +7,7 @@
  const layer=document.createElement('div');layer.id='tb-overlay-layer';scene.appendChild(layer);
  let overlays=[],selected=null,history=[],future=[],drag=null,muted=false;
  try{overlays=JSON.parse($('tb-overlay-data').textContent||'[]');if(!Array.isArray(overlays))overlays=[]}catch(e){overlays=[]}
- const safe=o=>({id:String(o.id||('overlay-'+Date.now())),src:String(o.src||''),x:Number(o.x)||0,y:Number(o.y)||0,w:Number(o.w)||12,rotation:Number(o.rotation)||0,z:Number(o.z)||1,plane:o.plane==='back'?'back':'front'});
+ const safe=o=>({id:String(o.id||('overlay-'+Date.now())),src:String(o.src||'').replace(/^images\/PNG\//i,'images/png/'),x:Number(o.x)||0,y:Number(o.y)||0,w:Number(o.w)||12,rotation:Number(o.rotation)||0,z:Number(o.z)||1,plane:o.plane==='back'?'back':'front'});
  overlays=overlays.filter(o=>o&&typeof o.src==='string').map(safe);
  function sync(){ $('tb-overlay-data').textContent=JSON.stringify(overlays); }
  function snapshot(){history.push(JSON.stringify(overlays));if(history.length>50)history.shift();future=[]}
@@ -27,7 +27,7 @@
  const title=$('tb-studio-drag');title.addEventListener('pointerdown',e=>{if(e.target.closest('button'))return;const r=studio.getBoundingClientRect();drag={type:'studio',dx:e.clientX-r.left,dy:e.clientY-r.top};title.setPointerCapture(e.pointerId)});
  title.addEventListener('pointermove',e=>{if(!drag||drag.type!=='studio')return;studio.style.left=Math.max(0,Math.min(innerWidth-60,e.clientX-drag.dx))+'px';studio.style.top=Math.max(0,Math.min(innerHeight-35,e.clientY-drag.dy))+'px';});title.addEventListener('pointerup',()=>drag=null);title.addEventListener('pointercancel',()=>drag=null);
  function add(src){if(!src)return;snapshot();const id='overlay-'+Date.now()+'-'+Math.random().toString(36).slice(2,7);overlays.push({id,src,x:45,y:35,w:12,rotation:0,z:overlays.length+1,plane:'front'});choose(id)}
- $('tb-overlay-add-path').onclick=()=>{const src=$('tb-overlay-path').value.trim();if(!src||/^(javascript:|https?:|\/\/)/i.test(src)){alert('Enter a relative image path from your website, such as images/png/bee.png');return;}add(src)};
+ $('tb-overlay-add-path').onclick=()=>{const src=$('tb-overlay-path').value.trim().replace(/^images\/PNG\//i,'images/png/');if(!src||/^(javascript:|https?:|\/\/)/i.test(src)){alert('Enter a relative image path from your website, such as images/png/bee.png');return;}add(src)};
  // Keep image bytes outside the HTML. Firefox downloads the chosen files;
  // the user places them in images/png/ before publishing the HTML.
  const pendingOverlayFiles=new Map();
