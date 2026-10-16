@@ -80,7 +80,9 @@ function select(b){if(selected)selected.classList.remove('selected');selected=b;
 function setEdit(on){editing=on;area.classList.toggle('picture-editing',on);panel.classList.toggle('open',on);toggle.hidden=on;if(!on)select(null);else{populate();select(buttons()[0]||null)}}
 buttons().forEach((b,i)=>{b.dataset.pictureIndex=i;if(positions[i])apply(b,positions[i]);});
 // Capture before original click handler so editing never opens a translation popup.
-area.addEventListener('click',e=>{if(editing){e.preventDefault();e.stopImmediatePropagation()}},true);
+// Editing mode owns hotspot clicks: never open the vocabulary/voice popup while dragging or selecting.
+area.addEventListener('click',e=>{if(!editing)return;e.preventDefault();e.stopImmediatePropagation();const b=e.target.closest('button');if(b&&area.contains(b))select(b)},true);
+area.addEventListener('dblclick',e=>{if(editing){e.preventDefault();e.stopImmediatePropagation()}},true);
 area.addEventListener('pointerdown',e=>{if(!editing)return;const b=e.target.closest('button');if(!b||!area.contains(b))return;e.preventDefault();e.stopPropagation();select(b);const r=b.getBoundingClientRect(),ar=area.getBoundingClientRect();const resize=e.clientX>r.right-23&&e.clientY>r.bottom-23;drag={b,id:e.pointerId,x:e.clientX,y:e.clientY,left:pct(b,'left'),top:pct(b,'top'),width:pct(b,'width'),height:pct(b,'height'),resize,aw:ar.width,ah:ar.height};b.setPointerCapture(e.pointerId)},true);
 area.addEventListener('pointermove',e=>{if(!drag||e.pointerId!==drag.id)return;e.preventDefault();let dx=100*(e.clientX-drag.x)/drag.aw,dy=100*(e.clientY-drag.y)/drag.ah;const b=drag.b;if(drag.resize){b.style.width=Math.max(1,Math.min(100-drag.left,drag.width+dx))+'%';b.style.height=Math.max(1,Math.min(100-drag.top,drag.height+dy))+'%'}else{b.style.left=Math.max(0,Math.min(100-drag.width,drag.left+dx))+'%';b.style.top=Math.max(0,Math.min(100-drag.height,drag.top+dy))+'%'}});
 function finish(e){if(drag&&e.pointerId===drag.id){drag=null}}area.addEventListener('pointerup',finish);area.addEventListener('pointercancel',finish);
@@ -106,11 +108,13 @@ let editing=false,selected=null,drag=null;const buttons=()=>Array.from(area.quer
 const pct=(b,k)=>parseFloat(b.style[k])||0;
 function populate(){pick.innerHTML='';buttons().forEach((b,i)=>{const o=document.createElement('option');o.value=i;o.textContent=(i+1)+'. '+b.getAttribute('aria-label');pick.append(o)});if(selected)pick.value=buttons().indexOf(selected)}
 function select(b){if(selected)selected.classList.remove('selected');selected=b;if(b){b.classList.add('selected');pick.value=buttons().indexOf(b)}}
-function setEdit(on){editing=on;area.classList.toggle('picture-editing',on);panel.classList.toggle('open',on);if(on){populate();select(buttons()[0]||null)}else select(null)}
+function setEdit(on){editing=on;area.classList.toggle('picture-editing',on);panel.classList.toggle('open',on);if(on){document.getElementById('overlay').classList.remove('open');if(window.speechSynthesis)window.speechSynthesis.cancel();populate();select(buttons()[0]||null)}else select(null)}
 shortcut.addEventListener('click',()=>{document.getElementById('pictureExit').click();setEdit(true)});
 document.getElementById('homeExit').addEventListener('click',()=>setEdit(false));
 pick.addEventListener('change',()=>select(buttons()[+pick.value]));
-area.addEventListener('click',e=>{if(editing){e.preventDefault();e.stopImmediatePropagation()}},true);
+// Editing mode owns hotspot clicks: never open the vocabulary/voice popup while dragging or selecting.
+area.addEventListener('click',e=>{if(!editing)return;e.preventDefault();e.stopImmediatePropagation();const b=e.target.closest('button');if(b&&area.contains(b))select(b)},true);
+area.addEventListener('dblclick',e=>{if(editing){e.preventDefault();e.stopImmediatePropagation()}},true);
 area.addEventListener('pointerdown',e=>{if(!editing)return;const b=e.target.closest('button');if(!b||!area.contains(b))return;e.preventDefault();e.stopPropagation();select(b);const r=b.getBoundingClientRect(),ar=area.getBoundingClientRect();drag={b,id:e.pointerId,x:e.clientX,y:e.clientY,left:pct(b,'left'),top:pct(b,'top'),width:pct(b,'width'),height:pct(b,'height'),resize:e.clientX>r.right-23&&e.clientY>r.bottom-23,aw:ar.width,ah:ar.height};b.setPointerCapture(e.pointerId)},true);
 area.addEventListener('pointermove',e=>{if(!drag||e.pointerId!==drag.id)return;e.preventDefault();const dx=100*(e.clientX-drag.x)/drag.aw,dy=100*(e.clientY-drag.y)/drag.ah,b=drag.b;if(drag.resize){b.style.width=Math.max(1,Math.min(100-drag.left,drag.width+dx))+'%';b.style.height=Math.max(1,Math.min(100-drag.top,drag.height+dy))+'%'}else{b.style.left=Math.max(0,Math.min(100-drag.width,drag.left+dx))+'%';b.style.top=Math.max(0,Math.min(100-drag.height,drag.top+dy))+'%'}});
 area.addEventListener('pointerup',e=>{if(drag&&e.pointerId===drag.id)drag=null});area.addEventListener('pointercancel',()=>drag=null);
