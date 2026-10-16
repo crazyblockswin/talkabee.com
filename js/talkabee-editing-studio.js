@@ -50,9 +50,6 @@
      add(src);
    }
    e.target.value='';
-   if(files.length){
-     alert('Overlay image paths have been added without Base64. When you save, the PNG/image files will download separately. Put them in your website '+overlayFolder+' folder before uploading the Adventure.');
-   }
  };
  // Allow the save runtime to download only files still referenced by overlays.
  window.tbStudioOverlayAssets={
