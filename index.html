@@ -19,6 +19,25 @@
 .header-resting-bee{position:absolute;right:12px;top:50%;transform:translateY(-50%);width:130px;height:92px;object-fit:contain;pointer-events:none}
 @media(max-width:1100px){.top{padding-right:105px}.header-resting-bee{width:88px;height:72px;right:8px}}
 @media(max-width:650px){.top{padding-right:12px;padding-bottom:74px}.header-resting-bee{top:auto;bottom:4px;right:12px;transform:none;width:110px;height:65px}}
+/* Keep translated navigation on one line without displacing either mascot. */
+@media(min-width:1101px){
+ .top{gap:12px;flex-wrap:nowrap}
+ .brand{font-size:clamp(25px,2.3vw,33px);gap:8px;flex:0 0 auto}
+ .nav{flex-wrap:nowrap;gap:7px;min-width:0;justify-content:center}
+ .nav a{white-space:nowrap;font-size:clamp(14px,1.12vw,17px);padding:10px 12px}
+ .language{flex:0 0 auto;font-size:clamp(14px,1.12vw,17px);gap:5px}
+ .language select{max-width:150px;padding:9px 8px;font-size:inherit}
+}
+@media(min-width:1101px) and (max-width:1350px){
+ .top{padding-right:112px;gap:8px}
+ .brand{font-size:25px}.brand img{width:54px;height:54px}
+ .nav a{font-size:14px;padding:9px 8px}
+ .header-resting-bee{width:90px;height:70px}
+}
+@media(min-width:651px) and (max-width:1100px){
+ .top{flex-wrap:wrap;justify-content:center;padding-right:110px}
+ .nav{flex-wrap:nowrap}.nav a{white-space:nowrap;font-size:14px;padding:9px 10px}
+}
 </style></head><body><div class="hero"><div class="shell"><header class="top"><a class="brand" href="index.html"><img src="images/bee7.png" alt="Talk A Bee mascot">Talk A Bee</a><nav class="nav" aria-label="Main navigation"><a href="Talk-A-Bee-Main-Directory.html">Learn</a><a href="adventures.html">Adventures</a><a href="#how-it-works" id="homeHowLink" aria-haspopup="dialog">How It Works</a></nav><label class="language">🌐 <span>Language</span><select id="native" aria-label="Preferred language"><option value="en">English</option><option value="es">Español</option><option value="fr">Français</option><option value="de">Deutsch</option><option value="it">Italiano</option><option value="pt">Português</option><option value="no">Norsk</option></select></label><img class="header-resting-bee" src="images/bee-laying-down.png" alt="" aria-hidden="true"></header>
 <section class="intro"><h1>Explore &amp; Discover a Fun New Way to Learn Languages!</h1><p>Step into an interactive world of adventures, storybook experiences, real-life sounds, and exciting discoveries. Make your own choices, explore at your own pace, and watch language learning come alive!</p><div class="goldline"></div></section>
 <main class="paths"><section class="panel" aria-labelledby="learnTitle"><div class="panelhead"><h2 id="learnTitle">📖 Learn the Basics</h2><p>Everyday words, pictures and expressions</p></div><div class="panelbody"><div class="activities"><a class="activity" href="numbers.html"><span class="symbol">🔢</span>Numbers</a><a class="activity" href="picture-learning.html"><span class="symbol">🍎</span>Pictures</a><a class="activity" href="time-calendar.html"><span class="symbol">🕒</span>Time &amp; Calendar</a><a class="activity" href="colors-shapes.html"><span class="symbol">🎨</span>Colors &amp; Shapes</a><a class="activity" href="feelings-expressions.html"><span class="symbol">😊</span>Feelings &amp; Expressions</a><a class="activity" href="Talk-A-Bee-Main-Directory.html"><span class="symbol">🧭</span>All Learning</a></div><p class="learning-intro">Explore everyday words, pictures, and expressions. Choose your languages and learn at your own pace.</p><p class="comment-invite">If you have any suggestions, feel free to send us your comments. <a href="Talk-A-Bee-Comments.html" id="homeCommentLink" aria-haspopup="dialog">Leave a Comment →</a></p><a class="action" href="Talk-A-Bee-Main-Directory.html">Explore Learning →</a></div></section>
