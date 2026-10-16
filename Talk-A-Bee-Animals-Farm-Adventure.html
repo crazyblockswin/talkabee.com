@@ -371,18 +371,7 @@ Target the actual elements.
 
 <!-- TALK A BEE HOTSPOTS VISUALLY RECERTIFIED AGAINST CURRENT SCENE ARTWORK: 2026-10-07 -->
 
-<style id="talkabee-hotspot-editor-style">
-#tb-hs-editor{position:fixed;right:16px;bottom:16px;z-index:2147483646;font:700 12px Arial,sans-serif;display:flex;flex-wrap:wrap;justify-content:flex-end;gap:6px;max-width:650px}
-#tb-hs-editor button,#tb-hs-editor input{border:1px solid #fff;border-radius:10px;background:#000;color:#fff;padding:9px 11px;box-shadow:0 4px 14px #0006}
-#tb-hs-editor input{background:#fff;color:#111;min-width:180px;font-weight:400}#tb-hs-editor button{cursor:pointer}
-body.tb-hs-editing .hotspot,body.tb-hs-editing .home-hotspot,body.tb-hs-editing .yacht-hotspot,body.tb-hs-editing .hotspots button,body.tb-hs-editing .train-hotspots button{display:block!important;outline:2px solid #ffea00!important;background:rgba(255,234,0,.18)!important;pointer-events:auto!important;cursor:move!important;visibility:visible!important;opacity:1!important;z-index:2147483005!important}
-body.tb-hs-editing .tb-hs-active{outline:3px solid #00ffff!important;background:rgba(0,255,255,.18)!important}
-.tb-hs-handle{position:absolute!important;right:-7px!important;bottom:-7px!important;left:auto!important;top:auto!important;width:14px!important;height:14px!important;border-radius:3px!important;background:#00ffff!important;border:2px solid #000!important;z-index:2147483647!important;cursor:nwse-resize!important;display:none!important;transform:none!important}
-body.tb-hs-editing .tb-hs-active>.tb-hs-handle{display:block!important}
 
-#tb-hs-editor .tb-sound-name{min-width:150px;max-width:230px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font:12px/1.2 Arial,sans-serif;color:#fff;opacity:.9}
-#tb-hs-editor input[type="file"].tb-sound-file{display:none!important}
-</style>
 
 <link rel="stylesheet" href="css/common-inline-8492e8692583.css" id="talkabee-bilingual-hotspot-popup-style">
 
@@ -405,15 +394,6 @@ body.tb-hs-editing .tb-hs-active>.tb-hs-handle{display:block!important}
 #world.challenge-mode #farmNextChallenge:hover{background:#ffe8a1!important}
 #world.challenge-mode .live-card .actions{flex-wrap:wrap!important}
 </style>
-<link rel="stylesheet" href="css/talkabee-enhanced-voice.css">
-<style id="tb-piper-controls">
-#voiceLab{position:relative;z-index:2;width:100%;margin:8px 0;font-size:12px}
-#voiceLab select,#voiceLab button{box-sizing:border-box;width:100%;max-width:100%}
-#voiceLabStatus{font-size:11px;line-height:1.4;overflow-wrap:anywhere}
-#voiceLabText,#voiceLabTestActions,#voiceLabCurrent,#voiceLabPlay,#voiceLabSlow,#voiceLabStop{display:none!important}
-#voiceLabNeural[hidden]{display:none!important}
-</style>
-<style id="tb-server-hide-editor-ui">#tb-studio,#tb-studio-launch,#tb-hs-editor,#tb-challenge-editor,#tb-overlay-editor,#tb-challenge-panel,.tb-hs-handle,[data-tb-editor-only]{display:none!important}</style>
 </head>
 <body class="">
 <div class="talkabee-editions">
@@ -432,7 +412,7 @@ body.tb-hs-editing .tb-hs-active>.tb-hs-handle{display:block!important}
 
 <nav class="talkabee-prev-next-nav" aria-label="Adventure navigation"><a href="Talk-A-Bee-Hotel-Adventure.html" aria-label="Previous page" title="Previous">‹</a><a href="Talk-A-Bee-Boardwalk-Adventure.html" aria-label="Next page" title="Next">›</a></nav>
 
-<main class="world challenge-mode" id="world">
+<main class="world" id="world">
 
 
 <button id="restorePanel" type="button">Return to Adventure</button>
@@ -446,18 +426,13 @@ body.tb-hs-editing .tb-hs-active>.tb-hs-handle{display:block!important}
 <div class="farm-left-controls">
 <select id="adventureLanguage" aria-label="Adventure language"><option value="es">🇪🇸 Spanish</option><option value="fr">🇫🇷 French</option><option value="en">🇺🇸 English</option><option value="de">🇩🇪 German</option><option value="it">🇮🇹 Italian</option><option value="pt">🇵🇹 Portuguese</option><option value="no">🇳🇴 Norwegian</option></select>
 <div class="label">VOICE</div>
-<select id="adventureVoice" aria-label="Adventure voice"><option value="">Browser Default Voice</option><option value="urn:moz-tts:sapi:Microsoft David - English (United States)?en-US">Microsoft David - English (United States) — en-US</option><option value="urn:moz-tts:sapi:Microsoft Mark - English (United States)?en-US">Microsoft Mark - English (United States) — en-US</option><option value="urn:moz-tts:sapi:Microsoft Zira - English (United States)?en-US">Microsoft Zira - English (United States) — en-US</option><option value="urn:moz-tts:sapi:Microsoft David Desktop - English (United States)?en-US">Microsoft David Desktop - English (United States) — en-US</option><option value="urn:moz-tts:sapi:Microsoft Zira Desktop - English (United States)?en-US">Microsoft Zira Desktop - English (United States) — en-US</option></select>
-<div id="voiceLab"><details open><summary>🎙️ Choose Voice</summary>
-<label for="voiceLabMode">Voice type</label><select id="voiceLabMode"><option value="standard">Standard</option><option value="enhanced">Enhanced</option></select>
-<div id="voiceLabNote" class="lab-note">Uses voices available in your browser.</div>
-<div id="voiceLabNeural" hidden><label for="voiceLabModel">Choose voice</label><select id="voiceLabModel"><option value="">Load voice catalog</option></select><button type="button" id="voiceLabLoad">Load voice</button></div>
-<div id="voiceLabStatus" role="status" aria-live="polite">Standard voice ready.</div></details></div>
+<select id="adventureVoice" aria-label="Adventure voice"><option value="">Browser Default Voice</option><option value="urn:moz-tts:sapi:Microsoft David - English (United States)?en-US">Microsoft David - English (United States) — en-US</option><option value="urn:moz-tts:sapi:Microsoft Mark - English (United States)?en-US">Microsoft Mark - English (United States) — en-US</option><option value="urn:moz-tts:sapi:Microsoft Zira - English (United States)?en-US">Microsoft Zira - English (United States) — en-US</option><option value="urn:moz-tts:sapi:Microsoft David Desktop - English (United States)?en-US">Microsoft David Desktop - English (United States) — en-US</option><option value="urn:moz-tts:sapi:Microsoft Zira Desktop - English (United States)?en-US">Microsoft Zira Desktop - English (United States) — en-US</option></select><div id="tbPiperPanel" style="margin: 10px 0px; padding: 9px; border: 1px solid rgb(168, 178, 189); border-radius: 9px; background: rgba(22, 27, 32, 0.65); color: white; font: 14px Arial, sans-serif;"><label style="display:block;margin-bottom:5px">Voice type <select id="tbPiperMode" style="max-width:100%;color:#111;background:#fff"><option value="standard">Standard</option><option value="enhanced">Enhanced (Piper)</option></select></label><div id="tbPiperOptions" hidden=""><select id="tbPiperModel" aria-label="Piper voice" style="max-width:100%;color:#111;background:#fff"><option value="">Load voice catalog</option></select> <button type="button" id="tbPiperLoad" style="color:#111;background:#eee">Load voice</button></div><div id="tbPiperStatus" role="status" aria-live="polite" style="font-size:12px;margin-top:5px">Standard voice ready.</div></div>
 <button id="sceneView" type="button" aria-pressed="false">◉ Scene View</button>
 </div>
 <div class="label">DISCOVERY</div>
 <button class="click discovery" data-key="discovery" aria-label="Discovery">🔎 Discovery — Click the Scene</button>
 <div class="label">ACTIVITIES</div>
-<button class="click activity a1" data-key="pets" aria-label="Activity 1 Friendly Pets">1. Friendly Pets</button>
+<button class="click activity a1 active-choice" data-key="pets" aria-label="Activity 1 Friendly Pets">1. Friendly Pets</button>
 <button class="click activity a2" data-key="farm" aria-label="Activity 2 Farm Animals">2. Farm Animals</button>
 <button class="click activity a3" data-key="wild" aria-label="Activity 3 Wild Neighbors">3. Wild Neighbors</button>
 <button class="click activity a4" data-key="birds" aria-label="Activity 4 Chickens and Rooster">4. Chickens &amp; Rooster</button>
@@ -468,13 +443,13 @@ body.tb-hs-editing .tb-hs-active>.tb-hs-handle{display:block!important}
 <button class="click challenge c2" data-key="c2" aria-label="Challenge 2">2. Find the horse</button>
 <button class="click challenge c3" data-key="c3" aria-label="Challenge 3">3. Find the cow</button>
 <button class="click challenge c4" data-key="c4" aria-label="Challenge 4">4. Find the sheep</button>
-<button class="click challenge c5 active-choice" data-key="c5" aria-label="Challenge 5">5. Find the Barn</button>
+<button class="click challenge c5" data-key="c5" aria-label="Challenge 5">5. Find the Barn</button>
 <button class="click challenge c6" data-key="c6" aria-label="Challenge 6">6. Find the RV Door</button>
 
 <a id="back" class="click" href="index.html" aria-label="Return to Main Directory">← Return to Main Directory</a></aside><div class="script-mask" aria-hidden="true">
 
-</div><section class="live-card tab-master-card" aria-live="polite" data-moved="1" style="inset: 294.367px auto auto 602.483px !important; transform-origin: left top 0px !important; transform: scale(0.67) !important;"><div class="tab-card-tools" aria-label="Script card controls"><button type="button" class="tab-card-drag" title="Move script card">↕ Move</button><button type="button" class="tab-card-font-down" title="Decrease text">A−</button><button type="button" class="tab-card-font-up" title="Increase text">A+</button><button type="button" class="tab-card-reset" title="Reset card">Reset</button></div><div class="kicker" id="kicker" data-base-font="19px">CHALLENGE 5 OF 6</div><h1 id="title" data-base-font="28px">Find the Barn</h1><p class="prompt" id="prompt" data-base-font="24px">Click the Barn in the scene.</p><div class="target" id="target" data-base-font="28px">Where is the barn?</div><div class="translation" id="translation" data-base-font="24px"></div><div class="actions"><button class="primary audio-active" id="normal" data-base-font="19px">🔊 Speak</button><button id="slow" data-base-font="19px">🐢 Slow</button><button id="replay" data-base-font="19px">↻ Replay</button><button type="button" id="farmNextChallenge" data-base-font="19px">Next</button></div><div class="status" id="status">Try another animal.</div><div class="tab-card-resize" title="Drag to resize script card" aria-label="Resize script card">↘</div></section>
-<button class="hotspot" id="horse" data-name="Horse" data-es="el caballo" style="width: 13.28%; height: 12.97%; left: 16.79%; top: 41.71%;"></button><button class="hotspot" id="cow" data-name="Cow" data-es="la vaca" style="left: 33.39%; top: 43.8%; width: 9.85%; height: 6.68%;"></button><button class="hotspot" id="sheep" data-name="Sheep" data-es="la oveja" style="left: 24.85%; top: 51.3%; width: 8.55%; height: 7.23%;"></button><button class="hotspot" id="goat" data-name="Goat" data-es="la cabra" style="left: 27.53%; top: 65.46%; width: 10.63%; height: 14.18%;"></button><button class="hotspot" id="pig" data-name="Pig" data-es="el cerdo" style="left: 15.2%; top: 72.89%; width: 10%; height: 14.92%;"></button><button class="hotspot" id="dog" data-name="Dog" data-es="el perro" style="left: 50.98%; top: 71.07%; width: 10.89%; height: 13.35%;"></button><button class="hotspot" id="rooster" data-name="Rooster" data-es="el gallo" style="width: 4.74%; height: 9.55%; left: 85.04%; top: 62.61%;"></button><button class="hotspot" id="chicken" data-name="Chicken" data-es="la gallina" style="left: 78.69%; top: 68.39%;"></button><button class="hotspot" id="rabbit" data-name="Rabbit" data-es="el conejo" style="width: 8.18%; height: 10.29%; left: 56.57%; top: 92.6%;"></button><button class="hotspot" id="squirrel" data-name="Squirrel" data-es="la ardilla" style="left: 94.98%; top: 47.32%; width: 7.14%; height: 12.6%;" data-sound="sounds/squirrel.mp3"></button><button class="hotspot" id="butterfly" data-name="Butterfly" data-es="la mariposa" style="left: 39.57%; top: 92.06%; width: 7.24%; height: 7.23%;"></button><button class="hotspot target-hotspot" id="barn" data-name="Barn" data-es="el granero" style="width: 7.61%; height: 13.71%; left: 56.35%; top: 38.44%;"></button><button class="hotspot" id="windmill" data-name="Windmill" data-es="el molino de viento" style="left: 63.23%; top: 22.13%; width: 3.81%; height: 12.6%;"></button><button class="hotspot" id="rv" data-name="Fifth-wheel RV" data-es="la casa rodante" style="left: 82.3%; top: 35.19%; width: 15.68%; height: 20.58%;"></button><button class="hotspot" id="campfire" data-name="Campfire" data-es="la fogata" style="left: 63.18%; top: 68.86%; width: 12.35%; height: 13.99%;"></button><button class="hotspot" id="fence" data-name="Fence" data-es="la cerca" style="left: 12.28%; top: 55.74%; width: 3.96%; height: 16.03%;"></button><button class="hotspot" id="flowers" data-name="Flowers" data-es="las flores" style="left: 8.6%; top: 92.17%; width: 10.63%; height: 13.8%;"></button><button class="hotspot" id="mountains" data-name="Mountains" data-es="las montañas" style="width: 15.83%; height: 11.22%; left: 29.15%; top: 19.46%;"></button><button class="hotspot" id="chick" data-name="Chick" data-es="el pollito" style="left: 87.44%; top: 74.31%; width: 5.89%; height: 8.53%;"></button>
+</div><section class="live-card tab-master-card" aria-live="polite" data-moved="1" style="inset: 172.367px auto auto 602.483px !important; transform-origin: left top 0px !important; transform: scale(0.67) !important;"><div class="tab-card-tools" aria-label="Script card controls"><button type="button" class="tab-card-drag" title="Move script card">↕ Move</button><button type="button" class="tab-card-font-down" title="Decrease text">A−</button><button type="button" class="tab-card-font-up" title="Increase text">A+</button><button type="button" class="tab-card-reset" title="Reset card">Reset</button></div><div class="kicker" id="kicker" data-base-font="19px">ACTIVITY 1 • FRIENDLY PETS</div><h1 id="title" data-base-font="28px">Meet Bear by the campfire.</h1><p class="prompt" id="prompt" data-base-font="24px">Listen, repeat, and use the scene to connect the words with what you see.</p><div class="target" id="target" data-base-font="28px">El perro está junto al fuego.</div><div class="translation" id="translation" data-base-font="24px">The dog is beside the fire.</div><div class="actions"><button class="primary audio-active" id="normal" data-base-font="19px">🔊 Speak</button><button id="slow" data-base-font="19px">🐢 Slow</button><button id="replay" data-base-font="19px">↻ Replay</button><button type="button" id="farmNextChallenge" data-base-font="19px">Next phrase →</button></div><div class="status" id="status"></div><div class="tab-card-resize" title="Drag to resize script card" aria-label="Resize script card">↘</div></section>
+<button class="hotspot" id="horse" data-name="Horse" data-es="el caballo" style="width: 13.28%; height: 12.97%; left: 16.79%; top: 41.71%;"></button><button class="hotspot" id="cow" data-name="Cow" data-es="la vaca" style="left: 33.39%; top: 43.8%; width: 9.85%; height: 6.68%;"></button><button class="hotspot" id="sheep" data-name="Sheep" data-es="la oveja" style="left: 24.85%; top: 51.3%; width: 8.55%; height: 7.23%;"></button><button class="hotspot" id="goat" data-name="Goat" data-es="la cabra" style="left: 27.53%; top: 65.46%; width: 10.63%; height: 14.18%;"></button><button class="hotspot" id="pig" data-name="Pig" data-es="el cerdo" style="left: 15.2%; top: 72.89%; width: 10%; height: 14.92%;"></button><button class="hotspot" id="dog" data-name="Dog" data-es="el perro" style="left: 50.98%; top: 71.07%; width: 10.89%; height: 13.35%;"></button><button class="hotspot" id="rooster" data-name="Rooster" data-es="el gallo" style="width: 4.74%; height: 9.55%; left: 85.04%; top: 62.61%;"></button><button class="hotspot" id="chicken" data-name="Chicken" data-es="la gallina" style="left: 78.69%; top: 68.39%;"></button><button class="hotspot" id="rabbit" data-name="Rabbit" data-es="el conejo" style="width: 8.18%; height: 10.29%; left: 56.57%; top: 92.6%;"></button><button class="hotspot" id="squirrel" data-name="Squirrel" data-es="la ardilla" style="left: 94.98%; top: 47.32%; width: 7.14%; height: 12.6%;" data-sound="sounds/squirrel.mp3"></button><button class="hotspot" id="butterfly" data-name="Butterfly" data-es="la mariposa" style="left: 39.57%; top: 92.06%; width: 7.24%; height: 7.23%;"></button><button class="hotspot" id="barn" data-name="Barn" data-es="el granero" style="width: 7.61%; height: 13.71%; left: 56.35%; top: 38.44%;"></button><button class="hotspot" id="windmill" data-name="Windmill" data-es="el molino de viento" style="left: 63.23%; top: 22.13%; width: 3.81%; height: 12.6%;"></button><button class="hotspot" id="rv" data-name="Fifth-wheel RV" data-es="la casa rodante" style="left: 82.3%; top: 35.19%; width: 15.68%; height: 20.58%;"></button><button class="hotspot" id="campfire" data-name="Campfire" data-es="la fogata" style="left: 63.18%; top: 68.86%; width: 12.35%; height: 13.99%;"></button><button class="hotspot" id="fence" data-name="Fence" data-es="la cerca" style="left: 12.28%; top: 55.74%; width: 3.96%; height: 16.03%;"></button><button class="hotspot" id="flowers" data-name="Flowers" data-es="las flores" style="left: 8.6%; top: 92.17%; width: 10.63%; height: 13.8%;"></button><button class="hotspot" id="mountains" data-name="Mountains" data-es="las montañas" style="width: 15.83%; height: 11.22%; left: 29.15%; top: 19.46%;"></button><button class="hotspot" id="chick" data-name="Chick" data-es="el pollito" style="left: 87.44%; top: 74.31%; width: 5.89%; height: 8.53%;"></button>
 <button type="button" class="hotspot" data-word="chicken" id="chicken-custom" aria-label="chicken" data-tb-custom="1" data-tb-en="chicken" data-tb-es="pollo" data-tb-fr="poulet" data-tb-de="Huhn" data-tb-it="pollo" data-tb-pt="frango" data-tb-no="kylling" style="left: 95.11%; top: 68.71%; width: 6%; height: 8%;" data-sound="sounds/chicken.mp3"></button><button type="button" class="hotspot" data-word="solar panel" id="solar-panel" aria-label="solar panel" data-tb-custom="1" data-tb-en="solar panel" data-tb-es="panel solar" data-tb-fr="panneau solaire" data-tb-de="Solarpanel" data-tb-it="pannello solare" data-tb-pt="painel solar" data-tb-no="solcellepanel" style="left: 73.5%; top: 21.9%; width: 6%; height: 8%;"></button><button type="button" class="hotspot" data-word="solar panel" id="solar-panel-2" aria-label="solar panel" data-tb-custom="1" data-tb-en="solar panel" data-tb-es="panel solar" data-tb-fr="panneau solaire" data-tb-de="Solarpanel" data-tb-it="pannello solare" data-tb-pt="painel solar" data-tb-no="solcellepanel" style="left: 85.35%; top: 18.58%; width: 6%; height: 8%;"></button><button type="button" class="hotspot" data-word="window" id="window" aria-label="window" data-tb-custom="1" data-tb-en="window" data-tb-es="ventana" data-tb-fr="fenêtre" data-tb-de="Fenster" data-tb-it="finestra" data-tb-pt="janela" data-tb-no="vindu" style="left: 94.27%; top: 28.47%; width: 6%; height: 8%;"></button><button type="button" class="hotspot" data-word="rear door" id="rear-door" aria-label="rear door" data-tb-custom="1" data-tb-en="rear door" data-tb-es="puerta trasera" data-tb-fr="porte arrière" data-tb-de="Hintertür" data-tb-it="porta posteriore" data-tb-pt="porta traseira" data-tb-no="bakdør" style="left: 70.77%; top: 37.96%; width: 3.29%; height: 9.2%;"></button><button type="button" class="hotspot" data-word="stairs" id="stairs" aria-label="stairs" data-tb-custom="1" data-tb-en="stairs" data-tb-es="escaleras" data-tb-fr="escaliers" data-tb-de="Treppe" data-tb-it="scale" data-tb-pt="escadaria" data-tb-no="trapp" style="left: 79.91%; top: 52.83%; width: 3.29%; height: 10.96%;"></button><button type="button" class="hotspot" data-word="girl" id="girl" aria-label="girl" data-tb-custom="1" data-tb-en="girl" data-tb-es="niña" data-tb-fr="fille" data-tb-de="Mädchen" data-tb-it="ragazza" data-tb-pt="menina" data-tb-no="jente" style="left: 41.44%; top: 61.17%; width: 5.74%; height: 20.03%;" data-sound="sounds/girl.mp3"></button><button type="button" class="hotspot" data-word="boy" id="boy" aria-label="boy" data-tb-custom="1" data-tb-en="boy" data-tb-es="niño" data-tb-fr="garçon" data-tb-de="Junge" data-tb-it="ragazzo" data-tb-pt="menino" data-tb-no="gutt" style="left: 48.18%; top: 61.59%; width: 4.85%; height: 12.44%;" data-sound="sounds/child-laughing.mp3"></button><button type="button" class="hotspot" data-word="field" id="field" aria-label="field" data-tb-custom="1" data-tb-en="field" data-tb-es="campo" data-tb-fr="champ" data-tb-de="Feld" data-tb-it="campo" data-tb-pt="campo" data-tb-no="felt" style="left: 40.79%; top: 39.18%; width: 7.25%; height: 4.76%;"></button><button type="button" class="hotspot" data-word="sunset" id="sunset" aria-label="sunset" data-tb-custom="1" data-tb-en="sunset" data-tb-es="atardecer" data-tb-fr="coucher de soleil" data-tb-de="Sonnenuntergang" data-tb-it="tramonto" data-tb-pt="pôr do sol" data-tb-no="solnedgang" style="left: 53.56%; top: 24.66%; width: 10.95%; height: 5.96%;"></button></main>
 <script>
 const languageData={
@@ -613,8 +588,7 @@ document.getElementById('farmNextChallenge').addEventListener('click',()=>{
 
 document.querySelectorAll('[data-key]').forEach(b=>b.addEventListener('click',()=>{const k=b.dataset.key;if(k==='discovery')showDiscovery();else if(challengeMeta[k])showChallenge(k);else showLesson(k)}));
 selector.addEventListener('change',()=>{lang=selector.value;localStorage.setItem(KEY,lang);fillFarmVoices();refresh()});
-function speak(txt,rate=1,onend=null){
- if(window.tbBoardwalkEnhancedSpeak?.(txt,rate,onend))return;
+function speak(txt,rate=1,onend=null){if(window.tbAdventurePiperSpeak?.(txt,rate,onend))return;
  if(!('speechSynthesis' in window)){if(onend)onend();return;}
  speechSynthesis.cancel();
  const u=new SpeechSynthesisUtterance(txt);u.lang=data().speech;u.rate=rate;
@@ -955,117 +929,7 @@ document.addEventListener('click',function(ev){
 },true);
 })();
 </script>
-<script id="talkabee-hotspot-editor-v10">
-(()=>{
-const SEL='.hotspot,.home-hotspot,.yacht-hotspot,.hotspots button,.train-hotspots button';
-let editing=false,active=null,adding=false,pendingName='',pendingTranslations=null;
-let selectedSoundFile=null;
-const tbSoundFiles=new WeakMap();
-const all=()=>[...document.querySelectorAll(SEL)].filter(x=>!x.closest('#tb-hs-editor'));
-function parentFor(el){return el.offsetParent||el.parentElement||document.body}
-function pct(v,n){return +(v/n*100).toFixed(2)}
-function cleanActive(){if(active){active.classList.remove('tb-hs-active');active.querySelector(':scope > .tb-hs-handle')?.remove()} active=null}
-function select(el){if(!editing||!el)return;cleanActive();active=el;selectedSoundFile=tbSoundFiles.get(el)||null;el.classList.add('tb-hs-active');let h=document.createElement('span');h.className='tb-hs-handle';el.appendChild(h);updateSoundUI()}
-function semanticNew(name){
- const existing=all()[0]; if(!existing)return null;
- const el=document.createElement('button');el.type='button';
- if(existing.classList.contains('home-hotspot')){el.className='home-hotspot show'}
- else if(existing.classList.contains('yacht-hotspot')){el.className='yacht-hotspot'}
- else if(existing.classList.contains('hotspot')){el.className='hotspot'}
- else if(existing.className)el.className=existing.className;
- if(existing.hasAttribute('data-object'))el.dataset.object=name;else el.dataset.word=name;
- if(existing.hasAttribute('data-en'))el.dataset.en=name;
- if(existing.id&&!existing.hasAttribute('data-word')&&!existing.hasAttribute('data-object'))el.id=name.toLowerCase().replace(/[^a-z0-9_-]+/g,'-').replace(/^-+|-+$/g,'');
- el.setAttribute('aria-label',name);if(pendingTranslations&&window.TB_registerNewHotspot)window.TB_registerNewHotspot(el,pendingTranslations);
- return el
-}
-function hotspotContainer(){const e=all()[0];return e?e.parentElement:null}
-function placeAt(ev){
- if(!editing||!adding)return;
- const host=hotspotContainer();if(!host)return;
- const el=semanticNew(pendingName);if(!el)return;
- host.appendChild(el);
- const r=parentFor(el).getBoundingClientRect();
- el.style.left=pct(ev.clientX-r.left,r.width)+'%';el.style.top=pct(ev.clientY-r.top,r.height)+'%';el.style.width='6%';el.style.height='8%';
- adding=false;pendingName='';pendingTranslations=null;nameBox.value='';select(el);ev.preventDefault();ev.stopPropagation();
-}
-function startDrag(ev,el){
- if(!editing||adding)return; if(ev.target.classList.contains('tb-hs-handle'))return;
- select(el);ev.preventDefault();ev.stopPropagation();
- const p=parentFor(el),r=p.getBoundingClientRect();let sx=ev.clientX,sy=ev.clientY;
- let l=parseFloat(el.style.left)||pct(el.offsetLeft,r.width),t=parseFloat(el.style.top)||pct(el.offsetTop,r.height);
- const move=e=>{el.style.left=(l+(e.clientX-sx)/r.width*100).toFixed(2)+'%';el.style.top=(t+(e.clientY-sy)/r.height*100).toFixed(2)+'%'};
- const up=()=>{window.removeEventListener('pointermove',move,true);window.removeEventListener('pointerup',up,true)};
- window.addEventListener('pointermove',move,true);window.addEventListener('pointerup',up,true)
-}
-function startResize(ev,el){
- if(!editing)return;ev.preventDefault();ev.stopPropagation();
- const p=parentFor(el),r=p.getBoundingClientRect();let sx=ev.clientX,sy=ev.clientY;
- let w=parseFloat(el.style.width)||pct(el.offsetWidth,r.width),h=parseFloat(el.style.height)||pct(el.offsetHeight,r.height);
- const move=e=>{el.style.width=Math.max(1,w+(e.clientX-sx)/r.width*100).toFixed(2)+'%';el.style.height=Math.max(1,h+(e.clientY-sy)/r.height*100).toFixed(2)+'%'};
- const up=()=>{window.removeEventListener('pointermove',move,true);window.removeEventListener('pointerup',up,true)};
- window.addEventListener('pointermove',move,true);window.addEventListener('pointerup',up,true)
-}
-function soundPath(el){
- if(!el)return '';
- const assigned=String(el.getAttribute('data-sound')||'').trim();
- if(assigned)return assigned;
- // Farm's original sound links are in discoverySounds, not data-sound attributes.
- const id=el.id;
- const builtIn=(typeof discoverySounds!=='undefined'&&discoverySounds[id])||'';
- return builtIn?'sounds/'+builtIn:'';
-}
-function soundLabel(path){return path?path.split('/').pop():'No sound'}
-function updateSoundUI(){if(typeof soundName==='undefined')return;const p=soundPath(active);const local=active&&tbSoundFiles.get(active);soundName.textContent=!active?'Select a hotspot':p?(p+(local?' (local preview; copy MP3 to sounds folder)':'')):'No sound connected';soundName.title=p||'';removeSound.textContent=active&&!active.hasAttribute('data-sound')?'Default Sound (built-in)':'Remove Sound';testSound.disabled=!active||!p;removeSound.disabled=!active||!active.hasAttribute('data-sound');chooseSound.disabled=!active}
-function stopEditorPreview(){if(window.__tbHsPreview){try{window.__tbHsPreview.pause();window.__tbHsPreview.currentTime=0}catch(e){}window.__tbHsPreview=null}}
-function previewSound(){if(!active)return;stopEditorPreview();const path=soundPath(active);const local=tbSoundFiles.get(active);const src=local&&path==='sounds/'+local.name?URL.createObjectURL(local):path;if(!src)return;const a=new Audio(src);window.__tbHsPreview=a;let revoked=false;const release=()=>{if(src.startsWith('blob:')&&!revoked){URL.revokeObjectURL(src);revoked=true}if(window.__tbHsPreview===a)window.__tbHsPreview=null};a.onended=release;a.onerror=()=>{release();soundName.textContent='Cannot load: '+path+' — check sounds folder';console.warn('Talk A Bee editor missing audio:',path)};a.play().catch(e=>{release();soundName.textContent='Sound playback failed: '+path;console.warn('Talk A Bee editor playback failed:',path,e)})}
-function assignSoundFile(file){if(!active||!file)return;selectedSoundFile=file;tbSoundFiles.set(active,file);active.dataset.sound='sounds/'+file.name;updateSoundUI();previewSound()}
-function removeAssignedSound(){if(!active)return;if(!active.hasAttribute('data-sound'))return;stopEditorPreview();active.removeAttribute('data-sound');tbSoundFiles.delete(active);selectedSoundFile=null;updateSoundUI()}
-const bar=document.createElement('div');bar.id='tb-hs-editor';
-const edit=document.createElement('button');edit.textContent='Edit Hotspots';
-const nameBox=document.createElement('input');nameBox.placeholder='hotspot name';
-const add=document.createElement('button');add.textContent='Add Hotspot';
-const del=document.createElement('button');del.textContent='Delete Hotspot';
-const save=document.createElement('button');save.textContent='Save Working HTML';
-const exportServer=document.createElement('button');exportServer.textContent='Export Server HTML';
-const soundFile=document.createElement('input');soundFile.type='file';soundFile.accept='audio/*,.mp3,.wav,.ogg,.m4a';soundFile.className='tb-sound-file';
-const chooseSound=document.createElement('button');chooseSound.textContent='Choose Sound';chooseSound.disabled=true;
-const testSound=document.createElement('button');testSound.textContent='Test Sound';testSound.disabled=true;
-const removeSound=document.createElement('button');removeSound.textContent='Remove Sound';removeSound.disabled=true;
-const soundName=document.createElement('span');soundName.className='tb-sound-name';soundName.textContent='Select a hotspot';
-bar.append(edit,nameBox,add,del,chooseSound,testSound,removeSound,soundName,save,exportServer,soundFile);document.body.appendChild(bar);nameBox.style.display=add.style.display=del.style.display=chooseSound.style.display=testSound.style.display=removeSound.style.display=soundName.style.display=save.style.display=exportServer.style.display='none';
-chooseSound.onclick=()=>{if(active){soundFile.value='';soundFile.click()}};
-soundFile.onchange=()=>{const f=soundFile.files&&soundFile.files[0];if(f)assignSoundFile(f)};
-testSound.onclick=previewSound;
-removeSound.onclick=removeAssignedSound;
-edit.onclick=()=>{editing=!editing;document.body.classList.toggle('tb-hs-editing',editing);edit.textContent=editing?'Exit Editor':'Edit Hotspots';nameBox.style.display=add.style.display=del.style.display=chooseSound.style.display=testSound.style.display=removeSound.style.display=soundName.style.display=save.style.display=exportServer.style.display=editing?'':'none';if(!editing){adding=false;stopEditorPreview();cleanActive();selectedSoundFile=null}updateSoundUI()};
-add.onclick=async()=>{if(!editing)return;const n=(nameBox.value||'').trim().toLowerCase().replace(/\s+/g,' ');if(!n){nameBox.focus();return}pendingName=n;add.disabled=true;const oldText=add.textContent;add.textContent='Translating...';try{pendingTranslations=window.TB_prepareNewHotspotTranslations?await window.TB_prepareNewHotspotTranslations(n):{en:n}}catch(e){pendingTranslations={en:n}}finally{add.disabled=false;add.textContent=oldText}adding=true;cleanActive()};
-del.onclick=()=>{if(active){stopEditorPreview();active.remove();active=null;selectedSoundFile=null;updateSoundUI()}};
-function downloadableClone(stripEditor){
- const clone=document.documentElement.cloneNode(true);
- clone.querySelector('#tb-hs-editor')?.remove();
- clone.querySelectorAll('#talkabee-object-popup').forEach(function(n){n.remove()});
- clone.querySelectorAll('.tb-hs-handle').forEach(function(n){n.remove()});
- clone.querySelector('body')?.classList.remove('tb-hs-editing','scene-view');
- clone.querySelectorAll('.tb-hs-active,.scene-only,.activity-collapsed').forEach(function(n){n.classList.remove('tb-hs-active','scene-only','activity-collapsed')});
- clone.querySelectorAll('#sceneView,#sceneViewToggle').forEach(function(n){n.setAttribute('aria-pressed','false')});
- if(stripEditor){
-  clone.querySelector('#talkabee-hotspot-editor-style')?.remove();
-  clone.querySelector('#talkabee-hotspot-editor-v10')?.remove();
-  clone.querySelector('#talkabee-hotspot-editor-script')?.remove();clone.querySelector('#tb-legacy-challenge-editor-script')?.remove();clone.querySelector('#tb-legacy-challenge-style')?.remove();clone.querySelector('#tb-legacy-challenge-open')?.remove();clone.querySelector('#tb-legacy-challenge-panel')?.remove();
-  clone.querySelector('#tb-hs-readout')?.remove();
- }
- return clone;
-}
-function downloadHTML(stripEditor){
- const clone=downloadableClone(stripEditor),blob=new Blob(['<!doctype html>\n'+clone.outerHTML],{type:'text/html'}),a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download=(location.pathname.split('/').pop()||'adventure.html');a.click();setTimeout(()=>URL.revokeObjectURL(a.href),1000)
-}
-save.onclick=()=>downloadHTML(false);
-exportServer.onclick=()=>downloadHTML(true);
-document.addEventListener('pointerdown',ev=>{if(!editing)return;const h=ev.target.closest('.tb-hs-handle');if(h){startResize(ev,h.parentElement);return}const el=ev.target.closest(SEL);if(el){startDrag(ev,el);return}},true);
-document.addEventListener('click',ev=>{if(!editing)return;if(ev.target.closest('#tb-hs-editor'))return;if(adding){placeAt(ev);return}const el=ev.target.closest(SEL);if(el){ev.preventDefault();ev.stopPropagation();select(el)}},true);
-})();
-</script>
+
 
 <script id="talkabee-farm-scene-view-reset">
 (function(){
@@ -1115,7 +979,7 @@ panel.querySelector('#tb-lc-apply').onclick=()=>{if(!target.value){status.textCo
 const observer=new MutationObserver(()=>{const editing=document.body.classList.contains('tb-hs-editing');b.style.display=editing?'':'none';if(!editing)panel.classList.remove('open')});observer.observe(document.body,{attributes:true,attributeFilter:['class']});
 const handle=panel.querySelector('.drag');let drag=null;handle.addEventListener('pointerdown',e=>{if(e.button!==0)return;e.preventDefault();const r=panel.getBoundingClientRect();panel.style.left=r.left+'px';panel.style.top=r.top+'px';panel.style.right='auto';drag={x:e.clientX,y:e.clientY,l:r.left,t:r.top};handle.setPointerCapture(e.pointerId)});handle.addEventListener('pointermove',e=>{if(!drag)return;panel.style.left=Math.max(0,Math.min(innerWidth-60,drag.l+e.clientX-drag.x))+'px';panel.style.top=Math.max(0,Math.min(innerHeight-50,drag.t+e.clientY-drag.y))+'px'});handle.addEventListener('pointerup',()=>drag=null);handle.addEventListener('pointercancel',()=>drag=null);
 })();
-</script><div id="tb-legacy-challenge-panel" class=""><div class="drag"><strong>↕ Edit Six Challenges</strong><div>Drag here to move</div></div><label>Challenge</label><select id="tb-lc-number"><option value="0">Challenge 1</option><option value="1">Challenge 2</option><option value="2">Challenge 3</option><option value="3">Challenge 4</option><option value="4">Challenge 5</option><option value="5">Challenge 6</option></select><label>Existing hotspot</label><select id="tb-lc-target"><option value="horse">horse</option><option value="cow">cow</option><option value="sheep">sheep</option><option value="goat">goat</option><option value="pig">pig</option><option value="dog">dog</option><option value="rooster">rooster</option><option value="chicken">chicken</option><option value="rabbit">rabbit</option><option value="squirrel">squirrel</option><option value="butterfly">butterfly</option><option value="barn">barn</option><option value="windmill">windmill</option><option value="rv">rv</option><option value="campfire">campfire</option><option value="fence">fence</option><option value="flowers">flowers</option><option value="mountains">mountains</option><option value="chick">chick</option><option value="solar-panel">solar-panel</option><option value="window">window</option><option value="rear-door">rear-door</option><option value="stairs">stairs</option><option value="girl">girl</option><option value="boy">boy</option><option value="field">field</option><option value="sunset">sunset</option></select><label>Challenge label</label><input id="tb-lc-label"><button type="button" id="tb-lc-apply">Apply Challenge</button> <button type="button" id="tb-lc-close">Close</button><p id="tb-lc-status" aria-live="polite"></p></div>
+</script><div id="tb-legacy-challenge-panel"><div class="drag"><strong>↕ Edit Six Challenges</strong><div>Drag here to move</div></div><label>Challenge</label><select id="tb-lc-number"><option value="0">Challenge 1</option><option value="1">Challenge 2</option><option value="2">Challenge 3</option><option value="3">Challenge 4</option><option value="4">Challenge 5</option><option value="5">Challenge 6</option></select><label>Existing hotspot</label><select id="tb-lc-target"></select><label>Challenge label</label><input id="tb-lc-label"><button type="button" id="tb-lc-apply">Apply Challenge</button> <button type="button" id="tb-lc-close">Close</button><p id="tb-lc-status" aria-live="polite"></p></div><div id="tb-legacy-challenge-panel" class=""><div class="drag"><strong>↕ Edit Six Challenges</strong><div>Drag here to move</div></div><label>Challenge</label><select id="tb-lc-number"><option value="0">Challenge 1</option><option value="1">Challenge 2</option><option value="2">Challenge 3</option><option value="3">Challenge 4</option><option value="4">Challenge 5</option><option value="5">Challenge 6</option></select><label>Existing hotspot</label><select id="tb-lc-target"><option value="horse">horse</option><option value="cow">cow</option><option value="sheep">sheep</option><option value="goat">goat</option><option value="pig">pig</option><option value="dog">dog</option><option value="rooster">rooster</option><option value="chicken">chicken</option><option value="rabbit">rabbit</option><option value="squirrel">squirrel</option><option value="butterfly">butterfly</option><option value="barn">barn</option><option value="windmill">windmill</option><option value="rv">rv</option><option value="campfire">campfire</option><option value="fence">fence</option><option value="flowers">flowers</option><option value="mountains">mountains</option><option value="chick">chick</option><option value="solar-panel">solar-panel</option><option value="window">window</option><option value="rear-door">rear-door</option><option value="stairs">stairs</option><option value="girl">girl</option><option value="boy">boy</option><option value="field">field</option><option value="sunset">sunset</option></select><label>Challenge label</label><input id="tb-lc-label"><button type="button" id="tb-lc-apply">Apply Challenge</button> <button type="button" id="tb-lc-close">Close</button><p id="tb-lc-status" aria-live="polite"></p></div>
 
 <style id="talkabee-farm-approved-card-20261010">
 /* Match the approved later Adventures; Farm challenge and hotspot logic stays intact. */
@@ -1166,144 +1030,29 @@ const handle=panel.querySelector('.drag');let drag=null;handle.addEventListener(
  .live-card.tab-master-card .actions button{flex:1 1 42%!important;font-size:17px!important;}
 }
 </style>
-<link rel="stylesheet" data-tb-shared-studio="1" href="css/talkabee-editing-studio.css">
+
 <!-- Talk A Bee Editing Studio pilot: isolated from Adventure lesson/challenge logic. -->
 
-<button id="tb-studio-launch" type="button" style="">✦ Editing Studio</button>
-<div id="tb-studio" aria-label="Talk A Bee Editing Studio" style="display: none;">
- <div class="tb-studio-head" id="tb-studio-drag"><span>✦ TALK A BEE STUDIO</span><span><button type="button" id="tb-studio-min" title="Minimize">−</button><button type="button" id="tb-studio-close" title="Close">×</button></span></div>
- <div class="tb-studio-main" id="tb-studio-main">
-  <section id="tb-studio-music" aria-label="Local music player">
-    <div class="tb-music-top"><strong>🎵 STUDIO MUSIC</strong><button type="button" id="tb-music-choose">Choose MP3</button></div>
-    <input type="file" id="tb-music-file" accept="audio/*,.mp3,.wav,.ogg,.m4a" hidden="">
-    <div class="tb-music-track" id="tb-music-track">No music selected</div>
-    <div class="tb-music-controls"><button type="button" id="tb-music-play" disabled="">▶ Play</button><button type="button" id="tb-music-stop" disabled="">■ Stop</button><label for="tb-music-volume">Volume</label><input type="range" id="tb-music-volume" min="0" max="100" value="35" aria-label="Music volume"></div>
-    <audio id="tb-music-audio"></audio>
-  </section>
-  <section id="tb-studio-savebar" aria-label="Save and export">
-    <div class="tb-save-title">SAVE YOUR WORK <span id="tb-studio-save-status" class="">Ready</span></div>
-    <div class="tb-save-buttons">
-      <button type="button" id="tb-studio-save-local">💾 Save Local Master</button>
-      <button type="button" id="tb-studio-save-server">🌐 Export Server Version</button>
-    </div>
-    <div class="tb-save-help">Both downloads include your latest hotspots, challenges, and image overlays.</div>
-  </section>
-  <label for="tb-studio-mode">EDITOR SELECTOR</label><select id="tb-studio-mode"><option value="none">Choose an editor...</option><option value="hotspot">Hotspot Editor</option><option value="challenge">Challenge Editor</option><option value="overlay">Image Overlay Editor</option></select>
-  <div id="tb-studio-hotspot" class="tb-studio-panel"><p class="tb-note">Select a hotspot in the scene to edit it. Move this whole window by its title bar.</p></div>
-  <div id="tb-studio-challenge" class="tb-studio-panel"><p class="tb-note">Choose a challenge and assign its answer below.</p></div>
-  <div id="tb-studio-overlay" class="tb-studio-panel">
-   <label for="tb-overlay-file">ADD TRANSPARENT PNG / IMAGE</label><input type="file" id="tb-overlay-file" accept="image/png,image/webp,image/jpeg,image/gif" multiple="">
-   <label for="tb-overlay-path">Or use an existing website image path</label><input type="text" id="tb-overlay-path" placeholder="images/PNG/bee.png"><button type="button" id="tb-overlay-add-path">Add Existing Image</button>
-   <label for="tb-overlay-items">SELECT IMAGE</label><select id="tb-overlay-items"><option value="">Select an overlay</option></select>
-   <div class="tb-smallrow"><div><label for="tb-overlay-width">Width (%)</label><input type="number" id="tb-overlay-width" min="1" max="100" step="0.5"></div><div><label for="tb-overlay-rotate">Rotation (°)</label><input type="number" id="tb-overlay-rotate" min="-360" max="360" step="5"></div></div>
-   <button type="button" id="tb-overlay-front">Bring Forward</button><button type="button" id="tb-overlay-back">Send Back</button><button type="button" id="tb-overlay-delete" class="tb-danger">Remove</button>
-   <p class="tb-note">Drag an image on the scene to move it. Use the width control to resize. Changes appear in your exported HTML.</p>
-   <button type="button" id="tb-overlay-undo">Undo</button><button type="button" id="tb-overlay-redo">Redo</button>
-   <button type="button" id="tb-overlay-export">Save Updated HTML</button>
-   <p class="tb-note">For reliable publishing, use existing website image paths. Uploaded local images are embedded in the exported HTML, which can make it large.</p>
-  </div>
- </div>
-</div>
-<script type="application/json" id="tb-overlay-data">[]</script>
 
 
-<script>
+<script type="application/json" id="tb-overlay-data">[]</script><style id="tb-overlay-public-style">#world>.tab-master-card,#world>.card{position:relative;z-index:2147483007!important}#tb-overlay-layer,#tb-overlay-back-layer{position:absolute;inset:0;pointer-events:none}#tb-overlay-layer{z-index:2147483008}#tb-overlay-back-layer{z-index:2147483006}#tb-overlay-layer img,#tb-overlay-back-layer img{position:absolute;pointer-events:none;user-select:none;transform-origin:center;object-fit:contain}</style><script id="tb-overlay-public-runtime">(function(){const scene=document.getElementById('world'),data=document.getElementById('tb-overlay-data');if(!scene||!data)return;let items=[];try{items=JSON.parse(data.textContent||'[]')}catch(e){}const back=document.createElement('div');back.id='tb-overlay-back-layer';scene.appendChild(back);const layer=document.createElement('div');layer.id='tb-overlay-layer';scene.appendChild(layer);items.forEach(o=>{if(!o||typeof o.src!=='string')return;const im=document.createElement('img');im.src=o.src;im.alt='';im.draggable=false;im.style.left=Number(o.x||0)+'%';im.style.top=Number(o.y||0)+'%';im.style.width=Number(o.w||12)+'%';im.style.transform='rotate('+Number(o.rotation||0)+'deg)';im.style.zIndex=String(Number(o.z||1));(o.plane==='back'?back:layer).appendChild(im)})})();</script>
+
+
+<script id="talkabee-farm-restore-enhanced-voice">
+/* Restore an existing Piper choice before the shared controller initializes.
+   No change to the site's saved voice or standard voice controls. */
 (function(){
-'use strict';
-// Boardwalk adapter for the proven Grandma & Grandpa Piper runtime.
-// Preserves native Boardwalk click handlers, challenges, popups, and MP3s.
-// Initialize controls as a classic script; import Piper only when requested.
-const piperModuleUrl = new URL('piper-matched-118/piper-tts-web.js?voice-switch=1', location.href).href;
-const $=id=>document.getElementById(id);
-const mode=$('voiceLabMode'),select=$('voiceLabModel'),status=$('voiceLabStatus');
-const lang=$('adventureLanguage');
-const prefix={en:'en_',es:'es_',fr:'fr_',de:'de_',it:'it_',pt:'pt_',no:'no_'};
-let engine=null,loading=null,catalog=[],audio=null,url=null,request=0;
-let lastText='',lastRate=.82;
-const show=s=>{if(status)status.textContent=s};
-function stop(){
- request++;
- if(audio){try{audio.pause();audio.currentTime=0}catch(_){}audio=null}
- if(url){URL.revokeObjectURL(url);url=null}
- try{speechSynthesis.cancel()}catch(_){}
-}
-function recommend(){
- const p=prefix[lang.value]||'en_',old=select.value;
- const matches=catalog.filter(v=>v.toLowerCase().startsWith(p));
- select.replaceChildren();
- for(const id of matches)select.add(new Option(id,id));
- if(matches.includes(old))select.value=old;
- else if(matches.length)select.value=matches.find(v=>v.includes('medium'))||matches[0];
- else select.add(new Option('No enhanced voice for this language',''));
-}
-async function loadEngine(){
- if(engine)return engine;
- if(loading)return loading;
- loading=(async()=>{
-   show('Loading Piper voice catalog…');
-   const m=await import(piperModuleUrl);
-   const voices=await m.voices();
-   const all=Array.isArray(voices)?voices.map(v=>typeof v==='string'?v:(v?.id||v?.key||v?.name||'')).filter(Boolean):Object.keys(voices||{});
-   catalog=all.filter(id=>Object.values(prefix).some(p=>id.toLowerCase().startsWith(p)));
-   if(!catalog.length)throw Error('No matching Piper voices found');
-   engine=m;recommend();show('Voice catalog ready. First speech may download a model.');
-   return engine;
- })();
- try{return await loading}catch(e){loading=null;show('Piper unavailable: '+(e?.message||e));console.error(e);throw e}
-}
-function updateMode(){
- const enabled=mode.value==='enhanced';
- $('voiceLabNeural').hidden=!enabled; $('voiceLabNeural').style.setProperty('display',enabled?'block':'none','important');
- $('voiceLabNote').textContent=enabled?'Load a voice before speaking.':'Uses voices available in your browser.';
- try{localStorage.setItem('talkabee-lab-voice-mode',mode.value)}catch(_){}
- show(enabled?'Enhanced selected. Click Load voice.':'Standard voice ready.');
-}
-try{if(localStorage.getItem('talkabee-lab-voice-mode')==='enhanced')mode.value='enhanced'}catch(_){}
-mode.addEventListener('change',()=>{stop();updateMode()});
-lang.addEventListener('change',()=>{stop();recommend()});
-select.addEventListener('change',()=>{stop();show('Voice selected: '+select.value)});
-$('voiceLabLoad').addEventListener('click',()=>loadEngine().catch(()=>{}));
-updateMode();
-
-async function enhancedSpeak(text,rate,onComplete){
- stop();const ticket=request;
- try{
-   const m=await loadEngine();if(ticket!==request||mode.value!=='enhanced')return;
-   const voiceId=select.value;
-   if(!voiceId)throw Error('No Piper voice available for this language');
-   show('Preparing enhanced voice…');
-   const wav=await m.predict({text,voiceId},p=>{
-     if(ticket===request&&p?.total)show('Downloading voice: '+Math.round(p.loaded/p.total*100)+'%');
-   });
-   if(ticket!==request||mode.value!=='enhanced'||select.value!==voiceId)return;
-   url=URL.createObjectURL(wav);audio=new Audio(url);audio.playbackRate=rate;
-   const current=audio;
-   current.addEventListener('ended',()=>{
-     if(audio!==current)return;
-     audio=null;if(url){URL.revokeObjectURL(url);url=null}
-     if(ticket===request){show('Voice finished.');onComplete?.()}
-   },{once:true});
-   await current.play();
-   if(ticket===request)show('Enhanced voice playing.');
- }catch(e){
-   if(ticket!==request)return;
-   console.error('Boardwalk Piper:',e);show('Piper failed: '+(e?.message||e)+'. Standard voice is available.');
-   // Preserve audio completion for original Boardwalk sound effects.
-   onComplete?.();
- }
-}
-window.tbBoardwalkEnhancedSpeak=function(text,rate,onComplete){
- if(mode.value!=='enhanced'||!text)return false;
- // Let the existing browser voice work until Piper is explicitly loaded.
- if(!engine||!select.value)return false;
- lastText=text;lastRate=rate||.82;
- enhancedSpeak(text,rate||.82,onComplete);
- return true;
-};
-// The original script-card handlers already call speak(), so no duplicate
-// click interception is necessary. Replay and Slow use the same route.
-
+  try {
+    var language=document.getElementById('adventureLanguage');
+    if(!language)return;
+    var saved=localStorage.getItem('talkabee-learn-language');
+    if(saved && Array.from(language.options).some(function(o){return o.value===saved;})){
+      if(language.value!==saved){language.value=saved;language.dispatchEvent(new Event('change',{bubbles:true}));}
+    }
+    var selected=localStorage.getItem('talkabee-piper-voice-'+language.value);
+    if(selected) localStorage.setItem('talkabee-lab-voice-mode','enhanced');
+  }catch(e){console.warn('Talk A Bee Farm: Piper preference could not be restored',e);}
 })();
-
 </script>
+<script src="js/talkabee-enhanced-voice-adventures.js"></script>
 </body></html>
