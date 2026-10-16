@@ -17,7 +17,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Talk A Bee — Aircraft Carrier Adventure</title>
-<link rel="icon" type="image/png" href="images/PNG/talkabee-favicon.png">
+<link rel="icon" type="image/png" href="images/png/talkabee-favicon.png">
 <style>
 *{box-sizing:border-box}
 html,body{margin:0;width:100%;height:100%;overflow:hidden;font-family:Arial,Helvetica,sans-serif;background:#063a66;color:#fff}
@@ -143,7 +143,7 @@ border:1px solid #fff;background:rgba(7,23,39,.65);color:#fff;font-weight:900}
 <a href="index.html">← Return to Main Directory</a>
 </aside>
 
-<section class="card tab-master-card" style="height: auto !important; min-height: 0px !important; max-height: none !important; overflow: visible !important;">
+<section class="card tab-master-card" style="height: auto !important; min-height: 0px !important; max-height: none !important; overflow: visible !important; inset: 210.283px auto auto 284.717px !important; transform-origin: left top 0px !important; transform: scale(0.67) !important;" data-moved="1">
 <div class="tab-card-tools" aria-label="Script card controls"><button type="button" class="tab-card-drag" title="Move script card">↕ Move</button><button type="button" class="tab-card-font-down" title="Decrease text">A−</button><button type="button" class="tab-card-font-up" title="Increase text">A+</button><button type="button" class="tab-card-reset" title="Reset card">Reset</button></div><div class="tab-card-resize" title="Drag to resize script card" aria-label="Resize script card">↘</div>
 
 <div class="kicker" data-base-font="19px" style="font-size: 19px !important;">ON THE FLIGHT DECK</div>
@@ -153,7 +153,7 @@ border:1px solid #fff;background:rgba(7,23,39,.65);color:#fff;font-weight:900}
 <p id="status"></p>
 <div class="controls">
 <button id="normal" data-base-font="19px">🔊 Speak</button><button id="slow" data-base-font="19px">🐢 Slow</button><button id="replay" data-base-font="19px">↻ Replay</button><button id="nextPhrase" data-base-font="19px" hidden="" style="display: none !important;">Next →</button>
-<button id="nextChallenge" type="button" hidden="" style="display: none !important;">Next →</button></div>
+<button id="nextChallenge" type="button" hidden="" style="display: none !important;" data-base-font="19px">Next →</button></div>
 </section>
 
 
@@ -356,7 +356,7 @@ showWord("game");
 
 
 
-<script type="application/json" id="tb-overlay-data">[{"id":"overlay-1792123103998-3268h","src":"images/PNG/5.png","x":82.03125715255737,"y":71.11794050492205,"w":9,"rotation":0,"z":1,"plane":"front"},{"id":"overlay-1792123117789-ipnn9","src":"images/PNG/angry-bee.png","x":90.67708969116211,"y":66.44962972247164,"w":7.5,"rotation":0,"z":2,"plane":"front"},{"id":"overlay-1792123148705-6rxz0","src":"images/PNG/talkabee-squirrel-transparent.png","x":92.39583730697632,"y":79.5945926947188,"w":4.5,"rotation":0,"z":3,"plane":"front"}]</script><style id="tb-overlay-public-style">#world>.tab-master-card,#world>.card{position:relative;z-index:2147483007!important}#tb-overlay-layer,#tb-overlay-back-layer{position:absolute;inset:0;pointer-events:none}#tb-overlay-layer{z-index:2147483008}#tb-overlay-back-layer{z-index:2147483006}#tb-overlay-layer img,#tb-overlay-back-layer img{position:absolute;pointer-events:none;user-select:none;transform-origin:center;object-fit:contain}</style><script id="tb-overlay-public-runtime">(function(){const scene=document.getElementById('world'),data=document.getElementById('tb-overlay-data');if(!scene||!data)return;let items=[];try{items=JSON.parse(data.textContent||'[]')}catch(e){}const back=document.createElement('div');back.id='tb-overlay-back-layer';scene.appendChild(back);const layer=document.createElement('div');layer.id='tb-overlay-layer';scene.appendChild(layer);items.forEach(o=>{if(!o||typeof o.src!=='string')return;const im=document.createElement('img');im.src=o.src;im.alt='';im.draggable=false;im.style.left=Number(o.x||0)+'%';im.style.top=Number(o.y||0)+'%';im.style.width=Number(o.w||12)+'%';im.style.transform='rotate('+Number(o.rotation||0)+'deg)';im.style.zIndex=String(Number(o.z||1));(o.plane==='back'?back:layer).appendChild(im)})})();</script>
+<script type="application/json" id="tb-overlay-data">[{"id":"overlay-1792123103998-3268h","src":"images/png/5.png","x":82.03125715255737,"y":71.11794050492205,"w":9,"rotation":0,"z":1,"plane":"front"},{"id":"overlay-1792123117789-ipnn9","src":"images/png/angry-bee.png","x":90.67708969116211,"y":66.44962972247164,"w":7.5,"rotation":0,"z":2,"plane":"front"},{"id":"overlay-1792123148705-6rxz0","src":"images/png/talkabee-squirrel-transparent.png","x":92.39583730697632,"y":79.5945926947188,"w":4.5,"rotation":0,"z":3,"plane":"front"}]</script><style id="tb-overlay-public-style">#world>.tab-master-card,#world>.card{position:relative;z-index:2147483007!important}#tb-overlay-layer,#tb-overlay-back-layer{position:absolute;inset:0;pointer-events:none}#tb-overlay-layer{z-index:2147483008}#tb-overlay-back-layer{z-index:2147483006}#tb-overlay-layer img,#tb-overlay-back-layer img{position:absolute;pointer-events:none;user-select:none;transform-origin:center;object-fit:contain}</style><script id="tb-overlay-public-runtime">(function(){const scene=document.getElementById('world'),data=document.getElementById('tb-overlay-data');if(!scene||!data)return;let items=[];try{items=JSON.parse(data.textContent||'[]')}catch(e){}const back=document.createElement('div');back.id='tb-overlay-back-layer';scene.appendChild(back);const layer=document.createElement('div');layer.id='tb-overlay-layer';scene.appendChild(layer);items.forEach(o=>{if(!o||typeof o.src!=='string')return;const im=document.createElement('img');im.src=o.src;im.alt='';im.draggable=false;im.style.left=Number(o.x||0)+'%';im.style.top=Number(o.y||0)+'%';im.style.width=Number(o.w||12)+'%';im.style.transform='rotate('+Number(o.rotation||0)+'deg)';im.style.zIndex=String(Number(o.z||1));(o.plane==='back'?back:layer).appendChild(im)})})();</script>
 
 
 <script src="js/talkabee-enhanced-voice-adventures.js"></script>
