@@ -12,18 +12,7 @@
 <link rel="stylesheet" href="css/talkabee-shared-43ddae767bb7.css" id="talkabee-global-card-grab-cursor">
 
 <!-- TALK A BEE HOTSPOTS VISUALLY RECERTIFIED AGAINST CURRENT SCENE ARTWORK: 2026-10-07 -->
-<style id="talkabee-hotspot-editor-style">
-#tb-hs-editor{position:fixed;right:16px;bottom:16px;z-index:2147483646;font:700 12px Arial,sans-serif;display:flex;flex-wrap:wrap;justify-content:flex-end;gap:6px;max-width:650px}
-#tb-hs-editor button,#tb-hs-editor input{border:1px solid #fff;border-radius:10px;background:#000;color:#fff;padding:9px 11px;box-shadow:0 4px 14px #0006}
-#tb-hs-editor input{background:#fff;color:#111;min-width:180px;font-weight:400}#tb-hs-editor button{cursor:pointer}
-body.tb-hs-editing .hotspot,body.tb-hs-editing .home-hotspot,body.tb-hs-editing .yacht-hotspot,body.tb-hs-editing .hotspots button,body.tb-hs-editing .train-hotspots button{display:block!important;outline:2px solid #ffea00!important;background:rgba(255,234,0,.18)!important;pointer-events:auto!important;cursor:move!important;visibility:visible!important;opacity:1!important;z-index:2147483005!important}
-body.tb-hs-editing .tb-hs-active{outline:3px solid #00ffff!important;background:rgba(0,255,255,.18)!important}
-.tb-hs-handle{position:absolute!important;right:-7px!important;bottom:-7px!important;left:auto!important;top:auto!important;width:14px!important;height:14px!important;border-radius:3px!important;background:#00ffff!important;border:2px solid #000!important;z-index:2147483647!important;cursor:nwse-resize!important;display:none!important;transform:none!important}
-body.tb-hs-editing .tb-hs-active>.tb-hs-handle{display:block!important}
 
-#tb-hs-editor .tb-sound-name{min-width:150px;max-width:230px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font:12px/1.2 Arial,sans-serif;color:#fff;opacity:.9}
-#tb-hs-editor input[type="file"].tb-sound-file{display:none!important}
-</style>
 
 <link rel="stylesheet" href="css/common-inline-8492e8692583.css" id="talkabee-bilingual-hotspot-popup-style">
 
@@ -37,15 +26,6 @@ body.tb-hs-editing .tb-hs-active>.tb-hs-handle{display:block!important}
 <link rel="stylesheet" href="css/talkabee-shared-04ae840c01bf.css" id="talkabee-approved-card-transparency-20pct">
 <link rel="stylesheet" href="css/talkabee-panel-pilot-safe.css" id="talkabee-panel-typography-standard">
 <link rel="stylesheet" href="css/talkabee-card-typography-safe.css">
-<link rel="stylesheet" href="css/talkabee-enhanced-voice.css">
-<style id="tab-piper-controls">
-#voiceLab{position:relative;z-index:2;width:100%;margin:8px 0;font-size:12px}
-#voiceLab select,#voiceLab button{box-sizing:border-box;width:100%;max-width:100%}
-#voiceLabStatus{font-size:11px;line-height:1.4;overflow-wrap:anywhere}
-#voiceLabText,#voiceLabTestActions,#voiceLabCurrent,#voiceLabPlay,#voiceLabSlow,#voiceLabStop{display:none!important}
-#voiceLabNeural[hidden]{display:none!important}
-</style>
-<style id="tb-server-hide-editor-ui">#tb-studio,#tb-studio-launch,#tb-hs-editor,#tb-challenge-editor,#tb-overlay-editor,#tb-challenge-panel,.tb-hs-handle,[data-tb-editor-only]{display:none!important}</style>
 </head>
 <body class="">
 <div class="talkabee-editions">
@@ -75,17 +55,12 @@ body.tb-hs-editing .tb-hs-active>.tb-hs-handle{display:block!important}
 <div class="tab-panel-size-controls" aria-label="Activity panel size"><button type="button" class="tab-panel-minus" title="Make activity panel smaller">−</button><button type="button" class="tab-panel-reset" title="Reset activity panel size">Reset</button><button type="button" class="tab-panel-plus" title="Make activity panel larger">+</button></div>
 
 <div class="label">LANGUAGE</div>
-<select id="lang">
+<select id="lang" data-tab-global-voice="1">
 <option value="es">Spanish</option><option value="fr">French</option><option value="en">English</option>
 <option value="de">German</option><option value="it">Italian</option><option value="pt">Portuguese</option><option value="no">Norwegian</option>
 </select>
 <div class="label">VOICE</div>
-<select id="voice"><option value="">Browser Default</option><option value="Microsoft David - English (United States)">Microsoft David - English (United States) — en-US</option><option value="Microsoft Mark - English (United States)">Microsoft Mark - English (United States) — en-US</option><option value="Microsoft Zira - English (United States)">Microsoft Zira - English (United States) — en-US</option><option value="Microsoft David Desktop - English (United States)">Microsoft David Desktop - English (United States) — en-US</option><option value="Microsoft Zira Desktop - English (United States)">Microsoft Zira Desktop - English (United States) — en-US</option></select>
-<div id="voiceLab"><details open><summary>🎙️ Choose Voice</summary>
-<label for="voiceLabMode">Voice type</label><select id="voiceLabMode"><option value="standard">Standard</option><option value="enhanced">Enhanced</option></select>
-<div id="voiceLabNote" class="lab-note">Uses voices available in your browser.</div>
-<div id="voiceLabNeural" hidden><label for="voiceLabModel">Choose voice</label><select id="voiceLabModel"><option value="">Load voice catalog</option></select><button type="button" id="voiceLabLoad">Load voice</button></div>
-<div id="voiceLabStatus" role="status" aria-live="polite">Standard voice ready.</div></details></div>
+<select id="voice" data-tab-global-voice="1"><option value="">Browser Default</option><option value="Microsoft David - English (United States)">Microsoft David - English (United States) — en-US</option><option value="Microsoft Mark - English (United States)">Microsoft Mark - English (United States) — en-US</option><option value="Microsoft Zira - English (United States)">Microsoft Zira - English (United States) — en-US</option><option value="Microsoft David Desktop - English (United States)">Microsoft David Desktop - English (United States) — en-US</option><option value="Microsoft Zira Desktop - English (United States)">Microsoft Zira Desktop - English (United States) — en-US</option></select><div id="tbPiperPanel" style="margin: 10px 0px; padding: 9px; border: 1px solid rgb(168, 178, 189); border-radius: 9px; background: rgba(22, 27, 32, 0.65); color: white; font: 14px Arial, sans-serif;"><label style="display:block;margin-bottom:5px">Voice type <select id="tbPiperMode" style="max-width:100%;color:#111;background:#fff"><option value="standard">Standard</option><option value="enhanced">Enhanced (Piper)</option></select></label><div id="tbPiperOptions" hidden=""><select id="tbPiperModel" aria-label="Piper voice" style="max-width:100%;color:#111;background:#fff"><option value="">Load voice catalog</option></select> <button type="button" id="tbPiperLoad" style="color:#111;background:#eee">Load voice</button></div><div id="tbPiperStatus" role="status" aria-live="polite" style="font-size:12px;margin-top:5px">Standard voice ready.</div></div>
 <button id="sceneView" aria-pressed="false">◉ Scene View</button>
 
 <div class="label">DISCOVERY</div>
@@ -108,17 +83,17 @@ body.tb-hs-editing .tb-hs-active>.tb-hs-handle{display:block!important}
 <a href="index.html">← Return to Main Directory</a>
 </aside>
 
-<section class="card tab-master-card">
+<section class="card tab-master-card" style="height: auto !important; min-height: 0px !important; max-height: none !important; overflow: visible !important;">
 <div class="tab-card-tools" aria-label="Script card controls"><button type="button" class="tab-card-drag" title="Move script card">↕ Move</button><button type="button" class="tab-card-font-down" title="Decrease text">A−</button><button type="button" class="tab-card-font-up" title="Increase text">A+</button><button type="button" class="tab-card-reset" title="Reset card">Reset</button></div><div class="tab-card-resize" title="Drag to resize script card" aria-label="Resize script card">↘</div>
 
-<div class="kicker">AT THE ZOO</div>
-<h2 id="title">Click &amp; Discover</h2>
-<p id="prompt">You found zoo.</p>
-<div class="word"><strong id="line">zoo</strong><div class="translation" id="translation"></div></div>
+<div class="kicker" data-base-font="19px" style="font-size: 19px !important;">AT THE ZOO</div>
+<h2 id="title" data-base-font="28px" style="font-size: 28px !important;">Click &amp; Discover</h2>
+<p id="prompt" data-base-font="24px" style="font-size: 24px !important;">You found zoo.</p>
+<div class="word"><strong id="line" data-base-font="28px" style="font-size: 28px !important;">zoológico</strong><div class="translation" id="translation" data-base-font="24px" style="font-size: 24px !important;">zoo</div></div>
 <p id="status"></p>
 <div class="controls">
-<button id="normal">🔊 Speak</button><button id="slow">🐢 Slow</button><button id="replay">↻ Replay</button><button id="nextPhrase">Next phrase →</button>
-</div>
+<button id="normal" data-base-font="19px">🔊 Speak</button><button id="slow" data-base-font="19px">🐢 Slow</button><button id="replay" data-base-font="19px">↻ Replay</button><button id="nextPhrase" data-base-font="19px" hidden="" style="display: none !important;">Next →</button>
+<button id="nextChallenge" type="button" hidden="" style="display: none !important;">Next →</button></div>
 </section>
 
 
@@ -175,7 +150,7 @@ function voices(){return ("speechSynthesis" in window)?speechSynthesis.getVoices
 function fillVoices(){const old=localStorage.getItem("talkabee-zoo-voice-"+langSel.value)||"";voiceSel.innerHTML='<option value="">Browser Default</option>';voices().forEach(v=>{const o=document.createElement("option");o.value=v.name;o.textContent=v.name+(v.lang?" — "+v.lang:"");voiceSel.appendChild(o)});if([...voiceSel.options].some(o=>o.value===old))voiceSel.value=old}
 if("speechSynthesis" in window){speechSynthesis.onvoiceschanged=fillVoices;fillVoices();setTimeout(fillVoices,150);setTimeout(fillVoices,600);setTimeout(fillVoices,1500)}
 voiceSel.onchange=()=>localStorage.setItem("talkabee-zoo-voice-"+langSel.value,voiceSel.value);
-function speak(text,rate=.88,onend=null){if(window.tbBoardwalkEnhancedSpeak?.(text,(typeof rate==="boolean"?(rate?0.65:0.88):(typeof rate==="number"?rate:0.82)),onend))return;if(!text||!("speechSynthesis" in window)){if(onend)onend();return}speechSynthesis.cancel();setTimeout(()=>{const u=new SpeechSynthesisUtterance(text);u.lang=SPEECH_LANG[langSel.value]||langSel.value;u.rate=rate;const v=speechSynthesis.getVoices().find(x=>x.name===voiceSel.value);if(v)u.voice=v;if(onend)u.onend=onend;speechSynthesis.speak(u)},50);lastSpoken=text}
+function speak(text,rate=.88,onend=null){if(window.tbAdventurePiperSpeak?.(text,rate,onend))return;if(!text||!("speechSynthesis" in window)){if(onend)onend();return}speechSynthesis.cancel();setTimeout(()=>{const u=new SpeechSynthesisUtterance(text);u.lang=SPEECH_LANG[langSel.value]||langSel.value;u.rate=rate;const v=speechSynthesis.getVoices().find(x=>x.name===voiceSel.value);if(v)u.voice=v;if(onend)u.onend=onend;speechSynthesis.speak(u)},50);lastSpoken=text}
 function stopSound(){document.querySelectorAll("audio[data-talkabee-sound]").forEach(a=>{a.pause();a.currentTime=0;a.remove()})}
 function playSound(key){stopSound();const src=SOUND_MAP[key];if(!src)return;const a=new Audio(src);a.dataset.talkabeeSound="1";document.body.appendChild(a);a.play().catch(()=>{});a.onended=()=>a.remove()}
 function showWord(key){activeLesson="";lastWord=key;lessonPhrase=1;title.textContent="Click & Discover";prompt.textContent="You found "+(EN[key]||key)+".";line.textContent=WORDS[langSel.value][key]||EN[key]||key;translation.textContent=langSel.value==="en"?"":(EN[key]||key)}
@@ -215,7 +190,7 @@ showWord("zoo");
 </script>
 <script id="talkabee-new-hotspot-language-bridge" src="js/talkabee-common-061ada9dc93c.js"></script>
 <script id="talkabee-new-hotspot-live-click" src="js/talkabee-common-bb7c92713084.js"></script>
-<script id="talkabee-hotspot-editor-v10" src="js/talkabee-common-9462cfe6bdf1.js"></script>
+
 
 
 
@@ -258,17 +233,7 @@ showWord("zoo");
   window.addEventListener('storage',function(e){if(e.key===KEY)restore()});
 })();
 </script>
-<style id="talkabee-challenge-editor-style">
-#tb-challenge-open{display:none}
-#tb-challenge-panel{position:fixed;z-index:2147483647;right:16px;bottom:92px;width:min(410px,calc(100vw - 32px));max-height:calc(100vh - 120px);overflow:auto;padding:16px;border:2px solid #f4d775;border-radius:16px;background:rgba(16,26,37,.97);color:#fff;font:14px/1.45 Arial,sans-serif;box-shadow:0 12px 38px #0009;display:none}
-#tb-challenge-panel h3{margin:0 0 8px;font-size:19px}
-#tb-challenge-drag{cursor:grab;touch-action:none;user-select:none;padding:5px 2px 10px;border-bottom:1px solid #ffffff40;margin-bottom:10px}
-#tb-challenge-drag:active{cursor:grabbing}
-#tb-challenge-panel label{display:block;margin:12px 0 4px;font-weight:bold}
-#tb-challenge-panel select,#tb-challenge-panel input{width:100%;padding:10px;border:1px solid #aab;border-radius:8px;background:#fff;color:#111;font-size:14px}
-#tb-challenge-panel button{margin:12px 7px 0 0;padding:9px 13px;border:1px solid #fff;border-radius:9px;background:#263e52;color:#fff;cursor:pointer}
-#tb-challenge-panel .tb-ch-warning{color:#ffdb80;font-size:12px;margin-top:8px}
-</style>
+
 <script type="application/json" id="talkabee-challenge-data">[]</script>
 <script id="talkabee-challenge-runtime">
 (function(){
@@ -281,7 +246,7 @@ showWord("zoo");
  });}catch(e){console.warn('Challenge data could not be loaded',e)}
 })();
 </script>
-<script id="talkabee-challenge-editor-script" src="js/talkabee-common-6b65d9ee1a33.js"></script>
+
 <script id="talkabee-approved-next-navigation-v2" src="js/talkabee-common-058157d34e0b.js"></script>
 <script id="talkabee-shared-card-viewport-boundary-v1" src="js/talkabee-common-3bf84d442532.js"></script>
 <script id="talkabee-approved-card-learning-text">
@@ -304,46 +269,27 @@ showWord("zoo");
   else enlarge();
 })();
 </script>
-<link rel="stylesheet" data-tb-shared-studio="1" href="css/talkabee-editing-studio.css">
+
 <!-- Talk A Bee Editing Studio pilot: isolated from Adventure lesson/challenge logic. -->
 
-<button id="tb-studio-launch" type="button" style="">✦ Editing Studio</button>
-<div id="tb-studio" aria-label="Talk A Bee Editing Studio" style="display: none;">
- <div class="tb-studio-head" id="tb-studio-drag"><span>✦ TALK A BEE STUDIO</span><span><button type="button" id="tb-studio-min" title="Minimize">−</button><button type="button" id="tb-studio-close" title="Close">×</button></span></div>
- <div class="tb-studio-main" id="tb-studio-main">
-  <section id="tb-studio-music" aria-label="Local music player">
-    <div class="tb-music-top"><strong>🎵 STUDIO MUSIC</strong><button type="button" id="tb-music-choose">Choose MP3</button></div>
-    <input type="file" id="tb-music-file" accept="audio/*,.mp3,.wav,.ogg,.m4a" hidden="">
-    <div class="tb-music-track" id="tb-music-track">No music selected</div>
-    <div class="tb-music-controls"><button type="button" id="tb-music-play" disabled="">▶ Play</button><button type="button" id="tb-music-stop" disabled="">■ Stop</button><label for="tb-music-volume">Volume</label><input type="range" id="tb-music-volume" min="0" max="100" value="35" aria-label="Music volume"></div>
-    <audio id="tb-music-audio"></audio>
-  </section>
-  <section id="tb-studio-savebar" aria-label="Save and export">
-    <div class="tb-save-title">SAVE YOUR WORK <span id="tb-studio-save-status" class="">Ready</span></div>
-    <div class="tb-save-buttons">
-      <button type="button" id="tb-studio-save-local">💾 Save Local Master</button>
-      <button type="button" id="tb-studio-save-server">🌐 Export Server Version</button>
-    </div>
-    <div class="tb-save-help">Both downloads include your latest hotspots, challenges, and image overlays.</div>
-  </section>
-  <label for="tb-studio-mode">EDITOR SELECTOR</label><select id="tb-studio-mode"><option value="none">Choose an editor...</option><option value="hotspot">Hotspot Editor</option><option value="challenge">Challenge Editor</option><option value="overlay">Image Overlay Editor</option></select>
-  <div id="tb-studio-hotspot" class="tb-studio-panel"><p class="tb-note">Select a hotspot in the scene to edit it. Move this whole window by its title bar.</p></div>
-  <div id="tb-studio-challenge" class="tb-studio-panel"><p class="tb-note">Choose a challenge and assign its answer below.</p></div>
-  <div id="tb-studio-overlay" class="tb-studio-panel">
-   <label for="tb-overlay-file">ADD TRANSPARENT PNG / IMAGE</label><input type="file" id="tb-overlay-file" accept="image/png,image/webp,image/jpeg,image/gif" multiple="">
-   <label for="tb-overlay-path">Or use an existing website image path</label><input type="text" id="tb-overlay-path" placeholder="images/PNG/bee.png"><button type="button" id="tb-overlay-add-path">Add Existing Image</button>
-   <label for="tb-overlay-items">SELECT IMAGE</label><select id="tb-overlay-items"><option value="">Select an overlay</option></select>
-   <div class="tb-smallrow"><div><label for="tb-overlay-width">Width (%)</label><input type="number" id="tb-overlay-width" min="1" max="100" step="0.5"></div><div><label for="tb-overlay-rotate">Rotation (°)</label><input type="number" id="tb-overlay-rotate" min="-360" max="360" step="5"></div></div>
-   <button type="button" id="tb-overlay-front">Bring Forward</button><button type="button" id="tb-overlay-back">Send Back</button><button type="button" id="tb-overlay-delete" class="tb-danger">Remove</button>
-   <p class="tb-note">Drag an image on the scene to move it. Use the width control to resize. Changes appear in your exported HTML.</p>
-   <button type="button" id="tb-overlay-undo">Undo</button><button type="button" id="tb-overlay-redo">Redo</button>
-   <button type="button" id="tb-overlay-export">Save Updated HTML</button>
-   <p class="tb-note">For reliable publishing, use existing website image paths. Uploaded local images are embedded in the exported HTML, which can make it large.</p>
-  </div>
- </div>
-</div>
-<script type="application/json" id="tb-overlay-data">[]</script>
 
 
-<script src="js/talkabee-enhanced-voice-boardwalk.js"></script>
+<script type="application/json" id="tb-overlay-data">[]</script><style id="tb-overlay-public-style">#world>.tab-master-card,#world>.card{position:relative;z-index:2147483007!important}#tb-overlay-layer,#tb-overlay-back-layer{position:absolute;inset:0;pointer-events:none}#tb-overlay-layer{z-index:2147483008}#tb-overlay-back-layer{z-index:2147483006}#tb-overlay-layer img,#tb-overlay-back-layer img{position:absolute;pointer-events:none;user-select:none;transform-origin:center;object-fit:contain}</style><script id="tb-overlay-public-runtime">(function(){const scene=document.getElementById('world'),data=document.getElementById('tb-overlay-data');if(!scene||!data)return;let items=[];try{items=JSON.parse(data.textContent||'[]')}catch(e){}const back=document.createElement('div');back.id='tb-overlay-back-layer';scene.appendChild(back);const layer=document.createElement('div');layer.id='tb-overlay-layer';scene.appendChild(layer);items.forEach(o=>{if(!o||typeof o.src!=='string')return;const im=document.createElement('img');im.src=o.src;im.alt='';im.draggable=false;im.style.left=Number(o.x||0)+'%';im.style.top=Number(o.y||0)+'%';im.style.width=Number(o.w||12)+'%';im.style.transform='rotate('+Number(o.rotation||0)+'deg)';im.style.zIndex=String(Number(o.z||1));(o.plane==='back'?back:layer).appendChild(im)})})();</script>
+
+
+<script id="talkabee-restore-enhanced-voice">
+(function(){
+  try {
+    var language=document.getElementById('lang');
+    if(!language)return;
+    var saved=localStorage.getItem('talkabee-learn-language');
+    if(saved && Array.from(language.options).some(function(o){return o.value===saved;})){
+      if(language.value!==saved){language.value=saved;language.dispatchEvent(new Event('change',{bubbles:true}));}
+    }
+    var selected=localStorage.getItem('talkabee-piper-voice-'+language.value);
+    if(selected)localStorage.setItem('talkabee-lab-voice-mode','enhanced');
+  }catch(e){console.warn('Talk A Bee: Piper preference could not be restored',e);}
+})();
+</script>
+<script src="js/talkabee-enhanced-voice-adventures.js"></script>
 </body></html>
