@@ -28,7 +28,40 @@
  title.addEventListener('pointermove',e=>{if(!drag||drag.type!=='studio')return;studio.style.left=Math.max(0,Math.min(innerWidth-60,e.clientX-drag.dx))+'px';studio.style.top=Math.max(0,Math.min(innerHeight-35,e.clientY-drag.dy))+'px';});title.addEventListener('pointerup',()=>drag=null);title.addEventListener('pointercancel',()=>drag=null);
  function add(src){if(!src)return;snapshot();const id='overlay-'+Date.now()+'-'+Math.random().toString(36).slice(2,7);overlays.push({id,src,x:45,y:35,w:12,rotation:0,z:overlays.length+1,plane:'front'});choose(id)}
  $('tb-overlay-add-path').onclick=()=>{const src=$('tb-overlay-path').value.trim();if(!src||/^(javascript:|https?:|\/\/)/i.test(src)){alert('Enter a relative image path from your website, such as images/PNG/bee.png');return;}add(src)};
- $('tb-overlay-file').onchange=async e=>{for(const f of [...e.target.files]){if(!f.type.startsWith('image/'))continue;const src=await new Promise((resolve,reject)=>{const r=new FileReader();r.onload=()=>resolve(r.result);r.onerror=reject;r.readAsDataURL(f)});add(src)}e.target.value='';};
+ // Keep image bytes outside the HTML. Firefox downloads the chosen files;
+ // the user places them in images/PNG/ before publishing the HTML.
+ const pendingOverlayFiles=new Map();
+ const overlayFolder='images/PNG/';
+ function overlayFilename(name){return String(name||'overlay.png').replace(/[\\/]/g,'_').replace(/[^a-zA-Z0-9._-]/g,'_');}
+ function downloadOverlayFile(file){
+   const url=URL.createObjectURL(file),a=document.createElement('a');
+   a.href=url;a.download=overlayFilename(file.name);document.body.appendChild(a);a.click();a.remove();
+   setTimeout(()=>URL.revokeObjectURL(url),30000);
+ }
+ $('tb-overlay-file').onchange=async e=>{
+   const files=[...e.target.files];
+   for(const f of files){
+     if(!/^image\/(png|webp|jpeg|gif)$/i.test(f.type))continue;
+     const filename=overlayFilename(f.name),src=overlayFolder+filename;
+     if(pendingOverlayFiles.has(src)&&pendingOverlayFiles.get(src)!==f){
+       alert('An overlay with this filename was already selected. Rename one of the images to avoid overwriting it.');continue;
+     }
+     pendingOverlayFiles.set(src,f);
+     add(src);
+   }
+   e.target.value='';
+   if(files.length){
+     alert('Overlay image paths have been added without Base64. When you save, the PNG/image files will download separately. Put them in your website '+overlayFolder+' folder before uploading the Adventure.');
+   }
+ };
+ // Allow the save runtime to download only files still referenced by overlays.
+ window.tbStudioOverlayAssets={
+   pending:()=>[...pendingOverlayFiles].filter(([src])=>overlays.some(o=>o.src===src)),
+   hasEmbedded:()=>overlays.some(o=>/^data:image\//i.test(o.src)),
+   download:downloadOverlayFile
+ };
+ const overlayNote=document.querySelector('#tb-studio-overlay .tb-note:last-of-type');
+ if(overlayNote)overlayNote.textContent='Uploaded images are saved separately, not embedded as Base64. On Save, place downloaded PNG/image files in images/PNG/ before publishing. Firefox may ask permission for multiple downloads.';
  $('tb-overlay-items').onchange=e=>choose(e.target.value);
  function edit(prop,value){const o=overlays.find(x=>x.id===selected);if(!o||!Number.isFinite(value))return;snapshot();o[prop]=value;refresh()}
  $('tb-overlay-width').onchange=e=>edit('w',Math.max(1,Math.min(100,Number(e.target.value))));$('tb-overlay-rotate').onchange=e=>edit('rotation',Number(e.target.value));
@@ -233,6 +266,17 @@ function serialize(server){
 }
 function download(server){
  try{
+  const assets=window.tbStudioOverlayAssets;
+  if(assets?.hasEmbedded()){
+    alert('This Adventure still contains an older Base64 overlay. Remove and re-add that image using a PNG file or an existing website path before exporting.');
+    status.textContent='Export blocked: embedded image';return;
+  }
+  const pending=assets?.pending()||[];
+  if(pending.length){
+    const names=pending.map(([src])=>src).join('\n');
+    if(!confirm('The following overlay images must be placed in your website images/PNG/ folder before publishing:\n\n'+names+'\n\nDownload these image files and the HTML now?'))return;
+    pending.forEach(([,file])=>assets.download(file));
+  }
   const html=serialize(server);
   // Use the currently opened Adventure, never the Airplane pilot's name.
   const opened=decodeURIComponent(location.pathname.split('/').pop()||'Talk-A-Bee-Adventure.html');
