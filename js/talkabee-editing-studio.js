@@ -58,7 +58,7 @@
    download:downloadOverlayFile
  };
  const overlayNote=document.querySelector('#tb-studio-overlay .tb-note:last-of-type');
- if(overlayNote)overlayNote.textContent='Uploaded images are saved separately, not embedded as Base64. On Save, place downloaded PNG/image files in images/PNG/ before publishing. Firefox may ask permission for multiple downloads.';
+ if(overlayNote)overlayNote.textContent='Overlays use images/PNG/ file paths. Save Local Master and Export Server Version download HTML only.';
  $('tb-overlay-items').onchange=e=>choose(e.target.value);
  function edit(prop,value){const o=overlays.find(x=>x.id===selected);if(!o||!Number.isFinite(value))return;snapshot();o[prop]=value;refresh()}
  $('tb-overlay-width').onchange=e=>edit('w',Math.max(1,Math.min(100,Number(e.target.value))));$('tb-overlay-rotate').onchange=e=>edit('rotation',Number(e.target.value));
@@ -268,12 +268,8 @@ function download(server){
     alert('This Adventure still contains an older Base64 overlay. Remove and re-add that image using a PNG file or an existing website path before exporting.');
     status.textContent='Export blocked: embedded image';return;
   }
-  const pending=assets?.pending()||[];
-  if(pending.length){
-    const names=pending.map(([src])=>src).join('\n');
-    if(!confirm('The following overlay images must be placed in your website images/PNG/ folder before publishing:\n\n'+names+'\n\nDownload these image files and the HTML now?'))return;
-    pending.forEach(([,file])=>assets.download(file));
-  }
+  // Overlay assets are already managed in the website images/PNG folder.
+  // Saving either HTML version must never trigger image downloads or confirmations.
   const html=serialize(server);
   // Use the currently opened Adventure, never the Airplane pilot's name.
   const opened=decodeURIComponent(location.pathname.split('/').pop()||'Talk-A-Bee-Adventure.html');
