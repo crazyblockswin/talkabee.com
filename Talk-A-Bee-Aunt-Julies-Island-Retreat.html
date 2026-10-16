@@ -86,31 +86,11 @@
 <link rel="stylesheet" href="css/talkabee-shared-43ddae767bb7.css" id="talkabee-global-card-grab-cursor">
 
 <!-- TALK A BEE HOTSPOTS VISUALLY RECERTIFIED AGAINST CURRENT SCENE ARTWORK: 2026-10-07 -->
-<style id="talkabee-hotspot-editor-style">
-#tb-hs-editor{position:fixed;right:16px;bottom:16px;z-index:2147483646;font:700 12px Arial,sans-serif;display:flex;flex-wrap:wrap;justify-content:flex-end;gap:6px;max-width:650px}
-#tb-hs-editor button,#tb-hs-editor input{border:1px solid #fff;border-radius:10px;background:#000;color:#fff;padding:9px 11px;box-shadow:0 4px 14px #0006}
-#tb-hs-editor input{background:#fff;color:#111;min-width:180px;font-weight:400}#tb-hs-editor button{cursor:pointer}
-body.tb-hs-editing .hotspot,body.tb-hs-editing .home-hotspot,body.tb-hs-editing .yacht-hotspot,body.tb-hs-editing .hotspots button,body.tb-hs-editing .train-hotspots button{display:block!important;outline:2px solid #ffea00!important;background:rgba(255,234,0,.18)!important;pointer-events:auto!important;cursor:move!important;visibility:visible!important;opacity:1!important;z-index:2147483005!important}
-body.tb-hs-editing .tb-hs-active{outline:3px solid #00ffff!important;background:rgba(0,255,255,.18)!important}
-.tb-hs-handle{position:absolute!important;right:-7px!important;bottom:-7px!important;left:auto!important;top:auto!important;width:14px!important;height:14px!important;border-radius:3px!important;background:#00ffff!important;border:2px solid #000!important;z-index:2147483647!important;cursor:nwse-resize!important;display:none!important;transform:none!important}
-body.tb-hs-editing .tb-hs-active>.tb-hs-handle{display:block!important}
 
-#tb-hs-editor .tb-sound-name{min-width:150px;max-width:230px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font:12px/1.2 Arial,sans-serif;color:#fff;opacity:.9}
-#tb-hs-editor input[type="file"].tb-sound-file{display:none!important}
-</style>
 
 <link rel="stylesheet" href="css/common-inline-8492e8692583.css" id="talkabee-bilingual-hotspot-popup-style">
 
 <script id="tb-legacy-challenge-data" type="application/json">{"targets":["car","dog","parrot","cabin","palm","sailboat"],"labels":["Find the Gremlin","Find the Dog","Find the Parrot","Find the cabin","Find the palm tree","Find the Sailboat"]}</script>
-<link rel="stylesheet" href="css/talkabee-enhanced-voice.css">
-<style id="tb-piper-controls">
-#voiceLab{position:relative;z-index:2;width:100%;margin:8px 0;font-size:12px}
-#voiceLab select,#voiceLab button{box-sizing:border-box;width:100%;max-width:100%}
-#voiceLabStatus{font-size:11px;line-height:1.4;overflow-wrap:anywhere}
-#voiceLabText,#voiceLabTestActions,#voiceLabCurrent,#voiceLabPlay,#voiceLabSlow,#voiceLabStop{display:none!important}
-#voiceLabNeural[hidden]{display:none!important}
-</style>
-<style id="tb-server-hide-editor-ui">#tb-studio,#tb-studio-launch,#tb-hs-editor,#tb-challenge-editor,#tb-overlay-editor,#tb-challenge-panel,.tb-hs-handle,[data-tb-editor-only]{display:none!important}</style>
 </head>
 <body class="">
 <div class="talkabee-editions">
@@ -142,16 +122,11 @@ body.tb-hs-editing .tb-hs-active>.tb-hs-handle{display:block!important}
    
    <button id="sceneViewToggle" class="scene-view-toggle" type="button" aria-pressed="false">Scene View</button>
    <div class="language-row" style="margin:5px 0 7px"><label for="adventureLanguage" style="display:block;font-size:9px;font-weight:950;letter-spacing:.10em;margin:0 0 3px 4px">LEARNING LANGUAGE — 7</label><select id="adventureLanguage" aria-label="Learning language" style="width:100%;padding:6px 8px;border:1px solid rgba(255,255,255,.55);border-radius:9px;background:rgba(10,37,42,.82);color:#fff;font-size:11px;font-weight:900" data-tab-global-voice="1"><option value="es">Spanish</option><option value="fr">French</option><option value="en">English</option><option value="de">German</option><option value="it">Italian</option><option value="pt">Portuguese</option><option value="no">Norwegian</option></select></div>
-   <div class="voice-row" style="margin:0 0 7px"><label for="adventureVoice" style="display:block;font-size:9px;font-weight:950;letter-spacing:.10em;margin:0 0 3px 4px">VOICE</label><select id="adventureVoice" aria-label="Voice" style="width:100%;padding:6px 8px;border:1px solid rgba(255,255,255,.55);border-radius:9px;background:rgba(10,37,42,.82);color:#fff;font-size:11px;font-weight:900" data-tab-global-voice="1"><option value="">Browser Default</option><option value="0" data-voice-id="urn:moz-tts:sapi:Microsoft David - English (United States)?en-US|||en-US">Microsoft David - English (United States) — en-US</option><option value="1" data-voice-id="urn:moz-tts:sapi:Microsoft Mark - English (United States)?en-US|||en-US">Microsoft Mark - English (United States) — en-US</option><option value="2" data-voice-id="urn:moz-tts:sapi:Microsoft Zira - English (United States)?en-US|||en-US">Microsoft Zira - English (United States) — en-US</option><option value="3" data-voice-id="urn:moz-tts:sapi:Microsoft David Desktop - English (United States)?en-US|||en-US">Microsoft David Desktop - English (United States) — en-US</option><option value="4" data-voice-id="urn:moz-tts:sapi:Microsoft Zira Desktop - English (United States)?en-US|||en-US">Microsoft Zira Desktop - English (United States) — en-US</option></select>
-<div id="voiceLab"><details open><summary>🎙️ Choose Voice</summary>
-<label for="voiceLabMode">Voice type</label><select id="voiceLabMode"><option value="standard">Standard</option><option value="enhanced">Enhanced</option></select>
-<div id="voiceLabNote" class="lab-note">Uses voices available in your browser.</div>
-<div id="voiceLabNeural" hidden><label for="voiceLabModel">Choose voice</label><select id="voiceLabModel"><option value="">Load voice catalog</option></select><button type="button" id="voiceLabLoad">Load voice</button></div>
-<div id="voiceLabStatus" role="status" aria-live="polite">Standard voice ready.</div></details></div></div>
+   <div class="voice-row" style="margin:0 0 7px"><label for="adventureVoice" style="display:block;font-size:9px;font-weight:950;letter-spacing:.10em;margin:0 0 3px 4px">VOICE</label><select id="adventureVoice" aria-label="Voice" style="width:100%;padding:6px 8px;border:1px solid rgba(255,255,255,.55);border-radius:9px;background:rgba(10,37,42,.82);color:#fff;font-size:11px;font-weight:900" data-tab-global-voice="1"><option value="">Browser Default</option><option value="0" data-voice-id="urn:moz-tts:sapi:Microsoft David - English (United States)?en-US|||en-US">Microsoft David - English (United States) — en-US</option><option value="1" data-voice-id="urn:moz-tts:sapi:Microsoft Mark - English (United States)?en-US|||en-US">Microsoft Mark - English (United States) — en-US</option><option value="2" data-voice-id="urn:moz-tts:sapi:Microsoft Zira - English (United States)?en-US|||en-US">Microsoft Zira - English (United States) — en-US</option><option value="3" data-voice-id="urn:moz-tts:sapi:Microsoft David Desktop - English (United States)?en-US|||en-US">Microsoft David Desktop - English (United States) — en-US</option><option value="4" data-voice-id="urn:moz-tts:sapi:Microsoft Zira Desktop - English (United States)?en-US|||en-US">Microsoft Zira Desktop - English (United States) — en-US</option></select><div id="tbPiperPanel" style="margin: 10px 0px; padding: 9px; border: 1px solid rgb(168, 178, 189); border-radius: 9px; background: rgba(22, 27, 32, 0.65); color: white; font: 14px Arial, sans-serif;"><label style="display:block;margin-bottom:5px">Voice type <select id="tbPiperMode" style="max-width:100%;color:#111;background:#fff"><option value="standard">Standard</option><option value="enhanced">Enhanced (Piper)</option></select></label><div id="tbPiperOptions"><select id="tbPiperModel" aria-label="Piper voice" style="max-width:100%;color:#111;background:#fff"><option value="">Load voice catalog</option></select> <button type="button" id="tbPiperLoad" style="color:#111;background:#eee">Load voice</button></div><div id="tbPiperStatus" role="status" aria-live="polite" style="font-size:12px;margin-top:5px">Piper unavailable: error loading dynamically imported module: file:///C:/Users/wally/Desktop/Talk-A-Bee/transfer%20location%20temporary/piper-matched-118/piper-tts-web.js?voice-switch=1</div></div></div>
    <div class="label">DISCOVERY</div>
    <button data-discovery="">🔎 Discovery — Click the Scene</button>
    <div class="label">ACTIVITIES</div>
-   <button data-lesson="welcome" class="">1. Island Welcome</button>
+   <button data-lesson="welcome" class="active">1. Island Welcome</button>
    <button data-lesson="retreat">2. At the Retreat</button>
    <button data-lesson="animals">3. Julie's Animals</button>
    <button data-lesson="music">4. Music Time</button>
@@ -162,19 +137,19 @@ body.tb-hs-editing .tb-hs-active>.tb-hs-handle{display:block!important}
    <button data-challenge="1">2. Find the Dog</button>
    <button data-challenge="2">3. Find the Parrot</button>
    <button data-challenge="3" class="">4. Find the cabin</button>
-   <button data-challenge="4" class="active">5. Find the palm tree</button>
+   <button data-challenge="4" class="">5. Find the palm tree</button>
    <button data-challenge="5">6. Find the Sailboat</button>
   <a id="mainDirectory" class="main-directory" href="index.html" style="display:block;text-decoration:none;color:#fff;padding:8px;border-radius:10px;margin-bottom:8px;background:rgba(255,255,255,.12);font-size:11px;font-weight:950">← Main Directory</a></aside>
 
-  <div class="panel tab-master-card">
+  <div class="panel tab-master-card" style="height: auto !important; max-height: none !important; overflow: visible !important;">
 <div class="tab-card-tools" aria-label="Script card controls"><button type="button" class="tab-card-drag" title="Move script card">↕ Move</button><button type="button" class="tab-card-font-down" title="Decrease text">A−</button><button type="button" class="tab-card-font-up" title="Increase text">A+</button><button type="button" class="tab-card-reset" title="Reset card">Reset</button></div><div class="tab-card-resize" title="Drag to resize script card" aria-label="Resize script card">↘</div>
 
-   <div class="kicker">AUNT JULIE'S ISLAND RETREAT</div>
-   <h2 id="title">Challenge 5: Find Palm tree.</h2><p id="prompt">Search the scene and click the correct object.</p>
-   <div class="line" id="line">La palmera.</div>
-   <div class="translation" id="translation">Palm tree.</div>
-   <div class="actions" id="actions" style="display: none;"><button id="speak">🔊 Hear It</button><button id="next">Next phrase →</button></div>
-   <div class="find show" id="find"><div class="count" id="count">CHALLENGE 5 OF 6</div><div class="status" id="status" style="color: rgb(23, 106, 72);">✓ Nice find! La palmera. Palm tree.</div><div class="hint" id="hint">Challenge complete. Move to the next one.</div><button class="challengeNext" id="challengeNext">Next Challenge →</button></div>
+   <div class="kicker" data-base-font="15px">AUNT JULIE'S ISLAND RETREAT</div>
+   <h2 id="title" data-base-font="32px">Island Welcome</h2><p id="prompt" data-base-font="24px">Practice a warm welcome at Aunt Julie's retreat.</p>
+   <div class="line" id="line" data-base-font="28px">Bienvenidos a la isla.</div>
+   <div class="translation" id="translation" data-base-font="22px">Welcome to the island.</div>
+   <div class="actions" id="actions" style="display: flex;"><button id="speak" data-base-font="17px">🔊 Hear It</button><button id="next" data-base-font="17px">Next phrase →</button></div>
+   <div class="find" id="find"><div class="count" id="count" data-base-font="18px">CHALLENGE 5 OF 6</div><div class="status" id="status" style="color: rgb(23, 106, 72);" data-base-font="18px">✓ Nice find! La palmera. Palm tree.</div><div class="hint" id="hint" data-base-font="18px">Challenge complete. Move to the next one.</div><button class="challengeNext" id="challengeNext" data-base-font="17px">Next phrase →</button></div>
   </div>
 
   <div class="hotspots">
@@ -323,8 +298,7 @@ function selectedVoice(){
  const i=parseInt(voiceSelect.value,10);
  return Number.isInteger(i)?(availableVoices[i]||null):null;
 }
-function speak(t){
- if(window.tbBoardwalkEnhancedSpeak?.(t,.82))return;
+function speak(t){if(window.tbAdventurePiperSpeak?.(t,.82,null))return;
  if(!("speechSynthesis" in window))return;
  speechSynthesis.cancel();
  const u=new SpeechSynthesisUtterance(t);
@@ -681,108 +655,7 @@ document.addEventListener('click',function(ev){
 },true);
 })();
 </script>
-<script id="talkabee-hotspot-editor-v10">
-(()=>{
-const SEL='.hotspot,.home-hotspot,.yacht-hotspot,.hotspots button,.train-hotspots button';
-let editing=false,active=null,adding=false,pendingName='',pendingTranslations=null;
-let selectedSoundFile=null;
-const all=()=>[...document.querySelectorAll(SEL)].filter(x=>!x.closest('#tb-hs-editor'));
-function parentFor(el){return el.offsetParent||el.parentElement||document.body}
-function pct(v,n){return +(v/n*100).toFixed(2)}
-function cleanActive(){if(active){active.classList.remove('tb-hs-active');active.querySelector(':scope > .tb-hs-handle')?.remove()} active=null}
-function select(el){if(!editing||!el)return;cleanActive();active=el;el.classList.add('tb-hs-active');let h=document.createElement('span');h.className='tb-hs-handle';el.appendChild(h);updateSoundUI()}
-function semanticNew(name){
- const existing=all()[0]; if(!existing)return null;
- const el=document.createElement('button');el.type='button';
- if(existing.classList.contains('home-hotspot')){el.className='home-hotspot show'}
- else if(existing.classList.contains('yacht-hotspot')){el.className='yacht-hotspot'}
- else if(existing.classList.contains('hotspot')){el.className='hotspot'}
- else if(existing.className)el.className=existing.className;
- if(existing.hasAttribute('data-object'))el.dataset.object=name;else el.dataset.word=name;
- if(existing.hasAttribute('data-en'))el.dataset.en=name;
- if(existing.id&&!existing.hasAttribute('data-word')&&!existing.hasAttribute('data-object'))el.id=name.toLowerCase().replace(/[^a-z0-9_-]+/g,'-').replace(/^-+|-+$/g,'');
- el.setAttribute('aria-label',name);if(pendingTranslations&&window.TB_registerNewHotspot)window.TB_registerNewHotspot(el,pendingTranslations);
- return el
-}
-function hotspotContainer(){const e=all()[0];return e?e.parentElement:null}
-function placeAt(ev){
- if(!editing||!adding)return;
- const host=hotspotContainer();if(!host)return;
- const el=semanticNew(pendingName);if(!el)return;
- host.appendChild(el);
- const r=parentFor(el).getBoundingClientRect();
- el.style.left=pct(ev.clientX-r.left,r.width)+'%';el.style.top=pct(ev.clientY-r.top,r.height)+'%';el.style.width='6%';el.style.height='8%';
- adding=false;pendingName='';pendingTranslations=null;nameBox.value='';select(el);ev.preventDefault();ev.stopPropagation();
-}
-function startDrag(ev,el){
- if(!editing||adding)return; if(ev.target.classList.contains('tb-hs-handle'))return;
- select(el);ev.preventDefault();ev.stopPropagation();
- const p=parentFor(el),r=p.getBoundingClientRect();let sx=ev.clientX,sy=ev.clientY;
- let l=parseFloat(el.style.left)||pct(el.offsetLeft,r.width),t=parseFloat(el.style.top)||pct(el.offsetTop,r.height);
- const move=e=>{el.style.left=(l+(e.clientX-sx)/r.width*100).toFixed(2)+'%';el.style.top=(t+(e.clientY-sy)/r.height*100).toFixed(2)+'%'};
- const up=()=>{window.removeEventListener('pointermove',move,true);window.removeEventListener('pointerup',up,true)};
- window.addEventListener('pointermove',move,true);window.addEventListener('pointerup',up,true)
-}
-function startResize(ev,el){
- if(!editing)return;ev.preventDefault();ev.stopPropagation();
- const p=parentFor(el),r=p.getBoundingClientRect();let sx=ev.clientX,sy=ev.clientY;
- let w=parseFloat(el.style.width)||pct(el.offsetWidth,r.width),h=parseFloat(el.style.height)||pct(el.offsetHeight,r.height);
- const move=e=>{el.style.width=Math.max(1,w+(e.clientX-sx)/r.width*100).toFixed(2)+'%';el.style.height=Math.max(1,h+(e.clientY-sy)/r.height*100).toFixed(2)+'%'};
- const up=()=>{window.removeEventListener('pointermove',move,true);window.removeEventListener('pointerup',up,true)};
- window.addEventListener('pointermove',move,true);window.addEventListener('pointerup',up,true)
-}
-function soundPath(el){return el&&el.dataset?String(el.dataset.sound||'').trim():''}
-function soundLabel(path){return path?path.split('/').pop():'No sound'}
-function updateSoundUI(){if(typeof soundName==='undefined')return;const p=soundPath(active);soundName.textContent=active?soundLabel(p):'Select a hotspot';removeSound.disabled=testSound.disabled=!active||!p;chooseSound.disabled=!active}
-function stopEditorPreview(){if(window.__tbHsPreview){try{window.__tbHsPreview.pause();window.__tbHsPreview.currentTime=0}catch(e){}window.__tbHsPreview=null}}
-function previewSound(){if(!active)return;stopEditorPreview();let src='';if(selectedSoundFile&&soundPath(active)==='sounds/'+selectedSoundFile.name)src=URL.createObjectURL(selectedSoundFile);else src=soundPath(active);if(!src)return;const a=new Audio(src);window.__tbHsPreview=a;a.play().catch(()=>{});a.onended=()=>{if(src.startsWith('blob:'))URL.revokeObjectURL(src);if(window.__tbHsPreview===a)window.__tbHsPreview=null}}
-function assignSoundFile(file){if(!active||!file)return;selectedSoundFile=file;active.dataset.sound='sounds/'+file.name;updateSoundUI();previewSound()}
-function removeAssignedSound(){if(!active)return;stopEditorPreview();active.removeAttribute('data-sound');selectedSoundFile=null;updateSoundUI()}
-const bar=document.createElement('div');bar.id='tb-hs-editor';
-const edit=document.createElement('button');edit.textContent='Edit Hotspots';
-const nameBox=document.createElement('input');nameBox.placeholder='hotspot name';
-const add=document.createElement('button');add.textContent='Add Hotspot';
-const del=document.createElement('button');del.textContent='Delete Hotspot';
-const save=document.createElement('button');save.textContent='Save Working HTML';
-const exportServer=document.createElement('button');exportServer.textContent='Export Server HTML';
-const soundFile=document.createElement('input');soundFile.type='file';soundFile.accept='audio/*,.mp3,.wav,.ogg,.m4a';soundFile.className='tb-sound-file';
-const chooseSound=document.createElement('button');chooseSound.textContent='Choose Sound';chooseSound.disabled=true;
-const testSound=document.createElement('button');testSound.textContent='Test Sound';testSound.disabled=true;
-const removeSound=document.createElement('button');removeSound.textContent='Remove Sound';removeSound.disabled=true;
-const soundName=document.createElement('span');soundName.className='tb-sound-name';soundName.textContent='Select a hotspot';
-bar.append(edit,nameBox,add,del,chooseSound,testSound,removeSound,soundName,save,exportServer,soundFile);document.body.appendChild(bar);nameBox.style.display=add.style.display=del.style.display=chooseSound.style.display=testSound.style.display=removeSound.style.display=soundName.style.display=save.style.display=exportServer.style.display='none';
-chooseSound.onclick=()=>{if(active){soundFile.value='';soundFile.click()}};
-soundFile.onchange=()=>{const f=soundFile.files&&soundFile.files[0];if(f)assignSoundFile(f)};
-testSound.onclick=previewSound;
-removeSound.onclick=removeAssignedSound;
-edit.onclick=()=>{editing=!editing;document.body.classList.toggle('tb-hs-editing',editing);edit.textContent=editing?'Exit Editor':'Edit Hotspots';nameBox.style.display=add.style.display=del.style.display=chooseSound.style.display=testSound.style.display=removeSound.style.display=soundName.style.display=save.style.display=exportServer.style.display=editing?'':'none';if(!editing){adding=false;stopEditorPreview();cleanActive()}updateSoundUI()};
-add.onclick=async()=>{if(!editing)return;const n=(nameBox.value||'').trim().toLowerCase().replace(/\s+/g,' ');if(!n){nameBox.focus();return}pendingName=n;add.disabled=true;const oldText=add.textContent;add.textContent='Translating...';try{pendingTranslations=window.TB_prepareNewHotspotTranslations?await window.TB_prepareNewHotspotTranslations(n):{en:n}}catch(e){pendingTranslations={en:n}}finally{add.disabled=false;add.textContent=oldText}adding=true;cleanActive()};
-del.onclick=()=>{if(active){stopEditorPreview();active.remove();active=null;selectedSoundFile=null;updateSoundUI()}};
-function downloadableClone(stripEditor){
- const clone=document.documentElement.cloneNode(true);
- clone.querySelector('#tb-hs-editor')?.remove();
- clone.querySelectorAll('#talkabee-object-popup').forEach(function(n){n.remove()});clone.querySelectorAll('#tb-legacy-challenge-panel,#tb-legacy-challenge-open').forEach(n=>n.remove());
- clone.querySelectorAll('.tb-hs-handle').forEach(function(n){n.remove()});
- clone.querySelector('body')?.classList.remove('tb-hs-editing','scene-view');
- clone.querySelectorAll('.tb-hs-active,.scene-only,.activity-collapsed').forEach(function(n){n.classList.remove('tb-hs-active','scene-only','activity-collapsed')});
- clone.querySelectorAll('#sceneView,#sceneViewToggle').forEach(function(n){n.setAttribute('aria-pressed','false')});
- if(stripEditor){
-  clone.querySelector('#talkabee-hotspot-editor-style')?.remove();
-  clone.querySelector('#talkabee-hotspot-editor-v10')?.remove();
-  clone.querySelector('#talkabee-hotspot-editor-script')?.remove();clone.querySelector('#tb-legacy-challenge-editor-script')?.remove();clone.querySelector('#tb-legacy-challenge-style')?.remove();
-  clone.querySelector('#tb-hs-readout')?.remove();
- }
- return clone;
-}
-function downloadHTML(stripEditor){
- const clone=downloadableClone(stripEditor),blob=new Blob(['<!doctype html>\n'+clone.outerHTML],{type:'text/html'}),a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download=(location.pathname.split('/').pop()||'adventure.html');a.click();setTimeout(()=>URL.revokeObjectURL(a.href),1000)
-}
-save.onclick=()=>downloadHTML(false);
-exportServer.onclick=()=>downloadHTML(true);
-document.addEventListener('pointerdown',ev=>{if(!editing)return;const h=ev.target.closest('.tb-hs-handle');if(h){startResize(ev,h.parentElement);return}const el=ev.target.closest(SEL);if(el){startDrag(ev,el);return}},true);
-document.addEventListener('click',ev=>{if(!editing)return;if(ev.target.closest('#tb-hs-editor'))return;if(adding){placeAt(ev);return}const el=ev.target.closest(SEL);if(el){ev.preventDefault();ev.stopPropagation();select(el)}},true);
-})();
-</script>
+
 
 <script id="talkabee-scene-view-safe-reset">
 (function(){
@@ -815,145 +688,29 @@ panel.querySelector('#tb-lc-apply').onclick=()=>{if(!target.value){status.textCo
 const observer=new MutationObserver(()=>{const editing=document.body.classList.contains('tb-hs-editing');b.style.display=editing?'':'none';if(!editing)panel.classList.remove('open')});observer.observe(document.body,{attributes:true,attributeFilter:['class']});
 const handle=panel.querySelector('.drag');let drag=null;handle.addEventListener('pointerdown',e=>{if(e.button!==0)return;e.preventDefault();const r=panel.getBoundingClientRect();panel.style.left=r.left+'px';panel.style.top=r.top+'px';panel.style.right='auto';drag={x:e.clientX,y:e.clientY,l:r.left,t:r.top};handle.setPointerCapture(e.pointerId)});handle.addEventListener('pointermove',e=>{if(!drag)return;panel.style.left=Math.max(0,Math.min(innerWidth-60,drag.l+e.clientX-drag.x))+'px';panel.style.top=Math.max(0,Math.min(innerHeight-50,drag.t+e.clientY-drag.y))+'px'});handle.addEventListener('pointerup',()=>drag=null);handle.addEventListener('pointercancel',()=>drag=null);
 })();
-</script>
-<link rel="stylesheet" data-tb-shared-studio="1" href="css/talkabee-editing-studio.css">
+</script><div id="tb-legacy-challenge-panel"><div class="drag"><strong>↕ Edit Six Challenges</strong><div>Drag here to move</div></div><label>Challenge</label><select id="tb-lc-number"><option value="0">Challenge 1</option><option value="1">Challenge 2</option><option value="2">Challenge 3</option><option value="3">Challenge 4</option><option value="4">Challenge 5</option><option value="5">Challenge 6</option></select><label>Existing hotspot</label><select id="tb-lc-target"></select><label>Challenge label</label><input id="tb-lc-label"><button type="button" id="tb-lc-apply">Apply Challenge</button> <button type="button" id="tb-lc-close">Close</button><p id="tb-lc-status" aria-live="polite"></p></div>
+
 <!-- Talk A Bee Editing Studio pilot: isolated from Adventure lesson/challenge logic. -->
 
-<button id="tb-studio-launch" type="button" style="">✦ Editing Studio</button>
-<div id="tb-studio" aria-label="Talk A Bee Editing Studio" style="display: none;">
- <div class="tb-studio-head" id="tb-studio-drag"><span>✦ TALK A BEE STUDIO</span><span><button type="button" id="tb-studio-min" title="Minimize">−</button><button type="button" id="tb-studio-close" title="Close">×</button></span></div>
- <div class="tb-studio-main" id="tb-studio-main">
-  <section id="tb-studio-music" aria-label="Local music player">
-    <div class="tb-music-top"><strong>🎵 STUDIO MUSIC</strong><button type="button" id="tb-music-choose">Choose MP3</button></div>
-    <input type="file" id="tb-music-file" accept="audio/*,.mp3,.wav,.ogg,.m4a" hidden="">
-    <div class="tb-music-track" id="tb-music-track">No music selected</div>
-    <div class="tb-music-controls"><button type="button" id="tb-music-play" disabled="">▶ Play</button><button type="button" id="tb-music-stop" disabled="">■ Stop</button><label for="tb-music-volume">Volume</label><input type="range" id="tb-music-volume" min="0" max="100" value="35" aria-label="Music volume"></div>
-    <audio id="tb-music-audio"></audio>
-  </section>
-  <section id="tb-studio-savebar" aria-label="Save and export">
-    <div class="tb-save-title">SAVE YOUR WORK <span id="tb-studio-save-status" class="">Ready</span></div>
-    <div class="tb-save-buttons">
-      <button type="button" id="tb-studio-save-local">💾 Save Local Master</button>
-      <button type="button" id="tb-studio-save-server">🌐 Export Server Version</button>
-    </div>
-    <div class="tb-save-help">Both downloads include your latest hotspots, challenges, and image overlays.</div>
-  </section>
-  <label for="tb-studio-mode">EDITOR SELECTOR</label><select id="tb-studio-mode"><option value="none">Choose an editor...</option><option value="hotspot">Hotspot Editor</option><option value="challenge">Challenge Editor</option><option value="overlay">Image Overlay Editor</option></select>
-  <div id="tb-studio-hotspot" class="tb-studio-panel"><p class="tb-note">Select a hotspot in the scene to edit it. Move this whole window by its title bar.</p></div>
-  <div id="tb-studio-challenge" class="tb-studio-panel"><p class="tb-note">Choose a challenge and assign its answer below.</p></div>
-  <div id="tb-studio-overlay" class="tb-studio-panel">
-   <label for="tb-overlay-file">ADD TRANSPARENT PNG / IMAGE</label><input type="file" id="tb-overlay-file" accept="image/png,image/webp,image/jpeg,image/gif" multiple="">
-   <label for="tb-overlay-path">Or use an existing website image path</label><input type="text" id="tb-overlay-path" placeholder="images/PNG/bee.png"><button type="button" id="tb-overlay-add-path">Add Existing Image</button>
-   <label for="tb-overlay-items">SELECT IMAGE</label><select id="tb-overlay-items"><option value="">Select an overlay</option></select>
-   <div class="tb-smallrow"><div><label for="tb-overlay-width">Width (%)</label><input type="number" id="tb-overlay-width" min="1" max="100" step="0.5"></div><div><label for="tb-overlay-rotate">Rotation (°)</label><input type="number" id="tb-overlay-rotate" min="-360" max="360" step="5"></div></div>
-   <button type="button" id="tb-overlay-front">Bring Forward</button><button type="button" id="tb-overlay-back">Send Back</button><button type="button" id="tb-overlay-delete" class="tb-danger">Remove</button>
-   <p class="tb-note">Drag an image on the scene to move it. Use the width control to resize. Changes appear in your exported HTML.</p>
-   <button type="button" id="tb-overlay-undo">Undo</button><button type="button" id="tb-overlay-redo">Redo</button>
-   <button type="button" id="tb-overlay-export">Save Updated HTML</button>
-   <p class="tb-note">For reliable publishing, use existing website image paths. Uploaded local images are embedded in the exported HTML, which can make it large.</p>
-  </div>
- </div>
-</div>
-<script type="application/json" id="tb-overlay-data">[]</script>
 
 
-<script>
+<script type="application/json" id="tb-overlay-data">[]</script><style id="tb-overlay-public-style">#world>.tab-master-card,#world>.card{position:relative;z-index:2147483007!important}#tb-overlay-layer,#tb-overlay-back-layer{position:absolute;inset:0;pointer-events:none}#tb-overlay-layer{z-index:2147483008}#tb-overlay-back-layer{z-index:2147483006}#tb-overlay-layer img,#tb-overlay-back-layer img{position:absolute;pointer-events:none;user-select:none;transform-origin:center;object-fit:contain}</style><script id="tb-overlay-public-runtime">(function(){const scene=document.getElementById('world'),data=document.getElementById('tb-overlay-data');if(!scene||!data)return;let items=[];try{items=JSON.parse(data.textContent||'[]')}catch(e){}const back=document.createElement('div');back.id='tb-overlay-back-layer';scene.appendChild(back);const layer=document.createElement('div');layer.id='tb-overlay-layer';scene.appendChild(layer);items.forEach(o=>{if(!o||typeof o.src!=='string')return;const im=document.createElement('img');im.src=o.src;im.alt='';im.draggable=false;im.style.left=Number(o.x||0)+'%';im.style.top=Number(o.y||0)+'%';im.style.width=Number(o.w||12)+'%';im.style.transform='rotate('+Number(o.rotation||0)+'deg)';im.style.zIndex=String(Number(o.z||1));(o.plane==='back'?back:layer).appendChild(im)})})();</script>
+
+
+<script id="talkabee-julie-restore-enhanced-voice">
+/* Restore the saved Piper mode before the shared voice controller initializes. */
 (function(){
-'use strict';
-// Boardwalk adapter for the proven Grandma & Grandpa Piper runtime.
-// Preserves native Boardwalk click handlers, challenges, popups, and MP3s.
-// Initialize controls as a classic script; import Piper only when requested.
-const piperModuleUrl = new URL('piper-matched-118/piper-tts-web.js?voice-switch=1', location.href).href;
-const $=id=>document.getElementById(id);
-const mode=$('voiceLabMode'),select=$('voiceLabModel'),status=$('voiceLabStatus');
-const lang=$('adventureLanguage');
-const prefix={en:'en_',es:'es_',fr:'fr_',de:'de_',it:'it_',pt:'pt_',no:'no_'};
-let engine=null,loading=null,catalog=[],audio=null,url=null,request=0;
-let lastText='',lastRate=.82;
-const show=s=>{if(status)status.textContent=s};
-function stop(){
- request++;
- if(audio){try{audio.pause();audio.currentTime=0}catch(_){}audio=null}
- if(url){URL.revokeObjectURL(url);url=null}
- try{speechSynthesis.cancel()}catch(_){}
-}
-function recommend(){
- const p=prefix[lang.value]||'en_',old=select.value;
- const matches=catalog.filter(v=>v.toLowerCase().startsWith(p));
- select.replaceChildren();
- for(const id of matches)select.add(new Option(id,id));
- if(matches.includes(old))select.value=old;
- else if(matches.length)select.value=matches.find(v=>v.includes('medium'))||matches[0];
- else select.add(new Option('No enhanced voice for this language',''));
-}
-async function loadEngine(){
- if(engine)return engine;
- if(loading)return loading;
- loading=(async()=>{
-   show('Loading Piper voice catalog…');
-   const m=await import(piperModuleUrl);
-   const voices=await m.voices();
-   const all=Array.isArray(voices)?voices.map(v=>typeof v==='string'?v:(v?.id||v?.key||v?.name||'')).filter(Boolean):Object.keys(voices||{});
-   catalog=all.filter(id=>Object.values(prefix).some(p=>id.toLowerCase().startsWith(p)));
-   if(!catalog.length)throw Error('No matching Piper voices found');
-   engine=m;recommend();show('Voice catalog ready. First speech may download a model.');
-   return engine;
- })();
- try{return await loading}catch(e){loading=null;show('Piper unavailable: '+(e?.message||e));console.error(e);throw e}
-}
-function updateMode(){
- const enabled=mode.value==='enhanced';
- $('voiceLabNeural').hidden=!enabled; $('voiceLabNeural').style.setProperty('display',enabled?'block':'none','important');
- $('voiceLabNote').textContent=enabled?'Load a voice before speaking.':'Uses voices available in your browser.';
- try{localStorage.setItem('talkabee-lab-voice-mode',mode.value)}catch(_){}
- show(enabled?'Enhanced selected. Click Load voice.':'Standard voice ready.');
-}
-try{if(localStorage.getItem('talkabee-lab-voice-mode')==='enhanced')mode.value='enhanced'}catch(_){}
-mode.addEventListener('change',()=>{stop();updateMode()});
-lang.addEventListener('change',()=>{stop();recommend()});
-select.addEventListener('change',()=>{stop();show('Voice selected: '+select.value)});
-$('voiceLabLoad').addEventListener('click',()=>loadEngine().catch(()=>{}));
-updateMode();
-
-async function enhancedSpeak(text,rate,onComplete){
- stop();const ticket=request;
- try{
-   const m=await loadEngine();if(ticket!==request||mode.value!=='enhanced')return;
-   const voiceId=select.value;
-   if(!voiceId)throw Error('No Piper voice available for this language');
-   show('Preparing enhanced voice…');
-   const wav=await m.predict({text,voiceId},p=>{
-     if(ticket===request&&p?.total)show('Downloading voice: '+Math.round(p.loaded/p.total*100)+'%');
-   });
-   if(ticket!==request||mode.value!=='enhanced'||select.value!==voiceId)return;
-   url=URL.createObjectURL(wav);audio=new Audio(url);audio.playbackRate=rate;
-   const current=audio;
-   current.addEventListener('ended',()=>{
-     if(audio!==current)return;
-     audio=null;if(url){URL.revokeObjectURL(url);url=null}
-     if(ticket===request){show('Voice finished.');onComplete?.()}
-   },{once:true});
-   await current.play();
-   if(ticket===request)show('Enhanced voice playing.');
- }catch(e){
-   if(ticket!==request)return;
-   console.error('Boardwalk Piper:',e);show('Piper failed: '+(e?.message||e)+'. Standard voice is available.');
-   // Preserve audio completion for original Boardwalk sound effects.
-   onComplete?.();
- }
-}
-window.tbBoardwalkEnhancedSpeak=function(text,rate,onComplete){
- if(mode.value!=='enhanced'||!text)return false;
- // Let the existing browser voice work until Piper is explicitly loaded.
- if(!engine||!select.value)return false;
- lastText=text;lastRate=rate||.82;
- enhancedSpeak(text,rate||.82,onComplete);
- return true;
-};
-// The original script-card handlers already call speak(), so no duplicate
-// click interception is necessary. Replay and Slow use the same route.
-
+  try {
+    var language=document.getElementById('adventureLanguage');
+    if(!language)return;
+    var saved=localStorage.getItem('talkabee-learn-language');
+    if(saved && Array.from(language.options).some(function(o){return o.value===saved;})){
+      if(language.value!==saved){language.value=saved;language.dispatchEvent(new Event('change',{bubbles:true}));}
+    }
+    var selected=localStorage.getItem('talkabee-piper-voice-'+language.value);
+    if(selected)localStorage.setItem('talkabee-lab-voice-mode','enhanced');
+  }catch(e){console.warn('Talk A Bee Julie: Piper preference could not be restored',e);}
 })();
-
 </script>
+<script src="js/talkabee-enhanced-voice-adventures.js"></script>
 </body></html>
