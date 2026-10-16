@@ -57,38 +57,47 @@
    hasEmbedded:()=>overlays.some(o=>/^data:image\//i.test(o.src)),
    download:downloadOverlayFile
  };
+ const pathInput=$('tb-overlay-path');if(pathInput)pathInput.placeholder='images/png/bee.png';
  const overlayNote=document.querySelector('#tb-studio-overlay .tb-note:last-of-type');
  if(overlayNote)overlayNote.textContent='Overlays use images/png/ file paths. Save Local Master and Export Server Version download HTML only.';
  $('tb-overlay-items').onchange=e=>choose(e.target.value);
  function edit(prop,value){const o=overlays.find(x=>x.id===selected);if(!o||!Number.isFinite(value))return;snapshot();o[prop]=value;refresh()}
  $('tb-overlay-width').onchange=e=>edit('w',Math.max(1,Math.min(100,Number(e.target.value))));$('tb-overlay-rotate').onchange=e=>edit('rotation',Number(e.target.value));
 
- // Firefox's native number spinners are too small. Provide accessible, full-size step buttons.
- function addStepButtons(inputId,prop,step,min,max){
-   const input=$(inputId),group=document.createElement('div');
-   group.className='tb-overlay-stepper';
-   input.parentNode.insertBefore(group,input);
+ // The Adventure HTML already contains stepper buttons. Reuse them; never nest more.
+ function wireStepper(inputId,prop,step,min,max){
+   const input=$(inputId);
+   if(!input)return;
+   let group=input.closest('.tb-overlay-stepper');
+   if(!group){
+     group=document.createElement('div');group.className='tb-overlay-stepper';
+     input.parentNode.insertBefore(group,input);group.appendChild(input);
+   }
+   // Remove accidental nested/duplicate controls left by older editor builds.
+   const buttons=[...group.querySelectorAll('.tb-overlay-step-button')];
+   buttons.forEach(b=>b.remove());
    const minus=document.createElement('button'),plus=document.createElement('button');
-   minus.type=plus.type='button';minus.className='tb-overlay-step-button';plus.className='tb-overlay-step-button';
-   minus.textContent='−';plus.textContent='+';
-   const noun=prop==='w'?'image width':'image rotation';
-   minus.setAttribute('aria-label','Decrease '+noun);plus.setAttribute('aria-label','Increase '+noun);
-   minus.title='Decrease '+noun;plus.title='Increase '+noun;
-   group.append(minus,input,plus);
-   input.classList.add('tb-overlay-step-input');
-   input.setAttribute('inputmode','decimal');
-   const change=direction=>{
-     const o=overlays.find(x=>x.id===selected);
-     if(!o)return;
-     const current=Number(o[prop]);
-     const next=Math.round(Math.max(min,Math.min(max,current+direction*step))*100)/100;
-     edit(prop,next);
-   };
-   minus.addEventListener('click',()=>change(-1));
-   plus.addEventListener('click',()=>change(1));
+   for(const [button,direction] of [[minus,-1],[plus,1]]){
+     button.type='button';button.className='tb-overlay-step-button';
+     button.textContent=direction<0?'−':'+';
+     button.title=(direction<0?'Decrease ':'Increase ')+(prop==='w'?'image width':'image rotation');
+     button.setAttribute('aria-label',button.title);
+     button.addEventListener('click',()=>{
+       const o=overlays.find(x=>x.id===selected);if(!o)return;
+       edit(prop,Math.round(Math.max(min,Math.min(max,Number(o[prop])+direction*step))*100)/100);
+     });
+   }
+   group.insertBefore(minus,input);group.appendChild(plus);
+   input.classList.add('tb-overlay-step-input');input.setAttribute('inputmode','decimal');
  }
- addStepButtons('tb-overlay-width','w',0.5,1,100);
- addStepButtons('tb-overlay-rotate','rotation',5,-360,360);
+ wireStepper('tb-overlay-width','w',0.5,1,100);
+ wireStepper('tb-overlay-rotate','rotation',5,-360,360);
+ // Scoped controls override the Adventure's global button rules.
+ if(!document.getElementById('tb-overlay-stepper-repair')){
+   const style=document.createElement('style');style.id='tb-overlay-stepper-repair';
+   style.textContent=`#tb-studio-overlay .tb-smallrow{display:grid!important;grid-template-columns:minmax(0,1fr) minmax(0,1fr)!important;gap:12px!important;min-width:0!important}#tb-studio-overlay .tb-smallrow>div{min-width:0!important}#tb-studio-overlay .tb-overlay-stepper{display:grid!important;grid-template-columns:34px minmax(0,1fr) 34px!important;gap:5px!important;align-items:center!important;width:100%!important;max-width:100%!important;min-width:0!important}#tb-studio-overlay .tb-overlay-stepper .tb-overlay-step-button{display:grid!important;place-items:center!important;box-sizing:border-box!important;width:34px!important;min-width:0!important;max-width:34px!important;height:36px!important;min-height:0!important;margin:0!important;padding:0!important;font:700 20px/1 Arial,sans-serif!important;white-space:nowrap!important}#tb-studio-overlay .tb-overlay-stepper .tb-overlay-step-input{box-sizing:border-box!important;width:100%!important;min-width:0!important;max-width:100%!important;height:36px!important;min-height:0!important;margin:0!important;padding:3px!important;text-align:center!important;font:600 14px/1 Arial,sans-serif!important}#tb-studio-overlay{overflow-x:hidden!important}`;
+   document.head.appendChild(style);
+ }
 
  $('tb-overlay-delete').onclick=()=>{if(!selected)return;snapshot();overlays=overlays.filter(o=>o.id!==selected);selected=null;refresh()};
  // These controls change the selected image's position relative to the script card.
@@ -97,7 +106,11 @@
  frontButton.textContent='Bring in Front of Card';backButton.textContent='Send Behind Card';
  frontButton.title='Display the selected image over the script card';
  backButton.title='Display the selected image behind the script card, above the scene';
- const depthNote=document.createElement('p');depthNote.className='tb-note';
+ // Reuse the existing explanation; older builds added a duplicate every load.
+ const oldNotes=[...document.querySelectorAll('#tb-studio-overlay .tb-note')].filter(n=>n.textContent.trim().startsWith('Front/Back places the selected image'));
+ const depthNote=oldNotes.shift()||document.createElement('p');
+ oldNotes.forEach(n=>n.remove());
+ depthNote.className='tb-note';
  depthNote.textContent='Front/Back places the selected image above or behind the script card. Drag to move it; Width (%) changes its size.';
  backButton.insertAdjacentElement('afterend',depthNote);
  function changeDepth(toFront){
@@ -255,6 +268,23 @@ function serialize(server){
    const mode=clone.querySelector('#tb-studio-mode');
    if(mode){mode.value='none';[...mode.options].forEach(o=>o.selected=o.value==='none');}
    clone.querySelectorAll('.tb-studio-panel').forEach(x=>x.classList.remove('active'));
+   // Export the canonical controls, not runtime-added wrappers or messages.
+   clone.querySelector('#tb-overlay-stepper-repair')?.remove();
+   for(const id of ['tb-overlay-width','tb-overlay-rotate']){
+     const input=clone.querySelector('#'+id);
+     if(!input)continue;
+     let group=input.closest('.tb-overlay-stepper');
+     while(group && group.parentElement?.classList.contains('tb-overlay-stepper')){
+       const outer=group.parentElement;outer.parentNode.insertBefore(group,outer);outer.remove();
+     }
+     group=input.closest('.tb-overlay-stepper');
+     if(group){
+       const btns=[...group.querySelectorAll('.tb-overlay-step-button')];
+       btns.slice(2).forEach(b=>b.remove());
+     }
+   }
+   const depthNotes=[...clone.querySelectorAll('#tb-studio-overlay .tb-note')].filter(n=>n.textContent.trim().startsWith('Front/Back places the selected image'));
+   depthNotes.slice(1).forEach(n=>n.remove());
    clone.querySelector('#tb-studio-resize-grip')?.remove();
    const stat=clone.querySelector('#tb-studio-save-status');
    if(stat){stat.textContent='Ready';stat.classList.remove('tb-unsaved');}
