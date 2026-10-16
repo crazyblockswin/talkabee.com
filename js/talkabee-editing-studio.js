@@ -307,7 +307,7 @@ function download(server){
   // Use the currently opened Adventure, never the Airplane pilot's name.
   const opened=decodeURIComponent(location.pathname.split('/').pop()||'Talk-A-Bee-Adventure.html');
   const base=opened.replace(/\.html?$/i,'').replace(/-SERVER$/i,'');
-  const file=base+(server?'-SERVER':'')+'.html';
+  const file=base+'.html';
   const url=URL.createObjectURL(new Blob([html],{type:'text/html;charset=utf-8'}));
   const a=document.createElement('a');a.href=url;a.download=file;document.body.appendChild(a);a.click();a.remove();
   setTimeout(()=>URL.revokeObjectURL(url),10000);
