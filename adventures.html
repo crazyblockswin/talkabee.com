@@ -2121,13 +2121,13 @@ renderGuidedSentence();
 <script>
 (function(){
  const topics={
-  travel:{k:'TRAVEL • PARIS',t:'Find your way through Paris.',b:'Learn useful travel phrases inside the story instead of staring at a plain worksheet.',p:'¿Dónde está la estación?',x:'Where is the station?',bg:'url("Lingo-Lane-Paris-Adventure-at-the-Station.png")'},
-  cafe:{k:'CAFÉ & FOOD',t:'Order with confidence.',b:'Practice the phrases you actually need at a café or restaurant.',p:'Un café, por favor.',x:'A coffee, please.',bg:'url("Lingo-Lane-Sunset-Cafe.png")'},
+  travel:{k:'TRAVEL • PARIS',t:'Find your way through Paris.',b:'Learn useful travel phrases inside the story instead of staring at a plain worksheet.',p:'¿Dónde está la estación?',x:'Where is the station?',bg:''},
+  cafe:{k:'CAFÉ & FOOD',t:'Order with confidence.',b:'Practice the phrases you actually need at a café or restaurant.',p:'Un café, por favor.',x:'A coffee, please.',bg:''},
   shopping:{k:'SHOPPING',t:'Ask prices and buy what you need.',b:'Use practical shopping phrases with a visual scene to make them stick.',p:'¿Cuánto cuesta?',x:'How much does it cost?',bg:''},
   animals:{k:'ANIMALS',t:'Learn with Bear and friends.',b:'Step into Animal World for speaking sentences, moving word highlights and playful practice.',p:'El perro es muy amigable.',x:'The dog is very friendly.',bg:'url("images/talkabee-image-03.png")'},
-  family:{k:'HOME & FAMILY',t:'Everyday language with familiar faces.',b:'Practice warm, useful conversation with Wally, Cathy and the family.',p:'Esta es mi familia.',x:'This is my family.',bg:'url("Lingo-Lane-Garden-Celebration.png")'},
+  family:{k:'HOME & FAMILY',t:'Everyday language with familiar faces.',b:'Practice warm, useful conversation with Wally, Cathy and the family.',p:'Esta es mi familia.',x:'This is my family.',bg:''},
   outdoors:{k:'OUTDOORS',t:'Take the lesson outside.',b:'Learn words and phrases through parks, lakes, travel and adventure scenes.',p:'Vamos al parque.',x:'Let’s go to the park.',bg:''},
-  music:{k:'MUSIC & FUN',t:'Sing, listen and play with Aunt Julie.',b:'Use music and personality to make practice feel less like homework.',p:'Me gusta la música.',x:'I like music.',bg:'url("Lingo-Lane-Aunt-Julie-Serenade.png")'},
+  music:{k:'MUSIC & FUN',t:'Sing, listen and play with Aunt Julie.',b:'Use music and personality to make practice feel less like homework.',p:'Me gusta la música.',x:'I like music.',bg:''},
   talk:{k:'EVERYDAY TALK',t:'Start with the phrases you use most.',b:'Greetings, introductions and simple conversation live here.',p:'Hola, ¿cómo estás?',x:'Hello, how are you?',bg:''},
   hotel:{k:'HOTEL & STAY',t:'Check in and settle in.',b:'Practice the short phrases travelers use at a hotel desk.',p:'Tengo una reservación.',x:'I have a reservation.',bg:'url("images/talkabee-image-32.jpg")'},
   transport:{k:'GETTING AROUND',t:'Find the station and keep moving.',b:'Use signs, stations and travel scenes as visual clues.',p:'¿Dónde está la estación?',x:'Where is the station?',bg:'url("images/talkabee-image-33.jpg")'},
@@ -2163,7 +2163,7 @@ renderGuidedSentence();
   challengeAction.textContent='Enter Grandma & Grandpa’s Challenges →';
  }
  document.querySelectorAll('.topic-link').forEach(btn=>btn.addEventListener('click',()=>selectTopic(btn)));
- hero.style.backgroundImage='linear-gradient(90deg,rgba(8,13,29,.10),rgba(8,13,29,.02)),url("Lingo-Lane-Paris-Adventure-at-the-Station.png")';
+ hero.style.backgroundImage=fallback;
 
  action.addEventListener('click',()=>{
    animalWorld.classList.add('open');
