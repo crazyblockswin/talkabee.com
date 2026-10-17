@@ -1,7 +1,5 @@
 <!doctype html>
-<!-- Talk A Bee Checkpoint 52. Sea Adventures updated from V51/V50;  Corrected Challenge Trail: all six challenges now stay inside Grandma & Grandpa’s single home scene. Added a Back to Main Directory control, numbered challenge links in the home directory, fixed challenge order, and Next Challenge progression. -->
-<html lang="en">
-<head>
+<html lang="en"><head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Talk A Bee — Adventure-First Language World</title>
@@ -1317,9 +1315,20 @@ body > .talkabee-editions.on-main .edition-row {
 }
 @media(prefers-reduced-motion:reduce){body > .talkabee-editions.on-main summary{transition:none!important;}}
 </style>
+
+<style id="tab-directory-overlay-style">
+#mainDirectory .hero-feature-card{position:relative}
+#tab-directory-overlays{position:absolute;inset:0;z-index:3;pointer-events:none}
+.tab-dir-overlay{position:absolute;transform:translate(-50%,-50%) rotate(var(--angle,0deg));transform-origin:center;pointer-events:none;object-fit:contain}
+body.tab-dir-editing .tab-dir-overlay{pointer-events:auto;cursor:move;outline:2px dashed #ffda59}
+#tab-dir-editor{display:none;position:fixed;right:15px;top:90px;z-index:10010;width:290px;max-height:80vh;overflow:auto;background:#15182a;color:#f5f5ff;border:2px solid #7b65e5;border-radius:16px;padding:13px;font:13px system-ui;box-shadow:0 10px 35px #0008}
+#tab-dir-editor button,#tab-dir-editor input{font:inherit}#tab-dir-editor button{padding:7px;margin:3px;border-radius:8px;border:1px solid #888;background:#323456;color:white;cursor:pointer}
+#tab-dir-editor input{width:100%;padding:6px;margin:3px 0;border-radius:6px}#tab-dir-editor label{display:block;margin-top:7px}#tab-dir-editor .tab-row{display:flex;flex-wrap:wrap}#tab-dir-editor .tab-row>*{flex:1}#tab-dir-editor .tab-editor-head{cursor:move;font-weight:bold;font-size:16px;margin-bottom:8px}#tab-dir-editor small{display:block;color:#d0cbe9;margin:7px 0}
+</style>
+
 </head>
-<body>
-<nav class="talkabee-prev-next-nav" aria-label="Main Adventure navigation"><a href="Talk-A-Bee-Nighttime-Campground-Adventure.html" aria-label="Previous Adventure" title="Nighttime Campground">‹</a><a href="Talk-A-Bee-Grandma-Grandpas-Place.html" aria-label="Next Adventure" title="Grandma & Grandpa’s Place">›</a></nav>
+<body class="">
+<nav class="talkabee-prev-next-nav" aria-label="Main Adventure navigation"><a href="Talk-A-Bee-Nighttime-Campground-Adventure.html" aria-label="Previous Adventure" title="Nighttime Campground">‹</a><a href="Talk-A-Bee-Grandma-Grandpas-Place.html" aria-label="Next Adventure" title="Grandma &amp; Grandpa’s Place">›</a></nav>
 
 <div class="talkabee-editions on-main">
 <details>
@@ -1355,7 +1364,7 @@ body > .talkabee-editions.on-main .edition-row {
  </div>
 </header>
 <button class="bee-guide-btn" id="beeGuideBtn" type="button" style="display:none!important" aria-label="Open Talk A Bee guide"><img src="images/talkabee-image-04.png" alt=""></button>
-</div>
+
 
 <!-- CHECKPOINT 40: Widescreen Grandma & Grandpa artwork installed; left activity panel remains live CSS -->
 <section class="hero" id="mainDirectory" style="background:none!important;background-image:none!important;">
@@ -1384,9 +1393,9 @@ body > .talkabee-editions.on-main .edition-row {
     <div class="hero-feature-card" style="background-image:none!important;background-color:#dcecff;">
       <img class="talkabee-main-entrance-image" src="images/talkabee-directory-balloon-world.jpg" alt="" aria-hidden="true">
       <div class="directory-sound-hotspots" aria-label="Scene sounds">
-        <button class="directory-sound-hotspot" type="button" data-sound="sounds/waterfall.mp3" data-x="75.0" data-y="55.0" data-w="11.5" data-h="34.0" aria-label="Play waterfall sound"><span>Waterfall</span></button>
-        <button class="directory-sound-hotspot" type="button" data-sound="sounds/hot-air-balloon.mp3" data-x="90.0" data-y="36.0" data-w="18.0" data-h="55.0" aria-label="Play hot-air balloon sound"><span>Hot-air balloon</span></button>
-        <button class="directory-sound-hotspot" type="button" data-sound="sounds/campground-night.mp3" data-x="31.0" data-y="78.0" data-w="38.0" data-h="31.0" aria-label="Play campground night sound"><span>Campground</span></button>
+        <button class="directory-sound-hotspot" type="button" data-sound="sounds/waterfall.mp3" data-x="75.0" data-y="55.0" data-w="11.5" data-h="34.0" aria-label="Play waterfall sound" style="left: 709.12px; top: 182.843px; width: 117.76px; height: 195.944px;"><span>Waterfall</span></button>
+        <button class="directory-sound-hotspot" type="button" data-sound="sounds/hot-air-balloon.mp3" data-x="90.0" data-y="36.0" data-w="18.0" data-h="55.0" aria-label="Play hot-air balloon sound" style="left: 829.44px; top: 12.8329px; width: 184.32px; height: 316.968px;"><span>Hot-air balloon</span></button>
+        <button class="directory-sound-hotspot" type="button" data-sound="sounds/campground-night.mp3" data-x="31.0" data-y="78.0" data-w="38.0" data-h="31.0" aria-label="Play campground night sound" style="left: 122.88px; top: 324.038px; width: 389.12px; height: 178.655px;"><span>Campground</span></button>
       </div>
       <div class="hero-feature-overlay hero-copy-overlay">
        <span class="eyebrow">FOLLOW THE BEE. FIND YOUR WORDS.</span>
@@ -1402,7 +1411,7 @@ body > .talkabee-editions.on-main .edition-row {
    </div>
   </div>
  </div>
-</section>
+<div id="tab-directory-overlays-back"></div><div id="tab-directory-overlays"><img class="tab-dir-overlay" src="blob:null/a8721ddb-46b8-4266-b5d1-15090d03667b" alt="" data-index="0" style="left: 5.625%; top: 27.672%; width: 14%; height: auto; --angle: 0deg;"></div></section>
 
 
 
@@ -1449,22 +1458,22 @@ body > .talkabee-editions.on-main .edition-row {
    <aside class="topic-directory" aria-label="Explore Talk A Bee topics">
     <h3>Explore Talk A Bee</h3><p>Jump straight into the kind of conversation you want to practice.</p>
     <button class="topic-link active" data-topic="travel">🧳 Travel <small>Paris</small></button>
-    <button class="topic-link" data-topic="cafe">☕ Café & Food <small>Ordering</small></button>
+    <button class="topic-link" data-topic="cafe">☕ Café &amp; Food <small>Ordering</small></button>
     <button class="topic-link" data-topic="shopping">🛍 Shopping <small>Prices</small></button>
     <button class="topic-link" data-topic="animals">🐶 Animals <small>Friends</small></button>
-    <button class="topic-link" data-topic="family">🏡 Home & Family <small>Everyday</small></button>
+    <button class="topic-link" data-topic="family">🏡 Home &amp; Family <small>Everyday</small></button>
     <button class="topic-link" data-topic="outdoors">🌳 Outdoors <small>Adventure</small></button>
-    <button class="topic-link" data-topic="music">🎵 Music & Fun <small>Julie</small></button>
+    <button class="topic-link" data-topic="music">🎵 Music &amp; Fun <small>Julie</small></button>
     <button class="topic-link" data-topic="talk">💬 Everyday Talk <small>Basics</small></button>
     <div class="directory-divider"></div>
     <div class="directory-label">More places to practice</div>
-    <button class="topic-link" data-topic="hotel">🏨 Hotel & Stay <small>Check-in</small></button>
+    <button class="topic-link" data-topic="hotel">🏨 Hotel &amp; Stay <small>Check-in</small></button>
     <button class="topic-link" data-topic="transport">🚉 Getting Around <small>Station</small></button>
-    <button class="topic-link" data-topic="farmworld">🌾 Farm & Nature <small>Outside</small></button>
-    <button class="topic-link" data-topic="challenges">⭐ Grandma & Grandpa Challenges <small>1–6</small></button>
+    <button class="topic-link" data-topic="farmworld">🌾 Farm &amp; Nature <small>Outside</small></button>
+    <button class="topic-link" data-topic="challenges">⭐ Grandma &amp; Grandpa Challenges <small>1–6</small></button>
    </aside>
    <div class="topic-stage">
-    <div class="topic-hero" id="topicHero">
+    <div class="topic-hero" id="topicHero" style="background-image: linear-gradient(135deg, rgb(74, 62, 115), rgb(22, 33, 58));">
      <div class="topic-overlay">
       <div class="topic-kicker" id="topicKicker">TRAVEL • PARIS</div>
       <h2 id="topicTitle">Find your way through Paris.</h2>
@@ -1473,7 +1482,7 @@ body > .talkabee-editions.on-main .edition-row {
        <strong>Today’s phrase</strong>
        <div class="target" id="topicPhrase">¿Dónde está la estación?</div>
        <div class="translation" id="topicTranslation">Where is the station?</div>
-       <div class="topic-action-row"><button type="button" class="topic-action" id="topicAction" hidden>Enter Animal World →</button><button type="button" class="topic-action" id="homeAction" hidden>Enter Grandma & Grandpa’s Place →</button><button type="button" class="topic-action" id="challengeAction" hidden>Start Challenge 1 →</button></div>
+       <div class="topic-action-row"><button type="button" class="topic-action" id="topicAction" hidden="">Enter Animal World →</button><button type="button" class="topic-action" id="homeAction" hidden="">Enter Grandma &amp; Grandpa’s Place →</button><button type="button" class="topic-action" id="challengeAction" hidden="">Start Challenge 1 →</button></div>
       </div>
      </div>
     </div>
@@ -1502,14 +1511,14 @@ body > .talkabee-editions.on-main .edition-row {
       <div class="animal-kicker" id="animalKicker">PETS • FRIENDLY WORDS</div>
       <h2 id="animalTitle">Meet the dogs.</h2>
       <p id="animalPrompt">Follow the words while the sentence is spoken. Click any word to hear it by itself.</p>
-      <div class="animal-sentence" id="animalSentence" aria-live="polite"></div>
-      <div class="animal-translation" id="animalTranslation"></div>
+      <div class="animal-sentence" id="animalSentence" aria-live="polite"><button type="button" class="animal-word" title="Click to hear this word">El</button><button type="button" class="animal-word" title="Click to hear this word">perro</button><button type="button" class="animal-word" title="Click to hear this word">es</button><button type="button" class="animal-word" title="Click to hear this word">muy</button><button type="button" class="animal-word" title="Click to hear this word">amigable.</button></div>
+      <div class="animal-translation" id="animalTranslation">The dog is very friendly.</div>
       <div class="animal-actions">
        <button type="button" class="primary" id="animalPlay">🔊 Speak + Highlight</button>
        <button type="button" id="animalSlow">🐢 Slow</button>
        <button type="button" id="animalReplay">↻ Replay</button>
       </div>
-      <div class="animal-sentence-list" id="animalSentenceList"></div>
+      <div class="animal-sentence-list" id="animalSentenceList"><button type="button" class="animal-pick active"><strong>1. El perro es muy amigable.</strong><br><span style="font-size:12px;color:#737c91">The dog is very friendly.</span></button><button type="button" class="animal-pick"><strong>2. El perro corre por el campo.</strong><br><span style="font-size:12px;color:#737c91">The dog runs through the field.</span></button><button type="button" class="animal-pick"><strong>3. Mi perro mueve la cola.</strong><br><span style="font-size:12px;color:#737c91">My dog wags its tail.</span></button><button type="button" class="animal-pick"><strong>4. Los perros juegan juntos.</strong><br><span style="font-size:12px;color:#737c91">The dogs play together.</span></button></div>
       <div class="animal-tip">💡 Try this: listen once, then tap each word, then play the full sentence again. The scene gives the sentence a memory to stick to.</div>
       <div class="animal-challenge" id="animalChallenge">
        <strong>Quick challenge</strong>
@@ -1532,7 +1541,7 @@ body > .talkabee-editions.on-main .edition-row {
 
 <section id="homeWorld" class="section home-world" aria-label="Grandma and Grandpa's Place">
  <div class="wrap">
-  <div class="head"><div class="kick">HOME & FAMILY</div><h2>Grandma & Grandpa’s Place</h2><p>Explore the scene, click real objects, hear words, practice family phrases, and play a find-it challenge.</p></div>
+  <div class="head"><div class="kick">HOME &amp; FAMILY</div><h2>Grandma &amp; Grandpa’s Place</h2><p>Explore the scene, click real objects, hear words, practice family phrases, and play a find-it challenge.</p></div>
   <div class="home-shell">
 
    <aside class="home-directory activity-panel" aria-label="Grandma and Grandpa activity menu">
@@ -1588,18 +1597,18 @@ body > .talkabee-editions.on-main .edition-row {
       <div class="home-kicker" id="homeKicker">FAMILY TALK</div>
       <h2 id="homeTitle">Meet Grandma Cathy and Grandpa Wally.</h2>
       <p id="homePrompt">Hear a simple family sentence, then click the words one at a time.</p>
-      <div class="home-wordline" id="homeWordline"></div>
-      <div class="home-translation" id="homeTranslation"></div>
-      <div class="home-actions">
+      <div class="home-wordline" id="homeWordline"><button type="button" class="home-word">Esta</button><button type="button" class="home-word">es</button><button type="button" class="home-word">mi</button><button type="button" class="home-word">abuela.</button></div>
+      <div class="home-translation" id="homeTranslation">This is my grandmother.</div>
+      <div class="home-actions" style="display: flex;">
        <button type="button" class="primary" id="homePlay">🔊 Speak + Highlight</button>
        <button type="button" id="homeSlow">🐢 Slow</button>
        <button type="button" id="homeReplay">↻ Replay</button>
       </div>
-      <div class="home-nextrow" id="homeNextRow">
+      <div class="home-nextrow" id="homeNextRow" style="display: flex;">
        <span class="home-progress" id="homeProgress">Phrase 1 of 4</span>
        <button type="button" class="home-nextphrase" id="homeNextPhrase">Next phrase →</button>
       </div>
-      <div class="home-list" id="homeList"></div>
+      <div class="home-list" id="homeList"><button type="button" class="home-pick active"><strong>1. Esta es mi abuela.</strong><br><span style="font-size:12px;color:#737c91">This is my grandmother.</span></button><button type="button" class="home-pick"><strong>2. Este es mi abuelo.</strong><br><span style="font-size:12px;color:#737c91">This is my grandfather.</span></button><button type="button" class="home-pick"><strong>3. Mi abuela está en el jardín.</strong><br><span style="font-size:12px;color:#737c91">My grandmother is in the garden.</span></button><button type="button" class="home-pick"><strong>4. Mi abuelo alimenta a los pájaros.</strong><br><span style="font-size:12px;color:#737c91">My grandfather feeds the birds.</span></button></div>
       <div class="home-find" id="homeFind">
        <div class="home-challenge-count" id="homeChallengeCount">CHALLENGE 1 OF 6</div>
        <div id="homeFindPrompt">Find the fishing pole.</div>
@@ -1611,7 +1620,7 @@ body > .talkabee-editions.on-main .edition-row {
     </div>
    </div>
   </div>
- </div>
+ 
 </section>
 
 
@@ -1666,18 +1675,18 @@ body > .talkabee-editions.on-main .edition-row {
    <div class="yacht-kicker" id="yachtKicker">ON DECK TALK</div>
    <h2 id="yachtTitle">A beautiful evening on the water.</h2>
    <p id="yachtPrompt">Hear a short sentence, then click the words one at a time.</p>
-   <div class="yacht-wordline" id="yachtWordline"></div>
-   <div class="yacht-translation" id="yachtTranslation"></div>
-   <div class="yacht-actions" id="yachtActions">
+   <div class="yacht-wordline" id="yachtWordline"><button type="button">Estamos</button><button type="button">en</button><button type="button">el</button><button type="button">yate.</button></div>
+   <div class="yacht-translation" id="yachtTranslation">We are on the yacht.</div>
+   <div class="yacht-actions" id="yachtActions" style="display: flex;">
     <button type="button" class="primary" id="yachtPlay">🔊 Speak + Highlight</button>
     <button type="button" id="yachtSlow">🐢 Slow</button>
     <button type="button" id="yachtReplay">↻ Replay</button>
    </div>
-   <div class="yacht-nextrow" id="yachtNextRow">
+   <div class="yacht-nextrow" id="yachtNextRow" style="display: flex;">
     <span class="yacht-progress" id="yachtProgress">Phrase 1 of 4</span>
     <button type="button" class="yacht-nextphrase" id="yachtNextPhrase">Next phrase →</button>
    </div>
-   <div class="yacht-list" id="yachtList"></div>
+   <div class="yacht-list" id="yachtList"><button type="button" class="active"><strong>1. Estamos en el yate.</strong><br><span style="font-size:12px;color:#737c91">We are on the yacht.</span></button><button type="button" class=""><strong>2. El atardecer es hermoso.</strong><br><span style="font-size:12px;color:#737c91">The sunset is beautiful.</span></button><button type="button" class=""><strong>3. Estamos juntos en la cubierta.</strong><br><span style="font-size:12px;color:#737c91">We are together on the deck.</span></button><button type="button" class=""><strong>4. Qué noche tan tranquila.</strong><br><span style="font-size:12px;color:#737c91">What a peaceful evening.</span></button></div>
    <div class="yacht-find" id="yachtFind">
     <div class="yacht-challenge-count" id="yachtChallengeCount">CHALLENGE 1 OF 6</div>
     <div id="yachtFindPrompt">Find Grandpa Wally.</div>
@@ -1698,7 +1707,7 @@ body > .talkabee-editions.on-main .edition-row {
    <button type="button" id="marketMainDirectory" class="market-main-directory">← Main Directory</button>
    <div class="market-place">🛍️ Shopping Market</div>
    <div class="market-section-label">ACTIVITIES</div>
-   <button data-market="conversation">1. 💬 Market Conversation</button>
+   <button data-market="conversation" class="active">1. 💬 Market Conversation</button>
    <button data-market="prices">2. 💶 Asking Prices</button>
    <button data-market="buying">3. 🧺 Buying Something</button>
    <button data-market="polite">4. 🙂 Please &amp; Thank You</button>
@@ -1719,7 +1728,7 @@ body > .talkabee-editions.on-main .edition-row {
    <p id="marketPrompt">Listen to the short conversation, then practice each line.</p>
    <div class="market-line" id="marketLine">¿Cuánto cuestan los limones?</div>
    <div class="market-translation" id="marketTranslation">How much are the lemons?</div>
-   <div class="market-actions" id="marketActions"><button id="marketSpeak">🔊 Speak</button><button id="marketNext">Next line →</button></div>
+   <div class="market-actions" id="marketActions" style="display: flex;"><button id="marketSpeak">🔊 Speak</button><button id="marketNext">Next line →</button></div>
    <div class="market-find" id="marketFind">
     <div class="market-challenge-count" id="marketChallengeCount">CHALLENGE 1 OF 6</div>
     <div class="market-find-status" id="marketFindStatus"></div>
@@ -1743,7 +1752,7 @@ body > .talkabee-editions.on-main .edition-row {
   <div class="head"><div class="kick">TRY IT</div><h2>Choose any of the 9 starter lessons.</h2><p>The full course path is visible here. Pick a lesson directly, or use Next Lesson when you finish one.</p></div>
   <div class="course-path" id="coursePath">
    <div class="course-unit"><div class="course-unit-kicker">UNIT 01</div><h3>First conversations</h3>
-    <button class="course-lesson-btn" data-course-lesson="0"><span class="course-lesson-num">1</span>Hello &amp; goodbye<span class="free-chip">FREE</span></button>
+    <button class="course-lesson-btn active" data-course-lesson="0"><span class="course-lesson-num">1</span>Hello &amp; goodbye<span class="free-chip">FREE</span></button>
     <button class="course-lesson-btn" data-course-lesson="1"><span class="course-lesson-num">2</span>Introduce yourself</button>
     <button class="course-lesson-btn" data-course-lesson="2"><span class="course-lesson-num">3</span>Everyday politeness</button>
    </div>
@@ -1760,20 +1769,20 @@ body > .talkabee-editions.on-main .edition-row {
   </div>
   <p class="course-hint">Tip: the green lessons are ones you have completed on this device.</p>
   <div class="course-shell">
-   <div class="course-top"><div><div style="font-size:10px;color:#cfc5ff;font-weight:950;letter-spacing:.09em">INTERACTIVE LESSON</div><h2 id="lessonTitle">Hello &amp; goodbye</h2><div class="lesson-meta" id="lessonMeta">Lesson 1 of 9 · Unit 1 of 3</div></div>
-    <div class="course-controls"><select id="lang"><option value="es">Spanish</option><option value="fr">French</option><option value="en">English</option></select><select id="lesson"></select><button id="trans">Hide translation</button></div>
+   <div class="course-top"><div><div style="font-size:10px;color:#cfc5ff;font-weight:950;letter-spacing:.09em">INTERACTIVE LESSON</div><h2 id="lessonTitle">Hello &amp; goodbye</h2><div class="lesson-meta" id="lessonMeta">Lesson 1 of 9 · Unit 1 of 3 · Step 1 of 5</div></div>
+    <div class="course-controls"><select id="lang"><option value="es">Spanish</option><option value="fr">French</option><option value="en">English</option></select><select id="lesson"><option value="0">1. Hello &amp; goodbye</option><option value="1">2. Introduce yourself</option><option value="2">3. Everyday politeness</option><option value="3">4. Food &amp; drinks</option><option value="4">5. At the café</option><option value="5">6. Out shopping</option><option value="6">7. Ask for directions</option><option value="7">8. Getting around</option><option value="8">9. At the hotel</option></select><button id="trans">Hide translation</button></div>
    </div>
    <div class="lesson-grid">
-    <div class="scene" id="scene"><div class="scene-overlay"></div><div class="scene-caption"><div class="label">TODAY'S SCENE</div><h3 id="sceneTitle">A café above the bay</h3><p id="sceneText">Sofia and Daniel meet over coffee.</p></div></div>
+    <div class="scene" id="scene" style="background-image: url(&quot;images/talkabee-image-01.jpg&quot;);"><div class="scene-overlay"></div><div class="scene-caption"><div class="label">TODAY'S SCENE</div><h3 id="sceneTitle">A café above the bay</h3><p id="sceneText">Sofia and Daniel meet over coffee.</p></div></div>
     <div class="exercise">
-     <div class="progress"><div id="prog"></div></div><div class="ex-type" id="etype">SEE + HEAR</div><h3 id="prompt">Listen to the conversation.</h3><div class="help" id="help">Use the scene to understand the situation before relying on translation.</div>
-     <div class="dialogue" id="dialogue"></div>
-     <div class="btnrow"><button class="smallbtn" id="play">🔊 Play conversation</button><button class="smallbtn" id="slow">🐢 Slow</button><button class="smallbtn" id="speak">🎤 Speak a line</button></div>
+     <div class="progress"><div id="prog" style="width: 20%;"></div></div><div class="ex-type" id="etype">SEE + HEAR</div><h3 id="prompt">Meet Sofia and Daniel.</h3><div class="help" id="help">Use the scene and conversation together.</div>
+     <div class="dialogue" id="dialogue" style="display: block;"><div class="line"><div class="mini-face"><img src="images/talkabee-image-25.png" alt="Sofia"></div><div class="bubble"><b>Sofia: ¡Hola! ¿Cómo estás?</b><small>Hello! How are you?</small><button class="smallbtn" style="margin-top:6px" data-i="0">🔊 Hear Sofia</button></div></div><div class="line"><div class="mini-face"><img src="images/talkabee-image-26.png" alt="Daniel"></div><div class="bubble"><b>Daniel: Muy bien, gracias. ¿Y tú?</b><small>Very well, thanks. And you?</small><button class="smallbtn" style="margin-top:6px" data-i="1">🔊 Hear Daniel</button></div></div></div>
+     <div class="btnrow" style="display: flex;"><button class="smallbtn" id="play">🔊 Play conversation</button><button class="smallbtn" id="slow">🐢 Slow</button><button class="smallbtn" id="speak">🎤 Speak a line</button></div>
      
-<div class="guided-reading" id="guidedReading">
+<div class="guided-reading" id="guidedReading" style="display: none;">
   <div class="guided-reading-label">FOLLOW THE WORDS</div>
-  <div class="guided-sentence" id="guidedSentence"></div>
-  <div class="guided-translation" id="guidedTranslation"></div>
+  <div class="guided-sentence" id="guidedSentence"><span class="guided-word" data-word-index="0">¡Hola!</span><span class="guided-word" data-word-index="1">¿Cómo</span><span class="guided-word" data-word-index="2">estás?</span></div>
+  <div class="guided-translation" id="guidedTranslation">Hello! How are you?</div>
   <div class="guided-actions">
     <button id="guidedPlay">▶ Follow along</button>
     <button id="guidedSlow">🐢 Slow follow</button>
@@ -1781,8 +1790,8 @@ body > .talkabee-editions.on-main .edition-row {
   </div>
 </div>
 
-<div class="builder"><h4 id="buildPrompt"></h4><div class="answer" id="answer"></div><div class="words" id="words"></div><div class="feedback" id="feedback"></div><div class="btnrow"><button class="smallbtn" id="undo">↶ Undo</button><button class="smallbtn" id="reset">Reset</button><button class="smallbtn" id="check">✓ Check</button></div></div>
-     <div class="navrow"><button type="button" class="prev" id="back" onclick="window.lingoBack && window.lingoBack()">← Back</button><button type="button" class="next" id="next" onclick="window.lingoNext && window.lingoNext()">Next →</button></div>
+<div class="builder" style="display: none;"><h4 id="buildPrompt">Build: “Hello, how are you?”</h4><div class="answer" id="answer"></div><div class="words" id="words"><button class="word">cómo</button><button class="word">Hola</button><button class="word">estás</button></div><div class="feedback" id="feedback"></div><div class="btnrow"><button class="smallbtn" id="undo">↶ Undo</button><button class="smallbtn" id="reset">Reset</button><button class="smallbtn" id="check">✓ Check</button></div></div>
+     <div class="navrow"><button type="button" class="prev" id="back" onclick="window.lingoBack &amp;&amp; window.lingoBack()">← Start</button><button type="button" class="next" id="next" onclick="window.lingoNext &amp;&amp; window.lingoNext()">Next step →</button></div>
     </div>
    </div>
   </div>
@@ -4348,7 +4357,7 @@ document.addEventListener('DOMContentLoaded',function(){
    <button type="button" id="kitchenMainDirectory" class="kitchen-main-directory">← Main Directory</button>
    <div class="kitchen-place">🍪 Grandma's Kitchen</div>
    <div class="kitchen-section-label">ACTIVITIES</div>
-   <button data-kitchen="baking">1. 🍪 Baking Cookies</button>
+   <button data-kitchen="baking" class="active">1. 🍪 Baking Cookies</button>
    <button data-kitchen="ingredients">2. 🥣 Finding Ingredients</button>
    <button data-kitchen="actions">3. 🥄 Kitchen Actions</button>
    <button data-kitchen="helping">4. 👵 Helping Grandma</button>
@@ -4380,10 +4389,10 @@ document.addEventListener('DOMContentLoaded',function(){
   <div class="kitchen-panel">
    <div class="kitchen-kicker">IN GRANDMA'S KITCHEN</div>
    <h2 id="kitchenTitle">Baking cookies with Grandma.</h2>
-   <p id="kitchenPrompt">Listen, then practice each useful kitchen sentence.</p>
+   <p id="kitchenPrompt">Practice talking about what everyone is making.</p>
    <div class="kitchen-line" id="kitchenLine">Estamos haciendo galletas.</div>
    <div class="kitchen-translation" id="kitchenTranslation">We are making cookies.</div>
-   <div class="kitchen-actions" id="kitchenActions"><button id="kitchenSpeak">🔊 Speak</button><button id="kitchenNext">Next line →</button></div>
+   <div class="kitchen-actions" id="kitchenActions" style="display: flex;"><button id="kitchenSpeak">🔊 Speak</button><button id="kitchenNext">Next line →</button></div>
    <div class="kitchen-find" id="kitchenFind"><div class="kitchen-challenge-count" id="kitchenChallengeCount">CHALLENGE 1 OF 6</div><div class="kitchen-find-status" id="kitchenFindStatus"></div><div class="kitchen-next-hint" id="kitchenNextHint">Find the correct object to unlock the next challenge.</div><button type="button" class="kitchen-challenge-next" id="kitchenChallengeNext">Next Challenge →</button></div>
   </div>
  </div></div>
@@ -4507,7 +4516,7 @@ button{font:inherit;cursor:pointer}
  &lt;div class=&quot;scene&quot;&gt;
   &lt;img src=&quot;images/talkabee-image-36.png&quot; alt=&quot;Grandparents and family enjoying a mountain lake adventure&quot;&gt;
   &lt;aside class=&quot;directory&quot;&gt;
-   &lt;button type=&quot;button&quot; class=&quot;main-directory&quot; onclick=&quot;parent.postMessage(&#x27;talkabee-main-directory&#x27;,&#x27;*&#x27;)&quot;&gt;← Main Directory&lt;/button&gt;
+   &lt;button type=&quot;button&quot; class=&quot;main-directory&quot; onclick=&quot;parent.postMessage('talkabee-main-directory','*')&quot;&gt;← Main Directory&lt;/button&gt;
    &lt;div class=&quot;place&quot;&gt;🏞️ Lake &amp;amp; Mountain Adventure&lt;/div&gt;
    &lt;div class=&quot;label&quot;&gt;ACTIVITIES&lt;/div&gt;
    &lt;button data-lesson=&quot;fishing&quot;&gt;1. 🎣 Fishing Trip&lt;/button&gt;
@@ -4597,9 +4606,9 @@ const title=$(&quot;title&quot;),prompt=$(&quot;prompt&quot;),line=$(&quot;line&
 function speak(t){if(!(&quot;speechSynthesis&quot; in window))return;speechSynthesis.cancel();let u=new SpeechSynthesisUtterance(t);u.lang=&quot;es-ES&quot;;u.rate=.82;speechSynthesis.speak(u)}
 function clearActive(){document.querySelectorAll(&quot;.directory button&quot;).forEach(b=&gt;b.classList.remove(&quot;active&quot;))}
 function render(){let x=lessons[active].lines[index];line.textContent=x[0];translation.textContent=x[1]}
-function loadLesson(k){active=k;index=0;challenge=-1;discovery=false;solved=false;find.classList.remove(&quot;show&quot;);actions.style.display=&quot;flex&quot;;let l=lessons[k];title.textContent=l.title;prompt.textContent=l.prompt;render();clearActive();document.querySelector(&#x27;[data-lesson=&quot;&#x27;+k+&#x27;&quot;]&#x27;).classList.add(&quot;active&quot;)}
+function loadLesson(k){active=k;index=0;challenge=-1;discovery=false;solved=false;find.classList.remove(&quot;show&quot;);actions.style.display=&quot;flex&quot;;let l=lessons[k];title.textContent=l.title;prompt.textContent=l.prompt;render();clearActive();document.querySelector('[data-lesson=&quot;'+k+'&quot;]').classList.add(&quot;active&quot;)}
 function loadDiscovery(){challenge=-1;discovery=true;find.classList.remove(&quot;show&quot;);actions.style.display=&quot;none&quot;;title.textContent=&quot;Click &amp; Discover&quot;;prompt.textContent=&quot;Click objects anywhere in the scene to learn their names.&quot;;line.textContent=&quot;Explora la escena.&quot;;translation.textContent=&quot;Explore the scene.&quot;;clearActive();document.querySelector(&quot;[data-discovery]&quot;).classList.add(&quot;active&quot;)}
-function loadChallenge(i){challenge=i;discovery=false;solved=false;actions.style.display=&quot;none&quot;;find.classList.add(&quot;show&quot;);let key=challengeOrder[i],x=words[key];title.textContent=&quot;Challenge &quot;+(i+1)+&quot;: Find &quot;+x[1].replace(/^The /,&quot;&quot;).replace(/\.$/,&quot;&quot;)+&quot;.&quot;;prompt.textContent=&quot;Search the scene and click the correct object.&quot;;line.textContent=x[0];translation.textContent=x[1];count.textContent=&quot;CHALLENGE &quot;+(i+1)+&quot; OF 6&quot;;status.textContent=&quot;&quot;;hint.textContent=&quot;Find the correct object to unlock the next challenge.&quot;;challengeNext.textContent=i&lt;5?&quot;Next Challenge →&quot;:&quot;Finish Challenges ✓&quot;;clearActive();document.querySelector(&#x27;[data-challenge=&quot;&#x27;+i+&#x27;&quot;]&#x27;).classList.add(&quot;active&quot;)}
+function loadChallenge(i){challenge=i;discovery=false;solved=false;actions.style.display=&quot;none&quot;;find.classList.add(&quot;show&quot;);let key=challengeOrder[i],x=words[key];title.textContent=&quot;Challenge &quot;+(i+1)+&quot;: Find &quot;+x[1].replace(/^The /,&quot;&quot;).replace(/\.$/,&quot;&quot;)+&quot;.&quot;;prompt.textContent=&quot;Search the scene and click the correct object.&quot;;line.textContent=x[0];translation.textContent=x[1];count.textContent=&quot;CHALLENGE &quot;+(i+1)+&quot; OF 6&quot;;status.textContent=&quot;&quot;;hint.textContent=&quot;Find the correct object to unlock the next challenge.&quot;;challengeNext.textContent=i&lt;5?&quot;Next Challenge →&quot;:&quot;Finish Challenges ✓&quot;;clearActive();document.querySelector('[data-challenge=&quot;'+i+'&quot;]').classList.add(&quot;active&quot;)}
 document.querySelectorAll(&quot;[data-lesson]&quot;).forEach(b=&gt;b.onclick=()=&gt;loadLesson(b.dataset.lesson));
 document.querySelector(&quot;[data-discovery]&quot;).onclick=loadDiscovery;
 document.querySelectorAll(&quot;[data-challenge]&quot;).forEach(b=&gt;b.onclick=()=&gt;loadChallenge(Number(b.dataset.challenge)));
@@ -4635,13 +4644,12 @@ loadLesson(&quot;fishing&quot;);
 
 
 <div id="auntJulieWorldHost" style="display:none;position:fixed;inset:0;z-index:999999;background:#142d35;">
-  <iframe id="auntJulieFrame" title="Aunt Julie's Island Retreat"
-    style="width:100%;height:100%;border:0;display:block;" srcdoc="&lt;!doctype html&gt;
+  <iframe id="auntJulieFrame" title="Aunt Julie's Island Retreat" style="width:100%;height:100%;border:0;display:block;" srcdoc="&lt;!doctype html&gt;
 &lt;html lang=&quot;en&quot;&gt;
 &lt;head&gt;
 &lt;meta charset=&quot;utf-8&quot;&gt;
 &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width,initial-scale=1&quot;&gt;
-&lt;title&gt;Talk A Bee — Aunt Julie&#x27;s Island Retreat&lt;/title&gt;
+&lt;title&gt;Talk A Bee — Aunt Julie's Island Retreat&lt;/title&gt;
 &lt;style&gt;
 *{box-sizing:border-box}
 html,body{margin:0;width:100%;height:100%;overflow:hidden;font-family:Inter,Segoe UI,Arial,sans-serif;background:#142d35;color:#172335}
@@ -4694,14 +4702,14 @@ button{font:inherit;cursor:pointer}
 &lt;body&gt;
 &lt;section id=&quot;world&quot;&gt;
  &lt;div class=&quot;scene&quot;&gt;
-  &lt;img src=&quot;images/talkabee-image-37.png&quot; alt=&quot;Aunt Julie&#x27;s Island Retreat&quot;&gt;
+  &lt;img src=&quot;images/talkabee-image-37.png&quot; alt=&quot;Aunt Julie's Island Retreat&quot;&gt;
   &lt;aside class=&quot;directory&quot;&gt;
-   &lt;a id=&quot;mainDirectory&quot; class=&quot;main-directory&quot; href=&quot;#&quot; onclick=&quot;parent.postMessage(&#x27;closeAuntJulie&#x27;,&#x27;*&#x27;);return false;&quot; style=&quot;display:block;text-decoration:none;color:#fff;padding:8px;border-radius:10px;margin-bottom:8px;background:rgba(255,255,255,.12);font-size:11px;font-weight:950&quot;&gt;← Main Directory&lt;/a&gt;
-   &lt;div class=&quot;place&quot;&gt;🌴 Aunt Julie&#x27;s Island Retreat&lt;/div&gt;
+   &lt;a id=&quot;mainDirectory&quot; class=&quot;main-directory&quot; href=&quot;#&quot; onclick=&quot;parent.postMessage('closeAuntJulie','*');return false;&quot; style=&quot;display:block;text-decoration:none;color:#fff;padding:8px;border-radius:10px;margin-bottom:8px;background:rgba(255,255,255,.12);font-size:11px;font-weight:950&quot;&gt;← Main Directory&lt;/a&gt;
+   &lt;div class=&quot;place&quot;&gt;🌴 Aunt Julie's Island Retreat&lt;/div&gt;
    &lt;div class=&quot;label&quot;&gt;ACTIVITIES&lt;/div&gt;
    &lt;button data-lesson=&quot;welcome&quot;&gt;1. 👋 Island Welcome&lt;/button&gt;
    &lt;button data-lesson=&quot;retreat&quot;&gt;2. 🏝️ At the Retreat&lt;/button&gt;
-   &lt;button data-lesson=&quot;animals&quot;&gt;3. 🐾 Julie&#x27;s Animals&lt;/button&gt;
+   &lt;button data-lesson=&quot;animals&quot;&gt;3. 🐾 Julie's Animals&lt;/button&gt;
    &lt;button data-lesson=&quot;music&quot;&gt;4. 🎸 Music Time&lt;/button&gt;
    &lt;button data-lesson=&quot;nature&quot;&gt;5. 🌺 Tropical Nature&lt;/button&gt;
    &lt;button data-lesson=&quot;island&quot;&gt;6. ⭐ Island Life&lt;/button&gt;
@@ -4717,7 +4725,7 @@ button{font:inherit;cursor:pointer}
   &lt;/aside&gt;
 
   &lt;div class=&quot;panel&quot;&gt;
-   &lt;div class=&quot;kicker&quot;&gt;AUNT JULIE&#x27;S ISLAND RETREAT&lt;/div&gt;
+   &lt;div class=&quot;kicker&quot;&gt;AUNT JULIE'S ISLAND RETREAT&lt;/div&gt;
    &lt;h2 id=&quot;title&quot;&gt;&lt;/h2&gt;&lt;p id=&quot;prompt&quot;&gt;&lt;/p&gt;
    &lt;div class=&quot;line&quot; id=&quot;line&quot;&gt;&lt;/div&gt;
    &lt;div class=&quot;translation&quot; id=&quot;translation&quot;&gt;&lt;/div&gt;
@@ -4747,11 +4755,11 @@ button{font:inherit;cursor:pointer}
 &lt;script&gt;
 (()=&gt;{
 const lessons={
-welcome:{title:&quot;Island Welcome&quot;,prompt:&quot;Practice a warm welcome at Aunt Julie&#x27;s retreat.&quot;,lines:[
+welcome:{title:&quot;Island Welcome&quot;,prompt:&quot;Practice a warm welcome at Aunt Julie's retreat.&quot;,lines:[
 [&quot;Bienvenidos a la isla.&quot;,&quot;Welcome to the island.&quot;],[&quot;Hola, me llamo Julie.&quot;,&quot;Hello, my name is Julie.&quot;],[&quot;Me alegra verte.&quot;,&quot;I am happy to see you.&quot;],[&quot;Ven y siéntate conmigo.&quot;,&quot;Come and sit with me.&quot;]]},
 retreat:{title:&quot;At the Retreat&quot;,prompt:&quot;Talk about things around the island retreat.&quot;,lines:[
 [&quot;Estamos junto al océano.&quot;,&quot;We are beside the ocean.&quot;],[&quot;El muelle llega hasta el agua.&quot;,&quot;The pier reaches the water.&quot;],[&quot;La hamaca está bajo las palmeras.&quot;,&quot;The hammock is under the palm trees.&quot;],[&quot;La mesa está llena de cosas bonitas.&quot;,&quot;The table is full of pretty things.&quot;]]},
-animals:{title:&quot;Julie&#x27;s Animals&quot;,prompt:&quot;Meet Aunt Julie&#x27;s island companions.&quot;,lines:[
+animals:{title:&quot;Julie's Animals&quot;,prompt:&quot;Meet Aunt Julie's island companions.&quot;,lines:[
 [&quot;El perro está junto a Julie.&quot;,&quot;The dog is beside Julie.&quot;],[&quot;El gato está sentado cerca.&quot;,&quot;The cat is sitting nearby.&quot;],[&quot;El cerdito lleva un pañuelo.&quot;,&quot;The little pig is wearing a bandana.&quot;],[&quot;Los animales están tranquilos.&quot;,&quot;The animals are calm.&quot;]]},
 music:{title:&quot;Music Time&quot;,prompt:&quot;Practice sentences about Aunt Julie and her music.&quot;,lines:[
 [&quot;Julie toca la guitarra.&quot;,&quot;Julie plays the guitar.&quot;],[&quot;La guitarra tiene muchos colores.&quot;,&quot;The guitar has many colors.&quot;],[&quot;Cantamos juntos al atardecer.&quot;,&quot;We sing together at sunset.&quot;],[&quot;La música suena junto al mar.&quot;,&quot;The music plays beside the sea.&quot;]]},
@@ -4771,9 +4779,9 @@ const $=id=&gt;document.getElementById(id),title=$(&quot;title&quot;),prompt=$(&
 function speak(t){if(!(&quot;speechSynthesis&quot; in window))return;speechSynthesis.cancel();const u=new SpeechSynthesisUtterance(t);u.lang=&quot;es-ES&quot;;u.rate=.82;speechSynthesis.speak(u)}
 function clearActive(){document.querySelectorAll(&quot;.directory button&quot;).forEach(b=&gt;b.classList.remove(&quot;active&quot;))}
 function render(){const x=lessons[active].lines[index];line.textContent=x[0];translation.textContent=x[1]}
-function loadLesson(k){active=k;index=0;challenge=-1;discovery=false;solved=false;find.classList.remove(&quot;show&quot;);actions.style.display=&quot;flex&quot;;const l=lessons[k];title.textContent=l.title;prompt.textContent=l.prompt;render();clearActive();document.querySelector(&#x27;[data-lesson=&quot;&#x27;+k+&#x27;&quot;]&#x27;).classList.add(&quot;active&quot;)}
+function loadLesson(k){active=k;index=0;challenge=-1;discovery=false;solved=false;find.classList.remove(&quot;show&quot;);actions.style.display=&quot;flex&quot;;const l=lessons[k];title.textContent=l.title;prompt.textContent=l.prompt;render();clearActive();document.querySelector('[data-lesson=&quot;'+k+'&quot;]').classList.add(&quot;active&quot;)}
 function loadDiscovery(){challenge=-1;discovery=true;find.classList.remove(&quot;show&quot;);actions.style.display=&quot;none&quot;;title.textContent=&quot;Click &amp; Discover&quot;;prompt.textContent=&quot;Click objects anywhere in the scene to learn their names.&quot;;line.textContent=&quot;Explora la escena.&quot;;translation.textContent=&quot;Explore the scene.&quot;;clearActive();document.querySelector(&quot;[data-discovery]&quot;).classList.add(&quot;active&quot;)}
-function loadChallenge(i){challenge=i;discovery=false;solved=false;actions.style.display=&quot;none&quot;;find.classList.add(&quot;show&quot;);const key=challengeOrder[i],x=words[key];title.textContent=&quot;Challenge &quot;+(i+1)+&quot;: Find &quot;+x[1].replace(/^The /,&quot;&quot;).replace(/\.$/,&quot;&quot;)+&quot;.&quot;;prompt.textContent=&quot;Search the scene and click the correct object.&quot;;line.textContent=x[0];translation.textContent=x[1];count.textContent=&quot;CHALLENGE &quot;+(i+1)+&quot; OF 6&quot;;status.textContent=&quot;&quot;;hint.textContent=&quot;Find the correct object to unlock the next challenge.&quot;;challengeNext.textContent=i&lt;5?&quot;Next Challenge →&quot;:&quot;Finish Challenges ✓&quot;;clearActive();document.querySelector(&#x27;[data-challenge=&quot;&#x27;+i+&#x27;&quot;]&#x27;).classList.add(&quot;active&quot;)}
+function loadChallenge(i){challenge=i;discovery=false;solved=false;actions.style.display=&quot;none&quot;;find.classList.add(&quot;show&quot;);const key=challengeOrder[i],x=words[key];title.textContent=&quot;Challenge &quot;+(i+1)+&quot;: Find &quot;+x[1].replace(/^The /,&quot;&quot;).replace(/\.$/,&quot;&quot;)+&quot;.&quot;;prompt.textContent=&quot;Search the scene and click the correct object.&quot;;line.textContent=x[0];translation.textContent=x[1];count.textContent=&quot;CHALLENGE &quot;+(i+1)+&quot; OF 6&quot;;status.textContent=&quot;&quot;;hint.textContent=&quot;Find the correct object to unlock the next challenge.&quot;;challengeNext.textContent=i&lt;5?&quot;Next Challenge →&quot;:&quot;Finish Challenges ✓&quot;;clearActive();document.querySelector('[data-challenge=&quot;'+i+'&quot;]').classList.add(&quot;active&quot;)}
 document.querySelectorAll(&quot;[data-lesson]&quot;).forEach(b=&gt;b.onclick=()=&gt;loadLesson(b.dataset.lesson));
 document.querySelector(&quot;[data-discovery]&quot;).onclick=loadDiscovery;
 document.querySelectorAll(&quot;[data-challenge]&quot;).forEach(b=&gt;b.onclick=()=&gt;loadChallenge(Number(b.dataset.challenge)));
@@ -4781,7 +4789,7 @@ document.querySelectorAll(&quot;[data-challenge]&quot;).forEach(b=&gt;b.onclick=
 $(&quot;next&quot;).onclick=()=&gt;{index=(index+1)%lessons[active].lines.length;render()};
 $(&quot;speak&quot;).onclick=()=&gt;speak(lessons[active].lines[index][0]);
 document.querySelectorAll(&quot;.hotspot&quot;).forEach(b=&gt;b.onclick=()=&gt;{const key=b.dataset.word,x=words[key];if(challenge&gt;=0){if(key===challengeOrder[challenge]){solved=true;status.textContent=&quot;✓ Nice find! &quot;+x[0]+&quot; &quot;+x[1];status.style.color=&quot;#176a48&quot;;hint.textContent=&quot;Challenge complete. Move to the next one.&quot;;speak(x[0])}else{status.textContent=&quot;Not that one — keep looking.&quot;;status.style.color=&quot;#85580f&quot;}return}if(discovery){title.textContent=&quot;Click &amp; Discover&quot;;prompt.textContent=&quot;You found something in the scene.&quot;;line.textContent=x[0];translation.textContent=x[1];speak(x[0])}});
-challengeNext.onclick=()=&gt;{if(!solved){status.textContent=&quot;Find the correct object first.&quot;;status.style.color=&quot;#85580f&quot;;return}if(challenge&lt;5)loadChallenge(challenge+1);else{status.textContent=&quot;🏁 You completed all 6 Island Retreat challenges!&quot;;status.style.color=&quot;#176a48&quot;;hint.textContent=&quot;Great job exploring Aunt Julie&#x27;s island.&quot;}};
+challengeNext.onclick=()=&gt;{if(!solved){status.textContent=&quot;Find the correct object first.&quot;;status.style.color=&quot;#85580f&quot;;return}if(challenge&lt;5)loadChallenge(challenge+1);else{status.textContent=&quot;🏁 You completed all 6 Island Retreat challenges!&quot;;status.style.color=&quot;#176a48&quot;;hint.textContent=&quot;Great job exploring Aunt Julie's island.&quot;}};
 loadLesson(&quot;welcome&quot;);
 })();
 &lt;/script&gt;
@@ -5308,8 +5316,37 @@ document.addEventListener('click',function(e){
 </script>
 
 
-</body>
-</html>
+<script id="tab-directory-overlay-data" type="application/json">[{"src":"images/miss-teacher-bee.png","x":5.6250013411045074,"y":27.671956259106835,"w":14,"r":0,"depth":"front"}]</script>
+<script id="tab-directory-overlay-runtime">
+(function(){'use strict';
+const stage=document.getElementById('mainDirectory');if(!stage)return;
+// Keep overlays in the directory's own stacking context, above its category panel.
+const layer=document.getElementById('tab-directory-overlays')||document.createElement('div');layer.id='tab-directory-overlays';stage.appendChild(layer);
+const backLayer=document.createElement('div');backLayer.id='tab-directory-overlays-back';stage.insertBefore(backLayer,layer);
+const previews=new Map();let entries=[];try{entries=JSON.parse(document.getElementById('tab-directory-overlay-data').textContent)||[]}catch(e){console.warn('Directory overlays:',e)}
+function draw(){layer.replaceChildren();backLayer.replaceChildren();entries.forEach((item,i)=>{const img=document.createElement('img');img.className='tab-dir-overlay';img.src=previews.get(item.src)||item.src;img.alt='';img.dataset.index=i;img.style.left=item.x+'%';img.style.top=item.y+'%';img.style.width=item.w+'%';img.style.height='auto';img.style.setProperty('--angle',(item.r||0)+'deg');(item.depth==='back'?backLayer:layer).appendChild(img)})}
+window.tabDirectoryOverlays={get:()=>entries,draw,stage,layer,backLayer,previews,set:(v)=>{entries=v;draw()}};draw();
+})();
+</script>
+<style id="tab-dir-editor-repair-css">
+#tab-dir-launch{position:fixed;right:16px;bottom:18px;z-index:10011;padding:10px 15px;background:#1c2040;color:white;border:1px solid #a89afc;border-radius:12px;font-weight:850;cursor:pointer;box-shadow:0 8px 24px #0006}
+#mainDirectory .hero-right{pointer-events:none!important}
+#mainDirectory .hero-feature-card{pointer-events:none!important}
+#tab-directory-overlays{pointer-events:none!important;z-index:25!important}
+#tab-directory-overlays-back{position:absolute;inset:0;z-index:5!important;pointer-events:none!important}
+body.tab-dir-editing #tab-directory-overlays-back .tab-dir-overlay{pointer-events:auto!important}
+body.tab-dir-editing #tab-directory-overlays .tab-dir-overlay{pointer-events:auto!important}
+#tab-dir-editor .tab-editor-head button{float:right}
+</style>
+<!-- TAB_DIRECTORY_EDITOR_START -->
+
+
+
+<!-- TAB_DIRECTORY_EDITOR_END -->
+<!-- Arrow keys follow the existing Previous/Next Adventure chevrons. -->
+<script src="js/talkabee-keyboard-chevron-nav.js" defer=""></script>
+
+
 <style>#homeWorld .scene-hotspots .home-hotspot{
   display:none;
 }
@@ -5425,3 +5462,4 @@ header .nav{height:72px!important;min-height:72px!important;max-height:72px!impo
 #mainDirectory .landing-directory::-webkit-scrollbar-thumb{background:rgba(255,255,255,.28)!important;border-radius:999px!important;}
 @media(max-width:900px){#mainDirectory .landing-directory{width:min(400px,calc(100% - 32px))!important;min-width:0!important;max-width:calc(100% - 32px)!important;}#mainDirectory .landing-directory .directory-link{font-size:16px!important;}}
 </style>
+</body></html>
