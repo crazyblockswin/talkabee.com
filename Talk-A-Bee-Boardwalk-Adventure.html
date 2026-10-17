@@ -1,7 +1,8 @@
-<!doctype html>
+<!DOCTYPE html>
+
 <html lang="en"><head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
 <title>Talk A Bee — Boardwalk Adventure</title>
 <style>
 *{box-sizing:border-box}html,body{margin:0;width:100%;height:100%;overflow:hidden;font-family:Arial,sans-serif;background:#071526;color:#fff}
@@ -21,14 +22,11 @@
 .scene-view .panel,.scene-view .card{display:none}.scene-return{display:none;position:fixed;z-index:10030;left:18px;top:18px;padding:10px 14px;border-radius:12px;border:1px solid #fff;background:rgba(7,23,39,.65);color:#fff;font-weight:900}.scene-view .scene-return{display:block}
 @media(max-width:900px){.panel{width:190px}.card{width:38vw}}
 </style>
-
 <style id="boardwalk-hotspots-hover-only">
 .hotspot{display:block!important;opacity:0!important;background:transparent!important;outline:none!important;animation:none!important}
 .hotspot:hover,.hotspot:focus-visible{opacity:1!important;background:rgba(255,220,72,.28)!important;outline:2px solid rgba(255,255,255,.85)!important}
 .challenge-mode .hotspot.target:not(:hover):not(:focus-visible){opacity:0!important;background:transparent!important;outline:none!important;box-shadow:none!important}
 </style>
-
-
 <style id="talkabee-prev-next-nav-style">
 /* Talk A Bee standard compact Previous / Next navigation. */
 .talkabee-prev-next-nav{position:fixed;top:18px;right:22px;z-index:2147483000;display:flex;align-items:center;overflow:hidden;border:2px solid rgba(255,255,255,.82);border-radius:999px;background:rgba(11,22,42,.24);box-shadow:0 5px 16px rgba(0,0,0,.16);backdrop-filter:blur(3px);-webkit-backdrop-filter:blur(3px)}
@@ -78,7 +76,6 @@
 .tab-master-card .actions button,.tab-master-card [class*="actions"] button,.tab-master-card>button{width:auto!important;min-width:0!important;height:auto!important;padding:9px 13px!important;margin:0!important;border-radius:12px!important;font:900 13px/1 Arial,Helvetica,sans-serif!important;white-space:nowrap!important}
 @media(max-width:760px){.tab-master-panel{left:10px!important;top:10px!important;bottom:10px!important;width:190px!important;min-width:190px!important;max-width:190px!important;padding:11px!important}.tab-master-card{width:min(520px,calc(100vw - 24px))!important;min-width:0!important;bottom:10px!important;padding:12px!important}}
 </style>
-
 <style id="tab-spoken-phrase-readability">
 /* Last-four phrase fix: style the full .word field, not the inner #line text. */
 .tab-master-card .word {
@@ -98,9 +95,6 @@
 }
 .tab-master-card .word .translation {color:#fff!important;}
 </style>
-
-
-
 <style id="talkabee-readable-supporting-text">
 /* Readability-only repair. Existing links, navigation, JS, hotspots and audio are untouched. */
 .tab-master-card p,
@@ -163,10 +157,8 @@
   height:auto !important;
 }
 </style>
-
-  <link rel="icon" type="image/png" href="images/PNG/talkabee-favicon.png">
-  <link rel="shortcut icon" type="image/png" href="images/PNG/talkabee-favicon.png">
-
+<link href="images/PNG/talkabee-favicon.png" rel="icon" type="image/png"/>
+<link href="images/PNG/talkabee-favicon.png" rel="shortcut icon" type="image/png"/>
 <style id="talkabee-edition-menu-style">
 .talkabee-editions{position:fixed;top:16px;left:50%;transform:translateX(-50%);z-index:2147482998;font-family:Arial,sans-serif}
 .talkabee-editions details{position:relative}
@@ -183,7 +175,6 @@
 .talkabee-editions .edition-row a:hover,.talkabee-editions .edition-row a:focus-visible{transform:translateY(-1px);outline:none}
 @media(max-width:900px){.talkabee-editions .edition-row{max-width:94vw;overflow-x:auto}}
 </style>
-
 <style id="talkabee-accessibility-controls-v1">
 /* Talk A Bee adjustable Adventure controls */
 .panel,.activity-panel,.tab-master-panel{--tab-panel-scale:1;background-color:rgba(13,25,45,.14)!important}
@@ -210,15 +201,11 @@
 .tab-master-card button,.tab-master-card a,.tab-master-card input,.tab-master-card select,.tab-master-card textarea{cursor:pointer!important}
 .card input,.card textarea,.script input,.script textarea,.tab-master-card input,.tab-master-card textarea{cursor:text!important}
 </style>
-
 <!-- TALK A BEE HOTSPOTS VISUALLY RECERTIFIED AGAINST CURRENT SCENE ARTWORK: 2026-10-07 -->
-
-
 
 <style id="talkabee-bilingual-hotspot-popup-style">
 #talkabee-object-popup{position:fixed;z-index:2147482900;display:none;padding:8px 12px;border-radius:12px;background:rgba(20,20,20,.82);color:white;font-weight:900;font-size:14px;pointer-events:none}
 </style>
-
 <style id="talkabee-boardwalk-card-readability-from-observation">
 /* Readability only: keep challenge logic, card geometry and editors unchanged.
    Desktop card renders at 0.67 scale, so CSS sizes compensate visually. */
@@ -252,7 +239,7 @@
   white-space:normal;
 }
 </style>
-<link rel="stylesheet" href="css/talkabee-enhanced-voice.css">
+<link href="css/talkabee-enhanced-voice.css" rel="stylesheet"/>
 <style id="boardwalk-piper-controls">
 #voiceLab{position:relative;z-index:2;width:100%;margin:8px 0;font-size:12px}
 #voiceLab select,#voiceLab button{box-sizing:border-box;width:100%;max-width:100%}
@@ -265,7 +252,7 @@
 <div class="talkabee-editions">
 <details>
 <summary>Explore Adventures ▾</summary>
-<div class="edition-row" role="navigation" aria-label="Talk A Bee Editions">
+<div aria-label="Talk A Bee Editions" class="edition-row" role="navigation">
 <a href="adventures.html">Main Adventures</a>
 <a href="Talk-A-Bee-More-Adventures.html">Community Edition</a>
 <a href="Talk-A-Bee-Directory-3.html">Travel Edition</a>
@@ -275,25 +262,21 @@
 </div>
 </details>
 </div>
-
-<nav class="talkabee-prev-next-nav" aria-label="Adventure navigation"><a href="Talk-A-Bee-Animals-Farm-Adventure.html" aria-label="Previous page" title="Previous">‹</a><a href="Talk-A-Bee-Observation-Deck-Adventure.html" aria-label="Next page" title="Next">›</a></nav>
-
+<nav aria-label="Adventure navigation" class="talkabee-prev-next-nav"><a aria-label="Previous page" href="Talk-A-Bee-Animals-Farm-Adventure.html" title="Previous">‹</a><a aria-label="Next page" href="Talk-A-Bee-Observation-Deck-Adventure.html" title="Next">›</a></nav>
 <main class="world" id="world">
-
 <button class="scene-return" id="sceneReturn">Return to Adventure</button>
 <aside class="panel tab-master-panel">
 <h1>🐝 Boardwalk Adventure</h1>
-<div class="tab-panel-size-controls" aria-label="Activity panel size"><button type="button" class="tab-panel-minus" title="Make activity panel smaller">−</button><button type="button" class="tab-panel-reset" title="Reset activity panel size">Reset</button><button type="button" class="tab-panel-plus" title="Make activity panel larger">+</button></div>
-
+<div aria-label="Activity panel size" class="tab-panel-size-controls"><button class="tab-panel-minus" title="Make activity panel smaller" type="button">−</button><button class="tab-panel-reset" title="Reset activity panel size" type="button">Reset</button><button class="tab-panel-plus" title="Make activity panel larger" type="button">+</button></div>
 <div class="label">LANGUAGE</div>
 <select id="lang"><option value="es">Spanish</option><option value="fr">French</option><option value="en">English</option><option value="de">German</option><option value="it">Italian</option><option value="pt">Portuguese</option><option value="no">Norwegian</option></select>
 <div class="label">VOICE</div><select id="voice"><option value="">Browser Default Voice</option><option value="urn:moz-tts:sapi:Microsoft David - English (United States)?en-US">Microsoft David - English (United States) — en-US</option><option value="urn:moz-tts:sapi:Microsoft Mark - English (United States)?en-US">Microsoft Mark - English (United States) — en-US</option><option value="urn:moz-tts:sapi:Microsoft Zira - English (United States)?en-US">Microsoft Zira - English (United States) — en-US</option><option value="urn:moz-tts:sapi:Microsoft David Desktop - English (United States)?en-US">Microsoft David Desktop - English (United States) — en-US</option><option value="urn:moz-tts:sapi:Microsoft Zira Desktop - English (United States)?en-US">Microsoft Zira Desktop - English (United States) — en-US</option></select>
 <div id="voiceLab"><details open=""><summary>🎙️ Choose Voice</summary>
 <label for="voiceLabMode">Voice type</label><select id="voiceLabMode"><option value="standard">Standard</option><option value="enhanced">Enhanced</option></select>
-<div id="voiceLabNote" class="lab-note">Load a voice before speaking.</div>
-<div id="voiceLabNeural" style="display: block !important;"><label for="voiceLabModel">Choose voice</label><select id="voiceLabModel"><option value="">Load voice catalog</option></select><button type="button" id="voiceLabLoad">Load voice</button></div>
-<div id="voiceLabStatus" role="status" aria-live="polite">Enhanced selected. Click Load voice.</div></details></div>
-<button id="sceneView" aria-pressed="false">◉ Scene View</button>
+<div class="lab-note" id="voiceLabNote">Uses voices available in your browser.</div>
+<div hidden="" id="voiceLabNeural"><label for="voiceLabModel">Choose voice</label><select id="voiceLabModel"><option value="">Load voice catalog</option></select><button id="voiceLabLoad" type="button">Load voice</button></div>
+<div aria-live="polite" id="voiceLabStatus" role="status">Standard voice ready.</div></details></div>
+<button aria-pressed="false" id="sceneView">◉ Scene View</button>
 <div class="label">DISCOVERY</div><button id="discovery">🔎 Discovery — Click the Scene</button>
 <div class="label">ACTIVITIES</div>
 <button data-lesson="arrive">1. Arrive at the Boardwalk</button>
@@ -304,54 +287,49 @@
 <button data-lesson="things">6. Things We See</button>
 <div class="label">CHALLENGES</div>
 <button data-ch="0">1. Find the Ferris Wheel</button><button data-ch="1">2. Find the Carousel</button><button data-ch="2">3. Find the Lifeguard Tower</button><button data-ch="3">4. Find the Kite</button><button data-ch="4">5. Find the Ice Cream</button><button data-ch="5">6. Find the Dog</button>
-
 <a href="index.html">← Return to Main Directory</a></aside>
 <section class="card tab-master-card" style="--tab-card-font-scale: 1.40; width: 545.467px !important; max-width: none !important; min-width: 0px !important; max-height: none !important; overflow: visible !important;">
 <div aria-label="Script card controls" class="tab-card-tools"><button class="tab-card-drag" title="Move script card" type="button">↕ Move</button><button class="tab-card-font-down" title="Decrease text" type="button">A−</button><button class="tab-card-font-up" title="Increase text" type="button">A+</button><button class="tab-card-reset" title="Reset card" type="button">Reset</button></div><div aria-label="Resize script card" class="tab-card-resize" title="Drag to resize script card">↘</div>
-<h2 data-base-font="22px" id="title" style="font-size: 30.8px !important;">Boardwalk Adventure</h2><p data-base-font="18px" id="prompt" style="font-size: 25.2px !important;">Choose an activity or challenge.</p>
-<div class="word"><strong data-base-font="22.4063px" id="line" style="font-size: 31.3688px !important;">noria</strong><div class="translation" id="translation" data-base-font="18px" style="font-size: 25.2px !important;">Ferris wheel</div></div>
+<h2 data-base-font="22px" id="title">Boardwalk Adventure</h2><p data-base-font="18px" id="prompt">Choose an activity or challenge.</p>
+<div class="word"><strong data-base-font="16px" id="line"></strong><div class="translation" id="translation"></div></div>
 <p id="status"></p>
-<div class="controls"><button data-base-font="13.3281px" id="normal" style="font-size: 18.6593px !important;">🔊 Speak</button><button data-base-font="13.3281px" id="slow" style="font-size: 18.6593px !important;">🐢 Slow</button><button data-base-font="13.3281px" id="replay" style="font-size: 18.6593px !important;">↻ Replay</button></div>
+<div class="controls"><button data-base-font="13.3281px" id="normal">🔊 Speak</button><button data-base-font="13.3281px" id="slow">🐢 Slow</button><button data-base-font="13.3281px" id="replay">↻ Replay</button></div>
 </section>
-
-
-
-<button class="hotspot" data-word="ferris" style="left: 47.39%; top: 9.94%; width: 12.46%; height: 22.52%;" aria-label="Ferris wheel"></button>
-<button class="hotspot" data-word="carousel" style="left: 56%; top: 29.44%; width: 11.9%; height: 17.37%;" aria-label="Carousel"></button>
-<button class="hotspot" data-word="tickets" style="left:51%;top:34%;width:10%;height:14%" aria-label="Ticket booth"></button>
-<button class="hotspot" data-word="icecream" style="left:32%;top:25%;width:13%;height:22%" aria-label="Ice cream stand"></button>
-<button class="hotspot" data-word="popcorn" style="left:43%;top:34%;width:9%;height:14%" aria-label="Popcorn stand"></button>
-<button class="hotspot" data-word="lifeguard" style="left: 82.84%; top: 35.83%; width: 4.66%; height: 8.94%;" aria-label="Lifeguard tower"></button>
-<button class="hotspot" data-word="surfboard" style="left: 78.54%; top: 54.11%; width: 6.48%; height: 9.35%;" aria-label="Surfboards"></button>
-<button class="hotspot" data-word="umbrella" style="left:61%;top:43%;width:12%;height:13%" aria-label="Beach umbrella"></button>
-<button class="hotspot" data-word="sandcastle" style="left: 65.41%; top: 61.6%; width: 6.55%; height: 9.22%;" aria-label="Sandcastle"></button>
-<button class="hotspot" data-word="seagull" style="left: 76.4%; top: 11.09%; width: 9%; height: 13%;" aria-label="Seagull"></button>
-<button class="hotspot" data-word="kite" style="left: 85.52%; top: 2.46%; width: 9%; height: 16%;" aria-label="Kite"></button>
-<button class="hotspot" data-word="bench" style="left: 0.42%; top: 72.22%; width: 8.08%; height: 26.18%;" aria-label="Bench"></button>
-<button class="hotspot" data-word="lamp" style="left: 25.05%; top: 10.36%; width: 6.81%; height: 20.19%;" aria-label="Lamp"></button>
-<button class="hotspot" data-word="flowers" style="left: 0.68%; top: 55.56%; width: 10.41%; height: 15.83%;" aria-label="Flowers"></button>
-
-<button class="hotspot" data-word="ocean" style="left: 92.61%; top: 51.13%; width: 7.66%; height: 10.98%;" aria-label="Ocean"></button>
-<button class="hotspot" data-word="palmtree" style="left: 5.93%; top: -4.17%; width: 8.65%; height: 41.94%;" aria-label="Palm tree"></button>
-<button class="hotspot" data-word="flag" style="left:16%;top:24%;width:6%;height:11%" aria-label="American flag"></button>
-<button class="hotspot" data-word="icecreamcone" style="left:35%;top:18%;width:7%;height:16%" aria-label="Ice cream cone"></button>
-<button class="hotspot" data-word="rollercoaster" style="left:66%;top:17%;width:11%;height:17%" aria-label="Roller coaster"></button>
-<button class="hotspot" data-word="pier" style="left: 68.22%; top: 42.81%; width: 14.18%; height: 9.02%;" aria-label="Pier"></button>
-<button class="hotspot" data-word="lifering" style="left: 84.66%; top: 44.35%; width: 5%; height: 9%;" aria-label="Life ring"></button>
-<button class="hotspot" data-word="binoculars" style="left:90%;top:34%;width:5%;height:8%" aria-label="Binoculars"></button>
-<button class="hotspot" data-word="beachchair" style="left: 58.21%; top: 55.91%; width: 9%; height: 12%;" aria-label="Beach chair"></button>
-<button class="hotspot" data-word="bucket" style="left: 72.94%; top: 65.48%; width: 5%; height: 7%;" aria-label="Bucket"></button>
-<button class="hotspot" data-word="sailboat" style="left:96%;top:42%;width:4%;height:9%" aria-label="Sailboat"></button>
-<button class="hotspot" data-word="boardwalk" style="left: 46.28%; top: 74.5%; width: 25.21%; height: 19.72%;" aria-label="Boardwalk"></button>
-<button class="hotspot" data-word="backpack" style="left: 21.15%; top: 63.81%; width: 5.07%; height: 16.31%;" aria-label="Backpack"></button>
-<button class="hotspot" data-word="hat" style="left: 0.92%; top: 36.58%; width: 6.29%; height: 7.04%;" aria-label="Hat"></button>
-<button class="hotspot" data-word="sunglasses" style="left: 24.68%; top: 42.63%; width: 2.24%; height: 3.04%;" aria-label="Sunglasses"></button>
-<button class="hotspot" data-word="boy" style="left: 31.89%; top: 52.28%; width: 3.95%; height: 17.65%;" aria-label="Boy"></button>
-<button class="hotspot" data-word="girl" style="left: 26.02%; top: 56.31%; width: 3.36%; height: 18.67%;" aria-label="Girl"></button>
-<button class="hotspot" data-word="grandpa" style="left: 21.64%; top: 38.08%; width: 5.42%; height: 15.28%;" aria-label="Grandpa"></button>
-<button class="hotspot" data-word="grandma" style="left: 29.92%; top: 39.68%; width: 4.57%; height: 13.23%;" aria-label="Grandma"></button>
-<button class="hotspot" data-word="beach" style="left: 87.9%; top: 66.44%; width: 15.65%; height: 11.33%;" aria-label="Beach"></button>
-<button type="button" class="hotspot" data-word="dog" aria-label="dog" data-tb-custom="1" data-tb-en="dog" data-tb-es="perro" data-tb-fr="chien" data-tb-de="Hund" data-tb-it="cane" data-tb-pt="cachorro" data-tb-no="hund" style="left: 32.25%; top: 66.9%; width: 8.19%; height: 29.39%;" data-sound="sounds/dog.mp3"></button></main>
+<button aria-label="Ferris wheel" class="hotspot" data-word="ferris" style="left: 47.39%; top: 9.94%; width: 12.46%; height: 22.52%;"></button>
+<button aria-label="Carousel" class="hotspot" data-word="carousel" style="left: 56%; top: 29.44%; width: 11.9%; height: 17.37%;"></button>
+<button aria-label="Ticket booth" class="hotspot" data-word="tickets" style="left:51%;top:34%;width:10%;height:14%"></button>
+<button aria-label="Ice cream stand" class="hotspot" data-word="icecream" style="left:32%;top:25%;width:13%;height:22%"></button>
+<button aria-label="Popcorn stand" class="hotspot" data-word="popcorn" style="left:43%;top:34%;width:9%;height:14%"></button>
+<button aria-label="Lifeguard tower" class="hotspot" data-word="lifeguard" style="left: 82.84%; top: 35.83%; width: 4.66%; height: 8.94%;"></button>
+<button aria-label="Surfboards" class="hotspot" data-word="surfboard" style="left: 78.54%; top: 54.11%; width: 6.48%; height: 9.35%;"></button>
+<button aria-label="Beach umbrella" class="hotspot" data-word="umbrella" style="left:61%;top:43%;width:12%;height:13%"></button>
+<button aria-label="Sandcastle" class="hotspot" data-word="sandcastle" style="left: 65.41%; top: 61.6%; width: 6.55%; height: 9.22%;"></button>
+<button aria-label="Seagull" class="hotspot" data-word="seagull" style="left: 76.4%; top: 11.09%; width: 9%; height: 13%;"></button>
+<button aria-label="Kite" class="hotspot" data-word="kite" style="left: 85.52%; top: 2.46%; width: 9%; height: 16%;"></button>
+<button aria-label="Bench" class="hotspot" data-word="bench" style="left: 0.42%; top: 72.22%; width: 8.08%; height: 26.18%;"></button>
+<button aria-label="Lamp" class="hotspot" data-word="lamp" style="left: 25.05%; top: 10.36%; width: 6.81%; height: 20.19%;"></button>
+<button aria-label="Flowers" class="hotspot" data-word="flowers" style="left: 0.68%; top: 55.56%; width: 10.41%; height: 15.83%;"></button>
+<button aria-label="Ocean" class="hotspot" data-word="ocean" style="left: 92.61%; top: 51.13%; width: 7.66%; height: 10.98%;"></button>
+<button aria-label="Palm tree" class="hotspot" data-word="palmtree" style="left: 5.93%; top: -4.17%; width: 8.65%; height: 41.94%;"></button>
+<button aria-label="American flag" class="hotspot" data-word="flag" style="left:16%;top:24%;width:6%;height:11%"></button>
+<button aria-label="Ice cream cone" class="hotspot" data-word="icecreamcone" style="left:35%;top:18%;width:7%;height:16%"></button>
+<button aria-label="Roller coaster" class="hotspot" data-word="rollercoaster" style="left:66%;top:17%;width:11%;height:17%"></button>
+<button aria-label="Pier" class="hotspot" data-word="pier" style="left: 68.22%; top: 42.81%; width: 14.18%; height: 9.02%;"></button>
+<button aria-label="Life ring" class="hotspot" data-word="lifering" style="left: 84.66%; top: 44.35%; width: 5%; height: 9%;"></button>
+<button aria-label="Binoculars" class="hotspot" data-word="binoculars" style="left:90%;top:34%;width:5%;height:8%"></button>
+<button aria-label="Beach chair" class="hotspot" data-word="beachchair" style="left: 58.21%; top: 55.91%; width: 9%; height: 12%;"></button>
+<button aria-label="Bucket" class="hotspot" data-word="bucket" style="left: 72.94%; top: 65.48%; width: 5%; height: 7%;"></button>
+<button aria-label="Sailboat" class="hotspot" data-word="sailboat" style="left:96%;top:42%;width:4%;height:9%"></button>
+<button aria-label="Boardwalk" class="hotspot" data-word="boardwalk" style="left: 46.28%; top: 74.5%; width: 25.21%; height: 19.72%;"></button>
+<button aria-label="Backpack" class="hotspot" data-word="backpack" style="left: 21.15%; top: 63.81%; width: 5.07%; height: 16.31%;"></button>
+<button aria-label="Hat" class="hotspot" data-word="hat" style="left: 0.92%; top: 36.58%; width: 6.29%; height: 7.04%;"></button>
+<button aria-label="Sunglasses" class="hotspot" data-word="sunglasses" style="left: 24.68%; top: 42.63%; width: 2.24%; height: 3.04%;"></button>
+<button aria-label="Boy" class="hotspot" data-word="boy" style="left: 31.89%; top: 52.28%; width: 3.95%; height: 17.65%;"></button>
+<button aria-label="Girl" class="hotspot" data-word="girl" style="left: 26.02%; top: 56.31%; width: 3.36%; height: 18.67%;"></button>
+<button aria-label="Grandpa" class="hotspot" data-word="grandpa" style="left: 21.64%; top: 38.08%; width: 5.42%; height: 15.28%;"></button>
+<button aria-label="Grandma" class="hotspot" data-word="grandma" style="left: 29.92%; top: 39.68%; width: 4.57%; height: 13.23%;"></button>
+<button aria-label="Beach" class="hotspot" data-word="beach" style="left: 87.9%; top: 66.44%; width: 15.65%; height: 11.33%;"></button>
+<button aria-label="dog" class="hotspot" data-sound="sounds/dog.mp3" data-tb-custom="1" data-tb-de="Hund" data-tb-en="dog" data-tb-es="perro" data-tb-fr="chien" data-tb-it="cane" data-tb-no="hund" data-tb-pt="cachorro" data-word="dog" style="left: 32.25%; top: 66.9%; width: 8.19%; height: 29.39%;" type="button"></button></main>
 <script>
 const LANGS={
 es:{code:"es-ES",words:{ferris:["noria","Ferris wheel"],carousel:["carrusel","carousel"],tickets:["taquilla","ticket booth"],icecream:["helado","ice cream"],popcorn:["palomitas","popcorn"],lifeguard:["torre de salvavidas","lifeguard tower"],surfboard:["tabla de surf","surfboard"],umbrella:["sombrilla","beach umbrella"],sandcastle:["castillo de arena","sandcastle"],seagull:["gaviota","seagull"],kite:["cometa","kite"],bicycle:["bicicleta","bicycle"],skateboard:["monopatín","skateboard"],trashcan:["papelera","trash can"],binoculars:["binoculares","binoculars"],sunglasses:["gafas de sol","sunglasses"],hat:["sombrero","hat"],bench:["banco","bench"],lamp:["farola","lamp"],flowers:["flores","flowers"],bear:["Bear","Bear"],ocean:["océano","ocean"]}},
@@ -539,7 +517,6 @@ showWord("ferris");
  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',run);else run();
 })();
 </script>
-
 <style id="talkabee-rendered-card-footprint-lock">
 /* Visual master: match the user-approved Grandma's Kitchen rendered footprint. */
 .tab-master-card{
@@ -549,7 +526,6 @@ showWord("ferris");
 }
 @media(max-width:760px){.tab-master-card{width:min(520px,calc(100vw - 32px))!important;transform:translateX(-50%) scale(.82)!important;}}
 </style>
-
 <script id="talkabee-accessibility-controls-script-v1">
 (function(){
  const panel=document.querySelector('.tab-master-panel,.activity-panel,.panel');
@@ -744,7 +720,6 @@ document.addEventListener('click',function(ev){
 })();
 </script>
 
-
 <script id="talkabee-scene-view-safe-reset">
 (function(){
   function resetTalkABeeSceneView(){
@@ -758,7 +733,6 @@ document.addEventListener('click',function(ev){
   window.addEventListener('pageshow',resetTalkABeeSceneView);
 })();
 </script>
-
 <script id="talkabee-bilingual-hotspot-popup">
 (function(){
  if(window.__talkabeeBilingualPopup)return; window.__talkabeeBilingualPopup=true;
@@ -799,8 +773,7 @@ document.addEventListener('click',function(ev){
 })();
 </script>
 
-
-<script type="application/json" id="talkabee-challenge-data">[{"key":"ferris","text":"Find the Ferris Wheel"},{"key":"carousel","text":"Find the Carousel"},{"key":"lifeguard","text":"Find the Lifeguard Tower"},{"key":"kite","text":"Find the Kite"},{"key":"icecream","text":"Find the Ice Cream"},{"key":"dog","text":"Find the Dog"}]</script>
+<script id="talkabee-challenge-data" type="application/json">[{"key":"ferris","text":"Find the Ferris Wheel"},{"key":"carousel","text":"Find the Carousel"},{"key":"lifeguard","text":"Find the Lifeguard Tower"},{"key":"kite","text":"Find the Kite"},{"key":"icecream","text":"Find the Ice Cream"},{"key":"dog","text":"Find the Dog"}]</script>
 <script id="talkabee-challenge-runtime">
 (function(){
  const data=document.getElementById('talkabee-challenge-data');
@@ -812,7 +785,7 @@ document.addEventListener('click',function(ev){
  });}catch(e){console.warn('Challenge data could not be loaded',e)}
 })();
 </script>
-<div id="tb-challenge-panel" style="display: none;"><div id="tb-challenge-drag" title="Drag to move this editor"><h3>↕ Edit Six Challenges</h3><small>Drag here to move</small></div><div>Choose a challenge, then assign an existing hotspot. Changes are included when you save or export HTML.</div><label for="tb-ch-number">Challenge</label><select id="tb-ch-number"><option value="0">Challenge 1</option><option value="1">Challenge 2</option><option value="2">Challenge 3</option><option value="3">Challenge 4</option><option value="4">Challenge 5</option><option value="5">Challenge 6</option></select><label for="tb-ch-hotspot">Find this hotspot</label><select id="tb-ch-hotspot"><option value="ferris">Ferris wheel [ferris]</option><option value="carousel">Carousel [carousel]</option><option value="tickets">Ticket booth [tickets]</option><option value="icecream">Ice cream stand [icecream]</option><option value="popcorn">Popcorn stand [popcorn]</option><option value="lifeguard">Lifeguard tower [lifeguard]</option><option value="surfboard">Surfboards [surfboard]</option><option value="umbrella">Beach umbrella [umbrella]</option><option value="sandcastle">Sandcastle [sandcastle]</option><option value="seagull">Seagull [seagull]</option><option value="kite">Kite [kite]</option><option value="bench">Bench [bench]</option><option value="lamp">Lamp [lamp]</option><option value="flowers">Flowers [flowers]</option><option value="ocean">Ocean [ocean]</option><option value="palmtree">Palm tree [palmtree]</option><option value="flag">American flag [flag]</option><option value="icecreamcone">Ice cream cone [icecreamcone]</option><option value="rollercoaster">Roller coaster [rollercoaster]</option><option value="pier">Pier [pier]</option><option value="lifering">Life ring [lifering]</option><option value="binoculars">Binoculars [binoculars]</option><option value="beachchair">Beach chair [beachchair]</option><option value="bucket">Bucket [bucket]</option><option value="sailboat">Sailboat [sailboat]</option><option value="boardwalk">Boardwalk [boardwalk]</option><option value="backpack">Backpack [backpack]</option><option value="hat">Hat [hat]</option><option value="sunglasses">Sunglasses [sunglasses]</option><option value="boy">Boy [boy]</option><option value="girl">Girl [girl]</option><option value="grandpa">Grandpa [grandpa]</option><option value="grandma">Grandma [grandma]</option><option value="beach">Beach [beach]</option><option value="dog">dog [dog]</option></select><label for="tb-ch-text">Challenge wording (English)</label><input id="tb-ch-text" maxlength="110" placeholder="Find the balloon basket"><div class="tb-ch-warning" id="tb-ch-warning">Saved into this page. Use Save Working HTML to keep it.</div><button type="button" id="tb-ch-apply">Apply Challenge</button><button type="button" id="tb-ch-close">Close</button></div>
+<div id="tb-challenge-panel" style="display: none;"><div id="tb-challenge-drag" title="Drag to move this editor"><h3>↕ Edit Six Challenges</h3><small>Drag here to move</small></div><div>Choose a challenge, then assign an existing hotspot. Changes are included when you save or export HTML.</div><label for="tb-ch-number">Challenge</label><select id="tb-ch-number"><option value="0">Challenge 1</option><option value="1">Challenge 2</option><option value="2">Challenge 3</option><option value="3">Challenge 4</option><option value="4">Challenge 5</option><option value="5">Challenge 6</option></select><label for="tb-ch-hotspot">Find this hotspot</label><select id="tb-ch-hotspot"><option value="ferris">Ferris wheel [ferris]</option><option value="carousel">Carousel [carousel]</option><option value="tickets">Ticket booth [tickets]</option><option value="icecream">Ice cream stand [icecream]</option><option value="popcorn">Popcorn stand [popcorn]</option><option value="lifeguard">Lifeguard tower [lifeguard]</option><option value="surfboard">Surfboards [surfboard]</option><option value="umbrella">Beach umbrella [umbrella]</option><option value="sandcastle">Sandcastle [sandcastle]</option><option value="seagull">Seagull [seagull]</option><option value="kite">Kite [kite]</option><option value="bench">Bench [bench]</option><option value="lamp">Lamp [lamp]</option><option value="flowers">Flowers [flowers]</option><option value="ocean">Ocean [ocean]</option><option value="palmtree">Palm tree [palmtree]</option><option value="flag">American flag [flag]</option><option value="icecreamcone">Ice cream cone [icecreamcone]</option><option value="rollercoaster">Roller coaster [rollercoaster]</option><option value="pier">Pier [pier]</option><option value="lifering">Life ring [lifering]</option><option value="binoculars">Binoculars [binoculars]</option><option value="beachchair">Beach chair [beachchair]</option><option value="bucket">Bucket [bucket]</option><option value="sailboat">Sailboat [sailboat]</option><option value="boardwalk">Boardwalk [boardwalk]</option><option value="backpack">Backpack [backpack]</option><option value="hat">Hat [hat]</option><option value="sunglasses">Sunglasses [sunglasses]</option><option value="boy">Boy [boy]</option><option value="girl">Girl [girl]</option><option value="grandpa">Grandpa [grandpa]</option><option value="grandma">Grandma [grandma]</option><option value="beach">Beach [beach]</option><option value="dog">dog [dog]</option></select><label for="tb-ch-text">Challenge wording (English)</label><input id="tb-ch-text" maxlength="110" placeholder="Find the balloon basket"/><div class="tb-ch-warning" id="tb-ch-warning">Saved into this page. Use Save Working HTML to keep it.</div><button id="tb-ch-apply" type="button">Apply Challenge</button><button id="tb-ch-close" type="button">Close</button></div>
 <script id="talkabee-boardwalk-card-viewport-boundary">
 /* Keep the complete displayed script card inside the viewport after moving,
    resizing, restoring its position, or growing to fit longer text. */
@@ -873,5 +846,23 @@ document.addEventListener('click',function(ev){
   schedule();
 })();
 </script>
+<script id="talkabee-boardwalk-restore-enhanced-voice-preload">
+(function(){
+  try {
+    var language=document.getElementById('lang');
+    if(!language)return;
+    var saved=localStorage.getItem('talkabee-learn-language');
+    if(saved && Array.from(language.options).some(function(option){return option.value===saved;})){
+      if(language.value!==saved){
+        language.value=saved;
+        language.dispatchEvent(new Event('change',{bubbles:true}));
+      }
+    }
+    var selected=localStorage.getItem('talkabee-piper-voice-'+language.value);
+    if(selected)localStorage.setItem('talkabee-lab-voice-mode','enhanced');
+  }catch(error){console.warn('Talk A Bee: saved Piper preference could not be restored',error);}
+})();
+</script>
 <script src="js/talkabee-enhanced-voice-boardwalk.js"></script>
+<script defer="" src="js/talkabee-keyboard-chevron-nav.js"></script>
 </body></html>
