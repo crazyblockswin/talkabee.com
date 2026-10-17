@@ -106,4 +106,35 @@ window.tabEditionOverlays={stage,back,front,items,previews,draw,saveData,highlig
 <!-- TAB_EDITION_EDITOR_END -->
 
 
+
+<style id="tab-sound-runtime-style">
+#tab-sound-layer{position:absolute;inset:0;z-index:35;pointer-events:none}
+.tab-sound-spot{position:absolute;display:block;border:0;background:transparent;cursor:pointer;pointer-events:auto;touch-action:none}
+.tab-sound-spot:focus-visible{outline:2px solid #ffd65e;outline-offset:2px}
+body.tab-sound-editing .tab-sound-spot{background:rgba(255,213,65,.15);outline:2px dashed #ffdb66;cursor:move}
+body.tab-sound-editing .tab-sound-spot.active{background:rgba(93,225,255,.23);outline:3px dashed #8cecff}
+body.tab-sound-editing .tab-sound-spot.active::after{content:'';position:absolute;right:-5px;bottom:-5px;width:17px;height:17px;border:2px solid #111;background:#ffdb66;cursor:nwse-resize}
+body.tab-sound-editing #tab-sound-layer{pointer-events:auto}
+body.tab-sound-drawing #tab-sound-layer{pointer-events:auto;cursor:crosshair}
+#tab-sound-tools[hidden],#tab-image-tools[hidden]{display:none!important}
+</style>
+<script id="tab-sound-data" type="application/json">[{"x":26.927083730697632,"y":4.351852006382413,"w":16.510415077209473,"h":33.61111183961232,"name":"New sound hotspot","sound":"sounds/sport-rock.mp3"},{"x":77.0312488079071,"y":26.11111005147298,"w":22.91666865348816,"h":56.48148324754504,"name":"New sound hotspot","sound":"sounds/energy-rock1.mp3"}]</script>
+<script id="tab-sound-runtime">
+(function(){'use strict';
+const stage=document.querySelector('main.world'),data=document.getElementById('tab-sound-data');if(!stage||!data)return;
+let spots=[];try{spots=JSON.parse(data.textContent)||[]}catch(e){console.warn('Sound hotspot data',e)}
+const layer=document.createElement('div');layer.id='tab-sound-layer';stage.appendChild(layer);
+const audio=new Audio();let editing=false,selected=-1,drawMode=false,preview=new Map();
+const clamp=(n,min,max)=>Math.min(max,Math.max(min,n));
+function persist(){data.textContent=JSON.stringify(spots).replace(/</g,'\\u003c')}
+function play(spot){if(!spot||!spot.sound)return;audio.pause();audio.currentTime=0;audio.src=preview.get(spot.sound)||spot.sound;audio.play().catch(err=>console.warn('Could not play hotspot audio:',err))}
+function render(){layer.replaceChildren();spots.forEach((v,i)=>{const b=document.createElement('button');b.type='button';b.className='tab-sound-spot'+(editing&&selected===i?' active':'');b.style.left=v.x+'%';b.style.top=v.y+'%';b.style.width=v.w+'%';b.style.height=v.h+'%';b.dataset.index=i;b.setAttribute('aria-label',v.name||'Play sound');b.title=editing?(v.name||'Sound hotspot'):'';b.addEventListener('click',e=>{e.stopPropagation();if(!editing)play(v)});layer.appendChild(b)})}
+function refresh(){persist();render();window.dispatchEvent(new Event('tab-sound-changed'))}
+window.tabSoundRuntime={spots,layer,preview,refresh,play,setEditing(v){editing=v;document.body.classList.toggle('tab-sound-editing',v);render()},setSelected(v){selected=v;render()},setDraw(v){drawMode=v;document.body.classList.toggle('tab-sound-drawing',v)},get drawing(){return drawMode},get editing(){return editing},clamp};render();
+})();
+</script>
+<!-- TAB_SOUND_EDITOR_START -->
+
+<!-- TAB_SOUND_EDITOR_END -->
+
 </body></html>
