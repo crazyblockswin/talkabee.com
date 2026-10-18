@@ -42,6 +42,17 @@
 </style>
 
 
+<style id="talkabee-community-panel-visibility-fix">
+/* Keep the final navigation button readable even on shorter screens. */
+.world > aside.panel { box-sizing:border-box; overflow-y:auto !important; overflow-x:hidden !important; padding-bottom:24px !important; scrollbar-width:thin; }
+.world > aside.panel > a:last-child { display:block !important; min-height:44px; line-height:1.35; white-space:normal !important; overflow:visible !important; margin-bottom:8px !important; }
+</style>
+<style id="tab-heading-bee-style">
+.panel h1.tab-heading-with-bee{display:flex;align-items:center;gap:10px}
+.panel h1 .tab-heading-bee{display:block;height:55px;width:auto;max-width:70px;object-fit:contain;flex:none}
+.panel h1.tab-heading-with-bee span{min-width:0}
+</style>
+
 <style id="tab-edition-overlay-runtime-css">.world{isolation:isolate}#tab-edition-overlays-back,#tab-edition-overlays-front{position:absolute;inset:0;pointer-events:none}#tab-edition-overlays-back{z-index:10}#tab-edition-overlays-front{z-index:30}.tab-edition-overlay{position:absolute;height:auto;display:block;transform:translate(-50%,-50%) rotate(var(--angle,0deg));transform-origin:center;pointer-events:none;user-select:none}</style></head>
 <body class="">
 <div class="talkabee-editions">
@@ -61,7 +72,7 @@
 
 <main class="world">
 <aside class="panel" aria-label="Community Edition">
-<h1>🐝 Community Edition</h1>
+<h1 class="tab-heading-with-bee"><img src="images/bee-fly.png" alt="" class="tab-heading-bee"> <span>Community Edition</span></h1>
 <a href="Talk-A-Bee-Library.html">📚 Library</a>
 <a href="Talk-A-Bee-City-Bus-Adventure.html">🚌 City Bus Adventure</a>
 <a href="Talk-A-Bee-Hotel-Adventure.html">🏨 Hotel Adventure</a>
@@ -69,12 +80,11 @@
 <a href="Talk-A-Bee-Boardwalk-Adventure.html">🎡 Boardwalk Adventure</a>
 <a href="Talk-A-Bee-Observation-Deck-Adventure.html">🌆 Observation Deck</a>
 <a href="Talk-A-Bee-Dinosaur-Museum-Adventure.html">🦖 Dinosaur Museum</a>
-<a href="Talk-A-Bee-Nighttime-Campground-Adventure.html">🏕️ Nighttime Campground</a>
-<a class="back" href="index.html">← Main Adventures</a>
+<a class="back" href="Talk-A-Bee-Directory-3.html">Explore Travel Edition →</a>
 </aside>
 </main>
 <script defer="" src="js/talkabee-keyboard-chevron-nav.js"></script>
-<script id="tab-edition-overlay-data" type="application/json">[{"src":"images/busskill-looking-down.png","x":29.270832538604736,"y":25.925927029715638,"w":21,"r":0,"depth":"front"}]</script>
+<script id="tab-edition-overlay-data" type="application/json">[{"src":"images/busskill-looking-down.png","x":30.885415077209473,"y":26.29629506005181,"w":15,"r":10,"depth":"front"}]</script>
 <script id="tab-edition-overlay-runtime">
 (function(){'use strict';const stage=document.querySelector('main.world');if(!stage)return;
 const back=document.createElement('div');back.id='tab-edition-overlays-back';const front=document.createElement('div');front.id='tab-edition-overlays-front';stage.insertBefore(back,stage.firstChild);stage.appendChild(front);
@@ -92,7 +102,6 @@ window.tabEditionOverlays={stage,back,front,items,previews,draw,saveData,highlig
 
 <!-- TAB_EDITION_EDITOR_END -->
 
-
 <style id="tab-sound-runtime-style">
 #tab-sound-layer{position:absolute;inset:0;z-index:35;pointer-events:none}
 .tab-sound-spot{position:absolute;display:block;border:0;background:transparent;cursor:pointer;pointer-events:auto;touch-action:none}
@@ -104,7 +113,7 @@ body.tab-sound-editing #tab-sound-layer{pointer-events:auto}
 body.tab-sound-drawing #tab-sound-layer{pointer-events:auto;cursor:crosshair}
 #tab-sound-tools[hidden],#tab-image-tools[hidden]{display:none!important}
 </style>
-<script id="tab-sound-data" type="application/json">[{"x":40.26041626930237,"y":43.70370441012913,"w":58.95833373069763,"h":51.851855383978936,"name":"kids-playing","sound":"sounds/kids-in-lake.mp3"}]</script>
+<script id="tab-sound-data" type="application/json">[{"x":39.0625,"y":13.425926367441813,"w":60.885417461395264,"h":85.3703671031528,"name":"kids playing in water","sound":"sounds/kids-in-lake.mp3"}]</script>
 <script id="tab-sound-runtime">
 (function(){'use strict';
 const stage=document.querySelector('main.world'),data=document.getElementById('tab-sound-data');if(!stage||!data)return;
@@ -122,5 +131,6 @@ window.tabSoundRuntime={spots,layer,preview,refresh,play,setEditing(v){editing=v
 <!-- TAB_SOUND_EDITOR_START -->
 
 <!-- TAB_SOUND_EDITOR_END -->
+
 
 </body></html>

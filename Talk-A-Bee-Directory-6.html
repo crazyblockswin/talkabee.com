@@ -1,19 +1,18 @@
 <!doctype html>
 <html lang="en"><head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta content="width=device-width,initial-scale=1" name="viewport">
 <title>Talk A Bee — Family &amp; Special Edition</title>
 <style>
 *{box-sizing:border-box}html,body{margin:0;width:100%;height:100%;overflow:hidden;font-family:Arial,sans-serif;background:#071526;color:#fff}
 .world{position:relative;width:100vw;height:100vh;background:#071526 url("images/Talk-A-Bee-Directory-6.jpg") center center/cover no-repeat}
-.panel{position:absolute;z-index:20;left:16px;top:16px;width:350px;max-height:calc(100vh - 32px);overflow:auto;padding:14px;border-radius:20px;background:rgba(7,23,39,.31);border:1px solid rgba(255,255,255,.28);box-shadow:0 10px 28px rgba(0,0,0,.22);backdrop-filter:blur(3px);-webkit-backdrop-filter:blur(3px)}
+.panel{position:absolute;z-index:20;left:16px;top:16px;width:375px;max-height:calc(100vh - 32px);overflow:auto;padding:14px;border-radius:20px;background:rgba(7,23,39,.31);border:1px solid rgba(255,255,255,.28);box-shadow:0 10px 28px rgba(0,0,0,.22);backdrop-filter:blur(3px);-webkit-backdrop-filter:blur(3px)}
 .panel h1{font-size:28px;line-height:1.08;margin:0 0 13px;font-weight:950}
-.panel a{width:100%;display:block;margin:5px 0;padding:9px 10px;border-radius:12px;border:1px solid rgba(255,255,255,.38);background:rgba(7,32,50,.54);color:#fff;font-size:17px;line-height:1.28;font-weight:850;text-decoration:none;text-align:left}
+.panel a{width:100%;display:block;margin:5px 0;padding:9px 10px;border-radius:12px;border:1px solid rgba(255,255,255,.38);background:rgba(7,32,50,.54);color:#fff;font-size:20px;line-height:1.28;font-weight:850;text-decoration:none;text-align:left}
 .panel a:hover{background:rgba(255,255,255,.18)}
 .panel .back{margin-top:10px;background:rgba(80,59,150,.64);border-color:rgba(255,255,255,.52)}
 @media(max-width:900px){.panel{width:190px}}
 </style>
-
 <style id="talkabee-prev-next-nav-style">
 /* Talk A Bee standard compact Previous / Next navigation. */
 .talkabee-prev-next-nav{position:fixed;top:18px;right:22px;z-index:2147483000;display:flex;align-items:center;overflow:hidden;border:2px solid rgba(255,255,255,.82);border-radius:999px;background:rgba(11,22,42,.24);box-shadow:0 5px 16px rgba(0,0,0,.16);backdrop-filter:blur(3px);-webkit-backdrop-filter:blur(3px)}
@@ -23,9 +22,8 @@
 .talkabee-prev-next-nav a:active{transform:scale(.94)}
 @media(max-width:720px){.talkabee-prev-next-nav{top:12px;right:12px}.talkabee-prev-next-nav a{width:42px;height:42px;font-size:33px}}
 </style>
-  <link rel="icon" type="image/png" href="images/talkabee-favicon.png">
-  <link rel="shortcut icon" type="image/png" href="images/talkabee-favicon.png">
-
+<link href="images/talkabee-favicon.png" rel="icon" type="image/png">
+<link href="images/talkabee-favicon.png" rel="shortcut icon" type="image/png">
 <style id="talkabee-edition-menu-style">
 .talkabee-editions{position:fixed;top:16px;left:50%;transform:translateX(-50%);z-index:2147482998;font-family:Arial,sans-serif}
 .talkabee-editions details{position:relative}
@@ -37,8 +35,6 @@
 .talkabee-editions.on-main{top:82px}
 @media(max-width:900px){.talkabee-editions .edition-row{max-width:94vw;overflow-x:auto}.talkabee-editions.on-main{top:72px}}
 </style>
-
-
 <style id="talkabee-edition-hover-colors">
 /* Subtle category color only on hover/focus. Normal menu appearance is unchanged. */
 .talkabee-editions .edition-row a{transition:background .16s ease,box-shadow .16s ease,transform .16s ease,border-color .16s ease}
@@ -58,13 +54,18 @@
 .talkabee-editions .edition-row a:focus-visible{transform:translateY(-1px)}
 </style>
 
+<style id="tab-heading-bee-style">
+.panel h1.tab-heading-with-bee{display:flex;align-items:center;gap:10px}
+.panel h1 .tab-heading-bee{display:block;height:55px;width:auto;max-width:70px;object-fit:contain;flex:none}
+.panel h1.tab-heading-with-bee span{min-width:0}
+</style>
 
 <style id="tab-edition-overlay-runtime-css">.world{isolation:isolate}#tab-edition-overlays-back,#tab-edition-overlays-front{position:absolute;inset:0;pointer-events:none}#tab-edition-overlays-back{z-index:10}#tab-edition-overlays-front{z-index:30}.tab-edition-overlay{position:absolute;height:auto;display:block;transform:translate(-50%,-50%) rotate(var(--angle,0deg));transform-origin:center;pointer-events:none;user-select:none}</style></head>
 <body class="">
 <div class="talkabee-editions">
 <details>
 <summary>Explore Adventures ▾</summary>
-<div class="edition-row" role="navigation" aria-label="Talk A Bee Editions">
+<div aria-label="Talk A Bee Editions" class="edition-row" role="navigation">
 <a href="Talk-A-Bee-Main-Directory.html">Main Adventures</a>
 <a href="Talk-A-Bee-More-Adventures.html">Community Edition</a>
 <a href="Talk-A-Bee-Directory-3.html">Travel Edition</a>
@@ -74,20 +75,19 @@
 </div>
 </details>
 </div>
-<nav class="talkabee-prev-next-nav" aria-label="Edition navigation"><a href="Talk-A-Bee-River-Rafting-Adventure.html" aria-label="Previous adventure" title="Previous">‹</a><a href="Talk-A-Bee-Golf-Adventure.html" aria-label="Next adventure" title="Next">›</a></nav>
-
+<nav aria-label="Edition navigation" class="talkabee-prev-next-nav"><a aria-label="Previous adventure" href="Talk-A-Bee-River-Rafting-Adventure.html" title="Previous">‹</a><a aria-label="Next adventure" href="Talk-A-Bee-Golf-Adventure.html" title="Next">›</a></nav>
 <main class="world">
-<aside class="panel" aria-label="Family &amp; Special Edition">
-<h1>🐝 Family &amp; Special Edition</h1>
-<a href="Talk-A-Bee-Golf-Adventure.html">⛳ Golf Adventure</a>
-<a href="Talk-A-Bee-Family-Picnic-Adventure.html">🧺 Family Picnic</a>
-<a href="Talk-A-Bee-Oval-Office-Adventure.html">🏛️ Oval Office</a>
-<a href="Talk-A-Bee-Nighttime-Campground-Adventure.html">🏕️ Nighttime Campground</a>
-<a class="back" href="Talk-A-Bee-Directory-5.html">← Previous Edition</a>
-</aside>
+<aside aria-label="Family &amp; Special Edition" class="panel">
+<h1 class="tab-heading-with-bee"><img src="images/bee-fly.png" alt="" class="tab-heading-bee"> <span>Family &amp; Special Edition</span></h1>
+
+
+
+
+
+<a href="Talk-A-Bee-Basic-Training-Adventure.html">🎖️ Basic Training</a><a href="Talk-A-Bee-Aircraft-Carrier-Adventure.html">⚓ Aircraft Carrier</a><a href="Talk-A-Bee-Nighttime-Campground-Adventure.html">🏕️ Nighttime Campground</a><a class="back" href="Talk-A-Bee-Main-Directory.html">← Main Directory</a></aside>
 </main>
 <script defer="" src="js/talkabee-keyboard-chevron-nav.js"></script>
-<script id="tab-edition-overlay-data" type="application/json">[{"src":"images/guitar.png","x":30.36458671092987,"y":26.89257654545352,"w":25,"r":0,"depth":"front"}]</script>
+<script id="tab-edition-overlay-data" type="application/json">[{"src":"images/guitar.png","x":31.770834624767303,"y":24.1148000922234,"w":17,"r":0,"depth":"front"}]</script>
 <script id="tab-edition-overlay-runtime">
 (function(){'use strict';const stage=document.querySelector('main.world');if(!stage)return;
 const back=document.createElement('div');back.id='tab-edition-overlays-back';const front=document.createElement('div');front.id='tab-edition-overlays-front';stage.insertBefore(back,stage.firstChild);stage.appendChild(front);
@@ -104,8 +104,6 @@ window.tabEditionOverlays={stage,back,front,items,previews,draw,saveData,highlig
 
 
 <!-- TAB_EDITION_EDITOR_END -->
-
-
 
 <style id="tab-sound-runtime-style">
 #tab-sound-layer{position:absolute;inset:0;z-index:35;pointer-events:none}
@@ -136,5 +134,4 @@ window.tabSoundRuntime={spots,layer,preview,refresh,play,setEditing(v){editing=v
 <!-- TAB_SOUND_EDITOR_START -->
 
 <!-- TAB_SOUND_EDITOR_END -->
-
 </body></html>
