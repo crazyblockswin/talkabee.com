@@ -1,10 +1,10 @@
-<!DOCTYPE html>
-
+<!doctype html>
 <html lang="en"><head>
-<meta charset="utf-8"/>
-<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Talk A Bee — Animals — Farm Adventure</title>
-<link href="css/shared-a4a6c78bba2b19f6.css" rel="stylesheet"/>
+<link rel="stylesheet" href="css/shared-a4a6c78bba2b19f6.css">
+
 <style id="farm-single-panel-final-fix">
 /* Final Farm fix: the approved scene already contains the original static course card.
    Cover that exact footprint with the one live lesson card so only one layer is visible. */
@@ -20,6 +20,7 @@
 .live-card .actions{margin-top:8px!important;}
 @media(max-width:900px){.live-card{padding:10px 13px!important;}}
 </style>
+
 <style id="clean-keeper-ui">
 .left-panel{position:absolute;z-index:10;left:.45%;top:5.2%;width:16.2%;height:91%;border-radius:20px;background:rgba(9,38,43,.80);box-shadow:0 14px 32px rgba(0,0,0,.28);border:1px solid rgba(255,255,255,.18);pointer-events:none}
 .left-title{position:absolute;z-index:11;left:1.45%;top:16.5%;width:14%;color:white;pointer-events:none}.left-title b{display:block;font-size:clamp(22px,2vw,36px)}.left-title span{font-size:clamp(12px,1.05vw,18px);font-weight:700}.section-label{position:absolute;z-index:11;left:1.45%;color:#dce7e7;font-weight:900;letter-spacing:.08em;pointer-events:none}.activities-label{top:23.3%}.challenges-label{top:64.4%}
@@ -30,6 +31,7 @@
 #butterfly{left:43.3%;top:89.7%}#barn{left:57.7%;top:34%}#windmill{left:61.9%;top:21.9%}#rv{left:78.1%;top:32%}#solar{left:84.7%;top:16.6%}#campfire{left:66.7%;top:64%}#fence{left:23.4%;top:50.7%}#flowers{left:9%;top:75%}#mountains{left:31%;top:19%}#chick{left:79.3%;top:62.5%}
 .hotspot{width:3.6%;border-width:3px}
 </style>
+
 <style id="farm-ui-tuning">
 /* CSS-only tuning: preserve clean keeper artwork and all interactions. */
 .left-panel{background:rgba(9,38,43,.87)!important;}
@@ -49,6 +51,7 @@
 .live-card .actions button{padding:8px 13px!important;}
 .live-card .status{margin-top:5px!important;min-height:12px!important;}
 </style>
+
 <style id="farm-match-train-transparency">
 /* Match Train Station panel transparencies only. */
 .left-panel{
@@ -58,6 +61,8 @@
   background:rgba(9,45,51,.30)!important;
 }
 </style>
+
+
 <style id="farm-panels-more-solid">
 /* Farm page only: strengthen panel backgrounds over the bright sunset scene. */
 .left-panel{
@@ -69,6 +74,8 @@
   backdrop-filter:blur(2px)!important;
 }
 </style>
+
+
 <style id="farm-left-panel-visible-fix">
 /* LEFT PANEL ONLY — make the container itself visibly dark/translucent. */
 .left-panel{
@@ -82,6 +89,8 @@
 }
 /* Do not alter the script box in this test. */
 </style>
+
+
 <style id="farm-left-panel-real-container-fix">
 .left-panel{
   display:block!important;
@@ -98,6 +107,8 @@
   pointer-events:none!important;
 }
 </style>
+
+
 <style id="farm-balanced-panel-transparency">
 /* Same green panel look, just lighter/more transparent. */
 .left-panel{
@@ -107,6 +118,8 @@
   background:rgba(9,45,51,.58)!important;
 }
 </style>
+
+
 <style id="farm-script-size-and-solar-hotspot-fix">
 /* Keep current transparency. Give the script card enough vertical room for all controls. */
 .live-card{
@@ -122,6 +135,8 @@
   top:17.0%!important;
 }
 </style>
+
+
 <style id="farm-solar-return-fix">
 /* Move solar-panel hotspot farther right, fully off Professor Bee. */
 .hotspot[data-id="solar"]{
@@ -141,6 +156,8 @@
   color:#fff!important;
 }
 </style>
+
+
 <style id="farm-solar-return-real-fix">
 /*
 REAL FIX:
@@ -166,6 +183,8 @@ Target the actual elements.
   color:#fff!important;
 }
 </style>
+
+
 <style id="farm-left-controls-and-scene-view">
 .farm-left-controls{position:absolute;z-index:40;left:1.25%;top:15.15%;width:14.2%;display:grid;gap:3px;color:#fff}
 .farm-left-controls button,.farm-left-controls select{width:100%;height:30px;border:1px solid rgba(255,255,255,.18);border-radius:9px;background:rgba(255,255,255,.10);color:#fff;font-size:clamp(9px,.72vw,12px);font-weight:850;padding:4px 7px}
@@ -175,6 +194,8 @@ Target the actual elements.
 #world.scene-only .left-panel,#world.scene-only #back,#world.scene-only .farm-left-controls,#world.scene-only .activity,#world.scene-only .discovery,#world.scene-only .challenge,#world.scene-only .live-card{display:none!important}
 #world.scene-only #restorePanel{display:block!important}
 </style>
+
+
 <style id="farm-left-panel-scroll-fix">
 /* Farm left panel: readable fixed-size rows with an internal scrollbar on shorter screens. */
 .left-panel{pointer-events:none!important;}
@@ -208,6 +229,8 @@ Target the actual elements.
   .farm-panel-scroll .discovery{margin-bottom:28px!important;}
 }
 </style>
+
+
 <style id="farm-left-panel-compact-and-return-fix">
 /* Compact the menu rows and keep the Scene View return control outside the hidden menu wrapper. */
 .farm-panel-scroll #back{min-height:60px!important;padding:7px 10px!important;margin-bottom:5px!important;}
@@ -220,6 +243,8 @@ Target the actual elements.
 #restorePanel{left:16px!important;top:16px!important;padding:10px 15px!important;font-size:15px!important;background:rgba(7,31,35,.78)!important;}
 #world.scene-only #restorePanel{display:block!important;}
 </style>
+
+
 <style id="farm-active-button-fix">
 /* Selected menu item follows the user's click instead of Activity 1 staying yellow. */
 .activity.active-choice,.discovery.active-choice,.challenge.active-choice{
@@ -227,11 +252,15 @@ Target the actual elements.
   color:#17212b!important;
 }
 </style>
+
+
 <style id="farm-audio-active-fix">
 /* Audio controls: highlight whichever button was last selected. */
 .live-card .actions button{background:#f6f7fa!important;color:#253047!important;}
 .live-card .actions button.audio-active{background:#ffd45c!important;color:#2b2515!important;}
 </style>
+
+
 <style id="farm-locked-template-final">
 /* LOCKED TALK-A-BEE TEMPLATE:
    Hotspots are live from page load; Discovery is optional.
@@ -250,6 +279,8 @@ Target the actual elements.
   transform:rotate(45deg) translate(-2px,2px);filter:drop-shadow(0 1px 2px rgba(0,0,0,.35));
 }
 </style>
+
+
 <style id="farm-hotspots-hover-only-final">
 /* Always clickable, visually invisible until hover/focus.
    Challenge target may still show when a challenge asks the learner to find it. */
@@ -275,6 +306,8 @@ Target the actual elements.
   box-shadow:0 0 0 7px rgba(255,195,55,.18),0 8px 22px rgba(0,0,0,.20)!important;
 }
 </style>
+
+
 <style id="farm-rv-hotspot-enlarge-only">
 /* RV ONLY — larger clickable/hover target, same center position. */
 #rv{
@@ -283,7 +316,10 @@ Target the actual elements.
   border-radius:24px!important;
 }
 </style>
-<link href="css/common-inline-102fc1d7383d.css" id="talkabee-prev-next-nav-style" rel="stylesheet"/>
+
+
+<link rel="stylesheet" href="css/common-inline-102fc1d7383d.css" id="talkabee-prev-next-nav-style">
+
 <style id="farm-boardwalk-panel-master">
 /* Boardwalk-standard panel transplant — visual shell only. */
 .left-panel{display:none!important}
@@ -305,7 +341,8 @@ Target the actual elements.
 #world.scene-only #restorePanel{display:block!important}
 @media(max-width:900px){.farm-panel-scroll{width:190px!important}}
 </style>
-<link href="css/talkabee-shared-5d2499d81b6e.css" id="talkabee-literal-master-template" rel="stylesheet"/>
+<link rel="stylesheet" href="css/talkabee-shared-5d2499d81b6e.css" id="talkabee-literal-master-template">
+
 <style id="tab-spoken-phrase-readability">
 /* Locked spoken-language phrase treatment: gray field + white type. */
 .tab-master-card #line,
@@ -321,15 +358,23 @@ Target the actual elements.
 .tab-master-card .line *,
 .tab-master-card .words * {color:#fff!important;}
 </style>
-<link href="css/common-inline-a202e810d91a.css" id="talkabee-readable-supporting-text" rel="stylesheet"/>
-<link href="images/PNG/talkabee-favicon.png" rel="icon" type="image/png"/>
-<link href="images/PNG/talkabee-favicon.png" rel="shortcut icon" type="image/png"/>
-<link href="css/common-inline-e41b546ea686.css" id="talkabee-edition-menu-style" rel="stylesheet"/>
-<link href="css/talkabee-shared-ecfa9fc689a3.css" id="talkabee-accessibility-controls-v1" rel="stylesheet"/>
-<link href="css/talkabee-shared-43ddae767bb7.css" id="talkabee-global-card-grab-cursor" rel="stylesheet"/>
+
+<link rel="stylesheet" href="css/common-inline-a202e810d91a.css" id="talkabee-readable-supporting-text">
+
+  <link rel="icon" type="image/png" href="images/PNG/talkabee-favicon.png">
+  <link rel="shortcut icon" type="image/png" href="images/PNG/talkabee-favicon.png">
+
+<link rel="stylesheet" href="css/common-inline-e41b546ea686.css" id="talkabee-edition-menu-style">
+
+<link rel="stylesheet" href="css/talkabee-shared-ecfa9fc689a3.css" id="talkabee-accessibility-controls-v1">
+<link rel="stylesheet" href="css/talkabee-shared-43ddae767bb7.css" id="talkabee-global-card-grab-cursor">
+
 <!-- TALK A BEE HOTSPOTS VISUALLY RECERTIFIED AGAINST CURRENT SCENE ARTWORK: 2026-10-07 -->
 
-<link href="css/common-inline-8492e8692583.css" id="talkabee-bilingual-hotspot-popup-style" rel="stylesheet"/>
+
+
+<link rel="stylesheet" href="css/common-inline-8492e8692583.css" id="talkabee-bilingual-hotspot-popup-style">
+
 <script id="tb-special-challenge-data" type="application/json">{"targets":["dog","horse","cow","sheep","barn","rv"],"labels":["Find the Dog","Find the horse","Find the cow","Find the sheep","Find the Barn","Find the RV Door"]}</script>
 <style id="talkabee-farm-no-challenge-answer-reveal">
 /* Challenge target class remains for answer checking, but never reveals its location. */
@@ -349,12 +394,21 @@ Target the actual elements.
 #world.challenge-mode #farmNextChallenge:hover{background:#ffe8a1!important}
 #world.challenge-mode .live-card .actions{flex-wrap:wrap!important}
 </style>
-</head>
+<style id="farm-panel-readable-20261018">
+.farm-panel-scroll h1{font-size:25px!important;line-height:1.15!important}
+.farm-panel-scroll .label{font-size:14px!important}
+.farm-panel-scroll select,.farm-panel-scroll button,.farm-panel-scroll a{font-size:16px!important;line-height:1.3!important;padding:10px 12px!important}
+.farm-panel-scroll .farm-left-controls select,.farm-panel-scroll .farm-left-controls button{font-size:16px!important;height:auto!important;min-height:44px!important}
+.farm-panel-scroll .activity,.farm-panel-scroll .discovery,.farm-panel-scroll .challenge{font-size:16px!important;min-height:46px!important}
+.farm-panel-scroll #tbPiperPanel{font-size:15px!important}
+.farm-panel-scroll #tbPiperStatus{font-size:14px!important}
+</style>
+<style id="tb-overlay-stepper-repair">#tb-studio-overlay .tb-smallrow{display:grid!important;grid-template-columns:minmax(0,1fr) minmax(0,1fr)!important;gap:12px!important;min-width:0!important}#tb-studio-overlay .tb-smallrow>div{min-width:0!important}#tb-studio-overlay .tb-overlay-stepper{display:grid!important;grid-template-columns:34px minmax(0,1fr) 34px!important;gap:5px!important;align-items:center!important;width:100%!important;max-width:100%!important;min-width:0!important}#tb-studio-overlay .tb-overlay-stepper .tb-overlay-step-button{display:grid!important;place-items:center!important;box-sizing:border-box!important;width:34px!important;min-width:0!important;max-width:34px!important;height:36px!important;min-height:0!important;margin:0!important;padding:0!important;font:700 20px/1 Arial,sans-serif!important;white-space:nowrap!important}#tb-studio-overlay .tb-overlay-stepper .tb-overlay-step-input{box-sizing:border-box!important;width:100%!important;min-width:0!important;max-width:100%!important;height:36px!important;min-height:0!important;margin:0!important;padding:3px!important;text-align:center!important;font:600 14px/1 Arial,sans-serif!important}#tb-studio-overlay{overflow-x:hidden!important}</style></head>
 <body class="">
 <div class="talkabee-editions">
 <details>
 <summary>Explore Adventures ▾</summary>
-<div aria-label="Talk A Bee Editions" class="edition-row" role="navigation">
+<div class="edition-row" role="navigation" aria-label="Talk A Bee Editions">
 <a href="adventures.html">Main Adventures</a>
 <a href="Talk-A-Bee-More-Adventures.html">Community Edition</a>
 <a href="Talk-A-Bee-Directory-3.html">Travel Edition</a>
@@ -364,41 +418,48 @@ Target the actual elements.
 </div>
 </details>
 </div>
-<nav aria-label="Adventure navigation" class="talkabee-prev-next-nav"><a aria-label="Previous page" href="Talk-A-Bee-Hotel-Adventure.html" title="Previous">‹</a><a aria-label="Next page" href="Talk-A-Bee-Boardwalk-Adventure.html" title="Next">›</a></nav>
+
+<nav class="talkabee-prev-next-nav" aria-label="Adventure navigation"><a href="Talk-A-Bee-Hotel-Adventure.html" aria-label="Previous page" title="Previous">‹</a><a href="Talk-A-Bee-Boardwalk-Adventure.html" aria-label="Next page" title="Next">›</a></nav>
+
 <main class="world" id="world">
+
+
 <button id="restorePanel" type="button">Return to Adventure</button>
-<img alt="Animals Farm Adventure" class="scene" src="images/animals-farm-adventure.jpg"/>
-<div aria-hidden="true" class="left-panel"></div>
-<aside aria-label="Animals Farm Adventure controls" class="farm-panel-scroll tab-master-panel" style="width: 175px !important; min-width: 175px !important; max-width: 175px !important; --tab-panel-scale: 0.897;">
+<img class="scene" src="images/animals-farm-adventure.jpg" alt="Animals Farm Adventure">
+<div class="left-panel" aria-hidden="true"></div>
+<aside class="farm-panel-scroll tab-master-panel" aria-label="Animals Farm Adventure controls" style="width: 260px !important; min-width: 260px !important; max-width: 260px !important; --tab-panel-scale: 1.20;">
 <h1>🐝 Animals — Farm Adventure</h1>
-<div aria-label="Activity panel size" class="tab-panel-size-controls"><button class="tab-panel-minus" title="Make activity panel smaller" type="button">−</button><button class="tab-panel-reset" title="Reset activity panel size" type="button">Reset</button><button class="tab-panel-plus" title="Make activity panel larger" type="button">+</button></div>
+<div class="tab-panel-size-controls" aria-label="Activity panel size"><button type="button" class="tab-panel-minus" title="Make activity panel smaller">−</button><button type="button" class="tab-panel-reset" title="Reset activity panel size">Reset</button><button type="button" class="tab-panel-plus" title="Make activity panel larger">+</button></div>
+
 <div class="label">LANGUAGE</div>
 <div class="farm-left-controls">
-<select aria-label="Adventure language" id="adventureLanguage"><option value="es">🇪🇸 Spanish</option><option value="fr">🇫🇷 French</option><option value="en">🇺🇸 English</option><option value="de">🇩🇪 German</option><option value="it">🇮🇹 Italian</option><option value="pt">🇵🇹 Portuguese</option><option value="no">🇳🇴 Norwegian</option></select>
+<select id="adventureLanguage" aria-label="Adventure language"><option value="es">🇪🇸 Spanish</option><option value="fr">🇫🇷 French</option><option value="en">🇺🇸 English</option><option value="de">🇩🇪 German</option><option value="it">🇮🇹 Italian</option><option value="pt">🇵🇹 Portuguese</option><option value="no">🇳🇴 Norwegian</option></select>
 <div class="label">VOICE</div>
-<select aria-label="Adventure voice" id="adventureVoice"><option value="">Browser Default Voice</option><option value="urn:moz-tts:sapi:Microsoft David - English (United States)?en-US">Microsoft David - English (United States) — en-US</option><option value="urn:moz-tts:sapi:Microsoft Mark - English (United States)?en-US">Microsoft Mark - English (United States) — en-US</option><option value="urn:moz-tts:sapi:Microsoft Zira - English (United States)?en-US">Microsoft Zira - English (United States) — en-US</option><option value="urn:moz-tts:sapi:Microsoft David Desktop - English (United States)?en-US">Microsoft David Desktop - English (United States) — en-US</option><option value="urn:moz-tts:sapi:Microsoft Zira Desktop - English (United States)?en-US">Microsoft Zira Desktop - English (United States) — en-US</option></select><div id="tbPiperPanel" style="margin: 10px 0px; padding: 9px; border: 1px solid rgb(168, 178, 189); border-radius: 9px; background: rgba(22, 27, 32, 0.65); color: white; font: 14px Arial, sans-serif;"><label style="display:block;margin-bottom:5px">Voice type <select id="tbPiperMode" style="max-width:100%;color:#111;background:#fff"><option value="standard">Standard</option><option value="enhanced">Enhanced (Piper)</option></select></label><div hidden="" id="tbPiperOptions"><select aria-label="Piper voice" id="tbPiperModel" style="max-width:100%;color:#111;background:#fff"><option value="">Load voice catalog</option></select> <button id="tbPiperLoad" style="color:#111;background:#eee" type="button">Load voice</button></div><div aria-live="polite" id="tbPiperStatus" role="status" style="font-size:12px;margin-top:5px">Standard voice ready.</div></div>
-<button aria-pressed="false" id="sceneView" type="button">◉ Scene View</button>
+<select id="adventureVoice" aria-label="Adventure voice"><option value="">Browser Default Voice</option><option value="urn:moz-tts:sapi:Microsoft David - English (United States)?en-US">Microsoft David - English (United States) — en-US</option><option value="urn:moz-tts:sapi:Microsoft Mark - English (United States)?en-US">Microsoft Mark - English (United States) — en-US</option><option value="urn:moz-tts:sapi:Microsoft Zira - English (United States)?en-US">Microsoft Zira - English (United States) — en-US</option><option value="urn:moz-tts:sapi:Microsoft David Desktop - English (United States)?en-US">Microsoft David Desktop - English (United States) — en-US</option><option value="urn:moz-tts:sapi:Microsoft Zira Desktop - English (United States)?en-US">Microsoft Zira Desktop - English (United States) — en-US</option></select><div id="tbPiperPanel" style="margin: 10px 0px; padding: 9px; border: 1px solid rgb(168, 178, 189); border-radius: 9px; background: rgba(22, 27, 32, 0.65); color: white; font: 14px Arial, sans-serif;"><label style="display:block;margin-bottom:5px">Voice type <select id="tbPiperMode" style="max-width:100%;color:#111;background:#fff"><option value="standard">Standard</option><option value="enhanced">Enhanced (Piper)</option></select></label><div id="tbPiperOptions"><select id="tbPiperModel" aria-label="Piper voice" style="max-width:100%;color:#111;background:#fff"><option value="">Load voice catalog</option></select> <button type="button" id="tbPiperLoad" style="color:#111;background:#eee">Load voice</button></div><div id="tbPiperStatus" role="status" aria-live="polite" style="font-size:12px;margin-top:5px">Piper unavailable: error loading dynamically imported module: file:///C:/Users/wally/Desktop/Talk-A-Bee/piper-matched-118/piper-tts-web.js?voice-switch=1</div></div>
+<button id="sceneView" type="button" aria-pressed="false">◉ Scene View</button>
 </div>
 <div class="label">DISCOVERY</div>
-<button aria-label="Discovery" class="click discovery" data-key="discovery">🔎 Discovery — Click the Scene</button>
+<button class="click discovery" data-key="discovery" aria-label="Discovery">🔎 Discovery — Click the Scene</button>
 <div class="label">ACTIVITIES</div>
-<button aria-label="Activity 1 Friendly Pets" class="click activity a1 active-choice" data-key="pets">1. Friendly Pets</button>
-<button aria-label="Activity 2 Farm Animals" class="click activity a2" data-key="farm">2. Farm Animals</button>
-<button aria-label="Activity 3 Wild Neighbors" class="click activity a3" data-key="wild">3. Wild Neighbors</button>
-<button aria-label="Activity 4 Chickens and Rooster" class="click activity a4" data-key="birds">4. Chickens &amp; Rooster</button>
-<button aria-label="Activity 5 Animals in the Field" class="click activity a5" data-key="field">5. Animals in the Field</button>
-<button aria-label="Activity 6 Animal Actions" class="click activity a6" data-key="actions">6. Animal Actions</button>
+<button class="click activity a1 active-choice" data-key="pets" aria-label="Activity 1 Friendly Pets">1. Friendly Pets</button>
+<button class="click activity a2" data-key="farm" aria-label="Activity 2 Farm Animals">2. Farm Animals</button>
+<button class="click activity a3" data-key="wild" aria-label="Activity 3 Wild Neighbors">3. Wild Neighbors</button>
+<button class="click activity a4" data-key="birds" aria-label="Activity 4 Chickens and Rooster">4. Chickens &amp; Rooster</button>
+<button class="click activity a5" data-key="field" aria-label="Activity 5 Animals in the Field">5. Animals in the Field</button>
+<button class="click activity a6" data-key="actions" aria-label="Activity 6 Animal Actions">6. Animal Actions</button>
 <div class="label">CHALLENGES</div>
-<button aria-label="Challenge 1" class="click challenge c1" data-key="c1">1. Find the Dog</button>
-<button aria-label="Challenge 2" class="click challenge c2" data-key="c2">2. Find the horse</button>
-<button aria-label="Challenge 3" class="click challenge c3" data-key="c3">3. Find the cow</button>
-<button aria-label="Challenge 4" class="click challenge c4" data-key="c4">4. Find the sheep</button>
-<button aria-label="Challenge 5" class="click challenge c5" data-key="c5">5. Find the Barn</button>
-<button aria-label="Challenge 6" class="click challenge c6" data-key="c6">6. Find the RV Door</button>
-<a aria-label="Return to Main Directory" class="click" href="index.html" id="back">← Return to Main Directory</a></aside><div aria-hidden="true" class="script-mask">
-</div><section aria-live="polite" class="live-card tab-master-card" data-moved="1" style="inset: 231.667px auto auto 400.35px !important; transform-origin: left top 0px !important; transform: scale(0.67) !important;"><div aria-label="Script card controls" class="tab-card-tools"><button class="tab-card-drag" title="Move script card" type="button">↕ Move</button><button class="tab-card-font-down" title="Decrease text" type="button">A−</button><button class="tab-card-font-up" title="Increase text" type="button">A+</button><button class="tab-card-reset" title="Reset card" type="button">Reset</button></div><div class="kicker" data-base-font="19px" id="kicker">ACTIVITY 1 • FRIENDLY PETS</div><h1 data-base-font="28px" id="title">Meet Bear by the campfire.</h1><p class="prompt" data-base-font="24px" id="prompt">Listen, repeat, and use the scene to connect the words with what you see.</p><div class="target" data-base-font="28px" id="target">The dog is beside the fire.</div><div class="translation" data-base-font="24px" id="translation"></div><div class="actions"><button class="primary audio-active" data-base-font="19px" id="normal">🔊 Speak</button><button data-base-font="19px" id="slow">🐢 Slow</button><button data-base-font="19px" id="replay">↻ Replay</button><button data-base-font="19px" id="farmNextChallenge" type="button">Next phrase →</button></div><div class="status" id="status"></div><div aria-label="Resize script card" class="tab-card-resize" title="Drag to resize script card">↘</div></section>
-<button class="hotspot" data-es="el caballo" data-name="Horse" id="horse" style="width: 13.28%; height: 12.97%; left: 16.79%; top: 41.71%;"></button><button class="hotspot" data-es="la vaca" data-name="Cow" id="cow" style="left: 33.39%; top: 43.8%; width: 9.85%; height: 6.68%;"></button><button class="hotspot" data-es="la oveja" data-name="Sheep" id="sheep" style="left: 24.85%; top: 51.3%; width: 8.55%; height: 7.23%;"></button><button class="hotspot" data-es="la cabra" data-name="Goat" id="goat" style="left: 27.53%; top: 65.46%; width: 10.63%; height: 14.18%;"></button><button class="hotspot" data-es="el cerdo" data-name="Pig" id="pig" style="left: 15.2%; top: 72.89%; width: 10%; height: 14.92%;"></button><button class="hotspot" data-es="el perro" data-name="Dog" id="dog" style="left: 50.98%; top: 71.07%; width: 10.89%; height: 13.35%;"></button><button class="hotspot" data-es="el gallo" data-name="Rooster" id="rooster" style="width: 4.74%; height: 9.55%; left: 85.04%; top: 62.61%;"></button><button class="hotspot" data-es="la gallina" data-name="Chicken" id="chicken" style="left: 78.69%; top: 68.39%;"></button><button class="hotspot" data-es="el conejo" data-name="Rabbit" id="rabbit" style="width: 8.18%; height: 10.29%; left: 56.57%; top: 92.6%;"></button><button class="hotspot" data-es="la ardilla" data-name="Squirrel" data-sound="sounds/squirrel.mp3" id="squirrel" style="left: 94.98%; top: 47.32%; width: 7.14%; height: 12.6%;"></button><button class="hotspot" data-es="la mariposa" data-name="Butterfly" id="butterfly" style="left: 39.57%; top: 92.06%; width: 7.24%; height: 7.23%;"></button><button class="hotspot" data-es="el granero" data-name="Barn" id="barn" style="width: 7.61%; height: 13.71%; left: 56.35%; top: 38.44%;"></button><button class="hotspot" data-es="el molino de viento" data-name="Windmill" id="windmill" style="left: 63.23%; top: 22.13%; width: 3.81%; height: 12.6%;"></button><button class="hotspot" data-es="la casa rodante" data-name="Fifth-wheel RV" id="rv" style="left: 82.3%; top: 35.19%; width: 15.68%; height: 20.58%;"></button><button class="hotspot" data-es="la fogata" data-name="Campfire" id="campfire" style="left: 63.18%; top: 68.86%; width: 12.35%; height: 13.99%;"></button><button class="hotspot" data-es="la cerca" data-name="Fence" id="fence" style="left: 12.28%; top: 55.74%; width: 3.96%; height: 16.03%;"></button><button class="hotspot" data-es="las flores" data-name="Flowers" id="flowers" style="left: 8.6%; top: 92.17%; width: 10.63%; height: 13.8%;"></button><button class="hotspot" data-es="las montañas" data-name="Mountains" id="mountains" style="width: 15.83%; height: 11.22%; left: 29.15%; top: 19.46%;"></button><button class="hotspot" data-es="el pollito" data-name="Chick" id="chick" style="left: 87.44%; top: 74.31%; width: 5.89%; height: 8.53%;"></button>
-<button aria-label="chicken" class="hotspot" data-sound="sounds/chicken.mp3" data-tb-custom="1" data-tb-de="Huhn" data-tb-en="chicken" data-tb-es="pollo" data-tb-fr="poulet" data-tb-it="pollo" data-tb-no="kylling" data-tb-pt="frango" data-word="chicken" id="chicken-custom" style="left: 95.11%; top: 68.71%; width: 6%; height: 8%;" type="button"></button><button aria-label="solar panel" class="hotspot" data-tb-custom="1" data-tb-de="Solarpanel" data-tb-en="solar panel" data-tb-es="panel solar" data-tb-fr="panneau solaire" data-tb-it="pannello solare" data-tb-no="solcellepanel" data-tb-pt="painel solar" data-word="solar panel" id="solar-panel" style="left: 73.5%; top: 21.9%; width: 6%; height: 8%;" type="button"></button><button aria-label="solar panel" class="hotspot" data-tb-custom="1" data-tb-de="Solarpanel" data-tb-en="solar panel" data-tb-es="panel solar" data-tb-fr="panneau solaire" data-tb-it="pannello solare" data-tb-no="solcellepanel" data-tb-pt="painel solar" data-word="solar panel" id="solar-panel-2" style="left: 85.35%; top: 18.58%; width: 6%; height: 8%;" type="button"></button><button aria-label="window" class="hotspot" data-tb-custom="1" data-tb-de="Fenster" data-tb-en="window" data-tb-es="ventana" data-tb-fr="fenêtre" data-tb-it="finestra" data-tb-no="vindu" data-tb-pt="janela" data-word="window" id="window" style="left: 94.27%; top: 28.47%; width: 6%; height: 8%;" type="button"></button><button aria-label="rear door" class="hotspot" data-tb-custom="1" data-tb-de="Hintertür" data-tb-en="rear door" data-tb-es="puerta trasera" data-tb-fr="porte arrière" data-tb-it="porta posteriore" data-tb-no="bakdør" data-tb-pt="porta traseira" data-word="rear door" id="rear-door" style="left: 70.77%; top: 37.96%; width: 3.29%; height: 9.2%;" type="button"></button><button aria-label="stairs" class="hotspot" data-tb-custom="1" data-tb-de="Treppe" data-tb-en="stairs" data-tb-es="escaleras" data-tb-fr="escaliers" data-tb-it="scale" data-tb-no="trapp" data-tb-pt="escadaria" data-word="stairs" id="stairs" style="left: 79.91%; top: 52.83%; width: 3.29%; height: 10.96%;" type="button"></button><button aria-label="girl" class="hotspot" data-sound="sounds/girl.mp3" data-tb-custom="1" data-tb-de="Mädchen" data-tb-en="girl" data-tb-es="niña" data-tb-fr="fille" data-tb-it="ragazza" data-tb-no="jente" data-tb-pt="menina" data-word="girl" id="girl" style="left: 41.44%; top: 61.17%; width: 5.74%; height: 20.03%;" type="button"></button><button aria-label="boy" class="hotspot" data-sound="sounds/child-laughing.mp3" data-tb-custom="1" data-tb-de="Junge" data-tb-en="boy" data-tb-es="niño" data-tb-fr="garçon" data-tb-it="ragazzo" data-tb-no="gutt" data-tb-pt="menino" data-word="boy" id="boy" style="left: 48.18%; top: 61.59%; width: 4.85%; height: 12.44%;" type="button"></button><button aria-label="field" class="hotspot" data-tb-custom="1" data-tb-de="Feld" data-tb-en="field" data-tb-es="campo" data-tb-fr="champ" data-tb-it="campo" data-tb-no="felt" data-tb-pt="campo" data-word="field" id="field" style="left: 40.79%; top: 39.18%; width: 7.25%; height: 4.76%;" type="button"></button><button aria-label="sunset" class="hotspot" data-tb-custom="1" data-tb-de="Sonnenuntergang" data-tb-en="sunset" data-tb-es="atardecer" data-tb-fr="coucher de soleil" data-tb-it="tramonto" data-tb-no="solnedgang" data-tb-pt="pôr do sol" data-word="sunset" id="sunset" style="left: 53.56%; top: 24.66%; width: 10.95%; height: 5.96%;" type="button"></button></main>
+<button class="click challenge c1" data-key="c1" aria-label="Challenge 1">1. Find the Dog</button>
+<button class="click challenge c2" data-key="c2" aria-label="Challenge 2">2. Find the horse</button>
+<button class="click challenge c3" data-key="c3" aria-label="Challenge 3">3. Find the cow</button>
+<button class="click challenge c4" data-key="c4" aria-label="Challenge 4">4. Find the sheep</button>
+<button class="click challenge c5" data-key="c5" aria-label="Challenge 5">5. Find the Barn</button>
+<button class="click challenge c6" data-key="c6" aria-label="Challenge 6">6. Find the RV Door</button>
+
+<a id="back" class="click" href="index.html" aria-label="Return to Main Directory">← Return to Main Directory</a></aside><div class="script-mask" aria-hidden="true">
+
+</div><section class="live-card tab-master-card" aria-live="polite" data-moved="1" style="inset: 231.667px auto auto 400.35px !important; transform-origin: left top 0px !important; transform: scale(0.67) !important;"><div class="tab-card-tools" aria-label="Script card controls"><button type="button" class="tab-card-drag" title="Move script card">↕ Move</button><button type="button" class="tab-card-font-down" title="Decrease text">A−</button><button type="button" class="tab-card-font-up" title="Increase text">A+</button><button type="button" class="tab-card-reset" title="Reset card">Reset</button></div><div class="kicker" id="kicker" data-base-font="19px">ACTIVITY 1 • FRIENDLY PETS</div><h1 id="title" data-base-font="28px">Meet Bear by the campfire.</h1><p class="prompt" id="prompt" data-base-font="24px">Listen, repeat, and use the scene to connect the words with what you see.</p><div class="target" id="target" data-base-font="28px">The dog is beside the fire.</div><div class="translation" id="translation" data-base-font="24px"></div><div class="actions"><button class="primary audio-active" id="normal" data-base-font="19px">🔊 Speak</button><button id="slow" data-base-font="19px">🐢 Slow</button><button id="replay" data-base-font="19px">↻ Replay</button><button type="button" id="farmNextChallenge" data-base-font="19px">Next phrase →</button></div><div class="status" id="status"></div><div class="tab-card-resize" title="Drag to resize script card" aria-label="Resize script card">↘</div></section>
+<button class="hotspot" id="horse" data-name="Horse" data-es="el caballo" style="width: 13.28%; height: 12.97%; left: 16.79%; top: 41.71%;"></button><button class="hotspot" id="cow" data-name="Cow" data-es="la vaca" style="left: 33.39%; top: 43.8%; width: 9.85%; height: 6.68%;"></button><button class="hotspot" id="sheep" data-name="Sheep" data-es="la oveja" style="left: 24.85%; top: 51.3%; width: 8.55%; height: 7.23%;"></button><button class="hotspot" id="goat" data-name="Goat" data-es="la cabra" style="left: 27.53%; top: 65.46%; width: 10.63%; height: 14.18%;"></button><button class="hotspot" id="pig" data-name="Pig" data-es="el cerdo" style="left: 15.2%; top: 72.89%; width: 10%; height: 14.92%;"></button><button class="hotspot" id="dog" data-name="Dog" data-es="el perro" style="left: 50.98%; top: 71.07%; width: 10.89%; height: 13.35%;"></button><button class="hotspot" id="rooster" data-name="Rooster" data-es="el gallo" style="width: 4.74%; height: 9.55%; left: 85.04%; top: 62.61%;"></button><button class="hotspot" id="chicken" data-name="Chicken" data-es="la gallina" style="left: 78.69%; top: 68.39%;"></button><button class="hotspot" id="rabbit" data-name="Rabbit" data-es="el conejo" style="width: 8.18%; height: 10.29%; left: 56.57%; top: 92.6%;"></button><button class="hotspot" id="squirrel" data-name="Squirrel" data-es="la ardilla" style="left: 94.98%; top: 47.32%; width: 7.14%; height: 12.6%;" data-sound="sounds/squirrel.mp3"></button><button class="hotspot" id="butterfly" data-name="Butterfly" data-es="la mariposa" style="left: 39.57%; top: 92.06%; width: 7.24%; height: 7.23%;"></button><button class="hotspot" id="barn" data-name="Barn" data-es="el granero" style="width: 7.61%; height: 13.71%; left: 56.35%; top: 38.44%;"></button><button class="hotspot" id="windmill" data-name="Windmill" data-es="el molino de viento" style="left: 63.23%; top: 22.13%; width: 3.81%; height: 12.6%;"></button><button class="hotspot" id="rv" data-name="Fifth-wheel RV" data-es="la casa rodante" style="left: 82.3%; top: 35.19%; width: 15.68%; height: 20.58%;"></button><button class="hotspot" id="campfire" data-name="Campfire" data-es="la fogata" style="left: 63.18%; top: 68.86%; width: 12.35%; height: 13.99%;"></button><button class="hotspot" id="fence" data-name="Fence" data-es="la cerca" style="left: 12.28%; top: 55.74%; width: 3.96%; height: 16.03%;"></button><button class="hotspot" id="flowers" data-name="Flowers" data-es="las flores" style="left: 8.6%; top: 92.17%; width: 10.63%; height: 13.8%;"></button><button class="hotspot" id="mountains" data-name="Mountains" data-es="las montañas" style="width: 15.83%; height: 11.22%; left: 29.15%; top: 19.46%;"></button><button class="hotspot" id="chick" data-name="Chick" data-es="el pollito" style="left: 87.44%; top: 74.31%; width: 5.89%; height: 8.53%;"></button>
+<button type="button" class="hotspot" data-word="chicken" id="chicken-custom" aria-label="chicken" data-tb-custom="1" data-tb-en="chicken" data-tb-es="pollo" data-tb-fr="poulet" data-tb-de="Huhn" data-tb-it="pollo" data-tb-pt="frango" data-tb-no="kylling" style="left: 95.11%; top: 68.71%; width: 6%; height: 8%;" data-sound="sounds/chicken.mp3"></button><button type="button" class="hotspot" data-word="solar panel" id="solar-panel" aria-label="solar panel" data-tb-custom="1" data-tb-en="solar panel" data-tb-es="panel solar" data-tb-fr="panneau solaire" data-tb-de="Solarpanel" data-tb-it="pannello solare" data-tb-pt="painel solar" data-tb-no="solcellepanel" style="left: 73.5%; top: 21.9%; width: 6%; height: 8%;"></button><button type="button" class="hotspot" data-word="solar panel" id="solar-panel-2" aria-label="solar panel" data-tb-custom="1" data-tb-en="solar panel" data-tb-es="panel solar" data-tb-fr="panneau solaire" data-tb-de="Solarpanel" data-tb-it="pannello solare" data-tb-pt="painel solar" data-tb-no="solcellepanel" style="left: 85.35%; top: 18.58%; width: 6%; height: 8%;"></button><button type="button" class="hotspot" data-word="window" id="window" aria-label="window" data-tb-custom="1" data-tb-en="window" data-tb-es="ventana" data-tb-fr="fenêtre" data-tb-de="Fenster" data-tb-it="finestra" data-tb-pt="janela" data-tb-no="vindu" style="left: 94.27%; top: 28.47%; width: 6%; height: 8%;"></button><button type="button" class="hotspot" data-word="rear door" id="rear-door" aria-label="rear door" data-tb-custom="1" data-tb-en="rear door" data-tb-es="puerta trasera" data-tb-fr="porte arrière" data-tb-de="Hintertür" data-tb-it="porta posteriore" data-tb-pt="porta traseira" data-tb-no="bakdør" style="left: 70.77%; top: 37.96%; width: 3.29%; height: 9.2%;"></button><button type="button" class="hotspot" data-word="stairs" id="stairs" aria-label="stairs" data-tb-custom="1" data-tb-en="stairs" data-tb-es="escaleras" data-tb-fr="escaliers" data-tb-de="Treppe" data-tb-it="scale" data-tb-pt="escadaria" data-tb-no="trapp" style="left: 79.91%; top: 52.83%; width: 3.29%; height: 10.96%;"></button><button type="button" class="hotspot" data-word="girl" id="girl" aria-label="girl" data-tb-custom="1" data-tb-en="girl" data-tb-es="niña" data-tb-fr="fille" data-tb-de="Mädchen" data-tb-it="ragazza" data-tb-pt="menina" data-tb-no="jente" style="left: 41.44%; top: 61.17%; width: 5.74%; height: 20.03%;" data-sound="sounds/girl.mp3"></button><button type="button" class="hotspot" data-word="boy" id="boy" aria-label="boy" data-tb-custom="1" data-tb-en="boy" data-tb-es="niño" data-tb-fr="garçon" data-tb-de="Junge" data-tb-it="ragazzo" data-tb-pt="menino" data-tb-no="gutt" style="left: 48.18%; top: 61.59%; width: 4.85%; height: 12.44%;" data-sound="sounds/child-laughing.mp3"></button><button type="button" class="hotspot" data-word="field" id="field" aria-label="field" data-tb-custom="1" data-tb-en="field" data-tb-es="campo" data-tb-fr="champ" data-tb-de="Feld" data-tb-it="campo" data-tb-pt="campo" data-tb-no="felt" style="left: 40.79%; top: 39.18%; width: 7.25%; height: 4.76%;"></button><button type="button" class="hotspot" data-word="sunset" id="sunset" aria-label="sunset" data-tb-custom="1" data-tb-en="sunset" data-tb-es="atardecer" data-tb-fr="coucher de soleil" data-tb-de="Sonnenuntergang" data-tb-it="tramonto" data-tb-pt="pôr do sol" data-tb-no="solnedgang" style="left: 53.56%; top: 24.66%; width: 10.95%; height: 5.96%;"></button></main>
 <script>
 const languageData={
 es:{
@@ -624,7 +685,9 @@ showLesson('pets');
  if('speechSynthesis' in window){speechSynthesis.addEventListener&&speechSynthesis.addEventListener('voiceschanged',inclusiveVoices);setTimeout(inclusiveVoices,250);setTimeout(inclusiveVoices,1000)}
 })();
 </script>
-<link href="css/common-inline-0d6913d7d62e.css" id="talkabee-rendered-card-footprint-lock" rel="stylesheet"/>
+
+<link rel="stylesheet" href="css/common-inline-0d6913d7d62e.css" id="talkabee-rendered-card-footprint-lock">
+
 <script id="talkabee-ensure-card-tools">
 (function(){
   const card=document.querySelector('.tab-master-card,.live-card,.script,.card');
@@ -652,12 +715,13 @@ showLesson('pets');
   }
 })();
 </script>
+
 <script id="talkabee-accessibility-controls-script-v1">
 (function(){
  const panel=document.querySelector('.tab-master-panel,.activity-panel,.panel');
  if(panel){
   const minus=panel.querySelector('.tab-panel-minus'),plus=panel.querySelector('.tab-panel-plus'),reset=panel.querySelector('.tab-panel-reset');
-  const KEY='talkabee-global-activity-panel-size',DEFAULT=195,MIN=170,MAX=310,STEP=20;
+  const KEY='talkabee-animals-farm-panel-size',DEFAULT=260,MIN=220,MAX=340,STEP=20;
   const clamp=(n,a,b)=>Math.max(a,Math.min(b,n));
   const apply=(width,save=true)=>{width=clamp(Math.round(Number(width)||DEFAULT),MIN,MAX);const scale=clamp(width/DEFAULT,.88,1.42);panel.style.setProperty('width',width+'px','important');panel.style.setProperty('min-width',width+'px','important');panel.style.setProperty('max-width',width+'px','important');panel.style.setProperty('--tab-panel-scale',scale.toFixed(3));if(save)try{localStorage.setItem(KEY,String(width))}catch(e){}};
   const current=()=>panel.getBoundingClientRect().width||DEFAULT;
@@ -875,6 +939,7 @@ document.addEventListener('click',function(ev){
 })();
 </script>
 
+
 <script id="talkabee-farm-scene-view-reset">
 (function(){
   function resetFarmSceneView(){
@@ -891,6 +956,8 @@ document.addEventListener('click',function(ev){
   window.addEventListener('pageshow',resetFarmSceneView);
 })();
 </script>
+
+
 <script id="talkabee-scene-view-safe-reset">
 (function(){
   function resetTalkABeeSceneView(){
@@ -904,9 +971,25 @@ document.addEventListener('click',function(ev){
   window.addEventListener('pageshow',resetTalkABeeSceneView);
 })();
 </script>
+
 <script id="talkabee-bilingual-hotspot-popup" src="js/talkabee-common-cffcf34e5d12.js"></script>
 
-<div id="tb-legacy-challenge-panel"><div class="drag"><strong>↕ Edit Six Challenges</strong><div>Drag here to move</div></div><label>Challenge</label><select id="tb-lc-number"><option value="0">Challenge 1</option><option value="1">Challenge 2</option><option value="2">Challenge 3</option><option value="3">Challenge 4</option><option value="4">Challenge 5</option><option value="5">Challenge 6</option></select><label>Existing hotspot</label><select id="tb-lc-target"></select><label>Challenge label</label><input id="tb-lc-label"/><button id="tb-lc-apply" type="button">Apply Challenge</button> <button id="tb-lc-close" type="button">Close</button><p aria-live="polite" id="tb-lc-status"></p></div><div class="" id="tb-legacy-challenge-panel"><div class="drag"><strong>↕ Edit Six Challenges</strong><div>Drag here to move</div></div><label>Challenge</label><select id="tb-lc-number"><option value="0">Challenge 1</option><option value="1">Challenge 2</option><option value="2">Challenge 3</option><option value="3">Challenge 4</option><option value="4">Challenge 5</option><option value="5">Challenge 6</option></select><label>Existing hotspot</label><select id="tb-lc-target"><option value="horse">horse</option><option value="cow">cow</option><option value="sheep">sheep</option><option value="goat">goat</option><option value="pig">pig</option><option value="dog">dog</option><option value="rooster">rooster</option><option value="chicken">chicken</option><option value="rabbit">rabbit</option><option value="squirrel">squirrel</option><option value="butterfly">butterfly</option><option value="barn">barn</option><option value="windmill">windmill</option><option value="rv">rv</option><option value="campfire">campfire</option><option value="fence">fence</option><option value="flowers">flowers</option><option value="mountains">mountains</option><option value="chick">chick</option><option value="solar-panel">solar-panel</option><option value="window">window</option><option value="rear-door">rear-door</option><option value="stairs">stairs</option><option value="girl">girl</option><option value="boy">boy</option><option value="field">field</option><option value="sunset">sunset</option></select><label>Challenge label</label><input id="tb-lc-label"/><button id="tb-lc-apply" type="button">Apply Challenge</button> <button id="tb-lc-close" type="button">Close</button><p aria-live="polite" id="tb-lc-status"></p></div>
+<style id="tb-legacy-challenge-style">#tb-legacy-challenge-panel{position:fixed;right:18px;top:16%;width:min(360px,calc(100vw - 24px));max-height:75vh;overflow:auto;z-index:2147483647;background:#17243a;color:white;border:2px solid #c9ad75;border-radius:14px;padding:0 14px 14px;box-shadow:0 12px 35px #0009;font:13px Arial,sans-serif;display:none}#tb-legacy-challenge-panel.open{display:block}#tb-legacy-challenge-panel .drag{padding:12px 14px;margin:0 -14px 12px;background:#354664;border-radius:12px 12px 0 0;cursor:grab;user-select:none;touch-action:none}#tb-legacy-challenge-panel label{display:block;margin:10px 0 4px;font-weight:bold}#tb-legacy-challenge-panel select,#tb-legacy-challenge-panel input{display:block;width:100%;box-sizing:border-box;padding:8px;color:#111;background:#fff;border:1px solid #aaa;border-radius:7px}#tb-legacy-challenge-panel button{padding:8px;margin-top:12px;background:#101827;color:white;border:1px solid white;border-radius:8px;cursor:pointer}</style>
+<script id="tb-legacy-challenge-editor-script">
+(()=>{
+const bar=document.getElementById('tb-hs-editor');if(!bar||!window.tbSpecialChallengeGet)return;
+const b=document.createElement('button');b.type='button';b.textContent='Edit Challenges';b.id='tb-legacy-challenge-open';b.style.display='none';bar.appendChild(b);
+const panel=document.createElement('div');panel.id='tb-legacy-challenge-panel';panel.innerHTML='<div class="drag"><strong>↕ Edit Six Challenges</strong><div>Drag here to move</div></div><label>Challenge</label><select id="tb-lc-number"></select><label>Existing hotspot</label><select id="tb-lc-target"></select><label>Challenge label</label><input id="tb-lc-label"><button type="button" id="tb-lc-apply">Apply Challenge</button> <button type="button" id="tb-lc-close">Close</button><p id="tb-lc-status" aria-live="polite"></p>';document.body.appendChild(panel);
+const num=panel.querySelector('#tb-lc-number'),target=panel.querySelector('#tb-lc-target'),label=panel.querySelector('#tb-lc-label'),status=panel.querySelector('#tb-lc-status');
+for(let i=0;i<6;i++)num.add(new Option('Challenge '+(i+1),i));
+function fill(){const d=window.tbSpecialChallengeGet(),i=+num.value;target.replaceChildren();const found=new Set();document.querySelectorAll(window.tbSpecialChallengeSelector).forEach(el=>{const k=el.id||el.dataset.word||el.dataset.object||el.dataset.key;if(k&&!found.has(k)){found.add(k);target.add(new Option(k,k))}});target.value=d.targets[i];label.value=d.labels[i]||d.targets[i];status.textContent=found.has(d.targets[i])?'':'Current target is missing; choose an existing hotspot.'}
+num.onchange=fill;b.onclick=()=>{panel.classList.toggle('open');if(panel.classList.contains('open'))fill()};panel.querySelector('#tb-lc-close').onclick=()=>panel.classList.remove('open');
+panel.querySelector('#tb-lc-apply').onclick=()=>{if(!target.value){status.textContent='Choose an existing hotspot.';return}const d=window.tbSpecialChallengeGet(),i=+num.value;d.targets[i]=target.value;d.labels[i]=label.value.trim()||target.value;window.tbSpecialChallengeSet(d);status.textContent='Challenge updated. Save Working HTML to keep the change.'};
+const observer=new MutationObserver(()=>{const editing=document.body.classList.contains('tb-hs-editing');b.style.display=editing?'':'none';if(!editing)panel.classList.remove('open')});observer.observe(document.body,{attributes:true,attributeFilter:['class']});
+const handle=panel.querySelector('.drag');let drag=null;handle.addEventListener('pointerdown',e=>{if(e.button!==0)return;e.preventDefault();const r=panel.getBoundingClientRect();panel.style.left=r.left+'px';panel.style.top=r.top+'px';panel.style.right='auto';drag={x:e.clientX,y:e.clientY,l:r.left,t:r.top};handle.setPointerCapture(e.pointerId)});handle.addEventListener('pointermove',e=>{if(!drag)return;panel.style.left=Math.max(0,Math.min(innerWidth-60,drag.l+e.clientX-drag.x))+'px';panel.style.top=Math.max(0,Math.min(innerHeight-50,drag.t+e.clientY-drag.y))+'px'});handle.addEventListener('pointerup',()=>drag=null);handle.addEventListener('pointercancel',()=>drag=null);
+})();
+</script><div id="tb-legacy-challenge-panel"><div class="drag"><strong>↕ Edit Six Challenges</strong><div>Drag here to move</div></div><label>Challenge</label><select id="tb-lc-number"><option value="0">Challenge 1</option><option value="1">Challenge 2</option><option value="2">Challenge 3</option><option value="3">Challenge 4</option><option value="4">Challenge 5</option><option value="5">Challenge 6</option></select><label>Existing hotspot</label><select id="tb-lc-target"></select><label>Challenge label</label><input id="tb-lc-label"><button type="button" id="tb-lc-apply">Apply Challenge</button> <button type="button" id="tb-lc-close">Close</button><p id="tb-lc-status" aria-live="polite"></p></div><div id="tb-legacy-challenge-panel"><div class="drag"><strong>↕ Edit Six Challenges</strong><div>Drag here to move</div></div><label>Challenge</label><select id="tb-lc-number"><option value="0">Challenge 1</option><option value="1">Challenge 2</option><option value="2">Challenge 3</option><option value="3">Challenge 4</option><option value="4">Challenge 5</option><option value="5">Challenge 6</option></select><label>Existing hotspot</label><select id="tb-lc-target"></select><label>Challenge label</label><input id="tb-lc-label"><button type="button" id="tb-lc-apply">Apply Challenge</button> <button type="button" id="tb-lc-close">Close</button><p id="tb-lc-status" aria-live="polite"></p></div><div id="tb-legacy-challenge-panel" class=""><div class="drag"><strong>↕ Edit Six Challenges</strong><div>Drag here to move</div></div><label>Challenge</label><select id="tb-lc-number"><option value="0">Challenge 1</option><option value="1">Challenge 2</option><option value="2">Challenge 3</option><option value="3">Challenge 4</option><option value="4">Challenge 5</option><option value="5">Challenge 6</option></select><label>Existing hotspot</label><select id="tb-lc-target"><option value="horse">horse</option><option value="cow">cow</option><option value="sheep">sheep</option><option value="goat">goat</option><option value="pig">pig</option><option value="dog">dog</option><option value="rooster">rooster</option><option value="chicken">chicken</option><option value="rabbit">rabbit</option><option value="squirrel">squirrel</option><option value="butterfly">butterfly</option><option value="barn">barn</option><option value="windmill">windmill</option><option value="rv">rv</option><option value="campfire">campfire</option><option value="fence">fence</option><option value="flowers">flowers</option><option value="mountains">mountains</option><option value="chick">chick</option><option value="solar-panel">solar-panel</option><option value="window">window</option><option value="rear-door">rear-door</option><option value="stairs">stairs</option><option value="girl">girl</option><option value="boy">boy</option><option value="field">field</option><option value="sunset">sunset</option></select><label>Challenge label</label><input id="tb-lc-label"><button type="button" id="tb-lc-apply">Apply Challenge</button> <button type="button" id="tb-lc-close">Close</button><p id="tb-lc-status" aria-live="polite"></p></div>
+
 <style id="talkabee-farm-approved-card-20261010">
 /* Match the approved later Adventures; Farm challenge and hotspot logic stays intact. */
 @media(min-width:761px){
@@ -956,11 +1039,13 @@ document.addEventListener('click',function(ev){
  .live-card.tab-master-card .actions button{flex:1 1 42%!important;font-size:17px!important;}
 }
 </style>
-<link data-tb-shared-studio="1" href="css/talkabee-editing-studio.css" rel="stylesheet"/>
-<!-- Talk A Bee Editing Studio pilot: isolated from Adventure lesson/challenge logic. -->
-<button id="tb-studio-launch" style="" type="button">✦ Editing Studio</button>
 
-<script id="tb-overlay-data" type="application/json">[{"id":"overlay-1792134092668-9u9rm","src":"images/png/bee-sitting-looking-left.png","x":72.96874642372131,"y":15.277775393591986,"w":7.5,"rotation":-10,"z":1,"plane":"front"}]</script>
+<!-- Talk A Bee Editing Studio pilot: isolated from Adventure lesson/challenge logic. -->
+
+
+
+<script type="application/json" id="tb-overlay-data">[{"id":"overlay-1792134092668-9u9rm","src":"images/png/bee-sitting-looking-left.png","x":72.96874642372131,"y":15.277775393591986,"w":7.5,"rotation":-10,"z":1,"plane":"front"}]</script><style id="tb-overlay-public-style">#world>.tab-master-card,#world>.card{position:relative;z-index:2147483007!important}#tb-overlay-layer,#tb-overlay-back-layer{position:absolute;inset:0;pointer-events:none}#tb-overlay-layer{z-index:2147483008}#tb-overlay-back-layer{z-index:2147483006}#tb-overlay-layer img,#tb-overlay-back-layer img{position:absolute;pointer-events:none;user-select:none;transform-origin:center;object-fit:contain}</style><script id="tb-overlay-public-runtime">(function(){const scene=document.getElementById('world'),data=document.getElementById('tb-overlay-data');if(!scene||!data)return;let items=[];try{items=JSON.parse(data.textContent||'[]')}catch(e){}const back=document.createElement('div');back.id='tb-overlay-back-layer';scene.appendChild(back);const layer=document.createElement('div');layer.id='tb-overlay-layer';scene.appendChild(layer);items.forEach(o=>{if(!o||typeof o.src!=='string')return;const im=document.createElement('img');im.src=o.src;im.alt='';im.draggable=false;im.style.left=Number(o.x||0)+'%';im.style.top=Number(o.y||0)+'%';im.style.width=Number(o.w||12)+'%';im.style.transform='rotate('+Number(o.rotation||0)+'deg)';im.style.zIndex=String(Number(o.z||1));(o.plane==='back'?back:layer).appendChild(im)})})();</script>
+
 
 <script id="talkabee-farm-restore-enhanced-voice">
 /* Restore an existing Piper choice before the shared controller initializes.
