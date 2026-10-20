@@ -575,7 +575,16 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
       }
     ],
     "overlays": [],
-    "challenges": []
+    "challenges": [
+      {
+        "prompt": "Find the Ferry",
+        "target": "ferry"
+      },
+      {
+        "prompt": "Find the Mountain",
+        "target": "mountain"
+      }
+    ]
   },
   "dinosaur-museum": {
     "title": "Dinosaur Museum",
@@ -867,7 +876,32 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
       }
     ],
     "overlays": [],
-    "challenges": []
+    "challenges": [
+      {
+        "prompt": "Find the T. rex",
+        "target": "trex"
+      },
+      {
+        "prompt": "Find the Triceratops",
+        "target": "triceratops"
+      },
+      {
+        "prompt": "Find the Stegosaurus",
+        "target": "stegosaurus"
+      },
+      {
+        "prompt": "Find the Pterosaur",
+        "target": "pterosaur"
+      },
+      {
+        "prompt": "Find the Dinosaur Eggs",
+        "target": "eggs"
+      },
+      {
+        "prompt": "Find the Footprints",
+        "target": "footprints"
+      }
+    ]
   },
   "nighttime-campground": {
     "title": "Nighttime Campground",
@@ -1334,7 +1368,28 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
         "z": 1
       }
     ],
-    "challenges": []
+    "challenges": [
+      {
+        "prompt": "Find the Campfire",
+        "target": "fire"
+      },
+      {
+        "prompt": "Find the RV",
+        "target": "rv"
+      },
+      {
+        "prompt": "Find the Tent",
+        "target": "tent"
+      },
+      {
+        "prompt": "Find the Moon",
+        "target": "moon"
+      },
+      {
+        "prompt": "Find the Raccoon",
+        "target": "raccoon"
+      }
+    ]
   },
   "grandma-grandpas-place": {
     "title": "Grandma & Grandpas Place",
@@ -1483,12 +1538,158 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
       }
     ],
     "overlays": [],
-    "challenges": []
+    "challenges": [
+      {
+        "prompt": "Find the rv",
+        "target": "rv"
+      },
+      {
+        "prompt": "Find the birdhouse",
+        "target": "birdhouse"
+      },
+      {
+        "prompt": "Find the dog",
+        "target": "dog"
+      }
+    ]
   },
   "underwater-adventure": {
     "title": "Underwater Adventure",
     "image": "images/Talk-A-Bee-Underwater-Adventure.jpg",
-    "lessons": [],
+    "lessons": [
+      {
+        "text": "Grandma and Grandpa are scuba diving together.",
+        "translations": {
+          "es": "La abuela y el abuelo están buceando juntos.",
+          "fr": "Grand-mère et grand-père font de la plongée ensemble.",
+          "de": "Oma und Opa tauchen zusammen.",
+          "it": "La nonna e il nonno fanno immersioni insieme.",
+          "pt": "A avó e o avô estão mergulhando juntos.",
+          "no": "Bestemor og bestefar dykker sammen."
+        }
+      },
+      {
+        "text": "They breathe through regulators and explore the reef.",
+        "translations": {
+          "es": "Respiran por reguladores y exploran el arrecife.",
+          "fr": "Ils respirent avec leurs détendeurs et explorent le récif.",
+          "de": "Sie atmen durch Atemregler und erkunden das Riff.",
+          "it": "Respirano con gli erogatori ed esplorano la barriera.",
+          "pt": "Eles respiram pelos reguladores e exploram o recife.",
+          "no": "De puster gjennom regulatorer og utforsker revet."
+        }
+      },
+      {
+        "text": "The coral reef is full of color and life.",
+        "translations": {
+          "es": "El arrecife de coral está lleno de color y vida.",
+          "fr": "Le récif corallien est plein de couleurs et de vie.",
+          "de": "Das Korallenriff ist voller Farben und Leben.",
+          "it": "La barriera corallina è piena di colori e vita.",
+          "pt": "O recife de coral está cheio de cor e vida.",
+          "no": "Korallrevet er fullt av farger og liv."
+        }
+      },
+      {
+        "text": "Coral gives many sea animals a place to live.",
+        "translations": {
+          "es": "El coral da hogar a muchos animales marinos.",
+          "fr": "Le corail abrite de nombreux animaux marins.",
+          "de": "Korallen bieten vielen Meerestieren ein Zuhause.",
+          "it": "Il corallo offre una casa a molti animali marini.",
+          "pt": "O coral oferece abrigo a muitos animais marinhos.",
+          "no": "Koraller gir mange sjødyr et sted å bo."
+        }
+      },
+      {
+        "text": "Tropical fish swim all around the reef.",
+        "translations": {
+          "es": "Los peces tropicales nadan alrededor del arrecife.",
+          "fr": "Les poissons tropicaux nagent autour du récif.",
+          "de": "Tropische Fische schwimmen rund um das Riff.",
+          "it": "I pesci tropicali nuotano intorno alla barriera.",
+          "pt": "Peixes tropicais nadam ao redor do recife.",
+          "no": "Tropiske fisk svømmer rundt revet."
+        }
+      },
+      {
+        "text": "Look for the clownfish and the pufferfish.",
+        "translations": {
+          "es": "Busca el pez payaso y el pez globo.",
+          "fr": "Cherche le poisson-clown et le poisson-globe.",
+          "de": "Suche den Clownfisch und den Kugelfisch.",
+          "it": "Cerca il pesce pagliaccio e il pesce palla.",
+          "pt": "Procure o peixe-palhaço e o baiacu.",
+          "no": "Se etter klovnefisken og kulefisken."
+        }
+      },
+      {
+        "text": "A shark, turtle, eel, octopus, and dolphins share the sea.",
+        "translations": {
+          "es": "Un tiburón, una tortuga, una morena, un pulpo y delfines comparten el mar.",
+          "fr": "Un requin, une tortue, une murène, une pieuvre et des dauphins partagent la mer.",
+          "de": "Ein Hai, eine Schildkröte, eine Muräne, ein Oktopus und Delfine teilen sich das Meer.",
+          "it": "Uno squalo, una tartaruga, una murena, un polpo e i delfini condividono il mare.",
+          "pt": "Um tubarão, uma tartaruga, uma moreia, um polvo e golfinhos compartilham o mar.",
+          "no": "En hai, en skilpadde, en murene, en blekksprut og delfiner deler havet."
+        }
+      },
+      {
+        "text": "Each animal moves through the water in a different way.",
+        "translations": {
+          "es": "Cada animal se mueve por el agua de una manera diferente.",
+          "fr": "Chaque animal se déplace différemment dans l'eau.",
+          "de": "Jedes Tier bewegt sich anders durch das Wasser.",
+          "it": "Ogni animale si muove nell'acqua in modo diverso.",
+          "pt": "Cada animal se move pela água de uma maneira diferente.",
+          "no": "Hvert dyr beveger seg gjennom vannet på sin egen måte."
+        }
+      },
+      {
+        "text": "The divers wear masks, scuba tanks, and fins.",
+        "translations": {
+          "es": "Los buzos llevan máscaras, tanques de buceo y aletas.",
+          "fr": "Les plongeurs portent des masques, des bouteilles et des palmes.",
+          "de": "Die Taucher tragen Masken, Tauchflaschen und Flossen.",
+          "it": "I sub indossano maschere, bombole e pinne.",
+          "pt": "Os mergulhadores usam máscaras, cilindros e nadadeiras.",
+          "no": "Dykkerne bruker masker, dykkeflasker og svømmeføtter."
+        }
+      },
+      {
+        "text": "Scuba gear helps people explore underwater.",
+        "translations": {
+          "es": "El equipo de buceo ayuda a explorar bajo el agua.",
+          "fr": "L'équipement de plongée aide à explorer sous l'eau.",
+          "de": "Tauchausrüstung hilft Menschen, die Unterwasserwelt zu erkunden.",
+          "it": "L'attrezzatura da sub aiuta a esplorare sott'acqua.",
+          "pt": "O equipamento de mergulho ajuda as pessoas a explorar debaixo d'água.",
+          "no": "Dykkerutstyr hjelper mennesker med å utforske under vann."
+        }
+      },
+      {
+        "text": "Sunlight shines through the clear tropical water.",
+        "translations": {
+          "es": "La luz del sol brilla a través del agua tropical.",
+          "fr": "La lumière du soleil traverse l'eau tropicale claire.",
+          "de": "Sonnenlicht scheint durch das klare tropische Wasser.",
+          "it": "La luce del sole attraversa l'acqua tropicale limpida.",
+          "pt": "A luz do sol atravessa a água tropical clara.",
+          "no": "Sollyset skinner gjennom det klare tropiske vannet."
+        }
+      },
+      {
+        "text": "The underwater world is busy, bright, and beautiful.",
+        "translations": {
+          "es": "El mundo submarino es activo, brillante y hermoso.",
+          "fr": "Le monde sous-marin est vivant, lumineux et magnifique.",
+          "de": "Die Unterwasserwelt ist lebendig, hell und wunderschön.",
+          "it": "Il mondo sottomarino è vivace, luminoso e bellissimo.",
+          "pt": "O mundo subaquático é movimentado, brilhante e bonito.",
+          "no": "Undervannsverdenen er travel, lys og vakker."
+        }
+      }
+    ],
     "hotspots": [
       {
         "id": "dolphin",
@@ -1672,7 +1873,28 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
       }
     ],
     "overlays": [],
-    "challenges": []
+    "challenges": [
+      {
+        "prompt": "Find the Shark",
+        "target": "shark"
+      },
+      {
+        "prompt": "Find the Sea Turtle",
+        "target": "turtle"
+      },
+      {
+        "prompt": "Find the Starfish",
+        "target": "starfish"
+      },
+      {
+        "prompt": "Find the Moray Eel",
+        "target": "eel"
+      },
+      {
+        "prompt": "Find the Octopus",
+        "target": "octopus"
+      }
+    ]
   },
   "mountain-ski-resort": {
     "title": "Mountain Ski Resort",
@@ -1994,7 +2216,28 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
       }
     ],
     "overlays": [],
-    "challenges": []
+    "challenges": [
+      {
+        "prompt": "Find the Chairlift",
+        "target": "chairlift"
+      },
+      {
+        "prompt": "Find the Skis",
+        "target": "skis"
+      },
+      {
+        "prompt": "Find Grandma",
+        "target": "grandma"
+      },
+      {
+        "prompt": "Find Grandpa",
+        "target": "grandpa"
+      },
+      {
+        "prompt": "Find the Fire Pit",
+        "target": "firepit"
+      }
+    ]
   },
   "airplane-flying": {
     "title": "Airplane Flying",
@@ -2316,7 +2559,32 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
       }
     ],
     "overlays": [],
-    "challenges": []
+    "challenges": [
+      {
+        "prompt": "Find the Throttle",
+        "target": "throttle"
+      },
+      {
+        "prompt": "Find the Headset",
+        "target": "headset"
+      },
+      {
+        "prompt": "Find the Mountain",
+        "target": "mountain"
+      },
+      {
+        "prompt": "Find the Ferry",
+        "target": "ferry"
+      },
+      {
+        "prompt": "Find the Bee",
+        "target": "bee"
+      },
+      {
+        "prompt": "Find the Captain",
+        "target": "wing"
+      }
+    ]
   },
   "zoo": {
     "title": "Zoo",
@@ -2668,7 +2936,28 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
       }
     ],
     "overlays": [],
-    "challenges": []
+    "challenges": [
+      {
+        "prompt": "Find the Elephant",
+        "target": "elephant"
+      },
+      {
+        "prompt": "Find the Lion",
+        "target": "lion"
+      },
+      {
+        "prompt": "Find the Zebra",
+        "target": "zebra"
+      },
+      {
+        "prompt": "Find the Penguins",
+        "target": "penguins"
+      },
+      {
+        "prompt": "Find the Parrot",
+        "target": "parrot"
+      }
+    ]
   },
   "great-wall-of-china": {
     "title": "Great Wall of China",
@@ -2950,7 +3239,32 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
       }
     ],
     "overlays": [],
-    "challenges": []
+    "challenges": [
+      {
+        "prompt": "Find a Watchtower",
+        "target": "watchtower"
+      },
+      {
+        "prompt": "Find the Hot-Air Balloons",
+        "target": "balloons"
+      },
+      {
+        "prompt": "Find the Eagle",
+        "target": "eagle"
+      },
+      {
+        "prompt": "Find the Squirrel",
+        "target": "squirrel"
+      },
+      {
+        "prompt": "Find the Bee",
+        "target": "bee"
+      },
+      {
+        "prompt": "Find the River",
+        "target": "river"
+      }
+    ]
   },
   "hollywood-movie-making": {
     "title": "Hollywood Movie Making",
@@ -3352,7 +3666,32 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
       }
     ],
     "overlays": [],
-    "challenges": []
+    "challenges": [
+      {
+        "prompt": "Find the Movie Camera",
+        "target": "camera"
+      },
+      {
+        "prompt": "Find the Boom Microphone",
+        "target": "boommic"
+      },
+      {
+        "prompt": "Find the Stunt Car",
+        "target": "stuntcar"
+      },
+      {
+        "prompt": "Find the Green Screen",
+        "target": "greenscreen"
+      },
+      {
+        "prompt": "Find the Director's Chair",
+        "target": "directorchair"
+      },
+      {
+        "prompt": "Find the Bee",
+        "target": "bee"
+      }
+    ]
   },
   "hang-gliding": {
     "title": "Hang Gliding",
@@ -3694,7 +4033,32 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
       }
     ],
     "overlays": [],
-    "challenges": []
+    "challenges": [
+      {
+        "prompt": "Find the Eagle",
+        "target": "eagle"
+      },
+      {
+        "prompt": "Find the Waterfall",
+        "target": "waterfall"
+      },
+      {
+        "prompt": "Find the Train",
+        "target": "train"
+      },
+      {
+        "prompt": "Find the RV",
+        "target": "rv"
+      },
+      {
+        "prompt": "Find the Deer",
+        "target": "deer"
+      },
+      {
+        "prompt": "Find the Bee",
+        "target": "bee"
+      }
+    ]
   },
   "seattle-fishing-charter": {
     "title": "Seattle Fishing Charter",
@@ -4036,7 +4400,32 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
       }
     ],
     "overlays": [],
-    "challenges": []
+    "challenges": [
+      {
+        "prompt": "Find the Orca",
+        "target": "orca"
+      },
+      {
+        "prompt": "Find the Dolphin",
+        "target": "dolphin"
+      },
+      {
+        "prompt": "Find the Space Needle",
+        "target": "spaceneedle"
+      },
+      {
+        "prompt": "Find Mount Rainier",
+        "target": "rainier"
+      },
+      {
+        "prompt": "Find the Dog",
+        "target": "dog"
+      },
+      {
+        "prompt": "Find the Bee",
+        "target": "bee"
+      }
+    ]
   },
   "train-engineer": {
     "title": "Train Engineer",
@@ -4378,7 +4767,28 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
       }
     ],
     "overlays": [],
-    "challenges": []
+    "challenges": [
+      {
+        "prompt": "Find the Train Bell",
+        "target": "bell"
+      },
+      {
+        "prompt": "Find the Waterfall",
+        "target": "waterfall"
+      },
+      {
+        "prompt": "Find the Water Tower",
+        "target": "crossing"
+      },
+      {
+        "prompt": "Find the Forest",
+        "target": "bison"
+      },
+      {
+        "prompt": "Find the locomotive",
+        "target": "eagle"
+      }
+    ]
   },
   "cave-exploration": {
     "title": "Cave Exploration",
@@ -4720,7 +5130,32 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
       }
     ],
     "overlays": [],
-    "challenges": []
+    "challenges": [
+      {
+        "prompt": "Find the Stalactites",
+        "target": "stalactites"
+      },
+      {
+        "prompt": "Find the Stalagmites",
+        "target": "stalagmites"
+      },
+      {
+        "prompt": "Find the Bats",
+        "target": "bats"
+      },
+      {
+        "prompt": "Find the Pool",
+        "target": "waterfall"
+      },
+      {
+        "prompt": "Find the Cave Passage",
+        "target": "headlamp"
+      },
+      {
+        "prompt": "Find the Water Reflection",
+        "target": "bee"
+      }
+    ]
   },
   "bicycle-race": {
     "title": "Bicycle Race",
@@ -5052,7 +5487,28 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
       }
     ],
     "overlays": [],
-    "challenges": []
+    "challenges": [
+      {
+        "prompt": "Find the Start Gate Sign",
+        "target": "startline"
+      },
+      {
+        "prompt": "Find a Helmet",
+        "target": "helmet"
+      },
+      {
+        "prompt": "Find the Spectators",
+        "target": "trailsign"
+      },
+      {
+        "prompt": "Find the Lake",
+        "target": "lake"
+      },
+      {
+        "prompt": "Find the Forest",
+        "target": "official"
+      }
+    ]
   },
   "softball": {
     "title": "Softball",
@@ -5404,7 +5860,28 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
       }
     ],
     "overlays": [],
-    "challenges": []
+    "challenges": [
+      {
+        "prompt": "Find the Softball",
+        "target": "softball"
+      },
+      {
+        "prompt": "Find the Spectators",
+        "target": "batter"
+      },
+      {
+        "prompt": "Find the Catcher",
+        "target": "catcher"
+      },
+      {
+        "prompt": "Find the Scoreboard",
+        "target": "scoreboard"
+      },
+      {
+        "prompt": "Find Home Plate",
+        "target": "homeplate"
+      }
+    ]
   },
   "football": {
     "title": "Football",
@@ -5726,7 +6203,32 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
       }
     ],
     "overlays": [],
-    "challenges": []
+    "challenges": [
+      {
+        "prompt": "Find the Bee Quarterback",
+        "target": "bee"
+      },
+      {
+        "prompt": "Find the Football",
+        "target": "football"
+      },
+      {
+        "prompt": "Find the Referee",
+        "target": "referee"
+      },
+      {
+        "prompt": "Find the Scoreboard",
+        "target": "scoreboard"
+      },
+      {
+        "prompt": "Find the Lake",
+        "target": "lake"
+      },
+      {
+        "prompt": "Find the Red Defender",
+        "target": "defender"
+      }
+    ]
   },
   "college-rowing": {
     "title": "College Rowing",
@@ -6048,7 +6550,24 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
       }
     ],
     "overlays": [],
-    "challenges": []
+    "challenges": [
+      {
+        "prompt": "Find the Buoys",
+        "target": "shell"
+      },
+      {
+        "prompt": "Find the Red Crew",
+        "target": "redcrew"
+      },
+      {
+        "prompt": "Find the flag",
+        "target": "banner"
+      },
+      {
+        "prompt": "Find the Sailboat",
+        "target": "sailboat"
+      }
+    ]
   },
   "boat-locks": {
     "title": "Boat Locks",
@@ -6390,7 +6909,32 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
       }
     ],
     "overlays": [],
-    "challenges": []
+    "challenges": [
+      {
+        "prompt": "Find Captain Bee",
+        "target": "bee"
+      },
+      {
+        "prompt": "Find the Lock Gate",
+        "target": "lockgate"
+      },
+      {
+        "prompt": "Find the locks water",
+        "target": "bollard"
+      },
+      {
+        "prompt": "Find the Ladder",
+        "target": "ladder"
+      },
+      {
+        "prompt": "Find the Seagull",
+        "target": "seagull"
+      },
+      {
+        "prompt": "Find the Boat Behind Us",
+        "target": "boatbehind"
+      }
+    ]
   },
   "skydiving": {
     "title": "Skydiving",
@@ -6722,7 +7266,28 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
       }
     ],
     "overlays": [],
-    "challenges": []
+    "challenges": [
+      {
+        "prompt": "Find the Instructor",
+        "target": "airplane"
+      },
+      {
+        "prompt": "Find a Helmet",
+        "target": "helmet"
+      },
+      {
+        "prompt": "Find the Goggles",
+        "target": "parachute"
+      },
+      {
+        "prompt": "Find the Mountain",
+        "target": "mountain"
+      },
+      {
+        "prompt": "Find the door",
+        "target": "lake"
+      }
+    ]
   },
   "dog-show": {
     "title": "Dog Show",
@@ -7034,7 +7599,28 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
       }
     ],
     "overlays": [],
-    "challenges": []
+    "challenges": [
+      {
+        "prompt": "Find the Golden Retriever",
+        "target": "golden"
+      },
+      {
+        "prompt": "Find the Dalmatian",
+        "target": "dalmatian"
+      },
+      {
+        "prompt": "Find the German Shepherd",
+        "target": "shepherd"
+      },
+      {
+        "prompt": "Find the Dog Show Banner",
+        "target": "banner"
+      },
+      {
+        "prompt": "Find the Border Collie",
+        "target": "audience"
+      }
+    ]
   },
   "river-rafting": {
     "title": "River Rafting",
@@ -7276,7 +7862,16 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
       }
     ],
     "overlays": [],
-    "challenges": []
+    "challenges": [
+      {
+        "prompt": "Find the Forest",
+        "target": "paddle"
+      },
+      {
+        "prompt": "Find the River",
+        "target": "rapids"
+      }
+    ]
   },
   "golf": {
     "title": "Golf",
@@ -7618,12 +8213,158 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
       }
     ],
     "overlays": [],
-    "challenges": []
+    "challenges": [
+      {
+        "prompt": "Find the Golf Ball",
+        "target": "ball"
+      },
+      {
+        "prompt": "Find the Fairway",
+        "target": "flag"
+      },
+      {
+        "prompt": "Find the Waterfall",
+        "target": "waterfall"
+      }
+    ]
   },
   "hot-air-balloon": {
     "title": "Hot Air Balloon",
     "image": "images/Talk-A-Bee-Hot-Air-Balloon-Festival-Adventure.jpg",
-    "lessons": [],
+    "lessons": [
+      {
+        "text": "Grandma, Grandpa, the children, and Bee are riding together in a hot air balloon basket.",
+        "translations": {
+          "es": "La abuela, el abuelo, los niños y la abeja viajan juntos en la cesta de un globo aerostático.",
+          "fr": "Grand-mère, grand-père, les enfants et l'abeille voyagent ensemble dans la nacelle d'une montgolfière.",
+          "de": "Oma, Opa, die Kinder und die Biene fahren gemeinsam in einem Heißluftballonkorb.",
+          "it": "La nonna, il nonno, i bambini e l'ape viaggiano insieme nel cesto di una mongolfiera.",
+          "pt": "A avó, o avô, as crianças e a abelha viajam juntos no cesto de um balão de ar quente.",
+          "no": "Bestemor, bestefar, barna og bien flyr sammen i kurven på en varmluftballong."
+        }
+      },
+      {
+        "text": "From high above the festival, the crew can see the lake, mountains, forests, and balloons all around them.",
+        "translations": {
+          "es": "Desde lo alto del festival pueden ver el lago, las montañas, los bosques y los globos a su alrededor.",
+          "fr": "Au-dessus du festival, ils voient le lac, les montagnes, les forêts et les ballons tout autour.",
+          "de": "Hoch über dem Festival sehen sie den See, die Berge, Wälder und viele Ballons.",
+          "it": "Dall'alto del festival possono vedere il lago, le montagne, i boschi e le mongolfiere intorno a loro.",
+          "pt": "Do alto do festival, eles podem ver o lago, as montanhas, as florestas e os balões ao redor.",
+          "no": "Høyt over festivalen kan de se innsjøen, fjellene, skogene og ballongene rundt seg."
+        }
+      },
+      {
+        "text": "A hot air balloon has a large fabric envelope above a strong basket.",
+        "translations": {
+          "es": "Un globo aerostático tiene una gran envoltura de tela sobre una cesta resistente.",
+          "fr": "Une montgolfière possède une grande enveloppe en tissu au-dessus d'une nacelle solide.",
+          "de": "Ein Heißluftballon hat eine große Stoffhülle über einem stabilen Korb.",
+          "it": "Una mongolfiera ha un grande involucro di tessuto sopra un cesto resistente.",
+          "pt": "Um balão de ar quente tem um grande envelope de tecido acima de um cesto resistente.",
+          "no": "En varmluftballong har en stor stoffduk over en solid kurv."
+        }
+      },
+      {
+        "text": "The balloon rises when the air inside the envelope becomes warmer than the surrounding air.",
+        "translations": {
+          "es": "El globo sube cuando el aire dentro de la envoltura está más caliente que el aire exterior.",
+          "fr": "Le ballon monte lorsque l'air dans l'enveloppe devient plus chaud que l'air extérieur.",
+          "de": "Der Ballon steigt, wenn die Luft in der Hülle wärmer wird als die umgebende Luft.",
+          "it": "La mongolfiera sale quando l'aria all'interno diventa più calda dell'aria circostante.",
+          "pt": "O balão sobe quando o ar dentro do envelope fica mais quente que o ar ao redor.",
+          "no": "Ballongen stiger når luften inne blir varmere enn luften rundt."
+        }
+      },
+      {
+        "text": "The burner produces a powerful flame that heats the air inside the balloon.",
+        "translations": {
+          "es": "El quemador produce una llama potente que calienta el aire dentro del globo.",
+          "fr": "Le brûleur produit une forte flamme qui chauffe l'air à l'intérieur du ballon.",
+          "de": "Der Brenner erzeugt eine starke Flamme, die die Luft im Ballon erwärmt.",
+          "it": "Il bruciatore produce una fiamma potente che riscalda l'aria all'interno della mongolfiera.",
+          "pt": "O queimador produz uma chama forte que aquece o ar dentro do balão.",
+          "no": "Brenneren lager en kraftig flamme som varmer luften inne i ballongen."
+        }
+      },
+      {
+        "text": "The pilot controls the burner to help the balloon rise or maintain altitude.",
+        "translations": {
+          "es": "El piloto controla el quemador para ayudar al globo a subir o mantener su altura.",
+          "fr": "Le pilote contrôle le brûleur pour faire monter le ballon ou maintenir son altitude.",
+          "de": "Der Pilot steuert den Brenner, damit der Ballon steigt oder seine Höhe hält.",
+          "it": "Il pilota controlla il bruciatore per far salire la mongolfiera o mantenerne l'altitudine.",
+          "pt": "O piloto controla o queimador para ajudar o balão a subir ou manter a altitude.",
+          "no": "Piloten styrer brenneren for å få ballongen til å stige eller holde høyden."
+        }
+      },
+      {
+        "text": "A balloon festival brings many pilots, crews, visitors, tents, and colorful balloons together in one place.",
+        "translations": {
+          "es": "Un festival de globos reúne a pilotos, equipos, visitantes, carpas y globos de muchos colores.",
+          "fr": "Un festival rassemble de nombreux pilotes, équipages, visiteurs, tentes et montgolfières colorées.",
+          "de": "Bei einem Ballonfestival kommen viele Piloten, Teams, Besucher, Zelte und bunte Ballons zusammen.",
+          "it": "Un festival riunisce molti piloti, equipaggi, visitatori, tende e mongolfiere colorate.",
+          "pt": "Um festival reúne muitos pilotos, equipes, visitantes, tendas e balões coloridos.",
+          "no": "En ballongfestival samler mange piloter, mannskaper, besøkende, telt og fargerike ballonger."
+        }
+      },
+      {
+        "text": "Some balloons are being inflated on the field while others are already flying.",
+        "translations": {
+          "es": "Algunos globos se están inflando en el campo mientras otros ya están volando.",
+          "fr": "Certains ballons sont gonflés sur le terrain tandis que d'autres volent déjà.",
+          "de": "Einige Ballons werden auf dem Feld aufgeblasen, während andere bereits fliegen.",
+          "it": "Alcune mongolfiere vengono gonfiate sul campo mentre altre sono già in volo.",
+          "pt": "Alguns balões estão sendo inflados no campo enquanto outros já estão voando.",
+          "no": "Noen ballonger blåses opp på bakken mens andre allerede flyr."
+        }
+      },
+      {
+        "text": "Hot air balloons travel with the wind, so pilots pay close attention to weather and wind direction.",
+        "translations": {
+          "es": "Los globos viajan con el viento, por eso los pilotos observan cuidadosamente el clima y la dirección del viento.",
+          "fr": "Les montgolfières voyagent avec le vent, alors les pilotes surveillent attentivement la météo et la direction du vent.",
+          "de": "Heißluftballons bewegen sich mit dem Wind, deshalb achten Piloten genau auf Wetter und Windrichtung.",
+          "it": "Le mongolfiere viaggiano con il vento, quindi i piloti osservano attentamente il tempo e la direzione del vento.",
+          "pt": "Balões de ar quente viajam com o vento, por isso os pilotos observam cuidadosamente o clima e a direção do vento.",
+          "no": "Varmluftballonger beveger seg med vinden, så pilotene følger nøye med på vær og vindretning."
+        }
+      },
+      {
+        "text": "Balloons can rise and descend by changing the temperature of the air inside the envelope.",
+        "translations": {
+          "es": "Los globos pueden subir y bajar cambiando la temperatura del aire dentro de la envoltura.",
+          "fr": "Elles peuvent monter et descendre en modifiant la température de l'air dans l'enveloppe.",
+          "de": "Ballons können steigen und sinken, indem die Temperatur der Luft in der Hülle verändert wird.",
+          "it": "Possono salire e scendere modificando la temperatura dell'aria nell'involucro.",
+          "pt": "Eles podem subir e descer mudando a temperatura do ar dentro do envelope.",
+          "no": "Ballongene kan stige og synke ved å endre temperaturen på luften inne i duken."
+        }
+      },
+      {
+        "text": "The festival overlooks a beautiful mountain lake surrounded by pine forests and snowy peaks.",
+        "translations": {
+          "es": "El festival domina un hermoso lago de montaña rodeado de bosques de pinos y picos nevados.",
+          "fr": "Le festival surplombe un magnifique lac de montagne entouré de forêts de pins et de sommets enneigés.",
+          "de": "Das Festival liegt an einem wunderschönen Bergsee mit Kiefernwäldern und schneebedeckten Gipfeln.",
+          "it": "Il festival si affaccia su un bellissimo lago di montagna circondato da pinete e cime innevate.",
+          "pt": "O festival fica diante de um belo lago de montanha cercado por florestas de pinheiros e picos nevados.",
+          "no": "Festivalen ligger ved en vakker fjellsjø omgitt av furuskog og snødekte topper."
+        }
+      },
+      {
+        "text": "At sunrise, the low golden light reflects across the water and makes the balloons glow.",
+        "translations": {
+          "es": "Al amanecer, la luz dorada se refleja en el agua y hace brillar los globos.",
+          "fr": "Au lever du soleil, la lumière dorée se reflète sur l'eau et illumine les ballons.",
+          "de": "Bei Sonnenaufgang spiegelt sich das goldene Licht im Wasser und lässt die Ballons leuchten.",
+          "it": "All'alba, la luce dorata si riflette sull'acqua e fa risplendere le mongolfiere.",
+          "pt": "Ao nascer do sol, a luz dourada se reflete na água e faz os balões brilharem.",
+          "no": "Ved soloppgang speiler det gylne lyset seg i vannet og får ballongene til å gløde."
+        }
+      }
+    ],
     "hotspots": [
       {
         "id": "crew",
@@ -7807,7 +8548,20 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
       }
     ],
     "overlays": [],
-    "challenges": []
+    "challenges": [
+      {
+        "prompt": "Find the Burner Flame",
+        "target": "flame"
+      },
+      {
+        "prompt": "Find the Balloon Basket",
+        "target": "basket"
+      },
+      {
+        "prompt": "Find the Lake",
+        "target": "lake"
+      }
+    ]
   },
   "large-picnic": {
     "title": "Large Picnic",
@@ -8189,7 +8943,28 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
       }
     ],
     "overlays": [],
-    "challenges": []
+    "challenges": [
+      {
+        "prompt": "Find the RV",
+        "target": "grandma"
+      },
+      {
+        "prompt": "Find Family and Friends",
+        "target": "grandpa"
+      },
+      {
+        "prompt": "Find the Solar Panels",
+        "target": "hotdogs"
+      },
+      {
+        "prompt": "Find the Campfire",
+        "target": "campfire"
+      },
+      {
+        "prompt": "Find the Sailboat",
+        "target": "sailboat"
+      }
+    ]
   },
   "oval-office": {
     "title": "Oval Office",
@@ -8521,7 +9296,28 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
       }
     ],
     "overlays": [],
-    "challenges": []
+    "challenges": [
+      {
+        "prompt": "Find the Resolute Desk",
+        "target": "desk"
+      },
+      {
+        "prompt": "Find the American Flag",
+        "target": "flag"
+      },
+      {
+        "prompt": "Find the Fireplace",
+        "target": "fireplace"
+      },
+      {
+        "prompt": "Find George Washington",
+        "target": "washington"
+      },
+      {
+        "prompt": "Find the Washington Monument",
+        "target": "monument"
+      }
+    ]
   },
   "nasa-spacewalk": {
     "title": "NASA Spacewalk",
@@ -8843,7 +9639,32 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
       }
     ],
     "overlays": [],
-    "challenges": []
+    "challenges": [
+      {
+        "prompt": "Find Bee",
+        "target": "bee"
+      },
+      {
+        "prompt": "Find Earth",
+        "target": "earth"
+      },
+      {
+        "prompt": "Find a Tether",
+        "target": "tether"
+      },
+      {
+        "prompt": "Find the Solar Panels",
+        "target": "solarpanels"
+      },
+      {
+        "prompt": "Find the Space Station",
+        "target": "station"
+      },
+      {
+        "prompt": "Find the Moon",
+        "target": "moon"
+      }
+    ]
   },
   "moon": {
     "title": "Moon",
@@ -9175,7 +9996,28 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
       }
     ],
     "overlays": [],
-    "challenges": []
+    "challenges": [
+      {
+        "prompt": "Find Earth",
+        "target": "earth"
+      },
+      {
+        "prompt": "Find the American Flag",
+        "target": "flag"
+      },
+      {
+        "prompt": "Find the Lunar Lander",
+        "target": "lander"
+      },
+      {
+        "prompt": "Find the Moon Rover",
+        "target": "rover"
+      },
+      {
+        "prompt": "Find the Moon Castle",
+        "target": "mooncastle"
+      }
+    ]
   },
   "mission-control": {
     "title": "Mission Control",
@@ -9497,7 +10339,32 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
       }
     ],
     "overlays": [],
-    "challenges": []
+    "challenges": [
+      {
+        "prompt": "Find Bee",
+        "target": "bee"
+      },
+      {
+        "prompt": "Find the Rocket",
+        "target": "rocket"
+      },
+      {
+        "prompt": "Find the Countdown Clock",
+        "target": "countdown"
+      },
+      {
+        "prompt": "Find the American Flag",
+        "target": "flag"
+      },
+      {
+        "prompt": "Find a Headset",
+        "target": "headset"
+      },
+      {
+        "prompt": "Find Earth",
+        "target": "earth"
+      }
+    ]
   },
   "spaceship-window-saturn": {
     "title": "Spaceship Window Saturn",
@@ -9819,7 +10686,28 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
       }
     ],
     "overlays": [],
-    "challenges": []
+    "challenges": [
+      {
+        "prompt": "Find Bee",
+        "target": "bee"
+      },
+      {
+        "prompt": "Find Saturn",
+        "target": "saturn"
+      },
+      {
+        "prompt": "Find Saturn's Rings",
+        "target": "rings"
+      },
+      {
+        "prompt": "Find a Moon",
+        "target": "moon"
+      },
+      {
+        "prompt": "Find the Solar System Screen",
+        "target": "solarsystem"
+      }
+    ]
   },
   "spaceship-window-earth": {
     "title": "Spaceship Window Earth",
@@ -9832,7 +10720,140 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
   "military-drill-sergeant": {
     "title": "Military Drill Sergeant",
     "image": "images/Talk-A-Bee-Basic-Training-Adventure.jpg",
-    "lessons": [],
+    "lessons": [
+      {
+        "text": "Basic training teaches people to work together, follow instructions, stay organized, and support their team.",
+        "translations": {
+          "es": "El entrenamiento básico enseña a trabajar juntos, seguir instrucciones, mantenerse organizados y apoyar al equipo.",
+          "fr": "L'entraînement de base apprend à travailler ensemble, suivre les instructions, rester organisé et soutenir son équipe.",
+          "de": "Die Grundausbildung lehrt Menschen, zusammenzuarbeiten, Anweisungen zu befolgen, organisiert zu bleiben und ihr Team zu unterstützen.",
+          "it": "L'addestramento di base insegna a lavorare insieme, seguire istruzioni, essere organizzati e sostenere la squadra.",
+          "pt": "O treinamento básico ensina a trabalhar em conjunto, seguir instruções, manter organização e apoiar a equipe.",
+          "no": "Grunntrening lærer folk å samarbeide, følge instruksjoner, holde orden og støtte laget sitt."
+        }
+      },
+      {
+        "text": "Training often combines classroom learning, physical exercise, practical skills, and teamwork.",
+        "translations": {
+          "es": "El entrenamiento suele combinar aprendizaje, ejercicio físico, habilidades prácticas y trabajo en equipo.",
+          "fr": "Il combine souvent apprentissage, exercice physique, compétences pratiques et travail d'équipe.",
+          "de": "Das Training verbindet häufig Unterricht, körperliche Übungen, praktische Fähigkeiten und Teamarbeit.",
+          "it": "Spesso combina apprendimento, esercizio fisico, abilità pratiche e lavoro di squadra.",
+          "pt": "O treinamento costuma combinar aprendizagem, exercício físico, habilidades práticas e trabalho em equipe.",
+          "no": "Treningen kombinerer ofte læring, fysisk aktivitet, praktiske ferdigheter og samarbeid."
+        }
+      },
+      {
+        "text": "Obstacle courses challenge balance, coordination, endurance, and problem-solving.",
+        "translations": {
+          "es": "Las pistas de obstáculos desafían el equilibrio, la coordinación, la resistencia y la resolución de problemas.",
+          "fr": "Les parcours d'obstacles mettent à l'épreuve l'équilibre, la coordination, l'endurance et la résolution de problèmes.",
+          "de": "Hindernisparcours fordern Gleichgewicht, Koordination, Ausdauer und Problemlösung.",
+          "it": "I percorsi a ostacoli mettono alla prova equilibrio, coordinazione, resistenza e capacità di risolvere problemi.",
+          "pt": "Pistas de obstáculos desafiam equilíbrio, coordenação, resistência e solução de problemas.",
+          "no": "Hinderløyper utfordrer balanse, koordinasjon, utholdenhet og problemløsning."
+        }
+      },
+      {
+        "text": "Trainees learn to move carefully through different obstacles while encouraging their teammates.",
+        "translations": {
+          "es": "Los reclutas aprenden a superar distintos obstáculos con cuidado mientras animan a sus compañeros.",
+          "fr": "Les stagiaires apprennent à franchir différents obstacles avec prudence tout en encourageant leurs coéquipiers.",
+          "de": "Die Teilnehmer lernen, verschiedene Hindernisse vorsichtig zu überwinden und ihre Teamkameraden zu unterstützen.",
+          "it": "Gli allievi imparano a superare diversi ostacoli con attenzione incoraggiando i compagni.",
+          "pt": "Os recrutas aprendem a passar por diferentes obstáculos com cuidado enquanto incentivam seus colegas.",
+          "no": "Rekrutter lærer å bevege seg forsiktig gjennom ulike hindringer samtidig som de oppmuntrer lagkameratene."
+        }
+      },
+      {
+        "text": "Climbing walls and ropes build strength, confidence, coordination, and persistence.",
+        "translations": {
+          "es": "Los muros y cuerdas de escalada desarrollan fuerza, confianza, coordinación y perseverancia.",
+          "fr": "Les murs et cordes d'escalade développent force, confiance, coordination et persévérance.",
+          "de": "Kletterwände und Seile fördern Kraft, Selbstvertrauen, Koordination und Ausdauer.",
+          "it": "Pareti e corde da arrampicata sviluppano forza, fiducia, coordinazione e perseveranza.",
+          "pt": "Paredes e cordas de escalada desenvolvem força, confiança, coordenação e persistência.",
+          "no": "Klatrevegger og tau bygger styrke, selvtillit, koordinasjon og utholdenhet."
+        }
+      },
+      {
+        "text": "Safety procedures and proper instruction are important during climbing activities.",
+        "translations": {
+          "es": "Los procedimientos de seguridad y la instrucción adecuada son importantes durante la escalada.",
+          "fr": "Les procédures de sécurité et une bonne instruction sont importantes pendant l'escalade.",
+          "de": "Sicherheitsverfahren und richtige Anleitung sind beim Klettern wichtig.",
+          "it": "Procedure di sicurezza e istruzioni corrette sono importanti durante l'arrampicata.",
+          "pt": "Procedimentos de segurança e orientação adequada são importantes durante a escalada.",
+          "no": "Sikkerhetsrutiner og riktig veiledning er viktig under klatring."
+        }
+      },
+      {
+        "text": "Training gear can include uniforms, boots, backpacks, canteens, protective equipment, and other supplies.",
+        "translations": {
+          "es": "El equipo de entrenamiento puede incluir uniformes, botas, mochilas, cantimploras, equipo protector y otros suministros.",
+          "fr": "L'équipement d'entraînement peut comprendre uniformes, bottes, sacs à dos, gourdes, protections et autres fournitures.",
+          "de": "Zur Trainingsausrüstung können Uniformen, Stiefel, Rucksäcke, Feldflaschen, Schutzausrüstung und weitere Vorräte gehören.",
+          "it": "L'attrezzatura può comprendere uniformi, stivali, zaini, borracce, protezioni e altre forniture.",
+          "pt": "O equipamento pode incluir uniformes, botas, mochilas, cantis, equipamentos de proteção e outros suprimentos.",
+          "no": "Treningsutstyr kan omfatte uniformer, støvler, ryggsekker, feltflasker, verneutstyr og andre forsyninger."
+        }
+      },
+      {
+        "text": "Keeping equipment organized and cared for is part of being prepared.",
+        "translations": {
+          "es": "Mantener el equipo organizado y cuidado forma parte de estar preparado.",
+          "fr": "Garder son équipement organisé et bien entretenu fait partie de la préparation.",
+          "de": "Ausrüstung ordentlich und gepflegt zu halten gehört zur Vorbereitung.",
+          "it": "Tenere l'attrezzatura ordinata e curata fa parte dell'essere preparati.",
+          "pt": "Manter o equipamento organizado e bem cuidado faz parte de estar preparado.",
+          "no": "Å holde utstyret organisert og godt vedlikeholdt er en del av å være forberedt."
+        }
+      },
+      {
+        "text": "Physical training can include running, crawling, climbing, carrying equipment, and other exercises.",
+        "translations": {
+          "es": "El entrenamiento físico puede incluir correr, gatear, escalar, transportar equipo y otros ejercicios.",
+          "fr": "L'entraînement physique peut comprendre courir, ramper, grimper, porter du matériel et d'autres exercices.",
+          "de": "Körperliches Training kann Laufen, Kriechen, Klettern, das Tragen von Ausrüstung und andere Übungen umfassen.",
+          "it": "L'allenamento fisico può includere corsa, strisciamento, arrampicata, trasporto di attrezzatura e altri esercizi.",
+          "pt": "O treinamento físico pode incluir corrida, rastejamento, escalada, transporte de equipamentos e outros exercícios.",
+          "no": "Fysisk trening kan omfatte løping, kryping, klatring, bæring av utstyr og andre øvelser."
+        }
+      },
+      {
+        "text": "Fitness training develops endurance, strength, coordination, and healthy teamwork.",
+        "translations": {
+          "es": "Desarrolla resistencia, fuerza, coordinación y trabajo en equipo saludable.",
+          "fr": "Il développe endurance, force, coordination et esprit d'équipe.",
+          "de": "Es entwickelt Ausdauer, Kraft, Koordination und Teamarbeit.",
+          "it": "Sviluppa resistenza, forza, coordinazione e collaborazione.",
+          "pt": "Ele desenvolve resistência, força, coordenação e trabalho em equipe.",
+          "no": "Treningen utvikler utholdenhet, styrke, koordinasjon og samarbeid."
+        }
+      },
+      {
+        "text": "Discipline means practicing good habits, following instructions, being responsible, and continuing even when a task is difficult.",
+        "translations": {
+          "es": "La disciplina significa practicar buenos hábitos, seguir instrucciones, ser responsable y continuar aunque una tarea sea difícil.",
+          "fr": "La discipline consiste à pratiquer de bonnes habitudes, suivre les instructions, être responsable et persévérer quand une tâche est difficile.",
+          "de": "Disziplin bedeutet, gute Gewohnheiten zu üben, Anweisungen zu befolgen, Verantwortung zu übernehmen und auch bei schwierigen Aufgaben weiterzumachen.",
+          "it": "La disciplina significa praticare buone abitudini, seguire istruzioni, essere responsabili e continuare anche quando un compito è difficile.",
+          "pt": "Disciplina significa praticar bons hábitos, seguir instruções, ser responsável e continuar mesmo quando uma tarefa é difícil.",
+          "no": "Disiplin betyr å øve på gode vaner, følge instruksjoner, ta ansvar og fortsette selv når en oppgave er vanskelig."
+        }
+      },
+      {
+        "text": "Teamwork means helping others, communicating clearly, and working toward a shared goal.",
+        "translations": {
+          "es": "El trabajo en equipo significa ayudar a los demás, comunicarse claramente y trabajar hacia una meta compartida.",
+          "fr": "Le travail d'équipe consiste à aider les autres, communiquer clairement et avancer vers un objectif commun.",
+          "de": "Teamarbeit bedeutet, anderen zu helfen, klar zu kommunizieren und gemeinsam auf ein Ziel hinzuarbeiten.",
+          "it": "Il lavoro di squadra significa aiutare gli altri, comunicare chiaramente e lavorare verso un obiettivo comune.",
+          "pt": "Trabalho em equipe significa ajudar os outros, comunicar-se claramente e trabalhar por um objetivo compartilhado.",
+          "no": "Samarbeid betyr å hjelpe andre, kommunisere tydelig og arbeide mot et felles mål."
+        }
+      }
+    ],
     "hotspots": [
       {
         "id": "bee",
@@ -10036,7 +11057,32 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
       }
     ],
     "overlays": [],
-    "challenges": []
+    "challenges": [
+      {
+        "prompt": "Find Drill Sergeant Bee",
+        "target": "bee"
+      },
+      {
+        "prompt": "Find the American Flag",
+        "target": "flag"
+      },
+      {
+        "prompt": "Find the Climbing Wall",
+        "target": "wall"
+      },
+      {
+        "prompt": "Find the Tires",
+        "target": "tires"
+      },
+      {
+        "prompt": "Find the Helicopter",
+        "target": "helicopter"
+      },
+      {
+        "prompt": "Find a Backpack",
+        "target": "backpack"
+      }
+    ]
   },
   "aircraft-carrier": {
     "title": "Aircraft Carrier",
@@ -10176,16 +11222,6 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
       }
     ],
     "hotspots": [
-      {
-        "id": "bee",
-        "label": "bee",
-        "x": 42,
-        "y": 59,
-        "w": 10,
-        "h": 23,
-        "sound": "",
-        "translations": {}
-      },
       {
         "id": "visitors",
         "label": "visitors",
@@ -10388,7 +11424,32 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
       }
     ],
     "overlays": [],
-    "challenges": []
+    "challenges": [
+      {
+        "prompt": "Find the Jet",
+        "target": "jet"
+      },
+      {
+        "prompt": "Find the Helicopter",
+        "target": "helicopter"
+      },
+      {
+        "prompt": "Find the Island",
+        "target": "island"
+      },
+      {
+        "prompt": "Find the American Flag",
+        "target": "flag"
+      },
+      {
+        "prompt": "Find the Tow Tractor",
+        "target": "towtractor"
+      },
+      {
+        "prompt": "Find the Flight Deck",
+        "target": "flightdeck"
+      }
+    ]
   },
   "dance-floor": {
     "title": "Dance Floor",
@@ -10401,7 +11462,272 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
   "bird-sanctuary": {
     "title": "Bird Sanctuary",
     "image": "images/bird-sanctuary.jpg",
-    "lessons": [],
+    "lessons": [
+      {
+        "text": "Ryder is painting a birdhouse.",
+        "translations": {
+          "es": "Ryder está pintando una casita para pájaros.",
+          "fr": "Ryder peint une cabane à oiseaux.",
+          "de": "Ryder bemalt ein Vogelhaus.",
+          "it": "Ryder sta dipingendo una casetta per uccelli.",
+          "pt": "Ryder está pintando uma casa de pássaros.",
+          "no": "Ryder maler et fuglehus."
+        }
+      },
+      {
+        "text": "Daniel is watching the birds.",
+        "translations": {
+          "es": "Daniel está mirando los pájaros.",
+          "fr": "Daniel regarde les oiseaux.",
+          "de": "Daniel beobachtet die Vögel.",
+          "it": "Daniel sta guardando gli uccelli.",
+          "pt": "Daniel está observando os pássaros.",
+          "no": "Daniel ser på fuglene."
+        }
+      },
+      {
+        "text": "Grandpa helps Ryder and Daniel.",
+        "translations": {
+          "es": "El abuelo ayuda a Ryder y Daniel.",
+          "fr": "Grand-père aide Ryder et Daniel.",
+          "de": "Opa hilft Ryder und Daniel.",
+          "it": "Il nonno aiuta Ryder e Daniel.",
+          "pt": "O avô ajuda Ryder e Daniel.",
+          "no": "Bestefar hjelper Ryder og Daniel."
+        }
+      },
+      {
+        "text": "The boys are learning together.",
+        "translations": {
+          "es": "Los niños están aprendiendo juntos.",
+          "fr": "Les garçons apprennent ensemble.",
+          "de": "Die Jungen lernen zusammen.",
+          "it": "I ragazzi stanno imparando insieme.",
+          "pt": "Os meninos estão aprendendo juntos.",
+          "no": "Guttene lærer sammen."
+        }
+      },
+      {
+        "text": "We are building a birdhouse.",
+        "translations": {
+          "es": "Estamos construyendo una casita para pájaros.",
+          "fr": "Nous construisons une cabane à oiseaux.",
+          "de": "Wir bauen ein Vogelhaus.",
+          "it": "Stiamo costruendo una casetta per uccelli.",
+          "pt": "Estamos construindo uma casa de pássaros.",
+          "no": "Vi bygger et fuglehus."
+        }
+      },
+      {
+        "text": "Grandpa uses the hammer.",
+        "translations": {
+          "es": "El abuelo usa el martillo.",
+          "fr": "Grand-père utilise le marteau.",
+          "de": "Opa benutzt den Hammer.",
+          "it": "Il nonno usa il martello.",
+          "pt": "O avô usa o martelo.",
+          "no": "Bestefar bruker hammeren."
+        }
+      },
+      {
+        "text": "Ryder paints the roof red.",
+        "translations": {
+          "es": "Ryder pinta el techo de rojo.",
+          "fr": "Ryder peint le toit en rouge.",
+          "de": "Ryder malt das Dach rot.",
+          "it": "Ryder dipinge il tetto di rosso.",
+          "pt": "Ryder pinta o telhado de vermelho.",
+          "no": "Ryder maler taket rødt."
+        }
+      },
+      {
+        "text": "Daniel holds the birdhouse.",
+        "translations": {
+          "es": "Daniel sostiene la casita para pájaros.",
+          "fr": "Daniel tient la cabane à oiseaux.",
+          "de": "Daniel hält das Vogelhaus.",
+          "it": "Daniel tiene la casetta per uccelli.",
+          "pt": "Daniel segura a casa de pássaros.",
+          "no": "Daniel holder fuglehuset."
+        }
+      },
+      {
+        "text": "The cardinal is red.",
+        "translations": {
+          "es": "El cardenal es rojo.",
+          "fr": "Le cardinal est rouge.",
+          "de": "Der Kardinal ist rot.",
+          "it": "Il cardinale è rosso.",
+          "pt": "O cardeal é vermelho.",
+          "no": "Kardinalen er rød."
+        }
+      },
+      {
+        "text": "The bluebird is near the flowers.",
+        "translations": {
+          "es": "El pájaro azul está cerca de las flores.",
+          "fr": "L'oiseau bleu est près des fleurs.",
+          "de": "Der Blauvogel ist in der Nähe der Blumen.",
+          "it": "L'uccello azzurro è vicino ai fiori.",
+          "pt": "O pássaro azul está perto das flores.",
+          "no": "Blåfuglen er nær blomstene."
+        }
+      },
+      {
+        "text": "The woodpecker is on the tree.",
+        "translations": {
+          "es": "El pájaro carpintero está en el árbol.",
+          "fr": "Le pic est dans l'arbre.",
+          "de": "Der Specht ist im Baum.",
+          "it": "Il picchio è sull'albero.",
+          "pt": "O pica-pau está na árvore.",
+          "no": "Hakkespetten er i treet."
+        }
+      },
+      {
+        "text": "The birds eat at the feeder.",
+        "translations": {
+          "es": "Los pájaros comen en el comedero.",
+          "fr": "Les oiseaux mangent à la mangeoire.",
+          "de": "Die Vögel fressen am Futterhaus.",
+          "it": "Gli uccelli mangiano alla mangiatoia.",
+          "pt": "Os pássaros comem no comedouro.",
+          "no": "Fuglene spiser ved fuglemateren."
+        }
+      },
+      {
+        "text": "The hammer is in Grandpa's hand.",
+        "translations": {
+          "es": "El martillo está en la mano del abuelo.",
+          "fr": "Le marteau est dans la main de Grand-père.",
+          "de": "Der Hammer ist in Opas Hand.",
+          "it": "Il martello è nella mano del nonno.",
+          "pt": "O martelo está na mão do avô.",
+          "no": "Hammeren er i hånden til bestefar."
+        }
+      },
+      {
+        "text": "Ryder has a paintbrush.",
+        "translations": {
+          "es": "Ryder tiene un pincel.",
+          "fr": "Ryder a un pinceau.",
+          "de": "Ryder hat einen Pinsel.",
+          "it": "Ryder ha un pennello.",
+          "pt": "Ryder tem um pincel.",
+          "no": "Ryder har en pensel."
+        }
+      },
+      {
+        "text": "The red paint is on the table.",
+        "translations": {
+          "es": "La pintura roja está sobre la mesa.",
+          "fr": "La peinture rouge est sur la table.",
+          "de": "Die rote Farbe steht auf dem Tisch.",
+          "it": "La vernice rossa è sul tavolo.",
+          "pt": "A tinta vermelha está sobre a mesa.",
+          "no": "Den røde malingen står på bordet."
+        }
+      },
+      {
+        "text": "The birdhouse has a green roof.",
+        "translations": {
+          "es": "La casita tiene un techo verde.",
+          "fr": "La cabane a un toit vert.",
+          "de": "Das Vogelhaus hat ein grünes Dach.",
+          "it": "La casetta ha un tetto verde.",
+          "pt": "A casa de pássaros tem um telhado verde.",
+          "no": "Fuglehuset har et grønt tak."
+        }
+      },
+      {
+        "text": "The mountains are behind the lake.",
+        "translations": {
+          "es": "Las montañas están detrás del lago.",
+          "fr": "Les montagnes sont derrière le lac.",
+          "de": "Die Berge liegen hinter dem See.",
+          "it": "Le montagne sono dietro il lago.",
+          "pt": "As montanhas estão atrás do lago.",
+          "no": "Fjellene ligger bak innsjøen."
+        }
+      },
+      {
+        "text": "There are many colorful flowers.",
+        "translations": {
+          "es": "Hay muchas flores de colores.",
+          "fr": "Il y a beaucoup de fleurs colorées.",
+          "de": "Es gibt viele bunte Blumen.",
+          "it": "Ci sono molti fiori colorati.",
+          "pt": "Há muitas flores coloridas.",
+          "no": "Det er mange fargerike blomster."
+        }
+      },
+      {
+        "text": "A butterfly flies near the boys.",
+        "translations": {
+          "es": "Una mariposa vuela cerca de los niños.",
+          "fr": "Un papillon vole près des garçons.",
+          "de": "Ein Schmetterling fliegt in der Nähe der Jungen.",
+          "it": "Una farfalla vola vicino ai ragazzi.",
+          "pt": "Uma borboleta voa perto dos meninos.",
+          "no": "En sommerfugl flyr nær guttene."
+        }
+      },
+      {
+        "text": "The water falls down the waterfall.",
+        "translations": {
+          "es": "El agua cae por la cascada.",
+          "fr": "L'eau tombe dans la cascade.",
+          "de": "Das Wasser fällt den Wasserfall hinunter.",
+          "it": "L'acqua scende dalla cascata.",
+          "pt": "A água cai pela cachoeira.",
+          "no": "Vannet faller ned fossen."
+        }
+      },
+      {
+        "text": "Ryder and Daniel spend the day at the bird sanctuary.",
+        "translations": {
+          "es": "Ryder y Daniel pasan el día en el santuario de aves.",
+          "fr": "Ryder et Daniel passent la journée au sanctuaire des oiseaux.",
+          "de": "Ryder und Daniel verbringen den Tag im Vogelschutzgebiet.",
+          "it": "Ryder e Daniel trascorrono la giornata nel santuario degli uccelli.",
+          "pt": "Ryder e Daniel passam o dia no santuário de aves.",
+          "no": "Ryder og Daniel tilbringer dagen i fuglereservatet."
+        }
+      },
+      {
+        "text": "They build birdhouses with their grandpa.",
+        "translations": {
+          "es": "Construyen casas para los pájaros con su abuelo.",
+          "fr": "Ils construisent des cabanes à oiseaux avec leur grand-père.",
+          "de": "Sie bauen mit ihrem Opa Vogelhäuser.",
+          "it": "Costruiscono casette per uccelli con il nonno.",
+          "pt": "Eles constroem casas de pássaros com o avô.",
+          "no": "De bygger fuglehus sammen med bestefaren sin."
+        }
+      },
+      {
+        "text": "The birds fly among the trees and flowers.",
+        "translations": {
+          "es": "Los pájaros vuelan entre los árboles y las flores.",
+          "fr": "Les oiseaux volent parmi les arbres et les fleurs.",
+          "de": "Die Vögel fliegen zwischen den Bäumen und Blumen.",
+          "it": "Gli uccelli volano tra gli alberi e i fiori.",
+          "pt": "Os pássaros voam entre as árvores e as flores.",
+          "no": "Fuglene flyr mellom trærne og blomstene."
+        }
+      },
+      {
+        "text": "Everyone enjoys a beautiful day by the lake.",
+        "translations": {
+          "es": "Todos disfrutan de un hermoso día junto al lago.",
+          "fr": "Tout le monde profite d'une belle journée près du lac.",
+          "de": "Alle genießen einen schönen Tag am See.",
+          "it": "Tutti si godono una bella giornata vicino al lago.",
+          "pt": "Todos aproveitam um lindo dia perto do lago.",
+          "no": "Alle nyter en vakker dag ved innsjøen."
+        }
+      }
+    ],
     "hotspots": [
       {
         "id": "ryder",
@@ -10675,12 +12001,232 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
       }
     ],
     "overlays": [],
-    "challenges": []
+    "challenges": [
+      {
+        "prompt": "Find the Birdhouse",
+        "target": "birdhouse"
+      },
+      {
+        "prompt": "Find the Hammer",
+        "target": "hammer"
+      },
+      {
+        "prompt": "Find the Paintbrush",
+        "target": "paintbrush"
+      },
+      {
+        "prompt": "Find the Bird Feeder",
+        "target": "birdfeeder"
+      },
+      {
+        "prompt": "Find the Bluebird",
+        "target": "bluebird"
+      }
+    ]
   },
   "library": {
     "title": "Library",
     "image": "images/library-adventure.jpg",
-    "lessons": [],
+    "lessons": [
+      {
+        "text": "Sofia: We are in the library.",
+        "translations": {
+          "es": "Sofia: Estamos en la biblioteca.",
+          "fr": "Sofia : Nous sommes à la bibliothèque.",
+          "de": "Sofia: Wir sind in der Bibliothek.",
+          "it": "Sofia: Siamo in biblioteca.",
+          "pt": "Sofia: Estamos na biblioteca.",
+          "no": "Sofia: Vi er på biblioteket."
+        }
+      },
+      {
+        "text": "Daniel: I am looking for an Italian book.",
+        "translations": {
+          "es": "Daniel: Busco un libro de italiano.",
+          "fr": "Daniel : Je cherche un livre d’italien.",
+          "de": "Daniel: Ich suche ein Italienischbuch.",
+          "it": "Daniel: Cerco un libro d’italiano.",
+          "pt": "Daniel: Estou procurando um livro de italiano.",
+          "no": "Daniel: Jeg leter etter en italienskbok."
+        }
+      },
+      {
+        "text": "Sofia: Here is one.",
+        "translations": {
+          "es": "Sofia: Aquí hay uno.",
+          "fr": "Sofia : En voici un.",
+          "de": "Sofia: Hier ist eins.",
+          "it": "Sofia: Eccone uno.",
+          "pt": "Sofia: Aqui está um.",
+          "no": "Sofia: Her er en."
+        }
+      },
+      {
+        "text": "This book is interesting.",
+        "translations": {
+          "es": "Este libro es interesante.",
+          "fr": "Ce livre est intéressant.",
+          "de": "Dieses Buch ist interessant.",
+          "it": "Questo libro è interessante.",
+          "pt": "Este livro é interessante.",
+          "no": "Denne boken er interessant."
+        }
+      },
+      {
+        "text": "I like to read.",
+        "translations": {
+          "es": "Me gusta leer.",
+          "fr": "J’aime lire.",
+          "de": "Ich lese gern.",
+          "it": "Mi piace leggere.",
+          "pt": "Gosto de ler.",
+          "no": "Jeg liker å lese."
+        }
+      },
+      {
+        "text": "Where is the book?",
+        "translations": {
+          "es": "¿Dónde está el libro?",
+          "fr": "Où est le livre ?",
+          "de": "Wo ist das Buch?",
+          "it": "Dov’è il libro?",
+          "pt": "Onde está o livro?",
+          "no": "Hvor er boken?"
+        }
+      },
+      {
+        "text": "I have a notebook.",
+        "translations": {
+          "es": "Tengo un cuaderno.",
+          "fr": "J’ai un cahier.",
+          "de": "Ich habe ein Notizbuch.",
+          "it": "Ho un quaderno.",
+          "pt": "Tenho um caderno.",
+          "no": "Jeg har en notatbok."
+        }
+      },
+      {
+        "text": "I need a pen.",
+        "translations": {
+          "es": "Necesito un bolígrafo.",
+          "fr": "J’ai besoin d’un stylo.",
+          "de": "Ich brauche einen Stift.",
+          "it": "Ho bisogno di una penna.",
+          "pt": "Preciso de uma caneta.",
+          "no": "Jeg trenger en penn."
+        }
+      },
+      {
+        "text": "We study together.",
+        "translations": {
+          "es": "Estudiamos juntos.",
+          "fr": "Nous étudions ensemble.",
+          "de": "Wir lernen zusammen.",
+          "it": "Studiamo insieme.",
+          "pt": "Estudamos juntos.",
+          "no": "Vi studerer sammen."
+        }
+      },
+      {
+        "text": "I want to travel to Italy.",
+        "translations": {
+          "es": "Quiero viajar a Italia.",
+          "fr": "Je veux voyager en Italie.",
+          "de": "Ich möchte nach Italien reisen.",
+          "it": "Voglio viaggiare in Italia.",
+          "pt": "Quero viajar para a Itália.",
+          "no": "Jeg vil reise til Italia."
+        }
+      },
+      {
+        "text": "Rome is a beautiful city.",
+        "translations": {
+          "es": "Roma es una ciudad hermosa.",
+          "fr": "Rome est une belle ville.",
+          "de": "Rom ist eine schöne Stadt.",
+          "it": "Roma è una bella città.",
+          "pt": "Roma é uma cidade bonita.",
+          "no": "Roma er en vakker by."
+        }
+      },
+      {
+        "text": "I need a travel guide.",
+        "translations": {
+          "es": "Necesito una guía de viaje.",
+          "fr": "J’ai besoin d’un guide de voyage.",
+          "de": "Ich brauche einen Reiseführer.",
+          "it": "Ho bisogno di una guida turistica.",
+          "pt": "Preciso de um guia de viagem.",
+          "no": "Jeg trenger en reiseguide."
+        }
+      },
+      {
+        "text": "Good morning.",
+        "translations": {
+          "es": "Buenos días.",
+          "fr": "Bonjour.",
+          "de": "Guten Morgen.",
+          "it": "Buongiorno.",
+          "pt": "Bom dia.",
+          "no": "God morgen."
+        }
+      },
+      {
+        "text": "Where is ...?",
+        "translations": {
+          "es": "¿Dónde se encuentra...?",
+          "fr": "Où se trouve... ?",
+          "de": "Wo befindet sich ...?",
+          "it": "Dove si trova...?",
+          "pt": "Onde fica...?",
+          "no": "Hvor er ...?"
+        }
+      },
+      {
+        "text": "A book, please.",
+        "translations": {
+          "es": "Un libro, por favor.",
+          "fr": "Un livre, s’il vous plaît.",
+          "de": "Ein Buch, bitte.",
+          "it": "Un libro, per favore.",
+          "pt": "Um livro, por favor.",
+          "no": "En bok, takk."
+        }
+      },
+      {
+        "text": "What does this mean?",
+        "translations": {
+          "es": "¿Qué significa esto?",
+          "fr": "Qu’est-ce que cela signifie ?",
+          "de": "Was bedeutet das?",
+          "it": "Che cosa significa?",
+          "pt": "O que isso significa?",
+          "no": "Hva betyr dette?"
+        }
+      },
+      {
+        "text": "How do you say it in this language?",
+        "translations": {
+          "es": "¿Cómo se dice en español?",
+          "fr": "Comment dit-on cela en français ?",
+          "de": "Wie sagt man das auf Deutsch?",
+          "it": "Come si dice in italiano?",
+          "pt": "Como se diz isso em português?",
+          "no": "Hvordan sier man dette på norsk?"
+        }
+      },
+      {
+        "text": "Can you repeat, please?",
+        "translations": {
+          "es": "¿Puede repetir, por favor?",
+          "fr": "Pouvez-vous répéter, s’il vous plaît ?",
+          "de": "Können Sie das bitte wiederholen?",
+          "it": "Può ripetere, per favore?",
+          "pt": "Pode repetir, por favor?",
+          "no": "Kan du gjenta, takk?"
+        }
+      }
+    ],
     "hotspots": [
       {
         "id": "libro",
@@ -10794,7 +12340,28 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
       }
     ],
     "overlays": [],
-    "challenges": []
+    "challenges": [
+      {
+        "prompt": "Find the book",
+        "target": "libro"
+      },
+      {
+        "prompt": "Find the fountain",
+        "target": "fuente"
+      },
+      {
+        "prompt": "Find the cup",
+        "target": "taza"
+      },
+      {
+        "prompt": "Find the notebook",
+        "target": "cuaderno"
+      },
+      {
+        "prompt": "Find the ladder",
+        "target": "escalera"
+      }
+    ]
   },
   "train-station": {
     "title": "Train Station",
@@ -10963,7 +12530,28 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
       }
     ],
     "overlays": [],
-    "challenges": []
+    "challenges": [
+      {
+        "prompt": "clock",
+        "target": "clock"
+      },
+      {
+        "prompt": "train",
+        "target": "train"
+      },
+      {
+        "prompt": "departures",
+        "target": "departures-sign"
+      },
+      {
+        "prompt": "luggage",
+        "target": "luggage"
+      },
+      {
+        "prompt": "ticket",
+        "target": "ticket"
+      }
+    ]
   },
   "animals-farm": {
     "title": "Animals Farm",
@@ -11503,12 +13091,290 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
         "z": 2
       }
     ],
-    "challenges": []
+    "challenges": [
+      {
+        "prompt": "Find the Gremlin",
+        "target": "car"
+      },
+      {
+        "prompt": "Find the Parrot",
+        "target": "parrot"
+      },
+      {
+        "prompt": "Find the palm tree",
+        "target": "hammock"
+      }
+    ]
   },
   "sea-adventures": {
     "title": "Sea Adventures",
     "image": "images/talkabee-image-21.jpg",
-    "lessons": [],
+    "lessons": [
+      {
+        "text": "We are on the yacht.",
+        "translations": {
+          "es": "Estamos en el yate.",
+          "fr": "Nous sommes sur le yacht.",
+          "de": "Wir sind auf der Yacht.",
+          "it": "Siamo sullo yacht.",
+          "pt": "Estamos no iate.",
+          "no": "Vi er på yachten."
+        }
+      },
+      {
+        "text": "The sunset is beautiful.",
+        "translations": {
+          "es": "El atardecer es hermoso.",
+          "fr": "Le coucher de soleil est magnifique.",
+          "de": "Der Sonnenuntergang ist wunderschön.",
+          "it": "Il tramonto è bellissimo.",
+          "pt": "O pôr do sol é lindo.",
+          "no": "Solnedgangen er vakker."
+        }
+      },
+      {
+        "text": "We are together on the deck.",
+        "translations": {
+          "es": "Estamos juntos en la cubierta.",
+          "fr": "Nous sommes ensemble sur le pont.",
+          "de": "Wir sind zusammen an Deck.",
+          "it": "Siamo insieme sul ponte.",
+          "pt": "Estamos juntos no convés.",
+          "no": "Vi er sammen på dekk."
+        }
+      },
+      {
+        "text": "What a peaceful evening.",
+        "translations": {
+          "es": "Qué noche tan tranquila.",
+          "fr": "Quelle soirée paisible.",
+          "de": "Was für ein ruhiger Abend.",
+          "it": "Che serata tranquilla.",
+          "pt": "Que noite tranquila.",
+          "no": "For en fredelig kveld."
+        }
+      },
+      {
+        "text": "This is the yacht.",
+        "translations": {
+          "es": "Este es el yate.",
+          "fr": "Voici le yacht.",
+          "de": "Das ist die Yacht.",
+          "it": "Questo è lo yacht.",
+          "pt": "Este é o iate.",
+          "no": "Dette er yachten."
+        }
+      },
+      {
+        "text": "The fishing pole is ready.",
+        "translations": {
+          "es": "La caña de pescar está lista.",
+          "fr": "La canne à pêche est prête.",
+          "de": "Die Angel ist bereit.",
+          "it": "La canna da pesca è pronta.",
+          "pt": "A vara de pesca está pronta.",
+          "no": "Fiskestangen er klar."
+        }
+      },
+      {
+        "text": "The tackle box is open.",
+        "translations": {
+          "es": "La caja de pesca está abierta.",
+          "fr": "La boîte de pêche est ouverte.",
+          "de": "Der Angelkasten ist offen.",
+          "it": "La cassetta da pesca è aperta.",
+          "pt": "A caixa de pesca está aberta.",
+          "no": "Fiskeskrinet er åpent."
+        }
+      },
+      {
+        "text": "The life ring is nearby.",
+        "translations": {
+          "es": "El salvavidas está cerca.",
+          "fr": "La bouée de sauvetage est proche.",
+          "de": "Der Rettungsring ist in der Nähe.",
+          "it": "Il salvagente è vicino.",
+          "pt": "A boia salva-vidas está perto.",
+          "no": "Livbøyen er i nærheten."
+        }
+      },
+      {
+        "text": "The ocean is shining.",
+        "translations": {
+          "es": "El océano brilla.",
+          "fr": "L'océan brille.",
+          "de": "Der Ozean glänzt.",
+          "it": "L'oceano brilla.",
+          "pt": "O oceano está brilhando.",
+          "no": "Havet skinner."
+        }
+      },
+      {
+        "text": "There is a whale.",
+        "translations": {
+          "es": "Hay una ballena.",
+          "fr": "Il y a une baleine.",
+          "de": "Da ist ein Wal.",
+          "it": "C'è una balena.",
+          "pt": "Há uma baleia.",
+          "no": "Det er en hval."
+        }
+      },
+      {
+        "text": "The dolphin jumps from the water.",
+        "translations": {
+          "es": "El delfín salta del agua.",
+          "fr": "Le dauphin saute hors de l'eau.",
+          "de": "Der Delfin springt aus dem Wasser.",
+          "it": "Il delfino salta fuori dall'acqua.",
+          "pt": "O golfinho salta da água.",
+          "no": "Delfinen hopper opp av vannet."
+        }
+      },
+      {
+        "text": "The seagull is nearby.",
+        "translations": {
+          "es": "La gaviota está cerca.",
+          "fr": "La mouette est proche.",
+          "de": "Die Möwe ist in der Nähe.",
+          "it": "Il gabbiano è vicino.",
+          "pt": "A gaivota está perto.",
+          "no": "Måken er i nærheten."
+        }
+      },
+      {
+        "text": "Look at the whale.",
+        "translations": {
+          "es": "Mira la ballena.",
+          "fr": "Regarde la baleine.",
+          "de": "Schau den Wal an.",
+          "it": "Guarda la balena.",
+          "pt": "Olhe para a baleia.",
+          "no": "Se på hvalen."
+        }
+      },
+      {
+        "text": "Look at the dolphin.",
+        "translations": {
+          "es": "Mira el delfín.",
+          "fr": "Regarde le dauphin.",
+          "de": "Schau den Delfin an.",
+          "it": "Guarda il delfino.",
+          "pt": "Olhe para o golfinho.",
+          "no": "Se på delfinen."
+        }
+      },
+      {
+        "text": "The seagull is on the railing.",
+        "translations": {
+          "es": "La gaviota está en la barandilla.",
+          "fr": "La mouette est sur la rambarde.",
+          "de": "Die Möwe sitzt auf der Reling.",
+          "it": "Il gabbiano è sulla ringhiera.",
+          "pt": "A gaivota está no corrimão.",
+          "no": "Måken sitter på rekka."
+        }
+      },
+      {
+        "text": "The dog is on the deck.",
+        "translations": {
+          "es": "El perro está en la cubierta.",
+          "fr": "Le chien est sur le pont.",
+          "de": "Der Hund ist an Deck.",
+          "it": "Il cane è sul ponte.",
+          "pt": "O cachorro está no convés.",
+          "no": "Hunden er på dekk."
+        }
+      },
+      {
+        "text": "I need the fishing pole.",
+        "translations": {
+          "es": "Necesito la caña de pescar.",
+          "fr": "J'ai besoin de la canne à pêche.",
+          "de": "Ich brauche die Angel.",
+          "it": "Ho bisogno della canna da pesca.",
+          "pt": "Preciso da vara de pesca.",
+          "no": "Jeg trenger fiskestangen."
+        }
+      },
+      {
+        "text": "The tackle box is here.",
+        "translations": {
+          "es": "La caja de pesca está aquí.",
+          "fr": "La boîte de pêche est ici.",
+          "de": "Der Angelkasten ist hier.",
+          "it": "La cassetta da pesca è qui.",
+          "pt": "A caixa de pesca está aqui.",
+          "no": "Fiskeskrinet er her."
+        }
+      },
+      {
+        "text": "The life ring is ready.",
+        "translations": {
+          "es": "El salvavidas está listo.",
+          "fr": "La bouée de sauvetage est prête.",
+          "de": "Der Rettungsring ist bereit.",
+          "it": "Il salvagente è pronto.",
+          "pt": "A boia salva-vidas está pronta.",
+          "no": "Livbøyen er klar."
+        }
+      },
+      {
+        "text": "The drink is on the table.",
+        "translations": {
+          "es": "La bebida está sobre la mesa.",
+          "fr": "La boisson est sur la table.",
+          "de": "Das Getränk steht auf dem Tisch.",
+          "it": "La bevanda è sul tavolo.",
+          "pt": "A bebida está sobre a mesa.",
+          "no": "Drikken står på bordet."
+        }
+      },
+      {
+        "text": "The sun is going down.",
+        "translations": {
+          "es": "El sol está bajando.",
+          "fr": "Le soleil se couche.",
+          "de": "Die Sonne geht unter.",
+          "it": "Il sole sta tramontando.",
+          "pt": "O sol está se pondo.",
+          "no": "Solen går ned."
+        }
+      },
+      {
+        "text": "The sky is clear.",
+        "translations": {
+          "es": "El cielo está despejado.",
+          "fr": "Le ciel est dégagé.",
+          "de": "Der Himmel ist klar.",
+          "it": "Il cielo è sereno.",
+          "pt": "O céu está limpo.",
+          "no": "Himmelen er klar."
+        }
+      },
+      {
+        "text": "The water is calm.",
+        "translations": {
+          "es": "El agua está tranquila.",
+          "fr": "L'eau est calme.",
+          "de": "Das Wasser ist ruhig.",
+          "it": "L'acqua è calma.",
+          "pt": "A água está calma.",
+          "no": "Vannet er rolig."
+        }
+      },
+      {
+        "text": "It is a beautiful evening.",
+        "translations": {
+          "es": "Hace una tarde hermosa.",
+          "fr": "C'est une belle soirée.",
+          "de": "Es ist ein schöner Abend.",
+          "it": "È una bellissima serata.",
+          "pt": "É uma linda tarde.",
+          "no": "Det er en vakker kveld."
+        }
+      }
+    ],
     "hotspots": [
       {
         "id": "grandpa",
@@ -11802,7 +13668,28 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
       }
     ],
     "overlays": [],
-    "challenges": []
+    "challenges": [
+      {
+        "prompt": "Grandma Cathy",
+        "target": "cathy"
+      },
+      {
+        "prompt": "find the yacht hotspot",
+        "target": "fishing-pole"
+      },
+      {
+        "prompt": "Whale",
+        "target": "whale"
+      },
+      {
+        "prompt": "Dolphin",
+        "target": "dolphin"
+      },
+      {
+        "prompt": "Seagull",
+        "target": "seagull"
+      }
+    ]
   },
   "protect-earth": {
     "title": "Protect Earth",
@@ -12064,7 +13951,16 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
       }
     ],
     "overlays": [],
-    "challenges": []
+    "challenges": [
+      {
+        "prompt": "Find the Smoke",
+        "target": "smoke"
+      },
+      {
+        "prompt": "Find the River",
+        "target": "river"
+      }
+    ]
   },
   "campground": {
     "title": "campground",

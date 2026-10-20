@@ -4,11 +4,11 @@ window.TAB_MASTER_DEFAULTS={
   "panelFont": 18,
   "panelFamily": "Arial, sans-serif",
   "scriptWidth": 435,
-  "scriptHeight": 190,
+  "scriptHeight": 240,
   "scriptFont": 22,
-  "scriptFamily": "Arial, sans-serif",
+  "scriptFamily": "Georgia, serif",
   "opacity": 54,
   "native": "en",
-  "learn": "no",
+  "learn": "en",
   "voiceMode": "standard"
 };
