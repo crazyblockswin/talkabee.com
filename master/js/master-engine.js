@@ -26,9 +26,18 @@ const clamp=(v,a,b)=>Math.max(a,Math.min(b,v));
 function saveSettings(){localStorage.setItem(settingKey,JSON.stringify(settings));applySettings()}
 function applySettings(){const root=document.documentElement.style;for(const [k,v] of Object.entries({'--panel-width':settings.panelWidth+'px','--panel-height':settings.panelHeight+'px','--panel-font':settings.panelFont+'px','--panel-family':settings.panelFamily,'--script-width':settings.scriptWidth+'px','--script-height':settings.scriptHeight+'px','--script-font':settings.scriptFont+'px','--script-family':settings.scriptFamily,'--card-opacity':settings.opacity/100}))root.setProperty(k,v);for(const [id,key] of [['panelWidth','panelWidth'],['panelHeight','panelHeight'],['panelFont','panelFont'],['panelFamily','panelFamily'],['scriptWidth','scriptWidth'],['scriptHeight','scriptHeight'],['scriptFont','scriptFont'],['scriptFamily','scriptFamily'],['opacity','opacity']])if($(id)){$(id).value=settings[key];const out=$(id+'Val');if(out)out.textContent=settings[key]+(key==='opacity'?'%':'px')};$('native').value=settings.native;$('learn').value=settings.learn;$('voiceMode').value=settings.voiceMode}
 function clearImagePreview(){if(temporaryImageUrl){URL.revokeObjectURL(temporaryImageUrl);temporaryImageUrl=null}}
-function allScenes(){const out={};for(const id of sceneNames())out[id]=loadScene(id);return out}
+function allScenes(){const out={};for(const id of sceneNames())out[id]=loadScene(id);if(editable&&sceneName&&scene){const score=s=>Number(!!s?.image)+(s?.hotspots?.length||0)+(s?.overlays?.length||0)+(s?.lessons?.length||0)+(s?.challenges?.length||0);if(!out[sceneName]||score(scene)>score(out[sceneName]))out[sceneName]=structuredClone(scene);}return out}
 function backupAll(){download('talkabee-all-scenes-'+new Date().toISOString().slice(0,10)+'.json',JSON.stringify({format:'talkabee-v2-all-scenes',settings,scenes:allScenes()},null,2),'application/json');status('Downloaded complete Adventure backup. Image and sound files are separate.')}
-function publishAll(){backupAll();download('published-scenes.js','window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},'+JSON.stringify(allScenes(),null,2).replace(/</g,'\\u003c')+');\n','text/javascript');download('master-settings.js','window.TAB_MASTER_DEFAULTS='+JSON.stringify(settings,null,2)+';\n','text/javascript');status('Downloaded complete backup, published-scenes.js and master-settings.js. Upload the JS files to data/; nothing was overwritten automatically.')}
+function publishAll(){
+ const scenes=allScenes();
+ const populated=Object.entries(scenes).filter(([id,s])=>!id.startsWith('test-')&&(!!s.image||s.hotspots?.length||s.overlays?.length||s.lessons?.length||s.challenges?.length));
+ const msg='Publishing '+populated.length+' Adventures with saved content: '+populated.map(([id])=>id).join(', ')+'.\n\nIf an imported Adventure is missing, click Cancel. The importer and publisher must run from the same Firefox website address/local file location.';
+ if(!confirm(msg)){status('Publish cancelled. No files downloaded.');return;}
+ backupAll();
+ download('published-scenes.js','window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},'+JSON.stringify(scenes,null,2).replace(/</g,'\\u003c')+');\n','text/javascript');
+ download('master-settings.js','window.TAB_MASTER_DEFAULTS='+JSON.stringify(settings,null,2)+';\n','text/javascript');
+ status('Published '+populated.length+' Adventures with content. Upload both JS files to data/.');
+}
 function saveBackup(){const stamp=new Date().toISOString().replace(/[:.]/g,'-');download(sceneName+'-backup-'+stamp+'.json',JSON.stringify(scene,null,2),'application/json');}
 function saveScene(){localStorage.setItem(sceneKey+sceneName,JSON.stringify(scene));updateScenePicker();status('Scene saved in this browser. Export a data file to deploy it.')}
 function status(s){if($('status'))$('status').textContent=s}
