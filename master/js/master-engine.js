@@ -7,7 +7,17 @@ const settingKey='talkabee-v2-global-master-v1', sceneKey='talkabee-v2-scene-';
 function read(k,f){try{return JSON.parse(localStorage.getItem(k))??f}catch{return f}}
 let settings={...defaults,...read(settingKey,{})},sceneName=new URLSearchParams(location.search).get('scene')||'test-campground';
 let scene=loadScene(sceneName);let temporaryImageUrl=null;
-function loadScene(name){const built=(window.TAB_SCENES||{})[name];const entry=(window.TAB_ADVENTURE_CATALOG||[]).find(x=>x.id===name);return structuredClone(read(sceneKey+name,built||{title:entry?.title||name,image:'',lessons:[],hotspots:[],overlays:[],challenges:[]}));}
+function loadScene(name){
+ const built=(window.TAB_SCENES||{})[name];
+ const entry=(window.TAB_ADVENTURE_CATALOG||[]).find(x=>x.id===name);
+ const fallback={title:entry?.title||name,image:'',lessons:[],hotspots:[],overlays:[],challenges:[]};
+ const saved=read(sceneKey+name,null);
+ // A previously saved empty placeholder must not hide an imported/published Adventure.
+ // Preserve meaningful browser edits, and prefer published data only when saved data is empty.
+ const hasContent=s=>!!(s&&(s.image||s.hotspots?.length||s.overlays?.length||s.lessons?.length||s.challenges?.length));
+ const chosen=hasContent(saved)?saved:(hasContent(built)?built:(saved||built||fallback));
+ return structuredClone(chosen);
+}
 function sceneNames(){return [...new Set([...Object.keys(window.TAB_SCENES||{}),...(window.TAB_ADVENTURE_CATALOG||[]).map(x=>x.id),...Object.keys(localStorage).filter(k=>k.startsWith(sceneKey)).map(k=>k.slice(sceneKey.length))])];}
 function updateAdventureNavigation(){
  const ids=sceneNames().filter(id=>!id.startsWith('test-'));
