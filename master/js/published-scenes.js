@@ -456,7 +456,7 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
         "y": -1.56,
         "w": 23.91,
         "h": 33.67,
-        "sound": "",
+        "sound": "sounds/dinosaur.mp3",
         "translations": {}
       },
       {
@@ -466,7 +466,7 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
         "y": 27.85,
         "w": 18.61,
         "h": 28.56,
-        "sound": "",
+        "sound": "sounds/dinosaur-growl.mp3",
         "translations": {}
       },
       {
@@ -476,7 +476,7 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
         "y": 45.85,
         "w": 15.59,
         "h": 16.52,
-        "sound": "",
+        "sound": "sounds/dinosaur-growl.mp3",
         "translations": {}
       },
       {
@@ -486,7 +486,7 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
         "y": 31,
         "w": 27,
         "h": 31,
-        "sound": "",
+        "sound": "sounds/dinosaur-growl.mp3",
         "translations": {}
       },
       {
@@ -496,7 +496,7 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
         "y": 3,
         "w": 24,
         "h": 28,
-        "sound": "",
+        "sound": "sounds/dino1.mp3",
         "translations": {}
       },
       {
@@ -516,7 +516,7 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
         "y": 65.5,
         "w": 1,
         "h": 2.89,
-        "sound": "",
+        "sound": "sounds/hatching-egg.mp3",
         "translations": {}
       },
       {
@@ -526,7 +526,7 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
         "y": 85.24,
         "w": 22,
         "h": 16,
-        "sound": "",
+        "sound": "sounds/dinosaur-foot-steps.mp3",
         "translations": {}
       },
       {
@@ -536,7 +536,7 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
         "y": 59.93,
         "w": 13,
         "h": 34,
-        "sound": "",
+        "sound": "sounds/child-laughing.mp3",
         "translations": {}
       },
       {
@@ -546,7 +546,7 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
         "y": 60.19,
         "w": 11,
         "h": 29,
-        "sound": "",
+        "sound": "sounds/boy-laugh.mp3",
         "translations": {}
       },
       {
@@ -556,7 +556,7 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
         "y": 61,
         "w": 17,
         "h": 18,
-        "sound": "",
+        "sound": "sounds/rattling-bones.mp3",
         "translations": {}
       },
       {
@@ -566,7 +566,7 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
         "y": 38,
         "w": 15,
         "h": 25,
-        "sound": "",
+        "sound": "sounds/rattling-bones.mp3",
         "translations": {}
       },
       {
@@ -576,7 +576,7 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
         "y": 6.84,
         "w": 22.03,
         "h": 15.87,
-        "sound": "",
+        "sound": "sounds/dinosaur-museum.mp3",
         "translations": {}
       },
       {
@@ -1277,25 +1277,598 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
   },
   "mountain-ski-resort": {
     "title": "Mountain Ski Resort",
-    "image": "",
+    "image": "images/Talk-A-Bee-Mountain-Ski-Resort-Adventure.jpg",
     "lessons": [],
-    "hotspots": [],
+    "hotspots": [
+      {
+        "id": "mountain",
+        "label": "mountain",
+        "x": 19,
+        "y": 2,
+        "w": 38,
+        "h": 28,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "chairlift",
+        "label": "chairlift",
+        "x": 59,
+        "y": 0,
+        "w": 27,
+        "h": 22,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "skiers",
+        "label": "skiers",
+        "x": 48,
+        "y": 24,
+        "w": 20,
+        "h": 25,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "trails",
+        "label": "trails",
+        "x": 34,
+        "y": 34,
+        "w": 9,
+        "h": 8,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "lift",
+        "label": "lift",
+        "x": 34,
+        "y": 40,
+        "w": 9,
+        "h": 7,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "rentals",
+        "label": "rentals",
+        "x": 34,
+        "y": 46,
+        "w": 9,
+        "h": 7,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "school",
+        "label": "school",
+        "x": 34,
+        "y": 52,
+        "w": 10,
+        "h": 7,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "cafe",
+        "label": "cafe",
+        "x": 34,
+        "y": 58,
+        "w": 9,
+        "h": 7,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "skis",
+        "label": "skis",
+        "x": 43,
+        "y": 46,
+        "w": 10,
+        "h": 21,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "snowboard",
+        "label": "snowboard",
+        "x": 38,
+        "y": 59,
+        "w": 11,
+        "h": 9,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "grandma",
+        "label": "grandma",
+        "x": 54.64,
+        "y": 43.25,
+        "w": 6.61,
+        "h": 32.17,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "grandpa",
+        "label": "grandpa",
+        "x": 64.52,
+        "y": 41,
+        "w": 5.73,
+        "h": 35.7,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "lodge",
+        "label": "lodge",
+        "x": 70,
+        "y": 21,
+        "w": 30,
+        "h": 38,
+        "sound": "sounds/crowd-shopping.mp3",
+        "translations": {}
+      },
+      {
+        "id": "resortsign",
+        "label": "resortsign",
+        "x": 86,
+        "y": 31,
+        "w": 13,
+        "h": 10,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "firepit",
+        "label": "firepit",
+        "x": 86,
+        "y": 58,
+        "w": 10.15,
+        "h": 12.69,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "chairs",
+        "label": "chairs",
+        "x": 74,
+        "y": 59,
+        "w": 15,
+        "h": 19,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "trees",
+        "label": "trees",
+        "x": 0,
+        "y": 8,
+        "w": 28,
+        "h": 51,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "snow",
+        "label": "snow",
+        "x": 20.86,
+        "y": 71.87,
+        "w": 21.8,
+        "h": 19.06,
+        "sound": "",
+        "translations": {}
+      }
+    ],
     "overlays": [],
     "challenges": []
   },
   "airplane-flying": {
     "title": "Airplane Flying",
-    "image": "",
+    "image": "images/Talk-A-Bee-Airplane-Flying-Adventure.jpg",
     "lessons": [],
-    "hotspots": [],
+    "hotspots": [
+      {
+        "id": "captain",
+        "label": "captain",
+        "x": 13.92,
+        "y": 22.16,
+        "w": 12.49,
+        "h": 26.56,
+        "sound": "sounds/Captain-tour-guide.mp3",
+        "translations": {}
+      },
+      {
+        "id": "pilot",
+        "label": "pilot",
+        "x": 65.23,
+        "y": 33.18,
+        "w": 8.02,
+        "h": 19.2,
+        "sound": "sounds/airplane-news-heart.mp3",
+        "translations": {}
+      },
+      {
+        "id": "boy",
+        "label": "boy",
+        "x": 8.57,
+        "y": 55.8,
+        "w": 15.53,
+        "h": 33.15,
+        "sound": "sounds/airplane-eric-fishing.mp3",
+        "translations": {}
+      },
+      {
+        "id": "girl",
+        "label": "girl",
+        "x": 69.09,
+        "y": 59.56,
+        "w": 12.97,
+        "h": 20.55,
+        "sound": "sounds/airplane-bella-back-seat.mp3",
+        "translations": {}
+      },
+      {
+        "id": "bee",
+        "label": "bee",
+        "x": 85.92,
+        "y": 17.1,
+        "w": 7.57,
+        "h": 9.07,
+        "sound": "sounds/bee.mp3",
+        "translations": {}
+      },
+      {
+        "id": "mountain",
+        "label": "mountain",
+        "x": 53.18,
+        "y": 12.31,
+        "w": 12.12,
+        "h": 14.67,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "city",
+        "label": "city",
+        "x": 89.1,
+        "y": 41.18,
+        "w": 9.56,
+        "h": 10.74,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "tower",
+        "label": "tower",
+        "x": 83.18,
+        "y": 38.45,
+        "w": 3.88,
+        "h": 14.35,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "water",
+        "label": "water",
+        "x": 73.89,
+        "y": 35.65,
+        "w": 5.41,
+        "h": 12.72,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "ferry",
+        "label": "ferry",
+        "x": 92.93,
+        "y": 53.41,
+        "w": 5.77,
+        "h": 7.5,
+        "sound": "sounds/boat-horn.mp3",
+        "translations": {}
+      },
+      {
+        "id": "wing",
+        "label": "wing",
+        "x": -0.1,
+        "y": 31,
+        "w": 11.15,
+        "h": 16.41,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "overhead",
+        "label": "overhead",
+        "x": 27,
+        "y": 0,
+        "w": 49,
+        "h": 15,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "throttle",
+        "label": "throttle",
+        "x": 42,
+        "y": 64,
+        "w": 15,
+        "h": 28,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "headset",
+        "label": "headset",
+        "x": 83.41,
+        "y": 54.43,
+        "w": 4.44,
+        "h": 29.34,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "controls",
+        "label": "controls",
+        "x": 36,
+        "y": 62,
+        "w": 27,
+        "h": 33,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "clouds",
+        "label": "clouds",
+        "x": 2.45,
+        "y": 8.37,
+        "w": 12.27,
+        "h": 14.09,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "forest",
+        "label": "forest",
+        "x": 44.93,
+        "y": 29.72,
+        "w": 7.03,
+        "h": 9.97,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "airplane",
+        "label": "airplane",
+        "x": 39.28,
+        "y": 13.74,
+        "w": 5.22,
+        "h": 29.94,
+        "sound": "sounds/airplane-ambience.mp3",
+        "translations": {}
+      }
+    ],
     "overlays": [],
     "challenges": []
   },
   "zoo": {
     "title": "Zoo",
-    "image": "",
+    "image": "images/Talk-A-Bee-Zoo-Adventure.jpg",
     "lessons": [],
-    "hotspots": [],
+    "hotspots": [
+      {
+        "id": "elephant",
+        "label": "elephant",
+        "x": 7.13,
+        "y": 6.95,
+        "w": 18.86,
+        "h": 41.5,
+        "sound": "sounds/elephant.mp3",
+        "translations": {}
+      },
+      {
+        "id": "giraffe",
+        "label": "giraffe",
+        "x": 33,
+        "y": 13.83,
+        "w": 11.65,
+        "h": 28.61,
+        "sound": "sounds/giraffe.mp3",
+        "translations": {}
+      },
+      {
+        "id": "mountain",
+        "label": "mountain",
+        "x": 48.56,
+        "y": 12.63,
+        "w": 11.28,
+        "h": 12.59,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "monkey",
+        "label": "monkey",
+        "x": 73.93,
+        "y": 3.31,
+        "w": 7.25,
+        "h": 10.06,
+        "sound": "sounds/monkey.mp3",
+        "translations": {}
+      },
+      {
+        "id": "parrot",
+        "label": "parrot",
+        "x": 93.99,
+        "y": 5.15,
+        "w": 3.75,
+        "h": 18.38,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "lion",
+        "label": "lion",
+        "x": 80.45,
+        "y": 27.16,
+        "w": 16.68,
+        "h": 13.98,
+        "sound": "sounds/lion.mp3",
+        "translations": {}
+      },
+      {
+        "id": "zoosign",
+        "label": "zoosign",
+        "x": 53.8,
+        "y": 35.2,
+        "w": 18.44,
+        "h": 7.93,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "zebra",
+        "label": "zebra",
+        "x": 51.97,
+        "y": 46.97,
+        "w": 7.86,
+        "h": 12.8,
+        "sound": "sounds/zebra.mp3",
+        "translations": {}
+      },
+      {
+        "id": "tram",
+        "label": "tram",
+        "x": 62.25,
+        "y": 46.95,
+        "w": 10.81,
+        "h": 12.57,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "penguins",
+        "label": "penguins",
+        "x": 60.24,
+        "y": 66.07,
+        "w": 12.6,
+        "h": 12.06,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "seal",
+        "label": "seal",
+        "x": 86.8,
+        "y": 53.5,
+        "w": 9.02,
+        "h": 16.69,
+        "sound": "sounds/seal.mp3",
+        "translations": {}
+      },
+      {
+        "id": "waterfall",
+        "label": "waterfall",
+        "x": 94.13,
+        "y": 41.67,
+        "w": 7.7,
+        "h": 20.41,
+        "sound": "sounds/waterfall-big.mp3",
+        "translations": {}
+      },
+      {
+        "id": "pool",
+        "label": "pool",
+        "x": 75.13,
+        "y": 72.86,
+        "w": 11.36,
+        "h": 9.73,
+        "sound": "sounds/water-stream.mp3",
+        "translations": {}
+      },
+      {
+        "id": "boy",
+        "label": "boy",
+        "x": 25.6,
+        "y": 59.61,
+        "w": 11.91,
+        "h": 35.04,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "girl",
+        "label": "girl",
+        "x": 40.67,
+        "y": 72.06,
+        "w": 17.92,
+        "h": 15.83,
+        "sound": "sounds/girl.mp3",
+        "translations": {}
+      },
+      {
+        "id": "visitors",
+        "label": "visitors",
+        "x": 21.99,
+        "y": 46.12,
+        "w": 24.81,
+        "h": 14.7,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "path",
+        "label": "path",
+        "x": 32.95,
+        "y": 81.04,
+        "w": 5.35,
+        "h": 7.56,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "space-needle",
+        "label": "space needle",
+        "x": 72.53,
+        "y": 22.73,
+        "w": 2.09,
+        "h": 9.85,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "buildings",
+        "label": "buildings",
+        "x": 65.04,
+        "y": 24.87,
+        "w": 6.68,
+        "h": 7.54,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "tree",
+        "label": "tree",
+        "x": 86.13,
+        "y": 0.27,
+        "w": 4.8,
+        "h": 22.63,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "cave",
+        "label": "cave",
+        "x": 77.79,
+        "y": 52.53,
+        "w": 6,
+        "h": 8,
+        "sound": "",
+        "translations": {}
+      }
+    ],
     "overlays": [],
     "challenges": []
   },
