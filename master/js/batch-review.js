@@ -7,7 +7,7 @@ const safeImage=s=>/^images\/[^<>\"']+\.(?:png|jpe?g|webp|gif)$/i.test(s);
 const baseScene=id=>{try{return JSON.parse(localStorage.getItem(prefix+id)||'null')||structuredClone((window.TAB_SCENES||{})[id]||{title:catalog.find(x=>x.id===id)?.title||id,image:'',hotspots:[],overlays:[],lessons:[],challenges:[]})}catch{return {title:id,image:'',hotspots:[],overlays:[],lessons:[],challenges:[]}}};
 const close=(a,b)=>Math.abs(Number(a)-Number(b))<=2;
 function duplicate(h,others){return others.some(o=>norm(o.id)===norm(h.id)|| (norm(o.label)===norm(h.label)&&close(o.x,h.x)&&close(o.y,h.y))||(close(o.x,h.x)&&close(o.y,h.y)&&close(o.w,h.w)&&close(o.h,h.h)))}
-function locate(name){const n=norm(name.replace(/\.html?$/i,'').replace(/\(\d{8}-\d+\)/g,'').replace(/-studio-music/i,''));let scores=catalog.map(c=>{const id=norm(c.id),title=norm(c.title);return {id:c.id,title:c.title,score:n.includes(id)?id.length+20:n.includes(title)?title.length+20:0}}).filter(x=>x.score).sort((a,b)=>b.score-a.score);return scores.length===1||scores[0]?.score>scores[1]?.score?scores[0]:null}
+function locate(name){const n=norm(name.replace(/\.html?$/i,'').replace(/\(\d{8}-\d+\)/g,'').replace(/-studio-music/i,''));if(n.includes('seattle-fishing')&&!n.includes('charter')){const match=catalog.find(c=>c.id==='seattle-fishing-charter');if(match)return {id:match.id,title:match.title};}let scores=catalog.map(c=>{const id=norm(c.id),title=norm(c.title);return {id:c.id,title:c.title,score:n.includes(id)?id.length+20:n.includes(title)?title.length+20:0}}).filter(x=>x.score).sort((a,b)=>b.score-a.score);return scores.length===1||scores[0]?.score>scores[1]?.score?scores[0]:null}
 function pct(el,k){const s=el.getAttribute('style')||'',v=s.match(new RegExp('(?:^|;)\\s*'+k+'\\s*:\\s*(-?[0-9.]+)%','i'));return v?Number(v[1]):NaN}
 function valid(h){return [h.x,h.y,h.w,h.h].every(Number.isFinite)&&h.x>=-5&&h.y>=-5&&h.w>0&&h.h>0&&h.x+h.w<=110&&h.y+h.h<=110}
 function path(s){s=String(s||'').trim().replace(/\\/g,'/');return /^(?:javascript:|data:|blob:|https?:|file:|\/)/i.test(s)?'':s}
@@ -45,14 +45,27 @@ const id=sceneId+'-'+file.name+'-'+within.length;
 candidates.push({key:id,file:file.name,sceneId,sceneTitle:matched?.title||'Unmatched',type:'hotspot',h,dup,linked,checked:false,warning:!sceneId?'Adventure name not matched':dup?'Duplicate detected':!linked?'No declarative connection found':!h.sound?'No sound mapping detected':mapped?'Legacy JavaScript sound mapping found (verify file)':'Direct sound path found (verify file)'});
 }
 return {matched,found:nodes.length,eligible:within.length};}
-function render(){const root=$('reviewRows');root.replaceChildren();const totals={duplicates:0,unmatched:0};
+// Bulk approval controls are created alongside the existing review controls.
+// Only matched, nonduplicate candidates can be selected.
+function bulkSelection(checked){
+ for(const c of candidates)c.checked=Boolean(checked&&!c.dup&&c.sceneId);
+ render();
+}
+function installBulkControls(){
+ const root=$('reviewRows');if(!root||document.getElementById('tbReviewSelectAll'))return;
+ const bar=document.createElement('div');bar.style.cssText='display:flex;flex-wrap:wrap;gap:8px;margin:10px 0';
+ const all=document.createElement('button');all.id='tbReviewSelectAll';all.type='button';all.textContent='✓ Select All Eligible';all.onclick=()=>bulkSelection(true);
+ const none=document.createElement('button');none.id='tbReviewClearAll';none.type='button';none.textContent='Clear Selection';none.onclick=()=>bulkSelection(false);
+ bar.append(all,none);root.parentNode.insertBefore(bar,root);
+}
+function render(){installBulkControls();const root=$('reviewRows');root.replaceChildren();const totals={duplicates:0,unmatched:0};
 for(const c of candidates){if(c.dup)totals.duplicates++;if(!c.sceneId)totals.unmatched++;
 const row=document.createElement('div');row.style.cssText='display:grid;grid-template-columns:26px minmax(180px,1fr) minmax(130px,1fr);gap:8px;padding:9px;border-bottom:1px solid #777;align-items:center';
 const check=document.createElement('input');check.type='checkbox';check.checked=c.checked;check.disabled=c.dup||!c.sceneId;check.setAttribute('aria-label','Approve '+(c.type==='overlay'?c.overlay.label:c.type==='sound'?c.label:c.h.label));check.onchange=()=>{c.checked=check.checked;updateSummary()};
 const info=document.createElement('div');const strong=document.createElement('strong');strong.textContent=(c.type==='overlay'?'🖼 Overlay: ':c.type==='sound'?'🔊 Sound: ':'Hotspot: ')+(c.type==='overlay'?c.overlay.label:c.type==='sound'?c.label:c.h.label);const sub=document.createElement('div');sub.style.fontSize='12px';sub.textContent=c.file+' → '+c.sceneTitle;info.append(strong,sub);
 const warn=document.createElement('div');warn.style.fontSize='12px';warn.textContent=c.warning+(c.h?.sound?' | '+c.h.sound:'');row.append(check,info,warn);root.append(row);
 }
-$('reviewSummary').textContent=`${candidates.length} candidates across ${new Set(candidates.map(c=>c.file)).size} files; ${totals.duplicates} duplicates blocked; ${totals.unmatched} unmatched candidates blocked. Nothing is approved automatically.`;updateSummary()}
+$('reviewSummary').textContent=`${candidates.length} candidates across ${new Set(candidates.map(c=>c.file)).size} files; ${totals.duplicates} duplicates blocked; ${totals.unmatched} unmatched candidates blocked. Use Select All Eligible to approve matched, nonduplicate items, or choose individual items.`;updateSummary()}
 function updateSummary(){$('reviewApprove').disabled=!candidates.some(c=>c.checked&&!c.dup&&c.sceneId);$('reviewSelected').textContent=candidates.filter(c=>c.checked&&!c.dup&&c.sceneId).length+' approved for import';}
 $('batchFiles').addEventListener('change',async e=>{candidates.length=0;let reports=[];const files=[...e.target.files].filter(f=>/\.html?$/i.test(f.name));for(const f of files){try{const raw=await f.text(),r=scan(f,raw);reports.push(f.name+': '+r.eligible+' position-valid of '+r.found+' markup matches'+(r.matched?' → '+r.matched.title:' (unmatched)'))}catch(err){reports.push(f.name+': ERROR '+err.message)}}render();$('reviewLog').textContent=reports.join('\n');});
 $('reviewApprove').onclick=()=>{const selected=candidates.filter(c=>c.checked&&!c.dup&&c.sceneId);if(!selected.length)return;
