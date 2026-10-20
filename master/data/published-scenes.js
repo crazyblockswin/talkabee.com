@@ -1874,31 +1874,634 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
   },
   "great-wall-of-china": {
     "title": "Great Wall of China",
-    "image": "",
+    "image": "images/Talk-A-Bee-Great-Wall-of-China-Adventure.jpg",
     "lessons": [],
-    "hotspots": [],
+    "hotspots": [
+      {
+        "id": "wall",
+        "label": "wall",
+        "x": 56.07,
+        "y": 32.44,
+        "w": 6.27,
+        "h": 16.77,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "watchtower",
+        "label": "watchtower",
+        "x": 83,
+        "y": 8,
+        "w": 16,
+        "h": 31,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "watchtowers",
+        "label": "watchtowers",
+        "x": 52.41,
+        "y": 18.89,
+        "w": 30.65,
+        "h": 16.24,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "mountains",
+        "label": "mountains",
+        "x": 34.5,
+        "y": 22.44,
+        "w": 13.52,
+        "h": 13.26,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "balloons",
+        "label": "balloons",
+        "x": 57,
+        "y": 1,
+        "w": 17,
+        "h": 17,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "eagle",
+        "label": "eagle",
+        "x": 78,
+        "y": 1,
+        "w": 11,
+        "h": 12,
+        "sound": "sounds/eagle.mp3",
+        "translations": {}
+      },
+      {
+        "id": "bee",
+        "label": "bee",
+        "x": 2,
+        "y": 2,
+        "w": 12,
+        "h": 17,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "squirrel",
+        "label": "squirrel",
+        "x": 92,
+        "y": 49,
+        "w": 8,
+        "h": 17,
+        "sound": "sounds/squirrel.mp3",
+        "translations": {}
+      },
+      {
+        "id": "river",
+        "label": "river",
+        "x": 22.11,
+        "y": 52.14,
+        "w": 3.91,
+        "h": 16.37,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "village",
+        "label": "village",
+        "x": 7,
+        "y": 44.74,
+        "w": 17.73,
+        "h": 7.65,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "bridge",
+        "label": "bridge",
+        "x": 21.93,
+        "y": 59.06,
+        "w": 15.11,
+        "h": 5.19,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "trees",
+        "label": "trees",
+        "x": 1,
+        "y": 1,
+        "w": 30,
+        "h": 26,
+        "sound": "sounds/leaves.mp3",
+        "translations": {}
+      },
+      {
+        "id": "walkway",
+        "label": "walkway",
+        "x": 43.96,
+        "y": 72.69,
+        "w": 9.32,
+        "h": 29.67,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "tourists",
+        "label": "tourists",
+        "x": 55.67,
+        "y": 53.48,
+        "w": 34.02,
+        "h": 13.09,
+        "sound": "sounds/talking-people.mp3",
+        "translations": {}
+      }
+    ],
     "overlays": [],
     "challenges": []
   },
   "hollywood-movie-making": {
     "title": "Hollywood Movie Making",
-    "image": "",
+    "image": "images/Talk-A-Bee-Hollywood-Movie-Making-Adventure.jpg",
     "lessons": [],
-    "hotspots": [],
+    "hotspots": [
+      {
+        "id": "studio",
+        "label": "studio",
+        "x": 12.09,
+        "y": 19.81,
+        "w": 10.86,
+        "h": 17.57,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "hollywood",
+        "label": "hollywood",
+        "x": 36.11,
+        "y": 22,
+        "w": 15.02,
+        "h": 8.3,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "watertower",
+        "label": "watertower",
+        "x": 87,
+        "y": 2,
+        "w": 9,
+        "h": 19,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "helicopter",
+        "label": "helicopter",
+        "x": 61,
+        "y": 1,
+        "w": 14,
+        "h": 14,
+        "sound": "sounds/helicopter.mp3",
+        "translations": {}
+      },
+      {
+        "id": "drone",
+        "label": "drone",
+        "x": 54,
+        "y": 6,
+        "w": 9,
+        "h": 10,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "greenscreen",
+        "label": "greenscreen",
+        "x": 88,
+        "y": 20.46,
+        "w": 12,
+        "h": 28,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "boommic",
+        "label": "boommic",
+        "x": 73.86,
+        "y": 29.89,
+        "w": 12.43,
+        "h": 6.8,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "explosion",
+        "label": "explosion",
+        "x": 75,
+        "y": 36,
+        "w": 14,
+        "h": 20,
+        "sound": "sounds/explosion.mp3",
+        "translations": {}
+      },
+      {
+        "id": "stuntcar",
+        "label": "stuntcar",
+        "x": 72,
+        "y": 48,
+        "w": 17,
+        "h": 15,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "camera",
+        "label": "camera",
+        "x": 50,
+        "y": 39,
+        "w": 18,
+        "h": 29,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "monitor",
+        "label": "monitor",
+        "x": 65,
+        "y": 59,
+        "w": 19,
+        "h": 23,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "clapperboard",
+        "label": "clapperboard",
+        "x": 76,
+        "y": 62,
+        "w": 8,
+        "h": 12,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "directorchair",
+        "label": "directorchair",
+        "x": 1,
+        "y": 55,
+        "w": 19,
+        "h": 30,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "costumes",
+        "label": "costumes",
+        "x": 91,
+        "y": 43.28,
+        "w": 9,
+        "h": 25,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "makeup",
+        "label": "makeup",
+        "x": 87,
+        "y": 68,
+        "w": 13,
+        "h": 27,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "lights",
+        "label": "lights",
+        "x": 1.04,
+        "y": 12.39,
+        "w": 9.94,
+        "h": 27.91,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "bee",
+        "label": "bee",
+        "x": 49,
+        "y": 34,
+        "w": 12,
+        "h": 17,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "crew",
+        "label": "crew",
+        "x": 42.06,
+        "y": 45.03,
+        "w": 35.93,
+        "h": 11.56,
+        "sound": "sounds/crowd-shopping.mp3",
+        "translations": {}
+      },
+      {
+        "id": "palmtrees",
+        "label": "palmtrees",
+        "x": 0,
+        "y": 0,
+        "w": 34.09,
+        "h": 11.19,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "radio-tower",
+        "label": "radio tower",
+        "x": 49.02,
+        "y": 11.04,
+        "w": 1.94,
+        "h": 9.11,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "tourists",
+        "label": "tourists",
+        "x": 20.25,
+        "y": 47.28,
+        "w": 23.18,
+        "h": 22.16,
+        "sound": "sounds/talking-people.mp3",
+        "translations": {}
+      },
+      {
+        "id": "building",
+        "label": "building",
+        "x": 65.45,
+        "y": 23.2,
+        "w": 10.43,
+        "h": 7.81,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "palm-tree",
+        "label": "palm tree",
+        "x": 28.6,
+        "y": 20.43,
+        "w": 6,
+        "h": 8,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "movie-props",
+        "label": "movie props",
+        "x": 71.7,
+        "y": 83.82,
+        "w": 15.84,
+        "h": 11.89,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "studio-lighting",
+        "label": "studio lighting",
+        "x": 80.3,
+        "y": 13.43,
+        "w": 6,
+        "h": 8,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "walk-way",
+        "label": "walk way",
+        "x": 24.12,
+        "y": 80.8,
+        "w": 28.24,
+        "h": 19.76,
+        "sound": "",
+        "translations": {}
+      }
+    ],
     "overlays": [],
     "challenges": []
   },
   "hang-gliding": {
     "title": "Hang Gliding",
-    "image": "",
+    "image": "images/Talk-A-Bee-Hang-Gliding-Adventure.jpg",
     "lessons": [],
-    "hotspots": [],
+    "hotspots": [
+      {
+        "id": "glider",
+        "label": "glider",
+        "x": 14,
+        "y": 0,
+        "w": 83.59,
+        "h": 14.17,
+        "sound": "sounds/wind-blowing.mp3",
+        "translations": {}
+      },
+      {
+        "id": "boy",
+        "label": "boy",
+        "x": 42.13,
+        "y": 14.13,
+        "w": 13.17,
+        "h": 18.96,
+        "sound": "sounds/laughing-male.mp3",
+        "translations": {}
+      },
+      {
+        "id": "bee",
+        "label": "bee",
+        "x": 57.61,
+        "y": 23.39,
+        "w": 9.09,
+        "h": 10.57,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "girl",
+        "label": "girl",
+        "x": 68.46,
+        "y": 21.82,
+        "w": 11.54,
+        "h": 15.33,
+        "sound": "sounds/laughing-adult-woman.mp3",
+        "translations": {}
+      },
+      {
+        "id": "controlbar",
+        "label": "controlbar",
+        "x": 32.03,
+        "y": 36.08,
+        "w": 54.11,
+        "h": 5.8,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "helmet",
+        "label": "helmet",
+        "x": 47,
+        "y": 11,
+        "w": 10,
+        "h": 14,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "eagle",
+        "label": "eagle",
+        "x": 17.12,
+        "y": 13.55,
+        "w": 10.91,
+        "h": 12.37,
+        "sound": "sounds/eagle.mp3",
+        "translations": {}
+      },
+      {
+        "id": "mountains",
+        "label": "mountains",
+        "x": -3.7,
+        "y": 22.43,
+        "w": 23.52,
+        "h": 14.39,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "lake",
+        "label": "lake",
+        "x": 64.09,
+        "y": 45.33,
+        "w": 9.38,
+        "h": 6.32,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "waterfall",
+        "label": "waterfall",
+        "x": 9.97,
+        "y": 47.09,
+        "w": 10.07,
+        "h": 18.31,
+        "sound": "sounds/waterfall.mp3",
+        "translations": {}
+      },
+      {
+        "id": "town",
+        "label": "town",
+        "x": 72.54,
+        "y": 48.49,
+        "w": 15.46,
+        "h": 15.69,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "boat",
+        "label": "boat",
+        "x": 53.45,
+        "y": 51.39,
+        "w": 5.28,
+        "h": 9.57,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "train",
+        "label": "train",
+        "x": 63.29,
+        "y": 70.03,
+        "w": 19.44,
+        "h": 10.22,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "bridge",
+        "label": "bridge",
+        "x": 58,
+        "y": 74,
+        "w": 24,
+        "h": 18,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "river",
+        "label": "river",
+        "x": 54,
+        "y": 78,
+        "w": 24,
+        "h": 21,
+        "sound": "sounds/river.mp3",
+        "translations": {}
+      },
+      {
+        "id": "rv",
+        "label": "rv",
+        "x": 90.63,
+        "y": 66.74,
+        "w": 8.85,
+        "h": 9.78,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "road",
+        "label": "road",
+        "x": 84.78,
+        "y": 63.49,
+        "w": 5.43,
+        "h": 9.06,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "cabin",
+        "label": "cabin",
+        "x": 23.78,
+        "y": 69.5,
+        "w": 13.25,
+        "h": 14.3,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "deer",
+        "label": "deer",
+        "x": 2.45,
+        "y": 64.7,
+        "w": 10.77,
+        "h": 18.78,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "forest",
+        "label": "forest",
+        "x": 28.88,
+        "y": 52.41,
+        "w": 14.63,
+        "h": 12.39,
+        "sound": "",
+        "translations": {}
+      }
+    ],
     "overlays": [],
     "challenges": []
   },
   "seattle-fishing-charter": {
     "title": "Seattle Fishing Charter",
-    "image": "",
+    "image": "images/Talk-A-Bee-Seattle-Fishing-Adventure.jpg",
     "lessons": [],
     "hotspots": [],
     "overlays": [],
