@@ -73,16 +73,42 @@ function translate(o){return o.translations?.[settings.learn]||o.text||o.label||
 function nativeText(o){return o.translations?.[settings.native]||o.text||o.label||''}
 // Challenges use the same language selection as Activities. A saved translation
 // always wins; otherwise an exactly matching translated Activity can supply it.
+// Shared translation lookup for every Adventure. Saved user translations always win.
+// Reuse the original seven-language object dictionaries, not scene-specific patches.
+const challengeWordIndex={};
+for(const words of Object.values(ORIGINAL_CHALLENGE_WORDS)){
+ const english=words.en||{};
+ for(const [key,label] of Object.entries(english)){
+  const normalized=String(label).trim().toLowerCase();
+  if(!normalized)continue;
+  (challengeWordIndex[normalized]??={});
+  for(const language of Object.keys(LANG)){
+   if(words[language]?.[key] && !challengeWordIndex[normalized][language])
+    challengeWordIndex[normalized][language]=words[language][key];
+  }
+ }
+}
+function challengePromptObject(prompt){
+ return String(prompt||'').trim().replace(/^(?:find\s+(?:the\s+|an?\s+)?)/i,'').replace(/[.!?]+$/,'').trim();
+}
 function challengeTargetName(q,language){
  const h=(scene.hotspots||[]).find(h=>h.id===q?.target);
  const original=ORIGINAL_CHALLENGE_WORDS[sceneName];
- // The original Adventures link Challenges to object keys, not English prompts.
- const exact=original?.[language]?.[q?.target];
- if(typeof exact==='string'&&exact.trim())return exact;
+ const englishObject=challengePromptObject(q?.prompt);
+ const englishLabel=String(original?.en?.[q?.target]||h?.label||'').trim();
+ const matchesTarget=englishObject && englishLabel && (
+  englishObject.toLowerCase()===englishLabel.toLowerCase() ||
+  englishObject.toLowerCase()===String(q?.target||'').toLowerCase());
+ // Prefer the *written question* over a target ID when legacy target IDs
+ // and question wording disagree. Never silently change the answer hotspot.
+ const indexed=challengeWordIndex[englishObject.toLowerCase()]?.[language];
+ if(indexed)return indexed;
+ const sameScene=original?.[language]?.[q?.target];
+ if(matchesTarget && typeof sameScene==='string'&&sameScene.trim())return sameScene;
  const saved=h?.translations?.[language];
- if(typeof saved==='string'&&saved.trim())return saved;
- // The English hotspot label is useful as a fallback, but not a translation.
- return language==='en'?(h?.label||q?.prompt||''):'';
+ if(matchesTarget && typeof saved==='string'&&saved.trim())return saved;
+ if(language==='en')return englishObject||englishLabel;
+ return '';
 }
 function challengeText(q,language){
  if(!q)return 'Add a challenge in the Studio.';
@@ -96,6 +122,7 @@ function challengeText(q,language){
   const verb={es:'Encuentra',fr:'Trouve',de:'Finde',it:'Trova',pt:'Encontre',no:'Finn'}[language];
   if(verb)return verb+' '+target;
  }
+ // Do not invent translations for custom questions lacking translated words.
  return q.prompt||'';
 }
 
