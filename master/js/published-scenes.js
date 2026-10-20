@@ -456,7 +456,7 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
         "y": -1.56,
         "w": 23.91,
         "h": 33.67,
-        "sound": "",
+        "sound": "sounds/dinosaur.mp3",
         "translations": {}
       },
       {
@@ -466,7 +466,7 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
         "y": 27.85,
         "w": 18.61,
         "h": 28.56,
-        "sound": "",
+        "sound": "sounds/dinosaur-growl.mp3",
         "translations": {}
       },
       {
@@ -476,7 +476,7 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
         "y": 45.85,
         "w": 15.59,
         "h": 16.52,
-        "sound": "",
+        "sound": "sounds/dinosaur-growl.mp3",
         "translations": {}
       },
       {
@@ -486,7 +486,7 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
         "y": 31,
         "w": 27,
         "h": 31,
-        "sound": "",
+        "sound": "sounds/dinosaur-growl.mp3",
         "translations": {}
       },
       {
@@ -496,7 +496,7 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
         "y": 3,
         "w": 24,
         "h": 28,
-        "sound": "",
+        "sound": "sounds/dino1.mp3",
         "translations": {}
       },
       {
@@ -516,7 +516,7 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
         "y": 65.5,
         "w": 1,
         "h": 2.89,
-        "sound": "",
+        "sound": "sounds/hatching-egg.mp3",
         "translations": {}
       },
       {
@@ -526,7 +526,7 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
         "y": 85.24,
         "w": 22,
         "h": 16,
-        "sound": "",
+        "sound": "sounds/dinosaur-foot-steps.mp3",
         "translations": {}
       },
       {
@@ -536,7 +536,7 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
         "y": 59.93,
         "w": 13,
         "h": 34,
-        "sound": "",
+        "sound": "sounds/child-laughing.mp3",
         "translations": {}
       },
       {
@@ -546,7 +546,7 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
         "y": 60.19,
         "w": 11,
         "h": 29,
-        "sound": "",
+        "sound": "sounds/boy-laugh.mp3",
         "translations": {}
       },
       {
@@ -556,7 +556,7 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
         "y": 61,
         "w": 17,
         "h": 18,
-        "sound": "",
+        "sound": "sounds/rattling-bones.mp3",
         "translations": {}
       },
       {
@@ -566,7 +566,7 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
         "y": 38,
         "w": 15,
         "h": 25,
-        "sound": "",
+        "sound": "sounds/rattling-bones.mp3",
         "translations": {}
       },
       {
@@ -576,7 +576,7 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
         "y": 6.84,
         "w": 22.03,
         "h": 15.87,
-        "sound": "",
+        "sound": "sounds/dinosaur-museum.mp3",
         "translations": {}
       },
       {
