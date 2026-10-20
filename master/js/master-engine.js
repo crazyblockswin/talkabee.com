@@ -103,6 +103,17 @@ function challengeTargetName(q,language){
  // and question wording disagree. Never silently change the answer hotspot.
  const indexed=challengeWordIndex[englishObject.toLowerCase()]?.[language];
  if(indexed)return indexed;
+ // Some original Adventures call an object "Buoys" while their bilingual
+ // dictionary calls it "race buoys". Match a unique word-bounded name in
+ // THIS Adventure without changing the Challenge's saved target hotspot.
+ if(englishObject && original?.en && original?.[language]){
+  const needle=englishObject.toLowerCase();
+  const candidates=Object.entries(original.en).filter(([,name])=>{
+   const label=String(name).trim().toLowerCase();
+   return label!==needle && (label.endsWith(' '+needle) || label.startsWith(needle+' '));
+  }).filter(([key])=>typeof original[language][key]==='string' && original[language][key].trim());
+  if(candidates.length===1)return original[language][candidates[0][0]];
+ }
  const sameScene=original?.[language]?.[q?.target];
  if(matchesTarget && typeof sameScene==='string'&&sameScene.trim())return sameScene;
  const saved=h?.translations?.[language];
@@ -137,7 +148,11 @@ function challengeTranslationField(){
 
 let challengeCardHidden=false;
 function syncChallengePeek(){const card=$('card'),tab=$('tbShowChallenge');if(!card||!tab)return;const hidden=mode==='challenges'&&challengeCardHidden&&!document.body.classList.contains('tb-scene-only');card.hidden=mode==='discovery'||hidden||document.body.classList.contains('tb-scene-only');card.style.display=card.hidden?'none':'';tab.hidden=!hidden;tab.style.display=hidden?'block':'none';const hide=$('tbHideChallenge');if(hide)hide.hidden=mode!=='challenges';}
-function renderCard(){for(const [id,active] of [['activities',mode==='activities'],['challenges',mode==='challenges'],['discovery',mode==='discovery']])$(id).classList.toggle('selected',active);const c=$('card'),prompt=$('scriptText'),tr=$('translation'),fb=$('feedback');fb.textContent='';if(mode==='activities'){const item=currentText();$('cardTitle').textContent=`Activity ${scene.lessons.length?lesson+1:0} of ${scene.lessons.length}`;prompt.textContent=translate(item);tr.textContent=nativeText(item)===translate(item)?'':nativeText(item)}else if(mode==='challenges'){const q=scene.challenges[challenge];$('cardTitle').textContent=`Challenge ${scene.challenges.length?challenge+1:0} of ${scene.challenges.length}`;prompt.textContent=challengeText(q,settings.learn);const native=challengeText(q,settings.native);tr.textContent=native===challengeText(q,settings.learn)?'':native}else{c.hidden=true;syncChallengePeek();return}c.hidden=false;$('speak').disabled=false;syncChallengePeek();}
+function renderCard(){for(const [id,active] of [['activities',mode==='activities'],['challenges',mode==='challenges'],['discovery',mode==='discovery']])$(id).classList.toggle('selected',active);const c=$('card'),prompt=$('scriptText'),tr=$('translation'),fb=$('feedback');fb.textContent='';if(mode==='activities'){const item=currentText();$('cardTitle').textContent=`Activity ${scene.lessons.length?lesson+1:0} of ${scene.lessons.length}`;prompt.textContent=translate(item);tr.textContent=nativeText(item)===translate(item)?'':nativeText(item)}else if(mode==='challenges'){const q=scene.challenges[challenge];$('cardTitle').textContent=`Challenge ${scene.challenges.length?challenge+1:0} of ${scene.challenges.length}`;prompt.textContent=challengeText(q,settings.learn);const learning=challengeText(q,settings.learn);let native=challengeText(q,settings.native);
+ // If the native-language lookup repeats the learning line, use the
+ // original English prompt as the comparison whenever it differs.
+ if(native===learning && settings.learn!=='en')native=challengeText(q,'en');
+ tr.textContent=native===learning?'':native}else{c.hidden=true;syncChallengePeek();return}c.hidden=false;$('speak').disabled=false;syncChallengePeek();}
 function renderScene(){const area=$('scene');area.querySelectorAll('.hotspot,.overlay-image').forEach(el=>el.remove());$('sceneTitle').textContent=scene.title||'Untitled Adventure';area.style.backgroundImage=(temporaryImageUrl||scene.image)?`url(${JSON.stringify(temporaryImageUrl||window.tbMasterMediaUrl(scene.image))})`:'';$('demoLandscape').hidden=!!(temporaryImageUrl||scene.image);if(editable&&$('backgroundStatus'))$('backgroundStatus').textContent=temporaryImageUrl?'Local preview only — copy the image to the saved path before publishing.':scene.image?'Image path: '+scene.image:'No background assigned yet.';
  for(const h of scene.hotspots){const b=document.createElement('button');b.className='hotspot';b.type='button';b.title=h.label;b.setAttribute('aria-label',h.label);b.dataset.id=h.id;b.style.cssText=`left:${h.x}%;top:${h.y}%;width:${h.w}%;height:${h.h}%`;b.addEventListener('click',e=>{if(editMode){choose('hotspot',h.id);return}hit(h)});if(editable){const grip=document.createElement('span');grip.className='tb-hotspot-resize';grip.title='Drag to resize hotspot';b.append(grip)}area.append(b)}
  for(const o of scene.overlays){const img=document.createElement('img');img.className='overlay-image';img.src=window.tbMasterMediaUrl(o.src);img.alt=o.label||'Overlay';img.dataset.id=o.id;img.style.cssText=`left:${o.x}%;top:${o.y}%;width:${o.w}%;transform:rotate(${o.rotation||0}deg);z-index:${o.z||4}`;img.addEventListener('click',()=>{if(editMode)choose('overlay',o.id)});area.append(img)}
