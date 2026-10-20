@@ -3128,33 +3128,797 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
   },
   "bicycle-race": {
     "title": "Bicycle Race",
-    "image": "",
+    "image": "images/Talk-A-Bee-Bicycle-Race-Adventure.jpg",
     "lessons": [],
-    "hotspots": [],
+    "hotspots": [
+      {
+        "id": "startline",
+        "label": "startline",
+        "x": 34,
+        "y": 69,
+        "w": 63,
+        "h": 14,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "startgate",
+        "label": "startgate",
+        "x": 38,
+        "y": 14,
+        "w": 46.33,
+        "h": 16.3,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "official",
+        "label": "official",
+        "x": 94.03,
+        "y": 28.12,
+        "w": 6.07,
+        "h": 28.17,
+        "sound": "sounds/gun-shot.mp3",
+        "translations": {}
+      },
+      {
+        "id": "signal",
+        "label": "signal",
+        "x": 91.19,
+        "y": 8.74,
+        "w": 6,
+        "h": 17,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "helmet",
+        "label": "helmet",
+        "x": 35.76,
+        "y": 38.85,
+        "w": 5.51,
+        "h": 9.18,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "bicycle",
+        "label": "bicycle",
+        "x": 33.83,
+        "y": 65.09,
+        "w": 5.72,
+        "h": 17.71,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "racers",
+        "label": "racers",
+        "x": 64.89,
+        "y": 51.73,
+        "w": 29.78,
+        "h": 11.31,
+        "sound": "sounds/bicycles.mp3",
+        "translations": {}
+      },
+      {
+        "id": "trailsign",
+        "label": "trailsign",
+        "x": 0,
+        "y": 30,
+        "w": 14,
+        "h": 22,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "lake",
+        "label": "lake",
+        "x": 27.36,
+        "y": 34.45,
+        "w": 5.47,
+        "h": 10.22,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "mountain",
+        "label": "mountain",
+        "x": 16.2,
+        "y": 16.76,
+        "w": 21.52,
+        "h": 10.19,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "forest",
+        "label": "forest",
+        "x": 12.03,
+        "y": 26.96,
+        "w": 11.82,
+        "h": 8.83,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "spectators",
+        "label": "spectators",
+        "x": 41.53,
+        "y": 40.68,
+        "w": 54.31,
+        "h": 8.77,
+        "sound": "sounds/soft-cheering-sports.mp3",
+        "translations": {}
+      },
+      {
+        "id": "flags",
+        "label": "flags",
+        "x": 85.62,
+        "y": 20.02,
+        "w": 5.85,
+        "h": 4.89,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "tent",
+        "label": "tent",
+        "x": 84.82,
+        "y": 29.61,
+        "w": 10.27,
+        "h": 11.33,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "track",
+        "label": "track",
+        "x": 30.6,
+        "y": 89.31,
+        "w": 69.25,
+        "h": 10.96,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "rocks",
+        "label": "rocks",
+        "x": 2.71,
+        "y": 54.04,
+        "w": 16.43,
+        "h": 31.35,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "bicycle-racers",
+        "label": "bicycle racers",
+        "x": 23.9,
+        "y": 51.72,
+        "w": 40.79,
+        "h": 11.36,
+        "sound": "sounds/bicycles.mp3",
+        "translations": {}
+      },
+      {
+        "id": "she-hit-a-boulder-and-lost",
+        "label": "she hit a boulder and lost",
+        "x": 22.26,
+        "y": 39.88,
+        "w": 6.47,
+        "h": 47.54,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "why-is-the-bee-riding-a-bike-when-he-can-fly",
+        "label": "why is the bee riding a bike when he can fly",
+        "x": 55.25,
+        "y": 50.41,
+        "w": 7.56,
+        "h": 32.26,
+        "sound": "",
+        "translations": {}
+      }
+    ],
     "overlays": [],
     "challenges": []
   },
   "softball": {
     "title": "Softball",
-    "image": "",
+    "image": "images/Talk-A-Bee-Softball-Game-Adventure.jpg",
     "lessons": [],
-    "hotspots": [],
+    "hotspots": [
+      {
+        "id": "softball",
+        "label": "softball",
+        "x": 49.35,
+        "y": 48.18,
+        "w": 6.22,
+        "h": 8.15,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "pitchermound",
+        "label": "pitchermound",
+        "x": 34.19,
+        "y": 64.35,
+        "w": 13.28,
+        "h": 10.59,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "batter",
+        "label": "batter",
+        "x": 74.22,
+        "y": 46.84,
+        "w": 7.1,
+        "h": 18.61,
+        "sound": "sounds/baseball1.mp3",
+        "translations": {}
+      },
+      {
+        "id": "bat",
+        "label": "bat",
+        "x": 78.98,
+        "y": 22.91,
+        "w": 2.93,
+        "h": 19.09,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "catcher",
+        "label": "catcher",
+        "x": 86.21,
+        "y": 56.56,
+        "w": 8.56,
+        "h": 31.89,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "umpire",
+        "label": "umpire",
+        "x": 93.19,
+        "y": 28.85,
+        "w": 9,
+        "h": 67,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "homeplate",
+        "label": "homeplate",
+        "x": 60,
+        "y": 82,
+        "w": 21,
+        "h": 16,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "scoreboard",
+        "label": "scoreboard",
+        "x": 78.75,
+        "y": 14.3,
+        "w": 15.71,
+        "h": 12.19,
+        "sound": "sounds/baseball2.mp3",
+        "translations": {}
+      },
+      {
+        "id": "spectators",
+        "label": "spectators",
+        "x": 82.36,
+        "y": 27.33,
+        "w": 12.78,
+        "h": 14.41,
+        "sound": "sounds/soft-cheering-sports.mp3",
+        "translations": {}
+      },
+      {
+        "id": "fielder1",
+        "label": "fielder1",
+        "x": 8.98,
+        "y": 42.5,
+        "w": 6.49,
+        "h": 16.81,
+        "sound": "sounds/baseball1.mp3",
+        "translations": {}
+      },
+      {
+        "id": "fielder2",
+        "label": "fielder2",
+        "x": 25.68,
+        "y": 46.69,
+        "w": 7.51,
+        "h": 15.09,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "fielder3",
+        "label": "fielder3",
+        "x": 57.08,
+        "y": 45.39,
+        "w": 6.47,
+        "h": 14.13,
+        "sound": "sounds/baseball1.mp3",
+        "translations": {}
+      },
+      {
+        "id": "glove",
+        "label": "glove",
+        "x": 12.44,
+        "y": 58.56,
+        "w": 4.35,
+        "h": 7.52,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "helmet",
+        "label": "helmet",
+        "x": 71.51,
+        "y": 35.57,
+        "w": 7.03,
+        "h": 9.19,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "field",
+        "label": "field",
+        "x": 7.08,
+        "y": 64.67,
+        "w": 26.82,
+        "h": 26.18,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "lake",
+        "label": "lake",
+        "x": 46.58,
+        "y": 35.48,
+        "w": 10.45,
+        "h": 9.27,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "mountains",
+        "label": "mountains",
+        "x": 44.86,
+        "y": 11.65,
+        "w": 17.65,
+        "h": 15.55,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "flag",
+        "label": "flag",
+        "x": 69.31,
+        "y": 8.9,
+        "w": 5.65,
+        "h": 11.91,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "team-members",
+        "label": "team members",
+        "x": 0.3,
+        "y": 38.32,
+        "w": 8.45,
+        "h": 8.46,
+        "sound": "sounds/baseball1.mp3",
+        "translations": {}
+      },
+      {
+        "id": "pitcher",
+        "label": "pitcher",
+        "x": 38.38,
+        "y": 46.95,
+        "w": 7.67,
+        "h": 14.39,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "fence",
+        "label": "fence",
+        "x": 65.18,
+        "y": 45.53,
+        "w": 8.08,
+        "h": 18.09,
+        "sound": "",
+        "translations": {}
+      }
+    ],
     "overlays": [],
     "challenges": []
   },
   "football": {
     "title": "Football",
-    "image": "",
+    "image": "images/Talk-A-Bee-Football-Game-Adventure.jpg",
     "lessons": [],
-    "hotspots": [],
+    "hotspots": [
+      {
+        "id": "bee",
+        "label": "bee",
+        "x": 46.02,
+        "y": 56.72,
+        "w": 5.5,
+        "h": 17.09,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "football",
+        "label": "football",
+        "x": 49.78,
+        "y": 57.7,
+        "w": 4.5,
+        "h": 6.48,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "referee",
+        "label": "referee",
+        "x": 33,
+        "y": 45,
+        "w": 9,
+        "h": 24,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "scoreboard",
+        "label": "scoreboard",
+        "x": 18.86,
+        "y": 31.52,
+        "w": 14.09,
+        "h": 15.52,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "mountains",
+        "label": "mountains",
+        "x": 38.48,
+        "y": 14.68,
+        "w": 30.5,
+        "h": 11.32,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "center",
+        "label": "center",
+        "x": 56.93,
+        "y": 52.3,
+        "w": 4.55,
+        "h": 15.31,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "receiver",
+        "label": "receiver",
+        "x": 82.89,
+        "y": 49.93,
+        "w": 5.83,
+        "h": 17.72,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "defender",
+        "label": "defender",
+        "x": 72,
+        "y": 47,
+        "w": 7.86,
+        "h": 23.63,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "defender2",
+        "label": "defender2",
+        "x": 93.13,
+        "y": 49.07,
+        "w": 6.93,
+        "h": 23.87,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "helmet",
+        "label": "helmet",
+        "x": 48.78,
+        "y": 47.96,
+        "w": 4.77,
+        "h": 11.26,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "field",
+        "label": "field",
+        "x": 9.37,
+        "y": 69.95,
+        "w": 25.42,
+        "h": 24.5,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "yardline",
+        "label": "yardline",
+        "x": 28.94,
+        "y": 81.46,
+        "w": 64.65,
+        "h": 6.67,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "crowd",
+        "label": "crowd",
+        "x": 61.73,
+        "y": 36.11,
+        "w": 38.64,
+        "h": 15.87,
+        "sound": "sounds/football.mp3",
+        "translations": {}
+      },
+      {
+        "id": "pressbox",
+        "label": "pressbox",
+        "x": 81.27,
+        "y": 23.16,
+        "w": 17.32,
+        "h": 11.78,
+        "sound": "sounds/football.mp3",
+        "translations": {}
+      },
+      {
+        "id": "flag",
+        "label": "flag",
+        "x": 26.97,
+        "y": 14.57,
+        "w": 4.69,
+        "h": 10.94,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "lights",
+        "label": "lights",
+        "x": 73.17,
+        "y": 7.3,
+        "w": 5.59,
+        "h": 18.48,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "forest",
+        "label": "forest",
+        "x": 32.61,
+        "y": 29.01,
+        "w": 23.32,
+        "h": 6.21,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "lake",
+        "label": "lake",
+        "x": 42.94,
+        "y": 37.07,
+        "w": 15.64,
+        "h": 8.93,
+        "sound": "",
+        "translations": {}
+      }
+    ],
     "overlays": [],
     "challenges": []
   },
   "college-rowing": {
     "title": "College Rowing",
-    "image": "",
+    "image": "images/Talk-A-Bee-Rowing-Regatta-Adventure.jpg",
     "lessons": [],
-    "hotspots": [],
+    "hotspots": [
+      {
+        "id": "megaphone",
+        "label": "megaphone",
+        "x": 70.7,
+        "y": 57.05,
+        "w": 4.2,
+        "h": 10.33,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "crew",
+        "label": "crew",
+        "x": 35.4,
+        "y": 47.27,
+        "w": 14.33,
+        "h": 15.56,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "shell",
+        "label": "shell",
+        "x": 46.48,
+        "y": 70.93,
+        "w": 17.06,
+        "h": 6.24,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "redcrew",
+        "label": "redcrew",
+        "x": 77.75,
+        "y": 47.91,
+        "w": 21.87,
+        "h": 8.85,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "buoys",
+        "label": "buoys",
+        "x": 0,
+        "y": 42,
+        "w": 35,
+        "h": 16,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "banner",
+        "label": "banner",
+        "x": 81.19,
+        "y": 30.31,
+        "w": 18.33,
+        "h": 6.56,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "boathouse",
+        "label": "boathouse",
+        "x": 78.16,
+        "y": 14.62,
+        "w": 21.37,
+        "h": 13.59,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "spectators",
+        "label": "spectators",
+        "x": 58.73,
+        "y": 41.5,
+        "w": 27.79,
+        "h": 3.8,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "dock",
+        "label": "dock",
+        "x": 86.94,
+        "y": 43.03,
+        "w": 13.17,
+        "h": 4.01,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "sailboat",
+        "label": "sailboat",
+        "x": 19.25,
+        "y": 38.15,
+        "w": 5.21,
+        "h": 9.59,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "boat",
+        "label": "boat",
+        "x": 4,
+        "y": 37,
+        "w": 10,
+        "h": 15,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "mountains",
+        "label": "mountains",
+        "x": 53,
+        "y": 9.91,
+        "w": 13.43,
+        "h": 9.82,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "forest",
+        "label": "forest",
+        "x": 19.91,
+        "y": 32.25,
+        "w": 16.95,
+        "h": 7.41,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "flags",
+        "label": "flags",
+        "x": 62.68,
+        "y": 28.62,
+        "w": 12.11,
+        "h": 11.63,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "splash",
+        "label": "splash",
+        "x": 19.29,
+        "y": 61.94,
+        "w": 18.69,
+        "h": 14.06,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "rower",
+        "label": "rower",
+        "x": 56,
+        "y": 42,
+        "w": 10,
+        "h": 26,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "finish",
+        "label": "finish",
+        "x": 15.68,
+        "y": 49.52,
+        "w": 11.14,
+        "h": 5.84,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "rowing-coxwayne",
+        "label": "rowing coxwayne",
+        "x": 73.46,
+        "y": 55.78,
+        "w": 11.73,
+        "h": 20.04,
+        "sound": "sounds/rowing-announcer.mp3",
+        "translations": {}
+      }
+    ],
     "overlays": [],
     "challenges": []
   },
