@@ -258,9 +258,8 @@ const _TtsSession = class _TtsSession {
     // @ts-ignore-next-line
     __privateAdd(this, _logger);
     var _a;
-    if (_TtsSession._instance) {
+    if (_TtsSession._instance && _TtsSession._instance.voiceId === voiceId) {
       logger == null ? void 0 : logger("Reusing session for TTS!");
-      _TtsSession._instance.voiceId = voiceId ?? _TtsSession._instance.voiceId;
       __privateSet(_TtsSession._instance, _progressCallback, progress ?? __privateGet(_TtsSession._instance, _progressCallback));
       return _TtsSession._instance;
     }
@@ -447,12 +446,27 @@ function splitIntoChunks(text, maxLength = MAX_CHUNK_LENGTH) {
   pushCurrent();
   return chunks;
 }
-async function predict(config, callback) {
-  const session = new TtsSession({
-    voiceId: config.voiceId,
-    progress: callback
+// Serialize model switches so the shared ONNX session cannot synthesize
+// a new language using the previous language's loaded voice.
+let tbPredictQueue = Promise.resolve();
+function predict(config, callback) {
+  const job = tbPredictQueue.catch(() => {}).then(async () => {
+    const previous = TtsSession._instance;
+    if (previous && previous.voiceId !== config.voiceId) {
+      await previous.waitReady;
+      const oldSession = __privateGet(previous, _ortSession);
+      if (oldSession && typeof oldSession.release === "function")
+        await oldSession.release();
+      TtsSession._instance = null;
+    }
+    const session = new TtsSession({
+      voiceId: config.voiceId,
+      progress: callback
+    });
+    return session.predict(config.text);
   });
-  return session.predict(config.text);
+  tbPredictQueue = job.catch(() => {});
+  return job;
 }
 async function getBlob(url, callback) {
   let blob = await readBlob(url);
