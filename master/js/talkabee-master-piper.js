@@ -87,9 +87,13 @@ function update(){
  if(!wrap.hidden){if(engine)syncSelection();else load().catch(()=>{})}
 }
 function languageChanged(){
- stop();selectionLanguage='';selectionSignature='';
+ stop();
+ // Re-select the saved Piper voice immediately for the newly selected language.
+ // The engine and this controller both listen for language changes; this is
+ // safe even when both notifications arrive for the same selection.
+ selectionLanguage='';selectionSignature='';
  if(engine)syncSelection(true);
- else if(mode.value==='enhanced')load().catch(()=>{});
+ else if(mode.value==='enhanced')load().then(()=>syncSelection(true)).catch(()=>{});
  else status('Piper waiting for '+learn.value);
 }
 mode.addEventListener('change',update);
@@ -111,9 +115,13 @@ window.tbAdventurePiperSpeak=function(text,rate,onComplete){
   try{
    const m=await load();
    if(ticket!==token||mode.value!=='enhanced'||learn.value!==languageAtStart)return;
-   syncSelection();
+   // Verify the voice against the language *at speech time*, not the
+   // previously selected dropdown value. No page refresh is necessary.
+   if(selectionLanguage!==languageAtStart ||
+      !available(languageAtStart).includes(select.value))syncSelection(true);
    const voiceId=select.value;
-   if(!voiceId)throw Error('No Piper voice selected');
+   if(!voiceId||!available(languageAtStart).includes(voiceId))
+    throw Error('No Piper voice available for '+languageAtStart);
    status('Preparing '+voiceId+'…');
    const wav=await m.predict({text:String(text),voiceId},progress=>{
     if(ticket===token&&progress?.total)status('Downloading voice: '+Math.round(progress.loaded/progress.total*100)+'%');
