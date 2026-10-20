@@ -49,15 +49,15 @@ window.TAB_ADVENTURE_CATALOG=[
   },
   {
     "id": "seattle-fishing-charter",
-    "title": "Seattle Fishing Charter"
+    "title": "Seattle Fishing Adventure"
   },
   {
     "id": "train-engineer",
-    "title": "Train Engineer"
+    "title": "Steam Train Adventure"
   },
   {
     "id": "cave-exploration",
-    "title": "Cave Exploration"
+    "title": "Cave Adventure"
   },
   {
     "id": "bicycle-race",
@@ -65,15 +65,15 @@ window.TAB_ADVENTURE_CATALOG=[
   },
   {
     "id": "softball",
-    "title": "Softball"
+    "title": "Softball Game Adventure"
   },
   {
     "id": "football",
-    "title": "Football"
+    "title": "Football Game Adventure"
   },
   {
     "id": "college-rowing",
-    "title": "College Rowing"
+    "title": "Rowing Regatta Adventure"
   },
   {
     "id": "boat-locks",
@@ -97,11 +97,11 @@ window.TAB_ADVENTURE_CATALOG=[
   },
   {
     "id": "hot-air-balloon",
-    "title": "Hot Air Balloon"
+    "title": "Hot Air Balloon Festival Adventure"
   },
   {
     "id": "large-picnic",
-    "title": "Large Picnic"
+    "title": "Family Picnic Adventure"
   },
   {
     "id": "oval-office",
@@ -109,7 +109,7 @@ window.TAB_ADVENTURE_CATALOG=[
   },
   {
     "id": "nasa-spacewalk",
-    "title": "NASA Spacewalk"
+    "title": "Spacewalk Adventure"
   },
   {
     "id": "moon",
@@ -121,7 +121,7 @@ window.TAB_ADVENTURE_CATALOG=[
   },
   {
     "id": "spaceship-window-saturn",
-    "title": "Spaceship Window Saturn"
+    "title": "Saturn Spacecraft Adventure"
   },
   {
     "id": "spaceship-window-earth",
@@ -129,7 +129,7 @@ window.TAB_ADVENTURE_CATALOG=[
   },
   {
     "id": "military-drill-sergeant",
-    "title": "Military Drill Sergeant"
+    "title": "Basic Training Adventure"
   },
   {
     "id": "aircraft-carrier",
