@@ -27,6 +27,14 @@ function loadScene(name){const built=(window.TAB_SCENES||{})[name];const entry=(
  const recovered=window.TAB_RECOVERED_LESSONS?.[name] || (name==='animals-farm'?FARM_RECOVERED_LESSONS:name==='grandma-grandpas-place'?GRANDMA_RECOVERED_LESSONS:name==='train-station'?TRAIN_RECOVERED_LESSONS:name==='aunt-julies-island-retreat'?JULIE_RECOVERED_LESSONS:name==='softball'?SOFTBALL_RECOVERED_LESSONS:null);
  // Only fill missing lessons. Never overwrite user-edited or published lessons.
  if((!Array.isArray(data.lessons)||data.lessons.length===0)&&Array.isArray(recovered)&&recovered.length)data.lessons=structuredClone(recovered);
+ // Softball: a stale browser-saved scene can have empty Challenges while the published scene has them.
+ // Restore only missing arrays; never replace authored entries or overwrite the saved scene.
+ if(name==='softball'&&!data.challengeRecoveryDisabled&&(!Array.isArray(data.challenges)||data.challenges.length===0)){
+   const source=Array.isArray(built?.challenges)&&built.challenges.length?built.challenges:RECOVERED_CHALLENGES.softball;
+   const valid=new Set([...(data.hotspots||[]),...(built?.hotspots||[])].map(h=>h.id));
+   const matched=source.filter(q=>q&&valid.has(q.target));
+   if(matched.length)data.challenges=structuredClone(matched);
+ }
  // Add only verified missing Challenges; preserve all existing user-authored Challenges.
  if(!data.challengeRecoveryDisabled&&(!Array.isArray(data.challenges)||data.challenges.length===0)&&Array.isArray(RECOVERED_CHALLENGES[name])){
    const valid=new Set((data.hotspots||[]).map(h=>h.id));
