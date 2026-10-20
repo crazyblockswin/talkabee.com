@@ -41,6 +41,7 @@ const modeKey='talkabee-v2-last-card-mode';
 function savedMode(){try{const m=localStorage.getItem(modeKey)||sessionStorage.getItem(modeKey);return ['activities','challenges','discovery'].includes(m)?m:'activities'}catch{return 'activities'}}
 function rememberMode(){try{localStorage.setItem(modeKey,mode);sessionStorage.setItem(modeKey,mode)}catch{}}
 let lesson=0,challenge=0,mode=savedMode(),selectedType='hotspot',selectedId='',editMode=false,lastSpeech='',cardXY=null;
+let browserSpeechTicket=0,browserSpeechTimer=null;
 const clamp=(v,a,b)=>Math.max(a,Math.min(b,v));
 function saveSettings(){localStorage.setItem(settingKey,JSON.stringify(settings));applySettings()}
 function applySettings(){const root=document.documentElement.style;for(const [k,v] of Object.entries({'--panel-width':settings.panelWidth+'px','--panel-height':settings.panelHeight+'px','--panel-font':settings.panelFont+'px','--panel-family':settings.panelFamily,'--script-width':settings.scriptWidth+'px','--script-height':settings.scriptHeight+'px','--script-font':settings.scriptFont+'px','--script-family':settings.scriptFamily,'--card-opacity':settings.opacity/100}))root.setProperty(k,v);for(const [id,key] of [['panelWidth','panelWidth'],['panelHeight','panelHeight'],['panelFont','panelFont'],['panelFamily','panelFamily'],['scriptWidth','scriptWidth'],['scriptHeight','scriptHeight'],['scriptFont','scriptFont'],['scriptFamily','scriptFamily'],['opacity','opacity']])if($(id)){$(id).value=settings[key];const out=$(id+'Val');if(out)out.textContent=settings[key]+(key==='opacity'?'%':'px')};$('native').value=settings.native;$('learn').value=settings.learn;$('voiceMode').value=settings.voiceMode}
@@ -113,7 +114,37 @@ function playSound(path){
   if(!path)return;
   try{const a=player.play(path);a.play().catch(()=>{if(player.current===a)player.stop();status('Sound file unavailable: '+path)})}catch{player.stop();status('Sound file unavailable: '+path)}
 }
-function speak(text,slow,onend){if(!text){onend?.();return;}lastSpeech=text;let finished=false;const finish=()=>{if(finished)return;finished=true;onend?.()};if(settings.voiceMode==='enhanced'&&typeof window.tbAdventurePiperSpeak==='function'){try{if(window.tbAdventurePiperSpeak(text,slow?.75:1,finish)!==false)return}catch(e){status('Piper unavailable; using browser voice')}}else if(settings.voiceMode==='enhanced')status('Piper adapter not connected yet; using browser voice');if(!('speechSynthesis'in window)){finish();return;}window.speechSynthesis.cancel();const u=new SpeechSynthesisUtterance(text);u.onend=finish;u.onerror=finish;u.lang=({en:'en-US',es:'es-ES',fr:'fr-FR',de:'de-DE',it:'it-IT',pt:'pt-PT',no:'nb-NO'})[settings.learn];u.rate=slow?.75:1;const wanted=read('talkabee-v2-voice-'+settings.learn,'');const available=speechSynthesis.getVoices();const matches=available.filter(v=>settings.learn==='no'?/^n[bo](-|_)/i.test(v.lang):v.lang.toLowerCase().split(/[-_]/)[0]===settings.learn);const voice=matches.find(v=>v.voiceURI===wanted)||matches.find(v=>v.default)||matches[0];if(voice)u.voice=voice;else if(available.length)status('No installed browser voice for '+(LANG[settings.learn]||settings.learn)+'; use Enhanced Piper or install a matching system voice');speechSynthesis.speak(u)}
+function speak(text,slow,onend){
+ if(!text){onend?.();return;}
+ lastSpeech=text;
+ const ticket=++browserSpeechTicket;
+ if(browserSpeechTimer!==null){clearTimeout(browserSpeechTimer);browserSpeechTimer=null}
+ let finished=false;
+ const finish=()=>{if(finished||ticket!==browserSpeechTicket)return;finished=true;onend?.()};
+ // Cancel the previous browser utterance before starting either voice engine.
+ // Starting immediately after cancel() can clip the beginning in Firefox.
+ window.speechSynthesis?.cancel();
+ if(settings.voiceMode==='enhanced'&&typeof window.tbAdventurePiperSpeak==='function'){
+  try{if(window.tbAdventurePiperSpeak(text,slow?.75:1,finish)!==false)return}
+  catch(e){status('Piper unavailable; using browser voice')}
+ }else if(settings.voiceMode==='enhanced')status('Piper adapter not connected yet; using browser voice');
+ if(!('speechSynthesis'in window)){finish();return;}
+ const u=new SpeechSynthesisUtterance(text);
+ u.onend=finish;u.onerror=finish;
+ u.lang=({en:'en-US',es:'es-ES',fr:'fr-FR',de:'de-DE',it:'it-IT',pt:'pt-PT',no:'nb-NO'})[settings.learn];
+ u.rate=slow?.75:1;
+ const wanted=read('talkabee-v2-voice-'+settings.learn,'');
+ const available=speechSynthesis.getVoices();
+ const matches=available.filter(v=>settings.learn==='no'?/^n[bo](-|_)/i.test(v.lang):v.lang.toLowerCase().split(/[-_]/)[0]===settings.learn);
+ const voice=matches.find(v=>v.voiceURI===wanted)||matches.find(v=>v.default)||matches[0];
+ if(voice)u.voice=voice;
+ else if(available.length)status('No installed browser voice for '+(LANG[settings.learn]||settings.learn)+'; use Enhanced Piper or install a matching system voice');
+ browserSpeechTimer=setTimeout(()=>{
+  browserSpeechTimer=null;
+  if(ticket!==browserSpeechTicket||settings.voiceMode==='enhanced')return;
+  speechSynthesis.speak(u);
+ },220);
+}
 function refreshVoices(){const s=$('voiceSelect');if(!s)return;const voices=speechSynthesis?.getVoices?.()||[];s.replaceChildren();const matching=voices.filter(v=>settings.learn==='no'?/^n[bo]/i.test(v.lang):v.lang.toLowerCase().startsWith(settings.learn));const none=document.createElement('option');none.value='';none.textContent='Browser default';s.append(none);for(const v of matching){const o=document.createElement('option');o.value=v.voiceURI;o.textContent=v.name+' ('+v.lang+')';s.append(o)}s.value=read('talkabee-v2-voice-'+settings.learn,'')}
 function choose(type,id){selectedType=type;selectedId=id;refreshList();const o=(type==='hotspot'?scene.hotspots:scene.overlays).find(x=>x.id===id);if(!o)return;for(const k of ['x','y','w','h','rotation','z'])if($(k))$(k).value=o[k]??(k==='h'?12:0);$('objectLabel').value=o.label||'';$('objectSrc').value=type==='hotspot'?(o.sound||''):(o.src||'');$('objectSrcLabel').textContent=type==='hotspot'?'Sound file path':'Image file path';$('objectTranslation').value=o.translations?.[settings.learn]||'';status(`Selected ${type}: ${o.label||id}`)}
 function refreshList(){if(!$('objectList'))return;const list=$('objectList');list.replaceChildren();for(const type of ['hotspot','overlay'])for(const o of type==='hotspot'?scene.hotspots:scene.overlays){const opt=document.createElement('option');opt.value=type+':'+o.id;opt.textContent=type+': '+(o.label||o.id);list.append(opt)}list.value=selectedType+':'+selectedId}
@@ -161,7 +192,7 @@ function setupChallengePeek(){
  syncChallengePeek();
 }
 function setup(){rememberMode();setupChallengePeek();setupSceneView();for(const [code,name] of Object.entries(LANG))for(const id of ['native','learn']){const opt=document.createElement('option');opt.value=code;opt.textContent=name;$(id).append(opt)}applySettings();renderScene();updateScenePicker();updateAdventureNavigation();$('scenePicker').addEventListener('change',()=>switchScene($('scenePicker').value));if(editable&&$('studioScenePicker'))$('studioScenePicker').addEventListener('change',()=>switchScene($('studioScenePicker').value));window.addEventListener('storage',e=>{if(e.key===settingKey){settings={...defaults,...read(settingKey,{})};applySettings();renderCard();}else if(e.key===sceneKey+sceneName){scene=loadScene(sceneName);renderScene();if(editable){refreshLessons();refreshChallenges();}}});initDrag();$('previousAdventure').onclick=()=>{const ids=sceneNames().filter(id=>!id.startsWith('test-'));const i=ids.indexOf(sceneName);if(i>0)switchScene(ids[i-1])};$('nextAdventure').onclick=()=>{const ids=sceneNames().filter(id=>!id.startsWith('test-'));const i=ids.indexOf(sceneName);if(i>=0&&i<ids.length-1)switchScene(ids[i+1])};$('activities').onclick=()=>{mode='activities';rememberMode();renderCard()};$('challenges').onclick=()=>{mode='challenges';rememberMode();renderCard()};$('discovery').onclick=()=>{mode='discovery';rememberMode();renderCard()};$('next').onclick=()=>{if(mode==='challenges')challenge=(challenge+1)%Math.max(1,scene.challenges.length);else lesson=(lesson+1)%Math.max(1,scene.lessons.length);renderCard()};$('speak').onclick=()=>speak(mode==='activities'?translate(currentText()):challengeSpeech(scene.challenges[challenge]),false);$('slow').onclick=()=>speak(mode==='activities'?translate(currentText()):challengeSpeech(scene.challenges[challenge]),true);$('replay').onclick=()=>speak(lastSpeech,false);$('cardReset').onclick=resetCard;
-for(const key of ['native','learn','voiceMode'])$(key).addEventListener('change',()=>{settings[key]=$(key).value;if(key==='learn'||key==='voiceMode'){window.speechSynthesis?.cancel();window.tbMasterPiperStop?.();lastSpeech='';}saveSettings();refreshVoices();renderCard();if(key==='learn'&&editable){syncLesson();syncChallenge();if(selectedId)choose(selectedType,selectedId)}window.dispatchEvent(new CustomEvent('tb-master-language-change',{detail:{native:settings.native,learn:settings.learn,mode:settings.voiceMode}}))});$('voiceSelect').onchange=()=>{window.speechSynthesis?.cancel();localStorage.setItem('talkabee-v2-voice-'+settings.learn,JSON.stringify($('voiceSelect').value));};if('speechSynthesis'in window){speechSynthesis.addEventListener?.('voiceschanged',refreshVoices);refreshVoices()}
+for(const key of ['native','learn','voiceMode'])$(key).addEventListener('change',()=>{settings[key]=$(key).value;if(key==='learn'||key==='voiceMode'){browserSpeechTicket++;if(browserSpeechTimer!==null){clearTimeout(browserSpeechTimer);browserSpeechTimer=null}window.speechSynthesis?.cancel();window.tbMasterPiperStop?.();lastSpeech='';}saveSettings();refreshVoices();renderCard();if(key==='learn'&&editable){syncLesson();syncChallenge();if(selectedId)choose(selectedType,selectedId)}window.dispatchEvent(new CustomEvent('tb-master-language-change',{detail:{native:settings.native,learn:settings.learn,mode:settings.voiceMode}}))});$('voiceSelect').onchange=()=>{window.speechSynthesis?.cancel();localStorage.setItem('talkabee-v2-voice-'+settings.learn,JSON.stringify($('voiceSelect').value));};if('speechSynthesis'in window){speechSynthesis.addEventListener?.('voiceschanged',refreshVoices);refreshVoices()}
 if(!editable)return;
 $('refreshAdventure').onclick=()=>refreshAdventureFromStorage();
 document.addEventListener('talkabee:batch-imported',e=>{if(e.detail?.sceneIds?.includes(sceneName))refreshAdventureFromStorage();});

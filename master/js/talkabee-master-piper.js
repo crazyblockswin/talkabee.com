@@ -47,6 +47,41 @@ async function load(){
  })();
  try{return await loading}catch(e){loading=null;status('Piper unavailable: '+(e?.message||e));throw e}
 }
+// Add a short silent lead-in to PCM WAV audio so the first syllable is not
+// lost while the browser/audio device starts. Preserve the original WAV when
+// its format is unsupported (e.g. compressed audio).
+async function withAudioLeadIn(blob){
+ try{
+  if(!(blob instanceof Blob))return blob;
+  const bytes=new Uint8Array(await blob.arrayBuffer());
+  if(bytes.length<44)return blob;
+  const view=new DataView(bytes.buffer);
+  const tag=(at)=>String.fromCharCode(...bytes.subarray(at,at+4));
+  if(tag(0)!=='RIFF'||tag(8)!=='WAVE')return blob;
+  let fmt=-1,data=-1,dataSize=0;
+  for(let at=12;at+8<=bytes.length;){
+   const size=view.getUint32(at+4,true);
+   if(at+8+size>bytes.length)break;
+   if(tag(at)==='fmt ')fmt=at+8;
+   if(tag(at)==='data'){data=at+8;dataSize=size;break}
+   at+=8+size+(size%2);
+  }
+  if(fmt<0||data<0)return blob;
+  const format=view.getUint16(fmt,true),sampleRate=view.getUint32(fmt+4,true),blockAlign=view.getUint16(fmt+12,true);
+  if(![1,3].includes(format)||!sampleRate||!blockAlign)return blob;
+  const silenceBytes=Math.round(sampleRate*.28)*blockAlign;
+  if(silenceBytes<=0||silenceBytes>2000000)return blob;
+  const result=new Uint8Array(bytes.length+silenceBytes);
+  result.set(bytes.subarray(0,data),0);
+  // For unsigned 8-bit PCM, silence is 128, not zero.
+  if(format===1&&view.getUint16(fmt+14,true)===8)result.fill(128,data,data+silenceBytes);
+  result.set(bytes.subarray(data),data+silenceBytes);
+  const out=new DataView(result.buffer);
+  out.setUint32(4,view.getUint32(4,true)+silenceBytes,true);
+  out.setUint32(data-4,dataSize+silenceBytes,true);
+  return new Blob([result],{type:'audio/wav'});
+ }catch(e){return blob}
+}
 function update(){
  wrap.hidden=mode.value!=='enhanced';stop();
  if(!wrap.hidden){if(engine)syncSelection();else load().catch(()=>{})}
@@ -84,7 +119,9 @@ window.tbAdventurePiperSpeak=function(text,rate,onComplete){
     if(ticket===token&&progress?.total)status('Downloading voice: '+Math.round(progress.loaded/progress.total*100)+'%');
    });
    if(ticket!==token||mode.value!=='enhanced'||select.value!==voiceId||learn.value!==languageAtStart)return;
-   currentUrl=URL.createObjectURL(wav);
+   const paddedWav=await withAudioLeadIn(wav);
+   if(ticket!==token||mode.value!=='enhanced')return;
+   currentUrl=URL.createObjectURL(paddedWav);
    const audio=new Audio(currentUrl);currentAudio=audio;
    audio.playbackRate=typeof rate==='number'&&rate>0?rate:1;
    audio.addEventListener('ended',()=>{
