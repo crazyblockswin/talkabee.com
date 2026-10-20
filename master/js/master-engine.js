@@ -7,7 +7,11 @@ const settingKey='talkabee-v2-global-master-v1', sceneKey='talkabee-v2-scene-';
 function read(k,f){try{return JSON.parse(localStorage.getItem(k))??f}catch{return f}}
 let settings={...defaults,...read(settingKey,{})},sceneName=new URLSearchParams(location.search).get('scene')||'test-campground';
 let scene=loadScene(sceneName);let temporaryImageUrl=null;
-function loadScene(name){const built=(window.TAB_SCENES||{})[name];const entry=(window.TAB_ADVENTURE_CATALOG||[]).find(x=>x.id===name);return structuredClone(read(sceneKey+name,built||{title:entry?.title||name,image:'',lessons:[],hotspots:[],overlays:[],challenges:[]}));}
+function loadScene(name){const built=(window.TAB_SCENES||{})[name];const entry=(window.TAB_ADVENTURE_CATALOG||[]).find(x=>x.id===name);const data=structuredClone(read(sceneKey+name,built||{title:entry?.title||name,image:'',lessons:[],hotspots:[],overlays:[],challenges:[]}));
+ const recovered=window.TAB_RECOVERED_LESSONS?.[name];
+ // Only fill missing lessons. Never overwrite user-edited or published lessons.
+ if((!Array.isArray(data.lessons)||data.lessons.length===0)&&Array.isArray(recovered)&&recovered.length)data.lessons=structuredClone(recovered);
+ return data;}
 function sceneNames(){return [...new Set([...Object.keys(window.TAB_SCENES||{}),...(window.TAB_ADVENTURE_CATALOG||[]).map(x=>x.id),...Object.keys(localStorage).filter(k=>k.startsWith(sceneKey)).map(k=>k.slice(sceneKey.length))])];}
 function updateAdventureNavigation(){
  const ids=sceneNames().filter(id=>!id.startsWith('test-'));

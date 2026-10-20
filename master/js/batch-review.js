@@ -10,7 +10,7 @@ function duplicate(h,others){return others.some(o=>norm(o.id)===norm(h.id)|| (no
 // Explicit legacy filename aliases retain the established Master Studio storage IDs.
 const legacyFilenameAliases={"steam-train":"train-engineer","seattle-fishing":"seattle-fishing-charter","cave":"cave-exploration","rowing-regatta":"college-rowing","family-picnic":"large-picnic","spacewalk":"nasa-spacewalk","saturn-spacecraft":"spaceship-window-saturn","softball-game":"softball","football-game":"football","basic-training":"military-drill-sergeant","hot-air-balloon-festival":"hot-air-balloon"};
 function locate(name){
- const n=norm(name.replace(/\.html?$/i,'').replace(/\(\d{8}-\d+\)/g,'').replace(/-studio-music/i,''));
+ const n=norm(name.replace(/\.html?$/i,'').replace(/\([^)]*\)\s*$/g,'').replace(/-studio-music/i,''));
  const stem=n.replace(/^talk-a-bee-/,'').replace(/-adventure$/,'').replace(/-local-save-guard$/,'');
  const aliased=legacyFilenameAliases[stem];
  if(aliased){const found=catalog.find(c=>c.id===aliased);if(found)return {id:found.id,title:found.title};}
@@ -29,7 +29,7 @@ function scan(file,raw){const doc=new DOMParser().parseFromString(raw,'text/html
 const overlayScript=doc.getElementById('tb-overlay-data');
 if(sceneId&&overlayScript){try{const entries=JSON.parse(overlayScript.textContent||'[]');for(const o of entries){if(!safeImage(o.src)||![o.x,o.y,o.w].every(v=>Number.isFinite(Number(v)))||Number(o.w)<=0)continue;const saved=baseScene(sceneId).overlays||[];const dup=saved.some(e=>e.src===o.src&&close(e.x,o.x)&&close(e.y,o.y));candidates.push({key:'overlay-'+file.name+'-'+o.id,file:file.name,sceneId,sceneTitle:matched.title,type:'overlay',overlay:{id:o.id||'overlay-'+norm(o.src),label:o.src.split('/').pop(),src:o.src,x:Number(o.x),y:Number(o.y),w:Number(o.w),rotation:Number(o.rotation)||0,z:Number(o.z)||4},dup,checked:false,warning:dup?'Existing overlay at this position':'Saved overlay position; image file must exist'});}}catch(e){console.warn('Overlay data unreadable',file.name,e)}}
 // Recognize literal legacy sound maps such as campgroundSounds={bee:'bee.mp3'}.
-const soundMap={};const mapRe=/(?:const|let|var)\s+([\w$]*[Ss]ounds?)\s*=\s*\{([^{}]{1,12000})\}/g;let m;
+const soundMap={};const mapRe=/(?:const|let|var)\s+([\w$]*(?:[Ss]ounds?|SOUND_MAP|soundMap|AUDIO_MAP|audioMap))\s*=\s*\{([^{}]{1,12000})\}/g;let m;
 while((m=mapRe.exec(raw))){const pairs=/(?:[\"']([\w-]+)[\"']|([\w-]+))\s*:\s*[\"']([^\"']+\.(?:mp3|wav|ogg))[\"']/gi;let v;while((v=pairs.exec(m[2]))){const name=v[1]||v[2],src=v[3];soundMap[norm(name)]=src.includes('/')?src:'sounds/'+src}}
 // Match existing scene hotspots by exact name first, then original hotspot geometry.
 // Keep sound updates separate from duplicate hotspot creation.
@@ -38,12 +38,14 @@ const originalNodes=[...doc.querySelectorAll('.hotspot,.home-hotspot,.yacht-hots
 const originalByKey=new Map();
 for(const el of originalNodes){const key=norm(el.getAttribute('data-word')||el.getAttribute('aria-label')||el.id);if(key&&!originalByKey.has(key))originalByKey.set(key,el)}
 const soundEntries=new Map(Object.entries(soundMap));
-for(const el of originalNodes){const key=norm(el.getAttribute('data-word')||el.getAttribute('aria-label')||el.id);const direct=path(el.getAttribute('data-sound'));if(key&&safeAudio(direct)&&!soundEntries.has(key))soundEntries.set(key,direct)}
+for(const el of originalNodes){const key=norm(el.getAttribute('data-word')||el.getAttribute('aria-label')||el.id);const direct=path(el.getAttribute('data-sound'));if(key&&safeAudio(direct))soundEntries.set(key,direct)}
 if(sceneId)for(const [name,src] of soundEntries){if(!safeAudio(src))continue;
  const original=originalByKey.get(name);
  let matches=savedHotspots.filter(h=>norm(h.label)===name||norm(h.id)===name||norm(h.id).endsWith('-'+name));
  if(matches.length!==1&&original){const x=pct(original,'left'),y=pct(original,'top'),w=pct(original,'width'),height=pct(original,'height');if([x,y,w,height].every(Number.isFinite)){const spatial=savedHotspots.filter(h=>close(h.x,x)&&close(h.y,y)&&close(h.w,w)&&close(h.h,height));if(spatial.length===1)matches=spatial;}}
  const target=matches.length===1?matches[0]:null;
+ // A missing target is handled by the new-hotspot candidate below, not as a disabled sound update.
+ if(!target)continue;
  candidates.push({key:'sound-'+file.name+'-'+name,file:file.name,sceneId,sceneTitle:matched.title,type:'sound',targetId:target?.id||'',sound:src,label:target?.label||name,dup:!target||target.sound===src,checked:false,warning:!target?(matches.length>1?'Ambiguous hotspot match':'No matching existing hotspot'):target.sound===src?'Sound already assigned':target.sound?'Replace '+target.sound+' → '+src:'Assign '+src+' to existing hotspot'});
 }
 const nodes=[...doc.querySelectorAll('.hotspot,.home-hotspot,.yacht-hotspot,[data-word][style]')],within=[];
@@ -54,8 +56,14 @@ const direct=path(el.getAttribute('data-sound'));if(/\.(mp3|ogg|wav)(?:\?.*)?$/i
 const mapped=soundMap[norm(label)]||soundMap[norm(el.getAttribute('data-word'))];if(!h.sound&&mapped&&safeAudio(mapped))h.sound=mapped;
 const inline=el.getAttribute('onclick')||'';const linked=!!(inline||el.hasAttribute('data-word')||el.hasAttribute('data-sound'));
 const dup=duplicate(h,existing)||duplicate(h,within);within.push(h);
+if(sceneId&&dup&&h.sound){
+ const matches=existing.filter(o=>norm(o.id)===norm(h.id)||(norm(o.label)===norm(h.label)&&close(o.x,h.x)&&close(o.y,h.y))||(close(o.x,h.x)&&close(o.y,h.y)&&close(o.w,h.w)&&close(o.h,h.h)));
+ if(matches.length===1&&matches[0].sound!==h.sound&&!candidates.some(c=>c.type==='sound'&&c.sceneId===sceneId&&c.targetId===matches[0].id&&c.sound===h.sound)){
+  candidates.push({key:'sound-duplicate-'+file.name+'-'+within.length,file:file.name,sceneId,sceneTitle:matched.title,type:'sound',targetId:matches[0].id,sound:h.sound,label:matches[0].label||label,dup:false,checked:false,warning:matches[0].sound?'Replace '+matches[0].sound+' → '+h.sound:'Add missing sound '+h.sound+' to existing hotspot'});
+ }
+}
 const id=sceneId+'-'+file.name+'-'+within.length;
-candidates.push({key:id,file:file.name,sceneId,sceneTitle:matched?.title||'Unmatched',type:'hotspot',h,dup,linked,checked:false,warning:!sceneId?'Adventure name not matched':dup?'Duplicate detected':!linked?'No declarative connection found':!h.sound?'No sound mapping detected':mapped?'Legacy JavaScript sound mapping found (verify file)':'Direct sound path found (verify file)'});
+candidates.push({key:id,file:file.name,sceneId,sceneTitle:matched?.title||'Unmatched',type:'hotspot',h,dup,linked,checked:false,warning:!sceneId?'Adventure name not matched — nothing will be saved; check original filename':dup?'Duplicate detected':!linked?'No declarative connection found':!h.sound?'No sound mapping detected':mapped?'Legacy JavaScript sound mapping found (verify file)':'Direct sound path found (verify file)'});
 }
 return {matched,found:nodes.length,eligible:within.length};}
 // Bulk approval controls are created alongside the existing review controls.
@@ -84,5 +92,5 @@ $('batchFiles').addEventListener('change',async e=>{candidates.length=0;let repo
 $('reviewApprove').onclick=()=>{const selected=candidates.filter(c=>c.checked&&!c.dup&&c.sceneId);if(!selected.length)return;
 if(!confirm('Add '+selected.length+' specifically approved item(s) (hotspots / overlays / sound assignments) to Master Studio? Existing backgrounds, lessons, challenges and hotspots will remain unchanged.'))return;
 const changes=new Map();for(const c of selected){const scene=changes.get(c.sceneId)||baseScene(c.sceneId);scene.hotspots??=[];scene.overlays??=[];if(c.type==='sound'){const target=scene.hotspots.find(h=>h.id===c.targetId);if(target&&target.sound!==c.sound){target.sound=c.sound;changes.set(c.sceneId,scene)}}else if(c.type==='overlay'){if(!scene.overlays.some(o=>o.src===c.overlay.src&&close(o.x,c.overlay.x)&&close(o.y,c.overlay.y))){let id=c.overlay.id,n=2;while(scene.overlays.some(o=>o.id===id))id=c.overlay.id+'-'+n++;scene.overlays.push({...c.overlay,id});changes.set(c.sceneId,scene)}}else if(!duplicate(c.h,scene.hotspots)){let id=c.h.id,n=2;while(scene.hotspots.some(h=>h.id===id))id=c.h.id+'-'+n++;scene.hotspots.push({...c.h,id});changes.set(c.sceneId,scene)}}
-try{for(const [id,scene] of changes)localStorage.setItem(prefix+id,JSON.stringify(scene));approvedCount+=selected.length;for(const c of selected)c.checked=false;render();document.dispatchEvent(new CustomEvent('talkabee:batch-imported',{detail:{sceneIds:[...changes.keys()]}}));$('reviewLog').textContent='Saved '+selected.length+' approved selections across '+changes.size+' Adventures in this browser. Current Adventure refreshed automatically if it was included. You can also click Refresh Adventure. Then Backup All Adventures and Publish All. NOTE: Approved sound-only assignments were applied to existing hotspots where names matched uniquely. Literal legacy sound maps are detected where possible. Audio files are not copied; verify playback before publishing. Lessons/challenges are not converted.';}catch(err){$('reviewLog').textContent='Save failed: '+err.message;}};
+try{for(const [id,updated] of changes){const json=JSON.stringify(updated);localStorage.setItem(prefix+id,json);if(localStorage.getItem(prefix+id)!==json)throw Error('Storage verification failed: '+id)}approvedCount+=changes.size?selected.length:0;for(const c of candidates){if(!changes.has(c.sceneId))continue;const saved=baseScene(c.sceneId);if(c.type==='hotspot')c.dup=duplicate(c.h,saved.hotspots||[]);else if(c.type==='sound'){const target=(saved.hotspots||[]).find(h=>h.id===c.targetId);c.dup=!target||target.sound===c.sound}else if(c.type==='overlay')c.dup=(saved.overlays||[]).some(o=>o.src===c.overlay.src&&close(o.x,c.overlay.x)&&close(o.y,c.overlay.y));if(c.dup)c.warning='Saved / already present';c.checked=false;}render();document.dispatchEvent(new CustomEvent('talkabee:batch-imported',{detail:{sceneIds:[...changes.keys()]}}));$('reviewLog').textContent='Verified saved data for '+changes.size+' Adventures in this browser ('+selected.length+' selections). Current Adventure refreshed automatically if it was included. You can also click Refresh Adventure. Then Backup All Adventures and Publish All. NOTE: Approved sound-only assignments were applied to existing hotspots where names matched uniquely. Literal legacy sound maps are detected where possible. Audio files are not copied; verify playback before publishing. Lessons/challenges are not converted.';}catch(err){$('reviewLog').textContent='Save failed: '+err.message;}};
 })();
