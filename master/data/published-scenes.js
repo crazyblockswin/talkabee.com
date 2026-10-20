@@ -1394,7 +1394,272 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
   "grandma-grandpas-place": {
     "title": "Grandma & Grandpas Place",
     "image": "images/grandma-grandpas-place.jpg",
-    "lessons": [],
+    "lessons": [
+      {
+        "text": "This is my grandmother.",
+        "translations": {
+          "es": "Esta es mi abuela.",
+          "fr": "Voici ma grand-mère.",
+          "de": "Das ist meine Großmutter.",
+          "it": "Questa è mia nonna.",
+          "pt": "Esta é a minha avó.",
+          "no": "Dette er bestemoren min."
+        }
+      },
+      {
+        "text": "This is my grandfather.",
+        "translations": {
+          "es": "Este es mi abuelo.",
+          "fr": "Voici mon grand-père.",
+          "de": "Das ist mein Großvater.",
+          "it": "Questo è mio nonno.",
+          "pt": "Este é o meu avô.",
+          "no": "Dette er bestefaren min."
+        }
+      },
+      {
+        "text": "My grandmother is in the garden.",
+        "translations": {
+          "es": "Mi abuela está en el jardín.",
+          "fr": "Ma grand-mère est dans le jardin.",
+          "de": "Meine Großmutter ist im Garten.",
+          "it": "Mia nonna è in giardino.",
+          "pt": "A minha avó está no jardim.",
+          "no": "Bestemoren min er i hagen."
+        }
+      },
+      {
+        "text": "My grandfather feeds the birds.",
+        "translations": {
+          "es": "Mi abuelo alimenta a los pájaros.",
+          "fr": "Mon grand-père nourrit les oiseaux.",
+          "de": "Mein Großvater füttert die Vögel.",
+          "it": "Mio nonno dà da mangiare agli uccelli.",
+          "pt": "O meu avô alimenta os pássaros.",
+          "no": "Bestefaren min mater fuglene."
+        }
+      },
+      {
+        "text": "There are flowers in the garden.",
+        "translations": {
+          "es": "Hay flores en el jardín.",
+          "fr": "Il y a des fleurs dans le jardin.",
+          "de": "Im Garten sind Blumen.",
+          "it": "Ci sono fiori in giardino.",
+          "pt": "Há flores no jardim.",
+          "no": "Det er blomster i hagen."
+        }
+      },
+      {
+        "text": "The flowers are beautiful.",
+        "translations": {
+          "es": "Las flores son hermosas.",
+          "fr": "Les fleurs sont belles.",
+          "de": "Die Blumen sind schön.",
+          "it": "I fiori sono belli.",
+          "pt": "As flores são bonitas.",
+          "no": "Blomstene er vakre."
+        }
+      },
+      {
+        "text": "The basket has flowers.",
+        "translations": {
+          "es": "La cesta tiene flores.",
+          "fr": "Le panier contient des fleurs.",
+          "de": "Der Korb enthält Blumen.",
+          "it": "Il cestino contiene fiori.",
+          "pt": "O cesto tem flores.",
+          "no": "Kurven har blomster."
+        }
+      },
+      {
+        "text": "The garden is full of color.",
+        "translations": {
+          "es": "El jardín está lleno de color.",
+          "fr": "Le jardin est plein de couleurs.",
+          "de": "Der Garten ist voller Farben.",
+          "it": "Il giardino è pieno di colori.",
+          "pt": "O jardim está cheio de cor.",
+          "no": "Hagen er full av farger."
+        }
+      },
+      {
+        "text": "The bird is near the birdhouse.",
+        "translations": {
+          "es": "El pájaro está cerca de la casita.",
+          "fr": "L'oiseau est près de la cabane à oiseaux.",
+          "de": "Der Vogel ist in der Nähe des Vogelhauses.",
+          "it": "L'uccello è vicino alla casetta.",
+          "pt": "O pássaro está perto da casa dos pássaros.",
+          "no": "Fuglen er nær fuglehuset."
+        }
+      },
+      {
+        "text": "There are birds in the garden.",
+        "translations": {
+          "es": "Hay pájaros en el jardín.",
+          "fr": "Il y a des oiseaux dans le jardin.",
+          "de": "Im Garten sind Vögel.",
+          "it": "Ci sono uccelli in giardino.",
+          "pt": "Há pássaros no jardim.",
+          "no": "Det er fugler i hagen."
+        }
+      },
+      {
+        "text": "The bird is blue.",
+        "translations": {
+          "es": "El pájaro es azul.",
+          "fr": "L'oiseau est bleu.",
+          "de": "Der Vogel ist blau.",
+          "it": "L'uccello è blu.",
+          "pt": "O pássaro é azul.",
+          "no": "Fuglen er blå."
+        }
+      },
+      {
+        "text": "My grandfather feeds the birds.",
+        "translations": {
+          "es": "Mi abuelo alimenta a los pájaros.",
+          "fr": "Mon grand-père nourrit les oiseaux.",
+          "de": "Mein Großvater füttert die Vögel.",
+          "it": "Mio nonno dà da mangiare agli uccelli.",
+          "pt": "O meu avô alimenta os pássaros.",
+          "no": "Bestefaren min mater fuglene."
+        }
+      },
+      {
+        "text": "My grandfather likes to fish.",
+        "translations": {
+          "es": "A mi abuelo le gusta pescar.",
+          "fr": "Mon grand-père aime pêcher.",
+          "de": "Mein Großvater angelt gern.",
+          "it": "A mio nonno piace pescare.",
+          "pt": "O meu avô gosta de pescar.",
+          "no": "Bestefaren min liker å fiske."
+        }
+      },
+      {
+        "text": "My grandmother takes care of the flowers.",
+        "translations": {
+          "es": "Mi abuela cuida las flores.",
+          "fr": "Ma grand-mère s'occupe des fleurs.",
+          "de": "Meine Großmutter kümmert sich um die Blumen.",
+          "it": "Mia nonna si prende cura dei fiori.",
+          "pt": "A minha avó cuida das flores.",
+          "no": "Bestemoren min tar vare på blomstene."
+        }
+      },
+      {
+        "text": "We have an RV.",
+        "translations": {
+          "es": "Tenemos una casa rodante.",
+          "fr": "Nous avons un camping-car.",
+          "de": "Wir haben ein Wohnmobil.",
+          "it": "Abbiamo un camper.",
+          "pt": "Temos uma autocaravana.",
+          "no": "Vi har en bobil."
+        }
+      },
+      {
+        "text": "The suitcase is next to the bench.",
+        "translations": {
+          "es": "La maleta está junto al banco.",
+          "fr": "La valise est près du banc.",
+          "de": "Der Koffer steht neben der Bank.",
+          "it": "La valigia è accanto alla panchina.",
+          "pt": "A mala está junto ao banco.",
+          "no": "Kofferten står ved benken."
+        }
+      },
+      {
+        "text": "The dog is beside the pond.",
+        "translations": {
+          "es": "El perro está junto al estanque.",
+          "fr": "Le chien est près de l'étang.",
+          "de": "Der Hund ist neben dem Teich.",
+          "it": "Il cane è accanto allo stagno.",
+          "pt": "O cão está junto ao lago.",
+          "no": "Hunden er ved dammen."
+        }
+      },
+      {
+        "text": "The RV is near the house.",
+        "translations": {
+          "es": "La casa rodante está cerca de la casa.",
+          "fr": "Le camping-car est près de la maison.",
+          "de": "Das Wohnmobil steht in der Nähe des Hauses.",
+          "it": "Il camper è vicino alla casa.",
+          "pt": "A autocaravana está perto da casa.",
+          "no": "Bobilen står nær huset."
+        }
+      },
+      {
+        "text": "The birdhouse is in the garden.",
+        "translations": {
+          "es": "La casita para pájaros está en el jardín.",
+          "fr": "La cabane à oiseaux est dans le jardin.",
+          "de": "Das Vogelhaus steht im Garten.",
+          "it": "La casetta per gli uccelli è in giardino.",
+          "pt": "A casa dos pássaros está no jardim.",
+          "no": "Fuglehuset står i hagen."
+        }
+      },
+      {
+        "text": "The fishing pole is ready.",
+        "translations": {
+          "es": "La caña de pescar está lista.",
+          "fr": "La canne à pêche est prête.",
+          "de": "Die Angel ist bereit.",
+          "it": "La canna da pesca è pronta.",
+          "pt": "A cana de pesca está pronta.",
+          "no": "Fiskestangen er klar."
+        }
+      },
+      {
+        "text": "We are at home.",
+        "translations": {
+          "es": "Estamos en casa.",
+          "fr": "Nous sommes à la maison.",
+          "de": "Wir sind zu Hause.",
+          "it": "Siamo a casa.",
+          "pt": "Estamos em casa.",
+          "no": "Vi er hjemme."
+        }
+      },
+      {
+        "text": "It is a beautiful day.",
+        "translations": {
+          "es": "Hace un día bonito.",
+          "fr": "C'est une belle journée.",
+          "de": "Es ist ein schöner Tag.",
+          "it": "È una bella giornata.",
+          "pt": "Está um dia bonito.",
+          "no": "Det er en fin dag."
+        }
+      },
+      {
+        "text": "We are going to the garden.",
+        "translations": {
+          "es": "Vamos al jardín.",
+          "fr": "Nous allons dans le jardin.",
+          "de": "Wir gehen in den Garten.",
+          "it": "Andiamo in giardino.",
+          "pt": "Vamos para o jardim.",
+          "no": "Vi går ut i hagen."
+        }
+      },
+      {
+        "text": "We spend time with family.",
+        "translations": {
+          "es": "Pasamos tiempo con la familia.",
+          "fr": "Nous passons du temps en famille.",
+          "de": "Wir verbringen Zeit mit der Familie.",
+          "it": "Passiamo del tempo con la famiglia.",
+          "pt": "Passamos tempo com a família.",
+          "no": "Vi tilbringer tid med familien."
+        }
+      }
+    ],
     "hotspots": [
       {
         "id": "grandma",
@@ -1540,15 +1805,19 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
     "overlays": [],
     "challenges": [
       {
-        "prompt": "Find the rv",
+        "prompt": "Find Grandma Cathy",
+        "target": "grandma"
+      },
+      {
+        "prompt": "Find Grandpa Wally",
+        "target": "grandpa"
+      },
+      {
+        "prompt": "Find the RV",
         "target": "rv"
       },
       {
-        "prompt": "Find the birdhouse",
-        "target": "birdhouse"
-      },
-      {
-        "prompt": "Find the dog",
+        "prompt": "Find the Dog",
         "target": "dog"
       }
     ]
@@ -5489,10 +5758,6 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
     "overlays": [],
     "challenges": [
       {
-        "prompt": "Find the Start Gate Sign",
-        "target": "startline"
-      },
-      {
         "prompt": "Find a Helmet",
         "target": "helmet"
       },
@@ -5507,6 +5772,20 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
       {
         "prompt": "Find the Forest",
         "target": "official"
+      },
+      {
+        "prompt": "Find a Helmet",
+        "target": "helmet",
+        "translations": {
+          "es": ""
+        }
+      },
+      {
+        "prompt": "Find The Trail Sign",
+        "target": "trailsign",
+        "translations": {
+          "es": ""
+        }
       }
     ]
   },
