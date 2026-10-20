@@ -91,7 +91,7 @@ function challengeText(q,language){
  return q.prompt||'';
 }
 
-function challengeSpeech(q){return challengeTargetName(q,settings.learn)||challengeText(q,settings.learn)}
+function challengeSpeech(q){return challengeText(q,settings.learn)}
 function challengeTranslationField(){
  if(!editable||!$('challengePrompt')||$('tbChallengeTranslation'))return;
  const wrap=document.createElement('div');wrap.id='tbChallengeTranslationWrap';wrap.style.cssText='margin:8px 0;display:flex;flex-direction:column;gap:4px';
