@@ -7,7 +7,20 @@ const safeImage=s=>/^images\/[^<>\"']+\.(?:png|jpe?g|webp|gif)$/i.test(s);
 const baseScene=id=>{try{return JSON.parse(localStorage.getItem(prefix+id)||'null')||structuredClone((window.TAB_SCENES||{})[id]||{title:catalog.find(x=>x.id===id)?.title||id,image:'',hotspots:[],overlays:[],lessons:[],challenges:[]})}catch{return {title:id,image:'',hotspots:[],overlays:[],lessons:[],challenges:[]}}};
 const close=(a,b)=>Math.abs(Number(a)-Number(b))<=2;
 function duplicate(h,others){return others.some(o=>norm(o.id)===norm(h.id)|| (norm(o.label)===norm(h.label)&&close(o.x,h.x)&&close(o.y,h.y))||(close(o.x,h.x)&&close(o.y,h.y)&&close(o.w,h.w)&&close(o.h,h.h)))}
-function locate(name){const n=norm(name.replace(/\.html?$/i,'').replace(/\(\d{8}-\d+\)/g,'').replace(/-studio-music/i,''));if(n.includes('seattle-fishing')&&!n.includes('charter')){const match=catalog.find(c=>c.id==='seattle-fishing-charter');if(match)return {id:match.id,title:match.title};}let scores=catalog.map(c=>{const id=norm(c.id),title=norm(c.title);return {id:c.id,title:c.title,score:n.includes(id)?id.length+20:n.includes(title)?title.length+20:0}}).filter(x=>x.score).sort((a,b)=>b.score-a.score);return scores.length===1||scores[0]?.score>scores[1]?.score?scores[0]:null}
+// Explicit legacy filename aliases retain the established Master Studio storage IDs.
+const legacyFilenameAliases={"steam-train":"train-engineer","seattle-fishing":"seattle-fishing-charter","cave":"cave-exploration","rowing-regatta":"college-rowing","family-picnic":"large-picnic","spacewalk":"nasa-spacewalk","saturn-spacecraft":"spaceship-window-saturn","softball-game":"softball","football-game":"football","basic-training":"military-drill-sergeant","hot-air-balloon-festival":"hot-air-balloon"};
+function locate(name){
+ const n=norm(name.replace(/\.html?$/i,'').replace(/\(\d{8}-\d+\)/g,'').replace(/-studio-music/i,''));
+ const stem=n.replace(/^talk-a-bee-/,'').replace(/-adventure$/,'').replace(/-local-save-guard$/,'');
+ const aliased=legacyFilenameAliases[stem];
+ if(aliased){const found=catalog.find(c=>c.id===aliased);if(found)return {id:found.id,title:found.title};}
+ // Match complete normalized catalog IDs/titles, not incidental words inside filenames.
+ const matches=catalog.map(c=>({id:c.id,title:c.title,keys:[norm(c.id),norm(c.title)]})).filter(c=>c.keys.some(k=>stem===k||n===k));
+ if(matches.length===1)return {id:matches[0].id,title:matches[0].title};
+ // Preserve matching for known prefixed/suffixed filenames, but reject ties.
+ const scores=catalog.map(c=>{const keys=[norm(c.id),norm(c.title)];const score=Math.max(...keys.map(k=>(n.includes(k)&&k.length>=5)?k.length+20:0));return {id:c.id,title:c.title,score}}).filter(x=>x.score).sort((a,b)=>b.score-a.score);
+ return scores.length&&(scores.length===1||scores[0].score>scores[1].score)?scores[0]:null;
+}
 function pct(el,k){const s=el.getAttribute('style')||'',v=s.match(new RegExp('(?:^|;)\\s*'+k+'\\s*:\\s*(-?[0-9.]+)%','i'));return v?Number(v[1]):NaN}
 function valid(h){return [h.x,h.y,h.w,h.h].every(Number.isFinite)&&h.x>=-5&&h.y>=-5&&h.w>0&&h.h>0&&h.x+h.w<=110&&h.y+h.h<=110}
 function path(s){s=String(s||'').trim().replace(/\\/g,'/');return /^(?:javascript:|data:|blob:|https?:|file:|\/)/i.test(s)?'':s}
