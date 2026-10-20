@@ -5758,6 +5758,10 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
     "overlays": [],
     "challenges": [
       {
+        "prompt": "Find the Start Gate Sign",
+        "target": "startline"
+      },
+      {
         "prompt": "Find a Helmet",
         "target": "helmet"
       },
@@ -5772,20 +5776,6 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
       {
         "prompt": "Find the Forest",
         "target": "official"
-      },
-      {
-        "prompt": "Find a Helmet",
-        "target": "helmet",
-        "translations": {
-          "es": ""
-        }
-      },
-      {
-        "prompt": "Find The Trail Sign",
-        "target": "trailsign",
-        "translations": {
-          "es": ""
-        }
       }
     ]
   },
@@ -5926,241 +5916,9 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
         }
       }
     ],
-    "hotspots": [
-      {
-        "id": "softball",
-        "label": "softball",
-        "x": 49.35,
-        "y": 48.18,
-        "w": 6.22,
-        "h": 8.15,
-        "sound": "",
-        "translations": {}
-      },
-      {
-        "id": "pitchermound",
-        "label": "pitchermound",
-        "x": 34.19,
-        "y": 64.35,
-        "w": 13.28,
-        "h": 10.59,
-        "sound": "",
-        "translations": {}
-      },
-      {
-        "id": "batter",
-        "label": "batter",
-        "x": 74.22,
-        "y": 46.84,
-        "w": 7.1,
-        "h": 18.61,
-        "sound": "sounds/baseball1.mp3",
-        "translations": {}
-      },
-      {
-        "id": "bat",
-        "label": "bat",
-        "x": 78.98,
-        "y": 22.91,
-        "w": 2.93,
-        "h": 19.09,
-        "sound": "",
-        "translations": {}
-      },
-      {
-        "id": "catcher",
-        "label": "catcher",
-        "x": 86.21,
-        "y": 56.56,
-        "w": 8.56,
-        "h": 31.89,
-        "sound": "",
-        "translations": {}
-      },
-      {
-        "id": "umpire",
-        "label": "umpire",
-        "x": 93.19,
-        "y": 28.85,
-        "w": 9,
-        "h": 67,
-        "sound": "",
-        "translations": {}
-      },
-      {
-        "id": "homeplate",
-        "label": "homeplate",
-        "x": 60,
-        "y": 82,
-        "w": 21,
-        "h": 16,
-        "sound": "",
-        "translations": {}
-      },
-      {
-        "id": "scoreboard",
-        "label": "scoreboard",
-        "x": 78.75,
-        "y": 14.3,
-        "w": 15.71,
-        "h": 12.19,
-        "sound": "sounds/baseball2.mp3",
-        "translations": {}
-      },
-      {
-        "id": "spectators",
-        "label": "spectators",
-        "x": 82.36,
-        "y": 27.33,
-        "w": 12.78,
-        "h": 14.41,
-        "sound": "sounds/soft-cheering-sports.mp3",
-        "translations": {}
-      },
-      {
-        "id": "fielder1",
-        "label": "fielder1",
-        "x": 8.98,
-        "y": 42.5,
-        "w": 6.49,
-        "h": 16.81,
-        "sound": "sounds/baseball1.mp3",
-        "translations": {}
-      },
-      {
-        "id": "fielder2",
-        "label": "fielder2",
-        "x": 25.68,
-        "y": 46.69,
-        "w": 7.51,
-        "h": 15.09,
-        "sound": "",
-        "translations": {}
-      },
-      {
-        "id": "fielder3",
-        "label": "fielder3",
-        "x": 57.08,
-        "y": 45.39,
-        "w": 6.47,
-        "h": 14.13,
-        "sound": "sounds/baseball1.mp3",
-        "translations": {}
-      },
-      {
-        "id": "glove",
-        "label": "glove",
-        "x": 12.44,
-        "y": 58.56,
-        "w": 4.35,
-        "h": 7.52,
-        "sound": "",
-        "translations": {}
-      },
-      {
-        "id": "helmet",
-        "label": "helmet",
-        "x": 71.51,
-        "y": 35.57,
-        "w": 7.03,
-        "h": 9.19,
-        "sound": "",
-        "translations": {}
-      },
-      {
-        "id": "field",
-        "label": "field",
-        "x": 7.08,
-        "y": 64.67,
-        "w": 26.82,
-        "h": 26.18,
-        "sound": "",
-        "translations": {}
-      },
-      {
-        "id": "lake",
-        "label": "lake",
-        "x": 46.58,
-        "y": 35.48,
-        "w": 10.45,
-        "h": 9.27,
-        "sound": "",
-        "translations": {}
-      },
-      {
-        "id": "mountains",
-        "label": "mountains",
-        "x": 44.86,
-        "y": 11.65,
-        "w": 17.65,
-        "h": 15.55,
-        "sound": "",
-        "translations": {}
-      },
-      {
-        "id": "flag",
-        "label": "flag",
-        "x": 69.31,
-        "y": 8.9,
-        "w": 5.65,
-        "h": 11.91,
-        "sound": "",
-        "translations": {}
-      },
-      {
-        "id": "team-members",
-        "label": "team members",
-        "x": 0.3,
-        "y": 38.32,
-        "w": 8.45,
-        "h": 8.46,
-        "sound": "sounds/baseball1.mp3",
-        "translations": {}
-      },
-      {
-        "id": "pitcher",
-        "label": "pitcher",
-        "x": 38.38,
-        "y": 46.95,
-        "w": 7.67,
-        "h": 14.39,
-        "sound": "",
-        "translations": {}
-      },
-      {
-        "id": "fence",
-        "label": "fence",
-        "x": 65.18,
-        "y": 45.53,
-        "w": 8.08,
-        "h": 18.09,
-        "sound": "",
-        "translations": {}
-      }
-    ],
+    "hotspots": [],
     "overlays": [],
-    "challenges": [
-      {
-        "prompt": "Find the Softball",
-        "target": "softball"
-      },
-      {
-        "prompt": "Find the Spectators",
-        "target": "batter"
-      },
-      {
-        "prompt": "Find the Catcher",
-        "target": "catcher"
-      },
-      {
-        "prompt": "Find the Scoreboard",
-        "target": "scoreboard"
-      },
-      {
-        "prompt": "Find Home Plate",
-        "target": "homeplate"
-      }
-    ]
+    "challenges": []
   },
   "football": {
     "title": "Football",
@@ -12645,7 +12403,206 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
   "train-station": {
     "title": "Train Station",
     "image": "images/train-station-adventure.jpg",
-    "lessons": [],
+    "lessons": [
+      {
+        "text": "I would like a ticket, please.",
+        "translations": {
+          "es": "Quiero un billete, por favor.",
+          "fr": "Je voudrais un billet, s’il vous plaît.",
+          "de": "Ich möchte eine Fahrkarte, bitte.",
+          "it": "Vorrei un biglietto, per favore.",
+          "pt": "Quero um bilhete, por favor.",
+          "no": "Jeg vil gjerne ha en billett, takk."
+        }
+      },
+      {
+        "text": "One ticket to Naples, please.",
+        "translations": {
+          "es": "Un billete a Nápoles, por favor.",
+          "fr": "Un billet pour Naples, s’il vous plaît.",
+          "de": "Eine Fahrkarte nach Neapel, bitte.",
+          "it": "Un biglietto per Napoli, per favore.",
+          "pt": "Um bilhete para Nápoles, por favor.",
+          "no": "En billett til Napoli, takk."
+        }
+      },
+      {
+        "text": "How much is the ticket?",
+        "translations": {
+          "es": "¿Cuánto cuesta el billete?",
+          "fr": "Combien coûte le billet ?",
+          "de": "Wie viel kostet die Fahrkarte?",
+          "it": "Quanto costa il biglietto?",
+          "pt": "Quanto custa o bilhete?",
+          "no": "Hvor mye koster billetten?"
+        }
+      },
+      {
+        "text": "Where is platform two?",
+        "translations": {
+          "es": "¿Dónde está el andén dos?",
+          "fr": "Où est le quai deux ?",
+          "de": "Wo ist Gleis zwei?",
+          "it": "Dov’è il binario due?",
+          "pt": "Onde fica a plataforma dois?",
+          "no": "Hvor er spor to?"
+        }
+      },
+      {
+        "text": "The train leaves from platform two.",
+        "translations": {
+          "es": "El tren sale del andén dos.",
+          "fr": "Le train part du quai deux.",
+          "de": "Der Zug fährt von Gleis zwei ab.",
+          "it": "Il treno parte dal binario due.",
+          "pt": "O trem parte da plataforma dois.",
+          "no": "Toget går fra spor to."
+        }
+      },
+      {
+        "text": "Thank you for your help.",
+        "translations": {
+          "es": "Gracias por su ayuda.",
+          "fr": "Merci pour votre aide.",
+          "de": "Danke für Ihre Hilfe.",
+          "it": "Grazie per il suo aiuto.",
+          "pt": "Obrigado pela sua ajuda.",
+          "no": "Takk for hjelpen."
+        }
+      },
+      {
+        "text": "What time does the train leave?",
+        "translations": {
+          "es": "¿A qué hora sale el tren?",
+          "fr": "À quelle heure part le train ?",
+          "de": "Wann fährt der Zug ab?",
+          "it": "A che ora parte il treno?",
+          "pt": "A que horas parte o trem?",
+          "no": "Når går toget?"
+        }
+      },
+      {
+        "text": "The train leaves at 5:10.",
+        "translations": {
+          "es": "El tren sale a las cinco y diez.",
+          "fr": "Le train part à cinq heures dix.",
+          "de": "Der Zug fährt um fünf Uhr zehn ab.",
+          "it": "Il treno parte alle cinque e dieci.",
+          "pt": "O trem parte às cinco e dez.",
+          "no": "Toget går ti over fem."
+        }
+      },
+      {
+        "text": "Does it arrive on time?",
+        "translations": {
+          "es": "¿Llega a tiempo?",
+          "fr": "Arrive-t-il à l’heure ?",
+          "de": "Kommt er pünktlich an?",
+          "it": "Arriva in orario?",
+          "pt": "Chega a horas?",
+          "no": "Kommer det i tide?"
+        }
+      },
+      {
+        "text": "Look at the departure board.",
+        "translations": {
+          "es": "Mire el tablero de salidas.",
+          "fr": "Regardez le tableau des départs.",
+          "de": "Schauen Sie auf die Abfahrtstafel.",
+          "it": "Guardi il tabellone delle partenze.",
+          "pt": "Olhe para o painel de partidas.",
+          "no": "Se på avgangstavlen."
+        }
+      },
+      {
+        "text": "My train goes to Sorrento.",
+        "translations": {
+          "es": "Mi tren va a Sorrento.",
+          "fr": "Mon train va à Sorrente.",
+          "de": "Mein Zug fährt nach Sorrent.",
+          "it": "Il mio treno va a Sorrento.",
+          "pt": "O meu trem vai para Sorrento.",
+          "no": "Toget mitt går til Sorrento."
+        }
+      },
+      {
+        "text": "The train is on time.",
+        "translations": {
+          "es": "El tren está a tiempo.",
+          "fr": "Le train est à l’heure.",
+          "de": "Der Zug ist pünktlich.",
+          "it": "Il treno è in orario.",
+          "pt": "O trem está a horas.",
+          "no": "Toget er i rute."
+        }
+      },
+      {
+        "text": "This is my suitcase.",
+        "translations": {
+          "es": "Esta es mi maleta.",
+          "fr": "Voici ma valise.",
+          "de": "Das ist mein Koffer.",
+          "it": "Questa è la mia valigia.",
+          "pt": "Esta é a minha mala.",
+          "no": "Dette er kofferten min."
+        }
+      },
+      {
+        "text": "I have a backpack.",
+        "translations": {
+          "es": "Tengo una mochila.",
+          "fr": "J’ai un sac à dos.",
+          "de": "Ich habe einen Rucksack.",
+          "it": "Ho uno zaino.",
+          "pt": "Tenho uma mochila.",
+          "no": "Jeg har en ryggsekk."
+        }
+      },
+      {
+        "text": "Where do I put my luggage?",
+        "translations": {
+          "es": "¿Dónde pongo mi equipaje?",
+          "fr": "Où dois-je mettre mes bagages ?",
+          "de": "Wo stelle ich mein Gepäck hin?",
+          "it": "Dove metto il mio bagaglio?",
+          "pt": "Onde coloco a minha bagagem?",
+          "no": "Hvor skal jeg sette bagasjen?"
+        }
+      },
+      {
+        "text": "Here is my ticket.",
+        "translations": {
+          "es": "Aquí está mi billete.",
+          "fr": "Voici mon billet.",
+          "de": "Hier ist meine Fahrkarte.",
+          "it": "Ecco il mio biglietto.",
+          "pt": "Aqui está o meu bilhete.",
+          "no": "Her er billetten min."
+        }
+      },
+      {
+        "text": "Is this my train?",
+        "translations": {
+          "es": "¿Es este mi tren?",
+          "fr": "Est-ce mon train ?",
+          "de": "Ist das mein Zug?",
+          "it": "È questo il mio treno?",
+          "pt": "Este é o meu trem?",
+          "no": "Er dette toget mitt?"
+        }
+      },
+      {
+        "text": "We are ready to board.",
+        "translations": {
+          "es": "Estamos listos para subir.",
+          "fr": "Nous sommes prêts à monter.",
+          "de": "Wir sind bereit einzusteigen.",
+          "it": "Siamo pronti a salire.",
+          "pt": "Estamos prontos para embarcar.",
+          "no": "Vi er klare til å gå om bord."
+        }
+      }
+    ],
     "hotspots": [
       {
         "id": "clock",
@@ -12811,24 +12768,39 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
     "overlays": [],
     "challenges": [
       {
-        "prompt": "clock",
-        "target": "clock"
+        "prompt": "find the clock",
+        "target": "clock",
+        "translations": {
+          "es": ""
+        }
       },
       {
-        "prompt": "train",
-        "target": "train"
+        "prompt": "find the subway train",
+        "target": "train",
+        "translations": {
+          "es": ""
+        }
       },
       {
-        "prompt": "departures",
-        "target": "departures-sign"
+        "prompt": "find the departures sign",
+        "target": "departures-sign",
+        "translations": {
+          "es": ""
+        }
       },
       {
-        "prompt": "luggage",
-        "target": "luggage"
+        "prompt": "find the boys luggage",
+        "target": "luggage",
+        "translations": {
+          "es": ""
+        }
       },
       {
-        "prompt": "ticket",
-        "target": "ticket"
+        "prompt": "find the girls ticket",
+        "target": "ticket",
+        "translations": {
+          "es": ""
+        }
       }
     ]
   },
@@ -13217,7 +13189,272 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
   "aunt-julies-island-retreat": {
     "title": "Aunt Julies Island Retreat",
     "image": "images/aunt-julies-island-retreat.jpg",
-    "lessons": [],
+    "lessons": [
+      {
+        "text": "Welcome to the island.",
+        "translations": {
+          "es": "Bienvenidos a la isla.",
+          "fr": "Bienvenue sur l’île.",
+          "de": "Willkommen auf der Insel.",
+          "it": "Benvenuti sull’isola.",
+          "pt": "Bem-vindos à ilha.",
+          "no": "Velkommen til øya."
+        }
+      },
+      {
+        "text": "Hello, my name is Julie.",
+        "translations": {
+          "es": "Hola, me llamo Julie.",
+          "fr": "Bonjour, je m’appelle Julie.",
+          "de": "Hallo, ich heiße Julie.",
+          "it": "Ciao, mi chiamo Julie.",
+          "pt": "Olá, chamo-me Julie.",
+          "no": "Hei, jeg heter Julie."
+        }
+      },
+      {
+        "text": "I am happy to see you.",
+        "translations": {
+          "es": "Me alegra verte.",
+          "fr": "Je suis heureuse de te voir.",
+          "de": "Ich freue mich, dich zu sehen.",
+          "it": "Sono felice di vederti.",
+          "pt": "Fico feliz por te ver.",
+          "no": "Jeg er glad for å se deg."
+        }
+      },
+      {
+        "text": "Come and sit with me.",
+        "translations": {
+          "es": "Ven y siéntate conmigo.",
+          "fr": "Viens t’asseoir avec moi.",
+          "de": "Komm und setz dich zu mir.",
+          "it": "Vieni a sederti con me.",
+          "pt": "Vem sentar-te comigo.",
+          "no": "Kom og sett deg sammen med meg."
+        }
+      },
+      {
+        "text": "We are beside the ocean.",
+        "translations": {
+          "es": "Estamos junto al océano.",
+          "fr": "Nous sommes au bord de l’océan.",
+          "de": "Wir sind am Meer.",
+          "it": "Siamo vicino all’oceano.",
+          "pt": "Estamos junto ao oceano.",
+          "no": "Vi er ved havet."
+        }
+      },
+      {
+        "text": "The pier reaches the water.",
+        "translations": {
+          "es": "El muelle llega hasta el agua.",
+          "fr": "Le quai s’avance jusqu’à l’eau.",
+          "de": "Der Steg reicht bis zum Wasser.",
+          "it": "Il molo arriva fino all’acqua.",
+          "pt": "O cais chega até à água.",
+          "no": "Brygga går ut til vannet."
+        }
+      },
+      {
+        "text": "The hammock is under the palm trees.",
+        "translations": {
+          "es": "La hamaca está bajo las palmeras.",
+          "fr": "Le hamac est sous les palmiers.",
+          "de": "Die Hängematte ist unter den Palmen.",
+          "it": "L’amaca è sotto le palme.",
+          "pt": "A rede está debaixo das palmeiras.",
+          "no": "Hengekøyen er under palmene."
+        }
+      },
+      {
+        "text": "The table is full of pretty things.",
+        "translations": {
+          "es": "La mesa está llena de cosas bonitas.",
+          "fr": "La table est pleine de jolies choses.",
+          "de": "Der Tisch ist voller schöner Dinge.",
+          "it": "Il tavolo è pieno di cose belle.",
+          "pt": "A mesa está cheia de coisas bonitas.",
+          "no": "Bordet er fullt av fine ting."
+        }
+      },
+      {
+        "text": "The dog is beside Julie.",
+        "translations": {
+          "es": "El perro está junto a Julie.",
+          "fr": "Le chien est à côté de Julie.",
+          "de": "Der Hund ist neben Julie.",
+          "it": "Il cane è accanto a Julie.",
+          "pt": "O cão está ao lado da Julie.",
+          "no": "Hunden er ved siden av Julie."
+        }
+      },
+      {
+        "text": "The cat is sitting nearby.",
+        "translations": {
+          "es": "El gato está sentado cerca.",
+          "fr": "Le chat est assis tout près.",
+          "de": "Die Katze sitzt in der Nähe.",
+          "it": "Il gatto è seduto qui vicino.",
+          "pt": "O gato está sentado perto.",
+          "no": "Katten sitter i nærheten."
+        }
+      },
+      {
+        "text": "The little pig is wearing a bandana.",
+        "translations": {
+          "es": "El cerdito lleva un pañuelo.",
+          "fr": "Le petit cochon porte un bandana.",
+          "de": "Das kleine Schwein trägt ein Halstuch.",
+          "it": "Il maialino indossa una bandana.",
+          "pt": "O porquinho usa uma bandana.",
+          "no": "Den lille grisen har på seg et skjerf."
+        }
+      },
+      {
+        "text": "The animals are calm.",
+        "translations": {
+          "es": "Los animales están tranquilos.",
+          "fr": "Les animaux sont calmes.",
+          "de": "Die Tiere sind ruhig.",
+          "it": "Gli animali sono tranquilli.",
+          "pt": "Os animais estão tranquilos.",
+          "no": "Dyrene er rolige."
+        }
+      },
+      {
+        "text": "Julie plays the guitar.",
+        "translations": {
+          "es": "Julie toca la guitarra.",
+          "fr": "Julie joue de la guitare.",
+          "de": "Julie spielt Gitarre.",
+          "it": "Julie suona la chitarra.",
+          "pt": "Julie toca guitarra.",
+          "no": "Julie spiller gitar."
+        }
+      },
+      {
+        "text": "The guitar has many colors.",
+        "translations": {
+          "es": "La guitarra tiene muchos colores.",
+          "fr": "La guitare a beaucoup de couleurs.",
+          "de": "Die Gitarre hat viele Farben.",
+          "it": "La chitarra ha molti colori.",
+          "pt": "A guitarra tem muitas cores.",
+          "no": "Gitaren har mange farger."
+        }
+      },
+      {
+        "text": "We sing together at sunset.",
+        "translations": {
+          "es": "Cantamos juntos al atardecer.",
+          "fr": "Nous chantons ensemble au coucher du soleil.",
+          "de": "Wir singen bei Sonnenuntergang zusammen.",
+          "it": "Cantiamo insieme al tramonto.",
+          "pt": "Cantamos juntos ao pôr do sol.",
+          "no": "Vi synger sammen ved solnedgang."
+        }
+      },
+      {
+        "text": "The music plays beside the sea.",
+        "translations": {
+          "es": "La música suena junto al mar.",
+          "fr": "La musique résonne au bord de la mer.",
+          "de": "Die Musik erklingt am Meer.",
+          "it": "La musica suona vicino al mare.",
+          "pt": "A música toca junto ao mar.",
+          "no": "Musikken spiller ved sjøen."
+        }
+      },
+      {
+        "text": "The flowers are very colorful.",
+        "translations": {
+          "es": "Las flores son muy coloridas.",
+          "fr": "Les fleurs sont très colorées.",
+          "de": "Die Blumen sind sehr bunt.",
+          "it": "I fiori sono molto colorati.",
+          "pt": "As flores são muito coloridas.",
+          "no": "Blomstene er veldig fargerike."
+        }
+      },
+      {
+        "text": "The palm trees are tall.",
+        "translations": {
+          "es": "Las palmeras son altas.",
+          "fr": "Les palmiers sont grands.",
+          "de": "Die Palmen sind hoch.",
+          "it": "Le palme sono alte.",
+          "pt": "As palmeiras são altas.",
+          "no": "Palmene er høye."
+        }
+      },
+      {
+        "text": "The ocean shines at sunset.",
+        "translations": {
+          "es": "El océano brilla al atardecer.",
+          "fr": "L’océan brille au coucher du soleil.",
+          "de": "Das Meer glänzt bei Sonnenuntergang.",
+          "it": "L’oceano brilla al tramonto.",
+          "pt": "O oceano brilha ao pôr do sol.",
+          "no": "Havet skinner ved solnedgang."
+        }
+      },
+      {
+        "text": "There is an island in the distance.",
+        "translations": {
+          "es": "Hay una isla a lo lejos.",
+          "fr": "Il y a une île au loin.",
+          "de": "In der Ferne liegt eine Insel.",
+          "it": "C’è un’isola in lontananza.",
+          "pt": "Há uma ilha ao longe.",
+          "no": "Det er en øy i det fjerne."
+        }
+      },
+      {
+        "text": "Julie enjoys a peaceful afternoon.",
+        "translations": {
+          "es": "Julie disfruta de una tarde tranquila.",
+          "fr": "Julie profite d’un après-midi paisible.",
+          "de": "Julie genießt einen ruhigen Nachmittag.",
+          "it": "Julie si gode un pomeriggio tranquillo.",
+          "pt": "Julie desfruta de uma tarde tranquila.",
+          "no": "Julie nyter en rolig ettermiddag."
+        }
+      },
+      {
+        "text": "The animals rest near her.",
+        "translations": {
+          "es": "Los animales descansan cerca de ella.",
+          "fr": "Les animaux se reposent près d’elle.",
+          "de": "Die Tiere ruhen sich in ihrer Nähe aus.",
+          "it": "Gli animali riposano vicino a lei.",
+          "pt": "Os animais descansam perto dela.",
+          "no": "Dyrene hviler i nærheten av henne."
+        }
+      },
+      {
+        "text": "A sailboat moves across the ocean.",
+        "translations": {
+          "es": "Un velero navega por el océano.",
+          "fr": "Un voilier traverse l’océan.",
+          "de": "Ein Segelboot fährt über das Meer.",
+          "it": "Una barca a vela attraversa l’oceano.",
+          "pt": "Um veleiro atravessa o oceano.",
+          "no": "En seilbåt beveger seg over havet."
+        }
+      },
+      {
+        "text": "Everyone enjoys the music and the sunset.",
+        "translations": {
+          "es": "Todos disfrutan de la música y la puesta de sol.",
+          "fr": "Tout le monde profite de la musique et du coucher du soleil.",
+          "de": "Alle genießen die Musik und den Sonnenuntergang.",
+          "it": "Tutti si godono la musica e il tramonto.",
+          "pt": "Todos desfrutam da música e do pôr do sol.",
+          "no": "Alle nyter musikken og solnedgangen."
+        }
+      }
+    ],
     "hotspots": [
       {
         "id": "julie",
