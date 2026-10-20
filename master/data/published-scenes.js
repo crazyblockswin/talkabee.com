@@ -12556,13 +12556,80 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
   "animals-farm": {
     "title": "Animals Farm",
     "image": "images/animals-farm-adventure.jpg",
-    "lessons": [],
+    "lessons": [
+      {
+        "text": "The dog is beside the fire.",
+        "translations": {
+          "es": "El perro está junto al fuego.",
+          "fr": "Le chien est près du feu.",
+          "de": "Der Hund ist neben dem Feuer.",
+          "it": "Il cane è vicino al fuoco.",
+          "pt": "O cão está junto ao fogo.",
+          "no": "Hunden er ved bålet."
+        }
+      },
+      {
+        "text": "The horse, cow, and sheep are on the farm.",
+        "translations": {
+          "es": "El caballo, la vaca y la oveja están en la granja.",
+          "fr": "Le cheval, la vache et le mouton sont à la ferme.",
+          "de": "Das Pferd, die Kuh und das Schaf sind auf dem Bauernhof.",
+          "it": "Il cavallo, la mucca e la pecora sono nella fattoria.",
+          "pt": "O cavalo, a vaca e a ovelha estão na quinta.",
+          "no": "Hesten, kua og sauen er på gården."
+        }
+      },
+      {
+        "text": "The squirrel and rabbit are near the field.",
+        "translations": {
+          "es": "La ardilla y el conejo están cerca del campo.",
+          "fr": "L’écureuil et le lapin sont près du champ.",
+          "de": "Das Eichhörnchen und das Kaninchen sind in der Nähe des Feldes.",
+          "it": "Lo scoiattolo e il coniglio sono vicino al campo.",
+          "pt": "O esquilo e o coelho estão perto do campo.",
+          "no": "Ekornet og kaninen er nær jordet."
+        }
+      },
+      {
+        "text": "The rooster is with the chickens.",
+        "translations": {
+          "es": "El gallo está con las gallinas.",
+          "fr": "Le coq est avec les poules.",
+          "de": "Der Hahn ist bei den Hühnern.",
+          "it": "Il gallo è con le galline.",
+          "pt": "O galo está com as galinhas.",
+          "no": "Hanen er sammen med hønene."
+        }
+      },
+      {
+        "text": "The cow and sheep are beside the fence.",
+        "translations": {
+          "es": "La vaca y la oveja están junto a la cerca.",
+          "fr": "La vache et le mouton sont près de la clôture.",
+          "de": "Die Kuh und das Schaf sind neben dem Zaun.",
+          "it": "La mucca e la pecora sono vicino alla recinzione.",
+          "pt": "A vaca e a ovelha estão junto à cerca.",
+          "no": "Kua og sauen er ved gjerdet."
+        }
+      },
+      {
+        "text": "The dog rests and the horse is standing.",
+        "translations": {
+          "es": "El perro descansa y el caballo está de pie.",
+          "fr": "Le chien se repose et le cheval est debout.",
+          "de": "Der Hund ruht sich aus und das Pferd steht.",
+          "it": "Il cane riposa e il cavallo è in piedi.",
+          "pt": "O cão descansa e o cavalo está de pé.",
+          "no": "Hunden hviler og hesten står."
+        }
+      }
+    ],
     "hotspots": [
       {
         "id": "horse",
         "label": "horse",
-        "x": 16.79,
-        "y": 41.71,
+        "x": 11.051445064253256,
+        "y": 32.71633276576448,
         "w": 13.28,
         "h": 12.97,
         "sound": "sounds/horse.mp3",
@@ -12591,8 +12658,8 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
       {
         "id": "goat",
         "label": "goat",
-        "x": 27.53,
-        "y": 65.46,
+        "x": 22.47100918854204,
+        "y": 58.61407958294441,
         "w": 10.63,
         "h": 14.18,
         "sound": "sounds/goat.mp3",
@@ -12601,8 +12668,8 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
       {
         "id": "pig",
         "label": "pig",
-        "x": 15.2,
-        "y": 72.89,
+        "x": 9.687967879203962,
+        "y": 64.43326754982921,
         "w": 10,
         "h": 14.92,
         "sound": "sounds/pig.mp3",
@@ -12611,8 +12678,8 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
       {
         "id": "dog",
         "label": "dog",
-        "x": 50.98,
-        "y": 71.07,
+        "x": 46.82709180721819,
+        "y": 65.96911571092454,
         "w": 10.89,
         "h": 13.35,
         "sound": "sounds/dog.mp3",
@@ -12621,8 +12688,8 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
       {
         "id": "rooster",
         "label": "rooster",
-        "x": 85.04,
-        "y": 62.61,
+        "x": 84.43594204050702,
+        "y": 68.11358729735426,
         "w": 4.74,
         "h": 9.55,
         "sound": "sounds/rooster.mp3",
@@ -12641,8 +12708,8 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
       {
         "id": "squirrel",
         "label": "squirrel",
-        "x": 94.98,
-        "y": 47.32,
+        "x": 91.58217073742944,
+        "y": 43.02451404656113,
         "w": 7.14,
         "h": 12.6,
         "sound": "sounds/squirrel.mp3",
@@ -12661,8 +12728,8 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
       {
         "id": "barn",
         "label": "barn",
-        "x": 56.35,
-        "y": 38.44,
+        "x": 51.81956098323924,
+        "y": 30.654441790600885,
         "w": 7.61,
         "h": 13.71,
         "sound": "sounds/tractor.mp3",
@@ -12671,8 +12738,8 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
       {
         "id": "windmill",
         "label": "windmill",
-        "x": 63.23,
-        "y": 22.13,
+        "x": 61.568838451112605,
+        "y": 15.28407574248391,
         "w": 3.81,
         "h": 12.6,
         "sound": "",
@@ -12681,8 +12748,8 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
       {
         "id": "rv",
         "label": "rv",
-        "x": 82.3,
-        "y": 35.19,
+        "x": 75.88188093996447,
+        "y": 26.733267549829208,
         "w": 15.68,
         "h": 20.58,
         "sound": "sounds/rv.mp3",
@@ -12691,8 +12758,8 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
       {
         "id": "campfire",
         "label": "campfire",
-        "x": 63.18,
-        "y": 68.86,
+        "x": 59.78217073742943,
+        "y": 62.148303677809324,
         "w": 12.35,
         "h": 13.99,
         "sound": "",
@@ -12701,8 +12768,8 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
       {
         "id": "fence",
         "label": "fence",
-        "x": 12.28,
-        "y": 55.74,
+        "x": 0.9539024580980975,
+        "y": 44.3301300779337,
         "w": 3.96,
         "h": 16.03,
         "sound": "",
@@ -12721,8 +12788,8 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
       {
         "id": "mountains",
         "label": "mountains",
-        "x": 29.15,
-        "y": 19.46,
+        "x": 23.864486373591333,
+        "y": 16.104151838904663,
         "w": 15.83,
         "h": 11.22,
         "sound": "",
@@ -12741,8 +12808,8 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
       {
         "id": "chicken",
         "label": "chicken",
-        "x": 95.11,
-        "y": 68.71,
+        "x": 92.61826199723225,
+        "y": 66.02532607967633,
         "w": 6,
         "h": 8,
         "sound": "sounds/chicken.mp3",
@@ -12751,8 +12818,8 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
       {
         "id": "solar-panel",
         "label": "solar panel",
-        "x": 73.5,
-        "y": 21.9,
+        "x": 81.73030157964116,
+        "y": 15.188307518269838,
         "w": 6,
         "h": 8,
         "sound": "",
@@ -12761,8 +12828,8 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
       {
         "id": "window",
         "label": "window",
-        "x": 94.27,
-        "y": 28.47,
+        "x": 90.49463991345047,
+        "y": 24.17451788702164,
         "w": 6,
         "h": 8,
         "sound": "",
@@ -12771,8 +12838,8 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
       {
         "id": "rear-door",
         "label": "rear door",
-        "x": 70.77,
-        "y": 37.96,
+        "x": 69.48636927509156,
+        "y": 33.396050494989275,
         "w": 3.29,
         "h": 9.2,
         "sound": "",
@@ -12791,8 +12858,8 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
       {
         "id": "girl",
         "label": "girl",
-        "x": 41.44,
-        "y": 61.17,
+        "x": 37.81564360191539,
+        "y": 54.458303677809326,
         "w": 5.74,
         "h": 20.03,
         "sound": "sounds/girl.mp3",
@@ -12801,8 +12868,8 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
       {
         "id": "boy",
         "label": "boy",
-        "x": 48.18,
-        "y": 61.59,
+        "x": 45.83928296795049,
+        "y": 53.267499325615134,
         "w": 4.85,
         "h": 12.44,
         "sound": "sounds/child-laughing.mp3",
@@ -12811,8 +12878,8 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
       {
         "id": "field",
         "label": "field",
-        "x": 40.79,
-        "y": 39.18,
+        "x": 38.524780491619616,
+        "y": 34.7502822707752,
         "w": 7.25,
         "h": 4.76,
         "sound": "",
@@ -12821,8 +12888,8 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
       {
         "id": "sunset",
         "label": "sunset",
-        "x": 53.56,
-        "y": 24.66,
+        "x": 48.425503023746245,
+        "y": 19.961814878742835,
         "w": 10.95,
         "h": 5.96,
         "sound": "",
@@ -12841,7 +12908,32 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
         "z": 1
       }
     ],
-    "challenges": []
+    "challenges": [
+      {
+        "prompt": "Find the Dog",
+        "target": "dog"
+      },
+      {
+        "prompt": "Find the Horse",
+        "target": "horse"
+      },
+      {
+        "prompt": "Find the Cow",
+        "target": "cow"
+      },
+      {
+        "prompt": "Find the Sheep",
+        "target": "sheep"
+      },
+      {
+        "prompt": "Find the Barn",
+        "target": "barn"
+      },
+      {
+        "prompt": "Find the RV Door",
+        "target": "rv"
+      }
+    ]
   },
   "aunt-julies-island-retreat": {
     "title": "Aunt Julies Island Retreat",
