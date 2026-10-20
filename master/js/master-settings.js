@@ -1,14 +1,14 @@
 window.TAB_MASTER_DEFAULTS={
-  "panelWidth": 265,
-  "panelHeight": 500,
-  "panelFont": 18,
+  "panelWidth": 210,
+  "panelHeight": 380,
+  "panelFont": 16,
   "panelFamily": "Arial, sans-serif",
-  "scriptWidth": 435,
-  "scriptHeight": 260,
+  "scriptWidth": 385,
+  "scriptHeight": 210,
   "scriptFont": 26,
-  "scriptFamily": "Arial, sans-serif",
-  "opacity": 54,
+  "scriptFamily": "Georgia, serif",
+  "opacity": 39,
   "native": "en",
-  "learn": "es",
+  "learn": "en",
   "voiceMode": "enhanced"
 };

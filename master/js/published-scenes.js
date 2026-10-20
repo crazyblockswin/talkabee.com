@@ -456,7 +456,7 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
         "y": -1.56,
         "w": 23.91,
         "h": 33.67,
-        "sound": "sounds/dinosaur.mp3",
+        "sound": "",
         "translations": {}
       },
       {
@@ -466,7 +466,7 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
         "y": 27.85,
         "w": 18.61,
         "h": 28.56,
-        "sound": "sounds/dinosaur-growl.mp3",
+        "sound": "",
         "translations": {}
       },
       {
@@ -476,7 +476,7 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
         "y": 45.85,
         "w": 15.59,
         "h": 16.52,
-        "sound": "sounds/dinosaur-growl.mp3",
+        "sound": "",
         "translations": {}
       },
       {
@@ -486,7 +486,7 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
         "y": 31,
         "w": 27,
         "h": 31,
-        "sound": "sounds/dinosaur-growl.mp3",
+        "sound": "",
         "translations": {}
       },
       {
@@ -496,7 +496,7 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
         "y": 3,
         "w": 24,
         "h": 28,
-        "sound": "sounds/dino1.mp3",
+        "sound": "",
         "translations": {}
       },
       {
@@ -516,7 +516,7 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
         "y": 65.5,
         "w": 1,
         "h": 2.89,
-        "sound": "sounds/hatching-egg.mp3",
+        "sound": "",
         "translations": {}
       },
       {
@@ -526,7 +526,7 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
         "y": 85.24,
         "w": 22,
         "h": 16,
-        "sound": "sounds/dinosaur-foot-steps.mp3",
+        "sound": "",
         "translations": {}
       },
       {
@@ -536,7 +536,7 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
         "y": 59.93,
         "w": 13,
         "h": 34,
-        "sound": "sounds/child-laughing.mp3",
+        "sound": "",
         "translations": {}
       },
       {
@@ -546,7 +546,7 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
         "y": 60.19,
         "w": 11,
         "h": 29,
-        "sound": "sounds/boy-laugh.mp3",
+        "sound": "",
         "translations": {}
       },
       {
@@ -556,7 +556,7 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
         "y": 61,
         "w": 17,
         "h": 18,
-        "sound": "sounds/rattling-bones.mp3",
+        "sound": "",
         "translations": {}
       },
       {
@@ -566,7 +566,7 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
         "y": 38,
         "w": 15,
         "h": 25,
-        "sound": "sounds/rattling-bones.mp3",
+        "sound": "",
         "translations": {}
       },
       {
@@ -576,7 +576,7 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
         "y": 6.84,
         "w": 22.03,
         "h": 15.87,
-        "sound": "sounds/dinosaur-museum.mp3",
+        "sound": "",
         "translations": {}
       },
       {
@@ -1088,9 +1088,190 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
   },
   "underwater-adventure": {
     "title": "Underwater Adventure",
-    "image": "",
+    "image": "images/Talk-A-Bee-Underwater-Adventure.jpg",
     "lessons": [],
-    "hotspots": [],
+    "hotspots": [
+      {
+        "id": "dolphin",
+        "label": "dolphin",
+        "x": 14,
+        "y": 8,
+        "w": 23,
+        "h": 17,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "shipwreck",
+        "label": "shipwreck",
+        "x": 20.73,
+        "y": 30.7,
+        "w": 13.43,
+        "h": 29.81,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "turtle",
+        "label": "turtle",
+        "x": 31,
+        "y": 25,
+        "w": 21,
+        "h": 28,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "grandma",
+        "label": "grandma",
+        "x": 56.52,
+        "y": 21.61,
+        "w": 7.19,
+        "h": 6.02,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "shark",
+        "label": "shark",
+        "x": 68,
+        "y": 2,
+        "w": 25,
+        "h": 22,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "clownfish",
+        "label": "clownfish",
+        "x": 0,
+        "y": 54,
+        "w": 16,
+        "h": 17,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "tropicalfish",
+        "label": "tropicalfish",
+        "x": 13,
+        "y": 45,
+        "w": 23,
+        "h": 22,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "pufferfish",
+        "label": "pufferfish",
+        "x": 57,
+        "y": 53,
+        "w": 10,
+        "h": 14,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "eel",
+        "label": "eel",
+        "x": 84,
+        "y": 51,
+        "w": 16,
+        "h": 18,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "starfish",
+        "label": "starfish",
+        "x": 5,
+        "y": 77,
+        "w": 18,
+        "h": 18,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "crab",
+        "label": "crab",
+        "x": 27,
+        "y": 73,
+        "w": 15,
+        "h": 18,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "lobster",
+        "label": "lobster",
+        "x": 52,
+        "y": 72,
+        "w": 16,
+        "h": 20,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "octopus",
+        "label": "octopus",
+        "x": 79,
+        "y": 72,
+        "w": 21,
+        "h": 25,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "coral",
+        "label": "coral",
+        "x": 68,
+        "y": 38,
+        "w": 16.16,
+        "h": 34.17,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "seaweed",
+        "label": "seaweed",
+        "x": 0,
+        "y": 25,
+        "w": 12,
+        "h": 42,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "sand",
+        "label": "sand",
+        "x": 37,
+        "y": 79,
+        "w": 20,
+        "h": 18,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "fins",
+        "label": "fins",
+        "x": 43.1,
+        "y": 36.17,
+        "w": 8.79,
+        "h": 16.94,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "scuba-diver",
+        "label": "scuba diver",
+        "x": 54.4,
+        "y": 22.08,
+        "w": 7.2,
+        "h": 17.44,
+        "sound": "sounds/scuba-diver.mp3",
+        "translations": {}
+      }
+    ],
     "overlays": [],
     "challenges": []
   },
