@@ -10400,55 +10400,1413 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
   },
   "bird-sanctuary": {
     "title": "Bird Sanctuary",
-    "image": "",
+    "image": "images/bird-sanctuary.jpg",
     "lessons": [],
-    "hotspots": [],
+    "hotspots": [
+      {
+        "id": "ryder",
+        "label": "ryder",
+        "x": 26.72,
+        "y": 46.12,
+        "w": 7.5,
+        "h": 19.46,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "grandpa",
+        "label": "grandpa",
+        "x": 37.26,
+        "y": 40.44,
+        "w": 6.23,
+        "h": 14.75,
+        "sound": "sounds/grandpa-birdhouses.mp3",
+        "translations": {}
+      },
+      {
+        "id": "daniel",
+        "label": "daniel",
+        "x": 50.26,
+        "y": 49.92,
+        "w": 7.43,
+        "h": 15.75,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "hammer",
+        "label": "hammer",
+        "x": 38.42,
+        "y": 52.3,
+        "w": 6.13,
+        "h": 13.83,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "paintbrush",
+        "label": "paintbrush",
+        "x": 23.62,
+        "y": 61.13,
+        "w": 5.76,
+        "h": 12.29,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "paint",
+        "label": "paint",
+        "x": 29.15,
+        "y": 64.37,
+        "w": 8.32,
+        "h": 5.72,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "birdhouse",
+        "label": "birdhouse",
+        "x": 42.9,
+        "y": 58.13,
+        "w": 6.74,
+        "h": 14.13,
+        "sound": "sounds/birdhouse.mp3",
+        "translations": {}
+      },
+      {
+        "id": "birdhouse2",
+        "label": "birdhouse2",
+        "x": 52.51,
+        "y": 60.45,
+        "w": 7.38,
+        "h": 11.24,
+        "sound": "sounds/birdhouse.mp3",
+        "translations": {}
+      },
+      {
+        "id": "birdfeeder",
+        "label": "birdfeeder",
+        "x": 84.71,
+        "y": 15.69,
+        "w": 6.18,
+        "h": 21.7,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "woodpecker",
+        "label": "woodpecker",
+        "x": 95.49,
+        "y": 18.78,
+        "w": 4.98,
+        "h": 20.62,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "bluebird",
+        "label": "bluebird",
+        "x": 94.3,
+        "y": 43.69,
+        "w": 6.31,
+        "h": 8.98,
+        "sound": "sounds/birds-forest.mp3",
+        "translations": {}
+      },
+      {
+        "id": "rv",
+        "label": "rv",
+        "x": 46.6,
+        "y": 30.37,
+        "w": 16.83,
+        "h": 18.05,
+        "sound": "sounds/RV2-nature.mp3",
+        "translations": {}
+      },
+      {
+        "id": "lake",
+        "label": "lake",
+        "x": 83.35,
+        "y": 38.31,
+        "w": 16.06,
+        "h": 12.31,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "waterfall",
+        "label": "waterfall",
+        "x": 69.62,
+        "y": 57.28,
+        "w": 11.07,
+        "h": 15.76,
+        "sound": "sounds/waterfall.mp3",
+        "translations": {}
+      },
+      {
+        "id": "flowers",
+        "label": "flowers",
+        "x": 9.21,
+        "y": 26.75,
+        "w": 13.22,
+        "h": 12.72,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "tools",
+        "label": "tools",
+        "x": 5.45,
+        "y": 53.18,
+        "w": 8.94,
+        "h": 22.13,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "tree",
+        "label": "tree",
+        "x": 98.83,
+        "y": 31.98,
+        "w": 8.43,
+        "h": 32.65,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "pond",
+        "label": "pond",
+        "x": 78.45,
+        "y": 74.26,
+        "w": 12.88,
+        "h": 11.52,
+        "sound": "sounds/water-stream.mp3",
+        "translations": {}
+      },
+      {
+        "id": "bird-house",
+        "label": "bird house",
+        "x": 90.25,
+        "y": 20.68,
+        "w": 5.48,
+        "h": 12.17,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "sail-boat",
+        "label": "sail boat",
+        "x": 70.64,
+        "y": 36.98,
+        "w": 6,
+        "h": 8,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "chair",
+        "label": "chair",
+        "x": 64.55,
+        "y": 44.27,
+        "w": 6,
+        "h": 8,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "canoe",
+        "label": "canoe",
+        "x": 85.53,
+        "y": 48.26,
+        "w": 8.45,
+        "h": 5.22,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "work-table",
+        "label": "work table",
+        "x": 37.93,
+        "y": 69.16,
+        "w": 15.48,
+        "h": 8.83,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "stool",
+        "label": "stool",
+        "x": 32.86,
+        "y": 76.33,
+        "w": 6,
+        "h": 8,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "dog",
+        "label": "dog",
+        "x": 17.81,
+        "y": 79.71,
+        "w": 13.4,
+        "h": 16.8,
+        "sound": "sounds/dog-panting.wav",
+        "translations": {}
+      },
+      {
+        "id": "flower-pot",
+        "label": "flower pot",
+        "x": 57.49,
+        "y": 77.22,
+        "w": 4.85,
+        "h": 11.06,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "humming-bird-feeder",
+        "label": "humming bird feeder",
+        "x": 23.15,
+        "y": 26.62,
+        "w": 4.7,
+        "h": 10.13,
+        "sound": "",
+        "translations": {}
+      }
+    ],
     "overlays": [],
     "challenges": []
   },
   "library": {
     "title": "Library",
-    "image": "",
+    "image": "images/library-adventure.jpg",
     "lessons": [],
-    "hotspots": [],
+    "hotspots": [
+      {
+        "id": "libro",
+        "label": "libro",
+        "x": 38.43,
+        "y": 62.62,
+        "w": 12.37,
+        "h": 10.36,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "fuente",
+        "label": "fuente",
+        "x": 74.06,
+        "y": 26.17,
+        "w": 4.98,
+        "h": 17.76,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "taza",
+        "label": "taza",
+        "x": 53.03,
+        "y": 71.99,
+        "w": 3.95,
+        "h": 5.96,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "cuaderno",
+        "label": "cuaderno",
+        "x": 39.81,
+        "y": 77.01,
+        "w": 12.29,
+        "h": 7.35,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "bol-grafo",
+        "label": "bolígrafo",
+        "x": 53.36,
+        "y": 78.22,
+        "w": 5.54,
+        "h": 4.86,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "escalera",
+        "label": "escalera",
+        "x": 19.55,
+        "y": 8.85,
+        "w": 3.93,
+        "h": 34.58,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "camera",
+        "label": "camera",
+        "x": 61.66,
+        "y": 73.43,
+        "w": 6,
+        "h": 8,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "man",
+        "label": "man",
+        "x": 83.66,
+        "y": 55.61,
+        "w": 6,
+        "h": 8,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "woman",
+        "label": "woman",
+        "x": 73.14,
+        "y": 54.95,
+        "w": 6,
+        "h": 8,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "flowers",
+        "label": "flowers",
+        "x": 87.8,
+        "y": 15.33,
+        "w": 6,
+        "h": 8,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "sign",
+        "label": "sign",
+        "x": 94.26,
+        "y": 17.53,
+        "w": 5.22,
+        "h": 24.85,
+        "sound": "",
+        "translations": {}
+      }
+    ],
     "overlays": [],
     "challenges": []
   },
   "train-station": {
     "title": "Train Station",
-    "image": "",
+    "image": "images/train-station-adventure.jpg",
     "lessons": [],
-    "hotspots": [],
+    "hotspots": [
+      {
+        "id": "clock",
+        "label": "clock",
+        "x": 51.2,
+        "y": 12.13,
+        "w": 7.93,
+        "h": 11.51,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "luggage",
+        "label": "luggage",
+        "x": 15.19,
+        "y": 89.56,
+        "w": 11.8,
+        "h": 19.15,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "train-station-porter",
+        "label": "train station porter",
+        "x": 62.68,
+        "y": 51.91,
+        "w": 16.1,
+        "h": 31.8,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "pink-coat",
+        "label": "pink coat",
+        "x": 34.1,
+        "y": 72.87,
+        "w": 6.78,
+        "h": 19.3,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "long-hair",
+        "label": "long hair",
+        "x": 35.97,
+        "y": 48.73,
+        "w": 4.07,
+        "h": 22.72,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "hand",
+        "label": "hand",
+        "x": 42.58,
+        "y": 68.06,
+        "w": 6,
+        "h": 8,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "smile",
+        "label": "smile",
+        "x": 27.41,
+        "y": 51.26,
+        "w": 6,
+        "h": 8,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "bench",
+        "label": "bench",
+        "x": 83.83,
+        "y": 73.33,
+        "w": 6,
+        "h": 8,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "blue-shirt",
+        "label": "blue shirt",
+        "x": 74.65,
+        "y": 43.29,
+        "w": 8.76,
+        "h": 12.35,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "sunset",
+        "label": "sunset",
+        "x": 7.16,
+        "y": 25.39,
+        "w": 12.88,
+        "h": 11.89,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "buildings",
+        "label": "buildings",
+        "x": 26.53,
+        "y": 29.99,
+        "w": 12.51,
+        "h": 12.17,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "flowers",
+        "label": "flowers",
+        "x": 48.71,
+        "y": 23.4,
+        "w": 7.93,
+        "h": 14.48,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "hat",
+        "label": "hat",
+        "x": 60.89,
+        "y": 17,
+        "w": 9.65,
+        "h": 14.94,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "ticket",
+        "label": "ticket",
+        "x": 50.49,
+        "y": 61.28,
+        "w": 8.5,
+        "h": 11.52,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "departures-sign",
+        "label": "departures sign",
+        "x": 84.05,
+        "y": 14.18,
+        "w": 22.04,
+        "h": 24.02,
+        "sound": "sounds/train-station.mp3",
+        "translations": {}
+      },
+      {
+        "id": "train",
+        "label": "train",
+        "x": 91.89,
+        "y": 57.29,
+        "w": 14.43,
+        "h": 31.05,
+        "sound": "sounds/subway.mp3",
+        "translations": {}
+      }
+    ],
     "overlays": [],
     "challenges": []
   },
   "animals-farm": {
     "title": "Animals Farm",
-    "image": "",
+    "image": "images/animals-farm-adventure.jpg",
     "lessons": [],
-    "hotspots": [],
-    "overlays": [],
+    "hotspots": [
+      {
+        "id": "horse",
+        "label": "horse",
+        "x": 16.79,
+        "y": 41.71,
+        "w": 13.28,
+        "h": 12.97,
+        "sound": "sounds/horse.mp3",
+        "translations": {}
+      },
+      {
+        "id": "cow",
+        "label": "cow",
+        "x": 33.39,
+        "y": 43.8,
+        "w": 9.85,
+        "h": 6.68,
+        "sound": "sounds/cow.mp3",
+        "translations": {}
+      },
+      {
+        "id": "sheep",
+        "label": "sheep",
+        "x": 24.85,
+        "y": 51.3,
+        "w": 8.55,
+        "h": 7.23,
+        "sound": "sounds/sheep.mp3",
+        "translations": {}
+      },
+      {
+        "id": "goat",
+        "label": "goat",
+        "x": 27.53,
+        "y": 65.46,
+        "w": 10.63,
+        "h": 14.18,
+        "sound": "sounds/goat.mp3",
+        "translations": {}
+      },
+      {
+        "id": "pig",
+        "label": "pig",
+        "x": 15.2,
+        "y": 72.89,
+        "w": 10,
+        "h": 14.92,
+        "sound": "sounds/pig.mp3",
+        "translations": {}
+      },
+      {
+        "id": "dog",
+        "label": "dog",
+        "x": 50.98,
+        "y": 71.07,
+        "w": 10.89,
+        "h": 13.35,
+        "sound": "sounds/dog.mp3",
+        "translations": {}
+      },
+      {
+        "id": "rooster",
+        "label": "rooster",
+        "x": 85.04,
+        "y": 62.61,
+        "w": 4.74,
+        "h": 9.55,
+        "sound": "sounds/rooster.mp3",
+        "translations": {}
+      },
+      {
+        "id": "rabbit",
+        "label": "rabbit",
+        "x": 56.57,
+        "y": 92.6,
+        "w": 8.18,
+        "h": 10.29,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "squirrel",
+        "label": "squirrel",
+        "x": 94.98,
+        "y": 47.32,
+        "w": 7.14,
+        "h": 12.6,
+        "sound": "sounds/squirrel.mp3",
+        "translations": {}
+      },
+      {
+        "id": "butterfly",
+        "label": "butterfly",
+        "x": 39.57,
+        "y": 92.06,
+        "w": 7.24,
+        "h": 7.23,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "barn",
+        "label": "barn",
+        "x": 56.35,
+        "y": 38.44,
+        "w": 7.61,
+        "h": 13.71,
+        "sound": "sounds/tractor.mp3",
+        "translations": {}
+      },
+      {
+        "id": "windmill",
+        "label": "windmill",
+        "x": 63.23,
+        "y": 22.13,
+        "w": 3.81,
+        "h": 12.6,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "rv",
+        "label": "rv",
+        "x": 82.3,
+        "y": 35.19,
+        "w": 15.68,
+        "h": 20.58,
+        "sound": "sounds/rv.mp3",
+        "translations": {}
+      },
+      {
+        "id": "campfire",
+        "label": "campfire",
+        "x": 63.18,
+        "y": 68.86,
+        "w": 12.35,
+        "h": 13.99,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "fence",
+        "label": "fence",
+        "x": 12.28,
+        "y": 55.74,
+        "w": 3.96,
+        "h": 16.03,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "flowers",
+        "label": "flowers",
+        "x": 8.6,
+        "y": 92.17,
+        "w": 10.63,
+        "h": 13.8,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "mountains",
+        "label": "mountains",
+        "x": 29.15,
+        "y": 19.46,
+        "w": 15.83,
+        "h": 11.22,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "chick",
+        "label": "chick",
+        "x": 87.44,
+        "y": 74.31,
+        "w": 5.89,
+        "h": 8.53,
+        "sound": "sounds/chicks.mp3",
+        "translations": {}
+      },
+      {
+        "id": "chicken",
+        "label": "chicken",
+        "x": 95.11,
+        "y": 68.71,
+        "w": 6,
+        "h": 8,
+        "sound": "sounds/chicken.mp3",
+        "translations": {}
+      },
+      {
+        "id": "solar-panel",
+        "label": "solar panel",
+        "x": 73.5,
+        "y": 21.9,
+        "w": 6,
+        "h": 8,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "window",
+        "label": "window",
+        "x": 94.27,
+        "y": 28.47,
+        "w": 6,
+        "h": 8,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "rear-door",
+        "label": "rear door",
+        "x": 70.77,
+        "y": 37.96,
+        "w": 3.29,
+        "h": 9.2,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "stairs",
+        "label": "stairs",
+        "x": 79.91,
+        "y": 52.83,
+        "w": 3.29,
+        "h": 10.96,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "girl",
+        "label": "girl",
+        "x": 41.44,
+        "y": 61.17,
+        "w": 5.74,
+        "h": 20.03,
+        "sound": "sounds/girl.mp3",
+        "translations": {}
+      },
+      {
+        "id": "boy",
+        "label": "boy",
+        "x": 48.18,
+        "y": 61.59,
+        "w": 4.85,
+        "h": 12.44,
+        "sound": "sounds/child-laughing.mp3",
+        "translations": {}
+      },
+      {
+        "id": "field",
+        "label": "field",
+        "x": 40.79,
+        "y": 39.18,
+        "w": 7.25,
+        "h": 4.76,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "sunset",
+        "label": "sunset",
+        "x": 53.56,
+        "y": 24.66,
+        "w": 10.95,
+        "h": 5.96,
+        "sound": "",
+        "translations": {}
+      }
+    ],
+    "overlays": [
+      {
+        "id": "overlay-1792134092668-9u9rm",
+        "label": "bee-sitting-looking-left.png",
+        "src": "images/png/bee-sitting-looking-left.png",
+        "x": 72.96874642372131,
+        "y": 15.277775393591986,
+        "w": 7.5,
+        "rotation": -10,
+        "z": 1
+      }
+    ],
     "challenges": []
   },
   "aunt-julies-island-retreat": {
     "title": "Aunt Julies Island Retreat",
-    "image": "",
+    "image": "images/aunt-julies-island-retreat.jpg",
     "lessons": [],
-    "hotspots": [],
-    "overlays": [],
+    "hotspots": [
+      {
+        "id": "julie",
+        "label": "julie",
+        "x": 54.92,
+        "y": 63.53,
+        "w": 8.53,
+        "h": 34.4,
+        "sound": "sounds/julie.mp3",
+        "translations": {}
+      },
+      {
+        "id": "car",
+        "label": "car",
+        "x": 26.96,
+        "y": 52.91,
+        "w": 23.82,
+        "h": 21.11,
+        "sound": "sounds/car-start.mp3",
+        "translations": {}
+      },
+      {
+        "id": "cabin",
+        "label": "cabin",
+        "x": 36.16,
+        "y": 33.86,
+        "w": 24.01,
+        "h": 26.16,
+        "sound": "sounds/cabin-guitar.mp3",
+        "translations": {}
+      },
+      {
+        "id": "ocean",
+        "label": "ocean",
+        "x": 87.59,
+        "y": 47.05,
+        "w": 6.41,
+        "h": 12.38,
+        "sound": "sounds/ocean.mp3",
+        "translations": {}
+      },
+      {
+        "id": "sun",
+        "label": "sun",
+        "x": 93.05,
+        "y": 35.72,
+        "w": 6,
+        "h": 8,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "sunset",
+        "label": "sunset",
+        "x": 88.31,
+        "y": 22.69,
+        "w": 20.9,
+        "h": 18.37,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "mountain",
+        "label": "mountain",
+        "x": 71.4,
+        "y": 30.86,
+        "w": 9.75,
+        "h": 14.48,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "parrot",
+        "label": "parrot",
+        "x": 58.77,
+        "y": 34.9,
+        "w": 6,
+        "h": 8,
+        "sound": "sounds/parrot.mp3",
+        "translations": {}
+      },
+      {
+        "id": "log",
+        "label": "log",
+        "x": 23.53,
+        "y": 78.2,
+        "w": 6,
+        "h": 8,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "stump",
+        "label": "stump",
+        "x": 69.73,
+        "y": 74.15,
+        "w": 6,
+        "h": 8,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "stairs",
+        "label": "stairs",
+        "x": 45.55,
+        "y": 53.65,
+        "w": 7.2,
+        "h": 12.35,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "roof",
+        "label": "roof",
+        "x": 26.2,
+        "y": 21.25,
+        "w": 6,
+        "h": 8,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "sand",
+        "label": "sand",
+        "x": 37.14,
+        "y": 85.01,
+        "w": 6,
+        "h": 8,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "pole",
+        "label": "pole",
+        "x": 95.88,
+        "y": 63.26,
+        "w": 3.4,
+        "h": 12.81,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "foot",
+        "label": "foot",
+        "x": 61.89,
+        "y": 81.79,
+        "w": 6,
+        "h": 8,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "hand",
+        "label": "hand",
+        "x": 64.65,
+        "y": 65.81,
+        "w": 4.59,
+        "h": 6.43,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "sky",
+        "label": "sky",
+        "x": 69.7,
+        "y": 4.93,
+        "w": 10.95,
+        "h": 10.31,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "hammock",
+        "label": "hammock",
+        "x": 54.17,
+        "y": 42.54,
+        "w": 11.89,
+        "h": 8.46,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "coffee-mug",
+        "label": "coffee mug",
+        "x": 51.49,
+        "y": 60.53,
+        "w": 6,
+        "h": 8,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "chair",
+        "label": "chair",
+        "x": 75.45,
+        "y": 53.93,
+        "w": 6,
+        "h": 8,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "flower",
+        "label": "flower",
+        "x": 91.8,
+        "y": 80.36,
+        "w": 6,
+        "h": 8,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "dock",
+        "label": "dock",
+        "x": 81.93,
+        "y": 61.87,
+        "w": 18.5,
+        "h": 7.81,
+        "sound": "",
+        "translations": {}
+      }
+    ],
+    "overlays": [
+      {
+        "id": "overlay-1792133599912-jxdgh",
+        "label": "bee6.png",
+        "src": "images/png/bee6.png",
+        "x": 40.260417461395264,
+        "y": 16.574082374572754,
+        "w": 9,
+        "rotation": 0,
+        "z": 1
+      },
+      {
+        "id": "overlay-1792133689066-r8sbt",
+        "label": "bee-laying-down.png",
+        "src": "images/png/bee-laying-down.png",
+        "x": 80.20834445953369,
+        "y": 53.79630088806153,
+        "w": 6.5,
+        "rotation": 0,
+        "z": 2
+      }
+    ],
     "challenges": []
   },
   "sea-adventures": {
     "title": "Sea Adventures",
-    "image": "",
+    "image": "images/talkabee-image-21.jpg",
     "lessons": [],
-    "hotspots": [],
+    "hotspots": [
+      {
+        "id": "grandpa",
+        "label": "Grandpa",
+        "x": 53.82,
+        "y": 63.03,
+        "w": 6.38,
+        "h": 13.28,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "girl",
+        "label": "Girl",
+        "x": 72.72,
+        "y": 56.8,
+        "w": 4.84,
+        "h": 8.78,
+        "sound": "sounds/girl-laugh.mp3",
+        "translations": {}
+      },
+      {
+        "id": "sailboat",
+        "label": "Sailboat",
+        "x": 75.33,
+        "y": 39.5,
+        "w": 5.88,
+        "h": 9.24,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "ocean",
+        "label": "Ocean",
+        "x": 48.3,
+        "y": 43.7,
+        "w": 14.51,
+        "h": 7.83,
+        "sound": "sounds/ocean.mp3",
+        "translations": {}
+      },
+      {
+        "id": "lantern",
+        "label": "Lantern",
+        "x": 63.84,
+        "y": 75.92,
+        "w": 5.1,
+        "h": 11.1,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "yacht",
+        "label": "Yacht",
+        "x": 92.73,
+        "y": 16.87,
+        "w": 15.23,
+        "h": 9.81,
+        "sound": "sounds/yacht.mp3",
+        "translations": {}
+      },
+      {
+        "id": "flowers",
+        "label": "flowers",
+        "x": 5.27,
+        "y": 77.61,
+        "w": 6,
+        "h": 8,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "fishing-pole",
+        "label": "fishing pole",
+        "x": 37.18,
+        "y": 46.92,
+        "w": 2.31,
+        "h": 16.33,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "sunset",
+        "label": "sunset",
+        "x": 44.13,
+        "y": 29.06,
+        "w": 27.2,
+        "h": 11.7,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "mountain",
+        "label": "mountain",
+        "x": 46.74,
+        "y": 36.31,
+        "w": 8.71,
+        "h": 4.48,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "clouds",
+        "label": "clouds",
+        "x": 40.75,
+        "y": 5.96,
+        "w": 22.51,
+        "h": 8.65,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "railing",
+        "label": "railing",
+        "x": 83.08,
+        "y": 8.87,
+        "w": 8.55,
+        "h": 5.41,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "upper-deck",
+        "label": "upper deck",
+        "x": 81.41,
+        "y": 20.8,
+        "w": 8.24,
+        "h": 8.56,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "lamp",
+        "label": "lamp",
+        "x": 98.6,
+        "y": 45.55,
+        "w": 4.23,
+        "h": 6.8,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "pillow",
+        "label": "pillow",
+        "x": 96.33,
+        "y": 67.47,
+        "w": 6.94,
+        "h": 5.96,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "hat",
+        "label": "hat",
+        "x": 63.95,
+        "y": 51.35,
+        "w": 6.62,
+        "h": 5.41,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "hill",
+        "label": "hill",
+        "x": 66.86,
+        "y": 35.38,
+        "w": 4.96,
+        "h": 6.8,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "sliding-glass-door",
+        "label": "sliding glass door",
+        "x": 94.66,
+        "y": 45.61,
+        "w": 3.92,
+        "h": 34.57,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "drinking-glass",
+        "label": "drinking glass",
+        "x": 85.17,
+        "y": 77.44,
+        "w": 5.48,
+        "h": 7.81,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "life-jacket",
+        "label": "life jacket",
+        "x": 74.05,
+        "y": 64.94,
+        "w": 6.57,
+        "h": 7.6,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "pointing-finger",
+        "label": "pointing finger",
+        "x": 80.11,
+        "y": 54.97,
+        "w": 3.76,
+        "h": 5.22,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "waves",
+        "label": "waves",
+        "x": 28.44,
+        "y": 52.7,
+        "w": 11.83,
+        "h": 12.17,
+        "sound": "sounds/ocean.mp3",
+        "translations": {}
+      },
+      {
+        "id": "sun-glasses",
+        "label": "sun glasses",
+        "x": 53.95,
+        "y": 51.24,
+        "w": 4.49,
+        "h": 3.37,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "sun",
+        "label": "sun",
+        "x": 63.1,
+        "y": 14.5,
+        "w": 6,
+        "h": 8,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "whale",
+        "label": "whale",
+        "x": 26.98,
+        "y": 34.88,
+        "w": 6,
+        "h": 8,
+        "sound": "sounds/whale.mp3",
+        "translations": {}
+      },
+      {
+        "id": "dolphin",
+        "label": "dolphin",
+        "x": 68.36,
+        "y": 43.93,
+        "w": 6,
+        "h": 8,
+        "sound": "sounds/dolphin.mp3",
+        "translations": {}
+      },
+      {
+        "id": "seagull",
+        "label": "seagull",
+        "x": 16.29,
+        "y": 60.61,
+        "w": 6,
+        "h": 8,
+        "sound": "sounds/seagull.mp3",
+        "translations": {}
+      },
+      {
+        "id": "cathy",
+        "label": "cathy",
+        "x": 63.02,
+        "y": 62.55,
+        "w": 5.06,
+        "h": 11.14,
+        "sound": "sounds/laughing-adult-woman.mp3",
+        "translations": {}
+      },
+      {
+        "id": "dog",
+        "label": "dog",
+        "x": 49.46,
+        "y": 79.11,
+        "w": 6,
+        "h": 8,
+        "sound": "sounds/dog-panting.wav",
+        "translations": {}
+      }
+    ],
     "overlays": [],
     "challenges": []
   },
   "protect-earth": {
     "title": "Protect Earth",
-    "image": "",
+    "image": "images/Talk-A-Bee-Protect-Earth-Adventure.jpg",
     "lessons": [
       {
         "text": "From space, Earth looks beautiful, but astronauts can also observe clouds, cities, fires, dust, and some forms of pollution.",
@@ -10583,7 +11941,128 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
         }
       }
     ],
-    "hotspots": [],
+    "hotspots": [
+      {
+        "id": "smoke",
+        "label": "smoke",
+        "x": 29,
+        "y": 19,
+        "w": 39,
+        "h": 26,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "haze",
+        "label": "haze",
+        "x": 26.94,
+        "y": 16.98,
+        "w": 27.55,
+        "h": 22.22,
+        "sound": "sounds/factory.mp3",
+        "translations": {}
+      },
+      {
+        "id": "river",
+        "label": "river",
+        "x": 83.08,
+        "y": 23.94,
+        "w": 3.1,
+        "h": 16.94,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "ocean",
+        "label": "ocean",
+        "x": 68,
+        "y": 45,
+        "w": 28,
+        "h": 19,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "atmosphere",
+        "label": "atmosphere",
+        "x": 24.01,
+        "y": 13.07,
+        "w": 67,
+        "h": 12,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "sunrise",
+        "label": "sunrise",
+        "x": 94.35,
+        "y": 14.75,
+        "w": 5.49,
+        "h": 19.29,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "ships",
+        "label": "ships",
+        "x": 76,
+        "y": 46,
+        "w": 22,
+        "h": 18,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "map",
+        "label": "map",
+        "x": -0.16,
+        "y": 18,
+        "w": 12.83,
+        "h": 21.5,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "chart",
+        "label": "chart",
+        "x": -1.15,
+        "y": 43.46,
+        "w": 15.48,
+        "h": 11.54,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "monitor",
+        "label": "monitor",
+        "x": 81.26,
+        "y": 72.48,
+        "w": 18,
+        "h": 22,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "satellite",
+        "label": "satellite",
+        "x": 9,
+        "y": 7,
+        "w": 12,
+        "h": 13,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "pollution-critical-warning",
+        "label": "pollution critical warning",
+        "x": 21.36,
+        "y": -1.04,
+        "w": 74.44,
+        "h": 77.73,
+        "sound": "sounds/world-pollution-warning-message.mp3",
+        "translations": {}
+      }
+    ],
     "overlays": [],
     "challenges": []
   },

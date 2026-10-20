@@ -9,6 +9,6 @@ window.TAB_MASTER_DEFAULTS={
   "scriptFamily": "Arial, sans-serif",
   "opacity": 54,
   "native": "en",
-  "learn": "es",
-  "voiceMode": "enhanced"
+  "learn": "no",
+  "voiceMode": "standard"
 };
