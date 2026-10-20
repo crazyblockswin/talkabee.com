@@ -5916,9 +5916,261 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
         }
       }
     ],
-    "hotspots": [],
+    "hotspots": [
+      {
+        "id": "softball",
+        "label": "softball",
+        "x": 49.35,
+        "y": 48.18,
+        "w": 6.22,
+        "h": 8.15,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "pitchermound",
+        "label": "pitchermound",
+        "x": 34.19,
+        "y": 64.35,
+        "w": 13.28,
+        "h": 10.59,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "batter",
+        "label": "batter",
+        "x": 74.22,
+        "y": 46.84,
+        "w": 7.1,
+        "h": 18.61,
+        "sound": "sounds/baseball1.mp3",
+        "translations": {}
+      },
+      {
+        "id": "bat",
+        "label": "bat",
+        "x": 78.98,
+        "y": 22.91,
+        "w": 2.93,
+        "h": 19.09,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "catcher",
+        "label": "catcher",
+        "x": 86.21,
+        "y": 56.56,
+        "w": 8.56,
+        "h": 31.89,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "umpire",
+        "label": "umpire",
+        "x": 93.19,
+        "y": 28.85,
+        "w": 9,
+        "h": 67,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "homeplate",
+        "label": "homeplate",
+        "x": 60,
+        "y": 82,
+        "w": 21,
+        "h": 16,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "scoreboard",
+        "label": "scoreboard",
+        "x": 78.75,
+        "y": 14.3,
+        "w": 15.71,
+        "h": 12.19,
+        "sound": "sounds/baseball2.mp3",
+        "translations": {}
+      },
+      {
+        "id": "spectators",
+        "label": "spectators",
+        "x": 82.36,
+        "y": 27.33,
+        "w": 12.78,
+        "h": 14.41,
+        "sound": "sounds/soft-cheering-sports.mp3",
+        "translations": {}
+      },
+      {
+        "id": "fielder1",
+        "label": "fielder1",
+        "x": 8.98,
+        "y": 42.5,
+        "w": 6.49,
+        "h": 16.81,
+        "sound": "sounds/baseball1.mp3",
+        "translations": {}
+      },
+      {
+        "id": "fielder2",
+        "label": "fielder2",
+        "x": 25.68,
+        "y": 46.69,
+        "w": 7.51,
+        "h": 15.09,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "fielder3",
+        "label": "fielder3",
+        "x": 57.08,
+        "y": 45.39,
+        "w": 6.47,
+        "h": 14.13,
+        "sound": "sounds/baseball1.mp3",
+        "translations": {}
+      },
+      {
+        "id": "glove",
+        "label": "glove",
+        "x": 12.44,
+        "y": 58.56,
+        "w": 4.35,
+        "h": 7.52,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "helmet",
+        "label": "helmet",
+        "x": 71.51,
+        "y": 35.57,
+        "w": 7.03,
+        "h": 9.19,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "field",
+        "label": "field",
+        "x": 7.08,
+        "y": 64.67,
+        "w": 26.82,
+        "h": 26.18,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "lake",
+        "label": "lake",
+        "x": 46.58,
+        "y": 35.48,
+        "w": 10.45,
+        "h": 9.27,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "mountains",
+        "label": "mountains",
+        "x": 44.86,
+        "y": 11.65,
+        "w": 17.65,
+        "h": 15.55,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "flag",
+        "label": "flag",
+        "x": 69.31,
+        "y": 8.9,
+        "w": 5.65,
+        "h": 11.91,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "team-members",
+        "label": "team members",
+        "x": 0.3,
+        "y": 38.32,
+        "w": 8.45,
+        "h": 8.46,
+        "sound": "sounds/baseball1.mp3",
+        "translations": {}
+      },
+      {
+        "id": "pitcher",
+        "label": "pitcher",
+        "x": 38.38,
+        "y": 46.95,
+        "w": 7.67,
+        "h": 14.39,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "fence",
+        "label": "fence",
+        "x": 65.18,
+        "y": 45.53,
+        "w": 8.08,
+        "h": 18.09,
+        "sound": "",
+        "translations": {}
+      }
+    ],
     "overlays": [],
-    "challenges": []
+    "challenges": [
+      {
+        "prompt": "find the pitcher",
+        "target": "pitcher",
+        "translations": {}
+      },
+      {
+        "prompt": "find the crowd of spectators",
+        "target": "spectators",
+        "translations": {}
+      },
+      {
+        "prompt": "find the softball",
+        "target": "softball",
+        "translations": {}
+      },
+      {
+        "prompt": "find the infielder",
+        "target": "fielder1",
+        "translations": {}
+      },
+      {
+        "prompt": "find the lake",
+        "target": "lake",
+        "translations": {}
+      },
+      {
+        "prompt": "find another infielder",
+        "target": "fielder2",
+        "translations": {}
+      },
+      {
+        "prompt": "find the fence",
+        "target": "fence",
+        "translations": {}
+      },
+      {
+        "prompt": "find the umpire",
+        "target": "umpire",
+        "translations": {}
+      }
+    ]
   },
   "football": {
     "title": "Football",
@@ -12607,8 +12859,8 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
       {
         "id": "clock",
         "label": "clock",
-        "x": 51.2,
-        "y": 12.13,
+        "x": 47.69737026387952,
+        "y": 2.4160500070691047,
         "w": 7.93,
         "h": 11.51,
         "sound": "",
@@ -12617,18 +12869,18 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
       {
         "id": "luggage",
         "label": "luggage",
-        "x": 15.19,
-        "y": 89.56,
-        "w": 11.8,
-        "h": 19.15,
+        "x": 2.0201187660262363,
+        "y": 80.85,
+        "w": 20.90683170209926,
+        "h": 19.150000000000006,
         "sound": "",
         "translations": {}
       },
       {
         "id": "train-station-porter",
         "label": "train station porter",
-        "x": 62.68,
-        "y": 51.91,
+        "x": 55.81484347247826,
+        "y": 40.327971600445125,
         "w": 16.1,
         "h": 31.8,
         "sound": "",
@@ -12637,8 +12889,8 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
       {
         "id": "pink-coat",
         "label": "pink coat",
-        "x": 34.1,
-        "y": 72.87,
+        "x": 32.69894650217638,
+        "y": 71.99823411503941,
         "w": 6.78,
         "h": 19.3,
         "sound": "",
@@ -12647,8 +12899,8 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
       {
         "id": "long-hair",
         "label": "long hair",
-        "x": 35.97,
-        "y": 48.73,
+        "x": 33.167901021229895,
+        "y": 37.77066559033858,
         "w": 4.07,
         "h": 22.72,
         "sound": "",
@@ -12657,8 +12909,8 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
       {
         "id": "hand",
         "label": "hand",
-        "x": 42.58,
-        "y": 68.06,
+        "x": 39.56773858727393,
+        "y": 64.32386456509049,
         "w": 6,
         "h": 8,
         "sound": "",
@@ -12667,8 +12919,8 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
       {
         "id": "smile",
         "label": "smile",
-        "x": 27.41,
-        "y": 51.26,
+        "x": 24.95815838302795,
+        "y": 46.65209868012989,
         "w": 6,
         "h": 8,
         "sound": "",
@@ -12677,8 +12929,8 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
       {
         "id": "bench",
         "label": "bench",
-        "x": 83.83,
-        "y": 73.33,
+        "x": 82.9193148255708,
+        "y": 70.96378136629816,
         "w": 6,
         "h": 8,
         "sound": "",
@@ -12687,8 +12939,8 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
       {
         "id": "blue-shirt",
         "label": "blue shirt",
-        "x": 74.65,
-        "y": 43.29,
+        "x": 71.84789300435277,
+        "y": 37.063102857742265,
         "w": 8.76,
         "h": 12.35,
         "sound": "",
@@ -12697,8 +12949,8 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
       {
         "id": "sunset",
         "label": "sunset",
-        "x": 7.16,
-        "y": 25.39,
+        "x": 0.9953742298286352,
+        "y": 20.78209868012989,
         "w": 12.88,
         "h": 11.89,
         "sound": "",
@@ -12707,10 +12959,10 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
       {
         "id": "buildings",
         "label": "buildings",
-        "x": 26.53,
-        "y": 29.99,
-        "w": 12.51,
-        "h": 12.17,
+        "x": 22.326847523406276,
+        "y": 24.261257337045755,
+        "w": 8.867267319160296,
+        "h": 9.80378136629816,
         "sound": "",
         "translations": {}
       },
@@ -12737,8 +12989,8 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
       {
         "id": "ticket",
         "label": "ticket",
-        "x": 50.49,
-        "y": 61.28,
+        "x": 45.65637625529264,
+        "y": 55.67579684763573,
         "w": 8.5,
         "h": 11.52,
         "sound": "",
@@ -12747,8 +12999,8 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
       {
         "id": "departures-sign",
         "label": "departures sign",
-        "x": 84.05,
-        "y": 14.18,
+        "x": 74.66295840002373,
+        "y": 1.6016768940637771,
         "w": 22.04,
         "h": 24.02,
         "sound": "sounds/train-station.mp3",
@@ -12757,8 +13009,8 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
       {
         "id": "train",
         "label": "train",
-        "x": 91.89,
-        "y": 57.29,
+        "x": 85.57,
+        "y": 40.47739054290718,
         "w": 14.43,
         "h": 31.05,
         "sound": "sounds/subway.mp3",
