@@ -11710,9 +11710,24 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
   },
   "dance-floor": {
     "title": "Dance Floor",
-    "image": "",
+    "image": "images/Dance-Floor.jpg",
     "lessons": [],
-    "hotspots": [],
+    "hotspots": [
+      {
+        "id": "hotspot-1792557489997",
+        "label": "drummer",
+        "x": 45.10526456542296,
+        "y": 28.31711052445773,
+        "w": 12,
+        "h": 14,
+        "sound": "sounds/energetic-bigbeat-drum1.mp3",
+        "translations": {
+          "es": ""
+        },
+        "rotation": 0,
+        "z": 0
+      }
+    ],
     "overlays": [],
     "challenges": []
   },
