@@ -162,3 +162,11 @@ body.tb-scene-only .tb-header-row #sceneViewReturn{display:block!important}
   .tb-scenePicker { flex: 1 1 230px !important; min-width: 155px !important; }
   .tb-field select { width: 100%; min-width: 0; }
 }
+
+/* Global script card: fit content, keep manual drag-resize available. */
+.card{height:auto;}
+.card .script-text{margin-bottom:0;}
+.card .translation{margin:8px 0 0;}
+.card .translation:empty,.card .feedback:empty{display:none;}
+.card .feedback{min-height:0;margin:8px 0 0;}
+.card .controls{margin-top:15px;}
