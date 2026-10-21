@@ -9886,6 +9886,54 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
       }
     ]
   },
+  "congratulations": {
+    "title": "congratulations",
+    "image": "images/everest-celebration.jpg",
+    "lessons": [
+      {
+        "text": "Congratulations for achieving this level of language education. ",
+        "translations": {
+          "en": ""
+        }
+      },
+      {
+        "text": "We are at a very high elevation and have reached the mountains summit.",
+        "translations": {
+          "en": ""
+        }
+      },
+      {
+        "text": "There is someone or something floating down on a parachute.",
+        "translations": {
+          "en": ""
+        }
+      },
+      {
+        "text": "The oxygen is low at this elevation and we are required to bring oxygen tanks with us.",
+        "translations": {
+          "en": ""
+        }
+      }
+    ],
+    "hotspots": [
+      {
+        "id": "hotspot-1792621582717",
+        "label": "parachute",
+        "x": 69.3684111016607,
+        "y": 0.22253425985377895,
+        "w": 27.421057297978805,
+        "h": 67.22207150896581,
+        "sound": "sounds/parachute.mp3",
+        "translations": {
+          "en": ""
+        },
+        "rotation": 0,
+        "z": 0
+      }
+    ],
+    "overlays": [],
+    "challenges": []
+  },
   "bicycle-race": {
     "title": "Bicycle Race",
     "image": "images/Talk-A-Bee-Bicycle-Race-Adventure.jpg",
