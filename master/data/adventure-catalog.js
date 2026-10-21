@@ -136,10 +136,6 @@ window.TAB_ADVENTURE_CATALOG=[
     "title": "Aircraft Carrier"
   },
   {
-    "id": "dance-floor",
-    "title": "Dance Floor"
-  },
-  {
     "id": "bird-sanctuary",
     "title": "Bird Sanctuary"
   },
