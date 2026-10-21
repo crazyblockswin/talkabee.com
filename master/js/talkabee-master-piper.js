@@ -16,7 +16,35 @@ const label=document.createElement('label');label.textContent='Enhanced Piper vo
 const select=document.createElement('select');select.id='tbMasterPiperVoice';select.style.cssText='display:block;width:100%;margin:5px 0';
 const info=document.createElement('div');info.id='tbMasterPiperStatus';info.setAttribute('role','status');info.textContent='Piper waiting';
 const loadBtn=document.createElement('button');loadBtn.type='button';loadBtn.textContent='Load Piper voice';
-wrap.append(label,select,loadBtn,info);mode.insertAdjacentElement('afterend',wrap);
+wrap.append(label,select,loadBtn,info);
+// Keep Piper settings outside header layout so loading/status cannot enlarge it.
+const voiceField=mode.closest('.tb-field')||mode.parentElement;
+const settingsBtn=document.createElement('button');
+settingsBtn.type='button';settingsBtn.id='tbPiperSettingsButton';
+settingsBtn.textContent='Voice Settings';settingsBtn.setAttribute('aria-controls',wrap.id);
+settingsBtn.setAttribute('aria-expanded','false');
+voiceField.insertAdjacentElement('afterend',settingsBtn);
+document.body.appendChild(wrap);
+const style=document.createElement('style');style.textContent=`
+#tbPiperSettingsButton{align-self:end;margin:0 6px 3px;padding:8px 12px;border:1px solid #8496aa;border-radius:9px;background:#263944;color:white;font:600 15px Arial,sans-serif;cursor:pointer;white-space:nowrap}
+#tbPiperSettingsButton[hidden],#tbMasterPiperControls[hidden]{display:none!important}
+#tbMasterPiperControls{position:fixed!important;z-index:2147483000;top:80px;right:16px;left:auto;width:min(340px,calc(100vw - 32px));max-height:calc(100vh - 100px);overflow:auto;box-sizing:border-box;margin:0!important;padding:15px!important;border:1px solid #9bacbd!important;border-radius:12px!important;background:#19232c!important;color:#f4f6fa!important;box-shadow:0 12px 35px #0009;font:15px Arial,sans-serif!important}
+#tbMasterPiperControls select{box-sizing:border-box;color:#fff;background:#30334b;padding:7px;border-radius:8px}
+#tbMasterPiperControls button{padding:8px 12px;margin:4px 0;color:white;background:#263944;border:1px solid #8795a4;border-radius:8px;cursor:pointer}
+#tbMasterPiperStatus{overflow-wrap:anywhere;margin-top:7px}
+`;document.head.appendChild(style);
+let panelOpen=false;
+function renderPanel(){
+ const enabled=mode.value==='enhanced';
+ settingsBtn.hidden=!enabled;
+ wrap.hidden=!enabled||!panelOpen;
+ settingsBtn.setAttribute('aria-expanded',String(enabled&&panelOpen));
+ if(enabled&&panelOpen){const r=settingsBtn.getBoundingClientRect();wrap.style.top=Math.min(window.innerHeight-110,Math.max(8,r.bottom+8))+'px';}
+}
+settingsBtn.addEventListener('click',()=>{panelOpen=!panelOpen;renderPanel();});
+document.addEventListener('pointerdown',e=>{if(panelOpen&&!wrap.contains(e.target)&&!settingsBtn.contains(e.target)){panelOpen=false;renderPanel();}});
+document.addEventListener('keydown',e=>{if(e.key==='Escape'&&panelOpen){panelOpen=false;renderPanel();settingsBtn.focus();}});
+
 function status(message){info.textContent=message}
 function stop(){token++;if(currentAudio){currentAudio.pause();currentAudio=null}if(currentUrl){URL.revokeObjectURL(currentUrl);currentUrl=null}}
 window.tbMasterPiperStop=stop;
@@ -83,8 +111,8 @@ async function withAudioLeadIn(blob){
  }catch(e){return blob}
 }
 function update(){
- wrap.hidden=mode.value!=='enhanced';stop();
- if(!wrap.hidden){if(engine)syncSelection();else load().catch(()=>{})}
+ renderPanel();stop();
+ if(mode.value==='enhanced'){if(engine)syncSelection();else load().catch(()=>{})}
 }
 function languageChanged(){
  stop();
