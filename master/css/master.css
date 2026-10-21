@@ -38,3 +38,127 @@ body.tb-scene-only #scene.edit-mode .hotspot{opacity:0!important;outline:none!im
 .tb-float-head{display:flex;align-items:center;justify-content:space-between;gap:8px}
 .tb-dock-in-head{font-size:13px;padding:4px 9px;cursor:pointer}
 .tb-floating > legend .tb-undock{display:none}
+
+/* Global public dashboard, approved Forest Retreat two-row design */
+*{box-sizing:border-box}body{margin:0;min-width:0}body>header{padding:8px 12px!important;position:relative!important;z-index:30;background:#14212e!important}body>header nav{display:none!important}
+.tb-header-row{display:flex;align-items:center;gap:10px;width:100%;min-width:0;flex-wrap:nowrap;overflow:visible;padding:3px 4px}.tb-header-row+.tb-header-row{border-top:1px solid #394958;margin-top:5px;padding-top:8px}.tb-row-voice{justify-content:flex-start}.tb-row-nav{justify-content:flex-start}.tb-nav-end{display:flex;gap:6px;margin-left:auto;flex-shrink:0}
+.tb-logo{font-weight:800;color:#fff;text-decoration:none;white-space:nowrap;font-size:clamp(14px,1.35vw,21px);padding-right:5px}
+.tb-field{display:flex;flex-direction:column;gap:2px;color:#e3ebf4;font-size:11px;font-weight:700;min-width:0;flex:0 1 auto;margin:0!important}
+.tb-field span{line-height:1.1}.tb-field select{height:36px!important;min-height:36px!important;padding:4px 6px!important;margin:0!important;border-radius:7px!important;font-size:13px!important;max-width:100%;background:#f9fafb;color:#111}
+.tb-scenePicker{flex:1 1 230px;min-width:155px;max-width:340px}.tb-native,.tb-learn{flex:0 1 150px;min-width:100px}.tb-voiceMode{flex:0 1 190px;min-width:125px}.tb-voiceSelect{flex:0 1 190px;min-width:125px}
+.tb-header-row button{flex:0 0 auto!important;white-space:nowrap!important;margin:0!important;padding:8px 9px!important;font-size:13px!important;min-height:36px!important;border-radius:8px!important}
+.tb-header-row .tb-mode.selected{background:#e5b957!important;color:#16212d!important}.tb-header-row .tb-arrow{font-weight:900;min-width:35px}
+.shell{display:block!important;width:100%!important;max-width:none!important;margin:0!important;padding:0!important;grid-template-columns:none!important}.scene-area{width:100%!important;max-width:none!important;margin:0!important;padding:0!important;min-width:0!important}
+.scene{width:100%!important;max-width:none!important;min-height:min(78vh,900px)!important;aspect-ratio:1508/856!important;background-position:center!important;background-size:cover!important;margin:0!important;border-radius:0!important}
+.tb-adventure-position{padding:5px 12px!important;text-align:center!important;background:#14212e!important;min-height:0!important}.tb-adventure-position button{display:none!important}.tb-adventure-position span{font-size:12px!important}.tb-status{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+@media(max-width:1100px){.tb-header-row{gap:5px}.tb-logo{font-size:14px}.tb-field select{font-size:12px!important}.tb-header-row button{font-size:12px!important;padding:7px!important}}
+@media(max-width:700px){.tb-header-row{flex-wrap:wrap}.tb-nav-end{margin-left:0}.tb-scenePicker{max-width:none}.tb-logo{min-width:100%}}
+
+/* Compact two-row visitor header — Forest Retreat test only */
+body>header{padding:3px 10px!important}
+.tb-header-row{gap:7px;padding:1px 3px!important;min-height:0!important}
+.tb-header-row+.tb-header-row{margin-top:2px!important;padding-top:3px!important}
+.tb-field{gap:1px!important;font-size:10px!important;line-height:1!important}
+.tb-field span{line-height:1!important}
+.tb-field select{height:31px!important;min-height:31px!important;padding:2px 6px!important;font-size:12px!important;border-radius:6px!important}
+.tb-header-row button{min-height:31px!important;padding:5px 9px!important;font-size:12px!important;border-radius:7px!important}
+.tb-logo{font-size:17px!important;padding-right:4px!important}
+.tb-scenePicker{max-width:310px!important}
+@media(max-width:1100px){.tb-header-row{gap:5px!important}.tb-logo{font-size:14px!important}.tb-native,.tb-learn{min-width:90px}.tb-voiceMode,.tb-voiceSelect{min-width:115px}}
+
+/* Recessed charcoal cockpit dashboard — visitor-only test */
+body{background:#091117!important}
+body>header{
+ background:linear-gradient(160deg,#353d43 0%,#20282e 40%,#141c23 100%)!important;
+ border:1px solid #596b76!important;border-top:2px solid #7c929d!important;
+ border-bottom:3px solid #080e13!important;
+ box-shadow:inset 0 2px 1px #a3b6bd33,inset 0 -6px 14px #0009,0 6px 18px #0009!important;
+ padding:7px 12px 8px!important;border-radius:0 0 15px 15px!important;
+}
+.tb-header-row{gap:9px!important;padding:3px 5px!important}
+.tb-header-row+.tb-header-row{
+ border-top:1px solid #66747c66!important;margin-top:6px!important;padding-top:8px!important;
+ box-shadow:0 -1px 0 #050a0e88!important;
+}
+.tb-logo{color:#f2f5f5!important;text-shadow:0 2px 3px #000,0 0 10px #66c7db44!important;letter-spacing:.2px}
+.tb-field{color:#b9c9d1!important;text-shadow:0 1px 2px #000!important;letter-spacing:.3px}
+.tb-field select{
+ appearance:auto!important;background:linear-gradient(180deg,#10171d,#202b33)!important;
+ color:#f1f7fa!important;border:1px solid #506470!important;border-top-color:#0a1014!important;
+ border-radius:9px!important;box-shadow:inset 0 3px 7px #000c,inset 0 -1px 0 #a0c3d01c,0 1px 0 #8ca1aa33!important;
+ font-weight:700!important;height:35px!important;min-height:35px!important;
+}
+.tb-field select:focus-visible{outline:2px solid #8bd9e5!important;outline-offset:2px}
+.tb-field select option{background:#17232c;color:#fff}
+.tb-header-row button{
+ background:linear-gradient(180deg,#27343d,#172229)!important;color:#e9f3f6!important;
+ border:1px solid #526875!important;border-top-color:#17232a!important;
+ border-radius:9px!important;box-shadow:inset 0 3px 6px #000a,inset 0 -1px 1px #a1bac022,0 1px 0 #8da2ac30!important;
+ min-height:35px!important;padding:6px 12px!important;text-shadow:0 1px 2px #000!important;
+ transition:background .15s ease,box-shadow .15s ease!important;
+}
+.tb-header-row button:hover{background:linear-gradient(180deg,#344650,#22333c)!important;border-color:#7ba3b4!important}
+.tb-header-row .tb-mode.selected,.tb-header-row .tb-mode[aria-pressed="true"]{
+ background:linear-gradient(180deg,#8a651f,#b58a36)!important;color:#fff8e6!important;
+ border-color:#e2bb63!important;box-shadow:inset 0 3px 9px #3e2500bb,0 0 8px #edbb4a44!important;
+}
+.tb-header-row button:active{box-shadow:inset 0 5px 10px #000e!important;transform:translateY(1px)}
+.tb-header-row .tb-arrow{min-width:38px!important;color:#a8e7f2!important;font-size:18px!important;padding:4px 9px!important}
+.tb-nav-end{margin-left:auto!important}
+.scene{border-top:1px solid #50626b!important}
+@media(max-width:900px){body>header{padding:5px 7px 6px!important}.tb-header-row{gap:5px!important}.tb-header-row button{padding:5px 8px!important}.tb-field select{height:33px!important;min-height:33px!important}}
+
+/* Soft internal color glow: illumination lives INSIDE recessed dashboard wells. */
+.tb-native{--well-glow:rgba(60,211,241,.34);--well-edge:#3a96a8}
+.tb-learn{--well-glow:rgba(113,238,176,.31);--well-edge:#51ad83}
+.tb-voiceMode{--well-glow:rgba(167,133,255,.30);--well-edge:#8873c5}
+.tb-voiceSelect{--well-glow:rgba(255,181,91,.30);--well-edge:#b58b54}
+.tb-scenePicker{--well-glow:rgba(78,188,241,.27);--well-edge:#477f9a}
+.tb-field select{
+ border-color:var(--well-edge,#526875)!important;
+ background:linear-gradient(180deg,#101820 0%,#1b2830 100%)!important;
+ box-shadow:inset 0 3px 8px #000c,inset 0 -9px 22px var(--well-glow,rgba(91,176,208,.2)),inset 0 0 0 1px #ffffff08,0 1px 0 #8ca1aa26!important;
+ transition:box-shadow .18s ease,border-color .18s ease!important;
+}
+.tb-field select:hover,.tb-field select:focus-visible{
+ box-shadow:inset 0 3px 8px #000b,inset 0 -12px 28px var(--well-glow,rgba(91,176,208,.2)),0 0 0 1px var(--well-edge,#526875)!important;
+}
+.tb-header-row button{box-shadow:inset 0 3px 7px #000c,inset 0 -9px 18px rgba(75,174,205,.17),0 1px 0 #8da2ac30!important}
+.tb-header-row button:hover{box-shadow:inset 0 3px 7px #000c,inset 0 -12px 22px rgba(81,198,228,.32)!important}
+.tb-header-row .tb-mode.selected,.tb-header-row .tb-mode[aria-pressed="true"]{
+ background:linear-gradient(180deg,#3a2e1c,#5c431c)!important;
+ color:#fff4ce!important;border-color:#d6aa4f!important;
+ box-shadow:inset 0 3px 8px #160d03,inset 0 -12px 26px rgba(255,193,64,.62),inset 0 0 2px #ffe3a7!important;
+}
+.tb-header-row .tb-arrow{box-shadow:inset 0 3px 7px #000c,inset 0 -9px 18px rgba(80,198,227,.22)!important}
+@media(prefers-reduced-motion:reduce){.tb-field select,.tb-header-row button{transition:none!important}}
+
+/* Forest Retreat: substantially reduce vertical space between the two dashboard rows. */
+body>header{padding-top:3px!important;padding-bottom:4px!important}
+.tb-header-row{padding-top:0!important;padding-bottom:0!important}
+.tb-header-row+.tb-header-row{margin-top:0!important;padding-top:2px!important}
+.tb-row-voice{padding-bottom:0!important}
+.tb-row-nav{padding-top:2px!important}
+
+/* Global dashboard tuning: published via Master Studio settings. */
+.tb-header-row{gap:var(--dashboard-gap,10px)!important}
+.tb-header-row+.tb-header-row{margin-top:var(--dashboard-row-gap,0px)!important}
+.tb-header-row button,.tb-field select{font-size:var(--dashboard-font,13px)!important;min-height:var(--dashboard-control-height,35px)!important;height:var(--dashboard-control-height,35px)!important}
+body>header{padding-top:var(--dashboard-padding,3px)!important;padding-bottom:var(--dashboard-padding,3px)!important}
+body .shell{padding:0!important;display:block!important}
+body .left-panel{display:none!important}
+body .scene-area{width:100%;border-radius:0!important;min-height:0!important}
+body .adventure-nav{display:none!important}
+body .scene-area>.scene{min-height:380px}
+body.tb-scene-only .tb-header-row #sceneViewReturn{display:block!important}
+@media(max-width:950px){.tb-header-row{gap:5px!important}.tb-logo{font-size:14px!important}.tb-field{min-width:0!important}.tb-native,.tb-learn{flex-basis:115px!important}.tb-voiceMode,.tb-voiceSelect{flex-basis:150px!important}.tb-header-row button{padding-left:7px!important;padding-right:7px!important}.tb-scenePicker{min-width:125px!important}}
+@media(max-width:620px){.tb-header-row{flex-wrap:wrap!important}.tb-row-nav{row-gap:5px!important}.tb-nav-end{margin-left:0!important}}
+
+/* Keep dashboard controls stable when Adventure names change. */
+@media (min-width: 951px) {
+  .tb-header-row { min-width: 0; }
+  .tb-native, .tb-learn { flex: 0 0 150px !important; }
+  .tb-voiceMode, .tb-voiceSelect { flex: 0 0 190px !important; }
+  .tb-scenePicker { flex: 1 1 230px !important; min-width: 155px !important; }
+  .tb-field select { width: 100%; min-width: 0; }
+}
