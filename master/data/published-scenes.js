@@ -1,7 +1,7 @@
 window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
   "test-campground": {
     "title": "Campground — Master Engine Test",
-    "image": "images/talkabee-nighttime-campground-adventure.jpg",
+    "image": "images/forest-retreat-test.jpg",
     "lessons": [
       {
         "text": "Welcome to the campground!",
@@ -23,39 +23,7 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
         }
       }
     ],
-    "hotspots": [
-      {
-        "id": "fire",
-        "label": "Campfire",
-        "x": 60,
-        "y": 63,
-        "w": 15,
-        "h": 22,
-        "sound": "",
-        "translations": {
-          "es": "Fogata",
-          "fr": "Feu de camp",
-          "de": "Lagerfeuer",
-          "it": "Falò",
-          "pt": "Fogueira",
-          "no": "Leirbål"
-        }
-      },
-      {
-        "id": "tent",
-        "label": "Tent",
-        "x": 33,
-        "y": 59,
-        "w": 18,
-        "h": 25,
-        "sound": "",
-        "translations": {
-          "es": "Tienda de campaña",
-          "fr": "Tente",
-          "de": "Zelt"
-        }
-      }
-    ],
+    "hotspots": [],
     "overlays": [],
     "challenges": [
       {
