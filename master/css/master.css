@@ -177,3 +177,12 @@ body.tb-scene-only .tb-header-row #sceneViewReturn{display:block!important}
 .tb-header-teacher{height:46px;width:50px;object-fit:contain;flex-shrink:0;display:block}
 .tb-header-buzzkill{position:absolute;right:4px;top:50%;transform:translateY(-50%);height:48px;width:55px;object-fit:contain;pointer-events:none}
 @media(max-width:700px){.tb-row-voice{padding-right:0!important}.tb-header-buzzkill{right:4px;top:3px;transform:none;height:43px;width:47px}.tb-logo{padding-right:48px!important}.tb-header-teacher{height:40px;width:44px}}
+
+/* Selected-object editing: other hotspots remain invisible and interactive selection stays focused. */
+.scene.edit-mode .hotspot:not(.active){border-color:transparent!important;background:transparent!important;opacity:0!important;pointer-events:none!important}
+.scene.edit-mode .hotspot:not(.active)::after,.scene.edit-mode .hotspot:not(.active) .tb-hotspot-resize{display:none!important}
+.scene.edit-mode .hotspot.active{opacity:1!important;pointer-events:auto!important}
+.scene.edit-mode .overlay-image:not(.active){outline:none!important;pointer-events:none!important}
+.scene.edit-mode .overlay-image.active{outline:2px dashed #6de3ff!important;touch-action:none;cursor:move}
+.tb-overlay-resize{display:none;position:absolute;width:20px;height:20px;border:2px solid #061b26;border-radius:5px;background:#00eaff;cursor:nwse-resize;z-index:25;touch-action:none}
+.scene.edit-mode .tb-overlay-resize.active{display:block}
