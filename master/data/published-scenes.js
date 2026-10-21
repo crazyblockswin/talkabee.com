@@ -10968,7 +10968,7 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
   },
   "spaceship-window-earth": {
     "title": "Spaceship Window Earth",
-    "image": "",
+    "image": "images/Spaceship-Window-Earth.jpg",
     "lessons": [],
     "hotspots": [],
     "overlays": [],
