@@ -4576,13 +4576,27 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
         "h": 11.43,
         "sound": "sounds/guitar3.mp3",
         "translations": {}
+      },
+      {
+        "id": "hotspot-1792612697531",
+        "label": "instructions",
+        "x": 71.63157667123046,
+        "y": 66.98191557645382,
+        "w": 14.210528769453527,
+        "h": 28.186370718320745,
+        "sound": "sounds/teacher-grandpas-place.mp3",
+        "translations": {
+          "en": ""
+        },
+        "rotation": 0,
+        "z": 0
       }
     ],
     "overlays": [
       {
         "id": "overlay-1792611587126",
         "label": "teacher",
-        "src": "sounds/teacher-grandpas-place.mp3",
+        "src": "images/teacher-black.png",
         "x": 69.2631495478409,
         "y": 57.06072913029043,
         "w": 19.578958362357653,
