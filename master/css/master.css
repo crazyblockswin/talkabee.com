@@ -186,3 +186,8 @@ body.tb-scene-only .tb-header-row #sceneViewReturn{display:block!important}
 .scene.edit-mode .overlay-image.active{outline:2px dashed #6de3ff!important;touch-action:none;cursor:move}
 .tb-overlay-resize{display:none;position:absolute;width:20px;height:20px;border:2px solid #061b26;border-radius:5px;background:#00eaff;cursor:nwse-resize;z-index:25;touch-action:none}
 .scene.edit-mode .tb-overlay-resize.active{display:block}
+
+/* Keep both dashboard rows visible while scrolling. */
+body:not(.tb-scene-only)>header {position:sticky!important;top:0!important;z-index:1000!important;}
+/* Retain dormant Scene View hooks without displaying visitor controls. */
+#sceneViewToggle {display:none!important;}
