@@ -170,3 +170,10 @@ body.tb-scene-only .tb-header-row #sceneViewReturn{display:block!important}
 .card .translation:empty,.card .feedback:empty{display:none;}
 .card .feedback{min-height:0;margin:8px 0 0;}
 .card .controls{margin-top:15px;}
+
+/* Talk A Bee character header: compact and responsive. */
+.tb-row-voice{position:relative!important;padding-right:65px!important}
+.tb-logo{display:inline-flex!important;align-items:center!important;gap:5px!important;flex:0 0 auto!important}
+.tb-header-teacher{height:46px;width:50px;object-fit:contain;flex-shrink:0;display:block}
+.tb-header-buzzkill{position:absolute;right:4px;top:50%;transform:translateY(-50%);height:48px;width:55px;object-fit:contain;pointer-events:none}
+@media(max-width:700px){.tb-row-voice{padding-right:0!important}.tb-header-buzzkill{right:4px;top:3px;transform:none;height:43px;width:47px}.tb-logo{padding-right:48px!important}.tb-header-teacher{height:40px;width:44px}}
