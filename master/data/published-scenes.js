@@ -13913,14 +13913,15 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
       },
       {
         "id": "hotspot-1792553973746",
-        "label": "New hotspot",
+        "label": "dog",
         "x": 35.526318610870334,
         "y": 63.45850951769601,
         "w": 12,
         "h": 14,
-        "sound": "",
+        "sound": "sounds/dog-panting.wav",
         "translations": {
-          "es": ""
+          "es": "",
+          "en": ""
         },
         "rotation": 0,
         "z": 0
