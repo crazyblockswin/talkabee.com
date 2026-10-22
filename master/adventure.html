@@ -70,6 +70,36 @@ body>header .tb-row-nav nav.tb-unified-nav > details > summary {
   line-height:1!important;
 }
 </style>
+<style id="tb-script-button-interactions">
+/* Script-card controls only. No changes to speech, hotspots, or engine behavior. */
+#card .controls button {
+  cursor: pointer;
+  transition: background-color .16s ease, color .16s ease,
+              border-color .16s ease, box-shadow .16s ease,
+              transform .10s ease;
+}
+#card .controls button:hover:not(:disabled) {
+  background: #ffe082 !important;
+  color: #24231d !important;
+  border-color: #f1bd45 !important;
+  box-shadow: 0 0 0 2px rgba(255,224,130,.22), 0 3px 12px rgba(0,0,0,.20) !important;
+}
+#card .controls button:active:not(:disabled) {
+  background: #a5ffd1 !important;
+  color: #173d2b !important;
+  border-color: #72dca9 !important;
+  transform: translateY(1px) scale(.98);
+  box-shadow: inset 0 2px 5px rgba(0,0,0,.16) !important;
+}
+#card .controls button:focus-visible {
+  outline: 3px solid #ffe082 !important;
+  outline-offset: 3px;
+}
+#card .controls button:disabled { cursor: default; opacity: .55; }
+@media (prefers-reduced-motion: reduce) {
+  #card .controls button { transition: none; }
+}
+</style>
 </head><body data-editor="no"><header><div class="tb-header-row tb-row-voice"><a class="tb-logo" href="../index.html"><img class="tb-header-teacher" src="images/teacher.png" alt=""/> <span>Talk A Bee</span></a><img class="tb-header-buzzkill" src="images/buzzkill.png" alt="Buzzkill Bee"/><label class="tb-field tb-native"><span>Native</span><select id="native"></select></label><label class="tb-field tb-learn"><span>Learn</span><select id="learn"></select></label><label class="tb-field tb-voiceMode"><span>Voice system</span><select id="voiceMode"><option value="standard">Standard browser voice</option><option value="enhanced">Enhanced Piper (local)</option></select></label><label class="tb-field tb-voiceSelect"><span>Voice choice</span><select id="voiceSelect"></select></label></div><div class="tb-header-row tb-row-nav"><label class="tb-field tb-scenePicker"><span>Adventure</span><select aria-label="Choose Adventure" id="scenePicker"></select></label><button class="tb-mode selected" id="activities">Activities</button><button class="tb-mode" id="challenges">Challenges</button><button class="tb-mode" id="discovery">Discovery</button><button aria-pressed="false" class="tb-view" id="sceneViewToggle" type="button">◉ Scene View</button><button hidden="" id="sceneViewReturn" type="button">← Return to Adventure</button>
 <nav class="tb-unified-nav" aria-label="More Talk A Bee destinations">
 <details><summary title="Part 2 Course">Part 2 Course +</summary><div class="tb-menu">
