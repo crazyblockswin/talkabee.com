@@ -247,7 +247,7 @@ function tbWordFollowStart(text,rate,estimated){
  element.append(document.createTextNode(original.slice(position)));
  tbWordFollowRestore={element,text:original};
  let active=-1;
- const show=index=>{if(index===active)return;if(spans[active]){spans[active].style.background='';spans[active].style.color='';spans[active].style.borderRadius='';}active=index;if(spans[index]){spans[index].style.background='#ffe082';spans[index].style.color='#172435';spans[index].style.borderRadius='3px';}};
+ const show=index=>{if(index===active)return;if(spans[active]){spans[active].style.removeProperty('background');spans[active].style.removeProperty('color');spans[active].style.removeProperty('border-radius');}active=index;if(spans[index]){spans[index].style.setProperty('background','#ffeb00','important');spans[index].style.setProperty('color','#111','important');spans[index].style.setProperty('border-radius','4px','important');}};
  if(estimated){
   // Piper currently exposes no word timestamps. Approximate only; stop on audio completion.
   const weights=tokens.map(m=>Math.max(1.7,[...m[0]].length*.52));
@@ -257,7 +257,7 @@ function tbWordFollowStart(text,rate,estimated){
   tbWordFollowTimer=setInterval(()=>{const fraction=Math.min(1,(performance.now()-started)/duration);let sum=0,index=weights.length-1;for(let i=0;i<weights.length;i++){sum+=weights[i]/total;if(fraction<sum){index=i;break;}}show(index);},60);
   show(0);
  }
- return {boundary(charIndex){let index=0;for(let i=0;i<tokens.length;i++){if(tokens[i].index<=charIndex)index=i;else break;}show(index);}};
+ return {stopEstimate(){if(tbWordFollowTimer!==null){clearInterval(tbWordFollowTimer);tbWordFollowTimer=null;}},boundary(charIndex){let index=0;for(let i=0;i<tokens.length;i++){if(tokens[i].index<=charIndex)index=i;else break;}show(index);}};
 }
 function speak(text,slow,onend){
  if(!text){onend?.();return;}
@@ -270,6 +270,9 @@ function speak(text,slow,onend){
  // Cancel the previous browser utterance before starting either voice engine.
  // Starting immediately after cancel() can clip the beginning in Firefox.
  window.speechSynthesis?.cancel();
+ // Start the proven visible-word renderer directly from the button action.
+ // Some Firefox voices never dispatch onstart, and Piper may not report playback start.
+ let tbWordFollowController=tbWordFollowStart(text,slow?.75:1,true);
  if(settings.voiceMode==='enhanced'&&typeof window.tbAdventurePiperSpeak==='function'){
   try{if(window.tbAdventurePiperSpeak(text,slow?.75:1,finish,()=>{if(ticket===browserSpeechTicket&&!finished)tbWordFollowStart(text,slow?.75:1,true)})!==false){return}}
   catch(e){status('Piper unavailable; using browser voice')}
@@ -277,9 +280,10 @@ function speak(text,slow,onend){
  if(!('speechSynthesis'in window)){finish();return;}
  const u=new SpeechSynthesisUtterance(text);
  u.onend=finish;u.onerror=finish;
- let tbWordFollowBoundary=null;
- u.onstart=()=>{if(ticket===browserSpeechTicket)tbWordFollowBoundary=tbWordFollowStart(text,u.rate,false)?.boundary};
- u.onboundary=e=>{if(ticket===browserSpeechTicket&&e.name==='word')tbWordFollowBoundary?.(e.charIndex)};
+ // Firefox voices may omit word-boundary events. Start estimated following,
+ // then switch to actual boundaries if the voice supplies them.
+ u.onstart=()=>{if(ticket===browserSpeechTicket)tbWordFollowController=tbWordFollowStart(text,u.rate,true)};
+ u.onboundary=e=>{if(ticket===browserSpeechTicket&&(e.name==='word'||typeof e.charIndex==='number')){tbWordFollowController?.stopEstimate();tbWordFollowController?.boundary(e.charIndex)}};
  u.lang=({en:'en-US',es:'es-ES',fr:'fr-FR',de:'de-DE',it:'it-IT',pt:'pt-PT',no:'nb-NO'})[settings.learn];
  u.rate=slow?.75:1;
  const wanted=read('talkabee-v2-voice-'+settings.learn,'');
