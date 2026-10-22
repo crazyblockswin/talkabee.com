@@ -232,7 +232,9 @@ function tbWordFollowClear(){
 function tbWordFollowStart(text,rate,estimated){
  tbWordFollowClear();
  const element=$('scriptText');
- if(!element||!text||element.textContent!==text||mode==='discovery')return null;
+ if(!element||!text||mode==='discovery')return null;
+ // Highlight the visible learning-language line; speech may include an extra instruction.
+ if(!element.textContent.trim())return null;
  const original=element.textContent;
  const tokens=[...original.matchAll(/\S+/gu)];
  if(!tokens.length)return null;
@@ -269,7 +271,7 @@ function speak(text,slow,onend){
  // Starting immediately after cancel() can clip the beginning in Firefox.
  window.speechSynthesis?.cancel();
  if(settings.voiceMode==='enhanced'&&typeof window.tbAdventurePiperSpeak==='function'){
-  try{if(window.tbAdventurePiperSpeak(text,slow?.75:1,finish)!==false){tbWordFollowStart(text,slow?.75:1,true);return}}
+  try{if(window.tbAdventurePiperSpeak(text,slow?.75:1,finish,()=>{if(ticket===browserSpeechTicket&&!finished)tbWordFollowStart(text,slow?.75:1,true)})!==false){return}}
   catch(e){status('Piper unavailable; using browser voice')}
  }else if(settings.voiceMode==='enhanced')status('Piper adapter not connected yet; using browser voice');
  if(!('speechSynthesis'in window)){finish();return;}

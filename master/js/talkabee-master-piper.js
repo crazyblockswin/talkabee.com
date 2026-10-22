@@ -135,7 +135,7 @@ select.addEventListener('change',()=>{
  stop();save(learn.value,select.value);status('Piper selected: '+select.value);
 });
 loadBtn.addEventListener('click',()=>{stop();load().then(()=>syncSelection()).catch(()=>{})});
-window.tbAdventurePiperSpeak=function(text,rate,onComplete){
+window.tbAdventurePiperSpeak=function(text,rate,onComplete,onPlaybackStart){
  if(mode.value!=='enhanced'||!text)return false;
  stop();const ticket=token,languageAtStart=learn.value;
  // Snapshot the requested voice once; never call syncSelection during synthesis.
@@ -166,7 +166,7 @@ window.tbAdventurePiperSpeak=function(text,rate,onComplete){
     if(currentUrl){URL.revokeObjectURL(currentUrl);currentUrl=null}
     status('Piper ready: '+voiceId);onComplete?.();
    },{once:true});
-   await audio.play();if(ticket===token)status('Playing: '+voiceId);
+   await audio.play();if(ticket===token){onPlaybackStart?.();status('Playing: '+voiceId)}
   }catch(e){if(ticket===token){status('Piper failed: '+(e?.message||e));console.error(e);onComplete?.()}}
  })();return true;
 };
