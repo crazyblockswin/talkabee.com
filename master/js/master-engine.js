@@ -106,7 +106,7 @@ function updateScenePicker(){const el=$('scenePicker');if(!el)return;el.replaceC
 const modeKey='talkabee-v2-last-card-mode';
 function savedMode(){try{const m=localStorage.getItem(modeKey)||sessionStorage.getItem(modeKey);return ['activities','challenges','discovery'].includes(m)?m:'activities'}catch{return 'activities'}}
 function rememberMode(){try{localStorage.setItem(modeKey,mode);sessionStorage.setItem(modeKey,mode)}catch{}}
-let lesson=0,challenge=0,mode=savedMode(),selectedType='hotspot',selectedId='',editMode=false,lastSpeech='',cardXY=null;
+let lesson=0,challenge=0,mode=savedMode(),selectedType='hotspot',selectedId='',editMode=false,lastSpeech='',lastSpeechFollowScript=true,cardXY=null;
 let browserSpeechTicket=0,browserSpeechTimer=null;
 const clamp=(v,a,b)=>Math.max(a,Math.min(b,v));
 for(const [k,legacy] of [['topFont','dashboardFont'],['bottomFont','dashboardFont'],['topControlHeight','dashboardControlHeight'],['bottomControlHeight','dashboardControlHeight']]){if(settings[k]===undefined)settings[k]=settings[legacy]??defaults[k];}
@@ -216,7 +216,7 @@ function renderScene(){const area=$('scene');area.querySelectorAll('.hotspot,.ov
  for(const h of scene.hotspots){const b=document.createElement('button');b.className='hotspot';b.type='button';b.title=h.label;b.setAttribute('aria-label',h.label);b.dataset.id=h.id;b.style.cssText=`left:${h.x}%;top:${h.y}%;width:${h.w}%;height:${h.h}%`;b.addEventListener('click',e=>{if(editMode){choose('hotspot',h.id);return}hit(h)});if(editable){const grip=document.createElement('span');grip.className='tb-hotspot-resize';grip.title='Drag to resize hotspot';b.append(grip)}area.append(b)}
  for(const o of scene.overlays){const img=document.createElement('img');img.className='overlay-image';img.src=overlayPreviewUrls.get(o.id)||window.tbMasterMediaUrl(o.src);img.alt=o.label||'Overlay';img.dataset.id=o.id;img.style.cssText=`left:${o.x}%;top:${o.y}%;width:${o.w}%;${o.h?'height:'+o.h+'%;':''}transform:rotate(${o.rotation||0}deg);z-index:${o.z||4}`;img.addEventListener('click',()=>{if(editMode)choose('overlay',o.id)});area.append(img);if(editable){const grip=document.createElement('span');grip.className='tb-overlay-resize';grip.dataset.id=o.id;grip.title='Drag to resize selected overlay';area.append(grip)}}
  area.classList.toggle('edit-mode',editMode);area.querySelectorAll('.hotspot,.overlay-image,.tb-overlay-resize').forEach(el=>el.classList.toggle('active',editMode&&el.dataset.id===selectedId&&((el.classList.contains('hotspot')&&selectedType==='hotspot')||(!el.classList.contains('hotspot')&&selectedType==='overlay'))));positionOverlayGrip();renderCard();refreshList()}
-function hit(h){if(mode==='challenges'){const q=scene.challenges[challenge];$('feedback').textContent=q&&q.target===h.id?'✓ Nice find!':'Not that one — keep looking';$('feedback').style.color=q&&q.target===h.id?'#a5ffd1':'#ffe29d';if(q&&q.target===h.id){challengeCardHidden=false;syncChallengePeek();playSound(h.sound)}return}const s=translate(h),native=nativeText(h);$('feedback').textContent=`${native}${s!==native?' — '+s:''}`;lastSpeech=s;speak(s,false,()=>playSound(h.sound))}
+function hit(h){if(mode==='challenges'){const q=scene.challenges[challenge];$('feedback').textContent=q&&q.target===h.id?'✓ Nice find!':'Not that one — keep looking';$('feedback').style.color=q&&q.target===h.id?'#a5ffd1':'#ffe29d';if(q&&q.target===h.id){challengeCardHidden=false;syncChallengePeek();playSound(h.sound)}return}const s=translate(h),native=nativeText(h);$('feedback').textContent=`${native}${s!==native?' — '+s:''}`;lastSpeech=s;speak(s,false,()=>playSound(h.sound),false)}
 function playSound(path){
   const player=window.tbMasterSoundPlayer||(window.tbMasterSoundPlayer={current:null,stop(){if(this.current){try{this.current.pause();this.current.currentTime=0}catch(e){}this.current=null}},play(src){this.stop();if(!src)return null;const a=new Audio(window.tbMasterMediaUrl(src));this.current=a;a.addEventListener('ended',()=>{if(this.current===a)this.current=null});a.addEventListener('error',()=>{if(this.current===a)this.current=null});return a}});
   player.stop();
@@ -259,9 +259,10 @@ function tbWordFollowStart(text,rate,estimated,audioDurationSeconds){
  }
  return {stopEstimate(){if(tbWordFollowTimer!==null){clearInterval(tbWordFollowTimer);tbWordFollowTimer=null;}},boundary(charIndex){let index=0;for(let i=0;i<tokens.length;i++){if(tokens[i].index<=charIndex)index=i;else break;}show(index);}};
 }
-function speak(text,slow,onend){
+function speak(text,slow,onend,followScript=true){
  if(!text){onend?.();return;}
  lastSpeech=text;
+ lastSpeechFollowScript=followScript;
  const ticket=++browserSpeechTicket;
  tbWordFollowClear();
  if(browserSpeechTimer!==null){clearTimeout(browserSpeechTimer);browserSpeechTimer=null}
@@ -277,19 +278,19 @@ function speak(text,slow,onend){
  // The adapter supplies the real audio duration, avoiding sentence-length drift.
  if(settings.voiceMode==='enhanced'&&typeof window.tbAdventurePiperSpeak==='function'){
   try{if(window.tbAdventurePiperSpeak(text,followRate,finish,(audioDurationSeconds)=>{
-   if(ticket===browserSpeechTicket&&!finished)tbWordFollowStart(text,followRate,true,audioDurationSeconds);
+   if(followScript&&ticket===browserSpeechTicket&&!finished)tbWordFollowStart(text,followRate,true,audioDurationSeconds);
   })!==false){return}}
   catch(e){status('Piper unavailable; using browser voice')}
  }else if(settings.voiceMode==='enhanced')status('Piper adapter not connected yet; using browser voice');
  // Browser voice retains the previously working immediate start and boundaries.
- let tbWordFollowController=tbWordFollowStart(text,followRate,true);
+ let tbWordFollowController=followScript?tbWordFollowStart(text,followRate,true):null;
  if(!('speechSynthesis'in window)){finish();return;}
  const u=new SpeechSynthesisUtterance(text);
  u.onend=finish;u.onerror=finish;
  // Firefox voices may omit word-boundary events. Start estimated following,
  // then switch to actual boundaries if the voice supplies them.
- u.onstart=()=>{if(ticket===browserSpeechTicket)tbWordFollowController=tbWordFollowStart(text,u.rate,true)};
- u.onboundary=e=>{if(ticket===browserSpeechTicket&&(e.name==='word'||typeof e.charIndex==='number')){tbWordFollowController?.stopEstimate();tbWordFollowController?.boundary(e.charIndex)}};
+ u.onstart=()=>{if(followScript&&ticket===browserSpeechTicket)tbWordFollowController=tbWordFollowStart(text,u.rate,true)};
+ u.onboundary=e=>{if(followScript&&ticket===browserSpeechTicket&&(e.name==='word'||typeof e.charIndex==='number')){tbWordFollowController?.stopEstimate();tbWordFollowController?.boundary(e.charIndex)}};
  u.lang=({en:'en-US',es:'es-ES',fr:'fr-FR',de:'de-DE',it:'it-IT',pt:'pt-PT',no:'nb-NO'})[settings.learn];
  u.rate=slow?.75:1;
  const wanted=read('talkabee-v2-voice-'+settings.learn,'');
@@ -371,7 +372,7 @@ function installTranslationFontControl(){
  scriptSlider.insertAdjacentElement('afterend',label);
  label.insertAdjacentElement('afterend',slider);
 }
-function setup(){installTranslationFontControl();rememberMode();setupChallengePeek();setupSceneView();for(const [code,name] of Object.entries(LANG))for(const id of ['native','learn']){const opt=document.createElement('option');opt.value=code;opt.textContent=name;$(id).append(opt)}applySettings();renderScene();updateScenePicker();updateAdventureNavigation();$('scenePicker').addEventListener('change',()=>switchScene($('scenePicker').value));if(editable&&$('studioScenePicker'))$('studioScenePicker').addEventListener('change',()=>switchScene($('studioScenePicker').value));window.addEventListener('talkabee-directory-changed',()=>{updateScenePicker();updateAdventureNavigation()});window.addEventListener('storage',e=>{if(e.key===settingKey){settings={...defaults,...read(settingKey,{})};applySettings();renderCard();}else if(e.key===sceneKey+sceneName){scene=loadScene(sceneName);renderScene();if(editable){refreshLessons();refreshChallenges();}}});initDrag();$('previousAdventure').onclick=()=>{const ids=sceneNames().filter(id=>!id.startsWith('test-'));const i=ids.indexOf(sceneName);if(i>0)switchScene(ids[i-1])};$('nextAdventure').onclick=()=>{const ids=sceneNames().filter(id=>!id.startsWith('test-'));const i=ids.indexOf(sceneName);if(i>=0&&i<ids.length-1)switchScene(ids[i+1])};$('activities').onclick=()=>{mode='activities';rememberMode();renderCard()};$('challenges').onclick=()=>{mode='challenges';rememberMode();renderCard()};$('discovery').onclick=()=>{mode='discovery';rememberMode();renderCard()};$('next').onclick=()=>{if(mode==='challenges')challenge=(challenge+1)%Math.max(1,scene.challenges.length);else lesson=(lesson+1)%Math.max(1,scene.lessons.length);renderCard()};$('speak').onclick=()=>speak(mode==='activities'?translate(currentText()):challengeSpeech(scene.challenges[challenge]),false);$('slow').onclick=()=>speak(mode==='activities'?translate(currentText()):challengeSpeech(scene.challenges[challenge]),true);$('replay').onclick=()=>speak(lastSpeech,false);$('cardReset').onclick=resetCard;
+function setup(){installTranslationFontControl();rememberMode();setupChallengePeek();setupSceneView();for(const [code,name] of Object.entries(LANG))for(const id of ['native','learn']){const opt=document.createElement('option');opt.value=code;opt.textContent=name;$(id).append(opt)}applySettings();renderScene();updateScenePicker();updateAdventureNavigation();$('scenePicker').addEventListener('change',()=>switchScene($('scenePicker').value));if(editable&&$('studioScenePicker'))$('studioScenePicker').addEventListener('change',()=>switchScene($('studioScenePicker').value));window.addEventListener('talkabee-directory-changed',()=>{updateScenePicker();updateAdventureNavigation()});window.addEventListener('storage',e=>{if(e.key===settingKey){settings={...defaults,...read(settingKey,{})};applySettings();renderCard();}else if(e.key===sceneKey+sceneName){scene=loadScene(sceneName);renderScene();if(editable){refreshLessons();refreshChallenges();}}});initDrag();$('previousAdventure').onclick=()=>{const ids=sceneNames().filter(id=>!id.startsWith('test-'));const i=ids.indexOf(sceneName);if(i>0)switchScene(ids[i-1])};$('nextAdventure').onclick=()=>{const ids=sceneNames().filter(id=>!id.startsWith('test-'));const i=ids.indexOf(sceneName);if(i>=0&&i<ids.length-1)switchScene(ids[i+1])};$('activities').onclick=()=>{mode='activities';rememberMode();renderCard()};$('challenges').onclick=()=>{mode='challenges';rememberMode();renderCard()};$('discovery').onclick=()=>{mode='discovery';rememberMode();renderCard()};$('next').onclick=()=>{if(mode==='challenges')challenge=(challenge+1)%Math.max(1,scene.challenges.length);else lesson=(lesson+1)%Math.max(1,scene.lessons.length);renderCard()};$('speak').onclick=()=>speak(mode==='activities'?translate(currentText()):challengeSpeech(scene.challenges[challenge]),false);$('slow').onclick=()=>speak(mode==='activities'?translate(currentText()):challengeSpeech(scene.challenges[challenge]),true);$('replay').onclick=()=>speak(lastSpeech,false,undefined,lastSpeechFollowScript);$('cardReset').onclick=resetCard;
 for(const key of ['native','learn','voiceMode'])$(key).addEventListener('change',()=>{settings[key]=$(key).value;if(key==='learn'||key==='voiceMode'){browserSpeechTicket++;tbWordFollowClear();if(browserSpeechTimer!==null){clearTimeout(browserSpeechTimer);browserSpeechTimer=null}window.speechSynthesis?.cancel();window.tbMasterPiperStop?.();lastSpeech='';}saveSettings();refreshVoices();renderCard();if(key==='learn'&&editable){syncLesson();syncChallenge();if(selectedId)choose(selectedType,selectedId)}window.dispatchEvent(new CustomEvent('tb-master-language-change',{detail:{native:settings.native,learn:settings.learn,mode:settings.voiceMode}}))});$('voiceSelect').onchange=()=>{window.speechSynthesis?.cancel();localStorage.setItem('talkabee-v2-voice-'+settings.learn,JSON.stringify($('voiceSelect').value));};if('speechSynthesis'in window){speechSynthesis.addEventListener?.('voiceschanged',refreshVoices);refreshVoices()}
 if(!editable)return;
 $('refreshAdventure').onclick=()=>refreshAdventureFromStorage();
