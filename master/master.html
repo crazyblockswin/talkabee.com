@@ -172,8 +172,15 @@ body>header .tb-row-voice .tb-field.tb-voiceSelect select{width:100%!important;m
     context.font=font;
     const captionWidth=context.measureText(caption).width;
     const titleWidth=title ? context.measureText(title.textContent.trim()).width : 0;
-    const width=Math.min(340,Math.max(125,Math.ceil(Math.max(captionWidth,titleWidth)+53)));
-    label.style.setProperty('--tb-selected-voice-width',width+'px');
+    const width=Math.min(340,Math.max(125,Math.ceil(Math.max(captionWidth,titleWidth)+38)));
+    // Inline important declarations beat published Master Studio width overrides.
+    label.style.setProperty('width',width+'px','important');
+    label.style.setProperty('flex','0 0 '+width+'px','important');
+    label.style.setProperty('flex-basis',width+'px','important');
+    label.style.setProperty('min-width','0px','important');
+    label.style.setProperty('max-width','min(340px, 100%)','important');
+    select.style.setProperty('width','100%','important');
+    select.style.setProperty('min-width','0px','important');
   }
   function refresh(){ids.forEach(id=>resizeVoiceSelect(document.getElementById(id)));}
   document.addEventListener('change',function(event){if(ids.includes(event.target.id))refresh();});
