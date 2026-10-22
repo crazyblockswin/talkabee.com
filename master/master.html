@@ -106,7 +106,20 @@ body>header .tb-row-nav nav.tb-unified-nav > details > summary {
   #card .controls button { transition: none; }
 }
 </style>
-</head><body data-editor="yes"><header><div class="tb-header-row tb-row-voice"><a class="tb-logo" href="../index.html">🐝 Talk A Bee</a><label class="tb-field tb-native"><span>Native</span><select id="native"></select></label><label class="tb-field tb-learn"><span>Learn</span><select id="learn"></select></label><label class="tb-field tb-voiceMode"><span>Voice system</span><select id="voiceMode"><option value="standard">Standard browser voice</option><option value="enhanced">Enhanced Piper (local)</option></select></label><label class="tb-field tb-voiceSelect"><span>Voice choice</span><select id="voiceSelect"></select></label></div><div class="tb-header-row tb-row-nav"><label class="tb-field tb-scenePicker"><span>Adventure</span><select aria-label="Choose Adventure" id="scenePicker"></select></label><button class="tb-mode selected" id="activities">Activities</button><button class="tb-mode" id="challenges">Challenges</button><button class="tb-mode" id="discovery">Discovery</button><button aria-pressed="false" class="tb-view" id="sceneViewToggle" type="button" hidden style="display:none!important" aria-hidden="true" tabindex="-1">◉ Scene View</button><button hidden="" id="sceneViewReturn" type="button">← Return to Adventure</button>
+<style id="tb-auto-voice-width-style">
+/* Voice dropdowns follow the selected label, not the old 190px fixed width. */
+body>header .tb-row-voice .tb-field.tb-voiceMode,
+body>header .tb-row-voice .tb-field.tb-voiceSelect{
+  flex:0 1 var(--tb-selected-voice-width,190px)!important;
+  flex-basis:var(--tb-selected-voice-width,190px)!important;
+  width:var(--tb-selected-voice-width,190px)!important;
+  min-width:0!important;
+  max-width:min(340px,100%)!important;
+}
+body>header .tb-row-voice .tb-field.tb-voiceMode select,
+body>header .tb-row-voice .tb-field.tb-voiceSelect select{width:100%!important;min-width:0!important}
+</style>
+</head><body data-editor="yes"><header><div class="tb-header-row tb-row-voice"><a class="tb-logo" href="../index.html">🐝 Talk A Bee</a><label class="tb-field tb-native"><span>Native</span><select id="native"></select></label><label class="tb-field tb-learn"><span>Learn</span><select id="learn"></select></label><label class="tb-field tb-voiceMode"><span>Voice system</span><select id="voiceMode"><option value="standard">Standard browser voice</option><option value="enhanced">Enhanced Piper</option></select></label><label class="tb-field tb-voiceSelect"><span>Voice choice</span><select id="voiceSelect"></select></label></div><div class="tb-header-row tb-row-nav"><label class="tb-field tb-scenePicker"><span>Adventure</span><select aria-label="Choose Adventure" id="scenePicker"></select></label><button class="tb-mode selected" id="activities">Activities</button><button class="tb-mode" id="challenges">Challenges</button><button class="tb-mode" id="discovery">Discovery</button><button aria-pressed="false" class="tb-view" id="sceneViewToggle" type="button" hidden style="display:none!important" aria-hidden="true" tabindex="-1">◉ Scene View</button><button hidden="" id="sceneViewReturn" type="button">← Return to Adventure</button>
 <nav class="tb-unified-nav" aria-label="More Talk A Bee destinations">
 <details><summary title="Part 2 Course">Part 2 Course +</summary><div class="tb-menu">
 <a href="../index.html">Home</a>
@@ -140,4 +153,36 @@ body>header .tb-row-nav nav.tb-unified-nav > details > summary {
  document.addEventListener('pointerdown',event=>{if(!event.target.closest('.tb-unified-nav'))menus.forEach(menu=>menu.open=false);});
  document.addEventListener('keydown',event=>{if(event.key==='Escape')menus.forEach(menu=>menu.open=false);});
 })();
-</script></body></html>
+</script><script id="tb-auto-voice-width-behavior">
+(function(){
+  'use strict';
+  const ids=['voiceMode','voiceSelect'];
+  function resizeVoiceSelect(select){
+    if(!select)return;
+    const label=select.closest('.tb-field');
+    if(!label)return;
+    const option=select.selectedOptions && select.selectedOptions[0];
+    const title=label.querySelector('span');
+    const caption=option ? option.textContent.trim() : '';
+    if(!caption)return;
+    const canvas=document.createElement('canvas');
+    const context=canvas.getContext('2d');
+    if(!context)return;
+    const font=getComputedStyle(select).font;
+    context.font=font;
+    const captionWidth=context.measureText(caption).width;
+    const titleWidth=title ? context.measureText(title.textContent.trim()).width : 0;
+    const width=Math.min(340,Math.max(125,Math.ceil(Math.max(captionWidth,titleWidth)+53)));
+    label.style.setProperty('--tb-selected-voice-width',width+'px');
+  }
+  function refresh(){ids.forEach(id=>resizeVoiceSelect(document.getElementById(id)));}
+  document.addEventListener('change',function(event){if(ids.includes(event.target.id))refresh();});
+  const voiceChoice=document.getElementById('voiceSelect');
+  if(voiceChoice){
+    new MutationObserver(refresh).observe(voiceChoice,{childList:true,subtree:true,characterData:true});
+  }
+  window.addEventListener('resize',refresh);
+  refresh();
+})();
+</script>
+</body></html>
