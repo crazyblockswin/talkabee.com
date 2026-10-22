@@ -7,6 +7,9 @@
 .tb-bottom-tool > .studio { margin: 0; }
 </style>
 <style id="tb-unified-navigation-style">
+/* Override legacy header rule that hides every nav element. */
+body>header nav.tb-unified-nav{display:flex!important;flex:0 0 auto;gap:8px;align-items:center}
+
 .tb-unified-nav{display:flex;align-items:center;gap:9px;flex-wrap:wrap}
 .tb-unified-nav details{position:relative}
 .tb-unified-nav summary{list-style:none;cursor:pointer;user-select:none;white-space:nowrap;
