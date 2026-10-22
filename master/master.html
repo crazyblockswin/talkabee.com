@@ -5,6 +5,20 @@
 .tb-bottom-tool { margin: 16px 18px; border: 1px solid #718298; border-radius: 12px; background: #203141; color: #fff; }
 .tb-bottom-tool > summary { cursor: pointer; padding: 15px 20px; font-size: 20px; font-weight: 700; color: #ffcf70; }
 .tb-bottom-tool > .studio { margin: 0; }
+
+/* Compact one-line Adventure toolbar: no third header row. */
+body>header .tb-row-nav{display:flex!important;flex-wrap:nowrap!important;align-items:end!important;gap:clamp(4px,.65vw,12px)!important;min-width:0}
+body>header .tb-row-nav .tb-scenePicker{flex:1 1 190px!important;min-width:125px!important;width:auto!important;max-width:300px!important}
+body>header .tb-row-nav .tb-scenePicker select{width:100%!important;min-width:0!important}
+body>header .tb-row-nav .tb-scenePicker>span{display:none!important}
+body>header .tb-row-nav #sceneViewToggle,body>header .tb-row-nav #sceneViewReturn{display:none!important}
+body>header .tb-row-nav .tb-mode{flex:0 0 auto!important;padding:7px clamp(7px,.8vw,14px)!important;white-space:nowrap;font-size:clamp(13px,1.35vw,22px)!important}
+body>header nav.tb-unified-nav{flex:0 0 auto!important;gap:clamp(4px,.5vw,9px)!important}
+body>header .tb-unified-nav summary{padding:7px clamp(8px,.8vw,13px)!important;font-size:clamp(13px,1.3vw,21px)!important;min-height:0!important}
+body>header .tb-nav-end{flex:0 0 auto!important;margin-left:auto!important;white-space:nowrap}
+body>header .tb-nav-end button{padding-left:clamp(6px,.7vw,12px)!important;padding-right:clamp(6px,.7vw,12px)!important}
+@media(max-width:900px){body>header .tb-row-nav{gap:4px!important}body>header .tb-row-nav .tb-scenePicker{flex-basis:135px!important}body>header .tb-row-nav .tb-mode{padding:6px!important;font-size:12px!important}body>header .tb-unified-nav summary{padding:6px!important;font-size:12px!important}}
+@media(max-width:620px){body>header .tb-row-nav{overflow-x:auto;overflow-y:visible}body>header .tb-row-nav .tb-scenePicker{flex:0 0 125px!important}}
 </style>
 <style id="tb-unified-navigation-style">
 /* Keep these two menus visible despite the older generic header-nav rule. */
@@ -28,12 +42,12 @@ body>header nav.tb-unified-nav{display:flex!important;flex:0 1 auto;min-width:0;
  font-family:Arial,sans-serif;font-size:18px;font-weight:400;line-height:1.35;text-decoration:none;white-space:nowrap;text-shadow:none!important}
 .tb-unified-nav .tb-menu a:hover,.tb-unified-nav .tb-menu a:focus-visible{background:#363638!important;color:#fff;outline:none}
 .tb-unified-nav summary:focus-visible{outline:3px solid #ffdc84;outline-offset:2px}
-@media(max-width:1150px){.tb-row-nav{flex-wrap:wrap!important}.tb-nav-end{margin-left:auto!important}}
-@media(max-width:720px){.tb-unified-nav{flex-wrap:wrap}.tb-unified-nav summary{padding:7px 10px;font-size:13px}.tb-unified-nav .tb-menu{min-width:205px}}
+
+
 </style>
 </head><body data-editor="yes"><header><div class="tb-header-row tb-row-voice"><a class="tb-logo" href="../index.html">🐝 Talk A Bee</a><label class="tb-field tb-native"><span>Native</span><select id="native"></select></label><label class="tb-field tb-learn"><span>Learn</span><select id="learn"></select></label><label class="tb-field tb-voiceMode"><span>Voice system</span><select id="voiceMode"><option value="standard">Standard browser voice</option><option value="enhanced">Enhanced Piper (local)</option></select></label><label class="tb-field tb-voiceSelect"><span>Voice choice</span><select id="voiceSelect"></select></label></div><div class="tb-header-row tb-row-nav"><label class="tb-field tb-scenePicker"><span>Adventure</span><select aria-label="Choose Adventure" id="scenePicker"></select></label><button class="tb-mode selected" id="activities">Activities</button><button class="tb-mode" id="challenges">Challenges</button><button class="tb-mode" id="discovery">Discovery</button><button aria-pressed="false" class="tb-view" id="sceneViewToggle" type="button" hidden style="display:none!important" aria-hidden="true" tabindex="-1">◉ Scene View</button><button hidden="" id="sceneViewReturn" type="button">← Return to Adventure</button>
 <nav class="tb-unified-nav" aria-label="More Talk A Bee destinations">
-<details><summary>Beyond Adventures</summary><div class="tb-menu">
+<details><summary title="Beyond Adventures">Explore</summary><div class="tb-menu">
 <a href="../index.html">Home</a>
 <a href="../adventures-a-z.html">Adventures A–Z</a>
 <a href="../Talk-A-Bee-Main-Directory.html">Learning Directory</a>
@@ -44,7 +58,7 @@ body>header nav.tb-unified-nav{display:flex!important;flex:0 1 auto;min-width:0;
 <a href="../feelings-expressions.html">Feelings &amp; Expressions</a>
 <a href="../course.html">Language Course</a>
 </div></details>
-<details><summary>Games &amp; Extras</summary><div class="tb-menu">
+<details><summary title="Games & Extras">More</summary><div class="tb-menu">
 <a href="../Talk-A-Bee-Comments.html">Comments &amp; Suggestions</a>
 <a href="https://crazyblocks.win/">🎮 Play Game — CrazyBlocks</a>
 <a href="https://crazysoundlab.com/">🎙️ Crazy Voice &amp; Sound Lab</a>
