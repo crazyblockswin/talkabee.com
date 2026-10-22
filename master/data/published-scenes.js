@@ -15059,5 +15059,182 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
         }
       }
     ]
+  },
+  "balloon-ride": {
+    "title": "Balloon Ride",
+    "image": "images/balloon-world.jpg",
+    "lessons": [
+      {
+        "text": "We are floating above Talk A Bee Campground in a colorful hot air balloon.",
+        "translations": {
+          "es": "Estamos flotando sobre el campamento Talk A Bee en un colorido globo aerostático.",
+          "fr": "Nous survolons le camping Talk A Bee dans une montgolfière colorée.",
+          "de": "Wir schweben in einem bunten Heißluftballon über dem Talk A Bee Campingplatz.",
+          "it": "Stiamo volando sopra il campeggio Talk A Bee in una colorata mongolfiera.",
+          "pt": "Estamos a sobrevoar o parque de campismo Talk A Bee num balão de ar quente colorido.",
+          "no": "Vi svever over Talk A Bee-campingplassen i en fargerik varmluftballong."
+        }
+      },
+      {
+        "text": "The sun is setting behind the mountains and lighting up the lake.",
+        "translations": {
+          "es": "El sol se pone detrás de las montañas e ilumina el lago.",
+          "fr": "Le soleil se couche derrière les montagnes et illumine le lac.",
+          "de": "Die Sonne geht hinter den Bergen unter und lässt den See leuchten.",
+          "it": "Il sole tramonta dietro le montagne e illumina il lago.",
+          "pt": "O sol está a pôr-se atrás das montanhas e ilumina o lago.",
+          "no": "Solen går ned bak fjellene og lyser opp innsjøen."
+        }
+      },
+      {
+        "text": "Far below us, campers are relaxing beside their tents and campfires.",
+        "translations": {
+          "es": "Muy por debajo de nosotros, los campistas descansan junto a sus tiendas y fogatas.",
+          "fr": "Loin en dessous de nous, les campeurs se détendent près de leurs tentes et de leurs feux de camp.",
+          "de": "Tief unter uns entspannen sich die Camper neben ihren Zelten und Lagerfeuern.",
+          "it": "Molto sotto di noi, i campeggiatori si rilassano accanto alle tende e ai falò.",
+          "pt": "Muito abaixo de nós, os campistas descansam junto das tendas e das fogueiras.",
+          "no": "Langt under oss slapper campinggjestene av ved teltene og leirbålene sine."
+        }
+      },
+      {
+        "text": "A waterfall rushes down the rocks and flows beneath a little wooden bridge.",
+        "translations": {
+          "es": "Una cascada baja por las rocas y pasa por debajo de un pequeño puente de madera.",
+          "fr": "Une cascade dévale les rochers et passe sous un petit pont en bois.",
+          "de": "Ein Wasserfall rauscht über die Felsen und fließt unter einer kleinen Holzbrücke hindurch.",
+          "it": "Una cascata scende sulle rocce e passa sotto un piccolo ponte di legno.",
+          "pt": "Uma cascata desce pelas rochas e passa por baixo de uma pequena ponte de madeira.",
+          "no": "En foss strømmer nedover steinene og renner under en liten trebro."
+        }
+      },
+      {
+        "text": "The balloon burner heats the air so our basket can rise into the sky.",
+        "translations": {
+          "es": "El quemador del globo calienta el aire para que nuestra cesta pueda elevarse hacia el cielo.",
+          "fr": "Le brûleur de la montgolfière chauffe l’air pour que notre nacelle puisse monter dans le ciel.",
+          "de": "Der Brenner des Ballons erwärmt die Luft, damit unser Korb in den Himmel steigen kann.",
+          "it": "Il bruciatore della mongolfiera riscalda l’aria per far salire il nostro cesto nel cielo.",
+          "pt": "O queimador do balão aquece o ar para que o nosso cesto possa subir ao céu.",
+          "no": "Ballongbrenneren varmer opp luften slik at kurven vår kan stige til værs."
+        }
+      }
+    ],
+    "hotspots": [
+      {
+        "id": "basket",
+        "label": "Balloon basket",
+        "x": 77,
+        "y": 29,
+        "w": 23,
+        "h": 53,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "burner",
+        "label": "Burner flame",
+        "x": 82,
+        "y": 11,
+        "w": 10,
+        "h": 15,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "waterfall",
+        "label": "Waterfall",
+        "x": 68,
+        "y": 53,
+        "w": 10,
+        "h": 23,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "sign",
+        "label": "Campground sign",
+        "x": 48,
+        "y": 73,
+        "w": 15,
+        "h": 17,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "ferris",
+        "label": "Ferris wheel",
+        "x": 19,
+        "y": 43,
+        "w": 5,
+        "h": 10,
+        "sound": "",
+        "translations": {}
+      }
+    ],
+    "overlays": [],
+    "challenges": [
+      {
+        "prompt": "Find the hot air balloon basket.",
+        "target": "basket",
+        "translations": {
+          "es": "Encuentra la cesta del globo aerostático.",
+          "fr": "Trouve la nacelle de la montgolfière.",
+          "de": "Finde den Korb des Heißluftballons.",
+          "it": "Trova il cesto della mongolfiera.",
+          "pt": "Encontra o cesto do balão de ar quente.",
+          "no": "Finn kurven til varmluftballongen."
+        }
+      },
+      {
+        "prompt": "Find the flame above the basket.",
+        "target": "burner",
+        "translations": {
+          "es": "Encuentra la llama encima de la cesta.",
+          "fr": "Trouve la flamme au-dessus de la nacelle.",
+          "de": "Finde die Flamme über dem Korb.",
+          "it": "Trova la fiamma sopra il cesto.",
+          "pt": "Encontra a chama por cima do cesto.",
+          "no": "Finn flammen over kurven."
+        }
+      },
+      {
+        "prompt": "Find the waterfall.",
+        "target": "waterfall",
+        "translations": {
+          "es": "Encuentra la cascada.",
+          "fr": "Trouve la cascade.",
+          "de": "Finde den Wasserfall.",
+          "it": "Trova la cascata.",
+          "pt": "Encontra a cascata.",
+          "no": "Finn fossen."
+        }
+      },
+      {
+        "prompt": "Find the Talk A Bee campground sign.",
+        "target": "sign",
+        "translations": {
+          "es": "Encuentra el letrero del campamento Talk A Bee.",
+          "fr": "Trouve le panneau du camping Talk A Bee.",
+          "de": "Finde das Schild des Talk A Bee Campingplatzes.",
+          "it": "Trova il cartello del campeggio Talk A Bee.",
+          "pt": "Encontra a placa do parque de campismo Talk A Bee.",
+          "no": "Finn skiltet til Talk A Bee-campingplassen."
+        }
+      },
+      {
+        "prompt": "Find the Ferris wheel beside the lake.",
+        "target": "ferris",
+        "translations": {
+          "es": "Encuentra la noria junto al lago.",
+          "fr": "Trouve la grande roue près du lac.",
+          "de": "Finde das Riesenrad am See.",
+          "it": "Trova la ruota panoramica vicino al lago.",
+          "pt": "Encontra a roda-gigante junto ao lago.",
+          "no": "Finn pariserhjulet ved innsjøen."
+        }
+      }
+    ]
   }
-});
+}
+);
