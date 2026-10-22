@@ -37,41 +37,59 @@
 .overlay .popup button:focus-visible { outline: 2px solid #ffe18b; outline-offset: 3px; }
 .overlay .popup button:active { transform: translateY(1px); box-shadow: inset 0 3px 6px #000; }
 </style>
-<style id="tab-header-reference-buttons-20261019">
-header nav{display:flex;align-items:center;gap:12px;flex-wrap:wrap}
-header nav a{display:inline-flex;align-items:center;justify-content:center;min-height:70px;padding:14px 23px;border-radius:25px;border:2px solid #080b10;background:linear-gradient(180deg,#555b64 0%,#303741 22%,#111820 65%,#06090d 100%);box-shadow:inset 0 2px 2px #ffffff55,inset 0 -5px 7px #000b,0 5px 0 #05080d,0 8px 12px #0007;color:#fff;font-size:20px;font-weight:700;text-shadow:0 2px 3px #000;white-space:nowrap;transition:filter .15s,transform .15s}
-header nav a[aria-current="page"]{color:#101820;background:linear-gradient(180deg,#ffe7a0 0%,#f5d47a 48%,#bc862f 100%);border-color:#ad7b2c;box-shadow:inset 0 2px 2px #fff9,inset 0 -5px 7px #8a5b1b88,0 5px 0 #704b18,0 8px 12px #0006;text-shadow:0 1px 1px #fff8}
-header nav a:hover,header nav a:focus-visible{filter:brightness(1.18);transform:translateY(-2px);outline:2px solid #ffe18b;outline-offset:2px}
-header nav a:active{transform:translateY(2px)}
-@media(max-width:1400px){header nav{gap:7px}header nav a{min-height:54px;padding:10px 13px;font-size:16px;border-radius:19px}}
-@media(max-width:760px){header nav a{min-height:44px;padding:9px 12px;font-size:14px;border-radius:15px}}
-</style><style id="tab-header-3d-nav">
-/* Subtle 3D header navigation: same look, lighter proportions and shadows. */
-header nav { gap: 8px; align-items: center; }
-header nav a {
+<style id="tab-header-3d-nav">
+/* Copied from the live homepage index.html dashboard navigation finish. */
+header nav{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+header nav a{
+ display:inline-flex;align-items:center;justify-content:center;
+ min-height:39px;padding:10px 12px;
+ font-size:clamp(12px,.88vw,17px);font-weight:700;white-space:nowrap;
+ background:linear-gradient(180deg,#27343d,#172229)!important;
+ color:#e9f3f6!important;border:1px solid #526875!important;
+ border-top-color:#17232a!important;border-radius:9px!important;
+ box-shadow:inset 0 3px 7px #000c,inset 0 -9px 18px rgba(75,174,205,.17),0 1px 0 #8da2ac30!important;
+ text-shadow:0 1px 2px #000!important;
+ transition:background .15s ease,box-shadow .15s ease!important;
+ transform:none!important;filter:none!important;
+}
+header nav a:hover,header nav a:focus-visible{
+ background:linear-gradient(180deg,#344650,#22333c)!important;
+ border-color:#7ba3b4!important;
+ box-shadow:inset 0 3px 7px #000c,inset 0 -12px 22px rgba(81,198,228,.32)!important;
+}
+header nav a:active{box-shadow:inset 0 5px 10px #000e!important;transform:translateY(1px)!important}
+header nav a[aria-current="page"]{
+ background:linear-gradient(180deg,#3a2e1c,#5c431c)!important;
+ color:#fff4ce!important;border-color:#d6aa4f!important;
+ box-shadow:inset 0 3px 8px #160d03,inset 0 -12px 26px rgba(255,193,64,.62),inset 0 0 2px #ffe3a7!important;
+}
+@media(max-width:700px){header nav{gap:6px}header nav a{min-height:36px;padding:7px 10px;font-size:12px}}
+@media(prefers-reduced-motion:reduce){header nav a{transition:none!important}}
+</style><style id="tab-learning-prev-next-dashboard">
+/* Previous / Next: dark header-navy dashboard controls, with golden hover. */
+main nav.tab-section-nav a {
   display:inline-flex;align-items:center;justify-content:center;
-  min-height:39px;padding:7px 14px;
-  font-size:clamp(12px,.88vw,15px);font-weight:700;
-  color:#fff;border:1.5px solid #101820;border-radius:14px;
-  background:linear-gradient(180deg,#414a54 0%,#28313b 36%,#151c25 72%,#10161d 100%);
-  box-shadow:inset 0 1px 2px #ffffff45,inset 0 -2px 3px #0008,0 2px 0 #071019,0 4px 7px #0005;
-  text-shadow:0 1px 2px #0009;
-  transition:transform .15s ease,box-shadow .15s ease,background .15s ease;
+  min-height:43px;padding:10px 17px;
+  color:#f4f9ff!important;font-weight:800;
+  border:1px solid #45627b!important;
+  border-top-color:#6a879e!important;
+  border-radius:10px!important;
+  background:linear-gradient(180deg,#24435e 0%,#112e49 52%,#0a2036 100%)!important;
+  box-shadow:inset 0 2px 0 #ffffff24,inset 0 -7px 14px #06182988,0 3px 0 #06192b,0 5px 9px #0003!important;
+  text-shadow:0 1px 2px #112b40!important;
+  text-decoration:none;transition:background .16s,box-shadow .16s,transform .16s,color .16s;
 }
-header nav a:hover,header nav a:focus-visible {
-  background:linear-gradient(180deg,#55616d,#343e49 42%,#18222c);
+main nav.tab-section-nav a:hover,main nav.tab-section-nav a:focus-visible {
+  color:#152c3d!important;
+  background:linear-gradient(180deg,#ffe8a1 0%,#f6c95c 54%,#dfa83d 100%)!important;
+  border-color:#ffdf91!important;
+  box-shadow:inset 0 2px 0 #fff5c0,inset 0 -5px 10px #c68a2c55,0 3px 0 #95641e,0 6px 12px #0003!important;
+  text-shadow:0 1px 0 #fff6c6!important;
   transform:translateY(-1px);
-  box-shadow:inset 0 1px 2px #ffffff55,inset 0 -2px 3px #0008,0 3px 0 #071019,0 6px 9px #0006;
-  outline:2px solid #ffe18b;outline-offset:2px;
+  outline:2px solid #ffe39a;outline-offset:2px;
 }
-header nav a:active {transform:translateY(2px);box-shadow:inset 0 2px 5px #0009,0 1px 0 #071019;}
-header nav a[aria-current="page"] {
-  color:#192332;border-color:#ac813d;
-  background:linear-gradient(180deg,#f8e5a0,#e8c574 48%,#cba050 100%);
-  text-shadow:0 1px 0 #fff6;
-  box-shadow:inset 0 1px 2px #fff8,inset 0 -2px 3px #80591b55,0 2px 0 #87602b,0 4px 7px #0005;
-}
-@media(max-width:700px){header nav{gap:6px}header nav a{min-height:36px;padding:6px 10px;border-radius:11px;font-size:12px}}
+main nav.tab-section-nav a:active {transform:translateY(2px);box-shadow:inset 0 3px 8px #19344b88,0 1px 0 #10283b!important}
+@media(prefers-reduced-motion:reduce){main nav.tab-section-nav a{transition:none}}
 </style></head><body><header><a class="brand" href="Talk-A-Bee-Main-Directory.html"><img src="images/teacher-black.png" alt="Talk A Bee mascot">Talk A Bee</a><nav aria-label="Directories"><a href="Talk-A-Bee-Main-Directory.html">Main Directory</a><a href="numbers.html">Numbers</a><a href="picture-learning.html">Pictures</a><a href="time-calendar.html">Time</a><a href="colors-shapes.html" aria-current="page">Colors</a><a href="feelings-expressions.html">Feelings</a><a href="master/adventure.html">Adventures</a></nav></header><main><div class="heading"><h1>Colors & Shapes</h1><p>See Colors, Learn Shapes</p></div><div class="settings"><label>Native language <select id="native"></select></label><label>Learning language <select id="learn"></select></label><label>Voice <select id="voice"></select></label></div><nav class="tab-section-nav" aria-label="Learning section navigation"><a href="time-calendar.html" title="Time & Calendar">‹ Previous: Time & Calendar</a><a href="feelings-expressions.html" title="Feelings & Expressions">Next: Feelings & Expressions ›</a></nav><section class="tiles" id="items" aria-label="Colors & Shapes items"></section><p class="note">Click any tile to see both languages and hear the learning-language word. Speech availability depends on voices installed in your browser.</p></main><div class="overlay" id="overlay" role="dialog" aria-modal="true" aria-label="Word translation"><div class="popup"><button class="x" id="close" aria-label="Close">×</button><div class="lang" id="nativeLabel"></div><div class="word" id="nativeWord"></div><div class="lang" id="learnLabel"></div><div class="word" id="learnWord"></div><button id="speak">🔊 Speak</button><button id="slow">🐢 Slow</button></div></div><script>const DATA=[{"icon": "🔴", "words": ["Red", "Rojo", "Rouge", "Rot", "Rosso", "Vermelho", "Rød", "Κόκκινο"]}, {"icon": "🔵", "words": ["Blue", "Azul", "Bleu", "Blau", "Blu", "Azul", "Blå", "Μπλε"]}, {"icon": "🟢", "words": ["Green", "Verde", "Vert", "Grün", "Verde", "Verde", "Grønn", "Πράσινο"]}, {"icon": "🟡", "words": ["Yellow", "Amarillo", "Jaune", "Gelb", "Giallo", "Amarelo", "Gul", "Κίτρινο"]}, {"icon": "🟠", "words": ["Orange", "Naranja", "Orange", "Orange", "Arancione", "Laranja", "Oransje", "Πορτοκαλί"]}, {"icon": "🟣", "words": ["Purple", "Morado", "Violet", "Lila", "Viola", "Roxo", "Lilla", "Μωβ"]}, {"icon": "⚫", "words": ["Black", "Negro", "Noir", "Schwarz", "Nero", "Preto", "Svart", "Μαύρο"]}, {"icon": "⚪", "words": ["White", "Blanco", "Blanc", "Weiß", "Bianco", "Branco", "Hvit", "Λευκό"]}, {"icon": "🟤", "words": ["Brown", "Marrón", "Marron", "Braun", "Marrone", "Marrom", "Brun", "Καφέ"]}, {"icon": "🩷", "words": ["Pink", "Rosa", "Rose", "Rosa", "Rosa", "Rosa", "Rosa", "Ροζ"]}, {"icon": "🔺", "words": ["Triangle", "Triángulo", "Triangle", "Dreieck", "Triangolo", "Triângulo", "Trekant", "Τρίγωνο"]}, {"icon": "🟦", "words": ["Square", "Cuadrado", "Carré", "Quadrat", "Quadrato", "Quadrado", "Kvadrat", "Τετράγωνο"]}, {"icon": "🔵", "words": ["Circle", "Círculo", "Cercle", "Kreis", "Cerchio", "Círculo", "Sirkel", "Κύκλος"]}, {"icon": "▬", "words": ["Rectangle", "Rectángulo", "Rectangle", "Rechteck", "Rettangolo", "Retângulo", "Rektangel", "Ορθογώνιο"]}];const LANGS={en:'English',es:'Spanish',fr:'French',de:'German',it:'Italian',pt:'Portuguese',no:'Norwegian'};
 const $=id=>document.getElementById(id);let active=null;
 function getSaved(keys,fallback){if(keys.includes('talkabee-native-language')){const passed=new URLSearchParams(location.search).get('tabnative');if(passed&&LANGS[passed]){try{localStorage.setItem('talkabee-native-language',passed)}catch(e){}return passed}}for(const k of keys){let v=localStorage.getItem(k);if(v&&LANGS[v])return v;}return fallback}
