@@ -229,7 +229,7 @@ function tbWordFollowClear(){
  if(tbWordFollowTimer!==null){clearInterval(tbWordFollowTimer);tbWordFollowTimer=null;}
  if(tbWordFollowRestore){const {element,text}=tbWordFollowRestore;if(element?.isConnected)element.textContent=text;tbWordFollowRestore=null;}
 }
-function tbWordFollowStart(text,rate,estimated){
+function tbWordFollowStart(text,rate,estimated,audioDurationSeconds){
  tbWordFollowClear();
  const element=$('scriptText');
  if(!element||!text||mode==='discovery')return null;
@@ -252,7 +252,7 @@ function tbWordFollowStart(text,rate,estimated){
   // Piper currently exposes no word timestamps. Approximate only; stop on audio completion.
   const weights=tokens.map(m=>Math.max(1.7,[...m[0]].length*.52));
   const total=weights.reduce((a,b)=>a+b,0);
-  const duration=Math.max(650,Math.min(30000,(original.length/13.5)*1000/Math.max(.5,rate)));
+  const duration=Number.isFinite(audioDurationSeconds)&&audioDurationSeconds>0 ? audioDurationSeconds*1000 : Math.max(650,Math.min(30000,(original.length/13.5)*1000/Math.max(.5,rate)));
   const started=performance.now();
   tbWordFollowTimer=setInterval(()=>{const fraction=Math.min(1,(performance.now()-started)/duration);let sum=0,index=weights.length-1;for(let i=0;i<weights.length;i++){sum+=weights[i]/total;if(fraction<sum){index=i;break;}}show(index);},60);
   show(0);
@@ -272,12 +272,17 @@ function speak(text,slow,onend){
  window.speechSynthesis?.cancel();
  // Start the proven visible-word renderer directly from the button action.
  // Some Firefox voices never dispatch onstart, and Piper may not report playback start.
- const followRate=(slow?.75:1)*(settings.voiceMode==='enhanced'?1.05:1);
- let tbWordFollowController=tbWordFollowStart(text,followRate,true);
+ const followRate=slow?.75:1;
+ // Piper: highlight only when its audio actually starts, never on button click.
+ // The adapter supplies the real audio duration, avoiding sentence-length drift.
  if(settings.voiceMode==='enhanced'&&typeof window.tbAdventurePiperSpeak==='function'){
-  try{if(window.tbAdventurePiperSpeak(text,slow?.75:1,finish,()=>{if(ticket===browserSpeechTicket&&!finished)tbWordFollowStart(text,followRate,true)})!==false){return}}
+  try{if(window.tbAdventurePiperSpeak(text,followRate,finish,(audioDurationSeconds)=>{
+   if(ticket===browserSpeechTicket&&!finished)tbWordFollowStart(text,followRate,true,audioDurationSeconds);
+  })!==false){return}}
   catch(e){status('Piper unavailable; using browser voice')}
  }else if(settings.voiceMode==='enhanced')status('Piper adapter not connected yet; using browser voice');
+ // Browser voice retains the previously working immediate start and boundaries.
+ let tbWordFollowController=tbWordFollowStart(text,followRate,true);
  if(!('speechSynthesis'in window)){finish();return;}
  const u=new SpeechSynthesisUtterance(text);
  u.onend=finish;u.onerror=finish;

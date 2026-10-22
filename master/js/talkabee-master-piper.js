@@ -166,7 +166,7 @@ window.tbAdventurePiperSpeak=function(text,rate,onComplete,onPlaybackStart){
     if(currentUrl){URL.revokeObjectURL(currentUrl);currentUrl=null}
     status('Piper ready: '+voiceId);onComplete?.();
    },{once:true});
-   await audio.play();if(ticket===token){onPlaybackStart?.();status('Playing: '+voiceId)}
+   await audio.play();if(ticket===token){onPlaybackStart?.(Number.isFinite(audio.duration)&&audio.duration>0?audio.duration/audio.playbackRate:null);status('Playing: '+voiceId)}
   }catch(e){if(ticket===token){status('Piper failed: '+(e?.message||e));console.error(e);onComplete?.()}}
  })();return true;
 };
