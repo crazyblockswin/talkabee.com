@@ -96,7 +96,7 @@ function updateAdventureNavigation(){
  const current=ids.indexOf(sceneName),n=ids.length;
  const prev=$('previousAdventure'),next=$('nextAdventure'),pos=$('adventurePosition'),finish=$('finishCourse');
  if(!prev||!next||!pos||!finish)return;
- prev.disabled=current<=0;next.disabled=current<0;
+ prev.disabled=current<=0;next.disabled=current<0||current>=n-1;
  prev.hidden=false;next.hidden=false;
  finish.hidden=current!==n-1||n===0;
  pos.textContent=current<0?'Test Adventure':`Adventure ${current+1} of ${n}`;
@@ -207,7 +207,7 @@ function challengeTranslationField(){
 
 let challengeCardHidden=false;
 function syncChallengePeek(){const card=$('card'),tab=$('tbShowChallenge');if(!card||!tab)return;const hidden=mode==='challenges'&&challengeCardHidden&&!document.body.classList.contains('tb-scene-only');card.hidden=mode==='discovery'||hidden||document.body.classList.contains('tb-scene-only');card.style.display=card.hidden?'none':'';tab.hidden=!hidden;tab.style.display=hidden?'block':'none';const hide=$('tbHideChallenge');if(hide)hide.hidden=mode!=='challenges';}
-function renderCard(){for(const [id,active] of [['activities',mode==='activities'],['challenges',mode==='challenges'],['discovery',mode==='discovery']])$(id).classList.toggle('selected',active);const c=$('card'),prompt=$('scriptText'),tr=$('translation'),fb=$('feedback');fb.textContent='';if(mode==='activities'){const item=currentText();$('cardTitle').textContent=`Activity ${scene.lessons.length?lesson+1:0} of ${scene.lessons.length}`;prompt.textContent=translate(item);tr.textContent=nativeText(item)===translate(item)?'':nativeText(item)}else if(mode==='challenges'){const q=scene.challenges[challenge];$('cardTitle').textContent=`Challenge ${scene.challenges.length?challenge+1:0} of ${scene.challenges.length}`;prompt.textContent=challengeText(q,settings.learn);const learning=challengeText(q,settings.learn);let native=challengeText(q,settings.native);
+function renderCard(){for(const [id,active] of [['activities',mode==='activities'],['challenges',mode==='challenges'],['discovery',mode==='discovery']])$(id).classList.toggle('selected',active);const c=$('card'),prompt=$('scriptText'),tr=$('translation'),fb=$('feedback');fb.textContent='';tbWordFollowClear();if(mode==='activities'){const item=currentText();$('cardTitle').textContent=`Activity ${scene.lessons.length?lesson+1:0} of ${scene.lessons.length}`;prompt.textContent=translate(item);tr.textContent=nativeText(item)===translate(item)?'':nativeText(item)}else if(mode==='challenges'){const q=scene.challenges[challenge];$('cardTitle').textContent=`Challenge ${scene.challenges.length?challenge+1:0} of ${scene.challenges.length}`;prompt.textContent=challengeText(q,settings.learn);const learning=challengeText(q,settings.learn);let native=challengeText(q,settings.native);
  // If the native-language lookup repeats the learning line, use the
  // original English prompt as the comparison whenever it differs.
  if(native===learning && settings.learn!=='en')native=challengeText(q,'en');
@@ -223,23 +223,61 @@ function playSound(path){
   if(!path)return;
   try{const a=player.play(path);a.play().catch(()=>{if(player.current===a)player.stop();status('Sound file unavailable: '+path)})}catch{player.stop();status('Sound file unavailable: '+path)}
 }
+// Optional, reversible word-follow experiment. Only touches the visible script line.
+let tbWordFollowTimer=null,tbWordFollowRestore=null;
+function tbWordFollowClear(){
+ if(tbWordFollowTimer!==null){clearInterval(tbWordFollowTimer);tbWordFollowTimer=null;}
+ if(tbWordFollowRestore){const {element,text}=tbWordFollowRestore;if(element?.isConnected)element.textContent=text;tbWordFollowRestore=null;}
+}
+function tbWordFollowStart(text,rate,estimated){
+ tbWordFollowClear();
+ const element=$('scriptText');
+ if(!element||!text||element.textContent!==text||mode==='discovery')return null;
+ const original=element.textContent;
+ const tokens=[...original.matchAll(/\S+/gu)];
+ if(!tokens.length)return null;
+ const spans=[];element.replaceChildren();let position=0;
+ for(const match of tokens){
+  element.append(document.createTextNode(original.slice(position,match.index)));
+  const span=document.createElement('span');span.textContent=match[0];span.dataset.tbWordStart=String(match.index);
+  element.append(span);spans.push(span);position=match.index+match[0].length;
+ }
+ element.append(document.createTextNode(original.slice(position)));
+ tbWordFollowRestore={element,text:original};
+ let active=-1;
+ const show=index=>{if(index===active)return;if(spans[active]){spans[active].style.background='';spans[active].style.color='';spans[active].style.borderRadius='';}active=index;if(spans[index]){spans[index].style.background='#ffe082';spans[index].style.color='#172435';spans[index].style.borderRadius='3px';}};
+ if(estimated){
+  // Piper currently exposes no word timestamps. Approximate only; stop on audio completion.
+  const weights=tokens.map(m=>Math.max(1.7,[...m[0]].length*.52));
+  const total=weights.reduce((a,b)=>a+b,0);
+  const duration=Math.max(650,Math.min(30000,(original.length/13.5)*1000/Math.max(.5,rate)));
+  const started=performance.now();
+  tbWordFollowTimer=setInterval(()=>{const fraction=Math.min(1,(performance.now()-started)/duration);let sum=0,index=weights.length-1;for(let i=0;i<weights.length;i++){sum+=weights[i]/total;if(fraction<sum){index=i;break;}}show(index);},60);
+  show(0);
+ }
+ return {boundary(charIndex){let index=0;for(let i=0;i<tokens.length;i++){if(tokens[i].index<=charIndex)index=i;else break;}show(index);}};
+}
 function speak(text,slow,onend){
  if(!text){onend?.();return;}
  lastSpeech=text;
  const ticket=++browserSpeechTicket;
+ tbWordFollowClear();
  if(browserSpeechTimer!==null){clearTimeout(browserSpeechTimer);browserSpeechTimer=null}
  let finished=false;
- const finish=()=>{if(finished||ticket!==browserSpeechTicket)return;finished=true;onend?.()};
+ const finish=()=>{if(finished||ticket!==browserSpeechTicket)return;finished=true;tbWordFollowClear();onend?.()};
  // Cancel the previous browser utterance before starting either voice engine.
  // Starting immediately after cancel() can clip the beginning in Firefox.
  window.speechSynthesis?.cancel();
  if(settings.voiceMode==='enhanced'&&typeof window.tbAdventurePiperSpeak==='function'){
-  try{if(window.tbAdventurePiperSpeak(text,slow?.75:1,finish)!==false)return}
+  try{if(window.tbAdventurePiperSpeak(text,slow?.75:1,finish)!==false){tbWordFollowStart(text,slow?.75:1,true);return}}
   catch(e){status('Piper unavailable; using browser voice')}
  }else if(settings.voiceMode==='enhanced')status('Piper adapter not connected yet; using browser voice');
  if(!('speechSynthesis'in window)){finish();return;}
  const u=new SpeechSynthesisUtterance(text);
  u.onend=finish;u.onerror=finish;
+ let tbWordFollowBoundary=null;
+ u.onstart=()=>{if(ticket===browserSpeechTicket)tbWordFollowBoundary=tbWordFollowStart(text,u.rate,false)?.boundary};
+ u.onboundary=e=>{if(ticket===browserSpeechTicket&&e.name==='word')tbWordFollowBoundary?.(e.charIndex)};
  u.lang=({en:'en-US',es:'es-ES',fr:'fr-FR',de:'de-DE',it:'it-IT',pt:'pt-PT',no:'nb-NO'})[settings.learn];
  u.rate=slow?.75:1;
  const wanted=read('talkabee-v2-voice-'+settings.learn,'');
@@ -321,8 +359,8 @@ function installTranslationFontControl(){
  scriptSlider.insertAdjacentElement('afterend',label);
  label.insertAdjacentElement('afterend',slider);
 }
-function setup(){installTranslationFontControl();rememberMode();setupChallengePeek();setupSceneView();for(const [code,name] of Object.entries(LANG))for(const id of ['native','learn']){const opt=document.createElement('option');opt.value=code;opt.textContent=name;$(id).append(opt)}applySettings();renderScene();updateScenePicker();updateAdventureNavigation();$('scenePicker').addEventListener('change',()=>switchScene($('scenePicker').value));if(editable&&$('studioScenePicker'))$('studioScenePicker').addEventListener('change',()=>switchScene($('studioScenePicker').value));window.addEventListener('talkabee-directory-changed',()=>{updateScenePicker();updateAdventureNavigation()});window.addEventListener('storage',e=>{if(e.key===settingKey){settings={...defaults,...read(settingKey,{})};applySettings();renderCard();}else if(e.key===sceneKey+sceneName){scene=loadScene(sceneName);renderScene();if(editable){refreshLessons();refreshChallenges();}}});initDrag();$('previousAdventure').onclick=()=>{const ids=sceneNames().filter(id=>!id.startsWith('test-'));const i=ids.indexOf(sceneName);if(i>0)switchScene(ids[i-1])};$('nextAdventure').onclick=()=>{const ids=sceneNames().filter(id=>!id.startsWith('test-'));const i=ids.indexOf(sceneName);if(i>=0&&i<ids.length-1)switchScene(ids[i+1]);else if(i===ids.length-1)window.location.href='../main-directory.html'};$('activities').onclick=()=>{mode='activities';rememberMode();renderCard()};$('challenges').onclick=()=>{mode='challenges';rememberMode();renderCard()};$('discovery').onclick=()=>{mode='discovery';rememberMode();renderCard()};$('next').onclick=()=>{if(mode==='challenges')challenge=(challenge+1)%Math.max(1,scene.challenges.length);else lesson=(lesson+1)%Math.max(1,scene.lessons.length);renderCard()};$('speak').onclick=()=>speak(mode==='activities'?translate(currentText()):challengeSpeech(scene.challenges[challenge]),false);$('slow').onclick=()=>speak(mode==='activities'?translate(currentText()):challengeSpeech(scene.challenges[challenge]),true);$('replay').onclick=()=>speak(lastSpeech,false);$('cardReset').onclick=resetCard;
-for(const key of ['native','learn','voiceMode'])$(key).addEventListener('change',()=>{settings[key]=$(key).value;if(key==='learn'||key==='voiceMode'){browserSpeechTicket++;if(browserSpeechTimer!==null){clearTimeout(browserSpeechTimer);browserSpeechTimer=null}window.speechSynthesis?.cancel();window.tbMasterPiperStop?.();lastSpeech='';}saveSettings();refreshVoices();renderCard();if(key==='learn'&&editable){syncLesson();syncChallenge();if(selectedId)choose(selectedType,selectedId)}window.dispatchEvent(new CustomEvent('tb-master-language-change',{detail:{native:settings.native,learn:settings.learn,mode:settings.voiceMode}}))});$('voiceSelect').onchange=()=>{window.speechSynthesis?.cancel();localStorage.setItem('talkabee-v2-voice-'+settings.learn,JSON.stringify($('voiceSelect').value));};if('speechSynthesis'in window){speechSynthesis.addEventListener?.('voiceschanged',refreshVoices);refreshVoices()}
+function setup(){installTranslationFontControl();rememberMode();setupChallengePeek();setupSceneView();for(const [code,name] of Object.entries(LANG))for(const id of ['native','learn']){const opt=document.createElement('option');opt.value=code;opt.textContent=name;$(id).append(opt)}applySettings();renderScene();updateScenePicker();updateAdventureNavigation();$('scenePicker').addEventListener('change',()=>switchScene($('scenePicker').value));if(editable&&$('studioScenePicker'))$('studioScenePicker').addEventListener('change',()=>switchScene($('studioScenePicker').value));window.addEventListener('talkabee-directory-changed',()=>{updateScenePicker();updateAdventureNavigation()});window.addEventListener('storage',e=>{if(e.key===settingKey){settings={...defaults,...read(settingKey,{})};applySettings();renderCard();}else if(e.key===sceneKey+sceneName){scene=loadScene(sceneName);renderScene();if(editable){refreshLessons();refreshChallenges();}}});initDrag();$('previousAdventure').onclick=()=>{const ids=sceneNames().filter(id=>!id.startsWith('test-'));const i=ids.indexOf(sceneName);if(i>0)switchScene(ids[i-1])};$('nextAdventure').onclick=()=>{const ids=sceneNames().filter(id=>!id.startsWith('test-'));const i=ids.indexOf(sceneName);if(i>=0&&i<ids.length-1)switchScene(ids[i+1])};$('activities').onclick=()=>{mode='activities';rememberMode();renderCard()};$('challenges').onclick=()=>{mode='challenges';rememberMode();renderCard()};$('discovery').onclick=()=>{mode='discovery';rememberMode();renderCard()};$('next').onclick=()=>{if(mode==='challenges')challenge=(challenge+1)%Math.max(1,scene.challenges.length);else lesson=(lesson+1)%Math.max(1,scene.lessons.length);renderCard()};$('speak').onclick=()=>speak(mode==='activities'?translate(currentText()):challengeSpeech(scene.challenges[challenge]),false);$('slow').onclick=()=>speak(mode==='activities'?translate(currentText()):challengeSpeech(scene.challenges[challenge]),true);$('replay').onclick=()=>speak(lastSpeech,false);$('cardReset').onclick=resetCard;
+for(const key of ['native','learn','voiceMode'])$(key).addEventListener('change',()=>{settings[key]=$(key).value;if(key==='learn'||key==='voiceMode'){browserSpeechTicket++;tbWordFollowClear();if(browserSpeechTimer!==null){clearTimeout(browserSpeechTimer);browserSpeechTimer=null}window.speechSynthesis?.cancel();window.tbMasterPiperStop?.();lastSpeech='';}saveSettings();refreshVoices();renderCard();if(key==='learn'&&editable){syncLesson();syncChallenge();if(selectedId)choose(selectedType,selectedId)}window.dispatchEvent(new CustomEvent('tb-master-language-change',{detail:{native:settings.native,learn:settings.learn,mode:settings.voiceMode}}))});$('voiceSelect').onchange=()=>{window.speechSynthesis?.cancel();localStorage.setItem('talkabee-v2-voice-'+settings.learn,JSON.stringify($('voiceSelect').value));};if('speechSynthesis'in window){speechSynthesis.addEventListener?.('voiceschanged',refreshVoices);refreshVoices()}
 if(!editable)return;
 $('refreshAdventure').onclick=()=>refreshAdventureFromStorage();
 document.addEventListener('talkabee:batch-imported',e=>{if(e.detail?.sceneIds?.includes(sceneName))refreshAdventureFromStorage();});
