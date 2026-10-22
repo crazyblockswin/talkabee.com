@@ -208,3 +208,12 @@ body>header .tb-row-nav .tb-scenePicker{width:var(--tb-adventure-dropdown-width,
 body>header .tb-row-nav .tb-mode{width:var(--tb-bottom-button-width,auto)!important}
 body>header .tb-row-nav .tb-unified-nav summary{width:var(--tb-bottom-button-width,auto)!important}
 }
+
+/* Tighter two-row dashboard: preserve Studio row-gap and height controls.
+   The earlier cockpit rule adds 2px top padding to the second row even
+   when dashboard row spacing is zero. Trim that padding and pull the
+   separator up by 3px for a subtle ~5px reduction. */
+body>header .tb-header-row+.tb-header-row{
+  padding-top:0!important;
+  margin-top:calc(var(--dashboard-row-gap,0px) - 3px)!important;
+}
