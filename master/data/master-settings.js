@@ -8,7 +8,7 @@ window.TAB_MASTER_DEFAULTS={
   "scriptFont": 23,
   "translationFont": 20,
   "scriptFamily": "Georgia, serif",
-  "opacity": 43,
+  "opacity": 58,
   "dashboardFont": 15,
   "dashboardRowGap": 0,
   "dashboardControlHeight": 28,
