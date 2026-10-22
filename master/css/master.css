@@ -191,3 +191,20 @@ body.tb-scene-only .tb-header-row #sceneViewReturn{display:block!important}
 body:not(.tb-scene-only)>header {position:sticky!important;top:0!important;z-index:1000!important;}
 /* Retain dormant Scene View hooks without displaying visitor controls. */
 #sceneViewToggle {display:none!important;}
+
+/* Master Studio: independent header row sizing. Controlled by published master-settings.js. */
+body>header .tb-row-voice{min-height:var(--tb-top-row-height,0px)!important;align-items:center!important}
+body>header .tb-row-nav{min-height:var(--tb-bottom-row-height,0px)!important;align-items:center!important}
+body>header .tb-row-voice .tb-field select{font-size:var(--tb-top-font,13px)!important;height:var(--tb-top-control-height,35px)!important;min-height:var(--tb-top-control-height,35px)!important}
+body>header .tb-row-voice .tb-field>span{font-size:clamp(10px,calc(var(--tb-top-font,13px)*.8),28px)!important}
+body>header .tb-row-nav .tb-field select,body>header .tb-row-nav button{font-size:var(--tb-bottom-font,13px)!important;height:var(--tb-bottom-control-height,35px)!important;min-height:var(--tb-bottom-control-height,35px)!important}
+body>header .tb-row-nav .tb-unified-nav,body>header .tb-row-nav .tb-unified-nav>details{height:var(--tb-bottom-control-height,35px)!important;min-height:var(--tb-bottom-control-height,35px)!important}
+body>header .tb-row-nav .tb-unified-nav summary{font-size:var(--tb-bottom-font,13px)!important;height:var(--tb-bottom-control-height,35px)!important;min-height:var(--tb-bottom-control-height,35px)!important;display:flex!important;align-items:center!important}
+
+/* Header width controls. Zero uses the original automatic widths. */
+@media(min-width:951px){
+body>header .tb-row-voice .tb-field{width:var(--tb-top-dropdown-width,auto)!important;flex-basis:var(--tb-top-dropdown-width,auto)!important}
+body>header .tb-row-nav .tb-scenePicker{width:var(--tb-adventure-dropdown-width,auto)!important;flex-basis:var(--tb-adventure-dropdown-width,230px)!important}
+body>header .tb-row-nav .tb-mode{width:var(--tb-bottom-button-width,auto)!important}
+body>header .tb-row-nav .tb-unified-nav summary{width:var(--tb-bottom-button-width,auto)!important}
+}
