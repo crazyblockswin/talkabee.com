@@ -272,9 +272,10 @@ function speak(text,slow,onend){
  window.speechSynthesis?.cancel();
  // Start the proven visible-word renderer directly from the button action.
  // Some Firefox voices never dispatch onstart, and Piper may not report playback start.
- let tbWordFollowController=tbWordFollowStart(text,slow?.75:1,true);
+ const followRate=(slow?.75:1)*(settings.voiceMode==='enhanced'?1.05:1);
+ let tbWordFollowController=tbWordFollowStart(text,followRate,true);
  if(settings.voiceMode==='enhanced'&&typeof window.tbAdventurePiperSpeak==='function'){
-  try{if(window.tbAdventurePiperSpeak(text,slow?.75:1,finish,()=>{if(ticket===browserSpeechTicket&&!finished)tbWordFollowStart(text,slow?.75:1,true)})!==false){return}}
+  try{if(window.tbAdventurePiperSpeak(text,slow?.75:1,finish,()=>{if(ticket===browserSpeechTicket&&!finished)tbWordFollowStart(text,followRate,true)})!==false){return}}
   catch(e){status('Piper unavailable; using browser voice')}
  }else if(settings.voiceMode==='enhanced')status('Piper adapter not connected yet; using browser voice');
  if(!('speechSynthesis'in window)){finish();return;}
