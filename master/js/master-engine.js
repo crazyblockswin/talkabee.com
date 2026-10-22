@@ -36,7 +36,10 @@ if(!requestedScene){
   || [...known].find(id=>!id.startsWith('test-')) || 'test-campground';
 }
 let scene=loadScene(sceneName);let temporaryImageUrl=null;
-function loadScene(name){const built=(window.TAB_SCENES||{})[name];const entry=(window.TAB_ADVENTURE_CATALOG||[]).find(x=>x.id===name);const data=structuredClone(read(sceneKey+name,built||{title:entry?.title||name,image:'',lessons:[],hotspots:[],overlays:[],challenges:[]}));
+function loadScene(name){const built=(window.TAB_SCENES||{})[name];const entry=(window.TAB_ADVENTURE_CATALOG||[]).find(x=>x.id===name);const fallback={title:entry?.title||name,image:'',lessons:[],hotspots:[],overlays:[],challenges:[]};
+ // Public visitors must see published data, not stale browser editor copies.
+ // The editor continues to prioritize its local unsaved/pending work.
+ const data=structuredClone(editable?read(sceneKey+name,built||fallback):(built||read(sceneKey+name,fallback)));
  const recovered=window.TAB_RECOVERED_LESSONS?.[name] || (name==='animals-farm'?FARM_RECOVERED_LESSONS:name==='grandma-grandpas-place'?GRANDMA_RECOVERED_LESSONS:name==='train-station'?TRAIN_RECOVERED_LESSONS:name==='aunt-julies-island-retreat'?JULIE_RECOVERED_LESSONS:name==='softball'?SOFTBALL_RECOVERED_LESSONS:null);
  // Only fill missing lessons. Never overwrite user-edited or published lessons.
  if((!Array.isArray(data.lessons)||data.lessons.length===0)&&Array.isArray(recovered)&&recovered.length)data.lessons=structuredClone(recovered);
