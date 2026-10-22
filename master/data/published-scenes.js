@@ -9893,31 +9893,61 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
       {
         "text": "Congratulations for achieving this level of language education. ",
         "translations": {
-          "en": ""
+          "en": "",
+          "es": "¡Felicidades por haber alcanzado este nivel de aprendizaje de idiomas!",
+          "fr": "Félicitations pour avoir atteint ce niveau d’apprentissage des langues !",
+          "de": "Herzlichen Glückwunsch, dass du dieses Niveau beim Sprachenlernen erreicht hast!",
+          "it": "Congratulazioni per aver raggiunto questo livello di apprendimento delle lingue!",
+          "pt": "Parabéns por ter alcançado este nível de aprendizagem de línguas!",
+          "no": "Gratulerer med å ha nådd dette nivået i språklæringen!"
         }
       },
       {
         "text": "We are at a very high elevation and have reached the mountains summit.",
         "translations": {
-          "en": ""
+          "en": "",
+          "es": "Estamos a una altitud muy elevada y hemos llegado a la cima de la montaña.",
+          "fr": "Nous sommes à une altitude très élevée et nous avons atteint le sommet de la montagne.",
+          "de": "Wir befinden uns in großer Höhe und haben den Gipfel des Berges erreicht.",
+          "it": "Siamo a un’altitudine molto elevata e abbiamo raggiunto la cima della montagna.",
+          "pt": "Estamos a uma altitude muito elevada e chegámos ao cume da montanha.",
+          "no": "Vi er svært høyt oppe og har nådd toppen av fjellet."
         }
       },
       {
         "text": "There is someone or something floating down on a parachute.",
         "translations": {
-          "en": ""
+          "en": "",
+          "es": "Hay alguien o algo descendiendo en paracaídas.",
+          "fr": "Il y a quelqu’un ou quelque chose qui descend en parachute.",
+          "de": "Da schwebt jemand oder etwas an einem Fallschirm herunter.",
+          "it": "C’è qualcuno o qualcosa che sta scendendo con un paracadute.",
+          "pt": "Há alguém ou alguma coisa a descer de paraquedas.",
+          "no": "Det er noen eller noe som svever ned i fallskjerm."
         }
       },
       {
         "text": "The oxygen is low at this elevation and we are required to bring oxygen tanks with us.",
         "translations": {
-          "en": ""
+          "en": "",
+          "es": "Hay poco oxígeno a esta altitud y tenemos que llevar tanques de oxígeno.",
+          "fr": "Il y a peu d’oxygène à cette altitude et nous devons emporter des bouteilles d’oxygène.",
+          "de": "In dieser Höhe gibt es wenig Sauerstoff, deshalb müssen wir Sauerstoffflaschen mitnehmen.",
+          "it": "A questa altitudine c’è poco ossigeno e dobbiamo portare con noi delle bombole di ossigeno.",
+          "pt": "Há pouco oxigénio a esta altitude e temos de levar garrafas de oxigénio connosco.",
+          "no": "Det er lite oksygen i denne høyden, så vi må ha med oss oksygentanker."
         }
       },
       {
         "text": "The two teachers and the language website developer and his dog have reached the summit of mount Everest. It is very cold and we must climb back down the mountain very soon.",
         "translations": {
-          "en": ""
+          "en": "",
+          "es": "Los dos profesores, el creador del sitio web de idiomas y su perro han llegado a la cima del monte Everest. Hace mucho frío y tenemos que bajar de la montaña muy pronto.",
+          "fr": "Les deux professeurs, le créateur du site d’apprentissage des langues et son chien ont atteint le sommet de l’Everest. Il fait très froid et nous devons bientôt redescendre de la montagne.",
+          "de": "Die beiden Sprachlehrer, der Entwickler der Sprachlern-Website und sein Hund haben den Gipfel des Mount Everest erreicht. Es ist sehr kalt, und wir müssen bald wieder vom Berg absteigen.",
+          "it": "I due insegnanti di lingue, lo sviluppatore del sito web per imparare le lingue e il suo cane hanno raggiunto la vetta dell’Everest. Fa molto freddo e dobbiamo scendere presto dalla montagna.",
+          "pt": "Os dois professores de línguas, o criador do site de aprendizagem de línguas e o seu cão chegaram ao cume do monte Evereste. Está muito frio e temos de descer a montanha em breve.",
+          "no": "De to språklærerne, utvikleren av språklæringsnettstedet og hunden hans har nådd toppen av Mount Everest. Det er veldig kaldt, og vi må snart klatre ned fra fjellet igjen."
         }
       }
     ],
@@ -9998,27 +10028,62 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
       {
         "prompt": "Find the fat bee in a parachute",
         "target": "hotspot-1792621582717",
-        "translations": {}
+        "translations": {
+          "es": "Encuentra la abeja gorda que lleva un paracaídas.",
+          "fr": "Trouve la grosse abeille avec un parachute.",
+          "de": "Finde die dicke Biene mit dem Fallschirm.",
+          "it": "Trova l’ape grassa con il paracadute.",
+          "pt": "Encontra a abelha gorda com um paraquedas.",
+          "no": "Finn den tykke bien med fallskjerm."
+        }
       },
       {
         "prompt": "This sign is for you! You deserve it!",
         "target": "hotspot-1792636742124",
-        "translations": {}
+        "translations": {
+          "es": "¡Este cartel es para ti! ¡Te lo mereces!",
+          "fr": "Cette pancarte est pour toi ! Tu le mérites !",
+          "de": "Dieses Schild ist für dich! Du hast es verdient!",
+          "it": "Questo cartello è per te! Te lo meriti!",
+          "pt": "Este cartaz é para ti! Tu mereces!",
+          "no": "Dette skiltet er til deg! Du fortjener det!"
+        }
       },
       {
         "prompt": "Find Woman Language Teacher",
         "target": "hotspot-1792636982204",
-        "translations": {}
+        "translations": {
+          "es": "Encuentra a la profesora de idiomas.",
+          "fr": "Trouve la professeure de langues.",
+          "de": "Finde die Sprachlehrerin.",
+          "it": "Trova l’insegnante di lingue.",
+          "pt": "Encontra a professora de línguas.",
+          "no": "Finn den kvinnelige språklæreren."
+        }
       },
       {
         "prompt": "Find the man language teacher",
         "target": "hotspot-1792637171813",
-        "translations": {}
+        "translations": {
+          "es": "Encuentra al profesor de idiomas.",
+          "fr": "Trouve le professeur de langues.",
+          "de": "Finde den Sprachlehrer.",
+          "it": "Trova l’insegnante di lingue uomo.",
+          "pt": "Encontra o professor de línguas.",
+          "no": "Finn den mannlige språklæreren."
+        }
       },
       {
         "prompt": "Find the Language Website Developer and His Dog",
         "target": "hotspot-1792637441276",
-        "translations": {}
+        "translations": {
+          "es": "Encuentra al creador del sitio web de idiomas y a su perro.",
+          "fr": "Trouve le créateur du site d’apprentissage des langues et son chien.",
+          "de": "Finde den Entwickler der Sprachlern-Website und seinen Hund.",
+          "it": "Trova lo sviluppatore del sito web per imparare le lingue e il suo cane.",
+          "pt": "Encontra o criador do site de aprendizagem de línguas e o seu cão.",
+          "no": "Finn utvikleren av språklæringsnettstedet og hunden hans."
+        }
       }
     ]
   },
