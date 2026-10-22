@@ -9913,6 +9913,12 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
         "translations": {
           "en": ""
         }
+      },
+      {
+        "text": "The two teachers and the language website developer and his dog have reached the summit of mount Everest. It is very cold and we must climb back down the mountain very soon.",
+        "translations": {
+          "en": ""
+        }
       }
     ],
     "hotspots": [
@@ -9929,10 +9935,92 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
         },
         "rotation": 0,
         "z": 0
+      },
+      {
+        "id": "hotspot-1792636742124",
+        "label": "Congratulations on your language achievments",
+        "x": 23.21052708295575,
+        "y": 60.58414314738727,
+        "w": 41.9473728370139,
+        "h": 22.252198066717835,
+        "sound": "",
+        "translations": {
+          "en": ""
+        },
+        "rotation": 0,
+        "z": 0
+      },
+      {
+        "id": "hotspot-1792636982204",
+        "label": "woman language teacher",
+        "x": 9.315789660720613,
+        "y": 17.561431214961424,
+        "w": 11.00000018069619,
+        "h": 57.11543188791857,
+        "sound": "",
+        "translations": {
+          "en": ""
+        },
+        "rotation": 0,
+        "z": 0
+      },
+      {
+        "id": "hotspot-1792637171813",
+        "label": "Man Language Teacher",
+        "x": 24.052631559926716,
+        "y": 11.070928219283442,
+        "w": 9.368422003664158,
+        "h": 48.95595377669346,
+        "sound": "",
+        "translations": {
+          "en": ""
+        },
+        "rotation": 0,
+        "z": 0
+      },
+      {
+        "id": "hotspot-1792637441276",
+        "label": "Website Developer",
+        "x": 37.99999825327017,
+        "y": 22.66110304489235,
+        "w": 9.000000542088571,
+        "h": 38.1075598172638,
+        "sound": "",
+        "translations": {
+          "en": ""
+        },
+        "rotation": 0,
+        "z": 0
       }
     ],
     "overlays": [],
-    "challenges": []
+    "challenges": [
+      {
+        "prompt": "Find the fat bee in a parachute",
+        "target": "hotspot-1792621582717",
+        "translations": {}
+      },
+      {
+        "prompt": "This sign is for you! You deserve it!",
+        "target": "hotspot-1792636742124",
+        "translations": {}
+      },
+      {
+        "prompt": "Find Woman Language Teacher",
+        "target": "hotspot-1792636982204",
+        "translations": {}
+      },
+      {
+        "prompt": "Find the man language teacher",
+        "target": "hotspot-1792637171813",
+        "translations": {}
+      },
+      {
+        "prompt": "Find the Language Website Developer and His Dog",
+        "target": "hotspot-1792637441276",
+        "translations": {}
+      }
+    ]
   },
   "bicycle-race": {
     "title": "Bicycle Race",
