@@ -8616,10 +8616,316 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
   "spaceship-window-earth": {
     "title": "Spaceship Window Earth",
     "image": "images/Spaceship-Window-Earth.jpg",
-    "lessons": [],
-    "hotspots": [],
+    "lessons": [
+      {
+        "text": "The aliens are laughing as they watch Earth through the spaceship window.",
+        "translations": {
+          "es": "Los extraterrestres se ríen mientras observan la Tierra por la ventana de la nave.",
+          "fr": "Les extraterrestres rient en regardant la Terre par la fenêtre du vaisseau.",
+          "de": "Die Außerirdischen lachen, während sie die Erde durch das Raumschifffenster beobachten.",
+          "it": "Gli alieni ridono mentre guardano la Terra dal finestrino dell’astronave.",
+          "pt": "Os alienígenas riem enquanto observam a Terra pela janela da nave.",
+          "no": "Romvesenene ler mens de ser på jorden gjennom romskipets vindu."
+        }
+      },
+      {
+        "text": "Factories produce useful things, but their smoke can pollute the air.",
+        "translations": {
+          "es": "Las fábricas producen cosas útiles, pero su humo puede contaminar el aire.",
+          "fr": "Les usines fabriquent des objets utiles, mais leur fumée peut polluer l’air.",
+          "de": "Fabriken stellen nützliche Dinge her, aber ihr Rauch kann die Luft verschmutzen.",
+          "it": "Le fabbriche producono cose utili, ma il loro fumo può inquinare l’aria.",
+          "pt": "As fábricas produzem coisas úteis, mas sua fumaça pode poluir o ar.",
+          "no": "Fabrikker lager nyttige ting, men røyken deres kan forurense luften."
+        }
+      },
+      {
+        "text": "A brown layer of smog hangs above some crowded cities.",
+        "translations": {
+          "es": "Una capa marrón de contaminación cubre algunas ciudades concurridas.",
+          "fr": "Une couche brune de smog flotte au-dessus de certaines villes très peuplées.",
+          "de": "Eine braune Smogschicht liegt über einigen dicht besiedelten Städten.",
+          "it": "Uno strato marrone di smog copre alcune città affollate.",
+          "pt": "Uma camada marrom de poluição paira sobre algumas cidades populosas.",
+          "no": "Et brunt lag med smog ligger over noen tett befolkede byer."
+        }
+      },
+      {
+        "text": "The aliens eat popcorn and pizza while pointing at the polluted planet.",
+        "translations": {
+          "es": "Los extraterrestres comen palomitas y pizza mientras señalan el planeta contaminado.",
+          "fr": "Les extraterrestres mangent du pop-corn et de la pizza en montrant la planète polluée.",
+          "de": "Die Außerirdischen essen Popcorn und Pizza und zeigen auf den verschmutzten Planeten.",
+          "it": "Gli alieni mangiano popcorn e pizza mentre indicano il pianeta inquinato.",
+          "pt": "Os alienígenas comem pipoca e pizza enquanto apontam para o planeta poluído.",
+          "no": "Romvesenene spiser popkorn og pizza mens de peker på den forurensede planeten."
+        }
+      },
+      {
+        "text": "The joke is on us: protecting our air, water, and planet is our responsibility.",
+        "translations": {
+          "es": "La broma es a nuestra costa: proteger el aire, el agua y el planeta es nuestra responsabilidad.",
+          "fr": "La plaisanterie est à nos dépens : protéger notre air, notre eau et notre planète est notre responsabilité.",
+          "de": "Der Witz geht auf unsere Kosten: Unsere Luft, unser Wasser und unseren Planeten zu schützen ist unsere Verantwortung.",
+          "it": "La battuta è a nostre spese: proteggere l’aria, l’acqua e il pianeta è una nostra responsabilità.",
+          "pt": "A piada é por nossa conta: proteger o ar, a água e o planeta é nossa responsabilidade.",
+          "no": "Spøken går på vår bekostning: Det er vårt ansvar å beskytte luften, vannet og planeten."
+        }
+      }
+    ],
+    "hotspots": [
+      {
+        "id": "earth",
+        "label": "Earth",
+        "x": 36,
+        "y": 17,
+        "w": 38,
+        "h": 37,
+        "sound": "",
+        "translations": {
+          "en": "earth",
+          "es": "la Tierra",
+          "fr": "la Terre",
+          "de": "die Erde",
+          "it": "la Terra",
+          "pt": "a Terra",
+          "no": "jorden"
+        }
+      },
+      {
+        "id": "factory",
+        "label": "Factory",
+        "x": 52,
+        "y": 29,
+        "w": 13,
+        "h": 16,
+        "sound": "",
+        "translations": {
+          "en": "factory",
+          "es": "fábrica",
+          "fr": "usine",
+          "de": "Fabrik",
+          "it": "fabbrica",
+          "pt": "fábrica",
+          "no": "fabrikk"
+        }
+      },
+      {
+        "id": "smoke",
+        "label": "Smoke",
+        "x": 32,
+        "y": 12,
+        "w": 13,
+        "h": 16,
+        "sound": "",
+        "translations": {
+          "en": "smoke",
+          "es": "humo",
+          "fr": "fumée",
+          "de": "Rauch",
+          "it": "fumo",
+          "pt": "fumaça",
+          "no": "røyk"
+        }
+      },
+      {
+        "id": "city",
+        "label": "City",
+        "x": 42,
+        "y": 39,
+        "w": 18,
+        "h": 12,
+        "sound": "",
+        "translations": {
+          "en": "city",
+          "es": "ciudad",
+          "fr": "ville",
+          "de": "Stadt",
+          "it": "città",
+          "pt": "cidade",
+          "no": "by"
+        }
+      },
+      {
+        "id": "clouds",
+        "label": "Clouds",
+        "x": 77,
+        "y": 46,
+        "w": 12,
+        "h": 15,
+        "sound": "",
+        "translations": {
+          "en": "clouds",
+          "es": "nubes",
+          "fr": "nuages",
+          "de": "Wolken",
+          "it": "nuvole",
+          "pt": "nuvens",
+          "no": "skyer"
+        }
+      },
+      {
+        "id": "alien",
+        "label": "Alien",
+        "x": 1,
+        "y": 37,
+        "w": 13,
+        "h": 25,
+        "sound": "",
+        "translations": {
+          "en": "alien",
+          "es": "extraterrestre",
+          "fr": "extraterrestre",
+          "de": "Außerirdischer",
+          "it": "alieno",
+          "pt": "alienígena",
+          "no": "romvesen"
+        }
+      },
+      {
+        "id": "popcorn",
+        "label": "Popcorn",
+        "x": 12,
+        "y": 59,
+        "w": 8,
+        "h": 12,
+        "sound": "",
+        "translations": {
+          "en": "popcorn",
+          "es": "palomitas de maíz",
+          "fr": "pop-corn",
+          "de": "Popcorn",
+          "it": "popcorn",
+          "pt": "pipoca",
+          "no": "popkorn"
+        }
+      },
+      {
+        "id": "pizza",
+        "label": "Pizza",
+        "x": 77,
+        "y": 86,
+        "w": 19,
+        "h": 12,
+        "sound": "",
+        "translations": {
+          "en": "pizza",
+          "es": "pizza",
+          "fr": "pizza",
+          "de": "Pizza",
+          "it": "pizza",
+          "pt": "pizza",
+          "no": "pizza"
+        }
+      },
+      {
+        "id": "moon",
+        "label": "Moon",
+        "x": 81,
+        "y": 6,
+        "w": 7,
+        "h": 11,
+        "sound": "",
+        "translations": {
+          "en": "moon",
+          "es": "luna",
+          "fr": "lune",
+          "de": "Mond",
+          "it": "luna",
+          "pt": "lua",
+          "no": "måne"
+        }
+      },
+      {
+        "id": "spaceship",
+        "label": "Spaceship",
+        "x": 0,
+        "y": 0,
+        "w": 11,
+        "h": 26,
+        "sound": "",
+        "translations": {
+          "en": "spaceship",
+          "es": "nave espacial",
+          "fr": "vaisseau spatial",
+          "de": "Raumschiff",
+          "it": "astronave",
+          "pt": "nave espacial",
+          "no": "romskip"
+        }
+      },
+      {
+        "id": "ocean",
+        "label": "Ocean",
+        "x": 69,
+        "y": 34,
+        "w": 10,
+        "h": 18,
+        "sound": "",
+        "translations": {
+          "en": "ocean",
+          "es": "océano",
+          "fr": "océan",
+          "de": "Ozean",
+          "it": "oceano",
+          "pt": "oceano",
+          "no": "hav"
+        }
+      },
+      {
+        "id": "smog",
+        "label": "Smog",
+        "x": 47,
+        "y": 16,
+        "w": 22,
+        "h": 17,
+        "sound": "",
+        "translations": {
+          "en": "smog",
+          "es": "niebla contaminante",
+          "fr": "smog",
+          "de": "Smog",
+          "it": "smog",
+          "pt": "poluição atmosférica",
+          "no": "smog"
+        }
+      }
+    ],
     "overlays": [],
-    "challenges": []
+    "challenges": [
+      {
+        "prompt": "Find the earth",
+        "target": "earth"
+      },
+      {
+        "prompt": "Find the factory",
+        "target": "factory"
+      },
+      {
+        "prompt": "Find the smoke",
+        "target": "smoke"
+      },
+      {
+        "prompt": "Find the city",
+        "target": "city"
+      },
+      {
+        "prompt": "Find the alien",
+        "target": "alien"
+      },
+      {
+        "prompt": "Find the popcorn",
+        "target": "popcorn"
+      },
+      {
+        "prompt": "Find the moon",
+        "target": "moon"
+      },
+      {
+        "prompt": "Find the smog",
+        "target": "smog"
+      }
+    ]
   },
   "nasa-spacewalk": {
     "title": "NASA Spacewalk",
