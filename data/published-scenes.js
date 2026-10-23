@@ -8889,6 +8889,20 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
           "pt": "poluição atmosférica",
           "no": "smog"
         }
+      },
+      {
+        "id": "hotspot-1792788319220",
+        "label": "Aliens are laughing at how humans are polluting their own planet",
+        "x": 31.368420979719087,
+        "y": 65.68381232453852,
+        "w": 27.052637101276538,
+        "h": 33.94529724237185,
+        "sound": "sounds/alien-visit-final.mp3",
+        "translations": {
+          "en": ""
+        },
+        "rotation": 0,
+        "z": 0
       }
     ],
     "overlays": [],
