@@ -3607,6 +3607,198 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
       }
     ]
   },
+  "balloon-ride": {
+    "title": "Balloon Ride",
+    "image": "images/balloon-world.jpg",
+    "lessons": [
+      {
+        "text": "We are floating above Talk A Bee Campground in a colorful hot air balloon.",
+        "translations": {
+          "es": "Estamos flotando sobre el campamento Talk A Bee en un colorido globo aerostático.",
+          "fr": "Nous survolons le camping Talk A Bee dans une montgolfière colorée.",
+          "de": "Wir schweben in einem bunten Heißluftballon über dem Talk A Bee Campingplatz.",
+          "it": "Stiamo volando sopra il campeggio Talk A Bee in una colorata mongolfiera.",
+          "pt": "Estamos a sobrevoar o parque de campismo Talk A Bee num balão de ar quente colorido.",
+          "no": "Vi svever over Talk A Bee-campingplassen i en fargerik varmluftballong."
+        }
+      },
+      {
+        "text": "The sun is setting behind the mountains and lighting up the lake.",
+        "translations": {
+          "es": "El sol se pone detrás de las montañas e ilumina el lago.",
+          "fr": "Le soleil se couche derrière les montagnes et illumine le lac.",
+          "de": "Die Sonne geht hinter den Bergen unter und lässt den See leuchten.",
+          "it": "Il sole tramonta dietro le montagne e illumina il lago.",
+          "pt": "O sol está a pôr-se atrás das montanhas e ilumina o lago.",
+          "no": "Solen går ned bak fjellene og lyser opp innsjøen."
+        }
+      },
+      {
+        "text": "Far below us, campers are relaxing beside their tents and campfires.",
+        "translations": {
+          "es": "Muy por debajo de nosotros, los campistas descansan junto a sus tiendas y fogatas.",
+          "fr": "Loin en dessous de nous, les campeurs se détendent près de leurs tentes et de leurs feux de camp.",
+          "de": "Tief unter uns entspannen sich die Camper neben ihren Zelten und Lagerfeuern.",
+          "it": "Molto sotto di noi, i campeggiatori si rilassano accanto alle tende e ai falò.",
+          "pt": "Muito abaixo de nós, os campistas descansam junto das tendas e das fogueiras.",
+          "no": "Langt under oss slapper campinggjestene av ved teltene og leirbålene sine."
+        }
+      },
+      {
+        "text": "A waterfall rushes down the rocks and flows beneath a little wooden bridge.",
+        "translations": {
+          "es": "Una cascada baja por las rocas y pasa por debajo de un pequeño puente de madera.",
+          "fr": "Une cascade dévale les rochers et passe sous un petit pont en bois.",
+          "de": "Ein Wasserfall rauscht über die Felsen und fließt unter einer kleinen Holzbrücke hindurch.",
+          "it": "Una cascata scende sulle rocce e passa sotto un piccolo ponte di legno.",
+          "pt": "Uma cascata desce pelas rochas e passa por baixo de uma pequena ponte de madeira.",
+          "no": "En foss strømmer nedover steinene og renner under en liten trebro."
+        }
+      },
+      {
+        "text": "The balloon burner heats the air so our basket can rise into the sky.",
+        "translations": {
+          "es": "El quemador del globo calienta el aire para que nuestra cesta pueda elevarse hacia el cielo.",
+          "fr": "Le brûleur de la montgolfière chauffe l’air pour que notre nacelle puisse monter dans le ciel.",
+          "de": "Der Brenner des Ballons erwärmt die Luft, damit unser Korb in den Himmel steigen kann.",
+          "it": "Il bruciatore della mongolfiera riscalda l’aria per far salire il nostro cesto nel cielo.",
+          "pt": "O queimador do balão aquece o ar para que o nosso cesto possa subir ao céu.",
+          "no": "Ballongbrenneren varmer opp luften slik at kurven vår kan stige til værs."
+        }
+      }
+    ],
+    "hotspots": [
+      {
+        "id": "basket",
+        "label": "Balloon basket",
+        "x": 77,
+        "y": 29,
+        "w": 23,
+        "h": 53,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "burner",
+        "label": "Burner flame",
+        "x": 82,
+        "y": 11,
+        "w": 10,
+        "h": 15,
+        "sound": "sounds/hot-air-balloon.mp3",
+        "translations": {
+          "es": ""
+        },
+        "rotation": 0,
+        "z": 0
+      },
+      {
+        "id": "waterfall",
+        "label": "Waterfall",
+        "x": 68,
+        "y": 53,
+        "w": 10,
+        "h": 23,
+        "sound": "sounds/waterfall.mp3",
+        "translations": {
+          "es": ""
+        },
+        "rotation": 0,
+        "z": 0
+      },
+      {
+        "id": "sign",
+        "label": "Campground sign",
+        "x": 48,
+        "y": 73,
+        "w": 15,
+        "h": 17,
+        "sound": "sounds/birds-forest.mp3",
+        "translations": {
+          "es": ""
+        },
+        "rotation": 0,
+        "z": 0
+      },
+      {
+        "id": "ferris",
+        "label": "Ferris wheel",
+        "x": 19,
+        "y": 43,
+        "w": 5,
+        "h": 10,
+        "sound": "sounds/carnival.mp3",
+        "translations": {
+          "es": ""
+        },
+        "rotation": 0,
+        "z": 0
+      }
+    ],
+    "overlays": [],
+    "challenges": [
+      {
+        "prompt": "Find the hot air balloon basket.",
+        "target": "basket",
+        "translations": {
+          "es": "Encuentra la cesta del globo aerostático.",
+          "fr": "Trouve la nacelle de la montgolfière.",
+          "de": "Finde den Korb des Heißluftballons.",
+          "it": "Trova il cesto della mongolfiera.",
+          "pt": "Encontra o cesto do balão de ar quente.",
+          "no": "Finn kurven til varmluftballongen."
+        }
+      },
+      {
+        "prompt": "Find the flame above the basket.",
+        "target": "burner",
+        "translations": {
+          "es": "Encuentra la llama encima de la cesta.",
+          "fr": "Trouve la flamme au-dessus de la nacelle.",
+          "de": "Finde die Flamme über dem Korb.",
+          "it": "Trova la fiamma sopra il cesto.",
+          "pt": "Encontra a chama por cima do cesto.",
+          "no": "Finn flammen over kurven."
+        }
+      },
+      {
+        "prompt": "Find the waterfall.",
+        "target": "waterfall",
+        "translations": {
+          "es": "Encuentra la cascada.",
+          "fr": "Trouve la cascade.",
+          "de": "Finde den Wasserfall.",
+          "it": "Trova la cascata.",
+          "pt": "Encontra a cascata.",
+          "no": "Finn fossen."
+        }
+      },
+      {
+        "prompt": "Find the Talk A Bee campground sign.",
+        "target": "sign",
+        "translations": {
+          "es": "Encuentra el letrero del campamento Talk A Bee.",
+          "fr": "Trouve le panneau du camping Talk A Bee.",
+          "de": "Finde das Schild des Talk A Bee Campingplatzes.",
+          "it": "Trova il cartello del campeggio Talk A Bee.",
+          "pt": "Encontra a placa do parque de campismo Talk A Bee.",
+          "no": "Finn skiltet til Talk A Bee-campingplassen."
+        }
+      },
+      {
+        "prompt": "Find the Ferris wheel beside the lake.",
+        "target": "ferris",
+        "translations": {
+          "es": "Encuentra la noria junto al lago.",
+          "fr": "Trouve la grande roue près du lac.",
+          "de": "Finde das Riesenrad am See.",
+          "it": "Trova la ruota panoramica vicino al lago.",
+          "pt": "Encontra a roda-gigante junto ao lago.",
+          "no": "Finn pariserhjulet ved innsjøen."
+        }
+      }
+    ]
+  },
   "library": {
     "title": "Library",
     "image": "images/library-adventure.jpg",
@@ -6114,409 +6306,6 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
       }
     ]
   },
-  "large-picnic": {
-    "title": "Large Picnic",
-    "image": "images/Talk-A-Bee-Family-Picnic-Adventure.jpg",
-    "lessons": [
-      {
-        "text": "Grandma, Grandpa, the children, dogs, and Bee have all gathered for one enormous lakeside picnic.",
-        "translations": {
-          "es": "La abuela, el abuelo, los niños, los perros y la abeja se han reunido para un enorme picnic junto al lago.",
-          "fr": "Grand-mère, grand-père, les enfants, les chiens et l'abeille se sont réunis pour un immense pique-nique au bord du lac.",
-          "de": "Oma, Opa, die Kinder, die Hunde und die Biene haben sich zu einem riesigen Picknick am See versammelt.",
-          "it": "La nonna, il nonno, i bambini, i cani e l'ape si sono riuniti per un enorme picnic sul lago.",
-          "pt": "A avó, o avô, as crianças, os cães e a abelha se reuniram para um enorme piquenique à beira do lago.",
-          "no": "Bestemor, bestefar, barna, hundene og bien har samlet seg til en enorm piknik ved innsjøen."
-        }
-      },
-      {
-        "text": "Everyone has a place around the long table while Bee watches from the roof of the RV.",
-        "translations": {
-          "es": "Todos tienen un lugar alrededor de la larga mesa mientras la abeja observa desde el techo de la casa rodante.",
-          "fr": "Tout le monde a une place autour de la longue table tandis que l'abeille observe depuis le toit du camping-car.",
-          "de": "Alle haben einen Platz am langen Tisch, während die Biene vom Dach des Wohnmobils zusieht.",
-          "it": "Tutti hanno un posto intorno al lungo tavolo mentre l'ape osserva dal tetto del camper.",
-          "pt": "Todos têm um lugar ao redor da longa mesa enquanto a abelha observa do teto do trailer.",
-          "no": "Alle har en plass rundt det lange bordet mens bien følger med fra taket på bobilen."
-        }
-      },
-      {
-        "text": "The picnic table is covered with favorite outdoor foods, including hot dogs, hamburgers, fruit, drinks, and other treats.",
-        "translations": {
-          "es": "La mesa está llena de comidas favoritas al aire libre, como perritos calientes, hamburguesas, fruta, bebidas y otras delicias.",
-          "fr": "La table est couverte de plats de plein air, notamment des hot-dogs, des hamburgers, des fruits, des boissons et d'autres gourmandises.",
-          "de": "Der Picknicktisch ist mit beliebten Speisen wie Hotdogs, Hamburgern, Obst, Getränken und anderen Leckereien gedeckt.",
-          "it": "Il tavolo è pieno di cibi da picnic, tra cui hot dog, hamburger, frutta, bevande e altre bontà.",
-          "pt": "A mesa está cheia de comidas favoritas ao ar livre, incluindo cachorros-quentes, hambúrgueres, frutas, bebidas e outras delícias.",
-          "no": "Piknikbordet er dekket med utendørsfavoritter som pølser, hamburgere, frukt, drikke og andre godsaker."
-        }
-      },
-      {
-        "text": "Sharing a meal gives everyone time to talk, laugh, and enjoy the day together.",
-        "translations": {
-          "es": "Compartir una comida permite que todos hablen, rían y disfruten juntos del día.",
-          "fr": "Partager un repas permet à tout le monde de parler, rire et profiter de la journée ensemble.",
-          "de": "Beim gemeinsamen Essen können alle reden, lachen und den Tag genießen.",
-          "it": "Condividere un pasto dà a tutti il tempo di parlare, ridere e godersi la giornata insieme.",
-          "pt": "Compartilhar uma refeição dá a todos tempo para conversar, rir e aproveitar o dia juntos.",
-          "no": "Et felles måltid gir alle tid til å snakke, le og nyte dagen sammen."
-        }
-      },
-      {
-        "text": "Hot dogs and other foods can be cooked over the campfire while everyone gathers nearby.",
-        "translations": {
-          "es": "Los perritos calientes y otros alimentos se pueden cocinar sobre la fogata mientras todos se reúnen cerca.",
-          "fr": "Les hot-dogs et d'autres aliments peuvent cuire au-dessus du feu de camp pendant que tout le monde se rassemble.",
-          "de": "Hotdogs und andere Speisen können über dem Lagerfeuer zubereitet werden, während alle in der Nähe zusammenkommen.",
-          "it": "Gli hot dog e altri cibi possono essere cucinati sul falò mentre tutti si riuniscono nelle vicinanze.",
-          "pt": "Cachorros-quentes e outros alimentos podem ser preparados sobre a fogueira enquanto todos se reúnem por perto.",
-          "no": "Pølser og annen mat kan tilberedes over leirbålet mens alle samles i nærheten."
-        }
-      },
-      {
-        "text": "The fire also creates a warm gathering place as the day becomes cooler.",
-        "translations": {
-          "es": "El fuego también crea un lugar cálido para reunirse cuando el día se vuelve más fresco.",
-          "fr": "Le feu crée aussi un endroit chaleureux lorsque la journée devient plus fraîche.",
-          "de": "Das Feuer schafft auch einen warmen Treffpunkt, wenn es später kühler wird.",
-          "it": "Il fuoco crea anche un luogo caldo quando la giornata diventa più fresca.",
-          "pt": "O fogo também cria um lugar acolhedor quando o dia fica mais fresco.",
-          "no": "Bålet skaper også et varmt samlingssted når dagen blir kjøligere."
-        }
-      },
-      {
-        "text": "The picnic overlooks a calm mountain lake with a sailboat, a motorboat, canoes, and a dock.",
-        "translations": {
-          "es": "El picnic tiene vista a un tranquilo lago de montaña con un velero, una lancha, canoas y un muelle.",
-          "fr": "Le pique-nique donne sur un lac de montagne calme avec un voilier, un bateau à moteur, des canoës et un quai.",
-          "de": "Das Picknick blickt auf einen ruhigen Bergsee mit Segelboot, Motorboot, Kanus und einem Steg.",
-          "it": "Il picnic si affaccia su un tranquillo lago di montagna con una barca a vela, un motoscafo, canoe e un molo.",
-          "pt": "O piquenique tem vista para um lago tranquilo de montanha com um veleiro, uma lancha, canoas e um cais.",
-          "no": "Pikniken har utsikt over en rolig fjellsjø med seilbåt, motorbåt, kanoer og brygge."
-        }
-      },
-      {
-        "text": "The water reflects the surrounding forest and snowy mountains.",
-        "translations": {
-          "es": "El agua refleja el bosque y las montañas nevadas.",
-          "fr": "L'eau reflète la forêt et les montagnes enneigées.",
-          "de": "Das Wasser spiegelt den Wald und die schneebedeckten Berge.",
-          "it": "L'acqua riflette il bosco e le montagne innevate.",
-          "pt": "A água reflete a floresta e as montanhas nevadas.",
-          "no": "Vannet speiler skogen og de snødekte fjellene."
-        }
-      },
-      {
-        "text": "The campsite includes an RV, a tent, outdoor chairs, coolers, cooking equipment, and plenty of room for the whole group.",
-        "translations": {
-          "es": "El campamento incluye una casa rodante, una tienda, sillas, neveras y equipo para cocinar.",
-          "fr": "Le camping comprend un camping-car, une tente, des chaises, des glacières et du matériel de cuisine.",
-          "de": "Zum Campingplatz gehören ein Wohnmobil, ein Zelt, Stühle, Kühlboxen und Kochutensilien.",
-          "it": "Il campeggio comprende un camper, una tenda, sedie, borse frigo e attrezzature per cucinare.",
-          "pt": "O acampamento inclui um trailer, uma barraca, cadeiras, caixas térmicas e equipamentos de cozinha.",
-          "no": "Campingplassen har bobil, telt, stoler, kjølebokser og kokeutstyr."
-        }
-      },
-      {
-        "text": "Camping equipment makes it easier to eat, relax, and spend time outdoors.",
-        "translations": {
-          "es": "El equipo de campamento facilita comer, descansar y pasar tiempo al aire libre.",
-          "fr": "Le matériel de camping facilite les repas, la détente et le temps passé dehors.",
-          "de": "Campingausrüstung macht Essen, Entspannen und Zeit im Freien einfacher.",
-          "it": "L'attrezzatura da campeggio rende più facile mangiare, rilassarsi e trascorrere tempo all'aperto.",
-          "pt": "O equipamento de camping facilita comer, relaxar e passar tempo ao ar livre.",
-          "no": "Campingutstyret gjør det lettere å spise, slappe av og være ute."
-        }
-      },
-      {
-        "text": "Pine forests, wildflowers, blue water, and snowy mountains surround the picnic area.",
-        "translations": {
-          "es": "Bosques de pinos, flores silvestres, agua azul y montañas nevadas rodean el picnic.",
-          "fr": "Des forêts de pins, des fleurs sauvages, de l'eau bleue et des montagnes enneigées entourent le pique-nique.",
-          "de": "Kiefernwälder, Wildblumen, blaues Wasser und schneebedeckte Berge umgeben den Picknickplatz.",
-          "it": "Pinete, fiori selvatici, acqua blu e montagne innevate circondano l'area del picnic.",
-          "pt": "Florestas de pinheiros, flores silvestres, água azul e montanhas nevadas cercam o piquenique.",
-          "no": "Furuskog, villblomster, blått vann og snødekte fjell omgir piknikområdet."
-        }
-      },
-      {
-        "text": "The wide landscape makes this picnic feel like a celebration of all the adventures the crew has shared.",
-        "translations": {
-          "es": "El amplio paisaje hace que este picnic parezca una celebración de todas las aventuras compartidas.",
-          "fr": "Le vaste paysage donne à ce pique-nique l'allure d'une célébration de toutes les aventures partagées.",
-          "de": "Die weite Landschaft lässt dieses Picknick wie eine Feier aller gemeinsamen Abenteuer wirken.",
-          "it": "Il grande paesaggio fa sembrare questo picnic una festa di tutte le avventure condivise.",
-          "pt": "A ampla paisagem faz este piquenique parecer uma celebração de todas as aventuras compartilhadas.",
-          "no": "Det vide landskapet får pikniken til å føles som en feiring av alle eventyrene gruppen har delt."
-        }
-      }
-    ],
-    "hotspots": [
-      {
-        "id": "grandma",
-        "label": "grandma",
-        "x": 62,
-        "y": 49,
-        "w": 6,
-        "h": 16,
-        "sound": "",
-        "translations": {}
-      },
-      {
-        "id": "grandpa",
-        "label": "grandpa",
-        "x": 54,
-        "y": 47,
-        "w": 7,
-        "h": 18,
-        "sound": "",
-        "translations": {}
-      },
-      {
-        "id": "crew",
-        "label": "crew",
-        "x": 56.92,
-        "y": 45.41,
-        "w": 31.13,
-        "h": 11.15,
-        "sound": "",
-        "translations": {}
-      },
-      {
-        "id": "table",
-        "label": "table",
-        "x": 37,
-        "y": 61,
-        "w": 53,
-        "h": 16,
-        "sound": "",
-        "translations": {}
-      },
-      {
-        "id": "food",
-        "label": "food",
-        "x": 42.52,
-        "y": 51.52,
-        "w": 17.33,
-        "h": 7.85,
-        "sound": "",
-        "translations": {}
-      },
-      {
-        "id": "hotdogs",
-        "label": "hotdogs",
-        "x": 69,
-        "y": 72,
-        "w": 10,
-        "h": 10,
-        "sound": "",
-        "translations": {}
-      },
-      {
-        "id": "hamburgers",
-        "label": "hamburgers",
-        "x": 58,
-        "y": 58,
-        "w": 9,
-        "h": 9,
-        "sound": "",
-        "translations": {}
-      },
-      {
-        "id": "campfire",
-        "label": "campfire",
-        "x": 60.11,
-        "y": 77.98,
-        "w": 9.38,
-        "h": 15.76,
-        "sound": "sounds/fire.mp3",
-        "translations": {}
-      },
-      {
-        "id": "shepherd",
-        "label": "shepherd",
-        "x": 75.54,
-        "y": 57.69,
-        "w": 8,
-        "h": 18,
-        "sound": "sounds/dog-panting.wav",
-        "translations": {}
-      },
-      {
-        "id": "rv",
-        "label": "rv",
-        "x": 71.62,
-        "y": 30.37,
-        "w": 25.04,
-        "h": 12.42,
-        "sound": "sounds/rv.mp3",
-        "translations": {}
-      },
-      {
-        "id": "tent",
-        "label": "tent",
-        "x": 94,
-        "y": 43,
-        "w": 6,
-        "h": 17,
-        "sound": "sounds/guitar.mp3",
-        "translations": {}
-      },
-      {
-        "id": "lake",
-        "label": "lake",
-        "x": 36.9,
-        "y": 40.49,
-        "w": 8.36,
-        "h": 5.3,
-        "sound": "",
-        "translations": {}
-      },
-      {
-        "id": "sailboat",
-        "label": "sailboat",
-        "x": 37.98,
-        "y": 27.9,
-        "w": 5.29,
-        "h": 10.5,
-        "sound": "",
-        "translations": {}
-      },
-      {
-        "id": "motorboat",
-        "label": "motorboat",
-        "x": 23.95,
-        "y": 34.41,
-        "w": 5.23,
-        "h": 10.28,
-        "sound": "",
-        "translations": {}
-      },
-      {
-        "id": "mountains",
-        "label": "mountains",
-        "x": 14.4,
-        "y": 5.84,
-        "w": 58,
-        "h": 20,
-        "sound": "",
-        "translations": {}
-      },
-      {
-        "id": "forest",
-        "label": "forest",
-        "x": -3.44,
-        "y": 2.69,
-        "w": 13.84,
-        "h": 21.09,
-        "sound": "sounds/birds-forest.mp3",
-        "translations": {}
-      },
-      {
-        "id": "flowers",
-        "label": "flowers",
-        "x": 5.05,
-        "y": 84.63,
-        "w": 24.26,
-        "h": 15.65,
-        "sound": "",
-        "translations": {}
-      },
-      {
-        "id": "mascott",
-        "label": "mascott",
-        "x": 83.52,
-        "y": 17.63,
-        "w": 6,
-        "h": 8,
-        "sound": "",
-        "translations": {}
-      },
-      {
-        "id": "solar-panels",
-        "label": "solar panels",
-        "x": 90.72,
-        "y": 15.87,
-        "w": 10.11,
-        "h": 8.74,
-        "sound": "",
-        "translations": {}
-      },
-      {
-        "id": "dog",
-        "label": "dog",
-        "x": 5.44,
-        "y": 70.21,
-        "w": 14.54,
-        "h": 10.5,
-        "sound": "sounds/dog-panting.wav",
-        "translations": {}
-      },
-      {
-        "id": "guitar-music",
-        "label": "guitar music",
-        "x": 5.83,
-        "y": 49.92,
-        "w": 19.28,
-        "h": 19.3,
-        "sound": "sounds/guitar3.mp3",
-        "translations": {}
-      },
-      {
-        "id": "stump",
-        "label": "stump",
-        "x": 30.52,
-        "y": 76.97,
-        "w": 6,
-        "h": 8,
-        "sound": "",
-        "translations": {}
-      },
-      {
-        "id": "dock",
-        "label": "dock",
-        "x": 10.36,
-        "y": 40.34,
-        "w": 12.25,
-        "h": 5.87,
-        "sound": "",
-        "translations": {}
-      },
-      {
-        "id": "seniors",
-        "label": "seniors",
-        "x": 24.86,
-        "y": 47.17,
-        "w": 14.07,
-        "h": 9.57,
-        "sound": "sounds/guitar-campfire.mp3",
-        "translations": {}
-      }
-    ],
-    "overlays": [],
-    "challenges": [
-      {
-        "prompt": "Find the RV",
-        "target": "grandma"
-      },
-      {
-        "prompt": "Find Family and Friends",
-        "target": "grandpa"
-      },
-      {
-        "prompt": "Find the Solar Panels",
-        "target": "hotdogs"
-      },
-      {
-        "prompt": "Find the Campfire",
-        "target": "campfire"
-      },
-      {
-        "prompt": "Find the Sailboat",
-        "target": "sailboat"
-      }
-    ]
-  },
   "nighttime-campground": {
     "title": "Nighttime Campground",
     "image": "images/talkabee-nighttime-campground-adventure.jpg",
@@ -7002,6 +6791,409 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
       {
         "prompt": "Find the Raccoon",
         "target": "raccoon"
+      }
+    ]
+  },
+  "large-picnic": {
+    "title": "Large Picnic",
+    "image": "images/Talk-A-Bee-Family-Picnic-Adventure.jpg",
+    "lessons": [
+      {
+        "text": "Grandma, Grandpa, the children, dogs, and Bee have all gathered for one enormous lakeside picnic.",
+        "translations": {
+          "es": "La abuela, el abuelo, los niños, los perros y la abeja se han reunido para un enorme picnic junto al lago.",
+          "fr": "Grand-mère, grand-père, les enfants, les chiens et l'abeille se sont réunis pour un immense pique-nique au bord du lac.",
+          "de": "Oma, Opa, die Kinder, die Hunde und die Biene haben sich zu einem riesigen Picknick am See versammelt.",
+          "it": "La nonna, il nonno, i bambini, i cani e l'ape si sono riuniti per un enorme picnic sul lago.",
+          "pt": "A avó, o avô, as crianças, os cães e a abelha se reuniram para um enorme piquenique à beira do lago.",
+          "no": "Bestemor, bestefar, barna, hundene og bien har samlet seg til en enorm piknik ved innsjøen."
+        }
+      },
+      {
+        "text": "Everyone has a place around the long table while Bee watches from the roof of the RV.",
+        "translations": {
+          "es": "Todos tienen un lugar alrededor de la larga mesa mientras la abeja observa desde el techo de la casa rodante.",
+          "fr": "Tout le monde a une place autour de la longue table tandis que l'abeille observe depuis le toit du camping-car.",
+          "de": "Alle haben einen Platz am langen Tisch, während die Biene vom Dach des Wohnmobils zusieht.",
+          "it": "Tutti hanno un posto intorno al lungo tavolo mentre l'ape osserva dal tetto del camper.",
+          "pt": "Todos têm um lugar ao redor da longa mesa enquanto a abelha observa do teto do trailer.",
+          "no": "Alle har en plass rundt det lange bordet mens bien følger med fra taket på bobilen."
+        }
+      },
+      {
+        "text": "The picnic table is covered with favorite outdoor foods, including hot dogs, hamburgers, fruit, drinks, and other treats.",
+        "translations": {
+          "es": "La mesa está llena de comidas favoritas al aire libre, como perritos calientes, hamburguesas, fruta, bebidas y otras delicias.",
+          "fr": "La table est couverte de plats de plein air, notamment des hot-dogs, des hamburgers, des fruits, des boissons et d'autres gourmandises.",
+          "de": "Der Picknicktisch ist mit beliebten Speisen wie Hotdogs, Hamburgern, Obst, Getränken und anderen Leckereien gedeckt.",
+          "it": "Il tavolo è pieno di cibi da picnic, tra cui hot dog, hamburger, frutta, bevande e altre bontà.",
+          "pt": "A mesa está cheia de comidas favoritas ao ar livre, incluindo cachorros-quentes, hambúrgueres, frutas, bebidas e outras delícias.",
+          "no": "Piknikbordet er dekket med utendørsfavoritter som pølser, hamburgere, frukt, drikke og andre godsaker."
+        }
+      },
+      {
+        "text": "Sharing a meal gives everyone time to talk, laugh, and enjoy the day together.",
+        "translations": {
+          "es": "Compartir una comida permite que todos hablen, rían y disfruten juntos del día.",
+          "fr": "Partager un repas permet à tout le monde de parler, rire et profiter de la journée ensemble.",
+          "de": "Beim gemeinsamen Essen können alle reden, lachen und den Tag genießen.",
+          "it": "Condividere un pasto dà a tutti il tempo di parlare, ridere e godersi la giornata insieme.",
+          "pt": "Compartilhar uma refeição dá a todos tempo para conversar, rir e aproveitar o dia juntos.",
+          "no": "Et felles måltid gir alle tid til å snakke, le og nyte dagen sammen."
+        }
+      },
+      {
+        "text": "Hot dogs and other foods can be cooked over the campfire while everyone gathers nearby.",
+        "translations": {
+          "es": "Los perritos calientes y otros alimentos se pueden cocinar sobre la fogata mientras todos se reúnen cerca.",
+          "fr": "Les hot-dogs et d'autres aliments peuvent cuire au-dessus du feu de camp pendant que tout le monde se rassemble.",
+          "de": "Hotdogs und andere Speisen können über dem Lagerfeuer zubereitet werden, während alle in der Nähe zusammenkommen.",
+          "it": "Gli hot dog e altri cibi possono essere cucinati sul falò mentre tutti si riuniscono nelle vicinanze.",
+          "pt": "Cachorros-quentes e outros alimentos podem ser preparados sobre a fogueira enquanto todos se reúnem por perto.",
+          "no": "Pølser og annen mat kan tilberedes over leirbålet mens alle samles i nærheten."
+        }
+      },
+      {
+        "text": "The fire also creates a warm gathering place as the day becomes cooler.",
+        "translations": {
+          "es": "El fuego también crea un lugar cálido para reunirse cuando el día se vuelve más fresco.",
+          "fr": "Le feu crée aussi un endroit chaleureux lorsque la journée devient plus fraîche.",
+          "de": "Das Feuer schafft auch einen warmen Treffpunkt, wenn es später kühler wird.",
+          "it": "Il fuoco crea anche un luogo caldo quando la giornata diventa più fresca.",
+          "pt": "O fogo também cria um lugar acolhedor quando o dia fica mais fresco.",
+          "no": "Bålet skaper også et varmt samlingssted når dagen blir kjøligere."
+        }
+      },
+      {
+        "text": "The picnic overlooks a calm mountain lake with a sailboat, a motorboat, canoes, and a dock.",
+        "translations": {
+          "es": "El picnic tiene vista a un tranquilo lago de montaña con un velero, una lancha, canoas y un muelle.",
+          "fr": "Le pique-nique donne sur un lac de montagne calme avec un voilier, un bateau à moteur, des canoës et un quai.",
+          "de": "Das Picknick blickt auf einen ruhigen Bergsee mit Segelboot, Motorboot, Kanus und einem Steg.",
+          "it": "Il picnic si affaccia su un tranquillo lago di montagna con una barca a vela, un motoscafo, canoe e un molo.",
+          "pt": "O piquenique tem vista para um lago tranquilo de montanha com um veleiro, uma lancha, canoas e um cais.",
+          "no": "Pikniken har utsikt over en rolig fjellsjø med seilbåt, motorbåt, kanoer og brygge."
+        }
+      },
+      {
+        "text": "The water reflects the surrounding forest and snowy mountains.",
+        "translations": {
+          "es": "El agua refleja el bosque y las montañas nevadas.",
+          "fr": "L'eau reflète la forêt et les montagnes enneigées.",
+          "de": "Das Wasser spiegelt den Wald und die schneebedeckten Berge.",
+          "it": "L'acqua riflette il bosco e le montagne innevate.",
+          "pt": "A água reflete a floresta e as montanhas nevadas.",
+          "no": "Vannet speiler skogen og de snødekte fjellene."
+        }
+      },
+      {
+        "text": "The campsite includes an RV, a tent, outdoor chairs, coolers, cooking equipment, and plenty of room for the whole group.",
+        "translations": {
+          "es": "El campamento incluye una casa rodante, una tienda, sillas, neveras y equipo para cocinar.",
+          "fr": "Le camping comprend un camping-car, une tente, des chaises, des glacières et du matériel de cuisine.",
+          "de": "Zum Campingplatz gehören ein Wohnmobil, ein Zelt, Stühle, Kühlboxen und Kochutensilien.",
+          "it": "Il campeggio comprende un camper, una tenda, sedie, borse frigo e attrezzature per cucinare.",
+          "pt": "O acampamento inclui um trailer, uma barraca, cadeiras, caixas térmicas e equipamentos de cozinha.",
+          "no": "Campingplassen har bobil, telt, stoler, kjølebokser og kokeutstyr."
+        }
+      },
+      {
+        "text": "Camping equipment makes it easier to eat, relax, and spend time outdoors.",
+        "translations": {
+          "es": "El equipo de campamento facilita comer, descansar y pasar tiempo al aire libre.",
+          "fr": "Le matériel de camping facilite les repas, la détente et le temps passé dehors.",
+          "de": "Campingausrüstung macht Essen, Entspannen und Zeit im Freien einfacher.",
+          "it": "L'attrezzatura da campeggio rende più facile mangiare, rilassarsi e trascorrere tempo all'aperto.",
+          "pt": "O equipamento de camping facilita comer, relaxar e passar tempo ao ar livre.",
+          "no": "Campingutstyret gjør det lettere å spise, slappe av og være ute."
+        }
+      },
+      {
+        "text": "Pine forests, wildflowers, blue water, and snowy mountains surround the picnic area.",
+        "translations": {
+          "es": "Bosques de pinos, flores silvestres, agua azul y montañas nevadas rodean el picnic.",
+          "fr": "Des forêts de pins, des fleurs sauvages, de l'eau bleue et des montagnes enneigées entourent le pique-nique.",
+          "de": "Kiefernwälder, Wildblumen, blaues Wasser und schneebedeckte Berge umgeben den Picknickplatz.",
+          "it": "Pinete, fiori selvatici, acqua blu e montagne innevate circondano l'area del picnic.",
+          "pt": "Florestas de pinheiros, flores silvestres, água azul e montanhas nevadas cercam o piquenique.",
+          "no": "Furuskog, villblomster, blått vann og snødekte fjell omgir piknikområdet."
+        }
+      },
+      {
+        "text": "The wide landscape makes this picnic feel like a celebration of all the adventures the crew has shared.",
+        "translations": {
+          "es": "El amplio paisaje hace que este picnic parezca una celebración de todas las aventuras compartidas.",
+          "fr": "Le vaste paysage donne à ce pique-nique l'allure d'une célébration de toutes les aventures partagées.",
+          "de": "Die weite Landschaft lässt dieses Picknick wie eine Feier aller gemeinsamen Abenteuer wirken.",
+          "it": "Il grande paesaggio fa sembrare questo picnic una festa di tutte le avventure condivise.",
+          "pt": "A ampla paisagem faz este piquenique parecer uma celebração de todas as aventuras compartilhadas.",
+          "no": "Det vide landskapet får pikniken til å føles som en feiring av alle eventyrene gruppen har delt."
+        }
+      }
+    ],
+    "hotspots": [
+      {
+        "id": "grandma",
+        "label": "grandma",
+        "x": 62,
+        "y": 49,
+        "w": 6,
+        "h": 16,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "grandpa",
+        "label": "grandpa",
+        "x": 54,
+        "y": 47,
+        "w": 7,
+        "h": 18,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "crew",
+        "label": "crew",
+        "x": 56.92,
+        "y": 45.41,
+        "w": 31.13,
+        "h": 11.15,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "table",
+        "label": "table",
+        "x": 37,
+        "y": 61,
+        "w": 53,
+        "h": 16,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "food",
+        "label": "food",
+        "x": 42.52,
+        "y": 51.52,
+        "w": 17.33,
+        "h": 7.85,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "hotdogs",
+        "label": "hotdogs",
+        "x": 69,
+        "y": 72,
+        "w": 10,
+        "h": 10,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "hamburgers",
+        "label": "hamburgers",
+        "x": 58,
+        "y": 58,
+        "w": 9,
+        "h": 9,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "campfire",
+        "label": "campfire",
+        "x": 60.11,
+        "y": 77.98,
+        "w": 9.38,
+        "h": 15.76,
+        "sound": "sounds/fire.mp3",
+        "translations": {}
+      },
+      {
+        "id": "shepherd",
+        "label": "shepherd",
+        "x": 75.54,
+        "y": 57.69,
+        "w": 8,
+        "h": 18,
+        "sound": "sounds/dog-panting.wav",
+        "translations": {}
+      },
+      {
+        "id": "rv",
+        "label": "rv",
+        "x": 71.62,
+        "y": 30.37,
+        "w": 25.04,
+        "h": 12.42,
+        "sound": "sounds/rv.mp3",
+        "translations": {}
+      },
+      {
+        "id": "tent",
+        "label": "tent",
+        "x": 94,
+        "y": 43,
+        "w": 6,
+        "h": 17,
+        "sound": "sounds/guitar.mp3",
+        "translations": {}
+      },
+      {
+        "id": "lake",
+        "label": "lake",
+        "x": 36.9,
+        "y": 40.49,
+        "w": 8.36,
+        "h": 5.3,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "sailboat",
+        "label": "sailboat",
+        "x": 37.98,
+        "y": 27.9,
+        "w": 5.29,
+        "h": 10.5,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "motorboat",
+        "label": "motorboat",
+        "x": 23.95,
+        "y": 34.41,
+        "w": 5.23,
+        "h": 10.28,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "mountains",
+        "label": "mountains",
+        "x": 14.4,
+        "y": 5.84,
+        "w": 58,
+        "h": 20,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "forest",
+        "label": "forest",
+        "x": -3.44,
+        "y": 2.69,
+        "w": 13.84,
+        "h": 21.09,
+        "sound": "sounds/birds-forest.mp3",
+        "translations": {}
+      },
+      {
+        "id": "flowers",
+        "label": "flowers",
+        "x": 5.05,
+        "y": 84.63,
+        "w": 24.26,
+        "h": 15.65,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "mascott",
+        "label": "mascott",
+        "x": 83.52,
+        "y": 17.63,
+        "w": 6,
+        "h": 8,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "solar-panels",
+        "label": "solar panels",
+        "x": 90.72,
+        "y": 15.87,
+        "w": 10.11,
+        "h": 8.74,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "dog",
+        "label": "dog",
+        "x": 5.44,
+        "y": 70.21,
+        "w": 14.54,
+        "h": 10.5,
+        "sound": "sounds/dog-panting.wav",
+        "translations": {}
+      },
+      {
+        "id": "guitar-music",
+        "label": "guitar music",
+        "x": 5.83,
+        "y": 49.92,
+        "w": 19.28,
+        "h": 19.3,
+        "sound": "sounds/guitar3.mp3",
+        "translations": {}
+      },
+      {
+        "id": "stump",
+        "label": "stump",
+        "x": 30.52,
+        "y": 76.97,
+        "w": 6,
+        "h": 8,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "dock",
+        "label": "dock",
+        "x": 10.36,
+        "y": 40.34,
+        "w": 12.25,
+        "h": 5.87,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "seniors",
+        "label": "seniors",
+        "x": 24.86,
+        "y": 47.17,
+        "w": 14.07,
+        "h": 9.57,
+        "sound": "sounds/guitar-campfire.mp3",
+        "translations": {}
+      }
+    ],
+    "overlays": [],
+    "challenges": [
+      {
+        "prompt": "Find the RV",
+        "target": "grandma"
+      },
+      {
+        "prompt": "Find Family and Friends",
+        "target": "grandpa"
+      },
+      {
+        "prompt": "Find the Solar Panels",
+        "target": "hotdogs"
+      },
+      {
+        "prompt": "Find the Campfire",
+        "target": "campfire"
+      },
+      {
+        "prompt": "Find the Sailboat",
+        "target": "sailboat"
       }
     ]
   },
@@ -9893,61 +10085,31 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
       {
         "text": "Congratulations for achieving this level of language education. ",
         "translations": {
-          "en": "",
-          "es": "¡Felicidades por haber alcanzado este nivel de aprendizaje de idiomas!",
-          "fr": "Félicitations pour avoir atteint ce niveau d’apprentissage des langues !",
-          "de": "Herzlichen Glückwunsch, dass du dieses Niveau beim Sprachenlernen erreicht hast!",
-          "it": "Congratulazioni per aver raggiunto questo livello di apprendimento delle lingue!",
-          "pt": "Parabéns por ter alcançado este nível de aprendizagem de línguas!",
-          "no": "Gratulerer med å ha nådd dette nivået i språklæringen!"
+          "en": ""
         }
       },
       {
         "text": "We are at a very high elevation and have reached the mountains summit.",
         "translations": {
-          "en": "",
-          "es": "Estamos a una altitud muy elevada y hemos llegado a la cima de la montaña.",
-          "fr": "Nous sommes à une altitude très élevée et nous avons atteint le sommet de la montagne.",
-          "de": "Wir befinden uns in großer Höhe und haben den Gipfel des Berges erreicht.",
-          "it": "Siamo a un’altitudine molto elevata e abbiamo raggiunto la cima della montagna.",
-          "pt": "Estamos a uma altitude muito elevada e chegámos ao cume da montanha.",
-          "no": "Vi er svært høyt oppe og har nådd toppen av fjellet."
+          "en": ""
         }
       },
       {
         "text": "There is someone or something floating down on a parachute.",
         "translations": {
-          "en": "",
-          "es": "Hay alguien o algo descendiendo en paracaídas.",
-          "fr": "Il y a quelqu’un ou quelque chose qui descend en parachute.",
-          "de": "Da schwebt jemand oder etwas an einem Fallschirm herunter.",
-          "it": "C’è qualcuno o qualcosa che sta scendendo con un paracadute.",
-          "pt": "Há alguém ou alguma coisa a descer de paraquedas.",
-          "no": "Det er noen eller noe som svever ned i fallskjerm."
+          "en": ""
         }
       },
       {
         "text": "The oxygen is low at this elevation and we are required to bring oxygen tanks with us.",
         "translations": {
-          "en": "",
-          "es": "Hay poco oxígeno a esta altitud y tenemos que llevar tanques de oxígeno.",
-          "fr": "Il y a peu d’oxygène à cette altitude et nous devons emporter des bouteilles d’oxygène.",
-          "de": "In dieser Höhe gibt es wenig Sauerstoff, deshalb müssen wir Sauerstoffflaschen mitnehmen.",
-          "it": "A questa altitudine c’è poco ossigeno e dobbiamo portare con noi delle bombole di ossigeno.",
-          "pt": "Há pouco oxigénio a esta altitude e temos de levar garrafas de oxigénio connosco.",
-          "no": "Det er lite oksygen i denne høyden, så vi må ha med oss oksygentanker."
+          "en": ""
         }
       },
       {
         "text": "The two teachers and the language website developer and his dog have reached the summit of mount Everest. It is very cold and we must climb back down the mountain very soon.",
         "translations": {
-          "en": "",
-          "es": "Los dos profesores, el creador del sitio web de idiomas y su perro han llegado a la cima del monte Everest. Hace mucho frío y tenemos que bajar de la montaña muy pronto.",
-          "fr": "Les deux professeurs, le créateur du site d’apprentissage des langues et son chien ont atteint le sommet de l’Everest. Il fait très froid et nous devons bientôt redescendre de la montagne.",
-          "de": "Die beiden Sprachlehrer, der Entwickler der Sprachlern-Website und sein Hund haben den Gipfel des Mount Everest erreicht. Es ist sehr kalt, und wir müssen bald wieder vom Berg absteigen.",
-          "it": "I due insegnanti di lingue, lo sviluppatore del sito web per imparare le lingue e il suo cane hanno raggiunto la vetta dell’Everest. Fa molto freddo e dobbiamo scendere presto dalla montagna.",
-          "pt": "Os dois professores de línguas, o criador do site de aprendizagem de línguas e o seu cão chegaram ao cume do monte Evereste. Está muito frio e temos de descer a montanha em breve.",
-          "no": "De to språklærerne, utvikleren av språklæringsnettstedet og hunden hans har nådd toppen av Mount Everest. Det er veldig kaldt, og vi må snart klatre ned fra fjellet igjen."
+          "en": ""
         }
       }
     ],
@@ -10028,62 +10190,27 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
       {
         "prompt": "Find the fat bee in a parachute",
         "target": "hotspot-1792621582717",
-        "translations": {
-          "es": "Encuentra la abeja gorda que lleva un paracaídas.",
-          "fr": "Trouve la grosse abeille avec un parachute.",
-          "de": "Finde die dicke Biene mit dem Fallschirm.",
-          "it": "Trova l’ape grassa con il paracadute.",
-          "pt": "Encontra a abelha gorda com um paraquedas.",
-          "no": "Finn den tykke bien med fallskjerm."
-        }
+        "translations": {}
       },
       {
         "prompt": "This sign is for you! You deserve it!",
         "target": "hotspot-1792636742124",
-        "translations": {
-          "es": "¡Este cartel es para ti! ¡Te lo mereces!",
-          "fr": "Cette pancarte est pour toi ! Tu le mérites !",
-          "de": "Dieses Schild ist für dich! Du hast es verdient!",
-          "it": "Questo cartello è per te! Te lo meriti!",
-          "pt": "Este cartaz é para ti! Tu mereces!",
-          "no": "Dette skiltet er til deg! Du fortjener det!"
-        }
+        "translations": {}
       },
       {
         "prompt": "Find Woman Language Teacher",
         "target": "hotspot-1792636982204",
-        "translations": {
-          "es": "Encuentra a la profesora de idiomas.",
-          "fr": "Trouve la professeure de langues.",
-          "de": "Finde die Sprachlehrerin.",
-          "it": "Trova l’insegnante di lingue.",
-          "pt": "Encontra a professora de línguas.",
-          "no": "Finn den kvinnelige språklæreren."
-        }
+        "translations": {}
       },
       {
         "prompt": "Find the man language teacher",
         "target": "hotspot-1792637171813",
-        "translations": {
-          "es": "Encuentra al profesor de idiomas.",
-          "fr": "Trouve le professeur de langues.",
-          "de": "Finde den Sprachlehrer.",
-          "it": "Trova l’insegnante di lingue uomo.",
-          "pt": "Encontra o professor de línguas.",
-          "no": "Finn den mannlige språklæreren."
-        }
+        "translations": {}
       },
       {
         "prompt": "Find the Language Website Developer and His Dog",
         "target": "hotspot-1792637441276",
-        "translations": {
-          "es": "Encuentra al creador del sitio web de idiomas y a su perro.",
-          "fr": "Trouve le créateur du site d’apprentissage des langues et son chien.",
-          "de": "Finde den Entwickler der Sprachlern-Website und seinen Hund.",
-          "it": "Trova lo sviluppatore del sito web per imparare le lingue e il suo cane.",
-          "pt": "Encontra o criador do site de aprendizagem de línguas e o seu cão.",
-          "no": "Finn utvikleren av språklæringsnettstedet og hunden hans."
-        }
+        "translations": {}
       }
     ]
   },
@@ -12191,359 +12318,6 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
       }
     ]
   },
-  "skydiving": {
-    "title": "Skydiving",
-    "image": "images/Talk-A-Bee-Skydiving-Adventure.jpg",
-    "lessons": [
-      {
-        "text": "The skydivers ride in an airplane until they reach the planned jumping altitude.",
-        "translations": {
-          "es": "Los paracaidistas viajan en avión hasta alcanzar la altitud prevista para el salto.",
-          "fr": "Les parachutistes montent dans un avion jusqu'à l'altitude prévue pour le saut.",
-          "de": "Die Fallschirmspringer fliegen mit einem Flugzeug bis zur geplanten Absprunghöhe.",
-          "it": "I paracadutisti viaggiano in aereo fino a raggiungere l'altitudine prevista per il lancio.",
-          "pt": "Os paraquedistas viajam de avião até alcançar a altitude planejada para o salto.",
-          "no": "Fallskjermhopperne flyr med et fly til den planlagte hopphøyden."
-        }
-      },
-      {
-        "text": "The crew checks the open door and the area outside before anyone exits.",
-        "translations": {
-          "es": "La tripulación revisa la puerta abierta y la zona exterior antes de que alguien salga.",
-          "fr": "L'équipage vérifie la porte ouverte et la zone extérieure avant la sortie.",
-          "de": "Die Besatzung überprüft die offene Tür und den Bereich draußen, bevor jemand aussteigt.",
-          "it": "L'equipaggio controlla la porta aperta e la zona esterna prima dell'uscita.",
-          "pt": "A tripulação verifica a porta aberta e a área externa antes da saída.",
-          "no": "Besetningen sjekker den åpne døren og området utenfor før noen går ut."
-        }
-      },
-      {
-        "text": "Skydivers use a helmet, goggles, a harness, and a parachute system.",
-        "translations": {
-          "es": "Los paracaidistas usan casco, gafas, arnés y un sistema de paracaídas.",
-          "fr": "Les parachutistes utilisent un casque, des lunettes, un harnais et un système de parachute.",
-          "de": "Fallschirmspringer tragen Helm, Schutzbrille, Gurtzeug und ein Fallschirmsystem.",
-          "it": "I paracadutisti usano casco, occhiali, imbracatura e sistema di paracadute.",
-          "pt": "Os paraquedistas usam capacete, óculos, arnês e um sistema de paraquedas.",
-          "no": "Fallskjermhoppere bruker hjelm, vernebriller, sele og et fallskjermsystem."
-        }
-      },
-      {
-        "text": "The equipment is checked before the jump so everything is secure.",
-        "translations": {
-          "es": "El equipo se revisa antes del salto para comprobar que todo esté seguro.",
-          "fr": "L'équipement est vérifié avant le saut pour s'assurer que tout est bien fixé.",
-          "de": "Die Ausrüstung wird vor dem Sprung überprüft, damit alles sicher sitzt.",
-          "it": "L'attrezzatura viene controllata prima del lancio per assicurarsi che sia tutto sicuro.",
-          "pt": "O equipamento é verificado antes do salto para garantir que tudo esteja seguro.",
-          "no": "Utstyret kontrolleres før hoppet slik at alt sitter sikkert."
-        }
-      },
-      {
-        "text": "At the correct time, the skydivers leave the airplane and move into a stable body position.",
-        "translations": {
-          "es": "En el momento correcto, los paracaidistas salen del avión y adoptan una posición estable.",
-          "fr": "Au bon moment, les parachutistes quittent l'avion et prennent une position stable.",
-          "de": "Zum richtigen Zeitpunkt verlassen die Fallschirmspringer das Flugzeug und nehmen eine stabile Körperhaltung ein.",
-          "it": "Al momento giusto, i paracadutisti lasciano l'aereo e assumono una posizione stabile.",
-          "pt": "No momento correto, os paraquedistas saem do avião e assumem uma posição estável.",
-          "no": "På riktig tidspunkt forlater fallskjermhopperne flyet og går inn i en stabil kroppsstilling."
-        }
-      },
-      {
-        "text": "The instructor stays nearby and watches the jump.",
-        "translations": {
-          "es": "El instructor permanece cerca y observa el salto.",
-          "fr": "L'instructeur reste à proximité et surveille le saut.",
-          "de": "Der Lehrer bleibt in der Nähe und beobachtet den Sprung.",
-          "it": "L'istruttore rimane vicino e osserva il lancio.",
-          "pt": "O instrutor permanece por perto e acompanha o salto.",
-          "no": "Instruktøren holder seg i nærheten og følger med på hoppet."
-        }
-      },
-      {
-        "text": "During freefall, air pushes against the skydivers as they move through the sky.",
-        "translations": {
-          "es": "Durante la caída libre, el aire empuja a los paracaidistas mientras se mueven por el cielo.",
-          "fr": "Pendant la chute libre, l'air pousse contre les parachutistes pendant leur descente.",
-          "de": "Im freien Fall drückt die Luft gegen die Fallschirmspringer, während sie sich durch den Himmel bewegen.",
-          "it": "Durante la caduta libera, l'aria spinge contro i paracadutisti mentre attraversano il cielo.",
-          "pt": "Durante a queda livre, o ar empurra os paraquedistas enquanto eles se movem pelo céu.",
-          "no": "Under fritt fall presser luften mot fallskjermhopperne mens de beveger seg gjennom himmelen."
-        }
-      },
-      {
-        "text": "A stable position helps them control their direction and body movement.",
-        "translations": {
-          "es": "Una posición estable ayuda a controlar la dirección y el movimiento del cuerpo.",
-          "fr": "Une position stable aide à contrôler la direction et les mouvements du corps.",
-          "de": "Eine stabile Haltung hilft, Richtung und Körperbewegung zu kontrollieren.",
-          "it": "Una posizione stabile aiuta a controllare la direzione e i movimenti del corpo.",
-          "pt": "Uma posição estável ajuda a controlar a direção e os movimentos do corpo.",
-          "no": "En stabil stilling hjelper dem å kontrollere retning og kroppsbevegelse."
-        }
-      },
-      {
-        "text": "At the planned altitude, the parachute is deployed and fills with air.",
-        "translations": {
-          "es": "A la altitud prevista, se abre el paracaídas y se llena de aire.",
-          "fr": "À l'altitude prévue, le parachute est déployé et se remplit d'air.",
-          "de": "In der geplanten Höhe wird der Fallschirm geöffnet und füllt sich mit Luft.",
-          "it": "All'altitudine prevista, il paracadute viene aperto e si riempie d'aria.",
-          "pt": "Na altitude planejada, o paraquedas é aberto e se enche de ar.",
-          "no": "I den planlagte høyden åpnes fallskjermen og fylles med luft."
-        }
-      },
-      {
-        "text": "The open parachute slows the descent for the trip toward the landing area.",
-        "translations": {
-          "es": "El paracaídas abierto reduce la velocidad para el descenso hacia la zona de aterrizaje.",
-          "fr": "Le parachute ouvert ralentit la descente vers la zone d'atterrissage.",
-          "de": "Der geöffnete Fallschirm verlangsamt den Sinkflug zur Landezone.",
-          "it": "Il paracadute aperto rallenta la discesa verso la zona di atterraggio.",
-          "pt": "O paraquedas aberto reduz a velocidade da descida até a área de pouso.",
-          "no": "Den åpne fallskjermen bremser nedstigningen mot landingsområdet."
-        }
-      },
-      {
-        "text": "From high above, the skydivers can see mountains, forests, islands, clouds, and a huge blue lake.",
-        "translations": {
-          "es": "Desde gran altura, los paracaidistas pueden ver montañas, bosques, islas, nubes y un enorme lago azul.",
-          "fr": "De très haut, les parachutistes voient des montagnes, des forêts, des îles, des nuages et un immense lac bleu.",
-          "de": "Von hoch oben sehen die Fallschirmspringer Berge, Wälder, Inseln, Wolken und einen riesigen blauen See.",
-          "it": "Dall'alto, i paracadutisti vedono montagne, foreste, isole, nuvole e un enorme lago blu.",
-          "pt": "Do alto, os paraquedistas podem ver montanhas, florestas, ilhas, nuvens e um enorme lago azul.",
-          "no": "Høyt over bakken kan fallskjermhopperne se fjell, skoger, øyer, skyer og en enorm blå innsjø."
-        }
-      },
-      {
-        "text": "The landscape looks completely different from thousands of feet in the air.",
-        "translations": {
-          "es": "El paisaje se ve completamente diferente desde miles de pies de altura.",
-          "fr": "Le paysage paraît complètement différent à plusieurs milliers de pieds d'altitude.",
-          "de": "Die Landschaft sieht aus mehreren tausend Fuß Höhe völlig anders aus.",
-          "it": "Il paesaggio appare completamente diverso da migliaia di piedi di altezza.",
-          "pt": "A paisagem parece completamente diferente a milhares de pés de altura.",
-          "no": "Landskapet ser helt annerledes ut fra flere tusen fots høyde."
-        }
-      }
-    ],
-    "hotspots": [
-      {
-        "id": "airplane",
-        "label": "airplane",
-        "x": 61.57,
-        "y": 2.31,
-        "w": 22.34,
-        "h": 28.93,
-        "sound": "sounds/cessna.mp3",
-        "translations": {}
-      },
-      {
-        "id": "door",
-        "label": "door",
-        "x": 85.29,
-        "y": 19.82,
-        "w": 11.9,
-        "h": 11,
-        "sound": "",
-        "translations": {}
-      },
-      {
-        "id": "crew",
-        "label": "crew",
-        "x": 86.87,
-        "y": 5.23,
-        "w": 9.57,
-        "h": 15.94,
-        "sound": "",
-        "translations": {}
-      },
-      {
-        "id": "instructor",
-        "label": "instructor",
-        "x": 46.59,
-        "y": 18.57,
-        "w": 5.53,
-        "h": 13.83,
-        "sound": "",
-        "translations": {}
-      },
-      {
-        "id": "jumperblue",
-        "label": "jumperblue",
-        "x": 28.92,
-        "y": 15.5,
-        "w": 11.84,
-        "h": 12.41,
-        "sound": "",
-        "translations": {}
-      },
-      {
-        "id": "jumperpink",
-        "label": "jumperpink",
-        "x": 57.01,
-        "y": 32.64,
-        "w": 6.09,
-        "h": 10.16,
-        "sound": "",
-        "translations": {}
-      },
-      {
-        "id": "helmet",
-        "label": "helmet",
-        "x": 42.1,
-        "y": 32.18,
-        "w": 4.43,
-        "h": 7.33,
-        "sound": "",
-        "translations": {}
-      },
-      {
-        "id": "goggles",
-        "label": "goggles",
-        "x": 41.79,
-        "y": 40.52,
-        "w": 3.95,
-        "h": 2.98,
-        "sound": "",
-        "translations": {}
-      },
-      {
-        "id": "harness",
-        "label": "harness",
-        "x": 36.92,
-        "y": 44.89,
-        "w": 10.59,
-        "h": 7.2,
-        "sound": "",
-        "translations": {}
-      },
-      {
-        "id": "parachute",
-        "label": "parachute",
-        "x": 72.5,
-        "y": 34.78,
-        "w": 12,
-        "h": 22,
-        "sound": "",
-        "translations": {}
-      },
-      {
-        "id": "wing",
-        "label": "wing",
-        "x": 46.91,
-        "y": 3.43,
-        "w": 30.78,
-        "h": 11.98,
-        "sound": "",
-        "translations": {}
-      },
-      {
-        "id": "mountain",
-        "label": "mountain",
-        "x": 55.09,
-        "y": 52.75,
-        "w": 10.43,
-        "h": 12.65,
-        "sound": "",
-        "translations": {}
-      },
-      {
-        "id": "lake",
-        "label": "lake",
-        "x": 33.67,
-        "y": 72.62,
-        "w": 14.87,
-        "h": 11.18,
-        "sound": "",
-        "translations": {}
-      },
-      {
-        "id": "islands",
-        "label": "islands",
-        "x": 25,
-        "y": 72,
-        "w": 43,
-        "h": 24,
-        "sound": "",
-        "translations": {}
-      },
-      {
-        "id": "clouds",
-        "label": "clouds",
-        "x": 87.55,
-        "y": 64.04,
-        "w": 19.53,
-        "h": 14.11,
-        "sound": "",
-        "translations": {}
-      },
-      {
-        "id": "forest",
-        "label": "forest",
-        "x": 66.41,
-        "y": 65.45,
-        "w": 9.48,
-        "h": 12.73,
-        "sound": "",
-        "translations": {}
-      },
-      {
-        "id": "sky",
-        "label": "sky",
-        "x": 18.7,
-        "y": -1.67,
-        "w": 18.25,
-        "h": 11.31,
-        "sound": "",
-        "translations": {}
-      },
-      {
-        "id": "landinggear",
-        "label": "landinggear",
-        "x": 94.42,
-        "y": 36.83,
-        "w": 6,
-        "h": 24,
-        "sound": "",
-        "translations": {}
-      },
-      {
-        "id": "valley",
-        "label": "valley",
-        "x": 74.03,
-        "y": 59.3,
-        "w": 12.64,
-        "h": 9.41,
-        "sound": "",
-        "translations": {}
-      }
-    ],
-    "overlays": [],
-    "challenges": [
-      {
-        "prompt": "Find the Instructor",
-        "target": "airplane"
-      },
-      {
-        "prompt": "Find a Helmet",
-        "target": "helmet"
-      },
-      {
-        "prompt": "Find the Goggles",
-        "target": "parachute"
-      },
-      {
-        "prompt": "Find the Mountain",
-        "target": "mountain"
-      },
-      {
-        "prompt": "Find the door",
-        "target": "lake"
-      }
-    ]
-  },
   "softball": {
     "title": "Softball",
     "image": "images/Talk-A-Bee-Softball-Game-Adventure.jpg",
@@ -12934,6 +12708,359 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
         "prompt": "find the umpire",
         "target": "umpire",
         "translations": {}
+      }
+    ]
+  },
+  "skydiving": {
+    "title": "Skydiving",
+    "image": "images/Talk-A-Bee-Skydiving-Adventure.jpg",
+    "lessons": [
+      {
+        "text": "The skydivers ride in an airplane until they reach the planned jumping altitude.",
+        "translations": {
+          "es": "Los paracaidistas viajan en avión hasta alcanzar la altitud prevista para el salto.",
+          "fr": "Les parachutistes montent dans un avion jusqu'à l'altitude prévue pour le saut.",
+          "de": "Die Fallschirmspringer fliegen mit einem Flugzeug bis zur geplanten Absprunghöhe.",
+          "it": "I paracadutisti viaggiano in aereo fino a raggiungere l'altitudine prevista per il lancio.",
+          "pt": "Os paraquedistas viajam de avião até alcançar a altitude planejada para o salto.",
+          "no": "Fallskjermhopperne flyr med et fly til den planlagte hopphøyden."
+        }
+      },
+      {
+        "text": "The crew checks the open door and the area outside before anyone exits.",
+        "translations": {
+          "es": "La tripulación revisa la puerta abierta y la zona exterior antes de que alguien salga.",
+          "fr": "L'équipage vérifie la porte ouverte et la zone extérieure avant la sortie.",
+          "de": "Die Besatzung überprüft die offene Tür und den Bereich draußen, bevor jemand aussteigt.",
+          "it": "L'equipaggio controlla la porta aperta e la zona esterna prima dell'uscita.",
+          "pt": "A tripulação verifica a porta aberta e a área externa antes da saída.",
+          "no": "Besetningen sjekker den åpne døren og området utenfor før noen går ut."
+        }
+      },
+      {
+        "text": "Skydivers use a helmet, goggles, a harness, and a parachute system.",
+        "translations": {
+          "es": "Los paracaidistas usan casco, gafas, arnés y un sistema de paracaídas.",
+          "fr": "Les parachutistes utilisent un casque, des lunettes, un harnais et un système de parachute.",
+          "de": "Fallschirmspringer tragen Helm, Schutzbrille, Gurtzeug und ein Fallschirmsystem.",
+          "it": "I paracadutisti usano casco, occhiali, imbracatura e sistema di paracadute.",
+          "pt": "Os paraquedistas usam capacete, óculos, arnês e um sistema de paraquedas.",
+          "no": "Fallskjermhoppere bruker hjelm, vernebriller, sele og et fallskjermsystem."
+        }
+      },
+      {
+        "text": "The equipment is checked before the jump so everything is secure.",
+        "translations": {
+          "es": "El equipo se revisa antes del salto para comprobar que todo esté seguro.",
+          "fr": "L'équipement est vérifié avant le saut pour s'assurer que tout est bien fixé.",
+          "de": "Die Ausrüstung wird vor dem Sprung überprüft, damit alles sicher sitzt.",
+          "it": "L'attrezzatura viene controllata prima del lancio per assicurarsi che sia tutto sicuro.",
+          "pt": "O equipamento é verificado antes do salto para garantir que tudo esteja seguro.",
+          "no": "Utstyret kontrolleres før hoppet slik at alt sitter sikkert."
+        }
+      },
+      {
+        "text": "At the correct time, the skydivers leave the airplane and move into a stable body position.",
+        "translations": {
+          "es": "En el momento correcto, los paracaidistas salen del avión y adoptan una posición estable.",
+          "fr": "Au bon moment, les parachutistes quittent l'avion et prennent une position stable.",
+          "de": "Zum richtigen Zeitpunkt verlassen die Fallschirmspringer das Flugzeug und nehmen eine stabile Körperhaltung ein.",
+          "it": "Al momento giusto, i paracadutisti lasciano l'aereo e assumono una posizione stabile.",
+          "pt": "No momento correto, os paraquedistas saem do avião e assumem uma posição estável.",
+          "no": "På riktig tidspunkt forlater fallskjermhopperne flyet og går inn i en stabil kroppsstilling."
+        }
+      },
+      {
+        "text": "The instructor stays nearby and watches the jump.",
+        "translations": {
+          "es": "El instructor permanece cerca y observa el salto.",
+          "fr": "L'instructeur reste à proximité et surveille le saut.",
+          "de": "Der Lehrer bleibt in der Nähe und beobachtet den Sprung.",
+          "it": "L'istruttore rimane vicino e osserva il lancio.",
+          "pt": "O instrutor permanece por perto e acompanha o salto.",
+          "no": "Instruktøren holder seg i nærheten og følger med på hoppet."
+        }
+      },
+      {
+        "text": "During freefall, air pushes against the skydivers as they move through the sky.",
+        "translations": {
+          "es": "Durante la caída libre, el aire empuja a los paracaidistas mientras se mueven por el cielo.",
+          "fr": "Pendant la chute libre, l'air pousse contre les parachutistes pendant leur descente.",
+          "de": "Im freien Fall drückt die Luft gegen die Fallschirmspringer, während sie sich durch den Himmel bewegen.",
+          "it": "Durante la caduta libera, l'aria spinge contro i paracadutisti mentre attraversano il cielo.",
+          "pt": "Durante a queda livre, o ar empurra os paraquedistas enquanto eles se movem pelo céu.",
+          "no": "Under fritt fall presser luften mot fallskjermhopperne mens de beveger seg gjennom himmelen."
+        }
+      },
+      {
+        "text": "A stable position helps them control their direction and body movement.",
+        "translations": {
+          "es": "Una posición estable ayuda a controlar la dirección y el movimiento del cuerpo.",
+          "fr": "Une position stable aide à contrôler la direction et les mouvements du corps.",
+          "de": "Eine stabile Haltung hilft, Richtung und Körperbewegung zu kontrollieren.",
+          "it": "Una posizione stabile aiuta a controllare la direzione e i movimenti del corpo.",
+          "pt": "Uma posição estável ajuda a controlar a direção e os movimentos do corpo.",
+          "no": "En stabil stilling hjelper dem å kontrollere retning og kroppsbevegelse."
+        }
+      },
+      {
+        "text": "At the planned altitude, the parachute is deployed and fills with air.",
+        "translations": {
+          "es": "A la altitud prevista, se abre el paracaídas y se llena de aire.",
+          "fr": "À l'altitude prévue, le parachute est déployé et se remplit d'air.",
+          "de": "In der geplanten Höhe wird der Fallschirm geöffnet und füllt sich mit Luft.",
+          "it": "All'altitudine prevista, il paracadute viene aperto e si riempie d'aria.",
+          "pt": "Na altitude planejada, o paraquedas é aberto e se enche de ar.",
+          "no": "I den planlagte høyden åpnes fallskjermen og fylles med luft."
+        }
+      },
+      {
+        "text": "The open parachute slows the descent for the trip toward the landing area.",
+        "translations": {
+          "es": "El paracaídas abierto reduce la velocidad para el descenso hacia la zona de aterrizaje.",
+          "fr": "Le parachute ouvert ralentit la descente vers la zone d'atterrissage.",
+          "de": "Der geöffnete Fallschirm verlangsamt den Sinkflug zur Landezone.",
+          "it": "Il paracadute aperto rallenta la discesa verso la zona di atterraggio.",
+          "pt": "O paraquedas aberto reduz a velocidade da descida até a área de pouso.",
+          "no": "Den åpne fallskjermen bremser nedstigningen mot landingsområdet."
+        }
+      },
+      {
+        "text": "From high above, the skydivers can see mountains, forests, islands, clouds, and a huge blue lake.",
+        "translations": {
+          "es": "Desde gran altura, los paracaidistas pueden ver montañas, bosques, islas, nubes y un enorme lago azul.",
+          "fr": "De très haut, les parachutistes voient des montagnes, des forêts, des îles, des nuages et un immense lac bleu.",
+          "de": "Von hoch oben sehen die Fallschirmspringer Berge, Wälder, Inseln, Wolken und einen riesigen blauen See.",
+          "it": "Dall'alto, i paracadutisti vedono montagne, foreste, isole, nuvole e un enorme lago blu.",
+          "pt": "Do alto, os paraquedistas podem ver montanhas, florestas, ilhas, nuvens e um enorme lago azul.",
+          "no": "Høyt over bakken kan fallskjermhopperne se fjell, skoger, øyer, skyer og en enorm blå innsjø."
+        }
+      },
+      {
+        "text": "The landscape looks completely different from thousands of feet in the air.",
+        "translations": {
+          "es": "El paisaje se ve completamente diferente desde miles de pies de altura.",
+          "fr": "Le paysage paraît complètement différent à plusieurs milliers de pieds d'altitude.",
+          "de": "Die Landschaft sieht aus mehreren tausend Fuß Höhe völlig anders aus.",
+          "it": "Il paesaggio appare completamente diverso da migliaia di piedi di altezza.",
+          "pt": "A paisagem parece completamente diferente a milhares de pés de altura.",
+          "no": "Landskapet ser helt annerledes ut fra flere tusen fots høyde."
+        }
+      }
+    ],
+    "hotspots": [
+      {
+        "id": "airplane",
+        "label": "airplane",
+        "x": 61.57,
+        "y": 2.31,
+        "w": 22.34,
+        "h": 28.93,
+        "sound": "sounds/cessna.mp3",
+        "translations": {}
+      },
+      {
+        "id": "door",
+        "label": "door",
+        "x": 85.29,
+        "y": 19.82,
+        "w": 11.9,
+        "h": 11,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "crew",
+        "label": "crew",
+        "x": 86.87,
+        "y": 5.23,
+        "w": 9.57,
+        "h": 15.94,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "instructor",
+        "label": "instructor",
+        "x": 46.59,
+        "y": 18.57,
+        "w": 5.53,
+        "h": 13.83,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "jumperblue",
+        "label": "jumperblue",
+        "x": 28.92,
+        "y": 15.5,
+        "w": 11.84,
+        "h": 12.41,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "jumperpink",
+        "label": "jumperpink",
+        "x": 57.01,
+        "y": 32.64,
+        "w": 6.09,
+        "h": 10.16,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "helmet",
+        "label": "helmet",
+        "x": 42.1,
+        "y": 32.18,
+        "w": 4.43,
+        "h": 7.33,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "goggles",
+        "label": "goggles",
+        "x": 41.79,
+        "y": 40.52,
+        "w": 3.95,
+        "h": 2.98,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "harness",
+        "label": "harness",
+        "x": 36.92,
+        "y": 44.89,
+        "w": 10.59,
+        "h": 7.2,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "parachute",
+        "label": "parachute",
+        "x": 72.5,
+        "y": 34.78,
+        "w": 12,
+        "h": 22,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "wing",
+        "label": "wing",
+        "x": 46.91,
+        "y": 3.43,
+        "w": 30.78,
+        "h": 11.98,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "mountain",
+        "label": "mountain",
+        "x": 55.09,
+        "y": 52.75,
+        "w": 10.43,
+        "h": 12.65,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "lake",
+        "label": "lake",
+        "x": 33.67,
+        "y": 72.62,
+        "w": 14.87,
+        "h": 11.18,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "islands",
+        "label": "islands",
+        "x": 25,
+        "y": 72,
+        "w": 43,
+        "h": 24,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "clouds",
+        "label": "clouds",
+        "x": 87.55,
+        "y": 64.04,
+        "w": 19.53,
+        "h": 14.11,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "forest",
+        "label": "forest",
+        "x": 66.41,
+        "y": 65.45,
+        "w": 9.48,
+        "h": 12.73,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "sky",
+        "label": "sky",
+        "x": 18.7,
+        "y": -1.67,
+        "w": 18.25,
+        "h": 11.31,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "landinggear",
+        "label": "landinggear",
+        "x": 94.42,
+        "y": 36.83,
+        "w": 6,
+        "h": 24,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "valley",
+        "label": "valley",
+        "x": 74.03,
+        "y": 59.3,
+        "w": 12.64,
+        "h": 9.41,
+        "sound": "",
+        "translations": {}
+      }
+    ],
+    "overlays": [],
+    "challenges": [
+      {
+        "prompt": "Find the Instructor",
+        "target": "airplane"
+      },
+      {
+        "prompt": "Find a Helmet",
+        "target": "helmet"
+      },
+      {
+        "prompt": "Find the Goggles",
+        "target": "parachute"
+      },
+      {
+        "prompt": "Find the Mountain",
+        "target": "mountain"
+      },
+      {
+        "prompt": "Find the door",
+        "target": "lake"
       }
     ]
   },
@@ -15059,182 +15186,5 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
         }
       }
     ]
-  },
-  "balloon-ride": {
-    "title": "Balloon Ride",
-    "image": "images/balloon-world.jpg",
-    "lessons": [
-      {
-        "text": "We are floating above Talk A Bee Campground in a colorful hot air balloon.",
-        "translations": {
-          "es": "Estamos flotando sobre el campamento Talk A Bee en un colorido globo aerostático.",
-          "fr": "Nous survolons le camping Talk A Bee dans une montgolfière colorée.",
-          "de": "Wir schweben in einem bunten Heißluftballon über dem Talk A Bee Campingplatz.",
-          "it": "Stiamo volando sopra il campeggio Talk A Bee in una colorata mongolfiera.",
-          "pt": "Estamos a sobrevoar o parque de campismo Talk A Bee num balão de ar quente colorido.",
-          "no": "Vi svever over Talk A Bee-campingplassen i en fargerik varmluftballong."
-        }
-      },
-      {
-        "text": "The sun is setting behind the mountains and lighting up the lake.",
-        "translations": {
-          "es": "El sol se pone detrás de las montañas e ilumina el lago.",
-          "fr": "Le soleil se couche derrière les montagnes et illumine le lac.",
-          "de": "Die Sonne geht hinter den Bergen unter und lässt den See leuchten.",
-          "it": "Il sole tramonta dietro le montagne e illumina il lago.",
-          "pt": "O sol está a pôr-se atrás das montanhas e ilumina o lago.",
-          "no": "Solen går ned bak fjellene og lyser opp innsjøen."
-        }
-      },
-      {
-        "text": "Far below us, campers are relaxing beside their tents and campfires.",
-        "translations": {
-          "es": "Muy por debajo de nosotros, los campistas descansan junto a sus tiendas y fogatas.",
-          "fr": "Loin en dessous de nous, les campeurs se détendent près de leurs tentes et de leurs feux de camp.",
-          "de": "Tief unter uns entspannen sich die Camper neben ihren Zelten und Lagerfeuern.",
-          "it": "Molto sotto di noi, i campeggiatori si rilassano accanto alle tende e ai falò.",
-          "pt": "Muito abaixo de nós, os campistas descansam junto das tendas e das fogueiras.",
-          "no": "Langt under oss slapper campinggjestene av ved teltene og leirbålene sine."
-        }
-      },
-      {
-        "text": "A waterfall rushes down the rocks and flows beneath a little wooden bridge.",
-        "translations": {
-          "es": "Una cascada baja por las rocas y pasa por debajo de un pequeño puente de madera.",
-          "fr": "Une cascade dévale les rochers et passe sous un petit pont en bois.",
-          "de": "Ein Wasserfall rauscht über die Felsen und fließt unter einer kleinen Holzbrücke hindurch.",
-          "it": "Una cascata scende sulle rocce e passa sotto un piccolo ponte di legno.",
-          "pt": "Uma cascata desce pelas rochas e passa por baixo de uma pequena ponte de madeira.",
-          "no": "En foss strømmer nedover steinene og renner under en liten trebro."
-        }
-      },
-      {
-        "text": "The balloon burner heats the air so our basket can rise into the sky.",
-        "translations": {
-          "es": "El quemador del globo calienta el aire para que nuestra cesta pueda elevarse hacia el cielo.",
-          "fr": "Le brûleur de la montgolfière chauffe l’air pour que notre nacelle puisse monter dans le ciel.",
-          "de": "Der Brenner des Ballons erwärmt die Luft, damit unser Korb in den Himmel steigen kann.",
-          "it": "Il bruciatore della mongolfiera riscalda l’aria per far salire il nostro cesto nel cielo.",
-          "pt": "O queimador do balão aquece o ar para que o nosso cesto possa subir ao céu.",
-          "no": "Ballongbrenneren varmer opp luften slik at kurven vår kan stige til værs."
-        }
-      }
-    ],
-    "hotspots": [
-      {
-        "id": "basket",
-        "label": "Balloon basket",
-        "x": 77,
-        "y": 29,
-        "w": 23,
-        "h": 53,
-        "sound": "",
-        "translations": {}
-      },
-      {
-        "id": "burner",
-        "label": "Burner flame",
-        "x": 82,
-        "y": 11,
-        "w": 10,
-        "h": 15,
-        "sound": "",
-        "translations": {}
-      },
-      {
-        "id": "waterfall",
-        "label": "Waterfall",
-        "x": 68,
-        "y": 53,
-        "w": 10,
-        "h": 23,
-        "sound": "",
-        "translations": {}
-      },
-      {
-        "id": "sign",
-        "label": "Campground sign",
-        "x": 48,
-        "y": 73,
-        "w": 15,
-        "h": 17,
-        "sound": "",
-        "translations": {}
-      },
-      {
-        "id": "ferris",
-        "label": "Ferris wheel",
-        "x": 19,
-        "y": 43,
-        "w": 5,
-        "h": 10,
-        "sound": "",
-        "translations": {}
-      }
-    ],
-    "overlays": [],
-    "challenges": [
-      {
-        "prompt": "Find the hot air balloon basket.",
-        "target": "basket",
-        "translations": {
-          "es": "Encuentra la cesta del globo aerostático.",
-          "fr": "Trouve la nacelle de la montgolfière.",
-          "de": "Finde den Korb des Heißluftballons.",
-          "it": "Trova il cesto della mongolfiera.",
-          "pt": "Encontra o cesto do balão de ar quente.",
-          "no": "Finn kurven til varmluftballongen."
-        }
-      },
-      {
-        "prompt": "Find the flame above the basket.",
-        "target": "burner",
-        "translations": {
-          "es": "Encuentra la llama encima de la cesta.",
-          "fr": "Trouve la flamme au-dessus de la nacelle.",
-          "de": "Finde die Flamme über dem Korb.",
-          "it": "Trova la fiamma sopra il cesto.",
-          "pt": "Encontra a chama por cima do cesto.",
-          "no": "Finn flammen over kurven."
-        }
-      },
-      {
-        "prompt": "Find the waterfall.",
-        "target": "waterfall",
-        "translations": {
-          "es": "Encuentra la cascada.",
-          "fr": "Trouve la cascade.",
-          "de": "Finde den Wasserfall.",
-          "it": "Trova la cascata.",
-          "pt": "Encontra a cascata.",
-          "no": "Finn fossen."
-        }
-      },
-      {
-        "prompt": "Find the Talk A Bee campground sign.",
-        "target": "sign",
-        "translations": {
-          "es": "Encuentra el letrero del campamento Talk A Bee.",
-          "fr": "Trouve le panneau du camping Talk A Bee.",
-          "de": "Finde das Schild des Talk A Bee Campingplatzes.",
-          "it": "Trova il cartello del campeggio Talk A Bee.",
-          "pt": "Encontra a placa do parque de campismo Talk A Bee.",
-          "no": "Finn skiltet til Talk A Bee-campingplassen."
-        }
-      },
-      {
-        "prompt": "Find the Ferris wheel beside the lake.",
-        "target": "ferris",
-        "translations": {
-          "es": "Encuentra la noria junto al lago.",
-          "fr": "Trouve la grande roue près du lac.",
-          "de": "Finde das Riesenrad am See.",
-          "it": "Trova la ruota panoramica vicino al lago.",
-          "pt": "Encontra a roda-gigante junto ao lago.",
-          "no": "Finn pariserhjulet ved innsjøen."
-        }
-      }
-    ]
   }
-}
-);
+});
