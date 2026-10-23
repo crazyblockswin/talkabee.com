@@ -33,6 +33,41 @@ footer{text-align:center;margin:26px 0 0;color:#c8dceb}
 .adventure:hover span,.adventure:focus-visible span{color:#f1c76c}
 .adventure:active{transform:translateY(1px);box-shadow:inset 0 3px 7px #0005,0 2px 4px #0003}
 @media(prefers-reduced-motion:reduce){.adventure{transition:none}}
+</style><style id="tb-az-dashboard-nav-match">
+/* Match the approved Colors & Shapes dashboard navigation; appearance only. */
+.top-nav a {
+  display:inline-flex;align-items:center;justify-content:center;
+  min-height:39px;padding:10px 12px;
+  font-size:clamp(12px,.88vw,17px);font-weight:700;white-space:nowrap;
+  background:linear-gradient(180deg,#27343d,#172229)!important;
+  color:#e9f3f6!important;border:1px solid #526875!important;
+  border-top-color:#17232a!important;border-radius:9px!important;
+  box-shadow:inset 0 3px 7px #000c,inset 0 -9px 18px rgba(75,174,205,.17),0 1px 0 #8da2ac30!important;
+  text-shadow:0 1px 2px #000!important;
+  transition:background .15s ease,box-shadow .15s ease!important;
+  transform:none!important;filter:none!important;
+}
+.top-nav a:hover,.top-nav a:focus-visible {
+  background:linear-gradient(180deg,#344650,#22333c)!important;
+  border-color:#7ba3b4!important;
+  box-shadow:inset 0 3px 7px #000c,inset 0 -12px 22px rgba(81,198,228,.32)!important;
+}
+.top-nav a:active {box-shadow:inset 0 5px 10px #000e!important;transform:translateY(1px)!important}
+/* Preserve the distinctive Donate button. */
+.top-nav a.nav-donate {
+  background:linear-gradient(180deg,#ffe6a4,#e7bb61 55%,#ac7629)!important;
+  color:#1e2835!important;border:1px solid #7c5420!important;
+  box-shadow:inset 0 2px 2px #fff9,0 3px 5px #0006!important;
+  text-shadow:none!important;
+}
+.top-nav a.nav-donate:hover,.top-nav a.nav-donate:focus-visible {
+  background:linear-gradient(180deg,#fff0bf,#f4ca73 55%,#c28a35)!important;
+}
+@media(max-width:700px){.top-nav{gap:6px}.top-nav a{min-height:36px;padding:7px 10px;font-size:12px}}
+@media(prefers-reduced-motion:reduce){.top-nav a{transition:none!important}}
+</style><style id="tb-az-header-position-fix">
+/* Keep the full navigation clear of the right-hand bee. */
+@media(min-width:1400px){header .top-nav{position:relative;left:-145px;}}
 </style><style id="tb-az-layer-style">main{position:relative}
 /* Public image overlays and clickable sound hotspots: retained in Server exports. */
 .tb-az-overlay{position:absolute;z-index:4;display:block;max-width:none;user-select:none;touch-action:none}
@@ -87,7 +122,7 @@ footer{text-align:center;margin:26px 0 0;color:#c8dceb}
 <a class="adventure" href="adventure.html?scene=train-engineer">Steam Train<span aria-hidden="true">›</span></a>
 <a class="adventure" href="adventure.html?scene=train-station">Train Station<span aria-hidden="true">›</span></a>
 <a class="adventure" href="adventure.html?scene=underwater-adventure">Underwater<span aria-hidden="true">›</span></a>
-<a class="adventure" href="adventure.html?scene=zoo">Zoo<span aria-hidden="true">›</span></a></div><section aria-label="Where to go next" class="end-panel"><h2>The adventure doesn’t have to end here!</h2><p>Return to the Adventures directory, head home, or tell us what you enjoyed most.</p><div class="end-actions"><a href="main-directory.html">Main Directory</a><a href="index.html">Home</a><a href="comments.html">Leave a Comment</a></div></section><footer>Talk A Bee  •  Explore, discover, and most of all have FUN!</footer></main><script type="application/json" id="tb-az-data">{"images":[{"src":"images/guitar.png","x":56,"y":-14,"w":241,"h":188,"rotate":0},{"src":"images/hanging.png","x":818,"y":-152,"w":220,"h":170,"rotate":0}],"sounds":{},"hotspots":[{"name":"Hotspot 1","x":82,"y":7,"w":178,"h":145,"sound":"sounds/energy-rock1.mp3"}]}</script><script id="tb-az-runtime">
+<a class="adventure" href="adventure.html?scene=zoo">Zoo<span aria-hidden="true">›</span></a></div><section aria-label="Where to go next" class="end-panel"><h2>The adventure doesn’t have to end here!</h2><p>Return to the Adventures directory, head home, or tell us what you enjoyed most.</p><div class="end-actions"><a href="main-directory.html">Main Directory</a><a href="index.html">Home</a><a href="comments.html">Leave a Comment</a></div></section><footer>Talk A Bee  •  Explore, discover, and most of all have FUN!</footer></main><script type="application/json" id="tb-az-data">{"images":[{"src":"images/guitar.png","x":56,"y":-14,"w":241,"h":188,"rotate":0},{"src":"images/hanging.png","x":825,"y":1,"w":220,"h":170,"rotate":0}],"sounds":{},"hotspots":[{"name":"Hotspot 1","x":82,"y":7,"w":178,"h":145,"sound":"sounds/energy-rock1.mp3"}]}</script><script id="tb-az-runtime">
 (function(){'use strict';
 const dataNode=document.getElementById('tb-az-data');let data={images:[],sounds:{},hotspots:[]};
 try{data=JSON.parse(dataNode.textContent)||data}catch(e){}
