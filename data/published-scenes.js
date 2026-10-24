@@ -8767,8 +8767,8 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
       {
         "id": "alien",
         "label": "Alien",
-        "x": 82.78947412168552,
-        "y": 38.39082055462832,
+        "x": 86.05263047574958,
+        "y": 55.26611242671298,
         "w": 13,
         "h": 25,
         "sound": "",
@@ -8780,7 +8780,9 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
           "it": "alieno",
           "pt": "alienígena",
           "no": "romvesen"
-        }
+        },
+        "rotation": 0,
+        "z": 0
       },
       {
         "id": "popcorn",
@@ -8908,10 +8910,24 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
         "id": "hotspot-1792808775391",
         "label": "Alien Visit The Return",
         "x": 0,
-        "y": 39.53638695863796,
+        "y": 37.21835358518399,
         "w": 33.15789329444269,
         "h": 60.45340334125029,
         "sound": "sounds/alien-story2.mp3",
+        "translations": {
+          "en": ""
+        },
+        "rotation": 0,
+        "z": 0
+      },
+      {
+        "id": "hotspot-1792811884274",
+        "label": "popcorn",
+        "x": 63.84211327085221,
+        "y": 84.0426500123036,
+        "w": 9.526311322790674,
+        "h": 12.60917944537168,
+        "sound": "",
         "translations": {
           "en": ""
         },
