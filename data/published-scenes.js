@@ -8767,8 +8767,8 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
       {
         "id": "alien",
         "label": "Alien",
-        "x": 1,
-        "y": 37,
+        "x": 82.78947412168552,
+        "y": 38.39082055462832,
         "w": 13,
         "h": 25,
         "sound": "",
@@ -8892,12 +8892,26 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
       },
       {
         "id": "hotspot-1792788319220",
-        "label": "Aliens are laughing at how humans are polluting their own planet",
+        "label": "Alien Visit First Contact",
         "x": 31.368420979719087,
         "y": 65.68381232453852,
-        "w": 27.052637101276538,
-        "h": 33.94529724237185,
+        "w": 31.263165509337686,
+        "h": 32.92536181527379,
         "sound": "sounds/alien-visit-final.mp3",
+        "translations": {
+          "en": ""
+        },
+        "rotation": 0,
+        "z": 0
+      },
+      {
+        "id": "hotspot-1792808775391",
+        "label": "Alien Visit The Return",
+        "x": 0,
+        "y": 39.53638695863796,
+        "w": 33.15789329444269,
+        "h": 60.45340334125029,
+        "sound": "sounds/alien-story2.mp3",
         "translations": {
           "en": ""
         },
