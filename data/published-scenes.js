@@ -6268,12 +6268,16 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
       {
         "id": "flower-pot",
         "label": "flower pot",
-        "x": 55.91105259987786,
-        "y": 71.19311800402309,
-        "w": 4.85,
-        "h": 11.06,
+        "x": 41.0689386062409,
+        "y": 76.94184543908119,
+        "w": 20.007898655096326,
+        "h": 9.391014273334143,
         "sound": "",
-        "translations": {}
+        "translations": {
+          "es": ""
+        },
+        "rotation": 0,
+        "z": 0
       },
       {
         "id": "humming-bird-feeder",
@@ -10063,7 +10067,63 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
   "dance-floor": {
     "title": "Dance Floor",
     "image": "images/Dance-Floor.jpg",
-    "lessons": [],
+    "lessons": [
+      {
+        "text": "The drummer keeps the beat. Listen to the rhythm of the drums.",
+        "translations": {
+          "es": "El baterista marca el ritmo. Escucha el ritmo de los tambores.",
+          "fr": "Le batteur donne le rythme. Écoute le rythme de la batterie.",
+          "de": "Der Schlagzeuger gibt den Takt an. Hör auf den Rhythmus der Trommeln.",
+          "it": "Il batterista tiene il ritmo. Ascolta il ritmo della batteria.",
+          "pt": "O baterista marca o ritmo. Ouça o ritmo da bateria.",
+          "no": "Trommeslageren holder takten. Hør på rytmen fra trommene."
+        }
+      },
+      {
+        "text": "The guitarist plays a lively tune. Listen to the sound of the guitar.",
+        "translations": {
+          "es": "El guitarrista toca una melodía animada. Escucha el sonido de la guitarra.",
+          "fr": "Le guitariste joue un air entraînant. Écoute le son de la guitare.",
+          "de": "Der Gitarrist spielt eine schwungvolle Melodie. Hör auf den Klang der Gitarre.",
+          "it": "Il chitarrista suona una melodia vivace. Ascolta il suono della chitarra.",
+          "pt": "O guitarrista toca uma melodia animada. Ouça o som da guitarra.",
+          "no": "Gitaristen spiller en livlig melodi. Hør på lyden av gitaren."
+        }
+      },
+      {
+        "text": "The keyboard player adds music to the dance floor. Listen to the keys.",
+        "translations": {
+          "es": "El tecladista añade música a la pista de baile. Escucha las teclas.",
+          "fr": "Le claviériste ajoute de la musique à la piste de danse. Écoute les touches.",
+          "de": "Der Keyboardspieler bringt Musik auf die Tanzfläche. Hör auf die Tasten.",
+          "it": "Il tastierista aggiunge musica alla pista da ballo. Ascolta i tasti.",
+          "pt": "O tecladista acrescenta música à pista de dança. Ouça as teclas.",
+          "no": "Keyboardspilleren fyller dansegulvet med musikk. Hør på tangentene."
+        }
+      },
+      {
+        "text": "The speaker fills the room with music. Music makes everyone want to dance.",
+        "translations": {
+          "es": "El altavoz llena la sala de música. La música hace que todos quieran bailar.",
+          "fr": "Le haut-parleur remplit la salle de musique. La musique donne envie à tout le monde de danser.",
+          "de": "Der Lautsprecher erfüllt den Raum mit Musik. Bei der Musik wollen alle tanzen.",
+          "it": "L’altoparlante riempie la sala di musica. La musica fa venire voglia di ballare a tutti.",
+          "pt": "O alto-falante enche a sala de música. A música dá vontade de dançar a todos.",
+          "no": "Høyttaleren fyller rommet med musikk. Musikken får alle til å ville danse."
+        }
+      },
+      {
+        "text": "The dancer moves to the rhythm. Watch the steps and enjoy the music.",
+        "translations": {
+          "es": "La bailarina se mueve al ritmo. Observa los pasos y disfruta de la música.",
+          "fr": "La danseuse bouge au rythme de la musique. Regarde ses pas et profite de la musique.",
+          "de": "Die Tänzerin bewegt sich im Rhythmus. Schau dir die Schritte an und genieße die Musik.",
+          "it": "La ballerina si muove a ritmo. Guarda i passi e goditi la musica.",
+          "pt": "A dançarina se move no ritmo. Observe os passos e aproveite a música.",
+          "no": "Danseren beveger seg i takt med musikken. Se på trinnene og nyt musikken."
+        }
+      }
+    ],
     "hotspots": [
       {
         "id": "hotspot-1792557489997",
@@ -10179,7 +10239,68 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
       }
     ],
     "overlays": [],
-    "challenges": []
+    "challenges": [
+      {
+        "prompt": "Find the drummer.",
+        "target": "hotspot-1792557489997",
+        "translations": {
+          "es": "Encuentra al baterista.",
+          "fr": "Trouve le batteur.",
+          "de": "Finde den Schlagzeuger.",
+          "it": "Trova il batterista.",
+          "pt": "Encontre o baterista.",
+          "no": "Finn trommeslageren."
+        }
+      },
+      {
+        "prompt": "Find the guitarist.",
+        "target": "hotspot-1792733380415",
+        "translations": {
+          "es": "Encuentra al guitarrista.",
+          "fr": "Trouve le guitariste.",
+          "de": "Finde den Gitarristen.",
+          "it": "Trova il chitarrista.",
+          "pt": "Encontre o guitarrista.",
+          "no": "Finn gitaristen."
+        }
+      },
+      {
+        "prompt": "Find the keyboard player.",
+        "target": "hotspot-1792733459045",
+        "translations": {
+          "es": "Encuentra al tecladista.",
+          "fr": "Trouve le claviériste.",
+          "de": "Finde den Keyboardspieler.",
+          "it": "Trova il tastierista.",
+          "pt": "Encontre o tecladista.",
+          "no": "Finn keyboardspilleren."
+        }
+      },
+      {
+        "prompt": "Find the speaker.",
+        "target": "hotspot-1792733608925",
+        "translations": {
+          "es": "Encuentra el altavoz.",
+          "fr": "Trouve le haut-parleur.",
+          "de": "Finde den Lautsprecher.",
+          "it": "Trova l’altoparlante.",
+          "pt": "Encontre o alto-falante.",
+          "no": "Finn høyttaleren."
+        }
+      },
+      {
+        "prompt": "Find the dancer.",
+        "target": "hotspot-1792733651948",
+        "translations": {
+          "es": "Encuentra a la bailarina.",
+          "fr": "Trouve la danseuse.",
+          "de": "Finde die Tänzerin.",
+          "it": "Trova la ballerina.",
+          "pt": "Encontre a dançarina.",
+          "no": "Finn danseren."
+        }
+      }
+    ]
   },
   "oval-office": {
     "title": "Oval Office",
