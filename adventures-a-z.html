@@ -90,6 +90,20 @@ footer{text-align:center;margin:26px 0 0;color:#c8dceb}
 </style><style id="tb-az-header-position-fix">
 /* Keep the full navigation clear of the right-hand bee. */
 @media(min-width:1400px){header .top-nav{position:relative;left:-145px;}}
+</style><style id="tb-az-editor-css">
+#tb-az-launch{position:fixed;right:16px;bottom:16px;z-index:10010;background:linear-gradient(#354e68,#111c2c);color:#fff;border:2px solid #dfb967;border-radius:12px;padding:12px 17px;font:700 14px Arial;cursor:pointer;box-shadow:0 7px 20px #0009}
+#tb-az-studio{position:fixed;right:18px;top:110px;width:340px;max-width:calc(100vw - 20px);max-height:calc(100vh - 120px);overflow:auto;z-index:10011;background:#101c2deb;border:1px solid #f2ce79;border-radius:14px;color:white;box-shadow:0 12px 36px #000b;padding:14px;font:13px Arial;display:none;resize:both}
+#tb-az-studio .tb-head{cursor:move;user-select:none;font-size:16px;font-weight:bold;border-bottom:1px solid #ffffff40;padding:4px 0 12px;margin-bottom:10px;display:flex;justify-content:space-between}
+#tb-az-studio label{display:block;margin:10px 0 4px;font-weight:bold}#tb-az-studio input,#tb-az-studio select{width:100%;padding:8px;background:#f5f5f5;color:#111;border-radius:7px;border:0;box-sizing:border-box}#tb-az-studio button{cursor:pointer;border-radius:8px;border:1px solid #93a9bc;background:#263d54;color:white;padding:8px 10px;margin:5px 3px 0 0}#tb-az-studio button:hover{background:#365d79}#tb-az-studio .tb-gold{background:#8c6221;border-color:#e6bc68}#tb-az-studio .tb-note{font-size:12px;color:#d0dbe5;line-height:1.4}#tb-az-studio .tb-row{display:flex;gap:6px}#tb-az-studio .tb-row>*{flex:1;min-width:0}
+body.tb-az-editing .tb-az-overlay{outline:2px dashed #ffd45f;cursor:move}body.tb-az-editing .tb-az-overlay.tb-selected{outline:3px solid #65efff}body.tb-az-editing .adventure.tb-az-selected-link{outline:3px solid #ffd45f}
+.tb-az-resizer{display:none;position:absolute;right:-7px;bottom:-7px;width:17px;height:17px;background:#65efff;border:2px solid #102033;border-radius:3px;cursor:nwse-resize;touch-action:none}body.tb-az-editing .tb-az-overlay.tb-selected .tb-az-resizer{display:block}
+
+
+
+body.tb-az-editing .tb-az-hotspot{border:2px dashed #ffcd61;background:#ffcc3320;cursor:move}
+body.tb-az-editing .tb-az-hotspot.tb-selected{border:3px solid #65efff;background:#65efff24}
+.tb-az-hotspot .tb-az-hotspot-grip{display:none;position:absolute;right:-8px;bottom:-8px;width:18px;height:18px;background:#65efff;border:2px solid #102033;border-radius:3px;cursor:nwse-resize;touch-action:none}
+body.tb-az-editing .tb-az-hotspot.tb-selected .tb-az-hotspot-grip{display:block}
 </style><style id="tb-az-layer-style">main{position:relative}
 /* Public image overlays and clickable sound hotspots: retained in Server exports. */
 .tb-az-overlay{position:absolute;z-index:4;display:block;max-width:none;user-select:none;touch-action:none}
@@ -144,7 +158,51 @@ footer{text-align:center;margin:26px 0 0;color:#c8dceb}
 <a class="adventure" href="adventure.html?scene=train-engineer">Steam Train<span aria-hidden="true">›</span></a>
 <a class="adventure" href="adventure.html?scene=train-station">Train Station<span aria-hidden="true">›</span></a>
 <a class="adventure" href="adventure.html?scene=underwater-adventure">Underwater<span aria-hidden="true">›</span></a>
-<a class="adventure" href="adventure.html?scene=zoo">Zoo<span aria-hidden="true">›</span></a></div><section aria-label="Where to go next" class="end-panel"><h2>The adventure doesn’t have to end here!</h2><p>Return to the Adventures directory, head home, or tell us what you enjoyed most.</p><div class="end-actions"><a href="main-directory.html">Main Directory</a><a href="index.html">Home</a><a href="comments.html">Leave a Comment</a></div></section><footer>Talk A Bee  •  Explore, discover, and most of all have FUN!</footer></main><script type="application/json" id="tb-az-data">{"images":[{"src":"images/hanging.png","x":880,"y":-3,"w":165,"h":128,"rotate":0},{"src":"images/guitar.png","x":56,"y":-14,"w":241,"h":188,"rotate":0}],"sounds":{},"hotspots":[{"name":"Hotspot 1","x":82,"y":7,"w":178,"h":145,"sound":"sounds/energy-rock1.mp3"}]}</script><script id="tb-az-runtime">
+<a class="adventure" href="adventure.html?scene=zoo">Zoo<span aria-hidden="true">›</span></a></div><section aria-label="Where to go next" class="end-panel"><h2>The adventure doesn’t have to end here!</h2><p>Return to the Adventures directory, head home, or tell us what you enjoyed most.</p><div class="end-actions"><a href="main-directory.html">Main Directory</a><a href="index.html">Home</a><a href="comments.html">Leave a Comment</a></div></section><footer>Talk A Bee  •  Explore, discover, and most of all have FUN!</footer></main><script src="js/adventure-catalog.js"></script>
+<script id="tb-az-catalog-sync">
+(function () {
+  'use strict';
+  const grid = document.querySelector('main .grid');
+  const catalog = window.TAB_ADVENTURE_CATALOG;
+  if (!grid || !Array.isArray(catalog)) return; // Keep original links if catalog is unavailable.
+  const original = Array.from(grid.querySelectorAll('a.adventure'));
+  const byScene = new Map();
+  for (const link of original) {
+    try {
+      const id = new URL(link.href, location.href).searchParams.get('scene');
+      if (id) byScene.set(id, link);
+    } catch (_) {}
+  }
+  const links = [];
+  const included = new Set();
+  for (const item of catalog) {
+    if (!item || !item.id || item.hidden === true || included.has(item.id)) continue;
+    included.add(item.id);
+    const existing = byScene.get(item.id);
+    const link = existing || document.createElement('a');
+    link.className = 'adventure';
+    link.href = item.href || (existing ? existing.getAttribute('href') : 'adventure.html?scene=' + encodeURIComponent(item.id));
+    if (!existing) {
+      link.append(document.createTextNode(item.title || item.id));
+      const arrow = document.createElement('span');
+      arrow.setAttribute('aria-hidden', 'true');
+      arrow.textContent = '›';
+      link.append(arrow);
+    }
+    links.push(link);
+  }
+  // Preserve standalone/legacy adventures that have no catalog entry.
+  for (const link of original) {
+    let id = null;
+    try { id = new URL(link.href, location.href).searchParams.get('scene'); } catch (_) {}
+    if (id && included.has(id)) continue;
+    links.push(link);
+  }
+  links.sort((a, b) => a.textContent.trim().replace(/›$/, '').trim().localeCompare(b.textContent.trim().replace(/›$/, '').trim(), undefined, {sensitivity:'base'}));
+  grid.replaceChildren(...links);
+})();
+</script>
+<script type="application/json" id="tb-az-data">{"images":[{"src":"images/hanging.png","x":880,"y":-3,"w":165,"h":128,"rotate":0},{"src":"images/guitar.png","x":56,"y":-14,"w":241,"h":188,"rotate":0}],"sounds":{},"hotspots":[{"name":"Hotspot 1","x":82,"y":7,"w":178,"h":145,"sound":"sounds/energy-rock1.mp3"}]}</script><script id="tb-az-runtime">
 (function(){'use strict';
 const dataNode=document.getElementById('tb-az-data');let data={images:[],sounds:{},hotspots:[]};
 try{data=JSON.parse(dataNode.textContent)||data}catch(e){}
@@ -174,6 +232,90 @@ function updateSelected(){layer.querySelectorAll('.tb-az-overlay').forEach(el=>e
 window.tbAz={data,draw,drawHotspots,updateSelected,layer,hotspotLayer,cards,audio,get hotspot(){return selectedHotspot},set hotspot(v){selectedHotspot=v;selectedImage=null;selectedLink=null;updateSelected()},get image(){return selectedImage},set image(v){selectedImage=v;selectedLink=null;selectedHotspot=null;updateSelected()},get link(){return selectedLink},set link(v){selectedLink=v;selectedImage=null;updateSelected()}};
 draw();drawHotspots();
 })();
-</script>
-
-</body></html>
+</script><button id="tb-az-launch" type="button">✦ Image &amp; Sound Editor</button>
+<div id="tb-az-studio" role="region" aria-label="Image and sound editor" style="display: none; left: 414.933px; top: 27.2px; right: auto;">
+<div class="tb-head" id="tb-az-drag"><span>✦ TALK A BEE STUDIO</span><button type="button" id="tb-az-close">×</button></div>
+<label>IMAGE EDITOR — FILE PATHS ONLY</label><input type="file" id="tb-az-image-file" accept="image/png,image/jpeg,image/webp,image/gif"><p class="tb-note">Choose a file already copied into your Talk-A-Bee/images folder. Selecting a file stores its filename/path, never its contents.</p>
+<label>Or existing website image path</label><input id="tb-az-image-path" placeholder="images/png/bee.png"><button id="tb-az-add-path">Add Image</button>
+<label>Select image</label><select id="tb-az-images"><option value="">Choose image…</option><option value="0">Image 1</option><option value="1">Image 2</option></select>
+<div class="tb-row"><button id="tb-az-front">Bring Forward</button><button id="tb-az-back">Send Backward</button><button id="tb-az-remove">Remove Image</button></div>
+<label>Image rotation (degrees)</label><input id="tb-az-rotation" type="number" min="-360" max="360" step="5" value="0">
+<p class="tb-note">Drag an image to move it. Drag its turquoise bottom-right handle to resize. Select an image to rotate or remove it.</p>
+<hr><label>SOUND EDITOR — CLICKABLE HOTSPOTS</label>
+<div class="tb-row"><button id="tb-az-add-hotspot">+ Add Hotspot</button><button id="tb-az-remove-hotspot">Remove Hotspot</button></div>
+<label>Select hotspot</label><select id="tb-az-hotspots"><option value="">Choose hotspot…</option><option value="0">Hotspot 1</option></select>
+<label>Hotspot name</label><input id="tb-az-hotspot-name" placeholder="e.g. Guitar Bee">
+<label>Sound file path</label><input id="tb-az-sound-path" placeholder="sounds/guitar.mp3"><button id="tb-az-set-sound">Assign Sound</button>
+<label>Choose an existing MP3 (filename only — no embedding)</label><input type="file" id="tb-az-sound-file" accept="audio/*,.mp3,.wav,.ogg">
+<div class="tb-row"><button id="tb-az-test">▶ Test Sound</button><button id="tb-az-clear">Remove Sound</button></div><p id="tb-az-audio-status" class="tb-note" role="status" aria-live="polite">Playing sounds/energy-rock1.mp3 (selected MP3 preview)</p>
+<p class="tb-note">Add a hotspot, drag it over your bee or picture, and resize using its turquoise corner. Assign a sound to that hotspot. Hotspots are invisible to visitors and play on click. Adventure links remain normal links.</p>
+<hr><div class="tb-row"><button class="tb-gold" id="tb-az-save-local">💾 Save Local HTML</button><button class="tb-gold" id="tb-az-save-server">🌐 Save Server HTML</button></div>
+<p class="tb-note">Local keeps this editor; Server removes the editor but keeps pictures and sounds. Existing file paths must remain in their website folders. Files are NEVER embedded. Put image files in images/ and audio files in sounds/ before selecting them. Save Local to keep editing; Save Server removes the editor.</p>
+</div>
+<script id="tb-az-editor-script">
+(function(){'use strict';
+const api=window.tbAz, data=api.data, studio=document.getElementById('tb-az-studio'), launch=document.getElementById('tb-az-launch');
+const $=id=>document.getElementById(id);
+ let previewUrl=null,previewPath='';
+ function clearPreview(){if(previewUrl)URL.revokeObjectURL(previewUrl);previewUrl=null;previewPath=''}
+ function status(message){$('tb-az-audio-status').textContent=message}
+ 
+launch.onclick=()=>{studio.style.display='block';document.body.classList.add('tb-az-editing');api.updateSelected()};
+$('tb-az-close').onclick=()=>{studio.style.display='none';document.body.classList.remove('tb-az-editing');api.image=null};
+$('tb-az-hotspots').onchange=e=>{clearPreview();status('');api.hotspot=e.target.value===''?null:+e.target.value};
+$('tb-az-images').onchange=e=>api.image=e.target.value===''?null:+e.target.value;
+function add(src){if(!src)return;data.images.push({src,x:Math.max(10,Math.round((document.querySelector('main').clientWidth-220)/2)),y:140,w:220,h:170,rotate:0});api.draw();api.image=data.images.length-1;}
+$('tb-az-add-path').onclick=()=>add($('tb-az-image-path').value.trim());
+function imageFilePath(file){if(!file)return '';return 'images/'+file.name;}
+function soundFilePath(file){if(!file)return '';return 'sounds/'+file.name;}
+$('tb-az-image-file').onchange=e=>{const path=imageFilePath(e.target.files[0]);if(path){$('tb-az-image-path').value=path;add(path)}};
+$('tb-az-remove').onclick=()=>{if(api.image===null)return;data.images.splice(api.image,1);api.image=null;api.draw();};
+$('tb-az-rotation').onchange=e=>{if(api.image===null)return;data.images[api.image].rotate=+e.target.value||0;api.draw();api.updateSelected()};
+function shift(dir){if(api.image===null)return;let i=api.image,j=i+dir;if(j<0||j>=data.images.length)return;[data.images[i],data.images[j]]=[data.images[j],data.images[i]];api.draw();api.image=j;}
+$('tb-az-front').onclick=()=>shift(1);$('tb-az-back').onclick=()=>shift(-1);
+let drag=null;
+api.layer.addEventListener('pointerdown',e=>{if(!document.body.classList.contains('tb-az-editing'))return;const wrap=e.target.closest('.tb-az-overlay');if(!wrap)return;e.preventDefault();const i=+wrap.dataset.index;api.image=i;const it=data.images[i];drag={i,resize:e.target.classList.contains('tb-az-resizer'),sx:e.clientX,sy:e.clientY,x:it.x,y:it.y,w:it.w,h:it.h};wrap.setPointerCapture(e.pointerId)});
+api.layer.addEventListener('pointermove',e=>{if(!drag)return;const it=data.images[drag.i];if(!it)return;const dx=e.clientX-drag.sx,dy=e.clientY-drag.sy;if(drag.resize){it.w=Math.max(25,Math.round(drag.w+dx));it.h=Math.max(25,Math.round(drag.h+dy))}else{it.x=Math.round(drag.x+dx);it.y=Math.round(drag.y+dy)}const el=api.layer.querySelector('[data-index="'+drag.i+'"]');if(el){el.style.left=it.x+'px';el.style.top=it.y+'px';el.style.width=it.w+'px';el.style.height=it.h+'px'}});
+api.layer.addEventListener('pointerup',()=>drag=null);api.layer.addEventListener('pointercancel',()=>drag=null);
+$('tb-az-add-hotspot').onclick=()=>{clearPreview();data.hotspots.push({name:'Hotspot '+(data.hotspots.length+1),x:160,y:180,w:130,h:110,sound:''});api.drawHotspots();api.hotspot=data.hotspots.length-1};
+$('tb-az-remove-hotspot').onclick=()=>{clearPreview();if(api.hotspot===null)return;data.hotspots.splice(api.hotspot,1);api.hotspot=null;api.drawHotspots()};
+$('tb-az-hotspot-name').onchange=e=>{if(api.hotspot===null)return;data.hotspots[api.hotspot].name=e.target.value.trim();api.drawHotspots();api.updateSelected()};
+function currentHotspot(){return api.hotspot===null?null:data.hotspots[api.hotspot]}
+$('tb-az-set-sound').onclick=()=>{const h=currentHotspot();if(h){const value=$('tb-az-sound-path').value.trim();if(value==='[Embedded audio]')return;h.sound=value;if(value!==previewPath)clearPreview();status('Assigned '+value);api.updateSelected()}};
+$('tb-az-sound-path').addEventListener('input',()=>{if($('tb-az-sound-path').value.trim()!==previewPath)clearPreview()});
+ $('tb-az-sound-file').onchange=e=>{
+   const file=e.target.files[0],path=soundFilePath(file);
+   if(!file)return;
+   clearPreview();previewUrl=URL.createObjectURL(file);previewPath=path;
+   $('tb-az-sound-path').value=path;
+   const h=currentHotspot();
+   if(h){h.sound=path;api.updateSelected();status('Selected '+file.name+'. Test uses this file; saved HTML uses '+path+'.')}
+   else status('Select a hotspot before assigning the MP3.');
+ };
+$('tb-az-clear').onclick=()=>{const h=currentHotspot();if(h){h.sound='';clearPreview();status('Sound removed.');api.updateSelected()}};
+$('tb-az-test').onclick=async()=>{
+  const h=currentHotspot();
+  if(!h){status('Select a hotspot first.');return}
+  const src=(previewUrl&&previewPath===h.sound)?previewUrl:h.sound;
+  status('Testing '+(h.sound||'(no sound assigned)')+' …');
+  try{await api.audio(src);status('Playing '+h.sound+(src===previewUrl?' (selected MP3 preview)':''))}
+  catch(e){status('Cannot play '+(h.sound||'sound')+'. Check that the MP3 is in the sounds/ folder beside this HTML. '+e.message)}
+ };
+let hotspotDrag=null;
+api.hotspotLayer.addEventListener('pointerdown',e=>{if(!document.body.classList.contains('tb-az-editing'))return;const el=e.target.closest('.tb-az-hotspot');if(!el)return;e.preventDefault();const i=+el.dataset.index;api.hotspot=i;const h=data.hotspots[i];hotspotDrag={i,resize:e.target.classList.contains('tb-az-hotspot-grip'),sx:e.clientX,sy:e.clientY,x:h.x,y:h.y,w:h.w,h:h.h};el.setPointerCapture(e.pointerId)});
+api.hotspotLayer.addEventListener('pointermove',e=>{if(!hotspotDrag)return;const d=hotspotDrag,h=data.hotspots[d.i];if(!h)return;const dx=e.clientX-d.sx,dy=e.clientY-d.sy;if(d.resize){h.w=Math.max(24,Math.round(d.w+dx));h.h=Math.max(24,Math.round(d.h+dy))}else{h.x=Math.round(d.x+dx);h.y=Math.round(d.y+dy)}const el=api.hotspotLayer.querySelector('[data-index="'+d.i+'"]');if(el){el.style.left=h.x+'px';el.style.top=h.y+'px';el.style.width=h.w+'px';el.style.height=h.h+'px'}});
+api.hotspotLayer.addEventListener('pointerup',()=>hotspotDrag=null);api.hotspotLayer.addEventListener('pointercancel',()=>hotspotDrag=null);
+// Move the floating studio by its heading.
+let panelDrag=null;$('tb-az-drag').addEventListener('pointerdown',e=>{if(e.target.tagName==='BUTTON')return;const r=studio.getBoundingClientRect();panelDrag={x:e.clientX,y:e.clientY,left:r.left,top:r.top};$('tb-az-drag').setPointerCapture(e.pointerId)});
+$('tb-az-drag').addEventListener('pointermove',e=>{if(!panelDrag)return;studio.style.left=Math.max(0,panelDrag.left+e.clientX-panelDrag.x)+'px';studio.style.top=Math.max(0,panelDrag.top+e.clientY-panelDrag.y)+'px';studio.style.right='auto'});
+$('tb-az-drag').addEventListener('pointerup',()=>panelDrag=null);
+function save(server){const embedded=[...data.images.map(i=>i.src),...data.hotspots.map(h=>h.sound)].filter(v=>typeof v==='string'&&/^data:/i.test(v));if(embedded.length){alert('Embedded media detected. Replace these with images/ or sounds/ file paths before saving.');return;}const clone=document.documentElement.cloneNode(true);const json=JSON.stringify(data).replace(/</g,'\\u003c');clone.querySelector('#tb-az-data').textContent=json;
+// Runtime-created images are rebuilt from JSON on load, never saved twice.
+clone.querySelector('#tb-az-image-layer')?.remove();clone.querySelector('#tb-az-hotspot-layer')?.remove();clone.querySelectorAll('.tb-az-selected-link').forEach(el=>el.classList.remove('tb-az-selected-link'));
+clone.querySelectorAll('.tb-selected').forEach(el=>el.classList.remove('tb-selected'));
+clone.querySelector('body').classList.remove('tb-az-editing');const savedStudio=clone.querySelector('#tb-az-studio');if(savedStudio)savedStudio.style.display='none';
+if(server){['tb-az-editor-css','tb-az-launch','tb-az-studio','tb-az-editor-script'].forEach(id=>clone.querySelector('#'+id)?.remove())}
+const html='<!DOCTYPE html>\n'+clone.outerHTML;const blob=new Blob([html],{type:'text/html;charset=utf-8'}),url=URL.createObjectURL(blob),a=document.createElement('a');a.href=url;a.download=server?'adventures-a-z-server.html':'adventures-a-z.html';document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),3000)}
+$('tb-az-save-local').onclick=()=>save(false);$('tb-az-save-server').onclick=()=>save(true);
+})();
+</script></body></html>
