@@ -89,7 +89,20 @@ function sceneNames(){
  const known=new Set([...Object.keys(window.TAB_SCENES||{}),...catalog.map(x=>x.id),...Object.keys(localStorage).filter(k=>k.startsWith(sceneKey)).map(k=>k.slice(sceneKey.length))]);
  const ordered=arranged.filter(x=>x&&known.has(x.id)&&(!x.hidden||editable)).map(x=>x.id);
  const remainder=[...known].filter(id=>!arranged.some(x=>x.id===id));
- return [...new Set([...ordered,...remainder])];
+ // Retired test Adventures may survive in browser storage or published scenes.
+ // Keep their data intact, but never offer them in the Adventure picker.
+ const retiredTitles=new Set(['campground — master engine test','forest walk — second engine test','campground']);
+ const retiredIds=new Set(['campground','campground-master-engine-test','forest-walk-second-engine-test']);
+ const savedTitles=new Map();
+ try{const saved=JSON.parse(localStorage.getItem('talkabee-adventure-directory-v1')||'[]');if(Array.isArray(saved))for(const item of saved)if(item?.id)savedTitles.set(item.id,item.title||'');}catch{}
+ const normalize=v=>String(v||'').trim().toLowerCase().replace(/[\u2013\u2014]/g,'-').replace(/\s+/g,' ');
+ const isRetired=id=>{
+   if(retiredIds.has(id))return true;
+   const titles=[savedTitles.get(id),catalog.find(x=>x.id===id)?.title,(window.TAB_SCENES||{})[id]?.title];
+   try{const stored=JSON.parse(localStorage.getItem(sceneKey+id)||'null');titles.push(stored?.title);}catch{}
+   return titles.some(title=>retiredTitles.has(String(title||'').trim().toLowerCase())||['campground - master engine test','forest walk - second engine test'].includes(normalize(title)));
+ };
+ return [...new Set([...ordered,...remainder])].filter(id=>!isRetired(id));
 }
 function updateAdventureNavigation(){
  const ids=sceneNames().filter(id=>!id.startsWith('test-'));
