@@ -40,6 +40,9 @@
   .vote-actions button{border:1px solid #e6c373;border-radius:10px;background:#e8c77d;color:#192437;font:inherit;font-weight:750;padding:12px 24px;cursor:pointer}
   .vote-actions button:disabled{opacity:.5;cursor:not-allowed}
   .vote-status{min-height:30px;margin:14px 0 0;color:#a5ffd1;font-weight:650}
+  .vote-results{margin:14px auto 0;max-width:650px;text-align:left;color:#e7e3dc;line-height:1.5}
+  .vote-results ul{padding-left:22px}
+  .vote-security{display:flex;justify-content:center;margin:18px auto 0;min-height:65px}
   .vote-note{font-size:13px;color:#bfc8d6;line-height:1.5;margin:10px auto 0;max-width:760px}
   @media(max-width:680px){.vote-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.vote-option{min-height:240px}.vote-photo{height:125px}}
   @media(max-width:420px){.vote-grid{grid-template-columns:1fr 1fr;gap:8px}.vote-option{padding:10px 5px;font-size:15px}.vote-photo{height:95px}.vote-reason{font-size:12px}}
@@ -73,54 +76,141 @@
       <label for="vote-idea">What should Buzzkill become?</label>
       <textarea id="vote-idea" maxlength="300" placeholder="Give Buzzkill a new life..."></textarea>
     </div>
-    <div class="vote-actions"><button id="vote-submit" type="button" disabled>Save My Choice</button></div>
+    <div class="vote-security" id="vote-security" aria-label="Anti-bot verification"></div>
+    <div class="vote-actions"><button id="vote-submit" type="button" disabled>Cast My Vote</button></div>
     <p class="vote-status" id="vote-status" role="status" aria-live="polite"></p>
+    <div class="vote-results" id="vote-results" aria-live="polite" hidden></div>
   </section>
   <nav class="bottom-nav" aria-label="Return navigation">
     <a href="adventure.html">❮ Return to Adventures</a>
     <a href="adventures-a-z.html">❮ Adventures A–Z</a>
   </nav>
 </main>
-<script>
-(function(){
-  'use strict';
-  const storageKey='talkabee-buzzkill-next-life-vote';
-  const options=Array.from(document.querySelectorAll('.vote-option'));
-  const custom=document.getElementById('vote-custom');
-  const idea=document.getElementById('vote-idea');
-  const submit=document.getElementById('vote-submit');
-  const status=document.getElementById('vote-status');
-  let selected='';
-  function choose(value){
-    selected=value;
-    options.forEach(button=>button.setAttribute('aria-pressed',String(button.dataset.vote===value)));
-    custom.hidden=value!=='custom';
-    submit.disabled=!value;
-    status.textContent='';
-    if(value==='custom')idea.focus();
-  }
-  options.forEach(button=>button.addEventListener('click',()=>choose(button.dataset.vote)));
-  try{
-    const previous=JSON.parse(localStorage.getItem(storageKey)||'null');
-    if(previous && options.some(button=>button.dataset.vote===previous.choice)){
-      choose(previous.choice);
-      if(previous.choice==='custom')idea.value=previous.idea||'';
-      status.textContent='Your previous choice is selected. You can change it.';
-    }
-  }catch(error){ /* Browser storage may be disabled. */ }
-  submit.addEventListener('click',()=>{
-    if(!selected)return;
-    const text=idea.value.trim();
-    if(selected==='custom' && !text){status.textContent='Please enter your idea first.';idea.focus();return;}
-    const vote={choice:selected,idea:selected==='custom'?text:''};
-    try{
-      localStorage.setItem(storageKey,JSON.stringify(vote));
-      status.textContent='Your choice has been saved on this browser!';
-    }catch(error){
-      status.textContent='Browser storage is unavailable. Your choice cannot be saved here.';
-    }
-  });
-})();
-</script>
+ <script src="https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit" async defer></script>
+ <script>
+ (function(){
+   'use strict';
+   const API = 'https://talkabee-voting.wallyjcass.workers.dev';
+   const SITE_KEY = '0x4AAAAAAFlvZu0ZFdHSJHbW';
+   const storageKey = 'talkabee-buzzkill-voter-id';
+   const votedKey = 'talkabee-buzzkill-vote-submitted';
+   const options = Array.from(document.querySelectorAll('.vote-option'));
+   const custom = document.getElementById('vote-custom');
+   const idea = document.getElementById('vote-idea');
+   const submit = document.getElementById('vote-submit');
+   const status = document.getElementById('vote-status');
+   const results = document.getElementById('vote-results');
+   const security = document.getElementById('vote-security');
+   let selected = '', widgetId = null, turnstileToken = '', ready = false, closed = false, alreadyVoted = false;
+   try { alreadyVoted = localStorage.getItem(votedKey) === 'yes'; } catch (_) {}
+   function message(text) { status.textContent = text; }
+   function refreshButton() { submit.disabled = !ready || closed || alreadyVoted || !selected || !turnstileToken; }
+   function choose(value) {
+     if (closed || alreadyVoted || !ready) return;
+     selected = value;
+     options.forEach(button => button.setAttribute('aria-pressed', String(button.dataset.vote === value)));
+     custom.hidden = value !== 'custom';
+     message(''); refreshButton();
+     if (value === 'custom') idea.focus();
+   }
+   options.forEach(button => button.addEventListener('click', () => choose(button.dataset.vote)));
+   function showResults(data) {
+     results.replaceChildren();
+     if (!data || data.milestone === 'hidden') { results.hidden = true; return; }
+     results.hidden = false;
+     const total = document.createElement('p');
+     total.textContent = 'Votes cast: ' + Number(data.total || 0) + ' of 1,000';
+     results.appendChild(total);
+     if (data.milestone === 'standings' && Array.isArray(data.standings)) {
+       const heading = document.createElement('strong'); heading.textContent = 'Current standings'; results.appendChild(heading);
+       const list = document.createElement('ul');
+       const labels = { dandelion:'Dandelion', daisy:'Daisy', honey:'Honey Jar', scarecrow:'Scarecrow', bee:'Let Him Bee!', custom:'My Own Idea' };
+       data.standings.forEach(item => {
+         const li = document.createElement('li'); li.textContent = (labels[item.choice] || item.choice) + ': ' + Number(item.votes) + ' votes'; list.appendChild(li);
+       });
+       results.appendChild(list);
+     }
+     if (data.closed) {
+       const winner = document.createElement('strong');
+       const labels = { dandelion:'Dandelion', daisy:'Daisy', honey:'Honey Jar', scarecrow:'Scarecrow', bee:'Let Him Bee!', custom:'My Own Idea' };
+       winner.textContent = 'Voting closed! ' + (data.winners?.length ? 'Winner: ' + data.winners.map(c => labels[c] || c).join(' / ') : 'Final results are being confirmed.');
+       results.appendChild(winner);
+     }
+   }
+   function showLocked(text) {
+     ready = false; message(text); refreshButton();
+   }
+   function renderTurnstile() {
+     if (!ready || closed || alreadyVoted || widgetId !== null) return;
+     if (!window.turnstile || typeof window.turnstile.render !== 'function') {
+       setTimeout(renderTurnstile, 250); return;
+     }
+     widgetId = window.turnstile.render(security, {
+       sitekey: SITE_KEY,
+       callback(token) { turnstileToken = token; refreshButton(); },
+       'expired-callback'() { turnstileToken = ''; refreshButton(); },
+       'error-callback'() { turnstileToken = ''; message('Verification could not load. Please refresh the page.'); refreshButton(); },
+     });
+   }
+   async function loadStatus() {
+     try {
+       const response = await fetch(API + '/api/status', { cache:'no-store' });
+       if (!response.ok) throw new Error('Status unavailable');
+       const data = await response.json();
+       showResults(data);
+       closed = !!data.closed;
+       ready = !!data.votingReady && !closed;
+       if (closed) message('Voting has closed. Thank you for taking part!');
+       else if (alreadyVoted) message('Your vote has already been submitted from this browser.');
+       else if (!data.votingReady) message('Voting will open shortly. Please check back soon.');
+       else { message('Select Buzzkill’s next life, complete verification, and cast your vote.'); renderTurnstile(); }
+       refreshButton();
+     } catch (error) { showLocked('Voting service is temporarily unavailable. Please try again later.'); }
+   }
+   submit.addEventListener('click', async () => {
+     if (submit.disabled || !ready || !selected || !turnstileToken) return;
+     const text = idea.value.trim();
+     if (selected === 'custom' && (text.length < 3 || text.length > 300)) {
+       message('Please enter an idea between 3 and 300 characters.'); idea.focus(); return;
+     }
+     let voterId;
+     try {
+       voterId = localStorage.getItem(storageKey);
+       if (!voterId) { voterId = crypto.randomUUID(); localStorage.setItem(storageKey, voterId); }
+     } catch (_) { message('Please enable browser storage to cast your vote.'); return; }
+     submit.disabled = true; message('Submitting your vote…');
+     try {
+       const response = await fetch(API + '/api/vote', {
+         method:'POST', headers:{ 'Content-Type':'application/json' },
+         body:JSON.stringify({ choice:selected, idea:selected === 'custom' ? text : '', voterId, turnstileToken }),
+       });
+       const data = await response.json();
+       showResults(data);
+       if (response.status === 201 && data.saved) {
+         alreadyVoted = true;
+         try { localStorage.setItem(votedKey, 'yes'); } catch (_) {}
+         message('Your vote has been counted! Thank you!');
+         security.hidden = true;
+       } else {
+         if (response.status === 409 && /already voted/i.test(data.error || '')) {
+           alreadyVoted = true;
+           try { localStorage.setItem(votedKey, 'yes'); } catch (_) {}
+           security.hidden = true;
+         }
+         if (data.closed) closed = true;
+         message(data.error || 'Your vote could not be submitted. Please try again.');
+         turnstileToken = '';
+         if (!alreadyVoted && !closed && widgetId !== null) window.turnstile?.reset(widgetId);
+       }
+     } catch (_) {
+       message('Could not reach the voting service. Please try again.');
+       turnstileToken = '';
+       if (widgetId !== null) window.turnstile?.reset(widgetId);
+     }
+     refreshButton();
+   });
+   loadStatus();
+ })();
+ </script>
 </body>
 </html>
