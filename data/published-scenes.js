@@ -1958,6 +1958,1385 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
       }
     ]
   },
+  "grandmas-kitchen": {
+    "title": "Grandma’s Kitchen",
+    "image": "images/grandmas-kitchen-adventure.jpg",
+    "lessons": [
+      {
+        "text": "We are making cookies.",
+        "translations": {
+          "es": "Horneando galletas.",
+          "fr": "Nous faisons des biscuits.",
+          "de": "Wir backen Kekse.",
+          "it": "Stiamo facendo i biscotti.",
+          "pt": "Estamos fazendo biscoitos.",
+          "no": "Vi baker kjeks."
+        }
+      },
+      {
+        "text": "We are preparing the dough.",
+        "translations": {
+          "es": "Estamos haciendo galletas.",
+          "fr": "Nous préparons la pâte.",
+          "de": "Wir bereiten den Teig vor.",
+          "it": "Prepariamo l'impasto.",
+          "pt": "Estamos preparando a massa.",
+          "no": "Vi lager deigen."
+        }
+      },
+      {
+        "text": "We mix the dough.",
+        "translations": {
+          "es": "Mezclamos la masa.",
+          "fr": "Nous mélangeons la pâte.",
+          "de": "Wir mischen den Teig.",
+          "it": "Mescoliamo l'impasto.",
+          "pt": "Misturamos a massa.",
+          "no": "Vi blander deigen."
+        }
+      },
+      {
+        "text": "The cookies smell very good.",
+        "translations": {
+          "es": "Las galletas huelen muy bien.",
+          "fr": "Les biscuits sentent très bon.",
+          "de": "Die Kekse riechen sehr gut.",
+          "it": "I biscotti hanno un buon profumo.",
+          "pt": "Os biscoitos cheiram muito bem.",
+          "no": "Kjeksene lukter veldig godt."
+        }
+      },
+      {
+        "text": "We need flour.",
+        "translations": {
+          "es": "Necesitamos harina.",
+          "fr": "Nous avons besoin de farine.",
+          "de": "Wir brauchen Mehl.",
+          "it": "Ci serve la farina.",
+          "pt": "Precisamos de farinha.",
+          "no": "Vi trenger mel."
+        }
+      },
+      {
+        "text": "Add a little sugar.",
+        "translations": {
+          "es": "Añade un poco de azúcar.",
+          "fr": "Ajoute un peu de sucre.",
+          "de": "Gib etwas Zucker dazu.",
+          "it": "Aggiungi un po' di zucchero.",
+          "pt": "Adicione um pouco de açúcar.",
+          "no": "Tilsett litt sukker."
+        }
+      },
+      {
+        "text": "Put the eggs in the bowl.",
+        "translations": {
+          "es": "Pon los huevos en el tazón.",
+          "fr": "Mets les œufs dans le bol.",
+          "de": "Gib die Eier in die Schüssel.",
+          "it": "Metti le uova nella ciotola.",
+          "pt": "Coloque os ovos na tigela.",
+          "no": "Legg eggene i bollen."
+        }
+      },
+      {
+        "text": "The milk is on the table.",
+        "translations": {
+          "es": "La leche está sobre la mesa.",
+          "fr": "Le lait est sur la table.",
+          "de": "Die Milch steht auf dem Tisch.",
+          "it": "Il latte è sul tavolo.",
+          "pt": "O leite está sobre a mesa.",
+          "no": "Melken står på bordet."
+        }
+      },
+      {
+        "text": "Mix the ingredients.",
+        "translations": {
+          "es": "Mezcla los ingredientes.",
+          "fr": "Mélange les ingrédients.",
+          "de": "Mische die Zutaten.",
+          "it": "Mescola gli ingredienti.",
+          "pt": "Misture os ingredientes.",
+          "no": "Bland ingrediensene."
+        }
+      },
+      {
+        "text": "Stir with the spoon.",
+        "translations": {
+          "es": "Revuelve con la cuchara.",
+          "fr": "Remue avec la cuillère.",
+          "de": "Rühre mit dem Löffel.",
+          "it": "Gira con il cucchiaio.",
+          "pt": "Mexa com a colher.",
+          "no": "Rør med skjeen."
+        }
+      },
+      {
+        "text": "Roll out the dough.",
+        "translations": {
+          "es": "Extiende la masa.",
+          "fr": "Étale la pâte.",
+          "de": "Rolle den Teig aus.",
+          "it": "Stendi l'impasto.",
+          "pt": "Abra a massa.",
+          "no": "Kjevle ut deigen."
+        }
+      },
+      {
+        "text": "Put the tray in the oven.",
+        "translations": {
+          "es": "Pon la bandeja en el horno.",
+          "fr": "Mets la plaque dans le four.",
+          "de": "Stell das Blech in den Ofen.",
+          "it": "Metti la teglia nel forno.",
+          "pt": "Coloque a assadeira no forno.",
+          "no": "Sett brettet i ovnen."
+        }
+      },
+      {
+        "text": "I am helping Grandma Cathy.",
+        "translations": {
+          "es": "Ayudo a la abuela Cathy.",
+          "fr": "J'aide grand-mère Cathy.",
+          "de": "Ich helfe Oma Cathy.",
+          "it": "Aiuto nonna Cathy.",
+          "pt": "Eu ajudo a avó Cathy.",
+          "no": "Jeg hjelper bestemor Cathy."
+        }
+      },
+      {
+        "text": "I hold the bowl.",
+        "translations": {
+          "es": "Yo sostengo el tazón.",
+          "fr": "Je tiens le bol.",
+          "de": "Ich halte die Schüssel.",
+          "it": "Tengo la ciotola.",
+          "pt": "Eu seguro a tigela.",
+          "no": "Jeg holder bollen."
+        }
+      },
+      {
+        "text": "We clean the table together.",
+        "translations": {
+          "es": "Limpiamos la mesa juntos.",
+          "fr": "Nous nettoyons la table ensemble.",
+          "de": "Wir putzen gemeinsam den Tisch.",
+          "it": "Puliamo il tavolo insieme.",
+          "pt": "Limpamos a mesa juntos.",
+          "no": "Vi rydder bordet sammen."
+        }
+      },
+      {
+        "text": "Thank you for helping me.",
+        "translations": {
+          "es": "Gracias por ayudarme.",
+          "fr": "Merci de m'aider.",
+          "de": "Danke für deine Hilfe.",
+          "it": "Grazie per l'aiuto.",
+          "pt": "Obrigado pela ajuda.",
+          "no": "Takk for hjelpen."
+        }
+      },
+      {
+        "text": "There are three apples.",
+        "translations": {
+          "es": "Hay tres manzanas.",
+          "fr": "Il y a trois pommes.",
+          "de": "Da sind drei Äpfel.",
+          "it": "Ci sono tre mele.",
+          "pt": "Há três maçãs.",
+          "no": "Det er tre epler."
+        }
+      },
+      {
+        "text": "The bowl is blue.",
+        "translations": {
+          "es": "El tazón es azul.",
+          "fr": "Le bol est bleu.",
+          "de": "Die Schüssel ist blau.",
+          "it": "La ciotola è blu.",
+          "pt": "A tigela é azul.",
+          "no": "Bollen er blå."
+        }
+      },
+      {
+        "text": "Count four eggs.",
+        "translations": {
+          "es": "Cuenta cuatro huevos.",
+          "fr": "Compte quatre œufs.",
+          "de": "Zähle vier Eier.",
+          "it": "Conta quattro uova.",
+          "pt": "Conte quatro ovos.",
+          "no": "Tell fire egg."
+        }
+      },
+      {
+        "text": "The flowers are yellow.",
+        "translations": {
+          "es": "Las flores son amarillas.",
+          "fr": "Les fleurs sont jaunes.",
+          "de": "Die Blumen sind gelb.",
+          "it": "I fiori sono gialli.",
+          "pt": "As flores são amarelas.",
+          "no": "Blomstene er gule."
+        }
+      },
+      {
+        "text": "The cookies are ready.",
+        "translations": {
+          "es": "Las galletas están listas.",
+          "fr": "Les biscuits sont prêts.",
+          "de": "Die Kekse sind fertig.",
+          "it": "I biscotti sono pronti.",
+          "pt": "Os biscoitos estão prontos.",
+          "no": "Kjeksene er klare."
+        }
+      },
+      {
+        "text": "Put them on a plate.",
+        "translations": {
+          "es": "Ponlas en un plato.",
+          "fr": "Mets-les sur une assiette.",
+          "de": "Leg sie auf einen Teller.",
+          "it": "Mettili su un piatto.",
+          "pt": "Coloque-os num prato.",
+          "no": "Legg dem på en tallerken."
+        }
+      },
+      {
+        "text": "We share with the family.",
+        "translations": {
+          "es": "Compartimos con la familia.",
+          "fr": "Nous partageons avec la famille.",
+          "de": "Wir teilen mit der Familie.",
+          "it": "Condividiamo con la famiglia.",
+          "pt": "Compartilhamos com a família.",
+          "no": "Vi deler med familien."
+        }
+      },
+      {
+        "text": "Enjoy your meal!",
+        "translations": {
+          "es": "¡Buen provecho!",
+          "fr": "Bon appétit !",
+          "de": "Guten Appetit!",
+          "it": "Buon appetito!",
+          "pt": "Bom apetite!",
+          "no": "God appetitt!"
+        }
+      }
+    ],
+    "hotspots": [
+      {
+        "id": "grandma",
+        "label": "Grandma",
+        "x": 39,
+        "y": 46,
+        "w": 7,
+        "h": 31,
+        "sound": "sounds/cathy-kitchen.mp3",
+        "translations": {
+          "es": "Abuela",
+          "fr": "Grand-mère",
+          "de": "Oma",
+          "it": "Nonna",
+          "pt": "Avó",
+          "no": "Bestemor"
+        }
+      },
+      {
+        "id": "girl",
+        "label": "Girl",
+        "x": 50,
+        "y": 45,
+        "w": 7,
+        "h": 26,
+        "sound": "sounds/child-laughing.mp3",
+        "translations": {
+          "es": "Niña",
+          "fr": "Fille",
+          "de": "Mädchen",
+          "it": "Ragazza",
+          "pt": "Menina",
+          "no": "Jente"
+        }
+      },
+      {
+        "id": "bee",
+        "label": "Bee",
+        "x": 46.5,
+        "y": 28,
+        "w": 5,
+        "h": 9,
+        "sound": "",
+        "translations": {
+          "es": "Abeja",
+          "fr": "Abeille",
+          "de": "Biene",
+          "it": "Ape",
+          "pt": "Abelha",
+          "no": "Bie"
+        }
+      },
+      {
+        "id": "bear",
+        "label": "Dog",
+        "x": 79,
+        "y": 78,
+        "w": 12,
+        "h": 18,
+        "sound": "sounds/dog-panting.wav",
+        "translations": {
+          "es": "Perro",
+          "fr": "Chien",
+          "de": "Hund",
+          "it": "Cane",
+          "pt": "Cão",
+          "no": "Hund"
+        }
+      },
+      {
+        "id": "flour",
+        "label": "Flour",
+        "x": 62.5,
+        "y": 52,
+        "w": 6,
+        "h": 10,
+        "sound": "",
+        "translations": {
+          "es": "Harina",
+          "fr": "Farine",
+          "de": "Mehl",
+          "it": "Farina",
+          "pt": "Farinha",
+          "no": "Mel"
+        }
+      },
+      {
+        "id": "milk",
+        "label": "Milk",
+        "x": 31,
+        "y": 51,
+        "w": 4,
+        "h": 10,
+        "sound": "",
+        "translations": {
+          "es": "Leche",
+          "fr": "Lait",
+          "de": "Milch",
+          "it": "Latte",
+          "pt": "Leite",
+          "no": "Melk"
+        }
+      },
+      {
+        "id": "bowl",
+        "label": "Bowl",
+        "x": 39,
+        "y": 49,
+        "w": 7,
+        "h": 8,
+        "sound": "",
+        "translations": {
+          "es": "Tazón",
+          "fr": "Bol",
+          "de": "Schüssel",
+          "it": "Ciotola",
+          "pt": "Tigela",
+          "no": "Bolle"
+        }
+      },
+      {
+        "id": "spoon",
+        "label": "Spoon",
+        "x": 47,
+        "y": 47,
+        "w": 3,
+        "h": 8,
+        "sound": "",
+        "translations": {
+          "es": "Cuchara",
+          "fr": "Cuillère",
+          "de": "Löffel",
+          "it": "Cucchiaio",
+          "pt": "Colher",
+          "no": "Skje"
+        }
+      },
+      {
+        "id": "rollingpin",
+        "label": "Rolling pin",
+        "x": 55,
+        "y": 57,
+        "w": 8,
+        "h": 5,
+        "sound": "",
+        "translations": {
+          "es": "Rodillo",
+          "fr": "Rouleau à pâtisserie",
+          "de": "Nudelholz",
+          "it": "Mattarello",
+          "pt": "Rolo da massa",
+          "no": "Kjevle"
+        }
+      },
+      {
+        "id": "book",
+        "label": "Book",
+        "x": 51,
+        "y": 55,
+        "w": 10,
+        "h": 6,
+        "sound": "",
+        "translations": {
+          "es": "Libro",
+          "fr": "Livre",
+          "de": "Buch",
+          "it": "Libro",
+          "pt": "Livro",
+          "no": "Bok"
+        }
+      },
+      {
+        "id": "apples",
+        "label": "Apples",
+        "x": 35.5,
+        "y": 52,
+        "w": 7,
+        "h": 6,
+        "sound": "",
+        "translations": {
+          "es": "Manzanas",
+          "fr": "Pommes",
+          "de": "Äpfel",
+          "it": "Mele",
+          "pt": "Maçãs",
+          "no": "Epler"
+        }
+      },
+      {
+        "id": "butter",
+        "label": "Butter",
+        "x": 42.5,
+        "y": 53,
+        "w": 4,
+        "h": 4,
+        "sound": "",
+        "translations": {
+          "es": "Mantequilla",
+          "fr": "Beurre",
+          "de": "Butter",
+          "it": "Burro",
+          "pt": "Manteiga",
+          "no": "Smør"
+        }
+      },
+      {
+        "id": "flowers",
+        "label": "Flowers",
+        "x": 67,
+        "y": 49,
+        "w": 9,
+        "h": 15,
+        "sound": "",
+        "translations": {
+          "es": "Flores",
+          "fr": "Fleurs",
+          "de": "Blumen",
+          "it": "Fiori",
+          "pt": "Flores",
+          "no": "Blomster"
+        }
+      },
+      {
+        "id": "table",
+        "label": "Table",
+        "x": 68,
+        "y": 68,
+        "w": 22,
+        "h": 12,
+        "sound": "",
+        "translations": {
+          "es": "Mesa",
+          "fr": "Table",
+          "de": "Tisch",
+          "it": "Tavolo",
+          "pt": "Mesa",
+          "no": "Bord"
+        }
+      },
+      {
+        "id": "chair",
+        "label": "Chair",
+        "x": 72,
+        "y": 61,
+        "w": 7,
+        "h": 20,
+        "sound": "",
+        "translations": {
+          "es": "Silla",
+          "fr": "Chaise",
+          "de": "Stuhl",
+          "it": "Sedia",
+          "pt": "Cadeira",
+          "no": "Stol"
+        }
+      },
+      {
+        "id": "stool",
+        "label": "Stool",
+        "x": 51,
+        "y": 70,
+        "w": 7,
+        "h": 13,
+        "sound": "",
+        "translations": {
+          "es": "Taburete",
+          "fr": "Tabouret",
+          "de": "Hocker",
+          "it": "Sgabello",
+          "pt": "Banco",
+          "no": "Krakk"
+        }
+      },
+      {
+        "id": "stove",
+        "label": "Stove",
+        "x": 24,
+        "y": 40,
+        "w": 9,
+        "h": 22,
+        "sound": "sounds/stove.mp3",
+        "translations": {
+          "es": "Estufa",
+          "fr": "Poêle",
+          "de": "Ofen",
+          "it": "Stufa",
+          "pt": "Fogão",
+          "no": "Ovn"
+        }
+      },
+      {
+        "id": "fire",
+        "label": "Fire",
+        "x": 24,
+        "y": 43,
+        "w": 4,
+        "h": 8,
+        "sound": "",
+        "translations": {
+          "es": "Fuego",
+          "fr": "Feu",
+          "de": "Feuer",
+          "it": "Fuoco",
+          "pt": "Fogo",
+          "no": "Ild"
+        }
+      },
+      {
+        "id": "kettle",
+        "label": "Kettle",
+        "x": 19,
+        "y": 34,
+        "w": 4,
+        "h": 7,
+        "sound": "",
+        "translations": {
+          "es": "Tetera",
+          "fr": "Bouilloire",
+          "de": "Wasserkessel",
+          "it": "Bollitore",
+          "pt": "Chaleira",
+          "no": "Kjele"
+        }
+      },
+      {
+        "id": "pans",
+        "label": "Pans",
+        "x": 14,
+        "y": 22,
+        "w": 12,
+        "h": 14,
+        "sound": "sounds/pan.mp3",
+        "translations": {
+          "es": "Sartenes",
+          "fr": "Casseroles",
+          "de": "Pfannen",
+          "it": "Pentole",
+          "pt": "Panelas",
+          "no": "Panner"
+        }
+      },
+      {
+        "id": "refrigerator",
+        "label": "Refrigerator",
+        "x": 77,
+        "y": 36,
+        "w": 9,
+        "h": 30,
+        "sound": "",
+        "translations": {
+          "es": "Refrigerador",
+          "fr": "Réfrigérateur",
+          "de": "Kühlschrank",
+          "it": "Frigorifero",
+          "pt": "Geladeira",
+          "no": "Kjøleskap"
+        }
+      },
+      {
+        "id": "sink",
+        "label": "Sink",
+        "x": 58,
+        "y": 38,
+        "w": 12,
+        "h": 12,
+        "sound": "",
+        "translations": {
+          "es": "Fregadero",
+          "fr": "Évier",
+          "de": "Spüle",
+          "it": "Lavello",
+          "pt": "Pia",
+          "no": "Vask"
+        }
+      },
+      {
+        "id": "window",
+        "label": "Window",
+        "x": 55,
+        "y": 23,
+        "w": 24,
+        "h": 22,
+        "sound": "",
+        "translations": {
+          "es": "Ventana",
+          "fr": "Fenêtre",
+          "de": "Fenster",
+          "it": "Finestra",
+          "pt": "Janela",
+          "no": "Vindu"
+        }
+      },
+      {
+        "id": "clock",
+        "label": "Clock",
+        "x": 87,
+        "y": 12,
+        "w": 6,
+        "h": 10,
+        "sound": "sounds/clock.mp3",
+        "translations": {
+          "es": "Reloj",
+          "fr": "Horloge",
+          "de": "Uhr",
+          "it": "Orologio",
+          "pt": "Relógio",
+          "no": "Klokke"
+        }
+      },
+      {
+        "id": "bird",
+        "label": "Bird",
+        "x": 20,
+        "y": 10,
+        "w": 5,
+        "h": 7,
+        "sound": "",
+        "translations": {
+          "es": "Pájaro",
+          "fr": "Oiseau",
+          "de": "Vogel",
+          "it": "Uccello",
+          "pt": "Pássaro",
+          "no": "Fugl"
+        }
+      },
+      {
+        "id": "rug",
+        "label": "Rug",
+        "x": 31,
+        "y": 84,
+        "w": 18,
+        "h": 12,
+        "sound": "",
+        "translations": {
+          "es": "Alfombra",
+          "fr": "Tapis",
+          "de": "Teppich",
+          "it": "Tappeto",
+          "pt": "Tapete",
+          "no": "Teppe"
+        }
+      },
+      {
+        "id": "basket",
+        "label": "Basket",
+        "x": 96,
+        "y": 52,
+        "w": 4,
+        "h": 8,
+        "sound": "",
+        "translations": {
+          "es": "Canasta",
+          "fr": "Panier",
+          "de": "Korb",
+          "it": "Cestino",
+          "pt": "Cesta",
+          "no": "Kurv"
+        }
+      },
+      {
+        "id": "mountains",
+        "label": "Mountains",
+        "x": 58,
+        "y": 20,
+        "w": 20,
+        "h": 10,
+        "sound": "",
+        "translations": {
+          "es": "Montañas",
+          "fr": "Montagnes",
+          "de": "Berge",
+          "it": "Montagne",
+          "pt": "Montanhas",
+          "no": "Fjell"
+        }
+      },
+      {
+        "id": "lake",
+        "label": "Lake",
+        "x": 58,
+        "y": 28,
+        "w": 16,
+        "h": 8,
+        "sound": "",
+        "translations": {
+          "es": "Lago",
+          "fr": "Lac",
+          "de": "See",
+          "it": "Lago",
+          "pt": "Lago",
+          "no": "Innsjø"
+        }
+      },
+      {
+        "id": "cabinets",
+        "label": "Cabinets",
+        "x": 37,
+        "y": 25,
+        "w": 17,
+        "h": 18,
+        "sound": "",
+        "translations": {
+          "es": "Armarios",
+          "fr": "Placards",
+          "de": "Schränke",
+          "it": "Armadi",
+          "pt": "Armários",
+          "no": "Skap"
+        }
+      },
+      {
+        "id": "stairs",
+        "label": "stairs",
+        "x": 92.22,
+        "y": 62.86,
+        "w": 6,
+        "h": 8,
+        "sound": "",
+        "translations": {
+          "es": "escaleras",
+          "fr": "escalier",
+          "de": "Treppe",
+          "it": "scale",
+          "pt": "escadas",
+          "no": "trapp"
+        }
+      },
+      {
+        "id": "cabinet",
+        "label": "cabinet",
+        "x": 11.13,
+        "y": 59.72,
+        "w": 6,
+        "h": 8,
+        "sound": "",
+        "translations": {
+          "es": "armario",
+          "fr": "placard",
+          "de": "Schrank",
+          "it": "armadietto",
+          "pt": "armário",
+          "no": "skap"
+        }
+      },
+      {
+        "id": "light",
+        "label": "light",
+        "x": 37.63,
+        "y": 8.45,
+        "w": 6,
+        "h": 8,
+        "sound": "",
+        "translations": {
+          "es": "luz",
+          "fr": "lumière",
+          "de": "Licht",
+          "it": "luce",
+          "pt": "luz",
+          "no": "lys"
+        }
+      },
+      {
+        "id": "shelf",
+        "label": "shelf",
+        "x": 76.39,
+        "y": 13.6,
+        "w": 8.6,
+        "h": 9.11,
+        "sound": "",
+        "translations": {
+          "es": "estante",
+          "fr": "étagère",
+          "de": "Regal",
+          "it": "mensola",
+          "pt": "prateleira",
+          "no": "hylle"
+        }
+      },
+      {
+        "id": "picture",
+        "label": "picture",
+        "x": 87.1,
+        "y": 25.98,
+        "w": 6,
+        "h": 8,
+        "sound": "",
+        "translations": {
+          "es": "cuadro",
+          "fr": "tableau",
+          "de": "Bild",
+          "it": "quadro",
+          "pt": "quadro",
+          "no": "bilde"
+        }
+      },
+      {
+        "id": "floor",
+        "label": "floor",
+        "x": 85.97,
+        "y": 67.62,
+        "w": 5.9,
+        "h": 4.76,
+        "sound": "",
+        "translations": {
+          "es": "suelo",
+          "fr": "sol",
+          "de": "Fußboden",
+          "it": "pavimento",
+          "pt": "chão",
+          "no": "gulv"
+        }
+      },
+      {
+        "id": "flue",
+        "label": "flue",
+        "x": 23.99,
+        "y": 16.23,
+        "w": 3.14,
+        "h": 14.94,
+        "sound": "",
+        "translations": {
+          "es": "tubo",
+          "fr": "cheminée",
+          "de": "Kamin",
+          "it": "canna fumaria",
+          "pt": "chaminé",
+          "no": "røykrør"
+        }
+      }
+    ],
+    "overlays": [],
+    "challenges": [
+      {
+        "prompt": "Find Flour.",
+        "target": "flour",
+        "translations": {
+          "es": "Find Harina.",
+          "fr": "Find Farine.",
+          "de": "Find Mehl.",
+          "it": "Find Farina.",
+          "pt": "Find Farinha.",
+          "no": "Find Mel."
+        }
+      },
+      {
+        "prompt": "Find Bowl.",
+        "target": "bowl",
+        "translations": {
+          "es": "Find Tazón.",
+          "fr": "Find Bol.",
+          "de": "Find Schüssel.",
+          "it": "Find Ciotola.",
+          "pt": "Find Tigela.",
+          "no": "Find Bolle."
+        }
+      },
+      {
+        "prompt": "Find Rolling pin.",
+        "target": "rollingpin",
+        "translations": {
+          "es": "Find Rodillo.",
+          "fr": "Find Rouleau à pâtisserie.",
+          "de": "Find Nudelholz.",
+          "it": "Find Mattarello.",
+          "pt": "Find Rolo da massa.",
+          "no": "Find Kjevle."
+        }
+      },
+      {
+        "prompt": "Find Stove.",
+        "target": "stove",
+        "translations": {
+          "es": "Find Estufa.",
+          "fr": "Find Poêle.",
+          "de": "Find Ofen.",
+          "it": "Find Stufa.",
+          "pt": "Find Fogão.",
+          "no": "Find Ovn."
+        }
+      },
+      {
+        "prompt": "Find Refrigerator.",
+        "target": "refrigerator",
+        "translations": {
+          "es": "Find Refrigerador.",
+          "fr": "Find Réfrigérateur.",
+          "de": "Find Kühlschrank.",
+          "it": "Find Frigorifero.",
+          "pt": "Find Geladeira.",
+          "no": "Find Kjøleskap."
+        }
+      },
+      {
+        "prompt": "Find Bee.",
+        "target": "bee",
+        "translations": {
+          "es": "Find Abeja.",
+          "fr": "Find Abeille.",
+          "de": "Find Biene.",
+          "it": "Find Ape.",
+          "pt": "Find Abelha.",
+          "no": "Find Bie."
+        }
+      }
+    ]
+  },
+  "large-picnic": {
+    "title": "Large Picnic",
+    "image": "images/Talk-A-Bee-Family-Picnic-Adventure.jpg",
+    "lessons": [
+      {
+        "text": "Grandma, Grandpa, the children, dogs, and Bee have all gathered for one enormous lakeside picnic.",
+        "translations": {
+          "es": "La abuela, el abuelo, los niños, los perros y la abeja se han reunido para un enorme picnic junto al lago.",
+          "fr": "Grand-mère, grand-père, les enfants, les chiens et l'abeille se sont réunis pour un immense pique-nique au bord du lac.",
+          "de": "Oma, Opa, die Kinder, die Hunde und die Biene haben sich zu einem riesigen Picknick am See versammelt.",
+          "it": "La nonna, il nonno, i bambini, i cani e l'ape si sono riuniti per un enorme picnic sul lago.",
+          "pt": "A avó, o avô, as crianças, os cães e a abelha se reuniram para um enorme piquenique à beira do lago.",
+          "no": "Bestemor, bestefar, barna, hundene og bien har samlet seg til en enorm piknik ved innsjøen."
+        }
+      },
+      {
+        "text": "Everyone has a place around the long table while Bee watches from the roof of the RV.",
+        "translations": {
+          "es": "Todos tienen un lugar alrededor de la larga mesa mientras la abeja observa desde el techo de la casa rodante.",
+          "fr": "Tout le monde a une place autour de la longue table tandis que l'abeille observe depuis le toit du camping-car.",
+          "de": "Alle haben einen Platz am langen Tisch, während die Biene vom Dach des Wohnmobils zusieht.",
+          "it": "Tutti hanno un posto intorno al lungo tavolo mentre l'ape osserva dal tetto del camper.",
+          "pt": "Todos têm um lugar ao redor da longa mesa enquanto a abelha observa do teto do trailer.",
+          "no": "Alle har en plass rundt det lange bordet mens bien følger med fra taket på bobilen."
+        }
+      },
+      {
+        "text": "The picnic table is covered with favorite outdoor foods, including hot dogs, hamburgers, fruit, drinks, and other treats.",
+        "translations": {
+          "es": "La mesa está llena de comidas favoritas al aire libre, como perritos calientes, hamburguesas, fruta, bebidas y otras delicias.",
+          "fr": "La table est couverte de plats de plein air, notamment des hot-dogs, des hamburgers, des fruits, des boissons et d'autres gourmandises.",
+          "de": "Der Picknicktisch ist mit beliebten Speisen wie Hotdogs, Hamburgern, Obst, Getränken und anderen Leckereien gedeckt.",
+          "it": "Il tavolo è pieno di cibi da picnic, tra cui hot dog, hamburger, frutta, bevande e altre bontà.",
+          "pt": "A mesa está cheia de comidas favoritas ao ar livre, incluindo cachorros-quentes, hambúrgueres, frutas, bebidas e outras delícias.",
+          "no": "Piknikbordet er dekket med utendørsfavoritter som pølser, hamburgere, frukt, drikke og andre godsaker."
+        }
+      },
+      {
+        "text": "Sharing a meal gives everyone time to talk, laugh, and enjoy the day together.",
+        "translations": {
+          "es": "Compartir una comida permite que todos hablen, rían y disfruten juntos del día.",
+          "fr": "Partager un repas permet à tout le monde de parler, rire et profiter de la journée ensemble.",
+          "de": "Beim gemeinsamen Essen können alle reden, lachen und den Tag genießen.",
+          "it": "Condividere un pasto dà a tutti il tempo di parlare, ridere e godersi la giornata insieme.",
+          "pt": "Compartilhar uma refeição dá a todos tempo para conversar, rir e aproveitar o dia juntos.",
+          "no": "Et felles måltid gir alle tid til å snakke, le og nyte dagen sammen."
+        }
+      },
+      {
+        "text": "Hot dogs and other foods can be cooked over the campfire while everyone gathers nearby.",
+        "translations": {
+          "es": "Los perritos calientes y otros alimentos se pueden cocinar sobre la fogata mientras todos se reúnen cerca.",
+          "fr": "Les hot-dogs et d'autres aliments peuvent cuire au-dessus du feu de camp pendant que tout le monde se rassemble.",
+          "de": "Hotdogs und andere Speisen können über dem Lagerfeuer zubereitet werden, während alle in der Nähe zusammenkommen.",
+          "it": "Gli hot dog e altri cibi possono essere cucinati sul falò mentre tutti si riuniscono nelle vicinanze.",
+          "pt": "Cachorros-quentes e outros alimentos podem ser preparados sobre a fogueira enquanto todos se reúnem por perto.",
+          "no": "Pølser og annen mat kan tilberedes over leirbålet mens alle samles i nærheten."
+        }
+      },
+      {
+        "text": "The fire also creates a warm gathering place as the day becomes cooler.",
+        "translations": {
+          "es": "El fuego también crea un lugar cálido para reunirse cuando el día se vuelve más fresco.",
+          "fr": "Le feu crée aussi un endroit chaleureux lorsque la journée devient plus fraîche.",
+          "de": "Das Feuer schafft auch einen warmen Treffpunkt, wenn es später kühler wird.",
+          "it": "Il fuoco crea anche un luogo caldo quando la giornata diventa più fresca.",
+          "pt": "O fogo também cria um lugar acolhedor quando o dia fica mais fresco.",
+          "no": "Bålet skaper også et varmt samlingssted når dagen blir kjøligere."
+        }
+      },
+      {
+        "text": "The picnic overlooks a calm mountain lake with a sailboat, a motorboat, canoes, and a dock.",
+        "translations": {
+          "es": "El picnic tiene vista a un tranquilo lago de montaña con un velero, una lancha, canoas y un muelle.",
+          "fr": "Le pique-nique donne sur un lac de montagne calme avec un voilier, un bateau à moteur, des canoës et un quai.",
+          "de": "Das Picknick blickt auf einen ruhigen Bergsee mit Segelboot, Motorboot, Kanus und einem Steg.",
+          "it": "Il picnic si affaccia su un tranquillo lago di montagna con una barca a vela, un motoscafo, canoe e un molo.",
+          "pt": "O piquenique tem vista para um lago tranquilo de montanha com um veleiro, uma lancha, canoas e um cais.",
+          "no": "Pikniken har utsikt over en rolig fjellsjø med seilbåt, motorbåt, kanoer og brygge."
+        }
+      },
+      {
+        "text": "The water reflects the surrounding forest and snowy mountains.",
+        "translations": {
+          "es": "El agua refleja el bosque y las montañas nevadas.",
+          "fr": "L'eau reflète la forêt et les montagnes enneigées.",
+          "de": "Das Wasser spiegelt den Wald und die schneebedeckten Berge.",
+          "it": "L'acqua riflette il bosco e le montagne innevate.",
+          "pt": "A água reflete a floresta e as montanhas nevadas.",
+          "no": "Vannet speiler skogen og de snødekte fjellene."
+        }
+      },
+      {
+        "text": "The campsite includes an RV, a tent, outdoor chairs, coolers, cooking equipment, and plenty of room for the whole group.",
+        "translations": {
+          "es": "El campamento incluye una casa rodante, una tienda, sillas, neveras y equipo para cocinar.",
+          "fr": "Le camping comprend un camping-car, une tente, des chaises, des glacières et du matériel de cuisine.",
+          "de": "Zum Campingplatz gehören ein Wohnmobil, ein Zelt, Stühle, Kühlboxen und Kochutensilien.",
+          "it": "Il campeggio comprende un camper, una tenda, sedie, borse frigo e attrezzature per cucinare.",
+          "pt": "O acampamento inclui um trailer, uma barraca, cadeiras, caixas térmicas e equipamentos de cozinha.",
+          "no": "Campingplassen har bobil, telt, stoler, kjølebokser og kokeutstyr."
+        }
+      },
+      {
+        "text": "Camping equipment makes it easier to eat, relax, and spend time outdoors.",
+        "translations": {
+          "es": "El equipo de campamento facilita comer, descansar y pasar tiempo al aire libre.",
+          "fr": "Le matériel de camping facilite les repas, la détente et le temps passé dehors.",
+          "de": "Campingausrüstung macht Essen, Entspannen und Zeit im Freien einfacher.",
+          "it": "L'attrezzatura da campeggio rende più facile mangiare, rilassarsi e trascorrere tempo all'aperto.",
+          "pt": "O equipamento de camping facilita comer, relaxar e passar tempo ao ar livre.",
+          "no": "Campingutstyret gjør det lettere å spise, slappe av og være ute."
+        }
+      },
+      {
+        "text": "Pine forests, wildflowers, blue water, and snowy mountains surround the picnic area.",
+        "translations": {
+          "es": "Bosques de pinos, flores silvestres, agua azul y montañas nevadas rodean el picnic.",
+          "fr": "Des forêts de pins, des fleurs sauvages, de l'eau bleue et des montagnes enneigées entourent le pique-nique.",
+          "de": "Kiefernwälder, Wildblumen, blaues Wasser und schneebedeckte Berge umgeben den Picknickplatz.",
+          "it": "Pinete, fiori selvatici, acqua blu e montagne innevate circondano l'area del picnic.",
+          "pt": "Florestas de pinheiros, flores silvestres, água azul e montanhas nevadas cercam o piquenique.",
+          "no": "Furuskog, villblomster, blått vann og snødekte fjell omgir piknikområdet."
+        }
+      },
+      {
+        "text": "The wide landscape makes this picnic feel like a celebration of all the adventures the crew has shared.",
+        "translations": {
+          "es": "El amplio paisaje hace que este picnic parezca una celebración de todas las aventuras compartidas.",
+          "fr": "Le vaste paysage donne à ce pique-nique l'allure d'une célébration de toutes les aventures partagées.",
+          "de": "Die weite Landschaft lässt dieses Picknick wie eine Feier aller gemeinsamen Abenteuer wirken.",
+          "it": "Il grande paesaggio fa sembrare questo picnic una festa di tutte le avventure condivise.",
+          "pt": "A ampla paisagem faz este piquenique parecer uma celebração de todas as aventuras compartilhadas.",
+          "no": "Det vide landskapet får pikniken til å føles som en feiring av alle eventyrene gruppen har delt."
+        }
+      }
+    ],
+    "hotspots": [
+      {
+        "id": "grandma",
+        "label": "grandma",
+        "x": 62,
+        "y": 49,
+        "w": 6,
+        "h": 16,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "grandpa",
+        "label": "grandpa",
+        "x": 54,
+        "y": 47,
+        "w": 7,
+        "h": 18,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "crew",
+        "label": "crew",
+        "x": 56.92,
+        "y": 45.41,
+        "w": 31.13,
+        "h": 11.15,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "table",
+        "label": "table",
+        "x": 37,
+        "y": 61,
+        "w": 53,
+        "h": 16,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "food",
+        "label": "food",
+        "x": 42.52,
+        "y": 51.52,
+        "w": 17.33,
+        "h": 7.85,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "hotdogs",
+        "label": "hotdogs",
+        "x": 69,
+        "y": 72,
+        "w": 10,
+        "h": 10,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "hamburgers",
+        "label": "hamburgers",
+        "x": 58,
+        "y": 58,
+        "w": 9,
+        "h": 9,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "campfire",
+        "label": "campfire",
+        "x": 60.11,
+        "y": 77.98,
+        "w": 9.38,
+        "h": 15.76,
+        "sound": "sounds/fire.mp3",
+        "translations": {}
+      },
+      {
+        "id": "shepherd",
+        "label": "shepherd",
+        "x": 75.54,
+        "y": 57.69,
+        "w": 8,
+        "h": 18,
+        "sound": "sounds/dog-panting.wav",
+        "translations": {}
+      },
+      {
+        "id": "rv",
+        "label": "rv",
+        "x": 71.62,
+        "y": 30.37,
+        "w": 25.04,
+        "h": 12.42,
+        "sound": "sounds/rv.mp3",
+        "translations": {}
+      },
+      {
+        "id": "tent",
+        "label": "tent",
+        "x": 94,
+        "y": 43,
+        "w": 6,
+        "h": 17,
+        "sound": "sounds/guitar.mp3",
+        "translations": {}
+      },
+      {
+        "id": "lake",
+        "label": "lake",
+        "x": 36.9,
+        "y": 40.49,
+        "w": 8.36,
+        "h": 5.3,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "sailboat",
+        "label": "sailboat",
+        "x": 37.98,
+        "y": 27.9,
+        "w": 5.29,
+        "h": 10.5,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "motorboat",
+        "label": "motorboat",
+        "x": 23.95,
+        "y": 34.41,
+        "w": 5.23,
+        "h": 10.28,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "mountains",
+        "label": "mountains",
+        "x": 14.4,
+        "y": 5.84,
+        "w": 58,
+        "h": 20,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "forest",
+        "label": "forest",
+        "x": -3.44,
+        "y": 2.69,
+        "w": 13.84,
+        "h": 21.09,
+        "sound": "sounds/birds-forest.mp3",
+        "translations": {}
+      },
+      {
+        "id": "flowers",
+        "label": "flowers",
+        "x": 5.05,
+        "y": 84.63,
+        "w": 24.26,
+        "h": 15.65,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "mascott",
+        "label": "mascott",
+        "x": 83.52,
+        "y": 17.63,
+        "w": 6,
+        "h": 8,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "solar-panels",
+        "label": "solar panels",
+        "x": 90.72,
+        "y": 15.87,
+        "w": 10.11,
+        "h": 8.74,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "dog",
+        "label": "dog",
+        "x": 5.44,
+        "y": 70.21,
+        "w": 14.54,
+        "h": 10.5,
+        "sound": "sounds/dog-panting.wav",
+        "translations": {}
+      },
+      {
+        "id": "guitar-music",
+        "label": "guitar music",
+        "x": 5.83,
+        "y": 49.92,
+        "w": 19.28,
+        "h": 19.3,
+        "sound": "sounds/guitar3.mp3",
+        "translations": {}
+      },
+      {
+        "id": "stump",
+        "label": "stump",
+        "x": 30.52,
+        "y": 76.97,
+        "w": 6,
+        "h": 8,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "dock",
+        "label": "dock",
+        "x": 10.36,
+        "y": 40.34,
+        "w": 12.25,
+        "h": 5.87,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "seniors",
+        "label": "seniors",
+        "x": 24.86,
+        "y": 47.17,
+        "w": 14.07,
+        "h": 9.57,
+        "sound": "sounds/guitar-campfire.mp3",
+        "translations": {}
+      }
+    ],
+    "overlays": [],
+    "challenges": [
+      {
+        "prompt": "Find the RV",
+        "target": "grandma"
+      },
+      {
+        "prompt": "Find Family and Friends",
+        "target": "grandpa"
+      },
+      {
+        "prompt": "Find the Solar Panels",
+        "target": "hotdogs"
+      },
+      {
+        "prompt": "Find the Campfire",
+        "target": "campfire"
+      },
+      {
+        "prompt": "Find the Sailboat",
+        "target": "sailboat"
+      }
+    ]
+  },
   "nighttime-campground": {
     "title": "Nighttime Campground",
     "image": "images/talkabee-nighttime-campground-adventure.jpg",
@@ -2443,409 +3822,6 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
       {
         "prompt": "Find the Raccoon",
         "target": "raccoon"
-      }
-    ]
-  },
-  "large-picnic": {
-    "title": "Large Picnic",
-    "image": "images/Talk-A-Bee-Family-Picnic-Adventure.jpg",
-    "lessons": [
-      {
-        "text": "Grandma, Grandpa, the children, dogs, and Bee have all gathered for one enormous lakeside picnic.",
-        "translations": {
-          "es": "La abuela, el abuelo, los niños, los perros y la abeja se han reunido para un enorme picnic junto al lago.",
-          "fr": "Grand-mère, grand-père, les enfants, les chiens et l'abeille se sont réunis pour un immense pique-nique au bord du lac.",
-          "de": "Oma, Opa, die Kinder, die Hunde und die Biene haben sich zu einem riesigen Picknick am See versammelt.",
-          "it": "La nonna, il nonno, i bambini, i cani e l'ape si sono riuniti per un enorme picnic sul lago.",
-          "pt": "A avó, o avô, as crianças, os cães e a abelha se reuniram para um enorme piquenique à beira do lago.",
-          "no": "Bestemor, bestefar, barna, hundene og bien har samlet seg til en enorm piknik ved innsjøen."
-        }
-      },
-      {
-        "text": "Everyone has a place around the long table while Bee watches from the roof of the RV.",
-        "translations": {
-          "es": "Todos tienen un lugar alrededor de la larga mesa mientras la abeja observa desde el techo de la casa rodante.",
-          "fr": "Tout le monde a une place autour de la longue table tandis que l'abeille observe depuis le toit du camping-car.",
-          "de": "Alle haben einen Platz am langen Tisch, während die Biene vom Dach des Wohnmobils zusieht.",
-          "it": "Tutti hanno un posto intorno al lungo tavolo mentre l'ape osserva dal tetto del camper.",
-          "pt": "Todos têm um lugar ao redor da longa mesa enquanto a abelha observa do teto do trailer.",
-          "no": "Alle har en plass rundt det lange bordet mens bien følger med fra taket på bobilen."
-        }
-      },
-      {
-        "text": "The picnic table is covered with favorite outdoor foods, including hot dogs, hamburgers, fruit, drinks, and other treats.",
-        "translations": {
-          "es": "La mesa está llena de comidas favoritas al aire libre, como perritos calientes, hamburguesas, fruta, bebidas y otras delicias.",
-          "fr": "La table est couverte de plats de plein air, notamment des hot-dogs, des hamburgers, des fruits, des boissons et d'autres gourmandises.",
-          "de": "Der Picknicktisch ist mit beliebten Speisen wie Hotdogs, Hamburgern, Obst, Getränken und anderen Leckereien gedeckt.",
-          "it": "Il tavolo è pieno di cibi da picnic, tra cui hot dog, hamburger, frutta, bevande e altre bontà.",
-          "pt": "A mesa está cheia de comidas favoritas ao ar livre, incluindo cachorros-quentes, hambúrgueres, frutas, bebidas e outras delícias.",
-          "no": "Piknikbordet er dekket med utendørsfavoritter som pølser, hamburgere, frukt, drikke og andre godsaker."
-        }
-      },
-      {
-        "text": "Sharing a meal gives everyone time to talk, laugh, and enjoy the day together.",
-        "translations": {
-          "es": "Compartir una comida permite que todos hablen, rían y disfruten juntos del día.",
-          "fr": "Partager un repas permet à tout le monde de parler, rire et profiter de la journée ensemble.",
-          "de": "Beim gemeinsamen Essen können alle reden, lachen und den Tag genießen.",
-          "it": "Condividere un pasto dà a tutti il tempo di parlare, ridere e godersi la giornata insieme.",
-          "pt": "Compartilhar uma refeição dá a todos tempo para conversar, rir e aproveitar o dia juntos.",
-          "no": "Et felles måltid gir alle tid til å snakke, le og nyte dagen sammen."
-        }
-      },
-      {
-        "text": "Hot dogs and other foods can be cooked over the campfire while everyone gathers nearby.",
-        "translations": {
-          "es": "Los perritos calientes y otros alimentos se pueden cocinar sobre la fogata mientras todos se reúnen cerca.",
-          "fr": "Les hot-dogs et d'autres aliments peuvent cuire au-dessus du feu de camp pendant que tout le monde se rassemble.",
-          "de": "Hotdogs und andere Speisen können über dem Lagerfeuer zubereitet werden, während alle in der Nähe zusammenkommen.",
-          "it": "Gli hot dog e altri cibi possono essere cucinati sul falò mentre tutti si riuniscono nelle vicinanze.",
-          "pt": "Cachorros-quentes e outros alimentos podem ser preparados sobre a fogueira enquanto todos se reúnem por perto.",
-          "no": "Pølser og annen mat kan tilberedes over leirbålet mens alle samles i nærheten."
-        }
-      },
-      {
-        "text": "The fire also creates a warm gathering place as the day becomes cooler.",
-        "translations": {
-          "es": "El fuego también crea un lugar cálido para reunirse cuando el día se vuelve más fresco.",
-          "fr": "Le feu crée aussi un endroit chaleureux lorsque la journée devient plus fraîche.",
-          "de": "Das Feuer schafft auch einen warmen Treffpunkt, wenn es später kühler wird.",
-          "it": "Il fuoco crea anche un luogo caldo quando la giornata diventa più fresca.",
-          "pt": "O fogo também cria um lugar acolhedor quando o dia fica mais fresco.",
-          "no": "Bålet skaper også et varmt samlingssted når dagen blir kjøligere."
-        }
-      },
-      {
-        "text": "The picnic overlooks a calm mountain lake with a sailboat, a motorboat, canoes, and a dock.",
-        "translations": {
-          "es": "El picnic tiene vista a un tranquilo lago de montaña con un velero, una lancha, canoas y un muelle.",
-          "fr": "Le pique-nique donne sur un lac de montagne calme avec un voilier, un bateau à moteur, des canoës et un quai.",
-          "de": "Das Picknick blickt auf einen ruhigen Bergsee mit Segelboot, Motorboot, Kanus und einem Steg.",
-          "it": "Il picnic si affaccia su un tranquillo lago di montagna con una barca a vela, un motoscafo, canoe e un molo.",
-          "pt": "O piquenique tem vista para um lago tranquilo de montanha com um veleiro, uma lancha, canoas e um cais.",
-          "no": "Pikniken har utsikt over en rolig fjellsjø med seilbåt, motorbåt, kanoer og brygge."
-        }
-      },
-      {
-        "text": "The water reflects the surrounding forest and snowy mountains.",
-        "translations": {
-          "es": "El agua refleja el bosque y las montañas nevadas.",
-          "fr": "L'eau reflète la forêt et les montagnes enneigées.",
-          "de": "Das Wasser spiegelt den Wald und die schneebedeckten Berge.",
-          "it": "L'acqua riflette il bosco e le montagne innevate.",
-          "pt": "A água reflete a floresta e as montanhas nevadas.",
-          "no": "Vannet speiler skogen og de snødekte fjellene."
-        }
-      },
-      {
-        "text": "The campsite includes an RV, a tent, outdoor chairs, coolers, cooking equipment, and plenty of room for the whole group.",
-        "translations": {
-          "es": "El campamento incluye una casa rodante, una tienda, sillas, neveras y equipo para cocinar.",
-          "fr": "Le camping comprend un camping-car, une tente, des chaises, des glacières et du matériel de cuisine.",
-          "de": "Zum Campingplatz gehören ein Wohnmobil, ein Zelt, Stühle, Kühlboxen und Kochutensilien.",
-          "it": "Il campeggio comprende un camper, una tenda, sedie, borse frigo e attrezzature per cucinare.",
-          "pt": "O acampamento inclui um trailer, uma barraca, cadeiras, caixas térmicas e equipamentos de cozinha.",
-          "no": "Campingplassen har bobil, telt, stoler, kjølebokser og kokeutstyr."
-        }
-      },
-      {
-        "text": "Camping equipment makes it easier to eat, relax, and spend time outdoors.",
-        "translations": {
-          "es": "El equipo de campamento facilita comer, descansar y pasar tiempo al aire libre.",
-          "fr": "Le matériel de camping facilite les repas, la détente et le temps passé dehors.",
-          "de": "Campingausrüstung macht Essen, Entspannen und Zeit im Freien einfacher.",
-          "it": "L'attrezzatura da campeggio rende più facile mangiare, rilassarsi e trascorrere tempo all'aperto.",
-          "pt": "O equipamento de camping facilita comer, relaxar e passar tempo ao ar livre.",
-          "no": "Campingutstyret gjør det lettere å spise, slappe av og være ute."
-        }
-      },
-      {
-        "text": "Pine forests, wildflowers, blue water, and snowy mountains surround the picnic area.",
-        "translations": {
-          "es": "Bosques de pinos, flores silvestres, agua azul y montañas nevadas rodean el picnic.",
-          "fr": "Des forêts de pins, des fleurs sauvages, de l'eau bleue et des montagnes enneigées entourent le pique-nique.",
-          "de": "Kiefernwälder, Wildblumen, blaues Wasser und schneebedeckte Berge umgeben den Picknickplatz.",
-          "it": "Pinete, fiori selvatici, acqua blu e montagne innevate circondano l'area del picnic.",
-          "pt": "Florestas de pinheiros, flores silvestres, água azul e montanhas nevadas cercam o piquenique.",
-          "no": "Furuskog, villblomster, blått vann og snødekte fjell omgir piknikområdet."
-        }
-      },
-      {
-        "text": "The wide landscape makes this picnic feel like a celebration of all the adventures the crew has shared.",
-        "translations": {
-          "es": "El amplio paisaje hace que este picnic parezca una celebración de todas las aventuras compartidas.",
-          "fr": "Le vaste paysage donne à ce pique-nique l'allure d'une célébration de toutes les aventures partagées.",
-          "de": "Die weite Landschaft lässt dieses Picknick wie eine Feier aller gemeinsamen Abenteuer wirken.",
-          "it": "Il grande paesaggio fa sembrare questo picnic una festa di tutte le avventure condivise.",
-          "pt": "A ampla paisagem faz este piquenique parecer uma celebração de todas as aventuras compartilhadas.",
-          "no": "Det vide landskapet får pikniken til å føles som en feiring av alle eventyrene gruppen har delt."
-        }
-      }
-    ],
-    "hotspots": [
-      {
-        "id": "grandma",
-        "label": "grandma",
-        "x": 62,
-        "y": 49,
-        "w": 6,
-        "h": 16,
-        "sound": "",
-        "translations": {}
-      },
-      {
-        "id": "grandpa",
-        "label": "grandpa",
-        "x": 54,
-        "y": 47,
-        "w": 7,
-        "h": 18,
-        "sound": "",
-        "translations": {}
-      },
-      {
-        "id": "crew",
-        "label": "crew",
-        "x": 56.92,
-        "y": 45.41,
-        "w": 31.13,
-        "h": 11.15,
-        "sound": "",
-        "translations": {}
-      },
-      {
-        "id": "table",
-        "label": "table",
-        "x": 37,
-        "y": 61,
-        "w": 53,
-        "h": 16,
-        "sound": "",
-        "translations": {}
-      },
-      {
-        "id": "food",
-        "label": "food",
-        "x": 42.52,
-        "y": 51.52,
-        "w": 17.33,
-        "h": 7.85,
-        "sound": "",
-        "translations": {}
-      },
-      {
-        "id": "hotdogs",
-        "label": "hotdogs",
-        "x": 69,
-        "y": 72,
-        "w": 10,
-        "h": 10,
-        "sound": "",
-        "translations": {}
-      },
-      {
-        "id": "hamburgers",
-        "label": "hamburgers",
-        "x": 58,
-        "y": 58,
-        "w": 9,
-        "h": 9,
-        "sound": "",
-        "translations": {}
-      },
-      {
-        "id": "campfire",
-        "label": "campfire",
-        "x": 60.11,
-        "y": 77.98,
-        "w": 9.38,
-        "h": 15.76,
-        "sound": "sounds/fire.mp3",
-        "translations": {}
-      },
-      {
-        "id": "shepherd",
-        "label": "shepherd",
-        "x": 75.54,
-        "y": 57.69,
-        "w": 8,
-        "h": 18,
-        "sound": "sounds/dog-panting.wav",
-        "translations": {}
-      },
-      {
-        "id": "rv",
-        "label": "rv",
-        "x": 71.62,
-        "y": 30.37,
-        "w": 25.04,
-        "h": 12.42,
-        "sound": "sounds/rv.mp3",
-        "translations": {}
-      },
-      {
-        "id": "tent",
-        "label": "tent",
-        "x": 94,
-        "y": 43,
-        "w": 6,
-        "h": 17,
-        "sound": "sounds/guitar.mp3",
-        "translations": {}
-      },
-      {
-        "id": "lake",
-        "label": "lake",
-        "x": 36.9,
-        "y": 40.49,
-        "w": 8.36,
-        "h": 5.3,
-        "sound": "",
-        "translations": {}
-      },
-      {
-        "id": "sailboat",
-        "label": "sailboat",
-        "x": 37.98,
-        "y": 27.9,
-        "w": 5.29,
-        "h": 10.5,
-        "sound": "",
-        "translations": {}
-      },
-      {
-        "id": "motorboat",
-        "label": "motorboat",
-        "x": 23.95,
-        "y": 34.41,
-        "w": 5.23,
-        "h": 10.28,
-        "sound": "",
-        "translations": {}
-      },
-      {
-        "id": "mountains",
-        "label": "mountains",
-        "x": 14.4,
-        "y": 5.84,
-        "w": 58,
-        "h": 20,
-        "sound": "",
-        "translations": {}
-      },
-      {
-        "id": "forest",
-        "label": "forest",
-        "x": -3.44,
-        "y": 2.69,
-        "w": 13.84,
-        "h": 21.09,
-        "sound": "sounds/birds-forest.mp3",
-        "translations": {}
-      },
-      {
-        "id": "flowers",
-        "label": "flowers",
-        "x": 5.05,
-        "y": 84.63,
-        "w": 24.26,
-        "h": 15.65,
-        "sound": "",
-        "translations": {}
-      },
-      {
-        "id": "mascott",
-        "label": "mascott",
-        "x": 83.52,
-        "y": 17.63,
-        "w": 6,
-        "h": 8,
-        "sound": "",
-        "translations": {}
-      },
-      {
-        "id": "solar-panels",
-        "label": "solar panels",
-        "x": 90.72,
-        "y": 15.87,
-        "w": 10.11,
-        "h": 8.74,
-        "sound": "",
-        "translations": {}
-      },
-      {
-        "id": "dog",
-        "label": "dog",
-        "x": 5.44,
-        "y": 70.21,
-        "w": 14.54,
-        "h": 10.5,
-        "sound": "sounds/dog-panting.wav",
-        "translations": {}
-      },
-      {
-        "id": "guitar-music",
-        "label": "guitar music",
-        "x": 5.83,
-        "y": 49.92,
-        "w": 19.28,
-        "h": 19.3,
-        "sound": "sounds/guitar3.mp3",
-        "translations": {}
-      },
-      {
-        "id": "stump",
-        "label": "stump",
-        "x": 30.52,
-        "y": 76.97,
-        "w": 6,
-        "h": 8,
-        "sound": "",
-        "translations": {}
-      },
-      {
-        "id": "dock",
-        "label": "dock",
-        "x": 10.36,
-        "y": 40.34,
-        "w": 12.25,
-        "h": 5.87,
-        "sound": "",
-        "translations": {}
-      },
-      {
-        "id": "seniors",
-        "label": "seniors",
-        "x": 24.86,
-        "y": 47.17,
-        "w": 14.07,
-        "h": 9.57,
-        "sound": "sounds/guitar-campfire.mp3",
-        "translations": {}
-      }
-    ],
-    "overlays": [],
-    "challenges": [
-      {
-        "prompt": "Find the RV",
-        "target": "grandma"
-      },
-      {
-        "prompt": "Find Family and Friends",
-        "target": "grandpa"
-      },
-      {
-        "prompt": "Find the Solar Panels",
-        "target": "hotdogs"
-      },
-      {
-        "prompt": "Find the Campfire",
-        "target": "campfire"
-      },
-      {
-        "prompt": "Find the Sailboat",
-        "target": "sailboat"
       }
     ]
   },
@@ -9920,257 +10896,6 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
       }
     ]
   },
-  "river-rafting": {
-    "title": "River Rafting",
-    "image": "images/Talk-A-Bee-River-Rafting-Adventure.jpg",
-    "lessons": [
-      {
-        "text": "Grandma, Grandpa, the family, their dog, and Bee are all together for a whitewater rafting adventure.",
-        "translations": {
-          "es": "La abuela, el abuelo, la familia, su perro y la abeja están juntos en una aventura de rafting.",
-          "fr": "Grand-mère, grand-père, la famille, leur chien et l'abeille sont réunis pour une aventure de rafting.",
-          "de": "Oma, Opa, die Familie, ihr Hund und die Biene erleben gemeinsam ein Wildwasser-Rafting-Abenteuer.",
-          "it": "La nonna, il nonno, la famiglia, il loro cane e l'ape sono insieme per un'avventura di rafting.",
-          "pt": "A avó, o avô, a família, o cachorro e a abelha estão juntos em uma aventura de rafting.",
-          "no": "Bestemor, bestefar, familien, hunden deres og bien er sammen på et raftingeventyr."
-        }
-      },
-      {
-        "text": "Everyone works as a team while the raft travels through the mountain river.",
-        "translations": {
-          "es": "Todos trabajan en equipo mientras la balsa recorre el río de montaña.",
-          "fr": "Tout le monde travaille en équipe pendant que le radeau descend la rivière de montagne.",
-          "de": "Alle arbeiten als Team, während das Boot durch den Bergfluss fährt.",
-          "it": "Tutti lavorano in squadra mentre il gommone percorre il fiume di montagna.",
-          "pt": "Todos trabalham em equipe enquanto o bote percorre o rio de montanha.",
-          "no": "Alle samarbeider mens flåten beveger seg gjennom fjellelven."
-        }
-      },
-      {
-        "text": "The rafters wear helmets and life jackets while they are on the river.",
-        "translations": {
-          "es": "Los participantes usan cascos y chalecos salvavidas mientras están en el río.",
-          "fr": "Les participants portent des casques et des gilets de sauvetage sur la rivière.",
-          "de": "Die Rafter tragen auf dem Fluss Helme und Schwimmwesten.",
-          "it": "I partecipanti indossano caschi e giubbotti salvagente mentre sono sul fiume.",
-          "pt": "Os participantes usam capacetes e coletes salva-vidas enquanto estão no rio.",
-          "no": "Deltakerne bruker hjelmer og redningsvester mens de er på elven."
-        }
-      },
-      {
-        "text": "Safety equipment helps protect the crew in fast-moving water.",
-        "translations": {
-          "es": "El equipo de seguridad ayuda a proteger al grupo en el agua rápida.",
-          "fr": "L'équipement de sécurité aide à protéger l'équipe dans l'eau rapide.",
-          "de": "Sicherheitsausrüstung hilft, die Gruppe in schnell fließendem Wasser zu schützen.",
-          "it": "L'attrezzatura di sicurezza aiuta a proteggere il gruppo nell'acqua veloce.",
-          "pt": "O equipamento de segurança ajuda a proteger a equipe em águas rápidas.",
-          "no": "Sikkerhetsutstyr bidrar til å beskytte laget i raskt vann."
-        }
-      },
-      {
-        "text": "Rapids form where fast water moves over and around rocks in the river.",
-        "translations": {
-          "es": "Los rápidos se forman donde el agua veloz pasa sobre y alrededor de las rocas del río.",
-          "fr": "Les rapides se forment lorsque l'eau rapide passe sur et autour des rochers de la rivière.",
-          "de": "Stromschnellen entstehen dort, wo schnelles Wasser über und um Felsen im Fluss fließt.",
-          "it": "Le rapide si formano dove l'acqua veloce passa sopra e intorno alle rocce del fiume.",
-          "pt": "As corredeiras se formam onde a água rápida passa por cima e ao redor das rochas do rio.",
-          "no": "Stryk dannes der raskt vann beveger seg over og rundt steiner i elven."
-        }
-      },
-      {
-        "text": "The rushing water creates waves, splashes, and white foam.",
-        "translations": {
-          "es": "El agua crea olas, salpicaduras y espuma blanca.",
-          "fr": "L'eau crée des vagues, des éclaboussures et de l'écume blanche.",
-          "de": "Das strömende Wasser erzeugt Wellen, Spritzer und weißen Schaum.",
-          "it": "L'acqua crea onde, spruzzi e schiuma bianca.",
-          "pt": "A água cria ondas, respingos e espuma branca.",
-          "no": "Det strømmende vannet lager bølger, sprut og hvitt skum."
-        }
-      },
-      {
-        "text": "The rafting crew uses paddles to help guide the raft through the river.",
-        "translations": {
-          "es": "El equipo usa remos para ayudar a guiar la balsa por el río.",
-          "fr": "L'équipe utilise des pagaies pour aider à guider le radeau sur la rivière.",
-          "de": "Das Rafting-Team benutzt Paddel, um das Boot durch den Fluss zu führen.",
-          "it": "L'equipaggio usa le pagaie per aiutare a guidare il gommone lungo il fiume.",
-          "pt": "A equipe usa remos para ajudar a guiar o bote pelo rio.",
-          "no": "Raftinglaget bruker padleårer for å hjelpe til med å styre flåten gjennom elven."
-        }
-      },
-      {
-        "text": "Working together helps the raft move in the intended direction.",
-        "translations": {
-          "es": "Trabajar juntos ayuda a mover la balsa en la dirección deseada.",
-          "fr": "Travailler ensemble aide le radeau à aller dans la direction voulue.",
-          "de": "Gemeinsames Arbeiten hilft, das Boot in die gewünschte Richtung zu bewegen.",
-          "it": "Lavorare insieme aiuta il gommone a muoversi nella direzione desiderata.",
-          "pt": "Trabalhar em conjunto ajuda o bote a seguir na direção desejada.",
-          "no": "Samarbeid hjelper flåten å bevege seg i ønsket retning."
-        }
-      },
-      {
-        "text": "A river can change from calm water to fast rapids as its depth, slope, and rocks change.",
-        "translations": {
-          "es": "Un río puede cambiar de agua tranquila a rápidos cuando cambian su profundidad, pendiente y rocas.",
-          "fr": "Une rivière peut passer d'une eau calme à des rapides lorsque sa profondeur, sa pente et ses rochers changent.",
-          "de": "Ein Fluss kann von ruhigem Wasser zu schnellen Stromschnellen wechseln, wenn sich Tiefe, Gefälle und Felsen verändern.",
-          "it": "Un fiume può passare da acqua calma a rapide quando cambiano profondità, pendenza e rocce.",
-          "pt": "Um rio pode mudar de águas calmas para corredeiras quando sua profundidade, inclinação e rochas mudam.",
-          "no": "En elv kan gå fra rolig vann til raske stryk når dybde, helling og steiner endrer seg."
-        }
-      },
-      {
-        "text": "Rafters watch the water and follow their guide through the safest route.",
-        "translations": {
-          "es": "Los participantes observan el agua y siguen a su guía por la ruta más segura.",
-          "fr": "Les participants observent l'eau et suivent leur guide sur l'itinéraire le plus sûr.",
-          "de": "Die Rafter beobachten das Wasser und folgen ihrem Guide auf der sichersten Route.",
-          "it": "I partecipanti osservano l'acqua e seguono la guida lungo il percorso più sicuro.",
-          "pt": "Os participantes observam a água e seguem o guia pela rota mais segura.",
-          "no": "Deltakerne følger med på vannet og følger guiden gjennom den tryggeste ruten."
-        }
-      },
-      {
-        "text": "The river runs through a beautiful valley surrounded by evergreen forests and snowy mountains.",
-        "translations": {
-          "es": "El río atraviesa un hermoso valle rodeado de bosques y montañas nevadas.",
-          "fr": "La rivière traverse une belle vallée entourée de forêts de conifères et de montagnes enneigées.",
-          "de": "Der Fluss fließt durch ein wunderschönes Tal mit Nadelwäldern und schneebedeckten Bergen.",
-          "it": "Il fiume attraversa una bellissima valle circondata da foreste di conifere e montagne innevate.",
-          "pt": "O rio atravessa um belo vale cercado por florestas e montanhas nevadas.",
-          "no": "Elven går gjennom en vakker dal omgitt av barskog og snødekte fjell."
-        }
-      },
-      {
-        "text": "Mountain rivers often carry cold water from rain and melting snow.",
-        "translations": {
-          "es": "Los ríos de montaña suelen llevar agua fría de la lluvia y la nieve derretida.",
-          "fr": "Les rivières de montagne transportent souvent de l'eau froide provenant de la pluie et de la fonte des neiges.",
-          "de": "Bergflüsse führen oft kaltes Wasser aus Regen und schmelzendem Schnee.",
-          "it": "I fiumi di montagna spesso trasportano acqua fredda proveniente dalla pioggia e dalla neve sciolta.",
-          "pt": "Rios de montanha muitas vezes carregam água fria da chuva e da neve derretida.",
-          "no": "Fjellelver fører ofte kaldt vann fra regn og smeltende snø."
-        }
-      }
-    ],
-    "hotspots": [
-      {
-        "id": "paddle",
-        "label": "paddle",
-        "x": 30.14,
-        "y": 47.74,
-        "w": 5.6,
-        "h": 9.81,
-        "sound": "",
-        "translations": {}
-      },
-      {
-        "id": "rapids",
-        "label": "rapids",
-        "x": 21.46,
-        "y": 52.52,
-        "w": 12.45,
-        "h": 22.7,
-        "sound": "",
-        "translations": {}
-      },
-      {
-        "id": "river",
-        "label": "river",
-        "x": 37.64,
-        "y": 68.46,
-        "w": 52.42,
-        "h": 37.93,
-        "sound": "",
-        "translations": {}
-      },
-      {
-        "id": "rocks",
-        "label": "rocks",
-        "x": 83.39,
-        "y": 50.59,
-        "w": 14.51,
-        "h": 10.59,
-        "sound": "",
-        "translations": {}
-      },
-      {
-        "id": "forest",
-        "label": "forest",
-        "x": 73.64,
-        "y": 15.46,
-        "w": 16.52,
-        "h": 24.41,
-        "sound": "sounds/birds-forest.mp3",
-        "translations": {}
-      },
-      {
-        "id": "mountain",
-        "label": "mountain",
-        "x": 57.64,
-        "y": 8.52,
-        "w": 21.07,
-        "h": 10.33,
-        "sound": "",
-        "translations": {}
-      },
-      {
-        "id": "trees",
-        "label": "trees",
-        "x": 89.6,
-        "y": 9.82,
-        "w": 11.54,
-        "h": 20.87,
-        "sound": "",
-        "translations": {}
-      },
-      {
-        "id": "sky",
-        "label": "sky",
-        "x": 22.14,
-        "y": -2.78,
-        "w": 17.32,
-        "h": 9.19,
-        "sound": "",
-        "translations": {}
-      },
-      {
-        "id": "valley",
-        "label": "valley",
-        "x": 31.19,
-        "y": 24.86,
-        "w": 53.28,
-        "h": 9.67,
-        "sound": "",
-        "translations": {}
-      },
-      {
-        "id": "river-rafting-crew",
-        "label": "river rafting crew",
-        "x": 37.04,
-        "y": 36.33,
-        "w": 29.28,
-        "h": 27.73,
-        "sound": "sounds/River-Rafting.mp3",
-        "translations": {}
-      }
-    ],
-    "overlays": [],
-    "challenges": [
-      {
-        "prompt": "Find the Forest",
-        "target": "paddle"
-      },
-      {
-        "prompt": "Find the River",
-        "target": "rapids"
-      }
-    ]
-  },
   "sea-adventures": {
     "title": "Sea Adventures",
     "image": "images/talkabee-image-21.jpg",
@@ -10753,6 +11478,257 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
       {
         "prompt": "Seagull",
         "target": "seagull"
+      }
+    ]
+  },
+  "river-rafting": {
+    "title": "River Rafting",
+    "image": "images/Talk-A-Bee-River-Rafting-Adventure.jpg",
+    "lessons": [
+      {
+        "text": "Grandma, Grandpa, the family, their dog, and Bee are all together for a whitewater rafting adventure.",
+        "translations": {
+          "es": "La abuela, el abuelo, la familia, su perro y la abeja están juntos en una aventura de rafting.",
+          "fr": "Grand-mère, grand-père, la famille, leur chien et l'abeille sont réunis pour une aventure de rafting.",
+          "de": "Oma, Opa, die Familie, ihr Hund und die Biene erleben gemeinsam ein Wildwasser-Rafting-Abenteuer.",
+          "it": "La nonna, il nonno, la famiglia, il loro cane e l'ape sono insieme per un'avventura di rafting.",
+          "pt": "A avó, o avô, a família, o cachorro e a abelha estão juntos em uma aventura de rafting.",
+          "no": "Bestemor, bestefar, familien, hunden deres og bien er sammen på et raftingeventyr."
+        }
+      },
+      {
+        "text": "Everyone works as a team while the raft travels through the mountain river.",
+        "translations": {
+          "es": "Todos trabajan en equipo mientras la balsa recorre el río de montaña.",
+          "fr": "Tout le monde travaille en équipe pendant que le radeau descend la rivière de montagne.",
+          "de": "Alle arbeiten als Team, während das Boot durch den Bergfluss fährt.",
+          "it": "Tutti lavorano in squadra mentre il gommone percorre il fiume di montagna.",
+          "pt": "Todos trabalham em equipe enquanto o bote percorre o rio de montanha.",
+          "no": "Alle samarbeider mens flåten beveger seg gjennom fjellelven."
+        }
+      },
+      {
+        "text": "The rafters wear helmets and life jackets while they are on the river.",
+        "translations": {
+          "es": "Los participantes usan cascos y chalecos salvavidas mientras están en el río.",
+          "fr": "Les participants portent des casques et des gilets de sauvetage sur la rivière.",
+          "de": "Die Rafter tragen auf dem Fluss Helme und Schwimmwesten.",
+          "it": "I partecipanti indossano caschi e giubbotti salvagente mentre sono sul fiume.",
+          "pt": "Os participantes usam capacetes e coletes salva-vidas enquanto estão no rio.",
+          "no": "Deltakerne bruker hjelmer og redningsvester mens de er på elven."
+        }
+      },
+      {
+        "text": "Safety equipment helps protect the crew in fast-moving water.",
+        "translations": {
+          "es": "El equipo de seguridad ayuda a proteger al grupo en el agua rápida.",
+          "fr": "L'équipement de sécurité aide à protéger l'équipe dans l'eau rapide.",
+          "de": "Sicherheitsausrüstung hilft, die Gruppe in schnell fließendem Wasser zu schützen.",
+          "it": "L'attrezzatura di sicurezza aiuta a proteggere il gruppo nell'acqua veloce.",
+          "pt": "O equipamento de segurança ajuda a proteger a equipe em águas rápidas.",
+          "no": "Sikkerhetsutstyr bidrar til å beskytte laget i raskt vann."
+        }
+      },
+      {
+        "text": "Rapids form where fast water moves over and around rocks in the river.",
+        "translations": {
+          "es": "Los rápidos se forman donde el agua veloz pasa sobre y alrededor de las rocas del río.",
+          "fr": "Les rapides se forment lorsque l'eau rapide passe sur et autour des rochers de la rivière.",
+          "de": "Stromschnellen entstehen dort, wo schnelles Wasser über und um Felsen im Fluss fließt.",
+          "it": "Le rapide si formano dove l'acqua veloce passa sopra e intorno alle rocce del fiume.",
+          "pt": "As corredeiras se formam onde a água rápida passa por cima e ao redor das rochas do rio.",
+          "no": "Stryk dannes der raskt vann beveger seg over og rundt steiner i elven."
+        }
+      },
+      {
+        "text": "The rushing water creates waves, splashes, and white foam.",
+        "translations": {
+          "es": "El agua crea olas, salpicaduras y espuma blanca.",
+          "fr": "L'eau crée des vagues, des éclaboussures et de l'écume blanche.",
+          "de": "Das strömende Wasser erzeugt Wellen, Spritzer und weißen Schaum.",
+          "it": "L'acqua crea onde, spruzzi e schiuma bianca.",
+          "pt": "A água cria ondas, respingos e espuma branca.",
+          "no": "Det strømmende vannet lager bølger, sprut og hvitt skum."
+        }
+      },
+      {
+        "text": "The rafting crew uses paddles to help guide the raft through the river.",
+        "translations": {
+          "es": "El equipo usa remos para ayudar a guiar la balsa por el río.",
+          "fr": "L'équipe utilise des pagaies pour aider à guider le radeau sur la rivière.",
+          "de": "Das Rafting-Team benutzt Paddel, um das Boot durch den Fluss zu führen.",
+          "it": "L'equipaggio usa le pagaie per aiutare a guidare il gommone lungo il fiume.",
+          "pt": "A equipe usa remos para ajudar a guiar o bote pelo rio.",
+          "no": "Raftinglaget bruker padleårer for å hjelpe til med å styre flåten gjennom elven."
+        }
+      },
+      {
+        "text": "Working together helps the raft move in the intended direction.",
+        "translations": {
+          "es": "Trabajar juntos ayuda a mover la balsa en la dirección deseada.",
+          "fr": "Travailler ensemble aide le radeau à aller dans la direction voulue.",
+          "de": "Gemeinsames Arbeiten hilft, das Boot in die gewünschte Richtung zu bewegen.",
+          "it": "Lavorare insieme aiuta il gommone a muoversi nella direzione desiderata.",
+          "pt": "Trabalhar em conjunto ajuda o bote a seguir na direção desejada.",
+          "no": "Samarbeid hjelper flåten å bevege seg i ønsket retning."
+        }
+      },
+      {
+        "text": "A river can change from calm water to fast rapids as its depth, slope, and rocks change.",
+        "translations": {
+          "es": "Un río puede cambiar de agua tranquila a rápidos cuando cambian su profundidad, pendiente y rocas.",
+          "fr": "Une rivière peut passer d'une eau calme à des rapides lorsque sa profondeur, sa pente et ses rochers changent.",
+          "de": "Ein Fluss kann von ruhigem Wasser zu schnellen Stromschnellen wechseln, wenn sich Tiefe, Gefälle und Felsen verändern.",
+          "it": "Un fiume può passare da acqua calma a rapide quando cambiano profondità, pendenza e rocce.",
+          "pt": "Um rio pode mudar de águas calmas para corredeiras quando sua profundidade, inclinação e rochas mudam.",
+          "no": "En elv kan gå fra rolig vann til raske stryk når dybde, helling og steiner endrer seg."
+        }
+      },
+      {
+        "text": "Rafters watch the water and follow their guide through the safest route.",
+        "translations": {
+          "es": "Los participantes observan el agua y siguen a su guía por la ruta más segura.",
+          "fr": "Les participants observent l'eau et suivent leur guide sur l'itinéraire le plus sûr.",
+          "de": "Die Rafter beobachten das Wasser und folgen ihrem Guide auf der sichersten Route.",
+          "it": "I partecipanti osservano l'acqua e seguono la guida lungo il percorso più sicuro.",
+          "pt": "Os participantes observam a água e seguem o guia pela rota mais segura.",
+          "no": "Deltakerne følger med på vannet og følger guiden gjennom den tryggeste ruten."
+        }
+      },
+      {
+        "text": "The river runs through a beautiful valley surrounded by evergreen forests and snowy mountains.",
+        "translations": {
+          "es": "El río atraviesa un hermoso valle rodeado de bosques y montañas nevadas.",
+          "fr": "La rivière traverse une belle vallée entourée de forêts de conifères et de montagnes enneigées.",
+          "de": "Der Fluss fließt durch ein wunderschönes Tal mit Nadelwäldern und schneebedeckten Bergen.",
+          "it": "Il fiume attraversa una bellissima valle circondata da foreste di conifere e montagne innevate.",
+          "pt": "O rio atravessa um belo vale cercado por florestas e montanhas nevadas.",
+          "no": "Elven går gjennom en vakker dal omgitt av barskog og snødekte fjell."
+        }
+      },
+      {
+        "text": "Mountain rivers often carry cold water from rain and melting snow.",
+        "translations": {
+          "es": "Los ríos de montaña suelen llevar agua fría de la lluvia y la nieve derretida.",
+          "fr": "Les rivières de montagne transportent souvent de l'eau froide provenant de la pluie et de la fonte des neiges.",
+          "de": "Bergflüsse führen oft kaltes Wasser aus Regen und schmelzendem Schnee.",
+          "it": "I fiumi di montagna spesso trasportano acqua fredda proveniente dalla pioggia e dalla neve sciolta.",
+          "pt": "Rios de montanha muitas vezes carregam água fria da chuva e da neve derretida.",
+          "no": "Fjellelver fører ofte kaldt vann fra regn og smeltende snø."
+        }
+      }
+    ],
+    "hotspots": [
+      {
+        "id": "paddle",
+        "label": "paddle",
+        "x": 30.14,
+        "y": 47.74,
+        "w": 5.6,
+        "h": 9.81,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "rapids",
+        "label": "rapids",
+        "x": 21.46,
+        "y": 52.52,
+        "w": 12.45,
+        "h": 22.7,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "river",
+        "label": "river",
+        "x": 37.64,
+        "y": 68.46,
+        "w": 52.42,
+        "h": 37.93,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "rocks",
+        "label": "rocks",
+        "x": 83.39,
+        "y": 50.59,
+        "w": 14.51,
+        "h": 10.59,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "forest",
+        "label": "forest",
+        "x": 73.64,
+        "y": 15.46,
+        "w": 16.52,
+        "h": 24.41,
+        "sound": "sounds/birds-forest.mp3",
+        "translations": {}
+      },
+      {
+        "id": "mountain",
+        "label": "mountain",
+        "x": 57.64,
+        "y": 8.52,
+        "w": 21.07,
+        "h": 10.33,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "trees",
+        "label": "trees",
+        "x": 89.6,
+        "y": 9.82,
+        "w": 11.54,
+        "h": 20.87,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "sky",
+        "label": "sky",
+        "x": 22.14,
+        "y": -2.78,
+        "w": 17.32,
+        "h": 9.19,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "valley",
+        "label": "valley",
+        "x": 31.19,
+        "y": 24.86,
+        "w": 53.28,
+        "h": 9.67,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "river-rafting-crew",
+        "label": "river rafting crew",
+        "x": 37.04,
+        "y": 36.33,
+        "w": 29.28,
+        "h": 27.73,
+        "sound": "sounds/River-Rafting.mp3",
+        "translations": {}
+      }
+    ],
+    "overlays": [],
+    "challenges": [
+      {
+        "prompt": "Find the Forest",
+        "target": "paddle"
+      },
+      {
+        "prompt": "Find the River",
+        "target": "rapids"
       }
     ]
   },
@@ -14201,6 +15177,1461 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
       }
     ]
   },
+  "city-bus": {
+    "title": "City Bus",
+    "image": "images/city-bus-adventure.jpg",
+    "lessons": [
+      {
+        "text": "Which bus goes downtown?",
+        "translations": {
+          "es": "¿Qué autobús va al centro?",
+          "fr": "Quel bus va au centre-ville ?",
+          "de": "Welcher Bus fährt ins Stadtzentrum?",
+          "it": "Quale autobus va in centro?",
+          "pt": "Qual ônibus vai para o centro?",
+          "no": "Hvilken buss går til sentrum?"
+        }
+      },
+      {
+        "text": "Bus number 22 goes downtown.",
+        "translations": {
+          "es": "El autobús número veintidós va al centro.",
+          "fr": "Le bus numéro vingt-deux va au centre-ville.",
+          "de": "Bus Nummer zweiundzwanzig fährt ins Stadtzentrum.",
+          "it": "L'autobus numero ventidue va in centro.",
+          "pt": "O ônibus número vinte e dois vai para o centro.",
+          "no": "Buss nummer tjueto går til sentrum."
+        }
+      },
+      {
+        "text": "That is our bus.",
+        "translations": {
+          "es": "Ese es nuestro autobús.",
+          "fr": "C'est notre bus.",
+          "de": "Das ist unser Bus.",
+          "it": "Quello è il nostro autobus.",
+          "pt": "Esse é o nosso ônibus.",
+          "no": "Det er bussen vår."
+        }
+      },
+      {
+        "text": "Let's get on the bus.",
+        "translations": {
+          "es": "Vamos a subir al autobús.",
+          "fr": "Montons dans le bus.",
+          "de": "Steigen wir in den Bus ein.",
+          "it": "Saliamo sull'autobus.",
+          "pt": "Vamos entrar no ônibus.",
+          "no": "La oss gå på bussen."
+        }
+      },
+      {
+        "text": "Look at the route map.",
+        "translations": {
+          "es": "Mira el mapa de rutas.",
+          "fr": "Regarde le plan des lignes.",
+          "de": "Schau auf den Linienplan.",
+          "it": "Guarda la mappa delle linee.",
+          "pt": "Olhe o mapa de rotas.",
+          "no": "Se på rutekartet."
+        }
+      },
+      {
+        "text": "Where is Central Station?",
+        "translations": {
+          "es": "¿Dónde está la estación central?",
+          "fr": "Où est la gare centrale ?",
+          "de": "Wo ist der Hauptbahnhof?",
+          "it": "Dov'è la stazione centrale?",
+          "pt": "Onde fica a estação central?",
+          "no": "Hvor er sentralstasjonen?"
+        }
+      },
+      {
+        "text": "This route goes downtown.",
+        "translations": {
+          "es": "Esta ruta va al centro.",
+          "fr": "Cette ligne va au centre-ville.",
+          "de": "Diese Linie fährt ins Stadtzentrum.",
+          "it": "Questa linea va in centro.",
+          "pt": "Esta rota vai para o centro.",
+          "no": "Denne ruten går til sentrum."
+        }
+      },
+      {
+        "text": "The park is on this route.",
+        "translations": {
+          "es": "El parque está en esta ruta.",
+          "fr": "Le parc est sur cette ligne.",
+          "de": "Der Park liegt an dieser Linie.",
+          "it": "Il parco è su questa linea.",
+          "pt": "O parque fica nesta rota.",
+          "no": "Parken ligger på denne ruten."
+        }
+      },
+      {
+        "text": "I have a bus pass.",
+        "translations": {
+          "es": "Tengo un pase de autobús.",
+          "fr": "J'ai un pass de bus.",
+          "de": "Ich habe eine Busfahrkarte.",
+          "it": "Ho un pass dell'autobus.",
+          "pt": "Tenho um passe de ônibus.",
+          "no": "Jeg har et busskort."
+        }
+      },
+      {
+        "text": "I need a ticket, please.",
+        "translations": {
+          "es": "Necesito un boleto, por favor.",
+          "fr": "J'ai besoin d'un billet, s'il vous plaît.",
+          "de": "Ich brauche eine Fahrkarte, bitte.",
+          "it": "Mi serve un biglietto, per favore.",
+          "pt": "Preciso de uma passagem, por favor.",
+          "no": "Jeg trenger en billett, takk."
+        }
+      },
+      {
+        "text": "Here is my pass.",
+        "translations": {
+          "es": "Aquí está mi pase.",
+          "fr": "Voici mon pass.",
+          "de": "Hier ist meine Fahrkarte.",
+          "it": "Ecco il mio pass.",
+          "pt": "Aqui está meu passe.",
+          "no": "Her er busskortet mitt."
+        }
+      },
+      {
+        "text": "How much is the ride?",
+        "translations": {
+          "es": "¿Cuánto cuesta el viaje?",
+          "fr": "Combien coûte le trajet ?",
+          "de": "Wie viel kostet die Fahrt?",
+          "it": "Quanto costa il viaggio?",
+          "pt": "Quanto custa a viagem?",
+          "no": "Hvor mye koster turen?"
+        }
+      },
+      {
+        "text": "How do I get to City Park?",
+        "translations": {
+          "es": "¿Cómo llego al parque de la ciudad?",
+          "fr": "Comment aller au parc municipal ?",
+          "de": "Wie komme ich zum Stadtpark?",
+          "it": "Come arrivo al parco cittadino?",
+          "pt": "Como chego ao parque da cidade?",
+          "no": "Hvordan kommer jeg til byparken?"
+        }
+      },
+      {
+        "text": "Where is Central Station?",
+        "translations": {
+          "es": "¿Dónde está la estación central?",
+          "fr": "Où est la gare centrale ?",
+          "de": "Wo ist der Hauptbahnhof?",
+          "it": "Dov'è la stazione centrale?",
+          "pt": "Onde fica a estação central?",
+          "no": "Hvor er sentralstasjonen?"
+        }
+      },
+      {
+        "text": "Go toward downtown.",
+        "translations": {
+          "es": "Siga hacia el centro.",
+          "fr": "Allez vers le centre-ville.",
+          "de": "Gehen Sie in Richtung Stadtzentrum.",
+          "it": "Vada verso il centro.",
+          "pt": "Siga em direção ao centro.",
+          "no": "Gå mot sentrum."
+        }
+      },
+      {
+        "text": "Main Street is over there.",
+        "translations": {
+          "es": "La calle principal está allí.",
+          "fr": "La rue principale est là-bas.",
+          "de": "Die Hauptstraße ist dort drüben.",
+          "it": "La via principale è laggiù.",
+          "pt": "A rua principal fica ali.",
+          "no": "Hovedgaten er der borte."
+        }
+      },
+      {
+        "text": "We are waiting for the bus.",
+        "translations": {
+          "es": "Estamos esperando el autobús.",
+          "fr": "Nous attendons le bus.",
+          "de": "Wir warten auf den Bus.",
+          "it": "Stiamo aspettando l'autobus.",
+          "pt": "Estamos esperando o ônibus.",
+          "no": "Vi venter på bussen."
+        }
+      },
+      {
+        "text": "When does bus 22 arrive?",
+        "translations": {
+          "es": "¿Cuándo llega el autobús veintidós?",
+          "fr": "Quand arrive le bus vingt-deux ?",
+          "de": "Wann kommt Bus zweiundzwanzig?",
+          "it": "Quando arriva l'autobus ventidue?",
+          "pt": "Quando chega o ônibus vinte e dois?",
+          "no": "Når kommer buss tjueto?"
+        }
+      },
+      {
+        "text": "The bus is coming now.",
+        "translations": {
+          "es": "El autobús ya viene.",
+          "fr": "Le bus arrive maintenant.",
+          "de": "Der Bus kommt jetzt.",
+          "it": "L'autobus sta arrivando.",
+          "pt": "O ônibus está chegando agora.",
+          "no": "Bussen kommer nå."
+        }
+      },
+      {
+        "text": "Let's wait here.",
+        "translations": {
+          "es": "Esperemos aquí.",
+          "fr": "Attendons ici.",
+          "de": "Warten wir hier.",
+          "it": "Aspettiamo qui.",
+          "pt": "Vamos esperar aqui.",
+          "no": "La oss vente her."
+        }
+      },
+      {
+        "text": "I want to get off downtown.",
+        "translations": {
+          "es": "Quiero bajar en el centro.",
+          "fr": "Je veux descendre au centre-ville.",
+          "de": "Ich möchte im Stadtzentrum aussteigen.",
+          "it": "Voglio scendere in centro.",
+          "pt": "Quero descer no centro.",
+          "no": "Jeg vil gå av i sentrum."
+        }
+      },
+      {
+        "text": "Is this my stop?",
+        "translations": {
+          "es": "¿Es esta mi parada?",
+          "fr": "Est-ce mon arrêt ?",
+          "de": "Ist das meine Haltestelle?",
+          "it": "È questa la mia fermata?",
+          "pt": "Este é o meu ponto?",
+          "no": "Er dette holdeplassen min?"
+        }
+      },
+      {
+        "text": "Please tell me when we reach downtown.",
+        "translations": {
+          "es": "Avíseme cuando lleguemos al centro.",
+          "fr": "Dites-moi quand nous arrivons au centre-ville, s'il vous plaît.",
+          "de": "Sagen Sie mir bitte, wenn wir das Stadtzentrum erreichen.",
+          "it": "Mi dica quando arriviamo in centro, per favore.",
+          "pt": "Avise-me quando chegarmos ao centro, por favor.",
+          "no": "Si fra når vi kommer til sentrum, takk."
+        }
+      },
+      {
+        "text": "We get off at the next stop.",
+        "translations": {
+          "es": "Bajamos en la próxima parada.",
+          "fr": "Nous descendons au prochain arrêt.",
+          "de": "Wir steigen an der nächsten Haltestelle aus.",
+          "it": "Scendiamo alla prossima fermata.",
+          "pt": "Descemos no próximo ponto.",
+          "no": "Vi går av på neste holdeplass."
+        }
+      }
+    ],
+    "hotspots": [
+      {
+        "id": "bus",
+        "label": "The bus.",
+        "x": 48.75316207611008,
+        "y": 46.583933253092056,
+        "w": 22.071577092854895,
+        "h": 10.371275217721589,
+        "sound": "sounds/city-bus.mp3",
+        "translations": {
+          "es": "El autobús.",
+          "fr": "Le bus.",
+          "de": "Der Bus.",
+          "it": "L'autobus.",
+          "pt": "O ônibus.",
+          "no": "Bussen."
+        },
+        "rotation": 0,
+        "z": 0
+      },
+      {
+        "id": "buspass",
+        "label": "The bus pass.",
+        "x": 30.550526842027505,
+        "y": 65.8365240627809,
+        "w": 6.64,
+        "h": 9.42,
+        "sound": "",
+        "translations": {
+          "es": "El pase de autobús.",
+          "fr": "Le pass de bus.",
+          "de": "Die Busfahrkarte.",
+          "it": "Il pass dell'autobus.",
+          "pt": "O passe de ônibus.",
+          "no": "Busskortet."
+        }
+      },
+      {
+        "id": "trafficlight",
+        "label": "The traffic light.",
+        "x": 74.28526510751153,
+        "y": 2.6306483817990873,
+        "w": 5.99,
+        "h": 18.86,
+        "sound": "",
+        "translations": {
+          "es": "El semáforo.",
+          "fr": "Le feu de circulation.",
+          "de": "Die Ampel.",
+          "it": "Il semaforo.",
+          "pt": "O semáforo.",
+          "no": "Trafikklyset."
+        }
+      },
+      {
+        "id": "skyscraper",
+        "label": "skyscraper",
+        "x": 69.50578502285174,
+        "y": 11.91311004568405,
+        "w": 3.5,
+        "h": 22.17,
+        "sound": "",
+        "translations": {
+          "es": "rascacielos",
+          "fr": "gratte-ciel",
+          "de": "Wolkenkratzer",
+          "it": "grattacielo",
+          "pt": "arranha-céu",
+          "no": "skyskraper"
+        }
+      },
+      {
+        "id": "buildings",
+        "label": "buildings",
+        "x": 78.84263113830228,
+        "y": 19.088192023473493,
+        "w": 8.86,
+        "h": 21.61,
+        "sound": "",
+        "translations": {
+          "es": "edificios",
+          "fr": "bâtiments",
+          "de": "Gebäude",
+          "it": "edifici",
+          "pt": "edifícios",
+          "no": "bygninger"
+        }
+      },
+      {
+        "id": "street lamp",
+        "label": "street lamp",
+        "x": 41.34631433439384,
+        "y": 19.910521888774888,
+        "w": 5.64,
+        "h": 22.54,
+        "sound": "",
+        "translations": {
+          "es": "farola",
+          "fr": "réverbère",
+          "de": "Straßenlaterne",
+          "it": "lampione",
+          "pt": "lâmpada de rua",
+          "no": "gatelykt"
+        }
+      },
+      {
+        "id": "lamp post",
+        "label": "lamp post",
+        "x": 43.55,
+        "y": 51.85,
+        "w": 2.25,
+        "h": 24.67,
+        "sound": "",
+        "translations": {
+          "es": "Poste de luz",
+          "fr": "lampadaire",
+          "de": "Laternenpfahl",
+          "it": "lampione",
+          "pt": "poste de iluminação",
+          "no": "lyktestolpe"
+        }
+      },
+      {
+        "id": "bumper",
+        "label": "bumper",
+        "x": 53.54262903018006,
+        "y": 74.24113811357866,
+        "w": 17.72,
+        "h": 4.3,
+        "sound": "",
+        "translations": {
+          "es": "parachoques",
+          "fr": "pare-chocs",
+          "de": "Stoßstange",
+          "it": "paraurti",
+          "pt": "pára-choque",
+          "no": "støtfanger"
+        }
+      },
+      {
+        "id": "cargo rack",
+        "label": "cargo rack",
+        "x": 56.675788576543475,
+        "y": 68.10298355265985,
+        "w": 10.9,
+        "h": 6.15,
+        "sound": "",
+        "translations": {
+          "es": "estante de carga",
+          "fr": "porte-bagages",
+          "de": "Gepäckträger",
+          "it": "portapacchi",
+          "pt": "rack de carga",
+          "no": "lastestativ"
+        }
+      },
+      {
+        "id": "bus driver",
+        "label": "bus driver",
+        "x": 63.32157889981679,
+        "y": 57.58576808105452,
+        "w": 6,
+        "h": 8,
+        "sound": "",
+        "translations": {
+          "es": "conductor de autobús",
+          "fr": "chauffeur d'autobus",
+          "de": "Busfahrer",
+          "it": "autista dell'autobus",
+          "pt": "motorista de ônibus",
+          "no": "bussjåfør"
+        }
+      },
+      {
+        "id": "passenger",
+        "label": "passenger",
+        "x": 44.72420967672669,
+        "y": 62.040322864509704,
+        "w": 4.33,
+        "h": 16.52,
+        "sound": "",
+        "translations": {
+          "es": "pasajero",
+          "fr": "passager",
+          "de": "Passagier",
+          "it": "passeggeri",
+          "pt": "passageiro",
+          "no": "passasjer"
+        }
+      },
+      {
+        "id": "car",
+        "label": "car",
+        "x": 70.91263396920925,
+        "y": 65.56652406278089,
+        "w": 3.14,
+        "h": 9.57,
+        "sound": "",
+        "translations": {
+          "es": "auto",
+          "fr": "voiture",
+          "de": "Auto",
+          "it": "auto",
+          "pt": "carro",
+          "no": "bil"
+        }
+      },
+      {
+        "id": "pedestrians",
+        "label": "pedestrians",
+        "x": 80.30157606890982,
+        "y": 63.96570350815257,
+        "w": 8.76,
+        "h": 11.43,
+        "sound": "",
+        "translations": {
+          "es": "peatones",
+          "fr": "piétons",
+          "de": "Fußgänger",
+          "it": "pedoni",
+          "pt": "pedestres",
+          "no": "fotgjengere"
+        }
+      },
+      {
+        "id": "tree",
+        "label": "tree",
+        "x": 38.707369765178676,
+        "y": 4.020454663093267,
+        "w": 6,
+        "h": 8,
+        "sound": "",
+        "translations": {
+          "es": "árbol",
+          "fr": "arbre",
+          "de": "Baum",
+          "it": "albero",
+          "pt": "árvore",
+          "no": "tre"
+        }
+      },
+      {
+        "id": "sky",
+        "label": "sky",
+        "x": 63.15052346903195,
+        "y": 1.8929150005883866,
+        "w": 6,
+        "h": 8,
+        "sound": "",
+        "translations": {
+          "es": "cielo",
+          "fr": "ciel",
+          "de": "Himmel",
+          "it": "cielo",
+          "pt": "céu",
+          "no": "himmel"
+        }
+      },
+      {
+        "id": "bell tower",
+        "label": "bell tower",
+        "x": 62.90368054588079,
+        "y": 20.66380145450849,
+        "w": 6,
+        "h": 8,
+        "sound": "",
+        "translations": {
+          "es": "campanario",
+          "fr": "clocher",
+          "de": "Glockenturm",
+          "it": "campanile",
+          "pt": "torre sineira",
+          "no": "klokketårn"
+        }
+      },
+      {
+        "id": "building",
+        "label": "building",
+        "x": 54.40000355369173,
+        "y": 25.66379880172881,
+        "w": 6,
+        "h": 8,
+        "sound": "",
+        "translations": {
+          "es": "edificio",
+          "fr": "bâtiment",
+          "de": "Gebäude",
+          "it": "edificio",
+          "pt": "prédio",
+          "no": "bygning"
+        }
+      },
+      {
+        "id": "side walk",
+        "label": "side walk",
+        "x": 42.7,
+        "y": 88.15,
+        "w": 6,
+        "h": 8,
+        "sound": "",
+        "translations": {
+          "es": "acera",
+          "fr": "trottoir",
+          "de": "Seitenweg",
+          "it": "passeggiata laterale",
+          "pt": "caminhada lateral",
+          "no": "fortau"
+        },
+        "rotation": 0,
+        "z": 0
+      }
+    ],
+    "overlays": [],
+    "challenges": [
+      {
+        "prompt": "Find The bus.",
+        "target": "bus",
+        "translations": {
+          "es": "Find El autobús..",
+          "fr": "Find Le bus..",
+          "de": "Find Der Bus..",
+          "it": "Find L'autobus..",
+          "pt": "Find O ônibus..",
+          "no": "Find Bussen.."
+        }
+      },
+      {
+        "prompt": "Find The bus pass.",
+        "target": "buspass",
+        "translations": {
+          "es": "Find El pase de autobús..",
+          "fr": "Find Le pass de bus..",
+          "de": "Find Die Busfahrkarte..",
+          "it": "Find Il pass dell'autobus..",
+          "pt": "Find O passe de ônibus..",
+          "no": "Find Busskortet.."
+        }
+      },
+      {
+        "prompt": "Find The traffic light.",
+        "target": "trafficlight",
+        "translations": {
+          "es": "Find El semáforo..",
+          "fr": "Find Le feu de circulation..",
+          "de": "Find Die Ampel..",
+          "it": "Find Il semaforo..",
+          "pt": "Find O semáforo..",
+          "no": "Find Trafikklyset.."
+        }
+      }
+    ]
+  },
+  "helicopter-mountain-rescue": {
+    "title": "Helicopter Mountain Rescue",
+    "image": "images/helicopter-mountain-rescue-adventure.jpg",
+    "lessons": [
+      {
+        "text": "A hiker needs help high in the mountains.",
+        "translations": {
+          "es": "Un excursionista necesita ayuda en lo alto de las montañas.",
+          "fr": "Un randonneur a besoin d'aide dans les montagnes.",
+          "de": "Ein Wanderer braucht hoch in den Bergen Hilfe.",
+          "it": "Un escursionista ha bisogno di aiuto in alta montagna.",
+          "pt": "Um caminhante precisa de ajuda no alto das montanhas.",
+          "no": "En turgåer trenger hjelp høyt oppe i fjellet."
+        }
+      },
+      {
+        "text": "The rescue helicopter team is moving into position.",
+        "translations": {
+          "es": "El equipo del helicóptero de rescate se está colocando en posición.",
+          "fr": "L'équipe de l'hélicoptère de sauvetage se met en position.",
+          "de": "Das Team des Rettungshubschraubers bringt sich in Position.",
+          "it": "La squadra dell'elicottero di soccorso si sta mettendo in posizione.",
+          "pt": "A equipe do helicóptero de resgate está se posicionando.",
+          "no": "Redningshelikopteret og teamet går i posisjon."
+        }
+      },
+      {
+        "text": "The rescue helicopter can hover above places that are difficult to reach.",
+        "translations": {
+          "es": "El helicóptero de rescate puede mantenerse sobre lugares difíciles de alcanzar.",
+          "fr": "L'hélicoptère de sauvetage peut rester en vol stationnaire au-dessus des endroits difficiles d'accès.",
+          "de": "Der Rettungshubschrauber kann über schwer erreichbaren Orten schweben.",
+          "it": "L'elicottero di soccorso può restare sospeso sopra luoghi difficili da raggiungere.",
+          "pt": "O helicóptero de resgate pode pairar sobre lugares difíceis de alcançar.",
+          "no": "Redningshelikopteret kan sveve over steder som er vanskelige å nå."
+        }
+      },
+      {
+        "text": "The pilot keeps the aircraft steady while the rescue team works.",
+        "translations": {
+          "es": "El piloto mantiene la aeronave estable mientras trabaja el equipo.",
+          "fr": "Le pilote maintient l'appareil stable pendant que l'équipe travaille.",
+          "de": "Der Pilot hält den Hubschrauber ruhig, während das Rettungsteam arbeitet.",
+          "it": "Il pilota mantiene stabile l'elicottero mentre la squadra lavora.",
+          "pt": "O piloto mantém a aeronave estável enquanto a equipe trabalha.",
+          "no": "Piloten holder helikopteret stabilt mens redningsteamet arbeider."
+        }
+      },
+      {
+        "text": "A rescuer is lowered toward the stranded hiker.",
+        "translations": {
+          "es": "Un rescatista desciende hacia el excursionista atrapado.",
+          "fr": "Un secouriste descend vers le randonneur bloqué.",
+          "de": "Ein Retter wird zum gestrandeten Wanderer hinabgelassen.",
+          "it": "Un soccorritore viene calato verso l'escursionista bloccato.",
+          "pt": "Um socorrista desce em direção ao caminhante preso.",
+          "no": "En redningsarbeider senkes ned mot turgåeren."
+        }
+      },
+      {
+        "text": "The rescue basket can safely lift someone away from the rocky ledge.",
+        "translations": {
+          "es": "La cesta de rescate puede levantar a una persona de forma segura desde la saliente rocosa.",
+          "fr": "Le panier de sauvetage peut soulever une personne en sécurité depuis la corniche rocheuse.",
+          "de": "Der Rettungskorb kann eine Person sicher vom Felsvorsprung wegheben.",
+          "it": "La cesta di soccorso può sollevare una persona in sicurezza dalla sporgenza rocciosa.",
+          "pt": "A cesta de resgate pode retirar uma pessoa com segurança da saliência rochosa.",
+          "no": "Redningskurven kan løfte en person trygt bort fra fjellhyllen."
+        }
+      },
+      {
+        "text": "Helmets, harnesses, cables, and rescue equipment help protect the team.",
+        "translations": {
+          "es": "Los cascos, arneses, cables y equipos de rescate ayudan a proteger al equipo.",
+          "fr": "Les casques, harnais, câbles et équipements de sauvetage protègent l'équipe.",
+          "de": "Helme, Gurte, Seile und Rettungsausrüstung schützen das Team.",
+          "it": "Caschi, imbracature, cavi e attrezzature di soccorso proteggono la squadra.",
+          "pt": "Capacetes, cintos, cabos e equipamentos de resgate ajudam a proteger a equipe.",
+          "no": "Hjelmer, seler, kabler og redningsutstyr beskytter teamet."
+        }
+      },
+      {
+        "text": "Everyone works carefully and follows the rescue plan.",
+        "translations": {
+          "es": "Todos trabajan con cuidado y siguen el plan de rescate.",
+          "fr": "Tout le monde travaille prudemment et suit le plan de sauvetage.",
+          "de": "Alle arbeiten vorsichtig und folgen dem Rettungsplan.",
+          "it": "Tutti lavorano con attenzione e seguono il piano di soccorso.",
+          "pt": "Todos trabalham com cuidado e seguem o plano de resgate.",
+          "no": "Alle arbeider forsiktig og følger redningsplanen."
+        }
+      },
+      {
+        "text": "Snowy mountains, a waterfall, forests, and a blue lake surround the rescue area.",
+        "translations": {
+          "es": "Montañas nevadas, una cascada, bosques y un lago azul rodean la zona de rescate.",
+          "fr": "Des montagnes enneigées, une cascade, des forêts et un lac bleu entourent la zone.",
+          "de": "Schneebedeckte Berge, ein Wasserfall, Wälder und ein blauer See umgeben das Rettungsgebiet.",
+          "it": "Montagne innevate, una cascata, foreste e un lago blu circondano l'area.",
+          "pt": "Montanhas nevadas, uma cachoeira, florestas e um lago azul cercam a área.",
+          "no": "Snødekte fjell, en foss, skoger og et blått fjellvann omgir området."
+        }
+      },
+      {
+        "text": "An eagle flies high above the valley.",
+        "translations": {
+          "es": "Un águila vuela sobre el valle.",
+          "fr": "Un aigle vole au-dessus de la vallée.",
+          "de": "Ein Adler fliegt hoch über dem Tal.",
+          "it": "Un'aquila vola alta sopra la valle.",
+          "pt": "Uma águia voa alto sobre o vale.",
+          "no": "En ørn flyr høyt over dalen."
+        }
+      },
+      {
+        "text": "Grandpa, Mitchell, Nicole, the pilot, and the rescue crew are working together.",
+        "translations": {
+          "es": "El abuelo, Mitchell, Nicole, el piloto y el equipo de rescate trabajan juntos.",
+          "fr": "Grand-père, Mitchell, Nicole, le pilote et l'équipe de sauvetage travaillent ensemble.",
+          "de": "Opa, Mitchell, Nicole, der Pilot und das Rettungsteam arbeiten zusammen.",
+          "it": "Nonno, Mitchell, Nicole, il pilota e la squadra di soccorso lavorano insieme.",
+          "pt": "O avô, Mitchell, Nicole, o piloto e a equipe de resgate trabalham juntos.",
+          "no": "Bestefar, Mitchell, Nicole, piloten og redningsteamet arbeider sammen."
+        }
+      },
+      {
+        "text": "Even the rescue dog and the Talk A Bee mascot came along.",
+        "translations": {
+          "es": "Hasta el perro de rescate y la mascota Talk A Bee vinieron.",
+          "fr": "Même le chien de sauvetage et la mascotte Talk A Bee sont venus.",
+          "de": "Sogar der Rettungshund und das Talk A Bee Maskottchen sind dabei.",
+          "it": "Anche il cane da soccorso e la mascotte Talk A Bee sono venuti.",
+          "pt": "Até o cão de resgate e a mascote Talk A Bee vieram.",
+          "no": "Til og med redningshunden og Talk A Bee-maskotten er med."
+        }
+      }
+    ],
+    "hotspots": [
+      {
+        "id": "helicopter",
+        "label": "rescue helicopter",
+        "x": 37.68,
+        "y": 15.89,
+        "w": 14.56,
+        "h": 16.87,
+        "sound": "sounds/helicopter.mp3",
+        "translations": {
+          "es": "helicóptero de rescate",
+          "fr": "hélicoptère de sauvetage",
+          "de": "Rettungshubschrauber",
+          "it": "elicottero di soccorso",
+          "pt": "helicóptero de resgate",
+          "no": "redningshelikopter"
+        }
+      },
+      {
+        "id": "pilot",
+        "label": "pilot",
+        "x": 53.4,
+        "y": 14.31,
+        "w": 4.33,
+        "h": 8.88,
+        "sound": "",
+        "translations": {
+          "es": "piloto",
+          "fr": "pilote",
+          "de": "Pilot",
+          "it": "pilota",
+          "pt": "piloto",
+          "no": "pilot"
+        }
+      },
+      {
+        "id": "dog",
+        "label": "rescue dog",
+        "x": 76.74,
+        "y": 25.85,
+        "w": 3.59,
+        "h": 8.81,
+        "sound": "sounds/dog.mp3",
+        "translations": {
+          "es": "perro de rescate",
+          "fr": "chien de sauvetage",
+          "de": "Rettungshund",
+          "it": "cane da soccorso",
+          "pt": "cão de resgate",
+          "no": "redningshund"
+        }
+      },
+      {
+        "id": "cable",
+        "label": "rescue cable",
+        "x": 64.3,
+        "y": 33.91,
+        "w": 2.94,
+        "h": 16.36,
+        "sound": "",
+        "translations": {
+          "es": "cable de rescate",
+          "fr": "câble de sauvetage",
+          "de": "Rettungsseil",
+          "it": "cavo di soccorso",
+          "pt": "cabo de resgate",
+          "no": "redningskabel"
+        }
+      },
+      {
+        "id": "rescuer",
+        "label": "rescuer",
+        "x": 64,
+        "y": 46,
+        "w": 7.43,
+        "h": 14.89,
+        "sound": "",
+        "translations": {
+          "es": "rescatista",
+          "fr": "secouriste",
+          "de": "Retter",
+          "it": "soccorritore",
+          "pt": "socorrista",
+          "no": "redningsarbeider"
+        }
+      },
+      {
+        "id": "basket",
+        "label": "rescue basket",
+        "x": 61.39,
+        "y": 63.39,
+        "w": 9.79,
+        "h": 12.48,
+        "sound": "",
+        "translations": {
+          "es": "cesta de rescate",
+          "fr": "panier de sauvetage",
+          "de": "Rettungskorb",
+          "it": "cesta di soccorso",
+          "pt": "cesta de resgate",
+          "no": "redningskurv"
+        }
+      },
+      {
+        "id": "hiker",
+        "label": "hiker",
+        "x": 80.19,
+        "y": 58.24,
+        "w": 4.2,
+        "h": 21.13,
+        "sound": "",
+        "translations": {
+          "es": "excursionista",
+          "fr": "randonneur",
+          "de": "Wanderer",
+          "it": "escursionista",
+          "pt": "caminhante",
+          "no": "turgåer"
+        }
+      },
+      {
+        "id": "backpack",
+        "label": "backpack",
+        "x": 85.44,
+        "y": 62.46,
+        "w": 3.9,
+        "h": 16.96,
+        "sound": "",
+        "translations": {
+          "es": "mochila",
+          "fr": "sac à dos",
+          "de": "Rucksack",
+          "it": "zaino",
+          "pt": "mochila",
+          "no": "ryggsekk"
+        }
+      },
+      {
+        "id": "mountain",
+        "label": "mountain",
+        "x": 14.49,
+        "y": 21.16,
+        "w": 18.8,
+        "h": 17.89,
+        "sound": "",
+        "translations": {
+          "es": "montaña",
+          "fr": "montagne",
+          "de": "Berg",
+          "it": "montagna",
+          "pt": "montanha",
+          "no": "fjell"
+        }
+      },
+      {
+        "id": "waterfall",
+        "label": "waterfall",
+        "x": 12.08,
+        "y": 48,
+        "w": 10.89,
+        "h": 25.44,
+        "sound": "sounds/waterfall.mp3",
+        "translations": {
+          "es": "cascada",
+          "fr": "cascade",
+          "de": "Wasserfall",
+          "it": "cascata",
+          "pt": "cachoeira",
+          "no": "foss"
+        }
+      },
+      {
+        "id": "lake",
+        "label": "mountain lake",
+        "x": 51.48,
+        "y": 57.64,
+        "w": 9.94,
+        "h": 6.3,
+        "sound": "",
+        "translations": {
+          "es": "lago de montaña",
+          "fr": "lac de montagne",
+          "de": "Bergsee",
+          "it": "lago di montagna",
+          "pt": "lago de montanha",
+          "no": "fjellvann"
+        }
+      },
+      {
+        "id": "eagle",
+        "label": "eagle",
+        "x": 2,
+        "y": 4,
+        "w": 13,
+        "h": 16,
+        "sound": "sounds/eagle.mp3",
+        "translations": {
+          "es": "águila",
+          "fr": "aigle",
+          "de": "Adler",
+          "it": "aquila",
+          "pt": "águia",
+          "no": "ørn"
+        },
+        "rotation": 0,
+        "z": 0
+      },
+      {
+        "id": "forest",
+        "label": "forest",
+        "x": 10.71,
+        "y": 72.76,
+        "w": 18.99,
+        "h": 32.72,
+        "sound": "sounds/birds-forest.mp3",
+        "translations": {
+          "es": "bosque",
+          "fr": "forêt",
+          "de": "Wald",
+          "it": "foresta",
+          "pt": "floresta",
+          "no": "skog"
+        }
+      },
+      {
+        "id": "campground",
+        "label": "campground",
+        "x": 36,
+        "y": 82,
+        "w": 16,
+        "h": 15,
+        "sound": "",
+        "translations": {
+          "es": "campamento",
+          "fr": "camping",
+          "de": "Campingplatz",
+          "it": "campeggio",
+          "pt": "acampamento",
+          "no": "campingplass"
+        }
+      },
+      {
+        "id": "helmet",
+        "label": "rescue helmet",
+        "x": 70.82,
+        "y": 47.13,
+        "w": 4.09,
+        "h": 7.19,
+        "sound": "",
+        "translations": {
+          "es": "casco de rescate",
+          "fr": "casque de sauvetage",
+          "de": "Rettungshelm",
+          "it": "casco di soccorso",
+          "pt": "capacete de resgate",
+          "no": "redningshjelm"
+        }
+      },
+      {
+        "id": "ledge",
+        "label": "rocky ledge",
+        "x": 82.99,
+        "y": 82.28,
+        "w": 9.82,
+        "h": 20.8,
+        "sound": "",
+        "translations": {
+          "es": "saliente rocoso",
+          "fr": "corniche rocheuse",
+          "de": "Felsvorsprung",
+          "it": "sporgenza rocciosa",
+          "pt": "saliência rochosa",
+          "no": "fjellhylle"
+        }
+      },
+      {
+        "id": "cliff",
+        "label": "cliff",
+        "x": 68.29,
+        "y": 83.62,
+        "w": 12.77,
+        "h": 28.09,
+        "sound": "",
+        "translations": {
+          "es": "acantilado",
+          "fr": "falaise",
+          "de": "Cliff",
+          "it": "scogliera",
+          "pt": "penhasco",
+          "no": "klippe"
+        }
+      },
+      {
+        "id": "rescue crew",
+        "label": "rescue crew",
+        "x": 63.32,
+        "y": 13.78,
+        "w": 9.39,
+        "h": 20.04,
+        "sound": "",
+        "translations": {
+          "es": "equipo de rescate",
+          "fr": "équipe de secours",
+          "de": "Rettungsmannschaft",
+          "it": "equipaggio di soccorso",
+          "pt": "equipe de resgate",
+          "no": "redningsmannskap"
+        }
+      },
+      {
+        "id": "rescue helicopter",
+        "label": "rescue helicopter",
+        "x": 81.13,
+        "y": 21.17,
+        "w": 10.84,
+        "h": 8.65,
+        "sound": "sounds/helicopter.mp3",
+        "translations": {
+          "es": "helicóptero de rescate",
+          "fr": "hélicoptère de sauvetage",
+          "de": "Rettungshubschrauber",
+          "it": "elicottero di soccorso",
+          "pt": "helicóptero de resgate",
+          "no": "redningshelikopter"
+        }
+      },
+      {
+        "id": "tail rotor",
+        "label": "tail rotor",
+        "x": 91.74,
+        "y": 4.8,
+        "w": 8.08,
+        "h": 25.87,
+        "sound": "",
+        "translations": {
+          "es": "rotor de cola",
+          "fr": "rotor de queue",
+          "de": "Heckrotor",
+          "it": "rotore di coda",
+          "pt": "rotor de cauda",
+          "no": "halerotor"
+        }
+      },
+      {
+        "id": "propeller blades",
+        "label": "propeller blades",
+        "x": 33.13,
+        "y": 0.12,
+        "w": 62.61,
+        "h": 4.57,
+        "sound": "",
+        "translations": {
+          "es": "palas de hélice",
+          "fr": "pales d'hélice",
+          "de": "Propellerblätter",
+          "it": "pale dell'elica",
+          "pt": "pás da hélice",
+          "no": "propellblader"
+        }
+      },
+      {
+        "id": "turbo engine",
+        "label": "turbo engine",
+        "x": 70.64,
+        "y": 8.72,
+        "w": 13.29,
+        "h": 7.07,
+        "sound": "",
+        "translations": {
+          "es": "motor turbo",
+          "fr": "moteur turbo",
+          "de": "Turbomotor",
+          "it": "motore turbo",
+          "pt": "motor turbo",
+          "no": "turbo motor"
+        }
+      },
+      {
+        "id": "landing struts",
+        "label": "landing struts",
+        "x": 43.17,
+        "y": 38.21,
+        "w": 36.57,
+        "h": 8.92,
+        "sound": "",
+        "translations": {
+          "es": "puntales de aterrizaje",
+          "fr": "jambes d'atterrissage",
+          "de": "Landestreben",
+          "it": "montanti di atterraggio",
+          "pt": "suportes de pouso",
+          "no": "landingsstag"
+        }
+      }
+    ],
+    "overlays": [],
+    "challenges": [
+      {
+        "prompt": "Find hiker.",
+        "target": "hiker",
+        "translations": {
+          "es": "Find excursionista.",
+          "fr": "Find randonneur.",
+          "de": "Find Wanderer.",
+          "it": "Find escursionista.",
+          "pt": "Find caminhante.",
+          "no": "Find turgåer."
+        }
+      },
+      {
+        "prompt": "Find rescue basket.",
+        "target": "basket",
+        "translations": {
+          "es": "Find cesta de rescate.",
+          "fr": "Find panier de sauvetage.",
+          "de": "Find Rettungskorb.",
+          "it": "Find cesta di soccorso.",
+          "pt": "Find cesta de resgate.",
+          "no": "Find redningskurv."
+        }
+      },
+      {
+        "prompt": "Find waterfall.",
+        "target": "waterfall",
+        "translations": {
+          "es": "Find cascada.",
+          "fr": "Find cascade.",
+          "de": "Find Wasserfall.",
+          "it": "Find cascata.",
+          "pt": "Find cachoeira.",
+          "no": "Find foss."
+        }
+      },
+      {
+        "prompt": "Find eagle.",
+        "target": "eagle",
+        "translations": {
+          "es": "Find águila.",
+          "fr": "Find aigle.",
+          "de": "Find Adler.",
+          "it": "Find aquila.",
+          "pt": "Find águia.",
+          "no": "Find ørn."
+        }
+      },
+      {
+        "prompt": "Find rescue dog.",
+        "target": "dog",
+        "translations": {
+          "es": "Find perro de rescate.",
+          "fr": "Find chien de sauvetage.",
+          "de": "Find Rettungshund.",
+          "it": "Find cane da soccorso.",
+          "pt": "Find cão de resgate.",
+          "no": "Find redningshund."
+        }
+      }
+    ]
+  },
+  "dance-floor": {
+    "title": "Dance Floor",
+    "image": "images/Dance-Floor.jpg",
+    "lessons": [
+      {
+        "text": "The drummer keeps the beat. Listen to the rhythm of the drums.",
+        "translations": {
+          "es": "El baterista marca el ritmo. Escucha el ritmo de los tambores.",
+          "fr": "Le batteur donne le rythme. Écoute le rythme de la batterie.",
+          "de": "Der Schlagzeuger gibt den Takt an. Hör auf den Rhythmus der Trommeln.",
+          "it": "Il batterista tiene il ritmo. Ascolta il ritmo della batteria.",
+          "pt": "O baterista marca o ritmo. Ouça o ritmo da bateria.",
+          "no": "Trommeslageren holder takten. Hør på rytmen fra trommene."
+        }
+      },
+      {
+        "text": "The guitarist plays a lively tune. Listen to the sound of the guitar.",
+        "translations": {
+          "es": "El guitarrista toca una melodía animada. Escucha el sonido de la guitarra.",
+          "fr": "Le guitariste joue un air entraînant. Écoute le son de la guitare.",
+          "de": "Der Gitarrist spielt eine schwungvolle Melodie. Hör auf den Klang der Gitarre.",
+          "it": "Il chitarrista suona una melodia vivace. Ascolta il suono della chitarra.",
+          "pt": "O guitarrista toca uma melodia animada. Ouça o som da guitarra.",
+          "no": "Gitaristen spiller en livlig melodi. Hør på lyden av gitaren."
+        }
+      },
+      {
+        "text": "The keyboard player adds music to the dance floor. Listen to the keys.",
+        "translations": {
+          "es": "El tecladista añade música a la pista de baile. Escucha las teclas.",
+          "fr": "Le claviériste ajoute de la musique à la piste de danse. Écoute les touches.",
+          "de": "Der Keyboardspieler bringt Musik auf die Tanzfläche. Hör auf die Tasten.",
+          "it": "Il tastierista aggiunge musica alla pista da ballo. Ascolta i tasti.",
+          "pt": "O tecladista acrescenta música à pista de dança. Ouça as teclas.",
+          "no": "Keyboardspilleren fyller dansegulvet med musikk. Hør på tangentene."
+        }
+      },
+      {
+        "text": "The speaker fills the room with music. Music makes everyone want to dance.",
+        "translations": {
+          "es": "El altavoz llena la sala de música. La música hace que todos quieran bailar.",
+          "fr": "Le haut-parleur remplit la salle de musique. La musique donne envie à tout le monde de danser.",
+          "de": "Der Lautsprecher erfüllt den Raum mit Musik. Bei der Musik wollen alle tanzen.",
+          "it": "L’altoparlante riempie la sala di musica. La musica fa venire voglia di ballare a tutti.",
+          "pt": "O alto-falante enche a sala de música. A música dá vontade de dançar a todos.",
+          "no": "Høyttaleren fyller rommet med musikk. Musikken får alle til å ville danse."
+        }
+      },
+      {
+        "text": "The dancer moves to the rhythm. Watch the steps and enjoy the music.",
+        "translations": {
+          "es": "La bailarina se mueve al ritmo. Observa los pasos y disfruta de la música.",
+          "fr": "La danseuse bouge au rythme de la musique. Regarde ses pas et profite de la musique.",
+          "de": "Die Tänzerin bewegt sich im Rhythmus. Schau dir die Schritte an und genieße die Musik.",
+          "it": "La ballerina si muove a ritmo. Guarda i passi e goditi la musica.",
+          "pt": "A dançarina se move no ritmo. Observe os passos e aproveite a música.",
+          "no": "Danseren beveger seg i takt med musikken. Se på trinnene og nyt musikken."
+        }
+      }
+    ],
+    "hotspots": [
+      {
+        "id": "hotspot-1792557489997",
+        "label": "drummer",
+        "x": 45.10526456542296,
+        "y": 28.31711052445773,
+        "w": 12,
+        "h": 14,
+        "sound": "sounds/energetic-bigbeat-drum1.mp3",
+        "translations": {
+          "es": ""
+        },
+        "rotation": 0,
+        "z": 0
+      },
+      {
+        "id": "hotspot-1792733380415",
+        "label": "guitar2",
+        "x": 65.26316231703834,
+        "y": 22.382937872854818,
+        "w": 11.526316984604625,
+        "h": 20.21233251808108,
+        "sound": "sounds/funk-rock.mp3",
+        "translations": {
+          "es": ""
+        },
+        "rotation": 0,
+        "z": 0
+      },
+      {
+        "id": "hotspot-1792733459045",
+        "label": "organ",
+        "x": 8.789474362613769,
+        "y": 25.164578982111458,
+        "w": 17.42105133500453,
+        "h": 15.112655382590782,
+        "sound": "sounds/synthesizer-one.mp3",
+        "translations": {
+          "es": ""
+        },
+        "rotation": 0,
+        "z": 0
+      },
+      {
+        "id": "hotspot-1792733508497",
+        "label": "basketball",
+        "x": 4.736840543984677,
+        "y": 47.881318244746936,
+        "w": 11.473684701893148,
+        "h": 35.23319875251444,
+        "sound": "",
+        "translations": {
+          "es": ""
+        },
+        "rotation": 0,
+        "z": 0
+      },
+      {
+        "id": "hotspot-1792733561747",
+        "label": "Chill Dude",
+        "x": 86.57894619548087,
+        "y": 56.31896152800959,
+        "w": 11.31579387696505,
+        "h": 27.351880507767497,
+        "sound": "",
+        "translations": {
+          "es": ""
+        },
+        "rotation": 0,
+        "z": 0
+      },
+      {
+        "id": "hotspot-1792733608925",
+        "label": "speaker",
+        "x": 78.5263168641405,
+        "y": 33.6022222653741,
+        "w": 8.68420684581971,
+        "h": 16.78164110925664,
+        "sound": "",
+        "translations": {
+          "es": ""
+        },
+        "rotation": 0,
+        "z": 0
+      },
+      {
+        "id": "hotspot-1792733651948",
+        "label": "dancer",
+        "x": 24.368419232989247,
+        "y": 50.47751413745877,
+        "w": 8.578948303603088,
+        "h": 33.19332259275895,
+        "sound": "",
+        "translations": {
+          "es": ""
+        },
+        "rotation": 0,
+        "z": 0
+      },
+      {
+        "id": "hotspot-1792733694365",
+        "label": "It looks like she is really enjoying herself.",
+        "x": 67.47368506328553,
+        "y": 49.92118909894306,
+        "w": 11.315793876965047,
+        "h": 33.37876250374439,
+        "sound": "",
+        "translations": {
+          "es": ""
+        },
+        "rotation": 0,
+        "z": 0
+      }
+    ],
+    "overlays": [],
+    "challenges": [
+      {
+        "prompt": "Find the drummer.",
+        "target": "hotspot-1792557489997",
+        "translations": {
+          "es": "Encuentra al baterista.",
+          "fr": "Trouve le batteur.",
+          "de": "Finde den Schlagzeuger.",
+          "it": "Trova il batterista.",
+          "pt": "Encontre o baterista.",
+          "no": "Finn trommeslageren."
+        }
+      },
+      {
+        "prompt": "Find the guitarist.",
+        "target": "hotspot-1792733380415",
+        "translations": {
+          "es": "Encuentra al guitarrista.",
+          "fr": "Trouve le guitariste.",
+          "de": "Finde den Gitarristen.",
+          "it": "Trova il chitarrista.",
+          "pt": "Encontre o guitarrista.",
+          "no": "Finn gitaristen."
+        }
+      },
+      {
+        "prompt": "Find the keyboard player.",
+        "target": "hotspot-1792733459045",
+        "translations": {
+          "es": "Encuentra al tecladista.",
+          "fr": "Trouve le claviériste.",
+          "de": "Finde den Keyboardspieler.",
+          "it": "Trova il tastierista.",
+          "pt": "Encontre o tecladista.",
+          "no": "Finn keyboardspilleren."
+        }
+      },
+      {
+        "prompt": "Find the speaker.",
+        "target": "hotspot-1792733608925",
+        "translations": {
+          "es": "Encuentra el altavoz.",
+          "fr": "Trouve le haut-parleur.",
+          "de": "Finde den Lautsprecher.",
+          "it": "Trova l’altoparlante.",
+          "pt": "Encontre o alto-falante.",
+          "no": "Finn høyttaleren."
+        }
+      },
+      {
+        "prompt": "Find the dancer.",
+        "target": "hotspot-1792733651948",
+        "translations": {
+          "es": "Encuentra a la bailarina.",
+          "fr": "Trouve la danseuse.",
+          "de": "Finde die Tänzerin.",
+          "it": "Trova la ballerina.",
+          "pt": "Encontre a dançarina.",
+          "no": "Finn danseren."
+        }
+      }
+    ]
+  },
   "aircraft-carrier": {
     "title": "Aircraft Carrier",
     "image": "images/Talk-A-Bee-Aircraft-Carrier-Adventure.jpg",
@@ -14935,244 +17366,6 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
       }
     ]
   },
-  "dance-floor": {
-    "title": "Dance Floor",
-    "image": "images/Dance-Floor.jpg",
-    "lessons": [
-      {
-        "text": "The drummer keeps the beat. Listen to the rhythm of the drums.",
-        "translations": {
-          "es": "El baterista marca el ritmo. Escucha el ritmo de los tambores.",
-          "fr": "Le batteur donne le rythme. Écoute le rythme de la batterie.",
-          "de": "Der Schlagzeuger gibt den Takt an. Hör auf den Rhythmus der Trommeln.",
-          "it": "Il batterista tiene il ritmo. Ascolta il ritmo della batteria.",
-          "pt": "O baterista marca o ritmo. Ouça o ritmo da bateria.",
-          "no": "Trommeslageren holder takten. Hør på rytmen fra trommene."
-        }
-      },
-      {
-        "text": "The guitarist plays a lively tune. Listen to the sound of the guitar.",
-        "translations": {
-          "es": "El guitarrista toca una melodía animada. Escucha el sonido de la guitarra.",
-          "fr": "Le guitariste joue un air entraînant. Écoute le son de la guitare.",
-          "de": "Der Gitarrist spielt eine schwungvolle Melodie. Hör auf den Klang der Gitarre.",
-          "it": "Il chitarrista suona una melodia vivace. Ascolta il suono della chitarra.",
-          "pt": "O guitarrista toca uma melodia animada. Ouça o som da guitarra.",
-          "no": "Gitaristen spiller en livlig melodi. Hør på lyden av gitaren."
-        }
-      },
-      {
-        "text": "The keyboard player adds music to the dance floor. Listen to the keys.",
-        "translations": {
-          "es": "El tecladista añade música a la pista de baile. Escucha las teclas.",
-          "fr": "Le claviériste ajoute de la musique à la piste de danse. Écoute les touches.",
-          "de": "Der Keyboardspieler bringt Musik auf die Tanzfläche. Hör auf die Tasten.",
-          "it": "Il tastierista aggiunge musica alla pista da ballo. Ascolta i tasti.",
-          "pt": "O tecladista acrescenta música à pista de dança. Ouça as teclas.",
-          "no": "Keyboardspilleren fyller dansegulvet med musikk. Hør på tangentene."
-        }
-      },
-      {
-        "text": "The speaker fills the room with music. Music makes everyone want to dance.",
-        "translations": {
-          "es": "El altavoz llena la sala de música. La música hace que todos quieran bailar.",
-          "fr": "Le haut-parleur remplit la salle de musique. La musique donne envie à tout le monde de danser.",
-          "de": "Der Lautsprecher erfüllt den Raum mit Musik. Bei der Musik wollen alle tanzen.",
-          "it": "L’altoparlante riempie la sala di musica. La musica fa venire voglia di ballare a tutti.",
-          "pt": "O alto-falante enche a sala de música. A música dá vontade de dançar a todos.",
-          "no": "Høyttaleren fyller rommet med musikk. Musikken får alle til å ville danse."
-        }
-      },
-      {
-        "text": "The dancer moves to the rhythm. Watch the steps and enjoy the music.",
-        "translations": {
-          "es": "La bailarina se mueve al ritmo. Observa los pasos y disfruta de la música.",
-          "fr": "La danseuse bouge au rythme de la musique. Regarde ses pas et profite de la musique.",
-          "de": "Die Tänzerin bewegt sich im Rhythmus. Schau dir die Schritte an und genieße die Musik.",
-          "it": "La ballerina si muove a ritmo. Guarda i passi e goditi la musica.",
-          "pt": "A dançarina se move no ritmo. Observe os passos e aproveite a música.",
-          "no": "Danseren beveger seg i takt med musikken. Se på trinnene og nyt musikken."
-        }
-      }
-    ],
-    "hotspots": [
-      {
-        "id": "hotspot-1792557489997",
-        "label": "drummer",
-        "x": 45.10526456542296,
-        "y": 28.31711052445773,
-        "w": 12,
-        "h": 14,
-        "sound": "sounds/energetic-bigbeat-drum1.mp3",
-        "translations": {
-          "es": ""
-        },
-        "rotation": 0,
-        "z": 0
-      },
-      {
-        "id": "hotspot-1792733380415",
-        "label": "guitar2",
-        "x": 65.26316231703834,
-        "y": 22.382937872854818,
-        "w": 11.526316984604625,
-        "h": 20.21233251808108,
-        "sound": "sounds/funk-rock.mp3",
-        "translations": {
-          "es": ""
-        },
-        "rotation": 0,
-        "z": 0
-      },
-      {
-        "id": "hotspot-1792733459045",
-        "label": "organ",
-        "x": 8.789474362613769,
-        "y": 25.164578982111458,
-        "w": 17.42105133500453,
-        "h": 15.112655382590782,
-        "sound": "sounds/synthesizer-one.mp3",
-        "translations": {
-          "es": ""
-        },
-        "rotation": 0,
-        "z": 0
-      },
-      {
-        "id": "hotspot-1792733508497",
-        "label": "basketball",
-        "x": 4.736840543984677,
-        "y": 47.881318244746936,
-        "w": 11.473684701893148,
-        "h": 35.23319875251444,
-        "sound": "",
-        "translations": {
-          "es": ""
-        },
-        "rotation": 0,
-        "z": 0
-      },
-      {
-        "id": "hotspot-1792733561747",
-        "label": "Chill Dude",
-        "x": 86.57894619548087,
-        "y": 56.31896152800959,
-        "w": 11.31579387696505,
-        "h": 27.351880507767497,
-        "sound": "",
-        "translations": {
-          "es": ""
-        },
-        "rotation": 0,
-        "z": 0
-      },
-      {
-        "id": "hotspot-1792733608925",
-        "label": "speaker",
-        "x": 78.5263168641405,
-        "y": 33.6022222653741,
-        "w": 8.68420684581971,
-        "h": 16.78164110925664,
-        "sound": "",
-        "translations": {
-          "es": ""
-        },
-        "rotation": 0,
-        "z": 0
-      },
-      {
-        "id": "hotspot-1792733651948",
-        "label": "dancer",
-        "x": 24.368419232989247,
-        "y": 50.47751413745877,
-        "w": 8.578948303603088,
-        "h": 33.19332259275895,
-        "sound": "",
-        "translations": {
-          "es": ""
-        },
-        "rotation": 0,
-        "z": 0
-      },
-      {
-        "id": "hotspot-1792733694365",
-        "label": "It looks like she is really enjoying herself.",
-        "x": 67.47368506328553,
-        "y": 49.92118909894306,
-        "w": 11.315793876965047,
-        "h": 33.37876250374439,
-        "sound": "",
-        "translations": {
-          "es": ""
-        },
-        "rotation": 0,
-        "z": 0
-      }
-    ],
-    "overlays": [],
-    "challenges": [
-      {
-        "prompt": "Find the drummer.",
-        "target": "hotspot-1792557489997",
-        "translations": {
-          "es": "Encuentra al baterista.",
-          "fr": "Trouve le batteur.",
-          "de": "Finde den Schlagzeuger.",
-          "it": "Trova il batterista.",
-          "pt": "Encontre o baterista.",
-          "no": "Finn trommeslageren."
-        }
-      },
-      {
-        "prompt": "Find the guitarist.",
-        "target": "hotspot-1792733380415",
-        "translations": {
-          "es": "Encuentra al guitarrista.",
-          "fr": "Trouve le guitariste.",
-          "de": "Finde den Gitarristen.",
-          "it": "Trova il chitarrista.",
-          "pt": "Encontre o guitarrista.",
-          "no": "Finn gitaristen."
-        }
-      },
-      {
-        "prompt": "Find the keyboard player.",
-        "target": "hotspot-1792733459045",
-        "translations": {
-          "es": "Encuentra al tecladista.",
-          "fr": "Trouve le claviériste.",
-          "de": "Finde den Keyboardspieler.",
-          "it": "Trova il tastierista.",
-          "pt": "Encontre o tecladista.",
-          "no": "Finn keyboardspilleren."
-        }
-      },
-      {
-        "prompt": "Find the speaker.",
-        "target": "hotspot-1792733608925",
-        "translations": {
-          "es": "Encuentra el altavoz.",
-          "fr": "Trouve le haut-parleur.",
-          "de": "Finde den Lautsprecher.",
-          "it": "Trova l’altoparlante.",
-          "pt": "Encontre o alto-falante.",
-          "no": "Finn høyttaleren."
-        }
-      },
-      {
-        "prompt": "Find the dancer.",
-        "target": "hotspot-1792733651948",
-        "translations": {
-          "es": "Encuentra a la bailarina.",
-          "fr": "Trouve la danseuse.",
-          "de": "Finde die Tänzerin.",
-          "it": "Trova la ballerina.",
-          "pt": "Encontre a dançarina.",
-          "no": "Finn danseren."
-        }
-      }
-    ]
-  },
   "underwater-aquarium": {
     "title": "Underwater Aquarium",
     "image": "images/Underwater-Aquarium.jpg",
@@ -15889,6 +18082,417 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
       }
     ]
   },
+  "ai-world": {
+    "title": "AI World — The Ultimate Adventure",
+    "image": "images/ai-world.jpg",
+    "lessons": [
+      {
+        "text": "The library is full of books and knowledge.",
+        "translations": {
+          "es": "La biblioteca está llena de libros y conocimientos.",
+          "fr": "La bibliothèque est pleine de livres et de connaissances.",
+          "de": "Die Bibliothek ist voller Bücher und Wissen.",
+          "it": "La biblioteca è piena di libri e conoscenze.",
+          "pt": "A biblioteca está cheia de livros e conhecimento.",
+          "no": "Biblioteket er fullt av bøker og kunnskap."
+        }
+      },
+      {
+        "text": "People use many languages around the world.",
+        "translations": {
+          "es": "Las personas usan muchos idiomas en el mundo.",
+          "fr": "Les gens utilisent de nombreuses langues dans le monde.",
+          "de": "Menschen sprechen viele Sprachen auf der Welt.",
+          "it": "Le persone usano molte lingue nel mondo.",
+          "pt": "As pessoas usam muitas línguas pelo mundo.",
+          "no": "Folk bruker mange språk rundt om i verden."
+        }
+      },
+      {
+        "text": "Imagination helps us create pictures, music, and stories.",
+        "translations": {
+          "es": "La imaginación nos ayuda a crear imágenes, música e historias.",
+          "fr": "L’imagination nous aide à créer des images, de la musique et des histoires.",
+          "de": "Fantasie hilft uns, Bilder, Musik und Geschichten zu erschaffen.",
+          "it": "L’immaginazione ci aiuta a creare immagini, musica e storie.",
+          "pt": "A imaginação ajuda-nos a criar imagens, música e histórias.",
+          "no": "Fantasien hjelper oss å lage bilder, musikk og historier."
+        }
+      },
+      {
+        "text": "Artificial intelligence learns patterns from examples.",
+        "translations": {
+          "es": "La inteligencia artificial aprende patrones a partir de ejemplos.",
+          "fr": "L’intelligence artificielle apprend des modèles à partir d’exemples.",
+          "de": "Künstliche Intelligenz lernt Muster aus Beispielen.",
+          "it": "L’intelligenza artificiale impara schemi dagli esempi.",
+          "pt": "A inteligência artificial aprende padrões a partir de exemplos.",
+          "no": "Kunstig intelligens lærer mønstre fra eksempler."
+        }
+      },
+      {
+        "text": "People and technology can work together.",
+        "translations": {
+          "es": "Las personas y la tecnología pueden trabajar juntas.",
+          "fr": "Les personnes et la technologie peuvent travailler ensemble.",
+          "de": "Menschen und Technik können zusammenarbeiten.",
+          "it": "Le persone e la tecnologia possono lavorare insieme.",
+          "pt": "As pessoas e a tecnologia podem trabalhar juntas.",
+          "no": "Mennesker og teknologi kan samarbeide."
+        }
+      },
+      {
+        "text": "The friendly robot is our guide through AI World.",
+        "translations": {
+          "es": "El robot amable es nuestro guía por el mundo de la IA.",
+          "fr": "Le gentil robot est notre guide dans le monde de l’IA.",
+          "de": "Der freundliche Roboter führt uns durch die KI-Welt.",
+          "it": "Il robot amichevole è la nostra guida nel mondo dell’IA.",
+          "pt": "O robô simpático é o nosso guia pelo mundo da IA.",
+          "no": "Den vennlige roboten er guiden vår gjennom KI-verdenen."
+        }
+      },
+      {
+        "text": "Buzzkill looks surprised on the flying ride.",
+        "translations": {
+          "es": "Buzzkill parece sorprendido en el vehículo volador.",
+          "fr": "Buzzkill a l’air surpris dans le véhicule volant.",
+          "de": "Buzzkill sieht auf der Flugfahrt überrascht aus.",
+          "it": "Buzzkill sembra sorpreso sul veicolo volante.",
+          "pt": "Buzzkill parece surpreendido no veículo voador.",
+          "no": "Buzzkill ser overrasket ut på den flygende turen."
+        }
+      },
+      {
+        "text": "The teacher points toward the exciting adventure.",
+        "translations": {
+          "es": "La profesora señala la emocionante aventura.",
+          "fr": "La professeure montre cette aventure passionnante.",
+          "de": "Die Lehrerin zeigt auf das spannende Abenteuer.",
+          "it": "L’insegnante indica l’emozionante avventura.",
+          "pt": "A professora aponta para a aventura emocionante.",
+          "no": "Læreren peker mot det spennende eventyret."
+        }
+      },
+      {
+        "text": "The serious teacher crosses his arms.",
+        "translations": {
+          "es": "El profesor serio cruza los brazos.",
+          "fr": "Le professeur sérieux croise les bras.",
+          "de": "Der ernste Lehrer verschränkt die Arme.",
+          "it": "L’insegnante serio incrocia le braccia.",
+          "pt": "O professor sério cruza os braços.",
+          "no": "Den alvorlige læreren legger armene i kors."
+        }
+      },
+      {
+        "text": "The flying vehicle carries everyone through AI World.",
+        "translations": {
+          "es": "El vehículo volador lleva a todos por el mundo de la IA.",
+          "fr": "Le véhicule volant emmène tout le monde dans le monde de l’IA.",
+          "de": "Das Flugfahrzeug bringt alle durch die KI-Welt.",
+          "it": "Il veicolo volante porta tutti nel mondo dell’IA.",
+          "pt": "O veículo voador leva todos pelo mundo da IA.",
+          "no": "Det flygende kjøretøyet tar alle gjennom KI-verdenen."
+        }
+      }
+    ],
+    "hotspots": [
+      {
+        "id": "knowledge-library",
+        "label": "Knowledge Library",
+        "x": 8,
+        "y": 8,
+        "w": 24,
+        "h": 27,
+        "sound": "",
+        "translations": {
+          "es": "La biblioteca está llena de libros y conocimientos.",
+          "fr": "La bibliothèque est pleine de livres et de connaissances.",
+          "de": "Die Bibliothek ist voller Bücher und Wissen.",
+          "it": "La biblioteca è piena di libri e conoscenze.",
+          "pt": "A biblioteca está cheia de livros e conhecimento.",
+          "no": "Biblioteket er fullt av bøker og kunnskap."
+        }
+      },
+      {
+        "id": "language-bridge",
+        "label": "Language Bridge",
+        "x": 34,
+        "y": 0,
+        "w": 20,
+        "h": 20,
+        "sound": "",
+        "translations": {
+          "es": "Las personas usan muchos idiomas en el mundo.",
+          "fr": "Les gens utilisent de nombreuses langues dans le monde.",
+          "de": "Menschen sprechen viele Sprachen auf der Welt.",
+          "it": "Le persone usano molte lingue nel mondo.",
+          "pt": "As pessoas usam muitas línguas pelo mundo.",
+          "no": "Folk bruker mange språk rundt om i verden."
+        }
+      },
+      {
+        "id": "imagination-studio",
+        "label": "Imagination Studio",
+        "x": 63,
+        "y": 0,
+        "w": 30,
+        "h": 26,
+        "sound": "",
+        "translations": {
+          "es": "La imaginación nos ayuda a crear imágenes, música e historias.",
+          "fr": "L’imagination nous aide à créer des images, de la musique et des histoires.",
+          "de": "Fantasie hilft uns, Bilder, Musik und Geschichten zu erschaffen.",
+          "it": "L’immaginazione ci aiuta a creare immagini, musica e storie.",
+          "pt": "A imaginação ajuda-nos a criar imagens, música e histórias.",
+          "no": "Fantasien hjelper oss å lage bilder, musikk og historier."
+        }
+      },
+      {
+        "id": "learning-network",
+        "label": "Learning Network",
+        "x": 77,
+        "y": 29,
+        "w": 21,
+        "h": 36,
+        "sound": "",
+        "translations": {
+          "es": "La inteligencia artificial aprende patrones a partir de ejemplos.",
+          "fr": "L’intelligence artificielle apprend des modèles à partir d’exemples.",
+          "de": "Künstliche Intelligenz lernt Muster aus Beispielen.",
+          "it": "L’intelligenza artificiale impara schemi dagli esempi.",
+          "pt": "A inteligência artificial aprende padrões a partir de exemplos.",
+          "no": "Kunstig intelligens lærer mønstre fra eksempler."
+        }
+      },
+      {
+        "id": "human-connection",
+        "label": "Human Connection",
+        "x": 78,
+        "y": 70,
+        "w": 20,
+        "h": 27,
+        "sound": "",
+        "translations": {
+          "es": "Las personas y la tecnología pueden trabajar juntas.",
+          "fr": "Les personnes et la technologie peuvent travailler ensemble.",
+          "de": "Menschen und Technik können zusammenarbeiten.",
+          "it": "Le persone e la tecnologia possono lavorare insieme.",
+          "pt": "As pessoas e a tecnologia podem trabalhar juntas.",
+          "no": "Mennesker og teknologi kan samarbeide."
+        }
+      },
+      {
+        "id": "ai-robot",
+        "label": "AI Robot",
+        "x": 50,
+        "y": 36,
+        "w": 20,
+        "h": 36,
+        "sound": "",
+        "translations": {
+          "es": "El robot amable es nuestro guía por el mundo de la IA.",
+          "fr": "Le gentil robot est notre guide dans le monde de l’IA.",
+          "de": "Der freundliche Roboter führt uns durch die KI-Welt.",
+          "it": "Il robot amichevole è la nostra guida nel mondo dell’IA.",
+          "pt": "O robô simpático é o nosso guia pelo mundo da IA.",
+          "no": "Den vennlige roboten er guiden vår gjennom KI-verdenen."
+        }
+      },
+      {
+        "id": "buzzkill",
+        "label": "Buzzkill",
+        "x": 39,
+        "y": 38,
+        "w": 17,
+        "h": 42,
+        "sound": "",
+        "translations": {
+          "es": "Buzzkill parece sorprendido en el vehículo volador.",
+          "fr": "Buzzkill a l’air surpris dans le véhicule volant.",
+          "de": "Buzzkill sieht auf der Flugfahrt überrascht aus.",
+          "it": "Buzzkill sembra sorpreso sul veicolo volante.",
+          "pt": "Buzzkill parece surpreendido no veículo voador.",
+          "no": "Buzzkill ser overrasket ut på den flygende turen."
+        }
+      },
+      {
+        "id": "teacher-black",
+        "label": "Teacher Bee",
+        "x": 9,
+        "y": 25,
+        "w": 20,
+        "h": 47,
+        "sound": "",
+        "translations": {
+          "es": "La profesora señala la emocionante aventura.",
+          "fr": "La professeure montre cette aventure passionnante.",
+          "de": "Die Lehrerin zeigt auf das spannende Abenteuer.",
+          "it": "L’insegnante indica l’emozionante avventura.",
+          "pt": "A professora aponta para a aventura emocionante.",
+          "no": "Læreren peker mot det spennende eventyret."
+        }
+      },
+      {
+        "id": "teacher-red",
+        "label": "Teacher with Glasses",
+        "x": 20,
+        "y": 39,
+        "w": 19,
+        "h": 37,
+        "sound": "",
+        "translations": {
+          "es": "El profesor serio cruza los brazos.",
+          "fr": "Le professeur sérieux croise les bras.",
+          "de": "Der ernste Lehrer verschränkt die Arme.",
+          "it": "L’insegnante serio incrocia le braccia.",
+          "pt": "O professor sério cruza os braços.",
+          "no": "Den alvorlige læreren legger armene i kors."
+        }
+      },
+      {
+        "id": "flying-ride",
+        "label": "Flying Ride",
+        "x": 4,
+        "y": 65,
+        "w": 69,
+        "h": 33,
+        "sound": "",
+        "translations": {
+          "es": "El vehículo volador lleva a todos por el mundo de la IA.",
+          "fr": "Le véhicule volant emmène tout le monde dans le monde de l’IA.",
+          "de": "Das Flugfahrzeug bringt alle durch die KI-Welt.",
+          "it": "Il veicolo volante porta tutti nel mondo dell’IA.",
+          "pt": "O veículo voador leva todos pelo mundo da IA.",
+          "no": "Det flygende kjøretøyet tar alle gjennom KI-verdenen."
+        }
+      }
+    ],
+    "overlays": [],
+    "challenges": [
+      {
+        "prompt": "Find the knowledge library.",
+        "target": "knowledge-library",
+        "translations": {
+          "es": "Encuentra la biblioteca.",
+          "fr": "Trouve la bibliothèque.",
+          "de": "Finde die Bibliothek.",
+          "it": "Trova la biblioteca.",
+          "pt": "Encontra a biblioteca.",
+          "no": "Finn biblioteket."
+        }
+      },
+      {
+        "prompt": "Find the language bridge.",
+        "target": "language-bridge",
+        "translations": {
+          "es": "Encuentra el puente de idiomas.",
+          "fr": "Trouve le pont des langues.",
+          "de": "Finde die Sprachbrücke.",
+          "it": "Trova il ponte delle lingue.",
+          "pt": "Encontra a ponte das línguas.",
+          "no": "Finn språkbroen."
+        }
+      },
+      {
+        "prompt": "Find the imagination studio.",
+        "target": "imagination-studio",
+        "translations": {
+          "es": "Encuentra el estudio de imaginación.",
+          "fr": "Trouve le studio de l’imagination.",
+          "de": "Finde das Fantasiestudio.",
+          "it": "Trova lo studio dell’immaginazione.",
+          "pt": "Encontra o estúdio da imaginação.",
+          "no": "Finn fantasistudioet."
+        }
+      },
+      {
+        "prompt": "Find the learning network.",
+        "target": "learning-network",
+        "translations": {
+          "es": "Encuentra la red de aprendizaje.",
+          "fr": "Trouve le réseau d’apprentissage.",
+          "de": "Finde das Lernnetzwerk.",
+          "it": "Trova la rete di apprendimento.",
+          "pt": "Encontra a rede de aprendizagem.",
+          "no": "Finn læringsnettverket."
+        }
+      },
+      {
+        "prompt": "Find the human connection.",
+        "target": "human-connection",
+        "translations": {
+          "es": "Encuentra la conexión humana.",
+          "fr": "Trouve la connexion humaine.",
+          "de": "Finde die menschliche Verbindung.",
+          "it": "Trova la connessione umana.",
+          "pt": "Encontra a ligação humana.",
+          "no": "Finn den menneskelige forbindelsen."
+        }
+      },
+      {
+        "prompt": "Find the AI robot.",
+        "target": "ai-robot",
+        "translations": {
+          "es": "Encuentra el robot.",
+          "fr": "Trouve le robot.",
+          "de": "Finde den Roboter.",
+          "it": "Trova il robot.",
+          "pt": "Encontra o robô.",
+          "no": "Finn roboten."
+        }
+      },
+      {
+        "prompt": "Find Buzzkill.",
+        "target": "buzzkill",
+        "translations": {
+          "es": "Encuentra a Buzzkill.",
+          "fr": "Trouve Buzzkill.",
+          "de": "Finde Buzzkill.",
+          "it": "Trova Buzzkill.",
+          "pt": "Encontra o Buzzkill.",
+          "no": "Finn Buzzkill."
+        }
+      },
+      {
+        "prompt": "Find the teacher who is pointing.",
+        "target": "teacher-black",
+        "translations": {
+          "es": "Encuentra la profesora que señala.",
+          "fr": "Trouve la professeure qui montre du doigt.",
+          "de": "Finde die Lehrerin, die zeigt.",
+          "it": "Trova l’insegnante che indica.",
+          "pt": "Encontra a professora que aponta.",
+          "no": "Finn læreren som peker."
+        }
+      },
+      {
+        "prompt": "Find the teacher with glasses.",
+        "target": "teacher-red",
+        "translations": {
+          "es": "Encuentra el profesor con gafas.",
+          "fr": "Trouve le professeur avec des lunettes.",
+          "de": "Finde den Lehrer mit Brille.",
+          "it": "Trova l’insegnante con gli occhiali.",
+          "pt": "Encontra o professor de óculos.",
+          "no": "Finn læreren med briller."
+        }
+      },
+      {
+        "prompt": "Find the flying vehicle.",
+        "target": "flying-ride",
+        "translations": {
+          "es": "Encuentra el vehículo volador.",
+          "fr": "Trouve le véhicule volant.",
+          "de": "Finde das Flugfahrzeug.",
+          "it": "Trova il veicolo volante.",
+          "pt": "Encontra o veículo voador.",
+          "no": "Finn det flygende kjøretøyet."
+        }
+      }
+    ]
+  },
   "congratulations": {
     "title": "congratulations",
     "image": "images/everest-celebration.jpg",
@@ -16022,2295 +18626,6 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
         "prompt": "Find the Language Website Developer and His Dog",
         "target": "hotspot-1792637441276",
         "translations": {}
-      }
-    ]
-  },
-  "test-campground": {
-    "title": "Campground — Master Engine Test",
-    "image": "images/forest-retreat-test.jpg",
-    "lessons": [
-      {
-        "text": "Welcome to the campground!",
-        "translations": {
-          "es": "¡Bienvenidos al campamento!",
-          "fr": "Bienvenue au camping !",
-          "de": "Willkommen auf dem Campingplatz!",
-          "it": "Benvenuti al campeggio!",
-          "pt": "Bem-vindos ao acampamento!",
-          "no": "Velkommen til campingplassen!"
-        }
-      },
-      {
-        "text": "Find the campfire.",
-        "translations": {
-          "es": "Encuentra la fogata.",
-          "fr": "Trouve le feu de camp.",
-          "de": "Finde das Lagerfeuer."
-        }
-      }
-    ],
-    "hotspots": [],
-    "overlays": [],
-    "challenges": [
-      {
-        "prompt": "Find the campfire",
-        "target": "fire"
-      },
-      {
-        "prompt": "Find the tent",
-        "target": "tent"
-      }
-    ]
-  },
-  "campground": {
-    "title": "campground",
-    "image": "",
-    "lessons": [
-      {
-        "text": "Welcome to campground",
-        "translations": {}
-      }
-    ],
-    "hotspots": [],
-    "overlays": [],
-    "challenges": []
-  },
-  "test-forest": {
-    "title": "Forest Walk — Second Engine Test",
-    "image": "",
-    "lessons": [
-      {
-        "text": "Welcome to the forest!",
-        "translations": {
-          "es": "¡Bienvenidos al bosque!",
-          "fr": "Bienvenue dans la forêt !"
-        }
-      }
-    ],
-    "hotspots": [
-      {
-        "id": "tree",
-        "label": "Tree",
-        "x": 20,
-        "y": 25,
-        "w": 18,
-        "h": 45,
-        "sound": "",
-        "translations": {
-          "es": "Árbol",
-          "fr": "Arbre"
-        }
-      },
-      {
-        "id": "bird",
-        "label": "Bird",
-        "x": 66,
-        "y": 20,
-        "w": 12,
-        "h": 15,
-        "sound": "",
-        "translations": {
-          "es": "Pájaro",
-          "fr": "Oiseau"
-        }
-      }
-    ],
-    "overlays": [],
-    "challenges": [
-      {
-        "prompt": "Find the tree",
-        "target": "tree"
-      },
-      {
-        "prompt": "Find the bird",
-        "target": "bird"
-      }
-    ]
-  },
-  "grandmas-kitchen": {
-    "title": "Grandma’s Kitchen",
-    "image": "images/grandmas-kitchen-adventure.jpg",
-    "lessons": [
-      {
-        "text": "We are making cookies.",
-        "translations": {
-          "es": "Horneando galletas.",
-          "fr": "Nous faisons des biscuits.",
-          "de": "Wir backen Kekse.",
-          "it": "Stiamo facendo i biscotti.",
-          "pt": "Estamos fazendo biscoitos.",
-          "no": "Vi baker kjeks."
-        }
-      },
-      {
-        "text": "We are preparing the dough.",
-        "translations": {
-          "es": "Estamos haciendo galletas.",
-          "fr": "Nous préparons la pâte.",
-          "de": "Wir bereiten den Teig vor.",
-          "it": "Prepariamo l'impasto.",
-          "pt": "Estamos preparando a massa.",
-          "no": "Vi lager deigen."
-        }
-      },
-      {
-        "text": "We mix the dough.",
-        "translations": {
-          "es": "Mezclamos la masa.",
-          "fr": "Nous mélangeons la pâte.",
-          "de": "Wir mischen den Teig.",
-          "it": "Mescoliamo l'impasto.",
-          "pt": "Misturamos a massa.",
-          "no": "Vi blander deigen."
-        }
-      },
-      {
-        "text": "The cookies smell very good.",
-        "translations": {
-          "es": "Las galletas huelen muy bien.",
-          "fr": "Les biscuits sentent très bon.",
-          "de": "Die Kekse riechen sehr gut.",
-          "it": "I biscotti hanno un buon profumo.",
-          "pt": "Os biscoitos cheiram muito bem.",
-          "no": "Kjeksene lukter veldig godt."
-        }
-      },
-      {
-        "text": "We need flour.",
-        "translations": {
-          "es": "Necesitamos harina.",
-          "fr": "Nous avons besoin de farine.",
-          "de": "Wir brauchen Mehl.",
-          "it": "Ci serve la farina.",
-          "pt": "Precisamos de farinha.",
-          "no": "Vi trenger mel."
-        }
-      },
-      {
-        "text": "Add a little sugar.",
-        "translations": {
-          "es": "Añade un poco de azúcar.",
-          "fr": "Ajoute un peu de sucre.",
-          "de": "Gib etwas Zucker dazu.",
-          "it": "Aggiungi un po' di zucchero.",
-          "pt": "Adicione um pouco de açúcar.",
-          "no": "Tilsett litt sukker."
-        }
-      },
-      {
-        "text": "Put the eggs in the bowl.",
-        "translations": {
-          "es": "Pon los huevos en el tazón.",
-          "fr": "Mets les œufs dans le bol.",
-          "de": "Gib die Eier in die Schüssel.",
-          "it": "Metti le uova nella ciotola.",
-          "pt": "Coloque os ovos na tigela.",
-          "no": "Legg eggene i bollen."
-        }
-      },
-      {
-        "text": "The milk is on the table.",
-        "translations": {
-          "es": "La leche está sobre la mesa.",
-          "fr": "Le lait est sur la table.",
-          "de": "Die Milch steht auf dem Tisch.",
-          "it": "Il latte è sul tavolo.",
-          "pt": "O leite está sobre a mesa.",
-          "no": "Melken står på bordet."
-        }
-      },
-      {
-        "text": "Mix the ingredients.",
-        "translations": {
-          "es": "Mezcla los ingredientes.",
-          "fr": "Mélange les ingrédients.",
-          "de": "Mische die Zutaten.",
-          "it": "Mescola gli ingredienti.",
-          "pt": "Misture os ingredientes.",
-          "no": "Bland ingrediensene."
-        }
-      },
-      {
-        "text": "Stir with the spoon.",
-        "translations": {
-          "es": "Revuelve con la cuchara.",
-          "fr": "Remue avec la cuillère.",
-          "de": "Rühre mit dem Löffel.",
-          "it": "Gira con il cucchiaio.",
-          "pt": "Mexa com a colher.",
-          "no": "Rør med skjeen."
-        }
-      },
-      {
-        "text": "Roll out the dough.",
-        "translations": {
-          "es": "Extiende la masa.",
-          "fr": "Étale la pâte.",
-          "de": "Rolle den Teig aus.",
-          "it": "Stendi l'impasto.",
-          "pt": "Abra a massa.",
-          "no": "Kjevle ut deigen."
-        }
-      },
-      {
-        "text": "Put the tray in the oven.",
-        "translations": {
-          "es": "Pon la bandeja en el horno.",
-          "fr": "Mets la plaque dans le four.",
-          "de": "Stell das Blech in den Ofen.",
-          "it": "Metti la teglia nel forno.",
-          "pt": "Coloque a assadeira no forno.",
-          "no": "Sett brettet i ovnen."
-        }
-      },
-      {
-        "text": "I am helping Grandma Cathy.",
-        "translations": {
-          "es": "Ayudo a la abuela Cathy.",
-          "fr": "J'aide grand-mère Cathy.",
-          "de": "Ich helfe Oma Cathy.",
-          "it": "Aiuto nonna Cathy.",
-          "pt": "Eu ajudo a avó Cathy.",
-          "no": "Jeg hjelper bestemor Cathy."
-        }
-      },
-      {
-        "text": "I hold the bowl.",
-        "translations": {
-          "es": "Yo sostengo el tazón.",
-          "fr": "Je tiens le bol.",
-          "de": "Ich halte die Schüssel.",
-          "it": "Tengo la ciotola.",
-          "pt": "Eu seguro a tigela.",
-          "no": "Jeg holder bollen."
-        }
-      },
-      {
-        "text": "We clean the table together.",
-        "translations": {
-          "es": "Limpiamos la mesa juntos.",
-          "fr": "Nous nettoyons la table ensemble.",
-          "de": "Wir putzen gemeinsam den Tisch.",
-          "it": "Puliamo il tavolo insieme.",
-          "pt": "Limpamos a mesa juntos.",
-          "no": "Vi rydder bordet sammen."
-        }
-      },
-      {
-        "text": "Thank you for helping me.",
-        "translations": {
-          "es": "Gracias por ayudarme.",
-          "fr": "Merci de m'aider.",
-          "de": "Danke für deine Hilfe.",
-          "it": "Grazie per l'aiuto.",
-          "pt": "Obrigado pela ajuda.",
-          "no": "Takk for hjelpen."
-        }
-      },
-      {
-        "text": "There are three apples.",
-        "translations": {
-          "es": "Hay tres manzanas.",
-          "fr": "Il y a trois pommes.",
-          "de": "Da sind drei Äpfel.",
-          "it": "Ci sono tre mele.",
-          "pt": "Há três maçãs.",
-          "no": "Det er tre epler."
-        }
-      },
-      {
-        "text": "The bowl is blue.",
-        "translations": {
-          "es": "El tazón es azul.",
-          "fr": "Le bol est bleu.",
-          "de": "Die Schüssel ist blau.",
-          "it": "La ciotola è blu.",
-          "pt": "A tigela é azul.",
-          "no": "Bollen er blå."
-        }
-      },
-      {
-        "text": "Count four eggs.",
-        "translations": {
-          "es": "Cuenta cuatro huevos.",
-          "fr": "Compte quatre œufs.",
-          "de": "Zähle vier Eier.",
-          "it": "Conta quattro uova.",
-          "pt": "Conte quatro ovos.",
-          "no": "Tell fire egg."
-        }
-      },
-      {
-        "text": "The flowers are yellow.",
-        "translations": {
-          "es": "Las flores son amarillas.",
-          "fr": "Les fleurs sont jaunes.",
-          "de": "Die Blumen sind gelb.",
-          "it": "I fiori sono gialli.",
-          "pt": "As flores são amarelas.",
-          "no": "Blomstene er gule."
-        }
-      },
-      {
-        "text": "The cookies are ready.",
-        "translations": {
-          "es": "Las galletas están listas.",
-          "fr": "Les biscuits sont prêts.",
-          "de": "Die Kekse sind fertig.",
-          "it": "I biscotti sono pronti.",
-          "pt": "Os biscoitos estão prontos.",
-          "no": "Kjeksene er klare."
-        }
-      },
-      {
-        "text": "Put them on a plate.",
-        "translations": {
-          "es": "Ponlas en un plato.",
-          "fr": "Mets-les sur une assiette.",
-          "de": "Leg sie auf einen Teller.",
-          "it": "Mettili su un piatto.",
-          "pt": "Coloque-os num prato.",
-          "no": "Legg dem på en tallerken."
-        }
-      },
-      {
-        "text": "We share with the family.",
-        "translations": {
-          "es": "Compartimos con la familia.",
-          "fr": "Nous partageons avec la famille.",
-          "de": "Wir teilen mit der Familie.",
-          "it": "Condividiamo con la famiglia.",
-          "pt": "Compartilhamos com a família.",
-          "no": "Vi deler med familien."
-        }
-      },
-      {
-        "text": "Enjoy your meal!",
-        "translations": {
-          "es": "¡Buen provecho!",
-          "fr": "Bon appétit !",
-          "de": "Guten Appetit!",
-          "it": "Buon appetito!",
-          "pt": "Bom apetite!",
-          "no": "God appetitt!"
-        }
-      }
-    ],
-    "hotspots": [
-      {
-        "id": "grandma",
-        "label": "Grandma",
-        "x": 39.0,
-        "y": 46.0,
-        "w": 7.0,
-        "h": 31.0,
-        "sound": "sounds/cathy-kitchen.mp3",
-        "translations": {
-          "es": "Abuela",
-          "fr": "Grand-mère",
-          "de": "Oma",
-          "it": "Nonna",
-          "pt": "Avó",
-          "no": "Bestemor"
-        }
-      },
-      {
-        "id": "girl",
-        "label": "Girl",
-        "x": 50.0,
-        "y": 45.0,
-        "w": 7.0,
-        "h": 26.0,
-        "sound": "sounds/child-laughing.mp3",
-        "translations": {
-          "es": "Niña",
-          "fr": "Fille",
-          "de": "Mädchen",
-          "it": "Ragazza",
-          "pt": "Menina",
-          "no": "Jente"
-        }
-      },
-      {
-        "id": "bee",
-        "label": "Bee",
-        "x": 46.5,
-        "y": 28.0,
-        "w": 5.0,
-        "h": 9.0,
-        "sound": "",
-        "translations": {
-          "es": "Abeja",
-          "fr": "Abeille",
-          "de": "Biene",
-          "it": "Ape",
-          "pt": "Abelha",
-          "no": "Bie"
-        }
-      },
-      {
-        "id": "bear",
-        "label": "Dog",
-        "x": 79.0,
-        "y": 78.0,
-        "w": 12.0,
-        "h": 18.0,
-        "sound": "sounds/dog-panting.wav",
-        "translations": {
-          "es": "Perro",
-          "fr": "Chien",
-          "de": "Hund",
-          "it": "Cane",
-          "pt": "Cão",
-          "no": "Hund"
-        }
-      },
-      {
-        "id": "flour",
-        "label": "Flour",
-        "x": 62.5,
-        "y": 52.0,
-        "w": 6.0,
-        "h": 10.0,
-        "sound": "",
-        "translations": {
-          "es": "Harina",
-          "fr": "Farine",
-          "de": "Mehl",
-          "it": "Farina",
-          "pt": "Farinha",
-          "no": "Mel"
-        }
-      },
-      {
-        "id": "milk",
-        "label": "Milk",
-        "x": 31.0,
-        "y": 51.0,
-        "w": 4.0,
-        "h": 10.0,
-        "sound": "",
-        "translations": {
-          "es": "Leche",
-          "fr": "Lait",
-          "de": "Milch",
-          "it": "Latte",
-          "pt": "Leite",
-          "no": "Melk"
-        }
-      },
-      {
-        "id": "bowl",
-        "label": "Bowl",
-        "x": 39.0,
-        "y": 49.0,
-        "w": 7.0,
-        "h": 8.0,
-        "sound": "",
-        "translations": {
-          "es": "Tazón",
-          "fr": "Bol",
-          "de": "Schüssel",
-          "it": "Ciotola",
-          "pt": "Tigela",
-          "no": "Bolle"
-        }
-      },
-      {
-        "id": "spoon",
-        "label": "Spoon",
-        "x": 47.0,
-        "y": 47.0,
-        "w": 3.0,
-        "h": 8.0,
-        "sound": "",
-        "translations": {
-          "es": "Cuchara",
-          "fr": "Cuillère",
-          "de": "Löffel",
-          "it": "Cucchiaio",
-          "pt": "Colher",
-          "no": "Skje"
-        }
-      },
-      {
-        "id": "rollingpin",
-        "label": "Rolling pin",
-        "x": 55.0,
-        "y": 57.0,
-        "w": 8.0,
-        "h": 5.0,
-        "sound": "",
-        "translations": {
-          "es": "Rodillo",
-          "fr": "Rouleau à pâtisserie",
-          "de": "Nudelholz",
-          "it": "Mattarello",
-          "pt": "Rolo da massa",
-          "no": "Kjevle"
-        }
-      },
-      {
-        "id": "book",
-        "label": "Book",
-        "x": 51.0,
-        "y": 55.0,
-        "w": 10.0,
-        "h": 6.0,
-        "sound": "",
-        "translations": {
-          "es": "Libro",
-          "fr": "Livre",
-          "de": "Buch",
-          "it": "Libro",
-          "pt": "Livro",
-          "no": "Bok"
-        }
-      },
-      {
-        "id": "apples",
-        "label": "Apples",
-        "x": 35.5,
-        "y": 52.0,
-        "w": 7.0,
-        "h": 6.0,
-        "sound": "",
-        "translations": {
-          "es": "Manzanas",
-          "fr": "Pommes",
-          "de": "Äpfel",
-          "it": "Mele",
-          "pt": "Maçãs",
-          "no": "Epler"
-        }
-      },
-      {
-        "id": "butter",
-        "label": "Butter",
-        "x": 42.5,
-        "y": 53.0,
-        "w": 4.0,
-        "h": 4.0,
-        "sound": "",
-        "translations": {
-          "es": "Mantequilla",
-          "fr": "Beurre",
-          "de": "Butter",
-          "it": "Burro",
-          "pt": "Manteiga",
-          "no": "Smør"
-        }
-      },
-      {
-        "id": "flowers",
-        "label": "Flowers",
-        "x": 67.0,
-        "y": 49.0,
-        "w": 9.0,
-        "h": 15.0,
-        "sound": "",
-        "translations": {
-          "es": "Flores",
-          "fr": "Fleurs",
-          "de": "Blumen",
-          "it": "Fiori",
-          "pt": "Flores",
-          "no": "Blomster"
-        }
-      },
-      {
-        "id": "table",
-        "label": "Table",
-        "x": 68.0,
-        "y": 68.0,
-        "w": 22.0,
-        "h": 12.0,
-        "sound": "",
-        "translations": {
-          "es": "Mesa",
-          "fr": "Table",
-          "de": "Tisch",
-          "it": "Tavolo",
-          "pt": "Mesa",
-          "no": "Bord"
-        }
-      },
-      {
-        "id": "chair",
-        "label": "Chair",
-        "x": 72.0,
-        "y": 61.0,
-        "w": 7.0,
-        "h": 20.0,
-        "sound": "",
-        "translations": {
-          "es": "Silla",
-          "fr": "Chaise",
-          "de": "Stuhl",
-          "it": "Sedia",
-          "pt": "Cadeira",
-          "no": "Stol"
-        }
-      },
-      {
-        "id": "stool",
-        "label": "Stool",
-        "x": 51.0,
-        "y": 70.0,
-        "w": 7.0,
-        "h": 13.0,
-        "sound": "",
-        "translations": {
-          "es": "Taburete",
-          "fr": "Tabouret",
-          "de": "Hocker",
-          "it": "Sgabello",
-          "pt": "Banco",
-          "no": "Krakk"
-        }
-      },
-      {
-        "id": "stove",
-        "label": "Stove",
-        "x": 24.0,
-        "y": 40.0,
-        "w": 9.0,
-        "h": 22.0,
-        "sound": "sounds/stove.mp3",
-        "translations": {
-          "es": "Estufa",
-          "fr": "Poêle",
-          "de": "Ofen",
-          "it": "Stufa",
-          "pt": "Fogão",
-          "no": "Ovn"
-        }
-      },
-      {
-        "id": "fire",
-        "label": "Fire",
-        "x": 24.0,
-        "y": 43.0,
-        "w": 4.0,
-        "h": 8.0,
-        "sound": "",
-        "translations": {
-          "es": "Fuego",
-          "fr": "Feu",
-          "de": "Feuer",
-          "it": "Fuoco",
-          "pt": "Fogo",
-          "no": "Ild"
-        }
-      },
-      {
-        "id": "kettle",
-        "label": "Kettle",
-        "x": 19.0,
-        "y": 34.0,
-        "w": 4.0,
-        "h": 7.0,
-        "sound": "",
-        "translations": {
-          "es": "Tetera",
-          "fr": "Bouilloire",
-          "de": "Wasserkessel",
-          "it": "Bollitore",
-          "pt": "Chaleira",
-          "no": "Kjele"
-        }
-      },
-      {
-        "id": "pans",
-        "label": "Pans",
-        "x": 14.0,
-        "y": 22.0,
-        "w": 12.0,
-        "h": 14.0,
-        "sound": "sounds/pan.mp3",
-        "translations": {
-          "es": "Sartenes",
-          "fr": "Casseroles",
-          "de": "Pfannen",
-          "it": "Pentole",
-          "pt": "Panelas",
-          "no": "Panner"
-        }
-      },
-      {
-        "id": "refrigerator",
-        "label": "Refrigerator",
-        "x": 77.0,
-        "y": 36.0,
-        "w": 9.0,
-        "h": 30.0,
-        "sound": "",
-        "translations": {
-          "es": "Refrigerador",
-          "fr": "Réfrigérateur",
-          "de": "Kühlschrank",
-          "it": "Frigorifero",
-          "pt": "Geladeira",
-          "no": "Kjøleskap"
-        }
-      },
-      {
-        "id": "sink",
-        "label": "Sink",
-        "x": 58.0,
-        "y": 38.0,
-        "w": 12.0,
-        "h": 12.0,
-        "sound": "",
-        "translations": {
-          "es": "Fregadero",
-          "fr": "Évier",
-          "de": "Spüle",
-          "it": "Lavello",
-          "pt": "Pia",
-          "no": "Vask"
-        }
-      },
-      {
-        "id": "window",
-        "label": "Window",
-        "x": 55.0,
-        "y": 23.0,
-        "w": 24.0,
-        "h": 22.0,
-        "sound": "",
-        "translations": {
-          "es": "Ventana",
-          "fr": "Fenêtre",
-          "de": "Fenster",
-          "it": "Finestra",
-          "pt": "Janela",
-          "no": "Vindu"
-        }
-      },
-      {
-        "id": "clock",
-        "label": "Clock",
-        "x": 87.0,
-        "y": 12.0,
-        "w": 6.0,
-        "h": 10.0,
-        "sound": "sounds/clock.mp3",
-        "translations": {
-          "es": "Reloj",
-          "fr": "Horloge",
-          "de": "Uhr",
-          "it": "Orologio",
-          "pt": "Relógio",
-          "no": "Klokke"
-        }
-      },
-      {
-        "id": "bird",
-        "label": "Bird",
-        "x": 20.0,
-        "y": 10.0,
-        "w": 5.0,
-        "h": 7.0,
-        "sound": "",
-        "translations": {
-          "es": "Pájaro",
-          "fr": "Oiseau",
-          "de": "Vogel",
-          "it": "Uccello",
-          "pt": "Pássaro",
-          "no": "Fugl"
-        }
-      },
-      {
-        "id": "rug",
-        "label": "Rug",
-        "x": 31.0,
-        "y": 84.0,
-        "w": 18.0,
-        "h": 12.0,
-        "sound": "",
-        "translations": {
-          "es": "Alfombra",
-          "fr": "Tapis",
-          "de": "Teppich",
-          "it": "Tappeto",
-          "pt": "Tapete",
-          "no": "Teppe"
-        }
-      },
-      {
-        "id": "basket",
-        "label": "Basket",
-        "x": 96.0,
-        "y": 52.0,
-        "w": 4.0,
-        "h": 8.0,
-        "sound": "",
-        "translations": {
-          "es": "Canasta",
-          "fr": "Panier",
-          "de": "Korb",
-          "it": "Cestino",
-          "pt": "Cesta",
-          "no": "Kurv"
-        }
-      },
-      {
-        "id": "mountains",
-        "label": "Mountains",
-        "x": 58.0,
-        "y": 20.0,
-        "w": 20.0,
-        "h": 10.0,
-        "sound": "",
-        "translations": {
-          "es": "Montañas",
-          "fr": "Montagnes",
-          "de": "Berge",
-          "it": "Montagne",
-          "pt": "Montanhas",
-          "no": "Fjell"
-        }
-      },
-      {
-        "id": "lake",
-        "label": "Lake",
-        "x": 58.0,
-        "y": 28.0,
-        "w": 16.0,
-        "h": 8.0,
-        "sound": "",
-        "translations": {
-          "es": "Lago",
-          "fr": "Lac",
-          "de": "See",
-          "it": "Lago",
-          "pt": "Lago",
-          "no": "Innsjø"
-        }
-      },
-      {
-        "id": "cabinets",
-        "label": "Cabinets",
-        "x": 37.0,
-        "y": 25.0,
-        "w": 17.0,
-        "h": 18.0,
-        "sound": "",
-        "translations": {
-          "es": "Armarios",
-          "fr": "Placards",
-          "de": "Schränke",
-          "it": "Armadi",
-          "pt": "Armários",
-          "no": "Skap"
-        }
-      },
-      {
-        "id": "stairs",
-        "label": "stairs",
-        "x": 92.22,
-        "y": 62.86,
-        "w": 6.0,
-        "h": 8.0,
-        "sound": "",
-        "translations": {
-          "es": "escaleras",
-          "fr": "escalier",
-          "de": "Treppe",
-          "it": "scale",
-          "pt": "escadas",
-          "no": "trapp"
-        }
-      },
-      {
-        "id": "cabinet",
-        "label": "cabinet",
-        "x": 11.13,
-        "y": 59.72,
-        "w": 6.0,
-        "h": 8.0,
-        "sound": "",
-        "translations": {
-          "es": "armario",
-          "fr": "placard",
-          "de": "Schrank",
-          "it": "armadietto",
-          "pt": "armário",
-          "no": "skap"
-        }
-      },
-      {
-        "id": "light",
-        "label": "light",
-        "x": 37.63,
-        "y": 8.45,
-        "w": 6.0,
-        "h": 8.0,
-        "sound": "",
-        "translations": {
-          "es": "luz",
-          "fr": "lumière",
-          "de": "Licht",
-          "it": "luce",
-          "pt": "luz",
-          "no": "lys"
-        }
-      },
-      {
-        "id": "shelf",
-        "label": "shelf",
-        "x": 76.39,
-        "y": 13.6,
-        "w": 8.6,
-        "h": 9.11,
-        "sound": "",
-        "translations": {
-          "es": "estante",
-          "fr": "étagère",
-          "de": "Regal",
-          "it": "mensola",
-          "pt": "prateleira",
-          "no": "hylle"
-        }
-      },
-      {
-        "id": "picture",
-        "label": "picture",
-        "x": 87.1,
-        "y": 25.98,
-        "w": 6.0,
-        "h": 8.0,
-        "sound": "",
-        "translations": {
-          "es": "cuadro",
-          "fr": "tableau",
-          "de": "Bild",
-          "it": "quadro",
-          "pt": "quadro",
-          "no": "bilde"
-        }
-      },
-      {
-        "id": "floor",
-        "label": "floor",
-        "x": 85.97,
-        "y": 67.62,
-        "w": 5.9,
-        "h": 4.76,
-        "sound": "",
-        "translations": {
-          "es": "suelo",
-          "fr": "sol",
-          "de": "Fußboden",
-          "it": "pavimento",
-          "pt": "chão",
-          "no": "gulv"
-        }
-      },
-      {
-        "id": "flue",
-        "label": "flue",
-        "x": 23.99,
-        "y": 16.23,
-        "w": 3.14,
-        "h": 14.94,
-        "sound": "",
-        "translations": {
-          "es": "tubo",
-          "fr": "cheminée",
-          "de": "Kamin",
-          "it": "canna fumaria",
-          "pt": "chaminé",
-          "no": "røykrør"
-        }
-      }
-    ],
-    "overlays": [],
-    "challenges": [
-      {
-        "prompt": "Find Flour.",
-        "target": "flour",
-        "translations": {
-          "es": "Find Harina.",
-          "fr": "Find Farine.",
-          "de": "Find Mehl.",
-          "it": "Find Farina.",
-          "pt": "Find Farinha.",
-          "no": "Find Mel."
-        }
-      },
-      {
-        "prompt": "Find Bowl.",
-        "target": "bowl",
-        "translations": {
-          "es": "Find Tazón.",
-          "fr": "Find Bol.",
-          "de": "Find Schüssel.",
-          "it": "Find Ciotola.",
-          "pt": "Find Tigela.",
-          "no": "Find Bolle."
-        }
-      },
-      {
-        "prompt": "Find Rolling pin.",
-        "target": "rollingpin",
-        "translations": {
-          "es": "Find Rodillo.",
-          "fr": "Find Rouleau à pâtisserie.",
-          "de": "Find Nudelholz.",
-          "it": "Find Mattarello.",
-          "pt": "Find Rolo da massa.",
-          "no": "Find Kjevle."
-        }
-      },
-      {
-        "prompt": "Find Stove.",
-        "target": "stove",
-        "translations": {
-          "es": "Find Estufa.",
-          "fr": "Find Poêle.",
-          "de": "Find Ofen.",
-          "it": "Find Stufa.",
-          "pt": "Find Fogão.",
-          "no": "Find Ovn."
-        }
-      },
-      {
-        "prompt": "Find Refrigerator.",
-        "target": "refrigerator",
-        "translations": {
-          "es": "Find Refrigerador.",
-          "fr": "Find Réfrigérateur.",
-          "de": "Find Kühlschrank.",
-          "it": "Find Frigorifero.",
-          "pt": "Find Geladeira.",
-          "no": "Find Kjøleskap."
-        }
-      },
-      {
-        "prompt": "Find Bee.",
-        "target": "bee",
-        "translations": {
-          "es": "Find Abeja.",
-          "fr": "Find Abeille.",
-          "de": "Find Biene.",
-          "it": "Find Ape.",
-          "pt": "Find Abelha.",
-          "no": "Find Bie."
-        }
-      }
-    ]
-  },
-  "city-bus": {
-    "title": "City Bus",
-    "image": "images/city-bus-adventure.jpg",
-    "lessons": [
-      {
-        "text": "Which bus goes downtown?",
-        "translations": {
-          "es": "¿Qué autobús va al centro?",
-          "fr": "Quel bus va au centre-ville ?",
-          "de": "Welcher Bus fährt ins Stadtzentrum?",
-          "it": "Quale autobus va in centro?",
-          "pt": "Qual ônibus vai para o centro?",
-          "no": "Hvilken buss går til sentrum?"
-        }
-      },
-      {
-        "text": "Bus number 22 goes downtown.",
-        "translations": {
-          "es": "El autobús número veintidós va al centro.",
-          "fr": "Le bus numéro vingt-deux va au centre-ville.",
-          "de": "Bus Nummer zweiundzwanzig fährt ins Stadtzentrum.",
-          "it": "L'autobus numero ventidue va in centro.",
-          "pt": "O ônibus número vinte e dois vai para o centro.",
-          "no": "Buss nummer tjueto går til sentrum."
-        }
-      },
-      {
-        "text": "That is our bus.",
-        "translations": {
-          "es": "Ese es nuestro autobús.",
-          "fr": "C'est notre bus.",
-          "de": "Das ist unser Bus.",
-          "it": "Quello è il nostro autobus.",
-          "pt": "Esse é o nosso ônibus.",
-          "no": "Det er bussen vår."
-        }
-      },
-      {
-        "text": "Let's get on the bus.",
-        "translations": {
-          "es": "Vamos a subir al autobús.",
-          "fr": "Montons dans le bus.",
-          "de": "Steigen wir in den Bus ein.",
-          "it": "Saliamo sull'autobus.",
-          "pt": "Vamos entrar no ônibus.",
-          "no": "La oss gå på bussen."
-        }
-      },
-      {
-        "text": "Look at the route map.",
-        "translations": {
-          "es": "Mira el mapa de rutas.",
-          "fr": "Regarde le plan des lignes.",
-          "de": "Schau auf den Linienplan.",
-          "it": "Guarda la mappa delle linee.",
-          "pt": "Olhe o mapa de rotas.",
-          "no": "Se på rutekartet."
-        }
-      },
-      {
-        "text": "Where is Central Station?",
-        "translations": {
-          "es": "¿Dónde está la estación central?",
-          "fr": "Où est la gare centrale ?",
-          "de": "Wo ist der Hauptbahnhof?",
-          "it": "Dov'è la stazione centrale?",
-          "pt": "Onde fica a estação central?",
-          "no": "Hvor er sentralstasjonen?"
-        }
-      },
-      {
-        "text": "This route goes downtown.",
-        "translations": {
-          "es": "Esta ruta va al centro.",
-          "fr": "Cette ligne va au centre-ville.",
-          "de": "Diese Linie fährt ins Stadtzentrum.",
-          "it": "Questa linea va in centro.",
-          "pt": "Esta rota vai para o centro.",
-          "no": "Denne ruten går til sentrum."
-        }
-      },
-      {
-        "text": "The park is on this route.",
-        "translations": {
-          "es": "El parque está en esta ruta.",
-          "fr": "Le parc est sur cette ligne.",
-          "de": "Der Park liegt an dieser Linie.",
-          "it": "Il parco è su questa linea.",
-          "pt": "O parque fica nesta rota.",
-          "no": "Parken ligger på denne ruten."
-        }
-      },
-      {
-        "text": "I have a bus pass.",
-        "translations": {
-          "es": "Tengo un pase de autobús.",
-          "fr": "J'ai un pass de bus.",
-          "de": "Ich habe eine Busfahrkarte.",
-          "it": "Ho un pass dell'autobus.",
-          "pt": "Tenho um passe de ônibus.",
-          "no": "Jeg har et busskort."
-        }
-      },
-      {
-        "text": "I need a ticket, please.",
-        "translations": {
-          "es": "Necesito un boleto, por favor.",
-          "fr": "J'ai besoin d'un billet, s'il vous plaît.",
-          "de": "Ich brauche eine Fahrkarte, bitte.",
-          "it": "Mi serve un biglietto, per favore.",
-          "pt": "Preciso de uma passagem, por favor.",
-          "no": "Jeg trenger en billett, takk."
-        }
-      },
-      {
-        "text": "Here is my pass.",
-        "translations": {
-          "es": "Aquí está mi pase.",
-          "fr": "Voici mon pass.",
-          "de": "Hier ist meine Fahrkarte.",
-          "it": "Ecco il mio pass.",
-          "pt": "Aqui está meu passe.",
-          "no": "Her er busskortet mitt."
-        }
-      },
-      {
-        "text": "How much is the ride?",
-        "translations": {
-          "es": "¿Cuánto cuesta el viaje?",
-          "fr": "Combien coûte le trajet ?",
-          "de": "Wie viel kostet die Fahrt?",
-          "it": "Quanto costa il viaggio?",
-          "pt": "Quanto custa a viagem?",
-          "no": "Hvor mye koster turen?"
-        }
-      },
-      {
-        "text": "How do I get to City Park?",
-        "translations": {
-          "es": "¿Cómo llego al parque de la ciudad?",
-          "fr": "Comment aller au parc municipal ?",
-          "de": "Wie komme ich zum Stadtpark?",
-          "it": "Come arrivo al parco cittadino?",
-          "pt": "Como chego ao parque da cidade?",
-          "no": "Hvordan kommer jeg til byparken?"
-        }
-      },
-      {
-        "text": "Where is Central Station?",
-        "translations": {
-          "es": "¿Dónde está la estación central?",
-          "fr": "Où est la gare centrale ?",
-          "de": "Wo ist der Hauptbahnhof?",
-          "it": "Dov'è la stazione centrale?",
-          "pt": "Onde fica a estação central?",
-          "no": "Hvor er sentralstasjonen?"
-        }
-      },
-      {
-        "text": "Go toward downtown.",
-        "translations": {
-          "es": "Siga hacia el centro.",
-          "fr": "Allez vers le centre-ville.",
-          "de": "Gehen Sie in Richtung Stadtzentrum.",
-          "it": "Vada verso il centro.",
-          "pt": "Siga em direção ao centro.",
-          "no": "Gå mot sentrum."
-        }
-      },
-      {
-        "text": "Main Street is over there.",
-        "translations": {
-          "es": "La calle principal está allí.",
-          "fr": "La rue principale est là-bas.",
-          "de": "Die Hauptstraße ist dort drüben.",
-          "it": "La via principale è laggiù.",
-          "pt": "A rua principal fica ali.",
-          "no": "Hovedgaten er der borte."
-        }
-      },
-      {
-        "text": "We are waiting for the bus.",
-        "translations": {
-          "es": "Estamos esperando el autobús.",
-          "fr": "Nous attendons le bus.",
-          "de": "Wir warten auf den Bus.",
-          "it": "Stiamo aspettando l'autobus.",
-          "pt": "Estamos esperando o ônibus.",
-          "no": "Vi venter på bussen."
-        }
-      },
-      {
-        "text": "When does bus 22 arrive?",
-        "translations": {
-          "es": "¿Cuándo llega el autobús veintidós?",
-          "fr": "Quand arrive le bus vingt-deux ?",
-          "de": "Wann kommt Bus zweiundzwanzig?",
-          "it": "Quando arriva l'autobus ventidue?",
-          "pt": "Quando chega o ônibus vinte e dois?",
-          "no": "Når kommer buss tjueto?"
-        }
-      },
-      {
-        "text": "The bus is coming now.",
-        "translations": {
-          "es": "El autobús ya viene.",
-          "fr": "Le bus arrive maintenant.",
-          "de": "Der Bus kommt jetzt.",
-          "it": "L'autobus sta arrivando.",
-          "pt": "O ônibus está chegando agora.",
-          "no": "Bussen kommer nå."
-        }
-      },
-      {
-        "text": "Let's wait here.",
-        "translations": {
-          "es": "Esperemos aquí.",
-          "fr": "Attendons ici.",
-          "de": "Warten wir hier.",
-          "it": "Aspettiamo qui.",
-          "pt": "Vamos esperar aqui.",
-          "no": "La oss vente her."
-        }
-      },
-      {
-        "text": "I want to get off downtown.",
-        "translations": {
-          "es": "Quiero bajar en el centro.",
-          "fr": "Je veux descendre au centre-ville.",
-          "de": "Ich möchte im Stadtzentrum aussteigen.",
-          "it": "Voglio scendere in centro.",
-          "pt": "Quero descer no centro.",
-          "no": "Jeg vil gå av i sentrum."
-        }
-      },
-      {
-        "text": "Is this my stop?",
-        "translations": {
-          "es": "¿Es esta mi parada?",
-          "fr": "Est-ce mon arrêt ?",
-          "de": "Ist das meine Haltestelle?",
-          "it": "È questa la mia fermata?",
-          "pt": "Este é o meu ponto?",
-          "no": "Er dette holdeplassen min?"
-        }
-      },
-      {
-        "text": "Please tell me when we reach downtown.",
-        "translations": {
-          "es": "Avíseme cuando lleguemos al centro.",
-          "fr": "Dites-moi quand nous arrivons au centre-ville, s'il vous plaît.",
-          "de": "Sagen Sie mir bitte, wenn wir das Stadtzentrum erreichen.",
-          "it": "Mi dica quando arriviamo in centro, per favore.",
-          "pt": "Avise-me quando chegarmos ao centro, por favor.",
-          "no": "Si fra når vi kommer til sentrum, takk."
-        }
-      },
-      {
-        "text": "We get off at the next stop.",
-        "translations": {
-          "es": "Bajamos en la próxima parada.",
-          "fr": "Nous descendons au prochain arrêt.",
-          "de": "Wir steigen an der nächsten Haltestelle aus.",
-          "it": "Scendiamo alla prossima fermata.",
-          "pt": "Descemos no próximo ponto.",
-          "no": "Vi går av på neste holdeplass."
-        }
-      }
-    ],
-    "hotspots": [
-      {
-        "id": "bus",
-        "label": "The bus.",
-        "x": 60.49,
-        "y": 51.22,
-        "w": 14.44,
-        "h": 16.12,
-        "sound": "",
-        "translations": {
-          "es": "El autobús.",
-          "fr": "Le bus.",
-          "de": "Der Bus.",
-          "it": "L'autobus.",
-          "pt": "O ônibus.",
-          "no": "Bussen."
-        }
-      },
-      {
-        "id": "buspass",
-        "label": "The bus pass.",
-        "x": 34.34,
-        "y": 68.34,
-        "w": 6.64,
-        "h": 9.42,
-        "sound": "",
-        "translations": {
-          "es": "El pase de autobús.",
-          "fr": "Le pass de bus.",
-          "de": "Die Busfahrkarte.",
-          "it": "Il pass dell'autobus.",
-          "pt": "O passe de ônibus.",
-          "no": "Busskortet."
-        }
-      },
-      {
-        "id": "trafficlight",
-        "label": "The traffic light.",
-        "x": 77.18,
-        "y": 12.83,
-        "w": 5.99,
-        "h": 18.86,
-        "sound": "",
-        "translations": {
-          "es": "El semáforo.",
-          "fr": "Le feu de circulation.",
-          "de": "Die Ampel.",
-          "it": "Il semaforo.",
-          "pt": "O semáforo.",
-          "no": "Trafikklyset."
-        }
-      },
-      {
-        "id": "skyscraper",
-        "label": "skyscraper",
-        "x": 71.19,
-        "y": 17.94,
-        "w": 3.5,
-        "h": 22.17,
-        "sound": "",
-        "translations": {
-          "es": "rascacielos",
-          "fr": "gratte-ciel",
-          "de": "Wolkenkratzer",
-          "it": "grattacielo",
-          "pt": "arranha-céu",
-          "no": "skyskraper"
-        }
-      },
-      {
-        "id": "buildings",
-        "label": "buildings",
-        "x": 80.79,
-        "y": 33.46,
-        "w": 8.86,
-        "h": 21.61,
-        "sound": "",
-        "translations": {
-          "es": "edificios",
-          "fr": "bâtiments",
-          "de": "Gebäude",
-          "it": "edifici",
-          "pt": "edifícios",
-          "no": "bygninger"
-        }
-      },
-      {
-        "id": "street lamp",
-        "label": "street lamp",
-        "x": 43.82,
-        "y": 28.07,
-        "w": 5.64,
-        "h": 22.54,
-        "sound": "",
-        "translations": {
-          "es": "farola",
-          "fr": "réverbère",
-          "de": "Straßenlaterne",
-          "it": "lampione",
-          "pt": "lâmpada de rua",
-          "no": "gatelykt"
-        }
-      },
-      {
-        "id": "lamp post",
-        "label": "lamp post",
-        "x": 43.55,
-        "y": 51.85,
-        "w": 2.25,
-        "h": 24.67,
-        "sound": "",
-        "translations": {
-          "es": "Poste de luz",
-          "fr": "lampadaire",
-          "de": "Laternenpfahl",
-          "it": "lampione",
-          "pt": "poste de iluminação",
-          "no": "lyktestolpe"
-        }
-      },
-      {
-        "id": "bumper",
-        "label": "bumper",
-        "x": 60.49,
-        "y": 77.95,
-        "w": 17.72,
-        "h": 4.3,
-        "sound": "",
-        "translations": {
-          "es": "parachoques",
-          "fr": "pare-chocs",
-          "de": "Stoßstange",
-          "it": "paraurti",
-          "pt": "pára-choque",
-          "no": "støtfanger"
-        }
-      },
-      {
-        "id": "cargo rack",
-        "label": "cargo rack",
-        "x": 61.36,
-        "y": 72.09,
-        "w": 10.9,
-        "h": 6.15,
-        "sound": "",
-        "translations": {
-          "es": "estante de carga",
-          "fr": "porte-bagages",
-          "de": "Gepäckträger",
-          "it": "portapacchi",
-          "pt": "rack de carga",
-          "no": "lastestativ"
-        }
-      },
-      {
-        "id": "bus driver",
-        "label": "bus driver",
-        "x": 65.69,
-        "y": 62.5,
-        "w": 6.0,
-        "h": 8.0,
-        "sound": "",
-        "translations": {
-          "es": "conductor de autobús",
-          "fr": "chauffeur d'autobus",
-          "de": "Busfahrer",
-          "it": "autista dell'autobus",
-          "pt": "motorista de ônibus",
-          "no": "bussjåfør"
-        }
-      },
-      {
-        "id": "passenger",
-        "label": "passenger",
-        "x": 47.04,
-        "y": 67.14,
-        "w": 4.33,
-        "h": 16.52,
-        "sound": "",
-        "translations": {
-          "es": "pasajero",
-          "fr": "passager",
-          "de": "Passagier",
-          "it": "passeggeri",
-          "pt": "passageiro",
-          "no": "passasjer"
-        }
-      },
-      {
-        "id": "car",
-        "label": "car",
-        "x": 71.86,
-        "y": 68.07,
-        "w": 3.14,
-        "h": 9.57,
-        "sound": "",
-        "translations": {
-          "es": "auto",
-          "fr": "voiture",
-          "de": "Auto",
-          "it": "auto",
-          "pt": "carro",
-          "no": "bil"
-        }
-      },
-      {
-        "id": "pedestrians",
-        "label": "pedestrians",
-        "x": 83.67,
-        "y": 67.86,
-        "w": 8.76,
-        "h": 11.43,
-        "sound": "",
-        "translations": {
-          "es": "peatones",
-          "fr": "piétons",
-          "de": "Fußgänger",
-          "it": "pedoni",
-          "pt": "pedestres",
-          "no": "fotgjengere"
-        }
-      },
-      {
-        "id": "tree",
-        "label": "tree",
-        "x": 41.76,
-        "y": 11.16,
-        "w": 6.0,
-        "h": 8.0,
-        "sound": "",
-        "translations": {
-          "es": "árbol",
-          "fr": "arbre",
-          "de": "Baum",
-          "it": "albero",
-          "pt": "árvore",
-          "no": "tre"
-        }
-      },
-      {
-        "id": "sky",
-        "label": "sky",
-        "x": 64.94,
-        "y": 4.86,
-        "w": 6.0,
-        "h": 8.0,
-        "sound": "",
-        "translations": {
-          "es": "cielo",
-          "fr": "ciel",
-          "de": "Himmel",
-          "it": "cielo",
-          "pt": "céu",
-          "no": "himmel"
-        }
-      },
-      {
-        "id": "bell tower",
-        "label": "bell tower",
-        "x": 65.43,
-        "y": 23.26,
-        "w": 6.0,
-        "h": 8.0,
-        "sound": "",
-        "translations": {
-          "es": "campanario",
-          "fr": "clocher",
-          "de": "Glockenturm",
-          "it": "campanile",
-          "pt": "torre sineira",
-          "no": "klokketårn"
-        }
-      },
-      {
-        "id": "building",
-        "label": "building",
-        "x": 57.4,
-        "y": 28.26,
-        "w": 6.0,
-        "h": 8.0,
-        "sound": "",
-        "translations": {
-          "es": "edificio",
-          "fr": "bâtiment",
-          "de": "Gebäude",
-          "it": "edificio",
-          "pt": "prédio",
-          "no": "bygning"
-        }
-      },
-      {
-        "id": "side walk",
-        "label": "side walk",
-        "x": 42.7,
-        "y": 88.15,
-        "w": 6.0,
-        "h": 8.0,
-        "sound": "",
-        "translations": {
-          "es": "acera",
-          "fr": "trottoir",
-          "de": "Seitenweg",
-          "it": "passeggiata laterale",
-          "pt": "caminhada lateral",
-          "no": "fortau"
-        }
-      }
-    ],
-    "overlays": [],
-    "challenges": [
-      {
-        "prompt": "Find The bus.",
-        "target": "bus",
-        "translations": {
-          "es": "Find El autobús..",
-          "fr": "Find Le bus..",
-          "de": "Find Der Bus..",
-          "it": "Find L'autobus..",
-          "pt": "Find O ônibus..",
-          "no": "Find Bussen.."
-        }
-      },
-      {
-        "prompt": "Find The bus pass.",
-        "target": "buspass",
-        "translations": {
-          "es": "Find El pase de autobús..",
-          "fr": "Find Le pass de bus..",
-          "de": "Find Die Busfahrkarte..",
-          "it": "Find Il pass dell'autobus..",
-          "pt": "Find O passe de ônibus..",
-          "no": "Find Busskortet.."
-        }
-      },
-      {
-        "prompt": "Find The traffic light.",
-        "target": "trafficlight",
-        "translations": {
-          "es": "Find El semáforo..",
-          "fr": "Find Le feu de circulation..",
-          "de": "Find Die Ampel..",
-          "it": "Find Il semaforo..",
-          "pt": "Find O semáforo..",
-          "no": "Find Trafikklyset.."
-        }
-      }
-    ]
-  },
-  "helicopter-mountain-rescue": {
-    "title": "Helicopter Mountain Rescue",
-    "image": "images/helicopter-mountain-rescue.jpg",
-    "lessons": [
-      {
-        "text": "A hiker needs help high in the mountains.",
-        "translations": {
-          "es": "Un excursionista necesita ayuda en lo alto de las montañas.",
-          "fr": "Un randonneur a besoin d'aide dans les montagnes.",
-          "de": "Ein Wanderer braucht hoch in den Bergen Hilfe.",
-          "it": "Un escursionista ha bisogno di aiuto in alta montagna.",
-          "pt": "Um caminhante precisa de ajuda no alto das montanhas.",
-          "no": "En turgåer trenger hjelp høyt oppe i fjellet."
-        }
-      },
-      {
-        "text": "The rescue helicopter team is moving into position.",
-        "translations": {
-          "es": "El equipo del helicóptero de rescate se está colocando en posición.",
-          "fr": "L'équipe de l'hélicoptère de sauvetage se met en position.",
-          "de": "Das Team des Rettungshubschraubers bringt sich in Position.",
-          "it": "La squadra dell'elicottero di soccorso si sta mettendo in posizione.",
-          "pt": "A equipe do helicóptero de resgate está se posicionando.",
-          "no": "Redningshelikopteret og teamet går i posisjon."
-        }
-      },
-      {
-        "text": "The rescue helicopter can hover above places that are difficult to reach.",
-        "translations": {
-          "es": "El helicóptero de rescate puede mantenerse sobre lugares difíciles de alcanzar.",
-          "fr": "L'hélicoptère de sauvetage peut rester en vol stationnaire au-dessus des endroits difficiles d'accès.",
-          "de": "Der Rettungshubschrauber kann über schwer erreichbaren Orten schweben.",
-          "it": "L'elicottero di soccorso può restare sospeso sopra luoghi difficili da raggiungere.",
-          "pt": "O helicóptero de resgate pode pairar sobre lugares difíceis de alcançar.",
-          "no": "Redningshelikopteret kan sveve over steder som er vanskelige å nå."
-        }
-      },
-      {
-        "text": "The pilot keeps the aircraft steady while the rescue team works.",
-        "translations": {
-          "es": "El piloto mantiene la aeronave estable mientras trabaja el equipo.",
-          "fr": "Le pilote maintient l'appareil stable pendant que l'équipe travaille.",
-          "de": "Der Pilot hält den Hubschrauber ruhig, während das Rettungsteam arbeitet.",
-          "it": "Il pilota mantiene stabile l'elicottero mentre la squadra lavora.",
-          "pt": "O piloto mantém a aeronave estável enquanto a equipe trabalha.",
-          "no": "Piloten holder helikopteret stabilt mens redningsteamet arbeider."
-        }
-      },
-      {
-        "text": "A rescuer is lowered toward the stranded hiker.",
-        "translations": {
-          "es": "Un rescatista desciende hacia el excursionista atrapado.",
-          "fr": "Un secouriste descend vers le randonneur bloqué.",
-          "de": "Ein Retter wird zum gestrandeten Wanderer hinabgelassen.",
-          "it": "Un soccorritore viene calato verso l'escursionista bloccato.",
-          "pt": "Um socorrista desce em direção ao caminhante preso.",
-          "no": "En redningsarbeider senkes ned mot turgåeren."
-        }
-      },
-      {
-        "text": "The rescue basket can safely lift someone away from the rocky ledge.",
-        "translations": {
-          "es": "La cesta de rescate puede levantar a una persona de forma segura desde la saliente rocosa.",
-          "fr": "Le panier de sauvetage peut soulever une personne en sécurité depuis la corniche rocheuse.",
-          "de": "Der Rettungskorb kann eine Person sicher vom Felsvorsprung wegheben.",
-          "it": "La cesta di soccorso può sollevare una persona in sicurezza dalla sporgenza rocciosa.",
-          "pt": "A cesta de resgate pode retirar uma pessoa com segurança da saliência rochosa.",
-          "no": "Redningskurven kan løfte en person trygt bort fra fjellhyllen."
-        }
-      },
-      {
-        "text": "Helmets, harnesses, cables, and rescue equipment help protect the team.",
-        "translations": {
-          "es": "Los cascos, arneses, cables y equipos de rescate ayudan a proteger al equipo.",
-          "fr": "Les casques, harnais, câbles et équipements de sauvetage protègent l'équipe.",
-          "de": "Helme, Gurte, Seile und Rettungsausrüstung schützen das Team.",
-          "it": "Caschi, imbracature, cavi e attrezzature di soccorso proteggono la squadra.",
-          "pt": "Capacetes, cintos, cabos e equipamentos de resgate ajudam a proteger a equipe.",
-          "no": "Hjelmer, seler, kabler og redningsutstyr beskytter teamet."
-        }
-      },
-      {
-        "text": "Everyone works carefully and follows the rescue plan.",
-        "translations": {
-          "es": "Todos trabajan con cuidado y siguen el plan de rescate.",
-          "fr": "Tout le monde travaille prudemment et suit le plan de sauvetage.",
-          "de": "Alle arbeiten vorsichtig und folgen dem Rettungsplan.",
-          "it": "Tutti lavorano con attenzione e seguono il piano di soccorso.",
-          "pt": "Todos trabalham com cuidado e seguem o plano de resgate.",
-          "no": "Alle arbeider forsiktig og følger redningsplanen."
-        }
-      },
-      {
-        "text": "Snowy mountains, a waterfall, forests, and a blue lake surround the rescue area.",
-        "translations": {
-          "es": "Montañas nevadas, una cascada, bosques y un lago azul rodean la zona de rescate.",
-          "fr": "Des montagnes enneigées, une cascade, des forêts et un lac bleu entourent la zone.",
-          "de": "Schneebedeckte Berge, ein Wasserfall, Wälder und ein blauer See umgeben das Rettungsgebiet.",
-          "it": "Montagne innevate, una cascata, foreste e un lago blu circondano l'area.",
-          "pt": "Montanhas nevadas, uma cachoeira, florestas e um lago azul cercam a área.",
-          "no": "Snødekte fjell, en foss, skoger og et blått fjellvann omgir området."
-        }
-      },
-      {
-        "text": "An eagle flies high above the valley.",
-        "translations": {
-          "es": "Un águila vuela sobre el valle.",
-          "fr": "Un aigle vole au-dessus de la vallée.",
-          "de": "Ein Adler fliegt hoch über dem Tal.",
-          "it": "Un'aquila vola alta sopra la valle.",
-          "pt": "Uma águia voa alto sobre o vale.",
-          "no": "En ørn flyr høyt over dalen."
-        }
-      },
-      {
-        "text": "Grandpa, Mitchell, Nicole, the pilot, and the rescue crew are working together.",
-        "translations": {
-          "es": "El abuelo, Mitchell, Nicole, el piloto y el equipo de rescate trabajan juntos.",
-          "fr": "Grand-père, Mitchell, Nicole, le pilote et l'équipe de sauvetage travaillent ensemble.",
-          "de": "Opa, Mitchell, Nicole, der Pilot und das Rettungsteam arbeiten zusammen.",
-          "it": "Nonno, Mitchell, Nicole, il pilota e la squadra di soccorso lavorano insieme.",
-          "pt": "O avô, Mitchell, Nicole, o piloto e a equipe de resgate trabalham juntos.",
-          "no": "Bestefar, Mitchell, Nicole, piloten og redningsteamet arbeider sammen."
-        }
-      },
-      {
-        "text": "Even the rescue dog and the Talk A Bee mascot came along.",
-        "translations": {
-          "es": "Hasta el perro de rescate y la mascota Talk A Bee vinieron.",
-          "fr": "Même le chien de sauvetage et la mascotte Talk A Bee sont venus.",
-          "de": "Sogar der Rettungshund und das Talk A Bee Maskottchen sind dabei.",
-          "it": "Anche il cane da soccorso e la mascotte Talk A Bee sono venuti.",
-          "pt": "Até o cão de resgate e a mascote Talk A Bee vieram.",
-          "no": "Til og med redningshunden og Talk A Bee-maskotten er med."
-        }
-      }
-    ],
-    "hotspots": [
-      {
-        "id": "helicopter",
-        "label": "rescue helicopter",
-        "x": 37.68,
-        "y": 15.89,
-        "w": 14.56,
-        "h": 16.87,
-        "sound": "sounds/helicopter.mp3",
-        "translations": {
-          "es": "helicóptero de rescate",
-          "fr": "hélicoptère de sauvetage",
-          "de": "Rettungshubschrauber",
-          "it": "elicottero di soccorso",
-          "pt": "helicóptero de resgate",
-          "no": "redningshelikopter"
-        }
-      },
-      {
-        "id": "pilot",
-        "label": "pilot",
-        "x": 53.4,
-        "y": 14.31,
-        "w": 4.33,
-        "h": 8.88,
-        "sound": "",
-        "translations": {
-          "es": "piloto",
-          "fr": "pilote",
-          "de": "Pilot",
-          "it": "pilota",
-          "pt": "piloto",
-          "no": "pilot"
-        }
-      },
-      {
-        "id": "dog",
-        "label": "rescue dog",
-        "x": 76.74,
-        "y": 25.85,
-        "w": 3.59,
-        "h": 8.81,
-        "sound": "sounds/dog.mp3",
-        "translations": {
-          "es": "perro de rescate",
-          "fr": "chien de sauvetage",
-          "de": "Rettungshund",
-          "it": "cane da soccorso",
-          "pt": "cão de resgate",
-          "no": "redningshund"
-        }
-      },
-      {
-        "id": "cable",
-        "label": "rescue cable",
-        "x": 64.3,
-        "y": 33.91,
-        "w": 2.94,
-        "h": 16.36,
-        "sound": "",
-        "translations": {
-          "es": "cable de rescate",
-          "fr": "câble de sauvetage",
-          "de": "Rettungsseil",
-          "it": "cavo di soccorso",
-          "pt": "cabo de resgate",
-          "no": "redningskabel"
-        }
-      },
-      {
-        "id": "rescuer",
-        "label": "rescuer",
-        "x": 64.0,
-        "y": 46.0,
-        "w": 7.43,
-        "h": 14.89,
-        "sound": "",
-        "translations": {
-          "es": "rescatista",
-          "fr": "secouriste",
-          "de": "Retter",
-          "it": "soccorritore",
-          "pt": "socorrista",
-          "no": "redningsarbeider"
-        }
-      },
-      {
-        "id": "basket",
-        "label": "rescue basket",
-        "x": 61.39,
-        "y": 63.39,
-        "w": 9.79,
-        "h": 12.48,
-        "sound": "",
-        "translations": {
-          "es": "cesta de rescate",
-          "fr": "panier de sauvetage",
-          "de": "Rettungskorb",
-          "it": "cesta di soccorso",
-          "pt": "cesta de resgate",
-          "no": "redningskurv"
-        }
-      },
-      {
-        "id": "hiker",
-        "label": "hiker",
-        "x": 80.19,
-        "y": 58.24,
-        "w": 4.2,
-        "h": 21.13,
-        "sound": "",
-        "translations": {
-          "es": "excursionista",
-          "fr": "randonneur",
-          "de": "Wanderer",
-          "it": "escursionista",
-          "pt": "caminhante",
-          "no": "turgåer"
-        }
-      },
-      {
-        "id": "backpack",
-        "label": "backpack",
-        "x": 85.44,
-        "y": 62.46,
-        "w": 3.9,
-        "h": 16.96,
-        "sound": "",
-        "translations": {
-          "es": "mochila",
-          "fr": "sac à dos",
-          "de": "Rucksack",
-          "it": "zaino",
-          "pt": "mochila",
-          "no": "ryggsekk"
-        }
-      },
-      {
-        "id": "mountain",
-        "label": "mountain",
-        "x": 14.49,
-        "y": 21.16,
-        "w": 18.8,
-        "h": 17.89,
-        "sound": "",
-        "translations": {
-          "es": "montaña",
-          "fr": "montagne",
-          "de": "Berg",
-          "it": "montagna",
-          "pt": "montanha",
-          "no": "fjell"
-        }
-      },
-      {
-        "id": "waterfall",
-        "label": "waterfall",
-        "x": 12.08,
-        "y": 48.0,
-        "w": 10.89,
-        "h": 25.44,
-        "sound": "sounds/waterfall.mp3",
-        "translations": {
-          "es": "cascada",
-          "fr": "cascade",
-          "de": "Wasserfall",
-          "it": "cascata",
-          "pt": "cachoeira",
-          "no": "foss"
-        }
-      },
-      {
-        "id": "lake",
-        "label": "mountain lake",
-        "x": 51.48,
-        "y": 57.64,
-        "w": 9.94,
-        "h": 6.3,
-        "sound": "",
-        "translations": {
-          "es": "lago de montaña",
-          "fr": "lac de montagne",
-          "de": "Bergsee",
-          "it": "lago di montagna",
-          "pt": "lago de montanha",
-          "no": "fjellvann"
-        }
-      },
-      {
-        "id": "eagle",
-        "label": "eagle",
-        "x": 2.0,
-        "y": 4.0,
-        "w": 13.0,
-        "h": 16.0,
-        "sound": "sounds/eagle.mp3",
-        "translations": {
-          "es": "águila",
-          "fr": "aigle",
-          "de": "Adler",
-          "it": "aquila",
-          "pt": "águia",
-          "no": "ørn"
-        }
-      },
-      {
-        "id": "forest",
-        "label": "forest",
-        "x": 10.71,
-        "y": 72.76,
-        "w": 18.99,
-        "h": 32.72,
-        "sound": "sounds/birds-forest.mp3",
-        "translations": {
-          "es": "bosque",
-          "fr": "forêt",
-          "de": "Wald",
-          "it": "foresta",
-          "pt": "floresta",
-          "no": "skog"
-        }
-      },
-      {
-        "id": "campground",
-        "label": "campground",
-        "x": 36.0,
-        "y": 82.0,
-        "w": 16.0,
-        "h": 15.0,
-        "sound": "",
-        "translations": {
-          "es": "campamento",
-          "fr": "camping",
-          "de": "Campingplatz",
-          "it": "campeggio",
-          "pt": "acampamento",
-          "no": "campingplass"
-        }
-      },
-      {
-        "id": "helmet",
-        "label": "rescue helmet",
-        "x": 70.82,
-        "y": 47.13,
-        "w": 4.09,
-        "h": 7.19,
-        "sound": "",
-        "translations": {
-          "es": "casco de rescate",
-          "fr": "casque de sauvetage",
-          "de": "Rettungshelm",
-          "it": "casco di soccorso",
-          "pt": "capacete de resgate",
-          "no": "redningshjelm"
-        }
-      },
-      {
-        "id": "ledge",
-        "label": "rocky ledge",
-        "x": 82.99,
-        "y": 82.28,
-        "w": 9.82,
-        "h": 20.8,
-        "sound": "",
-        "translations": {
-          "es": "saliente rocoso",
-          "fr": "corniche rocheuse",
-          "de": "Felsvorsprung",
-          "it": "sporgenza rocciosa",
-          "pt": "saliência rochosa",
-          "no": "fjellhylle"
-        }
-      },
-      {
-        "id": "cliff",
-        "label": "cliff",
-        "x": 68.29,
-        "y": 83.62,
-        "w": 12.77,
-        "h": 28.09,
-        "sound": "",
-        "translations": {
-          "es": "acantilado",
-          "fr": "falaise",
-          "de": "Cliff",
-          "it": "scogliera",
-          "pt": "penhasco",
-          "no": "klippe"
-        }
-      },
-      {
-        "id": "rescue crew",
-        "label": "rescue crew",
-        "x": 63.32,
-        "y": 13.78,
-        "w": 9.39,
-        "h": 20.04,
-        "sound": "",
-        "translations": {
-          "es": "equipo de rescate",
-          "fr": "équipe de secours",
-          "de": "Rettungsmannschaft",
-          "it": "equipaggio di soccorso",
-          "pt": "equipe de resgate",
-          "no": "redningsmannskap"
-        }
-      },
-      {
-        "id": "rescue helicopter",
-        "label": "rescue helicopter",
-        "x": 81.13,
-        "y": 21.17,
-        "w": 10.84,
-        "h": 8.65,
-        "sound": "sounds/helicopter.mp3",
-        "translations": {
-          "es": "helicóptero de rescate",
-          "fr": "hélicoptère de sauvetage",
-          "de": "Rettungshubschrauber",
-          "it": "elicottero di soccorso",
-          "pt": "helicóptero de resgate",
-          "no": "redningshelikopter"
-        }
-      },
-      {
-        "id": "tail rotor",
-        "label": "tail rotor",
-        "x": 91.74,
-        "y": 4.8,
-        "w": 8.08,
-        "h": 25.87,
-        "sound": "",
-        "translations": {
-          "es": "rotor de cola",
-          "fr": "rotor de queue",
-          "de": "Heckrotor",
-          "it": "rotore di coda",
-          "pt": "rotor de cauda",
-          "no": "halerotor"
-        }
-      },
-      {
-        "id": "propeller blades",
-        "label": "propeller blades",
-        "x": 33.13,
-        "y": 0.12,
-        "w": 62.61,
-        "h": 4.57,
-        "sound": "",
-        "translations": {
-          "es": "palas de hélice",
-          "fr": "pales d'hélice",
-          "de": "Propellerblätter",
-          "it": "pale dell'elica",
-          "pt": "pás da hélice",
-          "no": "propellblader"
-        }
-      },
-      {
-        "id": "turbo engine",
-        "label": "turbo engine",
-        "x": 70.64,
-        "y": 8.72,
-        "w": 13.29,
-        "h": 7.07,
-        "sound": "",
-        "translations": {
-          "es": "motor turbo",
-          "fr": "moteur turbo",
-          "de": "Turbomotor",
-          "it": "motore turbo",
-          "pt": "motor turbo",
-          "no": "turbo motor"
-        }
-      },
-      {
-        "id": "landing struts",
-        "label": "landing struts",
-        "x": 43.17,
-        "y": 38.21,
-        "w": 36.57,
-        "h": 8.92,
-        "sound": "",
-        "translations": {
-          "es": "puntales de aterrizaje",
-          "fr": "jambes d'atterrissage",
-          "de": "Landestreben",
-          "it": "montanti di atterraggio",
-          "pt": "suportes de pouso",
-          "no": "landingsstag"
-        }
-      }
-    ],
-    "overlays": [],
-    "challenges": [
-      {
-        "prompt": "Find hiker.",
-        "target": "hiker",
-        "translations": {
-          "es": "Find excursionista.",
-          "fr": "Find randonneur.",
-          "de": "Find Wanderer.",
-          "it": "Find escursionista.",
-          "pt": "Find caminhante.",
-          "no": "Find turgåer."
-        }
-      },
-      {
-        "prompt": "Find rescue basket.",
-        "target": "basket",
-        "translations": {
-          "es": "Find cesta de rescate.",
-          "fr": "Find panier de sauvetage.",
-          "de": "Find Rettungskorb.",
-          "it": "Find cesta di soccorso.",
-          "pt": "Find cesta de resgate.",
-          "no": "Find redningskurv."
-        }
-      },
-      {
-        "prompt": "Find waterfall.",
-        "target": "waterfall",
-        "translations": {
-          "es": "Find cascada.",
-          "fr": "Find cascade.",
-          "de": "Find Wasserfall.",
-          "it": "Find cascata.",
-          "pt": "Find cachoeira.",
-          "no": "Find foss."
-        }
-      },
-      {
-        "prompt": "Find eagle.",
-        "target": "eagle",
-        "translations": {
-          "es": "Find águila.",
-          "fr": "Find aigle.",
-          "de": "Find Adler.",
-          "it": "Find aquila.",
-          "pt": "Find águia.",
-          "no": "Find ørn."
-        }
-      },
-      {
-        "prompt": "Find rescue dog.",
-        "target": "dog",
-        "translations": {
-          "es": "Find perro de rescate.",
-          "fr": "Find chien de sauvetage.",
-          "de": "Find Rettungshund.",
-          "it": "Find cane da soccorso.",
-          "pt": "Find cão de resgate.",
-          "no": "Find redningshund."
-        }
       }
     ]
   }
