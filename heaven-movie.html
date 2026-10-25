@@ -20,7 +20,8 @@
   @media(max-width:600px){main{padding:0 6px 20px}video{border-radius:7px}.bottom-nav a{width:100%}}
 
   .vote-section{max-width:1050px;margin:36px auto 24px;padding:clamp(18px,3vw,36px);border:1px solid #8b7244;border-radius:18px;background:linear-gradient(150deg,#26334a,#151d2d);box-shadow:0 10px 35px #0005}
-  .vote-section h2{font-size:clamp(26px,3vw,40px);margin:0 0 8px;color:#ffe19a}
+  .vote-section h2{font-size:clamp(26px,3vw,40px);margin:0 0 8px;color:#ffe19a;display:flex;align-items:center;justify-content:center;gap:16px;flex-wrap:wrap}
+  .vote-heading-buzz{width:clamp(90px,12vw,150px);height:auto;object-fit:contain;flex-shrink:0}
   .vote-intro{color:#e7e3dc;margin:0 auto 22px;max-width:720px;line-height:1.5}
   .vote-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
   .vote-option{min-height:135px;display:flex;flex-direction:column;justify-content:center;align-items:center;gap:8px;padding:16px 10px;border:2px solid #687b94;border-radius:14px;background:#293a51;color:#fff5df;font:inherit;font-weight:700;cursor:pointer;transition:transform .15s,border-color .15s,background .15s}
@@ -57,7 +58,7 @@
   <h1>Heaven — The Final Adventure</h1>
   <p class="subtitle">A Talk A Bee movie</p>
   <section class="vote-section" aria-labelledby="vote-heading">
-    <h2 id="vote-heading">🐝 Choose Buzzkill's Next Life!</h2>
+    <h2 id="vote-heading"><img class="vote-heading-buzz" src="images/Buzz-vote.png" alt="Buzzkill nervously awaiting the vote"> Choose Buzzkill's Next Life!</h2>
     <p class="vote-intro">God has placed Buzzkill's fate in <strong>YOUR hands!</strong> Will God turn him into a flower in a field, a jar of honey, or simply let him <strong>BEE</strong>? <strong>VOTE NOW!</strong> Once 1,000 votes have been cast, the choice receiving the most votes will be enforced by <strong>God Himself!</strong></p>
     <div class="vote-grid" role="group" aria-label="Choose Buzzkill's next life">
       <button class="vote-option" type="button" data-vote="dandelion" aria-pressed="false"><img class="vote-photo" src="images/vote-dandelion.jpg" alt="Dandelion" loading="lazy"><span class="vote-name">Dandelion</span><span class="vote-reason">Every bee he tormented can land on him all day. And he can’t fly away!</span></button>
@@ -115,7 +116,7 @@
     const vote={choice:selected,idea:selected==='custom'?text:''};
     try{
       localStorage.setItem(storageKey,JSON.stringify(vote));
-      status.textContent='Your choice has been saved on this browser! 🐝';
+      status.textContent='Your choice has been saved on this browser!';
     }catch(error){
       status.textContent='Browser storage is unavailable. Your choice cannot be saved here.';
     }
