@@ -2936,7 +2936,7 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
   },
   "large-picnic": {
     "title": "Large Picnic",
-    "image": "images/Talk-A-Bee-Family-Picnic-Adventure.jpg",
+    "image": "images/Family-Picnic-Adventure.jpg",
     "lessons": [
       {
         "text": "Grandma, Grandpa, the children, dogs, and Bee have all gathered for one enormous lakeside picnic.",
@@ -3339,7 +3339,7 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
   },
   "nighttime-campground": {
     "title": "Nighttime Campground",
-    "image": "images/talkabee-nighttime-campground-adventure.jpg",
+    "image": "images/nighttime-campground-adventure.jpg",
     "lessons": [
       {
         "text": "We are camping by the lake.",
@@ -3827,7 +3827,7 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
   },
   "cave-exploration": {
     "title": "Cave Exploration",
-    "image": "images/Talk-A-Bee-Cave-Adventure.jpg",
+    "image": "images/Cave-Adventure.jpg",
     "lessons": [
       {
         "text": "We are exploring a huge underground cave.",
@@ -4725,7 +4725,7 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
   },
   "observation-deck": {
     "title": "Observation Deck",
-    "image": "images/talkabee-observation-deck-adventure.jpg",
+    "image": "images/observation-deck-adventure.jpg",
     "lessons": [
       {
         "text": "We are high above the city.",
@@ -4946,7 +4946,7 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
   },
   "bicycle-race": {
     "title": "Bicycle Race",
-    "image": "images/Talk-A-Bee-Bicycle-Race-Adventure.jpg",
+    "image": "images/Bicycle-Race-Adventure.jpg",
     "lessons": [
       {
         "text": "The bicycle racers are crouched at the starting line and ready to go.",
@@ -5299,7 +5299,7 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
   },
   "football": {
     "title": "Football",
-    "image": "images/Talk-A-Bee-Football-Game-Adventure.jpg",
+    "image": "images/Football-Game-Adventure.jpg",
     "lessons": [
       {
         "text": "The Talk A Bee quarterback stands behind the line with the football ready to throw.",
@@ -5646,7 +5646,7 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
   },
   "golf": {
     "title": "Golf",
-    "image": "images/Talk-A-Bee-Golf-Adventure.jpg",
+    "image": "images/Golf-Adventure.jpg",
     "lessons": [
       {
         "text": "Grandma, Grandpa, the children, Bee, and the dogs have gathered for a day on the golf course.",
@@ -6001,7 +6001,7 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
   },
   "college-rowing": {
     "title": "College Rowing",
-    "image": "images/Talk-A-Bee-Rowing-Regatta-Adventure.jpg",
+    "image": "images/Rowing-Regatta-Adventure.jpg",
     "lessons": [
       {
         "text": "The Talk A Bee coxswain sits at the end of the racing shell and directs the crew.",
@@ -6340,7 +6340,7 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
   },
   "softball": {
     "title": "Softball",
-    "image": "images/Talk-A-Bee-Softball-Game-Adventure.jpg",
+    "image": "images/Softball-Game-Adventure.jpg",
     "lessons": [
       {
         "text": "The Talk A Bee pitcher is on the mound with the softball ready to throw.",
@@ -6733,7 +6733,7 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
   },
   "skydiving": {
     "title": "Skydiving",
-    "image": "images/Talk-A-Bee-Skydiving-Adventure.jpg",
+    "image": "images/Skydiving-Adventure.jpg",
     "lessons": [
       {
         "text": "The skydivers ride in an airplane until they reach the planned jumping altitude.",
@@ -7086,7 +7086,7 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
   },
   "hang-gliding": {
     "title": "Hang Gliding",
-    "image": "images/Talk-A-Bee-Hang-Gliding-Adventure.jpg",
+    "image": "images/Hang-Gliding-Adventure.jpg",
     "lessons": [
       {
         "text": "We are hang gliding high above Talk A Bee country.",
@@ -7453,7 +7453,7 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
   },
   "airplane-flying": {
     "title": "Airplane Flying",
-    "image": "images/Talk-A-Bee-Airplane-Flying-Adventure.jpg",
+    "image": "images/Airplane-Flying-Adventure.jpg",
     "lessons": [
       {
         "text": "Welcome to the airplane cockpit.",
@@ -7800,7 +7800,7 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
   },
   "boat-locks": {
     "title": "Boat Locks",
-    "image": "images/Talk-A-Bee-Boat-Locks-Adventure.jpg",
+    "image": "images/Boat-Locks-Adventure.jpg",
     "lessons": [
       {
         "text": "Captain Bee is at the helm and guides the boat into the lock.",
@@ -8167,7 +8167,7 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
   },
   "great-wall-of-china": {
     "title": "Great Wall of China",
-    "image": "images/Talk-A-Bee-Great-Wall-of-China-Adventure.jpg",
+    "image": "images/Great-Wall-of-China-Adventure.jpg",
     "lessons": [
       {
         "text": "We have arrived at the Great Wall of China.",
@@ -8474,7 +8474,7 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
   },
   "hot-air-balloon": {
     "title": "Hot Air Balloon",
-    "image": "images/Talk-A-Bee-Hot-Air-Balloon-Festival-Adventure.jpg",
+    "image": "images/Hot-Air-Balloon-Festival-Adventure.jpg",
     "lessons": [
       {
         "text": "Grandma, Grandpa, the children, and Bee are riding together in a hot air balloon basket.",
@@ -8809,7 +8809,7 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
   },
   "train-engineer": {
     "title": "Train Engineer",
-    "image": "images/Talk-A-Bee-Steam-Train-Adventure.jpg",
+    "image": "images/Steam-Train-Adventure.jpg",
     "lessons": [
       {
         "text": "All aboard the mountain steam train.",
@@ -9821,7 +9821,7 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
   },
   "dinosaur-museum": {
     "title": "Dinosaur Museum",
-    "image": "images/talkabee-dinosaur-museum-adventure.jpg",
+    "image": "images/dinosaur-museum-adventure.jpg",
     "lessons": [
       {
         "text": "We are at the dinosaur museum.",
@@ -10138,7 +10138,7 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
   },
   "dog-show": {
     "title": "Dog Show",
-    "image": "images/Talk-A-Bee-Dog-Show-Adventure.jpg",
+    "image": "images/Dog-Show-Adventure.jpg",
     "lessons": [
       {
         "text": "Referee Bee stands beside the show ring with a clipboard and watches each dog carefully.",
@@ -10471,7 +10471,7 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
   },
   "hollywood-movie-making": {
     "title": "Hollywood Movie Making",
-    "image": "images/Talk-A-Bee-Hollywood-Movie-Making-Adventure.jpg",
+    "image": "images/Hollywood-Movie-Making-Adventure.jpg",
     "lessons": [
       {
         "text": "Welcome to a Hollywood movie studio.",
@@ -10898,7 +10898,7 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
   },
   "sea-adventures": {
     "title": "Sea Adventures",
-    "image": "images/talkabee-image-21.jpg",
+    "image": "images/Sea-Adventure.jpg",
     "lessons": [
       {
         "text": "We are on the yacht.",
@@ -11483,7 +11483,7 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
   },
   "river-rafting": {
     "title": "River Rafting",
-    "image": "images/Talk-A-Bee-River-Rafting-Adventure.jpg",
+    "image": "images/River-Rafting-Adventure.jpg",
     "lessons": [
       {
         "text": "Grandma, Grandpa, the family, their dog, and Bee are all together for a whitewater rafting adventure.",
@@ -11734,7 +11734,7 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
   },
   "seattle-fishing-charter": {
     "title": "Seattle Fishing Charter",
-    "image": "images/Talk-A-Bee-Seattle-Fishing-Adventure.jpg",
+    "image": "images/Seattle-Fishing-Adventure.jpg",
     "lessons": [
       {
         "text": "Welcome aboard our Seattle fishing boat.",
@@ -12101,7 +12101,7 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
   },
   "underwater-adventure": {
     "title": "Underwater Adventure",
-    "image": "images/Talk-A-Bee-Underwater-Adventure.jpg",
+    "image": "images/Underwater-Adventure.jpg",
     "lessons": [
       {
         "text": "Grandma and Grandpa are scuba diving together.",
@@ -12444,7 +12444,7 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
   },
   "zoo": {
     "title": "Zoo",
-    "image": "images/Talk-A-Bee-Zoo-Adventure.jpg",
+    "image": "images/Zoo-Adventure.jpg",
     "lessons": [
       {
         "text": "Welcome to the zoo!",
@@ -12817,7 +12817,7 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
   },
   "mountain-ski-resort": {
     "title": "Mountain Ski Resort",
-    "image": "images/Talk-A-Bee-Mountain-Ski-Resort-Adventure.jpg",
+    "image": "images/Mountain-Ski-Resort-Adventure.jpg",
     "lessons": [
       {
         "text": "We have arrived at the mountain ski resort.",
@@ -13160,7 +13160,7 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
   },
   "mission-control": {
     "title": "Mission Control",
-    "image": "images/Talk-A-Bee-Mission-Control-Adventure.jpg",
+    "image": "images/Mission-Control-Adventure.jpg",
     "lessons": [
       {
         "text": "Mission control is a center where teams monitor and support a space mission.",
@@ -13507,7 +13507,7 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
   },
   "moon": {
     "title": "Moon",
-    "image": "images/Talk-A-Bee-Moon-Adventure.jpg",
+    "image": "images/Moon-Adventure.jpg",
     "lessons": [
       {
         "text": "The Moon crew is exploring the lunar surface in spacesuits while Bee joins the expedition.",
@@ -13860,7 +13860,7 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
   },
   "protect-earth": {
     "title": "Protect Earth",
-    "image": "images/Talk-A-Bee-Protect-Earth-Adventure.jpg",
+    "image": "images/Protect-Earth-Adventure.jpg",
     "lessons": [
       {
         "text": "From space, Earth looks beautiful, but astronauts can also observe clouds, cities, fires, dust, and some forms of pollution.",
@@ -14131,7 +14131,7 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
   },
   "spaceship-window-saturn": {
     "title": "Spaceship Window Saturn",
-    "image": "images/Talk-A-Bee-Saturn-Spacecraft-Adventure.jpg",
+    "image": "images/Saturn-Spacecraft-Adventure.jpg",
     "lessons": [
       {
         "text": "Saturn is the sixth planet from the Sun and the second-largest planet in our Solar System.",
@@ -14832,7 +14832,7 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
   },
   "nasa-spacewalk": {
     "title": "NASA Spacewalk",
-    "image": "images/Talk-A-Bee-Spacewalk-Adventure.jpg",
+    "image": "images/Spacewalk-Adventure.jpg",
     "lessons": [
       {
         "text": "The crew is outside a space station performing a spacewalk high above Earth.",
@@ -16634,7 +16634,7 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
   },
   "aircraft-carrier": {
     "title": "Aircraft Carrier",
-    "image": "images/Talk-A-Bee-Aircraft-Carrier-Adventure.jpg",
+    "image": "images/Aircraft-Carrier-Adventure.jpg",
     "lessons": [
       {
         "text": "An aircraft carrier has a large flight deck where aircraft can take off, land, move, and be serviced while the ship is at sea.",
@@ -17001,7 +17001,7 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
   },
   "military-drill-sergeant": {
     "title": "Military Drill Sergeant",
-    "image": "images/Talk-A-Bee-Basic-Training-Adventure.jpg",
+    "image": "images/Basic-Training-Adventure.jpg",
     "lessons": [
       {
         "text": "Basic training teaches people to work together, follow instructions, stay organized, and support their team.",
@@ -17731,7 +17731,7 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
   },
   "oval-office": {
     "title": "Oval Office",
-    "image": "images/Talk-A-Bee-Oval-Office-Adventure.jpg",
+    "image": "images/Oval-Office-Adventure.jpg",
     "lessons": [
       {
         "text": "The Oval Office is the working office of the president of the United States in the White House.",
