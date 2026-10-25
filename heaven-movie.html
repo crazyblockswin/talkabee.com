@@ -18,6 +18,25 @@
   .bottom-nav{display:flex;justify-content:center;gap:16px;flex-wrap:wrap;margin:18px auto 12px}
   .bottom-nav a{display:inline-flex;align-items:center;justify-content:center;min-height:52px;padding:12px 22px;border:1px solid #d7b45f;border-radius:10px;background:#253245;color:#ffe19a;text-decoration:none;font-size:clamp(16px,1.5vw,21px);font-weight:600}
   @media(max-width:600px){main{padding:0 6px 20px}video{border-radius:7px}.bottom-nav a{width:100%}}
+
+  .vote-section{max-width:1050px;margin:36px auto 24px;padding:clamp(18px,3vw,36px);border:1px solid #8b7244;border-radius:18px;background:linear-gradient(150deg,#26334a,#151d2d);box-shadow:0 10px 35px #0005}
+  .vote-section h2{font-size:clamp(26px,3vw,40px);margin:0 0 8px;color:#ffe19a}
+  .vote-intro{color:#e7e3dc;margin:0 auto 22px;max-width:720px;line-height:1.5}
+  .vote-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+  .vote-option{min-height:135px;display:flex;flex-direction:column;justify-content:center;align-items:center;gap:8px;padding:16px 10px;border:2px solid #687b94;border-radius:14px;background:#293a51;color:#fff5df;font:inherit;font-weight:700;cursor:pointer;transition:transform .15s,border-color .15s,background .15s}
+  .vote-option:hover,.vote-option:focus-visible{border-color:#ffe19a;background:#354b67;transform:translateY(-2px)}
+  .vote-option[aria-pressed="true"]{border-color:#a5ffd1;background:#275147;box-shadow:0 0 0 2px #a5ffd133}
+  .vote-emoji{font-size:43px;line-height:1.1}
+  .vote-custom{margin:18px auto 0;max-width:650px;text-align:left}
+  .vote-custom label{display:block;margin-bottom:7px;font-weight:650}
+  .vote-custom textarea{display:block;width:100%;min-height:76px;padding:12px;border:1px solid #a9b4c5;border-radius:9px;background:#111a29;color:white;font:inherit;resize:vertical}
+  .vote-actions{display:flex;justify-content:center;gap:12px;flex-wrap:wrap;margin:19px 0 6px}
+  .vote-actions button{border:1px solid #e6c373;border-radius:10px;background:#e8c77d;color:#192437;font:inherit;font-weight:750;padding:12px 24px;cursor:pointer}
+  .vote-actions button:disabled{opacity:.5;cursor:not-allowed}
+  .vote-status{min-height:30px;margin:14px 0 0;color:#a5ffd1;font-weight:650}
+  .vote-note{font-size:13px;color:#bfc8d6;line-height:1.5;margin:10px auto 0;max-width:760px}
+  @media(max-width:680px){.vote-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.vote-option{min-height:120px}}
+  @media(max-width:420px){.vote-grid{grid-template-columns:1fr 1fr;gap:8px}.vote-option{padding:10px 5px;font-size:15px}.vote-emoji{font-size:34px}}
 </style>
 </head>
 <body>
@@ -32,10 +51,70 @@
   </video>
   <h1>Heaven — The Final Adventure</h1>
   <p class="subtitle">A Talk A Bee movie</p>
+  <section class="vote-section" aria-labelledby="vote-heading">
+    <h2 id="vote-heading">🐝 Choose Buzzkill's Next Life!</h2>
+    <p class="vote-intro">Buzzkill wants a lawyer. Boss Bee says the audience gets the final word! Pick your favorite fate for our very round troublemaker.</p>
+    <div class="vote-grid" role="group" aria-label="Choose Buzzkill's next life">
+      <button class="vote-option" type="button" data-vote="dandelion" aria-pressed="false"><span class="vote-emoji" aria-hidden="true">🌼</span><span>Dandelion</span></button>
+      <button class="vote-option" type="button" data-vote="daisy" aria-pressed="false"><span class="vote-emoji" aria-hidden="true">🌸</span><span>Daisy</span></button>
+      <button class="vote-option" type="button" data-vote="honey" aria-pressed="false"><span class="vote-emoji" aria-hidden="true">🍯</span><span>Honey Jar</span></button>
+      <button class="vote-option" type="button" data-vote="scarecrow" aria-pressed="false"><span class="vote-emoji" aria-hidden="true">🌾</span><span>Scarecrow</span></button>
+      <button class="vote-option" type="button" data-vote="bee" aria-pressed="false"><span class="vote-emoji" aria-hidden="true">🐝</span><span>Let Him Bee!</span></button>
+      <button class="vote-option" type="button" data-vote="custom" aria-pressed="false"><span class="vote-emoji" aria-hidden="true">✍️</span><span>My Own Idea</span></button>
+    </div>
+    <div class="vote-custom" id="vote-custom" hidden>
+      <label for="vote-idea">What should Buzzkill become?</label>
+      <textarea id="vote-idea" maxlength="300" placeholder="Give Buzzkill a new life..." aria-describedby="vote-note"></textarea>
+    </div>
+    <div class="vote-actions"><button id="vote-submit" type="button" disabled>Save My Choice</button></div>
+    <p class="vote-status" id="vote-status" role="status" aria-live="polite"></p>
+    <p class="vote-note" id="vote-note">This preview saves your selection on this browser only. A shared voting service is needed to collect votes from all visitors. You can change your selection.</p>
+  </section>
   <nav class="bottom-nav" aria-label="Return navigation">
     <a href="adventure.html">❮ Return to Adventures</a>
     <a href="adventures-a-z.html">❮ Adventures A–Z</a>
   </nav>
 </main>
+<script>
+(function(){
+  'use strict';
+  const storageKey='talkabee-buzzkill-next-life-vote';
+  const options=Array.from(document.querySelectorAll('.vote-option'));
+  const custom=document.getElementById('vote-custom');
+  const idea=document.getElementById('vote-idea');
+  const submit=document.getElementById('vote-submit');
+  const status=document.getElementById('vote-status');
+  let selected='';
+  function choose(value){
+    selected=value;
+    options.forEach(button=>button.setAttribute('aria-pressed',String(button.dataset.vote===value)));
+    custom.hidden=value!=='custom';
+    submit.disabled=!value;
+    status.textContent='';
+    if(value==='custom')idea.focus();
+  }
+  options.forEach(button=>button.addEventListener('click',()=>choose(button.dataset.vote)));
+  try{
+    const previous=JSON.parse(localStorage.getItem(storageKey)||'null');
+    if(previous && options.some(button=>button.dataset.vote===previous.choice)){
+      choose(previous.choice);
+      if(previous.choice==='custom')idea.value=previous.idea||'';
+      status.textContent='Your previous choice is selected. You can change it.';
+    }
+  }catch(error){ /* Browser storage may be disabled. */ }
+  submit.addEventListener('click',()=>{
+    if(!selected)return;
+    const text=idea.value.trim();
+    if(selected==='custom' && !text){status.textContent='Please enter your idea first.';idea.focus();return;}
+    const vote={choice:selected,idea:selected==='custom'?text:''};
+    try{
+      localStorage.setItem(storageKey,JSON.stringify(vote));
+      status.textContent='Your choice has been saved on this browser! 🐝';
+    }catch(error){
+      status.textContent='Browser storage is unavailable. Your choice cannot be saved here.';
+    }
+  });
+})();
+</script>
 </body>
 </html>
