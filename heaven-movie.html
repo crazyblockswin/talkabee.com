@@ -26,6 +26,11 @@
   .vote-option{min-height:135px;display:flex;flex-direction:column;justify-content:center;align-items:center;gap:8px;padding:16px 10px;border:2px solid #687b94;border-radius:14px;background:#293a51;color:#fff5df;font:inherit;font-weight:700;cursor:pointer;transition:transform .15s,border-color .15s,background .15s}
   .vote-option:hover,.vote-option:focus-visible{border-color:#ffe19a;background:#354b67;transform:translateY(-2px)}
   .vote-option[aria-pressed="true"]{border-color:#a5ffd1;background:#275147;box-shadow:0 0 0 2px #a5ffd133}
+  .vote-photo{width:100%;height:142px;object-fit:cover;border-radius:9px;display:block;background:#111a29}
+  .vote-option .vote-name{font-size:clamp(17px,1.7vw,22px)}
+  .vote-reason{font-size:clamp(12px,1.12vw,15px);font-weight:450;line-height:1.35;color:#e2e8f0}
+  .vote-option{justify-content:flex-start;min-height:250px;padding:10px;gap:9px}
+  .vote-option[data-vote="bee"] .vote-photo{object-fit:contain;background:#e7f0fa}
   .vote-emoji{font-size:43px;line-height:1.1}
   .vote-custom{margin:18px auto 0;max-width:650px;text-align:left}
   .vote-custom label{display:block;margin-bottom:7px;font-weight:650}
@@ -35,8 +40,8 @@
   .vote-actions button:disabled{opacity:.5;cursor:not-allowed}
   .vote-status{min-height:30px;margin:14px 0 0;color:#a5ffd1;font-weight:650}
   .vote-note{font-size:13px;color:#bfc8d6;line-height:1.5;margin:10px auto 0;max-width:760px}
-  @media(max-width:680px){.vote-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.vote-option{min-height:120px}}
-  @media(max-width:420px){.vote-grid{grid-template-columns:1fr 1fr;gap:8px}.vote-option{padding:10px 5px;font-size:15px}.vote-emoji{font-size:34px}}
+  @media(max-width:680px){.vote-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.vote-option{min-height:240px}.vote-photo{height:125px}}
+  @media(max-width:420px){.vote-grid{grid-template-columns:1fr 1fr;gap:8px}.vote-option{padding:10px 5px;font-size:15px}.vote-photo{height:95px}.vote-reason{font-size:12px}}
 </style>
 </head>
 <body>
@@ -55,12 +60,12 @@
     <h2 id="vote-heading">🐝 Choose Buzzkill's Next Life!</h2>
     <p class="vote-intro">God has placed Buzzkill's fate in <strong>YOUR hands!</strong> Will God turn him into a flower in a field, a jar of honey, or simply let him <strong>BEE</strong>? <strong>VOTE NOW!</strong> Once 1,000 votes have been cast, the choice receiving the most votes will be enforced by <strong>God Himself!</strong></p>
     <div class="vote-grid" role="group" aria-label="Choose Buzzkill's next life">
-      <button class="vote-option" type="button" data-vote="dandelion" aria-pressed="false"><span class="vote-emoji" aria-hidden="true">🌼</span><span>Dandelion</span></button>
-      <button class="vote-option" type="button" data-vote="daisy" aria-pressed="false"><span class="vote-emoji" aria-hidden="true">🌸</span><span>Daisy</span></button>
-      <button class="vote-option" type="button" data-vote="honey" aria-pressed="false"><span class="vote-emoji" aria-hidden="true">🍯</span><span>Honey Jar</span></button>
-      <button class="vote-option" type="button" data-vote="scarecrow" aria-pressed="false"><span class="vote-emoji" aria-hidden="true">🌾</span><span>Scarecrow</span></button>
-      <button class="vote-option" type="button" data-vote="bee" aria-pressed="false"><span class="vote-emoji" aria-hidden="true">🐝</span><span>Let Him Bee!</span></button>
-      <button class="vote-option" type="button" data-vote="custom" aria-pressed="false"><span class="vote-emoji" aria-hidden="true">✍️</span><span>My Own Idea</span></button>
+      <button class="vote-option" type="button" data-vote="dandelion" aria-pressed="false"><img class="vote-photo" src="images/vote-dandelion.jpg" alt="Dandelion" loading="lazy"><span class="vote-name">Dandelion</span><span class="vote-reason">Every bee he tormented can land on him all day. And he can’t fly away!</span></button>
+      <button class="vote-option" type="button" data-vote="daisy" aria-pressed="false"><img class="vote-photo" src="images/vote-daisy.jpg" alt="Daisy" loading="lazy"><span class="vote-name">Daisy</span><span class="vote-reason">A lifetime standing in a field smiling while bees come for a visit.</span></button>
+      <button class="vote-option" type="button" data-vote="honey" aria-pressed="false"><img class="vote-photo" src="images/vote-honey.jpg" alt="Honey Jar" loading="lazy"><span class="vote-name">Honey Jar</span><span class="vote-reason">Sweet for once — and surrounded by hungry bees!</span></button>
+      <button class="vote-option" type="button" data-vote="scarecrow" aria-pressed="false"><img class="vote-photo" src="images/vote-scarecrow.jpg" alt="Scarecrow" loading="lazy"><span class="vote-name">Scarecrow</span><span class="vote-reason">Stuck in a field all day, waving his arms without going anywhere.</span></button>
+      <button class="vote-option" type="button" data-vote="bee" aria-pressed="false"><img class="vote-photo" src="images/bee-sunglasses.png" alt="Let Him Bee!" loading="lazy"><span class="vote-name">Let Him Bee!</span><span class="vote-reason">Give Buzzkill another chance to bee better.</span></button>
+      <button class="vote-option" type="button" data-vote="custom" aria-pressed="false"><img class="vote-photo" src="images/vote-idea.jpg" alt="My Own Idea" loading="lazy"><span class="vote-name">My Own Idea</span><span class="vote-reason">You decide his next adventure!</span></button>
     </div>
     <p class="vote-intro" style="margin-top:22px"><strong>Have an original idea?</strong> Your suggestion might inspire an entirely new Talk A Bee Adventure! If we choose your idea, we'd love to credit you as its original author — with your permission, of course!</p>
     <div class="vote-custom" id="vote-custom" hidden>
