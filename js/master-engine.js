@@ -134,8 +134,7 @@ function publishAll(){
  const msg='Publishing '+populated.length+' Adventures with saved content: '+populated.map(([id])=>id).join(', ')+'.\n\nIf an imported Adventure is missing, click Cancel. The importer and publisher must run from the same Firefox website address/local file location.';
  if(!confirm(msg)){status('Publish cancelled. No files downloaded.');return;}
  download('published-scenes.js','window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},'+JSON.stringify(scenes,null,2).replace(/</g,'\\u003c')+');\n','text/javascript');
- download('master-settings.js','window.TAB_MASTER_DEFAULTS='+JSON.stringify(settings,null,2)+';\n','text/javascript');
- status('Published '+populated.length+' Adventures with content. Upload both JS files to data/.');
+ status('Published '+populated.length+' Adventures with content. Upload published-scenes.js to data/.');
 }
 function saveBackup(){const stamp=new Date().toISOString().replace(/[:.]/g,'-');download(sceneName+'-backup-'+stamp+'.json',JSON.stringify(scene,null,2),'application/json');}
 function saveScene(){localStorage.setItem(sceneKey+sceneName,JSON.stringify(scene));updateScenePicker();status('Scene saved in this browser. Export a data file to deploy it.')}
