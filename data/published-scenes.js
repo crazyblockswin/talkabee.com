@@ -1963,7 +1963,7 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
     "image": "images/grandmas-kitchen-adventure.jpg",
     "lessons": [
       {
-        "text": "We are making cookies.",
+        "text": "We are making cookies. Can you help find the ingredients?",
         "translations": {
           "es": "Horneando galletas.",
           "fr": "Nous faisons des biscuits.",
@@ -2231,10 +2231,10 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
       {
         "id": "grandma",
         "label": "Grandma",
-        "x": 39,
-        "y": 46,
-        "w": 7,
-        "h": 31,
+        "x": 36.894738807572594,
+        "y": 24.76680655304493,
+        "w": 6.842104657667154,
+        "h": 24.78766748191892,
         "sound": "sounds/cathy-kitchen.mp3",
         "translations": {
           "es": "Abuela",
@@ -2248,10 +2248,10 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
       {
         "id": "girl",
         "label": "Girl",
-        "x": 50,
-        "y": 45,
-        "w": 7,
-        "h": 26,
+        "x": 49.84210164606399,
+        "y": 37.118681755253064,
+        "w": 6.263151053642495,
+        "h": 9.959203644027951,
         "sound": "sounds/child-laughing.mp3",
         "translations": {
           "es": "Niña",
@@ -2282,8 +2282,8 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
       {
         "id": "bear",
         "label": "Dog",
-        "x": 79,
-        "y": 78,
+        "x": 74.84210236884874,
+        "y": 74.75475380772038,
         "w": 12,
         "h": 18,
         "sound": "sounds/dog-panting.wav",
@@ -2299,8 +2299,8 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
       {
         "id": "flour",
         "label": "Flour",
-        "x": 62.5,
-        "y": 52,
+        "x": 59.97368656908711,
+        "y": 49.77468923481843,
         "w": 6,
         "h": 10,
         "sound": "",
@@ -2316,8 +2316,8 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
       {
         "id": "milk",
         "label": "Milk",
-        "x": 31,
-        "y": 51,
+        "x": 29.684209496030498,
+        "y": 44.88038743741164,
         "w": 4,
         "h": 10,
         "sound": "",
@@ -2333,10 +2333,10 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
       {
         "id": "bowl",
         "label": "Bowl",
-        "x": 39,
-        "y": 49,
-        "w": 7,
-        "h": 8,
+        "x": 37.57894493060754,
+        "y": 45.569308591175556,
+        "w": 6.789473880757259,
+        "h": 6.609179445371679,
         "sound": "",
         "translations": {
           "es": "Tazón",
@@ -2350,10 +2350,10 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
       {
         "id": "spoon",
         "label": "Spoon",
-        "x": 47,
-        "y": 47,
-        "w": 3,
-        "h": 8,
+        "x": 45.78947406145345,
+        "y": 43.47658863568284,
+        "w": 5.105264204030573,
+        "h": 5.867409190311157,
         "sound": "",
         "translations": {
           "es": "Cuchara",
@@ -2367,8 +2367,8 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
       {
         "id": "rollingpin",
         "label": "Rolling pin",
-        "x": 55,
-        "y": 57,
+        "x": 54.73684611545053,
+        "y": 54.681963973766344,
         "w": 8,
         "h": 5,
         "sound": "",
@@ -2384,8 +2384,8 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
       {
         "id": "book",
         "label": "Book",
-        "x": 51,
-        "y": 55,
+        "x": 44.68420738790828,
+        "y": 52.96012914580388,
         "w": 10,
         "h": 6,
         "sound": "",
@@ -2401,8 +2401,8 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
       {
         "id": "apples",
         "label": "Apples",
-        "x": 35.5,
-        "y": 52,
+        "x": 33.131578899816795,
+        "y": 50.60917944537168,
         "w": 7,
         "h": 6,
         "sound": "",
@@ -2418,8 +2418,8 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
       {
         "id": "butter",
         "label": "Butter",
-        "x": 42.5,
-        "y": 53,
+        "x": 40.131578899816795,
+        "y": 51.60917944537168,
         "w": 4,
         "h": 4,
         "sound": "",
@@ -2435,8 +2435,8 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
       {
         "id": "flowers",
         "label": "Flowers",
-        "x": 67,
-        "y": 49,
+        "x": 64.368418992061,
+        "y": 42.787667481918916,
         "w": 9,
         "h": 15,
         "sound": "",
@@ -2452,8 +2452,8 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
       {
         "id": "table",
         "label": "Table",
-        "x": 68,
-        "y": 68,
+        "x": 49.68420654465939,
+        "y": 59.93324184426761,
         "w": 22,
         "h": 12,
         "sound": "",
@@ -2469,10 +2469,10 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
       {
         "id": "chair",
         "label": "Chair",
-        "x": 72,
-        "y": 61,
-        "w": 7,
-        "h": 20,
+        "x": 74.47368867720932,
+        "y": 50.337045951555794,
+        "w": 3.9473667535755106,
+        "h": 19.814554783455186,
         "sound": "",
         "translations": {
           "es": "Silla",
@@ -2486,8 +2486,8 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
       {
         "id": "stool",
         "label": "Stool",
-        "x": 51,
-        "y": 70,
+        "x": 46.52631469578622,
+        "y": 67.77468923481844,
         "w": 7,
         "h": 13,
         "sound": "",
@@ -2503,10 +2503,10 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
       {
         "id": "stove",
         "label": "Stove",
-        "x": 24,
-        "y": 40,
-        "w": 9,
-        "h": 22,
+        "x": 21.05263131899846,
+        "y": 30.07881090105694,
+        "w": 7.421052599877862,
+        "h": 15.973107392904367,
         "sound": "sounds/stove.mp3",
         "translations": {
           "es": "Estufa",
@@ -2520,8 +2520,8 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
       {
         "id": "fire",
         "label": "Fire",
-        "x": 24,
-        "y": 43,
+        "x": 23.842104657667154,
+        "y": 39.94019371870582,
         "w": 4,
         "h": 8,
         "sound": "",
@@ -2537,10 +2537,10 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
       {
         "id": "kettle",
         "label": "Kettle",
-        "x": 19,
-        "y": 34,
-        "w": 4,
-        "h": 7,
+        "x": 16.894735795969428,
+        "y": 30.291143419138024,
+        "w": 3.842104657667153,
+        "h": 7.463605083022984,
         "sound": "",
         "translations": {
           "es": "Tetera",
@@ -2554,8 +2554,8 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
       {
         "id": "pans",
         "label": "Pans",
-        "x": 14,
-        "y": 22,
+        "x": 11.210526661331311,
+        "y": 15.973110045684049,
         "w": 12,
         "h": 14,
         "sound": "sounds/pan.mp3",
@@ -2571,8 +2571,8 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
       {
         "id": "refrigerator",
         "label": "Refrigerator",
-        "x": 77,
-        "y": 36,
+        "x": 72.52631770738938,
+        "y": 26.264256117601754,
         "w": 9,
         "h": 30,
         "sound": "",
@@ -2588,10 +2588,10 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
       {
         "id": "sink",
         "label": "Sink",
-        "x": 58,
-        "y": 38,
-        "w": 12,
-        "h": 12,
+        "x": 56.68421250763366,
+        "y": 36.88733931184985,
+        "w": 7.6842100381190654,
+        "h": 6.714877647964888,
         "sound": "",
         "translations": {
           "es": "Fregadero",
@@ -2605,10 +2605,10 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
       {
         "id": "window",
         "label": "Window",
-        "x": 55,
-        "y": 23,
-        "w": 24,
-        "h": 22,
+        "x": 44.842103453025885,
+        "y": 14.469634108464945,
+        "w": 23.21052629993893,
+        "h": 16.993042820002426,
         "sound": "",
         "translations": {
           "es": "Ventana",
@@ -2622,8 +2622,8 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
       {
         "id": "clock",
         "label": "Clock",
-        "x": 87,
-        "y": 12,
+        "x": 83.84210519975572,
+        "y": 9.496524062780896,
         "w": 6,
         "h": 10,
         "sound": "sounds/clock.mp3",
@@ -2639,8 +2639,8 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
       {
         "id": "bird",
         "label": "Bird",
-        "x": 20,
-        "y": 10,
+        "x": 18.42105259987786,
+        "y": 6.5693085911755595,
         "w": 5,
         "h": 7,
         "sound": "",
@@ -2656,8 +2656,8 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
       {
         "id": "rug",
         "label": "Rug",
-        "x": 31,
-        "y": 84,
+        "x": 41.36842266621685,
+        "y": 87.05980628129417,
         "w": 18,
         "h": 12,
         "sound": "",
@@ -2690,10 +2690,10 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
       {
         "id": "mountains",
         "label": "Mountains",
-        "x": 58,
-        "y": 20,
-        "w": 20,
-        "h": 10,
+        "x": 60.73684256175879,
+        "y": 17.40380145450849,
+        "w": 4.736839791083884,
+        "h": 7.867406537531474,
         "sound": "",
         "translations": {
           "es": "Montañas",
@@ -2707,10 +2707,10 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
       {
         "id": "lake",
         "label": "Lake",
-        "x": 58,
-        "y": 28,
-        "w": 16,
-        "h": 8,
+        "x": 93.36841814881211,
+        "y": 23.549378469636867,
+        "w": 5.368420437630512,
+        "h": 6.238294317841419,
         "sound": "",
         "translations": {
           "es": "Lago",
@@ -2724,10 +2724,10 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
       {
         "id": "cabinets",
         "label": "Cabinets",
-        "x": 37,
-        "y": 25,
-        "w": 17,
-        "h": 18,
+        "x": 34.94736657287932,
+        "y": 16.376911500192538,
+        "w": 6.21052810690083,
+        "h": 10.11868175525306,
         "sound": "",
         "translations": {
           "es": "Armarios",
@@ -2741,8 +2741,8 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
       {
         "id": "stairs",
         "label": "stairs",
-        "x": 92.22,
-        "y": 62.86,
+        "x": 89.48315743824121,
+        "y": 60.35652406278089,
         "w": 6,
         "h": 8,
         "sound": "",
@@ -2758,10 +2758,10 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
       {
         "id": "cabinet",
         "label": "cabinet",
-        "x": 11.13,
-        "y": 59.72,
-        "w": 6,
-        "h": 8,
+        "x": 7.129999969883969,
+        "y": 54.71304282000242,
+        "w": 12.736841838974037,
+        "h": 11.059806281294179,
         "sound": "",
         "translations": {
           "es": "armario",
@@ -2775,8 +2775,8 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
       {
         "id": "light",
         "label": "light",
-        "x": 37.63,
-        "y": 8.45,
+        "x": 34.73526209590836,
+        "y": 6.131966626546026,
         "w": 6,
         "h": 8,
         "sound": "",
@@ -2792,8 +2792,8 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
       {
         "id": "shelf",
         "label": "shelf",
-        "x": 76.39,
-        "y": 13.6,
+        "x": 72.44263149969466,
+        "y": 11.003801454508489,
         "w": 8.6,
         "h": 9.11,
         "sound": "",
@@ -2809,8 +2809,8 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
       {
         "id": "picture",
         "label": "picture",
-        "x": 87.1,
-        "y": 25.98,
+        "x": 84.3631574382412,
+        "y": 23.291081499015768,
         "w": 6,
         "h": 8,
         "sound": "",
@@ -2826,8 +2826,8 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
       {
         "id": "floor",
         "label": "floor",
-        "x": 85.97,
-        "y": 67.62,
+        "x": 81.23315779963359,
+        "y": 66.41461935635714,
         "w": 5.9,
         "h": 4.76,
         "sound": "",
@@ -2843,8 +2843,8 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
       {
         "id": "flue",
         "label": "flue",
-        "x": 23.99,
-        "y": 16.23,
+        "x": 22.463684882589337,
+        "y": 13.911966626546027,
         "w": 3.14,
         "h": 14.94,
         "sound": "",
@@ -2856,6 +2856,20 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
           "pt": "chaminé",
           "no": "røykrør"
         }
+      },
+      {
+        "id": "hotspot-1793038973010",
+        "label": "dog bowl",
+        "x": 91.21053286523383,
+        "y": 86.17524347477212,
+        "w": 4.421053684055001,
+        "h": 7.509502309881381,
+        "sound": "",
+        "translations": {
+          "fr": ""
+        },
+        "rotation": 0,
+        "z": 0
       }
     ],
     "overlays": [],
@@ -2921,15 +2935,10 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
         }
       },
       {
-        "prompt": "Find Bee.",
-        "target": "bee",
+        "prompt": "find the dog bowl",
+        "target": "hotspot-1793038973010",
         "translations": {
-          "es": "Find Abeja.",
-          "fr": "Find Abeille.",
-          "de": "Find Biene.",
-          "it": "Find Ape.",
-          "pt": "Find Abelha.",
-          "no": "Find Bie."
+          "fr": ""
         }
       }
     ]
@@ -3488,10 +3497,10 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
       {
         "id": "bee",
         "label": "bee",
-        "x": 31,
-        "y": 19,
-        "w": 7,
-        "h": 10,
+        "x": 27.31579140745045,
+        "y": 32.166432638443,
+        "w": 3.4736837381801355,
+        "h": 8.60917944537168,
         "sound": "sounds/bee.mp3",
         "translations": {}
       },
@@ -3548,8 +3557,8 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
       {
         "id": "grandpa",
         "label": "grandpa",
-        "x": 61.5,
-        "y": 53.15,
+        "x": 62.605264384726766,
+        "y": 56.39524619227962,
         "w": 4.61,
         "h": 12.81,
         "sound": "sounds/guitar.mp3",
@@ -3558,8 +3567,8 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
       {
         "id": "grandma",
         "label": "grandma",
-        "x": 56.12,
-        "y": 54.74,
+        "x": 56.90947370006106,
+        "y": 56.13082055462832,
         "w": 5.02,
         "h": 9.04,
         "sound": "",
@@ -3588,10 +3597,10 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
       {
         "id": "marshmallow",
         "label": "marshmallow",
-        "x": 67.45,
-        "y": 67.48,
-        "w": 9.76,
-        "h": 8.52,
+        "x": 70.60789480024428,
+        "y": 68.49993542709807,
+        "w": 3.865262637996927,
+        "h": 6.851008967774774,
         "sound": "sounds/child-laughing.mp3",
         "translations": {}
       },
@@ -3628,8 +3637,8 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
       {
         "id": "lake",
         "label": "lake",
-        "x": 75.77,
-        "y": 46.33,
+        "x": 76.03315388454946,
+        "y": 47.72082055462832,
         "w": 8.83,
         "h": 7.42,
         "sound": "",
@@ -3692,10 +3701,10 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
       {
         "id": "logs",
         "label": "logs",
-        "x": 59,
-        "y": 78,
-        "w": 14,
-        "h": 12,
+        "x": 53.42105332266263,
+        "y": 80.03987085419612,
+        "w": 11.105265107511523,
+        "h": 7.17848803654724,
         "sound": "",
         "translations": {}
       },
@@ -3822,6 +3831,20 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
       {
         "prompt": "Find the Raccoon",
         "target": "raccoon"
+      },
+      {
+        "prompt": "find the guitar",
+        "target": "guitar",
+        "translations": {
+          "fr": ""
+        }
+      },
+      {
+        "prompt": "find grandpa",
+        "target": "grandpa",
+        "translations": {
+          "fr": ""
+        }
       }
     ]
   },
@@ -4094,16 +4117,6 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
         "translations": {}
       },
       {
-        "id": "bee",
-        "label": "bee",
-        "x": 77.29,
-        "y": 59.88,
-        "w": 4.23,
-        "h": 10.55,
-        "sound": "",
-        "translations": {}
-      },
-      {
         "id": "explorers",
         "label": "explorers",
         "x": 43,
@@ -4315,6 +4328,118 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
         "sound": "sounds/carnival.mp3",
         "translations": {
           "es": ""
+        },
+        "rotation": 0,
+        "z": 0
+      },
+      {
+        "id": "hotspot-1793039832336",
+        "label": "Recreational Vehicle RV",
+        "x": 22.263158040561837,
+        "y": 70.59805220182305,
+        "w": 20.263158462186283,
+        "h": 9.827538336115039,
+        "sound": "",
+        "translations": {
+          "fr": ""
+        },
+        "rotation": 0,
+        "z": 0
+      },
+      {
+        "id": "hotspot-1793039915099",
+        "label": "tent",
+        "x": 25.631578960048856,
+        "y": 85.989800911007,
+        "w": 6.631579441905362,
+        "h": 8.065832653956456,
+        "sound": "",
+        "translations": {
+          "fr": ""
+        },
+        "rotation": 0,
+        "z": 0
+      },
+      {
+        "id": "hotspot-1793039957386",
+        "label": "Road",
+        "x": 36.78947532632677,
+        "y": 89.88409475007472,
+        "w": 13.052627584610539,
+        "h": 4.635141245132017,
+        "sound": "",
+        "translations": {
+          "fr": ""
+        },
+        "rotation": 0,
+        "z": 0
+      },
+      {
+        "id": "hotspot-1793040002524",
+        "label": "Sailboat",
+        "x": 29.789470567993778,
+        "y": 53.35187520220813,
+        "w": 6.052631861087033,
+        "h": 6.396849580070281,
+        "sound": "",
+        "translations": {
+          "fr": ""
+        },
+        "rotation": 0,
+        "z": 0
+      },
+      {
+        "id": "hotspot-1793040067774",
+        "label": "sun",
+        "x": 56.42105326243056,
+        "y": 23.495598561004968,
+        "w": 5.421056514961975,
+        "h": 6.211407016305151,
+        "sound": "",
+        "translations": {
+          "fr": ""
+        },
+        "rotation": 0,
+        "z": 0
+      },
+      {
+        "id": "hotspot-1793040107408",
+        "label": "Club House",
+        "x": 60.631581670491705,
+        "y": 64.94205002781705,
+        "w": 5.315785926332693,
+        "h": 8.25127787050127,
+        "sound": "",
+        "translations": {
+          "fr": ""
+        },
+        "rotation": 0,
+        "z": 0
+      },
+      {
+        "id": "hotspot-1793040185428",
+        "label": "New hotspot",
+        "x": 8.526317466461132,
+        "y": 21.455725054029166,
+        "w": 31.210525697618298,
+        "h": 7.045894574078714,
+        "sound": "",
+        "translations": {
+          "fr": ""
+        },
+        "rotation": 0,
+        "z": 0
+      },
+      {
+        "id": "hotspot-1793040252074",
+        "label": "New hotspot",
+        "x": 0.7894705378777473,
+        "y": 63.73666938417418,
+        "w": 10.157890433419688,
+        "h": 34.76958836393209,
+        "sound": "",
+        "translations": {
+          "fr": ""
         },
         "rotation": 0,
         "z": 0
@@ -5805,7 +5930,7 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
       {
         "id": "smalldog",
         "label": "smalldog",
-        "x": 73.43,
+        "x": 74.11421214624129,
         "y": 73.37,
         "w": 5,
         "h": 10,
@@ -5935,8 +6060,8 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
       {
         "id": "caddy",
         "label": "caddy",
-        "x": 60.4,
-        "y": 61.53,
+        "x": 60.03157853842441,
+        "y": 59.490129145803884,
         "w": 5.32,
         "h": 16.8,
         "sound": "",
@@ -5975,8 +6100,8 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
       {
         "id": "golf-ball",
         "label": "golf ball",
-        "x": 46.61,
-        "y": 79.38,
+        "x": 49.241581007939004,
+        "y": 80.95626577117314,
         "w": 6,
         "h": 8,
         "sound": "",
@@ -6922,8 +7047,8 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
       {
         "id": "jumperpink",
         "label": "jumperpink",
-        "x": 57.01,
-        "y": 32.64,
+        "x": 78.85210369395413,
+        "y": 35.23619589271183,
         "w": 6.09,
         "h": 10.16,
         "sound": "",
@@ -6962,10 +7087,10 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
       {
         "id": "parachute",
         "label": "parachute",
-        "x": 72.5,
-        "y": 34.78,
-        "w": 12,
-        "h": 22,
+        "x": 9.973680847041102,
+        "y": 18.090153344460155,
+        "w": 4.7368443687206945,
+        "h": 6.700973899088472,
         "sound": "",
         "translations": {}
       },
@@ -7012,20 +7137,10 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
       {
         "id": "clouds",
         "label": "clouds",
-        "x": 87.55,
-        "y": 64.04,
+        "x": 1.076312196155584,
+        "y": 56.34413227735725,
         "w": 19.53,
         "h": 14.11,
-        "sound": "",
-        "translations": {}
-      },
-      {
-        "id": "forest",
-        "label": "forest",
-        "x": 66.41,
-        "y": 65.45,
-        "w": 9.48,
-        "h": 12.73,
         "sound": "",
         "translations": {}
       },
@@ -7041,13 +7156,17 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
       },
       {
         "id": "landinggear",
-        "label": "landinggear",
+        "label": "landing gear",
         "x": 94.42,
         "y": 36.83,
         "w": 6,
         "h": 24,
         "sound": "",
-        "translations": {}
+        "translations": {
+          "fr": ""
+        },
+        "rotation": 0,
+        "z": 0
       },
       {
         "id": "valley",
@@ -9789,6 +9908,12 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
           "it": "Che cosa vedi? Vedo una bicicletta, un aquilone e un gabbiano.",
           "pt": "O que você vê? Eu vejo uma bicicleta, uma pipa e uma gaivota.",
           "no": "Hva ser du? Jeg ser en sykkel, en drage og en måke."
+        }
+      },
+      {
+        "text": "I would love to ride the Ferris Wheel. We could view the entire area! Does anyone want to join me?",
+        "translations": {
+          "pt": ""
         }
       }
     ],
