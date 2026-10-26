@@ -440,19 +440,51 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
     "challenges": [
       {
         "prompt": "Find Grandma Cathy",
-        "target": "grandma"
+        "target": "grandma",
+        "translations": {
+          "es": "Encuentra a la abuela Cathy",
+          "fr": "Trouver grand-mère Cathy",
+          "de": "Finde Großmutter Cathy",
+          "it": "Trova nonna Cathy",
+          "pt": "Encontre a avó Cathy",
+          "no": "Finn bestemor Cathy"
+        }
       },
       {
         "prompt": "Find Grandpa Wally",
-        "target": "grandpa"
+        "target": "grandpa",
+        "translations": {
+          "es": "Encuentra al abuelo Wally",
+          "fr": "Trouver grand-père Wally",
+          "de": "Finde Opa Wally",
+          "it": "Trova nonno Wally",
+          "pt": "Encontre o avô Wally",
+          "no": "Finn bestefar Wally"
+        }
       },
       {
         "prompt": "Find the RV",
-        "target": "rv"
+        "target": "rv",
+        "translations": {
+          "es": "Encuentra el vehículo recreativo",
+          "fr": "Trouvez le camping-car",
+          "de": "Finden Sie das Wohnmobil",
+          "it": "Trova il camper",
+          "pt": "Encontre o trailer",
+          "no": "Finn bobilen"
+        }
       },
       {
         "prompt": "Find the Dog",
-        "target": "dog"
+        "target": "dog",
+        "translations": {
+          "es": "Encuentra al perro",
+          "fr": "Trouvez le chien",
+          "de": "Finde den Hund",
+          "it": "Trova il cane",
+          "pt": "Encontre o cão",
+          "no": "Finn hunden"
+        }
       }
     ]
   },
@@ -814,27 +846,75 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
     "challenges": [
       {
         "prompt": "Find the Dog",
-        "target": "dog"
+        "target": "dog",
+        "translations": {
+          "es": "Encuentra al perro",
+          "fr": "Trouvez le chien",
+          "de": "Finde den Hund",
+          "it": "Trova il cane",
+          "pt": "Encontre o cão",
+          "no": "Finn hunden"
+        }
       },
       {
         "prompt": "Find the Horse",
-        "target": "horse"
+        "target": "horse",
+        "translations": {
+          "es": "IV. El caballo",
+          "fr": "Le requin",
+          "de": "Finde das Pferd",
+          "it": "Trova il cavallo",
+          "pt": "O cavalo",
+          "no": "Finn hesten"
+        }
       },
       {
         "prompt": "Find the Cow",
-        "target": "cow"
+        "target": "cow",
+        "translations": {
+          "es": "Encuentra la vaca",
+          "fr": "la vache",
+          "de": "Finde die Kuh",
+          "it": "trova la mucca",
+          "pt": "encontra a vaca",
+          "no": "Finn kua"
+        }
       },
       {
         "prompt": "Find the Sheep",
-        "target": "sheep"
+        "target": "sheep",
+        "translations": {
+          "es": "La oveja",
+          "fr": "La sélection",
+          "de": "Finde das Schaf",
+          "it": "trova la pecora",
+          "pt": "encontra as ovelhas",
+          "no": "Finn sauene"
+        }
       },
       {
         "prompt": "Find the Barn",
-        "target": "barn"
+        "target": "barn",
+        "translations": {
+          "es": "Encuentra el granero",
+          "fr": "Trouvez la grange",
+          "de": "Finde die Scheune",
+          "it": "Trova il fienile",
+          "pt": "Encontre o Celeiro",
+          "no": "Finn låven"
+        }
       },
       {
         "prompt": "Find the RV Door",
-        "target": "rv"
+        "target": "rv",
+        "translations": {
+          "es": "Encontrar la puerta",
+          "fr": "Trouvez la porte du camping-car",
+          "de": "Finden Sie die Wohnmobiltür",
+          "it": "Trova la porta del camper",
+          "pt": "Encontre a porta do trailer",
+          "no": "Finn bobildøren"
+        }
       }
     ]
   },
@@ -1342,6 +1422,20 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
         },
         "rotation": 0,
         "z": 0
+      },
+      {
+        "id": "hotspot-1793049525913",
+        "label": "Red Parrot",
+        "x": 92.73684346523974,
+        "y": 43.24524884505931,
+        "w": 6.894736338057997,
+        "h": 6.860454663093267,
+        "sound": "sounds/parrot.mp3",
+        "translations": {
+          "es": ""
+        },
+        "rotation": 0,
+        "z": 0
       }
     ],
     "overlays": [
@@ -1369,15 +1463,75 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
     "challenges": [
       {
         "prompt": "Find the Gremlin",
-        "target": "car"
+        "target": "car",
+        "translations": {
+          "es": "Encuentra el Gremlin",
+          "fr": "Trouvez le Gremlin",
+          "de": "Finde den Gremlin",
+          "it": "Trova il Gremlin",
+          "pt": "Encontre o Gremlin",
+          "no": "Finn Gremlinen"
+        }
       },
       {
         "prompt": "Find the Parrot",
-        "target": "parrot"
+        "target": "parrot",
+        "translations": {
+          "es": "El loro",
+          "fr": "Trouvez le perroquet",
+          "de": "Finde den Papageien.",
+          "it": "Trova il pappagallo",
+          "pt": "Encontre o papagaio",
+          "no": "Finn papegøyen"
+        }
       },
       {
         "prompt": "Find the palm tree",
-        "target": "hammock"
+        "target": "hammock",
+        "translations": {
+          "es": "Encuentra la palmera",
+          "fr": "Trouvez le palmier",
+          "de": "Finde die Palme",
+          "it": "Trova la palma",
+          "pt": "Encontre a palmeira",
+          "no": "Finn palmetreet"
+        }
+      },
+      {
+        "prompt": "Find the dock on the lake",
+        "target": "dock",
+        "translations": {
+          "es": "El muelle en el lago",
+          "fr": "Trouvez le quai sur le lac",
+          "de": "Finde das Dock am See",
+          "it": "Trova il molo sul lago",
+          "pt": "Encontre a doca no lago",
+          "no": "Finn bryggen ved sjøen"
+        }
+      },
+      {
+        "prompt": "Find the hammock on the cabins front porch.",
+        "target": "hammock",
+        "translations": {
+          "es": "Encuentra la hamaca en el porche delantero de las cabañas.",
+          "fr": "Trouvez le hamac sur le porche des cabines.",
+          "de": "Finde die Hängematte auf der Veranda der Hütte.",
+          "it": "Trova l'amaca sul portico anteriore delle cabine.",
+          "pt": "Encontre a rede na varanda da frente da cabana.",
+          "no": "Finn hengekøya på verandaen til hytten."
+        }
+      },
+      {
+        "prompt": "Find the Red Parrot sitting on a pole.",
+        "target": "hotspot-1793049525913",
+        "translations": {
+          "es": "Encuentra al loro rojo sentado en un poste.",
+          "fr": "Trouvez le perroquet rouge assis sur un poteau.",
+          "de": "Finde den Roten Papagei, der auf einer Stange sitzt.",
+          "it": "Trova il pappagallo rosso seduto su un palo.",
+          "pt": "Encontre o Papagaio Vermelho sentado num poste.",
+          "no": "Finn den røde papegøyen som sitter på en stang."
+        }
       }
     ]
   },
@@ -1938,23 +2092,63 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
     "challenges": [
       {
         "prompt": "Find the Birdhouse",
-        "target": "birdhouse"
+        "target": "birdhouse",
+        "translations": {
+          "es": "Encuentra la casa de los pájaros",
+          "fr": "Trouvez le nichoir",
+          "de": "Finde das Vogelhaus",
+          "it": "Trova la casetta per uccelli",
+          "pt": "Encontre a Birdhouse",
+          "no": "Finn fuglehuset"
+        }
       },
       {
         "prompt": "Find the Hammer",
-        "target": "hammer"
+        "target": "hammer",
+        "translations": {
+          "es": "Encuentra el martillo",
+          "fr": "Trouvez le marteau",
+          "de": "Finde den Hammer",
+          "it": "Trova il martello",
+          "pt": "Encontre o martelo",
+          "no": "Finn hammeren"
+        }
       },
       {
         "prompt": "Find the Paintbrush",
-        "target": "paintbrush"
+        "target": "paintbrush",
+        "translations": {
+          "es": "El pincel",
+          "fr": "Trouvez le pinceau",
+          "de": "Finde den Pinsel",
+          "it": "Trova il pennello",
+          "pt": "Encontre o pincel",
+          "no": "Finn penselen"
+        }
       },
       {
         "prompt": "Find the Bird Feeder",
-        "target": "birdfeeder"
+        "target": "birdfeeder",
+        "translations": {
+          "es": "Encuentra el comedero para pájaros",
+          "fr": "Trouvez la mangeoire à oiseaux",
+          "de": "Finde den Vogelfutterspender",
+          "it": "Trova la mangiatoia per uccelli",
+          "pt": "Encontre o alimentador de pássaros",
+          "no": "Finn fuglemateren"
+        }
       },
       {
         "prompt": "Find the Bluebird",
-        "target": "bluebird"
+        "target": "bluebird",
+        "translations": {
+          "es": "Encuentra el pájaro azul",
+          "fr": "Trouvez le Bluebird",
+          "de": "Finde den Bluebird",
+          "it": "Trova il Bluebird",
+          "pt": "Encontre o Pássaro Azul",
+          "no": "Finn blåfuglen"
+        }
       }
     ]
   },
@@ -2938,7 +3132,12 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
         "prompt": "find the dog bowl",
         "target": "hotspot-1793038973010",
         "translations": {
-          "fr": ""
+          "fr": "trouver le bol pour chien",
+          "es": "encuentra el cuenco para perros",
+          "de": "finden Sie die Hundenapf",
+          "it": "trova la ciotola per cani",
+          "pt": "encontrar a tigela para cães",
+          "no": "finn hundeskålen"
         }
       }
     ]
@@ -3326,23 +3525,63 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
     "challenges": [
       {
         "prompt": "Find the RV",
-        "target": "grandma"
+        "target": "grandma",
+        "translations": {
+          "es": "Encuentra el vehículo recreativo",
+          "fr": "Trouvez le camping-car",
+          "de": "Finden Sie das Wohnmobil",
+          "it": "Trova il camper",
+          "pt": "Encontre o trailer",
+          "no": "Finn bobilen"
+        }
       },
       {
         "prompt": "Find Family and Friends",
-        "target": "grandpa"
+        "target": "grandpa",
+        "translations": {
+          "es": "Familia y amigos",
+          "fr": "Famille et amis",
+          "de": "Familie und Freunde",
+          "it": "Familiari e amici",
+          "pt": "Família e amigos",
+          "no": "Familie og venner"
+        }
       },
       {
         "prompt": "Find the Solar Panels",
-        "target": "hotdogs"
+        "target": "hotdogs",
+        "translations": {
+          "es": "Encuentra los paneles solares",
+          "fr": "Les panneaux solaires.",
+          "de": "Finde die Solarmodule",
+          "it": "I Pannelli solari",
+          "pt": "Encontre os painéis solares",
+          "no": "Finn solcellepanelene"
+        }
       },
       {
         "prompt": "Find the Campfire",
-        "target": "campfire"
+        "target": "campfire",
+        "translations": {
+          "es": "Encuentra la fogata",
+          "fr": "Trouvez le feu de camp",
+          "de": "Das Lagerfeuer",
+          "it": "Trova il falò",
+          "pt": "Encontre a Fogueira",
+          "no": "Finn leirbålet"
+        }
       },
       {
         "prompt": "Find the Sailboat",
-        "target": "sailboat"
+        "target": "sailboat",
+        "translations": {
+          "es": "El velero",
+          "fr": "Trouvez le voilier",
+          "de": "Finde das Segelboot",
+          "it": "Trova la barca a vela",
+          "pt": "Encontre o veleiro",
+          "no": "Finn seilbåten"
+        }
       }
     ]
   },
@@ -3814,36 +4053,86 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
     "challenges": [
       {
         "prompt": "Find the Campfire",
-        "target": "fire"
+        "target": "fire",
+        "translations": {
+          "es": "Encuentra la fogata",
+          "fr": "Trouvez le feu de camp",
+          "de": "Das Lagerfeuer",
+          "it": "Trova il falò",
+          "pt": "Encontre a Fogueira",
+          "no": "Finn leirbålet"
+        }
       },
       {
         "prompt": "Find the RV",
-        "target": "rv"
+        "target": "rv",
+        "translations": {
+          "es": "Encuentra el vehículo recreativo",
+          "fr": "Trouvez le camping-car",
+          "de": "Finden Sie das Wohnmobil",
+          "it": "Trova il camper",
+          "pt": "Encontre o trailer",
+          "no": "Finn bobilen"
+        }
       },
       {
         "prompt": "Find the Tent",
-        "target": "tent"
+        "target": "tent",
+        "translations": {
+          "es": "Encuentra la tienda",
+          "fr": "Trouvez la tente",
+          "de": "Finde das Zelt",
+          "it": "Trova la tenda",
+          "pt": "Encontre a Tenda",
+          "no": "Finn teltet"
+        }
       },
       {
         "prompt": "Find the Moon",
-        "target": "moon"
+        "target": "moon",
+        "translations": {
+          "es": "Encuentra la Luna",
+          "fr": "Trouvez la Lune",
+          "de": "Finde den Mond",
+          "it": "Trova la Luna",
+          "pt": "Encontrar a Lua",
+          "no": "Finn månen"
+        }
       },
       {
         "prompt": "Find the Raccoon",
-        "target": "raccoon"
+        "target": "raccoon",
+        "translations": {
+          "es": "EL RACCOON",
+          "fr": "Trouvez le raton laveur",
+          "de": "Finde den Waschbären",
+          "it": "Trova il Procione",
+          "pt": "O guaxinim",
+          "no": "Finn vaskebjørnen"
+        }
       },
       {
         "prompt": "find the guitar",
         "target": "guitar",
         "translations": {
-          "fr": ""
+          "fr": "trouver la guitare",
+          "es": "es informado del estado de la puja",
+          "de": "gitarre finden",
+          "it": "La chitarra",
+          "pt": "Guitarra",
+          "no": "gitaren"
         }
       },
       {
         "prompt": "find grandpa",
         "target": "grandpa",
         "translations": {
-          "fr": ""
+          "fr": "trouver grand-père",
+          "es": "encontrar abuelo",
+          "de": "opa finden",
+          "it": "trova il nonno",
+          "pt": "encontrar o vovô",
+          "no": "finn bestefar"
         }
       }
     ]
@@ -4181,27 +4470,75 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
     "challenges": [
       {
         "prompt": "Find the Stalactites",
-        "target": "stalactites"
+        "target": "stalactites",
+        "translations": {
+          "es": "Encuentra las estalactitas",
+          "fr": "Trouvez les stalactites",
+          "de": "Finde die Stalaktiten",
+          "it": "Trova le stalattiti",
+          "pt": "Encontre as estalactites",
+          "no": "Finn stalaktittene"
+        }
       },
       {
         "prompt": "Find the Stalagmites",
-        "target": "stalagmites"
+        "target": "stalagmites",
+        "translations": {
+          "es": "Encuentra las estalagmitas",
+          "fr": "Trouvez les stalagmites",
+          "de": "Finde die Stalagmiten",
+          "it": "Trova le stalagmiti",
+          "pt": "Encontre as estalagmites",
+          "no": "Finn stalagmittene"
+        }
       },
       {
         "prompt": "Find the Bats",
-        "target": "bats"
+        "target": "bats",
+        "translations": {
+          "es": "Encuentra los murciélagos",
+          "fr": "Trouvez les chauves-souris",
+          "de": "Finde die Fledermäuse",
+          "it": "Trova i pipistrelli",
+          "pt": "Encontre os morcegos",
+          "no": "Finn flaggermusene"
+        }
       },
       {
         "prompt": "Find the Pool",
-        "target": "waterfall"
+        "target": "waterfall",
+        "translations": {
+          "es": "Encuentra la piscina",
+          "fr": "Trouver la piscine",
+          "de": "Finde den Pool",
+          "it": "Trova la piscina",
+          "pt": "Encontre a piscina",
+          "no": "Finn bassenget"
+        }
       },
       {
         "prompt": "Find the Cave Passage",
-        "target": "headlamp"
+        "target": "headlamp",
+        "translations": {
+          "es": "Encuentra el pasaje de la cueva",
+          "fr": "Trouvez le passage de la grotte",
+          "de": "Finde die Höhlengasse",
+          "it": "Trova il passaggio della grotta",
+          "pt": "Encontre a passagem da caverna",
+          "no": "Finn hulepassasjen"
+        }
       },
       {
         "prompt": "Find the Water Reflection",
-        "target": "bee"
+        "target": "bee",
+        "translations": {
+          "es": "Encuentra el reflejo del agua",
+          "fr": "Trouvez le reflet de l'eau",
+          "de": "Finde die Wasserreflexion",
+          "it": "Trova il riflesso dell'acqua",
+          "pt": "Encontre o reflexo da água",
+          "no": "Finn vannrefleksjonen"
+        }
       }
     ]
   },
@@ -4262,6 +4599,17 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
           "it": "Il bruciatore della mongolfiera riscalda l’aria per far salire il nostro cesto nel cielo.",
           "pt": "O queimador do balão aquece o ar para que o nosso cesto possa subir ao céu.",
           "no": "Ballongbrenneren varmer opp luften slik at kurven vår kan stige til værs."
+        }
+      },
+      {
+        "text": "I see a Ferris Wheel. I think we should all go for a ride. We could view the entire area! How exciting!",
+        "translations": {
+          "fr": "Je vois une grande roue. Je pense que nous devrions tous aller faire un tour. Nous pouvions voir toute la région ! Comme c'est excitant !",
+          "es": "Veo una noria. Creo que todos deberíamos ir a dar un paseo. ¡Podríamos ver toda la zona! ¡Qué emocionante!",
+          "de": "Ich sehe ein Riesenrad. Ich denke, wir sollten alle mitfahren. Wir konnten das gesamte Gebiet sehen! Wie aufregend!",
+          "it": "Vedo una ruota panoramica. Penso che dovremmo andare tutti a fare un giro. Potremmo vedere l'intera area! Che emozione!",
+          "pt": "Vejo uma Roda Gigante. Acho que devíamos dar uma volta. Pudemos ver toda a área! Que emocionante!",
+          "no": "Jeg ser et pariserhjul. Jeg synes vi alle burde ta en tur. Vi kunne sett hele området! Så spennende!"
         }
       }
     ],
@@ -4418,28 +4766,30 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
       },
       {
         "id": "hotspot-1793040185428",
-        "label": "New hotspot",
+        "label": "Mountains",
         "x": 8.526317466461132,
         "y": 21.455725054029166,
         "w": 31.210525697618298,
         "h": 7.045894574078714,
         "sound": "",
         "translations": {
-          "fr": ""
+          "fr": "",
+          "pt": ""
         },
         "rotation": 0,
         "z": 0
       },
       {
         "id": "hotspot-1793040252074",
-        "label": "New hotspot",
+        "label": "Forest",
         "x": 0.7894705378777473,
         "y": 63.73666938417418,
         "w": 10.157890433419688,
         "h": 34.76958836393209,
         "sound": "",
         "translations": {
-          "fr": ""
+          "fr": "",
+          "pt": ""
         },
         "rotation": 0,
         "z": 0
@@ -4828,23 +5178,63 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
     "challenges": [
       {
         "prompt": "Find the book",
-        "target": "libro"
+        "target": "libro",
+        "translations": {
+          "es": "Encuentra el libro",
+          "fr": "Trouver le livre",
+          "de": "Finde das Buch",
+          "it": "Trova il libro",
+          "pt": "Encontrar o livro",
+          "no": "Finn boken"
+        }
       },
       {
         "prompt": "Find the fountain",
-        "target": "fuente"
+        "target": "fuente",
+        "translations": {
+          "es": "La Fuente",
+          "fr": "La Fontaine",
+          "de": "Finde den Brunnen",
+          "it": "L'albero della vita",
+          "pt": "Encontre a fonte",
+          "no": "Finn fontenen"
+        }
       },
       {
         "prompt": "Find the cup",
-        "target": "taza"
+        "target": "taza",
+        "translations": {
+          "es": "Encuentra la taza",
+          "fr": "Trouvez la tasse",
+          "de": "Finde die Tasse",
+          "it": "Trova la tazza",
+          "pt": "Encontrar o copo",
+          "no": "Finn koppen"
+        }
       },
       {
         "prompt": "Find the notebook",
-        "target": "cuaderno"
+        "target": "cuaderno",
+        "translations": {
+          "es": "El portátil",
+          "fr": "les adolescents",
+          "de": "Finde das Notizbuch",
+          "it": "Trova il taccuino",
+          "pt": "Encontrar o bloco de anotações",
+          "no": "Finn notatboken"
+        }
       },
       {
         "prompt": "Find the ladder",
-        "target": "escalera"
+        "target": "escalera",
+        "translations": {
+          "es": "La  escalera",
+          "fr": "LE CLASSEMENT",
+          "de": "Finde die Leiter",
+          "it": "Trova la scala",
+          "pt": "Encontre a escada",
+          "no": "Finn stigen"
+        }
       }
     ]
   },
@@ -5061,11 +5451,27 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
     "challenges": [
       {
         "prompt": "Find the Ferry",
-        "target": "ferry"
+        "target": "ferry",
+        "translations": {
+          "es": "El trasbordador",
+          "fr": "Trouvez le ferry",
+          "de": "Finde die Fähre",
+          "it": "Trova il traghetto",
+          "pt": "Encontrar a balsa",
+          "no": "Finn fergen"
+        }
       },
       {
         "prompt": "Find the Mountain",
-        "target": "mountain"
+        "target": "mountain",
+        "translations": {
+          "es": "LA MONTAÑA",
+          "fr": "La Montagne",
+          "de": "Finde den Berg",
+          "it": "THE MOUNTAIN",
+          "pt": "Encontre a montanha",
+          "no": "Finn fjellet"
+        }
       }
     ]
   },
@@ -5402,23 +5808,63 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
     "challenges": [
       {
         "prompt": "Find the Start Gate Sign",
-        "target": "startline"
+        "target": "startline",
+        "translations": {
+          "es": "Encuentre la señal de la puerta de inicio",
+          "fr": "Trouvez le panneau de démarrage de la porte",
+          "de": "Finde das Start-Gate-Schild",
+          "it": "Trova il segnale Start Gate",
+          "pt": "Encontre o sinal do portão de início",
+          "no": "Finn startportskiltet"
+        }
       },
       {
         "prompt": "Find a Helmet",
-        "target": "helmet"
+        "target": "helmet",
+        "translations": {
+          "es": "Un casco",
+          "fr": "Un casque",
+          "de": "Ein Helm",
+          "it": "Trova un casco",
+          "pt": "Encontrar um capacete",
+          "no": "Finn en hjelm"
+        }
       },
       {
         "prompt": "Find the Spectators",
-        "target": "trailsign"
+        "target": "trailsign",
+        "translations": {
+          "es": "Los espectadores",
+          "fr": "Les spectateurs",
+          "de": "Finde die Zuschauer",
+          "it": "Trova gli spettatori",
+          "pt": "Encontre os espectadores",
+          "no": "Finn tilskuerne"
+        }
       },
       {
         "prompt": "Find the Lake",
-        "target": "lake"
+        "target": "lake",
+        "translations": {
+          "es": "Encuentra el lago",
+          "fr": "Trouvez le lac",
+          "de": "Finde den See",
+          "it": "Trova il lago",
+          "pt": "Encontre o lago",
+          "no": "Finn innsjøen"
+        }
       },
       {
         "prompt": "Find the Forest",
-        "target": "official"
+        "target": "official",
+        "translations": {
+          "es": "El bosque",
+          "fr": "LA FORET",
+          "de": "Finde den Wald",
+          "it": "Il bosco",
+          "pt": "A Floresta",
+          "no": "Finn skogen"
+        }
       }
     ]
   },
@@ -5745,27 +6191,75 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
     "challenges": [
       {
         "prompt": "Find the Bee Quarterback",
-        "target": "bee"
+        "target": "bee",
+        "translations": {
+          "es": "Encuentra al mariscal de campo de Bee",
+          "fr": "Trouvez le Quarterback Bee",
+          "de": "Finde den Bienen-Quarterback",
+          "it": "Trova il quarterback delle api",
+          "pt": "Encontre o Bee Quarterback",
+          "no": "Finn bie-quarterbacken"
+        }
       },
       {
         "prompt": "Find the Football",
-        "target": "football"
+        "target": "football",
+        "translations": {
+          "es": "Encuentra el fútbol",
+          "fr": "Le foot",
+          "de": "Finde den Fußball",
+          "it": "Trova il calcio",
+          "pt": "Encontre o futebol",
+          "no": "Finn fotballen"
+        }
       },
       {
         "prompt": "Find the Referee",
-        "target": "referee"
+        "target": "referee",
+        "translations": {
+          "es": "Encuentra al árbitro",
+          "fr": "ARBITRE",
+          "de": "die Schiedsrichterin",
+          "it": "THE REFEREE",
+          "pt": "Encontrar o Árbitro",
+          "no": "Finn dommeren"
+        }
       },
       {
         "prompt": "Find the Scoreboard",
-        "target": "scoreboard"
+        "target": "scoreboard",
+        "translations": {
+          "es": "Cuadro de Indicadores",
+          "fr": "Le tableau de bord",
+          "de": "Das Verbraucherbarometer",
+          "it": "La Pagella",
+          "pt": "Quadro de controlo",
+          "no": "Finn resultattavlen"
+        }
       },
       {
         "prompt": "Find the Lake",
-        "target": "lake"
+        "target": "lake",
+        "translations": {
+          "es": "Encuentra el lago",
+          "fr": "Trouvez le lac",
+          "de": "Finde den See",
+          "it": "Trova il lago",
+          "pt": "Encontre o lago",
+          "no": "Finn innsjøen"
+        }
       },
       {
         "prompt": "Find the Red Defender",
-        "target": "defender"
+        "target": "defender",
+        "translations": {
+          "es": "Encuentra al Red Defender",
+          "fr": "Trouvez le défenseur rouge",
+          "de": "Finde den Roten Verteidiger",
+          "it": "Trova il Difensore Rosso",
+          "pt": "Encontre o Defensor Vermelho",
+          "no": "Finn den røde forsvareren"
+        }
       }
     ]
   },
@@ -6112,15 +6606,39 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
     "challenges": [
       {
         "prompt": "Find the Golf Ball",
-        "target": "ball"
+        "target": "ball",
+        "translations": {
+          "es": "Encuentra la pelota de golf",
+          "fr": "Trouvez la balle de golf",
+          "de": "Finde den Golfball",
+          "it": "Trova la pallina da golf",
+          "pt": "Encontre a bola de golfe",
+          "no": "Finn golfballen"
+        }
       },
       {
         "prompt": "Find the Fairway",
-        "target": "flag"
+        "target": "flag",
+        "translations": {
+          "es": "Encuentra el Fairway",
+          "fr": "Trouvez le fairway",
+          "de": "Finde das Fairway",
+          "it": "Trova il Fairway",
+          "pt": "Encontre o Fairway",
+          "no": "Finn fairwayen"
+        }
       },
       {
         "prompt": "Find the Waterfall",
-        "target": "waterfall"
+        "target": "waterfall",
+        "translations": {
+          "es": "La cascada",
+          "fr": "La Cascade",
+          "de": "Finde den Wasserfall",
+          "it": "La cascata",
+          "pt": "Encontre a cascata",
+          "no": "Finn fossen"
+        }
       }
     ]
   },
@@ -6447,19 +6965,51 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
     "challenges": [
       {
         "prompt": "Find the Buoys",
-        "target": "shell"
+        "target": "shell",
+        "translations": {
+          "es": "Encuentra las boyas",
+          "fr": "Trouvez les bouées",
+          "de": "Finde die Bojen",
+          "it": "Trova le boe",
+          "pt": "Encontre as bóias",
+          "no": "Finn bøyene"
+        }
       },
       {
         "prompt": "Find the Red Crew",
-        "target": "redcrew"
+        "target": "redcrew",
+        "translations": {
+          "es": "Encuentra a la tripulación roja",
+          "fr": "Trouvez l'équipage rouge",
+          "de": "Finde die rote Crew",
+          "it": "Trova la Red Crew",
+          "pt": "Encontre a Tripulação Vermelha",
+          "no": "Finn det røde mannskapet"
+        }
       },
       {
         "prompt": "Find the flag",
-        "target": "banner"
+        "target": "banner",
+        "translations": {
+          "es": "Encuentra la bandera",
+          "fr": "Trouver le drapeau",
+          "de": "Finde die Flagge",
+          "it": "Trova la bandiera",
+          "pt": "Encontrar a bandeira",
+          "no": "Finn flagget"
+        }
       },
       {
         "prompt": "Find the Sailboat",
-        "target": "sailboat"
+        "target": "sailboat",
+        "translations": {
+          "es": "El velero",
+          "fr": "Trouvez le voilier",
+          "de": "Finde das Segelboot",
+          "it": "Trova la barca a vela",
+          "pt": "Encontre o veleiro",
+          "no": "Finn seilbåten"
+        }
       }
     ]
   },
@@ -9915,6 +10465,12 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
         "translations": {
           "pt": ""
         }
+      },
+      {
+        "text": "There is a roller coaster that we could ride. I wonder if it is scary?",
+        "translations": {
+          "pt": ""
+        }
       }
     ],
     "challenges": [
@@ -10237,27 +10793,75 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
     "challenges": [
       {
         "prompt": "Find the T. rex",
-        "target": "trex"
+        "target": "trex",
+        "translations": {
+          "es": "Encuentra el T. rex",
+          "fr": "Trouvez le T. rex",
+          "de": "Finde den T. rex",
+          "it": "Trova il T. rex",
+          "pt": "Encontre o T. rex",
+          "no": "Finn T. rexen"
+        }
       },
       {
         "prompt": "Find the Triceratops",
-        "target": "triceratops"
+        "target": "triceratops",
+        "translations": {
+          "es": "El Triceratops",
+          "fr": "Trouvez les Tricératops",
+          "de": "Finde den Triceratops",
+          "it": "Trova il Triceratopo",
+          "pt": "Encontre o Tricerátopo",
+          "no": "Finn triceratopsene"
+        }
       },
       {
         "prompt": "Find the Stegosaurus",
-        "target": "stegosaurus"
+        "target": "stegosaurus",
+        "translations": {
+          "es": "Encuentra el estegosaurio",
+          "fr": "Trouvez le stégosaure",
+          "de": "Finde den Stegosaurus",
+          "it": "Trova lo stegosauro",
+          "pt": "Encontre o Estegossauro",
+          "no": "Finn stegosaurusen"
+        }
       },
       {
         "prompt": "Find the Pterosaur",
-        "target": "pterosaur"
+        "target": "pterosaur",
+        "translations": {
+          "es": "Encuentra el pterosaurio",
+          "fr": "Trouvez le ptérosaure",
+          "de": "Finde den Pterosaurier",
+          "it": "Trova lo pterosauro",
+          "pt": "Encontre o pterossauro",
+          "no": "Finn pterosauren"
+        }
       },
       {
         "prompt": "Find the Dinosaur Eggs",
-        "target": "eggs"
+        "target": "eggs",
+        "translations": {
+          "es": "Encuentra los huevos de dinosaurio",
+          "fr": "Trouvez les œufs de dinosaure",
+          "de": "Finde die Dinosaurier-Eier",
+          "it": "Trova le uova di dinosauro",
+          "pt": "Encontre os ovos de dinossauro",
+          "no": "Finn dinosaureggene"
+        }
       },
       {
         "prompt": "Find the Footprints",
-        "target": "footprints"
+        "target": "footprints",
+        "translations": {
+          "es": "después de la guerra.",
+          "fr": "Trouvez les empreintes",
+          "de": "Finde die Fußabdrücke",
+          "it": "Trova le impronte",
+          "pt": "Encontre as pegadas",
+          "no": "Finn fotsporene"
+        }
       }
     ]
   },
