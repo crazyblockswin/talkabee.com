@@ -8810,27 +8810,72 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
     "challenges": [
       {
         "prompt": "Find Captain Bee",
-        "target": "bee"
+        "target": "bee",
+        "translations": {
+          "es": "Encuentra al Capitán Abeja",
+          "fr": "Trouvez Captain Bee",
+          "de": "Finde Captain Bee",
+          "it": "Trova il Capitano Bee",
+          "pt": "Encontre o Capitão Abelha",
+          "no": "Finn kaptein Bee"
+        }
       },
       {
         "prompt": "Find the Lock Gate",
-        "target": "lockgate"
+        "target": "lockgate",
+        "translations": {
+          "es": "Encuentra la puerta de bloqueo",
+          "fr": "Trouvez le portail de verrouillage",
+          "de": "Finde das Schleusentor",
+          "it": "Trova il cancello di chiusura",
+          "pt": "Encontre o portão da fechadura",
+          "no": "Finn sluseporten"
+        }
       },
       {
         "prompt": "Find the locks water",
-        "target": "bollard"
+        "target": "bollard",
+        "translations": {
+          "es": "Encuentra el agua de las esclusas",
+          "fr": "Trouvez l'eau des écluses",
+          "de": "Finde das Schleusenwasser",
+          "it": "Trova l'acqua delle serrature",
+          "pt": "Encontre a água das fechaduras",
+          "no": "Finn slusene vann"
+        }
       },
       {
         "prompt": "Find the Ladder",
-        "target": "ladder"
+        "target": "ladder",
+        "translations": {
+          "es": "La  escalera",
+          "fr": "LE CLASSEMENT",
+          "de": "Finde die Leiter",
+          "it": "Trova la scala",
+          "pt": "Encontre a escada",
+          "no": "Finn stigen"
+        }
       },
       {
         "prompt": "Find the Seagull",
-        "target": "seagull"
+        "target": "seagull",
+        "translations": {
+          "es": "Encuentra la gaviota",
+          "fr": "Trouvez la Mouette",
+          "de": "Finde die Möwe",
+          "it": "Trova il gabbiano",
+          "pt": "Encontre a gaivota",
+          "no": "Finn måken"
+        }
       },
       {
         "prompt": "Find the Boat Behind Us",
-        "target": "boatbehind"
+        "target": "boatbehind",
+        "translations": {
+          "es": "Encuentra el barco detrás de nosotros",
+          "fr": "Trouvez le bateau derrière nous",
+          "de": "Finde das Boot hinter uns"
+        }
       }
     ]
   },
@@ -10210,35 +10255,60 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
         "prompt": "find the clock",
         "target": "clock",
         "translations": {
-          "es": ""
+          "es": "¿Qué teléfonos celulares estás comprando?",
+          "fr": "L'horloge",
+          "de": "Uhr",
+          "it": "l'orologio",
+          "pt": "encontrar o relógio",
+          "no": "finn klokken"
         }
       },
       {
         "prompt": "find the subway train",
         "target": "train",
         "translations": {
-          "es": ""
+          "es": "encuentra el tren subterráneo",
+          "fr": "trouver le métro",
+          "de": "finden Sie die U-Bahn",
+          "it": "trova il treno della metropolitana",
+          "pt": "encontrar o comboio do metro",
+          "no": "finn t-banetoget"
         }
       },
       {
         "prompt": "find the departures sign",
         "target": "departures-sign",
         "translations": {
-          "es": ""
+          "es": "encontrar el letrero de salidas",
+          "fr": "trouver le panneau des départs",
+          "de": "finden Sie das Abfahrtsschild",
+          "it": "trova il cartello partenze",
+          "pt": "encontre o sinal de partidas",
+          "no": "finn avgangsskiltet"
         }
       },
       {
         "prompt": "find the boys luggage",
         "target": "luggage",
         "translations": {
-          "es": ""
+          "es": "encontrar el equipaje de los niños",
+          "fr": "trouver les bagages des garçons",
+          "de": "finden Sie das Gepäck der Jungen",
+          "it": "trova i bagagli dei ragazzi",
+          "pt": "encontrar a bagagem dos meninos",
+          "no": "finn guttenes bagasje"
         }
       },
       {
         "prompt": "find the girls ticket",
         "target": "ticket",
         "translations": {
-          "es": ""
+          "es": "encontrar el boleto de las chicas",
+          "fr": "trouver le billet pour les filles",
+          "de": "finde das Mädchenticket",
+          "it": "trova il biglietto delle ragazze",
+          "pt": "encontrar o bilhete das meninas",
+          "no": "finn jentebilletten"
         }
       }
     ]
@@ -10463,40 +10533,98 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
       {
         "text": "I would love to ride the Ferris Wheel. We could view the entire area! Does anyone want to join me?",
         "translations": {
-          "pt": ""
+          "pt": "Eu adoraria andar na Roda Gigante. Conseguimos ver toda a área! Alguém quer juntar-se a mim?",
+          "es": "Me encantaría montar en la noria. ¡Podríamos ver toda la zona! ¿Alguien quiere acompañarme?",
+          "fr": "J'adorerais rouler sur la Grande Roue. Nous pouvions voir toute la zone ! Est-ce que quelqu'un veut se joindre à moi ?",
+          "de": "Ich würde gerne mit dem Riesenrad fahren. Wir könnten das gesamte Gebiet sehen! Möchte sich mir jemand anschließen?",
+          "it": "Mi piacerebbe guidare la ruota panoramica. Potremmo vedere l'intera area! Qualcuno vuole unirsi a me?",
+          "no": "Jeg skulle gjerne vært på pariserhjulet. Vi kunne sett hele området! Er det noen som vil bli med meg?"
         }
       },
       {
         "text": "There is a roller coaster that we could ride. I wonder if it is scary?",
         "translations": {
-          "pt": ""
+          "pt": "Há uma montanha-russa que poderíamos andar. Será que é assustador?",
+          "es": "Hay una montaña rusa que podríamos montar. Me pregunto si da miedo.",
+          "fr": "Il y a des montagnes russes que nous pourrions monter. Je me demande si c'est effrayant ?",
+          "de": "Es gibt eine Achterbahn, die wir fahren könnten. Ich frage mich, ob es beängstigend ist?",
+          "it": "C'è un ottovolante che potremmo guidare. Chissà se fa paura?",
+          "no": "Det finnes en berg-og-dal-bane vi kan kjøre. Jeg lurer på om den er skummel?"
         }
       }
     ],
     "challenges": [
       {
         "prompt": "Find the Ferris Wheel",
-        "target": "ferris"
+        "target": "ferris",
+        "translations": {
+          "es": "LA RUEDA DE LA FORTUNA",
+          "fr": "Trouvez la grande roue",
+          "de": "Das Riesenrad",
+          "it": "La Ruota Panoramica",
+          "pt": "Encontre a roda-gigante",
+          "no": "Finn pariserhjulet"
+        }
       },
       {
         "prompt": "Find the Carousel",
-        "target": "carousel"
+        "target": "carousel",
+        "translations": {
+          "es": "El Carrusel",
+          "fr": "Trouver le carrousel",
+          "de": "Das Carousel",
+          "it": "Il miracolo della luce",
+          "pt": "Encontre o carrossel",
+          "no": "Finn karusellen"
+        }
       },
       {
         "prompt": "Find the Lifeguard Tower",
-        "target": "lifeguard"
+        "target": "lifeguard",
+        "translations": {
+          "es": "Encuentra la torre de salvavidas",
+          "fr": "Trouvez la tour de sauvetage",
+          "de": "Finde den Rettungsschwimmerturm",
+          "it": "Trova la torre del bagnino",
+          "pt": "Encontre a Torre Salva-vidas",
+          "no": "Finn livreddertårnet"
+        }
       },
       {
         "prompt": "Find the Kite",
-        "target": "kite"
+        "target": "kite",
+        "translations": {
+          "es": "Encuentra la cometa",
+          "fr": "Trouvez le cerf-volant",
+          "de": "Finde den Drachen",
+          "it": "Trova l'aquilone",
+          "pt": "Encontrar o papagaio",
+          "no": "Finn dragen"
+        }
       },
       {
         "prompt": "Find the Ice Cream",
-        "target": "icecream"
+        "target": "icecream",
+        "translations": {
+          "es": "\"Encuentra el helado\"",
+          "fr": "La crème glacée",
+          "de": "Finde das Eis",
+          "it": "il diamante",
+          "pt": "Um sorvete.",
+          "no": "Finn iskremen"
+        }
       },
       {
         "prompt": "Find the Dog",
-        "target": "dog"
+        "target": "dog",
+        "translations": {
+          "es": "Encuentra al perro",
+          "fr": "Trouvez le chien",
+          "de": "Finde den Hund",
+          "it": "Trova il cane",
+          "pt": "Encontre o cão",
+          "no": "Finn hunden"
+        }
       }
     ]
   },
