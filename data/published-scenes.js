@@ -699,6 +699,17 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
           "pt": "Passamos tempo com a família.",
           "no": "Vi tilbringer tid med familien."
         }
+      },
+      {
+        "text": "My grandparents have been living here many years and they love living by the lake. It is quiet and peaceful. Family members show up often especially during the holidays.",
+        "translations": {
+          "es": "Mis abuelos han estado viviendo aquí muchos años y les encanta vivir junto al lago. Es tranquilo y apacible. Los miembros de la familia se presentan a menudo, especialmente durante las vacaciones.",
+          "fr": "Mes grands-parents vivent ici depuis de nombreuses années et ils adorent vivre au bord du lac. C'est calme et paisible. Les membres de la famille se présentent souvent, surtout pendant les vacances.",
+          "de": "Meine Großeltern leben seit vielen Jahren hier und sie lieben es, am See zu leben. Es ist ruhig und friedlich. Familienmitglieder tauchen vor allem in den Ferien oft auf.",
+          "it": "I miei nonni vivono qui da molti anni e amano vivere in riva al lago. È tranquillo e silenzioso. I membri della famiglia si presentano spesso soprattutto durante le vacanze.",
+          "pt": "Meus avós moram aqui há muitos anos e adoram viver à beira do lago. É tranquilo e pacífico. Os membros da família aparecem com frequência, especialmente durante as férias.",
+          "no": "Besteforeldrene mine har bodd her i mange år, og de elsker å bo ved sjøen. Det er stille og fredelig. Familiemedlemmer dukker ofte opp, spesielt i feriene."
+        }
       }
     ],
     "hotspots": [
@@ -813,16 +824,6 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
         "translations": {}
       },
       {
-        "id": "birdhouse",
-        "label": "Birdhouse",
-        "x": 96,
-        "y": 23.550442144537726,
-        "w": 4,
-        "h": 11,
-        "sound": "",
-        "translations": {}
-      },
-      {
         "id": "fire-pit",
         "label": "fire pit",
         "x": 72.13087175142243,
@@ -852,6 +853,34 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
         "sound": "sounds/teacher-grandpas-place.mp3",
         "translations": {
           "en": ""
+        },
+        "rotation": 0,
+        "z": 0
+      },
+      {
+        "id": "hotspot-1793084203164",
+        "label": "bird sitting in a tree",
+        "x": 94.21052804666877,
+        "y": 26.555399536739774,
+        "w": 5.789471953331233,
+        "h": 7.509502309881381,
+        "sound": "",
+        "translations": {
+          "es": ""
+        },
+        "rotation": 0,
+        "z": 0
+      },
+      {
+        "id": "hotspot-1793084272370",
+        "label": "Squirrel sitting on a rock",
+        "x": 92.73683744203342,
+        "y": 64.47844494479406,
+        "w": 6.631576430302197,
+        "h": 9.08576277549515,
+        "sound": "",
+        "translations": {
+          "es": ""
         },
         "rotation": 0,
         "z": 0
@@ -917,425 +946,6 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
           "it": "Trova il cane",
           "pt": "Encontre o cão",
           "no": "Finn hunden"
-        }
-      }
-    ]
-  },
-  "ai-world": {
-    "title": "AI World — The Ultimate Adventure",
-    "image": "images/ai-world.jpg",
-    "lessons": [
-      {
-        "text": "The library is full of books and knowledge.",
-        "translations": {
-          "es": "La biblioteca está llena de libros y conocimientos.",
-          "fr": "La bibliothèque est pleine de livres et de connaissances.",
-          "de": "Die Bibliothek ist voller Bücher und Wissen.",
-          "it": "La biblioteca è piena di libri e conoscenze.",
-          "pt": "A biblioteca está cheia de livros e conhecimento.",
-          "no": "Biblioteket er fullt av bøker og kunnskap."
-        }
-      },
-      {
-        "text": "People use many languages around the world.",
-        "translations": {
-          "es": "Las personas usan muchos idiomas en el mundo.",
-          "fr": "Les gens utilisent de nombreuses langues dans le monde.",
-          "de": "Menschen sprechen viele Sprachen auf der Welt.",
-          "it": "Le persone usano molte lingue nel mondo.",
-          "pt": "As pessoas usam muitas línguas pelo mundo.",
-          "no": "Folk bruker mange språk rundt om i verden."
-        }
-      },
-      {
-        "text": "Imagination helps us create pictures, music, and stories.",
-        "translations": {
-          "es": "La imaginación nos ayuda a crear imágenes, música e historias.",
-          "fr": "L’imagination nous aide à créer des images, de la musique et des histoires.",
-          "de": "Fantasie hilft uns, Bilder, Musik und Geschichten zu erschaffen.",
-          "it": "L’immaginazione ci aiuta a creare immagini, musica e storie.",
-          "pt": "A imaginação ajuda-nos a criar imagens, música e histórias.",
-          "no": "Fantasien hjelper oss å lage bilder, musikk og historier."
-        }
-      },
-      {
-        "text": "Artificial intelligence learns patterns from examples.",
-        "translations": {
-          "es": "La inteligencia artificial aprende patrones a partir de ejemplos.",
-          "fr": "L’intelligence artificielle apprend des modèles à partir d’exemples.",
-          "de": "Künstliche Intelligenz lernt Muster aus Beispielen.",
-          "it": "L’intelligenza artificiale impara schemi dagli esempi.",
-          "pt": "A inteligência artificial aprende padrões a partir de exemplos.",
-          "no": "Kunstig intelligens lærer mønstre fra eksempler."
-        }
-      },
-      {
-        "text": "People and technology can work together.",
-        "translations": {
-          "es": "Las personas y la tecnología pueden trabajar juntas.",
-          "fr": "Les personnes et la technologie peuvent travailler ensemble.",
-          "de": "Menschen und Technik können zusammenarbeiten.",
-          "it": "Le persone e la tecnologia possono lavorare insieme.",
-          "pt": "As pessoas e a tecnologia podem trabalhar juntas.",
-          "no": "Mennesker og teknologi kan samarbeide."
-        }
-      },
-      {
-        "text": "The friendly robot is our guide through AI World.",
-        "translations": {
-          "es": "El robot amable es nuestro guía por el mundo de la IA.",
-          "fr": "Le gentil robot est notre guide dans le monde de l’IA.",
-          "de": "Der freundliche Roboter führt uns durch die KI-Welt.",
-          "it": "Il robot amichevole è la nostra guida nel mondo dell’IA.",
-          "pt": "O robô simpático é o nosso guia pelo mundo da IA.",
-          "no": "Den vennlige roboten er guiden vår gjennom KI-verdenen."
-        }
-      },
-      {
-        "text": "Buzzkill looks surprised on the flying ride.",
-        "translations": {
-          "es": "Buzzkill parece sorprendido en el vehículo volador.",
-          "fr": "Buzzkill a l’air surpris dans le véhicule volant.",
-          "de": "Buzzkill sieht auf der Flugfahrt überrascht aus.",
-          "it": "Buzzkill sembra sorpreso sul veicolo volante.",
-          "pt": "Buzzkill parece surpreendido no veículo voador.",
-          "no": "Buzzkill ser overrasket ut på den flygende turen."
-        }
-      },
-      {
-        "text": "The teacher points toward the exciting adventure.",
-        "translations": {
-          "es": "La profesora señala la emocionante aventura.",
-          "fr": "La professeure montre cette aventure passionnante.",
-          "de": "Die Lehrerin zeigt auf das spannende Abenteuer.",
-          "it": "L’insegnante indica l’emozionante avventura.",
-          "pt": "A professora aponta para a aventura emocionante.",
-          "no": "Læreren peker mot det spennende eventyret."
-        }
-      },
-      {
-        "text": "The serious teacher crosses his arms.",
-        "translations": {
-          "es": "El profesor serio cruza los brazos.",
-          "fr": "Le professeur sérieux croise les bras.",
-          "de": "Der ernste Lehrer verschränkt die Arme.",
-          "it": "L’insegnante serio incrocia le braccia.",
-          "pt": "O professor sério cruza os braços.",
-          "no": "Den alvorlige læreren legger armene i kors."
-        }
-      },
-      {
-        "text": "The flying vehicle carries everyone through AI World.",
-        "translations": {
-          "es": "El vehículo volador lleva a todos por el mundo de la IA.",
-          "fr": "Le véhicule volant emmène tout le monde dans le monde de l’IA.",
-          "de": "Das Flugfahrzeug bringt alle durch die KI-Welt.",
-          "it": "Il veicolo volante porta tutti nel mondo dell’IA.",
-          "pt": "O veículo voador leva todos pelo mundo da IA.",
-          "no": "Det flygende kjøretøyet tar alle gjennom KI-verdenen."
-        }
-      }
-    ],
-    "hotspots": [
-      {
-        "id": "knowledge-library",
-        "label": "Knowledge Library",
-        "x": 8,
-        "y": 8,
-        "w": 24,
-        "h": 27,
-        "sound": "",
-        "translations": {
-          "es": "La biblioteca está llena de libros y conocimientos.",
-          "fr": "La bibliothèque est pleine de livres et de connaissances.",
-          "de": "Die Bibliothek ist voller Bücher und Wissen.",
-          "it": "La biblioteca è piena di libri e conoscenze.",
-          "pt": "A biblioteca está cheia de livros e conhecimento.",
-          "no": "Biblioteket er fullt av bøker og kunnskap."
-        }
-      },
-      {
-        "id": "language-bridge",
-        "label": "Language Bridge",
-        "x": 34,
-        "y": 0,
-        "w": 20,
-        "h": 20,
-        "sound": "",
-        "translations": {
-          "es": "Las personas usan muchos idiomas en el mundo.",
-          "fr": "Les gens utilisent de nombreuses langues dans le monde.",
-          "de": "Menschen sprechen viele Sprachen auf der Welt.",
-          "it": "Le persone usano molte lingue nel mondo.",
-          "pt": "As pessoas usam muitas línguas pelo mundo.",
-          "no": "Folk bruker mange språk rundt om i verden."
-        }
-      },
-      {
-        "id": "imagination-studio",
-        "label": "Imagination Studio",
-        "x": 63,
-        "y": 0,
-        "w": 30,
-        "h": 26,
-        "sound": "",
-        "translations": {
-          "es": "La imaginación nos ayuda a crear imágenes, música e historias.",
-          "fr": "L’imagination nous aide à créer des images, de la musique et des histoires.",
-          "de": "Fantasie hilft uns, Bilder, Musik und Geschichten zu erschaffen.",
-          "it": "L’immaginazione ci aiuta a creare immagini, musica e storie.",
-          "pt": "A imaginação ajuda-nos a criar imagens, música e histórias.",
-          "no": "Fantasien hjelper oss å lage bilder, musikk og historier."
-        }
-      },
-      {
-        "id": "learning-network",
-        "label": "Learning Network",
-        "x": 77,
-        "y": 29,
-        "w": 21,
-        "h": 36,
-        "sound": "",
-        "translations": {
-          "es": "La inteligencia artificial aprende patrones a partir de ejemplos.",
-          "fr": "L’intelligence artificielle apprend des modèles à partir d’exemples.",
-          "de": "Künstliche Intelligenz lernt Muster aus Beispielen.",
-          "it": "L’intelligenza artificiale impara schemi dagli esempi.",
-          "pt": "A inteligência artificial aprende padrões a partir de exemplos.",
-          "no": "Kunstig intelligens lærer mønstre fra eksempler."
-        }
-      },
-      {
-        "id": "human-connection",
-        "label": "Human Connection",
-        "x": 78,
-        "y": 70,
-        "w": 20,
-        "h": 27,
-        "sound": "",
-        "translations": {
-          "es": "Las personas y la tecnología pueden trabajar juntas.",
-          "fr": "Les personnes et la technologie peuvent travailler ensemble.",
-          "de": "Menschen und Technik können zusammenarbeiten.",
-          "it": "Le persone e la tecnologia possono lavorare insieme.",
-          "pt": "As pessoas e a tecnologia podem trabalhar juntas.",
-          "no": "Mennesker og teknologi kan samarbeide."
-        }
-      },
-      {
-        "id": "ai-robot",
-        "label": "AI Robot",
-        "x": 50,
-        "y": 36,
-        "w": 20,
-        "h": 36,
-        "sound": "sounds/ai-world.mp3",
-        "translations": {
-          "es": "El robot amable es nuestro guía por el mundo de la IA.",
-          "fr": "Le gentil robot est notre guide dans le monde de l’IA.",
-          "de": "Der freundliche Roboter führt uns durch die KI-Welt.",
-          "it": "Il robot amichevole è la nostra guida nel mondo dell’IA.",
-          "pt": "O robô simpático é o nosso guia pelo mundo da IA.",
-          "no": "Den vennlige roboten er guiden vår gjennom KI-verdenen."
-        },
-        "rotation": 0,
-        "z": 0
-      },
-      {
-        "id": "buzzkill",
-        "label": "Buzzkill",
-        "x": 39,
-        "y": 38,
-        "w": 17,
-        "h": 42,
-        "sound": "sounds/ai-world.mp3",
-        "translations": {
-          "es": "Buzzkill parece sorprendido en el vehículo volador.",
-          "fr": "Buzzkill a l’air surpris dans le véhicule volant.",
-          "de": "Buzzkill sieht auf der Flugfahrt überrascht aus.",
-          "it": "Buzzkill sembra sorpreso sul veicolo volante.",
-          "pt": "Buzzkill parece surpreendido no veículo voador.",
-          "no": "Buzzkill ser overrasket ut på den flygende turen."
-        },
-        "rotation": 0,
-        "z": 0
-      },
-      {
-        "id": "teacher-black",
-        "label": "Teacher Bee",
-        "x": 9,
-        "y": 25,
-        "w": 20,
-        "h": 47,
-        "sound": "",
-        "translations": {
-          "es": "La profesora señala la emocionante aventura.",
-          "fr": "La professeure montre cette aventure passionnante.",
-          "de": "Die Lehrerin zeigt auf das spannende Abenteuer.",
-          "it": "L’insegnante indica l’emozionante avventura.",
-          "pt": "A professora aponta para a aventura emocionante.",
-          "no": "Læreren peker mot det spennende eventyret."
-        }
-      },
-      {
-        "id": "teacher-red",
-        "label": "Teacher with Glasses",
-        "x": 20,
-        "y": 39,
-        "w": 19,
-        "h": 37,
-        "sound": "sounds/ai-world.mp3",
-        "translations": {
-          "es": "El profesor serio cruza los brazos.",
-          "fr": "Le professeur sérieux croise les bras.",
-          "de": "Der ernste Lehrer verschränkt die Arme.",
-          "it": "L’insegnante serio incrocia le braccia.",
-          "pt": "O professor sério cruza os braços.",
-          "no": "Den alvorlige læreren legger armene i kors."
-        },
-        "rotation": 0,
-        "z": 0
-      },
-      {
-        "id": "flying-ride",
-        "label": "Flying Ride",
-        "x": 4,
-        "y": 65,
-        "w": 69,
-        "h": 33,
-        "sound": "sounds/ai-world.mp3",
-        "translations": {
-          "es": "El vehículo volador lleva a todos por el mundo de la IA.",
-          "fr": "Le véhicule volant emmène tout le monde dans le monde de l’IA.",
-          "de": "Das Flugfahrzeug bringt alle durch die KI-Welt.",
-          "it": "Il veicolo volante porta tutti nel mondo dell’IA.",
-          "pt": "O veículo voador leva todos pelo mundo da IA.",
-          "no": "Det flygende kjøretøyet tar alle gjennom KI-verdenen."
-        },
-        "rotation": 0,
-        "z": 0
-      }
-    ],
-    "overlays": [],
-    "challenges": [
-      {
-        "prompt": "Find the knowledge library.",
-        "target": "knowledge-library",
-        "translations": {
-          "es": "Encuentra la biblioteca.",
-          "fr": "Trouve la bibliothèque.",
-          "de": "Finde die Bibliothek.",
-          "it": "Trova la biblioteca.",
-          "pt": "Encontra a biblioteca.",
-          "no": "Finn biblioteket."
-        }
-      },
-      {
-        "prompt": "Find the language bridge.",
-        "target": "language-bridge",
-        "translations": {
-          "es": "Encuentra el puente de idiomas.",
-          "fr": "Trouve le pont des langues.",
-          "de": "Finde die Sprachbrücke.",
-          "it": "Trova il ponte delle lingue.",
-          "pt": "Encontra a ponte das línguas.",
-          "no": "Finn språkbroen."
-        }
-      },
-      {
-        "prompt": "Find the imagination studio.",
-        "target": "imagination-studio",
-        "translations": {
-          "es": "Encuentra el estudio de imaginación.",
-          "fr": "Trouve le studio de l’imagination.",
-          "de": "Finde das Fantasiestudio.",
-          "it": "Trova lo studio dell’immaginazione.",
-          "pt": "Encontra o estúdio da imaginação.",
-          "no": "Finn fantasistudioet."
-        }
-      },
-      {
-        "prompt": "Find the learning network.",
-        "target": "learning-network",
-        "translations": {
-          "es": "Encuentra la red de aprendizaje.",
-          "fr": "Trouve le réseau d’apprentissage.",
-          "de": "Finde das Lernnetzwerk.",
-          "it": "Trova la rete di apprendimento.",
-          "pt": "Encontra a rede de aprendizagem.",
-          "no": "Finn læringsnettverket."
-        }
-      },
-      {
-        "prompt": "Find the human connection.",
-        "target": "human-connection",
-        "translations": {
-          "es": "Encuentra la conexión humana.",
-          "fr": "Trouve la connexion humaine.",
-          "de": "Finde die menschliche Verbindung.",
-          "it": "Trova la connessione umana.",
-          "pt": "Encontra a ligação humana.",
-          "no": "Finn den menneskelige forbindelsen."
-        }
-      },
-      {
-        "prompt": "Find the AI robot.",
-        "target": "ai-robot",
-        "translations": {
-          "es": "Encuentra el robot.",
-          "fr": "Trouve le robot.",
-          "de": "Finde den Roboter.",
-          "it": "Trova il robot.",
-          "pt": "Encontra o robô.",
-          "no": "Finn roboten."
-        }
-      },
-      {
-        "prompt": "Find Buzzkill.",
-        "target": "buzzkill",
-        "translations": {
-          "es": "Encuentra a Buzzkill.",
-          "fr": "Trouve Buzzkill.",
-          "de": "Finde Buzzkill.",
-          "it": "Trova Buzzkill.",
-          "pt": "Encontra o Buzzkill.",
-          "no": "Finn Buzzkill."
-        }
-      },
-      {
-        "prompt": "Find the teacher who is pointing.",
-        "target": "teacher-black",
-        "translations": {
-          "es": "Encuentra la profesora que señala.",
-          "fr": "Trouve la professeure qui montre du doigt.",
-          "de": "Finde die Lehrerin, die zeigt.",
-          "it": "Trova l’insegnante che indica.",
-          "pt": "Encontra a professora que aponta.",
-          "no": "Finn læreren som peker."
-        }
-      },
-      {
-        "prompt": "Find the teacher with glasses.",
-        "target": "teacher-red",
-        "translations": {
-          "es": "Encuentra el profesor con gafas.",
-          "fr": "Trouve le professeur avec des lunettes.",
-          "de": "Finde den Lehrer mit Brille.",
-          "it": "Trova l’insegnante con gli occhiali.",
-          "pt": "Encontra o professor de óculos.",
-          "no": "Finn læreren med briller."
-        }
-      },
-      {
-        "prompt": "Find the flying vehicle.",
-        "target": "flying-ride",
-        "translations": {
-          "es": "Encuentra el vehículo volador.",
-          "fr": "Trouve le véhicule volant.",
-          "de": "Finde das Flugfahrzeug.",
-          "it": "Trova il veicolo volante.",
-          "pt": "Encontra o veículo voador.",
-          "no": "Finn det flygende kjøretøyet."
         }
       }
     ]
@@ -7210,6 +6820,20 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
         },
         "rotation": 0,
         "z": 0
+      },
+      {
+        "id": "hotspot-1793086051088",
+        "label": "guitar player",
+        "x": 30.421051937325167,
+        "y": 21.91933013705215,
+        "w": 10.526317165300814,
+        "h": 25.775614736594363,
+        "sound": "sounds/guitar-solo.mp3",
+        "translations": {
+          "es": ""
+        },
+        "rotation": 0,
+        "z": 0
       }
     ],
     "overlays": [],
@@ -10237,6 +9861,425 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
           "it": "Trova il Cervo",
           "pt": "Encontre o Veado",
           "no": "Finn hjorten"
+        }
+      }
+    ]
+  },
+  "ai-world": {
+    "title": "AI World — The Ultimate Adventure",
+    "image": "images/ai-world.jpg",
+    "lessons": [
+      {
+        "text": "The library is full of books and knowledge.",
+        "translations": {
+          "es": "La biblioteca está llena de libros y conocimientos.",
+          "fr": "La bibliothèque est pleine de livres et de connaissances.",
+          "de": "Die Bibliothek ist voller Bücher und Wissen.",
+          "it": "La biblioteca è piena di libri e conoscenze.",
+          "pt": "A biblioteca está cheia de livros e conhecimento.",
+          "no": "Biblioteket er fullt av bøker og kunnskap."
+        }
+      },
+      {
+        "text": "People use many languages around the world.",
+        "translations": {
+          "es": "Las personas usan muchos idiomas en el mundo.",
+          "fr": "Les gens utilisent de nombreuses langues dans le monde.",
+          "de": "Menschen sprechen viele Sprachen auf der Welt.",
+          "it": "Le persone usano molte lingue nel mondo.",
+          "pt": "As pessoas usam muitas línguas pelo mundo.",
+          "no": "Folk bruker mange språk rundt om i verden."
+        }
+      },
+      {
+        "text": "Imagination helps us create pictures, music, and stories.",
+        "translations": {
+          "es": "La imaginación nos ayuda a crear imágenes, música e historias.",
+          "fr": "L’imagination nous aide à créer des images, de la musique et des histoires.",
+          "de": "Fantasie hilft uns, Bilder, Musik und Geschichten zu erschaffen.",
+          "it": "L’immaginazione ci aiuta a creare immagini, musica e storie.",
+          "pt": "A imaginação ajuda-nos a criar imagens, música e histórias.",
+          "no": "Fantasien hjelper oss å lage bilder, musikk og historier."
+        }
+      },
+      {
+        "text": "Artificial intelligence learns patterns from examples.",
+        "translations": {
+          "es": "La inteligencia artificial aprende patrones a partir de ejemplos.",
+          "fr": "L’intelligence artificielle apprend des modèles à partir d’exemples.",
+          "de": "Künstliche Intelligenz lernt Muster aus Beispielen.",
+          "it": "L’intelligenza artificiale impara schemi dagli esempi.",
+          "pt": "A inteligência artificial aprende padrões a partir de exemplos.",
+          "no": "Kunstig intelligens lærer mønstre fra eksempler."
+        }
+      },
+      {
+        "text": "People and technology can work together.",
+        "translations": {
+          "es": "Las personas y la tecnología pueden trabajar juntas.",
+          "fr": "Les personnes et la technologie peuvent travailler ensemble.",
+          "de": "Menschen und Technik können zusammenarbeiten.",
+          "it": "Le persone e la tecnologia possono lavorare insieme.",
+          "pt": "As pessoas e a tecnologia podem trabalhar juntas.",
+          "no": "Mennesker og teknologi kan samarbeide."
+        }
+      },
+      {
+        "text": "The friendly robot is our guide through AI World.",
+        "translations": {
+          "es": "El robot amable es nuestro guía por el mundo de la IA.",
+          "fr": "Le gentil robot est notre guide dans le monde de l’IA.",
+          "de": "Der freundliche Roboter führt uns durch die KI-Welt.",
+          "it": "Il robot amichevole è la nostra guida nel mondo dell’IA.",
+          "pt": "O robô simpático é o nosso guia pelo mundo da IA.",
+          "no": "Den vennlige roboten er guiden vår gjennom KI-verdenen."
+        }
+      },
+      {
+        "text": "Buzzkill looks surprised on the flying ride.",
+        "translations": {
+          "es": "Buzzkill parece sorprendido en el vehículo volador.",
+          "fr": "Buzzkill a l’air surpris dans le véhicule volant.",
+          "de": "Buzzkill sieht auf der Flugfahrt überrascht aus.",
+          "it": "Buzzkill sembra sorpreso sul veicolo volante.",
+          "pt": "Buzzkill parece surpreendido no veículo voador.",
+          "no": "Buzzkill ser overrasket ut på den flygende turen."
+        }
+      },
+      {
+        "text": "The teacher points toward the exciting adventure.",
+        "translations": {
+          "es": "La profesora señala la emocionante aventura.",
+          "fr": "La professeure montre cette aventure passionnante.",
+          "de": "Die Lehrerin zeigt auf das spannende Abenteuer.",
+          "it": "L’insegnante indica l’emozionante avventura.",
+          "pt": "A professora aponta para a aventura emocionante.",
+          "no": "Læreren peker mot det spennende eventyret."
+        }
+      },
+      {
+        "text": "The serious teacher crosses his arms.",
+        "translations": {
+          "es": "El profesor serio cruza los brazos.",
+          "fr": "Le professeur sérieux croise les bras.",
+          "de": "Der ernste Lehrer verschränkt die Arme.",
+          "it": "L’insegnante serio incrocia le braccia.",
+          "pt": "O professor sério cruza os braços.",
+          "no": "Den alvorlige læreren legger armene i kors."
+        }
+      },
+      {
+        "text": "The flying vehicle carries everyone through AI World.",
+        "translations": {
+          "es": "El vehículo volador lleva a todos por el mundo de la IA.",
+          "fr": "Le véhicule volant emmène tout le monde dans le monde de l’IA.",
+          "de": "Das Flugfahrzeug bringt alle durch die KI-Welt.",
+          "it": "Il veicolo volante porta tutti nel mondo dell’IA.",
+          "pt": "O veículo voador leva todos pelo mundo da IA.",
+          "no": "Det flygende kjøretøyet tar alle gjennom KI-verdenen."
+        }
+      }
+    ],
+    "hotspots": [
+      {
+        "id": "knowledge-library",
+        "label": "Knowledge Library",
+        "x": 8,
+        "y": 8,
+        "w": 24,
+        "h": 27,
+        "sound": "",
+        "translations": {
+          "es": "La biblioteca está llena de libros y conocimientos.",
+          "fr": "La bibliothèque est pleine de livres et de connaissances.",
+          "de": "Die Bibliothek ist voller Bücher und Wissen.",
+          "it": "La biblioteca è piena di libri e conoscenze.",
+          "pt": "A biblioteca está cheia de livros e conhecimento.",
+          "no": "Biblioteket er fullt av bøker og kunnskap."
+        }
+      },
+      {
+        "id": "language-bridge",
+        "label": "Language Bridge",
+        "x": 34,
+        "y": 0,
+        "w": 20,
+        "h": 20,
+        "sound": "",
+        "translations": {
+          "es": "Las personas usan muchos idiomas en el mundo.",
+          "fr": "Les gens utilisent de nombreuses langues dans le monde.",
+          "de": "Menschen sprechen viele Sprachen auf der Welt.",
+          "it": "Le persone usano molte lingue nel mondo.",
+          "pt": "As pessoas usam muitas línguas pelo mundo.",
+          "no": "Folk bruker mange språk rundt om i verden."
+        }
+      },
+      {
+        "id": "imagination-studio",
+        "label": "Imagination Studio",
+        "x": 63,
+        "y": 0,
+        "w": 30,
+        "h": 26,
+        "sound": "",
+        "translations": {
+          "es": "La imaginación nos ayuda a crear imágenes, música e historias.",
+          "fr": "L’imagination nous aide à créer des images, de la musique et des histoires.",
+          "de": "Fantasie hilft uns, Bilder, Musik und Geschichten zu erschaffen.",
+          "it": "L’immaginazione ci aiuta a creare immagini, musica e storie.",
+          "pt": "A imaginação ajuda-nos a criar imagens, música e histórias.",
+          "no": "Fantasien hjelper oss å lage bilder, musikk og historier."
+        }
+      },
+      {
+        "id": "learning-network",
+        "label": "Learning Network",
+        "x": 77,
+        "y": 29,
+        "w": 21,
+        "h": 36,
+        "sound": "",
+        "translations": {
+          "es": "La inteligencia artificial aprende patrones a partir de ejemplos.",
+          "fr": "L’intelligence artificielle apprend des modèles à partir d’exemples.",
+          "de": "Künstliche Intelligenz lernt Muster aus Beispielen.",
+          "it": "L’intelligenza artificiale impara schemi dagli esempi.",
+          "pt": "A inteligência artificial aprende padrões a partir de exemplos.",
+          "no": "Kunstig intelligens lærer mønstre fra eksempler."
+        }
+      },
+      {
+        "id": "human-connection",
+        "label": "Human Connection",
+        "x": 78,
+        "y": 70,
+        "w": 20,
+        "h": 27,
+        "sound": "",
+        "translations": {
+          "es": "Las personas y la tecnología pueden trabajar juntas.",
+          "fr": "Les personnes et la technologie peuvent travailler ensemble.",
+          "de": "Menschen und Technik können zusammenarbeiten.",
+          "it": "Le persone e la tecnologia possono lavorare insieme.",
+          "pt": "As pessoas e a tecnologia podem trabalhar juntas.",
+          "no": "Mennesker og teknologi kan samarbeide."
+        }
+      },
+      {
+        "id": "ai-robot",
+        "label": "AI Robot",
+        "x": 50,
+        "y": 36,
+        "w": 20,
+        "h": 36,
+        "sound": "sounds/ai-world.mp3",
+        "translations": {
+          "es": "El robot amable es nuestro guía por el mundo de la IA.",
+          "fr": "Le gentil robot est notre guide dans le monde de l’IA.",
+          "de": "Der freundliche Roboter führt uns durch die KI-Welt.",
+          "it": "Il robot amichevole è la nostra guida nel mondo dell’IA.",
+          "pt": "O robô simpático é o nosso guia pelo mundo da IA.",
+          "no": "Den vennlige roboten er guiden vår gjennom KI-verdenen."
+        },
+        "rotation": 0,
+        "z": 0
+      },
+      {
+        "id": "buzzkill",
+        "label": "Buzzkill",
+        "x": 39,
+        "y": 38,
+        "w": 17,
+        "h": 42,
+        "sound": "sounds/ai-world.mp3",
+        "translations": {
+          "es": "Buzzkill parece sorprendido en el vehículo volador.",
+          "fr": "Buzzkill a l’air surpris dans le véhicule volant.",
+          "de": "Buzzkill sieht auf der Flugfahrt überrascht aus.",
+          "it": "Buzzkill sembra sorpreso sul veicolo volante.",
+          "pt": "Buzzkill parece surpreendido no veículo voador.",
+          "no": "Buzzkill ser overrasket ut på den flygende turen."
+        },
+        "rotation": 0,
+        "z": 0
+      },
+      {
+        "id": "teacher-black",
+        "label": "Teacher Bee",
+        "x": 9,
+        "y": 25,
+        "w": 20,
+        "h": 47,
+        "sound": "",
+        "translations": {
+          "es": "La profesora señala la emocionante aventura.",
+          "fr": "La professeure montre cette aventure passionnante.",
+          "de": "Die Lehrerin zeigt auf das spannende Abenteuer.",
+          "it": "L’insegnante indica l’emozionante avventura.",
+          "pt": "A professora aponta para a aventura emocionante.",
+          "no": "Læreren peker mot det spennende eventyret."
+        }
+      },
+      {
+        "id": "teacher-red",
+        "label": "Teacher with Glasses",
+        "x": 20,
+        "y": 39,
+        "w": 19,
+        "h": 37,
+        "sound": "sounds/ai-world.mp3",
+        "translations": {
+          "es": "El profesor serio cruza los brazos.",
+          "fr": "Le professeur sérieux croise les bras.",
+          "de": "Der ernste Lehrer verschränkt die Arme.",
+          "it": "L’insegnante serio incrocia le braccia.",
+          "pt": "O professor sério cruza os braços.",
+          "no": "Den alvorlige læreren legger armene i kors."
+        },
+        "rotation": 0,
+        "z": 0
+      },
+      {
+        "id": "flying-ride",
+        "label": "Flying Ride",
+        "x": 4,
+        "y": 65,
+        "w": 69,
+        "h": 33,
+        "sound": "sounds/ai-world.mp3",
+        "translations": {
+          "es": "El vehículo volador lleva a todos por el mundo de la IA.",
+          "fr": "Le véhicule volant emmène tout le monde dans le monde de l’IA.",
+          "de": "Das Flugfahrzeug bringt alle durch die KI-Welt.",
+          "it": "Il veicolo volante porta tutti nel mondo dell’IA.",
+          "pt": "O veículo voador leva todos pelo mundo da IA.",
+          "no": "Det flygende kjøretøyet tar alle gjennom KI-verdenen."
+        },
+        "rotation": 0,
+        "z": 0
+      }
+    ],
+    "overlays": [],
+    "challenges": [
+      {
+        "prompt": "Find the knowledge library.",
+        "target": "knowledge-library",
+        "translations": {
+          "es": "Encuentra la biblioteca.",
+          "fr": "Trouve la bibliothèque.",
+          "de": "Finde die Bibliothek.",
+          "it": "Trova la biblioteca.",
+          "pt": "Encontra a biblioteca.",
+          "no": "Finn biblioteket."
+        }
+      },
+      {
+        "prompt": "Find the language bridge.",
+        "target": "language-bridge",
+        "translations": {
+          "es": "Encuentra el puente de idiomas.",
+          "fr": "Trouve le pont des langues.",
+          "de": "Finde die Sprachbrücke.",
+          "it": "Trova il ponte delle lingue.",
+          "pt": "Encontra a ponte das línguas.",
+          "no": "Finn språkbroen."
+        }
+      },
+      {
+        "prompt": "Find the imagination studio.",
+        "target": "imagination-studio",
+        "translations": {
+          "es": "Encuentra el estudio de imaginación.",
+          "fr": "Trouve le studio de l’imagination.",
+          "de": "Finde das Fantasiestudio.",
+          "it": "Trova lo studio dell’immaginazione.",
+          "pt": "Encontra o estúdio da imaginação.",
+          "no": "Finn fantasistudioet."
+        }
+      },
+      {
+        "prompt": "Find the learning network.",
+        "target": "learning-network",
+        "translations": {
+          "es": "Encuentra la red de aprendizaje.",
+          "fr": "Trouve le réseau d’apprentissage.",
+          "de": "Finde das Lernnetzwerk.",
+          "it": "Trova la rete di apprendimento.",
+          "pt": "Encontra a rede de aprendizagem.",
+          "no": "Finn læringsnettverket."
+        }
+      },
+      {
+        "prompt": "Find the human connection.",
+        "target": "human-connection",
+        "translations": {
+          "es": "Encuentra la conexión humana.",
+          "fr": "Trouve la connexion humaine.",
+          "de": "Finde die menschliche Verbindung.",
+          "it": "Trova la connessione umana.",
+          "pt": "Encontra a ligação humana.",
+          "no": "Finn den menneskelige forbindelsen."
+        }
+      },
+      {
+        "prompt": "Find the AI robot.",
+        "target": "ai-robot",
+        "translations": {
+          "es": "Encuentra el robot.",
+          "fr": "Trouve le robot.",
+          "de": "Finde den Roboter.",
+          "it": "Trova il robot.",
+          "pt": "Encontra o robô.",
+          "no": "Finn roboten."
+        }
+      },
+      {
+        "prompt": "Find Buzzkill.",
+        "target": "buzzkill",
+        "translations": {
+          "es": "Encuentra a Buzzkill.",
+          "fr": "Trouve Buzzkill.",
+          "de": "Finde Buzzkill.",
+          "it": "Trova Buzzkill.",
+          "pt": "Encontra o Buzzkill.",
+          "no": "Finn Buzzkill."
+        }
+      },
+      {
+        "prompt": "Find the teacher who is pointing.",
+        "target": "teacher-black",
+        "translations": {
+          "es": "Encuentra la profesora que señala.",
+          "fr": "Trouve la professeure qui montre du doigt.",
+          "de": "Finde die Lehrerin, die zeigt.",
+          "it": "Trova l’insegnante che indica.",
+          "pt": "Encontra a professora que aponta.",
+          "no": "Finn læreren som peker."
+        }
+      },
+      {
+        "prompt": "Find the teacher with glasses.",
+        "target": "teacher-red",
+        "translations": {
+          "es": "Encuentra el profesor con gafas.",
+          "fr": "Trouve le professeur avec des lunettes.",
+          "de": "Finde den Lehrer mit Brille.",
+          "it": "Trova l’insegnante con gli occhiali.",
+          "pt": "Encontra o professor de óculos.",
+          "no": "Finn læreren med briller."
+        }
+      },
+      {
+        "prompt": "Find the flying vehicle.",
+        "target": "flying-ride",
+        "translations": {
+          "es": "Encuentra el vehículo volador.",
+          "fr": "Trouve le véhicule volant.",
+          "de": "Finde das Flugfahrzeug.",
+          "it": "Trova il veicolo volante.",
+          "pt": "Encontra o veículo voador.",
+          "no": "Finn det flygende kjøretøyet."
         }
       }
     ]
