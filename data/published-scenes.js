@@ -20336,7 +20336,7 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
         "y": 36,
         "w": 20,
         "h": 36,
-        "sound": "",
+        "sound": "sounds/ai-world.mp3",
         "translations": {
           "es": "El robot amable es nuestro guía por el mundo de la IA.",
           "fr": "Le gentil robot est notre guide dans le monde de l’IA.",
@@ -20344,7 +20344,9 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
           "it": "Il robot amichevole è la nostra guida nel mondo dell’IA.",
           "pt": "O robô simpático é o nosso guia pelo mundo da IA.",
           "no": "Den vennlige roboten er guiden vår gjennom KI-verdenen."
-        }
+        },
+        "rotation": 0,
+        "z": 0
       },
       {
         "id": "buzzkill",
@@ -20353,7 +20355,7 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
         "y": 38,
         "w": 17,
         "h": 42,
-        "sound": "",
+        "sound": "sounds/ai-world.mp3",
         "translations": {
           "es": "Buzzkill parece sorprendido en el vehículo volador.",
           "fr": "Buzzkill a l’air surpris dans le véhicule volant.",
@@ -20361,7 +20363,9 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
           "it": "Buzzkill sembra sorpreso sul veicolo volante.",
           "pt": "Buzzkill parece surpreendido no veículo voador.",
           "no": "Buzzkill ser overrasket ut på den flygende turen."
-        }
+        },
+        "rotation": 0,
+        "z": 0
       },
       {
         "id": "teacher-black",
@@ -20387,7 +20391,7 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
         "y": 39,
         "w": 19,
         "h": 37,
-        "sound": "",
+        "sound": "sounds/ai-world.mp3",
         "translations": {
           "es": "El profesor serio cruza los brazos.",
           "fr": "Le professeur sérieux croise les bras.",
@@ -20395,7 +20399,9 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
           "it": "L’insegnante serio incrocia le braccia.",
           "pt": "O professor sério cruza os braços.",
           "no": "Den alvorlige læreren legger armene i kors."
-        }
+        },
+        "rotation": 0,
+        "z": 0
       },
       {
         "id": "flying-ride",
