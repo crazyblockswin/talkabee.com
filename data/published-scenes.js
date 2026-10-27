@@ -14170,8 +14170,12 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
         "y": 64,
         "w": 19,
         "h": 24,
-        "sound": "",
-        "translations": {}
+        "sound": "sounds/talking-people.mp3",
+        "translations": {
+          "es": ""
+        },
+        "rotation": 0,
+        "z": 0
       },
       {
         "id": "children",
@@ -14208,8 +14212,12 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
         "y": 7,
         "w": 13,
         "h": 15,
-        "sound": "",
-        "translations": {}
+        "sound": "sounds/eagle.mp3",
+        "translations": {
+          "es": ""
+        },
+        "rotation": 0,
+        "z": 0
       },
       {
         "id": "airplane",
@@ -14218,8 +14226,12 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
         "y": 29,
         "w": 14,
         "h": 12,
-        "sound": "",
-        "translations": {}
+        "sound": "sounds/cessna.mp3",
+        "translations": {
+          "es": ""
+        },
+        "rotation": 0,
+        "z": 0
       },
       {
         "id": "mountain",
@@ -14248,8 +14260,12 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
         "y": 56,
         "w": 7,
         "h": 5,
-        "sound": "",
-        "translations": {}
+        "sound": "sounds/boat-horn.mp3",
+        "translations": {
+          "es": ""
+        },
+        "rotation": 0,
+        "z": 0
       },
       {
         "id": "sailboats",
