@@ -13595,7 +13595,7 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
         "prompt": "Find the boy fishing",
         "target": "mitchell",
         "translations": {
-          "es": "Encuentra la abeja",
+          "es": "Encuentra al chico pescando",
           "fr": "Trouvez l'abeille",
           "de": "Finde die Biene",
           "it": "Trova l'ape",
@@ -14909,12 +14909,16 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
       {
         "id": "bee",
         "label": "bee",
-        "x": 32,
-        "y": 72,
+        "x": 78.05263451129781,
+        "y": 51.32313689712001,
         "w": 9,
         "h": 22,
         "sound": "",
-        "translations": {}
+        "translations": {
+          "es": ""
+        },
+        "rotation": 0,
+        "z": 0
       },
       {
         "id": "visitors",
@@ -14929,40 +14933,40 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
       {
         "id": "controllers",
         "label": "controllers",
-        "x": 25,
-        "y": 48,
-        "w": 65,
-        "h": 27,
+        "x": 22.894738807572594,
+        "y": 49.8544256376513,
+        "w": 50.736848645197185,
+        "h": 13.740839447725225,
         "sound": "sounds/crowd-cheering-nasa.mp3",
         "translations": {}
       },
       {
         "id": "console",
         "label": "console",
-        "x": 41,
-        "y": 55,
-        "w": 18,
-        "h": 17,
+        "x": 35.36841953414956,
+        "y": 57.78164110925664,
+        "w": 13.263157799633584,
+        "h": 11.251272564941903,
         "sound": "",
         "translations": {}
       },
       {
         "id": "monitor",
         "label": "monitor",
-        "x": 72,
-        "y": 55,
-        "w": 17,
-        "h": 17,
+        "x": 70.42105259987787,
+        "y": 59.63606674690794,
+        "w": 4.999996145147948,
+        "h": 10.602224918153787,
         "sound": "",
         "translations": {}
       },
       {
         "id": "headset",
         "label": "headset",
-        "x": 91,
-        "y": 53,
-        "w": 8,
-        "h": 18,
+        "x": 18.789473338668692,
+        "y": 74.41863866349989,
+        "w": 5.631578899816792,
+        "h": 12.90032817006907,
         "sound": "",
         "translations": {}
       },
@@ -15034,7 +15038,11 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
         "w": 11,
         "h": 19,
         "sound": "",
-        "translations": {}
+        "translations": {
+          "es": ""
+        },
+        "rotation": 0,
+        "z": 0
       },
       {
         "id": "gallery",
@@ -15091,27 +15099,75 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
     "challenges": [
       {
         "prompt": "Find Bee",
-        "target": "bee"
+        "target": "bee",
+        "translations": {
+          "es": "Encontrar abeja",
+          "fr": "Trouver une abeille",
+          "de": "Biene finden",
+          "it": "Trova l'ape",
+          "pt": "Encontrar abelha",
+          "no": "Finn bien"
+        }
       },
       {
         "prompt": "Find the Rocket",
-        "target": "rocket"
+        "target": "rocket",
+        "translations": {
+          "es": "Encuentra el cohete",
+          "fr": "Le négociateur",
+          "de": "Finde die Rakete",
+          "it": "Trova il razzo",
+          "pt": "Encontrar o foguete",
+          "no": "Finn raketten"
+        }
       },
       {
         "prompt": "Find the Countdown Clock",
-        "target": "countdown"
+        "target": "countdown",
+        "translations": {
+          "es": "Encuentra el reloj de la cuenta regresiva",
+          "fr": "Trouver l'horloge du compte à rebours",
+          "de": "Finde die Countdown-Uhr",
+          "it": "Trova l'orologio del conto alla rovescia",
+          "pt": "Encontre o Relógio de Contagem Regressiva",
+          "no": "Finn nedtellingsklokken"
+        }
       },
       {
         "prompt": "Find the American Flag",
-        "target": "flag"
+        "target": "flag",
+        "translations": {
+          "es": "La Bandera Americana.",
+          "fr": "Trouvez le drapeau américain",
+          "de": "Finde die amerikanische Flagge",
+          "it": "Trova la bandiera americana",
+          "pt": "Encontre a bandeira americana",
+          "no": "Finn det amerikanske flagget"
+        }
       },
       {
         "prompt": "Find a Headset",
-        "target": "headset"
+        "target": "headset",
+        "translations": {
+          "es": "Encuentra un auricular",
+          "fr": "CASQUE",
+          "de": "Ein Headset finden",
+          "it": "Trova un auricolare",
+          "pt": "Encontrar um Fone de Ouvido",
+          "no": "Finn et headset"
+        }
       },
       {
         "prompt": "Find Earth",
-        "target": "earth"
+        "target": "earth",
+        "translations": {
+          "es": "Encontrar Tierra",
+          "fr": "Trouver la Terre",
+          "de": "Erde finden",
+          "it": "Trova la Terra",
+          "pt": "Encontrar Terra",
+          "no": "Finn Jorden"
+        }
       }
     ]
   },
