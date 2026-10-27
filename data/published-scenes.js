@@ -12527,10 +12527,10 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
       {
         "id": "yacht",
         "label": "Yacht",
-        "x": 84.77,
-        "y": 15.757341964629534,
-        "w": 14.966840092244201,
-        "h": 16.949545336906734,
+        "x": 84.08578785375872,
+        "y": 11.770320211730018,
+        "w": 14.44052629993893,
+        "h": 10.922658035370468,
         "sound": "sounds/yacht.mp3",
         "translations": {
           "es": ""
@@ -12863,7 +12863,7 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
       },
       {
         "prompt": "find the yacht hotspot. Hint it is on upper right side.",
-        "target": "fishing-pole",
+        "target": "yacht",
         "translations": {
           "es": "encuentra el punto de acceso del yate",
           "fr": "trouver le hotspot du yacht",
