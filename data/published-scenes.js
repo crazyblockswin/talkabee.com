@@ -8112,7 +8112,7 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
         "y": 70.02689260709563,
         "w": 5.26315569151137,
         "h": 16.224385263405637,
-        "sound": "",
+        "sound": "sounds/cessna.mp3",
         "translations": {
           "es": ""
         },
