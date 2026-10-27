@@ -15176,9 +15176,9 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
     "image": "images/Moon-Adventure.jpg",
     "lessons": [
       {
-        "text": "The Moon crew is exploring the lunar surface in spacesuits while Bee joins the expedition.",
+        "text": "The Moon crew is exploring the lunar surface in spacesuits while gathering moon surface samples.",
         "translations": {
-          "es": "La tripulación explora la superficie lunar con trajes espaciales mientras la abeja participa en la expedición.",
+          "es": "La tripulación lunar está explorando la superficie lunar en trajes espaciales mientras recoge muestras de la superficie lunar.",
           "fr": "L'équipage explore la surface lunaire en combinaison spatiale tandis que l'abeille participe à l'expédition.",
           "de": "Die Mondbesatzung erkundet die Oberfläche in Raumanzügen, während die Biene an der Expedition teilnimmt.",
           "it": "L'equipaggio esplora la superficie lunare con tute spaziali mentre l'ape partecipa alla spedizione.",
@@ -16855,16 +16855,6 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
     ],
     "hotspots": [
       {
-        "id": "bee",
-        "label": "bee",
-        "x": 25.74,
-        "y": 23.58,
-        "w": 5.1,
-        "h": 13.19,
-        "sound": "",
-        "translations": {}
-      },
-      {
         "id": "astronaut",
         "label": "astronaut",
         "x": 51.61,
@@ -17037,18 +17027,6 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
     ],
     "overlays": [],
     "challenges": [
-      {
-        "prompt": "Find Bee",
-        "target": "bee",
-        "translations": {
-          "es": "Encontrar abeja",
-          "fr": "Trouver une abeille",
-          "de": "Biene finden",
-          "it": "Trova l'ape",
-          "pt": "Encontrar abelha",
-          "no": "Finn bien"
-        }
-      },
       {
         "prompt": "Find Earth",
         "target": "earth",
