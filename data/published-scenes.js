@@ -8403,8 +8403,8 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
       {
         "id": "pilot",
         "label": "pilot",
-        "x": 65.23,
-        "y": 33.18,
+        "x": 67.9668425617588,
+        "y": 29.656588635682837,
         "w": 8.02,
         "h": 19.2,
         "sound": "sounds/airplane-news-heart.mp3",
@@ -8431,16 +8431,6 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
         "translations": {}
       },
       {
-        "id": "bee",
-        "label": "bee",
-        "x": 85.92,
-        "y": 17.1,
-        "w": 7.57,
-        "h": 9.07,
-        "sound": "sounds/bee.mp3",
-        "translations": {}
-      },
-      {
         "id": "mountain",
         "label": "mountain",
         "x": 53.18,
@@ -8462,13 +8452,17 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
       },
       {
         "id": "tower",
-        "label": "tower",
+        "label": "Space Needle",
         "x": 83.18,
         "y": 38.45,
         "w": 3.88,
         "h": 14.35,
         "sound": "",
-        "translations": {}
+        "translations": {
+          "es": ""
+        },
+        "rotation": 0,
+        "z": 0
       },
       {
         "id": "water",
@@ -8513,12 +8507,16 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
       {
         "id": "throttle",
         "label": "throttle",
-        "x": 42,
-        "y": 64,
-        "w": 15,
-        "h": 28,
+        "x": 41.10526173451598,
+        "y": 70.02689260709563,
+        "w": 5.26315569151137,
+        "h": 16.224385263405637,
         "sound": "",
-        "translations": {}
+        "translations": {
+          "es": ""
+        },
+        "rotation": 0,
+        "z": 0
       },
       {
         "id": "headset",
@@ -8537,36 +8535,30 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
         "y": 62,
         "w": 27,
         "h": 33,
-        "sound": "",
-        "translations": {}
+        "sound": "sounds/cessna.mp3",
+        "translations": {
+          "es": ""
+        },
+        "rotation": 0,
+        "z": 0
       },
       {
         "id": "clouds",
         "label": "clouds",
-        "x": 2.45,
-        "y": 8.37,
-        "w": 12.27,
-        "h": 14.09,
-        "sound": "",
-        "translations": {}
-      },
-      {
-        "id": "forest",
-        "label": "forest",
-        "x": 44.93,
-        "y": 29.72,
-        "w": 7.03,
-        "h": 9.97,
+        "x": 84.97631629193589,
+        "y": 13.469674482710614,
+        "w": 12.533158401954218,
+        "h": 8.804882953524256,
         "sound": "",
         "translations": {}
       },
       {
         "id": "airplane",
         "label": "airplane",
-        "x": 39.28,
-        "y": 13.74,
-        "w": 5.22,
-        "h": 29.94,
+        "x": 28.75368500305347,
+        "y": 0,
+        "w": 29.37789401722745,
+        "h": 62.48520310052645,
         "sound": "sounds/airplane-ambience.mp3",
         "translations": {}
       }
@@ -8622,10 +8614,10 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
         }
       },
       {
-        "prompt": "Find the Bee",
-        "target": "bee",
+        "prompt": "Find the Space Needle",
+        "target": "tower",
         "translations": {
-          "es": "Encuentra la abeja",
+          "es": "Encuentra la aguja espacial",
           "fr": "Trouvez l'abeille",
           "de": "Finde die Biene",
           "it": "Trova l'ape",
@@ -8643,6 +8635,30 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
           "it": "il comandante",
           "pt": "Encontre o capitão",
           "no": "Finn kapteinen"
+        }
+      },
+      {
+        "prompt": "Find the girl sitting in the right rear passenger seat",
+        "target": "girl",
+        "translations": {
+          "es": "Encuentra a la chica sentada en el asiento trasero derecho del pasajero",
+          "fr": "Trouvez la fille assise sur le siège passager arrière droit",
+          "de": "Finde das Mädchen, das auf dem rechten hinteren Beifahrersitz sitzt",
+          "it": "Trova la ragazza seduta sul sedile posteriore destro del passeggero",
+          "pt": "Encontre a rapariga sentada no banco do passageiro traseiro direito",
+          "no": "Finn jenta som sitter i høyre passasjersete bak"
+        }
+      },
+      {
+        "prompt": "Find the clouds",
+        "target": "clouds",
+        "translations": {
+          "es": "Las nubes",
+          "fr": "nuages/des nuages/les nuages",
+          "de": "Die Wolken",
+          "it": "Trova le nuvole",
+          "pt": "Encontre as nuvens",
+          "no": "Finn skyene"
         }
       }
     ]
