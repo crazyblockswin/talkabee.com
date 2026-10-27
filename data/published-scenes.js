@@ -7995,7 +7995,11 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
         "w": 12.49,
         "h": 26.56,
         "sound": "sounds/Captain-tour-guide.mp3",
-        "translations": {}
+        "translations": {
+          "es": ""
+        },
+        "rotation": 0,
+        "z": 0
       },
       {
         "id": "pilot",
@@ -8224,7 +8228,7 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
       },
       {
         "prompt": "Find the Captain",
-        "target": "wing",
+        "target": "captain",
         "translations": {
           "es": "el capitán",
           "fr": "Le Capitaine",
