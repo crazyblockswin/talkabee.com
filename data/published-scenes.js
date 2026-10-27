@@ -8249,18 +8249,6 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
           "pt": "Encontre o Veado",
           "no": "Finn hjorten"
         }
-      },
-      {
-        "prompt": "Find the Bee",
-        "target": "bee",
-        "translations": {
-          "es": "Encuentra la abeja",
-          "fr": "Trouvez l'abeille",
-          "de": "Finde die Biene",
-          "it": "Trova l'ape",
-          "pt": "Encontre a Abelha",
-          "no": "Finn bien"
-        }
       }
     ]
   },
@@ -13604,8 +13592,8 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
         }
       },
       {
-        "prompt": "Find the Bee",
-        "target": "bee",
+        "prompt": "Find the boy fishing",
+        "target": "mitchell",
         "translations": {
           "es": "Encuentra la abeja",
           "fr": "Trouvez l'abeille",
