@@ -16026,34 +16026,32 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
     ],
     "hotspots": [
       {
-        "id": "bee",
-        "label": "bee",
-        "x": 51,
-        "y": 59,
-        "w": 10,
-        "h": 21,
-        "sound": "",
-        "translations": {}
-      },
-      {
         "id": "saturn",
         "label": "saturn",
-        "x": 63,
-        "y": 17,
-        "w": 25,
-        "h": 40,
+        "x": 66.68420859254955,
+        "y": 27.47751413745877,
+        "w": 10.47368271423506,
+        "h": 10.792768352805268,
         "sound": "",
-        "translations": {}
+        "translations": {
+          "es": ""
+        },
+        "rotation": 0,
+        "z": 0
       },
       {
         "id": "rings",
         "label": "rings",
-        "x": 55,
-        "y": 26,
-        "w": 39,
-        "h": 32,
+        "x": 79.52631547880304,
+        "y": 26.37088512753026,
+        "w": 15.368419775077815,
+        "h": 5.574409462061908,
         "sound": "",
-        "translations": {}
+        "translations": {
+          "es": ""
+        },
+        "rotation": 0,
+        "z": 0
       },
       {
         "id": "moon",
@@ -20406,7 +20404,7 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
         "y": 65,
         "w": 69,
         "h": 33,
-        "sound": "",
+        "sound": "sounds/ai-world.mp3",
         "translations": {
           "es": "El vehículo volador lleva a todos por el mundo de la IA.",
           "fr": "Le véhicule volant emmène tout le monde dans le monde de l’IA.",
@@ -20414,7 +20412,9 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
           "it": "Il veicolo volante porta tutti nel mondo dell’IA.",
           "pt": "O veículo voador leva todos pelo mundo da IA.",
           "no": "Det flygende kjøretøyet tar alle gjennom KI-verdenen."
-        }
+        },
+        "rotation": 0,
+        "z": 0
       }
     ],
     "overlays": [],
