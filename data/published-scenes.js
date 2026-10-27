@@ -20229,8 +20229,12 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
         "y": 9.5,
         "w": 4.3,
         "h": 15,
-        "sound": "",
-        "translations": {}
+        "sound": "sounds/shuttle-launch.mp3",
+        "translations": {
+          "es": ""
+        },
+        "rotation": 0,
+        "z": 0
       },
       {
         "id": "flames",
@@ -20319,8 +20323,12 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
         "y": 76,
         "w": 14,
         "h": 19,
-        "sound": "",
-        "translations": {}
+        "sound": "sounds/kids-talking.mp3",
+        "translations": {
+          "es": ""
+        },
+        "rotation": 0,
+        "z": 0
       },
       {
         "id": "dog",
@@ -20329,8 +20337,12 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
         "y": 82,
         "w": 7,
         "h": 16,
-        "sound": "",
-        "translations": {}
+        "sound": "sounds/dog.mp3",
+        "translations": {
+          "es": ""
+        },
+        "rotation": 0,
+        "z": 0
       },
       {
         "id": "water-tower",
