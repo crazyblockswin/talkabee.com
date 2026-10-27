@@ -12457,82 +12457,114 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
       {
         "id": "grandpa",
         "label": "Grandpa",
-        "x": 53.82,
-        "y": 63.03,
+        "x": 51.03052666133131,
+        "y": 53.016090945564216,
         "w": 6.38,
         "h": 13.28,
         "sound": "",
-        "translations": {}
+        "translations": {
+          "es": ""
+        },
+        "rotation": 0,
+        "z": 0
       },
       {
         "id": "girl",
         "label": "Girl",
-        "x": 72.72,
-        "y": 56.8,
-        "w": 4.84,
-        "h": 8.78,
+        "x": 70.77263716150861,
+        "y": 52.9984234636453,
+        "w": 4.471578538424412,
+        "h": 6.461963973766343,
         "sound": "sounds/girl-laugh.mp3",
-        "translations": {}
+        "translations": {
+          "es": ""
+        },
+        "rotation": 0,
+        "z": 0
       },
       {
         "id": "sailboat",
         "label": "Sailboat",
-        "x": 75.33,
-        "y": 39.5,
+        "x": 72.856317345997,
+        "y": 35.14209311957023,
         "w": 5.88,
         "h": 9.24,
         "sound": "",
-        "translations": {}
+        "translations": {
+          "es": ""
+        },
+        "rotation": 0,
+        "z": 0
       },
       {
         "id": "ocean",
         "label": "Ocean",
-        "x": 48.3,
-        "y": 43.7,
+        "x": 0.8789457136243612,
+        "y": 43.23639491697702,
         "w": 14.51,
         "h": 7.83,
         "sound": "sounds/ocean.mp3",
-        "translations": {}
+        "translations": {
+          "es": ""
+        },
+        "rotation": 0,
+        "z": 0
       },
       {
         "id": "lantern",
         "label": "Lantern",
-        "x": 63.84,
-        "y": 75.92,
+        "x": 62.155785022851745,
+        "y": 72.0256982025932,
         "w": 5.1,
         "h": 11.1,
         "sound": "",
-        "translations": {}
+        "translations": {
+          "es": ""
+        },
+        "rotation": 0,
+        "z": 0
       },
       {
         "id": "yacht",
         "label": "Yacht",
-        "x": 92.73,
-        "y": 16.87,
-        "w": 15.23,
-        "h": 9.81,
+        "x": 84.77,
+        "y": 15.757341964629534,
+        "w": 14.966840092244201,
+        "h": 16.949545336906734,
         "sound": "sounds/yacht.mp3",
-        "translations": {}
+        "translations": {
+          "es": ""
+        },
+        "rotation": 0,
+        "z": 0
       },
       {
         "id": "flowers",
         "label": "flowers",
-        "x": 5.27,
-        "y": 77.61,
-        "w": 6,
-        "h": 8,
+        "x": 0.16473671450839156,
+        "y": 67.22520051247459,
+        "w": 11.105263661942004,
+        "h": 15.417713161723954,
         "sound": "",
-        "translations": {}
+        "translations": {
+          "es": ""
+        },
+        "rotation": 0,
+        "z": 0
       },
       {
         "id": "fishing-pole",
         "label": "fishing pole",
         "x": 37.18,
         "y": 46.92,
-        "w": 2.31,
-        "h": 16.33,
+        "w": 3.204735253880857,
+        "h": 17.442655382590782,
         "sound": "",
-        "translations": {}
+        "translations": {
+          "es": ""
+        },
+        "rotation": 0,
+        "z": 0
       },
       {
         "id": "sunset",
@@ -12542,207 +12574,277 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
         "w": 27.2,
         "h": 11.7,
         "sound": "",
-        "translations": {}
+        "translations": {
+          "es": ""
+        },
+        "rotation": 0,
+        "z": 0
       },
       {
         "id": "mountain",
         "label": "mountain",
-        "x": 46.74,
-        "y": 36.31,
+        "x": 42.89789606511761,
+        "y": 33.1574737632131,
         "w": 8.71,
         "h": 4.48,
         "sound": "",
-        "translations": {}
+        "translations": {
+          "es": ""
+        },
+        "rotation": 0,
+        "z": 0
       },
       {
         "id": "clouds",
         "label": "clouds",
-        "x": 40.75,
-        "y": 5.96,
-        "w": 22.51,
-        "h": 8.65,
+        "x": 35.486844007328315,
+        "y": 4.940064572901941,
+        "w": 25.246842561758797,
+        "h": 16.716758155732386,
         "sound": "",
-        "translations": {}
-      },
-      {
-        "id": "railing",
-        "label": "railing",
-        "x": 83.08,
-        "y": 8.87,
-        "w": 8.55,
-        "h": 5.41,
-        "sound": "",
-        "translations": {}
+        "translations": {
+          "es": ""
+        },
+        "rotation": 0,
+        "z": 0
       },
       {
         "id": "upper-deck",
         "label": "upper deck",
-        "x": 81.41,
-        "y": 20.8,
-        "w": 8.24,
-        "h": 8.56,
+        "x": 76.67316382283991,
+        "y": 9.02438791618532,
+        "w": 14.818943485038025,
+        "h": 7.447344617409217,
         "sound": "",
-        "translations": {}
+        "translations": {
+          "es": ""
+        },
+        "rotation": 0,
+        "z": 0
       },
       {
         "id": "lamp",
         "label": "lamp",
-        "x": 98.6,
-        "y": 45.55,
+        "x": 95.77,
+        "y": 43.139244018273615,
         "w": 4.23,
         "h": 6.8,
         "sound": "",
-        "translations": {}
+        "translations": {
+          "es": ""
+        },
+        "rotation": 0,
+        "z": 0
       },
       {
         "id": "pillow",
         "label": "pillow",
-        "x": 96.33,
-        "y": 67.47,
-        "w": 6.94,
-        "h": 5.96,
+        "x": 78.01421256786571,
+        "y": 62.926647903025405,
+        "w": 4.518948122906899,
+        "h": 5.310949700432202,
         "sound": "",
-        "translations": {}
+        "translations": {
+          "es": ""
+        },
+        "rotation": 0,
+        "z": 0
       },
       {
         "id": "hat",
         "label": "hat",
-        "x": 63.95,
-        "y": 51.35,
+        "x": 60.89736675357551,
+        "y": 48.8465240627809,
         "w": 6.62,
         "h": 5.41,
         "sound": "",
-        "translations": {}
+        "translations": {
+          "es": ""
+        },
+        "rotation": 0,
+        "z": 0
       },
       {
         "id": "hill",
         "label": "hill",
-        "x": 66.86,
-        "y": 35.38,
+        "x": 67.54421214624128,
+        "y": 30.929373164077504,
         "w": 4.96,
         "h": 6.8,
         "sound": "",
-        "translations": {}
+        "translations": {
+          "es": ""
+        },
+        "rotation": 0,
+        "z": 0
       },
       {
         "id": "sliding-glass-door",
         "label": "sliding glass door",
-        "x": 94.66,
-        "y": 45.61,
+        "x": 94.817898353936,
+        "y": 26.880282490264033,
         "w": 3.92,
         "h": 34.57,
         "sound": "",
-        "translations": {}
+        "translations": {
+          "es": ""
+        },
+        "rotation": 0,
+        "z": 0
       },
       {
         "id": "drinking-glass",
         "label": "drinking glass",
-        "x": 85.17,
-        "y": 77.44,
+        "x": 82.69631132279068,
+        "y": 74.65835889074336,
         "w": 5.48,
         "h": 7.81,
         "sound": "",
-        "translations": {}
+        "translations": {
+          "es": ""
+        },
+        "rotation": 0,
+        "z": 0
       },
       {
         "id": "life-jacket",
         "label": "life jacket",
-        "x": 74.05,
-        "y": 64.94,
-        "w": 6.57,
-        "h": 7.6,
+        "x": 71.41841899206099,
+        "y": 60.95297824710048,
+        "w": 5.148944930607543,
+        "h": 5.281963973766343,
         "sound": "",
-        "translations": {}
+        "translations": {
+          "es": ""
+        },
+        "rotation": 0,
+        "z": 0
       },
       {
         "id": "pointing-finger",
         "label": "pointing finger",
-        "x": 80.11,
-        "y": 54.97,
+        "x": 79.58368620769473,
+        "y": 52.46652406278089,
         "w": 3.76,
         "h": 5.22,
         "sound": "",
-        "translations": {}
+        "translations": {
+          "es": ""
+        },
+        "rotation": 0,
+        "z": 0
       },
       {
         "id": "waves",
         "label": "waves",
-        "x": 28.44,
-        "y": 52.7,
+        "x": 22.22947345913282,
+        "y": 44.07691680575191,
         "w": 11.83,
         "h": 12.17,
         "sound": "sounds/ocean.mp3",
-        "translations": {}
+        "translations": {
+          "es": ""
+        },
+        "rotation": 0,
+        "z": 0
       },
       {
         "id": "sun-glasses",
         "label": "sun glasses",
-        "x": 53.95,
-        "y": 51.24,
+        "x": 51.265788215151105,
+        "y": 49.94189940086441,
         "w": 4.49,
         "h": 3.37,
         "sound": "",
-        "translations": {}
+        "translations": {
+          "es": ""
+        },
+        "rotation": 0,
+        "z": 0
       },
       {
         "id": "sun",
         "label": "sun",
-        "x": 63.1,
-        "y": 14.5,
+        "x": 54.784210760903825,
+        "y": 29.335421017888542,
         "w": 6,
         "h": 8,
         "sound": "",
-        "translations": {}
+        "translations": {
+          "es": ""
+        },
+        "rotation": 0,
+        "z": 0
       },
       {
         "id": "whale",
         "label": "whale",
-        "x": 26.98,
-        "y": 34.88,
+        "x": 23.55894830360309,
+        "y": 34.230949700432205,
         "w": 6,
         "h": 8,
         "sound": "sounds/whale.mp3",
-        "translations": {}
+        "translations": {
+          "es": ""
+        },
+        "rotation": 0,
+        "z": 0
       },
       {
         "id": "dolphin",
         "label": "dolphin",
-        "x": 68.36,
-        "y": 43.93,
+        "x": 65.09684364593593,
+        "y": 38.64488295352425,
         "w": 6,
         "h": 8,
         "sound": "sounds/dolphin.mp3",
-        "translations": {}
+        "translations": {
+          "es": ""
+        },
+        "rotation": 0,
+        "z": 0
       },
       {
         "id": "seagull",
         "label": "seagull",
-        "x": 16.29,
-        "y": 60.61,
+        "x": 13.92157889981679,
+        "y": 55.232157692472164,
         "w": 6,
         "h": 8,
         "sound": "sounds/seagull.mp3",
-        "translations": {}
+        "translations": {
+          "es": ""
+        },
+        "rotation": 0,
+        "z": 0
       },
       {
         "id": "cathy",
         "label": "cathy",
-        "x": 63.02,
-        "y": 62.55,
+        "x": 59.75684364593594,
+        "y": 59.11930859117556,
         "w": 5.06,
         "h": 11.14,
         "sound": "sounds/laughing-adult-woman.mp3",
-        "translations": {}
+        "translations": {
+          "es": ""
+        },
+        "rotation": 0,
+        "z": 0
       },
       {
         "id": "dog",
         "label": "dog",
-        "x": 49.46,
-        "y": 79.11,
-        "w": 6,
-        "h": 8,
+        "x": 42.617890583999845,
+        "y": 71.41412697179787,
+        "w": 10.947365308005992,
+        "h": 13.099671829930932,
         "sound": "sounds/dog-panting.wav",
-        "translations": {}
+        "translations": {
+          "es": ""
+        },
+        "rotation": 0,
+        "z": 0
       }
     ],
     "overlays": [],
