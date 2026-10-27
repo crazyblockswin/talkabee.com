@@ -7849,6 +7849,417 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
       }
     ]
   },
+  "airplane-flying": {
+    "title": "Airplane Flying",
+    "image": "images/Airplane-Flying-Adventure.jpg",
+    "lessons": [
+      {
+        "text": "Welcome to the airplane cockpit.",
+        "translations": {
+          "es": "Bienvenidos a la cabina del avión.",
+          "fr": "Bienvenue dans le poste de pilotage.",
+          "de": "Willkommen im Cockpit des Flugzeugs.",
+          "it": "Benvenuti nella cabina di pilotaggio.",
+          "pt": "Bem-vindos à cabine do avião.",
+          "no": "Velkommen til cockpiten."
+        }
+      },
+      {
+        "text": "The cockpit is where the pilots control the airplane.",
+        "translations": {
+          "es": "La cabina es donde los pilotos controlan el avión.",
+          "fr": "C'est ici que les pilotes contrôlent l'avion.",
+          "de": "Im Cockpit steuern die Piloten das Flugzeug.",
+          "it": "La cabina è il luogo dove i piloti controllano l'aereo.",
+          "pt": "A cabine é onde os pilotos controlam o avião.",
+          "no": "Cockpiten er stedet der pilotene styrer flyet."
+        }
+      },
+      {
+        "text": "The crew checks the airplane before takeoff.",
+        "translations": {
+          "es": "La tripulación revisa el avión antes del despegue.",
+          "fr": "L'équipage vérifie l'avion avant le décollage.",
+          "de": "Die Besatzung überprüft das Flugzeug vor dem Start.",
+          "it": "L'equipaggio controlla l'aereo prima del decollo.",
+          "pt": "A tripulação verifica o avião antes da decolagem.",
+          "no": "Mannskapet sjekker flyet før avgang."
+        }
+      },
+      {
+        "text": "Everyone gets ready before the airplane leaves the ground.",
+        "translations": {
+          "es": "Todos se preparan antes de que el avión deje el suelo.",
+          "fr": "Tout le monde se prépare avant que l'avion quitte le sol.",
+          "de": "Alle bereiten sich vor, bevor das Flugzeug abhebt.",
+          "it": "Tutti si preparano prima che l'aereo lasci il suolo.",
+          "pt": "Todos se preparam antes de o avião sair do chão.",
+          "no": "Alle gjør seg klare før flyet forlater bakken."
+        }
+      },
+      {
+        "text": "The cockpit has instruments, screens, switches, and throttles.",
+        "translations": {
+          "es": "La cabina tiene instrumentos, pantallas, interruptores y palancas.",
+          "fr": "Le cockpit contient des instruments, des écrans, des interrupteurs et des manettes.",
+          "de": "Das Cockpit hat Instrumente, Bildschirme, Schalter und Schubhebel.",
+          "it": "La cabina ha strumenti, schermi, interruttori e manette.",
+          "pt": "A cabine tem instrumentos, telas, interruptores e manetes.",
+          "no": "Cockpiten har instrumenter, skjermer, brytere og gasspaker."
+        }
+      },
+      {
+        "text": "Pilots use these controls to safely fly the airplane.",
+        "translations": {
+          "es": "Los pilotos usan estos controles para volar con seguridad.",
+          "fr": "Les pilotes utilisent ces commandes pour voler en sécurité.",
+          "de": "Die Piloten benutzen diese Bedienelemente für einen sicheren Flug.",
+          "it": "I piloti usano questi comandi per volare in sicurezza.",
+          "pt": "Os pilotos usam esses controles para voar com segurança.",
+          "no": "Pilotene bruker kontrollene for å fly trygt."
+        }
+      },
+      {
+        "text": "Look through the windows at the mountain, city, water, and clouds.",
+        "translations": {
+          "es": "Mira por las ventanas la montaña, la ciudad, el agua y las nubes.",
+          "fr": "Regarde par les fenêtres la montagne, la ville, l'eau et les nuages.",
+          "de": "Schau aus den Fenstern auf den Berg, die Stadt, das Wasser und die Wolken.",
+          "it": "Guarda dai finestrini la montagna, la città, l'acqua e le nuvole.",
+          "pt": "Olhe pelas janelas para a montanha, a cidade, a água e as nuvens.",
+          "no": "Se ut av vinduene på fjellet, byen, vannet og skyene."
+        }
+      },
+      {
+        "text": "Everything looks different from high in the sky.",
+        "translations": {
+          "es": "Todo se ve diferente desde lo alto del cielo.",
+          "fr": "Tout semble différent vu du ciel.",
+          "de": "Hoch am Himmel sieht alles anders aus.",
+          "it": "Tutto sembra diverso dall'alto nel cielo.",
+          "pt": "Tudo parece diferente do alto no céu.",
+          "no": "Alt ser annerledes ut høyt oppe på himmelen."
+        }
+      },
+      {
+        "text": "The captain and pilot work together in the cockpit.",
+        "translations": {
+          "es": "El capitán y el piloto trabajan juntos en la cabina.",
+          "fr": "Le commandant et le pilote travaillent ensemble dans le cockpit.",
+          "de": "Der Kapitän und der Pilot arbeiten im Cockpit zusammen.",
+          "it": "Il comandante e il pilota lavorano insieme nella cabina.",
+          "pt": "O comandante e o piloto trabalham juntos na cabine.",
+          "no": "Kapteinen og piloten jobber sammen i cockpiten."
+        }
+      },
+      {
+        "text": "Headsets help the crew communicate while flying.",
+        "translations": {
+          "es": "Los auriculares ayudan a la tripulación a comunicarse durante el vuelo.",
+          "fr": "Les casques aident l'équipage à communiquer pendant le vol.",
+          "de": "Headsets helfen der Besatzung während des Fluges zu kommunizieren.",
+          "it": "Le cuffie aiutano l'equipaggio a comunicare durante il volo.",
+          "pt": "Os fones ajudam a tripulação a se comunicar durante o voo.",
+          "no": "Hodesett hjelper mannskapet med å kommunisere under flyturen."
+        }
+      },
+      {
+        "text": "The airplane flies high above the landscape.",
+        "translations": {
+          "es": "El avión vuela alto sobre el paisaje.",
+          "fr": "L'avion vole haut au-dessus du paysage.",
+          "de": "Das Flugzeug fliegt hoch über der Landschaft.",
+          "it": "L'aereo vola alto sopra il paesaggio.",
+          "pt": "O avião voa alto sobre a paisagem.",
+          "no": "Flyet flyr høyt over landskapet."
+        }
+      },
+      {
+        "text": "Flying gives us a wonderful view of the world below.",
+        "translations": {
+          "es": "Volar nos da una vista maravillosa del mundo de abajo.",
+          "fr": "Voler nous offre une vue magnifique du monde en dessous.",
+          "de": "Beim Fliegen sehen wir die Welt von oben.",
+          "it": "Volare ci offre una splendida vista del mondo sottostante.",
+          "pt": "Voar nos dá uma vista maravilhosa do mundo abaixo.",
+          "no": "Å fly gir oss en fantastisk utsikt over verden nedenfor."
+        }
+      }
+    ],
+    "hotspots": [
+      {
+        "id": "captain",
+        "label": "captain",
+        "x": 13.92,
+        "y": 22.16,
+        "w": 12.49,
+        "h": 26.56,
+        "sound": "sounds/Captain-tour-guide.mp3",
+        "translations": {}
+      },
+      {
+        "id": "pilot",
+        "label": "pilot",
+        "x": 67.9668425617588,
+        "y": 29.656588635682837,
+        "w": 8.02,
+        "h": 19.2,
+        "sound": "sounds/airplane-news-heart.mp3",
+        "translations": {}
+      },
+      {
+        "id": "boy",
+        "label": "boy",
+        "x": 8.57,
+        "y": 55.8,
+        "w": 15.53,
+        "h": 33.15,
+        "sound": "sounds/airplane-eric-fishing.mp3",
+        "translations": {}
+      },
+      {
+        "id": "girl",
+        "label": "girl",
+        "x": 69.09,
+        "y": 59.56,
+        "w": 12.97,
+        "h": 20.55,
+        "sound": "sounds/airplane-bella-back-seat.mp3",
+        "translations": {}
+      },
+      {
+        "id": "mountain",
+        "label": "mountain",
+        "x": 53.18,
+        "y": 12.31,
+        "w": 12.12,
+        "h": 14.67,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "city",
+        "label": "city",
+        "x": 89.1,
+        "y": 41.18,
+        "w": 9.56,
+        "h": 10.74,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "tower",
+        "label": "Space Needle",
+        "x": 83.18,
+        "y": 38.45,
+        "w": 3.88,
+        "h": 14.35,
+        "sound": "",
+        "translations": {
+          "es": ""
+        },
+        "rotation": 0,
+        "z": 0
+      },
+      {
+        "id": "water",
+        "label": "water",
+        "x": 73.89,
+        "y": 35.65,
+        "w": 5.41,
+        "h": 12.72,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "ferry",
+        "label": "ferry",
+        "x": 92.93,
+        "y": 53.41,
+        "w": 5.77,
+        "h": 7.5,
+        "sound": "sounds/boat-horn.mp3",
+        "translations": {}
+      },
+      {
+        "id": "wing",
+        "label": "wing",
+        "x": -0.1,
+        "y": 31,
+        "w": 11.15,
+        "h": 16.41,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "overhead",
+        "label": "overhead",
+        "x": 27,
+        "y": 0,
+        "w": 49,
+        "h": 15,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "throttle",
+        "label": "throttle",
+        "x": 41.10526173451598,
+        "y": 70.02689260709563,
+        "w": 5.26315569151137,
+        "h": 16.224385263405637,
+        "sound": "",
+        "translations": {
+          "es": ""
+        },
+        "rotation": 0,
+        "z": 0
+      },
+      {
+        "id": "headset",
+        "label": "headset",
+        "x": 83.41,
+        "y": 54.43,
+        "w": 4.44,
+        "h": 29.34,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "controls",
+        "label": "controls",
+        "x": 27.947367657056457,
+        "y": 1.0820627579761977,
+        "w": 33.999995723523504,
+        "h": 9.541498440643045,
+        "sound": "sounds/cessna.mp3",
+        "translations": {
+          "es": ""
+        },
+        "rotation": 0,
+        "z": 0
+      },
+      {
+        "id": "clouds",
+        "label": "clouds",
+        "x": 84.97631629193589,
+        "y": 13.469674482710614,
+        "w": 12.533158401954218,
+        "h": 8.804882953524256,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "airplane",
+        "label": "airplane",
+        "x": 28.75368500305347,
+        "y": 0,
+        "w": 29.37789401722745,
+        "h": 62.48520310052645,
+        "sound": "sounds/airplane-ambience.mp3",
+        "translations": {}
+      }
+    ],
+    "overlays": [],
+    "challenges": [
+      {
+        "prompt": "Find the Throttle",
+        "target": "throttle",
+        "translations": {
+          "es": "Encuentra el acelerador",
+          "fr": "Trouvez l'accélérateur",
+          "de": "Finde das Gaspedal",
+          "it": "Trova l'acceleratore",
+          "pt": "Encontre o acelerador",
+          "no": "Finn gassen"
+        }
+      },
+      {
+        "prompt": "Find the Headset",
+        "target": "headset",
+        "translations": {
+          "es": "Los auriculares",
+          "fr": "Le casque",
+          "de": "Finde das Headset",
+          "it": "Trova l'auricolare",
+          "pt": "Encontre o Fone de Ouvido",
+          "no": "Finn headsettet"
+        }
+      },
+      {
+        "prompt": "Find the Mountain",
+        "target": "mountain",
+        "translations": {
+          "es": "LA MONTAÑA",
+          "fr": "La Montagne",
+          "de": "Finde den Berg",
+          "it": "THE MOUNTAIN",
+          "pt": "Encontre a montanha",
+          "no": "Finn fjellet"
+        }
+      },
+      {
+        "prompt": "Find the Ferry",
+        "target": "ferry",
+        "translations": {
+          "es": "El trasbordador",
+          "fr": "Trouvez le ferry",
+          "de": "Finde die Fähre",
+          "it": "Trova il traghetto",
+          "pt": "Encontrar a balsa",
+          "no": "Finn fergen"
+        }
+      },
+      {
+        "prompt": "Find the Space Needle",
+        "target": "tower",
+        "translations": {
+          "es": "Encuentra la aguja espacial",
+          "fr": "Trouvez l'abeille",
+          "de": "Finde die Biene",
+          "it": "Trova l'ape",
+          "pt": "Encontre a Abelha",
+          "no": "Finn bien"
+        }
+      },
+      {
+        "prompt": "Find the Captain",
+        "target": "wing",
+        "translations": {
+          "es": "el capitán",
+          "fr": "Le Capitaine",
+          "de": "Der Kapitän",
+          "it": "il comandante",
+          "pt": "Encontre o capitão",
+          "no": "Finn kapteinen"
+        }
+      },
+      {
+        "prompt": "Find the girl sitting in the right rear passenger seat",
+        "target": "girl",
+        "translations": {
+          "es": "Encuentra a la chica sentada en el asiento trasero derecho del pasajero",
+          "fr": "Trouvez la fille assise sur le siège passager arrière droit",
+          "de": "Finde das Mädchen, das auf dem rechten hinteren Beifahrersitz sitzt",
+          "it": "Trova la ragazza seduta sul sedile posteriore destro del passeggero",
+          "pt": "Encontre a rapariga sentada no banco do passageiro traseiro direito",
+          "no": "Finn jenta som sitter i høyre passasjersete bak"
+        }
+      },
+      {
+        "prompt": "Find the clouds",
+        "target": "clouds",
+        "translations": {
+          "es": "Las nubes",
+          "fr": "nuages/des nuages/les nuages",
+          "de": "Die Wolken",
+          "it": "Trova le nuvole",
+          "pt": "Encontre as nuvens",
+          "no": "Finn skyene"
+        }
+      }
+    ]
+  },
   "hang-gliding": {
     "title": "Hang Gliding",
     "image": "images/Hang-Gliding-Adventure.jpg",
@@ -8248,417 +8659,6 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
           "it": "Trova il Cervo",
           "pt": "Encontre o Veado",
           "no": "Finn hjorten"
-        }
-      }
-    ]
-  },
-  "airplane-flying": {
-    "title": "Airplane Flying",
-    "image": "images/Airplane-Flying-Adventure.jpg",
-    "lessons": [
-      {
-        "text": "Welcome to the airplane cockpit.",
-        "translations": {
-          "es": "Bienvenidos a la cabina del avión.",
-          "fr": "Bienvenue dans le poste de pilotage.",
-          "de": "Willkommen im Cockpit des Flugzeugs.",
-          "it": "Benvenuti nella cabina di pilotaggio.",
-          "pt": "Bem-vindos à cabine do avião.",
-          "no": "Velkommen til cockpiten."
-        }
-      },
-      {
-        "text": "The cockpit is where the pilots control the airplane.",
-        "translations": {
-          "es": "La cabina es donde los pilotos controlan el avión.",
-          "fr": "C'est ici que les pilotes contrôlent l'avion.",
-          "de": "Im Cockpit steuern die Piloten das Flugzeug.",
-          "it": "La cabina è il luogo dove i piloti controllano l'aereo.",
-          "pt": "A cabine é onde os pilotos controlam o avião.",
-          "no": "Cockpiten er stedet der pilotene styrer flyet."
-        }
-      },
-      {
-        "text": "The crew checks the airplane before takeoff.",
-        "translations": {
-          "es": "La tripulación revisa el avión antes del despegue.",
-          "fr": "L'équipage vérifie l'avion avant le décollage.",
-          "de": "Die Besatzung überprüft das Flugzeug vor dem Start.",
-          "it": "L'equipaggio controlla l'aereo prima del decollo.",
-          "pt": "A tripulação verifica o avião antes da decolagem.",
-          "no": "Mannskapet sjekker flyet før avgang."
-        }
-      },
-      {
-        "text": "Everyone gets ready before the airplane leaves the ground.",
-        "translations": {
-          "es": "Todos se preparan antes de que el avión deje el suelo.",
-          "fr": "Tout le monde se prépare avant que l'avion quitte le sol.",
-          "de": "Alle bereiten sich vor, bevor das Flugzeug abhebt.",
-          "it": "Tutti si preparano prima che l'aereo lasci il suolo.",
-          "pt": "Todos se preparam antes de o avião sair do chão.",
-          "no": "Alle gjør seg klare før flyet forlater bakken."
-        }
-      },
-      {
-        "text": "The cockpit has instruments, screens, switches, and throttles.",
-        "translations": {
-          "es": "La cabina tiene instrumentos, pantallas, interruptores y palancas.",
-          "fr": "Le cockpit contient des instruments, des écrans, des interrupteurs et des manettes.",
-          "de": "Das Cockpit hat Instrumente, Bildschirme, Schalter und Schubhebel.",
-          "it": "La cabina ha strumenti, schermi, interruttori e manette.",
-          "pt": "A cabine tem instrumentos, telas, interruptores e manetes.",
-          "no": "Cockpiten har instrumenter, skjermer, brytere og gasspaker."
-        }
-      },
-      {
-        "text": "Pilots use these controls to safely fly the airplane.",
-        "translations": {
-          "es": "Los pilotos usan estos controles para volar con seguridad.",
-          "fr": "Les pilotes utilisent ces commandes pour voler en sécurité.",
-          "de": "Die Piloten benutzen diese Bedienelemente für einen sicheren Flug.",
-          "it": "I piloti usano questi comandi per volare in sicurezza.",
-          "pt": "Os pilotos usam esses controles para voar com segurança.",
-          "no": "Pilotene bruker kontrollene for å fly trygt."
-        }
-      },
-      {
-        "text": "Look through the windows at the mountain, city, water, and clouds.",
-        "translations": {
-          "es": "Mira por las ventanas la montaña, la ciudad, el agua y las nubes.",
-          "fr": "Regarde par les fenêtres la montagne, la ville, l'eau et les nuages.",
-          "de": "Schau aus den Fenstern auf den Berg, die Stadt, das Wasser und die Wolken.",
-          "it": "Guarda dai finestrini la montagna, la città, l'acqua e le nuvole.",
-          "pt": "Olhe pelas janelas para a montanha, a cidade, a água e as nuvens.",
-          "no": "Se ut av vinduene på fjellet, byen, vannet og skyene."
-        }
-      },
-      {
-        "text": "Everything looks different from high in the sky.",
-        "translations": {
-          "es": "Todo se ve diferente desde lo alto del cielo.",
-          "fr": "Tout semble différent vu du ciel.",
-          "de": "Hoch am Himmel sieht alles anders aus.",
-          "it": "Tutto sembra diverso dall'alto nel cielo.",
-          "pt": "Tudo parece diferente do alto no céu.",
-          "no": "Alt ser annerledes ut høyt oppe på himmelen."
-        }
-      },
-      {
-        "text": "The captain and pilot work together in the cockpit.",
-        "translations": {
-          "es": "El capitán y el piloto trabajan juntos en la cabina.",
-          "fr": "Le commandant et le pilote travaillent ensemble dans le cockpit.",
-          "de": "Der Kapitän und der Pilot arbeiten im Cockpit zusammen.",
-          "it": "Il comandante e il pilota lavorano insieme nella cabina.",
-          "pt": "O comandante e o piloto trabalham juntos na cabine.",
-          "no": "Kapteinen og piloten jobber sammen i cockpiten."
-        }
-      },
-      {
-        "text": "Headsets help the crew communicate while flying.",
-        "translations": {
-          "es": "Los auriculares ayudan a la tripulación a comunicarse durante el vuelo.",
-          "fr": "Les casques aident l'équipage à communiquer pendant le vol.",
-          "de": "Headsets helfen der Besatzung während des Fluges zu kommunizieren.",
-          "it": "Le cuffie aiutano l'equipaggio a comunicare durante il volo.",
-          "pt": "Os fones ajudam a tripulação a se comunicar durante o voo.",
-          "no": "Hodesett hjelper mannskapet med å kommunisere under flyturen."
-        }
-      },
-      {
-        "text": "The airplane flies high above the landscape.",
-        "translations": {
-          "es": "El avión vuela alto sobre el paisaje.",
-          "fr": "L'avion vole haut au-dessus du paysage.",
-          "de": "Das Flugzeug fliegt hoch über der Landschaft.",
-          "it": "L'aereo vola alto sopra il paesaggio.",
-          "pt": "O avião voa alto sobre a paisagem.",
-          "no": "Flyet flyr høyt over landskapet."
-        }
-      },
-      {
-        "text": "Flying gives us a wonderful view of the world below.",
-        "translations": {
-          "es": "Volar nos da una vista maravillosa del mundo de abajo.",
-          "fr": "Voler nous offre une vue magnifique du monde en dessous.",
-          "de": "Beim Fliegen sehen wir die Welt von oben.",
-          "it": "Volare ci offre una splendida vista del mondo sottostante.",
-          "pt": "Voar nos dá uma vista maravilhosa do mundo abaixo.",
-          "no": "Å fly gir oss en fantastisk utsikt over verden nedenfor."
-        }
-      }
-    ],
-    "hotspots": [
-      {
-        "id": "captain",
-        "label": "captain",
-        "x": 13.92,
-        "y": 22.16,
-        "w": 12.49,
-        "h": 26.56,
-        "sound": "sounds/Captain-tour-guide.mp3",
-        "translations": {}
-      },
-      {
-        "id": "pilot",
-        "label": "pilot",
-        "x": 67.9668425617588,
-        "y": 29.656588635682837,
-        "w": 8.02,
-        "h": 19.2,
-        "sound": "sounds/airplane-news-heart.mp3",
-        "translations": {}
-      },
-      {
-        "id": "boy",
-        "label": "boy",
-        "x": 8.57,
-        "y": 55.8,
-        "w": 15.53,
-        "h": 33.15,
-        "sound": "sounds/airplane-eric-fishing.mp3",
-        "translations": {}
-      },
-      {
-        "id": "girl",
-        "label": "girl",
-        "x": 69.09,
-        "y": 59.56,
-        "w": 12.97,
-        "h": 20.55,
-        "sound": "sounds/airplane-bella-back-seat.mp3",
-        "translations": {}
-      },
-      {
-        "id": "mountain",
-        "label": "mountain",
-        "x": 53.18,
-        "y": 12.31,
-        "w": 12.12,
-        "h": 14.67,
-        "sound": "",
-        "translations": {}
-      },
-      {
-        "id": "city",
-        "label": "city",
-        "x": 89.1,
-        "y": 41.18,
-        "w": 9.56,
-        "h": 10.74,
-        "sound": "",
-        "translations": {}
-      },
-      {
-        "id": "tower",
-        "label": "Space Needle",
-        "x": 83.18,
-        "y": 38.45,
-        "w": 3.88,
-        "h": 14.35,
-        "sound": "",
-        "translations": {
-          "es": ""
-        },
-        "rotation": 0,
-        "z": 0
-      },
-      {
-        "id": "water",
-        "label": "water",
-        "x": 73.89,
-        "y": 35.65,
-        "w": 5.41,
-        "h": 12.72,
-        "sound": "",
-        "translations": {}
-      },
-      {
-        "id": "ferry",
-        "label": "ferry",
-        "x": 92.93,
-        "y": 53.41,
-        "w": 5.77,
-        "h": 7.5,
-        "sound": "sounds/boat-horn.mp3",
-        "translations": {}
-      },
-      {
-        "id": "wing",
-        "label": "wing",
-        "x": -0.1,
-        "y": 31,
-        "w": 11.15,
-        "h": 16.41,
-        "sound": "",
-        "translations": {}
-      },
-      {
-        "id": "overhead",
-        "label": "overhead",
-        "x": 27,
-        "y": 0,
-        "w": 49,
-        "h": 15,
-        "sound": "",
-        "translations": {}
-      },
-      {
-        "id": "throttle",
-        "label": "throttle",
-        "x": 41.10526173451598,
-        "y": 70.02689260709563,
-        "w": 5.26315569151137,
-        "h": 16.224385263405637,
-        "sound": "",
-        "translations": {
-          "es": ""
-        },
-        "rotation": 0,
-        "z": 0
-      },
-      {
-        "id": "headset",
-        "label": "headset",
-        "x": 83.41,
-        "y": 54.43,
-        "w": 4.44,
-        "h": 29.34,
-        "sound": "",
-        "translations": {}
-      },
-      {
-        "id": "controls",
-        "label": "controls",
-        "x": 36,
-        "y": 62,
-        "w": 27,
-        "h": 33,
-        "sound": "sounds/cessna.mp3",
-        "translations": {
-          "es": ""
-        },
-        "rotation": 0,
-        "z": 0
-      },
-      {
-        "id": "clouds",
-        "label": "clouds",
-        "x": 84.97631629193589,
-        "y": 13.469674482710614,
-        "w": 12.533158401954218,
-        "h": 8.804882953524256,
-        "sound": "",
-        "translations": {}
-      },
-      {
-        "id": "airplane",
-        "label": "airplane",
-        "x": 28.75368500305347,
-        "y": 0,
-        "w": 29.37789401722745,
-        "h": 62.48520310052645,
-        "sound": "sounds/airplane-ambience.mp3",
-        "translations": {}
-      }
-    ],
-    "overlays": [],
-    "challenges": [
-      {
-        "prompt": "Find the Throttle",
-        "target": "throttle",
-        "translations": {
-          "es": "Encuentra el acelerador",
-          "fr": "Trouvez l'accélérateur",
-          "de": "Finde das Gaspedal",
-          "it": "Trova l'acceleratore",
-          "pt": "Encontre o acelerador",
-          "no": "Finn gassen"
-        }
-      },
-      {
-        "prompt": "Find the Headset",
-        "target": "headset",
-        "translations": {
-          "es": "Los auriculares",
-          "fr": "Le casque",
-          "de": "Finde das Headset",
-          "it": "Trova l'auricolare",
-          "pt": "Encontre o Fone de Ouvido",
-          "no": "Finn headsettet"
-        }
-      },
-      {
-        "prompt": "Find the Mountain",
-        "target": "mountain",
-        "translations": {
-          "es": "LA MONTAÑA",
-          "fr": "La Montagne",
-          "de": "Finde den Berg",
-          "it": "THE MOUNTAIN",
-          "pt": "Encontre a montanha",
-          "no": "Finn fjellet"
-        }
-      },
-      {
-        "prompt": "Find the Ferry",
-        "target": "ferry",
-        "translations": {
-          "es": "El trasbordador",
-          "fr": "Trouvez le ferry",
-          "de": "Finde die Fähre",
-          "it": "Trova il traghetto",
-          "pt": "Encontrar a balsa",
-          "no": "Finn fergen"
-        }
-      },
-      {
-        "prompt": "Find the Space Needle",
-        "target": "tower",
-        "translations": {
-          "es": "Encuentra la aguja espacial",
-          "fr": "Trouvez l'abeille",
-          "de": "Finde die Biene",
-          "it": "Trova l'ape",
-          "pt": "Encontre a Abelha",
-          "no": "Finn bien"
-        }
-      },
-      {
-        "prompt": "Find the Captain",
-        "target": "wing",
-        "translations": {
-          "es": "el capitán",
-          "fr": "Le Capitaine",
-          "de": "Der Kapitän",
-          "it": "il comandante",
-          "pt": "Encontre o capitão",
-          "no": "Finn kapteinen"
-        }
-      },
-      {
-        "prompt": "Find the girl sitting in the right rear passenger seat",
-        "target": "girl",
-        "translations": {
-          "es": "Encuentra a la chica sentada en el asiento trasero derecho del pasajero",
-          "fr": "Trouvez la fille assise sur le siège passager arrière droit",
-          "de": "Finde das Mädchen, das auf dem rechten hinteren Beifahrersitz sitzt",
-          "it": "Trova la ragazza seduta sul sedile posteriore destro del passeggero",
-          "pt": "Encontre a rapariga sentada no banco do passageiro traseiro direito",
-          "no": "Finn jenta som sitter i høyre passasjersete bak"
-        }
-      },
-      {
-        "prompt": "Find the clouds",
-        "target": "clouds",
-        "translations": {
-          "es": "Las nubes",
-          "fr": "nuages/des nuages/les nuages",
-          "de": "Die Wolken",
-          "it": "Trova le nuvole",
-          "pt": "Encontre as nuvens",
-          "no": "Finn skyene"
         }
       }
     ]
