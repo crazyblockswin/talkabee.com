@@ -6900,6 +6900,353 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
       }
     ]
   },
+  "dancing": {
+    "title": "Dancing",
+    "image": "images/dancing.jpg",
+    "lessons": [
+      {
+        "text": "Welcome to the lakeside dance party!",
+        "translations": {
+          "es": "¡Bienvenidos a la fiesta de baile junto al lago!",
+          "fr": "Bienvenue à la soirée dansante au bord du lac !",
+          "de": "Willkommen zur Tanzparty am See!",
+          "it": "Benvenuti alla festa da ballo sul lago!",
+          "pt": "Bem-vindos à festa de dança à beira do lago!",
+          "no": "Velkommen til dansefesten ved innsjøen!"
+        }
+      },
+      {
+        "text": "The band is playing live music on the stage.",
+        "translations": {
+          "es": "La banda toca música en vivo en el escenario.",
+          "fr": "Le groupe joue de la musique en direct sur scène.",
+          "de": "Die Band spielt Livemusik auf der Bühne.",
+          "it": "La band suona musica dal vivo sul palco.",
+          "pt": "A banda toca música ao vivo no palco.",
+          "no": "Bandet spiller levende musikk på scenen."
+        }
+      },
+      {
+        "text": "The singer uses a microphone so everyone can hear her.",
+        "translations": {
+          "es": "La cantante usa un micrófono para que todos puedan oírla.",
+          "fr": "La chanteuse utilise un microphone pour que tout le monde puisse l’entendre.",
+          "de": "Die Sängerin benutzt ein Mikrofon, damit alle sie hören können.",
+          "it": "La cantante usa un microfono perché tutti possano sentirla.",
+          "pt": "A cantora usa um microfone para que todos possam ouvi-la.",
+          "no": "Sangeren bruker en mikrofon slik at alle kan høre henne."
+        }
+      },
+      {
+        "text": "The guitar players make music with strings.",
+        "translations": {
+          "es": "Los guitarristas hacen música con cuerdas.",
+          "fr": "Les guitaristes font de la musique avec des cordes.",
+          "de": "Die Gitarristen machen Musik mit Saiten.",
+          "it": "I chitarristi fanno musica con le corde.",
+          "pt": "Os guitarristas fazem música com cordas.",
+          "no": "Gitaristene lager musikk med strenger."
+        }
+      },
+      {
+        "text": "The drummer keeps the beat for the band.",
+        "translations": {
+          "es": "El baterista mantiene el ritmo de la banda.",
+          "fr": "Le batteur donne le rythme au groupe.",
+          "de": "Der Schlagzeuger gibt den Takt für die Band vor.",
+          "it": "Il batterista tiene il ritmo della band.",
+          "pt": "O baterista mantém o ritmo da banda.",
+          "no": "Trommeslageren holder takten for bandet."
+        }
+      },
+      {
+        "text": "People are dancing together on the wooden floor.",
+        "translations": {
+          "es": "La gente baila junta sobre el suelo de madera.",
+          "fr": "Les gens dansent ensemble sur la piste en bois.",
+          "de": "Die Menschen tanzen zusammen auf dem Holzboden.",
+          "it": "Le persone ballano insieme sul pavimento di legno.",
+          "pt": "As pessoas dançam juntas no piso de madeira.",
+          "no": "Folk danser sammen på tregulvet."
+        }
+      },
+      {
+        "text": "Colorful dresses move as the dancers turn.",
+        "translations": {
+          "es": "Los vestidos coloridos se mueven cuando los bailarines giran.",
+          "fr": "Les robes colorées bougent lorsque les danseurs tournent.",
+          "de": "Bunte Kleider bewegen sich, wenn sich die Tanzenden drehen.",
+          "it": "Gli abiti colorati si muovono mentre i ballerini girano.",
+          "pt": "Os vestidos coloridos se movem quando os dançarinos giram.",
+          "no": "Fargerike kjoler beveger seg når danserne snurrer."
+        }
+      },
+      {
+        "text": "Warm lights hang above the outdoor dance floor.",
+        "translations": {
+          "es": "Luces cálidas cuelgan sobre la pista de baile al aire libre.",
+          "fr": "Des lumières chaleureuses sont suspendues au-dessus de la piste de danse.",
+          "de": "Warme Lichter hängen über der Tanzfläche im Freien.",
+          "it": "Luci calde sono appese sopra la pista da ballo all’aperto.",
+          "pt": "Luzes aconchegantes ficam penduradas sobre a pista de dança ao ar livre.",
+          "no": "Varme lys henger over dansegulvet utendørs."
+        }
+      },
+      {
+        "text": "A boat is waiting beside the dock.",
+        "translations": {
+          "es": "Un barco espera junto al muelle.",
+          "fr": "Un bateau attend près du quai.",
+          "de": "Ein Boot wartet am Steg.",
+          "it": "Una barca aspetta accanto al molo.",
+          "pt": "Um barco espera ao lado do cais.",
+          "no": "En båt venter ved brygga."
+        }
+      },
+      {
+        "text": "The lake reflects the colors of the evening sky.",
+        "translations": {
+          "es": "El lago refleja los colores del cielo al atardecer.",
+          "fr": "Le lac reflète les couleurs du ciel du soir.",
+          "de": "Der See spiegelt die Farben des Abendhimmels.",
+          "it": "Il lago riflette i colori del cielo serale.",
+          "pt": "O lago reflete as cores do céu ao entardecer.",
+          "no": "Innsjøen speiler fargene på kveldshimmelen."
+        }
+      },
+      {
+        "text": "Snow-covered mountains rise beyond the water.",
+        "translations": {
+          "es": "Las montañas cubiertas de nieve se elevan más allá del agua.",
+          "fr": "Des montagnes enneigées s’élèvent au-delà de l’eau.",
+          "de": "Schneebedeckte Berge ragen hinter dem Wasser auf.",
+          "it": "Montagne innevate si innalzano oltre l’acqua.",
+          "pt": "Montanhas cobertas de neve se erguem além da água.",
+          "no": "Snødekte fjell reiser seg på den andre siden av vannet."
+        }
+      },
+      {
+        "text": "Everyone is enjoying music, friendship, and a beautiful sunset.",
+        "translations": {
+          "es": "Todos disfrutan de la música, la amistad y una hermosa puesta de sol.",
+          "fr": "Tout le monde profite de la musique, de l’amitié et d’un beau coucher de soleil.",
+          "de": "Alle genießen Musik, Freundschaft und einen wunderschönen Sonnenuntergang.",
+          "it": "Tutti si godono la musica, l’amicizia e un bellissimo tramonto.",
+          "pt": "Todos aproveitam a música, a amizade e um lindo pôr do sol.",
+          "no": "Alle nyter musikk, vennskap og en vakker solnedgang."
+        }
+      }
+    ],
+    "hotspots": [
+      {
+        "id": "singer",
+        "label": "singer",
+        "x": 48,
+        "y": 36,
+        "w": 3,
+        "h": 13,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "microphone",
+        "label": "microphone",
+        "x": 47.1,
+        "y": 37.4,
+        "w": 2.2,
+        "h": 8.5,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "left-guitar",
+        "label": "guitar",
+        "x": 38,
+        "y": 36,
+        "w": 7.3,
+        "h": 13,
+        "sound": "sounds/guitar.mp3",
+        "translations": {
+          "es": ""
+        },
+        "rotation": 0,
+        "z": 0
+      },
+      {
+        "id": "right-guitar",
+        "label": "bass guitar",
+        "x": 54.8,
+        "y": 35.5,
+        "w": 7.2,
+        "h": 14.2,
+        "sound": "sounds/guitar3.mp3",
+        "translations": {
+          "es": ""
+        },
+        "rotation": 0,
+        "z": 0
+      },
+      {
+        "id": "drums",
+        "label": "drums",
+        "x": 43.2,
+        "y": 41,
+        "w": 10,
+        "h": 8.4,
+        "sound": "sounds/energetic-bigbeat-drum1.mp3",
+        "translations": {
+          "es": ""
+        },
+        "rotation": 0,
+        "z": 0
+      },
+      {
+        "id": "stage",
+        "label": "stage",
+        "x": 32.5,
+        "y": 25.5,
+        "w": 34.6,
+        "h": 27,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "dancers",
+        "label": "dancers",
+        "x": 34.5,
+        "y": 53,
+        "w": 28.5,
+        "h": 38,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "red-dress",
+        "label": "red dress",
+        "x": 34.5,
+        "y": 53.5,
+        "w": 9,
+        "h": 31.5,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "string-lights",
+        "label": "string lights",
+        "x": 31,
+        "y": 18,
+        "w": 36,
+        "h": 17,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "boat",
+        "label": "boat",
+        "x": 5.4,
+        "y": 47.3,
+        "w": 9,
+        "h": 10,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "lake",
+        "label": "lake",
+        "x": 0,
+        "y": 48,
+        "w": 16.5,
+        "h": 13,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "mountains",
+        "label": "mountains",
+        "x": 80.5,
+        "y": 30,
+        "w": 19.2,
+        "h": 15,
+        "sound": "",
+        "translations": {}
+      }
+    ],
+    "overlays": [],
+    "challenges": [
+      {
+        "prompt": "Find the singer",
+        "target": "singer",
+        "translations": {
+          "es": "Encuentra a la cantante",
+          "fr": "Trouve la chanteuse",
+          "de": "Finde die Sängerin",
+          "it": "Trova la cantante",
+          "pt": "Encontre a cantora",
+          "no": "Finn sangeren"
+        }
+      },
+      {
+        "prompt": "Find the guitar",
+        "target": "left-guitar",
+        "translations": {
+          "es": "Encuentra la guitarra",
+          "fr": "Trouve la guitare",
+          "de": "Finde die Gitarre",
+          "it": "Trova la chitarra",
+          "pt": "Encontre a guitarra",
+          "no": "Finn gitaren"
+        }
+      },
+      {
+        "prompt": "Find the drums",
+        "target": "drums",
+        "translations": {
+          "es": "Encuentra la batería",
+          "fr": "Trouve la batterie",
+          "de": "Finde das Schlagzeug",
+          "it": "Trova la batteria",
+          "pt": "Encontre a bateria",
+          "no": "Finn trommene"
+        }
+      },
+      {
+        "prompt": "Find the dancers",
+        "target": "dancers",
+        "translations": {
+          "es": "Encuentra a los bailarines",
+          "fr": "Trouve les danseurs",
+          "de": "Finde die Tanzenden",
+          "it": "Trova i ballerini",
+          "pt": "Encontre os dançarinos",
+          "no": "Finn danserne"
+        }
+      },
+      {
+        "prompt": "Find the boat",
+        "target": "boat",
+        "translations": {
+          "es": "Encuentra el barco",
+          "fr": "Trouve le bateau",
+          "de": "Finde das Boot",
+          "it": "Trova la barca",
+          "pt": "Encontre o barco",
+          "no": "Finn båten"
+        }
+      },
+      {
+        "prompt": "Find the mountains",
+        "target": "mountains",
+        "translations": {
+          "es": "Encuentra las montañas",
+          "fr": "Trouve les montagnes",
+          "de": "Finde die Berge",
+          "it": "Trova le montagne",
+          "pt": "Encontre as montanhas",
+          "no": "Finn fjellene"
+        }
+      }
+    ]
+  },
   "large-picnic": {
     "title": "Large Picnic",
     "image": "images/Family-Picnic-Adventure.jpg",
@@ -13654,6 +14001,353 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
       }
     ]
   },
+  "overlook": {
+    "title": "Overlook",
+    "image": "images/overlook.jpg",
+    "lessons": [
+      {
+        "text": "A fifth-wheel RV is parked beside the overlook.",
+        "translations": {
+          "es": "Una caravana de quinta rueda está estacionada junto al mirador.",
+          "fr": "Une caravane à sellette est garée près du belvédère.",
+          "de": "Ein Wohnwagen mit Sattelkupplung steht am Aussichtspunkt.",
+          "it": "Una roulotte a quinta ruota è parcheggiata vicino al belvedere.",
+          "pt": "Um trailer de quinta roda está estacionado perto do mirante.",
+          "no": "En femtehjulscampingvogn står parkert ved utsiktspunktet."
+        }
+      },
+      {
+        "text": "Solar panels help provide electricity for the RV.",
+        "translations": {
+          "es": "Los paneles solares ayudan a proporcionar electricidad a la caravana.",
+          "fr": "Les panneaux solaires fournissent de l’électricité à la caravane.",
+          "de": "Solarmodule versorgen den Wohnwagen mit Strom.",
+          "it": "I pannelli solari forniscono elettricità alla roulotte.",
+          "pt": "Os painéis solares fornecem eletricidade ao trailer.",
+          "no": "Solcellepaneler gir strøm til campingvognen."
+        }
+      },
+      {
+        "text": "The adults enjoy the view with the children.",
+        "translations": {
+          "es": "Los adultos disfrutan de la vista con los niños.",
+          "fr": "Les adultes admirent la vue avec les enfants.",
+          "de": "Die Erwachsenen genießen mit den Kindern die Aussicht.",
+          "it": "Gli adulti ammirano il panorama con i bambini.",
+          "pt": "Os adultos apreciam a vista com as crianças.",
+          "no": "De voksne nyter utsikten sammen med barna."
+        }
+      },
+      {
+        "text": "The children are exploring the beautiful overlook.",
+        "translations": {
+          "es": "Los niños exploran el hermoso mirador.",
+          "fr": "Les enfants explorent le magnifique belvédère.",
+          "de": "Die Kinder erkunden den schönen Aussichtspunkt.",
+          "it": "I bambini esplorano il bellissimo belvedere.",
+          "pt": "As crianças exploram o belo mirante.",
+          "no": "Barna utforsker det vakre utsiktspunktet."
+        }
+      },
+      {
+        "text": "The golden dog sits beside the family.",
+        "translations": {
+          "es": "El perro dorado está sentado junto a la familia.",
+          "fr": "Le chien doré est assis près de la famille.",
+          "de": "Der goldene Hund sitzt neben der Familie.",
+          "it": "Il cane dorato è seduto accanto alla famiglia.",
+          "pt": "O cão dourado está sentado ao lado da família.",
+          "no": "Den gylne hunden sitter ved siden av familien."
+        }
+      },
+      {
+        "text": "An eagle spreads its wings above the valley.",
+        "translations": {
+          "es": "Un águila extiende sus alas sobre el valle.",
+          "fr": "Un aigle déploie ses ailes au-dessus de la vallée.",
+          "de": "Ein Adler breitet seine Flügel über dem Tal aus.",
+          "it": "Un’aquila spiega le ali sopra la valle.",
+          "pt": "Uma águia abre as asas sobre o vale.",
+          "no": "En ørn brer ut vingene over dalen."
+        }
+      },
+      {
+        "text": "A small airplane flies above the water.",
+        "translations": {
+          "es": "Un avión pequeño vuela sobre el agua.",
+          "fr": "Un petit avion vole au-dessus de l’eau.",
+          "de": "Ein kleines Flugzeug fliegt über das Wasser.",
+          "it": "Un piccolo aereo vola sopra l’acqua.",
+          "pt": "Um pequeno avião voa sobre a água.",
+          "no": "Et lite fly flyr over vannet."
+        }
+      },
+      {
+        "text": "A snow-covered mountain rises in the distance.",
+        "translations": {
+          "es": "Una montaña nevada se eleva a lo lejos.",
+          "fr": "Une montagne enneigée se dresse au loin.",
+          "de": "Ein schneebedeckter Berg erhebt sich in der Ferne.",
+          "it": "Una montagna innevata si erge in lontananza.",
+          "pt": "Uma montanha coberta de neve se ergue ao longe.",
+          "no": "Et snødekt fjell reiser seg i det fjerne."
+        }
+      },
+      {
+        "text": "The Space Needle rises above the city skyline.",
+        "translations": {
+          "es": "La Space Needle se eleva sobre la ciudad.",
+          "fr": "La Space Needle s’élève au-dessus de la ville.",
+          "de": "Die Space Needle ragt über die Stadt.",
+          "it": "Lo Space Needle si erge sopra la città.",
+          "pt": "A Space Needle se ergue acima da cidade.",
+          "no": "Space Needle ruver over byen."
+        }
+      },
+      {
+        "text": "A ferry carries passengers across the water.",
+        "translations": {
+          "es": "Un ferry transporta pasajeros por el agua.",
+          "fr": "Un ferry transporte des passagers sur l’eau.",
+          "de": "Eine Fähre bringt Passagiere über das Wasser.",
+          "it": "Un traghetto trasporta passeggeri sull’acqua.",
+          "pt": "Uma balsa transporta passageiros pela água.",
+          "no": "En ferge frakter passasjerer over vannet."
+        }
+      },
+      {
+        "text": "Sailboats glide across the blue water.",
+        "translations": {
+          "es": "Los veleros se deslizan sobre el agua azul.",
+          "fr": "Des voiliers glissent sur l’eau bleue.",
+          "de": "Segelboote gleiten über das blaue Wasser.",
+          "it": "Le barche a vela scivolano sull’acqua blu.",
+          "pt": "Veleiros deslizam sobre a água azul.",
+          "no": "Seilbåter glir over det blå vannet."
+        }
+      },
+      {
+        "text": "The sparkling water stretches toward the horizon.",
+        "translations": {
+          "es": "El agua brillante se extiende hasta el horizonte.",
+          "fr": "L’eau scintillante s’étend jusqu’à l’horizon.",
+          "de": "Das glitzernde Wasser reicht bis zum Horizont.",
+          "it": "L’acqua scintillante si estende fino all’orizzonte.",
+          "pt": "A água brilhante se estende até o horizonte.",
+          "no": "Det glitrende vannet strekker seg mot horisonten."
+        }
+      }
+    ],
+    "hotspots": [
+      {
+        "id": "fifth-wheel-rv",
+        "label": "fifth-wheel RV",
+        "x": 2,
+        "y": 42,
+        "w": 26,
+        "h": 24,
+        "sound": "sounds/RV2-nature.mp3",
+        "translations": {
+          "es": ""
+        },
+        "rotation": 0,
+        "z": 0
+      },
+      {
+        "id": "solar-panels",
+        "label": "solar panels",
+        "x": 7,
+        "y": 41,
+        "w": 9,
+        "h": 5,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "adults",
+        "label": "adults",
+        "x": 11,
+        "y": 64,
+        "w": 19,
+        "h": 24,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "children",
+        "label": "children",
+        "x": 28,
+        "y": 65,
+        "w": 20,
+        "h": 24,
+        "sound": "sounds/kids-talking.mp3",
+        "translations": {
+          "es": ""
+        },
+        "rotation": 0,
+        "z": 0
+      },
+      {
+        "id": "bear",
+        "label": "dog",
+        "x": 50,
+        "y": 77,
+        "w": 9,
+        "h": 17,
+        "sound": "sounds/dog-panting.wav",
+        "translations": {
+          "es": ""
+        },
+        "rotation": 0,
+        "z": 0
+      },
+      {
+        "id": "eagle",
+        "label": "eagle",
+        "x": 24,
+        "y": 7,
+        "w": 13,
+        "h": 15,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "airplane",
+        "label": "airplane",
+        "x": 79,
+        "y": 29,
+        "w": 14,
+        "h": 12,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "mountain",
+        "label": "snowy mountain",
+        "x": 52,
+        "y": 13,
+        "w": 29,
+        "h": 19,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "space-needle",
+        "label": "Space Needle",
+        "x": 59,
+        "y": 42,
+        "w": 4,
+        "h": 9,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "ferry",
+        "label": "ferry",
+        "x": 74,
+        "y": 56,
+        "w": 7,
+        "h": 5,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "sailboats",
+        "label": "sailboats",
+        "x": 69,
+        "y": 65,
+        "w": 9,
+        "h": 11,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "lake",
+        "label": "water",
+        "x": 79,
+        "y": 61,
+        "w": 12,
+        "h": 15,
+        "sound": "",
+        "translations": {}
+      }
+    ],
+    "overlays": [],
+    "challenges": [
+      {
+        "prompt": "Find the fifth-wheel RV",
+        "target": "fifth-wheel-rv",
+        "translations": {
+          "es": "Encuentra la caravana de quinta rueda",
+          "fr": "Trouve la caravane à sellette",
+          "de": "Finde den Wohnwagen mit Sattelkupplung",
+          "it": "Trova la roulotte a quinta ruota",
+          "pt": "Encontre o trailer de quinta roda",
+          "no": "Finn femtehjulscampingvognen"
+        }
+      },
+      {
+        "prompt": "Find the eagle",
+        "target": "eagle",
+        "translations": {
+          "es": "Encuentra el águila",
+          "fr": "Trouve l’aigle",
+          "de": "Finde den Adler",
+          "it": "Trova l’aquila",
+          "pt": "Encontre a águia",
+          "no": "Finn ørnen"
+        }
+      },
+      {
+        "prompt": "Find the airplane",
+        "target": "airplane",
+        "translations": {
+          "es": "Encuentra el avión",
+          "fr": "Trouve l’avion",
+          "de": "Finde das Flugzeug",
+          "it": "Trova l’aereo",
+          "pt": "Encontre o avião",
+          "no": "Finn flyet"
+        }
+      },
+      {
+        "prompt": "Find the snowy mountain",
+        "target": "mountain",
+        "translations": {
+          "es": "Encuentra la montaña nevada",
+          "fr": "Trouve la montagne enneigée",
+          "de": "Finde den schneebedeckten Berg",
+          "it": "Trova la montagna innevata",
+          "pt": "Encontre a montanha nevada",
+          "no": "Finn det snødekte fjellet"
+        }
+      },
+      {
+        "prompt": "Find the dog",
+        "target": "bear",
+        "translations": {
+          "es": "Encuentra el perro",
+          "fr": "Trouve le chien",
+          "de": "Finde den Hund",
+          "it": "Trova il cane",
+          "pt": "Encontre o cão",
+          "no": "Finn hunden"
+        }
+      },
+      {
+        "prompt": "Find the ferry",
+        "target": "ferry",
+        "translations": {
+          "es": "Encuentra el ferry",
+          "fr": "Trouve le ferry",
+          "de": "Finde die Fähre",
+          "it": "Trova il traghetto",
+          "pt": "Encontre a balsa",
+          "no": "Finn fergen"
+        }
+      }
+    ]
+  },
   "river-rafting": {
     "title": "River Rafting",
     "image": "images/River-Rafting-Adventure.jpg",
@@ -16697,6 +17391,1067 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
       }
     ]
   },
+  "swimming": {
+    "title": "Swimming",
+    "image": "images/swimming.jpg",
+    "lessons": [
+      {
+        "text": "Welcome to our lakeside swimming adventure!",
+        "translations": {
+          "es": "¡Bienvenidos a nuestra aventura de natación junto al lago!",
+          "fr": "Bienvenue dans notre aventure de baignade au bord du lac !",
+          "it": "Benvenuti alla nostra avventura di nuoto al lago!",
+          "de": "Willkommen bei unserem Schwimmabenteuer am See!",
+          "no": "Velkommen til svømmeeventyret vårt ved innsjøen!",
+          "pt": "Bem-vindos à nossa aventura de natação no lago!"
+        }
+      },
+      {
+        "text": "The children are swimming in the clear blue lake.",
+        "translations": {
+          "es": "Los niños nadan en el lago azul y cristalino.",
+          "fr": "Les enfants nagent dans le lac bleu et limpide.",
+          "it": "I bambini nuotano nel lago azzurro e limpido.",
+          "de": "Die Kinder schwimmen im klaren blauen See.",
+          "no": "Barna svømmer i den klare, blå innsjøen.",
+          "pt": "As crianças estão nadando no lago azul e cristalino."
+        }
+      },
+      {
+        "text": "They wear life jackets to stay safe in the water.",
+        "translations": {
+          "es": "Llevan chalecos salvavidas para estar seguros en el agua.",
+          "fr": "Ils portent des gilets de sauvetage pour rester en sécurité dans l’eau.",
+          "it": "Indossano giubbotti di salvataggio per stare al sicuro in acqua.",
+          "de": "Sie tragen Schwimmwesten, um im Wasser sicher zu sein.",
+          "no": "De bruker redningsvester for å være trygge i vannet.",
+          "pt": "Eles usam coletes salva-vidas para ficar seguros na água."
+        }
+      },
+      {
+        "text": "Bear the golden dog is standing on the wooden dock.",
+        "translations": {
+          "es": "Bear, el perro dorado, está de pie en el muelle de madera.",
+          "fr": "Bear, le chien doré, se tient sur le quai en bois.",
+          "it": "Bear, il cane dorato, è in piedi sul molo di legno.",
+          "de": "Bear, der goldene Hund, steht auf dem Holzsteg.",
+          "no": "Bear, den gylne hunden, står på trebrygga.",
+          "pt": "Bear, o cachorro dourado, está em pé no cais de madeira."
+        }
+      },
+      {
+        "text": "The whole family is relaxing together by the lake.",
+        "translations": {
+          "es": "Toda la familia se relaja junta junto al lago.",
+          "fr": "Toute la famille se détend ensemble au bord du lac.",
+          "it": "Tutta la famiglia si rilassa insieme vicino al lago.",
+          "de": "Die ganze Familie entspannt sich gemeinsam am See.",
+          "no": "Hele familien slapper av sammen ved innsjøen.",
+          "pt": "Toda a família está relaxando junta à beira do lago."
+        }
+      },
+      {
+        "text": "Grandma and Grandpa are enjoying the sunshine.",
+        "translations": {
+          "es": "La abuela y el abuelo disfrutan del sol.",
+          "fr": "Grand-mère et grand-père profitent du soleil.",
+          "it": "La nonna e il nonno si godono il sole.",
+          "de": "Oma und Opa genießen den Sonnenschein.",
+          "no": "Bestemor og bestefar nyter solskinnet.",
+          "pt": "A vovó e o vovô estão aproveitando o sol."
+        }
+      },
+      {
+        "text": "A red canoe is resting beside the dock.",
+        "translations": {
+          "es": "Una canoa roja descansa junto al muelle.",
+          "fr": "Un canoë rouge repose à côté du quai.",
+          "it": "Una canoa rossa si trova accanto al molo.",
+          "de": "Ein rotes Kanu liegt neben dem Steg.",
+          "no": "En rød kano ligger ved brygga.",
+          "pt": "Uma canoa vermelha está ao lado do cais."
+        }
+      },
+      {
+        "text": "The wooden dock stretches across the water.",
+        "translations": {
+          "es": "El muelle de madera se extiende sobre el agua.",
+          "fr": "Le quai en bois s’étend au-dessus de l’eau.",
+          "it": "Il molo di legno si estende sull’acqua.",
+          "de": "Der Holzsteg erstreckt sich über das Wasser.",
+          "no": "Trebrygga strekker seg utover vannet.",
+          "pt": "O cais de madeira se estende sobre a água."
+        }
+      },
+      {
+        "text": "Our fifth-wheel RV has solar panels on its roof.",
+        "translations": {
+          "es": "Nuestra caravana de quinta rueda tiene paneles solares en el techo.",
+          "fr": "Notre caravane à sellette possède des panneaux solaires sur le toit.",
+          "it": "La nostra roulotte a quinta ruota ha pannelli solari sul tetto.",
+          "de": "Unser Sattelauflieger-Wohnwagen hat Solarmodule auf dem Dach.",
+          "no": "Vår femtehjulsvogn har solcellepaneler på taket.",
+          "pt": "Nosso trailer de quinta roda tem painéis solares no teto."
+        }
+      },
+      {
+        "text": "Tall pine trees grow around the beautiful lake.",
+        "translations": {
+          "es": "Altos pinos crecen alrededor del hermoso lago.",
+          "fr": "De grands pins poussent autour du magnifique lac.",
+          "it": "Alti pini crescono intorno al bellissimo lago.",
+          "de": "Hohe Kiefern wachsen rund um den schönen See.",
+          "no": "Høye furutrær vokser rundt den vakre innsjøen.",
+          "pt": "Pinheiros altos crescem ao redor do belo lago."
+        }
+      },
+      {
+        "text": "Snowy mountains rise beyond the forest.",
+        "translations": {
+          "es": "Las montañas nevadas se elevan más allá del bosque.",
+          "fr": "Des montagnes enneigées s’élèvent au-delà de la forêt.",
+          "it": "Montagne innevate si ergono oltre la foresta.",
+          "de": "Schneebedeckte Berge ragen hinter dem Wald auf.",
+          "no": "Snødekte fjell reiser seg bak skogen.",
+          "pt": "Montanhas cobertas de neve se erguem além da floresta."
+        }
+      },
+      {
+        "text": "Pink water lilies float among the green lily pads.",
+        "translations": {
+          "es": "Nenúfares rosados flotan entre las hojas verdes.",
+          "fr": "Des nénuphars roses flottent parmi les feuilles vertes.",
+          "it": "Ninfee rosa galleggiano tra le foglie verdi.",
+          "de": "Rosa Seerosen schwimmen zwischen grünen Seerosenblättern.",
+          "no": "Rosa vannliljer flyter blant grønne blader.",
+          "pt": "Nenúfares rosa flutuam entre as folhas verdes."
+        }
+      }
+    ],
+    "hotspots": [
+      {
+        "id": "children",
+        "label": "swimming children",
+        "x": 49,
+        "y": 63,
+        "w": 26,
+        "h": 19,
+        "sound": "sounds/kids-in-lake.mp3",
+        "translations": {
+          "es": ""
+        },
+        "rotation": 0,
+        "z": 0
+      },
+      {
+        "id": "life-jacket",
+        "label": "life jacket",
+        "x": 53,
+        "y": 70,
+        "w": 8,
+        "h": 9,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "bear",
+        "label": "Bear the dog",
+        "x": 53,
+        "y": 46,
+        "w": 9,
+        "h": 16,
+        "sound": "sounds/dog.mp3",
+        "translations": {
+          "es": ""
+        },
+        "rotation": 0,
+        "z": 0
+      },
+      {
+        "id": "family",
+        "label": "family",
+        "x": 8,
+        "y": 36,
+        "w": 47,
+        "h": 25,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "grandparents",
+        "label": "grandparents",
+        "x": 39,
+        "y": 36,
+        "w": 16,
+        "h": 23,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "canoe",
+        "label": "red canoe",
+        "x": 65,
+        "y": 51,
+        "w": 20,
+        "h": 9,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "dock",
+        "label": "wooden dock",
+        "x": 0,
+        "y": 55,
+        "w": 90,
+        "h": 13,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "rv",
+        "label": "fifth-wheel RV",
+        "x": 2,
+        "y": 17,
+        "w": 39,
+        "h": 23,
+        "sound": "sounds/guitar-solo.mp3",
+        "translations": {
+          "es": ""
+        },
+        "rotation": 0,
+        "z": 0
+      },
+      {
+        "id": "solar-panels",
+        "label": "solar panels",
+        "x": 10,
+        "y": 16,
+        "w": 20,
+        "h": 8,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "pine-trees",
+        "label": "pine trees",
+        "x": 32,
+        "y": 3,
+        "w": 20,
+        "h": 39,
+        "sound": "sounds/crickets-birds.mp3",
+        "translations": {
+          "es": ""
+        },
+        "rotation": 0,
+        "z": 0
+      },
+      {
+        "id": "mountains",
+        "label": "snowy mountains",
+        "x": 53,
+        "y": 9,
+        "w": 45,
+        "h": 28,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "water-lilies",
+        "label": "water lilies",
+        "x": 4,
+        "y": 77,
+        "w": 39,
+        "h": 19,
+        "sound": "",
+        "translations": {}
+      }
+    ],
+    "overlays": [],
+    "challenges": [
+      {
+        "prompt": "Find the children swimming",
+        "target": "children",
+        "translations": {
+          "es": "Encuentra a los niños nadando",
+          "fr": "Trouvez les enfants qui nagent",
+          "it": "Trova i bambini che nuotano",
+          "de": "Finde die schwimmenden Kinder",
+          "no": "Finn barna som svømmer",
+          "pt": "Encontre as crianças nadando"
+        }
+      },
+      {
+        "prompt": "Find Bear the dog",
+        "target": "bear",
+        "translations": {
+          "es": "Encuentra a Bear, el perro",
+          "fr": "Trouvez Bear, le chien",
+          "it": "Trova Bear, il cane",
+          "de": "Finde Bear, den Hund",
+          "no": "Finn hunden Bear",
+          "pt": "Encontre Bear, o cachorro"
+        }
+      },
+      {
+        "prompt": "Find the red canoe",
+        "target": "canoe",
+        "translations": {
+          "es": "Encuentra la canoa roja",
+          "fr": "Trouvez le canoë rouge",
+          "it": "Trova la canoa rossa",
+          "de": "Finde das rote Kanu",
+          "no": "Finn den røde kanoen",
+          "pt": "Encontre a canoa vermelha"
+        }
+      },
+      {
+        "prompt": "Find the fifth-wheel RV",
+        "target": "rv",
+        "translations": {
+          "es": "Encuentra la caravana de quinta rueda",
+          "fr": "Trouvez la caravane à sellette",
+          "it": "Trova la roulotte a quinta ruota",
+          "de": "Finde den Sattelauflieger-Wohnwagen",
+          "no": "Finn femtehjulsvognen",
+          "pt": "Encontre o trailer de quinta roda"
+        }
+      },
+      {
+        "prompt": "Find the solar panels",
+        "target": "solar-panels",
+        "translations": {
+          "es": "Encuentra los paneles solares",
+          "fr": "Trouvez les panneaux solaires",
+          "it": "Trova i pannelli solari",
+          "de": "Finde die Solarmodule",
+          "no": "Finn solcellepanelene",
+          "pt": "Encontre os painéis solares"
+        }
+      },
+      {
+        "prompt": "Find the water lilies",
+        "target": "water-lilies",
+        "translations": {
+          "es": "Encuentra los nenúfares",
+          "fr": "Trouvez les nénuphars",
+          "it": "Trova le ninfee",
+          "de": "Finde die Seerosen",
+          "no": "Finn vannliljene",
+          "pt": "Encontre os nenúfares"
+        }
+      }
+    ]
+  },
+  "travel": {
+    "title": "Travel",
+    "image": "images/travel.jpg",
+    "lessons": [
+      {
+        "text": "Welcome to Travel! Explore the many ways people and goods move by land, sea, and air.",
+        "translations": {
+          "es": "¡Bienvenidos a Viajes! Explora las muchas formas en que las personas y las mercancías viajan por tierra, mar y aire.",
+          "fr": "Bienvenue dans Voyage ! Découvre les nombreuses façons dont les personnes et les marchandises se déplacent sur terre, sur mer et dans les airs.",
+          "de": "Willkommen bei Reisen! Entdecke, wie Menschen und Waren auf dem Land, auf dem Wasser und in der Luft unterwegs sind.",
+          "it": "Benvenuti a Viaggi! Scopri i tanti modi in cui persone e merci si spostano via terra, mare e aria.",
+          "pt": "Bem-vindos a Viagens! Explore as muitas formas de transportar pessoas e mercadorias por terra, mar e ar.",
+          "no": "Velkommen til Reise! Utforsk de mange måtene mennesker og varer reiser på land, til sjøs og i luften."
+        }
+      },
+      {
+        "text": "An airplane flies above Seattle, carrying passengers through the sky.",
+        "translations": {
+          "es": "Un avión vuela sobre Seattle y transporta pasajeros por el cielo.",
+          "fr": "Un avion survole Seattle et transporte des passagers dans le ciel.",
+          "de": "Ein Flugzeug fliegt über Seattle und befördert Passagiere durch die Luft.",
+          "it": "Un aereo vola sopra Seattle e trasporta passeggeri nel cielo.",
+          "pt": "Um avião voa sobre Seattle, transportando passageiros pelo céu.",
+          "no": "Et fly flyr over Seattle og frakter passasjerer gjennom luften."
+        }
+      },
+      {
+        "text": "A cruise ship carries travelers across the water, while ferries make shorter trips.",
+        "translations": {
+          "es": "Un crucero lleva viajeros por el agua, mientras los ferris hacen viajes más cortos.",
+          "fr": "Un bateau de croisière transporte des voyageurs sur l’eau, tandis que les ferries font des trajets plus courts.",
+          "de": "Ein Kreuzfahrtschiff bringt Reisende über das Wasser, während Fähren kürzere Strecken fahren.",
+          "it": "Una nave da crociera trasporta viaggiatori sull’acqua, mentre i traghetti fanno viaggi più brevi.",
+          "pt": "Um navio de cruzeiro transporta viajantes pela água, enquanto as balsas fazem viagens mais curtas.",
+          "no": "Et cruiseskip frakter reisende over vannet, mens ferger tar kortere turer."
+        }
+      },
+      {
+        "text": "The freight train carries shipping containers along the railway tracks.",
+        "translations": {
+          "es": "El tren de mercancías transporta contenedores por las vías del ferrocarril.",
+          "fr": "Le train de marchandises transporte des conteneurs sur les voies ferrées.",
+          "de": "Der Güterzug transportiert Container auf den Eisenbahnschienen.",
+          "it": "Il treno merci trasporta container lungo i binari.",
+          "pt": "O trem de carga transporta contêineres pelos trilhos.",
+          "no": "Godstoget frakter containere langs jernbanesporene."
+        }
+      },
+      {
+        "text": "Trucks and cars travel on the road. Port cranes help move cargo between ships and land.",
+        "translations": {
+          "es": "Los camiones y los coches circulan por la carretera. Las grúas del puerto ayudan a mover la carga entre los barcos y tierra.",
+          "fr": "Les camions et les voitures roulent sur la route. Les grues du port déplacent les marchandises entre les navires et la terre.",
+          "de": "Lastwagen und Autos fahren auf der Straße. Hafenkräne bewegen Fracht zwischen Schiffen und Land.",
+          "it": "Camion e automobili viaggiano sulla strada. Le gru del porto spostano le merci tra le navi e la terraferma.",
+          "pt": "Caminhões e carros viajam pela estrada. Os guindastes do porto movimentam cargas entre navios e terra.",
+          "no": "Lastebiler og biler kjører på veien. Havnekraner flytter last mellom skip og land."
+        }
+      },
+      {
+        "text": "Look for the Space Needle, Mount Rainier, and the sunset over the waterfront. What can you discover?",
+        "translations": {
+          "es": "Busca la Space Needle, el monte Rainier y la puesta de sol sobre el paseo marítimo. ¿Qué puedes descubrir?",
+          "fr": "Cherche la Space Needle, le mont Rainier et le coucher de soleil sur le front de mer. Que peux-tu découvrir ?",
+          "de": "Suche die Space Needle, den Mount Rainier und den Sonnenuntergang am Wasser. Was kannst du entdecken?",
+          "it": "Cerca lo Space Needle, il monte Rainier e il tramonto sul lungomare. Che cosa riesci a scoprire?",
+          "pt": "Procure a Space Needle, o Monte Rainier e o pôr do sol à beira-mar. O que você consegue descobrir?",
+          "no": "Se etter Space Needle, Mount Rainier og solnedgangen over havneområdet. Hva kan du oppdage?"
+        }
+      }
+    ],
+    "hotspots": [
+      {
+        "id": "airplane",
+        "label": "airplane",
+        "x": 63,
+        "y": 9,
+        "w": 14.8,
+        "h": 10.5,
+        "sound": "sounds/jet-fly-by.mp3",
+        "translations": {
+          "es": ""
+        },
+        "rotation": 0,
+        "z": 0
+      },
+      {
+        "id": "cruise-ship",
+        "label": "cruise ship",
+        "x": 53.5,
+        "y": 43,
+        "w": 24,
+        "h": 20,
+        "sound": "sounds/cruise-ship.mp3",
+        "translations": {
+          "es": ""
+        },
+        "rotation": 0,
+        "z": 0
+      },
+      {
+        "id": "ferry",
+        "label": "ferry",
+        "x": 42,
+        "y": 58,
+        "w": 12,
+        "h": 11.5,
+        "sound": "",
+        "translations": {},
+        "rotation": 0,
+        "z": 0
+      },
+      {
+        "id": "sailboat",
+        "label": "sailboat",
+        "x": 24,
+        "y": 56,
+        "w": 4.5,
+        "h": 10,
+        "sound": "",
+        "translations": {},
+        "rotation": 0,
+        "z": 0
+      },
+      {
+        "id": "freight-train",
+        "label": "freight train",
+        "x": 62,
+        "y": 66,
+        "w": 37.5,
+        "h": 23,
+        "sound": "sounds/train-normal.mp3",
+        "translations": {
+          "es": ""
+        },
+        "rotation": 0,
+        "z": 0
+      },
+      {
+        "id": "truck",
+        "label": "truck",
+        "x": 84,
+        "y": 80.5,
+        "w": 8,
+        "h": 11.5,
+        "sound": "sounds/truck.mp3",
+        "translations": {
+          "es": ""
+        },
+        "rotation": 0,
+        "z": 0
+      },
+      {
+        "id": "car",
+        "label": "car",
+        "x": 79,
+        "y": 88.5,
+        "w": 6.5,
+        "h": 8.5,
+        "sound": "sounds/car-passing.mp3",
+        "translations": {
+          "es": ""
+        },
+        "rotation": 0,
+        "z": 0
+      },
+      {
+        "id": "port-crane",
+        "label": "port crane",
+        "x": 89,
+        "y": 18,
+        "w": 10.5,
+        "h": 38,
+        "sound": "",
+        "translations": {},
+        "rotation": 0,
+        "z": 0
+      },
+      {
+        "id": "shipping-containers",
+        "label": "shipping containers",
+        "x": 78,
+        "y": 49,
+        "w": 20,
+        "h": 18,
+        "sound": "",
+        "translations": {},
+        "rotation": 0,
+        "z": 0
+      },
+      {
+        "id": "space-needle",
+        "label": "Space Needle",
+        "x": 35.1,
+        "y": 28,
+        "w": 3.5,
+        "h": 18.5,
+        "sound": "",
+        "translations": {},
+        "rotation": 0,
+        "z": 0
+      },
+      {
+        "id": "mount-rainier",
+        "label": "Mount Rainier",
+        "x": 47.5,
+        "y": 29,
+        "w": 22,
+        "h": 10,
+        "sound": "",
+        "translations": {},
+        "rotation": 0,
+        "z": 0
+      },
+      {
+        "id": "sunset",
+        "label": "sunset",
+        "x": 79.5,
+        "y": 31.5,
+        "w": 6,
+        "h": 10,
+        "sound": "",
+        "translations": {},
+        "rotation": 0,
+        "z": 0
+      }
+    ],
+    "overlays": [],
+    "challenges": [
+      {
+        "prompt": "Find the Airplane",
+        "target": "airplane",
+        "translations": {
+          "es": "Encuentra el avión",
+          "fr": "Trouve l’avion",
+          "de": "Finde das Flugzeug",
+          "it": "Trova l’aereo",
+          "pt": "Encontre o avião",
+          "no": "Finn flyet"
+        }
+      },
+      {
+        "prompt": "Find the Cruise Ship",
+        "target": "cruise-ship",
+        "translations": {
+          "es": "Encuentra el crucero",
+          "fr": "Trouve le bateau de croisière",
+          "de": "Finde das Kreuzfahrtschiff",
+          "it": "Trova la nave da crociera",
+          "pt": "Encontre o navio de cruzeiro",
+          "no": "Finn cruiseskipet"
+        }
+      },
+      {
+        "prompt": "Find the Ferry",
+        "target": "ferry",
+        "translations": {
+          "es": "Encuentra el ferri",
+          "fr": "Trouve le ferry",
+          "de": "Finde die Fähre",
+          "it": "Trova il traghetto",
+          "pt": "Encontre a balsa",
+          "no": "Finn fergen"
+        }
+      },
+      {
+        "prompt": "Find the Freight Train",
+        "target": "freight-train",
+        "translations": {
+          "es": "Encuentra el tren de mercancías",
+          "fr": "Trouve le train de marchandises",
+          "de": "Finde den Güterzug",
+          "it": "Trova il treno merci",
+          "pt": "Encontre o trem de carga",
+          "no": "Finn godstoget"
+        }
+      },
+      {
+        "prompt": "Find the Truck",
+        "target": "truck",
+        "translations": {
+          "es": "Encuentra el camión",
+          "fr": "Trouve le camion",
+          "de": "Finde den Lastwagen",
+          "it": "Trova il camion",
+          "pt": "Encontre o caminhão",
+          "no": "Finn lastebilen"
+        }
+      },
+      {
+        "prompt": "Find the Sailboat",
+        "target": "sailboat",
+        "translations": {
+          "es": "Encuentra el velero",
+          "fr": "Trouve le voilier",
+          "de": "Finde das Segelboot",
+          "it": "Trova la barca a vela",
+          "pt": "Encontre o veleiro",
+          "no": "Finn seilbåten"
+        }
+      }
+    ]
+  },
+  "underwater-adventure": {
+    "title": "Underwater Adventure",
+    "image": "images/Underwater-Adventure.jpg",
+    "lessons": [
+      {
+        "text": "Grandma and Grandpa are scuba diving together.",
+        "translations": {
+          "es": "La abuela y el abuelo están buceando juntos.",
+          "fr": "Grand-mère et grand-père font de la plongée ensemble.",
+          "de": "Oma und Opa tauchen zusammen.",
+          "it": "La nonna e il nonno fanno immersioni insieme.",
+          "pt": "A avó e o avô estão mergulhando juntos.",
+          "no": "Bestemor og bestefar dykker sammen."
+        }
+      },
+      {
+        "text": "They breathe through regulators and explore the reef.",
+        "translations": {
+          "es": "Respiran por reguladores y exploran el arrecife.",
+          "fr": "Ils respirent avec leurs détendeurs et explorent le récif.",
+          "de": "Sie atmen durch Atemregler und erkunden das Riff.",
+          "it": "Respirano con gli erogatori ed esplorano la barriera.",
+          "pt": "Eles respiram pelos reguladores e exploram o recife.",
+          "no": "De puster gjennom regulatorer og utforsker revet."
+        }
+      },
+      {
+        "text": "The coral reef is full of color and life.",
+        "translations": {
+          "es": "El arrecife de coral está lleno de color y vida.",
+          "fr": "Le récif corallien est plein de couleurs et de vie.",
+          "de": "Das Korallenriff ist voller Farben und Leben.",
+          "it": "La barriera corallina è piena di colori e vita.",
+          "pt": "O recife de coral está cheio de cor e vida.",
+          "no": "Korallrevet er fullt av farger og liv."
+        }
+      },
+      {
+        "text": "Coral gives many sea animals a place to live.",
+        "translations": {
+          "es": "El coral da hogar a muchos animales marinos.",
+          "fr": "Le corail abrite de nombreux animaux marins.",
+          "de": "Korallen bieten vielen Meerestieren ein Zuhause.",
+          "it": "Il corallo offre una casa a molti animali marini.",
+          "pt": "O coral oferece abrigo a muitos animais marinhos.",
+          "no": "Koraller gir mange sjødyr et sted å bo."
+        }
+      },
+      {
+        "text": "Tropical fish swim all around the reef.",
+        "translations": {
+          "es": "Los peces tropicales nadan alrededor del arrecife.",
+          "fr": "Les poissons tropicaux nagent autour du récif.",
+          "de": "Tropische Fische schwimmen rund um das Riff.",
+          "it": "I pesci tropicali nuotano intorno alla barriera.",
+          "pt": "Peixes tropicais nadam ao redor do recife.",
+          "no": "Tropiske fisk svømmer rundt revet."
+        }
+      },
+      {
+        "text": "Look for the clownfish and the pufferfish.",
+        "translations": {
+          "es": "Busca el pez payaso y el pez globo.",
+          "fr": "Cherche le poisson-clown et le poisson-globe.",
+          "de": "Suche den Clownfisch und den Kugelfisch.",
+          "it": "Cerca il pesce pagliaccio e il pesce palla.",
+          "pt": "Procure o peixe-palhaço e o baiacu.",
+          "no": "Se etter klovnefisken og kulefisken."
+        }
+      },
+      {
+        "text": "A shark, turtle, eel, octopus, and dolphins share the sea.",
+        "translations": {
+          "es": "Un tiburón, una tortuga, una morena, un pulpo y delfines comparten el mar.",
+          "fr": "Un requin, une tortue, une murène, une pieuvre et des dauphins partagent la mer.",
+          "de": "Ein Hai, eine Schildkröte, eine Muräne, ein Oktopus und Delfine teilen sich das Meer.",
+          "it": "Uno squalo, una tartaruga, una murena, un polpo e i delfini condividono il mare.",
+          "pt": "Um tubarão, uma tartaruga, uma moreia, um polvo e golfinhos compartilham o mar.",
+          "no": "En hai, en skilpadde, en murene, en blekksprut og delfiner deler havet."
+        }
+      },
+      {
+        "text": "Each animal moves through the water in a different way.",
+        "translations": {
+          "es": "Cada animal se mueve por el agua de una manera diferente.",
+          "fr": "Chaque animal se déplace différemment dans l'eau.",
+          "de": "Jedes Tier bewegt sich anders durch das Wasser.",
+          "it": "Ogni animale si muove nell'acqua in modo diverso.",
+          "pt": "Cada animal se move pela água de uma maneira diferente.",
+          "no": "Hvert dyr beveger seg gjennom vannet på sin egen måte."
+        }
+      },
+      {
+        "text": "The divers wear masks, scuba tanks, and fins.",
+        "translations": {
+          "es": "Los buzos llevan máscaras, tanques de buceo y aletas.",
+          "fr": "Les plongeurs portent des masques, des bouteilles et des palmes.",
+          "de": "Die Taucher tragen Masken, Tauchflaschen und Flossen.",
+          "it": "I sub indossano maschere, bombole e pinne.",
+          "pt": "Os mergulhadores usam máscaras, cilindros e nadadeiras.",
+          "no": "Dykkerne bruker masker, dykkeflasker og svømmeføtter."
+        }
+      },
+      {
+        "text": "Scuba gear helps people explore underwater.",
+        "translations": {
+          "es": "El equipo de buceo ayuda a explorar bajo el agua.",
+          "fr": "L'équipement de plongée aide à explorer sous l'eau.",
+          "de": "Tauchausrüstung hilft Menschen, die Unterwasserwelt zu erkunden.",
+          "it": "L'attrezzatura da sub aiuta a esplorare sott'acqua.",
+          "pt": "O equipamento de mergulho ajuda as pessoas a explorar debaixo d'água.",
+          "no": "Dykkerutstyr hjelper mennesker med å utforske under vann."
+        }
+      },
+      {
+        "text": "Sunlight shines through the clear tropical water.",
+        "translations": {
+          "es": "La luz del sol brilla a través del agua tropical.",
+          "fr": "La lumière du soleil traverse l'eau tropicale claire.",
+          "de": "Sonnenlicht scheint durch das klare tropische Wasser.",
+          "it": "La luce del sole attraversa l'acqua tropicale limpida.",
+          "pt": "A luz do sol atravessa a água tropical clara.",
+          "no": "Sollyset skinner gjennom det klare tropiske vannet."
+        }
+      },
+      {
+        "text": "The underwater world is busy, bright, and beautiful.",
+        "translations": {
+          "es": "El mundo submarino es activo, brillante y hermoso.",
+          "fr": "Le monde sous-marin est vivant, lumineux et magnifique.",
+          "de": "Die Unterwasserwelt ist lebendig, hell und wunderschön.",
+          "it": "Il mondo sottomarino è vivace, luminoso e bellissimo.",
+          "pt": "O mundo subaquático é movimentado, brilhante e bonito.",
+          "no": "Undervannsverdenen er travel, lys og vakker."
+        }
+      }
+    ],
+    "hotspots": [
+      {
+        "id": "dolphin",
+        "label": "dolphin",
+        "x": 14,
+        "y": 8,
+        "w": 23,
+        "h": 17,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "shipwreck",
+        "label": "shipwreck",
+        "x": 20.73,
+        "y": 30.7,
+        "w": 13.43,
+        "h": 29.81,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "turtle",
+        "label": "turtle",
+        "x": 31,
+        "y": 25,
+        "w": 21,
+        "h": 28,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "grandma",
+        "label": "grandma",
+        "x": 56.52,
+        "y": 21.61,
+        "w": 7.19,
+        "h": 6.02,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "shark",
+        "label": "shark",
+        "x": 68,
+        "y": 2,
+        "w": 25,
+        "h": 22,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "clownfish",
+        "label": "clownfish",
+        "x": 0,
+        "y": 54,
+        "w": 16,
+        "h": 17,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "tropicalfish",
+        "label": "tropicalfish",
+        "x": 13,
+        "y": 45,
+        "w": 23,
+        "h": 22,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "pufferfish",
+        "label": "pufferfish",
+        "x": 57,
+        "y": 53,
+        "w": 10,
+        "h": 14,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "eel",
+        "label": "eel",
+        "x": 84,
+        "y": 51,
+        "w": 16,
+        "h": 18,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "starfish",
+        "label": "starfish",
+        "x": 5,
+        "y": 77,
+        "w": 18,
+        "h": 18,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "crab",
+        "label": "crab",
+        "x": 27,
+        "y": 73,
+        "w": 15,
+        "h": 18,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "lobster",
+        "label": "lobster",
+        "x": 52,
+        "y": 72,
+        "w": 16,
+        "h": 20,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "octopus",
+        "label": "octopus",
+        "x": 79,
+        "y": 72,
+        "w": 21,
+        "h": 25,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "coral",
+        "label": "coral",
+        "x": 68,
+        "y": 38,
+        "w": 16.16,
+        "h": 34.17,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "seaweed",
+        "label": "seaweed",
+        "x": 0,
+        "y": 25,
+        "w": 12,
+        "h": 42,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "sand",
+        "label": "sand",
+        "x": 37,
+        "y": 79,
+        "w": 20,
+        "h": 18,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "fins",
+        "label": "fins",
+        "x": 43.1,
+        "y": 36.17,
+        "w": 8.79,
+        "h": 16.94,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "scuba-diver",
+        "label": "scuba diver",
+        "x": 54.4,
+        "y": 22.08,
+        "w": 7.2,
+        "h": 17.44,
+        "sound": "sounds/scuba-diver.mp3",
+        "translations": {}
+      }
+    ],
+    "overlays": [],
+    "challenges": [
+      {
+        "prompt": "Find the Shark",
+        "target": "shark",
+        "translations": {
+          "es": "El tiburón",
+          "fr": "le requin",
+          "de": "Finde den Hai",
+          "it": "Lo squalo",
+          "pt": "Encontre o Tubarão",
+          "no": "Finn haien"
+        }
+      },
+      {
+        "prompt": "Find the Sea Turtle",
+        "target": "turtle",
+        "translations": {
+          "es": "Tortuga marina",
+          "fr": "Trouvez la tortue de mer",
+          "de": "Finde die Meeresschildkröte",
+          "it": "LA TARTARUGA MARINA",
+          "pt": "Encontre a tartaruga marinha",
+          "no": "Finn havskilpadden"
+        }
+      },
+      {
+        "prompt": "Find the Starfish",
+        "target": "starfish",
+        "translations": {
+          "es": "La estrella de mar",
+          "fr": "Trouvez l'étoile de mer",
+          "de": "Finde den Seestern",
+          "it": "Trova la stella marina",
+          "pt": "Encontre a Estrela-do-mar",
+          "no": "Finn sjøstjernen"
+        }
+      },
+      {
+        "prompt": "Find the Moray Eel",
+        "target": "eel",
+        "translations": {
+          "es": "Encuentra la anguila morena",
+          "fr": "Trouvez l'anguille Moray",
+          "de": "der Mittelmeer-Muräne.",
+          "it": "Trova la murena",
+          "pt": "Encontre a Moray Eel",
+          "no": "Finn murenene"
+        }
+      },
+      {
+        "prompt": "Find the Octopus",
+        "target": "octopus",
+        "translations": {
+          "es": "EL PULPO",
+          "fr": "Le Diktat",
+          "de": "Der Oktopus",
+          "it": "Trova il polpo",
+          "pt": "Encontre o polvo",
+          "no": "Finn blekkspruten"
+        }
+      },
+      {
+        "prompt": "Find the Ship Wreck",
+        "target": "shipwreck",
+        "translations": {
+          "es": "Encuentra el naufragio",
+          "fr": "Trouvez l'épave du navire",
+          "de": "Finde das Schiffswrack",
+          "it": "Trova il relitto della nave",
+          "pt": "Encontre os destroços do navio",
+          "no": "Finn skipsvraket"
+        }
+      },
+      {
+        "prompt": "Find the dolphin",
+        "target": "dolphin",
+        "translations": {
+          "es": "El delfín",
+          "fr": "Le dauphin",
+          "de": "Finde den Delfin",
+          "it": "Il Delfino",
+          "pt": "Encontre o golfinho",
+          "no": "Finn delfinen"
+        }
+      }
+    ]
+  },
   "train-station": {
     "title": "Train Station",
     "image": "images/train-station-adventure.jpg",
@@ -17122,413 +18877,6 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
           "it": "trova il biglietto delle ragazze",
           "pt": "encontrar o bilhete das meninas",
           "no": "finn jentebilletten"
-        }
-      }
-    ]
-  },
-  "underwater-adventure": {
-    "title": "Underwater Adventure",
-    "image": "images/Underwater-Adventure.jpg",
-    "lessons": [
-      {
-        "text": "Grandma and Grandpa are scuba diving together.",
-        "translations": {
-          "es": "La abuela y el abuelo están buceando juntos.",
-          "fr": "Grand-mère et grand-père font de la plongée ensemble.",
-          "de": "Oma und Opa tauchen zusammen.",
-          "it": "La nonna e il nonno fanno immersioni insieme.",
-          "pt": "A avó e o avô estão mergulhando juntos.",
-          "no": "Bestemor og bestefar dykker sammen."
-        }
-      },
-      {
-        "text": "They breathe through regulators and explore the reef.",
-        "translations": {
-          "es": "Respiran por reguladores y exploran el arrecife.",
-          "fr": "Ils respirent avec leurs détendeurs et explorent le récif.",
-          "de": "Sie atmen durch Atemregler und erkunden das Riff.",
-          "it": "Respirano con gli erogatori ed esplorano la barriera.",
-          "pt": "Eles respiram pelos reguladores e exploram o recife.",
-          "no": "De puster gjennom regulatorer og utforsker revet."
-        }
-      },
-      {
-        "text": "The coral reef is full of color and life.",
-        "translations": {
-          "es": "El arrecife de coral está lleno de color y vida.",
-          "fr": "Le récif corallien est plein de couleurs et de vie.",
-          "de": "Das Korallenriff ist voller Farben und Leben.",
-          "it": "La barriera corallina è piena di colori e vita.",
-          "pt": "O recife de coral está cheio de cor e vida.",
-          "no": "Korallrevet er fullt av farger og liv."
-        }
-      },
-      {
-        "text": "Coral gives many sea animals a place to live.",
-        "translations": {
-          "es": "El coral da hogar a muchos animales marinos.",
-          "fr": "Le corail abrite de nombreux animaux marins.",
-          "de": "Korallen bieten vielen Meerestieren ein Zuhause.",
-          "it": "Il corallo offre una casa a molti animali marini.",
-          "pt": "O coral oferece abrigo a muitos animais marinhos.",
-          "no": "Koraller gir mange sjødyr et sted å bo."
-        }
-      },
-      {
-        "text": "Tropical fish swim all around the reef.",
-        "translations": {
-          "es": "Los peces tropicales nadan alrededor del arrecife.",
-          "fr": "Les poissons tropicaux nagent autour du récif.",
-          "de": "Tropische Fische schwimmen rund um das Riff.",
-          "it": "I pesci tropicali nuotano intorno alla barriera.",
-          "pt": "Peixes tropicais nadam ao redor do recife.",
-          "no": "Tropiske fisk svømmer rundt revet."
-        }
-      },
-      {
-        "text": "Look for the clownfish and the pufferfish.",
-        "translations": {
-          "es": "Busca el pez payaso y el pez globo.",
-          "fr": "Cherche le poisson-clown et le poisson-globe.",
-          "de": "Suche den Clownfisch und den Kugelfisch.",
-          "it": "Cerca il pesce pagliaccio e il pesce palla.",
-          "pt": "Procure o peixe-palhaço e o baiacu.",
-          "no": "Se etter klovnefisken og kulefisken."
-        }
-      },
-      {
-        "text": "A shark, turtle, eel, octopus, and dolphins share the sea.",
-        "translations": {
-          "es": "Un tiburón, una tortuga, una morena, un pulpo y delfines comparten el mar.",
-          "fr": "Un requin, une tortue, une murène, une pieuvre et des dauphins partagent la mer.",
-          "de": "Ein Hai, eine Schildkröte, eine Muräne, ein Oktopus und Delfine teilen sich das Meer.",
-          "it": "Uno squalo, una tartaruga, una murena, un polpo e i delfini condividono il mare.",
-          "pt": "Um tubarão, uma tartaruga, uma moreia, um polvo e golfinhos compartilham o mar.",
-          "no": "En hai, en skilpadde, en murene, en blekksprut og delfiner deler havet."
-        }
-      },
-      {
-        "text": "Each animal moves through the water in a different way.",
-        "translations": {
-          "es": "Cada animal se mueve por el agua de una manera diferente.",
-          "fr": "Chaque animal se déplace différemment dans l'eau.",
-          "de": "Jedes Tier bewegt sich anders durch das Wasser.",
-          "it": "Ogni animale si muove nell'acqua in modo diverso.",
-          "pt": "Cada animal se move pela água de uma maneira diferente.",
-          "no": "Hvert dyr beveger seg gjennom vannet på sin egen måte."
-        }
-      },
-      {
-        "text": "The divers wear masks, scuba tanks, and fins.",
-        "translations": {
-          "es": "Los buzos llevan máscaras, tanques de buceo y aletas.",
-          "fr": "Les plongeurs portent des masques, des bouteilles et des palmes.",
-          "de": "Die Taucher tragen Masken, Tauchflaschen und Flossen.",
-          "it": "I sub indossano maschere, bombole e pinne.",
-          "pt": "Os mergulhadores usam máscaras, cilindros e nadadeiras.",
-          "no": "Dykkerne bruker masker, dykkeflasker og svømmeføtter."
-        }
-      },
-      {
-        "text": "Scuba gear helps people explore underwater.",
-        "translations": {
-          "es": "El equipo de buceo ayuda a explorar bajo el agua.",
-          "fr": "L'équipement de plongée aide à explorer sous l'eau.",
-          "de": "Tauchausrüstung hilft Menschen, die Unterwasserwelt zu erkunden.",
-          "it": "L'attrezzatura da sub aiuta a esplorare sott'acqua.",
-          "pt": "O equipamento de mergulho ajuda as pessoas a explorar debaixo d'água.",
-          "no": "Dykkerutstyr hjelper mennesker med å utforske under vann."
-        }
-      },
-      {
-        "text": "Sunlight shines through the clear tropical water.",
-        "translations": {
-          "es": "La luz del sol brilla a través del agua tropical.",
-          "fr": "La lumière du soleil traverse l'eau tropicale claire.",
-          "de": "Sonnenlicht scheint durch das klare tropische Wasser.",
-          "it": "La luce del sole attraversa l'acqua tropicale limpida.",
-          "pt": "A luz do sol atravessa a água tropical clara.",
-          "no": "Sollyset skinner gjennom det klare tropiske vannet."
-        }
-      },
-      {
-        "text": "The underwater world is busy, bright, and beautiful.",
-        "translations": {
-          "es": "El mundo submarino es activo, brillante y hermoso.",
-          "fr": "Le monde sous-marin est vivant, lumineux et magnifique.",
-          "de": "Die Unterwasserwelt ist lebendig, hell und wunderschön.",
-          "it": "Il mondo sottomarino è vivace, luminoso e bellissimo.",
-          "pt": "O mundo subaquático é movimentado, brilhante e bonito.",
-          "no": "Undervannsverdenen er travel, lys og vakker."
-        }
-      }
-    ],
-    "hotspots": [
-      {
-        "id": "dolphin",
-        "label": "dolphin",
-        "x": 14,
-        "y": 8,
-        "w": 23,
-        "h": 17,
-        "sound": "",
-        "translations": {}
-      },
-      {
-        "id": "shipwreck",
-        "label": "shipwreck",
-        "x": 20.73,
-        "y": 30.7,
-        "w": 13.43,
-        "h": 29.81,
-        "sound": "",
-        "translations": {}
-      },
-      {
-        "id": "turtle",
-        "label": "turtle",
-        "x": 31,
-        "y": 25,
-        "w": 21,
-        "h": 28,
-        "sound": "",
-        "translations": {}
-      },
-      {
-        "id": "grandma",
-        "label": "grandma",
-        "x": 56.52,
-        "y": 21.61,
-        "w": 7.19,
-        "h": 6.02,
-        "sound": "",
-        "translations": {}
-      },
-      {
-        "id": "shark",
-        "label": "shark",
-        "x": 68,
-        "y": 2,
-        "w": 25,
-        "h": 22,
-        "sound": "",
-        "translations": {}
-      },
-      {
-        "id": "clownfish",
-        "label": "clownfish",
-        "x": 0,
-        "y": 54,
-        "w": 16,
-        "h": 17,
-        "sound": "",
-        "translations": {}
-      },
-      {
-        "id": "tropicalfish",
-        "label": "tropicalfish",
-        "x": 13,
-        "y": 45,
-        "w": 23,
-        "h": 22,
-        "sound": "",
-        "translations": {}
-      },
-      {
-        "id": "pufferfish",
-        "label": "pufferfish",
-        "x": 57,
-        "y": 53,
-        "w": 10,
-        "h": 14,
-        "sound": "",
-        "translations": {}
-      },
-      {
-        "id": "eel",
-        "label": "eel",
-        "x": 84,
-        "y": 51,
-        "w": 16,
-        "h": 18,
-        "sound": "",
-        "translations": {}
-      },
-      {
-        "id": "starfish",
-        "label": "starfish",
-        "x": 5,
-        "y": 77,
-        "w": 18,
-        "h": 18,
-        "sound": "",
-        "translations": {}
-      },
-      {
-        "id": "crab",
-        "label": "crab",
-        "x": 27,
-        "y": 73,
-        "w": 15,
-        "h": 18,
-        "sound": "",
-        "translations": {}
-      },
-      {
-        "id": "lobster",
-        "label": "lobster",
-        "x": 52,
-        "y": 72,
-        "w": 16,
-        "h": 20,
-        "sound": "",
-        "translations": {}
-      },
-      {
-        "id": "octopus",
-        "label": "octopus",
-        "x": 79,
-        "y": 72,
-        "w": 21,
-        "h": 25,
-        "sound": "",
-        "translations": {}
-      },
-      {
-        "id": "coral",
-        "label": "coral",
-        "x": 68,
-        "y": 38,
-        "w": 16.16,
-        "h": 34.17,
-        "sound": "",
-        "translations": {}
-      },
-      {
-        "id": "seaweed",
-        "label": "seaweed",
-        "x": 0,
-        "y": 25,
-        "w": 12,
-        "h": 42,
-        "sound": "",
-        "translations": {}
-      },
-      {
-        "id": "sand",
-        "label": "sand",
-        "x": 37,
-        "y": 79,
-        "w": 20,
-        "h": 18,
-        "sound": "",
-        "translations": {}
-      },
-      {
-        "id": "fins",
-        "label": "fins",
-        "x": 43.1,
-        "y": 36.17,
-        "w": 8.79,
-        "h": 16.94,
-        "sound": "",
-        "translations": {}
-      },
-      {
-        "id": "scuba-diver",
-        "label": "scuba diver",
-        "x": 54.4,
-        "y": 22.08,
-        "w": 7.2,
-        "h": 17.44,
-        "sound": "sounds/scuba-diver.mp3",
-        "translations": {}
-      }
-    ],
-    "overlays": [],
-    "challenges": [
-      {
-        "prompt": "Find the Shark",
-        "target": "shark",
-        "translations": {
-          "es": "El tiburón",
-          "fr": "le requin",
-          "de": "Finde den Hai",
-          "it": "Lo squalo",
-          "pt": "Encontre o Tubarão",
-          "no": "Finn haien"
-        }
-      },
-      {
-        "prompt": "Find the Sea Turtle",
-        "target": "turtle",
-        "translations": {
-          "es": "Tortuga marina",
-          "fr": "Trouvez la tortue de mer",
-          "de": "Finde die Meeresschildkröte",
-          "it": "LA TARTARUGA MARINA",
-          "pt": "Encontre a tartaruga marinha",
-          "no": "Finn havskilpadden"
-        }
-      },
-      {
-        "prompt": "Find the Starfish",
-        "target": "starfish",
-        "translations": {
-          "es": "La estrella de mar",
-          "fr": "Trouvez l'étoile de mer",
-          "de": "Finde den Seestern",
-          "it": "Trova la stella marina",
-          "pt": "Encontre a Estrela-do-mar",
-          "no": "Finn sjøstjernen"
-        }
-      },
-      {
-        "prompt": "Find the Moray Eel",
-        "target": "eel",
-        "translations": {
-          "es": "Encuentra la anguila morena",
-          "fr": "Trouvez l'anguille Moray",
-          "de": "der Mittelmeer-Muräne.",
-          "it": "Trova la murena",
-          "pt": "Encontre a Moray Eel",
-          "no": "Finn murenene"
-        }
-      },
-      {
-        "prompt": "Find the Octopus",
-        "target": "octopus",
-        "translations": {
-          "es": "EL PULPO",
-          "fr": "Le Diktat",
-          "de": "Der Oktopus",
-          "it": "Trova il polpo",
-          "pt": "Encontre o polvo",
-          "no": "Finn blekkspruten"
-        }
-      },
-      {
-        "prompt": "Find the Ship Wreck",
-        "target": "shipwreck",
-        "translations": {
-          "es": "Encuentra el naufragio",
-          "fr": "Trouvez l'épave du navire",
-          "de": "Finde das Schiffswrack",
-          "it": "Trova il relitto della nave",
-          "pt": "Encontre os destroços do navio",
-          "no": "Finn skipsvraket"
-        }
-      },
-      {
-        "prompt": "Find the dolphin",
-        "target": "dolphin",
-        "translations": {
-          "es": "El delfín",
-          "fr": "Le dauphin",
-          "de": "Finde den Delfin",
-          "it": "Il Delfino",
-          "pt": "Encontre o golfinho",
-          "no": "Finn delfinen"
         }
       }
     ]
@@ -18708,6 +20056,341 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
           "it": "Trova la Terra",
           "pt": "Encontrar Terra",
           "no": "Finn Jorden"
+        }
+      }
+    ]
+  },
+  "space-launch": {
+    "title": "Space-Launch",
+    "image": "images/space-launch.jpg",
+    "lessons": [
+      {
+        "text": "Welcome to Space Launch! Watch the spacecraft rise into the sky.",
+        "translations": {
+          "es": "¡Bienvenidos a Lanzamiento Espacial! Mira cómo la nave espacial sube al cielo.",
+          "fr": "Bienvenue à Lancement spatial ! Regardez le vaisseau spatial s’élever dans le ciel.",
+          "de": "Willkommen beim Weltraumstart! Sieh zu, wie das Raumschiff in den Himmel steigt.",
+          "it": "Benvenuti al lancio spaziale! Guarda la navicella salire nel cielo.",
+          "no": "Velkommen til romoppskytingen! Se romfartøyet stige opp mot himmelen.",
+          "pt": "Bem-vindos ao lançamento espacial! Veja a nave espacial subir ao céu."
+        }
+      },
+      {
+        "text": "The space shuttle lifts off with a powerful burst of fire.",
+        "translations": {
+          "es": "El transbordador espacial despega con una poderosa llamarada.",
+          "fr": "La navette spatiale décolle dans une puissante gerbe de feu.",
+          "de": "Die Raumfähre hebt mit einem gewaltigen Feuerstrahl ab.",
+          "it": "Lo space shuttle decolla con una potente fiammata.",
+          "no": "Romfergen tar av med en kraftig ildstråle.",
+          "pt": "O ônibus espacial decola com uma poderosa explosão de fogo."
+        }
+      },
+      {
+        "text": "The engines push the spacecraft upward against gravity.",
+        "translations": {
+          "es": "Los motores impulsan la nave espacial hacia arriba contra la gravedad.",
+          "fr": "Les moteurs poussent le vaisseau spatial vers le haut contre la gravité.",
+          "de": "Die Triebwerke schieben das Raumschiff gegen die Schwerkraft nach oben.",
+          "it": "I motori spingono la navicella verso l’alto contro la gravità.",
+          "no": "Motorene skyver romfartøyet oppover mot tyngdekraften.",
+          "pt": "Os motores empurram a nave espacial para cima contra a gravidade."
+        }
+      },
+      {
+        "text": "Huge clouds of smoke spread across the launch pad.",
+        "translations": {
+          "es": "Enormes nubes de humo se extienden por la plataforma de lanzamiento.",
+          "fr": "D’énormes nuages de fumée se répandent sur le pas de tir.",
+          "de": "Riesige Rauchwolken breiten sich über der Startrampe aus.",
+          "it": "Enormi nuvole di fumo si diffondono sulla rampa di lancio.",
+          "no": "Store røykskyer sprer seg over oppskytingsrampen.",
+          "pt": "Enormes nuvens de fumaça se espalham pela plataforma de lançamento."
+        }
+      },
+      {
+        "text": "The launch tower stands beside the spacecraft.",
+        "translations": {
+          "es": "La torre de lanzamiento está junto a la nave espacial.",
+          "fr": "La tour de lancement se dresse à côté du vaisseau spatial.",
+          "de": "Der Startturm steht neben dem Raumschiff.",
+          "it": "La torre di lancio si trova accanto alla navicella.",
+          "no": "Oppskytingstårnet står ved siden av romfartøyet.",
+          "pt": "A torre de lançamento fica ao lado da nave espacial."
+        }
+      },
+      {
+        "text": "The large NASA building is used to prepare spacecraft for launch.",
+        "translations": {
+          "es": "El gran edificio de la NASA se utiliza para preparar naves espaciales para el lanzamiento.",
+          "fr": "Le grand bâtiment de la NASA sert à préparer les engins spatiaux au lancement.",
+          "de": "Das große NASA-Gebäude dient dazu, Raumfahrzeuge für den Start vorzubereiten.",
+          "it": "Il grande edificio della NASA serve a preparare i veicoli spaziali al lancio.",
+          "no": "Den store NASA-bygningen brukes til å klargjøre romfartøy for oppskyting.",
+          "pt": "O grande edifício da NASA é usado para preparar naves espaciais para o lançamento."
+        }
+      },
+      {
+        "text": "Families gather at the viewing deck to watch the launch.",
+        "translations": {
+          "es": "Las familias se reúnen en la plataforma de observación para ver el lanzamiento.",
+          "fr": "Des familles se rassemblent sur la terrasse d’observation pour regarder le lancement.",
+          "de": "Familien versammeln sich auf der Aussichtsplattform, um den Start zu beobachten.",
+          "it": "Le famiglie si riuniscono sulla terrazza panoramica per assistere al lancio.",
+          "no": "Familier samles på utsiktsplattformen for å se oppskytingen.",
+          "pt": "As famílias se reúnem no mirante para assistir ao lançamento."
+        }
+      },
+      {
+        "text": "Photographers use cameras to capture the exciting moment.",
+        "translations": {
+          "es": "Los fotógrafos usan cámaras para captar este emocionante momento.",
+          "fr": "Les photographes utilisent des appareils photo pour immortaliser ce moment passionnant.",
+          "de": "Fotografen benutzen Kameras, um diesen aufregenden Moment festzuhalten.",
+          "it": "I fotografi usano le macchine fotografiche per immortalare questo momento emozionante.",
+          "no": "Fotografer bruker kameraer for å fange det spennende øyeblikket.",
+          "pt": "Os fotógrafos usam câmeras para registrar esse momento emocionante."
+        }
+      },
+      {
+        "text": "A golden dog watches from the wooden deck.",
+        "translations": {
+          "es": "Un perro dorado observa desde la plataforma de madera.",
+          "fr": "Un chien doré regarde depuis la terrasse en bois.",
+          "de": "Ein goldfarbener Hund schaut von der Holzplattform aus zu.",
+          "it": "Un cane dorato osserva dalla terrazza di legno.",
+          "no": "En gyllen hund følger med fra treplattformen.",
+          "pt": "Um cachorro dourado observa do deque de madeira."
+        }
+      },
+      {
+        "text": "The water reflects the bright light from the launch.",
+        "translations": {
+          "es": "El agua refleja la luz brillante del lanzamiento.",
+          "fr": "L’eau reflète la lumière éclatante du lancement.",
+          "de": "Das Wasser spiegelt das helle Licht des Starts wider.",
+          "it": "L’acqua riflette la luce intensa del lancio.",
+          "no": "Vannet speiler det sterke lyset fra oppskytingen.",
+          "pt": "A água reflete a luz brilhante do lançamento."
+        }
+      },
+      {
+        "text": "The American flag is displayed on the NASA building.",
+        "translations": {
+          "es": "La bandera estadounidense aparece en el edificio de la NASA.",
+          "fr": "Le drapeau américain est affiché sur le bâtiment de la NASA.",
+          "de": "Die amerikanische Flagge ist am NASA-Gebäude zu sehen.",
+          "it": "La bandiera americana è esposta sull’edificio della NASA.",
+          "no": "Det amerikanske flagget vises på NASA-bygningen.",
+          "pt": "A bandeira americana está no edifício da NASA."
+        }
+      },
+      {
+        "text": "Space exploration helps us learn more about Earth and the universe.",
+        "translations": {
+          "es": "La exploración espacial nos ayuda a aprender más sobre la Tierra y el universo.",
+          "fr": "L’exploration spatiale nous aide à mieux connaître la Terre et l’univers.",
+          "de": "Die Weltraumforschung hilft uns, mehr über die Erde und das Universum zu erfahren.",
+          "it": "L’esplorazione spaziale ci aiuta a conoscere meglio la Terra e l’universo.",
+          "no": "Romutforskning hjelper oss å lære mer om jorden og universet.",
+          "pt": "A exploração espacial nos ajuda a aprender mais sobre a Terra e o universo."
+        }
+      }
+    ],
+    "hotspots": [
+      {
+        "id": "shuttle",
+        "label": "space shuttle",
+        "x": 47.8,
+        "y": 9.5,
+        "w": 4.3,
+        "h": 15,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "flames",
+        "label": "rocket flames",
+        "x": 49.6,
+        "y": 24.4,
+        "w": 3.2,
+        "h": 19.5,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "smoke",
+        "label": "launch smoke",
+        "x": 64.5,
+        "y": 45.2,
+        "w": 14.3,
+        "h": 19,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "tower",
+        "label": "launch tower",
+        "x": 40.7,
+        "y": 34.2,
+        "w": 7.2,
+        "h": 23.2,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "nasa-building",
+        "label": "NASA building",
+        "x": 13.5,
+        "y": 46.5,
+        "w": 13.5,
+        "h": 17.8,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "flag",
+        "label": "American flag",
+        "x": 20,
+        "y": 48.2,
+        "w": 2.1,
+        "h": 6.5,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "water",
+        "label": "water",
+        "x": 1.5,
+        "y": 70,
+        "w": 24,
+        "h": 11,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "deck",
+        "label": "wooden viewing deck",
+        "x": 20,
+        "y": 91,
+        "w": 35,
+        "h": 8,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "photographer",
+        "label": "photographer",
+        "x": 58.5,
+        "y": 67,
+        "w": 10,
+        "h": 25,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "children",
+        "label": "children",
+        "x": 43,
+        "y": 76,
+        "w": 14,
+        "h": 19,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "dog",
+        "label": "golden dog",
+        "x": 55.8,
+        "y": 82,
+        "w": 7,
+        "h": 16,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "water-tower",
+        "label": "water tower",
+        "x": 31.4,
+        "y": 45,
+        "w": 3,
+        "h": 19,
+        "sound": "",
+        "translations": {}
+      }
+    ],
+    "overlays": [],
+    "challenges": [
+      {
+        "prompt": "Find the Space Shuttle",
+        "target": "shuttle",
+        "translations": {
+          "es": "Encuentra el transbordador espacial",
+          "fr": "Trouvez la navette spatiale",
+          "de": "Finde die Raumfähre",
+          "it": "Trova lo space shuttle",
+          "no": "Finn romfergen",
+          "pt": "Encontre o ônibus espacial"
+        }
+      },
+      {
+        "prompt": "Find the Launch Tower",
+        "target": "tower",
+        "translations": {
+          "es": "Encuentra la torre de lanzamiento",
+          "fr": "Trouvez la tour de lancement",
+          "de": "Finde den Startturm",
+          "it": "Trova la torre di lancio",
+          "no": "Finn oppskytingstårnet",
+          "pt": "Encontre a torre de lançamento"
+        }
+      },
+      {
+        "prompt": "Find the NASA Building",
+        "target": "nasa-building",
+        "translations": {
+          "es": "Encuentra el edificio de la NASA",
+          "fr": "Trouvez le bâtiment de la NASA",
+          "de": "Finde das NASA-Gebäude",
+          "it": "Trova l’edificio della NASA",
+          "no": "Finn NASA-bygningen",
+          "pt": "Encontre o edifício da NASA"
+        }
+      },
+      {
+        "prompt": "Find the American Flag",
+        "target": "flag",
+        "translations": {
+          "es": "Encuentra la bandera estadounidense",
+          "fr": "Trouvez le drapeau américain",
+          "de": "Finde die amerikanische Flagge",
+          "it": "Trova la bandiera americana",
+          "no": "Finn det amerikanske flagget",
+          "pt": "Encontre a bandeira americana"
+        }
+      },
+      {
+        "prompt": "Find the Golden Dog",
+        "target": "dog",
+        "translations": {
+          "es": "Encuentra el perro dorado",
+          "fr": "Trouvez le chien doré",
+          "de": "Finde den goldfarbenen Hund",
+          "it": "Trova il cane dorato",
+          "no": "Finn den gylne hunden",
+          "pt": "Encontre o cachorro dourado"
+        }
+      },
+      {
+        "prompt": "Find the Water Tower",
+        "target": "water-tower",
+        "translations": {
+          "es": "Encuentra la torre de agua",
+          "fr": "Trouvez le château d’eau",
+          "de": "Finde den Wasserturm",
+          "it": "Trova la torre dell’acqua",
+          "no": "Finn vanntårnet",
+          "pt": "Encontre a torre de água"
         }
       }
     ]
