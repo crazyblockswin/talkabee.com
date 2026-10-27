@@ -7103,22 +7103,30 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
       {
         "id": "stage",
         "label": "stage",
-        "x": 32.5,
-        "y": 25.5,
-        "w": 34.6,
-        "h": 27,
+        "x": 33.13157534612506,
+        "y": 24.29462200913681,
+        "w": 32.75789269212206,
+        "h": 7.713957451748325,
         "sound": "",
-        "translations": {}
+        "translations": {
+          "es": ""
+        },
+        "rotation": 0,
+        "z": 0
       },
       {
         "id": "dancers",
         "label": "dancers",
-        "x": 34.5,
-        "y": 53,
-        "w": 28.5,
-        "h": 38,
-        "sound": "",
-        "translations": {}
+        "x": 19.184209014173987,
+        "y": 55.50347593721911,
+        "w": 65.5,
+        "h": 23.350029504215637,
+        "sound": "sounds/music-upbeat.mp3",
+        "translations": {
+          "es": ""
+        },
+        "rotation": 0,
+        "z": 0
       },
       {
         "id": "red-dress",
