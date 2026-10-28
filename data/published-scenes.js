@@ -16170,40 +16170,136 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
     "image": "images/shopping-market.jpg",
     "lessons": [
       {
-        "text": "Welcome to the shopping market! Today our family is buying groceries."
+        "text": "Welcome to the shopping market! Today our family is buying groceries.",
+        "translations": {
+          "es": "¡Bienvenido al mercado de compras! Hoy nuestra familia está comprando comestibles.",
+          "fr": "Bienvenue sur le marché du shopping ! Aujourd'hui, notre famille achète des produits d'épicerie.",
+          "de": "Willkommen auf dem Einkaufsmarkt! Heute kauft unsere Familie Lebensmittel.",
+          "it": "Benvenuto al mercato dello shopping! Oggi la nostra famiglia fa la spesa.",
+          "pt": "Bem-vindo ao mercado de compras! Hoje a nossa família está comprando mantimentos.",
+          "no": "Velkommen til handlemarkedet! I dag handler familien vår dagligvarer."
+        }
       },
       {
-        "text": "The mother pushes the shopping cart through the store."
+        "text": "The mother pushes the shopping cart through the store.",
+        "translations": {
+          "es": "La madre empuja el carrito de compras a través de la tienda.",
+          "fr": "La mère pousse le caddie à travers le magasin.",
+          "de": "Die Mutter schiebt den Einkaufswagen durch den Laden.",
+          "it": "La madre spinge il carrello attraverso il negozio.",
+          "pt": "A mãe empurra o carrinho de compras pela loja.",
+          "no": "Moren dytter handlevognen gjennom butikken."
+        }
       },
       {
-        "text": "The boy is holding a bunch of yellow bananas."
+        "text": "The boy is holding a bunch of yellow bananas.",
+        "translations": {
+          "es": "El niño sostiene un racimo de plátanos amarillos.",
+          "fr": "Le garçon tient un bouquet de bananes jaunes.",
+          "de": "Der Junge hält einen Haufen gelber Bananen in der Hand.",
+          "it": "Il ragazzo ha in mano un mazzo di banane gialle.",
+          "pt": "O menino está segurando um cacho de bananas amarelas.",
+          "no": "Gutten holder en klase gule bananer."
+        }
       },
       {
-        "text": "The young girl is holding a fresh red apple."
+        "text": "The young girl is holding a fresh red apple.",
+        "translations": {
+          "es": "La joven sostiene una manzana roja fresca.",
+          "fr": "La jeune fille tient une pomme rouge fraîche.",
+          "de": "Das junge Mädchen hält einen frischen roten Apfel.",
+          "it": "La ragazza tiene in mano una mela rossa fresca.",
+          "pt": "A jovem segura uma maçã vermelha fresca.",
+          "no": "Den unge jenta holder et friskt rødt eple."
+        }
       },
       {
-        "text": "The teenager is reading the information on a cereal box."
+        "text": "The teenager is reading the information on a cereal box.",
+        "translations": {
+          "es": "El adolescente está leyendo la información en una caja de cereales.",
+          "fr": "L'adolescent est en train de lire les informations sur une boîte de céréales.",
+          "de": "Der Teenager liest die Informationen auf einer Müslischachtel.",
+          "it": "L'adolescente sta leggendo le informazioni su una scatola di cereali.",
+          "pt": "O adolescente está a ler a informação numa caixa de cereais.",
+          "no": "Tenåringen leser informasjonen på en frokostblandingeske."
+        }
       },
       {
-        "text": "The produce section has fresh fruits and vegetables."
+        "text": "The produce section has fresh fruits and vegetables.",
+        "translations": {
+          "es": "La sección de productos tiene frutas y verduras frescas.",
+          "fr": "La section des produits contient des fruits et légumes frais.",
+          "de": "Die Obst- und Gemüsesektion bietet frisches Obst und Gemüse.",
+          "it": "La sezione prodotti ha frutta e verdura fresca.",
+          "pt": "A secção de produtos tem frutas e legumes frescos.",
+          "no": "Frukt- og grøntavdelingen har fersk frukt og grønnsaker."
+        }
       },
       {
-        "text": "We can see red apples, oranges, and green vegetables."
+        "text": "We can see red apples, oranges, and green vegetables.",
+        "translations": {
+          "es": "Podemos ver manzanas rojas, naranjas y verduras verdes.",
+          "fr": "Nous pouvons voir des pommes rouges, des oranges et des légumes verts.",
+          "de": "Wir können rote Äpfel, Orangen und grünes Gemüse sehen.",
+          "it": "Possiamo vedere mele rosse, arance e verdure verdi.",
+          "pt": "Podemos ver maçãs vermelhas, laranjas e vegetais verdes.",
+          "no": "Vi kan se røde epler, appelsiner og grønne grønnsaker."
+        }
       },
       {
-        "text": "The shopping cart contains a pineapple, lettuce, and other groceries."
+        "text": "The shopping cart contains a pineapple, lettuce, and other groceries.",
+        "translations": {
+          "es": "El carrito de compras contiene una piña, lechuga y otros comestibles.",
+          "fr": "Le panier contient un ananas, de la laitue et d'autres produits d'épicerie.",
+          "de": "Der Einkaufswagen enthält eine Ananas, Salat und andere Lebensmittel.",
+          "it": "Il carrello della spesa contiene ananas, lattuga e altri generi alimentari.",
+          "pt": "O carrinho de compras contém um abacaxi, alface e outros mantimentos.",
+          "no": "Handlekurven inneholder ananas, salat og andre dagligvarer."
+        }
       },
       {
-        "text": "Milk is kept cold in the dairy section."
+        "text": "Milk is kept cold in the dairy section.",
+        "translations": {
+          "es": "La leche se mantiene fría en la sección de productos lácteos.",
+          "fr": "Le lait est conservé au froid dans la section laitière.",
+          "de": "Milch wird in der Milchabteilung kalt gehalten.",
+          "it": "Il latte viene conservato al freddo nel reparto lattiero-caseario.",
+          "pt": "O leite é mantido frio na secção de lacticínios.",
+          "no": "Melken holdes kald i meieriavdelingen."
+        }
       },
       {
-        "text": "Fresh bread is available near the bakery."
+        "text": "Fresh bread is available near the bakery.",
+        "translations": {
+          "es": "Hay pan fresco disponible cerca de la panadería.",
+          "fr": "Du pain frais est disponible à proximité de la boulangerie.",
+          "de": "Frisches Brot ist in der Nähe der Bäckerei erhältlich.",
+          "it": "Il pane fresco è disponibile vicino alla panetteria.",
+          "pt": "Pão fresco está disponível perto da padaria.",
+          "no": "Ferskt brød er tilgjengelig i nærheten av bakeriet."
+        }
       },
       {
-        "text": "Before buying something, we can compare prices and read labels."
+        "text": "Before buying something, we can compare prices and read labels.",
+        "translations": {
+          "es": "Antes de comprar algo, podemos comparar precios y leer etiquetas.",
+          "fr": "Avant d'acheter quelque chose, nous pouvons comparer les prix et lire les étiquettes.",
+          "de": "Bevor wir etwas kaufen, können wir Preise vergleichen und Etiketten lesen.",
+          "it": "Prima di acquistare qualcosa, possiamo confrontare i prezzi e leggere le etichette.",
+          "pt": "Antes de comprar algo, podemos comparar preços e ler os rótulos.",
+          "no": "Før vi kjøper noe, kan vi sammenligne priser og lese etiketter."
+        }
       },
       {
-        "text": "After shopping, the family takes their groceries to the checkout."
+        "text": "After shopping, the family takes their groceries to the checkout.",
+        "translations": {
+          "es": "Después de comprar, la familia lleva sus comestibles a la caja.",
+          "fr": "Après avoir fait ses courses, la famille amène son épicerie à la caisse.",
+          "de": "Nach dem Einkauf bringt die Familie ihre Lebensmittel zur Kasse.",
+          "it": "Dopo aver fatto la spesa, la famiglia porta la spesa alla cassa.",
+          "pt": "Depois de fazer compras, a família leva as compras para o caixa.",
+          "no": "Etter handlingen tar familien dagligvarene sine med til kassen."
+        }
       }
     ],
     "hotspots": [
@@ -16328,51 +16424,147 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
     "challenges": [
       {
         "prompt": "Find the shopping cart",
-        "target": "shopping-cart"
+        "target": "shopping-cart",
+        "translations": {
+          "es": "Encuentra el carrito de la compra",
+          "fr": "Le panier",
+          "de": "Der Warenkorb",
+          "it": "Trova il carrello",
+          "pt": "Encontre o carrinho de compras",
+          "no": "Finn handlekurven"
+        }
       },
       {
         "prompt": "Find the mother",
-        "target": "mother"
+        "target": "mother",
+        "translations": {
+          "es": "La madre",
+          "fr": "la mère",
+          "de": "Die Mutter",
+          "it": "LA MADRE",
+          "pt": "a noite",
+          "no": "Finn moren"
+        }
       },
       {
         "prompt": "Find the boy holding bananas",
-        "target": "boy"
+        "target": "boy",
+        "translations": {
+          "es": "Encuentra al niño que sostiene plátanos",
+          "fr": "Trouvez le garçon qui tient des bananes",
+          "de": "Finde den Jungen, der Bananen hält",
+          "it": "Trova il ragazzo che tiene le banane",
+          "pt": "Encontrar o rapaz a segurar bananas",
+          "no": "Finn gutten som holder bananer"
+        }
       },
       {
         "prompt": "Find the bananas",
-        "target": "bananas"
+        "target": "bananas",
+        "translations": {
+          "es": "Encuentra los plátanos",
+          "fr": "Les bananes",
+          "de": "Finde die Bananen",
+          "it": "Trova le banane",
+          "pt": "Encontre as bananas",
+          "no": "Finn bananene"
+        }
       },
       {
         "prompt": "Find the girl holding an apple",
-        "target": "young-girl"
+        "target": "young-girl",
+        "translations": {
+          "es": "Encuentra a la chica sosteniendo una manzana",
+          "fr": "Trouvez la fille qui tient une pomme",
+          "de": "Finde das Mädchen, das einen Apfel hält",
+          "it": "Trova la ragazza che tiene in mano una mela",
+          "pt": "Encontre a rapariga a segurar uma maçã",
+          "no": "Finn jenta som holder et eple"
+        }
       },
       {
         "prompt": "Find the red apple",
-        "target": "red-apple"
+        "target": "red-apple",
+        "translations": {
+          "es": "La manzana roja",
+          "fr": "La pomme rouge",
+          "de": "Rote Äpfel",
+          "it": "Le mele rosse",
+          "pt": "Encontre a maçã vermelha",
+          "no": "Finn det røde eplet"
+        }
       },
       {
         "prompt": "Find the teenager",
-        "target": "teenager"
+        "target": "teenager",
+        "translations": {
+          "es": "Encuentra al adolescente",
+          "fr": "L’adolescent",
+          "de": "Finde den Teenager",
+          "it": "Trova l'adolescente",
+          "pt": "Encontre o adolescente",
+          "no": "Finn tenåringen"
+        }
       },
       {
         "prompt": "Find the cereal box",
-        "target": "cereal-box"
+        "target": "cereal-box",
+        "translations": {
+          "es": "Encuentra la caja de cereales",
+          "fr": "Trouver la boîte de céréales",
+          "de": "Finde die Müslischachtel",
+          "it": "Trova la scatola di cereali",
+          "pt": "Encontre a caixa de cereais",
+          "no": "Finn frokostblandingsboksen"
+        }
       },
       {
         "prompt": "Find the pineapple",
-        "target": "pineapple"
+        "target": "pineapple",
+        "translations": {
+          "es": "Encuentra la piña",
+          "fr": "L’ananas",
+          "de": "Finde die Ananas",
+          "it": "Trova l'ananas",
+          "pt": "Encontre o abacaxi",
+          "no": "Finn ananasen"
+        }
       },
       {
         "prompt": "Find the milk",
-        "target": "milk"
+        "target": "milk",
+        "translations": {
+          "es": "Encuentra la leche",
+          "fr": "Trouver le lait",
+          "de": "Finde die Milch",
+          "it": "Trova il latte",
+          "pt": "Encontrar o leite",
+          "no": "Finn melken"
+        }
       },
       {
         "prompt": "Find the bread",
-        "target": "bread"
+        "target": "bread",
+        "translations": {
+          "es": "el pan",
+          "fr": "Le pain",
+          "de": "Finde das Brot",
+          "it": "il pane",
+          "pt": "Encontre o pão",
+          "no": "Finn brødet"
+        }
       },
       {
         "prompt": "Find the lettuce",
-        "target": "lettuce"
+        "target": "lettuce",
+        "translations": {
+          "es": "La lechuga",
+          "fr": "Trouvez la laitue",
+          "de": "Finde den Salat",
+          "it": "Trova la lattuga",
+          "pt": "Encontre a alface",
+          "no": "Finn salaten"
+        }
       }
     ]
   },
