@@ -12807,23 +12807,63 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
     "challenges": [
       {
         "prompt": "Find the Chairlift",
-        "target": "chairlift"
+        "target": "chairlift",
+        "translations": {
+          "es": "Encuentra el telesilla",
+          "fr": "Trouvez le télésiège",
+          "de": "Finde den Sessellift",
+          "it": "Trova la seggiovia",
+          "pt": "Encontre o Chairlift",
+          "no": "Finn stolheisen"
+        }
       },
       {
         "prompt": "Find the Skis",
-        "target": "skis"
+        "target": "skis",
+        "translations": {
+          "es": "Encuentra los esquís",
+          "fr": "Trouvez les skis",
+          "de": "Finde die Skier",
+          "it": "Trova gli sci",
+          "pt": "Encontrar os esquis",
+          "no": "Finn skiene"
+        }
       },
       {
         "prompt": "Find Grandma",
-        "target": "grandma"
+        "target": "grandma",
+        "translations": {
+          "es": "Encuentra a la abuela",
+          "fr": "Trouver grand-mère",
+          "de": "Oma finden",
+          "it": "Trova la nonna",
+          "pt": "Encontrar a avó",
+          "no": "Finn bestemor"
+        }
       },
       {
         "prompt": "Find Grandpa",
-        "target": "grandpa"
+        "target": "grandpa",
+        "translations": {
+          "es": "Encuentra al abuelo",
+          "fr": "Trouver grand-père",
+          "de": "Großvater finden",
+          "it": "Trova il nonno",
+          "pt": "Encontrar o vovô",
+          "no": "Finn bestefar"
+        }
       },
       {
         "prompt": "Find the Fire Pit",
-        "target": "firepit"
+        "target": "firepit",
+        "translations": {
+          "es": "Encuentra el pozo de fuego",
+          "fr": "Trouvez le foyer",
+          "de": "Finde die Feuerstelle",
+          "it": "Trova il Pozzo del Fuoco",
+          "pt": "Encontre a fogueira",
+          "no": "Finn bålplassen"
+        }
       }
     ]
   },
