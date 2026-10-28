@@ -13280,58 +13280,7 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
         "translations": {}
       }
     ],
-    "overlays": [
-      {
-        "id": "overlay-1792126653432-5rzjq",
-        "label": "bee-lounging-transparent.png",
-        "src": "images/png/bee-lounging-transparent.png",
-        "x": 25.208332538604736,
-        "y": 63.888893127441406,
-        "w": 7.5,
-        "rotation": -5,
-        "z": 4
-      },
-      {
-        "id": "overlay-1792127307030-bengf",
-        "label": "angry-bee.png",
-        "src": "images/png/angry-bee.png",
-        "x": 21.666665077209473,
-        "y": 31.018517812093098,
-        "w": 6,
-        "rotation": -5,
-        "z": 3
-      },
-      {
-        "id": "overlay-1792127385611-5wxp8",
-        "label": "squirrel2.png",
-        "src": "images/png/squirrel2.png",
-        "x": 29.895831346511844,
-        "y": 53.1481467352973,
-        "w": 3,
-        "rotation": 0,
-        "z": 3
-      },
-      {
-        "id": "overlay-1792127452663-0msjs",
-        "label": "buzzkill.png",
-        "src": "images/png/buzzkill.png",
-        "x": 45.9375,
-        "y": 32.685186598036026,
-        "w": 5.5,
-        "rotation": 5,
-        "z": 2
-      },
-      {
-        "id": "overlay-1792127611346-0e6ju",
-        "label": "bee-sleeping.png",
-        "src": "images/png/bee-sleeping.png",
-        "x": 90.36457538604736,
-        "y": 56.203702290852874,
-        "w": 4.5,
-        "rotation": 5,
-        "z": 1
-      }
-    ],
+    "overlays": [],
     "challenges": [
       {
         "prompt": "Find the Campfire",
