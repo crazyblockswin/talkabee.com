@@ -11901,8 +11901,12 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
         "y": 81.17,
         "w": 16.17,
         "h": 22.65,
-        "sound": "",
-        "translations": {}
+        "sound": "sounds/balloon-kids.mp3",
+        "translations": {
+          "es": ""
+        },
+        "rotation": 0,
+        "z": 0
       },
       {
         "id": "burner",
@@ -11921,8 +11925,12 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
         "y": 2.33,
         "w": 8.1,
         "h": 34.57,
-        "sound": "sounds/hot-air-balloon.mp3",
-        "translations": {}
+        "sound": "sounds/balloon-kids.mp3",
+        "translations": {
+          "es": ""
+        },
+        "rotation": 0,
+        "z": 0
       },
       {
         "id": "balloon",
@@ -18638,12 +18646,16 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
       {
         "id": "grandma",
         "label": "grandma",
-        "x": 56.52,
-        "y": 21.61,
-        "w": 7.19,
-        "h": 6.02,
+        "x": 52.83579140745046,
+        "y": 16.324882953524256,
+        "w": 9.347891969337303,
+        "h": 23.915227299182718,
         "sound": "",
-        "translations": {}
+        "translations": {
+          "es": ""
+        },
+        "rotation": 0,
+        "z": 0
       },
       {
         "id": "shark",
@@ -18778,12 +18790,16 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
       {
         "id": "scuba-diver",
         "label": "scuba diver",
-        "x": 54.4,
-        "y": 22.08,
+        "x": 65.55789335467476,
+        "y": 22.54360508302298,
         "w": 7.2,
         "h": 17.44,
         "sound": "sounds/scuba-diver.mp3",
-        "translations": {}
+        "translations": {
+          "es": ""
+        },
+        "rotation": 0,
+        "z": 0
       }
     ],
     "overlays": [],
