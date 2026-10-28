@@ -950,417 +950,992 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
       }
     ]
   },
-  "aircraft-carrier": {
-    "title": "Aircraft Carrier",
-    "image": "images/Aircraft-Carrier-Adventure.jpg",
+  "grandmas-kitchen": {
+    "title": "Grandma’s Kitchen",
+    "image": "images/grandmas-kitchen-adventure.jpg",
     "lessons": [
       {
-        "text": "An aircraft carrier has a large flight deck where aircraft can take off, land, move, and be serviced while the ship is at sea.",
+        "text": "We are making cookies. Can you help find the ingredients?",
         "translations": {
-          "es": "Un portaaviones tiene una gran cubierta de vuelo donde las aeronaves pueden despegar, aterrizar, moverse y recibir mantenimiento mientras el barco está en el mar.",
-          "fr": "Un porte-avions possède un grand pont d'envol où les aéronefs peuvent décoller, atterrir, se déplacer et être entretenus en mer.",
-          "de": "Ein Flugzeugträger besitzt ein großes Flugdeck, auf dem Flugzeuge auf See starten, landen, bewegt und gewartet werden können.",
-          "it": "Una portaerei ha un grande ponte di volo dove gli aeromobili possono decollare, atterrare, spostarsi ed essere assistiti mentre la nave è in mare.",
-          "pt": "Um porta-aviões possui um grande convés de voo onde aeronaves podem decolar, pousar, se mover e receber manutenção enquanto o navio está no mar.",
-          "no": "Et hangarskip har et stort flydekk der luftfartøy kan ta av, lande, flyttes og vedlikeholdes mens skipet er til sjøs."
+          "es": "Horneando galletas.",
+          "fr": "Nous faisons des biscuits.",
+          "de": "Wir backen Kekse.",
+          "it": "Stiamo facendo i biscotti.",
+          "pt": "Estamos fazendo biscoitos.",
+          "no": "Vi baker kjeks."
         }
       },
       {
-        "text": "The deck is carefully organized with markings, equipment, trained crews, and strict safety procedures.",
+        "text": "We are preparing the dough.",
         "translations": {
-          "es": "La cubierta está cuidadosamente organizada con marcas, equipos, personal capacitado y estrictos procedimientos de seguridad.",
-          "fr": "Le pont est soigneusement organisé avec des marquages, du matériel, des équipes formées et des règles de sécurité strictes.",
-          "de": "Das Deck ist mit Markierungen, Ausrüstung, geschulten Teams und strengen Sicherheitsverfahren sorgfältig organisiert.",
-          "it": "Il ponte è organizzato con segnaletica, attrezzature, equipaggi addestrati e rigorose procedure di sicurezza.",
-          "pt": "O convés é cuidadosamente organizado com marcações, equipamentos, equipes treinadas e procedimentos rigorosos de segurança.",
-          "no": "Dekket er nøye organisert med markeringer, utstyr, trente mannskaper og strenge sikkerhetsrutiner."
+          "es": "Estamos haciendo galletas.",
+          "fr": "Nous préparons la pâte.",
+          "de": "Wir bereiten den Teig vor.",
+          "it": "Prepariamo l'impasto.",
+          "pt": "Estamos preparando a massa.",
+          "no": "Vi lager deigen."
         }
       },
       {
-        "text": "Aircraft carriers can operate different aircraft, including fixed-wing airplanes and helicopters.",
+        "text": "We mix the dough.",
         "translations": {
-          "es": "Los portaaviones pueden operar diferentes aeronaves, incluidos aviones de ala fija y helicópteros.",
-          "fr": "Les porte-avions peuvent utiliser différents aéronefs, notamment des avions et des hélicoptères.",
-          "de": "Flugzeugträger können verschiedene Luftfahrzeuge einsetzen, darunter Flugzeuge und Hubschrauber.",
-          "it": "Le portaerei possono operare diversi aeromobili, compresi aerei ed elicotteri.",
-          "pt": "Porta-aviões podem operar diferentes aeronaves, incluindo aviões e helicópteros.",
-          "no": "Hangarskip kan operere ulike luftfartøy, blant annet fly og helikoptre."
+          "es": "Mezclamos la masa.",
+          "fr": "Nous mélangeons la pâte.",
+          "de": "Wir mischen den Teig.",
+          "it": "Mescoliamo l'impasto.",
+          "pt": "Misturamos a massa.",
+          "no": "Vi blander deigen."
         }
       },
       {
-        "text": "Aircraft are moved, inspected, fueled, maintained, launched, and recovered by teams with specialized jobs.",
+        "text": "The cookies smell very good.",
         "translations": {
-          "es": "Los equipos especializados mueven, inspeccionan, abastecen, mantienen, lanzan y recuperan las aeronaves.",
-          "fr": "Des équipes spécialisées déplacent, inspectent, ravitaillent, entretiennent, lancent et récupèrent les aéronefs.",
-          "de": "Spezialisierte Teams bewegen, prüfen, betanken, warten, starten und übernehmen die Luftfahrzeuge.",
-          "it": "Squadre specializzate spostano, ispezionano, riforniscono, mantengono, lanciano e recuperano gli aeromobili.",
-          "pt": "Equipes especializadas movem, inspecionam, abastecem, mantêm, lançam e recuperam as aeronaves.",
-          "no": "Spesialiserte team flytter, inspiserer, fyller drivstoff, vedlikeholder, sender ut og tar imot luftfartøy."
+          "es": "Las galletas huelen muy bien.",
+          "fr": "Les biscuits sentent très bon.",
+          "de": "Die Kekse riechen sehr gut.",
+          "it": "I biscotti hanno un buon profumo.",
+          "pt": "Os biscoitos cheiram muito bem.",
+          "no": "Kjeksene lukter veldig godt."
         }
       },
       {
-        "text": "Flight deck crews use colored clothing to help identify different jobs in a very busy environment.",
+        "text": "We need flour.",
         "translations": {
-          "es": "Las tripulaciones de cubierta usan ropa de diferentes colores para identificar trabajos distintos en un entorno muy ocupado.",
-          "fr": "Les équipes du pont d'envol portent des couleurs différentes pour identifier leurs fonctions dans un environnement très actif.",
-          "de": "Flugdeckbesatzungen tragen unterschiedliche Farben, damit verschiedene Aufgaben in der geschäftigen Umgebung erkennbar sind.",
-          "it": "Gli equipaggi del ponte indossano colori diversi per identificare i vari lavori in un ambiente molto attivo.",
-          "pt": "As equipes do convés usam roupas de cores diferentes para identificar trabalhos distintos em um ambiente muito movimentado.",
-          "no": "Mannskap på flydekket bruker forskjellige farger for å gjøre ulike arbeidsoppgaver lettere å kjenne igjen."
+          "es": "Necesitamos harina.",
+          "fr": "Nous avons besoin de farine.",
+          "de": "Wir brauchen Mehl.",
+          "it": "Ci serve la farina.",
+          "pt": "Precisamos de farinha.",
+          "no": "Vi trenger mel."
         }
       },
       {
-        "text": "Teamwork and clear signals help people coordinate aircraft movement safely.",
+        "text": "Add a little sugar.",
         "translations": {
-          "es": "El trabajo en equipo y las señales claras ayudan a coordinar el movimiento de las aeronaves con seguridad.",
-          "fr": "Le travail d'équipe et des signaux clairs permettent de coordonner les mouvements en sécurité.",
-          "de": "Teamarbeit und klare Signale helfen, Flugzeugbewegungen sicher zu koordinieren.",
-          "it": "Il lavoro di squadra e segnali chiari aiutano a coordinare in sicurezza il movimento degli aeromobili.",
-          "pt": "Trabalho em equipe e sinais claros ajudam a coordenar o movimento das aeronaves com segurança.",
-          "no": "Samarbeid og tydelige signaler hjelper dem å koordinere flybevegelser på en trygg måte."
+          "es": "Añade un poco de azúcar.",
+          "fr": "Ajoute un peu de sucre.",
+          "de": "Gib etwas Zucker dazu.",
+          "it": "Aggiungi un po' di zucchero.",
+          "pt": "Adicione um pouco de açúcar.",
+          "no": "Tilsett litt sukker."
         }
       },
       {
-        "text": "The tall structure rising above the flight deck is called the island.",
+        "text": "Put the eggs in the bowl.",
         "translations": {
-          "es": "La estructura alta sobre la cubierta se llama isla.",
-          "fr": "La grande structure qui s'élève au-dessus du pont est appelée l'îlot.",
-          "de": "Der hohe Aufbau über dem Flugdeck wird Insel genannt.",
-          "it": "L'alta struttura che si eleva sopra il ponte si chiama isola.",
-          "pt": "A estrutura alta acima do convés é chamada de ilha.",
-          "no": "Den høye konstruksjonen over flydekket kalles kommandotårnet eller øya."
+          "es": "Pon los huevos en el tazón.",
+          "fr": "Mets les œufs dans le bol.",
+          "de": "Gib die Eier in die Schüssel.",
+          "it": "Metti le uova nella ciotola.",
+          "pt": "Coloque os ovos na tigela.",
+          "no": "Legg eggene i bollen."
         }
       },
       {
-        "text": "It contains important spaces used to help navigate the ship and manage flight-deck operations.",
+        "text": "The milk is on the table.",
         "translations": {
-          "es": "Contiene espacios importantes utilizados para ayudar a navegar el barco y gestionar las operaciones de vuelo.",
-          "fr": "Elle contient des espaces importants servant à la navigation du navire et à la gestion des opérations aériennes.",
-          "de": "Darin befinden sich wichtige Bereiche zur Navigation des Schiffes und zur Leitung des Flugbetriebs.",
-          "it": "Contiene importanti spazi utilizzati per aiutare a navigare la nave e gestire le operazioni di volo.",
-          "pt": "Ela contém espaços importantes usados para ajudar na navegação do navio e no gerenciamento das operações de voo.",
-          "no": "Den inneholder viktige områder som brukes til navigasjon og styring av flyoperasjoner."
+          "es": "La leche está sobre la mesa.",
+          "fr": "Le lait est sur la table.",
+          "de": "Die Milch steht auf dem Tisch.",
+          "it": "Il latte è sul tavolo.",
+          "pt": "O leite está sobre a mesa.",
+          "no": "Melken står på bordet."
         }
       },
       {
-        "text": "A carrier flight deck can be noisy, windy, crowded, and full of moving equipment.",
+        "text": "Mix the ingredients.",
         "translations": {
-          "es": "La cubierta de un portaaviones puede ser ruidosa, ventosa, concurrida y llena de equipos en movimiento.",
-          "fr": "Un pont d'envol peut être bruyant, venteux, encombré et rempli d'équipements en mouvement.",
-          "de": "Ein Flugdeck kann laut, windig, überfüllt und voller beweglicher Ausrüstung sein.",
-          "it": "Il ponte di volo può essere rumoroso, ventoso, affollato e pieno di attrezzature in movimento.",
-          "pt": "Um convés de voo pode ser barulhento, ventoso, movimentado e cheio de equipamentos em movimento.",
-          "no": "Et flydekk kan være støyende, vindfullt, travelt og fullt av utstyr i bevegelse."
+          "es": "Mezcla los ingredientes.",
+          "fr": "Mélange les ingrédients.",
+          "de": "Mische die Zutaten.",
+          "it": "Mescola gli ingredienti.",
+          "pt": "Misture os ingredientes.",
+          "no": "Bland ingrediensene."
         }
       },
       {
-        "text": "Crews train carefully, wear protective gear, follow marked areas, and communicate with standardized signals.",
+        "text": "Stir with the spoon.",
         "translations": {
-          "es": "Las tripulaciones entrenan cuidadosamente, usan protección, siguen las zonas marcadas y se comunican con señales estandarizadas.",
-          "fr": "Les équipes s'entraînent soigneusement, portent des protections, respectent les zones marquées et utilisent des signaux normalisés.",
-          "de": "Die Teams trainieren sorgfältig, tragen Schutzausrüstung, beachten markierte Bereiche und verwenden standardisierte Signale.",
-          "it": "Gli equipaggi si addestrano attentamente, indossano protezioni, rispettano le aree segnate e comunicano con segnali standard.",
-          "pt": "As equipes treinam cuidadosamente, usam proteção, seguem áreas marcadas e se comunicam com sinais padronizados.",
-          "no": "Mannskap trener grundig, bruker verneutstyr, følger merkede områder og kommuniserer med standardiserte signaler."
+          "es": "Revuelve con la cuchara.",
+          "fr": "Remue avec la cuillère.",
+          "de": "Rühre mit dem Löffel.",
+          "it": "Gira con il cucchiaio.",
+          "pt": "Mexa com a colher.",
+          "no": "Rør med skjeen."
         }
       },
       {
-        "text": "An aircraft carrier is both an airfield and a large ship, with many people living and working aboard.",
+        "text": "Roll out the dough.",
         "translations": {
-          "es": "Un portaaviones es a la vez un aeródromo y un gran barco, con muchas personas viviendo y trabajando a bordo.",
-          "fr": "Un porte-avions est à la fois un aérodrome et un grand navire où de nombreuses personnes vivent et travaillent.",
-          "de": "Ein Flugzeugträger ist zugleich Flugplatz und großes Schiff, auf dem viele Menschen leben und arbeiten.",
-          "it": "Una portaerei è sia un aeroporto sia una grande nave, con molte persone che vivono e lavorano a bordo.",
-          "pt": "Um porta-aviões é ao mesmo tempo um aeródromo e um grande navio, com muitas pessoas vivendo e trabalhando a bordo.",
-          "no": "Et hangarskip er både en flyplass og et stort skip, med mange mennesker som bor og arbeider om bord."
+          "es": "Extiende la masa.",
+          "fr": "Étale la pâte.",
+          "de": "Rolle den Teig aus.",
+          "it": "Stendi l'impasto.",
+          "pt": "Abra a massa.",
+          "no": "Kjevle ut deigen."
         }
       },
       {
-        "text": "Sailors perform many different jobs to operate the ship, maintain equipment, prepare meals, navigate, communicate, and support aviation.",
+        "text": "Put the tray in the oven.",
         "translations": {
-          "es": "Los marineros realizan muchos trabajos para operar el barco, mantener equipos, preparar alimentos, navegar, comunicarse y apoyar la aviación.",
-          "fr": "Les marins exercent de nombreux métiers pour faire fonctionner le navire, entretenir le matériel, préparer les repas, naviguer, communiquer et soutenir l'aviation.",
-          "de": "Matrosen übernehmen viele Aufgaben, um das Schiff zu betreiben, Ausrüstung zu warten, Mahlzeiten zuzubereiten, zu navigieren, zu kommunizieren und den Flugbetrieb zu unterstützen.",
-          "it": "I marinai svolgono molti lavori per far funzionare la nave, mantenere le attrezzature, preparare pasti, navigare, comunicare e sostenere l'aviazione.",
-          "pt": "Marinheiros desempenham muitos trabalhos para operar o navio, manter equipamentos, preparar refeições, navegar, comunicar e apoiar a aviação.",
-          "no": "Sjøfolk gjør mange forskjellige jobber for å drive skipet, vedlikeholde utstyr, lage mat, navigere, kommunisere og støtte luftfarten."
+          "es": "Pon la bandeja en el horno.",
+          "fr": "Mets la plaque dans le four.",
+          "de": "Stell das Blech in den Ofen.",
+          "it": "Metti la teglia nel forno.",
+          "pt": "Coloque a assadeira no forno.",
+          "no": "Sett brettet i ovnen."
+        }
+      },
+      {
+        "text": "I am helping Grandma Cathy.",
+        "translations": {
+          "es": "Ayudo a la abuela Cathy.",
+          "fr": "J'aide grand-mère Cathy.",
+          "de": "Ich helfe Oma Cathy.",
+          "it": "Aiuto nonna Cathy.",
+          "pt": "Eu ajudo a avó Cathy.",
+          "no": "Jeg hjelper bestemor Cathy."
+        }
+      },
+      {
+        "text": "I hold the bowl.",
+        "translations": {
+          "es": "Yo sostengo el tazón.",
+          "fr": "Je tiens le bol.",
+          "de": "Ich halte die Schüssel.",
+          "it": "Tengo la ciotola.",
+          "pt": "Eu seguro a tigela.",
+          "no": "Jeg holder bollen."
+        }
+      },
+      {
+        "text": "We clean the table together.",
+        "translations": {
+          "es": "Limpiamos la mesa juntos.",
+          "fr": "Nous nettoyons la table ensemble.",
+          "de": "Wir putzen gemeinsam den Tisch.",
+          "it": "Puliamo il tavolo insieme.",
+          "pt": "Limpamos a mesa juntos.",
+          "no": "Vi rydder bordet sammen."
+        }
+      },
+      {
+        "text": "Thank you for helping me.",
+        "translations": {
+          "es": "Gracias por ayudarme.",
+          "fr": "Merci de m'aider.",
+          "de": "Danke für deine Hilfe.",
+          "it": "Grazie per l'aiuto.",
+          "pt": "Obrigado pela ajuda.",
+          "no": "Takk for hjelpen."
+        }
+      },
+      {
+        "text": "There are three apples.",
+        "translations": {
+          "es": "Hay tres manzanas.",
+          "fr": "Il y a trois pommes.",
+          "de": "Da sind drei Äpfel.",
+          "it": "Ci sono tre mele.",
+          "pt": "Há três maçãs.",
+          "no": "Det er tre epler."
+        }
+      },
+      {
+        "text": "The bowl is blue.",
+        "translations": {
+          "es": "El tazón es azul.",
+          "fr": "Le bol est bleu.",
+          "de": "Die Schüssel ist blau.",
+          "it": "La ciotola è blu.",
+          "pt": "A tigela é azul.",
+          "no": "Bollen er blå."
+        }
+      },
+      {
+        "text": "Count four eggs.",
+        "translations": {
+          "es": "Cuenta cuatro huevos.",
+          "fr": "Compte quatre œufs.",
+          "de": "Zähle vier Eier.",
+          "it": "Conta quattro uova.",
+          "pt": "Conte quatro ovos.",
+          "no": "Tell fire egg."
+        }
+      },
+      {
+        "text": "The flowers are yellow.",
+        "translations": {
+          "es": "Las flores son amarillas.",
+          "fr": "Les fleurs sont jaunes.",
+          "de": "Die Blumen sind gelb.",
+          "it": "I fiori sono gialli.",
+          "pt": "As flores são amarelas.",
+          "no": "Blomstene er gule."
+        }
+      },
+      {
+        "text": "The cookies are ready.",
+        "translations": {
+          "es": "Las galletas están listas.",
+          "fr": "Les biscuits sont prêts.",
+          "de": "Die Kekse sind fertig.",
+          "it": "I biscotti sono pronti.",
+          "pt": "Os biscoitos estão prontos.",
+          "no": "Kjeksene er klare."
+        }
+      },
+      {
+        "text": "Put them on a plate.",
+        "translations": {
+          "es": "Ponlas en un plato.",
+          "fr": "Mets-les sur une assiette.",
+          "de": "Leg sie auf einen Teller.",
+          "it": "Mettili su un piatto.",
+          "pt": "Coloque-os num prato.",
+          "no": "Legg dem på en tallerken."
+        }
+      },
+      {
+        "text": "We share with the family.",
+        "translations": {
+          "es": "Compartimos con la familia.",
+          "fr": "Nous partageons avec la famille.",
+          "de": "Wir teilen mit der Familie.",
+          "it": "Condividiamo con la famiglia.",
+          "pt": "Compartilhamos com a família.",
+          "no": "Vi deler med familien."
+        }
+      },
+      {
+        "text": "Enjoy your meal!",
+        "translations": {
+          "es": "¡Buen provecho!",
+          "fr": "Bon appétit !",
+          "de": "Guten Appetit!",
+          "it": "Buon appetito!",
+          "pt": "Bom apetite!",
+          "no": "God appetitt!"
         }
       }
     ],
     "hotspots": [
       {
-        "id": "visitors",
-        "label": "visitors",
-        "x": 15,
-        "y": 58,
-        "w": 28,
-        "h": 32,
-        "sound": "",
-        "translations": {}
+        "id": "grandma",
+        "label": "Grandma",
+        "x": 36.894738807572594,
+        "y": 24.76680655304493,
+        "w": 6.842104657667154,
+        "h": 24.78766748191892,
+        "sound": "sounds/cathy-kitchen.mp3",
+        "translations": {
+          "es": "Abuela",
+          "fr": "Grand-mère",
+          "de": "Oma",
+          "it": "Nonna",
+          "pt": "Avó",
+          "no": "Bestemor"
+        }
       },
       {
-        "id": "sailor",
-        "label": "sailor",
-        "x": 23,
-        "y": 52,
+        "id": "girl",
+        "label": "Girl",
+        "x": 49.84210164606399,
+        "y": 37.118681755253064,
+        "w": 6.263151053642495,
+        "h": 9.959203644027951,
+        "sound": "sounds/child-laughing.mp3",
+        "translations": {
+          "es": "Niña",
+          "fr": "Fille",
+          "de": "Mädchen",
+          "it": "Ragazza",
+          "pt": "Menina",
+          "no": "Jente"
+        }
+      },
+      {
+        "id": "bee",
+        "label": "Bee",
+        "x": 46.5,
+        "y": 28,
+        "w": 5,
+        "h": 9,
+        "sound": "",
+        "translations": {
+          "es": "Abeja",
+          "fr": "Abeille",
+          "de": "Biene",
+          "it": "Ape",
+          "pt": "Abelha",
+          "no": "Bie"
+        }
+      },
+      {
+        "id": "bear",
+        "label": "Dog",
+        "x": 74.84210236884874,
+        "y": 74.75475380772038,
+        "w": 12,
+        "h": 18,
+        "sound": "sounds/dog-panting.wav",
+        "translations": {
+          "es": "Perro",
+          "fr": "Chien",
+          "de": "Hund",
+          "it": "Cane",
+          "pt": "Cão",
+          "no": "Hund"
+        }
+      },
+      {
+        "id": "flour",
+        "label": "Flour",
+        "x": 59.97368656908711,
+        "y": 49.77468923481843,
+        "w": 6,
+        "h": 10,
+        "sound": "",
+        "translations": {
+          "es": "Harina",
+          "fr": "Farine",
+          "de": "Mehl",
+          "it": "Farina",
+          "pt": "Farinha",
+          "no": "Mel"
+        }
+      },
+      {
+        "id": "milk",
+        "label": "Milk",
+        "x": 29.684209496030498,
+        "y": 44.88038743741164,
+        "w": 4,
+        "h": 10,
+        "sound": "",
+        "translations": {
+          "es": "Leche",
+          "fr": "Lait",
+          "de": "Milch",
+          "it": "Latte",
+          "pt": "Leite",
+          "no": "Melk"
+        }
+      },
+      {
+        "id": "bowl",
+        "label": "Bowl",
+        "x": 37.57894493060754,
+        "y": 45.569308591175556,
+        "w": 6.789473880757259,
+        "h": 6.609179445371679,
+        "sound": "",
+        "translations": {
+          "es": "Tazón",
+          "fr": "Bol",
+          "de": "Schüssel",
+          "it": "Ciotola",
+          "pt": "Tigela",
+          "no": "Bolle"
+        }
+      },
+      {
+        "id": "spoon",
+        "label": "Spoon",
+        "x": 45.78947406145345,
+        "y": 43.47658863568284,
+        "w": 5.105264204030573,
+        "h": 5.867409190311157,
+        "sound": "",
+        "translations": {
+          "es": "Cuchara",
+          "fr": "Cuillère",
+          "de": "Löffel",
+          "it": "Cucchiaio",
+          "pt": "Colher",
+          "no": "Skje"
+        }
+      },
+      {
+        "id": "rollingpin",
+        "label": "Rolling pin",
+        "x": 54.73684611545053,
+        "y": 54.681963973766344,
+        "w": 8,
+        "h": 5,
+        "sound": "",
+        "translations": {
+          "es": "Rodillo",
+          "fr": "Rouleau à pâtisserie",
+          "de": "Nudelholz",
+          "it": "Mattarello",
+          "pt": "Rolo da massa",
+          "no": "Kjevle"
+        }
+      },
+      {
+        "id": "book",
+        "label": "Book",
+        "x": 44.68420738790828,
+        "y": 52.96012914580388,
         "w": 10,
-        "h": 17,
+        "h": 6,
         "sound": "",
-        "translations": {}
+        "translations": {
+          "es": "Libro",
+          "fr": "Livre",
+          "de": "Buch",
+          "it": "Libro",
+          "pt": "Livro",
+          "no": "Bok"
+        }
       },
       {
-        "id": "jet",
-        "label": "jet",
-        "x": 46,
-        "y": 40,
-        "w": 27,
-        "h": 19,
-        "sound": "sounds/jet-fly-by.mp3",
-        "translations": {}
-      },
-      {
-        "id": "jets",
-        "label": "jets",
-        "x": 14.86,
-        "y": 37.89,
-        "w": 27.05,
-        "h": 13.31,
-        "sound": "sounds/jet-fly-by.mp3",
-        "translations": {}
-      },
-      {
-        "id": "helicopter",
-        "label": "helicopter",
-        "x": 64.37,
-        "y": 8.96,
-        "w": 15.47,
-        "h": 16.11,
-        "sound": "sounds/helicopter-flying.mp3",
-        "translations": {}
-      },
-      {
-        "id": "island",
-        "label": "island",
-        "x": 18.38,
-        "y": 14.93,
-        "w": 8.89,
-        "h": 32.91,
-        "sound": "",
-        "translations": {}
-      },
-      {
-        "id": "flag",
-        "label": "flag",
-        "x": 28.45,
-        "y": 11.65,
+        "id": "apples",
+        "label": "Apples",
+        "x": 33.131578899816795,
+        "y": 50.60917944537168,
         "w": 7,
+        "h": 6,
+        "sound": "",
+        "translations": {
+          "es": "Manzanas",
+          "fr": "Pommes",
+          "de": "Äpfel",
+          "it": "Mele",
+          "pt": "Maçãs",
+          "no": "Epler"
+        }
+      },
+      {
+        "id": "butter",
+        "label": "Butter",
+        "x": 40.131578899816795,
+        "y": 51.60917944537168,
+        "w": 4,
+        "h": 4,
+        "sound": "",
+        "translations": {
+          "es": "Mantequilla",
+          "fr": "Beurre",
+          "de": "Butter",
+          "it": "Burro",
+          "pt": "Manteiga",
+          "no": "Smør"
+        }
+      },
+      {
+        "id": "flowers",
+        "label": "Flowers",
+        "x": 64.368418992061,
+        "y": 42.787667481918916,
+        "w": 9,
+        "h": 15,
+        "sound": "",
+        "translations": {
+          "es": "Flores",
+          "fr": "Fleurs",
+          "de": "Blumen",
+          "it": "Fiori",
+          "pt": "Flores",
+          "no": "Blomster"
+        }
+      },
+      {
+        "id": "table",
+        "label": "Table",
+        "x": 49.68420654465939,
+        "y": 59.93324184426761,
+        "w": 22,
         "h": 12,
         "sound": "",
-        "translations": {}
+        "translations": {
+          "es": "Mesa",
+          "fr": "Table",
+          "de": "Tisch",
+          "it": "Tavolo",
+          "pt": "Mesa",
+          "no": "Bord"
+        }
       },
       {
-        "id": "flightdeck",
-        "label": "flightdeck",
-        "x": 40.56,
-        "y": 9,
-        "w": 19.66,
-        "h": 14.46,
+        "id": "chair",
+        "label": "Chair",
+        "x": 74.47368867720932,
+        "y": 50.337045951555794,
+        "w": 3.9473667535755106,
+        "h": 19.814554783455186,
         "sound": "",
-        "translations": {}
+        "translations": {
+          "es": "Silla",
+          "fr": "Chaise",
+          "de": "Stuhl",
+          "it": "Sedia",
+          "pt": "Cadeira",
+          "no": "Stol"
+        }
       },
       {
-        "id": "crew",
-        "label": "crew",
-        "x": 27.79,
-        "y": 49.7,
-        "w": 14.87,
-        "h": 9.55,
+        "id": "stool",
+        "label": "Stool",
+        "x": 46.52631469578622,
+        "y": 67.77468923481844,
+        "w": 7,
+        "h": 13,
         "sound": "",
-        "translations": {}
+        "translations": {
+          "es": "Taburete",
+          "fr": "Tabouret",
+          "de": "Hocker",
+          "it": "Sgabello",
+          "pt": "Banco",
+          "no": "Krakk"
+        }
       },
       {
-        "id": "yellowshirt",
-        "label": "yellowshirt",
-        "x": 85.08,
-        "y": 60.74,
-        "w": 8,
-        "h": 18,
+        "id": "stove",
+        "label": "Stove",
+        "x": 21.05263131899846,
+        "y": 30.07881090105694,
+        "w": 7.421052599877862,
+        "h": 15.973107392904367,
+        "sound": "sounds/stove.mp3",
+        "translations": {
+          "es": "Estufa",
+          "fr": "Poêle",
+          "de": "Ofen",
+          "it": "Stufa",
+          "pt": "Fogão",
+          "no": "Ovn"
+        }
+      },
+      {
+        "id": "fire",
+        "label": "Fire",
+        "x": 23.842104657667154,
+        "y": 39.94019371870582,
+        "w": 4,
+        "h": 8,
         "sound": "",
-        "translations": {}
+        "translations": {
+          "es": "Fuego",
+          "fr": "Feu",
+          "de": "Feuer",
+          "it": "Fuoco",
+          "pt": "Fogo",
+          "no": "Ild"
+        }
       },
       {
-        "id": "greenshirt",
-        "label": "greenshirt",
-        "x": 76,
-        "y": 45,
-        "w": 8,
+        "id": "kettle",
+        "label": "Kettle",
+        "x": 16.894735795969428,
+        "y": 30.291143419138024,
+        "w": 3.842104657667153,
+        "h": 7.463605083022984,
+        "sound": "",
+        "translations": {
+          "es": "Tetera",
+          "fr": "Bouilloire",
+          "de": "Wasserkessel",
+          "it": "Bollitore",
+          "pt": "Chaleira",
+          "no": "Kjele"
+        }
+      },
+      {
+        "id": "pans",
+        "label": "Pans",
+        "x": 11.210526661331311,
+        "y": 15.973110045684049,
+        "w": 12,
         "h": 14,
+        "sound": "sounds/pan.mp3",
+        "translations": {
+          "es": "Sartenes",
+          "fr": "Casseroles",
+          "de": "Pfannen",
+          "it": "Pentole",
+          "pt": "Panelas",
+          "no": "Panner"
+        }
+      },
+      {
+        "id": "refrigerator",
+        "label": "Refrigerator",
+        "x": 72.52631770738938,
+        "y": 26.264256117601754,
+        "w": 9,
+        "h": 30,
         "sound": "",
-        "translations": {}
+        "translations": {
+          "es": "Refrigerador",
+          "fr": "Réfrigérateur",
+          "de": "Kühlschrank",
+          "it": "Frigorifero",
+          "pt": "Geladeira",
+          "no": "Kjøleskap"
+        }
       },
       {
-        "id": "towtractor",
-        "label": "towtractor",
-        "x": 90.14,
-        "y": 57.42,
-        "w": 10.79,
-        "h": 8.44,
-        "sound": "sounds/car-start.mp3",
-        "translations": {}
+        "id": "sink",
+        "label": "Sink",
+        "x": 56.68421250763366,
+        "y": 36.88733931184985,
+        "w": 7.6842100381190654,
+        "h": 6.714877647964888,
+        "sound": "",
+        "translations": {
+          "es": "Fregadero",
+          "fr": "Évier",
+          "de": "Spüle",
+          "it": "Lavello",
+          "pt": "Pia",
+          "no": "Vask"
+        }
       },
       {
-        "id": "ocean",
-        "label": "ocean",
-        "x": 65,
-        "y": 39.57,
-        "w": 34.27,
-        "h": 2.98,
-        "sound": "sounds/ship-ambience.mp3",
-        "translations": {}
+        "id": "window",
+        "label": "Window",
+        "x": 44.842103453025885,
+        "y": 14.469634108464945,
+        "w": 23.21052629993893,
+        "h": 16.993042820002426,
+        "sound": "",
+        "translations": {
+          "es": "Ventana",
+          "fr": "Fenêtre",
+          "de": "Fenster",
+          "it": "Finestra",
+          "pt": "Janela",
+          "no": "Vindu"
+        }
       },
       {
-        "id": "ship",
-        "label": "ship",
-        "x": 18.26,
-        "y": -0.48,
-        "w": 10,
+        "id": "clock",
+        "label": "Clock",
+        "x": 83.84210519975572,
+        "y": 9.496524062780896,
+        "w": 6,
         "h": 10,
-        "sound": "sounds/ship-ambience.mp3",
-        "translations": {}
+        "sound": "sounds/clock.mp3",
+        "translations": {
+          "es": "Reloj",
+          "fr": "Horloge",
+          "de": "Uhr",
+          "it": "Orologio",
+          "pt": "Relógio",
+          "no": "Klokke"
+        }
       },
       {
-        "id": "decklines",
-        "label": "decklines",
-        "x": 54.25,
-        "y": 68.93,
-        "w": 29.06,
-        "h": 10.11,
+        "id": "bird",
+        "label": "Bird",
+        "x": 18.42105259987786,
+        "y": 6.5693085911755595,
+        "w": 5,
+        "h": 7,
         "sound": "",
-        "translations": {}
+        "translations": {
+          "es": "Pájaro",
+          "fr": "Oiseau",
+          "de": "Vogel",
+          "it": "Uccello",
+          "pt": "Pássaro",
+          "no": "Fugl"
+        }
       },
       {
-        "id": "railing",
-        "label": "railing",
-        "x": -0.37,
-        "y": 79.96,
-        "w": 42,
-        "h": 19,
+        "id": "rug",
+        "label": "Rug",
+        "x": 41.36842266621685,
+        "y": 87.05980628129417,
+        "w": 18,
+        "h": 12,
         "sound": "",
-        "translations": {}
+        "translations": {
+          "es": "Alfombra",
+          "fr": "Tapis",
+          "de": "Teppich",
+          "it": "Tappeto",
+          "pt": "Tapete",
+          "no": "Teppe"
+        }
       },
       {
-        "id": "equipment",
-        "label": "equipment",
-        "x": 0,
-        "y": 51,
-        "w": 17,
-        "h": 26,
+        "id": "basket",
+        "label": "Basket",
+        "x": 96,
+        "y": 52,
+        "w": 4,
+        "h": 8,
         "sound": "",
-        "translations": {}
+        "translations": {
+          "es": "Canasta",
+          "fr": "Panier",
+          "de": "Korb",
+          "it": "Cestino",
+          "pt": "Cesta",
+          "no": "Kurv"
+        }
       },
       {
-        "id": "sky",
-        "label": "sky",
-        "x": 78.17,
-        "y": 76.02,
-        "w": 24.11,
-        "h": 24.52,
+        "id": "mountains",
+        "label": "Mountains",
+        "x": 60.73684256175879,
+        "y": 17.40380145450849,
+        "w": 4.736839791083884,
+        "h": 7.867406537531474,
         "sound": "",
-        "translations": {}
+        "translations": {
+          "es": "Montañas",
+          "fr": "Montagnes",
+          "de": "Berge",
+          "it": "Montagne",
+          "pt": "Montanhas",
+          "no": "Fjell"
+        }
       },
       {
-        "id": "jet-airplane",
-        "label": "jet airplane",
-        "x": 84.84,
-        "y": 45.85,
-        "w": 14.91,
-        "h": 7.88,
-        "sound": "sounds/jet-fly-by.mp3",
-        "translations": {}
-      },
-      {
-        "id": "clouds",
-        "label": "clouds",
-        "x": 81.46,
-        "y": 13.89,
-        "w": 20.17,
-        "h": 11.7,
+        "id": "lake",
+        "label": "Lake",
+        "x": 93.36841814881211,
+        "y": 23.549378469636867,
+        "w": 5.368420437630512,
+        "h": 6.238294317841419,
         "sound": "",
-        "translations": {}
+        "translations": {
+          "es": "Lago",
+          "fr": "Lac",
+          "de": "See",
+          "it": "Lago",
+          "pt": "Lago",
+          "no": "Innsjø"
+        }
+      },
+      {
+        "id": "cabinets",
+        "label": "Cabinets",
+        "x": 34.94736657287932,
+        "y": 16.376911500192538,
+        "w": 6.21052810690083,
+        "h": 10.11868175525306,
+        "sound": "",
+        "translations": {
+          "es": "Armarios",
+          "fr": "Placards",
+          "de": "Schränke",
+          "it": "Armadi",
+          "pt": "Armários",
+          "no": "Skap"
+        }
+      },
+      {
+        "id": "stairs",
+        "label": "stairs",
+        "x": 89.48315743824121,
+        "y": 60.35652406278089,
+        "w": 6,
+        "h": 8,
+        "sound": "",
+        "translations": {
+          "es": "escaleras",
+          "fr": "escalier",
+          "de": "Treppe",
+          "it": "scale",
+          "pt": "escadas",
+          "no": "trapp"
+        }
+      },
+      {
+        "id": "cabinet",
+        "label": "cabinet",
+        "x": 7.129999969883969,
+        "y": 54.71304282000242,
+        "w": 12.736841838974037,
+        "h": 11.059806281294179,
+        "sound": "",
+        "translations": {
+          "es": "armario",
+          "fr": "placard",
+          "de": "Schrank",
+          "it": "armadietto",
+          "pt": "armário",
+          "no": "skap"
+        }
+      },
+      {
+        "id": "light",
+        "label": "light",
+        "x": 34.73526209590836,
+        "y": 6.131966626546026,
+        "w": 6,
+        "h": 8,
+        "sound": "",
+        "translations": {
+          "es": "luz",
+          "fr": "lumière",
+          "de": "Licht",
+          "it": "luce",
+          "pt": "luz",
+          "no": "lys"
+        }
+      },
+      {
+        "id": "shelf",
+        "label": "shelf",
+        "x": 72.44263149969466,
+        "y": 11.003801454508489,
+        "w": 8.6,
+        "h": 9.11,
+        "sound": "",
+        "translations": {
+          "es": "estante",
+          "fr": "étagère",
+          "de": "Regal",
+          "it": "mensola",
+          "pt": "prateleira",
+          "no": "hylle"
+        }
+      },
+      {
+        "id": "picture",
+        "label": "picture",
+        "x": 84.3631574382412,
+        "y": 23.291081499015768,
+        "w": 6,
+        "h": 8,
+        "sound": "",
+        "translations": {
+          "es": "cuadro",
+          "fr": "tableau",
+          "de": "Bild",
+          "it": "quadro",
+          "pt": "quadro",
+          "no": "bilde"
+        }
+      },
+      {
+        "id": "floor",
+        "label": "floor",
+        "x": 81.23315779963359,
+        "y": 66.41461935635714,
+        "w": 5.9,
+        "h": 4.76,
+        "sound": "",
+        "translations": {
+          "es": "suelo",
+          "fr": "sol",
+          "de": "Fußboden",
+          "it": "pavimento",
+          "pt": "chão",
+          "no": "gulv"
+        }
+      },
+      {
+        "id": "flue",
+        "label": "flue",
+        "x": 22.463684882589337,
+        "y": 13.911966626546027,
+        "w": 3.14,
+        "h": 14.94,
+        "sound": "",
+        "translations": {
+          "es": "tubo",
+          "fr": "cheminée",
+          "de": "Kamin",
+          "it": "canna fumaria",
+          "pt": "chaminé",
+          "no": "røykrør"
+        }
+      },
+      {
+        "id": "hotspot-1793038973010",
+        "label": "dog bowl",
+        "x": 91.21053286523383,
+        "y": 86.17524347477212,
+        "w": 4.421053684055001,
+        "h": 7.509502309881381,
+        "sound": "",
+        "translations": {
+          "fr": ""
+        },
+        "rotation": 0,
+        "z": 0
       }
     ],
     "overlays": [],
     "challenges": [
       {
-        "prompt": "Find the Jet",
-        "target": "jet",
+        "prompt": "Find Flour.",
+        "target": "flour",
         "translations": {
-          "es": "Encuentra el jet",
-          "fr": "Trouvez le jet",
-          "de": "Finde den Jet",
-          "it": "Trova il jet",
-          "pt": "Encontrar o jato",
-          "no": "Finn jetflyet"
+          "es": "Find Harina.",
+          "fr": "Find Farine.",
+          "de": "Find Mehl.",
+          "it": "Find Farina.",
+          "pt": "Find Farinha.",
+          "no": "Find Mel."
         }
       },
       {
-        "prompt": "Find the Helicopter",
-        "target": "helicopter",
+        "prompt": "Find Bowl.",
+        "target": "bowl",
         "translations": {
-          "es": "Encuentra el helicóptero",
-          "fr": "L'hélicoptère",
-          "de": "der Helikopter",
-          "it": "Trova l'elicottero",
-          "pt": "Encontre o Helicóptero",
-          "no": "Finn helikopteret"
+          "es": "Find Tazón.",
+          "fr": "Find Bol.",
+          "de": "Find Schüssel.",
+          "it": "Find Ciotola.",
+          "pt": "Find Tigela.",
+          "no": "Find Bolle."
         }
       },
       {
-        "prompt": "Find the Island",
-        "target": "island",
+        "prompt": "Find Rolling pin.",
+        "target": "rollingpin",
         "translations": {
-          "es": "LA ISLA",
-          "fr": "L'île",
-          "de": "Die Insel",
-          "it": "L'ISOLA",
-          "pt": "A Ilha",
-          "no": "Finn øya"
+          "es": "Find Rodillo.",
+          "fr": "Find Rouleau à pâtisserie.",
+          "de": "Find Nudelholz.",
+          "it": "Find Mattarello.",
+          "pt": "Find Rolo da massa.",
+          "no": "Find Kjevle."
         }
       },
       {
-        "prompt": "Find the American Flag",
-        "target": "flag",
+        "prompt": "Find Stove.",
+        "target": "stove",
         "translations": {
-          "es": "La Bandera Americana.",
-          "fr": "Trouvez le drapeau américain",
-          "de": "Finde die amerikanische Flagge",
-          "it": "Trova la bandiera americana",
-          "pt": "Encontre a bandeira americana",
-          "no": "Finn det amerikanske flagget"
+          "es": "Find Estufa.",
+          "fr": "Find Poêle.",
+          "de": "Find Ofen.",
+          "it": "Find Stufa.",
+          "pt": "Find Fogão.",
+          "no": "Find Ovn."
         }
       },
       {
-        "prompt": "Find the Tow Tractor",
-        "target": "towtractor",
+        "prompt": "Find Refrigerator.",
+        "target": "refrigerator",
         "translations": {
-          "es": "Encuentre el tractor de remolque",
-          "fr": "Trouvez le tracteur de remorquage",
-          "de": "Finden Sie den Abschlepptraktor",
-          "it": "Trova il trattore da traino",
-          "pt": "Encontre o trator de reboque",
-          "no": "Finn slepetraktoren"
+          "es": "Find Refrigerador.",
+          "fr": "Find Réfrigérateur.",
+          "de": "Find Kühlschrank.",
+          "it": "Find Frigorifero.",
+          "pt": "Find Geladeira.",
+          "no": "Find Kjøleskap."
         }
       },
       {
-        "prompt": "Find the Flight Deck",
-        "target": "flightdeck",
+        "prompt": "find the dog bowl",
+        "target": "hotspot-1793038973010",
         "translations": {
-          "es": "Encuentra la plataforma de vuelo",
-          "fr": "Trouvez le poste de pilotage",
-          "de": "Finde das Flugdeck",
-          "it": "Trova il ponte di volo",
-          "pt": "Encontre o Convés de Voo",
-          "no": "Finn flydekket"
+          "fr": "trouver le bol pour chien",
+          "es": "encuentra el cuenco para perros",
+          "de": "finden Sie die Hundenapf",
+          "it": "trova la ciotola per cani",
+          "pt": "encontrar a tigela para cães",
+          "no": "finn hundeskålen"
         }
       }
     ]
@@ -2725,6 +3300,421 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
           "it": "Trova la ruota panoramica vicino al lago.",
           "pt": "Encontra a roda-gigante junto ao lago.",
           "no": "Finn pariserhjulet ved innsjøen."
+        }
+      }
+    ]
+  },
+  "aircraft-carrier": {
+    "title": "Aircraft Carrier",
+    "image": "images/Aircraft-Carrier-Adventure.jpg",
+    "lessons": [
+      {
+        "text": "An aircraft carrier has a large flight deck where aircraft can take off, land, move, and be serviced while the ship is at sea.",
+        "translations": {
+          "es": "Un portaaviones tiene una gran cubierta de vuelo donde las aeronaves pueden despegar, aterrizar, moverse y recibir mantenimiento mientras el barco está en el mar.",
+          "fr": "Un porte-avions possède un grand pont d'envol où les aéronefs peuvent décoller, atterrir, se déplacer et être entretenus en mer.",
+          "de": "Ein Flugzeugträger besitzt ein großes Flugdeck, auf dem Flugzeuge auf See starten, landen, bewegt und gewartet werden können.",
+          "it": "Una portaerei ha un grande ponte di volo dove gli aeromobili possono decollare, atterrare, spostarsi ed essere assistiti mentre la nave è in mare.",
+          "pt": "Um porta-aviões possui um grande convés de voo onde aeronaves podem decolar, pousar, se mover e receber manutenção enquanto o navio está no mar.",
+          "no": "Et hangarskip har et stort flydekk der luftfartøy kan ta av, lande, flyttes og vedlikeholdes mens skipet er til sjøs."
+        }
+      },
+      {
+        "text": "The deck is carefully organized with markings, equipment, trained crews, and strict safety procedures.",
+        "translations": {
+          "es": "La cubierta está cuidadosamente organizada con marcas, equipos, personal capacitado y estrictos procedimientos de seguridad.",
+          "fr": "Le pont est soigneusement organisé avec des marquages, du matériel, des équipes formées et des règles de sécurité strictes.",
+          "de": "Das Deck ist mit Markierungen, Ausrüstung, geschulten Teams und strengen Sicherheitsverfahren sorgfältig organisiert.",
+          "it": "Il ponte è organizzato con segnaletica, attrezzature, equipaggi addestrati e rigorose procedure di sicurezza.",
+          "pt": "O convés é cuidadosamente organizado com marcações, equipamentos, equipes treinadas e procedimentos rigorosos de segurança.",
+          "no": "Dekket er nøye organisert med markeringer, utstyr, trente mannskaper og strenge sikkerhetsrutiner."
+        }
+      },
+      {
+        "text": "Aircraft carriers can operate different aircraft, including fixed-wing airplanes and helicopters.",
+        "translations": {
+          "es": "Los portaaviones pueden operar diferentes aeronaves, incluidos aviones de ala fija y helicópteros.",
+          "fr": "Les porte-avions peuvent utiliser différents aéronefs, notamment des avions et des hélicoptères.",
+          "de": "Flugzeugträger können verschiedene Luftfahrzeuge einsetzen, darunter Flugzeuge und Hubschrauber.",
+          "it": "Le portaerei possono operare diversi aeromobili, compresi aerei ed elicotteri.",
+          "pt": "Porta-aviões podem operar diferentes aeronaves, incluindo aviões e helicópteros.",
+          "no": "Hangarskip kan operere ulike luftfartøy, blant annet fly og helikoptre."
+        }
+      },
+      {
+        "text": "Aircraft are moved, inspected, fueled, maintained, launched, and recovered by teams with specialized jobs.",
+        "translations": {
+          "es": "Los equipos especializados mueven, inspeccionan, abastecen, mantienen, lanzan y recuperan las aeronaves.",
+          "fr": "Des équipes spécialisées déplacent, inspectent, ravitaillent, entretiennent, lancent et récupèrent les aéronefs.",
+          "de": "Spezialisierte Teams bewegen, prüfen, betanken, warten, starten und übernehmen die Luftfahrzeuge.",
+          "it": "Squadre specializzate spostano, ispezionano, riforniscono, mantengono, lanciano e recuperano gli aeromobili.",
+          "pt": "Equipes especializadas movem, inspecionam, abastecem, mantêm, lançam e recuperam as aeronaves.",
+          "no": "Spesialiserte team flytter, inspiserer, fyller drivstoff, vedlikeholder, sender ut og tar imot luftfartøy."
+        }
+      },
+      {
+        "text": "Flight deck crews use colored clothing to help identify different jobs in a very busy environment.",
+        "translations": {
+          "es": "Las tripulaciones de cubierta usan ropa de diferentes colores para identificar trabajos distintos en un entorno muy ocupado.",
+          "fr": "Les équipes du pont d'envol portent des couleurs différentes pour identifier leurs fonctions dans un environnement très actif.",
+          "de": "Flugdeckbesatzungen tragen unterschiedliche Farben, damit verschiedene Aufgaben in der geschäftigen Umgebung erkennbar sind.",
+          "it": "Gli equipaggi del ponte indossano colori diversi per identificare i vari lavori in un ambiente molto attivo.",
+          "pt": "As equipes do convés usam roupas de cores diferentes para identificar trabalhos distintos em um ambiente muito movimentado.",
+          "no": "Mannskap på flydekket bruker forskjellige farger for å gjøre ulike arbeidsoppgaver lettere å kjenne igjen."
+        }
+      },
+      {
+        "text": "Teamwork and clear signals help people coordinate aircraft movement safely.",
+        "translations": {
+          "es": "El trabajo en equipo y las señales claras ayudan a coordinar el movimiento de las aeronaves con seguridad.",
+          "fr": "Le travail d'équipe et des signaux clairs permettent de coordonner les mouvements en sécurité.",
+          "de": "Teamarbeit und klare Signale helfen, Flugzeugbewegungen sicher zu koordinieren.",
+          "it": "Il lavoro di squadra e segnali chiari aiutano a coordinare in sicurezza il movimento degli aeromobili.",
+          "pt": "Trabalho em equipe e sinais claros ajudam a coordenar o movimento das aeronaves com segurança.",
+          "no": "Samarbeid og tydelige signaler hjelper dem å koordinere flybevegelser på en trygg måte."
+        }
+      },
+      {
+        "text": "The tall structure rising above the flight deck is called the island.",
+        "translations": {
+          "es": "La estructura alta sobre la cubierta se llama isla.",
+          "fr": "La grande structure qui s'élève au-dessus du pont est appelée l'îlot.",
+          "de": "Der hohe Aufbau über dem Flugdeck wird Insel genannt.",
+          "it": "L'alta struttura che si eleva sopra il ponte si chiama isola.",
+          "pt": "A estrutura alta acima do convés é chamada de ilha.",
+          "no": "Den høye konstruksjonen over flydekket kalles kommandotårnet eller øya."
+        }
+      },
+      {
+        "text": "It contains important spaces used to help navigate the ship and manage flight-deck operations.",
+        "translations": {
+          "es": "Contiene espacios importantes utilizados para ayudar a navegar el barco y gestionar las operaciones de vuelo.",
+          "fr": "Elle contient des espaces importants servant à la navigation du navire et à la gestion des opérations aériennes.",
+          "de": "Darin befinden sich wichtige Bereiche zur Navigation des Schiffes und zur Leitung des Flugbetriebs.",
+          "it": "Contiene importanti spazi utilizzati per aiutare a navigare la nave e gestire le operazioni di volo.",
+          "pt": "Ela contém espaços importantes usados para ajudar na navegação do navio e no gerenciamento das operações de voo.",
+          "no": "Den inneholder viktige områder som brukes til navigasjon og styring av flyoperasjoner."
+        }
+      },
+      {
+        "text": "A carrier flight deck can be noisy, windy, crowded, and full of moving equipment.",
+        "translations": {
+          "es": "La cubierta de un portaaviones puede ser ruidosa, ventosa, concurrida y llena de equipos en movimiento.",
+          "fr": "Un pont d'envol peut être bruyant, venteux, encombré et rempli d'équipements en mouvement.",
+          "de": "Ein Flugdeck kann laut, windig, überfüllt und voller beweglicher Ausrüstung sein.",
+          "it": "Il ponte di volo può essere rumoroso, ventoso, affollato e pieno di attrezzature in movimento.",
+          "pt": "Um convés de voo pode ser barulhento, ventoso, movimentado e cheio de equipamentos em movimento.",
+          "no": "Et flydekk kan være støyende, vindfullt, travelt og fullt av utstyr i bevegelse."
+        }
+      },
+      {
+        "text": "Crews train carefully, wear protective gear, follow marked areas, and communicate with standardized signals.",
+        "translations": {
+          "es": "Las tripulaciones entrenan cuidadosamente, usan protección, siguen las zonas marcadas y se comunican con señales estandarizadas.",
+          "fr": "Les équipes s'entraînent soigneusement, portent des protections, respectent les zones marquées et utilisent des signaux normalisés.",
+          "de": "Die Teams trainieren sorgfältig, tragen Schutzausrüstung, beachten markierte Bereiche und verwenden standardisierte Signale.",
+          "it": "Gli equipaggi si addestrano attentamente, indossano protezioni, rispettano le aree segnate e comunicano con segnali standard.",
+          "pt": "As equipes treinam cuidadosamente, usam proteção, seguem áreas marcadas e se comunicam com sinais padronizados.",
+          "no": "Mannskap trener grundig, bruker verneutstyr, følger merkede områder og kommuniserer med standardiserte signaler."
+        }
+      },
+      {
+        "text": "An aircraft carrier is both an airfield and a large ship, with many people living and working aboard.",
+        "translations": {
+          "es": "Un portaaviones es a la vez un aeródromo y un gran barco, con muchas personas viviendo y trabajando a bordo.",
+          "fr": "Un porte-avions est à la fois un aérodrome et un grand navire où de nombreuses personnes vivent et travaillent.",
+          "de": "Ein Flugzeugträger ist zugleich Flugplatz und großes Schiff, auf dem viele Menschen leben und arbeiten.",
+          "it": "Una portaerei è sia un aeroporto sia una grande nave, con molte persone che vivono e lavorano a bordo.",
+          "pt": "Um porta-aviões é ao mesmo tempo um aeródromo e um grande navio, com muitas pessoas vivendo e trabalhando a bordo.",
+          "no": "Et hangarskip er både en flyplass og et stort skip, med mange mennesker som bor og arbeider om bord."
+        }
+      },
+      {
+        "text": "Sailors perform many different jobs to operate the ship, maintain equipment, prepare meals, navigate, communicate, and support aviation.",
+        "translations": {
+          "es": "Los marineros realizan muchos trabajos para operar el barco, mantener equipos, preparar alimentos, navegar, comunicarse y apoyar la aviación.",
+          "fr": "Les marins exercent de nombreux métiers pour faire fonctionner le navire, entretenir le matériel, préparer les repas, naviguer, communiquer et soutenir l'aviation.",
+          "de": "Matrosen übernehmen viele Aufgaben, um das Schiff zu betreiben, Ausrüstung zu warten, Mahlzeiten zuzubereiten, zu navigieren, zu kommunizieren und den Flugbetrieb zu unterstützen.",
+          "it": "I marinai svolgono molti lavori per far funzionare la nave, mantenere le attrezzature, preparare pasti, navigare, comunicare e sostenere l'aviazione.",
+          "pt": "Marinheiros desempenham muitos trabalhos para operar o navio, manter equipamentos, preparar refeições, navegar, comunicar e apoiar a aviação.",
+          "no": "Sjøfolk gjør mange forskjellige jobber for å drive skipet, vedlikeholde utstyr, lage mat, navigere, kommunisere og støtte luftfarten."
+        }
+      }
+    ],
+    "hotspots": [
+      {
+        "id": "visitors",
+        "label": "visitors",
+        "x": 15,
+        "y": 58,
+        "w": 28,
+        "h": 32,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "sailor",
+        "label": "sailor",
+        "x": 23,
+        "y": 52,
+        "w": 10,
+        "h": 17,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "jet",
+        "label": "jet",
+        "x": 46,
+        "y": 40,
+        "w": 27,
+        "h": 19,
+        "sound": "sounds/jet-fly-by.mp3",
+        "translations": {}
+      },
+      {
+        "id": "jets",
+        "label": "jets",
+        "x": 14.86,
+        "y": 37.89,
+        "w": 27.05,
+        "h": 13.31,
+        "sound": "sounds/jet-fly-by.mp3",
+        "translations": {}
+      },
+      {
+        "id": "helicopter",
+        "label": "helicopter",
+        "x": 64.37,
+        "y": 8.96,
+        "w": 15.47,
+        "h": 16.11,
+        "sound": "sounds/helicopter-flying.mp3",
+        "translations": {}
+      },
+      {
+        "id": "island",
+        "label": "island",
+        "x": 18.38,
+        "y": 14.93,
+        "w": 8.89,
+        "h": 32.91,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "flag",
+        "label": "flag",
+        "x": 28.45,
+        "y": 11.65,
+        "w": 7,
+        "h": 12,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "flightdeck",
+        "label": "flightdeck",
+        "x": 40.56,
+        "y": 9,
+        "w": 19.66,
+        "h": 14.46,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "crew",
+        "label": "crew",
+        "x": 27.79,
+        "y": 49.7,
+        "w": 14.87,
+        "h": 9.55,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "yellowshirt",
+        "label": "yellowshirt",
+        "x": 85.08,
+        "y": 60.74,
+        "w": 8,
+        "h": 18,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "greenshirt",
+        "label": "greenshirt",
+        "x": 76,
+        "y": 45,
+        "w": 8,
+        "h": 14,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "towtractor",
+        "label": "towtractor",
+        "x": 90.14,
+        "y": 57.42,
+        "w": 10.79,
+        "h": 8.44,
+        "sound": "sounds/car-start.mp3",
+        "translations": {}
+      },
+      {
+        "id": "ocean",
+        "label": "ocean",
+        "x": 65,
+        "y": 39.57,
+        "w": 34.27,
+        "h": 2.98,
+        "sound": "sounds/ship-ambience.mp3",
+        "translations": {}
+      },
+      {
+        "id": "ship",
+        "label": "ship",
+        "x": 18.26,
+        "y": -0.48,
+        "w": 10,
+        "h": 10,
+        "sound": "sounds/ship-ambience.mp3",
+        "translations": {}
+      },
+      {
+        "id": "decklines",
+        "label": "decklines",
+        "x": 54.25,
+        "y": 68.93,
+        "w": 29.06,
+        "h": 10.11,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "railing",
+        "label": "railing",
+        "x": -0.37,
+        "y": 79.96,
+        "w": 42,
+        "h": 19,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "equipment",
+        "label": "equipment",
+        "x": 0,
+        "y": 51,
+        "w": 17,
+        "h": 26,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "sky",
+        "label": "sky",
+        "x": 78.17,
+        "y": 76.02,
+        "w": 24.11,
+        "h": 24.52,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "jet-airplane",
+        "label": "jet airplane",
+        "x": 84.84,
+        "y": 45.85,
+        "w": 14.91,
+        "h": 7.88,
+        "sound": "sounds/jet-fly-by.mp3",
+        "translations": {}
+      },
+      {
+        "id": "clouds",
+        "label": "clouds",
+        "x": 81.46,
+        "y": 13.89,
+        "w": 20.17,
+        "h": 11.7,
+        "sound": "",
+        "translations": {}
+      }
+    ],
+    "overlays": [],
+    "challenges": [
+      {
+        "prompt": "Find the Jet",
+        "target": "jet",
+        "translations": {
+          "es": "Encuentra el jet",
+          "fr": "Trouvez le jet",
+          "de": "Finde den Jet",
+          "it": "Trova il jet",
+          "pt": "Encontrar o jato",
+          "no": "Finn jetflyet"
+        }
+      },
+      {
+        "prompt": "Find the Helicopter",
+        "target": "helicopter",
+        "translations": {
+          "es": "Encuentra el helicóptero",
+          "fr": "L'hélicoptère",
+          "de": "der Helikopter",
+          "it": "Trova l'elicottero",
+          "pt": "Encontre o Helicóptero",
+          "no": "Finn helikopteret"
+        }
+      },
+      {
+        "prompt": "Find the Island",
+        "target": "island",
+        "translations": {
+          "es": "LA ISLA",
+          "fr": "L'île",
+          "de": "Die Insel",
+          "it": "L'ISOLA",
+          "pt": "A Ilha",
+          "no": "Finn øya"
+        }
+      },
+      {
+        "prompt": "Find the American Flag",
+        "target": "flag",
+        "translations": {
+          "es": "La Bandera Americana.",
+          "fr": "Trouvez le drapeau américain",
+          "de": "Finde die amerikanische Flagge",
+          "it": "Trova la bandiera americana",
+          "pt": "Encontre a bandeira americana",
+          "no": "Finn det amerikanske flagget"
+        }
+      },
+      {
+        "prompt": "Find the Tow Tractor",
+        "target": "towtractor",
+        "translations": {
+          "es": "Encuentre el tractor de remolque",
+          "fr": "Trouvez le tracteur de remorquage",
+          "de": "Finden Sie den Abschlepptraktor",
+          "it": "Trova il trattore da traino",
+          "pt": "Encontre o trator de reboque",
+          "no": "Finn slepetraktoren"
+        }
+      },
+      {
+        "prompt": "Find the Flight Deck",
+        "target": "flightdeck",
+        "translations": {
+          "es": "Encuentra la plataforma de vuelo",
+          "fr": "Trouvez le poste de pilotage",
+          "de": "Finde das Flugdeck",
+          "it": "Trova il ponte di volo",
+          "pt": "Encontre o Convés de Voo",
+          "no": "Finn flydekket"
         }
       }
     ]
@@ -8089,996 +9079,6 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
           "it": "Trova il Difensore Rosso",
           "pt": "Encontre o Defensor Vermelho",
           "no": "Finn den røde forsvareren"
-        }
-      }
-    ]
-  },
-  "grandmas-kitchen": {
-    "title": "Grandma’s Kitchen",
-    "image": "images/grandmas-kitchen-adventure.jpg",
-    "lessons": [
-      {
-        "text": "We are making cookies. Can you help find the ingredients?",
-        "translations": {
-          "es": "Horneando galletas.",
-          "fr": "Nous faisons des biscuits.",
-          "de": "Wir backen Kekse.",
-          "it": "Stiamo facendo i biscotti.",
-          "pt": "Estamos fazendo biscoitos.",
-          "no": "Vi baker kjeks."
-        }
-      },
-      {
-        "text": "We are preparing the dough.",
-        "translations": {
-          "es": "Estamos haciendo galletas.",
-          "fr": "Nous préparons la pâte.",
-          "de": "Wir bereiten den Teig vor.",
-          "it": "Prepariamo l'impasto.",
-          "pt": "Estamos preparando a massa.",
-          "no": "Vi lager deigen."
-        }
-      },
-      {
-        "text": "We mix the dough.",
-        "translations": {
-          "es": "Mezclamos la masa.",
-          "fr": "Nous mélangeons la pâte.",
-          "de": "Wir mischen den Teig.",
-          "it": "Mescoliamo l'impasto.",
-          "pt": "Misturamos a massa.",
-          "no": "Vi blander deigen."
-        }
-      },
-      {
-        "text": "The cookies smell very good.",
-        "translations": {
-          "es": "Las galletas huelen muy bien.",
-          "fr": "Les biscuits sentent très bon.",
-          "de": "Die Kekse riechen sehr gut.",
-          "it": "I biscotti hanno un buon profumo.",
-          "pt": "Os biscoitos cheiram muito bem.",
-          "no": "Kjeksene lukter veldig godt."
-        }
-      },
-      {
-        "text": "We need flour.",
-        "translations": {
-          "es": "Necesitamos harina.",
-          "fr": "Nous avons besoin de farine.",
-          "de": "Wir brauchen Mehl.",
-          "it": "Ci serve la farina.",
-          "pt": "Precisamos de farinha.",
-          "no": "Vi trenger mel."
-        }
-      },
-      {
-        "text": "Add a little sugar.",
-        "translations": {
-          "es": "Añade un poco de azúcar.",
-          "fr": "Ajoute un peu de sucre.",
-          "de": "Gib etwas Zucker dazu.",
-          "it": "Aggiungi un po' di zucchero.",
-          "pt": "Adicione um pouco de açúcar.",
-          "no": "Tilsett litt sukker."
-        }
-      },
-      {
-        "text": "Put the eggs in the bowl.",
-        "translations": {
-          "es": "Pon los huevos en el tazón.",
-          "fr": "Mets les œufs dans le bol.",
-          "de": "Gib die Eier in die Schüssel.",
-          "it": "Metti le uova nella ciotola.",
-          "pt": "Coloque os ovos na tigela.",
-          "no": "Legg eggene i bollen."
-        }
-      },
-      {
-        "text": "The milk is on the table.",
-        "translations": {
-          "es": "La leche está sobre la mesa.",
-          "fr": "Le lait est sur la table.",
-          "de": "Die Milch steht auf dem Tisch.",
-          "it": "Il latte è sul tavolo.",
-          "pt": "O leite está sobre a mesa.",
-          "no": "Melken står på bordet."
-        }
-      },
-      {
-        "text": "Mix the ingredients.",
-        "translations": {
-          "es": "Mezcla los ingredientes.",
-          "fr": "Mélange les ingrédients.",
-          "de": "Mische die Zutaten.",
-          "it": "Mescola gli ingredienti.",
-          "pt": "Misture os ingredientes.",
-          "no": "Bland ingrediensene."
-        }
-      },
-      {
-        "text": "Stir with the spoon.",
-        "translations": {
-          "es": "Revuelve con la cuchara.",
-          "fr": "Remue avec la cuillère.",
-          "de": "Rühre mit dem Löffel.",
-          "it": "Gira con il cucchiaio.",
-          "pt": "Mexa com a colher.",
-          "no": "Rør med skjeen."
-        }
-      },
-      {
-        "text": "Roll out the dough.",
-        "translations": {
-          "es": "Extiende la masa.",
-          "fr": "Étale la pâte.",
-          "de": "Rolle den Teig aus.",
-          "it": "Stendi l'impasto.",
-          "pt": "Abra a massa.",
-          "no": "Kjevle ut deigen."
-        }
-      },
-      {
-        "text": "Put the tray in the oven.",
-        "translations": {
-          "es": "Pon la bandeja en el horno.",
-          "fr": "Mets la plaque dans le four.",
-          "de": "Stell das Blech in den Ofen.",
-          "it": "Metti la teglia nel forno.",
-          "pt": "Coloque a assadeira no forno.",
-          "no": "Sett brettet i ovnen."
-        }
-      },
-      {
-        "text": "I am helping Grandma Cathy.",
-        "translations": {
-          "es": "Ayudo a la abuela Cathy.",
-          "fr": "J'aide grand-mère Cathy.",
-          "de": "Ich helfe Oma Cathy.",
-          "it": "Aiuto nonna Cathy.",
-          "pt": "Eu ajudo a avó Cathy.",
-          "no": "Jeg hjelper bestemor Cathy."
-        }
-      },
-      {
-        "text": "I hold the bowl.",
-        "translations": {
-          "es": "Yo sostengo el tazón.",
-          "fr": "Je tiens le bol.",
-          "de": "Ich halte die Schüssel.",
-          "it": "Tengo la ciotola.",
-          "pt": "Eu seguro a tigela.",
-          "no": "Jeg holder bollen."
-        }
-      },
-      {
-        "text": "We clean the table together.",
-        "translations": {
-          "es": "Limpiamos la mesa juntos.",
-          "fr": "Nous nettoyons la table ensemble.",
-          "de": "Wir putzen gemeinsam den Tisch.",
-          "it": "Puliamo il tavolo insieme.",
-          "pt": "Limpamos a mesa juntos.",
-          "no": "Vi rydder bordet sammen."
-        }
-      },
-      {
-        "text": "Thank you for helping me.",
-        "translations": {
-          "es": "Gracias por ayudarme.",
-          "fr": "Merci de m'aider.",
-          "de": "Danke für deine Hilfe.",
-          "it": "Grazie per l'aiuto.",
-          "pt": "Obrigado pela ajuda.",
-          "no": "Takk for hjelpen."
-        }
-      },
-      {
-        "text": "There are three apples.",
-        "translations": {
-          "es": "Hay tres manzanas.",
-          "fr": "Il y a trois pommes.",
-          "de": "Da sind drei Äpfel.",
-          "it": "Ci sono tre mele.",
-          "pt": "Há três maçãs.",
-          "no": "Det er tre epler."
-        }
-      },
-      {
-        "text": "The bowl is blue.",
-        "translations": {
-          "es": "El tazón es azul.",
-          "fr": "Le bol est bleu.",
-          "de": "Die Schüssel ist blau.",
-          "it": "La ciotola è blu.",
-          "pt": "A tigela é azul.",
-          "no": "Bollen er blå."
-        }
-      },
-      {
-        "text": "Count four eggs.",
-        "translations": {
-          "es": "Cuenta cuatro huevos.",
-          "fr": "Compte quatre œufs.",
-          "de": "Zähle vier Eier.",
-          "it": "Conta quattro uova.",
-          "pt": "Conte quatro ovos.",
-          "no": "Tell fire egg."
-        }
-      },
-      {
-        "text": "The flowers are yellow.",
-        "translations": {
-          "es": "Las flores son amarillas.",
-          "fr": "Les fleurs sont jaunes.",
-          "de": "Die Blumen sind gelb.",
-          "it": "I fiori sono gialli.",
-          "pt": "As flores são amarelas.",
-          "no": "Blomstene er gule."
-        }
-      },
-      {
-        "text": "The cookies are ready.",
-        "translations": {
-          "es": "Las galletas están listas.",
-          "fr": "Les biscuits sont prêts.",
-          "de": "Die Kekse sind fertig.",
-          "it": "I biscotti sono pronti.",
-          "pt": "Os biscoitos estão prontos.",
-          "no": "Kjeksene er klare."
-        }
-      },
-      {
-        "text": "Put them on a plate.",
-        "translations": {
-          "es": "Ponlas en un plato.",
-          "fr": "Mets-les sur une assiette.",
-          "de": "Leg sie auf einen Teller.",
-          "it": "Mettili su un piatto.",
-          "pt": "Coloque-os num prato.",
-          "no": "Legg dem på en tallerken."
-        }
-      },
-      {
-        "text": "We share with the family.",
-        "translations": {
-          "es": "Compartimos con la familia.",
-          "fr": "Nous partageons avec la famille.",
-          "de": "Wir teilen mit der Familie.",
-          "it": "Condividiamo con la famiglia.",
-          "pt": "Compartilhamos com a família.",
-          "no": "Vi deler med familien."
-        }
-      },
-      {
-        "text": "Enjoy your meal!",
-        "translations": {
-          "es": "¡Buen provecho!",
-          "fr": "Bon appétit !",
-          "de": "Guten Appetit!",
-          "it": "Buon appetito!",
-          "pt": "Bom apetite!",
-          "no": "God appetitt!"
-        }
-      }
-    ],
-    "hotspots": [
-      {
-        "id": "grandma",
-        "label": "Grandma",
-        "x": 36.894738807572594,
-        "y": 24.76680655304493,
-        "w": 6.842104657667154,
-        "h": 24.78766748191892,
-        "sound": "sounds/cathy-kitchen.mp3",
-        "translations": {
-          "es": "Abuela",
-          "fr": "Grand-mère",
-          "de": "Oma",
-          "it": "Nonna",
-          "pt": "Avó",
-          "no": "Bestemor"
-        }
-      },
-      {
-        "id": "girl",
-        "label": "Girl",
-        "x": 49.84210164606399,
-        "y": 37.118681755253064,
-        "w": 6.263151053642495,
-        "h": 9.959203644027951,
-        "sound": "sounds/child-laughing.mp3",
-        "translations": {
-          "es": "Niña",
-          "fr": "Fille",
-          "de": "Mädchen",
-          "it": "Ragazza",
-          "pt": "Menina",
-          "no": "Jente"
-        }
-      },
-      {
-        "id": "bee",
-        "label": "Bee",
-        "x": 46.5,
-        "y": 28,
-        "w": 5,
-        "h": 9,
-        "sound": "",
-        "translations": {
-          "es": "Abeja",
-          "fr": "Abeille",
-          "de": "Biene",
-          "it": "Ape",
-          "pt": "Abelha",
-          "no": "Bie"
-        }
-      },
-      {
-        "id": "bear",
-        "label": "Dog",
-        "x": 74.84210236884874,
-        "y": 74.75475380772038,
-        "w": 12,
-        "h": 18,
-        "sound": "sounds/dog-panting.wav",
-        "translations": {
-          "es": "Perro",
-          "fr": "Chien",
-          "de": "Hund",
-          "it": "Cane",
-          "pt": "Cão",
-          "no": "Hund"
-        }
-      },
-      {
-        "id": "flour",
-        "label": "Flour",
-        "x": 59.97368656908711,
-        "y": 49.77468923481843,
-        "w": 6,
-        "h": 10,
-        "sound": "",
-        "translations": {
-          "es": "Harina",
-          "fr": "Farine",
-          "de": "Mehl",
-          "it": "Farina",
-          "pt": "Farinha",
-          "no": "Mel"
-        }
-      },
-      {
-        "id": "milk",
-        "label": "Milk",
-        "x": 29.684209496030498,
-        "y": 44.88038743741164,
-        "w": 4,
-        "h": 10,
-        "sound": "",
-        "translations": {
-          "es": "Leche",
-          "fr": "Lait",
-          "de": "Milch",
-          "it": "Latte",
-          "pt": "Leite",
-          "no": "Melk"
-        }
-      },
-      {
-        "id": "bowl",
-        "label": "Bowl",
-        "x": 37.57894493060754,
-        "y": 45.569308591175556,
-        "w": 6.789473880757259,
-        "h": 6.609179445371679,
-        "sound": "",
-        "translations": {
-          "es": "Tazón",
-          "fr": "Bol",
-          "de": "Schüssel",
-          "it": "Ciotola",
-          "pt": "Tigela",
-          "no": "Bolle"
-        }
-      },
-      {
-        "id": "spoon",
-        "label": "Spoon",
-        "x": 45.78947406145345,
-        "y": 43.47658863568284,
-        "w": 5.105264204030573,
-        "h": 5.867409190311157,
-        "sound": "",
-        "translations": {
-          "es": "Cuchara",
-          "fr": "Cuillère",
-          "de": "Löffel",
-          "it": "Cucchiaio",
-          "pt": "Colher",
-          "no": "Skje"
-        }
-      },
-      {
-        "id": "rollingpin",
-        "label": "Rolling pin",
-        "x": 54.73684611545053,
-        "y": 54.681963973766344,
-        "w": 8,
-        "h": 5,
-        "sound": "",
-        "translations": {
-          "es": "Rodillo",
-          "fr": "Rouleau à pâtisserie",
-          "de": "Nudelholz",
-          "it": "Mattarello",
-          "pt": "Rolo da massa",
-          "no": "Kjevle"
-        }
-      },
-      {
-        "id": "book",
-        "label": "Book",
-        "x": 44.68420738790828,
-        "y": 52.96012914580388,
-        "w": 10,
-        "h": 6,
-        "sound": "",
-        "translations": {
-          "es": "Libro",
-          "fr": "Livre",
-          "de": "Buch",
-          "it": "Libro",
-          "pt": "Livro",
-          "no": "Bok"
-        }
-      },
-      {
-        "id": "apples",
-        "label": "Apples",
-        "x": 33.131578899816795,
-        "y": 50.60917944537168,
-        "w": 7,
-        "h": 6,
-        "sound": "",
-        "translations": {
-          "es": "Manzanas",
-          "fr": "Pommes",
-          "de": "Äpfel",
-          "it": "Mele",
-          "pt": "Maçãs",
-          "no": "Epler"
-        }
-      },
-      {
-        "id": "butter",
-        "label": "Butter",
-        "x": 40.131578899816795,
-        "y": 51.60917944537168,
-        "w": 4,
-        "h": 4,
-        "sound": "",
-        "translations": {
-          "es": "Mantequilla",
-          "fr": "Beurre",
-          "de": "Butter",
-          "it": "Burro",
-          "pt": "Manteiga",
-          "no": "Smør"
-        }
-      },
-      {
-        "id": "flowers",
-        "label": "Flowers",
-        "x": 64.368418992061,
-        "y": 42.787667481918916,
-        "w": 9,
-        "h": 15,
-        "sound": "",
-        "translations": {
-          "es": "Flores",
-          "fr": "Fleurs",
-          "de": "Blumen",
-          "it": "Fiori",
-          "pt": "Flores",
-          "no": "Blomster"
-        }
-      },
-      {
-        "id": "table",
-        "label": "Table",
-        "x": 49.68420654465939,
-        "y": 59.93324184426761,
-        "w": 22,
-        "h": 12,
-        "sound": "",
-        "translations": {
-          "es": "Mesa",
-          "fr": "Table",
-          "de": "Tisch",
-          "it": "Tavolo",
-          "pt": "Mesa",
-          "no": "Bord"
-        }
-      },
-      {
-        "id": "chair",
-        "label": "Chair",
-        "x": 74.47368867720932,
-        "y": 50.337045951555794,
-        "w": 3.9473667535755106,
-        "h": 19.814554783455186,
-        "sound": "",
-        "translations": {
-          "es": "Silla",
-          "fr": "Chaise",
-          "de": "Stuhl",
-          "it": "Sedia",
-          "pt": "Cadeira",
-          "no": "Stol"
-        }
-      },
-      {
-        "id": "stool",
-        "label": "Stool",
-        "x": 46.52631469578622,
-        "y": 67.77468923481844,
-        "w": 7,
-        "h": 13,
-        "sound": "",
-        "translations": {
-          "es": "Taburete",
-          "fr": "Tabouret",
-          "de": "Hocker",
-          "it": "Sgabello",
-          "pt": "Banco",
-          "no": "Krakk"
-        }
-      },
-      {
-        "id": "stove",
-        "label": "Stove",
-        "x": 21.05263131899846,
-        "y": 30.07881090105694,
-        "w": 7.421052599877862,
-        "h": 15.973107392904367,
-        "sound": "sounds/stove.mp3",
-        "translations": {
-          "es": "Estufa",
-          "fr": "Poêle",
-          "de": "Ofen",
-          "it": "Stufa",
-          "pt": "Fogão",
-          "no": "Ovn"
-        }
-      },
-      {
-        "id": "fire",
-        "label": "Fire",
-        "x": 23.842104657667154,
-        "y": 39.94019371870582,
-        "w": 4,
-        "h": 8,
-        "sound": "",
-        "translations": {
-          "es": "Fuego",
-          "fr": "Feu",
-          "de": "Feuer",
-          "it": "Fuoco",
-          "pt": "Fogo",
-          "no": "Ild"
-        }
-      },
-      {
-        "id": "kettle",
-        "label": "Kettle",
-        "x": 16.894735795969428,
-        "y": 30.291143419138024,
-        "w": 3.842104657667153,
-        "h": 7.463605083022984,
-        "sound": "",
-        "translations": {
-          "es": "Tetera",
-          "fr": "Bouilloire",
-          "de": "Wasserkessel",
-          "it": "Bollitore",
-          "pt": "Chaleira",
-          "no": "Kjele"
-        }
-      },
-      {
-        "id": "pans",
-        "label": "Pans",
-        "x": 11.210526661331311,
-        "y": 15.973110045684049,
-        "w": 12,
-        "h": 14,
-        "sound": "sounds/pan.mp3",
-        "translations": {
-          "es": "Sartenes",
-          "fr": "Casseroles",
-          "de": "Pfannen",
-          "it": "Pentole",
-          "pt": "Panelas",
-          "no": "Panner"
-        }
-      },
-      {
-        "id": "refrigerator",
-        "label": "Refrigerator",
-        "x": 72.52631770738938,
-        "y": 26.264256117601754,
-        "w": 9,
-        "h": 30,
-        "sound": "",
-        "translations": {
-          "es": "Refrigerador",
-          "fr": "Réfrigérateur",
-          "de": "Kühlschrank",
-          "it": "Frigorifero",
-          "pt": "Geladeira",
-          "no": "Kjøleskap"
-        }
-      },
-      {
-        "id": "sink",
-        "label": "Sink",
-        "x": 56.68421250763366,
-        "y": 36.88733931184985,
-        "w": 7.6842100381190654,
-        "h": 6.714877647964888,
-        "sound": "",
-        "translations": {
-          "es": "Fregadero",
-          "fr": "Évier",
-          "de": "Spüle",
-          "it": "Lavello",
-          "pt": "Pia",
-          "no": "Vask"
-        }
-      },
-      {
-        "id": "window",
-        "label": "Window",
-        "x": 44.842103453025885,
-        "y": 14.469634108464945,
-        "w": 23.21052629993893,
-        "h": 16.993042820002426,
-        "sound": "",
-        "translations": {
-          "es": "Ventana",
-          "fr": "Fenêtre",
-          "de": "Fenster",
-          "it": "Finestra",
-          "pt": "Janela",
-          "no": "Vindu"
-        }
-      },
-      {
-        "id": "clock",
-        "label": "Clock",
-        "x": 83.84210519975572,
-        "y": 9.496524062780896,
-        "w": 6,
-        "h": 10,
-        "sound": "sounds/clock.mp3",
-        "translations": {
-          "es": "Reloj",
-          "fr": "Horloge",
-          "de": "Uhr",
-          "it": "Orologio",
-          "pt": "Relógio",
-          "no": "Klokke"
-        }
-      },
-      {
-        "id": "bird",
-        "label": "Bird",
-        "x": 18.42105259987786,
-        "y": 6.5693085911755595,
-        "w": 5,
-        "h": 7,
-        "sound": "",
-        "translations": {
-          "es": "Pájaro",
-          "fr": "Oiseau",
-          "de": "Vogel",
-          "it": "Uccello",
-          "pt": "Pássaro",
-          "no": "Fugl"
-        }
-      },
-      {
-        "id": "rug",
-        "label": "Rug",
-        "x": 41.36842266621685,
-        "y": 87.05980628129417,
-        "w": 18,
-        "h": 12,
-        "sound": "",
-        "translations": {
-          "es": "Alfombra",
-          "fr": "Tapis",
-          "de": "Teppich",
-          "it": "Tappeto",
-          "pt": "Tapete",
-          "no": "Teppe"
-        }
-      },
-      {
-        "id": "basket",
-        "label": "Basket",
-        "x": 96,
-        "y": 52,
-        "w": 4,
-        "h": 8,
-        "sound": "",
-        "translations": {
-          "es": "Canasta",
-          "fr": "Panier",
-          "de": "Korb",
-          "it": "Cestino",
-          "pt": "Cesta",
-          "no": "Kurv"
-        }
-      },
-      {
-        "id": "mountains",
-        "label": "Mountains",
-        "x": 60.73684256175879,
-        "y": 17.40380145450849,
-        "w": 4.736839791083884,
-        "h": 7.867406537531474,
-        "sound": "",
-        "translations": {
-          "es": "Montañas",
-          "fr": "Montagnes",
-          "de": "Berge",
-          "it": "Montagne",
-          "pt": "Montanhas",
-          "no": "Fjell"
-        }
-      },
-      {
-        "id": "lake",
-        "label": "Lake",
-        "x": 93.36841814881211,
-        "y": 23.549378469636867,
-        "w": 5.368420437630512,
-        "h": 6.238294317841419,
-        "sound": "",
-        "translations": {
-          "es": "Lago",
-          "fr": "Lac",
-          "de": "See",
-          "it": "Lago",
-          "pt": "Lago",
-          "no": "Innsjø"
-        }
-      },
-      {
-        "id": "cabinets",
-        "label": "Cabinets",
-        "x": 34.94736657287932,
-        "y": 16.376911500192538,
-        "w": 6.21052810690083,
-        "h": 10.11868175525306,
-        "sound": "",
-        "translations": {
-          "es": "Armarios",
-          "fr": "Placards",
-          "de": "Schränke",
-          "it": "Armadi",
-          "pt": "Armários",
-          "no": "Skap"
-        }
-      },
-      {
-        "id": "stairs",
-        "label": "stairs",
-        "x": 89.48315743824121,
-        "y": 60.35652406278089,
-        "w": 6,
-        "h": 8,
-        "sound": "",
-        "translations": {
-          "es": "escaleras",
-          "fr": "escalier",
-          "de": "Treppe",
-          "it": "scale",
-          "pt": "escadas",
-          "no": "trapp"
-        }
-      },
-      {
-        "id": "cabinet",
-        "label": "cabinet",
-        "x": 7.129999969883969,
-        "y": 54.71304282000242,
-        "w": 12.736841838974037,
-        "h": 11.059806281294179,
-        "sound": "",
-        "translations": {
-          "es": "armario",
-          "fr": "placard",
-          "de": "Schrank",
-          "it": "armadietto",
-          "pt": "armário",
-          "no": "skap"
-        }
-      },
-      {
-        "id": "light",
-        "label": "light",
-        "x": 34.73526209590836,
-        "y": 6.131966626546026,
-        "w": 6,
-        "h": 8,
-        "sound": "",
-        "translations": {
-          "es": "luz",
-          "fr": "lumière",
-          "de": "Licht",
-          "it": "luce",
-          "pt": "luz",
-          "no": "lys"
-        }
-      },
-      {
-        "id": "shelf",
-        "label": "shelf",
-        "x": 72.44263149969466,
-        "y": 11.003801454508489,
-        "w": 8.6,
-        "h": 9.11,
-        "sound": "",
-        "translations": {
-          "es": "estante",
-          "fr": "étagère",
-          "de": "Regal",
-          "it": "mensola",
-          "pt": "prateleira",
-          "no": "hylle"
-        }
-      },
-      {
-        "id": "picture",
-        "label": "picture",
-        "x": 84.3631574382412,
-        "y": 23.291081499015768,
-        "w": 6,
-        "h": 8,
-        "sound": "",
-        "translations": {
-          "es": "cuadro",
-          "fr": "tableau",
-          "de": "Bild",
-          "it": "quadro",
-          "pt": "quadro",
-          "no": "bilde"
-        }
-      },
-      {
-        "id": "floor",
-        "label": "floor",
-        "x": 81.23315779963359,
-        "y": 66.41461935635714,
-        "w": 5.9,
-        "h": 4.76,
-        "sound": "",
-        "translations": {
-          "es": "suelo",
-          "fr": "sol",
-          "de": "Fußboden",
-          "it": "pavimento",
-          "pt": "chão",
-          "no": "gulv"
-        }
-      },
-      {
-        "id": "flue",
-        "label": "flue",
-        "x": 22.463684882589337,
-        "y": 13.911966626546027,
-        "w": 3.14,
-        "h": 14.94,
-        "sound": "",
-        "translations": {
-          "es": "tubo",
-          "fr": "cheminée",
-          "de": "Kamin",
-          "it": "canna fumaria",
-          "pt": "chaminé",
-          "no": "røykrør"
-        }
-      },
-      {
-        "id": "hotspot-1793038973010",
-        "label": "dog bowl",
-        "x": 91.21053286523383,
-        "y": 86.17524347477212,
-        "w": 4.421053684055001,
-        "h": 7.509502309881381,
-        "sound": "",
-        "translations": {
-          "fr": ""
-        },
-        "rotation": 0,
-        "z": 0
-      }
-    ],
-    "overlays": [],
-    "challenges": [
-      {
-        "prompt": "Find Flour.",
-        "target": "flour",
-        "translations": {
-          "es": "Find Harina.",
-          "fr": "Find Farine.",
-          "de": "Find Mehl.",
-          "it": "Find Farina.",
-          "pt": "Find Farinha.",
-          "no": "Find Mel."
-        }
-      },
-      {
-        "prompt": "Find Bowl.",
-        "target": "bowl",
-        "translations": {
-          "es": "Find Tazón.",
-          "fr": "Find Bol.",
-          "de": "Find Schüssel.",
-          "it": "Find Ciotola.",
-          "pt": "Find Tigela.",
-          "no": "Find Bolle."
-        }
-      },
-      {
-        "prompt": "Find Rolling pin.",
-        "target": "rollingpin",
-        "translations": {
-          "es": "Find Rodillo.",
-          "fr": "Find Rouleau à pâtisserie.",
-          "de": "Find Nudelholz.",
-          "it": "Find Mattarello.",
-          "pt": "Find Rolo da massa.",
-          "no": "Find Kjevle."
-        }
-      },
-      {
-        "prompt": "Find Stove.",
-        "target": "stove",
-        "translations": {
-          "es": "Find Estufa.",
-          "fr": "Find Poêle.",
-          "de": "Find Ofen.",
-          "it": "Find Stufa.",
-          "pt": "Find Fogão.",
-          "no": "Find Ovn."
-        }
-      },
-      {
-        "prompt": "Find Refrigerator.",
-        "target": "refrigerator",
-        "translations": {
-          "es": "Find Refrigerador.",
-          "fr": "Find Réfrigérateur.",
-          "de": "Find Kühlschrank.",
-          "it": "Find Frigorifero.",
-          "pt": "Find Geladeira.",
-          "no": "Find Kjøleskap."
-        }
-      },
-      {
-        "prompt": "find the dog bowl",
-        "target": "hotspot-1793038973010",
-        "translations": {
-          "fr": "trouver le bol pour chien",
-          "es": "encuentra el cuenco para perros",
-          "de": "finden Sie die Hundenapf",
-          "it": "trova la ciotola per cani",
-          "pt": "encontrar a tigela para cães",
-          "no": "finn hundeskålen"
         }
       }
     ]
@@ -16162,6 +16162,217 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
           "pt": "Encontre a Abelha",
           "no": "Finn bien"
         }
+      }
+    ]
+  },
+  "shopping-market": {
+    "title": "Shopping-Market",
+    "image": "images/shopping-market.jpg",
+    "lessons": [
+      {
+        "text": "Welcome to the shopping market! Today our family is buying groceries."
+      },
+      {
+        "text": "The mother pushes the shopping cart through the store."
+      },
+      {
+        "text": "The boy is holding a bunch of yellow bananas."
+      },
+      {
+        "text": "The young girl is holding a fresh red apple."
+      },
+      {
+        "text": "The teenager is reading the information on a cereal box."
+      },
+      {
+        "text": "The produce section has fresh fruits and vegetables."
+      },
+      {
+        "text": "We can see red apples, oranges, and green vegetables."
+      },
+      {
+        "text": "The shopping cart contains a pineapple, lettuce, and other groceries."
+      },
+      {
+        "text": "Milk is kept cold in the dairy section."
+      },
+      {
+        "text": "Fresh bread is available near the bakery."
+      },
+      {
+        "text": "Before buying something, we can compare prices and read labels."
+      },
+      {
+        "text": "After shopping, the family takes their groceries to the checkout."
+      }
+    ],
+    "hotspots": [
+      {
+        "id": "shopping-cart",
+        "label": "shopping cart",
+        "x": 29.9,
+        "y": 48.46,
+        "w": 25.24,
+        "h": 51.43
+      },
+      {
+        "id": "mother",
+        "label": "mother",
+        "x": 30.5,
+        "y": 11.05,
+        "w": 18.78,
+        "h": 46.87
+      },
+      {
+        "id": "boy",
+        "label": "boy",
+        "x": 17.82,
+        "y": 30.07,
+        "w": 13.22,
+        "h": 47.72
+      },
+      {
+        "id": "bananas",
+        "label": "bananas",
+        "x": 22.01,
+        "y": 51.01,
+        "w": 8.07,
+        "h": 9.56,
+        "rotation": 0,
+        "z": 0,
+        "sound": "sounds/store-cleanup-sale.mp3",
+        "translations": {
+          "es": ""
+        }
+      },
+      {
+        "id": "young-girl",
+        "label": "young girl",
+        "x": 50,
+        "y": 33.05,
+        "w": 13.58,
+        "h": 44.95
+      },
+      {
+        "id": "red-apple",
+        "label": "red apple",
+        "x": 54.55,
+        "y": 51.01,
+        "w": 4.19,
+        "h": 6.7
+      },
+      {
+        "id": "teenager",
+        "label": "teenager",
+        "x": 70.87,
+        "y": 15.52,
+        "w": 16.75,
+        "h": 70.03
+      },
+      {
+        "id": "cereal-box",
+        "label": "cereal box",
+        "x": 80.44,
+        "y": 31.24,
+        "w": 8.37,
+        "h": 13.71
+      },
+      {
+        "id": "pineapple",
+        "label": "pineapple",
+        "x": 29.61,
+        "y": 47.82,
+        "w": 5.8,
+        "h": 15.73
+      },
+      {
+        "id": "milk",
+        "label": "milk",
+        "x": 46.41,
+        "y": 51.54,
+        "w": 3.47,
+        "h": 11.16
+      },
+      {
+        "id": "bread",
+        "label": "bread",
+        "x": 34.45,
+        "y": 51.01,
+        "w": 7.06,
+        "h": 10.63
+      },
+      {
+        "id": "lettuce",
+        "label": "lettuce",
+        "x": 40.37,
+        "y": 49.95,
+        "w": 7,
+        "h": 10.63
+      },
+      {
+        "id": "hotspot-1793206241152",
+        "label": "Store Intercom",
+        "x": 46.15789215003349,
+        "y": 5.8785364338597805,
+        "w": 27.947366331951066,
+        "h": 9.17848803654724,
+        "sound": "sounds/store-cleanup.mp3",
+        "translations": {
+          "es": ""
+        },
+        "rotation": 0,
+        "z": 0
+      }
+    ],
+    "overlays": [],
+    "challenges": [
+      {
+        "prompt": "Find the shopping cart",
+        "target": "shopping-cart"
+      },
+      {
+        "prompt": "Find the mother",
+        "target": "mother"
+      },
+      {
+        "prompt": "Find the boy holding bananas",
+        "target": "boy"
+      },
+      {
+        "prompt": "Find the bananas",
+        "target": "bananas"
+      },
+      {
+        "prompt": "Find the girl holding an apple",
+        "target": "young-girl"
+      },
+      {
+        "prompt": "Find the red apple",
+        "target": "red-apple"
+      },
+      {
+        "prompt": "Find the teenager",
+        "target": "teenager"
+      },
+      {
+        "prompt": "Find the cereal box",
+        "target": "cereal-box"
+      },
+      {
+        "prompt": "Find the pineapple",
+        "target": "pineapple"
+      },
+      {
+        "prompt": "Find the milk",
+        "target": "milk"
+      },
+      {
+        "prompt": "Find the bread",
+        "target": "bread"
+      },
+      {
+        "prompt": "Find the lettuce",
+        "target": "lettuce"
       }
     ]
   },
