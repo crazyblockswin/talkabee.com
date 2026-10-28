@@ -16363,7 +16363,13 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
         "x": 70.87,
         "y": 15.52,
         "w": 16.75,
-        "h": 70.03
+        "h": 70.03,
+        "rotation": 0,
+        "z": 0,
+        "sound": "sounds/store-cleanup-sale.mp3",
+        "translations": {
+          "es": ""
+        }
       },
       {
         "id": "cereal-box",
