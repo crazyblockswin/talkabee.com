@@ -17821,6 +17821,455 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
       }
     ]
   },
+  "stormy-seas": {
+    "title": "Stormy Seas",
+    "image": "images/stormy-seas.jpg",
+    "lessons": [
+      {
+        "text": "The old sailing ship is fighting its way through a powerful storm.",
+        "translations": {
+          "es": "El viejo velero se abre camino a través de una poderosa tormenta.",
+          "fr": "Le vieux voilier se fraye un chemin à travers une puissante tempête.",
+          "de": "Das alte Segelschiff kämpft sich durch einen mächtigen Sturm.",
+          "it": "Il vecchio veliero si sta facendo strada attraverso una potente tempesta.",
+          "pt": "O velho veleiro está abrindo caminho através de uma tempestade poderosa.",
+          "no": "Det gamle seilskipet kjemper seg gjennom en kraftig storm."
+        }
+      },
+      {
+        "text": "The skipper wears a yellow raincoat and hat to stay dry.",
+        "translations": {
+          "es": "El patrón lleva un impermeable amarillo y un sombrero para mantenerse seco.",
+          "fr": "Le skipper porte un imperméable jaune et un chapeau pour rester au sec.",
+          "de": "Der Skipper trägt einen gelben Regenmantel und eine Mütze, um trocken zu bleiben.",
+          "it": "Lo skipper indossa un impermeabile giallo e un cappello per rimanere asciutto.",
+          "pt": "O capitão usa uma capa de chuva amarela e um chapéu para se manter seco.",
+          "no": "Skipperen har på seg gul regnfrakk og lue for å holde seg tørr."
+        }
+      },
+      {
+        "text": "He grips the wooden ship’s wheel to steer through the waves.",
+        "translations": {
+          "es": "Agarra el volante del barco de madera para navegar a través de las olas.",
+          "fr": "Il saisit la roue du navire en bois pour se diriger à travers les vagues.",
+          "de": "Er greift nach dem hölzernen Schiffsrad, um durch die Wellen zu lenken.",
+          "it": "Afferra il volante della nave di legno per guidare tra le onde.",
+          "pt": "Ele agarra a roda do navio de madeira para atravessar as ondas.",
+          "no": "Han griper tak i rattet på treskipet for å styre gjennom bølgene."
+        }
+      },
+      {
+        "text": "The wind has torn large holes in the ship’s sails.",
+        "translations": {
+          "es": "El viento ha abierto grandes agujeros en las velas del barco.",
+          "fr": "Le vent a déchiré de grands trous dans les voiles du navire.",
+          "de": "Der Wind hat große Löcher in die Segel des Schiffes gerissen.",
+          "it": "Il vento ha lacerato grandi buchi nelle vele della nave.",
+          "pt": "O vento abriu grandes buracos nas velas do navio.",
+          "no": "Vinden har revet store hull i skipets seil."
+        }
+      },
+      {
+        "text": "The tall mast supports the sails high above the deck.",
+        "translations": {
+          "es": "El alto mástil sostiene las velas por encima de la cubierta.",
+          "fr": "Le grand mât soutient les voiles au-dessus du pont.",
+          "de": "Der hohe Mast stützt die Segel hoch über dem Deck.",
+          "it": "L'alto albero sostiene le vele alte sopra il ponte.",
+          "pt": "O mastro alto sustenta as velas bem acima do convés.",
+          "no": "Den høye masten støtter seilene høyt over dekk."
+        }
+      },
+      {
+        "text": "Ropes and rigging help the crew control the sails.",
+        "translations": {
+          "es": "Las cuerdas y el aparejo ayudan a la tripulación a controlar las velas.",
+          "fr": "Les cordes et le gréement aident l'équipage à contrôler les voiles.",
+          "de": "Seile und Takelagen helfen der Besatzung, die Segel zu kontrollieren.",
+          "it": "Corde e sartiame aiutano l'equipaggio a controllare le vele.",
+          "pt": "Cordas e cordame ajudam a tripulação a controlar as velas.",
+          "no": "Tau og rigg hjelper mannskapet med å kontrollere seilene."
+        }
+      },
+      {
+        "text": "Bright lightning flashes across the dark storm clouds.",
+        "translations": {
+          "es": "Relámpagos brillantes brillan a través de las oscuras nubes de tormenta.",
+          "fr": "La foudre brillante éclaire les nuages sombres de la tempête.",
+          "de": "Helle Blitze blitzen über den dunklen Gewitterwolken.",
+          "it": "Lampi luminosi attraversano le nuvole scure della tempesta.",
+          "pt": "Relâmpagos brilhantes brilham através das nuvens escuras da tempestade.",
+          "no": "Kraftige lyn blinker over de mørke stormskyene."
+        }
+      },
+      {
+        "text": "A giant wave rises beside the ship and crashes against its side.",
+        "translations": {
+          "es": "Una ola gigante se eleva al lado del barco y se estrella contra su costado.",
+          "fr": "Une vague géante se lève à côté du navire et s'écrase sur le côté.",
+          "de": "Eine riesige Welle erhebt sich neben dem Schiff und stürzt gegen seine Seite.",
+          "it": "Un'onda gigante si alza accanto alla nave e si schianta contro il suo fianco.",
+          "pt": "Uma onda gigante sobe ao lado do navio e bate contra o seu lado.",
+          "no": "En gigantisk bølge stiger ved siden av skipet og slår mot siden."
+        }
+      },
+      {
+        "text": "Cold seawater sprays over the railing and onto the wooden deck.",
+        "translations": {
+          "es": "El agua de mar fría se rocía sobre la barandilla y sobre la cubierta de madera.",
+          "fr": "L'eau de mer froide pulvérise sur la balustrade et sur la terrasse en bois.",
+          "de": "Kaltes Meerwasser spritzt über das Geländer und auf das Holzdeck.",
+          "it": "L'acqua fredda del mare spruzza sulla ringhiera e sul ponte di legno.",
+          "pt": "A água do mar fria pulveriza sobre o corrimão e sobre o convés de madeira.",
+          "no": "Kaldt sjøvann spruter over rekkverket og ned på tredekket."
+        }
+      },
+      {
+        "text": "Warm lanterns glow beside the cabin despite the heavy rain.",
+        "translations": {
+          "es": "Linternas cálidas brillan al lado de la cabina a pesar de la fuerte lluvia.",
+          "fr": "Des lanternes chaudes brillent à côté de la cabine malgré la forte pluie.",
+          "de": "Warme Laternen leuchten trotz des starken Regens neben der Kabine.",
+          "it": "Le calde lanterne brillano accanto alla cabina nonostante la pioggia battente.",
+          "pt": "Lanternas quentes brilham ao lado da cabine, apesar da chuva forte.",
+          "no": "Varme lykter lyser ved siden av hytta til tross for det kraftige regnet."
+        }
+      },
+      {
+        "text": "The crew must keep loose ropes and equipment secure during the storm.",
+        "translations": {
+          "es": "La cuadrilla debe mantener las cuerdas y el equipo sueltos y seguros durante la tormenta.",
+          "fr": "L'équipage doit garder les cordes et l'équipement desserrés en sécurité pendant la tempête.",
+          "de": "Die Besatzung muss lose Seile und Ausrüstung während des Sturms sicher aufbewahren.",
+          "it": "L'equipaggio deve tenere al sicuro corde e attrezzature allentate durante la tempesta.",
+          "pt": "A tripulação deve manter cordas soltas e equipamentos seguros durante a tempestade.",
+          "no": "Mannskapet må holde løse tau og utstyr sikkert på plass under stormen."
+        }
+      },
+      {
+        "text": "The skipper stays alert and guides the ship toward safer waters.",
+        "translations": {
+          "es": "El patrón se mantiene alerta y guía el barco hacia aguas más seguras.",
+          "fr": "Le skipper reste alerte et guide le navire vers des eaux plus sûres.",
+          "de": "Der Skipper bleibt wachsam und führt das Schiff in sicherere Gewässer.",
+          "it": "Lo skipper rimane vigile e guida la nave verso acque più sicure.",
+          "pt": "O capitão fica alerta e guia o navio em direção a águas mais seguras.",
+          "no": "Skipperen holder seg årvåken og styrer skipet mot tryggere farvann."
+        }
+      }
+    ],
+    "hotspots": [
+      {
+        "id": "skipper",
+        "label": "Skipper",
+        "x": 4.88,
+        "y": 23.93,
+        "w": 22.14,
+        "h": 54.69,
+        "rotation": 0,
+        "z": 0,
+        "sound": "sounds/stormy-seas.mp3",
+        "translations": {
+          "es": ""
+        }
+      },
+      {
+        "id": "yellow-hat",
+        "label": "Yellow rain hat",
+        "x": 12.96,
+        "y": 24.51,
+        "w": 7.16,
+        "h": 8.89
+      },
+      {
+        "id": "yellow-raincoat",
+        "label": "Yellow raincoat",
+        "x": 5.21,
+        "y": 34.18,
+        "w": 20.18,
+        "h": 41.99
+      },
+      {
+        "id": "ships-wheel",
+        "label": "Ship wheel",
+        "x": 0,
+        "y": 38.09,
+        "w": 30.6,
+        "h": 41.02
+      },
+      {
+        "id": "main-mast",
+        "label": "Main mast",
+        "x": 21.16,
+        "y": 0,
+        "w": 10.42,
+        "h": 47.85
+      },
+      {
+        "id": "torn-sails",
+        "label": "Torn sails",
+        "x": 30.27,
+        "y": 0,
+        "w": 43.29,
+        "h": 46.88
+      },
+      {
+        "id": "rigging",
+        "label": "Rigging",
+        "x": 36.13,
+        "y": 8.79,
+        "w": 11.39,
+        "h": 52.25
+      },
+      {
+        "id": "rope-ladder",
+        "label": "Rope ladder",
+        "x": 39.71,
+        "y": 7.81,
+        "w": 8.14,
+        "h": 45.41
+      },
+      {
+        "id": "lantern",
+        "label": "Lantern",
+        "x": 30.34,
+        "y": 47.85,
+        "w": 5.14,
+        "h": 13.18
+      },
+      {
+        "id": "cabin",
+        "label": "Ship cabin",
+        "x": 19.53,
+        "y": 42.97,
+        "w": 25.39,
+        "h": 21.97
+      },
+      {
+        "id": "wooden-deck",
+        "label": "Wooden deck",
+        "x": 31.9,
+        "y": 68.36,
+        "w": 27.34,
+        "h": 30.27
+      },
+      {
+        "id": "ship-railing",
+        "label": "Ship railing",
+        "x": 61.2,
+        "y": 61.52,
+        "w": 35.81,
+        "h": 18.55
+      },
+      {
+        "id": "giant-wave",
+        "label": "Giant wave",
+        "x": 63.8,
+        "y": 34.18,
+        "w": 33.85,
+        "h": 38.09,
+        "rotation": 0,
+        "z": 0,
+        "sound": "sounds/stormy-seas.mp3",
+        "translations": {
+          "es": ""
+        }
+      },
+      {
+        "id": "lightning",
+        "label": "Lightning",
+        "x": 61.59157715308695,
+        "y": 2.047732054820858,
+        "w": 29.040000000000006,
+        "h": 34.3996771354903,
+        "rotation": 0,
+        "z": 0,
+        "sound": "sounds/stormy-seas.mp3",
+        "translations": {
+          "es": ""
+        }
+      },
+      {
+        "id": "rope-coil",
+        "label": "Coiled rope",
+        "x": 65.1,
+        "y": 67.38,
+        "w": 9.44,
+        "h": 12.21
+      },
+      {
+        "id": "pulley",
+        "label": "Pulley",
+        "x": 93.1,
+        "y": 28.81,
+        "w": 6.51,
+        "h": 17.58
+      },
+      {
+        "id": "sea-spray",
+        "label": "Sea spray",
+        "x": 53.71,
+        "y": 45.9,
+        "w": 21.16,
+        "h": 26.37
+      },
+      {
+        "id": "wooden-barrel",
+        "label": "Wooden barrel",
+        "x": 32.55,
+        "y": 63.96,
+        "w": 5.86,
+        "h": 12.21
+      }
+    ],
+    "overlays": [],
+    "challenges": [
+      {
+        "prompt": "Find the skipper",
+        "target": "skipper",
+        "translations": {
+          "es": "Encuentra al patrón",
+          "fr": "Le patron",
+          "de": "Finde den Skipper",
+          "it": "Trova lo skipper",
+          "pt": "Encontre o capitão",
+          "no": "Finn skipperen"
+        }
+      },
+      {
+        "prompt": "Find the yellow rain hat",
+        "target": "yellow-hat",
+        "translations": {
+          "es": "Encuentra el sombrero amarillo para la lluvia",
+          "fr": "Trouvez le chapeau de pluie jaune",
+          "de": "Finde den gelben Regenhut",
+          "it": "Trova il cappello da pioggia giallo",
+          "pt": "Encontre o chapéu de chuva amarelo",
+          "no": "Finn den gule regnhatten"
+        }
+      },
+      {
+        "prompt": "Find the ship’s wheel",
+        "target": "ships-wheel",
+        "translations": {
+          "es": "Encuentra la rueda del barco",
+          "fr": "Trouvez la roue du navire",
+          "de": "Finde das Schiffsrad",
+          "it": "Trova la ruota della nave",
+          "pt": "Encontre a roda do navio",
+          "no": "Finn skipets ratt"
+        }
+      },
+      {
+        "prompt": "Find the torn sails",
+        "target": "torn-sails",
+        "translations": {
+          "es": "Encuentra las velas rotas",
+          "fr": "Trouvez les voiles déchirées",
+          "de": "Finde die zerrissenen Segel",
+          "it": "Trova le vele strappate",
+          "pt": "Encontre as velas rasgadas",
+          "no": "Finn de revne seilene"
+        }
+      },
+      {
+        "prompt": "Find the main mast",
+        "target": "main-mast",
+        "translations": {
+          "es": "Encuentra el mástil principal",
+          "fr": "Trouvez le mât principal",
+          "de": "Finden Sie den Hauptmast",
+          "it": "Trova l'albero principale",
+          "pt": "Encontre o mastro principal",
+          "no": "Finn hovedmasten"
+        }
+      },
+      {
+        "prompt": "Find the rope ladder",
+        "target": "rope-ladder",
+        "translations": {
+          "es": "Encuentra la escalera de cuerda",
+          "fr": "Trouvez l'échelle de corde",
+          "de": "Finde die Strickleiter",
+          "it": "Trova la scala di corda",
+          "pt": "Encontre a escada de corda",
+          "no": "Finn taustigen"
+        }
+      },
+      {
+        "prompt": "Find the lantern",
+        "target": "lantern",
+        "translations": {
+          "es": "Encuentra la linterna",
+          "fr": "Trouvez la lanterne",
+          "de": "Finde die Laterne",
+          "it": "Trova la lanterna",
+          "pt": "Encontre a lanterna",
+          "no": "Finn lykten"
+        }
+      },
+      {
+        "prompt": "Find the ship’s cabin",
+        "target": "cabin",
+        "translations": {
+          "es": "Encuentra el camarote del barco",
+          "fr": "Trouver la cabine du navire",
+          "de": "Finde die Schiffskabine",
+          "it": "Trova la cabina della nave",
+          "pt": "Encontre a cabine do navio",
+          "no": "Finn skipets lugar"
+        }
+      },
+      {
+        "prompt": "Find the wooden deck",
+        "target": "wooden-deck",
+        "translations": {
+          "es": "Encuentra la cubierta de madera",
+          "fr": "Retrouvez la terrasse en bois",
+          "de": "Finde das Holzdeck",
+          "it": "Trova il ponte in legno",
+          "pt": "Encontre o deck de madeira",
+          "no": "Finn treterrassen"
+        }
+      },
+      {
+        "prompt": "Find the ship’s railing",
+        "target": "ship-railing",
+        "translations": {
+          "es": "Encuentra la barandilla del barco",
+          "fr": "Trouvez la balustrade du navire",
+          "de": "Finden Sie das Schiffsgeländer",
+          "it": "Trova la ringhiera della nave",
+          "pt": "Encontre o corrimão do navio",
+          "no": "Finn skipets rekkverk"
+        }
+      },
+      {
+        "prompt": "Find the giant wave",
+        "target": "giant-wave",
+        "translations": {
+          "es": "Encuentra la ola gigante",
+          "fr": "Trouvez la vague géante",
+          "de": "Finde die Riesenwelle",
+          "it": "Trova l'onda gigante",
+          "pt": "Encontre a onda gigante",
+          "no": "Finn den gigantiske bølgen"
+        }
+      },
+      {
+        "prompt": "Find the lightning",
+        "target": "lightning",
+        "translations": {
+          "es": "EL RAYO",
+          "fr": "Trouvez la foudre",
+          "de": "Finde den Blitz",
+          "it": "Trova il fulmine",
+          "pt": "O relâmpago",
+          "no": "Finn lynet"
+        }
+      }
+    ]
+  },
   "swimming": {
     "title": "Swimming",
     "image": "images/swimming.jpg",
