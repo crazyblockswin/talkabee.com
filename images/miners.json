@@ -1,0 +1,131 @@
+{
+  "title": "Miners",
+  "image": "images/miners.jpg",
+  "lessons": [
+    {
+      "text": "The miners are collecting rocks that contain gold."
+    },
+    {
+      "text": "A miner uses a pickaxe to break rock."
+    },
+    {
+      "text": "An ore cart carries heavy rocks out of the mine."
+    },
+    {
+      "text": "A small loader moves materials through the mine."
+    },
+    {
+      "text": "A miner wears a headlamp to see underground."
+    },
+    {
+      "text": "A wooden walkway crosses the upper part of the cavern."
+    },
+    {
+      "text": "A tunnel leads deeper into the underground mine."
+    },
+    {
+      "text": "A gold-colored mineral vein runs through the rock."
+    }
+  ],
+  "hotspots": [
+    {
+      "id": "gold-ore",
+      "label": "gold ore",
+      "x": 0,
+      "y": 75,
+      "w": 44,
+      "h": 24
+    },
+    {
+      "id": "miner-with-pickaxe",
+      "label": "miner with pickaxe",
+      "x": 62,
+      "y": 35,
+      "w": 22,
+      "h": 50
+    },
+    {
+      "id": "ore-cart",
+      "label": "ore cart",
+      "x": 0,
+      "y": 70,
+      "w": 48,
+      "h": 28
+    },
+    {
+      "id": "mine-loader",
+      "label": "mine loader",
+      "x": 0,
+      "y": 27,
+      "w": 25,
+      "h": 40
+    },
+    {
+      "id": "headlamp",
+      "label": "headlamp",
+      "x": 60,
+      "y": 45,
+      "w": 9,
+      "h": 9
+    },
+    {
+      "id": "wooden-walkway",
+      "label": "wooden walkway",
+      "x": 0,
+      "y": 2,
+      "w": 64,
+      "h": 33
+    },
+    {
+      "id": "mine-tunnel",
+      "label": "mine tunnel",
+      "x": 45,
+      "y": 34,
+      "w": 22,
+      "h": 33
+    },
+    {
+      "id": "gold-vein",
+      "label": "gold vein",
+      "x": 72,
+      "y": 0,
+      "w": 27,
+      "h": 49
+    }
+  ],
+  "overlays": [],
+  "challenges": [
+    {
+      "prompt": "Find the gold ore",
+      "target": "gold-ore"
+    },
+    {
+      "prompt": "Find the miner with pickaxe",
+      "target": "miner-with-pickaxe"
+    },
+    {
+      "prompt": "Find the ore cart",
+      "target": "ore-cart"
+    },
+    {
+      "prompt": "Find the mine loader",
+      "target": "mine-loader"
+    },
+    {
+      "prompt": "Find the headlamp",
+      "target": "headlamp"
+    },
+    {
+      "prompt": "Find the wooden walkway",
+      "target": "wooden-walkway"
+    },
+    {
+      "prompt": "Find the mine tunnel",
+      "target": "mine-tunnel"
+    },
+    {
+      "prompt": "Find the gold vein",
+      "target": "gold-vein"
+    }
+  ]
+}

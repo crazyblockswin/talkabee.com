@@ -1,0 +1,131 @@
+{
+  "title": "Asteroid",
+  "image": "images/asteroid.jpg",
+  "lessons": [
+    {
+      "text": "A gigantic asteroid is moving toward Earth."
+    },
+    {
+      "text": "The asteroid leaves a glowing trail behind it."
+    },
+    {
+      "text": "Smaller pieces of rock break away from the asteroid."
+    },
+    {
+      "text": "A large city stretches along the coastline."
+    },
+    {
+      "text": "The ocean reflects the orange light in the sky."
+    },
+    {
+      "text": "People are fleeing from the approaching danger."
+    },
+    {
+      "text": "Cars are stopped along the crowded road."
+    },
+    {
+      "text": "Dark clouds of smoke and dust spread across the sky."
+    }
+  ],
+  "hotspots": [
+    {
+      "id": "asteroid",
+      "label": "asteroid",
+      "x": 29,
+      "y": 0,
+      "w": 39,
+      "h": 47
+    },
+    {
+      "id": "fiery-trail",
+      "label": "fiery trail",
+      "x": 61,
+      "y": 0,
+      "w": 37,
+      "h": 39
+    },
+    {
+      "id": "flying-fragments",
+      "label": "flying fragments",
+      "x": 72,
+      "y": 21,
+      "w": 26,
+      "h": 22
+    },
+    {
+      "id": "coastal-city",
+      "label": "coastal city",
+      "x": 5,
+      "y": 55,
+      "w": 59,
+      "h": 18
+    },
+    {
+      "id": "ocean",
+      "label": "ocean",
+      "x": 45,
+      "y": 48,
+      "w": 46,
+      "h": 13
+    },
+    {
+      "id": "running-people",
+      "label": "running people",
+      "x": 0,
+      "y": 67,
+      "w": 44,
+      "h": 31
+    },
+    {
+      "id": "cars",
+      "label": "cars",
+      "x": 33,
+      "y": 72,
+      "w": 46,
+      "h": 26
+    },
+    {
+      "id": "smoke-clouds",
+      "label": "smoke clouds",
+      "x": 71,
+      "y": 35,
+      "w": 27,
+      "h": 18
+    }
+  ],
+  "overlays": [],
+  "challenges": [
+    {
+      "prompt": "Find the asteroid",
+      "target": "asteroid"
+    },
+    {
+      "prompt": "Find the fiery trail",
+      "target": "fiery-trail"
+    },
+    {
+      "prompt": "Find the flying fragments",
+      "target": "flying-fragments"
+    },
+    {
+      "prompt": "Find the coastal city",
+      "target": "coastal-city"
+    },
+    {
+      "prompt": "Find the ocean",
+      "target": "ocean"
+    },
+    {
+      "prompt": "Find the running people",
+      "target": "running-people"
+    },
+    {
+      "prompt": "Find the cars",
+      "target": "cars"
+    },
+    {
+      "prompt": "Find the smoke clouds",
+      "target": "smoke-clouds"
+    }
+  ]
+}

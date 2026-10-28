@@ -1,0 +1,131 @@
+{
+  "title": "Tornado",
+  "image": "images/tornado.jpg",
+  "lessons": [
+    {
+      "text": "A powerful tornado spins beneath a dark thunderstorm."
+    },
+    {
+      "text": "Dark storm clouds cover the sky."
+    },
+    {
+      "text": "The strong wind carries debris through the air."
+    },
+    {
+      "text": "A farmhouse stands near the approaching tornado."
+    },
+    {
+      "text": "The red barn is beside the farm fields."
+    },
+    {
+      "text": "The farm windmill stands near the grain silos."
+    },
+    {
+      "text": "Rows of crops grow in the field."
+    },
+    {
+      "text": "Rain has made the country road wet and slippery."
+    }
+  ],
+  "hotspots": [
+    {
+      "id": "tornado-funnel",
+      "label": "tornado funnel",
+      "x": 60,
+      "y": 5,
+      "w": 23,
+      "h": 65
+    },
+    {
+      "id": "storm-clouds",
+      "label": "storm clouds",
+      "x": 15,
+      "y": 4,
+      "w": 43,
+      "h": 36
+    },
+    {
+      "id": "flying-debris",
+      "label": "flying debris",
+      "x": 80,
+      "y": 34,
+      "w": 13,
+      "h": 31
+    },
+    {
+      "id": "farmhouse",
+      "label": "farmhouse",
+      "x": 20,
+      "y": 59,
+      "w": 15,
+      "h": 13
+    },
+    {
+      "id": "red-barn",
+      "label": "red barn",
+      "x": 53,
+      "y": 63,
+      "w": 18,
+      "h": 11
+    },
+    {
+      "id": "windmill",
+      "label": "windmill",
+      "x": 49,
+      "y": 52,
+      "w": 5,
+      "h": 16
+    },
+    {
+      "id": "cornfield",
+      "label": "cornfield",
+      "x": 61,
+      "y": 73,
+      "w": 37,
+      "h": 12
+    },
+    {
+      "id": "wet-road",
+      "label": "wet road",
+      "x": 5,
+      "y": 74,
+      "w": 53,
+      "h": 24
+    }
+  ],
+  "overlays": [],
+  "challenges": [
+    {
+      "prompt": "Find the tornado funnel",
+      "target": "tornado-funnel"
+    },
+    {
+      "prompt": "Find the storm clouds",
+      "target": "storm-clouds"
+    },
+    {
+      "prompt": "Find the flying debris",
+      "target": "flying-debris"
+    },
+    {
+      "prompt": "Find the farmhouse",
+      "target": "farmhouse"
+    },
+    {
+      "prompt": "Find the red barn",
+      "target": "red-barn"
+    },
+    {
+      "prompt": "Find the windmill",
+      "target": "windmill"
+    },
+    {
+      "prompt": "Find the cornfield",
+      "target": "cornfield"
+    },
+    {
+      "prompt": "Find the wet road",
+      "target": "wet-road"
+    }
+  ]
+}

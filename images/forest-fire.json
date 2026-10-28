@@ -1,0 +1,131 @@
+{
+  "title": "Forest Fire",
+  "image": "images/forest-fire.jpg",
+  "lessons": [
+    {
+      "text": "Large flames are burning through the forest."
+    },
+    {
+      "text": "A firefighter directs water toward the flames."
+    },
+    {
+      "text": "Firefighters use a hose to spray water."
+    },
+    {
+      "text": "A fire engine carries emergency equipment."
+    },
+    {
+      "text": "A helicopter is helping fight the wildfire."
+    },
+    {
+      "text": "A helicopter carries water to the fire."
+    },
+    {
+      "text": "An aircraft flies above the burning forest."
+    },
+    {
+      "text": "A river runs beside the burning hillside."
+    }
+  ],
+  "hotspots": [
+    {
+      "id": "wildfire",
+      "label": "wildfire",
+      "x": 63,
+      "y": 19,
+      "w": 35,
+      "h": 49
+    },
+    {
+      "id": "firefighter",
+      "label": "firefighter",
+      "x": 49,
+      "y": 55,
+      "w": 13,
+      "h": 22
+    },
+    {
+      "id": "fire-hose",
+      "label": "fire hose",
+      "x": 0,
+      "y": 77,
+      "w": 55,
+      "h": 18
+    },
+    {
+      "id": "fire-engine",
+      "label": "fire engine",
+      "x": 0,
+      "y": 30,
+      "w": 30,
+      "h": 34
+    },
+    {
+      "id": "helicopter",
+      "label": "helicopter",
+      "x": 75,
+      "y": 3,
+      "w": 13,
+      "h": 11
+    },
+    {
+      "id": "water-bucket",
+      "label": "water bucket",
+      "x": 78,
+      "y": 12,
+      "w": 5,
+      "h": 8
+    },
+    {
+      "id": "air-tanker",
+      "label": "air tanker",
+      "x": 25,
+      "y": 0,
+      "w": 16,
+      "h": 14
+    },
+    {
+      "id": "river",
+      "label": "river",
+      "x": 59,
+      "y": 67,
+      "w": 40,
+      "h": 22
+    }
+  ],
+  "overlays": [],
+  "challenges": [
+    {
+      "prompt": "Find the wildfire",
+      "target": "wildfire"
+    },
+    {
+      "prompt": "Find the firefighter",
+      "target": "firefighter"
+    },
+    {
+      "prompt": "Find the fire hose",
+      "target": "fire-hose"
+    },
+    {
+      "prompt": "Find the fire engine",
+      "target": "fire-engine"
+    },
+    {
+      "prompt": "Find the helicopter",
+      "target": "helicopter"
+    },
+    {
+      "prompt": "Find the water bucket",
+      "target": "water-bucket"
+    },
+    {
+      "prompt": "Find the air tanker",
+      "target": "air-tanker"
+    },
+    {
+      "prompt": "Find the river",
+      "target": "river"
+    }
+  ]
+}

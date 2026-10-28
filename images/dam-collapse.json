@@ -1,0 +1,131 @@
+{
+  "title": "Dam Collapse",
+  "image": "images/dam-collapse.jpg",
+  "lessons": [
+    {
+      "text": "The concrete dam is breaking apart."
+    },
+    {
+      "text": "Powerful floodwater rushes through the valley."
+    },
+    {
+      "text": "A reservoir lies behind the dam."
+    },
+    {
+      "text": "Floodwater surrounds the houses below."
+    },
+    {
+      "text": "A church stands near the flooded town."
+    },
+    {
+      "text": "People are evacuating along the road."
+    },
+    {
+      "text": "Emergency vehicles are helping during the evacuation."
+    },
+    {
+      "text": "Tall pine trees grow on the mountain slopes."
+    }
+  ],
+  "hotspots": [
+    {
+      "id": "broken-dam",
+      "label": "broken dam",
+      "x": 25,
+      "y": 6,
+      "w": 72,
+      "h": 29
+    },
+    {
+      "id": "floodwater",
+      "label": "floodwater",
+      "x": 42,
+      "y": 28,
+      "w": 55,
+      "h": 31
+    },
+    {
+      "id": "mountain-lake",
+      "label": "mountain lake",
+      "x": 30,
+      "y": 2,
+      "w": 27,
+      "h": 11
+    },
+    {
+      "id": "flooded-houses",
+      "label": "flooded houses",
+      "x": 61,
+      "y": 47,
+      "w": 29,
+      "h": 18
+    },
+    {
+      "id": "church",
+      "label": "church",
+      "x": 87,
+      "y": 45,
+      "w": 11,
+      "h": 19
+    },
+    {
+      "id": "evacuation-road",
+      "label": "evacuation road",
+      "x": 1,
+      "y": 68,
+      "w": 45,
+      "h": 30
+    },
+    {
+      "id": "rescue-vehicles",
+      "label": "rescue vehicles",
+      "x": 37,
+      "y": 64,
+      "w": 51,
+      "h": 22
+    },
+    {
+      "id": "pine-forest",
+      "label": "pine forest",
+      "x": 11,
+      "y": 8,
+      "w": 24,
+      "h": 46
+    }
+  ],
+  "overlays": [],
+  "challenges": [
+    {
+      "prompt": "Find the broken dam",
+      "target": "broken-dam"
+    },
+    {
+      "prompt": "Find the floodwater",
+      "target": "floodwater"
+    },
+    {
+      "prompt": "Find the mountain lake",
+      "target": "mountain-lake"
+    },
+    {
+      "prompt": "Find the flooded houses",
+      "target": "flooded-houses"
+    },
+    {
+      "prompt": "Find the church",
+      "target": "church"
+    },
+    {
+      "prompt": "Find the evacuation road",
+      "target": "evacuation-road"
+    },
+    {
+      "prompt": "Find the rescue vehicles",
+      "target": "rescue-vehicles"
+    },
+    {
+      "prompt": "Find the pine forest",
+      "target": "pine-forest"
+    }
+  ]
+}

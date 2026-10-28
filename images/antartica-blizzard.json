@@ -1,0 +1,131 @@
+{
+  "title": "Antartica Blizzard",
+  "image": "images/antartica-blizzard.jpg",
+  "lessons": [
+    {
+      "text": "Scientists work inside the Antarctic research station."
+    },
+    {
+      "text": "A helicopter is approaching the station through the blizzard."
+    },
+    {
+      "text": "A scientist walks through deep snow."
+    },
+    {
+      "text": "A snowmobile helps workers travel over the ice."
+    },
+    {
+      "text": "Equipment and supplies are stored in sturdy crates."
+    },
+    {
+      "text": "The windsock shows the direction of the strong wind."
+    },
+    {
+      "text": "A radio tower supports communication with the outside world."
+    },
+    {
+      "text": "Blowing snow makes it difficult to see."
+    }
+  ],
+  "hotspots": [
+    {
+      "id": "research-station",
+      "label": "research station",
+      "x": 0,
+      "y": 24,
+      "w": 31,
+      "h": 57
+    },
+    {
+      "id": "helicopter",
+      "label": "helicopter",
+      "x": 72,
+      "y": 24,
+      "w": 25,
+      "h": 25
+    },
+    {
+      "id": "scientist",
+      "label": "scientist",
+      "x": 51,
+      "y": 52,
+      "w": 7,
+      "h": 18
+    },
+    {
+      "id": "snowmobile",
+      "label": "snowmobile",
+      "x": 66,
+      "y": 61,
+      "w": 16,
+      "h": 19
+    },
+    {
+      "id": "supply-crates",
+      "label": "supply crates",
+      "x": 41,
+      "y": 80,
+      "w": 25,
+      "h": 18
+    },
+    {
+      "id": "windsock",
+      "label": "windsock",
+      "x": 30,
+      "y": 10,
+      "w": 10,
+      "h": 9
+    },
+    {
+      "id": "radio-tower",
+      "label": "radio tower",
+      "x": 11,
+      "y": 0,
+      "w": 8,
+      "h": 29
+    },
+    {
+      "id": "snowstorm",
+      "label": "snowstorm",
+      "x": 57,
+      "y": 6,
+      "w": 29,
+      "h": 39
+    }
+  ],
+  "overlays": [],
+  "challenges": [
+    {
+      "prompt": "Find the research station",
+      "target": "research-station"
+    },
+    {
+      "prompt": "Find the helicopter",
+      "target": "helicopter"
+    },
+    {
+      "prompt": "Find the scientist",
+      "target": "scientist"
+    },
+    {
+      "prompt": "Find the snowmobile",
+      "target": "snowmobile"
+    },
+    {
+      "prompt": "Find the supply crates",
+      "target": "supply-crates"
+    },
+    {
+      "prompt": "Find the windsock",
+      "target": "windsock"
+    },
+    {
+      "prompt": "Find the radio tower",
+      "target": "radio-tower"
+    },
+    {
+      "prompt": "Find the snowstorm",
+      "target": "snowstorm"
+    }
+  ]
+}

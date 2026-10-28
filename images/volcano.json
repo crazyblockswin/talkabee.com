@@ -1,0 +1,131 @@
+{
+  "title": "Volcano",
+  "image": "images/volcano.jpg",
+  "lessons": [
+    {
+      "text": "Molten lava glows inside the volcanic crater."
+    },
+    {
+      "text": "A bright river of lava flows down the slope."
+    },
+    {
+      "text": "A thick cloud of ash rises above the volcano."
+    },
+    {
+      "text": "Steam rises where hot lava meets cold ground."
+    },
+    {
+      "text": "Snow covers the rocks near the volcano."
+    },
+    {
+      "text": "The volcano has steep rocky slopes."
+    },
+    {
+      "text": "Snowy mountains stretch into the distance."
+    },
+    {
+      "text": "Dark volcanic rock covers the lower slope."
+    }
+  ],
+  "hotspots": [
+    {
+      "id": "volcanic-crater",
+      "label": "volcanic crater",
+      "x": 22,
+      "y": 25,
+      "w": 33,
+      "h": 26
+    },
+    {
+      "id": "lava-river",
+      "label": "lava river",
+      "x": 48,
+      "y": 49,
+      "w": 49,
+      "h": 36
+    },
+    {
+      "id": "ash-plume",
+      "label": "ash plume",
+      "x": 0,
+      "y": 0,
+      "w": 43,
+      "h": 34
+    },
+    {
+      "id": "steam",
+      "label": "steam",
+      "x": 52,
+      "y": 46,
+      "w": 21,
+      "h": 17
+    },
+    {
+      "id": "snow",
+      "label": "snow",
+      "x": 1,
+      "y": 73,
+      "w": 40,
+      "h": 24
+    },
+    {
+      "id": "volcanic-cone",
+      "label": "volcanic cone",
+      "x": 19,
+      "y": 26,
+      "w": 50,
+      "h": 50
+    },
+    {
+      "id": "distant-mountains",
+      "label": "distant mountains",
+      "x": 61,
+      "y": 7,
+      "w": 35,
+      "h": 24
+    },
+    {
+      "id": "black-rock",
+      "label": "black rock",
+      "x": 40,
+      "y": 76,
+      "w": 35,
+      "h": 17
+    }
+  ],
+  "overlays": [],
+  "challenges": [
+    {
+      "prompt": "Find the volcanic crater",
+      "target": "volcanic-crater"
+    },
+    {
+      "prompt": "Find the lava river",
+      "target": "lava-river"
+    },
+    {
+      "prompt": "Find the ash plume",
+      "target": "ash-plume"
+    },
+    {
+      "prompt": "Find the steam",
+      "target": "steam"
+    },
+    {
+      "prompt": "Find the snow",
+      "target": "snow"
+    },
+    {
+      "prompt": "Find the volcanic cone",
+      "target": "volcanic-cone"
+    },
+    {
+      "prompt": "Find the distant mountains",
+      "target": "distant-mountains"
+    },
+    {
+      "prompt": "Find the black rock",
+      "target": "black-rock"
+    }
+  ]
+}

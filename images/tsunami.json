@@ -1,0 +1,131 @@
+{
+  "title": "Tsunami",
+  "image": "images/tsunami.jpg",
+  "lessons": [
+    {
+      "text": "A huge wave is approaching the coastal town."
+    },
+    {
+      "text": "The ocean is flooding the coastline."
+    },
+    {
+      "text": "People are running uphill to reach safer ground."
+    },
+    {
+      "text": "Vehicles are trying to leave the danger zone."
+    },
+    {
+      "text": "Buildings stand close to the shore."
+    },
+    {
+      "text": "Palm trees grow along the coast."
+    },
+    {
+      "text": "Boats are floating in the marina."
+    },
+    {
+      "text": "Mountains rise behind the coastal city."
+    }
+  ],
+  "hotspots": [
+    {
+      "id": "tsunami-wave",
+      "label": "tsunami wave",
+      "x": 39,
+      "y": 3,
+      "w": 59,
+      "h": 40
+    },
+    {
+      "id": "ocean",
+      "label": "ocean",
+      "x": 58,
+      "y": 43,
+      "w": 39,
+      "h": 18
+    },
+    {
+      "id": "people-evacuating",
+      "label": "people evacuating",
+      "x": 2,
+      "y": 62,
+      "w": 37,
+      "h": 37
+    },
+    {
+      "id": "traffic",
+      "label": "traffic",
+      "x": 25,
+      "y": 56,
+      "w": 69,
+      "h": 41
+    },
+    {
+      "id": "coastal-buildings",
+      "label": "coastal buildings",
+      "x": 12,
+      "y": 30,
+      "w": 30,
+      "h": 17
+    },
+    {
+      "id": "palm-trees",
+      "label": "palm trees",
+      "x": 41,
+      "y": 40,
+      "w": 28,
+      "h": 16
+    },
+    {
+      "id": "marina",
+      "label": "marina",
+      "x": 74,
+      "y": 47,
+      "w": 24,
+      "h": 19
+    },
+    {
+      "id": "mountains",
+      "label": "mountains",
+      "x": 0,
+      "y": 12,
+      "w": 22,
+      "h": 22
+    }
+  ],
+  "overlays": [],
+  "challenges": [
+    {
+      "prompt": "Find the tsunami wave",
+      "target": "tsunami-wave"
+    },
+    {
+      "prompt": "Find the ocean",
+      "target": "ocean"
+    },
+    {
+      "prompt": "Find the people evacuating",
+      "target": "people-evacuating"
+    },
+    {
+      "prompt": "Find the traffic",
+      "target": "traffic"
+    },
+    {
+      "prompt": "Find the coastal buildings",
+      "target": "coastal-buildings"
+    },
+    {
+      "prompt": "Find the palm trees",
+      "target": "palm-trees"
+    },
+    {
+      "prompt": "Find the marina",
+      "target": "marina"
+    },
+    {
+      "prompt": "Find the mountains",
+      "target": "mountains"
+    }
+  ]
+}
