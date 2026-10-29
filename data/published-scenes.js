@@ -12023,9 +12023,10 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
         "y": 48.125708813711945,
         "w": 4.58,
         "h": 9.48,
-        "sound": "sounds/bell.mp3",
+        "sound": "",
         "translations": {
-          "en": ""
+          "en": "",
+          "es": ""
         },
         "rotation": 0,
         "z": 0
@@ -12057,8 +12058,12 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
         "y": 57.333048125561795,
         "w": 4.99,
         "h": 8.4,
-        "sound": "",
-        "translations": {}
+        "sound": "sounds/bell.mp3",
+        "translations": {
+          "es": ""
+        },
+        "rotation": 0,
+        "z": 0
       },
       {
         "id": "libro",
