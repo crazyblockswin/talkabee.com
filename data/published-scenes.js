@@ -12794,6 +12794,565 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
       }
     ]
   },
+  "industrial-age": {
+    "title": "Industrial Age",
+    "image": "images/industrial-age.jpg",
+    "lessons": [
+      {
+        "text": "Look at the woman ironworker.",
+        "translations": {
+          "es": "Mira trabajadora del acero.",
+          "fr": "Regardez ouvrière de l'acier.",
+          "de": "Schau dir Stahlarbeiterin an.",
+          "it": "Guarda operaia siderurgica.",
+          "pt": "Olhe para trabalhadora do aço.",
+          "no": "Se på kvinnelig stålarbeider."
+        }
+      },
+      {
+        "text": "Look at the steel beam.",
+        "translations": {
+          "es": "Mira viga de acero.",
+          "fr": "Regardez poutre d'acier.",
+          "de": "Schau dir Stahlträger an.",
+          "it": "Guarda trave d'acciaio.",
+          "pt": "Olhe para viga de aço.",
+          "no": "Se på stålbjelke."
+        }
+      },
+      {
+        "text": "Look at the older ironworker.",
+        "translations": {
+          "es": "Mira trabajador mayor.",
+          "fr": "Regardez ouvrier âgé.",
+          "de": "Schau dir älterer Stahlarbeiter an.",
+          "it": "Guarda operaio anziano.",
+          "pt": "Olhe para trabalhador mais velho.",
+          "no": "Se på eldre stålarbeider."
+        }
+      },
+      {
+        "text": "Look at the young ironworker.",
+        "translations": {
+          "es": "Mira trabajador joven.",
+          "fr": "Regardez jeune ouvrier.",
+          "de": "Schau dir junger Stahlarbeiter an.",
+          "it": "Guarda giovane operaio.",
+          "pt": "Olhe para trabalhador jovem.",
+          "no": "Se på ung stålarbeider."
+        }
+      },
+      {
+        "text": "Look at the lunch pail.",
+        "translations": {
+          "es": "Mira fiambrera.",
+          "fr": "Regardez boîte à déjeuner.",
+          "de": "Schau dir Brotdose an.",
+          "it": "Guarda portapranzo.",
+          "pt": "Olhe para marmita.",
+          "no": "Se på matboks."
+        }
+      },
+      {
+        "text": "Look at the hammer.",
+        "translations": {
+          "es": "Mira martillo.",
+          "fr": "Regardez marteau.",
+          "de": "Schau dir Hammer an.",
+          "it": "Guarda martello.",
+          "pt": "Olhe para martelo.",
+          "no": "Se på hammer."
+        }
+      },
+      {
+        "text": "Look at the rivets.",
+        "translations": {
+          "es": "Mira remaches.",
+          "fr": "Regardez rivets.",
+          "de": "Schau dir Nieten an.",
+          "it": "Guarda rivetti.",
+          "pt": "Olhe para rebites.",
+          "no": "Se på nagler."
+        }
+      },
+      {
+        "text": "Look at the crane hook.",
+        "translations": {
+          "es": "Mira gancho de grúa.",
+          "fr": "Regardez crochet de grue.",
+          "de": "Schau dir Kranhaken an.",
+          "it": "Guarda gancio della gru.",
+          "pt": "Olhe para gancho do guindaste.",
+          "no": "Se på krankrok."
+        }
+      },
+      {
+        "text": "Look at the hanging beam.",
+        "translations": {
+          "es": "Mira viga suspendida.",
+          "fr": "Regardez poutre suspendue.",
+          "de": "Schau dir hängender Träger an.",
+          "it": "Guarda trave sospesa.",
+          "pt": "Olhe para viga suspensa.",
+          "no": "Se på hengende bjelke."
+        }
+      },
+      {
+        "text": "Look at the work boots.",
+        "translations": {
+          "es": "Mira botas de trabajo.",
+          "fr": "Regardez bottes de travail.",
+          "de": "Schau dir Arbeitsstiefel an.",
+          "it": "Guarda stivali da lavoro.",
+          "pt": "Olhe para botas de trabalho.",
+          "no": "Se på arbeidsstøvler."
+        }
+      },
+      {
+        "text": "Look at the Empire State Building.",
+        "translations": {
+          "es": "Mira Empire State Building.",
+          "fr": "Regardez Empire State Building.",
+          "de": "Schau dir Empire State Building an.",
+          "it": "Guarda Empire State Building.",
+          "pt": "Olhe para Empire State Building.",
+          "no": "Se på Empire State Building."
+        }
+      },
+      {
+        "text": "Look at the city skyline.",
+        "translations": {
+          "es": "Mira horizonte de la ciudad.",
+          "fr": "Regardez panorama urbain.",
+          "de": "Schau dir Stadtsilhouette an.",
+          "it": "Guarda panorama della città.",
+          "pt": "Olhe para panorama da cidade.",
+          "no": "Se på byens silhuett."
+        }
+      }
+    ],
+    "hotspots": [
+      {
+        "id": "steel-beam",
+        "label": "steel beam",
+        "x": 29,
+        "y": 57,
+        "w": 54,
+        "h": 14,
+        "sound": "sounds/skyscraper.mp3",
+        "translations": {
+          "es": ""
+        },
+        "rotation": 0,
+        "z": 0
+      },
+      {
+        "id": "woman-ironworker",
+        "label": "woman ironworker",
+        "x": 45,
+        "y": 31,
+        "w": 11,
+        "h": 40,
+        "sound": "sounds/skyscraper.mp3",
+        "translations": {
+          "es": ""
+        },
+        "rotation": 0,
+        "z": 0
+      },
+      {
+        "id": "older-worker",
+        "label": "older ironworker",
+        "x": 17,
+        "y": 31,
+        "w": 15,
+        "h": 41,
+        "sound": "sounds/skyscraper.mp3",
+        "translations": {
+          "es": ""
+        },
+        "rotation": 0,
+        "z": 0
+      },
+      {
+        "id": "young-worker",
+        "label": "young ironworker",
+        "x": 31,
+        "y": 30,
+        "w": 13,
+        "h": 41,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "middle-aged-worker",
+        "label": "middle-aged ironworker",
+        "x": 57,
+        "y": 33,
+        "w": 13,
+        "h": 38,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "lunch-pail",
+        "label": "lunch pail",
+        "x": 21,
+        "y": 47,
+        "w": 8,
+        "h": 8,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "sandwich",
+        "label": "sandwich",
+        "x": 38,
+        "y": 40,
+        "w": 5,
+        "h": 7,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "thermos",
+        "label": "thermos",
+        "x": 52,
+        "y": 42,
+        "w": 4,
+        "h": 13,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "apple",
+        "label": "apple",
+        "x": 78,
+        "y": 39,
+        "w": 5,
+        "h": 8,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "work-boots",
+        "label": "work boots",
+        "x": 46,
+        "y": 64,
+        "w": 10,
+        "h": 11,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "flat-cap",
+        "label": "flat cap",
+        "x": 35,
+        "y": 30,
+        "w": 6,
+        "h": 7,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "red-headscarf",
+        "label": "red headscarf",
+        "x": 49,
+        "y": 32,
+        "w": 5,
+        "h": 6,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "hammer",
+        "label": "hammer",
+        "x": 3,
+        "y": 8,
+        "w": 5,
+        "h": 9,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "hammering-worker",
+        "label": "hammering worker",
+        "x": 3,
+        "y": 4,
+        "w": 18,
+        "h": 49,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "rivets",
+        "label": "rivets",
+        "x": 0,
+        "y": 9,
+        "w": 5,
+        "h": 39,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "steel-column",
+        "label": "steel column",
+        "x": 0,
+        "y": 0,
+        "w": 6,
+        "h": 64,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "hanging-beam",
+        "label": "hanging beam",
+        "x": 79,
+        "y": 10,
+        "w": 21,
+        "h": 13,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "crane-hook",
+        "label": "crane hook",
+        "x": 78,
+        "y": 0,
+        "w": 7,
+        "h": 16,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "rope",
+        "label": "rope",
+        "x": 11,
+        "y": 51,
+        "w": 10,
+        "h": 26,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "tool-belt",
+        "label": "tool belt",
+        "x": 84,
+        "y": 66,
+        "w": 7,
+        "h": 13,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "kneeling-worker",
+        "label": "kneeling worker",
+        "x": 77,
+        "y": 61,
+        "w": 18,
+        "h": 28,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "standing-worker",
+        "label": "standing worker",
+        "x": 88,
+        "y": 17,
+        "w": 12,
+        "h": 41,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "empire-state-building",
+        "label": "Empire State Building",
+        "x": 68,
+        "y": 13,
+        "w": 9,
+        "h": 34,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "city-skyline",
+        "label": "city skyline",
+        "x": 22,
+        "y": 18,
+        "w": 45,
+        "h": 26,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "wooden-planks",
+        "label": "wooden planks",
+        "x": 0,
+        "y": 75,
+        "w": 28,
+        "h": 25,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "river",
+        "label": "river",
+        "x": 26,
+        "y": 16,
+        "w": 45,
+        "h": 9,
+        "sound": "",
+        "translations": {}
+      }
+    ],
+    "overlays": [],
+    "challenges": [
+      {
+        "prompt": "Find the woman ironworker.",
+        "target": "woman-ironworker",
+        "translations": {
+          "es": "Encuentra trabajadora del acero.",
+          "fr": "Trouvez ouvrière de l'acier.",
+          "de": "Finde Stahlarbeiterin.",
+          "it": "Trova operaia siderurgica.",
+          "pt": "Encontre trabalhadora do aço.",
+          "no": "Finn kvinnelig stålarbeider."
+        }
+      },
+      {
+        "prompt": "Find the steel beam.",
+        "target": "steel-beam",
+        "translations": {
+          "es": "Encuentra viga de acero.",
+          "fr": "Trouvez poutre d'acier.",
+          "de": "Finde Stahlträger.",
+          "it": "Trova trave d'acciaio.",
+          "pt": "Encontre viga de aço.",
+          "no": "Finn stålbjelke."
+        }
+      },
+      {
+        "prompt": "Find the older ironworker.",
+        "target": "older-worker",
+        "translations": {
+          "es": "Encuentra trabajador mayor.",
+          "fr": "Trouvez ouvrier âgé.",
+          "de": "Finde älterer Stahlarbeiter.",
+          "it": "Trova operaio anziano.",
+          "pt": "Encontre trabalhador mais velho.",
+          "no": "Finn eldre stålarbeider."
+        }
+      },
+      {
+        "prompt": "Find the young ironworker.",
+        "target": "young-worker",
+        "translations": {
+          "es": "Encuentra trabajador joven.",
+          "fr": "Trouvez jeune ouvrier.",
+          "de": "Finde junger Stahlarbeiter.",
+          "it": "Trova giovane operaio.",
+          "pt": "Encontre trabalhador jovem.",
+          "no": "Finn ung stålarbeider."
+        }
+      },
+      {
+        "prompt": "Find the lunch pail.",
+        "target": "lunch-pail",
+        "translations": {
+          "es": "Encuentra fiambrera.",
+          "fr": "Trouvez boîte à déjeuner.",
+          "de": "Finde Brotdose.",
+          "it": "Trova portapranzo.",
+          "pt": "Encontre marmita.",
+          "no": "Finn matboks."
+        }
+      },
+      {
+        "prompt": "Find the hammer.",
+        "target": "hammer",
+        "translations": {
+          "es": "Encuentra martillo.",
+          "fr": "Trouvez marteau.",
+          "de": "Finde Hammer.",
+          "it": "Trova martello.",
+          "pt": "Encontre martelo.",
+          "no": "Finn hammer."
+        }
+      },
+      {
+        "prompt": "Find the rivets.",
+        "target": "rivets",
+        "translations": {
+          "es": "Encuentra remaches.",
+          "fr": "Trouvez rivets.",
+          "de": "Finde Nieten.",
+          "it": "Trova rivetti.",
+          "pt": "Encontre rebites.",
+          "no": "Finn nagler."
+        }
+      },
+      {
+        "prompt": "Find the crane hook.",
+        "target": "crane-hook",
+        "translations": {
+          "es": "Encuentra gancho de grúa.",
+          "fr": "Trouvez crochet de grue.",
+          "de": "Finde Kranhaken.",
+          "it": "Trova gancio della gru.",
+          "pt": "Encontre gancho do guindaste.",
+          "no": "Finn krankrok."
+        }
+      },
+      {
+        "prompt": "Find the hanging beam.",
+        "target": "hanging-beam",
+        "translations": {
+          "es": "Encuentra viga suspendida.",
+          "fr": "Trouvez poutre suspendue.",
+          "de": "Finde hängender Träger.",
+          "it": "Trova trave sospesa.",
+          "pt": "Encontre viga suspensa.",
+          "no": "Finn hengende bjelke."
+        }
+      },
+      {
+        "prompt": "Find the work boots.",
+        "target": "work-boots",
+        "translations": {
+          "es": "Encuentra botas de trabajo.",
+          "fr": "Trouvez bottes de travail.",
+          "de": "Finde Arbeitsstiefel.",
+          "it": "Trova stivali da lavoro.",
+          "pt": "Encontre botas de trabalho.",
+          "no": "Finn arbeidsstøvler."
+        }
+      },
+      {
+        "prompt": "Find the Empire State Building.",
+        "target": "empire-state-building",
+        "translations": {
+          "es": "Encuentra Empire State Building.",
+          "fr": "Trouvez Empire State Building.",
+          "de": "Finde Empire State Building.",
+          "it": "Trova Empire State Building.",
+          "pt": "Encontre Empire State Building.",
+          "no": "Finn Empire State Building."
+        }
+      },
+      {
+        "prompt": "Find the city skyline.",
+        "target": "city-skyline",
+        "translations": {
+          "es": "Encuentra horizonte de la ciudad.",
+          "fr": "Trouvez panorama urbain.",
+          "de": "Finde Stadtsilhouette.",
+          "it": "Trova panorama della città.",
+          "pt": "Encontre panorama da cidade.",
+          "no": "Finn byens silhuett."
+        }
+      }
+    ]
+  },
   "lake-mountain": {
     "title": "Lake Mountain",
     "image": "images/lake-mountain-adventure.jpg",
@@ -13854,6 +14413,565 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
           "it": "Trova la scala",
           "pt": "Encontre a escada",
           "no": "Finn stigen"
+        }
+      }
+    ]
+  },
+  "marlin-fishing": {
+    "title": "Marlin Fishing",
+    "image": "images/marlin-fishing.jpg",
+    "lessons": [
+      {
+        "text": "Look at the blue marlin.",
+        "translations": {
+          "es": "Mira marlín azul.",
+          "fr": "Regardez marlin bleu.",
+          "de": "Schau dir Blauer Marlin an.",
+          "it": "Guarda marlin blu.",
+          "pt": "Olhe para marlim-azul.",
+          "no": "Se på blå marlin."
+        }
+      },
+      {
+        "text": "Look at the marlin bill.",
+        "translations": {
+          "es": "Mira pico del marlín.",
+          "fr": "Regardez rostre du marlin.",
+          "de": "Schau dir Speer des Marlins an.",
+          "it": "Guarda rostro del marlin.",
+          "pt": "Olhe para bico do marlim.",
+          "no": "Se på spydet til marlinen."
+        }
+      },
+      {
+        "text": "Look at the marlin tail.",
+        "translations": {
+          "es": "Mira cola del marlín.",
+          "fr": "Regardez queue du marlin.",
+          "de": "Schau dir Schwanz des Marlins an.",
+          "it": "Guarda coda del marlin.",
+          "pt": "Olhe para cauda do marlim.",
+          "no": "Se på halen til marlinen."
+        }
+      },
+      {
+        "text": "Look at the fishing line.",
+        "translations": {
+          "es": "Mira sedal.",
+          "fr": "Regardez ligne de pêche.",
+          "de": "Schau dir Angelschnur an.",
+          "it": "Guarda lenza.",
+          "pt": "Olhe para linha de pesca.",
+          "no": "Se på fiskesnøre."
+        }
+      },
+      {
+        "text": "Look at the fishing rod.",
+        "translations": {
+          "es": "Mira caña de pescar.",
+          "fr": "Regardez canne à pêche.",
+          "de": "Schau dir Angelrute an.",
+          "it": "Guarda canna da pesca.",
+          "pt": "Olhe para vara de pesca.",
+          "no": "Se på fiskestang."
+        }
+      },
+      {
+        "text": "Look at the gold fishing reel.",
+        "translations": {
+          "es": "Mira carrete dorado.",
+          "fr": "Regardez moulinet doré.",
+          "de": "Schau dir goldene Angelrolle an.",
+          "it": "Guarda mulinello dorato.",
+          "pt": "Olhe para carretilha dourada.",
+          "no": "Se på gyllen fiskesnelle."
+        }
+      },
+      {
+        "text": "Look at the fisherman.",
+        "translations": {
+          "es": "Mira pescador.",
+          "fr": "Regardez pêcheur.",
+          "de": "Schau dir Angler an.",
+          "it": "Guarda pescatore.",
+          "pt": "Olhe para pescador.",
+          "no": "Se på fisker."
+        }
+      },
+      {
+        "text": "Look at the fighting chair.",
+        "translations": {
+          "es": "Mira silla de pesca.",
+          "fr": "Regardez fauteuil de pêche.",
+          "de": "Schau dir Angelstuhl an.",
+          "it": "Guarda sedia da pesca.",
+          "pt": "Olhe para cadeira de pesca.",
+          "no": "Se på fiskestol."
+        }
+      },
+      {
+        "text": "Look at the teak deck.",
+        "translations": {
+          "es": "Mira cubierta de teca.",
+          "fr": "Regardez pont en teck.",
+          "de": "Schau dir Teakdeck an.",
+          "it": "Guarda ponte in teak.",
+          "pt": "Olhe para convés de teca.",
+          "no": "Se på teakdekk."
+        }
+      },
+      {
+        "text": "Look at the ocean waves.",
+        "translations": {
+          "es": "Mira olas del océano.",
+          "fr": "Regardez vagues de l'océan.",
+          "de": "Schau dir Meereswellen an.",
+          "it": "Guarda onde dell'oceano.",
+          "pt": "Olhe para ondas do oceano.",
+          "no": "Se på havbølger."
+        }
+      },
+      {
+        "text": "Look at the ocean spray.",
+        "translations": {
+          "es": "Mira salpicaduras del mar.",
+          "fr": "Regardez embruns.",
+          "de": "Schau dir Meeresgischt an.",
+          "it": "Guarda spruzzi del mare.",
+          "pt": "Olhe para respingos do mar.",
+          "no": "Se på sjøsprøyt."
+        }
+      },
+      {
+        "text": "Look at the bait tank.",
+        "translations": {
+          "es": "Mira tanque de cebo.",
+          "fr": "Regardez vivier à appâts.",
+          "de": "Schau dir Köderbehälter an.",
+          "it": "Guarda vasca per esche.",
+          "pt": "Olhe para tanque de iscas.",
+          "no": "Se på agnbeholder."
+        }
+      }
+    ],
+    "hotspots": [
+      {
+        "id": "marlin",
+        "label": "blue marlin",
+        "x": 62.0000024695146,
+        "y": 8.2522033722772,
+        "w": 27.842100622118913,
+        "h": 49.502550435443176,
+        "sound": "sounds/marlin-fishing.mp3",
+        "translations": {
+          "es": ""
+        },
+        "rotation": 0,
+        "z": 0
+      },
+      {
+        "id": "marlin-bill",
+        "label": "marlin bill",
+        "x": 58,
+        "y": 0,
+        "w": 6.157896245813797,
+        "h": 17.900325517289385,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "marlin-dorsal-fin",
+        "label": "dorsal fin",
+        "x": 73.15789516163666,
+        "y": 16.576263118393452,
+        "w": 13.368421461575588,
+        "h": 12.714882953524256,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "marlin-tail",
+        "label": "marlin tail",
+        "x": 85,
+        "y": 44,
+        "w": 12,
+        "h": 18,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "marlin-eye",
+        "label": "marlin eye",
+        "x": 63.52632017690398,
+        "y": 11.827538336115039,
+        "w": 4,
+        "h": 5,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "marlin-mouth",
+        "label": "marlin mouth",
+        "x": 56.47368054588078,
+        "y": 8.396849580070281,
+        "w": 7,
+        "h": 9,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "fishing-line",
+        "label": "fishing line",
+        "x": 35.52631927342303,
+        "y": 3.3180333734539733,
+        "w": 22.842109114839836,
+        "h": 6.946222744147782,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "fishing-rod",
+        "label": "fishing rod",
+        "x": 27.842104296274773,
+        "y": 0,
+        "w": 5.526316141355737,
+        "h": 41.900322864509704,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "gold-reel",
+        "label": "gold fishing reel",
+        "x": 24,
+        "y": 45,
+        "w": 7.0526311383022735,
+        "h": 11.536392264197332,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "fisherman",
+        "label": "fisherman",
+        "x": 9,
+        "y": 31,
+        "w": 12.631578237264096,
+        "h": 56.35697607309448,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "fishing-cap",
+        "label": "fishing cap",
+        "x": 10,
+        "y": 32,
+        "w": 4.999999397679367,
+        "h": 9,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "sunglasses",
+        "label": "sunglasses",
+        "x": 15.473683196091566,
+        "y": 35.94019902426519,
+        "w": 3.5789479422107084,
+        "h": 3.3509497004322015,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "fishing-shirt",
+        "label": "fishing shirt",
+        "x": 10.89473675968244,
+        "y": 44.6490502995678,
+        "w": 8.052632041783223,
+        "h": 14.396849580070281,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "fishing-shorts",
+        "label": "fishing shorts",
+        "x": 16,
+        "y": 64,
+        "w": 6.684210941600016,
+        "h": 10.045897226858397,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "fishing-boots",
+        "label": "fishing shoes",
+        "x": 12,
+        "y": 88,
+        "w": 23,
+        "h": 10,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "fighting-chair",
+        "label": "fighting chair",
+        "x": 36.57894986963674,
+        "y": 81.97403820023966,
+        "w": 19.631580706778692,
+        "h": 14.224387916185322,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "boat-deck",
+        "label": "teak deck",
+        "x": 64.84210791019856,
+        "y": 91.78164110925664,
+        "w": 19.26315502895867,
+        "h": 8.218358890743358,
+        "sound": "sounds/yacht.mp3",
+        "translations": {
+          "es": ""
+        },
+        "rotation": 0,
+        "z": 0
+      },
+      {
+        "id": "boat-railing",
+        "label": "boat railing",
+        "x": 32.57894782174658,
+        "y": 64.03987085419612,
+        "w": 46.526317526693205,
+        "h": 6.376911500192539,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "ocean-waves",
+        "label": "ocean waves",
+        "x": 33.10526474611914,
+        "y": 39.212332518081084,
+        "w": 22.789471230546475,
+        "h": 13.515533988103025,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "ocean-spray",
+        "label": "ocean spray",
+        "x": 83.57894740012213,
+        "y": 16.64904499400843,
+        "w": 7.894740253142111,
+        "h": 25.952246464030377,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "clouds",
+        "label": "clouds",
+        "x": 8.894734952720542,
+        "y": 14.17848803654724,
+        "w": 15.21052901038178,
+        "h": 13.476588635682837,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "horizon",
+        "label": "horizon",
+        "x": 34.73684376640006,
+        "y": 33.16550978944675,
+        "w": 20.63158124886726,
+        "h": 3.6091794453716792,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "spare-fishing-rod",
+        "label": "spare fishing rod",
+        "x": 1,
+        "y": 21,
+        "w": 5.0526314996946535,
+        "h": 43.814554783455186,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "rod-holder",
+        "label": "rod holder",
+        "x": 0,
+        "y": 54.89429649184743,
+        "w": 6.000000165638174,
+        "h": 15.781641109256642,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "bait-tank",
+        "label": "bait tank",
+        "x": 86,
+        "y": 65,
+        "w": 14,
+        "h": 17,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "boat-canopy",
+        "label": "boat canopy",
+        "x": 0,
+        "y": 0,
+        "w": 20,
+        "h": 9.509504962661065,
+        "sound": "",
+        "translations": {
+          "es": ""
+        },
+        "rotation": 0,
+        "z": 0
+      }
+    ],
+    "overlays": [],
+    "challenges": [
+      {
+        "prompt": "Find the blue marlin.",
+        "target": "marlin",
+        "translations": {
+          "es": "Encuentra marlín azul.",
+          "fr": "Trouvez marlin bleu.",
+          "de": "Finde Blauer Marlin.",
+          "it": "Trova marlin blu.",
+          "pt": "Encontre marlim-azul.",
+          "no": "Finn blå marlin."
+        }
+      },
+      {
+        "prompt": "Find the marlin bill.",
+        "target": "marlin-bill",
+        "translations": {
+          "es": "Encuentra pico del marlín.",
+          "fr": "Trouvez rostre du marlin.",
+          "de": "Finde Speer des Marlins.",
+          "it": "Trova rostro del marlin.",
+          "pt": "Encontre bico do marlim.",
+          "no": "Finn spydet til marlinen."
+        }
+      },
+      {
+        "prompt": "Find the marlin tail.",
+        "target": "marlin-tail",
+        "translations": {
+          "es": "Encuentra cola del marlín.",
+          "fr": "Trouvez queue du marlin.",
+          "de": "Finde Schwanz des Marlins.",
+          "it": "Trova coda del marlin.",
+          "pt": "Encontre cauda do marlim.",
+          "no": "Finn halen til marlinen."
+        }
+      },
+      {
+        "prompt": "Find the fishing line.",
+        "target": "fishing-line",
+        "translations": {
+          "es": "Encuentra sedal.",
+          "fr": "Trouvez ligne de pêche.",
+          "de": "Finde Angelschnur.",
+          "it": "Trova lenza.",
+          "pt": "Encontre linha de pesca.",
+          "no": "Finn fiskesnøre."
+        }
+      },
+      {
+        "prompt": "Find the fishing rod.",
+        "target": "fishing-rod",
+        "translations": {
+          "es": "Encuentra caña de pescar.",
+          "fr": "Trouvez canne à pêche.",
+          "de": "Finde Angelrute.",
+          "it": "Trova canna da pesca.",
+          "pt": "Encontre vara de pesca.",
+          "no": "Finn fiskestang."
+        }
+      },
+      {
+        "prompt": "Find the gold fishing reel.",
+        "target": "gold-reel",
+        "translations": {
+          "es": "Encuentra carrete dorado.",
+          "fr": "Trouvez moulinet doré.",
+          "de": "Finde goldene Angelrolle.",
+          "it": "Trova mulinello dorato.",
+          "pt": "Encontre carretilha dourada.",
+          "no": "Finn gyllen fiskesnelle."
+        }
+      },
+      {
+        "prompt": "Find the fisherman.",
+        "target": "fisherman",
+        "translations": {
+          "es": "Encuentra pescador.",
+          "fr": "Trouvez pêcheur.",
+          "de": "Finde Angler.",
+          "it": "Trova pescatore.",
+          "pt": "Encontre pescador.",
+          "no": "Finn fisker."
+        }
+      },
+      {
+        "prompt": "Find the fighting chair.",
+        "target": "fighting-chair",
+        "translations": {
+          "es": "Encuentra silla de pesca.",
+          "fr": "Trouvez fauteuil de pêche.",
+          "de": "Finde Angelstuhl.",
+          "it": "Trova sedia da pesca.",
+          "pt": "Encontre cadeira de pesca.",
+          "no": "Finn fiskestol."
+        }
+      },
+      {
+        "prompt": "Find the teak deck.",
+        "target": "boat-deck",
+        "translations": {
+          "es": "Encuentra cubierta de teca.",
+          "fr": "Trouvez pont en teck.",
+          "de": "Finde Teakdeck.",
+          "it": "Trova ponte in teak.",
+          "pt": "Encontre convés de teca.",
+          "no": "Finn teakdekk."
+        }
+      },
+      {
+        "prompt": "Find the ocean waves.",
+        "target": "ocean-waves",
+        "translations": {
+          "es": "Encuentra olas del océano.",
+          "fr": "Trouvez vagues de l'océan.",
+          "de": "Finde Meereswellen.",
+          "it": "Trova onde dell'oceano.",
+          "pt": "Encontre ondas do oceano.",
+          "no": "Finn havbølger."
+        }
+      },
+      {
+        "prompt": "Find the ocean spray.",
+        "target": "ocean-spray",
+        "translations": {
+          "es": "Encuentra salpicaduras del mar.",
+          "fr": "Trouvez embruns.",
+          "de": "Finde Meeresgischt.",
+          "it": "Trova spruzzi del mare.",
+          "pt": "Encontre respingos do mar.",
+          "no": "Finn sjøsprøyt."
+        }
+      },
+      {
+        "prompt": "Find the bait tank.",
+        "target": "bait-tank",
+        "translations": {
+          "es": "Encuentra tanque de cebo.",
+          "fr": "Trouvez vivier à appâts.",
+          "de": "Finde Köderbehälter.",
+          "it": "Trova vasca per esche.",
+          "pt": "Encontre tanque de iscas.",
+          "no": "Finn agnbeholder."
         }
       }
     ]
@@ -15234,6 +16352,377 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
           "it": "THE MOUNTAIN",
           "pt": "Encontre a montanha",
           "no": "Finn fjellet"
+        }
+      }
+    ]
+  },
+  "college-rowing": {
+    "title": "College Rowing",
+    "image": "images/Rowing-Regatta-Adventure.jpg",
+    "lessons": [
+      {
+        "text": "The Talk A Bee coxswain sits at the end of the racing shell and directs the crew.",
+        "translations": {
+          "es": "La abeja timonel de Talk A Bee se sienta al final del bote y dirige al equipo.",
+          "fr": "L'abeille barreur de Talk A Bee est assise à l'extrémité de la coque et dirige l'équipe.",
+          "de": "Die Talk A Bee Steuermann-Biene sitzt am Ende des Rennboots und führt die Mannschaft.",
+          "it": "L'ape timoniere di Talk A Bee siede all'estremità della barca e dirige l'equipaggio.",
+          "pt": "A abelha timoneira de Talk A Bee senta na extremidade do barco e dirige a equipe.",
+          "no": "Talk A Bee-styrmannsbien sitter i enden av racerbåten og leder laget."
+        }
+      },
+      {
+        "text": "The coxswain steers, calls the rhythm, and encourages the rowers.",
+        "translations": {
+          "es": "El timonel guía el bote, marca el ritmo y anima a los remeros.",
+          "fr": "Le barreur dirige le bateau, donne le rythme et encourage les rameurs.",
+          "de": "Der Steuermann lenkt, gibt den Rhythmus vor und feuert die Ruderer an.",
+          "it": "Il timoniere guida, dà il ritmo e incoraggia i vogatori.",
+          "pt": "A timoneira conduz, marca o ritmo e incentiva os remadores.",
+          "no": "Styrmannen styrer, roper rytmen og oppmuntrer roerne."
+        }
+      },
+      {
+        "text": "Eight rowers sit in the racing shell and work as one team.",
+        "translations": {
+          "es": "Ocho remeros se sientan en el bote de competición y trabajan como un solo equipo.",
+          "fr": "Huit rameurs sont assis dans la coque de course et travaillent comme une seule équipe.",
+          "de": "Acht Ruderer sitzen im Rennboot und arbeiten als ein Team.",
+          "it": "Otto vogatori siedono nella barca da gara e lavorano come una sola squadra.",
+          "pt": "Oito remadores sentam no barco de competição e trabalham como uma só equipe.",
+          "no": "Åtte roere sitter i racerbåten og arbeider som ett lag."
+        }
+      },
+      {
+        "text": "Each rower follows the same rhythm so the boat moves quickly and smoothly.",
+        "translations": {
+          "es": "Cada remero sigue el mismo ritmo para que el bote avance rápido y suavemente.",
+          "fr": "Chaque rameur suit le même rythme pour que le bateau avance vite et régulièrement.",
+          "de": "Jeder Ruderer folgt demselben Rhythmus, damit das Boot schnell und ruhig fährt.",
+          "it": "Ogni vogatore segue lo stesso ritmo per far muovere la barca velocemente e senza scosse.",
+          "pt": "Cada remador segue o mesmo ritmo para o barco avançar rápido e suavemente.",
+          "no": "Hver roer følger samme rytme slik at båten går raskt og jevnt."
+        }
+      },
+      {
+        "text": "The rowers place their oars in the water together, pull, and then return for the next stroke.",
+        "translations": {
+          "es": "Los remeros colocan los remos en el agua juntos, tiran y vuelven para la siguiente palada.",
+          "fr": "Les rameurs mettent leurs rames dans l'eau ensemble, tirent puis reviennent pour le coup suivant.",
+          "de": "Die Ruderer setzen ihre Ruder gleichzeitig ins Wasser, ziehen und gehen dann zum nächsten Schlag zurück.",
+          "it": "I vogatori mettono i remi nell'acqua insieme, tirano e poi tornano per la vogata successiva.",
+          "pt": "Os remadores colocam os remos na água juntos, puxam e retornam para a próxima remada.",
+          "no": "Roerne setter årene i vannet samtidig, trekker og går tilbake til neste åretak."
+        }
+      },
+      {
+        "text": "Good timing makes the racing shell glide across the lake.",
+        "translations": {
+          "es": "Un buen ritmo hace que el bote se deslice por el lago.",
+          "fr": "Un bon rythme fait glisser la coque sur le lac.",
+          "de": "Gutes Timing lässt das Rennboot über den See gleiten.",
+          "it": "Un buon ritmo fa scivolare la barca sul lago.",
+          "pt": "Um bom ritmo faz o barco deslizar pelo lago.",
+          "no": "God timing får racerbåten til å gli over innsjøen."
+        }
+      },
+      {
+        "text": "A racing shell is long, narrow, and built to move quickly through the water.",
+        "translations": {
+          "es": "Un bote de competición es largo, estrecho y está diseñado para moverse rápidamente por el agua.",
+          "fr": "Une coque de course est longue, étroite et conçue pour avancer rapidement sur l'eau.",
+          "de": "Ein Rennboot ist lang, schmal und für hohe Geschwindigkeit auf dem Wasser gebaut.",
+          "it": "Una barca da gara è lunga, stretta e costruita per muoversi rapidamente sull'acqua.",
+          "pt": "Um barco de competição é longo, estreito e feito para se mover rapidamente na água.",
+          "no": "En racerbåt er lang, smal og bygget for å bevege seg raskt gjennom vannet."
+        }
+      },
+      {
+        "text": "The rowers sit in a line while their oars extend from both sides.",
+        "translations": {
+          "es": "Los remeros se sientan en fila y los remos se extienden a ambos lados.",
+          "fr": "Les rameurs sont assis en ligne et leurs rames s'étendent des deux côtés.",
+          "de": "Die Ruderer sitzen hintereinander und ihre Ruder ragen zu beiden Seiten hinaus.",
+          "it": "I vogatori siedono in fila e i remi si estendono da entrambi i lati.",
+          "pt": "Os remadores sentam em linha e seus remos se estendem pelos dois lados.",
+          "no": "Roerne sitter på rekke mens årene stikker ut på begge sider."
+        }
+      },
+      {
+        "text": "Several crews race side by side along a marked course across the lake.",
+        "translations": {
+          "es": "Varios equipos compiten lado a lado en un recorrido marcado por el lago.",
+          "fr": "Plusieurs équipes courent côte à côte sur un parcours balisé à travers le lac.",
+          "de": "Mehrere Mannschaften fahren nebeneinander auf einer markierten Strecke über den See.",
+          "it": "Diversi equipaggi gareggiano fianco a fianco lungo un percorso segnato sul lago.",
+          "pt": "Várias equipes competem lado a lado em um percurso marcado pelo lago.",
+          "no": "Flere lag konkurrerer side om side langs en merket bane over innsjøen."
+        }
+      },
+      {
+        "text": "Red buoys help separate the racing lanes.",
+        "translations": {
+          "es": "Las boyas rojas ayudan a separar los carriles.",
+          "fr": "Des bouées rouges séparent les couloirs.",
+          "de": "Rote Bojen trennen die Rennbahnen.",
+          "it": "Le boe rosse aiutano a separare le corsie.",
+          "pt": "Boias vermelhas ajudam a separar as raias.",
+          "no": "Røde bøyer hjelper til med å skille banene."
+        }
+      },
+      {
+        "text": "A rowing competition with many races is called a regatta.",
+        "translations": {
+          "es": "Una competición de remo con muchas carreras se llama regata.",
+          "fr": "Une compétition d'aviron avec plusieurs courses s'appelle une régate.",
+          "de": "Ein Ruderwettbewerb mit vielen Rennen heißt Regatta.",
+          "it": "Una competizione di canottaggio con molte gare si chiama regata.",
+          "pt": "Uma competição de remo com várias corridas é chamada de regata.",
+          "no": "En rokonkurranse med mange løp kalles en regatta."
+        }
+      },
+      {
+        "text": "Spectators gather at the boathouse and docks to cheer for the crews.",
+        "translations": {
+          "es": "Los espectadores se reúnen en el cobertizo y los muelles para animar a los equipos.",
+          "fr": "Les spectateurs se rassemblent près du hangar et des quais pour encourager les équipes.",
+          "de": "Zuschauer versammeln sich am Bootshaus und an den Stegen, um die Teams anzufeuern.",
+          "it": "Gli spettatori si riuniscono vicino alla rimessa e ai moli per fare il tifo.",
+          "pt": "Os espectadores se reúnem na casa de barcos e nos cais para torcer pelas equipes.",
+          "no": "Tilskuere samles ved båthuset og bryggene for å heie på lagene."
+        }
+      }
+    ],
+    "hotspots": [
+      {
+        "id": "megaphone",
+        "label": "megaphone",
+        "x": 70.7,
+        "y": 57.05,
+        "w": 4.2,
+        "h": 10.33,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "crew",
+        "label": "crew",
+        "x": 35.4,
+        "y": 47.27,
+        "w": 14.33,
+        "h": 15.56,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "shell",
+        "label": "shell",
+        "x": 46.48,
+        "y": 70.93,
+        "w": 17.06,
+        "h": 6.24,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "redcrew",
+        "label": "redcrew",
+        "x": 77.75,
+        "y": 47.91,
+        "w": 21.87,
+        "h": 8.85,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "buoys",
+        "label": "buoys",
+        "x": 0,
+        "y": 42,
+        "w": 35,
+        "h": 16,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "banner",
+        "label": "banner",
+        "x": 81.19,
+        "y": 30.31,
+        "w": 18.33,
+        "h": 6.56,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "boathouse",
+        "label": "boathouse",
+        "x": 78.16,
+        "y": 14.62,
+        "w": 21.37,
+        "h": 13.59,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "spectators",
+        "label": "spectators",
+        "x": 58.73,
+        "y": 41.5,
+        "w": 27.79,
+        "h": 3.8,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "dock",
+        "label": "dock",
+        "x": 86.94,
+        "y": 43.03,
+        "w": 13.17,
+        "h": 4.01,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "sailboat",
+        "label": "sailboat",
+        "x": 19.25,
+        "y": 38.15,
+        "w": 5.21,
+        "h": 9.59,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "boat",
+        "label": "boat",
+        "x": 4,
+        "y": 37,
+        "w": 10,
+        "h": 15,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "mountains",
+        "label": "mountains",
+        "x": 53,
+        "y": 9.91,
+        "w": 13.43,
+        "h": 9.82,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "forest",
+        "label": "forest",
+        "x": 19.91,
+        "y": 32.25,
+        "w": 16.95,
+        "h": 7.41,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "flags",
+        "label": "flags",
+        "x": 62.68,
+        "y": 28.62,
+        "w": 12.11,
+        "h": 11.63,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "splash",
+        "label": "splash",
+        "x": 19.29,
+        "y": 61.94,
+        "w": 18.69,
+        "h": 14.06,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "rower",
+        "label": "rower",
+        "x": 56,
+        "y": 42,
+        "w": 10,
+        "h": 26,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "finish",
+        "label": "finish",
+        "x": 15.68,
+        "y": 49.52,
+        "w": 11.14,
+        "h": 5.84,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "rowing-coxwayne",
+        "label": "rowing coxwayne",
+        "x": 73.46,
+        "y": 55.78,
+        "w": 11.73,
+        "h": 20.04,
+        "sound": "sounds/rowing-announcer.mp3",
+        "translations": {}
+      }
+    ],
+    "overlays": [],
+    "challenges": [
+      {
+        "prompt": "Find the Buoys",
+        "target": "shell",
+        "translations": {
+          "es": "Encuentra las boyas",
+          "fr": "Trouvez les bouées",
+          "de": "Finde die Bojen",
+          "it": "Trova le boe",
+          "pt": "Encontre as bóias",
+          "no": "Finn bøyene"
+        }
+      },
+      {
+        "prompt": "Find the Red Crew",
+        "target": "redcrew",
+        "translations": {
+          "es": "Encuentra a la tripulación roja",
+          "fr": "Trouvez l'équipage rouge",
+          "de": "Finde die rote Crew",
+          "it": "Trova la Red Crew",
+          "pt": "Encontre a Tripulação Vermelha",
+          "no": "Finn det røde mannskapet"
+        }
+      },
+      {
+        "prompt": "Find the flag",
+        "target": "banner",
+        "translations": {
+          "es": "Encuentra la bandera",
+          "fr": "Trouver le drapeau",
+          "de": "Finde die Flagge",
+          "it": "Trova la bandiera",
+          "pt": "Encontrar a bandeira",
+          "no": "Finn flagget"
+        }
+      },
+      {
+        "prompt": "Find the Sailboat",
+        "target": "sailboat",
+        "translations": {
+          "es": "El velero",
+          "fr": "Trouvez le voilier",
+          "de": "Finde das Segelboot",
+          "it": "Trova la barca a vela",
+          "pt": "Encontre o veleiro",
+          "no": "Finn seilbåten"
         }
       }
     ]
@@ -17008,377 +18497,6 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
           "it": "Trova la porta scorrevole in vetro per yacht",
           "pt": "Encontre a porta de vidro deslizante dos iates",
           "no": "Finn yachtens skyvedør i glass"
-        }
-      }
-    ]
-  },
-  "college-rowing": {
-    "title": "College Rowing",
-    "image": "images/Rowing-Regatta-Adventure.jpg",
-    "lessons": [
-      {
-        "text": "The Talk A Bee coxswain sits at the end of the racing shell and directs the crew.",
-        "translations": {
-          "es": "La abeja timonel de Talk A Bee se sienta al final del bote y dirige al equipo.",
-          "fr": "L'abeille barreur de Talk A Bee est assise à l'extrémité de la coque et dirige l'équipe.",
-          "de": "Die Talk A Bee Steuermann-Biene sitzt am Ende des Rennboots und führt die Mannschaft.",
-          "it": "L'ape timoniere di Talk A Bee siede all'estremità della barca e dirige l'equipaggio.",
-          "pt": "A abelha timoneira de Talk A Bee senta na extremidade do barco e dirige a equipe.",
-          "no": "Talk A Bee-styrmannsbien sitter i enden av racerbåten og leder laget."
-        }
-      },
-      {
-        "text": "The coxswain steers, calls the rhythm, and encourages the rowers.",
-        "translations": {
-          "es": "El timonel guía el bote, marca el ritmo y anima a los remeros.",
-          "fr": "Le barreur dirige le bateau, donne le rythme et encourage les rameurs.",
-          "de": "Der Steuermann lenkt, gibt den Rhythmus vor und feuert die Ruderer an.",
-          "it": "Il timoniere guida, dà il ritmo e incoraggia i vogatori.",
-          "pt": "A timoneira conduz, marca o ritmo e incentiva os remadores.",
-          "no": "Styrmannen styrer, roper rytmen og oppmuntrer roerne."
-        }
-      },
-      {
-        "text": "Eight rowers sit in the racing shell and work as one team.",
-        "translations": {
-          "es": "Ocho remeros se sientan en el bote de competición y trabajan como un solo equipo.",
-          "fr": "Huit rameurs sont assis dans la coque de course et travaillent comme une seule équipe.",
-          "de": "Acht Ruderer sitzen im Rennboot und arbeiten als ein Team.",
-          "it": "Otto vogatori siedono nella barca da gara e lavorano come una sola squadra.",
-          "pt": "Oito remadores sentam no barco de competição e trabalham como uma só equipe.",
-          "no": "Åtte roere sitter i racerbåten og arbeider som ett lag."
-        }
-      },
-      {
-        "text": "Each rower follows the same rhythm so the boat moves quickly and smoothly.",
-        "translations": {
-          "es": "Cada remero sigue el mismo ritmo para que el bote avance rápido y suavemente.",
-          "fr": "Chaque rameur suit le même rythme pour que le bateau avance vite et régulièrement.",
-          "de": "Jeder Ruderer folgt demselben Rhythmus, damit das Boot schnell und ruhig fährt.",
-          "it": "Ogni vogatore segue lo stesso ritmo per far muovere la barca velocemente e senza scosse.",
-          "pt": "Cada remador segue o mesmo ritmo para o barco avançar rápido e suavemente.",
-          "no": "Hver roer følger samme rytme slik at båten går raskt og jevnt."
-        }
-      },
-      {
-        "text": "The rowers place their oars in the water together, pull, and then return for the next stroke.",
-        "translations": {
-          "es": "Los remeros colocan los remos en el agua juntos, tiran y vuelven para la siguiente palada.",
-          "fr": "Les rameurs mettent leurs rames dans l'eau ensemble, tirent puis reviennent pour le coup suivant.",
-          "de": "Die Ruderer setzen ihre Ruder gleichzeitig ins Wasser, ziehen und gehen dann zum nächsten Schlag zurück.",
-          "it": "I vogatori mettono i remi nell'acqua insieme, tirano e poi tornano per la vogata successiva.",
-          "pt": "Os remadores colocam os remos na água juntos, puxam e retornam para a próxima remada.",
-          "no": "Roerne setter årene i vannet samtidig, trekker og går tilbake til neste åretak."
-        }
-      },
-      {
-        "text": "Good timing makes the racing shell glide across the lake.",
-        "translations": {
-          "es": "Un buen ritmo hace que el bote se deslice por el lago.",
-          "fr": "Un bon rythme fait glisser la coque sur le lac.",
-          "de": "Gutes Timing lässt das Rennboot über den See gleiten.",
-          "it": "Un buon ritmo fa scivolare la barca sul lago.",
-          "pt": "Um bom ritmo faz o barco deslizar pelo lago.",
-          "no": "God timing får racerbåten til å gli over innsjøen."
-        }
-      },
-      {
-        "text": "A racing shell is long, narrow, and built to move quickly through the water.",
-        "translations": {
-          "es": "Un bote de competición es largo, estrecho y está diseñado para moverse rápidamente por el agua.",
-          "fr": "Une coque de course est longue, étroite et conçue pour avancer rapidement sur l'eau.",
-          "de": "Ein Rennboot ist lang, schmal und für hohe Geschwindigkeit auf dem Wasser gebaut.",
-          "it": "Una barca da gara è lunga, stretta e costruita per muoversi rapidamente sull'acqua.",
-          "pt": "Um barco de competição é longo, estreito e feito para se mover rapidamente na água.",
-          "no": "En racerbåt er lang, smal og bygget for å bevege seg raskt gjennom vannet."
-        }
-      },
-      {
-        "text": "The rowers sit in a line while their oars extend from both sides.",
-        "translations": {
-          "es": "Los remeros se sientan en fila y los remos se extienden a ambos lados.",
-          "fr": "Les rameurs sont assis en ligne et leurs rames s'étendent des deux côtés.",
-          "de": "Die Ruderer sitzen hintereinander und ihre Ruder ragen zu beiden Seiten hinaus.",
-          "it": "I vogatori siedono in fila e i remi si estendono da entrambi i lati.",
-          "pt": "Os remadores sentam em linha e seus remos se estendem pelos dois lados.",
-          "no": "Roerne sitter på rekke mens årene stikker ut på begge sider."
-        }
-      },
-      {
-        "text": "Several crews race side by side along a marked course across the lake.",
-        "translations": {
-          "es": "Varios equipos compiten lado a lado en un recorrido marcado por el lago.",
-          "fr": "Plusieurs équipes courent côte à côte sur un parcours balisé à travers le lac.",
-          "de": "Mehrere Mannschaften fahren nebeneinander auf einer markierten Strecke über den See.",
-          "it": "Diversi equipaggi gareggiano fianco a fianco lungo un percorso segnato sul lago.",
-          "pt": "Várias equipes competem lado a lado em um percurso marcado pelo lago.",
-          "no": "Flere lag konkurrerer side om side langs en merket bane over innsjøen."
-        }
-      },
-      {
-        "text": "Red buoys help separate the racing lanes.",
-        "translations": {
-          "es": "Las boyas rojas ayudan a separar los carriles.",
-          "fr": "Des bouées rouges séparent les couloirs.",
-          "de": "Rote Bojen trennen die Rennbahnen.",
-          "it": "Le boe rosse aiutano a separare le corsie.",
-          "pt": "Boias vermelhas ajudam a separar as raias.",
-          "no": "Røde bøyer hjelper til med å skille banene."
-        }
-      },
-      {
-        "text": "A rowing competition with many races is called a regatta.",
-        "translations": {
-          "es": "Una competición de remo con muchas carreras se llama regata.",
-          "fr": "Une compétition d'aviron avec plusieurs courses s'appelle une régate.",
-          "de": "Ein Ruderwettbewerb mit vielen Rennen heißt Regatta.",
-          "it": "Una competizione di canottaggio con molte gare si chiama regata.",
-          "pt": "Uma competição de remo com várias corridas é chamada de regata.",
-          "no": "En rokonkurranse med mange løp kalles en regatta."
-        }
-      },
-      {
-        "text": "Spectators gather at the boathouse and docks to cheer for the crews.",
-        "translations": {
-          "es": "Los espectadores se reúnen en el cobertizo y los muelles para animar a los equipos.",
-          "fr": "Les spectateurs se rassemblent près du hangar et des quais pour encourager les équipes.",
-          "de": "Zuschauer versammeln sich am Bootshaus und an den Stegen, um die Teams anzufeuern.",
-          "it": "Gli spettatori si riuniscono vicino alla rimessa e ai moli per fare il tifo.",
-          "pt": "Os espectadores se reúnem na casa de barcos e nos cais para torcer pelas equipes.",
-          "no": "Tilskuere samles ved båthuset og bryggene for å heie på lagene."
-        }
-      }
-    ],
-    "hotspots": [
-      {
-        "id": "megaphone",
-        "label": "megaphone",
-        "x": 70.7,
-        "y": 57.05,
-        "w": 4.2,
-        "h": 10.33,
-        "sound": "",
-        "translations": {}
-      },
-      {
-        "id": "crew",
-        "label": "crew",
-        "x": 35.4,
-        "y": 47.27,
-        "w": 14.33,
-        "h": 15.56,
-        "sound": "",
-        "translations": {}
-      },
-      {
-        "id": "shell",
-        "label": "shell",
-        "x": 46.48,
-        "y": 70.93,
-        "w": 17.06,
-        "h": 6.24,
-        "sound": "",
-        "translations": {}
-      },
-      {
-        "id": "redcrew",
-        "label": "redcrew",
-        "x": 77.75,
-        "y": 47.91,
-        "w": 21.87,
-        "h": 8.85,
-        "sound": "",
-        "translations": {}
-      },
-      {
-        "id": "buoys",
-        "label": "buoys",
-        "x": 0,
-        "y": 42,
-        "w": 35,
-        "h": 16,
-        "sound": "",
-        "translations": {}
-      },
-      {
-        "id": "banner",
-        "label": "banner",
-        "x": 81.19,
-        "y": 30.31,
-        "w": 18.33,
-        "h": 6.56,
-        "sound": "",
-        "translations": {}
-      },
-      {
-        "id": "boathouse",
-        "label": "boathouse",
-        "x": 78.16,
-        "y": 14.62,
-        "w": 21.37,
-        "h": 13.59,
-        "sound": "",
-        "translations": {}
-      },
-      {
-        "id": "spectators",
-        "label": "spectators",
-        "x": 58.73,
-        "y": 41.5,
-        "w": 27.79,
-        "h": 3.8,
-        "sound": "",
-        "translations": {}
-      },
-      {
-        "id": "dock",
-        "label": "dock",
-        "x": 86.94,
-        "y": 43.03,
-        "w": 13.17,
-        "h": 4.01,
-        "sound": "",
-        "translations": {}
-      },
-      {
-        "id": "sailboat",
-        "label": "sailboat",
-        "x": 19.25,
-        "y": 38.15,
-        "w": 5.21,
-        "h": 9.59,
-        "sound": "",
-        "translations": {}
-      },
-      {
-        "id": "boat",
-        "label": "boat",
-        "x": 4,
-        "y": 37,
-        "w": 10,
-        "h": 15,
-        "sound": "",
-        "translations": {}
-      },
-      {
-        "id": "mountains",
-        "label": "mountains",
-        "x": 53,
-        "y": 9.91,
-        "w": 13.43,
-        "h": 9.82,
-        "sound": "",
-        "translations": {}
-      },
-      {
-        "id": "forest",
-        "label": "forest",
-        "x": 19.91,
-        "y": 32.25,
-        "w": 16.95,
-        "h": 7.41,
-        "sound": "",
-        "translations": {}
-      },
-      {
-        "id": "flags",
-        "label": "flags",
-        "x": 62.68,
-        "y": 28.62,
-        "w": 12.11,
-        "h": 11.63,
-        "sound": "",
-        "translations": {}
-      },
-      {
-        "id": "splash",
-        "label": "splash",
-        "x": 19.29,
-        "y": 61.94,
-        "w": 18.69,
-        "h": 14.06,
-        "sound": "",
-        "translations": {}
-      },
-      {
-        "id": "rower",
-        "label": "rower",
-        "x": 56,
-        "y": 42,
-        "w": 10,
-        "h": 26,
-        "sound": "",
-        "translations": {}
-      },
-      {
-        "id": "finish",
-        "label": "finish",
-        "x": 15.68,
-        "y": 49.52,
-        "w": 11.14,
-        "h": 5.84,
-        "sound": "",
-        "translations": {}
-      },
-      {
-        "id": "rowing-coxwayne",
-        "label": "rowing coxwayne",
-        "x": 73.46,
-        "y": 55.78,
-        "w": 11.73,
-        "h": 20.04,
-        "sound": "sounds/rowing-announcer.mp3",
-        "translations": {}
-      }
-    ],
-    "overlays": [],
-    "challenges": [
-      {
-        "prompt": "Find the Buoys",
-        "target": "shell",
-        "translations": {
-          "es": "Encuentra las boyas",
-          "fr": "Trouvez les bouées",
-          "de": "Finde die Bojen",
-          "it": "Trova le boe",
-          "pt": "Encontre as bóias",
-          "no": "Finn bøyene"
-        }
-      },
-      {
-        "prompt": "Find the Red Crew",
-        "target": "redcrew",
-        "translations": {
-          "es": "Encuentra a la tripulación roja",
-          "fr": "Trouvez l'équipage rouge",
-          "de": "Finde die rote Crew",
-          "it": "Trova la Red Crew",
-          "pt": "Encontre a Tripulação Vermelha",
-          "no": "Finn det røde mannskapet"
-        }
-      },
-      {
-        "prompt": "Find the flag",
-        "target": "banner",
-        "translations": {
-          "es": "Encuentra la bandera",
-          "fr": "Trouver le drapeau",
-          "de": "Finde die Flagge",
-          "it": "Trova la bandiera",
-          "pt": "Encontrar a bandeira",
-          "no": "Finn flagget"
-        }
-      },
-      {
-        "prompt": "Find the Sailboat",
-        "target": "sailboat",
-        "translations": {
-          "es": "El velero",
-          "fr": "Trouvez le voilier",
-          "de": "Finde das Segelboot",
-          "it": "Trova la barca a vela",
-          "pt": "Encontre o veleiro",
-          "no": "Finn seilbåten"
         }
       }
     ]
@@ -25537,6 +26655,379 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
       }
     ]
   },
+  "nasa-spacewalk": {
+    "title": "NASA Spacewalk",
+    "image": "images/Spacewalk-Adventure.jpg",
+    "lessons": [
+      {
+        "text": "The crew is outside a space station performing a spacewalk high above Earth.",
+        "translations": {
+          "es": "La tripulación está fuera de una estación espacial realizando una caminata espacial muy por encima de la Tierra.",
+          "fr": "L'équipage se trouve à l'extérieur d'une station spatiale pour effectuer une sortie au-dessus de la Terre.",
+          "de": "Die Besatzung befindet sich außerhalb einer Raumstation auf einem Weltraumspaziergang hoch über der Erde.",
+          "it": "L'equipaggio è all'esterno di una stazione spaziale per una passeggiata spaziale sopra la Terra.",
+          "pt": "A tripulação está fora de uma estação espacial realizando uma caminhada espacial acima da Terra.",
+          "no": "Mannskapet er utenfor en romstasjon på romvandring høyt over jorden."
+        }
+      },
+      {
+        "text": "Astronauts train carefully before working outside a spacecraft in the vacuum of space.",
+        "translations": {
+          "es": "Los astronautas entrenan cuidadosamente antes de trabajar fuera de una nave espacial en el vacío del espacio.",
+          "fr": "Les astronautes s'entraînent soigneusement avant de travailler à l'extérieur d'un vaisseau dans le vide spatial.",
+          "de": "Astronauten trainieren sorgfältig, bevor sie außerhalb eines Raumfahrzeugs im Vakuum des Weltraums arbeiten.",
+          "it": "Gli astronauti si addestrano con cura prima di lavorare fuori da un veicolo spaziale nel vuoto.",
+          "pt": "Os astronautas treinam cuidadosamente antes de trabalhar fora de uma nave no vácuo do espaço.",
+          "no": "Astronauter trener grundig før de arbeider utenfor et romfartøy i vakuumet i verdensrommet."
+        }
+      },
+      {
+        "text": "A spacesuit provides oxygen, pressure, temperature control, communication equipment, and protection.",
+        "translations": {
+          "es": "Un traje espacial proporciona oxígeno, presión, control de temperatura, comunicaciones y protección.",
+          "fr": "Une combinaison spatiale fournit de l'oxygène, de la pression, un contrôle thermique, des communications et une protection.",
+          "de": "Ein Raumanzug liefert Sauerstoff, Druck, Temperaturregelung, Kommunikation und Schutz.",
+          "it": "Una tuta spaziale fornisce ossigeno, pressione, controllo della temperatura, comunicazioni e protezione.",
+          "pt": "Um traje espacial fornece oxigênio, pressão, controle de temperatura, comunicação e proteção.",
+          "no": "En romdrakt gir oksygen, trykk, temperaturkontroll, kommunikasjon og beskyttelse."
+        }
+      },
+      {
+        "text": "The helmet and gloves are part of the system that keeps an astronaut safe while working outside.",
+        "translations": {
+          "es": "El casco y los guantes forman parte del sistema que mantiene seguro al astronauta mientras trabaja afuera.",
+          "fr": "Le casque et les gants font partie du système qui protège l'astronaute pendant son travail à l'extérieur.",
+          "de": "Helm und Handschuhe gehören zum System, das Astronauten bei der Arbeit außerhalb schützt.",
+          "it": "Il casco e i guanti fanno parte del sistema che mantiene al sicuro un astronauta mentre lavora all'esterno.",
+          "pt": "O capacete e as luvas fazem parte do sistema que mantém o astronauta seguro durante o trabalho externo.",
+          "no": "Hjelmen og hanskene er deler av systemet som holder astronauten trygg under arbeid utenfor."
+        }
+      },
+      {
+        "text": "A space station is a spacecraft designed so people can live and work in orbit for extended periods.",
+        "translations": {
+          "es": "Una estación espacial es una nave diseñada para que las personas vivan y trabajen en órbita durante largos períodos.",
+          "fr": "Une station spatiale est un vaisseau conçu pour permettre à des personnes de vivre et travailler en orbite pendant de longues périodes.",
+          "de": "Eine Raumstation ist ein Raumfahrzeug, in dem Menschen längere Zeit im Orbit leben und arbeiten können.",
+          "it": "Una stazione spaziale è un veicolo progettato affinché le persone possano vivere e lavorare in orbita per lunghi periodi.",
+          "pt": "Uma estação espacial é uma nave projetada para que pessoas possam viver e trabalhar em órbita por longos períodos.",
+          "no": "En romstasjon er et romfartøy laget slik at mennesker kan bo og arbeide i bane over lengre tid."
+        }
+      },
+      {
+        "text": "Outside the station are modules, structural trusses, handrails, equipment, and large solar arrays.",
+        "translations": {
+          "es": "En el exterior hay módulos, estructuras, pasamanos, equipos y grandes paneles solares.",
+          "fr": "À l'extérieur se trouvent des modules, des structures, des mains courantes, des équipements et de grands panneaux solaires.",
+          "de": "Außen befinden sich Module, Gerüste, Handläufe, Geräte und große Solaranlagen.",
+          "it": "All'esterno ci sono moduli, strutture, corrimano, attrezzature e grandi pannelli solari.",
+          "pt": "Do lado de fora há módulos, estruturas, corrimãos, equipamentos e grandes painéis solares.",
+          "no": "Utenpå finnes moduler, rammer, håndtak, utstyr og store solpaneler."
+        }
+      },
+      {
+        "text": "During a spacewalk, astronauts can use safety tethers to stay connected to the spacecraft.",
+        "translations": {
+          "es": "Durante una caminata espacial, los astronautas pueden usar cables de seguridad para permanecer conectados a la nave.",
+          "fr": "Pendant une sortie spatiale, les astronautes peuvent utiliser des câbles de sécurité pour rester reliés au vaisseau.",
+          "de": "Bei einem Weltraumspaziergang können Astronauten Sicherheitsleinen benutzen, um mit dem Raumfahrzeug verbunden zu bleiben.",
+          "it": "Durante una passeggiata spaziale, gli astronauti possono usare cavi di sicurezza per rimanere collegati al veicolo.",
+          "pt": "Durante uma caminhada espacial, astronautas podem usar cabos de segurança para permanecer ligados à nave.",
+          "no": "Under en romvandring kan astronauter bruke sikkerhetsliner for å holde seg koblet til romfartøyet."
+        }
+      },
+      {
+        "text": "Handrails and attachment points help astronauts move carefully around the outside of the station.",
+        "translations": {
+          "es": "Los pasamanos y puntos de sujeción ayudan a los astronautas a moverse cuidadosamente por el exterior.",
+          "fr": "Les mains courantes et les points d'attache les aident à se déplacer prudemment autour de la station.",
+          "de": "Handläufe und Befestigungspunkte helfen ihnen, sich vorsichtig an der Außenseite der Station zu bewegen.",
+          "it": "Corrimano e punti di aggancio li aiutano a muoversi con attenzione all'esterno della stazione.",
+          "pt": "Corrimãos e pontos de fixação ajudam os astronautas a se mover com cuidado pelo exterior da estação.",
+          "no": "Håndtak og festepunkter hjelper astronautene å bevege seg forsiktig rundt utsiden av stasjonen."
+        }
+      },
+      {
+        "text": "From orbit, astronauts can see Earth's curved horizon, blue oceans, white clouds, and the thin atmosphere.",
+        "translations": {
+          "es": "Desde la órbita, los astronautas pueden ver el horizonte curvo de la Tierra, océanos azules, nubes blancas y la delgada atmósfera.",
+          "fr": "Depuis l'orbite, les astronautes peuvent voir l'horizon courbe de la Terre, les océans bleus, les nuages blancs et la fine atmosphère.",
+          "de": "Aus dem Orbit können Astronauten den gekrümmten Horizont der Erde, blaue Ozeane, weiße Wolken und die dünne Atmosphäre sehen.",
+          "it": "Dall'orbita gli astronauti possono vedere l'orizzonte curvo della Terra, oceani blu, nuvole bianche e la sottile atmosfera.",
+          "pt": "Da órbita, astronautas podem ver o horizonte curvo da Terra, oceanos azuis, nuvens brancas e a fina atmosfera.",
+          "no": "Fra bane kan astronauter se jordens buede horisont, blå hav, hvite skyer og den tynne atmosfæren."
+        }
+      },
+      {
+        "text": "The atmosphere looks like a narrow layer surrounding our planet when viewed from space.",
+        "translations": {
+          "es": "La atmósfera parece una capa estrecha alrededor de nuestro planeta vista desde el espacio.",
+          "fr": "Vue de l'espace, l'atmosphère ressemble à une mince couche entourant notre planète.",
+          "de": "Vom Weltraum aus erscheint die Atmosphäre als schmale Schicht um unseren Planeten.",
+          "it": "Dallo spazio l'atmosfera appare come uno strato sottile intorno al nostro pianeta.",
+          "pt": "Vista do espaço, a atmosfera parece uma camada estreita ao redor do nosso planeta.",
+          "no": "Fra verdensrommet ser atmosfæren ut som et smalt lag rundt planeten vår."
+        }
+      },
+      {
+        "text": "Large solar arrays collect sunlight and convert its energy into electricity for the space station.",
+        "translations": {
+          "es": "Grandes paneles solares recogen la luz del Sol y convierten su energía en electricidad para la estación espacial.",
+          "fr": "De grands panneaux solaires captent la lumière du Soleil et transforment son énergie en électricité pour la station.",
+          "de": "Große Solaranlagen sammeln Sonnenlicht und wandeln dessen Energie in Strom für die Raumstation um.",
+          "it": "Grandi pannelli solari raccolgono la luce del Sole e trasformano la sua energia in elettricità per la stazione.",
+          "pt": "Grandes painéis solares captam a luz do Sol e transformam sua energia em eletricidade para a estação.",
+          "no": "Store solpaneler samler sollys og omdanner energien til elektrisitet for romstasjonen."
+        }
+      },
+      {
+        "text": "The arrays can be positioned to collect sunlight as the station travels around Earth.",
+        "translations": {
+          "es": "Los paneles pueden orientarse para recoger la luz solar mientras la estación viaja alrededor de la Tierra.",
+          "fr": "Les panneaux peuvent être orientés pour capter la lumière lorsque la station tourne autour de la Terre.",
+          "de": "Die Anlagen können ausgerichtet werden, um Sonnenlicht zu sammeln, während die Station die Erde umkreist.",
+          "it": "I pannelli possono essere orientati per raccogliere la luce mentre la stazione viaggia intorno alla Terra.",
+          "pt": "Os painéis podem ser posicionados para captar luz solar enquanto a estação viaja ao redor da Terra.",
+          "no": "Panelene kan plasseres for å samle sollys mens stasjonen beveger seg rundt jorden."
+        }
+      }
+    ],
+    "hotspots": [
+      {
+        "id": "astronaut",
+        "label": "astronaut",
+        "x": 51.61,
+        "y": 39.21,
+        "w": 20.34,
+        "h": 30.7,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "girl",
+        "label": "girl",
+        "x": 73.56,
+        "y": 20.68,
+        "w": 12.02,
+        "h": 15.02,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "spacesuit",
+        "label": "spacesuit",
+        "x": 60.91,
+        "y": 47.22,
+        "w": 22,
+        "h": 40,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "helmet",
+        "label": "helmet",
+        "x": 57.35,
+        "y": 31.29,
+        "w": 15,
+        "h": 22,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "gloves",
+        "label": "gloves",
+        "x": 72,
+        "y": 57,
+        "w": 18,
+        "h": 22,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "tether",
+        "label": "tether",
+        "x": 30.87,
+        "y": 48.79,
+        "w": 19.6,
+        "h": 16.65,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "station",
+        "label": "station",
+        "x": 67.11,
+        "y": 2.06,
+        "w": 32.95,
+        "h": 11.15,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "solarpanels",
+        "label": "solarpanels",
+        "x": 40.66,
+        "y": -2.04,
+        "w": 13.5,
+        "h": 39.46,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "handrail",
+        "label": "handrail",
+        "x": 88.01,
+        "y": 43.3,
+        "w": 6.94,
+        "h": 27.61,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "earth",
+        "label": "earth",
+        "x": 1.3,
+        "y": 19.86,
+        "w": 19.89,
+        "h": 24.64,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "ocean",
+        "label": "ocean",
+        "x": -0.39,
+        "y": 45.93,
+        "w": 25.89,
+        "h": 23.35,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "clouds",
+        "label": "clouds",
+        "x": 0.41,
+        "y": 73.95,
+        "w": 23.31,
+        "h": 19.44,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "atmosphere",
+        "label": "atmosphere",
+        "x": -2.6,
+        "y": 17.76,
+        "w": 27.75,
+        "h": 1.55,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "moon",
+        "label": "moon",
+        "x": 25,
+        "y": 2,
+        "w": 9,
+        "h": 14,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "sun",
+        "label": "sun",
+        "x": 0,
+        "y": 0,
+        "w": 12,
+        "h": 19,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "stars",
+        "label": "stars",
+        "x": 33.67,
+        "y": 6.87,
+        "w": 6,
+        "h": 8,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "astronaught",
+        "label": "astronaught",
+        "x": 32.2,
+        "y": 28.69,
+        "w": 7.51,
+        "h": 17.44,
+        "sound": "",
+        "translations": {}
+      }
+    ],
+    "overlays": [],
+    "challenges": [
+      {
+        "prompt": "Find Earth",
+        "target": "earth",
+        "translations": {
+          "es": "Encontrar Tierra",
+          "fr": "Trouver la Terre",
+          "de": "Erde finden",
+          "it": "Trova la Terra",
+          "pt": "Encontrar Terra",
+          "no": "Finn Jorden"
+        }
+      },
+      {
+        "prompt": "Find a Tether",
+        "target": "tether",
+        "translations": {
+          "es": "Encuentra un Tether",
+          "fr": "Trouver une attache",
+          "de": "Einen Haltegurt finden",
+          "it": "Trova un Tether",
+          "pt": "Encontrar um Tether",
+          "no": "Finn en tether"
+        }
+      },
+      {
+        "prompt": "Find the Solar Panels",
+        "target": "solarpanels",
+        "translations": {
+          "es": "Encuentra los paneles solares",
+          "fr": "Les panneaux solaires.",
+          "de": "Finde die Solarmodule",
+          "it": "I Pannelli solari",
+          "pt": "Encontre os painéis solares",
+          "no": "Finn solcellepanelene"
+        }
+      },
+      {
+        "prompt": "Find the Space Station",
+        "target": "station",
+        "translations": {
+          "es": "la estación espacial",
+          "fr": "la station spatiale",
+          "de": "Finde die Raumstation",
+          "it": "Trova la Stazione Spaziale",
+          "pt": "Encontre a Estação Espacial",
+          "no": "Finn romstasjonen"
+        }
+      },
+      {
+        "prompt": "Find the Moon",
+        "target": "moon",
+        "translations": {
+          "es": "Encuentra la Luna",
+          "fr": "Trouvez la Lune",
+          "de": "Finde den Mond",
+          "it": "Trova la Luna",
+          "pt": "Encontrar a Lua",
+          "no": "Finn månen"
+        }
+      }
+    ]
+  },
   "moon": {
     "title": "Moon",
     "image": "images/Moon-Adventure.jpg",
@@ -25926,379 +27417,6 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
           "it": "Trova il Castello della Luna",
           "pt": "Encontre o Castelo da Lua",
           "no": "Finn måneborgen"
-        }
-      }
-    ]
-  },
-  "nasa-spacewalk": {
-    "title": "NASA Spacewalk",
-    "image": "images/Spacewalk-Adventure.jpg",
-    "lessons": [
-      {
-        "text": "The crew is outside a space station performing a spacewalk high above Earth.",
-        "translations": {
-          "es": "La tripulación está fuera de una estación espacial realizando una caminata espacial muy por encima de la Tierra.",
-          "fr": "L'équipage se trouve à l'extérieur d'une station spatiale pour effectuer une sortie au-dessus de la Terre.",
-          "de": "Die Besatzung befindet sich außerhalb einer Raumstation auf einem Weltraumspaziergang hoch über der Erde.",
-          "it": "L'equipaggio è all'esterno di una stazione spaziale per una passeggiata spaziale sopra la Terra.",
-          "pt": "A tripulação está fora de uma estação espacial realizando uma caminhada espacial acima da Terra.",
-          "no": "Mannskapet er utenfor en romstasjon på romvandring høyt over jorden."
-        }
-      },
-      {
-        "text": "Astronauts train carefully before working outside a spacecraft in the vacuum of space.",
-        "translations": {
-          "es": "Los astronautas entrenan cuidadosamente antes de trabajar fuera de una nave espacial en el vacío del espacio.",
-          "fr": "Les astronautes s'entraînent soigneusement avant de travailler à l'extérieur d'un vaisseau dans le vide spatial.",
-          "de": "Astronauten trainieren sorgfältig, bevor sie außerhalb eines Raumfahrzeugs im Vakuum des Weltraums arbeiten.",
-          "it": "Gli astronauti si addestrano con cura prima di lavorare fuori da un veicolo spaziale nel vuoto.",
-          "pt": "Os astronautas treinam cuidadosamente antes de trabalhar fora de uma nave no vácuo do espaço.",
-          "no": "Astronauter trener grundig før de arbeider utenfor et romfartøy i vakuumet i verdensrommet."
-        }
-      },
-      {
-        "text": "A spacesuit provides oxygen, pressure, temperature control, communication equipment, and protection.",
-        "translations": {
-          "es": "Un traje espacial proporciona oxígeno, presión, control de temperatura, comunicaciones y protección.",
-          "fr": "Une combinaison spatiale fournit de l'oxygène, de la pression, un contrôle thermique, des communications et une protection.",
-          "de": "Ein Raumanzug liefert Sauerstoff, Druck, Temperaturregelung, Kommunikation und Schutz.",
-          "it": "Una tuta spaziale fornisce ossigeno, pressione, controllo della temperatura, comunicazioni e protezione.",
-          "pt": "Um traje espacial fornece oxigênio, pressão, controle de temperatura, comunicação e proteção.",
-          "no": "En romdrakt gir oksygen, trykk, temperaturkontroll, kommunikasjon og beskyttelse."
-        }
-      },
-      {
-        "text": "The helmet and gloves are part of the system that keeps an astronaut safe while working outside.",
-        "translations": {
-          "es": "El casco y los guantes forman parte del sistema que mantiene seguro al astronauta mientras trabaja afuera.",
-          "fr": "Le casque et les gants font partie du système qui protège l'astronaute pendant son travail à l'extérieur.",
-          "de": "Helm und Handschuhe gehören zum System, das Astronauten bei der Arbeit außerhalb schützt.",
-          "it": "Il casco e i guanti fanno parte del sistema che mantiene al sicuro un astronauta mentre lavora all'esterno.",
-          "pt": "O capacete e as luvas fazem parte do sistema que mantém o astronauta seguro durante o trabalho externo.",
-          "no": "Hjelmen og hanskene er deler av systemet som holder astronauten trygg under arbeid utenfor."
-        }
-      },
-      {
-        "text": "A space station is a spacecraft designed so people can live and work in orbit for extended periods.",
-        "translations": {
-          "es": "Una estación espacial es una nave diseñada para que las personas vivan y trabajen en órbita durante largos períodos.",
-          "fr": "Une station spatiale est un vaisseau conçu pour permettre à des personnes de vivre et travailler en orbite pendant de longues périodes.",
-          "de": "Eine Raumstation ist ein Raumfahrzeug, in dem Menschen längere Zeit im Orbit leben und arbeiten können.",
-          "it": "Una stazione spaziale è un veicolo progettato affinché le persone possano vivere e lavorare in orbita per lunghi periodi.",
-          "pt": "Uma estação espacial é uma nave projetada para que pessoas possam viver e trabalhar em órbita por longos períodos.",
-          "no": "En romstasjon er et romfartøy laget slik at mennesker kan bo og arbeide i bane over lengre tid."
-        }
-      },
-      {
-        "text": "Outside the station are modules, structural trusses, handrails, equipment, and large solar arrays.",
-        "translations": {
-          "es": "En el exterior hay módulos, estructuras, pasamanos, equipos y grandes paneles solares.",
-          "fr": "À l'extérieur se trouvent des modules, des structures, des mains courantes, des équipements et de grands panneaux solaires.",
-          "de": "Außen befinden sich Module, Gerüste, Handläufe, Geräte und große Solaranlagen.",
-          "it": "All'esterno ci sono moduli, strutture, corrimano, attrezzature e grandi pannelli solari.",
-          "pt": "Do lado de fora há módulos, estruturas, corrimãos, equipamentos e grandes painéis solares.",
-          "no": "Utenpå finnes moduler, rammer, håndtak, utstyr og store solpaneler."
-        }
-      },
-      {
-        "text": "During a spacewalk, astronauts can use safety tethers to stay connected to the spacecraft.",
-        "translations": {
-          "es": "Durante una caminata espacial, los astronautas pueden usar cables de seguridad para permanecer conectados a la nave.",
-          "fr": "Pendant une sortie spatiale, les astronautes peuvent utiliser des câbles de sécurité pour rester reliés au vaisseau.",
-          "de": "Bei einem Weltraumspaziergang können Astronauten Sicherheitsleinen benutzen, um mit dem Raumfahrzeug verbunden zu bleiben.",
-          "it": "Durante una passeggiata spaziale, gli astronauti possono usare cavi di sicurezza per rimanere collegati al veicolo.",
-          "pt": "Durante uma caminhada espacial, astronautas podem usar cabos de segurança para permanecer ligados à nave.",
-          "no": "Under en romvandring kan astronauter bruke sikkerhetsliner for å holde seg koblet til romfartøyet."
-        }
-      },
-      {
-        "text": "Handrails and attachment points help astronauts move carefully around the outside of the station.",
-        "translations": {
-          "es": "Los pasamanos y puntos de sujeción ayudan a los astronautas a moverse cuidadosamente por el exterior.",
-          "fr": "Les mains courantes et les points d'attache les aident à se déplacer prudemment autour de la station.",
-          "de": "Handläufe und Befestigungspunkte helfen ihnen, sich vorsichtig an der Außenseite der Station zu bewegen.",
-          "it": "Corrimano e punti di aggancio li aiutano a muoversi con attenzione all'esterno della stazione.",
-          "pt": "Corrimãos e pontos de fixação ajudam os astronautas a se mover com cuidado pelo exterior da estação.",
-          "no": "Håndtak og festepunkter hjelper astronautene å bevege seg forsiktig rundt utsiden av stasjonen."
-        }
-      },
-      {
-        "text": "From orbit, astronauts can see Earth's curved horizon, blue oceans, white clouds, and the thin atmosphere.",
-        "translations": {
-          "es": "Desde la órbita, los astronautas pueden ver el horizonte curvo de la Tierra, océanos azules, nubes blancas y la delgada atmósfera.",
-          "fr": "Depuis l'orbite, les astronautes peuvent voir l'horizon courbe de la Terre, les océans bleus, les nuages blancs et la fine atmosphère.",
-          "de": "Aus dem Orbit können Astronauten den gekrümmten Horizont der Erde, blaue Ozeane, weiße Wolken und die dünne Atmosphäre sehen.",
-          "it": "Dall'orbita gli astronauti possono vedere l'orizzonte curvo della Terra, oceani blu, nuvole bianche e la sottile atmosfera.",
-          "pt": "Da órbita, astronautas podem ver o horizonte curvo da Terra, oceanos azuis, nuvens brancas e a fina atmosfera.",
-          "no": "Fra bane kan astronauter se jordens buede horisont, blå hav, hvite skyer og den tynne atmosfæren."
-        }
-      },
-      {
-        "text": "The atmosphere looks like a narrow layer surrounding our planet when viewed from space.",
-        "translations": {
-          "es": "La atmósfera parece una capa estrecha alrededor de nuestro planeta vista desde el espacio.",
-          "fr": "Vue de l'espace, l'atmosphère ressemble à une mince couche entourant notre planète.",
-          "de": "Vom Weltraum aus erscheint die Atmosphäre als schmale Schicht um unseren Planeten.",
-          "it": "Dallo spazio l'atmosfera appare come uno strato sottile intorno al nostro pianeta.",
-          "pt": "Vista do espaço, a atmosfera parece uma camada estreita ao redor do nosso planeta.",
-          "no": "Fra verdensrommet ser atmosfæren ut som et smalt lag rundt planeten vår."
-        }
-      },
-      {
-        "text": "Large solar arrays collect sunlight and convert its energy into electricity for the space station.",
-        "translations": {
-          "es": "Grandes paneles solares recogen la luz del Sol y convierten su energía en electricidad para la estación espacial.",
-          "fr": "De grands panneaux solaires captent la lumière du Soleil et transforment son énergie en électricité pour la station.",
-          "de": "Große Solaranlagen sammeln Sonnenlicht und wandeln dessen Energie in Strom für die Raumstation um.",
-          "it": "Grandi pannelli solari raccolgono la luce del Sole e trasformano la sua energia in elettricità per la stazione.",
-          "pt": "Grandes painéis solares captam a luz do Sol e transformam sua energia em eletricidade para a estação.",
-          "no": "Store solpaneler samler sollys og omdanner energien til elektrisitet for romstasjonen."
-        }
-      },
-      {
-        "text": "The arrays can be positioned to collect sunlight as the station travels around Earth.",
-        "translations": {
-          "es": "Los paneles pueden orientarse para recoger la luz solar mientras la estación viaja alrededor de la Tierra.",
-          "fr": "Les panneaux peuvent être orientés pour capter la lumière lorsque la station tourne autour de la Terre.",
-          "de": "Die Anlagen können ausgerichtet werden, um Sonnenlicht zu sammeln, während die Station die Erde umkreist.",
-          "it": "I pannelli possono essere orientati per raccogliere la luce mentre la stazione viaggia intorno alla Terra.",
-          "pt": "Os painéis podem ser posicionados para captar luz solar enquanto a estação viaja ao redor da Terra.",
-          "no": "Panelene kan plasseres for å samle sollys mens stasjonen beveger seg rundt jorden."
-        }
-      }
-    ],
-    "hotspots": [
-      {
-        "id": "astronaut",
-        "label": "astronaut",
-        "x": 51.61,
-        "y": 39.21,
-        "w": 20.34,
-        "h": 30.7,
-        "sound": "",
-        "translations": {}
-      },
-      {
-        "id": "girl",
-        "label": "girl",
-        "x": 73.56,
-        "y": 20.68,
-        "w": 12.02,
-        "h": 15.02,
-        "sound": "",
-        "translations": {}
-      },
-      {
-        "id": "spacesuit",
-        "label": "spacesuit",
-        "x": 60.91,
-        "y": 47.22,
-        "w": 22,
-        "h": 40,
-        "sound": "",
-        "translations": {}
-      },
-      {
-        "id": "helmet",
-        "label": "helmet",
-        "x": 57.35,
-        "y": 31.29,
-        "w": 15,
-        "h": 22,
-        "sound": "",
-        "translations": {}
-      },
-      {
-        "id": "gloves",
-        "label": "gloves",
-        "x": 72,
-        "y": 57,
-        "w": 18,
-        "h": 22,
-        "sound": "",
-        "translations": {}
-      },
-      {
-        "id": "tether",
-        "label": "tether",
-        "x": 30.87,
-        "y": 48.79,
-        "w": 19.6,
-        "h": 16.65,
-        "sound": "",
-        "translations": {}
-      },
-      {
-        "id": "station",
-        "label": "station",
-        "x": 67.11,
-        "y": 2.06,
-        "w": 32.95,
-        "h": 11.15,
-        "sound": "",
-        "translations": {}
-      },
-      {
-        "id": "solarpanels",
-        "label": "solarpanels",
-        "x": 40.66,
-        "y": -2.04,
-        "w": 13.5,
-        "h": 39.46,
-        "sound": "",
-        "translations": {}
-      },
-      {
-        "id": "handrail",
-        "label": "handrail",
-        "x": 88.01,
-        "y": 43.3,
-        "w": 6.94,
-        "h": 27.61,
-        "sound": "",
-        "translations": {}
-      },
-      {
-        "id": "earth",
-        "label": "earth",
-        "x": 1.3,
-        "y": 19.86,
-        "w": 19.89,
-        "h": 24.64,
-        "sound": "",
-        "translations": {}
-      },
-      {
-        "id": "ocean",
-        "label": "ocean",
-        "x": -0.39,
-        "y": 45.93,
-        "w": 25.89,
-        "h": 23.35,
-        "sound": "",
-        "translations": {}
-      },
-      {
-        "id": "clouds",
-        "label": "clouds",
-        "x": 0.41,
-        "y": 73.95,
-        "w": 23.31,
-        "h": 19.44,
-        "sound": "",
-        "translations": {}
-      },
-      {
-        "id": "atmosphere",
-        "label": "atmosphere",
-        "x": -2.6,
-        "y": 17.76,
-        "w": 27.75,
-        "h": 1.55,
-        "sound": "",
-        "translations": {}
-      },
-      {
-        "id": "moon",
-        "label": "moon",
-        "x": 25,
-        "y": 2,
-        "w": 9,
-        "h": 14,
-        "sound": "",
-        "translations": {}
-      },
-      {
-        "id": "sun",
-        "label": "sun",
-        "x": 0,
-        "y": 0,
-        "w": 12,
-        "h": 19,
-        "sound": "",
-        "translations": {}
-      },
-      {
-        "id": "stars",
-        "label": "stars",
-        "x": 33.67,
-        "y": 6.87,
-        "w": 6,
-        "h": 8,
-        "sound": "",
-        "translations": {}
-      },
-      {
-        "id": "astronaught",
-        "label": "astronaught",
-        "x": 32.2,
-        "y": 28.69,
-        "w": 7.51,
-        "h": 17.44,
-        "sound": "",
-        "translations": {}
-      }
-    ],
-    "overlays": [],
-    "challenges": [
-      {
-        "prompt": "Find Earth",
-        "target": "earth",
-        "translations": {
-          "es": "Encontrar Tierra",
-          "fr": "Trouver la Terre",
-          "de": "Erde finden",
-          "it": "Trova la Terra",
-          "pt": "Encontrar Terra",
-          "no": "Finn Jorden"
-        }
-      },
-      {
-        "prompt": "Find a Tether",
-        "target": "tether",
-        "translations": {
-          "es": "Encuentra un Tether",
-          "fr": "Trouver une attache",
-          "de": "Einen Haltegurt finden",
-          "it": "Trova un Tether",
-          "pt": "Encontrar um Tether",
-          "no": "Finn en tether"
-        }
-      },
-      {
-        "prompt": "Find the Solar Panels",
-        "target": "solarpanels",
-        "translations": {
-          "es": "Encuentra los paneles solares",
-          "fr": "Les panneaux solaires.",
-          "de": "Finde die Solarmodule",
-          "it": "I Pannelli solari",
-          "pt": "Encontre os painéis solares",
-          "no": "Finn solcellepanelene"
-        }
-      },
-      {
-        "prompt": "Find the Space Station",
-        "target": "station",
-        "translations": {
-          "es": "la estación espacial",
-          "fr": "la station spatiale",
-          "de": "Finde die Raumstation",
-          "it": "Trova la Stazione Spaziale",
-          "pt": "Encontre a Estação Espacial",
-          "no": "Finn romstasjonen"
-        }
-      },
-      {
-        "prompt": "Find the Moon",
-        "target": "moon",
-        "translations": {
-          "es": "Encuentra la Luna",
-          "fr": "Trouvez la Lune",
-          "de": "Finde den Mond",
-          "it": "Trova la Luna",
-          "pt": "Encontrar a Lua",
-          "no": "Finn månen"
         }
       }
     ]
