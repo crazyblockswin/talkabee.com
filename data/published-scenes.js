@@ -12019,8 +12019,8 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
       {
         "id": "llave",
         "label": "llave",
-        "x": 67.51104868479375,
-        "y": 56.934237224504855,
+        "x": 61.826840453636585,
+        "y": 48.125708813711945,
         "w": 4.58,
         "h": 9.48,
         "sound": "sounds/bell.mp3",
@@ -12053,8 +12053,8 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
       {
         "id": "campana",
         "label": "campana",
-        "x": 74.6463159004275,
-        "y": 58.445703508152576,
+        "x": 67.96210483836336,
+        "y": 57.333048125561795,
         "w": 4.99,
         "h": 8.4,
         "sound": "",
