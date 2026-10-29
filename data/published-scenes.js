@@ -950,6 +950,436 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
       }
     ]
   },
+  "animals-farm": {
+    "title": "Animals Farm",
+    "image": "images/animals-farm-adventure.jpg",
+    "lessons": [
+      {
+        "text": "The dog is beside the fire.",
+        "translations": {
+          "es": "El perro está junto al fuego.",
+          "fr": "Le chien est près du feu.",
+          "de": "Der Hund ist neben dem Feuer.",
+          "it": "Il cane è vicino al fuoco.",
+          "pt": "O cão está junto ao fogo.",
+          "no": "Hunden er ved bålet."
+        }
+      },
+      {
+        "text": "The horse, cow, and sheep are on the farm.",
+        "translations": {
+          "es": "El caballo, la vaca y la oveja están en la granja.",
+          "fr": "Le cheval, la vache et le mouton sont à la ferme.",
+          "de": "Das Pferd, die Kuh und das Schaf sind auf dem Bauernhof.",
+          "it": "Il cavallo, la mucca e la pecora sono nella fattoria.",
+          "pt": "O cavalo, a vaca e a ovelha estão na quinta.",
+          "no": "Hesten, kua og sauen er på gården."
+        }
+      },
+      {
+        "text": "The squirrel and rabbit are near the field.",
+        "translations": {
+          "es": "La ardilla y el conejo están cerca del campo.",
+          "fr": "L’écureuil et le lapin sont près du champ.",
+          "de": "Das Eichhörnchen und das Kaninchen sind in der Nähe des Feldes.",
+          "it": "Lo scoiattolo e il coniglio sono vicino al campo.",
+          "pt": "O esquilo e o coelho estão perto do campo.",
+          "no": "Ekornet og kaninen er nær jordet."
+        }
+      },
+      {
+        "text": "The rooster is with the chickens.",
+        "translations": {
+          "es": "El gallo está con las gallinas.",
+          "fr": "Le coq est avec les poules.",
+          "de": "Der Hahn ist bei den Hühnern.",
+          "it": "Il gallo è con le galline.",
+          "pt": "O galo está com as galinhas.",
+          "no": "Hanen er sammen med hønene."
+        }
+      },
+      {
+        "text": "The cow and sheep are beside the fence.",
+        "translations": {
+          "es": "La vaca y la oveja están junto a la cerca.",
+          "fr": "La vache et le mouton sont près de la clôture.",
+          "de": "Die Kuh und das Schaf sind neben dem Zaun.",
+          "it": "La mucca e la pecora sono vicino alla recinzione.",
+          "pt": "A vaca e a ovelha estão junto à cerca.",
+          "no": "Kua og sauen er ved gjerdet."
+        }
+      },
+      {
+        "text": "The dog rests and the horse is standing.",
+        "translations": {
+          "es": "El perro descansa y el caballo está de pie.",
+          "fr": "Le chien se repose et le cheval est debout.",
+          "de": "Der Hund ruht sich aus und das Pferd steht.",
+          "it": "Il cane riposa e il cavallo è in piedi.",
+          "pt": "O cão descansa e o cavalo está de pé.",
+          "no": "Hunden hviler og hesten står."
+        }
+      }
+    ],
+    "hotspots": [
+      {
+        "id": "horse",
+        "label": "horse",
+        "x": 11.051445064253256,
+        "y": 32.71633276576448,
+        "w": 13.28,
+        "h": 12.97,
+        "sound": "sounds/horse.mp3",
+        "translations": {}
+      },
+      {
+        "id": "cow",
+        "label": "cow",
+        "x": 33.39,
+        "y": 43.8,
+        "w": 9.85,
+        "h": 6.68,
+        "sound": "sounds/cow.mp3",
+        "translations": {}
+      },
+      {
+        "id": "sheep",
+        "label": "sheep",
+        "x": 24.85,
+        "y": 51.3,
+        "w": 8.55,
+        "h": 7.23,
+        "sound": "sounds/sheep.mp3",
+        "translations": {}
+      },
+      {
+        "id": "goat",
+        "label": "goat",
+        "x": 22.47100918854204,
+        "y": 58.61407958294441,
+        "w": 10.63,
+        "h": 14.18,
+        "sound": "sounds/goat.mp3",
+        "translations": {}
+      },
+      {
+        "id": "pig",
+        "label": "pig",
+        "x": 9.687967879203962,
+        "y": 64.43326754982921,
+        "w": 10,
+        "h": 14.92,
+        "sound": "sounds/pig.mp3",
+        "translations": {}
+      },
+      {
+        "id": "dog",
+        "label": "dog",
+        "x": 46.82709180721819,
+        "y": 65.96911571092454,
+        "w": 10.89,
+        "h": 13.35,
+        "sound": "sounds/dog.mp3",
+        "translations": {}
+      },
+      {
+        "id": "rooster",
+        "label": "rooster",
+        "x": 84.43594204050702,
+        "y": 68.11358729735426,
+        "w": 4.74,
+        "h": 9.55,
+        "sound": "sounds/rooster.mp3",
+        "translations": {}
+      },
+      {
+        "id": "rabbit",
+        "label": "rabbit",
+        "x": 56.57,
+        "y": 92.6,
+        "w": 8.18,
+        "h": 10.29,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "squirrel",
+        "label": "squirrel",
+        "x": 91.58217073742944,
+        "y": 43.02451404656113,
+        "w": 7.14,
+        "h": 12.6,
+        "sound": "sounds/squirrel.mp3",
+        "translations": {}
+      },
+      {
+        "id": "butterfly",
+        "label": "butterfly",
+        "x": 39.57,
+        "y": 92.06,
+        "w": 7.24,
+        "h": 7.23,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "barn",
+        "label": "barn",
+        "x": 51.81956098323924,
+        "y": 30.654441790600885,
+        "w": 7.61,
+        "h": 13.71,
+        "sound": "sounds/tractor.mp3",
+        "translations": {}
+      },
+      {
+        "id": "windmill",
+        "label": "windmill",
+        "x": 61.568838451112605,
+        "y": 15.28407574248391,
+        "w": 3.81,
+        "h": 12.6,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "rv",
+        "label": "rv",
+        "x": 75.88188093996447,
+        "y": 26.733267549829208,
+        "w": 15.68,
+        "h": 20.58,
+        "sound": "sounds/rv.mp3",
+        "translations": {}
+      },
+      {
+        "id": "campfire",
+        "label": "campfire",
+        "x": 59.78217073742943,
+        "y": 62.148303677809324,
+        "w": 12.35,
+        "h": 13.99,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "fence",
+        "label": "fence",
+        "x": 0.9539024580980975,
+        "y": 44.3301300779337,
+        "w": 3.96,
+        "h": 16.03,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "flowers",
+        "label": "flowers",
+        "x": 8.6,
+        "y": 92.17,
+        "w": 10.63,
+        "h": 13.8,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "mountains",
+        "label": "mountains",
+        "x": 23.864486373591333,
+        "y": 16.104151838904663,
+        "w": 15.83,
+        "h": 11.22,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "chick",
+        "label": "chick",
+        "x": 87.44,
+        "y": 74.31,
+        "w": 5.89,
+        "h": 8.53,
+        "sound": "sounds/chicks.mp3",
+        "translations": {}
+      },
+      {
+        "id": "chicken",
+        "label": "chicken",
+        "x": 92.61826199723225,
+        "y": 66.02532607967633,
+        "w": 6,
+        "h": 8,
+        "sound": "sounds/chicken.mp3",
+        "translations": {}
+      },
+      {
+        "id": "solar-panel",
+        "label": "solar panel",
+        "x": 81.73030157964116,
+        "y": 15.188307518269838,
+        "w": 6,
+        "h": 8,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "window",
+        "label": "window",
+        "x": 90.49463991345047,
+        "y": 24.17451788702164,
+        "w": 6,
+        "h": 8,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "rear-door",
+        "label": "rear door",
+        "x": 69.48636927509156,
+        "y": 33.396050494989275,
+        "w": 3.29,
+        "h": 9.2,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "stairs",
+        "label": "stairs",
+        "x": 79.91,
+        "y": 52.83,
+        "w": 3.29,
+        "h": 10.96,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "girl",
+        "label": "girl",
+        "x": 37.81564360191539,
+        "y": 54.458303677809326,
+        "w": 5.74,
+        "h": 20.03,
+        "sound": "sounds/girl.mp3",
+        "translations": {}
+      },
+      {
+        "id": "boy",
+        "label": "boy",
+        "x": 45.83928296795049,
+        "y": 53.267499325615134,
+        "w": 4.85,
+        "h": 12.44,
+        "sound": "sounds/child-laughing.mp3",
+        "translations": {}
+      },
+      {
+        "id": "field",
+        "label": "field",
+        "x": 38.524780491619616,
+        "y": 34.7502822707752,
+        "w": 7.25,
+        "h": 4.76,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "sunset",
+        "label": "sunset",
+        "x": 48.425503023746245,
+        "y": 19.961814878742835,
+        "w": 10.95,
+        "h": 5.96,
+        "sound": "",
+        "translations": {}
+      }
+    ],
+    "overlays": [
+      {
+        "id": "overlay-1792134092668-9u9rm",
+        "label": "bee-sitting-looking-left.png",
+        "src": "images/png/bee-sitting-looking-left.png",
+        "x": 72.96874642372131,
+        "y": 15.277775393591986,
+        "w": 7.5,
+        "rotation": -10,
+        "z": 1
+      }
+    ],
+    "challenges": [
+      {
+        "prompt": "Find the Dog",
+        "target": "dog",
+        "translations": {
+          "es": "Encuentra al perro",
+          "fr": "Trouvez le chien",
+          "de": "Finde den Hund",
+          "it": "Trova il cane",
+          "pt": "Encontre o cão",
+          "no": "Finn hunden"
+        }
+      },
+      {
+        "prompt": "Find the Horse",
+        "target": "horse",
+        "translations": {
+          "es": "IV. El caballo",
+          "fr": "Le requin",
+          "de": "Finde das Pferd",
+          "it": "Trova il cavallo",
+          "pt": "O cavalo",
+          "no": "Finn hesten"
+        }
+      },
+      {
+        "prompt": "Find the Cow",
+        "target": "cow",
+        "translations": {
+          "es": "Encuentra la vaca",
+          "fr": "la vache",
+          "de": "Finde die Kuh",
+          "it": "trova la mucca",
+          "pt": "encontra a vaca",
+          "no": "Finn kua"
+        }
+      },
+      {
+        "prompt": "Find the Sheep",
+        "target": "sheep",
+        "translations": {
+          "es": "La oveja",
+          "fr": "La sélection",
+          "de": "Finde das Schaf",
+          "it": "trova la pecora",
+          "pt": "encontra as ovelhas",
+          "no": "Finn sauene"
+        }
+      },
+      {
+        "prompt": "Find the Barn",
+        "target": "barn",
+        "translations": {
+          "es": "Encuentra el granero",
+          "fr": "Trouvez la grange",
+          "de": "Finde die Scheune",
+          "it": "Trova il fienile",
+          "pt": "Encontre o Celeiro",
+          "no": "Finn låven"
+        }
+      },
+      {
+        "prompt": "Find the RV Door",
+        "target": "rv",
+        "translations": {
+          "es": "Encontrar la puerta",
+          "fr": "Trouvez la porte du camping-car",
+          "de": "Finden Sie die Wohnmobiltür",
+          "it": "Trova la porta del camper",
+          "pt": "Encontre a porta do trailer",
+          "no": "Finn bobildøren"
+        }
+      }
+    ]
+  },
   "grandmas-kitchen": {
     "title": "Grandma’s Kitchen",
     "image": "images/grandmas-kitchen-adventure.jpg",
@@ -1936,436 +2366,6 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
           "it": "trova la ciotola per cani",
           "pt": "encontrar a tigela para cães",
           "no": "finn hundeskålen"
-        }
-      }
-    ]
-  },
-  "animals-farm": {
-    "title": "Animals Farm",
-    "image": "images/animals-farm-adventure.jpg",
-    "lessons": [
-      {
-        "text": "The dog is beside the fire.",
-        "translations": {
-          "es": "El perro está junto al fuego.",
-          "fr": "Le chien est près du feu.",
-          "de": "Der Hund ist neben dem Feuer.",
-          "it": "Il cane è vicino al fuoco.",
-          "pt": "O cão está junto ao fogo.",
-          "no": "Hunden er ved bålet."
-        }
-      },
-      {
-        "text": "The horse, cow, and sheep are on the farm.",
-        "translations": {
-          "es": "El caballo, la vaca y la oveja están en la granja.",
-          "fr": "Le cheval, la vache et le mouton sont à la ferme.",
-          "de": "Das Pferd, die Kuh und das Schaf sind auf dem Bauernhof.",
-          "it": "Il cavallo, la mucca e la pecora sono nella fattoria.",
-          "pt": "O cavalo, a vaca e a ovelha estão na quinta.",
-          "no": "Hesten, kua og sauen er på gården."
-        }
-      },
-      {
-        "text": "The squirrel and rabbit are near the field.",
-        "translations": {
-          "es": "La ardilla y el conejo están cerca del campo.",
-          "fr": "L’écureuil et le lapin sont près du champ.",
-          "de": "Das Eichhörnchen und das Kaninchen sind in der Nähe des Feldes.",
-          "it": "Lo scoiattolo e il coniglio sono vicino al campo.",
-          "pt": "O esquilo e o coelho estão perto do campo.",
-          "no": "Ekornet og kaninen er nær jordet."
-        }
-      },
-      {
-        "text": "The rooster is with the chickens.",
-        "translations": {
-          "es": "El gallo está con las gallinas.",
-          "fr": "Le coq est avec les poules.",
-          "de": "Der Hahn ist bei den Hühnern.",
-          "it": "Il gallo è con le galline.",
-          "pt": "O galo está com as galinhas.",
-          "no": "Hanen er sammen med hønene."
-        }
-      },
-      {
-        "text": "The cow and sheep are beside the fence.",
-        "translations": {
-          "es": "La vaca y la oveja están junto a la cerca.",
-          "fr": "La vache et le mouton sont près de la clôture.",
-          "de": "Die Kuh und das Schaf sind neben dem Zaun.",
-          "it": "La mucca e la pecora sono vicino alla recinzione.",
-          "pt": "A vaca e a ovelha estão junto à cerca.",
-          "no": "Kua og sauen er ved gjerdet."
-        }
-      },
-      {
-        "text": "The dog rests and the horse is standing.",
-        "translations": {
-          "es": "El perro descansa y el caballo está de pie.",
-          "fr": "Le chien se repose et le cheval est debout.",
-          "de": "Der Hund ruht sich aus und das Pferd steht.",
-          "it": "Il cane riposa e il cavallo è in piedi.",
-          "pt": "O cão descansa e o cavalo está de pé.",
-          "no": "Hunden hviler og hesten står."
-        }
-      }
-    ],
-    "hotspots": [
-      {
-        "id": "horse",
-        "label": "horse",
-        "x": 11.051445064253256,
-        "y": 32.71633276576448,
-        "w": 13.28,
-        "h": 12.97,
-        "sound": "sounds/horse.mp3",
-        "translations": {}
-      },
-      {
-        "id": "cow",
-        "label": "cow",
-        "x": 33.39,
-        "y": 43.8,
-        "w": 9.85,
-        "h": 6.68,
-        "sound": "sounds/cow.mp3",
-        "translations": {}
-      },
-      {
-        "id": "sheep",
-        "label": "sheep",
-        "x": 24.85,
-        "y": 51.3,
-        "w": 8.55,
-        "h": 7.23,
-        "sound": "sounds/sheep.mp3",
-        "translations": {}
-      },
-      {
-        "id": "goat",
-        "label": "goat",
-        "x": 22.47100918854204,
-        "y": 58.61407958294441,
-        "w": 10.63,
-        "h": 14.18,
-        "sound": "sounds/goat.mp3",
-        "translations": {}
-      },
-      {
-        "id": "pig",
-        "label": "pig",
-        "x": 9.687967879203962,
-        "y": 64.43326754982921,
-        "w": 10,
-        "h": 14.92,
-        "sound": "sounds/pig.mp3",
-        "translations": {}
-      },
-      {
-        "id": "dog",
-        "label": "dog",
-        "x": 46.82709180721819,
-        "y": 65.96911571092454,
-        "w": 10.89,
-        "h": 13.35,
-        "sound": "sounds/dog.mp3",
-        "translations": {}
-      },
-      {
-        "id": "rooster",
-        "label": "rooster",
-        "x": 84.43594204050702,
-        "y": 68.11358729735426,
-        "w": 4.74,
-        "h": 9.55,
-        "sound": "sounds/rooster.mp3",
-        "translations": {}
-      },
-      {
-        "id": "rabbit",
-        "label": "rabbit",
-        "x": 56.57,
-        "y": 92.6,
-        "w": 8.18,
-        "h": 10.29,
-        "sound": "",
-        "translations": {}
-      },
-      {
-        "id": "squirrel",
-        "label": "squirrel",
-        "x": 91.58217073742944,
-        "y": 43.02451404656113,
-        "w": 7.14,
-        "h": 12.6,
-        "sound": "sounds/squirrel.mp3",
-        "translations": {}
-      },
-      {
-        "id": "butterfly",
-        "label": "butterfly",
-        "x": 39.57,
-        "y": 92.06,
-        "w": 7.24,
-        "h": 7.23,
-        "sound": "",
-        "translations": {}
-      },
-      {
-        "id": "barn",
-        "label": "barn",
-        "x": 51.81956098323924,
-        "y": 30.654441790600885,
-        "w": 7.61,
-        "h": 13.71,
-        "sound": "sounds/tractor.mp3",
-        "translations": {}
-      },
-      {
-        "id": "windmill",
-        "label": "windmill",
-        "x": 61.568838451112605,
-        "y": 15.28407574248391,
-        "w": 3.81,
-        "h": 12.6,
-        "sound": "",
-        "translations": {}
-      },
-      {
-        "id": "rv",
-        "label": "rv",
-        "x": 75.88188093996447,
-        "y": 26.733267549829208,
-        "w": 15.68,
-        "h": 20.58,
-        "sound": "sounds/rv.mp3",
-        "translations": {}
-      },
-      {
-        "id": "campfire",
-        "label": "campfire",
-        "x": 59.78217073742943,
-        "y": 62.148303677809324,
-        "w": 12.35,
-        "h": 13.99,
-        "sound": "",
-        "translations": {}
-      },
-      {
-        "id": "fence",
-        "label": "fence",
-        "x": 0.9539024580980975,
-        "y": 44.3301300779337,
-        "w": 3.96,
-        "h": 16.03,
-        "sound": "",
-        "translations": {}
-      },
-      {
-        "id": "flowers",
-        "label": "flowers",
-        "x": 8.6,
-        "y": 92.17,
-        "w": 10.63,
-        "h": 13.8,
-        "sound": "",
-        "translations": {}
-      },
-      {
-        "id": "mountains",
-        "label": "mountains",
-        "x": 23.864486373591333,
-        "y": 16.104151838904663,
-        "w": 15.83,
-        "h": 11.22,
-        "sound": "",
-        "translations": {}
-      },
-      {
-        "id": "chick",
-        "label": "chick",
-        "x": 87.44,
-        "y": 74.31,
-        "w": 5.89,
-        "h": 8.53,
-        "sound": "sounds/chicks.mp3",
-        "translations": {}
-      },
-      {
-        "id": "chicken",
-        "label": "chicken",
-        "x": 92.61826199723225,
-        "y": 66.02532607967633,
-        "w": 6,
-        "h": 8,
-        "sound": "sounds/chicken.mp3",
-        "translations": {}
-      },
-      {
-        "id": "solar-panel",
-        "label": "solar panel",
-        "x": 81.73030157964116,
-        "y": 15.188307518269838,
-        "w": 6,
-        "h": 8,
-        "sound": "",
-        "translations": {}
-      },
-      {
-        "id": "window",
-        "label": "window",
-        "x": 90.49463991345047,
-        "y": 24.17451788702164,
-        "w": 6,
-        "h": 8,
-        "sound": "",
-        "translations": {}
-      },
-      {
-        "id": "rear-door",
-        "label": "rear door",
-        "x": 69.48636927509156,
-        "y": 33.396050494989275,
-        "w": 3.29,
-        "h": 9.2,
-        "sound": "",
-        "translations": {}
-      },
-      {
-        "id": "stairs",
-        "label": "stairs",
-        "x": 79.91,
-        "y": 52.83,
-        "w": 3.29,
-        "h": 10.96,
-        "sound": "",
-        "translations": {}
-      },
-      {
-        "id": "girl",
-        "label": "girl",
-        "x": 37.81564360191539,
-        "y": 54.458303677809326,
-        "w": 5.74,
-        "h": 20.03,
-        "sound": "sounds/girl.mp3",
-        "translations": {}
-      },
-      {
-        "id": "boy",
-        "label": "boy",
-        "x": 45.83928296795049,
-        "y": 53.267499325615134,
-        "w": 4.85,
-        "h": 12.44,
-        "sound": "sounds/child-laughing.mp3",
-        "translations": {}
-      },
-      {
-        "id": "field",
-        "label": "field",
-        "x": 38.524780491619616,
-        "y": 34.7502822707752,
-        "w": 7.25,
-        "h": 4.76,
-        "sound": "",
-        "translations": {}
-      },
-      {
-        "id": "sunset",
-        "label": "sunset",
-        "x": 48.425503023746245,
-        "y": 19.961814878742835,
-        "w": 10.95,
-        "h": 5.96,
-        "sound": "",
-        "translations": {}
-      }
-    ],
-    "overlays": [
-      {
-        "id": "overlay-1792134092668-9u9rm",
-        "label": "bee-sitting-looking-left.png",
-        "src": "images/png/bee-sitting-looking-left.png",
-        "x": 72.96874642372131,
-        "y": 15.277775393591986,
-        "w": 7.5,
-        "rotation": -10,
-        "z": 1
-      }
-    ],
-    "challenges": [
-      {
-        "prompt": "Find the Dog",
-        "target": "dog",
-        "translations": {
-          "es": "Encuentra al perro",
-          "fr": "Trouvez le chien",
-          "de": "Finde den Hund",
-          "it": "Trova il cane",
-          "pt": "Encontre o cão",
-          "no": "Finn hunden"
-        }
-      },
-      {
-        "prompt": "Find the Horse",
-        "target": "horse",
-        "translations": {
-          "es": "IV. El caballo",
-          "fr": "Le requin",
-          "de": "Finde das Pferd",
-          "it": "Trova il cavallo",
-          "pt": "O cavalo",
-          "no": "Finn hesten"
-        }
-      },
-      {
-        "prompt": "Find the Cow",
-        "target": "cow",
-        "translations": {
-          "es": "Encuentra la vaca",
-          "fr": "la vache",
-          "de": "Finde die Kuh",
-          "it": "trova la mucca",
-          "pt": "encontra a vaca",
-          "no": "Finn kua"
-        }
-      },
-      {
-        "prompt": "Find the Sheep",
-        "target": "sheep",
-        "translations": {
-          "es": "La oveja",
-          "fr": "La sélection",
-          "de": "Finde das Schaf",
-          "it": "trova la pecora",
-          "pt": "encontra as ovelhas",
-          "no": "Finn sauene"
-        }
-      },
-      {
-        "prompt": "Find the Barn",
-        "target": "barn",
-        "translations": {
-          "es": "Encuentra el granero",
-          "fr": "Trouvez la grange",
-          "de": "Finde die Scheune",
-          "it": "Trova il fienile",
-          "pt": "Encontre o Celeiro",
-          "no": "Finn låven"
-        }
-      },
-      {
-        "prompt": "Find the RV Door",
-        "target": "rv",
-        "translations": {
-          "es": "Encontrar la puerta",
-          "fr": "Trouvez la porte du camping-car",
-          "de": "Finden Sie die Wohnmobiltür",
-          "it": "Trova la porta del camper",
-          "pt": "Encontre a porta do trailer",
-          "no": "Finn bobildøren"
         }
       }
     ]
@@ -11746,6 +11746,687 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
       }
     ]
   },
+  "hotel": {
+    "title": "Hotel",
+    "image": "images/hotel-adventure.jpg",
+    "lessons": [
+      {
+        "text": "Hello. We have a reservation.",
+        "translations": {
+          "es": "Hola. Tenemos una reservación.",
+          "fr": "Bonjour. Nous avons une réservation.",
+          "de": "Hallo. Wir haben eine Reservierung.",
+          "it": "Salve. Abbiamo una prenotazione.",
+          "pt": "Olá. Temos uma reserva.",
+          "no": "Hei. Vi har en reservasjon."
+        }
+      },
+      {
+        "text": "Good afternoon. Under what name?",
+        "translations": {
+          "es": "Buenas tardes. ¿A nombre de quién?",
+          "fr": "Bonsoir. À quel nom ?",
+          "de": "Guten Abend. Auf welchen Namen?",
+          "it": "Buonasera. A che nome?",
+          "pt": "Boa tarde. Em nome de quem?",
+          "no": "God ettermiddag. Hvilket navn står den på?"
+        }
+      },
+      {
+        "text": "Under the name Wally.",
+        "translations": {
+          "es": "A nombre de Wally.",
+          "fr": "Au nom de Wally.",
+          "de": "Auf den Namen Wally.",
+          "it": "A nome Wally.",
+          "pt": "Em nome de Wally.",
+          "no": "Den står på Wally."
+        }
+      },
+      {
+        "text": "Perfect. Welcome to the hotel.",
+        "translations": {
+          "es": "Perfecto. Bienvenidos al hotel.",
+          "fr": "Parfait. Bienvenue à l'hôtel.",
+          "de": "Perfekt. Willkommen im Hotel.",
+          "it": "Perfetto. Benvenuti in hotel.",
+          "pt": "Perfeito. Bem-vindos ao hotel.",
+          "no": "Perfekt. Velkommen til hotellet."
+        }
+      },
+      {
+        "text": "Can you look up our reservation?",
+        "translations": {
+          "es": "¿Puede buscar nuestra reservación?",
+          "fr": "Pouvez-vous chercher notre réservation ?",
+          "de": "Können Sie unsere Reservierung suchen?",
+          "it": "Può cercare la nostra prenotazione?",
+          "pt": "Pode procurar nossa reserva?",
+          "no": "Kan du finne reservasjonen vår?"
+        }
+      },
+      {
+        "text": "Yes. May I have your last name, please?",
+        "translations": {
+          "es": "Sí. ¿Me da su apellido, por favor?",
+          "fr": "Oui. Votre nom de famille, s'il vous plaît ?",
+          "de": "Ja. Ihren Nachnamen, bitte?",
+          "it": "Sì. Il cognome, per favore?",
+          "pt": "Sim. Seu sobrenome, por favor?",
+          "no": "Ja. Etternavnet ditt, takk?"
+        }
+      },
+      {
+        "text": "Here is your reservation.",
+        "translations": {
+          "es": "Aquí está su reservación.",
+          "fr": "Voici votre réservation.",
+          "de": "Hier ist Ihre Reservierung.",
+          "it": "Ecco la vostra prenotazione.",
+          "pt": "Aqui está sua reserva.",
+          "no": "Her er reservasjonen deres."
+        }
+      },
+      {
+        "text": "Thank you.",
+        "translations": {
+          "es": "Gracias.",
+          "fr": "Merci.",
+          "de": "Danke.",
+          "it": "Grazie.",
+          "pt": "Obrigado.",
+          "no": "Takk."
+        }
+      },
+      {
+        "text": "Here is your room key.",
+        "translations": {
+          "es": "Aquí tiene la llave de su habitación.",
+          "fr": "Voici la clé de votre chambre.",
+          "de": "Hier ist Ihr Zimmerschlüssel.",
+          "it": "Ecco la chiave della vostra camera.",
+          "pt": "Aqui está a chave do seu quarto.",
+          "no": "Her er romnøkkelen deres."
+        }
+      },
+      {
+        "text": "What room number do we have?",
+        "translations": {
+          "es": "¿Qué número de habitación tenemos?",
+          "fr": "Quel est le numéro de notre chambre ?",
+          "de": "Welche Zimmernummer haben wir?",
+          "it": "Qual è il numero della nostra camera?",
+          "pt": "Qual é o número do nosso quarto?",
+          "no": "Hvilket romnummer har vi?"
+        }
+      },
+      {
+        "text": "Your room is on the second floor.",
+        "translations": {
+          "es": "Su habitación está en el segundo piso.",
+          "fr": "Votre chambre est au deuxième étage.",
+          "de": "Ihr Zimmer ist im zweiten Stock.",
+          "it": "La vostra camera è al secondo piano.",
+          "pt": "Seu quarto fica no segundo andar.",
+          "no": "Rommet deres er i andre etasje."
+        }
+      },
+      {
+        "text": "Thank you very much.",
+        "translations": {
+          "es": "Muchas gracias.",
+          "fr": "Merci beaucoup.",
+          "de": "Vielen Dank.",
+          "it": "Grazie mille.",
+          "pt": "Muito obrigado.",
+          "no": "Tusen takk."
+        }
+      },
+      {
+        "text": "Where is our room?",
+        "translations": {
+          "es": "¿Dónde está nuestra habitación?",
+          "fr": "Où est notre chambre ?",
+          "de": "Wo ist unser Zimmer?",
+          "it": "Dov'è la nostra camera?",
+          "pt": "Onde fica nosso quarto?",
+          "no": "Hvor er rommet vårt?"
+        }
+      },
+      {
+        "text": "Is there an elevator?",
+        "translations": {
+          "es": "¿Hay un ascensor?",
+          "fr": "Y a-t-il un ascenseur ?",
+          "de": "Gibt es einen Aufzug?",
+          "it": "C'è un ascensore?",
+          "pt": "Há um elevador?",
+          "no": "Er det en heis?"
+        }
+      },
+      {
+        "text": "Yes, it is beside the lobby.",
+        "translations": {
+          "es": "Sí, está al lado del vestíbulo.",
+          "fr": "Oui, il est à côté du hall.",
+          "de": "Ja, er ist neben der Lobby.",
+          "it": "Sì, è accanto alla hall.",
+          "pt": "Sim, fica ao lado do saguão.",
+          "no": "Ja, den er ved siden av lobbyen."
+        }
+      },
+      {
+        "text": "What time do we need to check out?",
+        "translations": {
+          "es": "¿A qué hora debemos salir?",
+          "fr": "À quelle heure devons-nous libérer la chambre ?",
+          "de": "Wann müssen wir auschecken?",
+          "it": "A che ora dobbiamo fare il check-out?",
+          "pt": "A que horas precisamos fazer o check-out?",
+          "no": "Når må vi sjekke ut?"
+        }
+      },
+      {
+        "text": "Can you help us with the luggage?",
+        "translations": {
+          "es": "¿Puede ayudarnos con el equipaje?",
+          "fr": "Pouvez-vous nous aider avec les bagages ?",
+          "de": "Können Sie uns mit dem Gepäck helfen?",
+          "it": "Può aiutarci con i bagagli?",
+          "pt": "Pode nos ajudar com a bagagem?",
+          "no": "Kan du hjelpe oss med bagasjen?"
+        }
+      },
+      {
+        "text": "Of course.",
+        "translations": {
+          "es": "Por supuesto.",
+          "fr": "Bien sûr.",
+          "de": "Natürlich.",
+          "it": "Certo.",
+          "pt": "Claro.",
+          "no": "Selvfølgelig."
+        }
+      },
+      {
+        "text": "This suitcase is mine.",
+        "translations": {
+          "es": "Esta maleta es mía.",
+          "fr": "Cette valise est à moi.",
+          "de": "Dieser Koffer gehört mir.",
+          "it": "Questa valigia è mia.",
+          "pt": "Esta mala é minha.",
+          "no": "Denne kofferten er min."
+        }
+      },
+      {
+        "text": "Thank you for your help.",
+        "translations": {
+          "es": "Gracias por su ayuda.",
+          "fr": "Merci pour votre aide.",
+          "de": "Danke für Ihre Hilfe.",
+          "it": "Grazie per l'aiuto.",
+          "pt": "Obrigado pela ajuda.",
+          "no": "Takk for hjelpen."
+        }
+      },
+      {
+        "text": "Is breakfast included?",
+        "translations": {
+          "es": "¿El desayuno está incluido?",
+          "fr": "Le petit-déjeuner est-il inclus ?",
+          "de": "Ist das Frühstück inbegriffen?",
+          "it": "La colazione è inclusa?",
+          "pt": "O café da manhã está incluído?",
+          "no": "Er frokost inkludert?"
+        }
+      },
+      {
+        "text": "Yes, breakfast is included.",
+        "translations": {
+          "es": "Sí, el desayuno está incluido.",
+          "fr": "Oui, le petit-déjeuner est inclus.",
+          "de": "Ja, das Frühstück ist inbegriffen.",
+          "it": "Sì, la colazione è inclusa.",
+          "pt": "Sim, o café da manhã está incluído.",
+          "no": "Ja, frokost er inkludert."
+        }
+      },
+      {
+        "text": "What time do you serve breakfast?",
+        "translations": {
+          "es": "¿A qué hora sirven el desayuno?",
+          "fr": "À quelle heure servez-vous le petit-déjeuner ?",
+          "de": "Um wie viel Uhr gibt es Frühstück?",
+          "it": "A che ora servite la colazione?",
+          "pt": "A que horas servem o café da manhã?",
+          "no": "Når serverer dere frokost?"
+        }
+      },
+      {
+        "text": "Perfect. See you tomorrow.",
+        "translations": {
+          "es": "Perfecto. Nos vemos mañana.",
+          "fr": "Parfait. À demain.",
+          "de": "Perfekt. Bis morgen.",
+          "it": "Perfetto. A domani.",
+          "pt": "Perfeito. Até amanhã.",
+          "no": "Perfekt. Vi sees i morgen."
+        }
+      }
+    ],
+    "hotspots": [
+      {
+        "id": "llave",
+        "label": "llave",
+        "x": 67.51104868479375,
+        "y": 56.934237224504855,
+        "w": 4.58,
+        "h": 9.48,
+        "sound": "sounds/bell.mp3",
+        "translations": {
+          "en": ""
+        },
+        "rotation": 0,
+        "z": 0
+      },
+      {
+        "id": "maleta",
+        "label": "maleta",
+        "x": 30.90736729566408,
+        "y": 78.64278452839466,
+        "w": 10.42,
+        "h": 16.09,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "camara",
+        "label": "camara",
+        "x": 43.92526510751152,
+        "y": 52.528488036547245,
+        "w": 6.9,
+        "h": 10.99,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "campana",
+        "label": "campana",
+        "x": 74.6463159004275,
+        "y": 58.445703508152576,
+        "w": 4.99,
+        "h": 8.4,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "libro",
+        "label": "libro",
+        "x": 77.0752587229128,
+        "y": 61.10835889074336,
+        "w": 10.74,
+        "h": 8.03,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "flores",
+        "label": "flores",
+        "x": 85.08737030726725,
+        "y": 59.63101427333414,
+        "w": 11.91,
+        "h": 15.16,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "recepcionista",
+        "label": "recepcionista",
+        "x": 77.03526474611915,
+        "y": 30.346351889951663,
+        "w": 6.51,
+        "h": 28.83,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "mostrador",
+        "label": "mostrador",
+        "x": 63.053684099572514,
+        "y": 71.96557436234869,
+        "w": 23.07,
+        "h": 10.04,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "sunset",
+        "label": "sunset",
+        "x": 54.95210519975572,
+        "y": 22.734557436234873,
+        "w": 8.6,
+        "h": 6.7,
+        "sound": "",
+        "translations": {
+          "es": "atardecer",
+          "fr": "coucher de soleil",
+          "de": "Sonnenuntergang",
+          "it": "tramonto",
+          "pt": "pôr do sol",
+          "no": "solnedgang"
+        }
+      },
+      {
+        "id": "marina",
+        "label": "marina",
+        "x": 16.6,
+        "y": 36.81,
+        "w": 10.27,
+        "h": 5.04,
+        "sound": "",
+        "translations": {
+          "es": "puerto pequeño",
+          "fr": "marina",
+          "de": "Yachthafen",
+          "it": "marina",
+          "pt": "marina",
+          "no": "marina"
+        }
+      },
+      {
+        "id": "rug",
+        "label": "rug",
+        "x": 23.86,
+        "y": 86.81,
+        "w": 11.73,
+        "h": 11.7,
+        "sound": "",
+        "translations": {
+          "es": "alfombra",
+          "fr": "tapis",
+          "de": "Teppich",
+          "it": "tappeto",
+          "pt": "tapete",
+          "no": "teppe"
+        }
+      },
+      {
+        "id": "purse",
+        "label": "purse",
+        "x": 50.1,
+        "y": 71.05,
+        "w": 6,
+        "h": 8,
+        "sound": "",
+        "translations": {
+          "es": "cartera",
+          "fr": "bourse",
+          "de": "Geldbeutel",
+          "it": "borsa",
+          "pt": "bolsa",
+          "no": "pung"
+        }
+      },
+      {
+        "id": "lamp",
+        "label": "lamp",
+        "x": 69.12,
+        "y": 10.82,
+        "w": 4.33,
+        "h": 10.96,
+        "sound": "",
+        "translations": {
+          "es": "lámpara",
+          "fr": "lampe",
+          "de": "Lampe",
+          "it": "lampada",
+          "pt": "lâmpada",
+          "no": "lampe"
+        }
+      },
+      {
+        "id": "arch",
+        "label": "arch",
+        "x": 34.16,
+        "y": 5.14,
+        "w": 10.32,
+        "h": 8.93,
+        "sound": "",
+        "translations": {
+          "es": "arco",
+          "fr": "cambre",
+          "de": "Bogen",
+          "it": "arco",
+          "pt": "arco",
+          "no": "bue"
+        }
+      },
+      {
+        "id": "flowers",
+        "label": "flowers",
+        "x": 26.58,
+        "y": 17.56,
+        "w": 4.54,
+        "h": 19.76,
+        "sound": "",
+        "translations": {
+          "es": "flores",
+          "fr": "fleurs",
+          "de": "Blumen",
+          "it": "fiori",
+          "pt": "flores",
+          "no": "blomster"
+        }
+      },
+      {
+        "id": "flower pot",
+        "label": "flower pot",
+        "x": 26.46,
+        "y": 58.09,
+        "w": 6,
+        "h": 8,
+        "sound": "",
+        "translations": {
+          "es": "maceta",
+          "fr": "pot de fleur",
+          "de": "Blumentopf",
+          "it": "vaso di fiori",
+          "pt": "vaso de flores",
+          "no": "blomsterpotte"
+        }
+      },
+      {
+        "id": "floor",
+        "label": "floor",
+        "x": 17.04210610323667,
+        "y": 62.27786120062474,
+        "w": 15.11,
+        "h": 10.59,
+        "sound": "",
+        "translations": {
+          "es": "piso",
+          "fr": "sol",
+          "de": "Boden",
+          "it": "pavimento",
+          "pt": "chão",
+          "no": "gulv"
+        }
+      },
+      {
+        "id": "chair",
+        "label": "chair",
+        "x": 2.804210775961841,
+        "y": 56.92868706081243,
+        "w": 6,
+        "h": 8,
+        "sound": "",
+        "translations": {
+          "es": "silla",
+          "fr": "chaise",
+          "de": "Stuhl",
+          "it": "sedia",
+          "pt": "cadeira",
+          "no": "stol"
+        }
+      },
+      {
+        "id": "table",
+        "label": "table",
+        "x": 13.31105145546866,
+        "y": 54.74671778148672,
+        "w": 6,
+        "h": 8,
+        "sound": "",
+        "translations": {
+          "es": "mesa",
+          "fr": "tableau",
+          "de": "Tisch",
+          "it": "tavolo",
+          "pt": "mesa",
+          "no": "bord"
+        }
+      },
+      {
+        "id": "hat",
+        "label": "hat",
+        "x": 44.89842200366416,
+        "y": 31.363933253092053,
+        "w": 6,
+        "h": 8,
+        "sound": "",
+        "translations": {
+          "es": "sombrero",
+          "fr": "chapeau",
+          "de": "Hut",
+          "it": "cappello",
+          "pt": "chapéu",
+          "no": "hatt"
+        }
+      },
+      {
+        "id": "picture",
+        "label": "picture",
+        "x": 69.91473880757259,
+        "y": 21.883112698463734,
+        "w": 4.33,
+        "h": 14.67,
+        "sound": "",
+        "translations": {
+          "es": "imagen",
+          "fr": "image",
+          "de": "Bild",
+          "it": "immagine",
+          "pt": "foto",
+          "no": "bilde"
+        }
+      },
+      {
+        "id": "room keys",
+        "label": "room keys",
+        "x": 84.17263149969466,
+        "y": 15.18995962575433,
+        "w": 12.51,
+        "h": 24.11,
+        "sound": "",
+        "translations": {
+          "es": "llaves de la habitación",
+          "fr": "clés de la chambre",
+          "de": "Zimmerschlüssel",
+          "it": "chiavi della camera",
+          "pt": "chaves do quarto",
+          "no": "romnøkler"
+        }
+      },
+      {
+        "id": "buildings",
+        "label": "buildings",
+        "x": 12.839473097740438,
+        "y": 23.835768081054518,
+        "w": 6,
+        "h": 8,
+        "sound": "",
+        "translations": {
+          "es": "edificios",
+          "fr": "bâtiments",
+          "de": "Gebäude",
+          "it": "edifici",
+          "pt": "edifícios",
+          "no": "bygninger"
+        }
+      },
+      {
+        "id": "hotel sign",
+        "label": "hotel sign",
+        "x": 85.47157853842441,
+        "y": 5.207538336115039,
+        "w": 6,
+        "h": 8,
+        "sound": "",
+        "translations": {
+          "es": "señal de hotel",
+          "fr": "signe de l'hôtel",
+          "de": "Hotelschild",
+          "it": "insegna dell'hotel",
+          "pt": "sinal de hotel",
+          "no": "hotellskilt"
+        }
+      },
+      {
+        "id": "sailboat",
+        "label": "sailboat",
+        "x": 51.85473314575864,
+        "y": 32.126588635682836,
+        "w": 7.99262758461054,
+        "h": 6.2367177814867185,
+        "sound": "",
+        "translations": {
+          "es": "velero",
+          "fr": "voilier",
+          "de": "Segelboot",
+          "it": "barca a vela",
+          "pt": "veleiro",
+          "no": "seilbåt",
+          "en": ""
+        },
+        "rotation": 0,
+        "z": 0
+      }
+    ],
+    "overlays": [],
+    "challenges": [
+      {
+        "prompt": "Find the Room Key",
+        "target": "llave",
+        "translations": {}
+      },
+      {
+        "prompt": "Find the Bell",
+        "target": "campana",
+        "translations": {}
+      },
+      {
+        "prompt": "Find the Camera",
+        "target": "camara",
+        "translations": {}
+      },
+      {
+        "prompt": "Find the Flowers",
+        "target": "flores",
+        "translations": {}
+      },
+      {
+        "prompt": "Find the Sailboat",
+        "target": "sailboat",
+        "translations": {}
+      },
+      {
+        "prompt": "Find the Book",
+        "target": "libro",
+        "translations": {}
+      }
+    ]
+  },
   "hot-air-balloon": {
     "title": "Hot Air Balloon",
     "image": "images/Hot-Air-Balloon-Festival-Adventure.jpg",
@@ -12110,6 +12791,689 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
           "pt": "Encontre o lago",
           "no": "Finn innsjøen"
         }
+      }
+    ]
+  },
+  "lake-mountain": {
+    "title": "Lake Mountain",
+    "image": "images/lake-mountain-adventure.jpg",
+    "lessons": [
+      {
+        "text": "Grandpa is fishing.",
+        "translations": {
+          "es": "El abuelo está pescando.",
+          "fr": "Grand-père pêche.",
+          "de": "Opa angelt.",
+          "it": "Il nonno sta pescando.",
+          "pt": "O avô está pescando.",
+          "no": "Bestefar fisker."
+        }
+      },
+      {
+        "text": "The fish jumps from the water.",
+        "translations": {
+          "es": "El pez salta del agua.",
+          "fr": "Le poisson saute hors de l'eau.",
+          "de": "Der Fisch springt aus dem Wasser.",
+          "it": "Il pesce salta fuori dall'acqua.",
+          "pt": "O peixe salta da água.",
+          "no": "Fisken hopper opp av vannet."
+        }
+      },
+      {
+        "text": "The fishing pole is ready.",
+        "translations": {
+          "es": "La caña de pescar está lista.",
+          "fr": "La canne à pêche est prête.",
+          "de": "Die Angel ist bereit.",
+          "it": "La canna da pesca è pronta.",
+          "pt": "A vara de pesca está pronta.",
+          "no": "Fiskestangen er klar."
+        }
+      },
+      {
+        "text": "The family is in the boat.",
+        "translations": {
+          "es": "La familia está en el bote.",
+          "fr": "La famille est dans le bateau.",
+          "de": "Die Familie ist im Boot.",
+          "it": "La famiglia è sulla barca.",
+          "pt": "A família está no barco.",
+          "no": "Familien er i båten."
+        }
+      },
+      {
+        "text": "The lake is beautiful.",
+        "translations": {
+          "es": "El lago es hermoso.",
+          "fr": "Le lac est magnifique.",
+          "de": "Der See ist wunderschön.",
+          "it": "Il lago è bellissimo.",
+          "pt": "O lago é lindo.",
+          "no": "Innsjøen er vakker."
+        }
+      },
+      {
+        "text": "The boat is on the water.",
+        "translations": {
+          "es": "El bote está en el agua.",
+          "fr": "Le bateau est sur l'eau.",
+          "de": "Das Boot ist auf dem Wasser.",
+          "it": "La barca è sull'acqua.",
+          "pt": "O barco está na água.",
+          "no": "Båten er på vannet."
+        }
+      },
+      {
+        "text": "The dock is beside the lake.",
+        "translations": {
+          "es": "El muelle está junto al lago.",
+          "fr": "Le quai est au bord du lac.",
+          "de": "Der Steg ist am See.",
+          "it": "Il molo è vicino al lago.",
+          "pt": "O cais fica ao lado do lago.",
+          "no": "Brygga ligger ved innsjøen."
+        }
+      },
+      {
+        "text": "The mountains are in the background.",
+        "translations": {
+          "es": "Las montañas están al fondo.",
+          "fr": "Les montagnes sont au fond.",
+          "de": "Die Berge sind im Hintergrund.",
+          "it": "Le montagne sono sullo sfondo.",
+          "pt": "As montanhas estão ao fundo.",
+          "no": "Fjellene er i bakgrunnen."
+        }
+      },
+      {
+        "text": "Grandma is smiling.",
+        "translations": {
+          "es": "La abuela está sonriendo.",
+          "fr": "Grand-mère sourit.",
+          "de": "Oma lächelt.",
+          "it": "La nonna sorride.",
+          "pt": "A avó está sorrindo.",
+          "no": "Bestemor smiler."
+        }
+      },
+      {
+        "text": "The children are in the boat.",
+        "translations": {
+          "es": "Los niños están en el bote.",
+          "fr": "Les enfants sont dans le bateau.",
+          "de": "Die Kinder sind im Boot.",
+          "it": "I bambini sono sulla barca.",
+          "pt": "As crianças estão no barco.",
+          "no": "Barna er i båten."
+        }
+      },
+      {
+        "text": "The boy is on the swing.",
+        "translations": {
+          "es": "El niño está en el columpio.",
+          "fr": "Le garçon est sur la balançoire.",
+          "de": "Der Junge ist auf der Schaukel.",
+          "it": "Il ragazzo è sull'altalena.",
+          "pt": "O menino está no balanço.",
+          "no": "Gutten er på husken."
+        }
+      },
+      {
+        "text": "The dog is on the shore.",
+        "translations": {
+          "es": "El perro está en la orilla.",
+          "fr": "Le chien est sur la rive.",
+          "de": "Der Hund ist am Ufer.",
+          "it": "Il cane è sulla riva.",
+          "pt": "O cachorro está na margem.",
+          "no": "Hunden er på stranden."
+        }
+      },
+      {
+        "text": "I see the mountains.",
+        "translations": {
+          "es": "Veo las montañas.",
+          "fr": "Je vois les montagnes.",
+          "de": "Ich sehe die Berge.",
+          "it": "Vedo le montagne.",
+          "pt": "Vejo as montanhas.",
+          "no": "Jeg ser fjellene."
+        }
+      },
+      {
+        "text": "The eagle is on the branch.",
+        "translations": {
+          "es": "El águila está en la rama.",
+          "fr": "L'aigle est sur la branche.",
+          "de": "Der Adler sitzt auf dem Ast.",
+          "it": "L'aquila è sul ramo.",
+          "pt": "A águia está no galho.",
+          "no": "Ørnen sitter på grenen."
+        }
+      },
+      {
+        "text": "The owl is in the tree.",
+        "translations": {
+          "es": "El búho está en el árbol.",
+          "fr": "Le hibou est dans l'arbre.",
+          "de": "Die Eule ist im Baum.",
+          "it": "Il gufo è nell'albero.",
+          "pt": "A coruja está na árvore.",
+          "no": "Uglen er i treet."
+        }
+      },
+      {
+        "text": "There are flowers beside the lake.",
+        "translations": {
+          "es": "Hay flores junto al lago.",
+          "fr": "Il y a des fleurs près du lac.",
+          "de": "Am See sind Blumen.",
+          "it": "Ci sono fiori vicino al lago.",
+          "pt": "Há flores perto do lago.",
+          "no": "Det er blomster ved innsjøen."
+        }
+      },
+      {
+        "text": "The fish are jumping.",
+        "translations": {
+          "es": "Los peces están saltando.",
+          "fr": "Les poissons sautent.",
+          "de": "Die Fische springen.",
+          "it": "I pesci stanno saltando.",
+          "pt": "Os peixes estão saltando.",
+          "no": "Fiskene hopper."
+        }
+      },
+      {
+        "text": "The boy is swinging.",
+        "translations": {
+          "es": "El niño se está columpiando.",
+          "fr": "Le garçon se balance.",
+          "de": "Der Junge schaukelt.",
+          "it": "Il ragazzo si dondola.",
+          "pt": "O menino está balançando.",
+          "no": "Gutten husker."
+        }
+      },
+      {
+        "text": "The dog is watching the lake.",
+        "translations": {
+          "es": "El perro está mirando el lago.",
+          "fr": "Le chien regarde le lac.",
+          "de": "Der Hund schaut auf den See.",
+          "it": "Il cane guarda il lago.",
+          "pt": "O cachorro olha para o lago.",
+          "no": "Hunden ser på innsjøen."
+        }
+      },
+      {
+        "text": "The family is fishing.",
+        "translations": {
+          "es": "La familia está pescando.",
+          "fr": "La famille pêche.",
+          "de": "Die Familie angelt.",
+          "it": "La famiglia sta pescando.",
+          "pt": "A família está pescando.",
+          "no": "Familien fisker."
+        }
+      },
+      {
+        "text": "The family enjoys the lake.",
+        "translations": {
+          "es": "La familia disfruta del lago.",
+          "fr": "La famille profite du lac.",
+          "de": "Die Familie genießt den See.",
+          "it": "La famiglia si gode il lago.",
+          "pt": "A família aproveita o lago.",
+          "no": "Familien nyter innsjøen."
+        }
+      },
+      {
+        "text": "The sun is setting.",
+        "translations": {
+          "es": "El sol se está poniendo.",
+          "fr": "Le soleil se couche.",
+          "de": "Die Sonne geht unter.",
+          "it": "Il sole sta tramontando.",
+          "pt": "O sol está se pondo.",
+          "no": "Solen går ned."
+        }
+      },
+      {
+        "text": "The cabin is among the trees.",
+        "translations": {
+          "es": "La cabaña está entre los árboles.",
+          "fr": "La cabane est parmi les arbres.",
+          "de": "Die Hütte steht zwischen den Bäumen.",
+          "it": "La baita è tra gli alberi.",
+          "pt": "A cabana fica entre as árvores.",
+          "no": "Hytta ligger mellom trærne."
+        }
+      },
+      {
+        "text": "Everyone enjoys the evening.",
+        "translations": {
+          "es": "Todos disfrutan de la tarde.",
+          "fr": "Tout le monde profite de la soirée.",
+          "de": "Alle genießen den Abend.",
+          "it": "Tutti si godono la sera.",
+          "pt": "Todos aproveitam a tarde.",
+          "no": "Alle nyter kvelden."
+        }
+      }
+    ],
+    "hotspots": [
+      {
+        "id": "grandpa",
+        "label": "grandpa",
+        "x": 55.78947725375281,
+        "y": 50.29114872469739,
+        "w": 4,
+        "h": 10,
+        "sound": "",
+        "translations": {
+          "es": ""
+        },
+        "rotation": 0,
+        "z": 0
+      },
+      {
+        "id": "grandma",
+        "label": "grandma",
+        "x": 59.26315424594185,
+        "y": 51.21835889074336,
+        "w": 4,
+        "h": 10,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "child",
+        "label": "child",
+        "x": 64,
+        "y": 54,
+        "w": 5,
+        "h": 10,
+        "sound": "sounds/child-laughing.mp3",
+        "translations": {
+          "es": ""
+        },
+        "rotation": 0,
+        "z": 0
+      },
+      {
+        "id": "swing",
+        "label": "swing",
+        "x": 84.52631770738938,
+        "y": 31.853500135875375,
+        "w": 9,
+        "h": 26,
+        "sound": "",
+        "translations": {
+          "es": ""
+        },
+        "rotation": 0,
+        "z": 0
+      },
+      {
+        "id": "dog",
+        "label": "dog",
+        "x": 87.26947761514519,
+        "y": 68.32488295352425,
+        "w": 10.97,
+        "h": 10.93,
+        "sound": "sounds/dog-panting.wav",
+        "translations": {
+          "es": ""
+        },
+        "rotation": 0,
+        "z": 0
+      },
+      {
+        "id": "fish",
+        "label": "fish",
+        "x": 64.94525944569757,
+        "y": 65.2302529860484,
+        "w": 10,
+        "h": 10,
+        "sound": "",
+        "translations": {
+          "es": ""
+        },
+        "rotation": 0,
+        "z": 0
+      },
+      {
+        "id": "fishingpole",
+        "label": "fishingpole",
+        "x": 44.38631716530082,
+        "y": 57.86228683827605,
+        "w": 3.19,
+        "h": 17.06,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "boat",
+        "label": "boat",
+        "x": 51.73473103763643,
+        "y": 54.7793731640775,
+        "w": 17.48,
+        "h": 7.31,
+        "sound": "sounds/boat-motor.mp3",
+        "translations": {
+          "es": ""
+        },
+        "rotation": 0,
+        "z": 0
+      },
+      {
+        "id": "owl",
+        "label": "owl",
+        "x": 2.4736844910809266,
+        "y": 27.602222265374106,
+        "w": 7,
+        "h": 14,
+        "sound": "sounds/owl.mp3",
+        "translations": {
+          "es": ""
+        },
+        "rotation": 0,
+        "z": 0
+      },
+      {
+        "id": "eagle",
+        "label": "eagle",
+        "x": 13.894736338057996,
+        "y": 4.363933253092053,
+        "w": 9,
+        "h": 12,
+        "sound": "sounds/eagle.mp3",
+        "translations": {
+          "es": ""
+        },
+        "rotation": 0,
+        "z": 0
+      },
+      {
+        "id": "cabin",
+        "label": "cabin",
+        "x": 25.349474784238208,
+        "y": 42.732157692472164,
+        "w": 10,
+        "h": 12,
+        "sound": "sounds/crickets-birds.mp3",
+        "translations": {}
+      },
+      {
+        "id": "waterfall",
+        "label": "waterfall",
+        "x": 37.2105268420275,
+        "y": 43.97311269846373,
+        "w": 7,
+        "h": 13,
+        "sound": "sounds/waterfall.mp3",
+        "translations": {
+          "es": ""
+        },
+        "rotation": 0,
+        "z": 0
+      },
+      {
+        "id": "dock",
+        "label": "dock",
+        "x": 39.06368428026871,
+        "y": 73.41924932383299,
+        "w": 11.33,
+        "h": 2.98,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "canoe",
+        "label": "canoe",
+        "x": 24.947370307267246,
+        "y": 80.42373953438623,
+        "w": 22,
+        "h": 11,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "paddle",
+        "label": "paddle",
+        "x": 34,
+        "y": 85,
+        "w": 22,
+        "h": 5,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "lifejacket",
+        "label": "lifejacket",
+        "x": 30.242631138302272,
+        "y": 77.49930859117556,
+        "w": 6,
+        "h": 8,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "campfire",
+        "label": "campfire",
+        "x": 25.56526209590836,
+        "y": 67.05202854666828,
+        "w": 7,
+        "h": 10,
+        "sound": "sounds/fire.mp3",
+        "translations": {
+          "es": ""
+        },
+        "rotation": 0,
+        "z": 0
+      },
+      {
+        "id": "chair",
+        "label": "chair",
+        "x": 15.5263162015878,
+        "y": 58.86045201031358,
+        "w": 9,
+        "h": 15,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "lantern",
+        "label": "lantern",
+        "x": 31.842104838363344,
+        "y": 64.68196397376634,
+        "w": 4,
+        "h": 8,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "tacklebox",
+        "label": "tacklebox",
+        "x": 34.63684310384736,
+        "y": 68.79114341913802,
+        "w": 7,
+        "h": 7,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "bucket",
+        "label": "bucket",
+        "x": 39.08316044984437,
+        "y": 68.18101427333414,
+        "w": 5,
+        "h": 8,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "lake",
+        "label": "lake",
+        "x": 75.5794776151452,
+        "y": 60.01462200913681,
+        "w": 13.46,
+        "h": 6.54,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "mountains",
+        "label": "mountains",
+        "x": 50.421050853148024,
+        "y": 33.33101427333414,
+        "w": 13.31579146768252,
+        "h": 7.986090945564218,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "sun",
+        "label": "sun",
+        "x": 70.73684400732832,
+        "y": 33.71487764796489,
+        "w": 7,
+        "h": 10,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "tree",
+        "label": "tree",
+        "x": 5.902105199755724,
+        "y": 41.69589722685839,
+        "w": 4.29,
+        "h": 21.76,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "flowers",
+        "label": "flowers",
+        "x": 1.590000150580158,
+        "y": 72.00063214148186,
+        "w": 3.743683888760293,
+        "h": 11.795708813711942,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "lilypads",
+        "label": "lilypads",
+        "x": 52.68421039951144,
+        "y": 81.47658863568283,
+        "w": 12.736839791083884,
+        "h": 11.60917944537168,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "rocks",
+        "label": "rocks",
+        "x": 78,
+        "y": 87,
+        "w": 22,
+        "h": 13,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "chipmunk",
+        "label": "chipmunk",
+        "x": 8.955263601709941,
+        "y": 75.88032286450971,
+        "w": 7,
+        "h": 10,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "dragonfly",
+        "label": "dragonfly",
+        "x": 85.8421055611481,
+        "y": 87.94019902426518,
+        "w": 6,
+        "h": 7,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "forest",
+        "label": "forest",
+        "x": 67.73525944569758,
+        "y": 49.01367230870461,
+        "w": 8.34,
+        "h": 5.400322864509702,
+        "sound": "sounds/birds-forest.mp3",
+        "translations": {
+          "es": "bosque",
+          "fr": "forêt",
+          "de": "Wald",
+          "it": "foresta",
+          "pt": "floresta",
+          "no": "skog"
+        },
+        "rotation": 0,
+        "z": 0
+      },
+      {
+        "id": "smoke",
+        "label": "smoke",
+        "x": 26.038418992060993,
+        "y": 33.305703508152575,
+        "w": 6,
+        "h": 8,
+        "sound": "",
+        "translations": {
+          "es": "humo",
+          "fr": "fumée",
+          "de": "Rauch",
+          "it": "fumo",
+          "pt": "fumaça",
+          "no": "røyk"
+        },
+        "rotation": 0,
+        "z": 0
+      }
+    ],
+    "overlays": [],
+    "challenges": [
+      {
+        "prompt": "Find the Fish",
+        "target": "fish",
+        "translations": {}
+      },
+      {
+        "prompt": "Find a Fishing Pole",
+        "target": "fishingpole",
+        "translations": {}
+      },
+      {
+        "prompt": "Find the Dog",
+        "target": "dog",
+        "translations": {}
+      },
+      {
+        "prompt": "Find the Eagle",
+        "target": "eagle",
+        "translations": {}
+      },
+      {
+        "prompt": "Find the Owl",
+        "target": "owl",
+        "translations": {}
+      },
+      {
+        "prompt": "Find the Swing",
+        "target": "swing",
+        "translations": {}
       }
     ]
   },
@@ -18080,6 +19444,357 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
       }
     ]
   },
+  "swimming": {
+    "title": "Swimming",
+    "image": "images/swimming.jpg",
+    "lessons": [
+      {
+        "text": "Welcome to our lakeside swimming adventure!",
+        "translations": {
+          "es": "¡Bienvenidos a nuestra aventura de natación junto al lago!",
+          "fr": "Bienvenue dans notre aventure de baignade au bord du lac !",
+          "it": "Benvenuti alla nostra avventura di nuoto al lago!",
+          "de": "Willkommen bei unserem Schwimmabenteuer am See!",
+          "no": "Velkommen til svømmeeventyret vårt ved innsjøen!",
+          "pt": "Bem-vindos à nossa aventura de natação no lago!"
+        }
+      },
+      {
+        "text": "The children are swimming in the clear blue lake.",
+        "translations": {
+          "es": "Los niños nadan en el lago azul y cristalino.",
+          "fr": "Les enfants nagent dans le lac bleu et limpide.",
+          "it": "I bambini nuotano nel lago azzurro e limpido.",
+          "de": "Die Kinder schwimmen im klaren blauen See.",
+          "no": "Barna svømmer i den klare, blå innsjøen.",
+          "pt": "As crianças estão nadando no lago azul e cristalino."
+        }
+      },
+      {
+        "text": "They wear life jackets to stay safe in the water.",
+        "translations": {
+          "es": "Llevan chalecos salvavidas para estar seguros en el agua.",
+          "fr": "Ils portent des gilets de sauvetage pour rester en sécurité dans l’eau.",
+          "it": "Indossano giubbotti di salvataggio per stare al sicuro in acqua.",
+          "de": "Sie tragen Schwimmwesten, um im Wasser sicher zu sein.",
+          "no": "De bruker redningsvester for å være trygge i vannet.",
+          "pt": "Eles usam coletes salva-vidas para ficar seguros na água."
+        }
+      },
+      {
+        "text": "Bear the golden dog is standing on the wooden dock.",
+        "translations": {
+          "es": "Bear, el perro dorado, está de pie en el muelle de madera.",
+          "fr": "Bear, le chien doré, se tient sur le quai en bois.",
+          "it": "Bear, il cane dorato, è in piedi sul molo di legno.",
+          "de": "Bear, der goldene Hund, steht auf dem Holzsteg.",
+          "no": "Bear, den gylne hunden, står på trebrygga.",
+          "pt": "Bear, o cachorro dourado, está em pé no cais de madeira."
+        }
+      },
+      {
+        "text": "The whole family is relaxing together by the lake.",
+        "translations": {
+          "es": "Toda la familia se relaja junta junto al lago.",
+          "fr": "Toute la famille se détend ensemble au bord du lac.",
+          "it": "Tutta la famiglia si rilassa insieme vicino al lago.",
+          "de": "Die ganze Familie entspannt sich gemeinsam am See.",
+          "no": "Hele familien slapper av sammen ved innsjøen.",
+          "pt": "Toda a família está relaxando junta à beira do lago."
+        }
+      },
+      {
+        "text": "Grandma and Grandpa are enjoying the sunshine.",
+        "translations": {
+          "es": "La abuela y el abuelo disfrutan del sol.",
+          "fr": "Grand-mère et grand-père profitent du soleil.",
+          "it": "La nonna e il nonno si godono il sole.",
+          "de": "Oma und Opa genießen den Sonnenschein.",
+          "no": "Bestemor og bestefar nyter solskinnet.",
+          "pt": "A vovó e o vovô estão aproveitando o sol."
+        }
+      },
+      {
+        "text": "A red canoe is resting beside the dock.",
+        "translations": {
+          "es": "Una canoa roja descansa junto al muelle.",
+          "fr": "Un canoë rouge repose à côté du quai.",
+          "it": "Una canoa rossa si trova accanto al molo.",
+          "de": "Ein rotes Kanu liegt neben dem Steg.",
+          "no": "En rød kano ligger ved brygga.",
+          "pt": "Uma canoa vermelha está ao lado do cais."
+        }
+      },
+      {
+        "text": "The wooden dock stretches across the water.",
+        "translations": {
+          "es": "El muelle de madera se extiende sobre el agua.",
+          "fr": "Le quai en bois s’étend au-dessus de l’eau.",
+          "it": "Il molo di legno si estende sull’acqua.",
+          "de": "Der Holzsteg erstreckt sich über das Wasser.",
+          "no": "Trebrygga strekker seg utover vannet.",
+          "pt": "O cais de madeira se estende sobre a água."
+        }
+      },
+      {
+        "text": "Our fifth-wheel RV has solar panels on its roof.",
+        "translations": {
+          "es": "Nuestra caravana de quinta rueda tiene paneles solares en el techo.",
+          "fr": "Notre caravane à sellette possède des panneaux solaires sur le toit.",
+          "it": "La nostra roulotte a quinta ruota ha pannelli solari sul tetto.",
+          "de": "Unser Sattelauflieger-Wohnwagen hat Solarmodule auf dem Dach.",
+          "no": "Vår femtehjulsvogn har solcellepaneler på taket.",
+          "pt": "Nosso trailer de quinta roda tem painéis solares no teto."
+        }
+      },
+      {
+        "text": "Tall pine trees grow around the beautiful lake.",
+        "translations": {
+          "es": "Altos pinos crecen alrededor del hermoso lago.",
+          "fr": "De grands pins poussent autour du magnifique lac.",
+          "it": "Alti pini crescono intorno al bellissimo lago.",
+          "de": "Hohe Kiefern wachsen rund um den schönen See.",
+          "no": "Høye furutrær vokser rundt den vakre innsjøen.",
+          "pt": "Pinheiros altos crescem ao redor do belo lago."
+        }
+      },
+      {
+        "text": "Snowy mountains rise beyond the forest.",
+        "translations": {
+          "es": "Las montañas nevadas se elevan más allá del bosque.",
+          "fr": "Des montagnes enneigées s’élèvent au-delà de la forêt.",
+          "it": "Montagne innevate si ergono oltre la foresta.",
+          "de": "Schneebedeckte Berge ragen hinter dem Wald auf.",
+          "no": "Snødekte fjell reiser seg bak skogen.",
+          "pt": "Montanhas cobertas de neve se erguem além da floresta."
+        }
+      },
+      {
+        "text": "Pink water lilies float among the green lily pads.",
+        "translations": {
+          "es": "Nenúfares rosados flotan entre las hojas verdes.",
+          "fr": "Des nénuphars roses flottent parmi les feuilles vertes.",
+          "it": "Ninfee rosa galleggiano tra le foglie verdi.",
+          "de": "Rosa Seerosen schwimmen zwischen grünen Seerosenblättern.",
+          "no": "Rosa vannliljer flyter blant grønne blader.",
+          "pt": "Nenúfares rosa flutuam entre as folhas verdes."
+        }
+      }
+    ],
+    "hotspots": [
+      {
+        "id": "children",
+        "label": "swimming children",
+        "x": 49,
+        "y": 63,
+        "w": 26,
+        "h": 19,
+        "sound": "sounds/kids-in-lake.mp3",
+        "translations": {
+          "es": ""
+        },
+        "rotation": 0,
+        "z": 0
+      },
+      {
+        "id": "life-jacket",
+        "label": "life jacket",
+        "x": 53,
+        "y": 70,
+        "w": 8,
+        "h": 9,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "bear",
+        "label": "Bear the dog",
+        "x": 53,
+        "y": 46,
+        "w": 9,
+        "h": 16,
+        "sound": "sounds/dog.mp3",
+        "translations": {
+          "es": ""
+        },
+        "rotation": 0,
+        "z": 0
+      },
+      {
+        "id": "family",
+        "label": "family",
+        "x": 8,
+        "y": 36,
+        "w": 47,
+        "h": 25,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "grandparents",
+        "label": "grandparents",
+        "x": 39,
+        "y": 36,
+        "w": 16,
+        "h": 23,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "canoe",
+        "label": "red canoe",
+        "x": 65,
+        "y": 51,
+        "w": 20,
+        "h": 9,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "dock",
+        "label": "wooden dock",
+        "x": 0,
+        "y": 55,
+        "w": 90,
+        "h": 13,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "rv",
+        "label": "fifth-wheel RV",
+        "x": 2,
+        "y": 17,
+        "w": 39,
+        "h": 23,
+        "sound": "sounds/guitar-solo.mp3",
+        "translations": {
+          "es": ""
+        },
+        "rotation": 0,
+        "z": 0
+      },
+      {
+        "id": "solar-panels",
+        "label": "solar panels",
+        "x": 10,
+        "y": 16,
+        "w": 20,
+        "h": 8,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "pine-trees",
+        "label": "pine trees",
+        "x": 32,
+        "y": 3,
+        "w": 20,
+        "h": 39,
+        "sound": "sounds/crickets-birds.mp3",
+        "translations": {
+          "es": ""
+        },
+        "rotation": 0,
+        "z": 0
+      },
+      {
+        "id": "mountains",
+        "label": "snowy mountains",
+        "x": 53,
+        "y": 9,
+        "w": 45,
+        "h": 28,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "water-lilies",
+        "label": "water lilies",
+        "x": 4,
+        "y": 77,
+        "w": 39,
+        "h": 19,
+        "sound": "",
+        "translations": {}
+      }
+    ],
+    "overlays": [],
+    "challenges": [
+      {
+        "prompt": "Find the children swimming",
+        "target": "children",
+        "translations": {
+          "es": "Encuentra a los niños nadando",
+          "fr": "Trouvez les enfants qui nagent",
+          "it": "Trova i bambini che nuotano",
+          "de": "Finde die schwimmenden Kinder",
+          "no": "Finn barna som svømmer",
+          "pt": "Encontre as crianças nadando"
+        }
+      },
+      {
+        "prompt": "Find Bear the dog",
+        "target": "bear",
+        "translations": {
+          "es": "Encuentra a Bear, el perro",
+          "fr": "Trouvez Bear, le chien",
+          "it": "Trova Bear, il cane",
+          "de": "Finde Bear, den Hund",
+          "no": "Finn hunden Bear",
+          "pt": "Encontre Bear, o cachorro"
+        }
+      },
+      {
+        "prompt": "Find the red canoe",
+        "target": "canoe",
+        "translations": {
+          "es": "Encuentra la canoa roja",
+          "fr": "Trouvez le canoë rouge",
+          "it": "Trova la canoa rossa",
+          "de": "Finde das rote Kanu",
+          "no": "Finn den røde kanoen",
+          "pt": "Encontre a canoa vermelha"
+        }
+      },
+      {
+        "prompt": "Find the fifth-wheel RV",
+        "target": "rv",
+        "translations": {
+          "es": "Encuentra la caravana de quinta rueda",
+          "fr": "Trouvez la caravane à sellette",
+          "it": "Trova la roulotte a quinta ruota",
+          "de": "Finde den Sattelauflieger-Wohnwagen",
+          "no": "Finn femtehjulsvognen",
+          "pt": "Encontre o trailer de quinta roda"
+        }
+      },
+      {
+        "prompt": "Find the solar panels",
+        "target": "solar-panels",
+        "translations": {
+          "es": "Encuentra los paneles solares",
+          "fr": "Trouvez les panneaux solaires",
+          "it": "Trova i pannelli solari",
+          "de": "Finde die Solarmodule",
+          "no": "Finn solcellepanelene",
+          "pt": "Encontre os painéis solares"
+        }
+      },
+      {
+        "prompt": "Find the water lilies",
+        "target": "water-lilies",
+        "translations": {
+          "es": "Encuentra los nenúfares",
+          "fr": "Trouvez les nénuphars",
+          "it": "Trova le ninfee",
+          "de": "Finde die Seerosen",
+          "no": "Finn vannliljene",
+          "pt": "Encontre os nenúfares"
+        }
+      }
+    ]
+  },
   "stormy-seas": {
     "title": "Stormy Seas",
     "image": "images/stormy-seas.jpg",
@@ -18549,357 +20264,6 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
           "it": "Trova il fulmine",
           "pt": "O relâmpago",
           "no": "Finn lynet"
-        }
-      }
-    ]
-  },
-  "swimming": {
-    "title": "Swimming",
-    "image": "images/swimming.jpg",
-    "lessons": [
-      {
-        "text": "Welcome to our lakeside swimming adventure!",
-        "translations": {
-          "es": "¡Bienvenidos a nuestra aventura de natación junto al lago!",
-          "fr": "Bienvenue dans notre aventure de baignade au bord du lac !",
-          "it": "Benvenuti alla nostra avventura di nuoto al lago!",
-          "de": "Willkommen bei unserem Schwimmabenteuer am See!",
-          "no": "Velkommen til svømmeeventyret vårt ved innsjøen!",
-          "pt": "Bem-vindos à nossa aventura de natação no lago!"
-        }
-      },
-      {
-        "text": "The children are swimming in the clear blue lake.",
-        "translations": {
-          "es": "Los niños nadan en el lago azul y cristalino.",
-          "fr": "Les enfants nagent dans le lac bleu et limpide.",
-          "it": "I bambini nuotano nel lago azzurro e limpido.",
-          "de": "Die Kinder schwimmen im klaren blauen See.",
-          "no": "Barna svømmer i den klare, blå innsjøen.",
-          "pt": "As crianças estão nadando no lago azul e cristalino."
-        }
-      },
-      {
-        "text": "They wear life jackets to stay safe in the water.",
-        "translations": {
-          "es": "Llevan chalecos salvavidas para estar seguros en el agua.",
-          "fr": "Ils portent des gilets de sauvetage pour rester en sécurité dans l’eau.",
-          "it": "Indossano giubbotti di salvataggio per stare al sicuro in acqua.",
-          "de": "Sie tragen Schwimmwesten, um im Wasser sicher zu sein.",
-          "no": "De bruker redningsvester for å være trygge i vannet.",
-          "pt": "Eles usam coletes salva-vidas para ficar seguros na água."
-        }
-      },
-      {
-        "text": "Bear the golden dog is standing on the wooden dock.",
-        "translations": {
-          "es": "Bear, el perro dorado, está de pie en el muelle de madera.",
-          "fr": "Bear, le chien doré, se tient sur le quai en bois.",
-          "it": "Bear, il cane dorato, è in piedi sul molo di legno.",
-          "de": "Bear, der goldene Hund, steht auf dem Holzsteg.",
-          "no": "Bear, den gylne hunden, står på trebrygga.",
-          "pt": "Bear, o cachorro dourado, está em pé no cais de madeira."
-        }
-      },
-      {
-        "text": "The whole family is relaxing together by the lake.",
-        "translations": {
-          "es": "Toda la familia se relaja junta junto al lago.",
-          "fr": "Toute la famille se détend ensemble au bord du lac.",
-          "it": "Tutta la famiglia si rilassa insieme vicino al lago.",
-          "de": "Die ganze Familie entspannt sich gemeinsam am See.",
-          "no": "Hele familien slapper av sammen ved innsjøen.",
-          "pt": "Toda a família está relaxando junta à beira do lago."
-        }
-      },
-      {
-        "text": "Grandma and Grandpa are enjoying the sunshine.",
-        "translations": {
-          "es": "La abuela y el abuelo disfrutan del sol.",
-          "fr": "Grand-mère et grand-père profitent du soleil.",
-          "it": "La nonna e il nonno si godono il sole.",
-          "de": "Oma und Opa genießen den Sonnenschein.",
-          "no": "Bestemor og bestefar nyter solskinnet.",
-          "pt": "A vovó e o vovô estão aproveitando o sol."
-        }
-      },
-      {
-        "text": "A red canoe is resting beside the dock.",
-        "translations": {
-          "es": "Una canoa roja descansa junto al muelle.",
-          "fr": "Un canoë rouge repose à côté du quai.",
-          "it": "Una canoa rossa si trova accanto al molo.",
-          "de": "Ein rotes Kanu liegt neben dem Steg.",
-          "no": "En rød kano ligger ved brygga.",
-          "pt": "Uma canoa vermelha está ao lado do cais."
-        }
-      },
-      {
-        "text": "The wooden dock stretches across the water.",
-        "translations": {
-          "es": "El muelle de madera se extiende sobre el agua.",
-          "fr": "Le quai en bois s’étend au-dessus de l’eau.",
-          "it": "Il molo di legno si estende sull’acqua.",
-          "de": "Der Holzsteg erstreckt sich über das Wasser.",
-          "no": "Trebrygga strekker seg utover vannet.",
-          "pt": "O cais de madeira se estende sobre a água."
-        }
-      },
-      {
-        "text": "Our fifth-wheel RV has solar panels on its roof.",
-        "translations": {
-          "es": "Nuestra caravana de quinta rueda tiene paneles solares en el techo.",
-          "fr": "Notre caravane à sellette possède des panneaux solaires sur le toit.",
-          "it": "La nostra roulotte a quinta ruota ha pannelli solari sul tetto.",
-          "de": "Unser Sattelauflieger-Wohnwagen hat Solarmodule auf dem Dach.",
-          "no": "Vår femtehjulsvogn har solcellepaneler på taket.",
-          "pt": "Nosso trailer de quinta roda tem painéis solares no teto."
-        }
-      },
-      {
-        "text": "Tall pine trees grow around the beautiful lake.",
-        "translations": {
-          "es": "Altos pinos crecen alrededor del hermoso lago.",
-          "fr": "De grands pins poussent autour du magnifique lac.",
-          "it": "Alti pini crescono intorno al bellissimo lago.",
-          "de": "Hohe Kiefern wachsen rund um den schönen See.",
-          "no": "Høye furutrær vokser rundt den vakre innsjøen.",
-          "pt": "Pinheiros altos crescem ao redor do belo lago."
-        }
-      },
-      {
-        "text": "Snowy mountains rise beyond the forest.",
-        "translations": {
-          "es": "Las montañas nevadas se elevan más allá del bosque.",
-          "fr": "Des montagnes enneigées s’élèvent au-delà de la forêt.",
-          "it": "Montagne innevate si ergono oltre la foresta.",
-          "de": "Schneebedeckte Berge ragen hinter dem Wald auf.",
-          "no": "Snødekte fjell reiser seg bak skogen.",
-          "pt": "Montanhas cobertas de neve se erguem além da floresta."
-        }
-      },
-      {
-        "text": "Pink water lilies float among the green lily pads.",
-        "translations": {
-          "es": "Nenúfares rosados flotan entre las hojas verdes.",
-          "fr": "Des nénuphars roses flottent parmi les feuilles vertes.",
-          "it": "Ninfee rosa galleggiano tra le foglie verdi.",
-          "de": "Rosa Seerosen schwimmen zwischen grünen Seerosenblättern.",
-          "no": "Rosa vannliljer flyter blant grønne blader.",
-          "pt": "Nenúfares rosa flutuam entre as folhas verdes."
-        }
-      }
-    ],
-    "hotspots": [
-      {
-        "id": "children",
-        "label": "swimming children",
-        "x": 49,
-        "y": 63,
-        "w": 26,
-        "h": 19,
-        "sound": "sounds/kids-in-lake.mp3",
-        "translations": {
-          "es": ""
-        },
-        "rotation": 0,
-        "z": 0
-      },
-      {
-        "id": "life-jacket",
-        "label": "life jacket",
-        "x": 53,
-        "y": 70,
-        "w": 8,
-        "h": 9,
-        "sound": "",
-        "translations": {}
-      },
-      {
-        "id": "bear",
-        "label": "Bear the dog",
-        "x": 53,
-        "y": 46,
-        "w": 9,
-        "h": 16,
-        "sound": "sounds/dog.mp3",
-        "translations": {
-          "es": ""
-        },
-        "rotation": 0,
-        "z": 0
-      },
-      {
-        "id": "family",
-        "label": "family",
-        "x": 8,
-        "y": 36,
-        "w": 47,
-        "h": 25,
-        "sound": "",
-        "translations": {}
-      },
-      {
-        "id": "grandparents",
-        "label": "grandparents",
-        "x": 39,
-        "y": 36,
-        "w": 16,
-        "h": 23,
-        "sound": "",
-        "translations": {}
-      },
-      {
-        "id": "canoe",
-        "label": "red canoe",
-        "x": 65,
-        "y": 51,
-        "w": 20,
-        "h": 9,
-        "sound": "",
-        "translations": {}
-      },
-      {
-        "id": "dock",
-        "label": "wooden dock",
-        "x": 0,
-        "y": 55,
-        "w": 90,
-        "h": 13,
-        "sound": "",
-        "translations": {}
-      },
-      {
-        "id": "rv",
-        "label": "fifth-wheel RV",
-        "x": 2,
-        "y": 17,
-        "w": 39,
-        "h": 23,
-        "sound": "sounds/guitar-solo.mp3",
-        "translations": {
-          "es": ""
-        },
-        "rotation": 0,
-        "z": 0
-      },
-      {
-        "id": "solar-panels",
-        "label": "solar panels",
-        "x": 10,
-        "y": 16,
-        "w": 20,
-        "h": 8,
-        "sound": "",
-        "translations": {}
-      },
-      {
-        "id": "pine-trees",
-        "label": "pine trees",
-        "x": 32,
-        "y": 3,
-        "w": 20,
-        "h": 39,
-        "sound": "sounds/crickets-birds.mp3",
-        "translations": {
-          "es": ""
-        },
-        "rotation": 0,
-        "z": 0
-      },
-      {
-        "id": "mountains",
-        "label": "snowy mountains",
-        "x": 53,
-        "y": 9,
-        "w": 45,
-        "h": 28,
-        "sound": "",
-        "translations": {}
-      },
-      {
-        "id": "water-lilies",
-        "label": "water lilies",
-        "x": 4,
-        "y": 77,
-        "w": 39,
-        "h": 19,
-        "sound": "",
-        "translations": {}
-      }
-    ],
-    "overlays": [],
-    "challenges": [
-      {
-        "prompt": "Find the children swimming",
-        "target": "children",
-        "translations": {
-          "es": "Encuentra a los niños nadando",
-          "fr": "Trouvez les enfants qui nagent",
-          "it": "Trova i bambini che nuotano",
-          "de": "Finde die schwimmenden Kinder",
-          "no": "Finn barna som svømmer",
-          "pt": "Encontre as crianças nadando"
-        }
-      },
-      {
-        "prompt": "Find Bear the dog",
-        "target": "bear",
-        "translations": {
-          "es": "Encuentra a Bear, el perro",
-          "fr": "Trouvez Bear, le chien",
-          "it": "Trova Bear, il cane",
-          "de": "Finde Bear, den Hund",
-          "no": "Finn hunden Bear",
-          "pt": "Encontre Bear, o cachorro"
-        }
-      },
-      {
-        "prompt": "Find the red canoe",
-        "target": "canoe",
-        "translations": {
-          "es": "Encuentra la canoa roja",
-          "fr": "Trouvez le canoë rouge",
-          "it": "Trova la canoa rossa",
-          "de": "Finde das rote Kanu",
-          "no": "Finn den røde kanoen",
-          "pt": "Encontre a canoa vermelha"
-        }
-      },
-      {
-        "prompt": "Find the fifth-wheel RV",
-        "target": "rv",
-        "translations": {
-          "es": "Encuentra la caravana de quinta rueda",
-          "fr": "Trouvez la caravane à sellette",
-          "it": "Trova la roulotte a quinta ruota",
-          "de": "Finde den Sattelauflieger-Wohnwagen",
-          "no": "Finn femtehjulsvognen",
-          "pt": "Encontre o trailer de quinta roda"
-        }
-      },
-      {
-        "prompt": "Find the solar panels",
-        "target": "solar-panels",
-        "translations": {
-          "es": "Encuentra los paneles solares",
-          "fr": "Trouvez les panneaux solaires",
-          "it": "Trova i pannelli solari",
-          "de": "Finde die Solarmodule",
-          "no": "Finn solcellepanelene",
-          "pt": "Encontre os painéis solares"
-        }
-      },
-      {
-        "prompt": "Find the water lilies",
-        "target": "water-lilies",
-        "translations": {
-          "es": "Encuentra los nenúfares",
-          "fr": "Trouvez les nénuphars",
-          "it": "Trova le ninfee",
-          "de": "Finde die Seerosen",
-          "no": "Finn vannliljene",
-          "pt": "Encontre os nenúfares"
         }
       }
     ]
@@ -21086,532 +22450,747 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
       }
     ]
   },
-  "asteroid": {
-    "title": "Asteroid",
-    "image": "images/asteroid.jpg",
+  "protect-earth": {
+    "title": "Protect Earth",
+    "image": "images/Protect-Earth-Adventure.jpg",
     "lessons": [
       {
-        "text": "A gigantic asteroid is moving toward Earth.",
+        "text": "From space, Earth looks beautiful, but astronauts can also observe clouds, cities, fires, dust, and some forms of pollution.",
         "translations": {
-          "es": "Un asteroide gigantesco se está moviendo hacia la Tierra.",
-          "fr": "Un astéroïde gigantesque se dirige vers la Terre.",
-          "de": "Ein gigantischer Asteroid bewegt sich auf die Erde zu.",
-          "it": "Un gigantesco asteroide si sta muovendo verso la Terra.",
-          "pt": "Um asteróide gigantesco está a mover-se em direção à Terra.",
-          "no": "En gigantisk asteroide beveger seg mot jorden."
+          "es": "Desde el espacio, la Tierra se ve hermosa, pero los astronautas también pueden observar nubes, ciudades, incendios, polvo y algunas formas de contaminación.",
+          "fr": "Depuis l'espace, la Terre est magnifique, mais les astronautes peuvent aussi observer les nuages, les villes, les incendies, la poussière et certaines formes de pollution.",
+          "de": "Aus dem Weltraum sieht die Erde wunderschön aus, doch Astronauten können auch Wolken, Städte, Brände, Staub und manche Formen der Verschmutzung beobachten.",
+          "it": "Dallo spazio la Terra appare bellissima, ma gli astronauti possono anche osservare nuvole, città, incendi, polvere e alcune forme di inquinamento.",
+          "pt": "Do espaço, a Terra parece linda, mas astronautas também podem observar nuvens, cidades, incêndios, poeira e algumas formas de poluição.",
+          "no": "Fra verdensrommet ser jorden vakker ut, men astronauter kan også observere skyer, byer, branner, støv og enkelte former for forurensning."
         }
       },
       {
-        "text": "The asteroid leaves a glowing trail behind it.",
+        "text": "Seeing our planet from far away reminds us that its air, land, and water are connected.",
         "translations": {
-          "es": "El asteroide deja un rastro brillante detrás de él.",
-          "fr": "L'astéroïde laisse une traînée lumineuse derrière lui.",
-          "de": "Der Asteroid hinterlässt eine leuchtende Spur.",
-          "it": "L'asteroide lascia una scia luminosa dietro di sé.",
-          "pt": "O asteroide deixa um rastro brilhante atrás dele.",
-          "no": "Asteroiden etterlater seg et glødende spor etter seg."
+          "es": "Ver nuestro planeta desde lejos nos recuerda que su aire, tierra y agua están conectados.",
+          "fr": "Voir notre planète de loin nous rappelle que son air, ses terres et son eau sont liés.",
+          "de": "Der Blick aus der Ferne erinnert uns daran, dass Luft, Land und Wasser miteinander verbunden sind.",
+          "it": "Vedere il pianeta da lontano ci ricorda che aria, terra e acqua sono collegate.",
+          "pt": "Ver nosso planeta de longe nos lembra que o ar, a terra e a água estão conectados.",
+          "no": "Å se planeten på avstand minner oss om at luft, land og vann henger sammen."
         }
       },
       {
-        "text": "Smaller pieces of rock break away from the asteroid.",
+        "text": "Air pollution happens when harmful gases and particles enter the air.",
         "translations": {
-          "es": "Trozos más pequeños de roca se separan del asteroide.",
-          "fr": "De plus petits morceaux de roche se détachent de l'astéroïde.",
-          "de": "Kleinere Gesteinsstücke brechen vom Asteroiden ab.",
-          "it": "Pezzi di roccia più piccoli si staccano dall'asteroide.",
-          "pt": "Pedaços menores de rocha se separam do asteroide.",
-          "no": "Mindre steinbiter løsner fra asteroiden."
+          "es": "La contaminación del aire ocurre cuando gases y partículas dañinas entran en el aire.",
+          "fr": "La pollution de l'air se produit lorsque des gaz et des particules nocifs pénètrent dans l'air.",
+          "de": "Luftverschmutzung entsteht, wenn schädliche Gase und Partikel in die Luft gelangen.",
+          "it": "L'inquinamento atmosferico si verifica quando gas e particelle nocive entrano nell'aria.",
+          "pt": "A poluição do ar acontece quando gases e partículas prejudiciais entram no ar.",
+          "no": "Luftforurensning oppstår når skadelige gasser og partikler kommer ut i luften."
         }
       },
       {
-        "text": "A large city stretches along the coastline.",
+        "text": "Pollution can come from many sources, including transportation, industry, fires, and energy production.",
         "translations": {
-          "es": "Una gran ciudad se extiende a lo largo de la costa.",
-          "fr": "Une grande ville s'étend le long de la côte.",
-          "de": "Entlang der Küste erstreckt sich eine große Stadt.",
-          "it": "Una grande città si estende lungo la costa.",
-          "pt": "Uma grande cidade se estende ao longo da costa.",
-          "no": "En stor by strekker seg langs kystlinjen."
+          "es": "La contaminación puede provenir de muchas fuentes, como el transporte, la industria, los incendios y la producción de energía.",
+          "fr": "Elle peut provenir de nombreuses sources, notamment les transports, l'industrie, les incendies et la production d'énergie.",
+          "de": "Verschmutzung kann aus vielen Quellen stammen, darunter Verkehr, Industrie, Brände und Energieerzeugung.",
+          "it": "Può provenire da molte fonti, tra cui trasporti, industria, incendi e produzione di energia.",
+          "pt": "Ela pode vir de muitas fontes, incluindo transporte, indústria, incêndios e produção de energia.",
+          "no": "Forurensning kan komme fra mange kilder, blant annet transport, industri, branner og energiproduksjon."
         }
       },
       {
-        "text": "The ocean reflects the orange light in the sky.",
+        "text": "Factories make many useful products, but industrial processes can also release pollution if emissions are not controlled.",
         "translations": {
-          "es": "El océano refleja la luz naranja en el cielo.",
-          "fr": "L'océan reflète la lumière orange dans le ciel.",
-          "de": "Der Ozean reflektiert das orangefarbene Licht am Himmel.",
-          "it": "L'oceano riflette la luce arancione nel cielo.",
-          "pt": "O oceano reflete a luz laranja no céu.",
-          "no": "Havet reflekterer det oransje lyset på himmelen."
+          "es": "Las fábricas producen muchos productos útiles, pero los procesos industriales también pueden liberar contaminación si las emisiones no se controlan.",
+          "fr": "Les usines fabriquent de nombreux produits utiles, mais les procédés industriels peuvent aussi produire de la pollution si les émissions ne sont pas contrôlées.",
+          "de": "Fabriken stellen viele nützliche Produkte her, doch industrielle Prozesse können auch Schadstoffe freisetzen, wenn Emissionen nicht kontrolliert werden.",
+          "it": "Le fabbriche producono molti prodotti utili, ma i processi industriali possono anche rilasciare inquinamento se le emissioni non sono controllate.",
+          "pt": "Fábricas produzem muitos produtos úteis, mas processos industriais também podem liberar poluição se as emissões não forem controladas.",
+          "no": "Fabrikker lager mange nyttige produkter, men industrielle prosesser kan også slippe ut forurensning dersom utslipp ikke kontrolleres."
         }
       },
       {
-        "text": "People are fleeing from the approaching danger.",
+        "text": "Cleaner technology, filters, efficiency, and cleaner energy can reduce harmful emissions.",
         "translations": {
-          "es": "La gente está huyendo del peligro que se aproxima.",
-          "fr": "Les gens fuient le danger qui approche.",
-          "de": "Die Menschen fliehen vor der herannahenden Gefahr.",
-          "it": "Le persone stanno fuggendo dal pericolo in avvicinamento.",
-          "pt": "As pessoas estão fugindo do perigo que se aproxima.",
-          "no": "Folk flykter fra den nærliggende faren."
+          "es": "La tecnología más limpia, los filtros, la eficiencia y la energía más limpia pueden reducir las emisiones dañinas.",
+          "fr": "Des technologies plus propres, des filtres, l'efficacité et une énergie plus propre peuvent réduire les émissions nocives.",
+          "de": "Sauberere Technik, Filter, Effizienz und sauberere Energie können schädliche Emissionen verringern.",
+          "it": "Tecnologie più pulite, filtri, efficienza ed energia più pulita possono ridurre le emissioni nocive.",
+          "pt": "Tecnologia mais limpa, filtros, eficiência e energia mais limpa podem reduzir emissões prejudiciais.",
+          "no": "Renere teknologi, filtre, effektivitet og renere energi kan redusere skadelige utslipp."
         }
       },
       {
-        "text": "Cars are stopped along the crowded road.",
+        "text": "Pollution on land can reach streams, rivers, lakes, and oceans through runoff and waste.",
         "translations": {
-          "es": "Los coches se detienen a lo largo de la concurrida carretera.",
-          "fr": "Les voitures sont arrêtées le long de la route bondée.",
-          "de": "Autos werden entlang der überfüllten Straße angehalten.",
-          "it": "Le auto vengono fermate lungo la strada affollata.",
-          "pt": "Carros são parados ao longo da estrada lotada.",
-          "no": "Biler stopper langs den overfylte veien."
+          "es": "La contaminación en tierra puede llegar a arroyos, ríos, lagos y océanos por la escorrentía y los residuos.",
+          "fr": "La pollution terrestre peut atteindre les ruisseaux, les rivières, les lacs et les océans par le ruissellement et les déchets.",
+          "de": "Verschmutzung an Land kann durch Abfluss und Abfälle in Bäche, Flüsse, Seen und Ozeane gelangen.",
+          "it": "L'inquinamento sulla terra può raggiungere ruscelli, fiumi, laghi e oceani attraverso il deflusso e i rifiuti.",
+          "pt": "A poluição em terra pode chegar a córregos, rios, lagos e oceanos por escoamento e resíduos.",
+          "no": "Forurensning på land kan nå bekker, elver, innsjøer og hav gjennom avrenning og avfall."
         }
       },
       {
-        "text": "Dark clouds of smoke and dust spread across the sky.",
+        "text": "Keeping trash and harmful chemicals out of waterways helps protect wildlife and clean water.",
         "translations": {
-          "es": "Nubes oscuras de humo y polvo se extendieron por el cielo.",
-          "fr": "Des nuages sombres de fumée et de poussière se répandirent dans le ciel.",
-          "de": "Dunkle Rauch- und Staubwolken breiteten sich über den Himmel aus.",
-          "it": "Nuvole scure di fumo e polvere si diffusero nel cielo.",
-          "pt": "Nuvens escuras de fumaça e poeira se espalharam pelo céu.",
-          "no": "Mørke skyer av røyk og støv spredte seg over himmelen."
+          "es": "Mantener la basura y los productos químicos dañinos fuera del agua ayuda a proteger la vida silvestre y el agua limpia.",
+          "fr": "Empêcher les déchets et les produits chimiques nocifs d'entrer dans l'eau aide à protéger la faune et l'eau propre.",
+          "de": "Müll und schädliche Chemikalien von Gewässern fernzuhalten hilft, Tiere und sauberes Wasser zu schützen.",
+          "it": "Tenere rifiuti e sostanze chimiche nocive lontano dall'acqua aiuta a proteggere la fauna e l'acqua pulita.",
+          "pt": "Manter lixo e produtos químicos prejudiciais longe da água ajuda a proteger a vida selvagem e a água limpa.",
+          "no": "Å holde søppel og skadelige kjemikalier unna vann bidrar til å beskytte dyreliv og rent vann."
+        }
+      },
+      {
+        "text": "People can help by wasting less energy, reusing and recycling materials, preventing litter, and choosing cleaner transportation when practical.",
+        "translations": {
+          "es": "Las personas pueden ayudar usando menos energía, reutilizando y reciclando materiales, evitando tirar basura y eligiendo transporte más limpio cuando sea práctico.",
+          "fr": "On peut aider en gaspillant moins d'énergie, en réutilisant et recyclant, en évitant les déchets sauvages et en choisissant des transports plus propres lorsque c'est possible.",
+          "de": "Menschen können helfen, indem sie weniger Energie verschwenden, Materialien wiederverwenden und recyceln, Müll vermeiden und wenn möglich sauberere Verkehrsmittel wählen.",
+          "it": "Le persone possono aiutare sprecando meno energia, riutilizzando e riciclando materiali, evitando di gettare rifiuti e scegliendo trasporti più puliti quando possibile.",
+          "pt": "As pessoas podem ajudar desperdiçando menos energia, reutilizando e reciclando materiais, evitando lixo e escolhendo transporte mais limpo quando for prático.",
+          "no": "Folk kan hjelpe ved å sløse mindre energi, gjenbruke og resirkulere materialer, unngå forsøpling og velge renere transport når det er praktisk."
+        }
+      },
+      {
+        "text": "Communities, businesses, scientists, and governments can also work together to reduce pollution.",
+        "translations": {
+          "es": "Las comunidades, empresas, científicos y gobiernos también pueden trabajar juntos para reducir la contaminación.",
+          "fr": "Les communautés, entreprises, scientifiques et gouvernements peuvent également travailler ensemble pour réduire la pollution.",
+          "de": "Gemeinden, Unternehmen, Wissenschaftler und Regierungen können ebenfalls zusammenarbeiten, um Verschmutzung zu reduzieren.",
+          "it": "Comunità, imprese, scienziati e governi possono inoltre collaborare per ridurre l'inquinamento.",
+          "pt": "Comunidades, empresas, cientistas e governos também podem trabalhar juntos para reduzir a poluição.",
+          "no": "Lokalsamfunn, bedrifter, forskere og myndigheter kan også samarbeide om å redusere forurensning."
+        }
+      },
+      {
+        "text": "Earth is our shared home. Protecting clean air, clean water, soil, forests, and wildlife helps people and nature.",
+        "translations": {
+          "es": "La Tierra es nuestro hogar compartido. Proteger el aire, el agua, el suelo, los bosques y la vida silvestre ayuda a las personas y a la naturaleza.",
+          "fr": "La Terre est notre maison commune. Protéger l'air, l'eau, les sols, les forêts et la faune aide les personnes et la nature.",
+          "de": "Die Erde ist unser gemeinsames Zuhause. Saubere Luft, sauberes Wasser, Böden, Wälder und Tiere zu schützen hilft Menschen und Natur.",
+          "it": "La Terra è la nostra casa comune. Proteggere aria, acqua, suolo, foreste e fauna aiuta le persone e la natura.",
+          "pt": "A Terra é nosso lar compartilhado. Proteger o ar, a água, o solo, as florestas e a vida selvagem ajuda as pessoas e a natureza.",
+          "no": "Jorden er vårt felles hjem. Å beskytte ren luft, rent vann, jord, skog og dyreliv hjelper både mennesker og natur."
+        }
+      },
+      {
+        "text": "The message of this adventure is simple: do not pollute, and do what you can to leave the planet cleaner.",
+        "translations": {
+          "es": "El mensaje de esta aventura es sencillo: no contamines y haz lo que puedas para dejar el planeta más limpio.",
+          "fr": "Le message de cette aventure est simple : ne polluons pas et faisons ce que nous pouvons pour laisser une planète plus propre.",
+          "de": "Die Botschaft dieses Abenteuers ist einfach: nicht verschmutzen und tun, was man kann, um den Planeten sauberer zu hinterlassen.",
+          "it": "Il messaggio di questa avventura è semplice: non inquinare e fai ciò che puoi per lasciare il pianeta più pulito.",
+          "pt": "A mensagem desta aventura é simples: não polua e faça o que puder para deixar o planeta mais limpo.",
+          "no": "Budskapet i dette eventyret er enkelt: ikke forurens, og gjør det du kan for å etterlate planeten renere."
         }
       }
     ],
     "hotspots": [
       {
-        "id": "asteroid",
-        "label": "asteroid",
+        "id": "smoke",
+        "label": "smoke",
         "x": 29,
-        "y": 0,
+        "y": 19,
         "w": 39,
-        "h": 47,
-        "rotation": 0,
-        "z": 0,
-        "sound": "sounds/asteroid.mp3",
-        "translations": {
-          "es": ""
-        }
+        "h": 26,
+        "sound": "",
+        "translations": {}
       },
       {
-        "id": "fiery-trail",
-        "label": "fiery trail",
-        "x": 61,
-        "y": 0,
-        "w": 37,
-        "h": 39
+        "id": "haze",
+        "label": "haze",
+        "x": 26.94,
+        "y": 16.98,
+        "w": 27.55,
+        "h": 22.22,
+        "sound": "sounds/factory.mp3",
+        "translations": {}
       },
       {
-        "id": "flying-fragments",
-        "label": "flying fragments",
-        "x": 72,
-        "y": 21,
-        "w": 26,
-        "h": 22
-      },
-      {
-        "id": "coastal-city",
-        "label": "coastal city",
-        "x": 5,
-        "y": 55,
-        "w": 59,
-        "h": 18
+        "id": "river",
+        "label": "river",
+        "x": 83.08,
+        "y": 23.94,
+        "w": 3.1,
+        "h": 16.94,
+        "sound": "",
+        "translations": {}
       },
       {
         "id": "ocean",
         "label": "ocean",
-        "x": 45,
-        "y": 48,
-        "w": 46,
-        "h": 13
+        "x": 68,
+        "y": 45,
+        "w": 28,
+        "h": 19,
+        "sound": "",
+        "translations": {}
       },
       {
-        "id": "running-people",
-        "label": "running people",
-        "x": 0,
-        "y": 67,
-        "w": 44,
-        "h": 31
+        "id": "atmosphere",
+        "label": "atmosphere",
+        "x": 24.01,
+        "y": 13.07,
+        "w": 67,
+        "h": 12,
+        "sound": "",
+        "translations": {}
       },
       {
-        "id": "cars",
-        "label": "cars",
-        "x": 33,
-        "y": 72,
-        "w": 46,
-        "h": 26
+        "id": "sunrise",
+        "label": "sunrise",
+        "x": 94.35,
+        "y": 14.75,
+        "w": 5.49,
+        "h": 19.29,
+        "sound": "",
+        "translations": {}
       },
       {
-        "id": "smoke-clouds",
-        "label": "smoke clouds",
-        "x": 71,
-        "y": 35,
-        "w": 27,
-        "h": 18
+        "id": "ships",
+        "label": "ships",
+        "x": 76,
+        "y": 46,
+        "w": 22,
+        "h": 18,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "map",
+        "label": "map",
+        "x": -0.16,
+        "y": 18,
+        "w": 12.83,
+        "h": 21.5,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "chart",
+        "label": "chart",
+        "x": -1.15,
+        "y": 43.46,
+        "w": 15.48,
+        "h": 11.54,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "monitor",
+        "label": "monitor",
+        "x": 81.26,
+        "y": 72.48,
+        "w": 18,
+        "h": 22,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "satellite",
+        "label": "satellite",
+        "x": 9,
+        "y": 7,
+        "w": 7.894736157361807,
+        "h": 13,
+        "sound": "",
+        "translations": {}
+      },
+      {
+        "id": "pollution-critical-warning",
+        "label": "pollution critical warning",
+        "x": 21.36,
+        "y": -1.04,
+        "w": 74.44,
+        "h": 77.73,
+        "sound": "sounds/world-pollution-warning-message.mp3",
+        "translations": {}
       }
     ],
     "overlays": [],
     "challenges": [
       {
-        "prompt": "Find the asteroid",
-        "target": "asteroid",
+        "prompt": "Find the Smoke",
+        "target": "smoke",
         "translations": {
-          "es": "Encuentra el asteroide",
-          "fr": "Trouvez l'astéroïde",
-          "de": "Finde den Asteroiden",
-          "it": "Trova l'asteroide",
-          "pt": "Encontrar o asteróide",
-          "no": "Finn asteroiden"
+          "es": "44. El humo (Ad dójan)",
+          "fr": "La fumée",
+          "de": "Finde den Rauch",
+          "it": "Trova il fumo",
+          "pt": "Encontre o fumo",
+          "no": "Finn røyken"
         }
       },
       {
-        "prompt": "Find the fiery trail",
-        "target": "fiery-trail",
+        "prompt": "Find the River",
+        "target": "river",
         "translations": {
-          "es": "Encuentra el sendero de fuego",
-          "fr": "Trouvez la piste ardente",
-          "de": "Finde den feurigen Pfad",
-          "it": "Trova il sentiero infuocato",
-          "pt": "Encontre a trilha ardente",
-          "no": "Finn den brennende stien"
+          "es": "El canal",
+          "fr": "La rivière",
+          "de": "DER FLUSS",
+          "it": "Il fiume",
+          "pt": "Do Rio",
+          "no": "Finn elven"
         }
       },
       {
-        "prompt": "Find the flying fragments",
-        "target": "flying-fragments",
+        "prompt": "Find the Ships Satelite Display",
+        "target": "satellite",
         "translations": {
-          "es": "Encuentra los fragmentos voladores",
-          "fr": "Trouvez les fragments volants",
-          "de": "Finde die fliegenden Fragmente",
-          "it": "Trova i frammenti volanti",
-          "pt": "Encontre os fragmentos voadores",
-          "no": "Finn de flygende fragmentene"
+          "es": "Encuentra la pantalla satelital del barco",
+          "fr": "Trouvez l'affichage satellite des vaisseaux",
+          "de": "Finden Sie das Schiffs-Satelliten-Display",
+          "it": "Trova lo Ships Satelite Display",
+          "pt": "Encontre o visor de satélites do Ships",
+          "no": "Finn skipets satellittskjerm"
         }
       },
       {
-        "prompt": "Find the coastal city",
-        "target": "coastal-city",
+        "prompt": "Find the space ships navigation charts",
+        "target": "chart",
         "translations": {
-          "es": "Encuentra la ciudad costera",
-          "fr": "Trouvez la ville côtière",
-          "de": "Finde die Küstenstadt",
-          "it": "Trova la città costiera",
-          "pt": "Encontre a cidade costeira",
-          "no": "Finn kystbyen"
+          "es": "Encuentra las cartas de navegación de las naves espaciales",
+          "fr": "Trouvez les cartes de navigation des vaisseaux spatiaux",
+          "de": "Finden Sie die Navigationskarten der Raumschiffe",
+          "it": "Trova le carte di navigazione delle navi spaziali",
+          "pt": "Encontre as cartas de navegação das naves espaciais",
+          "no": "Finn navigasjonskartene til romskipene"
         }
       },
       {
-        "prompt": "Find the ocean",
-        "target": "ocean",
+        "prompt": "Find Earths Atmosphere",
+        "target": "atmosphere",
         "translations": {
-          "es": "El Mar",
-          "fr": "l’océan",
-          "de": "Finde den Ozean",
-          "it": "L'oceano",
-          "pt": "o oceano",
-          "no": "Finn havet"
-        }
-      },
-      {
-        "prompt": "Find the running people",
-        "target": "running-people",
-        "translations": {
-          "es": "Encuentra a la gente que corre",
-          "fr": "Trouvez les gens qui courent",
-          "de": "Finde die rennenden Leute",
-          "it": "Trova le persone che corrono",
-          "pt": "Encontre as pessoas que correm",
-          "no": "Finn de løpende menneskene"
-        }
-      },
-      {
-        "prompt": "Find the cars",
-        "target": "cars",
-        "translations": {
-          "es": "Encuentra los coches",
-          "fr": "Trouver les voitures",
-          "de": "Finden Sie die Autos",
-          "it": "Trova le auto",
-          "pt": "Encontrar os carros",
-          "no": "Finn bilene"
-        }
-      },
-      {
-        "prompt": "Find the smoke clouds",
-        "target": "smoke-clouds",
-        "translations": {
-          "es": "Encuentra las nubes de humo",
-          "fr": "Trouvez les nuages de fumée",
-          "de": "Finde die Rauchwolken",
-          "it": "Trova le nuvole di fumo",
-          "pt": "Encontre as nuvens de fumo",
-          "no": "Finn røykskyene"
+          "es": "Encuentra la atmósfera de la Tierra",
+          "fr": "Trouver l'atmosphère terrestre",
+          "de": "Finde die Atmosphäre der Erde",
+          "it": "Trova l'atmosfera terrestre",
+          "pt": "Encontre a atmosfera da Terra",
+          "no": "Finn jordens atmosfære"
         }
       }
     ]
   },
-  "dam-collapse": {
-    "title": "Dam Collapse",
-    "image": "images/dam-collapse.jpg",
+  "spaceship-window-earth": {
+    "title": "Spaceship Window Earth",
+    "image": "images/Spaceship-Window-Earth.jpg",
     "lessons": [
       {
-        "text": "The concrete dam is breaking apart.",
+        "text": "The aliens are laughing as they watch Earth through the spaceship window.",
         "translations": {
-          "es": "La presa de hormigón se está rompiendo.",
-          "fr": "Le barrage en béton se brise.",
-          "de": "Der Betondamm bricht auseinander.",
-          "it": "La diga di cemento si sta rompendo.",
-          "pt": "A barragem de betão está a romper-se.",
-          "no": "Betongdammen er i ferd med å brekke fra hverandre."
+          "es": "Los extraterrestres se ríen mientras observan la Tierra por la ventana de la nave.",
+          "fr": "Les extraterrestres rient en regardant la Terre par la fenêtre du vaisseau.",
+          "de": "Die Außerirdischen lachen, während sie die Erde durch das Raumschifffenster beobachten.",
+          "it": "Gli alieni ridono mentre guardano la Terra dal finestrino dell’astronave.",
+          "pt": "Os alienígenas riem enquanto observam a Terra pela janela da nave.",
+          "no": "Romvesenene ler mens de ser på jorden gjennom romskipets vindu."
         }
       },
       {
-        "text": "Powerful floodwater rushes through the valley.",
+        "text": "Factories produce useful things, but their smoke can pollute the air.",
         "translations": {
-          "es": "Poderosas inundaciones atraviesan el valle.",
-          "fr": "De puissantes eaux de crue se précipitent dans la vallée.",
-          "de": "Starkes Hochwasser strömt durch das Tal.",
-          "it": "Una potente inondazione attraversa la valle.",
-          "pt": "Poderosas enchentes correm pelo vale.",
-          "no": "Kraftig flomvann fosser gjennom dalen."
+          "es": "Las fábricas producen cosas útiles, pero su humo puede contaminar el aire.",
+          "fr": "Les usines fabriquent des objets utiles, mais leur fumée peut polluer l’air.",
+          "de": "Fabriken stellen nützliche Dinge her, aber ihr Rauch kann die Luft verschmutzen.",
+          "it": "Le fabbriche producono cose utili, ma il loro fumo può inquinare l’aria.",
+          "pt": "As fábricas produzem coisas úteis, mas sua fumaça pode poluir o ar.",
+          "no": "Fabrikker lager nyttige ting, men røyken deres kan forurense luften."
         }
       },
       {
-        "text": "A reservoir lies behind the dam.",
+        "text": "A brown layer of smog hangs above some crowded cities.",
         "translations": {
-          "es": "Un embalse se encuentra detrás de la presa.",
-          "fr": "Un réservoir se trouve derrière le barrage.",
-          "de": "Hinter dem Damm liegt ein Stausee.",
-          "it": "Un bacino idrico si trova dietro la diga.",
-          "pt": "Um reservatório fica atrás da barragem.",
-          "no": "Et reservoar ligger bak demningen."
+          "es": "Una capa marrón de contaminación cubre algunas ciudades concurridas.",
+          "fr": "Une couche brune de smog flotte au-dessus de certaines villes très peuplées.",
+          "de": "Eine braune Smogschicht liegt über einigen dicht besiedelten Städten.",
+          "it": "Uno strato marrone di smog copre alcune città affollate.",
+          "pt": "Uma camada marrom de poluição paira sobre algumas cidades populosas.",
+          "no": "Et brunt lag med smog ligger over noen tett befolkede byer."
         }
       },
       {
-        "text": "Floodwater surrounds the houses below.",
+        "text": "The aliens eat popcorn and pizza while pointing at the polluted planet.",
         "translations": {
-          "es": "El agua de la inundación rodea las casas de abajo.",
-          "fr": "Les eaux de crue entourent les maisons en contrebas.",
-          "de": "Das Hochwasser umgibt die Häuser darunter.",
-          "it": "L'acqua di piena circonda le case sottostanti.",
-          "pt": "A água da inundação rodeia as casas abaixo.",
-          "no": "Flomvann omgir husene nedenfor."
+          "es": "Los extraterrestres comen palomitas y pizza mientras señalan el planeta contaminado.",
+          "fr": "Les extraterrestres mangent du pop-corn et de la pizza en montrant la planète polluée.",
+          "de": "Die Außerirdischen essen Popcorn und Pizza und zeigen auf den verschmutzten Planeten.",
+          "it": "Gli alieni mangiano popcorn e pizza mentre indicano il pianeta inquinato.",
+          "pt": "Os alienígenas comem pipoca e pizza enquanto apontam para o planeta poluído.",
+          "no": "Romvesenene spiser popkorn og pizza mens de peker på den forurensede planeten."
         }
       },
       {
-        "text": "A church stands near the flooded town.",
+        "text": "The joke is on us: protecting our air, water, and planet is our responsibility.",
         "translations": {
-          "es": "Una iglesia se encuentra cerca de la ciudad inundada.",
-          "fr": "Une église se dresse près de la ville inondée.",
-          "de": "In der Nähe der überfluteten Stadt steht eine Kirche.",
-          "it": "Una chiesa si trova vicino alla città allagata.",
-          "pt": "Uma igreja fica perto da cidade inundada.",
-          "no": "En kirke står i nærheten av den oversvømte byen."
-        }
-      },
-      {
-        "text": "People are evacuating along the road.",
-        "translations": {
-          "es": "La gente está evacuando a lo largo de la carretera.",
-          "fr": "Les gens évacuent le long de la route.",
-          "de": "Menschen evakuieren entlang der Straße.",
-          "it": "Le persone stanno evacuando lungo la strada.",
-          "pt": "As pessoas estão a ser evacuadas ao longo da estrada.",
-          "no": "Folk evakuerer langs veien."
-        }
-      },
-      {
-        "text": "Emergency vehicles are helping during the evacuation.",
-        "translations": {
-          "es": "Los vehículos de emergencia están ayudando durante la evacuación.",
-          "fr": "Les véhicules d'urgence aident pendant l'évacuation.",
-          "de": "Einsatzfahrzeuge helfen bei der Evakuierung.",
-          "it": "I veicoli di emergenza stanno aiutando durante l'evacuazione.",
-          "pt": "Os veículos de emergência estão a ajudar durante a evacuação.",
-          "no": "Utrykningskjøretøy bistår under evakueringen."
-        }
-      },
-      {
-        "text": "Tall pine trees grow on the mountain slopes.",
-        "translations": {
-          "es": "Los altos pinos crecen en las laderas de las montañas.",
-          "fr": "De grands pins poussent sur les pentes des montagnes.",
-          "de": "An den Berghängen wachsen hohe Kiefern.",
-          "it": "Sulle pendici della montagna crescono alti pini.",
-          "pt": "Pinheiros altos crescem nas encostas das montanhas.",
-          "no": "Høye furutrær vokser i fjellsidene."
+          "es": "La broma es a nuestra costa: proteger el aire, el agua y el planeta es nuestra responsabilidad.",
+          "fr": "La plaisanterie est à nos dépens : protéger notre air, notre eau et notre planète est notre responsabilité.",
+          "de": "Der Witz geht auf unsere Kosten: Unsere Luft, unser Wasser und unseren Planeten zu schützen ist unsere Verantwortung.",
+          "it": "La battuta è a nostre spese: proteggere l’aria, l’acqua e il pianeta è una nostra responsabilità.",
+          "pt": "A piada é por nossa conta: proteger o ar, a água e o planeta é nossa responsabilidade.",
+          "no": "Spøken går på vår bekostning: Det er vårt ansvar å beskytte luften, vannet og planeten."
         }
       }
     ],
     "hotspots": [
       {
-        "id": "broken-dam",
-        "label": "broken dam",
-        "x": 25,
-        "y": 6,
-        "w": 72,
-        "h": 29,
-        "rotation": 0,
-        "z": 0,
-        "sound": "sounds/tsunami.mp3",
+        "id": "earth",
+        "label": "Earth",
+        "x": 36,
+        "y": 17,
+        "w": 38,
+        "h": 37,
+        "sound": "",
         "translations": {
-          "es": ""
+          "en": "earth",
+          "es": "la Tierra",
+          "fr": "la Terre",
+          "de": "die Erde",
+          "it": "la Terra",
+          "pt": "a Terra",
+          "no": "jorden"
         }
       },
       {
-        "id": "floodwater",
-        "label": "floodwater",
+        "id": "factory",
+        "label": "Factory",
+        "x": 52,
+        "y": 29,
+        "w": 13,
+        "h": 16,
+        "sound": "",
+        "translations": {
+          "en": "factory",
+          "es": "fábrica",
+          "fr": "usine",
+          "de": "Fabrik",
+          "it": "fabbrica",
+          "pt": "fábrica",
+          "no": "fabrikk"
+        }
+      },
+      {
+        "id": "smoke",
+        "label": "Smoke",
+        "x": 32,
+        "y": 12,
+        "w": 13,
+        "h": 16,
+        "sound": "",
+        "translations": {
+          "en": "smoke",
+          "es": "humo",
+          "fr": "fumée",
+          "de": "Rauch",
+          "it": "fumo",
+          "pt": "fumaça",
+          "no": "røyk"
+        }
+      },
+      {
+        "id": "city",
+        "label": "City",
         "x": 42,
-        "y": 28,
-        "w": 55,
-        "h": 31
+        "y": 39,
+        "w": 18,
+        "h": 12,
+        "sound": "",
+        "translations": {
+          "en": "city",
+          "es": "ciudad",
+          "fr": "ville",
+          "de": "Stadt",
+          "it": "città",
+          "pt": "cidade",
+          "no": "by"
+        }
       },
       {
-        "id": "mountain-lake",
-        "label": "mountain lake",
-        "x": 30,
-        "y": 2,
-        "w": 27,
-        "h": 11
+        "id": "clouds",
+        "label": "Clouds",
+        "x": 77,
+        "y": 46,
+        "w": 12,
+        "h": 15,
+        "sound": "",
+        "translations": {
+          "en": "clouds",
+          "es": "nubes",
+          "fr": "nuages",
+          "de": "Wolken",
+          "it": "nuvole",
+          "pt": "nuvens",
+          "no": "skyer"
+        }
       },
       {
-        "id": "flooded-houses",
-        "label": "flooded houses",
-        "x": 61,
-        "y": 47,
-        "w": 29,
-        "h": 18
+        "id": "alien",
+        "label": "Alien",
+        "x": 86.05263047574958,
+        "y": 55.26611242671298,
+        "w": 13,
+        "h": 25,
+        "sound": "",
+        "translations": {
+          "en": "alien",
+          "es": "extraterrestre",
+          "fr": "extraterrestre",
+          "de": "Außerirdischer",
+          "it": "alieno",
+          "pt": "alienígena",
+          "no": "romvesen"
+        },
+        "rotation": 0,
+        "z": 0
       },
       {
-        "id": "church",
-        "label": "church",
-        "x": 87,
-        "y": 45,
+        "id": "popcorn",
+        "label": "Popcorn",
+        "x": 12,
+        "y": 59,
+        "w": 8,
+        "h": 12,
+        "sound": "",
+        "translations": {
+          "en": "popcorn",
+          "es": "palomitas de maíz",
+          "fr": "pop-corn",
+          "de": "Popcorn",
+          "it": "popcorn",
+          "pt": "pipoca",
+          "no": "popkorn"
+        }
+      },
+      {
+        "id": "pizza",
+        "label": "Pizza",
+        "x": 77,
+        "y": 86,
+        "w": 19,
+        "h": 12,
+        "sound": "",
+        "translations": {
+          "en": "pizza",
+          "es": "pizza",
+          "fr": "pizza",
+          "de": "Pizza",
+          "it": "pizza",
+          "pt": "pizza",
+          "no": "pizza"
+        }
+      },
+      {
+        "id": "moon",
+        "label": "Moon",
+        "x": 81,
+        "y": 6,
+        "w": 7,
+        "h": 11,
+        "sound": "",
+        "translations": {
+          "en": "moon",
+          "es": "luna",
+          "fr": "lune",
+          "de": "Mond",
+          "it": "luna",
+          "pt": "lua",
+          "no": "måne"
+        }
+      },
+      {
+        "id": "spaceship",
+        "label": "Spaceship",
+        "x": 0,
+        "y": 0,
         "w": 11,
-        "h": 19
+        "h": 26,
+        "sound": "",
+        "translations": {
+          "en": "spaceship",
+          "es": "nave espacial",
+          "fr": "vaisseau spatial",
+          "de": "Raumschiff",
+          "it": "astronave",
+          "pt": "nave espacial",
+          "no": "romskip"
+        }
       },
       {
-        "id": "evacuation-road",
-        "label": "evacuation road",
-        "x": 1,
-        "y": 68,
-        "w": 45,
-        "h": 30
+        "id": "ocean",
+        "label": "Ocean",
+        "x": 69,
+        "y": 34,
+        "w": 10,
+        "h": 18,
+        "sound": "",
+        "translations": {
+          "en": "ocean",
+          "es": "océano",
+          "fr": "océan",
+          "de": "Ozean",
+          "it": "oceano",
+          "pt": "oceano",
+          "no": "hav"
+        }
       },
       {
-        "id": "rescue-vehicles",
-        "label": "rescue vehicles",
-        "x": 37,
-        "y": 64,
-        "w": 51,
-        "h": 22
+        "id": "smog",
+        "label": "Smog",
+        "x": 47,
+        "y": 16,
+        "w": 22,
+        "h": 17,
+        "sound": "",
+        "translations": {
+          "en": "smog",
+          "es": "niebla contaminante",
+          "fr": "smog",
+          "de": "Smog",
+          "it": "smog",
+          "pt": "poluição atmosférica",
+          "no": "smog"
+        }
       },
       {
-        "id": "pine-forest",
-        "label": "pine forest",
-        "x": 11,
-        "y": 8,
-        "w": 24,
-        "h": 46
+        "id": "hotspot-1792788319220",
+        "label": "Alien Visit First Contact",
+        "x": 31.368420979719087,
+        "y": 65.68381232453852,
+        "w": 31.263165509337686,
+        "h": 32.92536181527379,
+        "sound": "sounds/alien-visit-final.mp3",
+        "translations": {
+          "en": ""
+        },
+        "rotation": 0,
+        "z": 0
+      },
+      {
+        "id": "hotspot-1792808775391",
+        "label": "Alien Visit The Return",
+        "x": 0,
+        "y": 37.21835358518399,
+        "w": 33.15789329444269,
+        "h": 60.45340334125029,
+        "sound": "sounds/alien-story2.mp3",
+        "translations": {
+          "en": ""
+        },
+        "rotation": 0,
+        "z": 0
+      },
+      {
+        "id": "hotspot-1792811884274",
+        "label": "popcorn",
+        "x": 63.84211327085221,
+        "y": 84.0426500123036,
+        "w": 9.526311322790674,
+        "h": 12.60917944537168,
+        "sound": "",
+        "translations": {
+          "en": ""
+        },
+        "rotation": 0,
+        "z": 0
       }
     ],
     "overlays": [],
     "challenges": [
       {
-        "prompt": "Find the broken dam",
-        "target": "broken-dam",
+        "prompt": "Find the first Alien in the center with his arms over his head",
+        "target": "hotspot-1792788319220",
         "translations": {
-          "es": "Encuentra la presa rota",
-          "fr": "Trouvez le barrage cassé",
-          "de": "Finde den kaputten Damm",
-          "it": "Trova la diga rotta",
-          "pt": "Encontrar a barragem rompida",
-          "no": "Finn den ødelagte demningen"
+          "es": "Encuentra al primer alienígena en el centro con los brazos sobre la cabeza",
+          "fr": "Trouvez le premier Alien au centre avec ses bras au-dessus de sa tête",
+          "de": "Finde den ersten Außerirdischen in der Mitte mit seinen Armen über dem Kopf",
+          "it": "Trova il primo Alieno al centro con le braccia sopra la testa",
+          "pt": "Encontre o primeiro Alienígena no centro com os braços sobre a cabeça",
+          "no": "Finn den første romvesenet i midten med armene over hodet"
         }
       },
       {
-        "prompt": "Find the floodwater",
-        "target": "floodwater",
+        "prompt": "Find the two aliens on the left laughing",
+        "target": "hotspot-1792808775391",
         "translations": {
-          "es": "Encuentra el agua de la inundación",
-          "fr": "Trouvez les eaux de crue",
-          "de": "Finde das Hochwasser",
-          "it": "Trova l'acqua alluvionale",
-          "pt": "Encontre a água da inundação",
-          "no": "Finn flomvannet"
+          "es": "Encuentra a los dos alienígenas de la izquierda riendo",
+          "fr": "Retrouvez les deux aliens à gauche en riant",
+          "de": "Finde die beiden Aliens auf der linken Seite lachend",
+          "it": "Trova i due alieni a sinistra che ridono",
+          "pt": "Encontre os dois alienígenas à esquerda rindo",
+          "no": "Finn de to romvesenene til venstre som ler"
         }
       },
       {
-        "prompt": "Find the mountain lake",
-        "target": "mountain-lake",
+        "prompt": "Find the smoke",
+        "target": "smoke",
         "translations": {
-          "es": "Encuentra el lago de montaña",
-          "fr": "Lac de montagne.",
-          "de": "Finden Sie den Bergsee",
-          "it": "Trova il lago di montagna",
-          "pt": "Encontre o lago da montanha",
-          "no": "Finn fjellsjøen"
+          "es": "44. El humo (Ad dójan)",
+          "fr": "La fumée",
+          "de": "Finde den Rauch",
+          "it": "Trova il fumo",
+          "pt": "Encontrar o fumo",
+          "no": "Finn røyken"
         }
       },
       {
-        "prompt": "Find the flooded houses",
-        "target": "flooded-houses",
+        "prompt": "Find the city",
+        "target": "city",
         "translations": {
-          "es": "Encuentra las casas inundadas",
-          "fr": "Trouvez les maisons inondées",
-          "de": "Finde die überfluteten Häuser",
-          "it": "Trova le case allagate",
-          "pt": "Encontre as casas inundadas",
-          "no": "Finn de oversvømte husene"
+          "es": "Encontrar la ciudad",
+          "fr": "Trouver la ville",
+          "de": "Finde die Stadt",
+          "it": "Trovare la città",
+          "pt": "Encontre a cidade",
+          "no": "Finn byen"
         }
       },
       {
-        "prompt": "Find the church",
-        "target": "church",
+        "prompt": "Find the alien",
+        "target": "alien",
         "translations": {
-          "es": "La Iglesia",
-          "fr": "L’ÉGLISE",
-          "de": "DIE KIRCHE",
-          "it": "Il Paese",
-          "pt": "A IGREJA",
-          "no": "Finn kirken"
+          "es": "¿Encontrado al alienígena?",
+          "fr": "Trouvez l'extraterrestre",
+          "de": "Finde das Alien",
+          "it": "L'ALIENO",
+          "pt": "Encontre o alienígena",
+          "no": "Finn romvesenet"
         }
       },
       {
-        "prompt": "Find the evacuation road",
-        "target": "evacuation-road",
+        "prompt": "Find the popcorn",
+        "target": "popcorn",
         "translations": {
-          "es": "Encuentra el camino de evacuación",
-          "fr": "Trouver la route d'évacuation",
-          "de": "Finden Sie die Evakuierungsstraße",
-          "it": "Trova la strada di evacuazione",
-          "pt": "Encontre a estrada de evacuação",
-          "no": "Finn evakueringsveien"
+          "es": "Las palomitas de maíz",
+          "fr": "le pop-corn",
+          "de": "Finden Sie das Popcorn",
+          "it": "Trova i popcorn",
+          "pt": "Encontre a pipoca",
+          "no": "Finn popcornen"
         }
       },
       {
-        "prompt": "Find the rescue vehicles",
-        "target": "rescue-vehicles",
+        "prompt": "Find the moon",
+        "target": "moon",
         "translations": {
-          "es": "Encuentra los vehículos de rescate",
-          "fr": "Trouver les véhicules de secours",
-          "de": "Finde die Rettungsfahrzeuge",
-          "it": "Trova i mezzi di soccorso",
-          "pt": "Encontre os veículos de resgate",
-          "no": "Finn redningskjøretøyene"
+          "es": "Encuentra la luna",
+          "fr": "Trouvez la lune",
+          "de": "Finde den Mond",
+          "it": "Trova la luna",
+          "pt": "Encontrar a lua",
+          "no": "Finn månen"
         }
       },
       {
-        "prompt": "Find the pine forest",
-        "target": "pine-forest",
+        "prompt": "Find the smog",
+        "target": "smog",
         "translations": {
-          "es": "EL PINAR",
-          "fr": "Les forêts de pins",
-          "de": "Der Pinienwald",
-          "it": "Trova la pineta",
-          "pt": "Encontre a floresta de pinheiros",
-          "no": "Finn furuskogen"
+          "es": "Encuentra el smog",
+          "fr": "Trouvez le smog",
+          "de": "Finde den Smog",
+          "it": "Trova lo smog",
+          "pt": "Encontrar o smog",
+          "no": "Finn smogen"
         }
       }
     ]
@@ -22142,6 +23721,536 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
           "it": "Trova la strada bagnata",
           "pt": "Encontre a estrada molhada",
           "no": "Finn den våte veien"
+        }
+      }
+    ]
+  },
+  "dam-collapse": {
+    "title": "Dam Collapse",
+    "image": "images/dam-collapse.jpg",
+    "lessons": [
+      {
+        "text": "The concrete dam is breaking apart.",
+        "translations": {
+          "es": "La presa de hormigón se está rompiendo.",
+          "fr": "Le barrage en béton se brise.",
+          "de": "Der Betondamm bricht auseinander.",
+          "it": "La diga di cemento si sta rompendo.",
+          "pt": "A barragem de betão está a romper-se.",
+          "no": "Betongdammen er i ferd med å brekke fra hverandre."
+        }
+      },
+      {
+        "text": "Powerful floodwater rushes through the valley.",
+        "translations": {
+          "es": "Poderosas inundaciones atraviesan el valle.",
+          "fr": "De puissantes eaux de crue se précipitent dans la vallée.",
+          "de": "Starkes Hochwasser strömt durch das Tal.",
+          "it": "Una potente inondazione attraversa la valle.",
+          "pt": "Poderosas enchentes correm pelo vale.",
+          "no": "Kraftig flomvann fosser gjennom dalen."
+        }
+      },
+      {
+        "text": "A reservoir lies behind the dam.",
+        "translations": {
+          "es": "Un embalse se encuentra detrás de la presa.",
+          "fr": "Un réservoir se trouve derrière le barrage.",
+          "de": "Hinter dem Damm liegt ein Stausee.",
+          "it": "Un bacino idrico si trova dietro la diga.",
+          "pt": "Um reservatório fica atrás da barragem.",
+          "no": "Et reservoar ligger bak demningen."
+        }
+      },
+      {
+        "text": "Floodwater surrounds the houses below.",
+        "translations": {
+          "es": "El agua de la inundación rodea las casas de abajo.",
+          "fr": "Les eaux de crue entourent les maisons en contrebas.",
+          "de": "Das Hochwasser umgibt die Häuser darunter.",
+          "it": "L'acqua di piena circonda le case sottostanti.",
+          "pt": "A água da inundação rodeia as casas abaixo.",
+          "no": "Flomvann omgir husene nedenfor."
+        }
+      },
+      {
+        "text": "A church stands near the flooded town.",
+        "translations": {
+          "es": "Una iglesia se encuentra cerca de la ciudad inundada.",
+          "fr": "Une église se dresse près de la ville inondée.",
+          "de": "In der Nähe der überfluteten Stadt steht eine Kirche.",
+          "it": "Una chiesa si trova vicino alla città allagata.",
+          "pt": "Uma igreja fica perto da cidade inundada.",
+          "no": "En kirke står i nærheten av den oversvømte byen."
+        }
+      },
+      {
+        "text": "People are evacuating along the road.",
+        "translations": {
+          "es": "La gente está evacuando a lo largo de la carretera.",
+          "fr": "Les gens évacuent le long de la route.",
+          "de": "Menschen evakuieren entlang der Straße.",
+          "it": "Le persone stanno evacuando lungo la strada.",
+          "pt": "As pessoas estão a ser evacuadas ao longo da estrada.",
+          "no": "Folk evakuerer langs veien."
+        }
+      },
+      {
+        "text": "Emergency vehicles are helping during the evacuation.",
+        "translations": {
+          "es": "Los vehículos de emergencia están ayudando durante la evacuación.",
+          "fr": "Les véhicules d'urgence aident pendant l'évacuation.",
+          "de": "Einsatzfahrzeuge helfen bei der Evakuierung.",
+          "it": "I veicoli di emergenza stanno aiutando durante l'evacuazione.",
+          "pt": "Os veículos de emergência estão a ajudar durante a evacuação.",
+          "no": "Utrykningskjøretøy bistår under evakueringen."
+        }
+      },
+      {
+        "text": "Tall pine trees grow on the mountain slopes.",
+        "translations": {
+          "es": "Los altos pinos crecen en las laderas de las montañas.",
+          "fr": "De grands pins poussent sur les pentes des montagnes.",
+          "de": "An den Berghängen wachsen hohe Kiefern.",
+          "it": "Sulle pendici della montagna crescono alti pini.",
+          "pt": "Pinheiros altos crescem nas encostas das montanhas.",
+          "no": "Høye furutrær vokser i fjellsidene."
+        }
+      }
+    ],
+    "hotspots": [
+      {
+        "id": "broken-dam",
+        "label": "broken dam",
+        "x": 25,
+        "y": 6,
+        "w": 72,
+        "h": 29,
+        "rotation": 0,
+        "z": 0,
+        "sound": "sounds/tsunami.mp3",
+        "translations": {
+          "es": ""
+        }
+      },
+      {
+        "id": "floodwater",
+        "label": "floodwater",
+        "x": 42,
+        "y": 28,
+        "w": 55,
+        "h": 31
+      },
+      {
+        "id": "mountain-lake",
+        "label": "mountain lake",
+        "x": 30,
+        "y": 2,
+        "w": 27,
+        "h": 11
+      },
+      {
+        "id": "flooded-houses",
+        "label": "flooded houses",
+        "x": 61,
+        "y": 47,
+        "w": 29,
+        "h": 18
+      },
+      {
+        "id": "church",
+        "label": "church",
+        "x": 87,
+        "y": 45,
+        "w": 11,
+        "h": 19
+      },
+      {
+        "id": "evacuation-road",
+        "label": "evacuation road",
+        "x": 1,
+        "y": 68,
+        "w": 45,
+        "h": 30
+      },
+      {
+        "id": "rescue-vehicles",
+        "label": "rescue vehicles",
+        "x": 37,
+        "y": 64,
+        "w": 51,
+        "h": 22
+      },
+      {
+        "id": "pine-forest",
+        "label": "pine forest",
+        "x": 11,
+        "y": 8,
+        "w": 24,
+        "h": 46
+      }
+    ],
+    "overlays": [],
+    "challenges": [
+      {
+        "prompt": "Find the broken dam",
+        "target": "broken-dam",
+        "translations": {
+          "es": "Encuentra la presa rota",
+          "fr": "Trouvez le barrage cassé",
+          "de": "Finde den kaputten Damm",
+          "it": "Trova la diga rotta",
+          "pt": "Encontrar a barragem rompida",
+          "no": "Finn den ødelagte demningen"
+        }
+      },
+      {
+        "prompt": "Find the floodwater",
+        "target": "floodwater",
+        "translations": {
+          "es": "Encuentra el agua de la inundación",
+          "fr": "Trouvez les eaux de crue",
+          "de": "Finde das Hochwasser",
+          "it": "Trova l'acqua alluvionale",
+          "pt": "Encontre a água da inundação",
+          "no": "Finn flomvannet"
+        }
+      },
+      {
+        "prompt": "Find the mountain lake",
+        "target": "mountain-lake",
+        "translations": {
+          "es": "Encuentra el lago de montaña",
+          "fr": "Lac de montagne.",
+          "de": "Finden Sie den Bergsee",
+          "it": "Trova il lago di montagna",
+          "pt": "Encontre o lago da montanha",
+          "no": "Finn fjellsjøen"
+        }
+      },
+      {
+        "prompt": "Find the flooded houses",
+        "target": "flooded-houses",
+        "translations": {
+          "es": "Encuentra las casas inundadas",
+          "fr": "Trouvez les maisons inondées",
+          "de": "Finde die überfluteten Häuser",
+          "it": "Trova le case allagate",
+          "pt": "Encontre as casas inundadas",
+          "no": "Finn de oversvømte husene"
+        }
+      },
+      {
+        "prompt": "Find the church",
+        "target": "church",
+        "translations": {
+          "es": "La Iglesia",
+          "fr": "L’ÉGLISE",
+          "de": "DIE KIRCHE",
+          "it": "Il Paese",
+          "pt": "A IGREJA",
+          "no": "Finn kirken"
+        }
+      },
+      {
+        "prompt": "Find the evacuation road",
+        "target": "evacuation-road",
+        "translations": {
+          "es": "Encuentra el camino de evacuación",
+          "fr": "Trouver la route d'évacuation",
+          "de": "Finden Sie die Evakuierungsstraße",
+          "it": "Trova la strada di evacuazione",
+          "pt": "Encontre a estrada de evacuação",
+          "no": "Finn evakueringsveien"
+        }
+      },
+      {
+        "prompt": "Find the rescue vehicles",
+        "target": "rescue-vehicles",
+        "translations": {
+          "es": "Encuentra los vehículos de rescate",
+          "fr": "Trouver les véhicules de secours",
+          "de": "Finde die Rettungsfahrzeuge",
+          "it": "Trova i mezzi di soccorso",
+          "pt": "Encontre os veículos de resgate",
+          "no": "Finn redningskjøretøyene"
+        }
+      },
+      {
+        "prompt": "Find the pine forest",
+        "target": "pine-forest",
+        "translations": {
+          "es": "EL PINAR",
+          "fr": "Les forêts de pins",
+          "de": "Der Pinienwald",
+          "it": "Trova la pineta",
+          "pt": "Encontre a floresta de pinheiros",
+          "no": "Finn furuskogen"
+        }
+      }
+    ]
+  },
+  "asteroid": {
+    "title": "Asteroid",
+    "image": "images/asteroid.jpg",
+    "lessons": [
+      {
+        "text": "A gigantic asteroid is moving toward Earth.",
+        "translations": {
+          "es": "Un asteroide gigantesco se está moviendo hacia la Tierra.",
+          "fr": "Un astéroïde gigantesque se dirige vers la Terre.",
+          "de": "Ein gigantischer Asteroid bewegt sich auf die Erde zu.",
+          "it": "Un gigantesco asteroide si sta muovendo verso la Terra.",
+          "pt": "Um asteróide gigantesco está a mover-se em direção à Terra.",
+          "no": "En gigantisk asteroide beveger seg mot jorden."
+        }
+      },
+      {
+        "text": "The asteroid leaves a glowing trail behind it.",
+        "translations": {
+          "es": "El asteroide deja un rastro brillante detrás de él.",
+          "fr": "L'astéroïde laisse une traînée lumineuse derrière lui.",
+          "de": "Der Asteroid hinterlässt eine leuchtende Spur.",
+          "it": "L'asteroide lascia una scia luminosa dietro di sé.",
+          "pt": "O asteroide deixa um rastro brilhante atrás dele.",
+          "no": "Asteroiden etterlater seg et glødende spor etter seg."
+        }
+      },
+      {
+        "text": "Smaller pieces of rock break away from the asteroid.",
+        "translations": {
+          "es": "Trozos más pequeños de roca se separan del asteroide.",
+          "fr": "De plus petits morceaux de roche se détachent de l'astéroïde.",
+          "de": "Kleinere Gesteinsstücke brechen vom Asteroiden ab.",
+          "it": "Pezzi di roccia più piccoli si staccano dall'asteroide.",
+          "pt": "Pedaços menores de rocha se separam do asteroide.",
+          "no": "Mindre steinbiter løsner fra asteroiden."
+        }
+      },
+      {
+        "text": "A large city stretches along the coastline.",
+        "translations": {
+          "es": "Una gran ciudad se extiende a lo largo de la costa.",
+          "fr": "Une grande ville s'étend le long de la côte.",
+          "de": "Entlang der Küste erstreckt sich eine große Stadt.",
+          "it": "Una grande città si estende lungo la costa.",
+          "pt": "Uma grande cidade se estende ao longo da costa.",
+          "no": "En stor by strekker seg langs kystlinjen."
+        }
+      },
+      {
+        "text": "The ocean reflects the orange light in the sky.",
+        "translations": {
+          "es": "El océano refleja la luz naranja en el cielo.",
+          "fr": "L'océan reflète la lumière orange dans le ciel.",
+          "de": "Der Ozean reflektiert das orangefarbene Licht am Himmel.",
+          "it": "L'oceano riflette la luce arancione nel cielo.",
+          "pt": "O oceano reflete a luz laranja no céu.",
+          "no": "Havet reflekterer det oransje lyset på himmelen."
+        }
+      },
+      {
+        "text": "People are fleeing from the approaching danger.",
+        "translations": {
+          "es": "La gente está huyendo del peligro que se aproxima.",
+          "fr": "Les gens fuient le danger qui approche.",
+          "de": "Die Menschen fliehen vor der herannahenden Gefahr.",
+          "it": "Le persone stanno fuggendo dal pericolo in avvicinamento.",
+          "pt": "As pessoas estão fugindo do perigo que se aproxima.",
+          "no": "Folk flykter fra den nærliggende faren."
+        }
+      },
+      {
+        "text": "Cars are stopped along the crowded road.",
+        "translations": {
+          "es": "Los coches se detienen a lo largo de la concurrida carretera.",
+          "fr": "Les voitures sont arrêtées le long de la route bondée.",
+          "de": "Autos werden entlang der überfüllten Straße angehalten.",
+          "it": "Le auto vengono fermate lungo la strada affollata.",
+          "pt": "Carros são parados ao longo da estrada lotada.",
+          "no": "Biler stopper langs den overfylte veien."
+        }
+      },
+      {
+        "text": "Dark clouds of smoke and dust spread across the sky.",
+        "translations": {
+          "es": "Nubes oscuras de humo y polvo se extendieron por el cielo.",
+          "fr": "Des nuages sombres de fumée et de poussière se répandirent dans le ciel.",
+          "de": "Dunkle Rauch- und Staubwolken breiteten sich über den Himmel aus.",
+          "it": "Nuvole scure di fumo e polvere si diffusero nel cielo.",
+          "pt": "Nuvens escuras de fumaça e poeira se espalharam pelo céu.",
+          "no": "Mørke skyer av røyk og støv spredte seg over himmelen."
+        }
+      }
+    ],
+    "hotspots": [
+      {
+        "id": "asteroid",
+        "label": "asteroid",
+        "x": 29,
+        "y": 0,
+        "w": 39,
+        "h": 47,
+        "rotation": 0,
+        "z": 0,
+        "sound": "sounds/asteroid.mp3",
+        "translations": {
+          "es": ""
+        }
+      },
+      {
+        "id": "fiery-trail",
+        "label": "fiery trail",
+        "x": 61,
+        "y": 0,
+        "w": 37,
+        "h": 39
+      },
+      {
+        "id": "flying-fragments",
+        "label": "flying fragments",
+        "x": 72,
+        "y": 21,
+        "w": 26,
+        "h": 22
+      },
+      {
+        "id": "coastal-city",
+        "label": "coastal city",
+        "x": 5,
+        "y": 55,
+        "w": 59,
+        "h": 18
+      },
+      {
+        "id": "ocean",
+        "label": "ocean",
+        "x": 45,
+        "y": 48,
+        "w": 46,
+        "h": 13
+      },
+      {
+        "id": "running-people",
+        "label": "running people",
+        "x": 0,
+        "y": 67,
+        "w": 44,
+        "h": 31
+      },
+      {
+        "id": "cars",
+        "label": "cars",
+        "x": 33,
+        "y": 72,
+        "w": 46,
+        "h": 26
+      },
+      {
+        "id": "smoke-clouds",
+        "label": "smoke clouds",
+        "x": 71,
+        "y": 35,
+        "w": 27,
+        "h": 18
+      }
+    ],
+    "overlays": [],
+    "challenges": [
+      {
+        "prompt": "Find the asteroid",
+        "target": "asteroid",
+        "translations": {
+          "es": "Encuentra el asteroide",
+          "fr": "Trouvez l'astéroïde",
+          "de": "Finde den Asteroiden",
+          "it": "Trova l'asteroide",
+          "pt": "Encontrar o asteróide",
+          "no": "Finn asteroiden"
+        }
+      },
+      {
+        "prompt": "Find the fiery trail",
+        "target": "fiery-trail",
+        "translations": {
+          "es": "Encuentra el sendero de fuego",
+          "fr": "Trouvez la piste ardente",
+          "de": "Finde den feurigen Pfad",
+          "it": "Trova il sentiero infuocato",
+          "pt": "Encontre a trilha ardente",
+          "no": "Finn den brennende stien"
+        }
+      },
+      {
+        "prompt": "Find the flying fragments",
+        "target": "flying-fragments",
+        "translations": {
+          "es": "Encuentra los fragmentos voladores",
+          "fr": "Trouvez les fragments volants",
+          "de": "Finde die fliegenden Fragmente",
+          "it": "Trova i frammenti volanti",
+          "pt": "Encontre os fragmentos voadores",
+          "no": "Finn de flygende fragmentene"
+        }
+      },
+      {
+        "prompt": "Find the coastal city",
+        "target": "coastal-city",
+        "translations": {
+          "es": "Encuentra la ciudad costera",
+          "fr": "Trouvez la ville côtière",
+          "de": "Finde die Küstenstadt",
+          "it": "Trova la città costiera",
+          "pt": "Encontre a cidade costeira",
+          "no": "Finn kystbyen"
+        }
+      },
+      {
+        "prompt": "Find the ocean",
+        "target": "ocean",
+        "translations": {
+          "es": "El Mar",
+          "fr": "l’océan",
+          "de": "Finde den Ozean",
+          "it": "L'oceano",
+          "pt": "o oceano",
+          "no": "Finn havet"
+        }
+      },
+      {
+        "prompt": "Find the running people",
+        "target": "running-people",
+        "translations": {
+          "es": "Encuentra a la gente que corre",
+          "fr": "Trouvez les gens qui courent",
+          "de": "Finde die rennenden Leute",
+          "it": "Trova le persone che corrono",
+          "pt": "Encontre as pessoas que correm",
+          "no": "Finn de løpende menneskene"
+        }
+      },
+      {
+        "prompt": "Find the cars",
+        "target": "cars",
+        "translations": {
+          "es": "Encuentra los coches",
+          "fr": "Trouver les voitures",
+          "de": "Finden Sie die Autos",
+          "it": "Trova le auto",
+          "pt": "Encontrar os carros",
+          "no": "Finn bilene"
+        }
+      },
+      {
+        "prompt": "Find the smoke clouds",
+        "target": "smoke-clouds",
+        "translations": {
+          "es": "Encuentra las nubes de humo",
+          "fr": "Trouvez les nuages de fumée",
+          "de": "Finde die Rauchwolken",
+          "it": "Trova le nuvole di fumo",
+          "pt": "Encontre as nuvens de fumo",
+          "no": "Finn røykskyene"
         }
       }
     ]
@@ -24593,751 +26702,6 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
           "it": "Trova la schermata di visualizzazione del pianeta",
           "pt": "Encontrar o ecrã de exibição do planeta",
           "no": "Finn planet-skjermen"
-        }
-      }
-    ]
-  },
-  "spaceship-window-earth": {
-    "title": "Spaceship Window Earth",
-    "image": "images/Spaceship-Window-Earth.jpg",
-    "lessons": [
-      {
-        "text": "The aliens are laughing as they watch Earth through the spaceship window.",
-        "translations": {
-          "es": "Los extraterrestres se ríen mientras observan la Tierra por la ventana de la nave.",
-          "fr": "Les extraterrestres rient en regardant la Terre par la fenêtre du vaisseau.",
-          "de": "Die Außerirdischen lachen, während sie die Erde durch das Raumschifffenster beobachten.",
-          "it": "Gli alieni ridono mentre guardano la Terra dal finestrino dell’astronave.",
-          "pt": "Os alienígenas riem enquanto observam a Terra pela janela da nave.",
-          "no": "Romvesenene ler mens de ser på jorden gjennom romskipets vindu."
-        }
-      },
-      {
-        "text": "Factories produce useful things, but their smoke can pollute the air.",
-        "translations": {
-          "es": "Las fábricas producen cosas útiles, pero su humo puede contaminar el aire.",
-          "fr": "Les usines fabriquent des objets utiles, mais leur fumée peut polluer l’air.",
-          "de": "Fabriken stellen nützliche Dinge her, aber ihr Rauch kann die Luft verschmutzen.",
-          "it": "Le fabbriche producono cose utili, ma il loro fumo può inquinare l’aria.",
-          "pt": "As fábricas produzem coisas úteis, mas sua fumaça pode poluir o ar.",
-          "no": "Fabrikker lager nyttige ting, men røyken deres kan forurense luften."
-        }
-      },
-      {
-        "text": "A brown layer of smog hangs above some crowded cities.",
-        "translations": {
-          "es": "Una capa marrón de contaminación cubre algunas ciudades concurridas.",
-          "fr": "Une couche brune de smog flotte au-dessus de certaines villes très peuplées.",
-          "de": "Eine braune Smogschicht liegt über einigen dicht besiedelten Städten.",
-          "it": "Uno strato marrone di smog copre alcune città affollate.",
-          "pt": "Uma camada marrom de poluição paira sobre algumas cidades populosas.",
-          "no": "Et brunt lag med smog ligger over noen tett befolkede byer."
-        }
-      },
-      {
-        "text": "The aliens eat popcorn and pizza while pointing at the polluted planet.",
-        "translations": {
-          "es": "Los extraterrestres comen palomitas y pizza mientras señalan el planeta contaminado.",
-          "fr": "Les extraterrestres mangent du pop-corn et de la pizza en montrant la planète polluée.",
-          "de": "Die Außerirdischen essen Popcorn und Pizza und zeigen auf den verschmutzten Planeten.",
-          "it": "Gli alieni mangiano popcorn e pizza mentre indicano il pianeta inquinato.",
-          "pt": "Os alienígenas comem pipoca e pizza enquanto apontam para o planeta poluído.",
-          "no": "Romvesenene spiser popkorn og pizza mens de peker på den forurensede planeten."
-        }
-      },
-      {
-        "text": "The joke is on us: protecting our air, water, and planet is our responsibility.",
-        "translations": {
-          "es": "La broma es a nuestra costa: proteger el aire, el agua y el planeta es nuestra responsabilidad.",
-          "fr": "La plaisanterie est à nos dépens : protéger notre air, notre eau et notre planète est notre responsabilité.",
-          "de": "Der Witz geht auf unsere Kosten: Unsere Luft, unser Wasser und unseren Planeten zu schützen ist unsere Verantwortung.",
-          "it": "La battuta è a nostre spese: proteggere l’aria, l’acqua e il pianeta è una nostra responsabilità.",
-          "pt": "A piada é por nossa conta: proteger o ar, a água e o planeta é nossa responsabilidade.",
-          "no": "Spøken går på vår bekostning: Det er vårt ansvar å beskytte luften, vannet og planeten."
-        }
-      }
-    ],
-    "hotspots": [
-      {
-        "id": "earth",
-        "label": "Earth",
-        "x": 36,
-        "y": 17,
-        "w": 38,
-        "h": 37,
-        "sound": "",
-        "translations": {
-          "en": "earth",
-          "es": "la Tierra",
-          "fr": "la Terre",
-          "de": "die Erde",
-          "it": "la Terra",
-          "pt": "a Terra",
-          "no": "jorden"
-        }
-      },
-      {
-        "id": "factory",
-        "label": "Factory",
-        "x": 52,
-        "y": 29,
-        "w": 13,
-        "h": 16,
-        "sound": "",
-        "translations": {
-          "en": "factory",
-          "es": "fábrica",
-          "fr": "usine",
-          "de": "Fabrik",
-          "it": "fabbrica",
-          "pt": "fábrica",
-          "no": "fabrikk"
-        }
-      },
-      {
-        "id": "smoke",
-        "label": "Smoke",
-        "x": 32,
-        "y": 12,
-        "w": 13,
-        "h": 16,
-        "sound": "",
-        "translations": {
-          "en": "smoke",
-          "es": "humo",
-          "fr": "fumée",
-          "de": "Rauch",
-          "it": "fumo",
-          "pt": "fumaça",
-          "no": "røyk"
-        }
-      },
-      {
-        "id": "city",
-        "label": "City",
-        "x": 42,
-        "y": 39,
-        "w": 18,
-        "h": 12,
-        "sound": "",
-        "translations": {
-          "en": "city",
-          "es": "ciudad",
-          "fr": "ville",
-          "de": "Stadt",
-          "it": "città",
-          "pt": "cidade",
-          "no": "by"
-        }
-      },
-      {
-        "id": "clouds",
-        "label": "Clouds",
-        "x": 77,
-        "y": 46,
-        "w": 12,
-        "h": 15,
-        "sound": "",
-        "translations": {
-          "en": "clouds",
-          "es": "nubes",
-          "fr": "nuages",
-          "de": "Wolken",
-          "it": "nuvole",
-          "pt": "nuvens",
-          "no": "skyer"
-        }
-      },
-      {
-        "id": "alien",
-        "label": "Alien",
-        "x": 86.05263047574958,
-        "y": 55.26611242671298,
-        "w": 13,
-        "h": 25,
-        "sound": "",
-        "translations": {
-          "en": "alien",
-          "es": "extraterrestre",
-          "fr": "extraterrestre",
-          "de": "Außerirdischer",
-          "it": "alieno",
-          "pt": "alienígena",
-          "no": "romvesen"
-        },
-        "rotation": 0,
-        "z": 0
-      },
-      {
-        "id": "popcorn",
-        "label": "Popcorn",
-        "x": 12,
-        "y": 59,
-        "w": 8,
-        "h": 12,
-        "sound": "",
-        "translations": {
-          "en": "popcorn",
-          "es": "palomitas de maíz",
-          "fr": "pop-corn",
-          "de": "Popcorn",
-          "it": "popcorn",
-          "pt": "pipoca",
-          "no": "popkorn"
-        }
-      },
-      {
-        "id": "pizza",
-        "label": "Pizza",
-        "x": 77,
-        "y": 86,
-        "w": 19,
-        "h": 12,
-        "sound": "",
-        "translations": {
-          "en": "pizza",
-          "es": "pizza",
-          "fr": "pizza",
-          "de": "Pizza",
-          "it": "pizza",
-          "pt": "pizza",
-          "no": "pizza"
-        }
-      },
-      {
-        "id": "moon",
-        "label": "Moon",
-        "x": 81,
-        "y": 6,
-        "w": 7,
-        "h": 11,
-        "sound": "",
-        "translations": {
-          "en": "moon",
-          "es": "luna",
-          "fr": "lune",
-          "de": "Mond",
-          "it": "luna",
-          "pt": "lua",
-          "no": "måne"
-        }
-      },
-      {
-        "id": "spaceship",
-        "label": "Spaceship",
-        "x": 0,
-        "y": 0,
-        "w": 11,
-        "h": 26,
-        "sound": "",
-        "translations": {
-          "en": "spaceship",
-          "es": "nave espacial",
-          "fr": "vaisseau spatial",
-          "de": "Raumschiff",
-          "it": "astronave",
-          "pt": "nave espacial",
-          "no": "romskip"
-        }
-      },
-      {
-        "id": "ocean",
-        "label": "Ocean",
-        "x": 69,
-        "y": 34,
-        "w": 10,
-        "h": 18,
-        "sound": "",
-        "translations": {
-          "en": "ocean",
-          "es": "océano",
-          "fr": "océan",
-          "de": "Ozean",
-          "it": "oceano",
-          "pt": "oceano",
-          "no": "hav"
-        }
-      },
-      {
-        "id": "smog",
-        "label": "Smog",
-        "x": 47,
-        "y": 16,
-        "w": 22,
-        "h": 17,
-        "sound": "",
-        "translations": {
-          "en": "smog",
-          "es": "niebla contaminante",
-          "fr": "smog",
-          "de": "Smog",
-          "it": "smog",
-          "pt": "poluição atmosférica",
-          "no": "smog"
-        }
-      },
-      {
-        "id": "hotspot-1792788319220",
-        "label": "Alien Visit First Contact",
-        "x": 31.368420979719087,
-        "y": 65.68381232453852,
-        "w": 31.263165509337686,
-        "h": 32.92536181527379,
-        "sound": "sounds/alien-visit-final.mp3",
-        "translations": {
-          "en": ""
-        },
-        "rotation": 0,
-        "z": 0
-      },
-      {
-        "id": "hotspot-1792808775391",
-        "label": "Alien Visit The Return",
-        "x": 0,
-        "y": 37.21835358518399,
-        "w": 33.15789329444269,
-        "h": 60.45340334125029,
-        "sound": "sounds/alien-story2.mp3",
-        "translations": {
-          "en": ""
-        },
-        "rotation": 0,
-        "z": 0
-      },
-      {
-        "id": "hotspot-1792811884274",
-        "label": "popcorn",
-        "x": 63.84211327085221,
-        "y": 84.0426500123036,
-        "w": 9.526311322790674,
-        "h": 12.60917944537168,
-        "sound": "",
-        "translations": {
-          "en": ""
-        },
-        "rotation": 0,
-        "z": 0
-      }
-    ],
-    "overlays": [],
-    "challenges": [
-      {
-        "prompt": "Find the first Alien in the center with his arms over his head",
-        "target": "hotspot-1792788319220",
-        "translations": {
-          "es": "Encuentra al primer alienígena en el centro con los brazos sobre la cabeza",
-          "fr": "Trouvez le premier Alien au centre avec ses bras au-dessus de sa tête",
-          "de": "Finde den ersten Außerirdischen in der Mitte mit seinen Armen über dem Kopf",
-          "it": "Trova il primo Alieno al centro con le braccia sopra la testa",
-          "pt": "Encontre o primeiro Alienígena no centro com os braços sobre a cabeça",
-          "no": "Finn den første romvesenet i midten med armene over hodet"
-        }
-      },
-      {
-        "prompt": "Find the two aliens on the left laughing",
-        "target": "hotspot-1792808775391",
-        "translations": {
-          "es": "Encuentra a los dos alienígenas de la izquierda riendo",
-          "fr": "Retrouvez les deux aliens à gauche en riant",
-          "de": "Finde die beiden Aliens auf der linken Seite lachend",
-          "it": "Trova i due alieni a sinistra che ridono",
-          "pt": "Encontre os dois alienígenas à esquerda rindo",
-          "no": "Finn de to romvesenene til venstre som ler"
-        }
-      },
-      {
-        "prompt": "Find the smoke",
-        "target": "smoke",
-        "translations": {
-          "es": "44. El humo (Ad dójan)",
-          "fr": "La fumée",
-          "de": "Finde den Rauch",
-          "it": "Trova il fumo",
-          "pt": "Encontrar o fumo",
-          "no": "Finn røyken"
-        }
-      },
-      {
-        "prompt": "Find the city",
-        "target": "city",
-        "translations": {
-          "es": "Encontrar la ciudad",
-          "fr": "Trouver la ville",
-          "de": "Finde die Stadt",
-          "it": "Trovare la città",
-          "pt": "Encontre a cidade",
-          "no": "Finn byen"
-        }
-      },
-      {
-        "prompt": "Find the alien",
-        "target": "alien",
-        "translations": {
-          "es": "¿Encontrado al alienígena?",
-          "fr": "Trouvez l'extraterrestre",
-          "de": "Finde das Alien",
-          "it": "L'ALIENO",
-          "pt": "Encontre o alienígena",
-          "no": "Finn romvesenet"
-        }
-      },
-      {
-        "prompt": "Find the popcorn",
-        "target": "popcorn",
-        "translations": {
-          "es": "Las palomitas de maíz",
-          "fr": "le pop-corn",
-          "de": "Finden Sie das Popcorn",
-          "it": "Trova i popcorn",
-          "pt": "Encontre a pipoca",
-          "no": "Finn popcornen"
-        }
-      },
-      {
-        "prompt": "Find the moon",
-        "target": "moon",
-        "translations": {
-          "es": "Encuentra la luna",
-          "fr": "Trouvez la lune",
-          "de": "Finde den Mond",
-          "it": "Trova la luna",
-          "pt": "Encontrar a lua",
-          "no": "Finn månen"
-        }
-      },
-      {
-        "prompt": "Find the smog",
-        "target": "smog",
-        "translations": {
-          "es": "Encuentra el smog",
-          "fr": "Trouvez le smog",
-          "de": "Finde den Smog",
-          "it": "Trova lo smog",
-          "pt": "Encontrar o smog",
-          "no": "Finn smogen"
-        }
-      }
-    ]
-  },
-  "protect-earth": {
-    "title": "Protect Earth",
-    "image": "images/Protect-Earth-Adventure.jpg",
-    "lessons": [
-      {
-        "text": "From space, Earth looks beautiful, but astronauts can also observe clouds, cities, fires, dust, and some forms of pollution.",
-        "translations": {
-          "es": "Desde el espacio, la Tierra se ve hermosa, pero los astronautas también pueden observar nubes, ciudades, incendios, polvo y algunas formas de contaminación.",
-          "fr": "Depuis l'espace, la Terre est magnifique, mais les astronautes peuvent aussi observer les nuages, les villes, les incendies, la poussière et certaines formes de pollution.",
-          "de": "Aus dem Weltraum sieht die Erde wunderschön aus, doch Astronauten können auch Wolken, Städte, Brände, Staub und manche Formen der Verschmutzung beobachten.",
-          "it": "Dallo spazio la Terra appare bellissima, ma gli astronauti possono anche osservare nuvole, città, incendi, polvere e alcune forme di inquinamento.",
-          "pt": "Do espaço, a Terra parece linda, mas astronautas também podem observar nuvens, cidades, incêndios, poeira e algumas formas de poluição.",
-          "no": "Fra verdensrommet ser jorden vakker ut, men astronauter kan også observere skyer, byer, branner, støv og enkelte former for forurensning."
-        }
-      },
-      {
-        "text": "Seeing our planet from far away reminds us that its air, land, and water are connected.",
-        "translations": {
-          "es": "Ver nuestro planeta desde lejos nos recuerda que su aire, tierra y agua están conectados.",
-          "fr": "Voir notre planète de loin nous rappelle que son air, ses terres et son eau sont liés.",
-          "de": "Der Blick aus der Ferne erinnert uns daran, dass Luft, Land und Wasser miteinander verbunden sind.",
-          "it": "Vedere il pianeta da lontano ci ricorda che aria, terra e acqua sono collegate.",
-          "pt": "Ver nosso planeta de longe nos lembra que o ar, a terra e a água estão conectados.",
-          "no": "Å se planeten på avstand minner oss om at luft, land og vann henger sammen."
-        }
-      },
-      {
-        "text": "Air pollution happens when harmful gases and particles enter the air.",
-        "translations": {
-          "es": "La contaminación del aire ocurre cuando gases y partículas dañinas entran en el aire.",
-          "fr": "La pollution de l'air se produit lorsque des gaz et des particules nocifs pénètrent dans l'air.",
-          "de": "Luftverschmutzung entsteht, wenn schädliche Gase und Partikel in die Luft gelangen.",
-          "it": "L'inquinamento atmosferico si verifica quando gas e particelle nocive entrano nell'aria.",
-          "pt": "A poluição do ar acontece quando gases e partículas prejudiciais entram no ar.",
-          "no": "Luftforurensning oppstår når skadelige gasser og partikler kommer ut i luften."
-        }
-      },
-      {
-        "text": "Pollution can come from many sources, including transportation, industry, fires, and energy production.",
-        "translations": {
-          "es": "La contaminación puede provenir de muchas fuentes, como el transporte, la industria, los incendios y la producción de energía.",
-          "fr": "Elle peut provenir de nombreuses sources, notamment les transports, l'industrie, les incendies et la production d'énergie.",
-          "de": "Verschmutzung kann aus vielen Quellen stammen, darunter Verkehr, Industrie, Brände und Energieerzeugung.",
-          "it": "Può provenire da molte fonti, tra cui trasporti, industria, incendi e produzione di energia.",
-          "pt": "Ela pode vir de muitas fontes, incluindo transporte, indústria, incêndios e produção de energia.",
-          "no": "Forurensning kan komme fra mange kilder, blant annet transport, industri, branner og energiproduksjon."
-        }
-      },
-      {
-        "text": "Factories make many useful products, but industrial processes can also release pollution if emissions are not controlled.",
-        "translations": {
-          "es": "Las fábricas producen muchos productos útiles, pero los procesos industriales también pueden liberar contaminación si las emisiones no se controlan.",
-          "fr": "Les usines fabriquent de nombreux produits utiles, mais les procédés industriels peuvent aussi produire de la pollution si les émissions ne sont pas contrôlées.",
-          "de": "Fabriken stellen viele nützliche Produkte her, doch industrielle Prozesse können auch Schadstoffe freisetzen, wenn Emissionen nicht kontrolliert werden.",
-          "it": "Le fabbriche producono molti prodotti utili, ma i processi industriali possono anche rilasciare inquinamento se le emissioni non sono controllate.",
-          "pt": "Fábricas produzem muitos produtos úteis, mas processos industriais também podem liberar poluição se as emissões não forem controladas.",
-          "no": "Fabrikker lager mange nyttige produkter, men industrielle prosesser kan også slippe ut forurensning dersom utslipp ikke kontrolleres."
-        }
-      },
-      {
-        "text": "Cleaner technology, filters, efficiency, and cleaner energy can reduce harmful emissions.",
-        "translations": {
-          "es": "La tecnología más limpia, los filtros, la eficiencia y la energía más limpia pueden reducir las emisiones dañinas.",
-          "fr": "Des technologies plus propres, des filtres, l'efficacité et une énergie plus propre peuvent réduire les émissions nocives.",
-          "de": "Sauberere Technik, Filter, Effizienz und sauberere Energie können schädliche Emissionen verringern.",
-          "it": "Tecnologie più pulite, filtri, efficienza ed energia più pulita possono ridurre le emissioni nocive.",
-          "pt": "Tecnologia mais limpa, filtros, eficiência e energia mais limpa podem reduzir emissões prejudiciais.",
-          "no": "Renere teknologi, filtre, effektivitet og renere energi kan redusere skadelige utslipp."
-        }
-      },
-      {
-        "text": "Pollution on land can reach streams, rivers, lakes, and oceans through runoff and waste.",
-        "translations": {
-          "es": "La contaminación en tierra puede llegar a arroyos, ríos, lagos y océanos por la escorrentía y los residuos.",
-          "fr": "La pollution terrestre peut atteindre les ruisseaux, les rivières, les lacs et les océans par le ruissellement et les déchets.",
-          "de": "Verschmutzung an Land kann durch Abfluss und Abfälle in Bäche, Flüsse, Seen und Ozeane gelangen.",
-          "it": "L'inquinamento sulla terra può raggiungere ruscelli, fiumi, laghi e oceani attraverso il deflusso e i rifiuti.",
-          "pt": "A poluição em terra pode chegar a córregos, rios, lagos e oceanos por escoamento e resíduos.",
-          "no": "Forurensning på land kan nå bekker, elver, innsjøer og hav gjennom avrenning og avfall."
-        }
-      },
-      {
-        "text": "Keeping trash and harmful chemicals out of waterways helps protect wildlife and clean water.",
-        "translations": {
-          "es": "Mantener la basura y los productos químicos dañinos fuera del agua ayuda a proteger la vida silvestre y el agua limpia.",
-          "fr": "Empêcher les déchets et les produits chimiques nocifs d'entrer dans l'eau aide à protéger la faune et l'eau propre.",
-          "de": "Müll und schädliche Chemikalien von Gewässern fernzuhalten hilft, Tiere und sauberes Wasser zu schützen.",
-          "it": "Tenere rifiuti e sostanze chimiche nocive lontano dall'acqua aiuta a proteggere la fauna e l'acqua pulita.",
-          "pt": "Manter lixo e produtos químicos prejudiciais longe da água ajuda a proteger a vida selvagem e a água limpa.",
-          "no": "Å holde søppel og skadelige kjemikalier unna vann bidrar til å beskytte dyreliv og rent vann."
-        }
-      },
-      {
-        "text": "People can help by wasting less energy, reusing and recycling materials, preventing litter, and choosing cleaner transportation when practical.",
-        "translations": {
-          "es": "Las personas pueden ayudar usando menos energía, reutilizando y reciclando materiales, evitando tirar basura y eligiendo transporte más limpio cuando sea práctico.",
-          "fr": "On peut aider en gaspillant moins d'énergie, en réutilisant et recyclant, en évitant les déchets sauvages et en choisissant des transports plus propres lorsque c'est possible.",
-          "de": "Menschen können helfen, indem sie weniger Energie verschwenden, Materialien wiederverwenden und recyceln, Müll vermeiden und wenn möglich sauberere Verkehrsmittel wählen.",
-          "it": "Le persone possono aiutare sprecando meno energia, riutilizzando e riciclando materiali, evitando di gettare rifiuti e scegliendo trasporti più puliti quando possibile.",
-          "pt": "As pessoas podem ajudar desperdiçando menos energia, reutilizando e reciclando materiais, evitando lixo e escolhendo transporte mais limpo quando for prático.",
-          "no": "Folk kan hjelpe ved å sløse mindre energi, gjenbruke og resirkulere materialer, unngå forsøpling og velge renere transport når det er praktisk."
-        }
-      },
-      {
-        "text": "Communities, businesses, scientists, and governments can also work together to reduce pollution.",
-        "translations": {
-          "es": "Las comunidades, empresas, científicos y gobiernos también pueden trabajar juntos para reducir la contaminación.",
-          "fr": "Les communautés, entreprises, scientifiques et gouvernements peuvent également travailler ensemble pour réduire la pollution.",
-          "de": "Gemeinden, Unternehmen, Wissenschaftler und Regierungen können ebenfalls zusammenarbeiten, um Verschmutzung zu reduzieren.",
-          "it": "Comunità, imprese, scienziati e governi possono inoltre collaborare per ridurre l'inquinamento.",
-          "pt": "Comunidades, empresas, cientistas e governos também podem trabalhar juntos para reduzir a poluição.",
-          "no": "Lokalsamfunn, bedrifter, forskere og myndigheter kan også samarbeide om å redusere forurensning."
-        }
-      },
-      {
-        "text": "Earth is our shared home. Protecting clean air, clean water, soil, forests, and wildlife helps people and nature.",
-        "translations": {
-          "es": "La Tierra es nuestro hogar compartido. Proteger el aire, el agua, el suelo, los bosques y la vida silvestre ayuda a las personas y a la naturaleza.",
-          "fr": "La Terre est notre maison commune. Protéger l'air, l'eau, les sols, les forêts et la faune aide les personnes et la nature.",
-          "de": "Die Erde ist unser gemeinsames Zuhause. Saubere Luft, sauberes Wasser, Böden, Wälder und Tiere zu schützen hilft Menschen und Natur.",
-          "it": "La Terra è la nostra casa comune. Proteggere aria, acqua, suolo, foreste e fauna aiuta le persone e la natura.",
-          "pt": "A Terra é nosso lar compartilhado. Proteger o ar, a água, o solo, as florestas e a vida selvagem ajuda as pessoas e a natureza.",
-          "no": "Jorden er vårt felles hjem. Å beskytte ren luft, rent vann, jord, skog og dyreliv hjelper både mennesker og natur."
-        }
-      },
-      {
-        "text": "The message of this adventure is simple: do not pollute, and do what you can to leave the planet cleaner.",
-        "translations": {
-          "es": "El mensaje de esta aventura es sencillo: no contamines y haz lo que puedas para dejar el planeta más limpio.",
-          "fr": "Le message de cette aventure est simple : ne polluons pas et faisons ce que nous pouvons pour laisser une planète plus propre.",
-          "de": "Die Botschaft dieses Abenteuers ist einfach: nicht verschmutzen und tun, was man kann, um den Planeten sauberer zu hinterlassen.",
-          "it": "Il messaggio di questa avventura è semplice: non inquinare e fai ciò che puoi per lasciare il pianeta più pulito.",
-          "pt": "A mensagem desta aventura é simples: não polua e faça o que puder para deixar o planeta mais limpo.",
-          "no": "Budskapet i dette eventyret er enkelt: ikke forurens, og gjør det du kan for å etterlate planeten renere."
-        }
-      }
-    ],
-    "hotspots": [
-      {
-        "id": "smoke",
-        "label": "smoke",
-        "x": 29,
-        "y": 19,
-        "w": 39,
-        "h": 26,
-        "sound": "",
-        "translations": {}
-      },
-      {
-        "id": "haze",
-        "label": "haze",
-        "x": 26.94,
-        "y": 16.98,
-        "w": 27.55,
-        "h": 22.22,
-        "sound": "sounds/factory.mp3",
-        "translations": {}
-      },
-      {
-        "id": "river",
-        "label": "river",
-        "x": 83.08,
-        "y": 23.94,
-        "w": 3.1,
-        "h": 16.94,
-        "sound": "",
-        "translations": {}
-      },
-      {
-        "id": "ocean",
-        "label": "ocean",
-        "x": 68,
-        "y": 45,
-        "w": 28,
-        "h": 19,
-        "sound": "",
-        "translations": {}
-      },
-      {
-        "id": "atmosphere",
-        "label": "atmosphere",
-        "x": 24.01,
-        "y": 13.07,
-        "w": 67,
-        "h": 12,
-        "sound": "",
-        "translations": {}
-      },
-      {
-        "id": "sunrise",
-        "label": "sunrise",
-        "x": 94.35,
-        "y": 14.75,
-        "w": 5.49,
-        "h": 19.29,
-        "sound": "",
-        "translations": {}
-      },
-      {
-        "id": "ships",
-        "label": "ships",
-        "x": 76,
-        "y": 46,
-        "w": 22,
-        "h": 18,
-        "sound": "",
-        "translations": {}
-      },
-      {
-        "id": "map",
-        "label": "map",
-        "x": -0.16,
-        "y": 18,
-        "w": 12.83,
-        "h": 21.5,
-        "sound": "",
-        "translations": {}
-      },
-      {
-        "id": "chart",
-        "label": "chart",
-        "x": -1.15,
-        "y": 43.46,
-        "w": 15.48,
-        "h": 11.54,
-        "sound": "",
-        "translations": {}
-      },
-      {
-        "id": "monitor",
-        "label": "monitor",
-        "x": 81.26,
-        "y": 72.48,
-        "w": 18,
-        "h": 22,
-        "sound": "",
-        "translations": {}
-      },
-      {
-        "id": "satellite",
-        "label": "satellite",
-        "x": 9,
-        "y": 7,
-        "w": 7.894736157361807,
-        "h": 13,
-        "sound": "",
-        "translations": {}
-      },
-      {
-        "id": "pollution-critical-warning",
-        "label": "pollution critical warning",
-        "x": 21.36,
-        "y": -1.04,
-        "w": 74.44,
-        "h": 77.73,
-        "sound": "sounds/world-pollution-warning-message.mp3",
-        "translations": {}
-      }
-    ],
-    "overlays": [],
-    "challenges": [
-      {
-        "prompt": "Find the Smoke",
-        "target": "smoke",
-        "translations": {
-          "es": "44. El humo (Ad dójan)",
-          "fr": "La fumée",
-          "de": "Finde den Rauch",
-          "it": "Trova il fumo",
-          "pt": "Encontre o fumo",
-          "no": "Finn røyken"
-        }
-      },
-      {
-        "prompt": "Find the River",
-        "target": "river",
-        "translations": {
-          "es": "El canal",
-          "fr": "La rivière",
-          "de": "DER FLUSS",
-          "it": "Il fiume",
-          "pt": "Do Rio",
-          "no": "Finn elven"
-        }
-      },
-      {
-        "prompt": "Find the Ships Satelite Display",
-        "target": "satellite",
-        "translations": {
-          "es": "Encuentra la pantalla satelital del barco",
-          "fr": "Trouvez l'affichage satellite des vaisseaux",
-          "de": "Finden Sie das Schiffs-Satelliten-Display",
-          "it": "Trova lo Ships Satelite Display",
-          "pt": "Encontre o visor de satélites do Ships",
-          "no": "Finn skipets satellittskjerm"
-        }
-      },
-      {
-        "prompt": "Find the space ships navigation charts",
-        "target": "chart",
-        "translations": {
-          "es": "Encuentra las cartas de navegación de las naves espaciales",
-          "fr": "Trouvez les cartes de navigation des vaisseaux spatiaux",
-          "de": "Finden Sie die Navigationskarten der Raumschiffe",
-          "it": "Trova le carte di navigazione delle navi spaziali",
-          "pt": "Encontre as cartas de navegação das naves espaciais",
-          "no": "Finn navigasjonskartene til romskipene"
-        }
-      },
-      {
-        "prompt": "Find Earths Atmosphere",
-        "target": "atmosphere",
-        "translations": {
-          "es": "Encuentra la atmósfera de la Tierra",
-          "fr": "Trouver l'atmosphère terrestre",
-          "de": "Finde die Atmosphäre der Erde",
-          "it": "Trova l'atmosfera terrestre",
-          "pt": "Encontre a atmosfera da Terra",
-          "no": "Finn jordens atmosfære"
         }
       }
     ]
