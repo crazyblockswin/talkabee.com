@@ -22551,7 +22551,13 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
         "x": 19,
         "y": 26,
         "w": 50,
-        "h": 50
+        "h": 50,
+        "rotation": 0,
+        "z": 0,
+        "sound": "sounds/volcano.mp3",
+        "translations": {
+          "es": ""
+        }
       },
       {
         "id": "distant-mountains",
