@@ -13091,13 +13091,14 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
       {
         "id": "child",
         "label": "child",
-        "x": 64,
-        "y": 54,
-        "w": 5,
-        "h": 10,
+        "x": 84.94736844007329,
+        "y": 43.15160073501097,
+        "w": 7.526313430912889,
+        "h": 14.172461663884961,
         "sound": "sounds/child-laughing.mp3",
         "translations": {
-          "es": ""
+          "es": "",
+          "en": ""
         },
         "rotation": 0,
         "z": 0
@@ -13105,10 +13106,10 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
       {
         "id": "swing",
         "label": "swing",
-        "x": 84.52631770738938,
-        "y": 31.853500135875375,
-        "w": 9,
-        "h": 26,
+        "x": 85.21052985363066,
+        "y": 23.508576808105452,
+        "w": 8.631578538424412,
+        "h": 17.098746328155002,
         "sound": "",
         "translations": {
           "es": ""
@@ -13137,9 +13138,10 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
         "y": 65.2302529860484,
         "w": 10,
         "h": 10,
-        "sound": "",
+        "sound": "sounds/fish.mp3",
         "translations": {
-          "es": ""
+          "es": "",
+          "en": ""
         },
         "rotation": 0,
         "z": 0
