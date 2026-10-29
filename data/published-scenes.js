@@ -15076,7 +15076,13 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
         "x": 0,
         "y": 75,
         "w": 44,
-        "h": 24
+        "h": 24,
+        "rotation": 0,
+        "z": 0,
+        "sound": "sounds/mining.mp3",
+        "translations": {
+          "es": ""
+        }
       },
       {
         "id": "miner-with-pickaxe",
@@ -15124,7 +15130,13 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
         "x": 45,
         "y": 34,
         "w": 22,
-        "h": 33
+        "h": 33,
+        "rotation": 0,
+        "z": 0,
+        "sound": "sounds/mining.mp3",
+        "translations": {
+          "es": ""
+        }
       },
       {
         "id": "gold-vein",
