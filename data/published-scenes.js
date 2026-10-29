@@ -15090,7 +15090,13 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
         "x": 62,
         "y": 35,
         "w": 22,
-        "h": 50
+        "h": 50,
+        "rotation": 0,
+        "z": 0,
+        "sound": "sounds/mining.mp3",
+        "translations": {
+          "es": ""
+        }
       },
       {
         "id": "ore-cart",
@@ -15098,7 +15104,13 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
         "x": 0,
         "y": 70,
         "w": 48,
-        "h": 28
+        "h": 28,
+        "rotation": 0,
+        "z": 0,
+        "sound": "sounds/mining.mp3",
+        "translations": {
+          "es": ""
+        }
       },
       {
         "id": "mine-loader",
@@ -15144,7 +15156,13 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
         "x": 72,
         "y": 0,
         "w": 27,
-        "h": 49
+        "h": 49,
+        "rotation": 0,
+        "z": 0,
+        "sound": "sounds/mining.mp3",
+        "translations": {
+          "es": ""
+        }
       }
     ],
     "overlays": [],
