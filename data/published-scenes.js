@@ -12492,6 +12492,265 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
       }
     ]
   },
+  "miners": {
+    "title": "Miners",
+    "image": "images/miners.jpg",
+    "lessons": [
+      {
+        "text": "The miners are collecting rocks that contain gold.",
+        "translations": {
+          "es": "Los mineros están recolectando rocas que contienen oro.",
+          "fr": "Les mineurs collectent des roches contenant de l'or.",
+          "de": "Die Bergleute sammeln Steine, die Gold enthalten.",
+          "it": "I minatori stanno raccogliendo rocce che contengono oro.",
+          "pt": "Os mineiros estão a recolher pedras que contêm ouro.",
+          "no": "Gruvearbeiderne samler steiner som inneholder gull."
+        }
+      },
+      {
+        "text": "A miner uses a pickaxe to break rock.",
+        "translations": {
+          "es": "Un minero usa un pico para romper la roca.",
+          "fr": "Un mineur utilise une pioche pour briser la roche.",
+          "de": "Ein Bergmann benutzt eine Spitzhacke, um Felsen zu brechen.",
+          "it": "Un minatore usa un piccone per rompere la roccia.",
+          "pt": "Um mineiro usa uma picareta para quebrar a rocha.",
+          "no": "En gruvearbeider bruker en hakke til å knuse stein."
+        }
+      },
+      {
+        "text": "An ore cart carries heavy rocks out of the mine.",
+        "translations": {
+          "es": "Un carro de mineral lleva rocas pesadas fuera de la mina.",
+          "fr": "Un chariot à minerai transporte de lourdes roches hors de la mine.",
+          "de": "Ein Erzkarren trägt schwere Steine aus der Mine.",
+          "it": "Un carro di minerali trasporta rocce pesanti fuori dalla miniera.",
+          "pt": "Um carrinho de minério carrega pedras pesadas para fora da mina.",
+          "no": "En malmvogn frakter tunge steiner ut av gruven."
+        }
+      },
+      {
+        "text": "A small loader moves materials through the mine.",
+        "translations": {
+          "es": "Un pequeño cargador mueve materiales a través de la mina.",
+          "fr": "Un petit chargeur déplace les matériaux à travers la mine.",
+          "de": "Ein kleiner Lader bewegt Materialien durch die Mine.",
+          "it": "Un piccolo caricatore sposta i materiali attraverso la miniera.",
+          "pt": "Um pequeno carregador move materiais através da mina.",
+          "no": "En liten lastemaskin flytter materialer gjennom gruven."
+        }
+      },
+      {
+        "text": "A miner wears a headlamp to see underground.",
+        "translations": {
+          "es": "Un minero lleva un faro para ver bajo tierra.",
+          "fr": "Un mineur porte une lampe frontale pour voir sous terre.",
+          "de": "Ein Bergmann trägt eine Stirnlampe, um unterirdisch zu sehen.",
+          "it": "Un minatore indossa una lampada frontale per vedere sottoterra.",
+          "pt": "Um mineiro usa um farol para ver o subsolo.",
+          "no": "En gruvearbeider bruker hodelykt for å se under jorden."
+        }
+      },
+      {
+        "text": "A wooden walkway crosses the upper part of the cavern.",
+        "translations": {
+          "es": "Una pasarela de madera atraviesa la parte superior de la caverna.",
+          "fr": "Une passerelle en bois traverse la partie supérieure de la caverne.",
+          "de": "Ein Holzsteg durchquert den oberen Teil der Höhle.",
+          "it": "Una passerella in legno attraversa la parte superiore della caverna.",
+          "pt": "Uma passarela de madeira atravessa a parte superior da caverna.",
+          "no": "En gangvei av tre krysser den øvre delen av hulen."
+        }
+      },
+      {
+        "text": "A tunnel leads deeper into the underground mine.",
+        "translations": {
+          "es": "Un túnel conduce a lo más profundo de la mina subterránea.",
+          "fr": "Un tunnel mène plus profondément dans la mine souterraine.",
+          "de": "Ein Tunnel führt tiefer in die unterirdische Mine.",
+          "it": "Un tunnel conduce più in profondità nella miniera sotterranea.",
+          "pt": "Um túnel leva mais fundo na mina subterrânea.",
+          "no": "En tunnel fører dypere inn i den underjordiske gruven."
+        }
+      },
+      {
+        "text": "A gold-colored mineral vein runs through the rock.",
+        "translations": {
+          "es": "Una veta mineral de color dorado atraviesa la roca.",
+          "fr": "Une veine minérale dorée traverse la roche.",
+          "de": "Durch das Gestein verläuft eine goldfarbene Mineralader.",
+          "it": "Una vena minerale color oro attraversa la roccia.",
+          "pt": "Uma veia mineral dourada atravessa a rocha.",
+          "no": "En gullfarget mineralåre går gjennom berget."
+        }
+      }
+    ],
+    "hotspots": [
+      {
+        "id": "gold-ore",
+        "label": "gold ore",
+        "x": 0,
+        "y": 75,
+        "w": 44,
+        "h": 24
+      },
+      {
+        "id": "miner-with-pickaxe",
+        "label": "miner with pickaxe",
+        "x": 62,
+        "y": 35,
+        "w": 22,
+        "h": 50
+      },
+      {
+        "id": "ore-cart",
+        "label": "ore cart",
+        "x": 0,
+        "y": 70,
+        "w": 48,
+        "h": 28
+      },
+      {
+        "id": "mine-loader",
+        "label": "mine loader",
+        "x": 0,
+        "y": 27,
+        "w": 25,
+        "h": 40
+      },
+      {
+        "id": "headlamp",
+        "label": "headlamp",
+        "x": 60,
+        "y": 45,
+        "w": 9,
+        "h": 9
+      },
+      {
+        "id": "wooden-walkway",
+        "label": "wooden walkway",
+        "x": 0,
+        "y": 2,
+        "w": 64,
+        "h": 33
+      },
+      {
+        "id": "mine-tunnel",
+        "label": "mine tunnel",
+        "x": 45,
+        "y": 34,
+        "w": 22,
+        "h": 33
+      },
+      {
+        "id": "gold-vein",
+        "label": "gold vein",
+        "x": 72,
+        "y": 0,
+        "w": 27,
+        "h": 49
+      }
+    ],
+    "overlays": [],
+    "challenges": [
+      {
+        "prompt": "Find the gold ore",
+        "target": "gold-ore",
+        "translations": {
+          "es": "Encuentra el mineral de oro",
+          "fr": "Trouver le minerai d'or",
+          "de": "Finde das Golderz",
+          "it": "Trova il minerale d'oro",
+          "pt": "Encontre o minério de ouro",
+          "no": "Finn gullmalmen"
+        }
+      },
+      {
+        "prompt": "Find the miner with pickaxe",
+        "target": "miner-with-pickaxe",
+        "translations": {
+          "es": "Encuentra al minero con pico",
+          "fr": "Trouvez le mineur avec la pioche",
+          "de": "Finde den Bergmann mit Spitzhacke",
+          "it": "Trova il minatore con il piccone",
+          "pt": "Encontre o mineiro com uma picareta",
+          "no": "Finn gruvearbeideren med hakke"
+        }
+      },
+      {
+        "prompt": "Find the ore cart",
+        "target": "ore-cart",
+        "translations": {
+          "es": "Encuentra el carro de mineral",
+          "fr": "Trouver le chariot de minerai",
+          "de": "Finde den Erzwagen",
+          "it": "Trova il carrello dei minerali",
+          "pt": "Encontre o carrinho de minério",
+          "no": "Finn malmvognen"
+        }
+      },
+      {
+        "prompt": "Find the mine loader",
+        "target": "mine-loader",
+        "translations": {
+          "es": "Encuentra el cargador de minas",
+          "fr": "Trouvez le chargeur de mines",
+          "de": "Finde den Minenlader",
+          "it": "Trova il caricatore da miniera",
+          "pt": "Encontre o carregador de minas",
+          "no": "Finn gruvelasteren"
+        }
+      },
+      {
+        "prompt": "Find the headlamp",
+        "target": "headlamp",
+        "translations": {
+          "es": "Encuentra el faro",
+          "fr": "Trouvez la lampe frontale",
+          "de": "Scheinwerfer suchen",
+          "it": "Trova la lampada frontale",
+          "pt": "Encontre o farol",
+          "no": "Finn hodelykten"
+        }
+      },
+      {
+        "prompt": "Find the wooden walkway",
+        "target": "wooden-walkway",
+        "translations": {
+          "es": "Encuentra la pasarela de madera",
+          "fr": "Trouvez la passerelle en bois",
+          "de": "Finde den Holzsteg",
+          "it": "Trova la passerella in legno",
+          "pt": "Encontre a passarela de madeira",
+          "no": "Finn tregangen"
+        }
+      },
+      {
+        "prompt": "Find the mine tunnel",
+        "target": "mine-tunnel",
+        "translations": {
+          "es": "Encuentra el túnel de la mina",
+          "fr": "Trouvez le tunnel de mine",
+          "de": "Finde den Minentunnel",
+          "it": "Trova il tunnel della miniera",
+          "pt": "Encontre o túnel da mina",
+          "no": "Finn gruvetunnelen"
+        }
+      },
+      {
+        "prompt": "Find the gold vein",
+        "target": "gold-vein",
+        "translations": {
+          "es": "Encuentra la veta dorada",
+          "fr": "Trouvez la veine d'or",
+          "de": "Finde die Goldader",
+          "it": "Trova la vena dorata",
+          "pt": "Encontre O veio DE ouro",
+          "no": "Finn gullåren"
+        }
+      }
+    ]
+  },
   "mountain-ski-resort": {
     "title": "Mountain Ski Resort",
     "image": "images/Mountain-Ski-Resort-Adventure.jpg",
@@ -17962,10 +18221,10 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
       {
         "id": "skipper",
         "label": "Skipper",
-        "x": 4.88,
-        "y": 23.93,
-        "w": 22.14,
-        "h": 54.69,
+        "x": 6.616841236653403,
+        "y": 28.3806268359225,
+        "w": 10.98210513952366,
+        "h": 51.90835889074336,
         "rotation": 0,
         "z": 0,
         "sound": "sounds/stormy-seas.mp3",
@@ -17976,10 +18235,16 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
       {
         "id": "yellow-hat",
         "label": "Yellow rain hat",
-        "x": 12.96,
-        "y": 24.51,
+        "x": 12.696841598045783,
+        "y": 20.522983552659852,
         "w": 7.16,
-        "h": 8.89
+        "h": 8.89,
+        "rotation": 0,
+        "z": 0,
+        "sound": "",
+        "translations": {
+          "es": ""
+        }
       },
       {
         "id": "yellow-raincoat",
@@ -17992,10 +18257,16 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
       {
         "id": "ships-wheel",
         "label": "Ship wheel",
-        "x": 0,
-        "y": 38.09,
-        "w": 30.6,
-        "h": 41.02
+        "x": 20.736843073731336,
+        "y": 67.1117917362093,
+        "w": 5.02105241918167,
+        "h": 13.389031471198722,
+        "rotation": 0,
+        "z": 0,
+        "sound": "",
+        "translations": {
+          "es": ""
+        }
       },
       {
         "id": "main-mast",
@@ -18003,15 +18274,27 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
         "x": 21.16,
         "y": 0,
         "w": 10.42,
-        "h": 47.85
+        "h": 47.85,
+        "rotation": 0,
+        "z": 0,
+        "sound": "sounds/stormy-seas.mp3",
+        "translations": {
+          "es": ""
+        }
       },
       {
         "id": "torn-sails",
         "label": "Torn sails",
-        "x": 30.27,
+        "x": 43.00684677800323,
         "y": 0,
-        "w": 43.29,
-        "h": 46.88
+        "w": 31.079473037508375,
+        "h": 19.80535650971443,
+        "rotation": 0,
+        "z": 0,
+        "sound": "",
+        "translations": {
+          "es": ""
+        }
       },
       {
         "id": "rigging",
@@ -20540,6 +20823,1849 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
           "it": "Trova il pappagallo",
           "pt": "Encontre o papagaio",
           "no": "Finn papegøyen"
+        }
+      }
+    ]
+  },
+  "antartica-blizzard": {
+    "title": "Antartica Blizzard",
+    "image": "images/antartica-blizzard.jpg",
+    "lessons": [
+      {
+        "text": "Scientists work inside the Antarctic research station.",
+        "translations": {
+          "es": "Los científicos trabajan dentro de la estación de investigación antártica.",
+          "fr": "Les scientifiques travaillent à l'intérieur de la station de recherche antarctique.",
+          "de": "Wissenschaftler arbeiten in der Antarktis-Forschungsstation.",
+          "it": "Gli scienziati lavorano all'interno della stazione di ricerca antartica.",
+          "pt": "Os cientistas trabalham dentro da estação de pesquisa da Antártida.",
+          "no": "Forskere jobber inne på den antarktiske forskningsstasjonen."
+        }
+      },
+      {
+        "text": "A helicopter is approaching the station through the blizzard.",
+        "translations": {
+          "es": "Un helicóptero se acerca a la estación a través de la tormenta de nieve.",
+          "fr": "Un hélicoptère s'approche de la station à travers le blizzard.",
+          "de": "Ein Hubschrauber nähert sich der Station durch den Schneesturm.",
+          "it": "Un elicottero si sta avvicinando alla stazione attraverso la tormenta.",
+          "pt": "Um helicóptero está se aproximando da estação através da nevasca.",
+          "no": "Et helikopter nærmer seg stasjonen gjennom snøstormen."
+        }
+      },
+      {
+        "text": "A scientist walks through deep snow.",
+        "translations": {
+          "es": "Un científico camina por la nieve profunda.",
+          "fr": "Un scientifique marche dans la neige profonde.",
+          "de": "Ein Wissenschaftler geht durch tiefen Schnee.",
+          "it": "Uno scienziato cammina attraverso la neve profonda.",
+          "pt": "Um cientista caminha pela neve profunda.",
+          "no": "En forsker går gjennom dyp snø."
+        }
+      },
+      {
+        "text": "A snowmobile helps workers travel over the ice.",
+        "translations": {
+          "es": "Una moto de nieve ayuda a los trabajadores a viajar sobre el hielo.",
+          "fr": "Une motoneige aide les travailleurs à se déplacer sur la glace.",
+          "de": "Ein Schneemobil hilft den Arbeitern, über das Eis zu fahren.",
+          "it": "Una motoslitta aiuta i lavoratori a viaggiare sul ghiaccio.",
+          "pt": "Um snowmobile ajuda os trabalhadores a viajar sobre o gelo.",
+          "no": "En snøscooter hjelper arbeiderne med å reise over isen."
+        }
+      },
+      {
+        "text": "Equipment and supplies are stored in sturdy crates.",
+        "translations": {
+          "es": "Los equipos y suministros se almacenan en cajas resistentes.",
+          "fr": "L'équipement et les fournitures sont stockés dans des caisses robustes.",
+          "de": "Ausrüstung und Vorräte werden in stabilen Kisten gelagert.",
+          "it": "Le attrezzature e le forniture sono conservate in casse robuste.",
+          "pt": "Equipamentos e suprimentos são armazenados em caixas resistentes.",
+          "no": "Utstyr og forsyninger oppbevares i solide kasser."
+        }
+      },
+      {
+        "text": "The windsock shows the direction of the strong wind.",
+        "translations": {
+          "es": "La manga de viento muestra la dirección del viento fuerte.",
+          "fr": "La manche à air montre la direction du vent fort.",
+          "de": "Der Windsack zeigt die Richtung des starken Windes an.",
+          "it": "La manica a vento mostra la direzione del vento forte.",
+          "pt": "A biruta mostra a direção do vento forte.",
+          "no": "Vindsekken viser retningen på den sterke vinden."
+        }
+      },
+      {
+        "text": "A radio tower supports communication with the outside world.",
+        "translations": {
+          "es": "Una torre de radio permite la comunicación con el mundo exterior.",
+          "fr": "Une tour radio permet de communiquer avec le monde extérieur.",
+          "de": "Ein Funkturm unterstützt die Kommunikation mit der Außenwelt.",
+          "it": "Una torre radio supporta la comunicazione con il mondo esterno.",
+          "pt": "Uma torre de rádio suporta a comunicação com o mundo exterior.",
+          "no": "Et radiotårn støtter kommunikasjon med omverdenen."
+        }
+      },
+      {
+        "text": "Blowing snow makes it difficult to see.",
+        "translations": {
+          "es": "La nieve que sopla hace que sea difícil de ver.",
+          "fr": "Souffler de la neige la rend difficile à voir.",
+          "de": "Das Blasen von Schnee macht es schwer zu sehen.",
+          "it": "Soffiare la neve rende difficile vedere.",
+          "pt": "Soprar neve dificulta a visão.",
+          "no": "Snøfokk gjør det vanskelig å se."
+        }
+      }
+    ],
+    "hotspots": [
+      {
+        "id": "research-station",
+        "label": "research station",
+        "x": 0,
+        "y": 24,
+        "w": 31,
+        "h": 57
+      },
+      {
+        "id": "helicopter",
+        "label": "helicopter",
+        "x": 72,
+        "y": 24,
+        "w": 25,
+        "h": 25
+      },
+      {
+        "id": "scientist",
+        "label": "scientist",
+        "x": 51,
+        "y": 52,
+        "w": 7,
+        "h": 18
+      },
+      {
+        "id": "snowmobile",
+        "label": "snowmobile",
+        "x": 66,
+        "y": 61,
+        "w": 16,
+        "h": 19
+      },
+      {
+        "id": "supply-crates",
+        "label": "supply crates",
+        "x": 41,
+        "y": 80,
+        "w": 25,
+        "h": 18
+      },
+      {
+        "id": "windsock",
+        "label": "windsock",
+        "x": 30,
+        "y": 10,
+        "w": 10,
+        "h": 9
+      },
+      {
+        "id": "radio-tower",
+        "label": "radio tower",
+        "x": 11,
+        "y": 0,
+        "w": 8,
+        "h": 29
+      },
+      {
+        "id": "snowstorm",
+        "label": "snowstorm",
+        "x": 57,
+        "y": 6,
+        "w": 29,
+        "h": 39
+      }
+    ],
+    "overlays": [],
+    "challenges": [
+      {
+        "prompt": "Find the research station",
+        "target": "research-station",
+        "translations": {
+          "es": "Encuentra la estación de investigación",
+          "fr": "Trouver la station de recherche",
+          "de": "Finden Sie die Forschungsstation",
+          "it": "Trova la stazione di ricerca",
+          "pt": "Encontre a estação de pesquisa",
+          "no": "Finn forskningsstasjonen"
+        }
+      },
+      {
+        "prompt": "Find the helicopter",
+        "target": "helicopter",
+        "translations": {
+          "es": "Encuentra el helicóptero",
+          "fr": "L'hélicoptère",
+          "de": "der Helikopter",
+          "it": "Trova l'elicottero",
+          "pt": "Encontre o helicóptero",
+          "no": "Finn helikopteret"
+        }
+      },
+      {
+        "prompt": "Find the scientist",
+        "target": "scientist",
+        "translations": {
+          "es": "El rey",
+          "fr": "The Scientist",
+          "de": "Finde den Wissenschaftler!",
+          "it": "Trova lo scienziato!",
+          "pt": "Encontre o cientista",
+          "no": "Finn forskeren"
+        }
+      },
+      {
+        "prompt": "Find the snowmobile",
+        "target": "snowmobile",
+        "translations": {
+          "es": "Encuentra la moto de nieve",
+          "fr": "Trouvez la motoneige",
+          "de": "Finde den Motorschlitten",
+          "it": "Trova la motoslitta",
+          "pt": "Encontre o snowmobile",
+          "no": "Finn snøscooteren"
+        }
+      },
+      {
+        "prompt": "Find the supply crates",
+        "target": "supply-crates",
+        "translations": {
+          "es": "Encuentra las cajas de suministros",
+          "fr": "Trouvez les caisses d'approvisionnement",
+          "de": "Finde die Vorratskisten",
+          "it": "Trova le casse di rifornimento",
+          "pt": "Encontre as caixas de suprimentos",
+          "no": "Finn forsyningskassene"
+        }
+      },
+      {
+        "prompt": "Find the windsock",
+        "target": "windsock",
+        "translations": {
+          "es": "Encuentra la manga de viento",
+          "fr": "Trouvez la manche à vent",
+          "de": "Finde den Windsack",
+          "it": "Trova la manica a vento",
+          "pt": "Encontre a biruta",
+          "no": "Finn vindposen"
+        }
+      },
+      {
+        "prompt": "Find the radio tower",
+        "target": "radio-tower",
+        "translations": {
+          "es": "Encuentra la torre de radio",
+          "fr": "Trouvez la tour radio",
+          "de": "Funkturm auf dem Messegelände",
+          "it": "Trova la torre radio",
+          "pt": "Encontre a torre de rádio",
+          "no": "Finn radiotårnet"
+        }
+      },
+      {
+        "prompt": "Find the snowstorm",
+        "target": "snowstorm",
+        "translations": {
+          "es": "Encuentra la tormenta de nieve",
+          "fr": "Trouvez la tempête de neige",
+          "de": "Finde den Schneesturm",
+          "it": "Trova la tempesta di neve",
+          "pt": "Encontre a tempestade de neve",
+          "no": "Finn snøstormen"
+        }
+      }
+    ]
+  },
+  "asteroid": {
+    "title": "Asteroid",
+    "image": "images/asteroid.jpg",
+    "lessons": [
+      {
+        "text": "A gigantic asteroid is moving toward Earth.",
+        "translations": {
+          "es": "Un asteroide gigantesco se está moviendo hacia la Tierra.",
+          "fr": "Un astéroïde gigantesque se dirige vers la Terre.",
+          "de": "Ein gigantischer Asteroid bewegt sich auf die Erde zu.",
+          "it": "Un gigantesco asteroide si sta muovendo verso la Terra.",
+          "pt": "Um asteróide gigantesco está a mover-se em direção à Terra.",
+          "no": "En gigantisk asteroide beveger seg mot jorden."
+        }
+      },
+      {
+        "text": "The asteroid leaves a glowing trail behind it.",
+        "translations": {
+          "es": "El asteroide deja un rastro brillante detrás de él.",
+          "fr": "L'astéroïde laisse une traînée lumineuse derrière lui.",
+          "de": "Der Asteroid hinterlässt eine leuchtende Spur.",
+          "it": "L'asteroide lascia una scia luminosa dietro di sé.",
+          "pt": "O asteroide deixa um rastro brilhante atrás dele.",
+          "no": "Asteroiden etterlater seg et glødende spor etter seg."
+        }
+      },
+      {
+        "text": "Smaller pieces of rock break away from the asteroid.",
+        "translations": {
+          "es": "Trozos más pequeños de roca se separan del asteroide.",
+          "fr": "De plus petits morceaux de roche se détachent de l'astéroïde.",
+          "de": "Kleinere Gesteinsstücke brechen vom Asteroiden ab.",
+          "it": "Pezzi di roccia più piccoli si staccano dall'asteroide.",
+          "pt": "Pedaços menores de rocha se separam do asteroide.",
+          "no": "Mindre steinbiter løsner fra asteroiden."
+        }
+      },
+      {
+        "text": "A large city stretches along the coastline.",
+        "translations": {
+          "es": "Una gran ciudad se extiende a lo largo de la costa.",
+          "fr": "Une grande ville s'étend le long de la côte.",
+          "de": "Entlang der Küste erstreckt sich eine große Stadt.",
+          "it": "Una grande città si estende lungo la costa.",
+          "pt": "Uma grande cidade se estende ao longo da costa.",
+          "no": "En stor by strekker seg langs kystlinjen."
+        }
+      },
+      {
+        "text": "The ocean reflects the orange light in the sky.",
+        "translations": {
+          "es": "El océano refleja la luz naranja en el cielo.",
+          "fr": "L'océan reflète la lumière orange dans le ciel.",
+          "de": "Der Ozean reflektiert das orangefarbene Licht am Himmel.",
+          "it": "L'oceano riflette la luce arancione nel cielo.",
+          "pt": "O oceano reflete a luz laranja no céu.",
+          "no": "Havet reflekterer det oransje lyset på himmelen."
+        }
+      },
+      {
+        "text": "People are fleeing from the approaching danger.",
+        "translations": {
+          "es": "La gente está huyendo del peligro que se aproxima.",
+          "fr": "Les gens fuient le danger qui approche.",
+          "de": "Die Menschen fliehen vor der herannahenden Gefahr.",
+          "it": "Le persone stanno fuggendo dal pericolo in avvicinamento.",
+          "pt": "As pessoas estão fugindo do perigo que se aproxima.",
+          "no": "Folk flykter fra den nærliggende faren."
+        }
+      },
+      {
+        "text": "Cars are stopped along the crowded road.",
+        "translations": {
+          "es": "Los coches se detienen a lo largo de la concurrida carretera.",
+          "fr": "Les voitures sont arrêtées le long de la route bondée.",
+          "de": "Autos werden entlang der überfüllten Straße angehalten.",
+          "it": "Le auto vengono fermate lungo la strada affollata.",
+          "pt": "Carros são parados ao longo da estrada lotada.",
+          "no": "Biler stopper langs den overfylte veien."
+        }
+      },
+      {
+        "text": "Dark clouds of smoke and dust spread across the sky.",
+        "translations": {
+          "es": "Nubes oscuras de humo y polvo se extendieron por el cielo.",
+          "fr": "Des nuages sombres de fumée et de poussière se répandirent dans le ciel.",
+          "de": "Dunkle Rauch- und Staubwolken breiteten sich über den Himmel aus.",
+          "it": "Nuvole scure di fumo e polvere si diffusero nel cielo.",
+          "pt": "Nuvens escuras de fumaça e poeira se espalharam pelo céu.",
+          "no": "Mørke skyer av røyk og støv spredte seg over himmelen."
+        }
+      }
+    ],
+    "hotspots": [
+      {
+        "id": "asteroid",
+        "label": "asteroid",
+        "x": 29,
+        "y": 0,
+        "w": 39,
+        "h": 47,
+        "rotation": 0,
+        "z": 0,
+        "sound": "sounds/asteroid.mp3",
+        "translations": {
+          "es": ""
+        }
+      },
+      {
+        "id": "fiery-trail",
+        "label": "fiery trail",
+        "x": 61,
+        "y": 0,
+        "w": 37,
+        "h": 39
+      },
+      {
+        "id": "flying-fragments",
+        "label": "flying fragments",
+        "x": 72,
+        "y": 21,
+        "w": 26,
+        "h": 22
+      },
+      {
+        "id": "coastal-city",
+        "label": "coastal city",
+        "x": 5,
+        "y": 55,
+        "w": 59,
+        "h": 18
+      },
+      {
+        "id": "ocean",
+        "label": "ocean",
+        "x": 45,
+        "y": 48,
+        "w": 46,
+        "h": 13
+      },
+      {
+        "id": "running-people",
+        "label": "running people",
+        "x": 0,
+        "y": 67,
+        "w": 44,
+        "h": 31
+      },
+      {
+        "id": "cars",
+        "label": "cars",
+        "x": 33,
+        "y": 72,
+        "w": 46,
+        "h": 26
+      },
+      {
+        "id": "smoke-clouds",
+        "label": "smoke clouds",
+        "x": 71,
+        "y": 35,
+        "w": 27,
+        "h": 18
+      }
+    ],
+    "overlays": [],
+    "challenges": [
+      {
+        "prompt": "Find the asteroid",
+        "target": "asteroid",
+        "translations": {
+          "es": "Encuentra el asteroide",
+          "fr": "Trouvez l'astéroïde",
+          "de": "Finde den Asteroiden",
+          "it": "Trova l'asteroide",
+          "pt": "Encontrar o asteróide",
+          "no": "Finn asteroiden"
+        }
+      },
+      {
+        "prompt": "Find the fiery trail",
+        "target": "fiery-trail",
+        "translations": {
+          "es": "Encuentra el sendero de fuego",
+          "fr": "Trouvez la piste ardente",
+          "de": "Finde den feurigen Pfad",
+          "it": "Trova il sentiero infuocato",
+          "pt": "Encontre a trilha ardente",
+          "no": "Finn den brennende stien"
+        }
+      },
+      {
+        "prompt": "Find the flying fragments",
+        "target": "flying-fragments",
+        "translations": {
+          "es": "Encuentra los fragmentos voladores",
+          "fr": "Trouvez les fragments volants",
+          "de": "Finde die fliegenden Fragmente",
+          "it": "Trova i frammenti volanti",
+          "pt": "Encontre os fragmentos voadores",
+          "no": "Finn de flygende fragmentene"
+        }
+      },
+      {
+        "prompt": "Find the coastal city",
+        "target": "coastal-city",
+        "translations": {
+          "es": "Encuentra la ciudad costera",
+          "fr": "Trouvez la ville côtière",
+          "de": "Finde die Küstenstadt",
+          "it": "Trova la città costiera",
+          "pt": "Encontre a cidade costeira",
+          "no": "Finn kystbyen"
+        }
+      },
+      {
+        "prompt": "Find the ocean",
+        "target": "ocean",
+        "translations": {
+          "es": "El Mar",
+          "fr": "l’océan",
+          "de": "Finde den Ozean",
+          "it": "L'oceano",
+          "pt": "o oceano",
+          "no": "Finn havet"
+        }
+      },
+      {
+        "prompt": "Find the running people",
+        "target": "running-people",
+        "translations": {
+          "es": "Encuentra a la gente que corre",
+          "fr": "Trouvez les gens qui courent",
+          "de": "Finde die rennenden Leute",
+          "it": "Trova le persone che corrono",
+          "pt": "Encontre as pessoas que correm",
+          "no": "Finn de løpende menneskene"
+        }
+      },
+      {
+        "prompt": "Find the cars",
+        "target": "cars",
+        "translations": {
+          "es": "Encuentra los coches",
+          "fr": "Trouver les voitures",
+          "de": "Finden Sie die Autos",
+          "it": "Trova le auto",
+          "pt": "Encontrar os carros",
+          "no": "Finn bilene"
+        }
+      },
+      {
+        "prompt": "Find the smoke clouds",
+        "target": "smoke-clouds",
+        "translations": {
+          "es": "Encuentra las nubes de humo",
+          "fr": "Trouvez les nuages de fumée",
+          "de": "Finde die Rauchwolken",
+          "it": "Trova le nuvole di fumo",
+          "pt": "Encontre as nuvens de fumo",
+          "no": "Finn røykskyene"
+        }
+      }
+    ]
+  },
+  "dam-collapse": {
+    "title": "Dam Collapse",
+    "image": "images/dam-collapse.jpg",
+    "lessons": [
+      {
+        "text": "The concrete dam is breaking apart.",
+        "translations": {
+          "es": "La presa de hormigón se está rompiendo.",
+          "fr": "Le barrage en béton se brise.",
+          "de": "Der Betondamm bricht auseinander.",
+          "it": "La diga di cemento si sta rompendo.",
+          "pt": "A barragem de betão está a romper-se.",
+          "no": "Betongdammen er i ferd med å brekke fra hverandre."
+        }
+      },
+      {
+        "text": "Powerful floodwater rushes through the valley.",
+        "translations": {
+          "es": "Poderosas inundaciones atraviesan el valle.",
+          "fr": "De puissantes eaux de crue se précipitent dans la vallée.",
+          "de": "Starkes Hochwasser strömt durch das Tal.",
+          "it": "Una potente inondazione attraversa la valle.",
+          "pt": "Poderosas enchentes correm pelo vale.",
+          "no": "Kraftig flomvann fosser gjennom dalen."
+        }
+      },
+      {
+        "text": "A reservoir lies behind the dam.",
+        "translations": {
+          "es": "Un embalse se encuentra detrás de la presa.",
+          "fr": "Un réservoir se trouve derrière le barrage.",
+          "de": "Hinter dem Damm liegt ein Stausee.",
+          "it": "Un bacino idrico si trova dietro la diga.",
+          "pt": "Um reservatório fica atrás da barragem.",
+          "no": "Et reservoar ligger bak demningen."
+        }
+      },
+      {
+        "text": "Floodwater surrounds the houses below.",
+        "translations": {
+          "es": "El agua de la inundación rodea las casas de abajo.",
+          "fr": "Les eaux de crue entourent les maisons en contrebas.",
+          "de": "Das Hochwasser umgibt die Häuser darunter.",
+          "it": "L'acqua di piena circonda le case sottostanti.",
+          "pt": "A água da inundação rodeia as casas abaixo.",
+          "no": "Flomvann omgir husene nedenfor."
+        }
+      },
+      {
+        "text": "A church stands near the flooded town.",
+        "translations": {
+          "es": "Una iglesia se encuentra cerca de la ciudad inundada.",
+          "fr": "Une église se dresse près de la ville inondée.",
+          "de": "In der Nähe der überfluteten Stadt steht eine Kirche.",
+          "it": "Una chiesa si trova vicino alla città allagata.",
+          "pt": "Uma igreja fica perto da cidade inundada.",
+          "no": "En kirke står i nærheten av den oversvømte byen."
+        }
+      },
+      {
+        "text": "People are evacuating along the road.",
+        "translations": {
+          "es": "La gente está evacuando a lo largo de la carretera.",
+          "fr": "Les gens évacuent le long de la route.",
+          "de": "Menschen evakuieren entlang der Straße.",
+          "it": "Le persone stanno evacuando lungo la strada.",
+          "pt": "As pessoas estão a ser evacuadas ao longo da estrada.",
+          "no": "Folk evakuerer langs veien."
+        }
+      },
+      {
+        "text": "Emergency vehicles are helping during the evacuation.",
+        "translations": {
+          "es": "Los vehículos de emergencia están ayudando durante la evacuación.",
+          "fr": "Les véhicules d'urgence aident pendant l'évacuation.",
+          "de": "Einsatzfahrzeuge helfen bei der Evakuierung.",
+          "it": "I veicoli di emergenza stanno aiutando durante l'evacuazione.",
+          "pt": "Os veículos de emergência estão a ajudar durante a evacuação.",
+          "no": "Utrykningskjøretøy bistår under evakueringen."
+        }
+      },
+      {
+        "text": "Tall pine trees grow on the mountain slopes.",
+        "translations": {
+          "es": "Los altos pinos crecen en las laderas de las montañas.",
+          "fr": "De grands pins poussent sur les pentes des montagnes.",
+          "de": "An den Berghängen wachsen hohe Kiefern.",
+          "it": "Sulle pendici della montagna crescono alti pini.",
+          "pt": "Pinheiros altos crescem nas encostas das montanhas.",
+          "no": "Høye furutrær vokser i fjellsidene."
+        }
+      }
+    ],
+    "hotspots": [
+      {
+        "id": "broken-dam",
+        "label": "broken dam",
+        "x": 25,
+        "y": 6,
+        "w": 72,
+        "h": 29,
+        "rotation": 0,
+        "z": 0,
+        "sound": "sounds/tsunami.mp3",
+        "translations": {
+          "es": ""
+        }
+      },
+      {
+        "id": "floodwater",
+        "label": "floodwater",
+        "x": 42,
+        "y": 28,
+        "w": 55,
+        "h": 31
+      },
+      {
+        "id": "mountain-lake",
+        "label": "mountain lake",
+        "x": 30,
+        "y": 2,
+        "w": 27,
+        "h": 11
+      },
+      {
+        "id": "flooded-houses",
+        "label": "flooded houses",
+        "x": 61,
+        "y": 47,
+        "w": 29,
+        "h": 18
+      },
+      {
+        "id": "church",
+        "label": "church",
+        "x": 87,
+        "y": 45,
+        "w": 11,
+        "h": 19
+      },
+      {
+        "id": "evacuation-road",
+        "label": "evacuation road",
+        "x": 1,
+        "y": 68,
+        "w": 45,
+        "h": 30
+      },
+      {
+        "id": "rescue-vehicles",
+        "label": "rescue vehicles",
+        "x": 37,
+        "y": 64,
+        "w": 51,
+        "h": 22
+      },
+      {
+        "id": "pine-forest",
+        "label": "pine forest",
+        "x": 11,
+        "y": 8,
+        "w": 24,
+        "h": 46
+      }
+    ],
+    "overlays": [],
+    "challenges": [
+      {
+        "prompt": "Find the broken dam",
+        "target": "broken-dam",
+        "translations": {
+          "es": "Encuentra la presa rota",
+          "fr": "Trouvez le barrage cassé",
+          "de": "Finde den kaputten Damm",
+          "it": "Trova la diga rotta",
+          "pt": "Encontrar a barragem rompida",
+          "no": "Finn den ødelagte demningen"
+        }
+      },
+      {
+        "prompt": "Find the floodwater",
+        "target": "floodwater",
+        "translations": {
+          "es": "Encuentra el agua de la inundación",
+          "fr": "Trouvez les eaux de crue",
+          "de": "Finde das Hochwasser",
+          "it": "Trova l'acqua alluvionale",
+          "pt": "Encontre a água da inundação",
+          "no": "Finn flomvannet"
+        }
+      },
+      {
+        "prompt": "Find the mountain lake",
+        "target": "mountain-lake",
+        "translations": {
+          "es": "Encuentra el lago de montaña",
+          "fr": "Lac de montagne.",
+          "de": "Finden Sie den Bergsee",
+          "it": "Trova il lago di montagna",
+          "pt": "Encontre o lago da montanha",
+          "no": "Finn fjellsjøen"
+        }
+      },
+      {
+        "prompt": "Find the flooded houses",
+        "target": "flooded-houses",
+        "translations": {
+          "es": "Encuentra las casas inundadas",
+          "fr": "Trouvez les maisons inondées",
+          "de": "Finde die überfluteten Häuser",
+          "it": "Trova le case allagate",
+          "pt": "Encontre as casas inundadas",
+          "no": "Finn de oversvømte husene"
+        }
+      },
+      {
+        "prompt": "Find the church",
+        "target": "church",
+        "translations": {
+          "es": "La Iglesia",
+          "fr": "L’ÉGLISE",
+          "de": "DIE KIRCHE",
+          "it": "Il Paese",
+          "pt": "A IGREJA",
+          "no": "Finn kirken"
+        }
+      },
+      {
+        "prompt": "Find the evacuation road",
+        "target": "evacuation-road",
+        "translations": {
+          "es": "Encuentra el camino de evacuación",
+          "fr": "Trouver la route d'évacuation",
+          "de": "Finden Sie die Evakuierungsstraße",
+          "it": "Trova la strada di evacuazione",
+          "pt": "Encontre a estrada de evacuação",
+          "no": "Finn evakueringsveien"
+        }
+      },
+      {
+        "prompt": "Find the rescue vehicles",
+        "target": "rescue-vehicles",
+        "translations": {
+          "es": "Encuentra los vehículos de rescate",
+          "fr": "Trouver les véhicules de secours",
+          "de": "Finde die Rettungsfahrzeuge",
+          "it": "Trova i mezzi di soccorso",
+          "pt": "Encontre os veículos de resgate",
+          "no": "Finn redningskjøretøyene"
+        }
+      },
+      {
+        "prompt": "Find the pine forest",
+        "target": "pine-forest",
+        "translations": {
+          "es": "EL PINAR",
+          "fr": "Les forêts de pins",
+          "de": "Der Pinienwald",
+          "it": "Trova la pineta",
+          "pt": "Encontre a floresta de pinheiros",
+          "no": "Finn furuskogen"
+        }
+      }
+    ]
+  },
+  "forest-fire": {
+    "title": "Forest Fire",
+    "image": "images/forest-fire.jpg",
+    "lessons": [
+      {
+        "text": "Large flames are burning through the forest.",
+        "translations": {
+          "es": "Grandes llamas están ardiendo a través del bosque.",
+          "fr": "De grandes flammes brûlent à travers la forêt.",
+          "de": "Große Flammen brennen durch den Wald.",
+          "it": "Grandi fiamme stanno bruciando nella foresta.",
+          "pt": "Grandes chamas estão queimando pela floresta.",
+          "no": "Store flammer brenner gjennom skogen."
+        }
+      },
+      {
+        "text": "A firefighter directs water toward the flames.",
+        "translations": {
+          "es": "Un bombero dirige el agua hacia las llamas.",
+          "fr": "Un pompier dirige l'eau vers les flammes.",
+          "de": "Ein Feuerwehrmann leitet Wasser zu den Flammen.",
+          "it": "Un vigile del fuoco dirige l'acqua verso le fiamme.",
+          "pt": "Um bombeiro direciona a água para as chamas.",
+          "no": "En brannmann leder vann mot flammene."
+        }
+      },
+      {
+        "text": "Firefighters use a hose to spray water.",
+        "translations": {
+          "es": "Los bomberos usan una manguera para rociar agua.",
+          "fr": "Les pompiers utilisent un tuyau pour pulvériser de l'eau.",
+          "de": "Feuerwehrleute verwenden einen Schlauch, um Wasser zu sprühen.",
+          "it": "I vigili del fuoco usano un tubo per spruzzare acqua.",
+          "pt": "Os bombeiros usam uma mangueira para pulverizar água.",
+          "no": "Brannmannskaper bruker en vannslange til å sprøyte vann."
+        }
+      },
+      {
+        "text": "A fire engine carries emergency equipment.",
+        "translations": {
+          "es": "Un camión de bomberos lleva equipo de emergencia.",
+          "fr": "Un camion de pompiers transporte un équipement d'urgence.",
+          "de": "Ein Löschfahrzeug trägt eine Notfallausrüstung.",
+          "it": "Un'autopompa trasporta attrezzature di emergenza.",
+          "pt": "Um carro de bombeiros transporta equipamento de emergência.",
+          "no": "En brannbil har med seg nødutstyr."
+        }
+      },
+      {
+        "text": "A helicopter is helping fight the wildfire.",
+        "translations": {
+          "es": "Un helicóptero está ayudando a combatir el incendio forestal.",
+          "fr": "Un hélicoptère aide à combattre le feu de forêt.",
+          "de": "Ein Hubschrauber hilft, das Lauffeuer zu bekämpfen.",
+          "it": "Un elicottero sta aiutando a combattere l'incendio.",
+          "pt": "Um helicóptero está a ajudar a combater os incêndios florestais.",
+          "no": "Et helikopter hjelper til med å bekjempe skogbrannen."
+        }
+      },
+      {
+        "text": "A helicopter carries water to the fire.",
+        "translations": {
+          "es": "Un helicóptero lleva agua al fuego.",
+          "fr": "Un hélicoptère transporte de l'eau jusqu'au feu.",
+          "de": "Ein Hubschrauber bringt Wasser zum Feuer.",
+          "it": "Un elicottero porta l'acqua al fuoco.",
+          "pt": "Um helicóptero transporta água para o fogo.",
+          "no": "Et helikopter frakter vann til brannen."
+        }
+      },
+      {
+        "text": "An aircraft flies above the burning forest.",
+        "translations": {
+          "es": "Un avión vuela sobre el bosque en llamas.",
+          "fr": "Un avion vole au-dessus de la forêt en feu.",
+          "de": "Ein Flugzeug fliegt über den brennenden Wald.",
+          "it": "Un aereo vola sopra la foresta in fiamme.",
+          "pt": "Uma aeronave voa acima da floresta em chamas.",
+          "no": "Et fly flyr over den brennende skogen."
+        }
+      },
+      {
+        "text": "A river runs beside the burning hillside.",
+        "translations": {
+          "es": "Un río corre junto a la ladera ardiente.",
+          "fr": "Une rivière coule à côté de la colline en feu.",
+          "de": "Ein Fluss fließt neben dem brennenden Hang.",
+          "it": "Un fiume scorre accanto alla collina in fiamme.",
+          "pt": "Um rio corre ao lado da encosta em chamas.",
+          "no": "En elv renner langs den brennende åssiden."
+        }
+      }
+    ],
+    "hotspots": [
+      {
+        "id": "wildfire",
+        "label": "wildfire",
+        "x": 63,
+        "y": 19,
+        "w": 35,
+        "h": 49,
+        "rotation": 0,
+        "z": 0,
+        "sound": "sounds/forest-fire.mp3",
+        "translations": {
+          "es": ""
+        }
+      },
+      {
+        "id": "firefighter",
+        "label": "firefighter",
+        "x": 49,
+        "y": 55,
+        "w": 13,
+        "h": 22
+      },
+      {
+        "id": "fire-hose",
+        "label": "fire hose",
+        "x": 0,
+        "y": 77,
+        "w": 55,
+        "h": 18
+      },
+      {
+        "id": "fire-engine",
+        "label": "fire engine",
+        "x": 0,
+        "y": 30,
+        "w": 30,
+        "h": 34
+      },
+      {
+        "id": "helicopter",
+        "label": "helicopter",
+        "x": 75,
+        "y": 3,
+        "w": 13,
+        "h": 11
+      },
+      {
+        "id": "water-bucket",
+        "label": "water bucket",
+        "x": 78,
+        "y": 12,
+        "w": 5,
+        "h": 8
+      },
+      {
+        "id": "air-tanker",
+        "label": "air tanker",
+        "x": 25,
+        "y": 0,
+        "w": 16,
+        "h": 14
+      },
+      {
+        "id": "river",
+        "label": "river",
+        "x": 59,
+        "y": 67,
+        "w": 40,
+        "h": 22
+      }
+    ],
+    "overlays": [],
+    "challenges": [
+      {
+        "prompt": "Find the wildfire",
+        "target": "wildfire",
+        "translations": {
+          "es": "Encuentra el incendio forestal",
+          "fr": "Trouvez le feu de forêt",
+          "de": "Finde das Lauffeuer",
+          "it": "Trova l'incendio",
+          "pt": "Encontre o incêndio florestal",
+          "no": "Finn skogbrannen"
+        }
+      },
+      {
+        "prompt": "Find the firefighter",
+        "target": "firefighter",
+        "translations": {
+          "es": "Encuentra al bombero",
+          "fr": "Trouvez le pompier",
+          "de": "Finde den Feuerwehrmann",
+          "it": "Trova il pompiere",
+          "pt": "Encontre o bombeiro",
+          "no": "Finn brannmannen"
+        }
+      },
+      {
+        "prompt": "Find the fire hose",
+        "target": "fire-hose",
+        "translations": {
+          "es": "Encuentra la manguera contra incendios",
+          "fr": "Trouvez le tuyau d'incendie",
+          "de": "Finden Sie den Feuerwehrschlauch",
+          "it": "Trova la manichetta antincendio",
+          "pt": "Encontre a mangueira de incêndio",
+          "no": "Finn brannslangen"
+        }
+      },
+      {
+        "prompt": "Find the fire engine",
+        "target": "fire-engine",
+        "translations": {
+          "es": "Encuentra el camión de bomberos",
+          "fr": "Trouvez le camion de pompiers",
+          "de": "der Feuerwehrwagen",
+          "it": "Trova l'autopompa",
+          "pt": "B O veículo dos bombeiros.",
+          "no": "Finn brannbilen"
+        }
+      },
+      {
+        "prompt": "Find the helicopter",
+        "target": "helicopter",
+        "translations": {
+          "es": "Encuentra el helicóptero",
+          "fr": "L'hélicoptère",
+          "de": "der Helikopter",
+          "it": "Trova l'elicottero",
+          "pt": "Encontre o helicóptero",
+          "no": "Finn helikopteret"
+        }
+      },
+      {
+        "prompt": "Find the water bucket",
+        "target": "water-bucket",
+        "translations": {
+          "es": "Encuentra el cubo de agua",
+          "fr": "Trouvez le seau d'eau",
+          "de": "Finde den Wassereimer",
+          "it": "Trova il secchio d'acqua",
+          "pt": "Encontre o balde de água",
+          "no": "Finn vannbøtta"
+        }
+      },
+      {
+        "prompt": "Find the air tanker",
+        "target": "air-tanker",
+        "translations": {
+          "es": "Encuentra el avión cisterna",
+          "fr": "Trouvez le camion-citerne",
+          "de": "Finde den Lufttanker",
+          "it": "Trova l'aerocisterna",
+          "pt": "Encontre o navio-tanque de ar",
+          "no": "Finn lufttankeren"
+        }
+      },
+      {
+        "prompt": "Find the river",
+        "target": "river",
+        "translations": {
+          "es": "El canal",
+          "fr": "La rivière",
+          "de": "DER FLUSS",
+          "it": "Il fiume",
+          "pt": "Do Rio",
+          "no": "Finn elven"
+        }
+      }
+    ]
+  },
+  "tornado": {
+    "title": "Tornado",
+    "image": "images/tornado.jpg",
+    "lessons": [
+      {
+        "text": "A powerful tornado spins beneath a dark thunderstorm.",
+        "translations": {
+          "es": "Un poderoso tornado gira bajo una oscura tormenta eléctrica.",
+          "fr": "Une puissante tornade tourne sous un orage sombre.",
+          "de": "Ein mächtiger Tornado dreht sich unter einem dunklen Gewitter.",
+          "it": "Un potente tornado ruota sotto un temporale scuro.",
+          "pt": "Um poderoso tornado gira sob uma tempestade escura.",
+          "no": "En kraftig tornado snurrer under et mørkt tordenvær."
+        }
+      },
+      {
+        "text": "Dark storm clouds cover the sky.",
+        "translations": {
+          "es": "Oscuras nubes de tormenta cubren el cielo.",
+          "fr": "Des nuages d'orage sombres couvrent le ciel.",
+          "de": "Dunkle Gewitterwolken bedecken den Himmel.",
+          "it": "Nuvole scure di tempesta coprono il cielo.",
+          "pt": "Nuvens escuras de tempestade cobrem o céu.",
+          "no": "Mørke stormskyer dekker himmelen."
+        }
+      },
+      {
+        "text": "The strong wind carries debris through the air.",
+        "translations": {
+          "es": "El fuerte viento transporta escombros a través del aire.",
+          "fr": "Le vent fort transporte les débris dans l'air.",
+          "de": "Der starke Wind trägt Trümmer durch die Luft.",
+          "it": "Il vento forte trasporta detriti nell'aria.",
+          "pt": "O vento forte carrega detritos pelo ar.",
+          "no": "Den sterke vinden fører med seg rusk og avfall gjennom luften."
+        }
+      },
+      {
+        "text": "A farmhouse stands near the approaching tornado.",
+        "translations": {
+          "es": "Una granja se encuentra cerca del tornado que se aproxima.",
+          "fr": "Une ferme se trouve près de la tornade qui approche.",
+          "de": "In der Nähe des herannahenden Tornados steht ein Bauernhaus.",
+          "it": "Una casa colonica si trova vicino al tornado in avvicinamento.",
+          "pt": "Uma casa de fazenda fica perto do tornado que se aproxima.",
+          "no": "Et gårdshus står i nærheten av den nærliggende tornadoen."
+        }
+      },
+      {
+        "text": "The red barn is beside the farm fields.",
+        "translations": {
+          "es": "El granero rojo está al lado de los campos de cultivo.",
+          "fr": "La grange rouge est à côté des champs de la ferme.",
+          "de": "Die rote Scheune befindet sich neben den Farmfeldern.",
+          "it": "Il fienile rosso è accanto ai campi della fattoria.",
+          "pt": "O celeiro vermelho fica ao lado dos campos da fazenda.",
+          "no": "Den røde låven ligger ved siden av åkrene."
+        }
+      },
+      {
+        "text": "The farm windmill stands near the grain silos.",
+        "translations": {
+          "es": "El molino de viento de la granja se encuentra cerca de los silos de grano.",
+          "fr": "Le moulin à vent de la ferme se trouve près des silos à grains.",
+          "de": "Die Farm-Windmühle steht in der Nähe der Getreidesilos.",
+          "it": "Il mulino a vento della fattoria si trova vicino ai silos di grano.",
+          "pt": "O moinho de vento da fazenda fica perto dos silos de grãos.",
+          "no": "Gårdsvindmøllen står i nærheten av kornsiloene."
+        }
+      },
+      {
+        "text": "Rows of crops grow in the field.",
+        "translations": {
+          "es": "En el campo crecen hileras de cultivos.",
+          "fr": "Des rangées de cultures poussent dans le champ.",
+          "de": "Auf dem Feld wachsen Pflanzenreihen.",
+          "it": "Nel campo crescono file di colture.",
+          "pt": "Fileiras de culturas crescem no campo.",
+          "no": "Rader med avlinger vokser på åkeren."
+        }
+      },
+      {
+        "text": "Rain has made the country road wet and slippery.",
+        "translations": {
+          "es": "La lluvia ha hecho que la carretera rural esté mojada y resbaladiza.",
+          "fr": "La pluie a rendu la route de campagne humide et glissante.",
+          "de": "Regen hat die Landstraße nass und rutschig gemacht.",
+          "it": "La pioggia ha reso la strada di campagna bagnata e scivolosa.",
+          "pt": "A chuva tornou a estrada molhada e escorregadia.",
+          "no": "Regn har gjort landeveien våt og glatt."
+        }
+      }
+    ],
+    "hotspots": [
+      {
+        "id": "tornado-funnel",
+        "label": "tornado funnel",
+        "x": 60,
+        "y": 5,
+        "w": 23,
+        "h": 65,
+        "rotation": 0,
+        "z": 0,
+        "sound": "sounds/tornado.mp3",
+        "translations": {
+          "es": ""
+        }
+      },
+      {
+        "id": "storm-clouds",
+        "label": "storm clouds",
+        "x": 15,
+        "y": 4,
+        "w": 43,
+        "h": 36
+      },
+      {
+        "id": "flying-debris",
+        "label": "flying debris",
+        "x": 80,
+        "y": 34,
+        "w": 13,
+        "h": 31
+      },
+      {
+        "id": "farmhouse",
+        "label": "farmhouse",
+        "x": 20,
+        "y": 59,
+        "w": 15,
+        "h": 13
+      },
+      {
+        "id": "red-barn",
+        "label": "red barn",
+        "x": 53,
+        "y": 63,
+        "w": 18,
+        "h": 11
+      },
+      {
+        "id": "windmill",
+        "label": "windmill",
+        "x": 49,
+        "y": 52,
+        "w": 5,
+        "h": 16
+      },
+      {
+        "id": "cornfield",
+        "label": "cornfield",
+        "x": 61,
+        "y": 73,
+        "w": 37,
+        "h": 12
+      },
+      {
+        "id": "wet-road",
+        "label": "wet road",
+        "x": 5,
+        "y": 74,
+        "w": 53,
+        "h": 24
+      }
+    ],
+    "overlays": [],
+    "challenges": [
+      {
+        "prompt": "Find the tornado funnel",
+        "target": "tornado-funnel",
+        "translations": {
+          "es": "Encuentra el embudo del tornado",
+          "fr": "Trouvez l'entonnoir de tornade",
+          "de": "Finde den Tornado-Trichter",
+          "it": "Trova l'imbuto del tornado",
+          "pt": "Encontre o funil do tornado",
+          "no": "Finn tornadotrakten"
+        }
+      },
+      {
+        "prompt": "Find the storm clouds",
+        "target": "storm-clouds",
+        "translations": {
+          "es": "Encuentra las nubes de tormenta",
+          "fr": "Trouvez les nuages d'orage",
+          "de": "Finde die Sturmwolken",
+          "it": "Trova le nuvole temporalesche",
+          "pt": "Encontre as nuvens de tempestade",
+          "no": "Finn stormskyene"
+        }
+      },
+      {
+        "prompt": "Find the flying debris",
+        "target": "flying-debris",
+        "translations": {
+          "es": "Encuentra los escombros voladores",
+          "fr": "Trouvez les débris volants",
+          "de": "Finde die fliegenden Trümmer",
+          "it": "Trova i detriti volanti",
+          "pt": "Encontre os detritos voadores",
+          "no": "Finn de flygende vrakrestene"
+        }
+      },
+      {
+        "prompt": "Find the farmhouse",
+        "target": "farmhouse",
+        "translations": {
+          "es": "La granja",
+          "fr": "LA FERME",
+          "de": "Finde das Bauernhaus",
+          "it": "L'AZIENDA",
+          "pt": "Encontre a quinta",
+          "no": "Finn gårdshuset"
+        }
+      },
+      {
+        "prompt": "Find the red barn",
+        "target": "red-barn",
+        "translations": {
+          "es": "Encuentra el granero rojo",
+          "fr": "Trouvez la grange rouge",
+          "de": "Finde die rote Scheune",
+          "it": "Trova il fienile rosso",
+          "pt": "Encontre o celeiro vermelho",
+          "no": "Finn den røde låven"
+        }
+      },
+      {
+        "prompt": "Find the windmill",
+        "target": "windmill",
+        "translations": {
+          "es": "El molino de viento",
+          "fr": "Trouvez le moulin à vent",
+          "de": "Finde die Windmühle",
+          "it": "Trova il mulino a vento",
+          "pt": "O moinho de vento",
+          "no": "Finn vindmøllen"
+        }
+      },
+      {
+        "prompt": "Find the cornfield",
+        "target": "cornfield",
+        "translations": {
+          "es": "Encuentra el campo de maíz",
+          "fr": "Trouvez le champ de maïs",
+          "de": "Finde das Maisfeld",
+          "it": "Trova il campo di mais",
+          "pt": "Encontre o milharal",
+          "no": "Finn kornåkeren"
+        }
+      },
+      {
+        "prompt": "Find the wet road",
+        "target": "wet-road",
+        "translations": {
+          "es": "Encuentra la carretera mojada",
+          "fr": "Trouvez la route mouillée",
+          "de": "Finde die nasse Straße",
+          "it": "Trova la strada bagnata",
+          "pt": "Encontre a estrada molhada",
+          "no": "Finn den våte veien"
+        }
+      }
+    ]
+  },
+  "tsunami": {
+    "title": "Tsunami",
+    "image": "images/tsunami.jpg",
+    "lessons": [
+      {
+        "text": "A huge wave is approaching the coastal town.",
+        "translations": {
+          "es": "Una enorme ola se acerca a la ciudad costera.",
+          "fr": "Une énorme vague s'approche de la ville côtière.",
+          "de": "Eine riesige Welle nähert sich der Küstenstadt.",
+          "it": "Un'onda enorme si sta avvicinando alla città costiera.",
+          "pt": "Uma enorme onda se aproxima da cidade costeira.",
+          "no": "En enorm bølge nærmer seg kystbyen."
+        }
+      },
+      {
+        "text": "The ocean is flooding the coastline.",
+        "translations": {
+          "es": "El océano está inundando la costa.",
+          "fr": "L'océan inonde le littoral.",
+          "de": "Das Meer überschwemmt die Küste.",
+          "it": "L'oceano sta inondando la costa.",
+          "pt": "O oceano está inundando a costa.",
+          "no": "Havet oversvømmer kystlinjen."
+        }
+      },
+      {
+        "text": "People are running uphill to reach safer ground.",
+        "translations": {
+          "es": "La gente corre cuesta arriba para llegar a un terreno más seguro.",
+          "fr": "Les gens montent en courant pour atteindre un terrain plus sûr.",
+          "de": "Die Menschen rennen bergauf, um sichereren Boden zu erreichen.",
+          "it": "Le persone corrono in salita per raggiungere un terreno più sicuro.",
+          "pt": "As pessoas correm ladeira acima para chegar a um terreno mais seguro.",
+          "no": "Folk løper oppoverbakke for å komme til tryggere terreng."
+        }
+      },
+      {
+        "text": "Vehicles are trying to leave the danger zone.",
+        "translations": {
+          "es": "Los vehículos intentan salir de la zona de peligro.",
+          "fr": "Les véhicules tentent de quitter la zone de danger.",
+          "de": "Fahrzeuge versuchen, den Gefahrenbereich zu verlassen.",
+          "it": "I veicoli stanno cercando di lasciare la zona di pericolo.",
+          "pt": "Os veículos estão a tentar sair da zona de perigo.",
+          "no": "Kjøretøy prøver å forlate faresonen."
+        }
+      },
+      {
+        "text": "Buildings stand close to the shore.",
+        "translations": {
+          "es": "Los edificios se encuentran cerca de la orilla.",
+          "fr": "Les bâtiments se tiennent près du rivage.",
+          "de": "Gebäude stehen in Küstennähe.",
+          "it": "Gli edifici sorgono vicino alla riva.",
+          "pt": "Os edifícios ficam perto da costa.",
+          "no": "Bygningene står nær kysten."
+        }
+      },
+      {
+        "text": "Palm trees grow along the coast.",
+        "translations": {
+          "es": "Las palmeras crecen a lo largo de la costa.",
+          "fr": "Des palmiers poussent le long de la côte.",
+          "de": "An der Küste wachsen Palmen.",
+          "it": "Lungo la costa crescono palme.",
+          "pt": "Palmeiras crescem ao longo da costa.",
+          "no": "Palmer vokser langs kysten."
+        }
+      },
+      {
+        "text": "Boats are floating in the marina.",
+        "translations": {
+          "es": "Los barcos están flotando en el puerto deportivo.",
+          "fr": "Des bateaux flottent dans la marina.",
+          "de": "Im Yachthafen treiben Boote.",
+          "it": "Le barche galleggiano nel porto turistico.",
+          "pt": "Os barcos estão flutuando na marina.",
+          "no": "Båter flyter i marinaen."
+        }
+      },
+      {
+        "text": "Mountains rise behind the coastal city.",
+        "translations": {
+          "es": "Las montañas se elevan detrás de la ciudad costera.",
+          "fr": "Les montagnes s'élèvent derrière la ville côtière.",
+          "de": "Hinter der Küstenstadt erheben sich Berge.",
+          "it": "Le montagne si ergono dietro la città costiera.",
+          "pt": "Montanhas se erguem atrás da cidade costeira.",
+          "no": "Fjell reiser seg bak kystbyen."
+        }
+      }
+    ],
+    "hotspots": [
+      {
+        "id": "tsunami-wave",
+        "label": "tsunami wave",
+        "x": 39,
+        "y": 3,
+        "w": 59,
+        "h": 40,
+        "rotation": 0,
+        "z": 0,
+        "sound": "sounds/tsunami.mp3",
+        "translations": {
+          "es": ""
+        }
+      },
+      {
+        "id": "ocean",
+        "label": "ocean",
+        "x": 58,
+        "y": 43,
+        "w": 39,
+        "h": 18
+      },
+      {
+        "id": "people-evacuating",
+        "label": "people evacuating",
+        "x": 2,
+        "y": 62,
+        "w": 37,
+        "h": 37
+      },
+      {
+        "id": "traffic",
+        "label": "traffic",
+        "x": 25,
+        "y": 56,
+        "w": 69,
+        "h": 41
+      },
+      {
+        "id": "coastal-buildings",
+        "label": "coastal buildings",
+        "x": 12,
+        "y": 30,
+        "w": 30,
+        "h": 17
+      },
+      {
+        "id": "palm-trees",
+        "label": "palm trees",
+        "x": 41,
+        "y": 40,
+        "w": 28,
+        "h": 16
+      },
+      {
+        "id": "marina",
+        "label": "marina",
+        "x": 74,
+        "y": 47,
+        "w": 24,
+        "h": 19
+      },
+      {
+        "id": "mountains",
+        "label": "mountains",
+        "x": 0,
+        "y": 12,
+        "w": 22,
+        "h": 22
+      }
+    ],
+    "overlays": [],
+    "challenges": [
+      {
+        "prompt": "Find the tsunami wave",
+        "target": "tsunami-wave",
+        "translations": {
+          "es": "Encuentra la ola del tsunami",
+          "fr": "Trouvez la vague du tsunami",
+          "de": "Finde die Tsunami-Welle",
+          "it": "Trova l'onda dello tsunami",
+          "pt": "Encontre a onda do tsunami",
+          "no": "Finn tsunamibølgen"
+        }
+      },
+      {
+        "prompt": "Find the ocean",
+        "target": "ocean",
+        "translations": {
+          "es": "El Mar",
+          "fr": "l’océan",
+          "de": "Finde den Ozean",
+          "it": "L'oceano",
+          "pt": "o oceano",
+          "no": "Finn havet"
+        }
+      },
+      {
+        "prompt": "Find the people evacuating",
+        "target": "people-evacuating",
+        "translations": {
+          "es": "Encuentra a las personas que están evacuando",
+          "fr": "Trouvez les personnes évacuées",
+          "de": "Finde die Evakuierenden",
+          "it": "Trova le persone che stanno evacuando",
+          "pt": "Encontre as pessoas a evacuar",
+          "no": "Finn menneskene som evakuerer"
+        }
+      },
+      {
+        "prompt": "Find the traffic",
+        "target": "traffic",
+        "translations": {
+          "es": "El tráfico",
+          "fr": "La circulation routière",
+          "de": "Finde den Verkehr",
+          "it": "Trova il traffico",
+          "pt": "O trânsito",
+          "no": "Finn trafikken"
+        }
+      },
+      {
+        "prompt": "Find the coastal buildings",
+        "target": "coastal-buildings",
+        "translations": {
+          "es": "Encuentra los edificios costeros",
+          "fr": "Retrouvez les bâtiments côtiers",
+          "de": "Finde die Küstengebäude",
+          "it": "Trova gli edifici costieri",
+          "pt": "Encontre os edifícios costeiros",
+          "no": "Finn kystbygningene"
+        }
+      },
+      {
+        "prompt": "Find the palm trees",
+        "target": "palm-trees",
+        "translations": {
+          "es": "Encuentra las palmeras",
+          "fr": "Les Palmiers",
+          "de": "die Palmen",
+          "it": "Trova le palme",
+          "pt": "Encontre as palmeiras",
+          "no": "Finn palmene"
+        }
+      },
+      {
+        "prompt": "Find the marina",
+        "target": "marina",
+        "translations": {
+          "es": "Encuentra el puerto deportivo",
+          "fr": "LA MARINE",
+          "de": "DIE MARINA",
+          "it": "LA MARINA",
+          "pt": "Encontre o Porto",
+          "no": "Finn marinaen"
+        }
+      },
+      {
+        "prompt": "Find the mountains",
+        "target": "mountains",
+        "translations": {
+          "es": "La Montaña",
+          "fr": "montagne",
+          "de": "Gebirge",
+          "it": "La Montagna",
+          "pt": "A escola-oficina recupera a montanha",
+          "no": "Finn fjellene"
+        }
+      }
+    ]
+  },
+  "volcano": {
+    "title": "Volcano",
+    "image": "images/volcano.jpg",
+    "lessons": [
+      {
+        "text": "Molten lava glows inside the volcanic crater.",
+        "translations": {
+          "es": "La lava fundida brilla dentro del cráter volcánico.",
+          "fr": "La lave en fusion brille à l'intérieur du cratère volcanique.",
+          "de": "Geschmolzene Lava leuchtet im Vulkankrater.",
+          "it": "La lava fusa brilla all'interno del cratere vulcanico.",
+          "pt": "A lava derretida brilha dentro da cratera vulcânica.",
+          "no": "Smeltet lava gløder inne i det vulkanske krateret."
+        }
+      },
+      {
+        "text": "A bright river of lava flows down the slope.",
+        "translations": {
+          "es": "Un brillante río de lava fluye por la ladera.",
+          "fr": "Une rivière de lave brillante coule sur la pente.",
+          "de": "Ein heller Lavastrom fließt den Hang hinunter.",
+          "it": "Un fiume luminoso di lava scorre lungo il pendio.",
+          "pt": "Um rio brilhante de lava desce a encosta.",
+          "no": "En lys elv av lava renner nedover skråningen."
+        }
+      },
+      {
+        "text": "A thick cloud of ash rises above the volcano.",
+        "translations": {
+          "es": "Una espesa nube de ceniza se eleva sobre el volcán.",
+          "fr": "Un épais nuage de cendres s'élève au-dessus du volcan.",
+          "de": "Eine dicke Aschewolke erhebt sich über dem Vulkan.",
+          "it": "Una spessa nuvola di cenere si alza sopra il vulcano.",
+          "pt": "Uma espessa nuvem de cinzas sobe acima do vulcão.",
+          "no": "En tykk askesky stiger over vulkanen."
+        }
+      },
+      {
+        "text": "Steam rises where hot lava meets cold ground.",
+        "translations": {
+          "es": "El vapor se eleva donde la lava caliente se encuentra con el suelo frío.",
+          "fr": "La vapeur monte là où la lave chaude rencontre le sol froid.",
+          "de": "Dampf steigt dort auf, wo heiße Lava auf kalten Boden trifft.",
+          "it": "Il vapore sale dove la lava calda incontra il terreno freddo.",
+          "pt": "O vapor sobe onde a lava quente encontra o solo frio.",
+          "no": "Damp stiger opp der varm lava møter kald bakke."
+        }
+      },
+      {
+        "text": "Snow covers the rocks near the volcano.",
+        "translations": {
+          "es": "La nieve cubre las rocas cerca del volcán.",
+          "fr": "La neige recouvre les rochers près du volcan.",
+          "de": "Schnee bedeckt die Felsen in der Nähe des Vulkans.",
+          "it": "La neve copre le rocce vicino al vulcano.",
+          "pt": "A neve cobre as rochas perto do vulcão.",
+          "no": "Snø dekker steinene nær vulkanen."
+        }
+      },
+      {
+        "text": "The volcano has steep rocky slopes.",
+        "translations": {
+          "es": "El volcán tiene laderas rocosas empinadas.",
+          "fr": "Le volcan a des pentes rocheuses abruptes.",
+          "de": "Der Vulkan hat steile Felshänge.",
+          "it": "Il vulcano ha ripidi pendii rocciosi.",
+          "pt": "O vulcão tem encostas rochosas íngremes.",
+          "no": "Vulkanen har bratte, steinete skråninger."
+        }
+      },
+      {
+        "text": "Snowy mountains stretch into the distance.",
+        "translations": {
+          "es": "Montañas nevadas se extienden en la distancia.",
+          "fr": "Les montagnes enneigées s'étendent au loin.",
+          "de": "Verschneite Berge erstrecken sich in die Ferne.",
+          "it": "Le montagne innevate si estendono in lontananza.",
+          "pt": "Montanhas nevadas se estendem à distância.",
+          "no": "Snødekte fjell strekker seg inn i det fjerne."
+        }
+      },
+      {
+        "text": "Dark volcanic rock covers the lower slope.",
+        "translations": {
+          "es": "La roca volcánica oscura cubre la ladera inferior.",
+          "fr": "Une roche volcanique sombre recouvre la pente inférieure.",
+          "de": "Dunkles Vulkangestein bedeckt den unteren Hang.",
+          "it": "La roccia vulcanica scura copre il pendio inferiore.",
+          "pt": "Rocha vulcânica escura cobre a encosta inferior.",
+          "no": "Mørk vulkansk stein dekker den nedre skråningen."
+        }
+      }
+    ],
+    "hotspots": [
+      {
+        "id": "volcanic-crater",
+        "label": "volcanic crater",
+        "x": 22,
+        "y": 25,
+        "w": 33,
+        "h": 26
+      },
+      {
+        "id": "lava-river",
+        "label": "lava river",
+        "x": 48,
+        "y": 49,
+        "w": 49,
+        "h": 36
+      },
+      {
+        "id": "ash-plume",
+        "label": "ash plume",
+        "x": 0,
+        "y": 0,
+        "w": 43,
+        "h": 34
+      },
+      {
+        "id": "steam",
+        "label": "steam",
+        "x": 52,
+        "y": 46,
+        "w": 21,
+        "h": 17
+      },
+      {
+        "id": "snow",
+        "label": "snow",
+        "x": 1,
+        "y": 73,
+        "w": 40,
+        "h": 24
+      },
+      {
+        "id": "volcanic-cone",
+        "label": "volcanic cone",
+        "x": 19,
+        "y": 26,
+        "w": 50,
+        "h": 50
+      },
+      {
+        "id": "distant-mountains",
+        "label": "distant mountains",
+        "x": 61,
+        "y": 7,
+        "w": 35,
+        "h": 24
+      },
+      {
+        "id": "black-rock",
+        "label": "black rock",
+        "x": 40,
+        "y": 76,
+        "w": 35,
+        "h": 17
+      }
+    ],
+    "overlays": [],
+    "challenges": [
+      {
+        "prompt": "Find the volcanic crater",
+        "target": "volcanic-crater",
+        "translations": {
+          "es": "Encuentra el cráter volcánico",
+          "fr": "Trouvez le cratère volcanique",
+          "de": "Finde den Vulkankrater",
+          "it": "Trova il cratere vulcanico",
+          "pt": "Encontre a cratera vulcânica",
+          "no": "Finn vulkankrateret"
+        }
+      },
+      {
+        "prompt": "Find the lava river",
+        "target": "lava-river",
+        "translations": {
+          "es": "Encuentra el río de lava",
+          "fr": "Trouvez la rivière de lave",
+          "de": "Finde den Lavastrom",
+          "it": "Trova il fiume di lava",
+          "pt": "Encontre o rio de lava",
+          "no": "Finn lavaelven"
+        }
+      },
+      {
+        "prompt": "Find the ash plume",
+        "target": "ash-plume",
+        "translations": {
+          "es": "Encuentra el penacho de cenizas",
+          "fr": "Trouvez le panache de cendres",
+          "de": "Finde die Aschewolke",
+          "it": "Trova il pennacchio di cenere",
+          "pt": "Encontre a pluma de cinzas",
+          "no": "Finn askeskyen"
+        }
+      },
+      {
+        "prompt": "Find the steam",
+        "target": "steam",
+        "translations": {
+          "es": "Encuentra el vapor",
+          "fr": "Trouvez la vapeur",
+          "de": "Finde den Dampf",
+          "it": "Il vapore prodotto dall'acqua",
+          "pt": "Encontre o vapor",
+          "no": "Finn dampen"
+        }
+      },
+      {
+        "prompt": "Find the snow",
+        "target": "snow",
+        "translations": {
+          "es": "Encuentra la nieve",
+          "fr": "Trouvez la neige",
+          "de": "Finde den Schnee",
+          "it": "Trova la neve",
+          "pt": "Encontrar a neve",
+          "no": "Finn snøen"
+        }
+      },
+      {
+        "prompt": "Find the volcanic cone",
+        "target": "volcanic-cone",
+        "translations": {
+          "es": "Encuentra el cono volcánico",
+          "fr": "Trouvez le cône volcanique",
+          "de": "Finde den Vulkankegel",
+          "it": "Trova il cono vulcanico",
+          "pt": "Encontre o cone vulcânico",
+          "no": "Finn vulkankjeglen"
+        }
+      },
+      {
+        "prompt": "Find the distant mountains",
+        "target": "distant-mountains",
+        "translations": {
+          "es": "Encuentra las montañas lejanas",
+          "fr": "“Les montagnes au loin -",
+          "de": "Finde die fernen Berge",
+          "it": "Trova le montagne lontane",
+          "pt": "Encontre as montanhas distantes",
+          "no": "Finn de fjerne fjellene"
+        }
+      },
+      {
+        "prompt": "Find the black rock",
+        "target": "black-rock",
+        "translations": {
+          "es": "Encuentra la roca negra",
+          "fr": "Trouvez la roche noire",
+          "de": "Finde den schwarzen Felsen",
+          "it": "Trova la roccia nera",
+          "pt": "Encontre a rocha negra",
+          "no": "Finn den svarte steinen"
         }
       }
     ]
