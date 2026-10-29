@@ -250,10 +250,10 @@ body>header .tb-header-row+.tb-header-row{
     overflow: hidden;
   }
   body:not([data-editor="yes"]):not(.tb-scene-only) .scene-area > .scene {
-    flex: 1 1 auto!important;
-    width: 100%!important;
+    flex: 0 1 auto!important;
+    width: 94%!important;
     height: 100%!important;
-    max-width: none!important;
+    max-width: 94%!important;
     min-height: 0!important;
     max-height: 100%!important;
     aspect-ratio: auto!important;
