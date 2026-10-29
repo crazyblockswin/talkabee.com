@@ -217,3 +217,48 @@ body>header .tb-header-row+.tb-header-row{
   padding-top:0!important;
   margin-top:calc(var(--dashboard-row-gap,0px) - 3px)!important;
 }
+
+
+/* Visitor Adventures: fit the complete scene and footer in one viewport.
+   Editor pages keep their normal scrolling and sizing. */
+@media (min-width: 701px) and (min-height: 520px) {
+  body:not([data-editor="yes"]):not(.tb-scene-only) {
+    height: 100vh;
+    height: 100dvh;
+    min-height: 0;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+  }
+  body:not([data-editor="yes"]):not(.tb-scene-only) > header,
+  body:not([data-editor="yes"]):not(.tb-scene-only) > footer,
+  body:not([data-editor="yes"]):not(.tb-scene-only) > .footer {
+    flex: 0 0 auto;
+  }
+  body:not([data-editor="yes"]):not(.tb-scene-only) > .shell {
+    flex: 1 1 0!important;
+    min-height: 0!important;
+    height: auto!important;
+    overflow: hidden;
+  }
+  body:not([data-editor="yes"]):not(.tb-scene-only) .scene-area {
+    height: 100%!important;
+    min-height: 0!important;
+    display: flex!important;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
+  body:not([data-editor="yes"]):not(.tb-scene-only) .scene-area > .scene {
+    flex: 1 1 auto!important;
+    width: 100%!important;
+    height: 100%!important;
+    max-width: none!important;
+    min-height: 0!important;
+    max-height: 100%!important;
+    aspect-ratio: auto!important;
+    background-size: cover!important;
+    background-position: center center!important;
+    margin: 0!important;
+  }
+}
