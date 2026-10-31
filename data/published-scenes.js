@@ -34740,6 +34740,619 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
       }
     ]
   },
+  "universe": {
+    "title": "Our Universe",
+    "image": "images/Our-Universe.jpg",
+    "lessons": [
+      {
+        "text": "Welcome to Our Universe! The large sphere is an artist's illustration of the observable universe, the part of space whose light has had time to reach us.",
+        "translations": {
+          "es": "¡Bienvenido a Nuestro Universo! La gran esfera es una ilustración artística del universo observable, la parte del espacio cuya luz ha tenido tiempo de llegar hasta nosotros.",
+          "fr": "Bienvenue dans notre univers ! La grande sphère est une illustration artistique de l'univers observable, la partie de l'espace dont la lumière a eu le temps de nous atteindre.",
+          "de": "Willkommen in unserem Universum! Die große Kugel ist eine künstlerische Illustration des beobachtbaren Universums, des Teils des Raums, dessen Licht Zeit hatte, uns zu erreichen.",
+          "it": "Benvenuto nel nostro universo! La grande sfera è l'illustrazione di un artista dell'universo osservabile, la parte dello spazio la cui luce ha avuto il tempo di raggiungerci.",
+          "pt": "Bem-vindo ao Nosso Universo! A grande esfera é uma ilustração artística do universo observável, a parte do espaço cuja luz teve tempo de nos alcançar.",
+          "no": "Velkommen til vårt univers! Den store kulen er en kunstners illustrasjon av det observerbare universet, den delen av rommet hvis lys har hatt tid til å nå oss."
+        }
+      },
+      {
+        "text": "The observable universe is about 92 to 93 billion light-years across. A light-year measures distance, not time.",
+        "translations": {
+          "es": "El universo observable tiene entre 92 y 93 mil millones de años luz de diámetro. Un año luz mide la distancia, no el tiempo.",
+          "fr": "L'univers observable mesure environ 92 à 93 milliards d'années-lumière de diamètre. Une année-lumière mesure la distance, pas le temps.",
+          "de": "Das beobachtbare Universum hat einen Durchmesser von etwa 92 bis 93 Milliarden Lichtjahren. Ein Lichtjahr misst die Entfernung, nicht die Zeit.",
+          "it": "L'universo osservabile si estende da 92 a 93 miliardi di anni luce. Un anno luce misura la distanza, non il tempo.",
+          "pt": "O universo observável tem cerca de 92 a 93 bilhões de anos-luz de diâmetro. Um ano-luz mede a distância, não o tempo.",
+          "no": "Det observerbare universet er omtrent 92 til 93 milliarder lysår i diameter. Et lysår måler avstand, ikke tid."
+        }
+      },
+      {
+        "text": "Look at the glowing threads inside the sphere. They represent the cosmic web, a huge pattern of matter stretching across space.",
+        "translations": {
+          "es": "Mira los hilos brillantes dentro de la esfera. Representan la red cósmica, un enorme patrón de materia que se extiende a través del espacio.",
+          "fr": "Regardez les fils lumineux à l'intérieur de la sphère. Ils représentent la toile cosmique, un énorme motif de matière s'étendant à travers l'espace.",
+          "de": "Schauen Sie sich die glühenden Fäden innerhalb der Kugel an. Sie repräsentieren das kosmische Netz, ein riesiges Muster von Materie, das sich über den Raum erstreckt.",
+          "it": "Guarda i fili luminosi all'interno della sfera. Rappresentano la rete cosmica, un enorme modello di materia che si estende nello spazio.",
+          "pt": "Olhe para os fios brilhantes dentro da esfera. Eles representam a teia cósmica, um enorme padrão de matéria que se estende pelo espaço.",
+          "no": "Se på de glødende trådene inne i kulen. De representerer det kosmiske nettet, et enormt mønster av materie som strekker seg over rommet."
+        }
+      },
+      {
+        "text": "Between those glowing threads are cosmic voids. These are enormous regions with relatively few galaxies.",
+        "translations": {
+          "es": "Entre esos hilos brillantes hay vacíos cósmicos. Estas son regiones enormes con relativamente pocas galaxias.",
+          "fr": "Entre ces fils lumineux se trouvent des vides cosmiques. Ce sont des régions énormes avec relativement peu de galaxies.",
+          "de": "Zwischen diesen leuchtenden Fäden befinden sich kosmische Hohlräume. Dies sind riesige Regionen mit relativ wenigen Galaxien.",
+          "it": "Tra quei fili incandescenti ci sono vuoti cosmici. Si tratta di regioni enormi con relativamente poche galassie.",
+          "pt": "Entre esses fios brilhantes estão os vazios cósmicos. Estas são regiões enormes com relativamente poucas galáxias.",
+          "no": "Mellom disse glødende trådene finnes kosmiske tomrom. Dette er enorme områder med relativt få galakser."
+        }
+      },
+      {
+        "text": "On the right is a close-up illustration of a galaxy cluster. Gravity holds hundreds or even thousands of galaxies together.",
+        "translations": {
+          "es": "A la derecha hay una ilustración en primer plano de un cúmulo de galaxias. La gravedad mantiene unidas a cientos o incluso miles de galaxias.",
+          "fr": "À droite, une illustration en gros plan d'un amas de galaxies. La gravité maintient des centaines, voire des milliers de galaxies ensemble.",
+          "de": "Rechts ist eine Nahaufnahme eines Galaxienhaufens zu sehen. Die Schwerkraft hält Hunderte oder sogar Tausende von Galaxien zusammen.",
+          "it": "Sulla destra c'è un'illustrazione ravvicinata di un ammasso di galassie. La gravità tiene insieme centinaia o addirittura migliaia di galassie.",
+          "pt": "À direita está uma ilustração em close de um aglomerado de galáxias. A gravidade mantém centenas ou mesmo milhares de galáxias juntas.",
+          "no": "Til høyre er en nærbildeillustrasjon av en galaksehop. Tyngdekraften holder hundrevis eller til og med tusenvis av galakser sammen."
+        }
+      },
+      {
+        "text": "Find the bright center of the galaxy cluster. Many galaxy clusters contain large, bright elliptical galaxies near their centers.",
+        "translations": {
+          "es": "Encuentra el centro brillante del cúmulo de galaxias. Muchos cúmulos de galaxias contienen galaxias elípticas grandes y brillantes cerca de sus centros.",
+          "fr": "Trouvez le centre lumineux de l'amas de galaxies. De nombreux amas de galaxies contiennent de grandes galaxies elliptiques brillantes près de leurs centres.",
+          "de": "Finde das helle Zentrum des Galaxienhaufens. Viele Galaxienhaufen enthalten große, helle elliptische Galaxien in der Nähe ihrer Zentren.",
+          "it": "Trova il centro luminoso dell'ammasso di galassie. Molti ammassi di galassie contengono grandi e luminose galassie ellittiche vicino ai loro centri.",
+          "pt": "Encontre o centro brilhante do aglomerado de galáxias. Muitos aglomerados de galáxias contêm galáxias elípticas grandes e brilhantes perto de seus centros.",
+          "no": "Finn det lyse sentrum av galaksehopen. Mange galaksehoper inneholder store, lyse elliptiske galakser i nærheten av sentrum."
+        }
+      },
+      {
+        "text": "Look for spiral galaxies. Their curved arms contain stars, gas, and dust. Our Milky Way is also a spiral galaxy.",
+        "translations": {
+          "es": "Busca galaxias espirales. Sus brazos curvos contienen estrellas, gas y polvo. Nuestra Vía Láctea también es una galaxia espiral.",
+          "fr": "Cherchez des galaxies spirales. Leurs bras incurvés contiennent des étoiles, du gaz et de la poussière. Notre Voie Lactée est aussi une galaxie spirale.",
+          "de": "Suche nach Spiralgalaxien. Ihre geschwungenen Arme enthalten Sterne, Gas und Staub. Unsere Milchstraße ist auch eine Spiralgalaxie.",
+          "it": "Cerca galassie a spirale. Le loro braccia curve contengono stelle, gas e polvere. Anche la nostra Via Lattea è una galassia a spirale.",
+          "pt": "Procure galáxias espirais. Seus braços curvos contêm estrelas, gás e poeira. Nossa Via Láctea também é uma galáxia espiral.",
+          "no": "Se etter spiralgalakser. De buede armene deres inneholder stjerner, gass og støv. Melkeveien vår er også en spiralgalakse."
+        }
+      },
+      {
+        "text": "The illustration is not a photograph or an exact scale model. Our universe contains far more galaxies than we can draw. Keep exploring!",
+        "translations": {
+          "es": "La ilustración no es una fotografía ni una maqueta exacta. Nuestro universo contiene muchas más galaxias de las que podemos dibujar. ¡Sigue explorando!",
+          "fr": "L'illustration n'est pas une photographie ou un modèle à l'échelle exacte. Notre univers contient beaucoup plus de galaxies que nous ne pouvons en dessiner. Continuez à explorer !",
+          "de": "Bei der Abbildung handelt es sich weder um ein Foto noch um ein maßstabsgetreues Modell. Unser Universum enthält weit mehr Galaxien, als wir zeichnen können. Erforsche weiter!",
+          "it": "L'illustrazione non è una fotografia o un modello in scala esatto. Il nostro universo contiene molte più galassie di quante ne possiamo disegnare. Continua a esplorare!",
+          "pt": "A ilustração não é uma fotografia ou um modelo em escala exata. Nosso universo contém muito mais galáxias do que podemos desenhar. Continue explorando!",
+          "no": "Illustrasjonen er ikke et fotografi eller en eksakt skalamodell. Universet vårt inneholder langt flere galakser enn vi kan tegne. Fortsett å utforske!"
+        }
+      }
+    ],
+    "hotspots": [
+      {
+        "id": "observable-universe",
+        "label": "Observable Universe",
+        "x": 0,
+        "y": 1.2890283192608205,
+        "w": 55.14393643568701,
+        "h": 96.35132306102788,
+        "sound": "",
+        "translations": {
+          "es": "Universo observable",
+          "fr": "Univers observable",
+          "de": "Observables Universum",
+          "it": "Universo osservabile",
+          "pt": "Universo Observável",
+          "no": "Observerbart univers"
+        },
+        "rotation": 0,
+        "z": 0
+      },
+      {
+        "id": "cosmic-web",
+        "label": "Cosmic Web",
+        "x": 28,
+        "y": 31,
+        "w": 12,
+        "h": 17,
+        "sound": "",
+        "translations": {
+          "es": "Cosmic Web",
+          "fr": "Cosmic Web",
+          "de": "Kosmisches Netz",
+          "it": "Cosmic Web",
+          "pt": "Cosmic Web",
+          "no": "Kosmisk nett"
+        },
+        "rotation": 0,
+        "z": 0
+      },
+      {
+        "id": "cosmic-filament",
+        "label": "Cosmic Filament",
+        "x": 31,
+        "y": 55,
+        "w": 12,
+        "h": 12,
+        "sound": "",
+        "translations": {
+          "es": "Filamento cósmico",
+          "fr": "Filament cosmique",
+          "de": "Kosmisches Filament",
+          "it": "Filamento cosmico",
+          "pt": "Filamento Cósmico",
+          "no": "Kosmisk filament"
+        }
+      },
+      {
+        "id": "cosmic-void",
+        "label": "Cosmic Void",
+        "x": 12.263156052903748,
+        "y": 35.423734228826866,
+        "w": 5.421054467071824,
+        "h": 9.158555262228864,
+        "sound": "",
+        "translations": {
+          "es": "Vacío Cósmico",
+          "fr": "Vide cosmique",
+          "de": "Kosmische Leere",
+          "it": "Vuoto Cosmico",
+          "pt": "Vazio Cósmico",
+          "no": "Kosmisk tomrom"
+        },
+        "rotation": 0,
+        "z": 0
+      },
+      {
+        "id": "purple-galaxy",
+        "label": "Purple Galaxy",
+        "x": 14.842105561148102,
+        "y": 21.46360773580267,
+        "w": 5,
+        "h": 9,
+        "sound": "",
+        "translations": {
+          "es": "Galaxia púrpura",
+          "fr": "Galaxie violette",
+          "de": "Lila Galaxie",
+          "it": "Galassia viola",
+          "pt": "Galáxia Roxa",
+          "no": "Lilla galakse"
+        }
+      },
+      {
+        "id": "bright-galaxy",
+        "label": "Bright Galaxy",
+        "x": 11,
+        "y": 37,
+        "w": 6,
+        "h": 11,
+        "sound": "",
+        "translations": {
+          "es": "Galaxia brillante",
+          "fr": "Bright Galaxy",
+          "de": "Helle Galaxie",
+          "it": "Galassia luminosa",
+          "pt": "Galáxia Brilh",
+          "no": "Lys galakse"
+        }
+      },
+      {
+        "id": "galaxy-group",
+        "label": "Galaxy Group",
+        "x": 30,
+        "y": 64,
+        "w": 10,
+        "h": 13,
+        "sound": "",
+        "translations": {
+          "es": "Galaxy Group",
+          "fr": "Groupe Galaxy",
+          "de": "Galaxy Group,Inc",
+          "it": "Gruppo Galaxy",
+          "pt": "Galaxy Group",
+          "no": "Galaxy-gruppen"
+        }
+      },
+      {
+        "id": "galaxy-cluster",
+        "label": "Galaxy Cluster",
+        "x": 62,
+        "y": 12,
+        "w": 37,
+        "h": 68,
+        "sound": "",
+        "translations": {
+          "es": "cúmulo galáctico",
+          "fr": "Amas de galaxies",
+          "de": "Galaxienhaufen",
+          "it": "Ammasso di galassie",
+          "pt": "grupo de galáxias",
+          "no": "galaksehop"
+        }
+      },
+      {
+        "id": "cluster-core",
+        "label": "Bright Cluster Core",
+        "x": 78,
+        "y": 40,
+        "w": 12,
+        "h": 22,
+        "sound": "",
+        "translations": {
+          "es": "Núcleo de clúster brillante",
+          "fr": "Bright Cluster Core",
+          "de": "Heller Clusterkern",
+          "it": "Bright Cluster Core",
+          "pt": "Núcleo de Cluster Brilh",
+          "no": "Lys klyngekjerne"
+        }
+      },
+      {
+        "id": "spiral-galaxy-top",
+        "label": "Upper Spiral Galaxy",
+        "x": 73.69173378110018,
+        "y": 30.5838349307617,
+        "w": 8,
+        "h": 10,
+        "sound": "",
+        "translations": {
+          "es": "Galaxia espiral superior",
+          "fr": "Galaxie spirale supérieure",
+          "de": "Obere Spiralgalaxie",
+          "it": "Galassia Spirale Superiore",
+          "pt": "Galáxia Espiral Superior",
+          "no": "Øvre spiralgalakse"
+        }
+      },
+      {
+        "id": "spiral-galaxy-right",
+        "label": "Right Spiral Galaxy",
+        "x": 93,
+        "y": 54.52829829938539,
+        "w": 7,
+        "h": 12,
+        "sound": "",
+        "translations": {
+          "es": "Galaxia espiral derecha",
+          "fr": "Galaxie spirale droite",
+          "de": "Rechte Spiralgalaxie",
+          "it": "Galassia a spirale destra",
+          "pt": "Galáxia Espiral Direita",
+          "no": "Høyre spiralgalakse"
+        }
+      },
+      {
+        "id": "spiral-galaxy-bottom",
+        "label": "Lower Spiral Galaxy",
+        "x": 91,
+        "y": 69,
+        "w": 7,
+        "h": 10,
+        "sound": "",
+        "translations": {
+          "es": "Galaxia espiral inferior",
+          "fr": "Galaxie spirale inférieure",
+          "de": "Untere Spiralgalaxie",
+          "it": "Galassia a spirale inferiore",
+          "pt": "Galáxia Espiral Inferior",
+          "no": "Nedre spiralgalakse"
+        }
+      },
+      {
+        "id": "blue-spiral-left",
+        "label": "Left Blue Spiral Galaxy",
+        "x": 68.39635131371047,
+        "y": 57.135359992100184,
+        "w": 6,
+        "h": 11,
+        "sound": "",
+        "translations": {
+          "es": "Galaxia espiral azul izquierda",
+          "fr": "Galaxie spirale bleue gauche",
+          "de": "Linke blaue Spiralgalaxie",
+          "it": "Galassia a spirale blu sinistra",
+          "pt": "Galáxia Espiral Azul Esquerda",
+          "no": "Venstre blå spiralgalakse"
+        }
+      },
+      {
+        "id": "small-spiral",
+        "label": "Small Spiral Galaxy",
+        "x": 87.29645754340211,
+        "y": 60.74377762457934,
+        "w": 5,
+        "h": 9,
+        "sound": "",
+        "translations": {
+          "es": "Galaxia espiral pequeña",
+          "fr": "Petite galaxie spirale",
+          "de": "Kleine Spiralgalaxie",
+          "it": "Galassia a spirale piccola",
+          "pt": "Galáxia Espiral Pequena",
+          "no": "Liten spiralgalakse"
+        }
+      },
+      {
+        "id": "golden-galaxy",
+        "label": "Golden Galaxy",
+        "x": 93.56498806053003,
+        "y": 30.37845152610084,
+        "w": 5,
+        "h": 9,
+        "sound": "",
+        "translations": {
+          "es": "Golden Galaxy",
+          "fr": "Galaxie dorée",
+          "de": "Goldene Galaxie",
+          "it": "Galassia d'oro",
+          "pt": "Galáxia Dourada",
+          "no": "Den gyldne galaksen"
+        },
+        "rotation": 0,
+        "z": 0
+      },
+      {
+        "id": "upper-right-galaxy",
+        "label": "Upper Right Galaxy",
+        "x": 95,
+        "y": 19.337708475874116,
+        "w": 5,
+        "h": 9,
+        "sound": "",
+        "translations": {
+          "es": "Galaxia superior derecha",
+          "fr": "Galaxie supérieure droite",
+          "de": "Obere rechte Galaxie",
+          "it": "Galassia superiore destra",
+          "pt": "Galáxia Superior Direita",
+          "no": "Øvre høyre galakse"
+        }
+      },
+      {
+        "id": "lower-galaxy",
+        "label": "Lower Galaxy",
+        "x": 76.76262027666922,
+        "y": 69.13535457830251,
+        "w": 5,
+        "h": 10,
+        "sound": "",
+        "translations": {
+          "es": "Galaxia inferior",
+          "fr": "Galaxie inférieure",
+          "de": "Untere Galaxie",
+          "it": "Galassia inferiore",
+          "pt": "Galáxia Inferior",
+          "no": "Nedre galakse"
+        }
+      },
+      {
+        "id": "zoom-box",
+        "label": "Zoom Selection",
+        "x": 42,
+        "y": 46,
+        "w": 4,
+        "h": 6,
+        "sound": "",
+        "translations": {
+          "es": "Selección de zoom",
+          "fr": "Zoom jusqu'à la sélection",
+          "de": "Zoom-Auswahl",
+          "it": "Selezione Zoom",
+          "pt": "Seleção Zoom",
+          "no": "Zoom utvalg"
+        }
+      },
+      {
+        "id": "zoom-connector",
+        "label": "Magnification Lines",
+        "x": 51.91300129978334,
+        "y": 20.039381696664698,
+        "w": 10,
+        "h": 13,
+        "sound": "",
+        "translations": {
+          "es": "Líneas de aumento",
+          "fr": "Lignes de grossissement",
+          "de": "Vergrößerungslinien",
+          "it": "Linee di ingrandimento",
+          "pt": "Linhas de Ampliação",
+          "no": "Forstørrelseslinjer"
+        }
+      },
+      {
+        "id": "universe-label",
+        "label": "Our Universe Label",
+        "x": 0,
+        "y": 1,
+        "w": 19.296456006869896,
+        "h": 9.56631864248807,
+        "sound": "",
+        "translations": {
+          "es": "Our Universe Label",
+          "fr": "Notre Label Univers",
+          "de": "Unser Universum-Label",
+          "it": "Etichetta Il nostro universo",
+          "pt": "Rótulo do nosso universo",
+          "no": "Vårt univers-merkelapp"
+        }
+      },
+      {
+        "id": "cluster-label",
+        "label": "Galaxy Cluster Label",
+        "x": 63,
+        "y": 13,
+        "w": 32.324384569676326,
+        "h": 17.17609762852924,
+        "sound": "",
+        "translations": {
+          "es": "Etiqueta del cúmulo de galaxias",
+          "fr": "Étiquette de grappe de galaxies",
+          "de": "Galaxie-Cluster-Label",
+          "it": "Etichetta Ammasso di galassie",
+          "pt": "Rótulo do Galaxy Cluster",
+          "no": "Etikett for galaksehopen"
+        }
+      },
+      {
+        "id": "size-label",
+        "label": "Cluster Size Label",
+        "x": 63,
+        "y": 24,
+        "w": 22,
+        "h": 6,
+        "sound": "",
+        "translations": {
+          "es": "Etiqueta de tamaño de clúster",
+          "fr": "Étiquette de taille de cluster",
+          "de": "Cluster-Größenbeschriftung",
+          "it": "Etichetta dimensione cluster",
+          "pt": "Etiqueta de tamanho do cluster",
+          "no": "Etikett for klyngestørrelse"
+        }
+      },
+      {
+        "id": "universe-diameter",
+        "label": "Universe Diameter Label",
+        "x": 1,
+        "y": 10,
+        "w": 15,
+        "h": 11,
+        "sound": "",
+        "translations": {
+          "es": "Etiqueta de diámetro del universo",
+          "fr": "Étiquette de diamètre d'univers",
+          "de": "Beschriftung Universaldurchmesser",
+          "it": "Etichetta Diametro Universo",
+          "pt": "Etiqueta de Diâmetro do Universo",
+          "no": "Etikett for universets diameter"
+        }
+      },
+      {
+        "id": "dark-space",
+        "label": "Dark Space",
+        "x": 52.04618889610854,
+        "y": 3.081484747004031,
+        "w": 7,
+        "h": 14,
+        "sound": "",
+        "translations": {
+          "es": "Es un espacio oscuro.",
+          "fr": "« Espace sombre ? »",
+          "de": "Dunkler Raum",
+          "it": "Spazio oscuro",
+          "pt": "Espaço Escuro",
+          "no": "Mørkt rom"
+        },
+        "rotation": 0,
+        "z": 0
+      }
+    ],
+    "overlays": [],
+    "challenges": [
+      {
+        "prompt": "Find the large illustration of the observable universe.",
+        "target": "observable-universe",
+        "translations": {
+          "es": "Encuentra la ilustración grande del universo observable.",
+          "fr": "Retrouvez la grande illustration de l'univers observable.",
+          "de": "Finde die große Illustration des beobachtbaren Universums.",
+          "it": "Trova la grande illustrazione dell'universo osservabile.",
+          "pt": "Encontre a grande ilustração do universo observável.",
+          "no": "Finn den store illustrasjonen av det observerbare universet."
+        }
+      },
+      {
+        "prompt": "Find the glowing cosmic web.",
+        "target": "cosmic-web",
+        "translations": {
+          "es": "Encuentra la brillante red cósmica.",
+          "fr": "Trouvez la toile cosmique rayonnante.",
+          "de": "Finde das leuchtende kosmische Netz.",
+          "it": "Trova la ragnatela cosmica incandescente.",
+          "pt": "Encontre a teia cósmica brilhante.",
+          "no": "Finn det glødende kosmiske nettet."
+        }
+      },
+      {
+        "prompt": "Find a dark cosmic void.",
+        "target": "cosmic-void",
+        "translations": {
+          "es": "Encuentra un vacío cósmico oscuro.",
+          "fr": "Trouvez un vide cosmique sombre.",
+          "de": "Finde eine dunkle kosmische Leere.",
+          "it": "Trova un vuoto cosmico oscuro.",
+          "pt": "Encontre um vazio cósmico escuro.",
+          "no": "Finn et mørkt kosmisk tomrom."
+        }
+      },
+      {
+        "prompt": "Find the magnified galaxy cluster on the right.",
+        "target": "galaxy-cluster",
+        "translations": {
+          "es": "Encuentra el cúmulo de galaxias ampliado a la derecha.",
+          "fr": "Trouvez l'amas de galaxies agrandi sur la droite.",
+          "de": "Finde den vergrößerten Galaxienhaufen auf der rechten Seite.",
+          "it": "Trova l'ammasso di galassie ingrandito sulla destra.",
+          "pt": "Encontre o aglomerado de galáxias ampliado à direita.",
+          "no": "Finn den forstørrede galaksehopen til høyre."
+        }
+      },
+      {
+        "prompt": "Find the bright center of the galaxy cluster.",
+        "target": "cluster-core",
+        "translations": {
+          "es": "Encuentra el centro brillante del cúmulo de galaxias.",
+          "fr": "Trouvez le centre lumineux de l'amas de galaxies.",
+          "de": "Finde das helle Zentrum des Galaxienhaufens.",
+          "it": "Trova il centro luminoso dell'ammasso di galassie.",
+          "pt": "Encontre o centro brilhante do aglomerado de galáxias.",
+          "no": "Finn det lyse sentrum av galaksehopen."
+        }
+      },
+      {
+        "prompt": "Find the large spiral galaxy near the upper part of the cluster.",
+        "target": "spiral-galaxy-top",
+        "translations": {
+          "es": "Encuentra la gran galaxia espiral cerca de la parte superior del cúmulo.",
+          "fr": "Trouvez la grande galaxie spirale près de la partie supérieure de l'amas.",
+          "de": "Finde die große Spiralgalaxie in der Nähe des oberen Teils des Clusters.",
+          "it": "Trova la grande galassia a spirale vicino alla parte superiore dell'ammasso.",
+          "pt": "Encontre a grande galáxia espiral perto da parte superior do aglomerado.",
+          "no": "Finn den store spiralgalaksen nær den øvre delen av galaksehopen."
+        }
+      },
+      {
+        "prompt": "Find the blue spiral galaxy toward the left side of the cluster.",
+        "target": "blue-spiral-left",
+        "translations": {
+          "es": "Encuentra la galaxia espiral azul hacia el lado izquierdo del cúmulo.",
+          "fr": "Trouvez la galaxie spirale bleue vers le côté gauche de l'amas.",
+          "de": "Finde die blaue Spiralgalaxie auf der linken Seite des Clusters.",
+          "it": "Trova la galassia a spirale blu verso il lato sinistro dell'ammasso.",
+          "pt": "Encontre a galáxia espiral azul em direção ao lado esquerdo do aglomerado.",
+          "no": "Finn den blå spiralgalaksen mot venstre side av galaksehopen."
+        }
+      },
+      {
+        "prompt": "Find the small zoom selection box connecting the universe to the close-up.",
+        "target": "zoom-box",
+        "translations": {
+          "es": "Encuentra el pequeño cuadro de selección de zoom que conecta el universo con el primer plano.",
+          "fr": "Trouvez la petite boîte de sélection de zoom reliant l'univers au gros plan.",
+          "de": "Finden Sie das kleine Zoom-Auswahlfeld, das das Universum mit der Nahaufnahme verbindet.",
+          "it": "Trova la piccola casella di selezione dello zoom che collega l'universo al primo piano.",
+          "pt": "Encontre a pequena caixa de seleção de zoom que liga o universo ao close-up.",
+          "no": "Finn den lille zoom-valgboksen som forbinder universet med nærbildet."
+        }
+      }
+    ]
+  },
   "congratulations": {
     "title": "congratulations",
     "image": "images/everest-celebration.jpg",
