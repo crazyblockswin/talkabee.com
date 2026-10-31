@@ -146,7 +146,12 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
         "h": 26.56,
         "sound": "sounds/Captain-tour-guide.mp3",
         "translations": {
-          "es": ""
+          "es": "Capitán",
+          "fr": "capitaine",
+          "de": "Kapitän",
+          "it": "Il capitano",
+          "pt": "capitão",
+          "no": "kaptein"
         },
         "rotation": 0,
         "z": 0
@@ -159,7 +164,12 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
         "w": 8.02,
         "h": 19.2,
         "sound": "sounds/airplane-news-heart.mp3",
-        "translations": {}
+        "translations": {
+          "es": "piloto",
+          "fr": "pilote",
+          "it": "sito pilota",
+          "pt": "piloto"
+        }
       },
       {
         "id": "boy",
@@ -170,7 +180,12 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
         "h": 44.2,
         "sound": "sounds/airplane-eric-fishing.mp3",
         "translations": {
-          "es": ""
+          "es": "chico",
+          "fr": "garçon",
+          "de": "Junge",
+          "it": "bimbo",
+          "pt": "aprendiz",
+          "no": "gutt"
         },
         "rotation": 0,
         "z": 0
@@ -178,22 +193,36 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
       {
         "id": "girl",
         "label": "girl",
-        "x": 61.09000144556952,
-        "y": 59.56,
-        "w": 22.81211188551475,
-        "h": 40.44,
+        "x": 67.91062584699806,
+        "y": 62.398355777086515,
+        "w": 13.682146047172484,
+        "h": 37.601644222913485,
         "sound": "sounds/airplane-bella-back-seat.mp3",
-        "translations": {}
+        "translations": {
+          "es": "chica",
+          "fr": "fille",
+          "de": "Mädchen",
+          "it": "Telugu",
+          "pt": "menina preguiçosa",
+          "no": "datter"
+        }
       },
       {
         "id": "mountain",
         "label": "mountain",
-        "x": 53.18,
-        "y": 12.31,
-        "w": 12.12,
-        "h": 14.67,
+        "x": 55.54305368382722,
+        "y": 15.90524992914505,
+        "w": 9.058775610549038,
+        "h": 7.857946134992367,
         "sound": "",
-        "translations": {}
+        "translations": {
+          "es": "montaña",
+          "fr": "Montagne",
+          "de": "Berg",
+          "it": "in montagna",
+          "pt": "montanha",
+          "no": "berg"
+        }
       },
       {
         "id": "city",
@@ -203,7 +232,14 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
         "w": 9.56,
         "h": 10.74,
         "sound": "",
-        "translations": {}
+        "translations": {
+          "es": "ciudad",
+          "fr": "ville",
+          "de": "Stadt",
+          "it": "città",
+          "pt": "cidade",
+          "no": "by"
+        }
       },
       {
         "id": "tower",
@@ -214,7 +250,11 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
         "h": 14.35,
         "sound": "",
         "translations": {
-          "es": ""
+          "es": "",
+          "fr": "Space-Needle (Aiguille de l’espace)",
+          "de": "The Space Needle",
+          "it": "Ago spaziale",
+          "no": "Romnålen"
         },
         "rotation": 0,
         "z": 0
@@ -222,12 +262,19 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
       {
         "id": "water",
         "label": "water",
-        "x": 73.89,
-        "y": 35.65,
-        "w": 5.41,
-        "h": 12.72,
+        "x": 88.39053658160982,
+        "y": 28.554107309043307,
+        "w": 5.7859365593657515,
+        "h": 4.583378662022925,
         "sound": "",
-        "translations": {}
+        "translations": {
+          "es": "de agua",
+          "fr": "eau",
+          "de": "Wasser",
+          "it": "calda sanitaria",
+          "pt": "água",
+          "no": "vann"
+        }
       },
       {
         "id": "ferry",
@@ -237,7 +284,12 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
         "w": 5.77,
         "h": 7.5,
         "sound": "sounds/boat-horn.mp3",
-        "translations": {}
+        "translations": {
+          "de": "Fähre",
+          "it": "traghetto",
+          "pt": "transbordador",
+          "no": "Ferge"
+        }
       },
       {
         "id": "wing",
@@ -247,17 +299,31 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
         "w": 11.15,
         "h": 16.41,
         "sound": "",
-        "translations": {}
+        "translations": {
+          "es": "de la ala",
+          "fr": "aile",
+          "de": "flügel",
+          "it": "l’ala",
+          "pt": "asa",
+          "no": "Vinge"
+        }
       },
       {
         "id": "overhead",
         "label": "overhead",
         "x": 27,
         "y": 0,
-        "w": 49,
-        "h": 15,
+        "w": 37.99033169721751,
+        "h": 8.661005792089053,
         "sound": "",
-        "translations": {}
+        "translations": {
+          "es": "costes operativos",
+          "fr": "Aériens",
+          "de": "Gemeinkosten",
+          "it": "soffitto",
+          "pt": "Custos industriais que continuam a existir, mesmo se a fábrica não produzir nada.",
+          "no": "Overheng"
+        }
       },
       {
         "id": "throttle",
@@ -268,7 +334,12 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
         "h": 16.224385263405637,
         "sound": "sounds/cessna.mp3",
         "translations": {
-          "es": ""
+          "es": "acelerador",
+          "fr": "étrangleur&#10;throttle",
+          "de": "Gashebel",
+          "it": "valvola a farfalla",
+          "pt": "manete de potência",
+          "no": "begrense"
         },
         "rotation": 0,
         "z": 0
@@ -278,21 +349,32 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
         "label": "headset",
         "x": 83.41,
         "y": 54.43,
-        "w": 4.44,
-        "h": 29.34,
+        "w": 5.943756071268737,
+        "h": 28.866941425650115,
         "sound": "",
-        "translations": {}
+        "translations": {
+          "es": "auriculares",
+          "fr": "casque d'écoute",
+          "it": "cuffia",
+          "pt": "auscultadores",
+          "no": "headsett"
+        }
       },
       {
         "id": "controls",
         "label": "controls",
-        "x": 27.947367657056457,
-        "y": 1.0820627579761977,
-        "w": 33.999995723523504,
-        "h": 9.541498440643045,
+        "x": 29.343716443658252,
+        "y": 42.238220442983845,
+        "w": 27.286783523664777,
+        "h": 6.2300819237130405,
         "sound": "sounds/cessna.mp3",
         "translations": {
-          "es": ""
+          "es": "mandos",
+          "fr": "témoins",
+          "de": "Steuerelemente",
+          "it": "comandi",
+          "pt": "controlos",
+          "no": "kontroller"
         },
         "rotation": 0,
         "z": 0
@@ -305,28 +387,45 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
         "w": 12.533158401954218,
         "h": 8.804882953524256,
         "sound": "",
-        "translations": {}
+        "translations": {
+          "es": "nubes",
+          "fr": "nuages",
+          "pt": "nuvens",
+          "no": "skyer"
+        }
       },
       {
         "id": "airplane",
         "label": "airplane",
-        "x": 28.75368500305347,
-        "y": 0,
-        "w": 29.37789401722745,
-        "h": 62.48520310052645,
+        "x": 38.63553133548153,
+        "y": 12.961826159024149,
+        "w": 6.123325698189684,
+        "h": 26.62730989366256,
         "sound": "sounds/airplane-ambience.mp3",
-        "translations": {}
+        "translations": {
+          "es": "el avión",
+          "fr": "avion",
+          "de": "Flugzeug",
+          "it": "aereo",
+          "pt": "avião",
+          "no": "Fly"
+        }
       },
       {
         "id": "hotspot-1793082050879",
         "label": "instrument display",
-        "x": 40.789471591938856,
-        "y": 55.66991388122147,
-        "w": 14.894734892488477,
-        "h": 6.95317461858599,
+        "x": 39.66165208003587,
+        "y": 55.8591347123691,
+        "w": 16.774432440025834,
+        "h": 9.696915649111482,
         "sound": "",
         "translations": {
-          "es": ""
+          "es": "Pantalla del instrumento",
+          "fr": "Dispositif d&#39;affichage",
+          "de": "Anzeigegerät",
+          "it": "display dello strumento",
+          "pt": "visor do instrumento",
+          "no": "instrumentdisplay"
         },
         "rotation": 0,
         "z": 0
@@ -721,7 +820,14 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
         "w": 7.2,
         "h": 43,
         "sound": "sounds/Grandma-Cathy.mp3",
-        "translations": {}
+        "translations": {
+          "es": "Abuela",
+          "fr": "Grand-mère",
+          "de": "Oma",
+          "pt": "Avó",
+          "no": "Besteforeldre",
+          "it": "Grandma"
+        }
       },
       {
         "id": "grandpa",
@@ -731,7 +837,16 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
         "w": 7.3,
         "h": 44,
         "sound": "sounds/grandpa-main-intro.mp3",
-        "translations": {}
+        "translations": {
+          "es": "abuelo",
+          "fr": "Papi",
+          "de": "Großeltern",
+          "it": "Nonno.",
+          "pt": "Avô",
+          "no": "Bestefar"
+        },
+        "rotation": 0,
+        "z": 0
       },
       {
         "id": "girl",
@@ -741,7 +856,14 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
         "w": 5.6,
         "h": 13.5,
         "sound": "",
-        "translations": {}
+        "translations": {
+          "es": "Niña",
+          "fr": "Fille",
+          "de": "Weiblich",
+          "it": "Femmina",
+          "pt": "Rapariga",
+          "no": "Jente"
+        }
       },
       {
         "id": "boy",
@@ -751,7 +873,14 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
         "w": 5.7,
         "h": 13.5,
         "sound": "",
-        "translations": {}
+        "translations": {
+          "es": "Niño",
+          "fr": "Garçon",
+          "de": "Junge",
+          "it": "Maschio",
+          "pt": "Masculino.",
+          "no": "Gutt"
+        }
       },
       {
         "id": "dog",
@@ -761,27 +890,50 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
         "w": 8,
         "h": 22,
         "sound": "sounds/dog-panting.wav",
-        "translations": {}
+        "translations": {
+          "fr": "Chien",
+          "de": "Hund",
+          "it": "Cagnolo",
+          "pt": "Cão",
+          "no": "Hund",
+          "es": "Perro"
+        },
+        "rotation": 0,
+        "z": 0
       },
       {
         "id": "rv",
         "label": "RV",
-        "x": 20.90042095248547,
-        "y": 24.26326754982921,
-        "w": 25.5,
-        "h": 17,
+        "x": 21.544888662076453,
+        "y": 27.76394822661022,
+        "w": 21.7406034908537,
+        "h": 9.809412883387557,
         "sound": "sounds/Blues.mp3",
-        "translations": {}
+        "translations": {
+          "es": "VR",
+          "fr": "BR",
+          "no": "Bobil",
+          "de": "RV",
+          "it": "RV",
+          "pt": "RV"
+        }
       },
       {
         "id": "solar-panels",
         "label": "Solar panels",
-        "x": 35,
-        "y": 25,
-        "w": 10,
-        "h": 5,
+        "x": 31.079482722125398,
+        "y": 23.296968132546223,
+        "w": 6.938773001580047,
+        "h": 4.526934238924534,
         "sound": "",
-        "translations": {}
+        "translations": {
+          "es": "Placas solares",
+          "fr": "Panneaux solaires",
+          "de": "Sonnenkollektoren",
+          "it": "Pannelli Fotovoltaici",
+          "pt": "Painéis Solares",
+          "no": "Solcellepaneler"
+        }
       },
       {
         "id": "lake",
@@ -791,7 +943,14 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
         "w": 20,
         "h": 9,
         "sound": "",
-        "translations": {}
+        "translations": {
+          "es": "Lake (Lago)",
+          "fr": "Lac",
+          "it": "Lago",
+          "pt": "Lago",
+          "no": "Innsjø",
+          "de": "Lake"
+        }
       },
       {
         "id": "mountains",
@@ -801,7 +960,14 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
         "w": 37.5856553840916,
         "h": 11.764880094678105,
         "sound": "",
-        "translations": {}
+        "translations": {
+          "es": "Montañas",
+          "fr": "Montagnes",
+          "de": "Berge",
+          "it": "Montagna",
+          "pt": "Região das montanhas",
+          "no": "Fjell"
+        }
       },
       {
         "id": "trees",
@@ -811,27 +977,48 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
         "w": 9.773472864485964,
         "h": 12.207267195892367,
         "sound": "",
-        "translations": {}
+        "translations": {
+          "es": "Árboles",
+          "fr": "Arbres",
+          "de": "Bäume",
+          "it": "Alberi",
+          "no": "Tre",
+          "pt": "Trees"
+        }
       },
       {
         "id": "flowers",
         "label": "Flowers",
-        "x": 4.071731720668668,
-        "y": 70.91895583716202,
+        "x": 0,
+        "y": 69.97282972880875,
         "w": 19,
         "h": 25,
         "sound": "",
-        "translations": {}
+        "translations": {
+          "es": "Flores",
+          "fr": "Fleurs",
+          "de": "Blumenarrangements",
+          "it": "Fiori",
+          "pt": "Flores",
+          "no": "Flowers"
+        }
       },
       {
         "id": "fire-pit",
         "label": "fire pit",
-        "x": 72.13087175142243,
-        "y": 55.45101436700915,
+        "x": 70.57340581511255,
+        "y": 56.397145889160086,
         "w": 6,
         "h": 8,
         "sound": "sounds/fire.mp3",
-        "translations": {}
+        "translations": {
+          "es": "Foso ardiente",
+          "fr": "Puits de feu",
+          "de": "Feuerstelle",
+          "it": "Base per fuoco all'aperto",
+          "pt": "Braseira",
+          "no": "bålplass"
+        }
       },
       {
         "id": "guitar",
@@ -841,18 +1028,31 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
         "w": 7.67,
         "h": 11.43,
         "sound": "sounds/guitar3.mp3",
-        "translations": {}
+        "translations": {
+          "es": "guitarra",
+          "fr": "guitare",
+          "de": "Gitarre",
+          "it": "chitarra",
+          "pt": "guitarra",
+          "no": "gitar"
+        }
       },
       {
         "id": "hotspot-1792612697531",
         "label": "instructions",
-        "x": 71.63157667123046,
-        "y": 66.98191557645382,
+        "x": 71.47046204863105,
+        "y": 64.90042947600037,
         "w": 14.210528769453527,
         "h": 28.186370718320745,
         "sound": "sounds/teacher-grandpas-place.mp3",
         "translations": {
-          "en": ""
+          "en": "",
+          "es": "funcionamiento",
+          "de": "triebsanleitung",
+          "it": "Istruzioni",
+          "pt": "instruções",
+          "no": "vedlikeholdsinstruksjonene",
+          "fr": "instructions"
         },
         "rotation": 0,
         "z": 0
@@ -866,7 +1066,12 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
         "h": 7.509502309881381,
         "sound": "",
         "translations": {
-          "es": ""
+          "es": "pájaro sentado en un árbol",
+          "fr": "oiseau assis dans un arbre",
+          "de": "vogel, der auf einem Baum sitzt",
+          "it": "uccello seduto su un albero",
+          "pt": "pássaro sentado numa árvore",
+          "no": "fugl som sitter i et tre"
         },
         "rotation": 0,
         "z": 0
@@ -880,7 +1085,12 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
         "h": 9.08576277549515,
         "sound": "",
         "translations": {
-          "es": ""
+          "es": "Ardilla sentada en una roca",
+          "fr": "Écureuil assis sur un rocher",
+          "de": "Auf einem Felsen sitzendes Eichhörnchen",
+          "it": "Scoiattolo seduto su una roccia",
+          "pt": "Esquilo sentado numa pedra",
+          "no": "Ekorn sitter på en stein"
         },
         "rotation": 0,
         "z": 0
@@ -1030,37 +1240,67 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
         "w": 13.28,
         "h": 12.97,
         "sound": "sounds/horse.mp3",
-        "translations": {}
+        "translations": {
+          "es": "caballo.",
+          "de": "Pferd",
+          "it": "cavallo",
+          "pt": "cavalete",
+          "no": "hest",
+          "fr": "Cheval"
+        },
+        "rotation": 0,
+        "z": 0
       },
       {
         "id": "cow",
         "label": "cow",
-        "x": 33.39,
-        "y": 43.8,
+        "x": 29.863683738180136,
+        "y": 40.09114341913802,
         "w": 9.85,
         "h": 6.68,
         "sound": "sounds/cow.mp3",
-        "translations": {}
+        "translations": {
+          "es": "vaca",
+          "fr": "vache",
+          "de": "Rinds",
+          "it": "mucca",
+          "pt": "vaca",
+          "no": "ku"
+        }
       },
       {
         "id": "sheep",
         "label": "sheep",
-        "x": 24.85,
-        "y": 51.3,
-        "w": 8.55,
-        "h": 7.23,
+        "x": 19.060524191816718,
+        "y": 46.942093119570224,
+        "w": 10.39210730787794,
+        "h": 8.898985726665858,
         "sound": "sounds/sheep.mp3",
-        "translations": {}
+        "translations": {
+          "es": "oveja",
+          "fr": "ovins",
+          "de": "Schaf",
+          "it": "pecora",
+          "pt": "ovelha",
+          "no": "sau"
+        }
       },
       {
         "id": "goat",
         "label": "goat",
         "x": 22.47100918854204,
-        "y": 58.61407958294441,
+        "y": 57.686869416898446,
         "w": 10.63,
         "h": 14.18,
         "sound": "sounds/goat.mp3",
-        "translations": {}
+        "translations": {
+          "es": "cabra",
+          "fr": "chèvre",
+          "de": "Ziege",
+          "it": "capra",
+          "pt": "cabra",
+          "no": "geit"
+        }
       },
       {
         "id": "pig",
@@ -1070,67 +1310,84 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
         "w": 10,
         "h": 14.92,
         "sound": "sounds/pig.mp3",
-        "translations": {}
+        "translations": {
+          "es": "cerdo",
+          "fr": "porc",
+          "de": "Schwein",
+          "it": "maiale",
+          "pt": "pig",
+          "no": "gris"
+        }
       },
       {
         "id": "dog",
         "label": "dog",
-        "x": 46.82709180721819,
-        "y": 65.96911571092454,
+        "x": 45.40603673782573,
+        "y": 65.32006541135674,
         "w": 10.89,
         "h": 13.35,
         "sound": "sounds/dog.mp3",
-        "translations": {}
+        "translations": {
+          "es": "perro",
+          "fr": "chien",
+          "de": "Hund",
+          "it": "cane",
+          "pt": "cão",
+          "no": "hund"
+        }
       },
       {
         "id": "rooster",
         "label": "rooster",
-        "x": 84.43594204050702,
-        "y": 68.11358729735426,
-        "w": 4.74,
-        "h": 9.55,
+        "x": 83.80436669438195,
+        "y": 57.172468076872505,
+        "w": 6.687368861697727,
+        "h": 11.218985726665858,
         "sound": "sounds/rooster.mp3",
-        "translations": {}
-      },
-      {
-        "id": "rabbit",
-        "label": "rabbit",
-        "x": 56.57,
-        "y": 92.6,
-        "w": 8.18,
-        "h": 10.29,
-        "sound": "",
-        "translations": {}
+        "translations": {
+          "es": "el gallo",
+          "fr": "le coq",
+          "de": "Hahn",
+          "it": "gallo",
+          "pt": "galo",
+          "no": "hane"
+        },
+        "rotation": 0,
+        "z": 0
       },
       {
         "id": "squirrel",
         "label": "squirrel",
         "x": 91.58217073742944,
         "y": 43.02451404656113,
-        "w": 7.14,
-        "h": 12.6,
+        "w": 7.034738446180212,
+        "h": 9.818358890743358,
         "sound": "sounds/squirrel.mp3",
-        "translations": {}
-      },
-      {
-        "id": "butterfly",
-        "label": "butterfly",
-        "x": 39.57,
-        "y": 92.06,
-        "w": 7.24,
-        "h": 7.23,
-        "sound": "",
-        "translations": {}
+        "translations": {
+          "es": "ardilla",
+          "fr": "Écureuils",
+          "de": "Eichhörnchen",
+          "it": "scoiattolo",
+          "pt": "esquilo",
+          "no": "Ekorn"
+        }
       },
       {
         "id": "barn",
         "label": "barn",
         "x": 51.81956098323924,
-        "y": 30.654441790600885,
-        "w": 7.61,
-        "h": 13.71,
+        "y": 31.58165726220622,
+        "w": 13.557368138912967,
+        "h": 11.855574362348696,
         "sound": "sounds/tractor.mp3",
-        "translations": {}
+        "translations": {
+          "es": "granero",
+          "fr": "grange",
+          "de": "Scheune",
+          "it": "stella del fienile",
+          "pt": "celeiro",
+          "no": "Løe"
+        }
       },
       {
         "id": "windmill",
@@ -1140,47 +1397,65 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
         "w": 3.81,
         "h": 12.6,
         "sound": "",
-        "translations": {}
+        "translations": {
+          "es": "molino de viento",
+          "fr": "moulin à vent",
+          "de": "Windmühle",
+          "it": "motore eolico",
+          "pt": "moinho de vento",
+          "no": "Vindmøller"
+        }
       },
       {
         "id": "rv",
         "label": "rv",
-        "x": 75.88188093996447,
-        "y": 26.733267549829208,
-        "w": 15.68,
-        "h": 20.58,
+        "x": 73.1976751783219,
+        "y": 28.773138404025325,
+        "w": 24.276011390765206,
+        "h": 13.533177271365672,
         "sound": "sounds/rv.mp3",
-        "translations": {}
+        "translations": {
+          "es": "casa rodante",
+          "fr": "camping-car",
+          "de": "Wohnmobil",
+          "it": "camper",
+          "pt": "autocaravana",
+          "no": "bobil"
+        }
       },
       {
         "id": "campfire",
         "label": "campfire",
-        "x": 59.78217073742943,
-        "y": 62.148303677809324,
-        "w": 12.35,
-        "h": 13.99,
+        "x": 58.72953712961257,
+        "y": 62.79734867181776,
+        "w": 10.402631138302272,
+        "h": 11.022913674198545,
         "sound": "",
-        "translations": {}
+        "translations": {
+          "es": "fuego de campamento",
+          "fr": "feu de camp",
+          "de": "Lagerfeuer",
+          "it": "Falò",
+          "pt": "fogueira",
+          "no": "Bål"
+        }
       },
       {
         "id": "fence",
         "label": "fence",
-        "x": 0.9539024580980975,
-        "y": 44.3301300779337,
-        "w": 3.96,
-        "h": 16.03,
+        "x": 0,
+        "y": 48.03898665879568,
+        "w": 9.960000045174048,
+        "h": 15.102784528394665,
         "sound": "",
-        "translations": {}
-      },
-      {
-        "id": "flowers",
-        "label": "flowers",
-        "x": 8.6,
-        "y": 92.17,
-        "w": 10.63,
-        "h": 13.8,
-        "sound": "",
-        "translations": {}
+        "translations": {
+          "es": "reja",
+          "fr": "clôture",
+          "de": "Zaun",
+          "it": "recinto",
+          "pt": "cerca",
+          "no": "stride"
+        }
       },
       {
         "id": "mountains",
@@ -1190,17 +1465,33 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
         "w": 15.83,
         "h": 11.22,
         "sound": "",
-        "translations": {}
+        "translations": {
+          "es": "montañas",
+          "fr": "montagnes",
+          "de": "Berge",
+          "it": "montagne",
+          "pt": "montanhas",
+          "no": "fjell"
+        }
       },
       {
         "id": "chick",
-        "label": "chick",
-        "x": 87.44,
-        "y": 74.31,
+        "label": "chicks",
+        "x": 84.4926283073953,
+        "y": 70.87930859117556,
         "w": 5.89,
         "h": 8.53,
         "sound": "sounds/chicks.mp3",
-        "translations": {}
+        "translations": {
+          "es": "pollito",
+          "fr": "oisillons",
+          "de": "chick",
+          "it": "pulcino",
+          "pt": "miúda",
+          "no": "jente"
+        },
+        "rotation": 0,
+        "z": 0
       },
       {
         "id": "chicken",
@@ -1210,27 +1501,50 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
         "w": 6,
         "h": 8,
         "sound": "sounds/chicken.mp3",
-        "translations": {}
+        "translations": {
+          "es": "estilo koreano",
+          "fr": "Poulet",
+          "de": "Huhn",
+          "it": "pollo",
+          "pt": "galinha",
+          "no": "kylling"
+        }
       },
       {
         "id": "solar-panel",
         "label": "solar panel",
-        "x": 81.73030157964116,
-        "y": 15.188307518269838,
+        "x": 71.57241105587339,
+        "y": 17.413620936231087,
         "w": 6,
         "h": 8,
         "sound": "",
-        "translations": {}
+        "translations": {
+          "es": "panel solar",
+          "fr": "panneau solaire",
+          "de": "Solarmodul",
+          "it": "pannello solare",
+          "pt": "painel solar",
+          "no": "solcellepanel"
+        },
+        "rotation": 0,
+        "z": 0
       },
       {
         "id": "window",
         "label": "window",
-        "x": 90.49463991345047,
-        "y": 24.17451788702164,
+        "x": 91.02095370575574,
+        "y": 24.638128275603993,
         "w": 6,
         "h": 8,
         "sound": "",
-        "translations": {}
+        "translations": {
+          "es": "ventana",
+          "fr": "transparente",
+          "de": "Fenster",
+          "it": "finestra",
+          "pt": "da janela.",
+          "no": "vindu"
+        }
       },
       {
         "id": "rear-door",
@@ -1240,27 +1554,48 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
         "w": 3.29,
         "h": 9.2,
         "sound": "",
-        "translations": {}
+        "translations": {
+          "es": "rear door",
+          "fr": "porte arrière",
+          "de": "hinteren Tür",
+          "it": "Sportello posteriore",
+          "pt": "Porta traseira",
+          "no": "Bakdør"
+        }
       },
       {
         "id": "stairs",
         "label": "stairs",
-        "x": 79.91,
-        "y": 52.83,
-        "w": 3.29,
-        "h": 10.96,
+        "x": 78.38368337678774,
+        "y": 45.59773205482086,
+        "w": 4.447895161636657,
+        "h": 11.887215471605337,
         "sound": "",
-        "translations": {}
+        "translations": {
+          "es": "escaleras",
+          "fr": "escaliers",
+          "de": "eine Treppe",
+          "it": "scale",
+          "pt": "escadas",
+          "no": "trapper"
+        }
       },
       {
         "id": "girl",
         "label": "girl",
         "x": 37.81564360191539,
-        "y": 54.458303677809326,
+        "y": 50.93489231349216,
         "w": 5.74,
         "h": 20.03,
         "sound": "sounds/girl.mp3",
-        "translations": {}
+        "translations": {
+          "es": "niña",
+          "fr": "fille",
+          "de": "Mädchen",
+          "it": "ragazza",
+          "pt": "menina",
+          "no": "jente"
+        }
       },
       {
         "id": "boy",
@@ -1270,41 +1605,51 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
         "w": 4.85,
         "h": 12.44,
         "sound": "sounds/child-laughing.mp3",
-        "translations": {}
+        "translations": {
+          "es": "niño",
+          "fr": "garçon",
+          "de": "Junge",
+          "it": "ragazzo",
+          "pt": "menino",
+          "no": "gutt"
+        }
       },
       {
         "id": "field",
         "label": "field",
-        "x": 38.524780491619616,
-        "y": 34.7502822707752,
+        "x": 38.47214670310656,
+        "y": 35.67749774238054,
         "w": 7.25,
         "h": 4.76,
         "sound": "",
-        "translations": {}
+        "translations": {
+          "es": "plátanos",
+          "fr": ".",
+          "de": "Feld",
+          "it": "field",
+          "pt": "campo",
+          "no": "felt"
+        }
       },
       {
         "id": "sunset",
         "label": "sunset",
-        "x": 48.425503023746245,
-        "y": 19.961814878742835,
+        "x": 48.267610693016564,
+        "y": 20.610865178310632,
         "w": 10.95,
         "h": 5.96,
         "sound": "",
-        "translations": {}
+        "translations": {
+          "es": "ocaso",
+          "fr": "coucher du soleil/coucher de soleil",
+          "de": "Sonnenuntergang",
+          "it": "tramonto?",
+          "pt": "pôr do sol",
+          "no": "solnedgang"
+        }
       }
     ],
-    "overlays": [
-      {
-        "id": "overlay-1792134092668-9u9rm",
-        "label": "bee-sitting-looking-left.png",
-        "src": "images/png/bee-sitting-looking-left.png",
-        "x": 72.96874642372131,
-        "y": 15.277775393591986,
-        "w": 7.5,
-        "rotation": -10,
-        "z": 1
-      }
-    ],
+    "overlays": [],
     "challenges": [
       {
         "prompt": "Find the Dog",
@@ -2288,7 +2633,12 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
         "h": 7.509502309881381,
         "sound": "",
         "translations": {
-          "fr": ""
+          "fr": "bol pour chien",
+          "es": "cuenco para perros",
+          "de": "Hundenapf",
+          "it": "Ciotola del cane",
+          "pt": "tigela para cães",
+          "no": "hundeskål"
         },
         "rotation": 0,
         "z": 0
@@ -2648,7 +2998,14 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
         "w": 8.53,
         "h": 34.4,
         "sound": "sounds/julie.mp3",
-        "translations": {}
+        "translations": {
+          "es": "JULIE",
+          "fr": "julie",
+          "de": "Julie",
+          "it": "JULIE",
+          "pt": "Julie",
+          "no": "Julie"
+        }
       },
       {
         "id": "car",
@@ -2658,7 +3015,14 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
         "w": 29.083155992671685,
         "h": 21.573605083022983,
         "sound": "sounds/car-start.mp3",
-        "translations": {}
+        "translations": {
+          "es": "dis",
+          "fr": "voiture",
+          "de": "Auto",
+          "it": "auto",
+          "pt": "carro",
+          "no": "bil"
+        }
       },
       {
         "id": "cabin",
@@ -2668,7 +3032,14 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
         "w": 22.062631138302276,
         "h": 17.351466283647724,
         "sound": "sounds/cabin-guitar.mp3",
-        "translations": {}
+        "translations": {
+          "es": "cabina",
+          "fr": "Cabine",
+          "de": "Hütte",
+          "it": "affilatura",
+          "pt": "camarote",
+          "no": "hytte"
+        }
       },
       {
         "id": "ocean",
@@ -2678,7 +3049,14 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
         "w": 6.41,
         "h": 12.38,
         "sound": "sounds/ocean.mp3",
-        "translations": {}
+        "translations": {
+          "es": "oceánicas",
+          "fr": "océan",
+          "de": "Ozean",
+          "it": "oceano",
+          "pt": "oceano",
+          "no": "hav"
+        }
       },
       {
         "id": "sun",
@@ -2688,7 +3066,14 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
         "w": 4.947366392183131,
         "h": 6.145569056789328,
         "sound": "",
-        "translations": {}
+        "translations": {
+          "es": "dom",
+          "fr": "soleil",
+          "de": "Sonne",
+          "it": "dom",
+          "pt": "eno",
+          "no": "solen"
+        }
       },
       {
         "id": "sunset",
@@ -2698,7 +3083,14 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
         "w": 12.478949207084035,
         "h": 12.343107392904368,
         "sound": "",
-        "translations": {}
+        "translations": {
+          "es": "ocaso",
+          "fr": "coucher du soleil/coucher de soleil",
+          "de": "Sonnenuntergang",
+          "it": "tramonto?",
+          "pt": "pôr do sol",
+          "no": "solnedgang"
+        }
       },
       {
         "id": "mountain",
@@ -2708,17 +3100,33 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
         "w": 9.75,
         "h": 14.48,
         "sound": "",
-        "translations": {}
+        "translations": {
+          "es": "montaña",
+          "fr": "Montagne",
+          "de": "Berg",
+          "it": "in montagna",
+          "pt": "montanha",
+          "no": "berg"
+        }
       },
       {
         "id": "parrot",
         "label": "parrot",
-        "x": 56.45420967672669,
-        "y": 30.542098425129588,
+        "x": 56.29309505412728,
+        "y": 32.907424523608086,
         "w": 6,
         "h": 8,
         "sound": "sounds/parrot.mp3",
-        "translations": {}
+        "translations": {
+          "fr": "Perroquets",
+          "es": "loro",
+          "de": "Papagei",
+          "it": "papagallo",
+          "pt": "papagaio",
+          "no": "Papegøyer"
+        },
+        "rotation": 0,
+        "z": 0
       },
       {
         "id": "log",
@@ -2728,7 +3136,14 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
         "w": 6,
         "h": 8,
         "sound": "",
-        "translations": {}
+        "translations": {
+          "es": "registro",
+          "fr": "log",
+          "de": "Log",
+          "it": "log",
+          "pt": "registro",
+          "no": "Logg"
+        }
       },
       {
         "id": "stump",
@@ -2738,7 +3153,13 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
         "w": 6,
         "h": 8,
         "sound": "",
-        "translations": {}
+        "translations": {
+          "es": "cepa",
+          "de": "Stümpfe",
+          "it": "ceppo",
+          "pt": "tronco",
+          "no": "Amputasjonsstumper"
+        }
       },
       {
         "id": "stairs",
@@ -2748,7 +3169,14 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
         "w": 7.2,
         "h": 12.35,
         "sound": "",
-        "translations": {}
+        "translations": {
+          "es": "escaleras",
+          "fr": "escaliers",
+          "de": "eine Treppe",
+          "it": "scale",
+          "pt": "escadas",
+          "no": "trapper"
+        }
       },
       {
         "id": "roof",
@@ -2758,7 +3186,14 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
         "w": 6,
         "h": 8,
         "sound": "",
-        "translations": {}
+        "translations": {
+          "es": "techo",
+          "fr": "toiture",
+          "de": "Dach",
+          "it": "tetto",
+          "pt": "teto",
+          "no": "tak"
+        }
       },
       {
         "id": "sand",
@@ -2768,7 +3203,14 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
         "w": 6,
         "h": 8,
         "sound": "",
-        "translations": {}
+        "translations": {
+          "es": "sand",
+          "fr": "sable",
+          "de": "sand",
+          "it": "sabbia",
+          "pt": "areia",
+          "no": "sand"
+        }
       },
       {
         "id": "pole",
@@ -2778,7 +3220,14 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
         "w": 3.4,
         "h": 12.81,
         "sound": "",
-        "translations": {}
+        "translations": {
+          "es": "barra",
+          "fr": "pôle",
+          "de": "Pfosten",
+          "it": "asta (3 metri)",
+          "pt": "suporte",
+          "no": "stav"
+        }
       },
       {
         "id": "foot",
@@ -2788,7 +3237,14 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
         "w": 4.263160269148179,
         "h": 5.032913674198545,
         "sound": "",
-        "translations": {}
+        "translations": {
+          "es": "Patín",
+          "fr": "Pied",
+          "de": "fuss",
+          "it": "piede",
+          "pt": "pé",
+          "no": "fot"
+        }
       },
       {
         "id": "hand",
@@ -2798,7 +3254,14 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
         "w": 4.59,
         "h": 6.43,
         "sound": "",
-        "translations": {}
+        "translations": {
+          "es": "izquierda",
+          "fr": "la main",
+          "de": "werden.",
+          "it": "mano",
+          "pt": "mão",
+          "no": "hånd"
+        }
       },
       {
         "id": "sky",
@@ -2808,17 +3271,31 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
         "w": 10.95,
         "h": 10.31,
         "sound": "",
-        "translations": {}
+        "translations": {
+          "es": "el cielo",
+          "fr": "ciel",
+          "de": "Himmel",
+          "it": "sky",
+          "pt": "céu",
+          "no": "himmel"
+        }
       },
       {
         "id": "hammock",
         "label": "hammock",
-        "x": 50.95947442284583,
-        "y": 39.01658863568284,
+        "x": 47.898253570554765,
+        "y": 37.78662252930453,
         "w": 11.89,
         "h": 8.46,
         "sound": "",
-        "translations": {}
+        "translations": {
+          "es": "hamaca",
+          "fr": "hamac",
+          "de": "Hängematte",
+          "it": "amaca",
+          "pt": "cama de rede",
+          "no": "Hengekøye"
+        }
       },
       {
         "id": "coffee-mug",
@@ -2828,7 +3305,14 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
         "w": 3.631578899816792,
         "h": 4.5693112439552435,
         "sound": "",
-        "translations": {}
+        "translations": {
+          "es": "coffee mug",
+          "fr": "tasse géante à café",
+          "de": "kaffeebecher",
+          "it": "Tazza di caffè",
+          "pt": "Caneca",
+          "no": "kaffekopp"
+        }
       },
       {
         "id": "chair",
@@ -2838,17 +3322,31 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
         "w": 6,
         "h": 8,
         "sound": "",
-        "translations": {}
+        "translations": {
+          "es": "silla",
+          "fr": "chaise",
+          "de": "Stuhl",
+          "it": "sedia",
+          "pt": "Cadeira",
+          "no": "stol"
+        }
       },
       {
         "id": "flower",
         "label": "flower",
-        "x": 91.8,
-        "y": 80.36,
+        "x": 89.65177430136337,
+        "y": 78.27851389954655,
         "w": 6,
         "h": 8,
         "sound": "",
-        "translations": {}
+        "translations": {
+          "es": "flor",
+          "fr": "fleur",
+          "de": "Blume",
+          "it": "fiore",
+          "pt": "flor",
+          "no": "blomst"
+        }
       },
       {
         "id": "dock",
@@ -2858,7 +3356,14 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
         "w": 18.5,
         "h": 7.81,
         "sound": "",
-        "translations": {}
+        "translations": {
+          "es": "acoplar",
+          "fr": "véhicule, ponton. domotique",
+          "de": "Dock",
+          "it": "molo",
+          "pt": "troço",
+          "no": "forankre"
+        }
       },
       {
         "id": "hotspot-1792553973746",
@@ -2869,8 +3374,13 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
         "h": 14,
         "sound": "sounds/dog-panting.wav",
         "translations": {
-          "es": "",
-          "en": ""
+          "es": "perro",
+          "en": "",
+          "fr": "chien",
+          "de": "Hund",
+          "it": "cane",
+          "pt": "cão",
+          "no": "hund"
         },
         "rotation": 0,
         "z": 0
@@ -2884,34 +3394,18 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
         "h": 6.860454663093267,
         "sound": "sounds/parrot.mp3",
         "translations": {
-          "es": ""
+          "es": "Loro rojo",
+          "fr": "Perroquet rouge",
+          "de": "Roter Papagei",
+          "it": "Pappagallo rosso",
+          "pt": "Papagaio vermelho",
+          "no": "Rød papegøye"
         },
         "rotation": 0,
         "z": 0
       }
     ],
-    "overlays": [
-      {
-        "id": "overlay-1792133599912-jxdgh",
-        "label": "bee6.png",
-        "src": "images/png/bee6.png",
-        "x": 40.260417461395264,
-        "y": 16.574082374572754,
-        "w": 9,
-        "rotation": 0,
-        "z": 1
-      },
-      {
-        "id": "overlay-1792133689066-r8sbt",
-        "label": "bee-laying-down.png",
-        "src": "images/png/bee-laying-down.png",
-        "x": 80.68202747492906,
-        "y": 53.79630088806153,
-        "w": 6.5,
-        "rotation": 0,
-        "z": 2
-      }
-    ],
+    "overlays": [],
     "challenges": [
       {
         "prompt": "Find the Gremlin",
@@ -3067,7 +3561,14 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
         "w": 23,
         "h": 53,
         "sound": "",
-        "translations": {}
+        "translations": {
+          "es": "Cesta de globos",
+          "fr": "NACELLE DE BALLON",
+          "de": "Ballonkorb",
+          "it": "Cesto per palloncini",
+          "pt": "Cesto balão",
+          "no": "Ballongkurv"
+        }
       },
       {
         "id": "burner",
@@ -3078,7 +3579,12 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
         "h": 15,
         "sound": "sounds/hot-air-balloon.mp3",
         "translations": {
-          "es": ""
+          "es": "Pérdida de llama del quemador",
+          "fr": "FLAMME DE BRULEUR",
+          "de": "BRENNER, FLAMME",
+          "it": "Fiamma bruciatore",
+          "pt": "Chama do queimador",
+          "no": "Brennerflamme"
         },
         "rotation": 0,
         "z": 0
@@ -3092,7 +3598,12 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
         "h": 23,
         "sound": "sounds/waterfall.mp3",
         "translations": {
-          "es": ""
+          "es": "Cascada",
+          "fr": "Cascade",
+          "de": "Wasser- fall",
+          "it": "Cascata",
+          "pt": "Queda de água",
+          "no": "Fossefall"
         },
         "rotation": 0,
         "z": 0
@@ -3106,7 +3617,12 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
         "h": 17,
         "sound": "sounds/birds-forest.mp3",
         "translations": {
-          "es": ""
+          "es": "Señal de camping",
+          "fr": "Panneau de terrain de camping",
+          "de": "Zeltplatzschild",
+          "it": "Cartello campeggio",
+          "pt": "Placa de acampamento",
+          "no": "Skilt for campingplassen"
         },
         "rotation": 0,
         "z": 0
@@ -3120,7 +3636,12 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
         "h": 10,
         "sound": "sounds/carnival.mp3",
         "translations": {
-          "es": ""
+          "es": "Noria",
+          "fr": "Grande roue",
+          "de": "Riesenrad",
+          "it": "Ruota panoramica",
+          "pt": "Roda-gigante",
+          "no": "Pariserhjul"
         },
         "rotation": 0,
         "z": 0
@@ -3134,7 +3655,12 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
         "h": 9.827538336115039,
         "sound": "",
         "translations": {
-          "fr": ""
+          "fr": "Véhicule de plaisance",
+          "es": "vehículo recreativo",
+          "de": "Freizeitfahrzeug (RV)",
+          "it": "Camper",
+          "pt": "Veículo recreativo",
+          "no": "Bobil"
         },
         "rotation": 0,
         "z": 0
@@ -3148,7 +3674,12 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
         "h": 8.065832653956456,
         "sound": "",
         "translations": {
-          "fr": ""
+          "fr": "tente pour campeur",
+          "es": "la tienda de campaña",
+          "de": "Zelt",
+          "it": "tenda (da campeggio)",
+          "pt": "tenda",
+          "no": "telt"
         },
         "rotation": 0,
         "z": 0
@@ -3162,7 +3693,12 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
         "h": 4.635141245132017,
         "sound": "",
         "translations": {
-          "fr": ""
+          "fr": "Routier",
+          "es": "Carretera",
+          "de": "Straße",
+          "it": "Strada",
+          "pt": "Rodoviário",
+          "no": "Vei"
         },
         "rotation": 0,
         "z": 0
@@ -3176,7 +3712,12 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
         "h": 6.396849580070281,
         "sound": "",
         "translations": {
-          "fr": ""
+          "fr": "Voilier",
+          "es": "Velero",
+          "de": "Segelboot",
+          "it": "Vela",
+          "pt": "Veleiro",
+          "no": "Seilbåt"
         },
         "rotation": 0,
         "z": 0
@@ -3190,7 +3731,12 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
         "h": 6.211407016305151,
         "sound": "",
         "translations": {
-          "fr": ""
+          "fr": "soleil",
+          "es": "dom",
+          "de": "Sonne",
+          "it": "dom",
+          "pt": "eno",
+          "no": "solen"
         },
         "rotation": 0,
         "z": 0
@@ -3204,7 +3750,12 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
         "h": 8.25127787050127,
         "sound": "",
         "translations": {
-          "fr": ""
+          "fr": "Un club House",
+          "es": "Casa Club",
+          "de": "Club House",
+          "it": "Club House",
+          "pt": "clube",
+          "no": "Club- house"
         },
         "rotation": 0,
         "z": 0
@@ -3218,8 +3769,12 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
         "h": 7.045894574078714,
         "sound": "",
         "translations": {
-          "fr": "",
-          "pt": ""
+          "fr": "montagnes",
+          "pt": "montanhas",
+          "es": "montañas",
+          "de": "Berge",
+          "it": "montagne",
+          "no": "fjell"
         },
         "rotation": 0,
         "z": 0
@@ -3233,8 +3788,12 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
         "h": 34.76958836393209,
         "sound": "",
         "translations": {
-          "fr": "",
-          "pt": ""
+          "fr": "Forêt",
+          "pt": "Florestal",
+          "es": "Bosque",
+          "de": "Wälder",
+          "it": "Foresta",
+          "no": "Skoger"
         },
         "rotation": 0,
         "z": 0
@@ -3450,7 +4009,14 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
         "w": 28,
         "h": 32,
         "sound": "",
-        "translations": {}
+        "translations": {
+          "es": "visitantes",
+          "fr": "visiteurs",
+          "de": "Gäste",
+          "it": "visitatori",
+          "pt": "visitantes",
+          "no": "Besøkende"
+        }
       },
       {
         "id": "sailor",
@@ -3460,7 +4026,14 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
         "w": 10,
         "h": 17,
         "sound": "",
-        "translations": {}
+        "translations": {
+          "es": "marinero",
+          "fr": "avec une expérience de navigation",
+          "de": "Segler*in",
+          "it": "navigatore",
+          "pt": "marujo",
+          "no": "matros"
+        }
       },
       {
         "id": "jet",
@@ -3470,7 +4043,14 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
         "w": 27,
         "h": 19,
         "sound": "sounds/jet-fly-by.mp3",
-        "translations": {}
+        "translations": {
+          "es": "avión a chorro",
+          "fr": "jet;",
+          "de": "Jet",
+          "it": "getto",
+          "pt": "jato maciço",
+          "no": "Stråle"
+        }
       },
       {
         "id": "jets",
@@ -3480,7 +4060,14 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
         "w": 27.05,
         "h": 13.31,
         "sound": "sounds/jet-fly-by.mp3",
-        "translations": {}
+        "translations": {
+          "es": "avión a chorro",
+          "fr": "spurts",
+          "de": "Jets",
+          "it": "JETS",
+          "pt": "Jatos",
+          "no": "jetfly"
+        }
       },
       {
         "id": "helicopter",
@@ -3490,7 +4077,14 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
         "w": 15.47,
         "h": 16.11,
         "sound": "sounds/helicopter-flying.mp3",
-        "translations": {}
+        "translations": {
+          "es": "helicóptero",
+          "fr": "Hélicoptères",
+          "de": "Hubschrauber",
+          "it": "elicottero",
+          "pt": "Helicópteros",
+          "no": "Helikoptre"
+        }
       },
       {
         "id": "island",
@@ -3500,7 +4094,14 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
         "w": 8.89,
         "h": 32.91,
         "sound": "",
-        "translations": {}
+        "translations": {
+          "es": "isla",
+          "fr": "ilote",
+          "de": "insel",
+          "it": "L'ISOLA",
+          "pt": "ilha",
+          "no": "øy"
+        }
       },
       {
         "id": "flag",
@@ -3510,7 +4111,14 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
         "w": 7,
         "h": 12,
         "sound": "",
-        "translations": {}
+        "translations": {
+          "es": "indicador",
+          "fr": "test",
+          "de": "Flagge",
+          "it": "bandiera",
+          "pt": "marcar",
+          "no": "flagg"
+        }
       },
       {
         "id": "flightdeck",
@@ -3520,7 +4128,14 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
         "w": 19.66,
         "h": 14.46,
         "sound": "",
-        "translations": {}
+        "translations": {
+          "es": "Flightdeck",
+          "fr": "Pont d'envol",
+          "de": "flightdeck",
+          "it": "flightdeck",
+          "pt": "convés de voo",
+          "no": "flydekk"
+        }
       },
       {
         "id": "crew",
@@ -3530,7 +4145,14 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
         "w": 14.87,
         "h": 9.55,
         "sound": "",
-        "translations": {}
+        "translations": {
+          "es": "tripulación",
+          "fr": "équipage",
+          "de": "Crew",
+          "it": "crew (troupe/cast)",
+          "pt": "equipa",
+          "no": "crew"
+        }
       },
       {
         "id": "yellowshirt",
@@ -3540,7 +4162,14 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
         "w": 8,
         "h": 18,
         "sound": "",
-        "translations": {}
+        "translations": {
+          "es": "yellowshirt",
+          "fr": "chemise jaune",
+          "de": "yellowshirt",
+          "it": "camicia gialla",
+          "pt": "camisa-amarela",
+          "no": "gulskjorte"
+        }
       },
       {
         "id": "greenshirt",
@@ -3550,7 +4179,14 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
         "w": 8,
         "h": 14,
         "sound": "",
-        "translations": {}
+        "translations": {
+          "es": "camiseta verde",
+          "fr": "chemise verte",
+          "de": "grünhemd",
+          "it": "camiciaverde",
+          "pt": "camisa verde",
+          "no": "grønnskjorte"
+        }
       },
       {
         "id": "towtractor",
@@ -3560,7 +4196,14 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
         "w": 10.79,
         "h": 8.44,
         "sound": "sounds/car-start.mp3",
-        "translations": {}
+        "translations": {
+          "es": "remolcador",
+          "fr": "tracteur",
+          "de": "abschleppwagen",
+          "it": "trattore da traino",
+          "pt": "rebocador",
+          "no": "slepetraktor"
+        }
       },
       {
         "id": "ocean",
@@ -3570,7 +4213,14 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
         "w": 34.27,
         "h": 2.98,
         "sound": "sounds/ship-ambience.mp3",
-        "translations": {}
+        "translations": {
+          "es": "oceánicas",
+          "fr": "océan",
+          "de": "Ozean",
+          "it": "oceano",
+          "pt": "oceano",
+          "no": "hav"
+        }
       },
       {
         "id": "ship",
@@ -3580,7 +4230,14 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
         "w": 10,
         "h": 10,
         "sound": "sounds/ship-ambience.mp3",
-        "translations": {}
+        "translations": {
+          "es": "barco",
+          "fr": "moteurs",
+          "de": "shiff",
+          "it": "nave",
+          "pt": "enviar",
+          "no": "skip"
+        }
       },
       {
         "id": "decklines",
@@ -3590,7 +4247,14 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
         "w": 29.06,
         "h": 10.11,
         "sound": "",
-        "translations": {}
+        "translations": {
+          "es": "líneas de cubierta",
+          "fr": "lignes de pont",
+          "de": "decklinien",
+          "it": "decklines",
+          "pt": "linhas de convés",
+          "no": "dekklinjer"
+        }
       },
       {
         "id": "railing",
@@ -3600,7 +4264,12 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
         "w": 42,
         "h": 19,
         "sound": "",
-        "translations": {}
+        "translations": {
+          "es": "familia Rallidae",
+          "fr": "débroussaillage au rail",
+          "pt": "desmatamento com trilho",
+          "no": "rekkverk"
+        }
       },
       {
         "id": "equipment",
@@ -3610,7 +4279,14 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
         "w": 17,
         "h": 26,
         "sound": "",
-        "translations": {}
+        "translations": {
+          "es": "de RF",
+          "fr": "équipement",
+          "de": "tung",
+          "it": "apparati",
+          "pt": "equipamentos",
+          "no": "Utstyr"
+        }
       },
       {
         "id": "sky",
@@ -3620,7 +4296,14 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
         "w": 24.11,
         "h": 24.52,
         "sound": "",
-        "translations": {}
+        "translations": {
+          "es": "el cielo",
+          "fr": "ciel",
+          "de": "Himmel",
+          "it": "sky",
+          "pt": "céu",
+          "no": "himmel"
+        }
       },
       {
         "id": "jet-airplane",
@@ -3630,7 +4313,14 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
         "w": 14.91,
         "h": 7.88,
         "sound": "sounds/jet-fly-by.mp3",
-        "translations": {}
+        "translations": {
+          "es": "avión a chorro",
+          "fr": "avion à réaction",
+          "de": "Düsenflugzeug",
+          "it": "aereo a reazione",
+          "pt": "avião a jacto",
+          "no": "jetfly"
+        }
       },
       {
         "id": "clouds",
@@ -3640,7 +4330,14 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
         "w": 20.17,
         "h": 11.7,
         "sound": "",
-        "translations": {}
+        "translations": {
+          "es": "nubes",
+          "fr": "nuages",
+          "de": "Clouds",
+          "it": "clouds",
+          "pt": "nuvens",
+          "no": "skyer"
+        }
       }
     ],
     "overlays": [],
