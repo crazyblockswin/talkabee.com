@@ -25989,13 +25989,15 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
         "h": 28,
         "sound": "",
         "translations": {
-          "es": "Montañas nevadasComment",
+          "es": "Montañas",
           "fr": "Montagne enneigées",
           "de": "Verschneite BergeComment",
           "it": "Montagne innevate",
           "pt": "Montanhas NevadasComment",
           "no": "Name"
-        }
+        },
+        "rotation": 0,
+        "z": 0
       },
       {
         "id": "water-lilies",
