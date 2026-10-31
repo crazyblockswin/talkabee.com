@@ -4004,10 +4004,10 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
       {
         "id": "visitors",
         "label": "visitors",
-        "x": 15,
+        "x": 16.611170810509684,
         "y": 58,
-        "w": 28,
-        "h": 32,
+        "w": 26.442534063690122,
+        "h": 24.147124066160508,
         "sound": "",
         "translations": {
           "es": "visitantes",
@@ -4016,15 +4016,17 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
           "it": "visitatori",
           "pt": "visitantes",
           "no": "Besøkende"
-        }
+        },
+        "rotation": 0,
+        "z": 0
       },
       {
         "id": "sailor",
         "label": "sailor",
-        "x": 23,
-        "y": 52,
-        "w": 10,
-        "h": 17,
+        "x": 20.422126088571616,
+        "y": 65.71888000220017,
+        "w": 8.603651759353978,
+        "h": 5.267991863278654,
         "sound": "",
         "translations": {
           "es": "marinero",
@@ -4055,10 +4057,10 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
       {
         "id": "jets",
         "label": "jets",
-        "x": 14.86,
-        "y": 37.89,
-        "w": 27.05,
-        "h": 13.31,
+        "x": 1.4872835019954018,
+        "y": 46.78362439786389,
+        "w": 17.651504117537584,
+        "h": 6.4032555883114375,
         "sound": "sounds/jet-fly-by.mp3",
         "translations": {
           "es": "avión a chorro",
@@ -4174,10 +4176,10 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
       {
         "id": "greenshirt",
         "label": "greenshirt",
-        "x": 76,
-        "y": 45,
-        "w": 8,
-        "h": 14,
+        "x": 33.73361558815626,
+        "y": 69.78859932169446,
+        "w": 7.785177430136338,
+        "h": 10.783159321244035,
         "sound": "",
         "translations": {
           "es": "camiseta verde",
@@ -4225,10 +4227,10 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
       {
         "id": "ship",
         "label": "ship",
-        "x": 18.26,
-        "y": -0.48,
-        "w": 10,
-        "h": 10,
+        "x": 24.16762681737958,
+        "y": 37.0813478017437,
+        "w": 5.220192442670753,
+        "h": 5.458576272992263,
         "sound": "sounds/ship-ambience.mp3",
         "translations": {
           "es": "barco",
@@ -4244,8 +4246,8 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
         "label": "decklines",
         "x": 54.25,
         "y": 68.93,
-        "w": 29.06,
-        "h": 10.11,
+        "w": 32.389751369418974,
+        "h": 6.420096267067403,
         "sound": "",
         "translations": {
           "es": "líneas de cubierta",
@@ -4291,10 +4293,10 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
       {
         "id": "sky",
         "label": "sky",
-        "x": 78.17,
-        "y": 76.02,
-        "w": 24.11,
-        "h": 24.52,
+        "x": 34.507270420574685,
+        "y": 5.43872000282383,
+        "w": 22.23030481849129,
+        "h": 13.450280680505704,
         "sound": "",
         "translations": {
           "es": "el cielo",
@@ -4303,7 +4305,9 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
           "it": "sky",
           "pt": "céu",
           "no": "himmel"
-        }
+        },
+        "rotation": 0,
+        "z": 0
       },
       {
         "id": "jet-airplane",
