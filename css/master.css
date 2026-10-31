@@ -262,3 +262,39 @@ body>header .tb-header-row+.tb-header-row{
     margin: 0!important;
   }
 }
+
+/* Preserve approved full-width 3% margins, and map hotspots to the same
+   percentage coordinates as the displayed background. */
+@media (min-width: 701px) and (min-height: 520px) {
+  body:not([data-editor="yes"]):not(.tb-scene-only) .scene-area > .scene {
+    width: 94%!important;
+    max-width: 94%!important;
+    height: 100%!important;
+    max-height: 100%!important;
+    aspect-ratio: auto!important;
+    background-size: 100% 100%!important;
+    background-position: center center!important;
+  }
+}
+
+/* TEST: Adventure viewer only — hide footer and preserve image proportions.
+   The scene's percentage-based hotspots continue to follow its image box. */
+@media (min-width: 701px) and (min-height: 520px) {
+  body[data-editor="no"]:not(.tb-scene-only) > footer,
+  body[data-editor="no"]:not(.tb-scene-only) > .footer {
+    display: none!important;
+  }
+  body[data-editor="no"]:not(.tb-scene-only) .scene-area {
+    container-type: size;
+  }
+  body[data-editor="no"]:not(.tb-scene-only) .scene-area > .scene {
+    flex: 0 0 auto!important;
+    width: min(94cqw, 176.168cqh)!important;
+    max-width: 94%!important;
+    height: auto!important;
+    max-height: 100%!important;
+    aspect-ratio: 1508 / 856!important;
+    background-size: 100% 100%!important;
+    background-position: center center!important;
+  }
+}
