@@ -31,9 +31,9 @@ body>header .tb-row-nav .tb-scenePicker{flex:1 1 190px!important;min-width:125px
 body>header .tb-row-nav .tb-scenePicker select{width:100%!important;min-width:0!important}
 body>header .tb-row-nav .tb-scenePicker>span{display:none!important}
 body>header .tb-row-nav #sceneViewToggle,body>header .tb-row-nav #sceneViewReturn{display:none!important}
-body>header .tb-row-nav .tb-mode{flex:0 0 auto!important;padding:7px clamp(7px,.8vw,14px)!important;white-space:nowrap;font-size:clamp(13px,1.35vw,22px)!important}
+body>header .tb-row-nav .tb-mode{flex:0 0 auto!important;padding:7px clamp(7px,.8vw,14px)!important;white-space:nowrap;font-size:var(--tb-bottom-font,13px)!important}
 body>header nav.tb-unified-nav{flex:0 0 auto!important;gap:clamp(4px,.5vw,9px)!important}
-body>header .tb-unified-nav summary{padding:7px clamp(8px,.8vw,13px)!important;font-size:clamp(13px,1.3vw,21px)!important;min-height:0!important}
+body>header .tb-unified-nav summary{padding:7px clamp(8px,.8vw,13px)!important;font-size:var(--tb-bottom-font,13px)!important;min-height:0!important}
 
 body>header .tb-nav-end{flex:0 0 auto!important;margin-left:auto!important;white-space:nowrap}
 body>header .tb-nav-end button{padding-left:clamp(6px,.7vw,12px)!important;padding-right:clamp(6px,.7vw,12px)!important}
@@ -44,7 +44,7 @@ body>header .tb-nav-end button{padding-left:clamp(6px,.7vw,12px)!important;paddi
 /* Use the same global dashboard height as Activities, Challenges and Discovery. */
 body>header .tb-row-nav nav.tb-unified-nav {
   align-self:center!important;
-  height:var(--dashboard-control-height,35px)!important;
+  height:var(--tb-bottom-control-height,35px)!important;
   min-height:0!important;
   margin:0!important;
   padding:0!important;
@@ -113,7 +113,99 @@ body>header .tb-row-voice .tb-field.tb-voiceSelect{
 body>header .tb-row-voice .tb-field.tb-voiceMode select,
 body>header .tb-row-voice .tb-field.tb-voiceSelect select{width:100%!important;min-width:0!important}
 </style>
-<style id="tb-congratulations-route-style">#tb-congratulations-next{display:none;position:absolute;z-index:20;right:18px;bottom:18px;padding:12px 19px;border:2px solid #e8c77d;border-radius:12px;background:linear-gradient(#344650,#172229);color:#fff6dc;font:bold 18px Arial,sans-serif;text-decoration:none;box-shadow:0 5px 15px #0009}body.tb-congratulations-scene #tb-congratulations-next{display:block}</style></head><body data-editor="no"><header><div class="tb-header-row tb-row-voice"><a class="tb-logo" href="index.html"><img class="tb-header-teacher" src="images/teacher.png" alt=""/> <span>Talk A Bee</span></a><img class="tb-header-buzzkill" src="images/buzzkill.png" alt="Buzzkill Bee"/><label class="tb-field tb-native"><span>Native</span><select id="native"></select></label><label class="tb-field tb-learn"><span>Learn</span><select id="learn"></select></label><label class="tb-field tb-voiceMode"><span>Voice system</span><select id="voiceMode"><option value="standard">Standard browser voice</option><option value="enhanced">Enhanced Piper</option></select></label><label class="tb-field tb-voiceSelect"><span>Voice choice</span><select id="voiceSelect"></select></label></div><div class="tb-header-row tb-row-nav"><label class="tb-field tb-scenePicker"><span>Adventure</span><select aria-label="Choose Adventure" id="scenePicker"></select></label><button class="tb-mode selected" id="activities">Activities</button><button class="tb-mode" id="challenges">Challenges</button><button class="tb-mode" id="discovery">Discovery</button><button aria-pressed="false" class="tb-view" id="sceneViewToggle" type="button">◉ Scene View</button><button hidden="" id="sceneViewReturn" type="button">← Return to Adventure</button>
+<style id="tb-congratulations-route-style">#tb-congratulations-next{display:none;position:absolute;z-index:20;right:18px;bottom:18px;padding:12px 19px;border:2px solid #e8c77d;border-radius:12px;background:linear-gradient(#344650,#172229);color:#fff6dc;font:bold 18px Arial,sans-serif;text-decoration:none;box-shadow:0 5px 15px #0009}body.tb-congratulations-scene #tb-congratulations-next{display:block}</style><style id="tb-side-selector-test">
+/* Visitor-only experimental vertical controls. Original selects stay live in DOM. */
+body[data-editor="no"] header .tb-row-voice{display:none!important}
+body[data-editor="no"] #tb-side-tabs{position:fixed;left:0;top:90px;z-index:2100;display:flex;flex-direction:column;align-items:center;gap:3px;padding:3px 2px;background:rgba(15,30,39,.86);border-radius:0 8px 8px 0}
+body[data-editor="no"] .tb-side-tab{writing-mode:vertical-rl;text-orientation:upright;letter-spacing:.6px;font:700 12px Arial,sans-serif;color:#f0f6f9;background:linear-gradient(#344c5a,#17242e);border:1px solid #68818d;border-radius:6px;padding:9px 5px;min-height:0;min-width:25px;cursor:pointer}
+body[data-editor="no"] .tb-side-tab[aria-expanded="true"]{background:#987329;color:#fff}
+body[data-editor="no"] #tb-side-menu{position:fixed;z-index:2101;left:0;top:0;min-width:175px;max-width:min(340px,75vw);max-height:65vh;overflow:auto;background:#1b2a35;border:1px solid #78909d;border-radius:8px;padding:6px;box-shadow:0 10px 28px #000a}
+body[data-editor="no"] #tb-side-menu[hidden]{display:none!important}
+body[data-editor="no"] #tb-side-menu button{display:block;width:100%;text-align:left;padding:8px 10px;margin:2px 0;border-radius:5px;border:1px solid #526a78;background:#293d4a;color:#fff;font:14px Arial,sans-serif;cursor:pointer}
+body[data-editor="no"] #tb-side-menu button[aria-selected="true"]{background:#866524}
+@media(min-width:701px) and (min-height:520px){
+body[data-editor="no"]:not(.tb-scene-only) .scene-area>.scene{width:min(98cqw,176.168cqh)!important;max-width:98%!important}
+}
+body.tb-scene-only #tb-side-tabs,body.tb-scene-only #tb-side-menu{display:none!important}
+/* Right-edge studio navigation: menus open inward, original links remain intact. */
+body[data-editor="no"] header .tb-unified-nav{display:none!important}
+body[data-editor="no"] #tb-studio-tabs{position:fixed;right:0;top:90px;z-index:2100;display:flex;flex-direction:column;align-items:center;gap:14px;padding:3px 2px;background:rgba(15,30,39,.86);border-radius:8px 0 0 8px}
+body[data-editor="no"] .tb-studio-tab{writing-mode:vertical-rl;text-orientation:upright;letter-spacing:.6px;font:700 12px Arial,sans-serif;color:#f0f6f9;background:linear-gradient(#344c5a,#17242e);border:1px solid #68818d;border-radius:6px;padding:9px 5px;min-width:25px;cursor:pointer}
+body[data-editor="no"] .tb-studio-tab[aria-expanded="true"]{background:#987329;color:#fff}
+body[data-editor="no"] #tb-studio-menu{position:fixed;z-index:2101;right:0;top:0;min-width:185px;max-width:min(340px,75vw);max-height:65vh;overflow:auto;background:#1b2a35;border:1px solid #78909d;border-radius:8px;padding:6px;box-shadow:0 10px 28px #000a}
+body[data-editor="no"] #tb-studio-menu[hidden]{display:none!important}
+body[data-editor="no"] #tb-studio-menu a{display:block;text-align:left;text-decoration:none;padding:9px 10px;margin:2px 0;border-radius:5px;border:1px solid #526a78;background:#293d4a;color:#fff;font:14px Arial,sans-serif}
+body[data-editor="no"] #tb-studio-menu a:hover,body[data-editor="no"] #tb-studio-menu a:focus-visible{background:#866524}
+body.tb-scene-only #tb-studio-tabs,body.tb-scene-only #tb-studio-menu{display:none!important}
+/* Narrow both vertical rails and center every tab within its rail. */
+body[data-editor="no"] #tb-side-tabs,
+body[data-editor="no"] #tb-studio-tabs {
+  width: 30px !important;
+  min-width: 30px !important;
+  max-width: 30px !important;
+  box-sizing: border-box !important;
+  padding-left: 2px !important;
+  padding-right: 2px !important;
+  align-items: center !important;
+}
+body[data-editor="no"] .tb-side-tab,
+body[data-editor="no"] .tb-studio-tab {
+  width: 26px !important;
+  min-width: 0 !important;
+  box-sizing: border-box !important;
+  padding-left: 2px !important;
+  padding-right: 2px !important;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+  text-align: center !important;
+}
+</style><style id="tb-centered-visitor-header">
+/* Only the public Adventure header; preserve Master Studio and scene sizing. */
+@media (min-width: 701px) {
+ body[data-editor="no"]>header .tb-row-nav {position:relative!important;justify-content:center!important;align-items:center!important;padding-left:70px!important;padding-right:115px!important;}
+ body[data-editor="no"]>header .tb-row-nav .tb-scenePicker {flex:0 1 300px!important;width:min(300px,28vw)!important;max-width:300px!important;}
+ body[data-editor="no"]>header .tb-row-nav .tb-nav-end {position:absolute!important;right:4px!important;top:50%!important;transform:translateY(-50%);margin:0!important;}
+}
+body[data-editor="no"]>header .tb-row-nav .tb-corner-teacher {position:absolute;left:4px;top:50%;transform:translateY(-50%);height:42px;width:49px;display:flex;align-items:center;justify-content:center;z-index:2;}
+body[data-editor="no"]>header .tb-row-nav .tb-corner-teacher img {display:block;width:100%;height:100%;object-fit:contain;}
+
+@media (max-width:700px) {body[data-editor="no"]>header .tb-row-nav {padding-left:52px!important;}body[data-editor="no"]>header .tb-row-nav .tb-corner-teacher {height:35px;width:42px;}}
+</style><style id="tb-header-vertical-clearance">
+/* Target 50px header, including padding; controls remain unchanged. */
+body[data-editor="no"] > header {
+  height: 50px !important;
+  min-height: 50px !important;
+  max-height: 50px !important;
+  box-sizing: border-box !important;
+  padding: 0 10px !important;
+  display: flex !important;
+  align-items: center !important;
+}
+body[data-editor="no"] > header .tb-row-nav {
+  height: 100% !important;
+  min-height: 0 !important;
+  box-sizing: border-box !important;
+  margin: 0 !important;
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+  align-items: center !important;
+}
+</style><style id="tb-narrow-full-height-side-margins">
+/* Narrow the FULL-HEIGHT blue-green strips, not the tab rails.
+   Maintain a full-height scene and align percentage hotspots with the image. */
+@media (min-width:701px) and (min-height:520px) {
+  body[data-editor="no"]:not(.tb-scene-only) .scene-area > .scene {
+    width:94cqw !important;
+    max-width:94% !important;
+    height:100cqh !important;
+    max-height:100% !important;
+    min-height:0 !important;
+    flex:0 0 auto !important;
+    aspect-ratio:auto !important;
+    background-size:100% 100% !important;
+  }
+}
+</style></head><body data-editor="no"><header><div class="tb-header-row tb-row-voice"><a class="tb-logo" href="index.html"><img class="tb-header-teacher" src="images/teacher.png" alt=""/> <span>Talk A Bee</span></a><img class="tb-header-buzzkill" src="images/buzzkill.png" alt="Buzzkill Bee"/><label class="tb-field tb-native"><span>Native</span><select id="native"></select></label><label class="tb-field tb-learn"><span>Learn</span><select id="learn"></select></label><label class="tb-field tb-voiceMode"><span>Voice system</span><select id="voiceMode"><option value="standard">Standard browser voice</option><option value="enhanced">Enhanced Piper</option></select></label><label class="tb-field tb-voiceSelect"><span>Voice choice</span><select id="voiceSelect"></select></label></div><div class="tb-header-row tb-row-nav"><a class="tb-corner-teacher" href="index.html" title="Talk A Bee Home" aria-label="Talk A Bee Home"><img src="images/teacher.png" alt="Teacher Bee"></a><label class="tb-field tb-scenePicker"><span>Adventure</span><select aria-label="Choose Adventure" id="scenePicker"></select></label><button class="tb-mode selected" id="activities">Activities</button><button class="tb-mode" id="challenges">Challenges</button><button class="tb-mode" id="discovery">Discovery</button><button aria-pressed="false" class="tb-view" id="sceneViewToggle" type="button">◉ Scene View</button><button hidden="" id="sceneViewReturn" type="button">← Return to Adventure</button>
 <nav class="tb-unified-nav" aria-label="More Talk A Bee destinations">
 <details><summary title="Part 2 Course">Part 2 Course +</summary><div class="tb-menu">
 <a href="index.html">Home</a>
@@ -178,4 +270,56 @@ body>header .tb-row-voice .tb-field.tb-voiceSelect select{width:100%!important;m
   refresh();
 })();
 </script>
-<script id="tb-congratulations-route">(function(){'use strict';function sync(){const name=new URLSearchParams(location.search).get('scene')||document.getElementById('scenePicker')?.value;document.body.classList.toggle('tb-congratulations-scene',name==='congratulations');}document.addEventListener('DOMContentLoaded',sync);document.addEventListener('change',e=>{if(e.target.id==='scenePicker')setTimeout(sync,0)});document.getElementById('previousAdventure')?.addEventListener('click',()=>setTimeout(sync,0));document.getElementById('nextAdventure')?.addEventListener('click',()=>setTimeout(sync,0));window.addEventListener('popstate',sync);new MutationObserver(sync).observe(document.getElementById('sceneTitle'),{childList:true,subtree:true,characterData:true});sync();})();</script></body></html>
+<script id="tb-congratulations-route">(function(){'use strict';function sync(){const name=new URLSearchParams(location.search).get('scene')||document.getElementById('scenePicker')?.value;document.body.classList.toggle('tb-congratulations-scene',name==='congratulations');}document.addEventListener('DOMContentLoaded',sync);document.addEventListener('change',e=>{if(e.target.id==='scenePicker')setTimeout(sync,0)});document.getElementById('previousAdventure')?.addEventListener('click',()=>setTimeout(sync,0));document.getElementById('nextAdventure')?.addEventListener('click',()=>setTimeout(sync,0));window.addEventListener('popstate',sync);new MutationObserver(sync).observe(document.getElementById('sceneTitle'),{childList:true,subtree:true,characterData:true});sync();})();</script><script id="tb-side-selector-test-js">
+(function(){'use strict';
+if(document.body.dataset.editor!=='no')return;
+const config=[['native','NATIVE'],['learn','LEARN'],['voiceMode','VOICE'],['voiceSelect','CHOICE']];
+const rail=document.createElement('div');rail.id='tb-side-tabs';rail.setAttribute('aria-label','Language and voice settings');
+const menu=document.createElement('div');menu.id='tb-side-menu';menu.hidden=true;document.body.append(rail,menu);
+let current=null;
+function close(){menu.hidden=true;current=null;rail.querySelectorAll('button').forEach(b=>b.setAttribute('aria-expanded','false'));}
+function openFor(id,button){const select=document.getElementById(id);if(!select)return;menu.replaceChildren();
+Array.from(select.options).forEach(option=>{if(option.disabled||option.hidden)return;const b=document.createElement('button');b.type='button';b.textContent=option.textContent;b.setAttribute('aria-selected',String(option.value===select.value));b.addEventListener('click',()=>{select.value=option.value;select.dispatchEvent(new Event('input',{bubbles:true}));select.dispatchEvent(new Event('change',{bubbles:true}));close();});menu.appendChild(b);});
+if(!menu.children.length){const msg=document.createElement('span');msg.textContent='No choices available';menu.appendChild(msg);}
+const rect=button.getBoundingClientRect();menu.style.left=Math.round(rect.right+5)+'px';menu.style.top=Math.round(Math.max(4,Math.min(rect.top,innerHeight-150)))+'px';menu.hidden=false;current=id;button.setAttribute('aria-expanded','true');}
+config.forEach(([id,label])=>{const button=document.createElement('button');button.type='button';button.className='tb-side-tab';button.textContent=label;button.setAttribute('aria-expanded','false');button.setAttribute('aria-label','Open '+label+' options');button.addEventListener('click',()=>{if(current===id){close();return;}close();openFor(id,button);});rail.appendChild(button);});
+document.addEventListener('pointerdown',e=>{if(!rail.contains(e.target)&&!menu.contains(e.target))close();});document.addEventListener('keydown',e=>{if(e.key==='Escape')close();});
+})();
+</script><script id="tb-right-studio-tabs-js">
+(function(){'use strict';
+if(document.body.dataset.editor!=='no')return;
+const source=document.querySelectorAll('header .tb-unified-nav details');
+if(source.length<2)return;
+const entries=[{name:'STUDIO',full:'Word & Picture Studio',source:source[0]},{name:'SOUND & GAMES',full:'Sound & Game Studio',source:source[1]}];
+const rail=document.createElement('nav');rail.id='tb-studio-tabs';rail.setAttribute('aria-label','Studios and games');
+const menu=document.createElement('div');menu.id='tb-studio-menu';menu.hidden=true;document.body.append(rail,menu);
+let current=null;
+function close(){menu.hidden=true;current=null;rail.querySelectorAll('button').forEach(b=>b.setAttribute('aria-expanded','false'));}
+function openFor(entry,button){menu.replaceChildren();
+const title=document.createElement('div');title.textContent=entry.full;title.style.cssText='font:bold 14px Arial,sans-serif;color:#f1d68c;padding:8px 10px';menu.appendChild(title);
+entry.source.querySelectorAll('.tb-menu a').forEach(link=>{const copy=link.cloneNode(true);menu.appendChild(copy);});
+const rect=button.getBoundingClientRect();menu.style.right=Math.round(innerWidth-rect.left+5)+'px';menu.style.top='4px';menu.hidden=false;
+const height=menu.getBoundingClientRect().height;menu.style.top=Math.round(Math.max(4,Math.min(rect.top,innerHeight-height-4)))+'px';current=entry;button.setAttribute('aria-expanded','true');}
+entries.forEach(entry=>{const button=document.createElement('button');button.type='button';button.className='tb-studio-tab';button.textContent=entry.name;button.title=entry.full;button.setAttribute('aria-label','Open '+entry.full);button.setAttribute('aria-expanded','false');button.addEventListener('click',()=>{if(current===entry){close();return;}close();openFor(entry,button);});rail.appendChild(button);});
+document.addEventListener('pointerdown',e=>{if(!rail.contains(e.target)&&!menu.contains(e.target))close();});document.addEventListener('keydown',e=>{if(e.key==='Escape')close();});
+})();
+</script><script id="tb-center-side-rails-in-gutters">
+(function(){
+  'use strict';
+  if(document.body.dataset.editor!=='no')return;
+  const scene=document.getElementById('scene');
+  const leftRail=document.getElementById('tb-side-tabs');
+  const rightRail=document.getElementById('tb-studio-tabs');
+  if(!scene||!leftRail||!rightRail)return;
+  function centerRails(){
+    const rect=scene.getBoundingClientRect();
+    const leftSpace=Math.max(0,rect.left);
+    const rightSpace=Math.max(0,window.innerWidth-rect.right);
+    leftRail.style.setProperty('left',Math.max(0,(leftSpace-leftRail.offsetWidth)/2)+'px','important');
+    rightRail.style.setProperty('right',Math.max(0,(rightSpace-rightRail.offsetWidth)/2)+'px','important');
+  }
+  window.addEventListener('resize',centerRails);
+  if(typeof ResizeObserver!=='undefined')new ResizeObserver(centerRails).observe(scene);
+  centerRails();
+})();
+</script></body></html>
