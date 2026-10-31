@@ -34835,12 +34835,29 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
     ],
     "hotspots": [
       {
+        "id": "galaxy-cluster",
+        "label": "Galaxy Cluster",
+        "x": 67.40386729180173,
+        "y": 24.488911188923026,
+        "w": 32.59613270819827,
+        "h": 67.81076611625308,
+        "sound": "",
+        "translations": {
+          "es": "cúmulo galáctico",
+          "fr": "Amas de galaxies",
+          "de": "Galaxienhaufen",
+          "it": "Ammasso di galassie",
+          "pt": "grupo de galáxias",
+          "no": "galaksehop"
+        }
+      },
+      {
         "id": "observable-universe",
         "label": "Observable Universe",
         "x": 0,
         "y": 1.2890283192608205,
-        "w": 55.14393643568701,
-        "h": 96.35132306102788,
+        "w": 50.84747889228489,
+        "h": 98.71097168073918,
         "sound": "",
         "translations": {
           "es": "Universo observable",
@@ -34957,23 +34974,6 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
           "it": "Gruppo Galaxy",
           "pt": "Galaxy Group",
           "no": "Galaxy-gruppen"
-        }
-      },
-      {
-        "id": "galaxy-cluster",
-        "label": "Galaxy Cluster",
-        "x": 62,
-        "y": 12,
-        "w": 37,
-        "h": 68,
-        "sound": "",
-        "translations": {
-          "es": "cúmulo galáctico",
-          "fr": "Amas de galaxies",
-          "de": "Galaxienhaufen",
-          "it": "Ammasso di galassie",
-          "pt": "grupo de galáxias",
-          "no": "galaksehop"
         }
       },
       {
@@ -35169,9 +35169,9 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
         "id": "universe-label",
         "label": "Our Universe Label",
         "x": 0,
-        "y": 1,
-        "w": 19.296456006869896,
-        "h": 9.56631864248807,
+        "y": 2.6084203393779823,
+        "w": 19.457570629469306,
+        "h": 6.254866435656313,
         "sound": "",
         "translations": {
           "es": "Our Universe Label",
@@ -35204,8 +35204,8 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
         "label": "Cluster Size Label",
         "x": 63,
         "y": 24,
-        "w": 22,
-        "h": 6,
+        "w": 35.3190116238048,
+        "h": 11.676778305310254,
         "sound": "",
         "translations": {
           "es": "Etiqueta de tamaño de clúster",
