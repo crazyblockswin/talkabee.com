@@ -11335,23 +11335,6 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
         }
       },
       {
-        "id": "ball",
-        "label": "ball",
-        "x": 60,
-        "y": 78,
-        "w": 5,
-        "h": 8,
-        "sound": "",
-        "translations": {
-          "es": "bola",
-          "fr": "- Ballon",
-          "de": "Kugel",
-          "it": "palla",
-          "pt": "ball",
-          "no": "ball"
-        }
-      },
-      {
         "id": "flag",
         "label": "flag",
         "x": 66.63,
@@ -11621,7 +11604,9 @@ window.TAB_SCENES=Object.assign(window.TAB_SCENES||{},{
           "it": "Pallina da golf",
           "pt": "bola de golfe",
           "no": "Golfball"
-        }
+        },
+        "rotation": 0,
+        "z": 0
       }
     ],
     "overlays": [],
