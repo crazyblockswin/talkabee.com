@@ -14,6 +14,22 @@ const wrap=document.createElement('div');wrap.id='tbMasterPiperControls';
 wrap.style.cssText='margin:8px 0 12px;padding:9px;border:1px solid #a8b2bd;border-radius:8px;font:13px Arial,sans-serif';
 const label=document.createElement('label');label.textContent='Enhanced Piper voice';label.htmlFor='tbMasterPiperVoice';
 const select=document.createElement('select');select.id='tbMasterPiperVoice';select.style.cssText='display:block;width:100%;margin:5px 0';
+const publicChoice=document.getElementById('voiceSelect');
+function syncPublicChoice(){
+ if(!publicChoice)return;
+ if(mode.value!=='enhanced'){
+  publicChoice.replaceChildren(new Option('Browser default',''));
+  return;
+ }
+ publicChoice.replaceChildren();
+ for(const option of select.options)publicChoice.add(new Option(option.textContent,option.value));
+ publicChoice.value=select.value;
+}
+if(publicChoice)publicChoice.addEventListener('change',()=>{
+ if(mode.value!=='enhanced'||!Array.from(select.options).some(o=>o.value===publicChoice.value))return;
+ select.value=publicChoice.value;
+ select.dispatchEvent(new Event('change',{bubbles:true}));
+});
 const info=document.createElement('div');info.id='tbMasterPiperStatus';info.setAttribute('role','status');info.textContent='Piper waiting';
 const loadBtn=document.createElement('button');loadBtn.type='button';loadBtn.textContent='Load Piper voice';
 wrap.append(label,select,loadBtn,info);
@@ -63,6 +79,7 @@ function syncSelection(force){
  if(chosen){select.value=chosen;save(language,chosen)}
  else select.add(new Option('No Piper voice for this language',''));
  status(chosen?'Piper selected: '+chosen:'No Piper voice available for '+language);
+ syncPublicChoice();
 }
 async function load(){
  if(engine)return engine;
@@ -111,7 +128,7 @@ async function withAudioLeadIn(blob){
  }catch(e){return blob}
 }
 function update(){
- renderPanel();stop();
+ renderPanel();stop();syncPublicChoice();
  if(mode.value==='enhanced'){if(engine)syncSelection();else load().catch(()=>{})}
 }
 function languageChanged(){
@@ -132,7 +149,7 @@ window.addEventListener('tb-master-language-change',()=>{
  if(selectionLanguage!==learn.value)languageChanged();
 });
 select.addEventListener('change',()=>{
- stop();save(learn.value,select.value);status('Piper selected: '+select.value);
+ stop();save(learn.value,select.value);status('Piper selected: '+select.value);syncPublicChoice();
 });
 loadBtn.addEventListener('click',()=>{stop();load().then(()=>syncSelection()).catch(()=>{})});
 window.tbAdventurePiperSpeak=function(text,rate,onComplete,onPlaybackStart){
