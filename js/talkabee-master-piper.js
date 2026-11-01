@@ -49,7 +49,7 @@ document.body.appendChild(wrap);
 const style=document.createElement('style');style.textContent=`
 #tbPiperSettingsButton{align-self:end;margin:0 6px 3px;padding:8px 12px;border:1px solid #8496aa;border-radius:9px;background:#263944;color:white;font:600 15px Arial,sans-serif;cursor:pointer;white-space:nowrap}
 #tbPiperSettingsButton[hidden],#tbMasterPiperControls[hidden]{display:none!important}
-#tbMasterPiperControls{position:fixed!important;z-index:2147483000;top:80px;right:16px;left:auto;width:min(340px,calc(100vw - 32px));max-height:calc(100vh - 100px);overflow:auto;box-sizing:border-box;margin:0!important;padding:15px!important;border:1px solid #9bacbd!important;border-radius:12px!important;background:#19232c!important;color:#f4f6fa!important;box-shadow:0 12px 35px #0009;font:15px Arial,sans-serif!important}
+#tbMasterPiperControls{position:fixed!important;z-index:2147483000;top:80px;right:16px;left:auto;width:min(340px,calc(100vw - 32px));max-height:calc(100dvh - 16px);overflow-y:auto;overscroll-behavior:contain;box-sizing:border-box;margin:0!important;padding:15px!important;border:1px solid #9bacbd!important;border-radius:12px!important;background:#19232c!important;color:#f4f6fa!important;box-shadow:0 12px 35px #0009;font:15px Arial,sans-serif!important}
 #tbMasterPiperControls select{box-sizing:border-box;color:#fff;background:#30334b;padding:7px;border-radius:8px}
 #tbMasterPiperControls button{padding:8px 12px;margin:4px 0;color:white;background:#263944;border:1px solid #8795a4;border-radius:8px;cursor:pointer}
 #tbMasterPiperStatus{overflow-wrap:anywhere;margin-top:7px}
@@ -82,9 +82,13 @@ function renderPanel(anchor){
  if(enabled&&panelOpen){
  const r=(anchor||document.getElementById('tb-side-tabs')||settingsBtn).getBoundingClientRect();
  if(document.getElementById('tb-side-tabs')){
-  wrap.style.left=Math.min(window.innerWidth-355,Math.max(4,r.right+8))+'px';wrap.style.right='auto';
-  wrap.style.top=Math.max(4,Math.min(r.top,window.innerHeight-250))+'px';
- }else{wrap.style.left='auto';wrap.style.right='16px';wrap.style.top=Math.max(4,Math.min(r.bottom+8,window.innerHeight-250))+'px';}
+  wrap.style.left=Math.max(6,Math.min(window.innerWidth-Math.min(340,window.innerWidth-32)-6,r.right+8))+'px';wrap.style.right='auto';
+ }else{wrap.style.left='auto';wrap.style.right='16px';}
+ // Measure after making the panel visible. Anchor it within the actual viewport.
+ wrap.style.top='6px';
+ const panelHeight=wrap.getBoundingClientRect().height;
+ const preferredTop=document.getElementById('tb-side-tabs')?r.top:r.bottom+8;
+ wrap.style.top=Math.round(Math.max(6,Math.min(preferredTop,window.innerHeight-panelHeight-6)))+'px';
  }
 }
 settingsBtn.addEventListener('click',()=>{panelOpen=!panelOpen;renderPanel();});
