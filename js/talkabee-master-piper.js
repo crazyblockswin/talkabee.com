@@ -32,7 +32,12 @@ if(publicChoice)publicChoice.addEventListener('change',()=>{
 });
 const info=document.createElement('div');info.id='tbMasterPiperStatus';info.setAttribute('role','status');info.textContent='Piper waiting';
 const loadBtn=document.createElement('button');loadBtn.type='button';loadBtn.textContent='Load Piper voice';
+const progressBox=document.createElement('div');progressBox.id='tbPiperDownload';progressBox.hidden=true;
+const progressText=document.createElement('div');progressText.id='tbPiperDownloadText';
+const progressBar=document.createElement('progress');progressBar.id='tbPiperDownloadBar';progressBar.max=100;
+progressBar.removeAttribute('value');progressBox.append(progressText,progressBar);
 wrap.append(label,select,loadBtn,info);
+document.body.appendChild(progressBox);
 // Keep Piper settings outside header layout so loading/status cannot enlarge it.
 const voiceField=mode.closest('.tb-field')||mode.parentElement;
 const settingsBtn=document.createElement('button');
@@ -48,21 +53,46 @@ const style=document.createElement('style');style.textContent=`
 #tbMasterPiperControls select{box-sizing:border-box;color:#fff;background:#30334b;padding:7px;border-radius:8px}
 #tbMasterPiperControls button{padding:8px 12px;margin:4px 0;color:white;background:#263944;border:1px solid #8795a4;border-radius:8px;cursor:pointer}
 #tbMasterPiperStatus{overflow-wrap:anywhere;margin-top:7px}
+#tbPiperDownload[hidden]{display:none!important}
+#tbPiperDownload{position:fixed;z-index:2147483001;bottom:18px;left:50%;transform:translateX(-50%);width:min(390px,calc(100vw - 32px));box-sizing:border-box;padding:12px 15px;border:1px solid #9bacbd;border-radius:10px;background:#19232c;color:#f4f6fa;box-shadow:0 8px 25px #0009;font:14px Arial,sans-serif}
+#tbPiperDownloadBar{display:block;width:100%;height:18px;margin-top:6px;accent-color:#67c5e8}
 `;document.head.appendChild(style);
 let panelOpen=false;
-function renderPanel(){
+function progress(message,loaded,total){
+ progressBox.hidden=false;
+ if(Number.isFinite(total)&&total>0&&Number.isFinite(loaded)){
+  const pct=Math.max(0,Math.min(100,Math.round(100*loaded/total)));
+  progressBar.value=pct;
+  progressText.textContent=message+' — '+pct+'% ('+(loaded/1048576).toFixed(1)+' / '+(total/1048576).toFixed(1)+' MB)';
+ }else{progressBar.removeAttribute('value');progressText.textContent=message+' — please wait…';}
+}
+function showVoiceProgress(loaded,total){progress('Downloading voice',loaded,total)}
+function progressDone(){progressBox.hidden=true;progressBar.removeAttribute('value');}
+window.tbPiperOpenChoice=function(anchor){
+ if(mode.value!=='enhanced')return false;
+ panelOpen=true;renderPanel(anchor);
+ load().catch(()=>{});
+ return true;
+};
+function renderPanel(anchor){
  const enabled=mode.value==='enhanced';
  settingsBtn.hidden=!enabled;
  wrap.hidden=!enabled||!panelOpen;
  settingsBtn.setAttribute('aria-expanded',String(enabled&&panelOpen));
- if(enabled&&panelOpen){const r=settingsBtn.getBoundingClientRect();wrap.style.top=Math.min(window.innerHeight-110,Math.max(8,r.bottom+8))+'px';}
+ if(enabled&&panelOpen){
+ const r=(anchor||document.getElementById('tb-side-tabs')||settingsBtn).getBoundingClientRect();
+ if(document.getElementById('tb-side-tabs')){
+  wrap.style.left=Math.min(window.innerWidth-355,Math.max(4,r.right+8))+'px';wrap.style.right='auto';
+  wrap.style.top=Math.max(4,Math.min(r.top,window.innerHeight-250))+'px';
+ }else{wrap.style.left='auto';wrap.style.right='16px';wrap.style.top=Math.max(4,Math.min(r.bottom+8,window.innerHeight-250))+'px';}
+ }
 }
 settingsBtn.addEventListener('click',()=>{panelOpen=!panelOpen;renderPanel();});
-document.addEventListener('pointerdown',e=>{if(panelOpen&&!wrap.contains(e.target)&&!settingsBtn.contains(e.target)){panelOpen=false;renderPanel();}});
+document.addEventListener('pointerdown',e=>{if(panelOpen&&!wrap.contains(e.target)&&!settingsBtn.contains(e.target)&&!e.target.closest('#tb-side-tabs')){panelOpen=false;renderPanel();}});
 document.addEventListener('keydown',e=>{if(e.key==='Escape'&&panelOpen){panelOpen=false;renderPanel();settingsBtn.focus();}});
 
 function status(message){info.textContent=message}
-function stop(){token++;if(currentAudio){currentAudio.pause();currentAudio=null}if(currentUrl){URL.revokeObjectURL(currentUrl);currentUrl=null}}
+function stop(){progressDone();token++;if(currentAudio){currentAudio.pause();currentAudio=null}if(currentUrl){URL.revokeObjectURL(currentUrl);currentUrl=null}}
 window.tbMasterPiperStop=stop;
 function saved(language){try{return localStorage.getItem(voiceKey+language)||''}catch{return ''}}
 function save(language,id){try{if(id)localStorage.setItem(voiceKey+language,id)}catch{}}
@@ -85,12 +115,12 @@ async function load(){
  if(engine)return engine;
  if(loading)return loading;
  loading=(async()=>{
-  status('Loading Piper voice catalog…');
+  status('Loading Piper voice catalog…');progress('Loading voice catalog');
   const m=await import(moduleUrl),raw=await m.voices();
   voices=(Array.isArray(raw)?raw.map(v=>typeof v==='string'?v:v?.id||v?.key||v?.name||''):Object.keys(raw||{})).filter(Boolean);
-  engine=m;syncSelection(true);return m;
+  engine=m;syncSelection(true);progressDone();return m;
  })();
- try{return await loading}catch(e){loading=null;status('Piper unavailable: '+(e?.message||e));throw e}
+ try{return await loading}catch(e){progressDone();loading=null;status('Piper unavailable: '+(e?.message||e));throw e}
 }
 // Add a short silent lead-in to PCM WAV audio so the first syllable is not
 // lost while the browser/audio device starts. Preserve the original WAV when
@@ -128,7 +158,7 @@ async function withAudioLeadIn(blob){
  }catch(e){return blob}
 }
 function update(){
- renderPanel();stop();syncPublicChoice();
+ renderPanel();syncPublicChoice();stop();syncPublicChoice();
  if(mode.value==='enhanced'){if(engine)syncSelection();else load().catch(()=>{})}
 }
 function languageChanged(){
@@ -167,12 +197,12 @@ window.tbAdventurePiperSpeak=function(text,rate,onComplete,onPlaybackStart){
    const voiceId=select.value;
    if(!voiceId||!available(languageAtStart).includes(voiceId))
     throw Error('No Piper voice available for '+languageAtStart);
-   status('Preparing '+voiceId+'…');
+   status('Preparing '+voiceId+'…');progress('Preparing '+voiceId);
    const wav=await m.predict({text:String(text),voiceId},progress=>{
-    if(ticket===token&&progress?.total)status('Downloading voice: '+Math.round(progress.loaded/progress.total*100)+'%');
+    if(ticket===token){if(progress?.total) {status('Downloading voice: '+Math.round(progress.loaded/progress.total*100)+'%');showVoiceProgress(progress.loaded,progress.total);} }
    });
    if(ticket!==token||mode.value!=='enhanced'||select.value!==voiceId||learn.value!==languageAtStart)return;
-   const paddedWav=await withAudioLeadIn(wav);
+   progressDone();const paddedWav=await withAudioLeadIn(wav);
    if(ticket!==token||mode.value!=='enhanced')return;
    currentUrl=URL.createObjectURL(paddedWav);
    const audio=new Audio(currentUrl);currentAudio=audio;
@@ -184,7 +214,7 @@ window.tbAdventurePiperSpeak=function(text,rate,onComplete,onPlaybackStart){
     status('Piper ready: '+voiceId);onComplete?.();
    },{once:true});
    await audio.play();if(ticket===token){onPlaybackStart?.(Number.isFinite(audio.duration)&&audio.duration>0?audio.duration/audio.playbackRate:null);status('Playing: '+voiceId)}
-  }catch(e){if(ticket===token){status('Piper failed: '+(e?.message||e));console.error(e);onComplete?.()}}
+  }catch(e){if(ticket===token){progressDone();status('Piper failed: '+(e?.message||e));console.error(e);onComplete?.()}}
  })();return true;
 };
 update();
