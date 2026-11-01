@@ -278,7 +278,7 @@ const rail=document.createElement('div');rail.id='tb-side-tabs';rail.setAttribut
 const menu=document.createElement('div');menu.id='tb-side-menu';menu.hidden=true;document.body.append(rail,menu);
 let current=null;
 function close(){menu.hidden=true;current=null;rail.querySelectorAll('button').forEach(b=>b.setAttribute('aria-expanded','false'));}
-function openFor(id,button){const select=document.getElementById(id);if(!select)return;menu.replaceChildren();
+function openFor(id,button){const select=document.getElementById(id);if(!select)return;if(id==='voiceSelect'&&document.getElementById('voiceMode')?.value==='enhanced'&&window.tbPiperOpenChoice?.(button)){close();return;}menu.replaceChildren();
 Array.from(select.options).forEach(option=>{if(option.disabled||option.hidden)return;const b=document.createElement('button');b.type='button';b.textContent=option.textContent;b.setAttribute('aria-selected',String(option.value===select.value));b.addEventListener('click',()=>{select.value=option.value;select.dispatchEvent(new Event('input',{bubbles:true}));select.dispatchEvent(new Event('change',{bubbles:true}));close();});menu.appendChild(b);});
 if(!menu.children.length){const msg=document.createElement('span');msg.textContent='No choices available';menu.appendChild(msg);}
 const rect=button.getBoundingClientRect();menu.style.left=Math.round(rect.right+5)+'px';menu.style.top=Math.round(Math.max(4,Math.min(rect.top,innerHeight-150)))+'px';menu.hidden=false;current=id;button.setAttribute('aria-expanded','true');}
